@@ -6,7 +6,9 @@ The exact all-length path recurrence and singleton-normalization identity
 used by the RG reconstruction. The determinant/resolvent interpretation and
 the analytic sign certificates remain separate proof obligations.
 -/
-import Mathlib.Tactic
+import Mathlib.Tactic.Ring
+import Mathlib.Tactic.LinearCombination
+import Mathlib.Tactic.FieldSimp
 
 namespace Gebendorfer.RadenkovicGutman.PathRecurrence
 
@@ -78,3 +80,4 @@ theorem resolventQuotient_succ (z : K) (n : ℕ) (hb : den z n ≠ 0) :
 #print axioms resolventQuotient_succ
 
 end Gebendorfer.RadenkovicGutman.PathRecurrence
+

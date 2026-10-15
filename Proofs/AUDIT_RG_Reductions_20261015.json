@@ -1,0 +1,411 @@
+{
+  "lean": "Lean (version 4.33.1, x86_64-unknown-linux-gnu, commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6, Release)",
+  "mathlib": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "global_rg": "NOT_PROVED",
+  "modules": [
+    {
+      "name": "RadenkovicGutmanPathRecurrence",
+      "seconds": 1.466,
+      "source_sha256": "4e4eeb10961d7d9834c138cfe317e5f6dd2a153102b2e092662c75661230c4e6",
+      "profiles": [
+        {
+          "name": "Gebendorfer.RadenkovicGutman.PathRecurrence.addition",
+          "axioms": [
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "name": "Gebendorfer.RadenkovicGutman.PathRecurrence.singleton_normalization",
+          "axioms": [
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "name": "Gebendorfer.RadenkovicGutman.PathRecurrence.characteristic_recurrence",
+          "axioms": [
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "name": "Gebendorfer.RadenkovicGutman.PathRecurrence.resolventQuotient_succ",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "RadenkovicGutmanPathDeterminant",
+      "seconds": 3.599,
+      "source_sha256": "d6121b7d9da80dabe42e1a33f87b6d60a7f968da8823fe829b15851be072d031",
+      "profiles": [
+        {
+          "name": "Gebendorfer.RadenkovicGutman.PathRecurrence.det_tridiagonal",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "name": "Gebendorfer.RadenkovicGutman.PathRecurrence.pathTail_det",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "name": "Gebendorfer.RadenkovicGutman.PathRecurrence.pathGraph_degree",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "name": "Gebendorfer.RadenkovicGutman.PathRecurrence.pathMatrix_tridiagonal",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "name": "Gebendorfer.RadenkovicGutman.PathRecurrence.pathMatrix_det",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "name": "Gebendorfer.RadenkovicGutman.PathRecurrence.pathMatrix_inv_endpoint",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "RadenkovicGutmanPathResolvent",
+      "seconds": 2.139,
+      "source_sha256": "72a7442dc6be586455fdec61a674157048718060da11c5d4bf24eb129e78e627",
+      "profiles": [
+        {
+          "name": "Gebendorfer.RadenkovicGutman.PathRecurrence.shifted_det_ne_zero",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "name": "Gebendorfer.RadenkovicGutman.PathRecurrence.den_ne_zero_of_im_ne_zero",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "name": "Gebendorfer.RadenkovicGutman.PathRecurrence.pathMatrix_mul_inverse",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "name": "Gebendorfer.RadenkovicGutman.PathRecurrence.endpoint_resolvent_recurrence",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "RadenkovicGutmanPathAudit",
+      "seconds": 2.104,
+      "source_sha256": "5c80794423a22f46041d6e1dcc673b22a5486a6d6222b34e569ca604cfd292d1",
+      "profiles": [
+        {
+          "name": "Gebendorfer.RadenkovicGutman.PathAudit.exact_determinant",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "name": "Gebendorfer.RadenkovicGutman.PathAudit.exact_resolvent",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "name": "Gebendorfer.RadenkovicGutman.PathAudit.exact_upper_half_plane",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "name": "Gebendorfer.RadenkovicGutman.PathAudit.singleton_control",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "name": "Gebendorfer.RadenkovicGutman.PathAudit.endpoint_degree_negative_control",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "RadenkovicGutmanCoreQuotient",
+      "seconds": 5.203,
+      "source_sha256": "9a73956ea3e17c97208ee5522dc73d9feb2b5f209e5d707ef19d64bade8d3d82",
+      "profiles": [
+        {
+          "name": "Gebendorfer.RadenkovicGutman.CoreQuotient.det_sub_two",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "name": "Gebendorfer.RadenkovicGutman.CoreQuotient.det_sub_edge",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "name": "Gebendorfer.RadenkovicGutman.CoreQuotient.det_sub_two_root_edges",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "name": "Gebendorfer.RadenkovicGutman.CoreQuotient.rooted_two_arm_det",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "name": "Gebendorfer.RadenkovicGutman.CoreQuotient.rooted_one_arm_det",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "RadenkovicGutmanGraphJoin",
+      "seconds": 7.14,
+      "source_sha256": "36d8d239d7a45bf63cfd0475180e208c72cf5bbe9f18873a32b966bdcfa7c428",
+      "profiles": [
+        {
+          "name": "Gebendorfer.RadenkovicGutman.CoreQuotient.shifted_join",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "name": "Gebendorfer.RadenkovicGutman.CoreQuotient.shifted_joinTwo",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "RadenkovicGutmanFusionQuotient",
+      "seconds": 2.71,
+      "source_sha256": "af4340091b54039be8601ca21297236fe5983b34e9bc5e311a1709b87e1faaf8",
+      "profiles": [
+        {
+          "name": "Gebendorfer.RadenkovicGutman.CoreQuotient.source_det",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "name": "Gebendorfer.RadenkovicGutman.CoreQuotient.fused_det",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "name": "Gebendorfer.RadenkovicGutman.CoreQuotient.singleton_factor_calibration",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "name": "Gebendorfer.RadenkovicGutman.CoreQuotient.normalized_determinant_quotient",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "name": "Gebendorfer.RadenkovicGutman.CoreQuotient.normalized_resolvent_quotient",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "RadenkovicGutmanResolventDisk",
+      "seconds": 2.819,
+      "source_sha256": "f7bd373fd0673afb3031ed0e1c2f1c6fd1d18261671545fb84c3155fd4f819ce",
+      "profiles": [
+        {
+          "name": "Gebendorfer.RadenkovicGutman.ResolventDisk.disk_of_equation",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "name": "Gebendorfer.RadenkovicGutman.ResolventDisk.hermitian_resolvent_disk",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "name": "Gebendorfer.RadenkovicGutman.ResolventDisk.schur_complement_disk",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "RadenkovicGutmanPathEnclosure",
+      "seconds": 1.606,
+      "source_sha256": "fa908a8e90a316981820ebf47445e0ab206f3cf32e546466d775fc908931cc85",
+      "profiles": [
+        {
+          "name": "Gebendorfer.RadenkovicGutman.PathEnclosure.all_long_arms",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "RadenkovicGutmanArmBridge",
+      "seconds": 2.255,
+      "source_sha256": "dbe29009159ad77cc551e19ad5a02816252cffabe171a6c3a89ed6ab9fb059ba",
+      "profiles": [
+        {
+          "name": "Gebendorfer.RadenkovicGutman.PathEnclosure.path_resolvent_real",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "name": "Gebendorfer.RadenkovicGutman.PathEnclosure.all_long_path_resolvents",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "RadenkovicGutmanReductionsAudit",
+      "seconds": 2.438,
+      "source_sha256": "663802285e8987c119ed5df4898783b2efc1881e406abe963570bad3735a5bfb",
+      "profiles": [
+        {
+          "name": "Gebendorfer.RadenkovicGutman.ReductionsAudit.exact_graph_quotient",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "name": "Gebendorfer.RadenkovicGutman.ReductionsAudit.normalization_negative_control",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "name": "Gebendorfer.RadenkovicGutman.PathEnclosure.all_long_path_resolvents",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "name": "Gebendorfer.RadenkovicGutman.ResolventDisk.hermitian_resolvent_disk",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        }
+      ]
+    }
+  ],
+  "seconds": 33.485,
+  "printed_axiom_profiles": 41
+}

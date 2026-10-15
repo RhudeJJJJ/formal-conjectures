@@ -1,7 +1,9 @@
 # WOWII 252: full finite counterexample certificate
 
 The theorem `WOWII252Proof.conjecture252` negates the complete universal
-statement on connected finite simple graphs. The supplied manuscript by
+statement on connected finite simple graphs without isolated vertices.
+The explicit isolation condition ensures that total domination is defined;
+it prevents Lean's empty-infimum default from creating a spurious singleton case. The supplied manuscript by
 Jonas J. Gebendorfer specifies the actual 30-vertex witness and all its edges.
 Intake: https://github.com/google-deepmind/formal-conjectures/issues/7262
 

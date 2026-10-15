@@ -61,6 +61,9 @@ def selected : Finset (Fin 30) := {0,1,2,3,4,5}
 lemma selected_total : witness.IsTotalDominating (selected : Set (Fin 30)) := by
   change ∀ v : Fin 30, ∃ w ∈ selected, witness.Adj v w
   decide
+lemma witness_no_isolates (v : Fin 30) : ∃ w, witness.Adj v w := by
+  obtain ⟨w, _, hw⟩ := selected_total v
+  exact ⟨w, hw⟩
 lemma total_upper : witness.totalDominationNumber ≤ 6 :=
   Nat.sInf_le ⟨selected, selected_total, by decide⟩
 
@@ -86,10 +89,10 @@ lemma total_eq : witness.totalDominationNumber = 6 := by
     exact selected_lower D hD.isTotalDominating
 
 theorem conjecture252 : ¬ ∀ (W : Type) [Fintype W] [DecidableEq W]
-    (G : SimpleGraph W) [DecidableRel G.Adj], G.Connected → C4Free G →
+    (G : SimpleGraph W) [DecidableRel G.Adj], G.Connected → (∀ v, ∃ w, G.Adj v w) → C4Free G →
       modeMin G ≤ G.totalDominationNumber := by
   intro h
-  have hb := h (Fin 30) witness witness_connected witness_C4Free
+  have hb := h (Fin 30) witness witness_connected witness_no_isolates witness_C4Free
   rw [mode_eq, total_eq] at hb
   omega
 

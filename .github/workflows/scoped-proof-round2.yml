@@ -25,4 +25,11 @@ jobs:
       - name: Build exact statement imports
         run: lake --wfail build FormalConjectures.WrittenOnTheWallII.GraphConjecture404To407 FormalConjectures.WrittenOnTheWallII.GraphConjecture362 FormalConjectures.Knill.GreenEigenvalue
       - name: Check corona proof and axioms
+        if: always()
         run: lake env lean -DwarningAsError=true Proofs/CoronaTwoDominatingProof.lean
+      - name: Check support components and axioms
+        if: always()
+        run: lake env lean -DwarningAsError=true Proofs/SupportComponentsProof.lean
+      - name: Check Knill proof and axioms
+        if: always()
+        run: lake env lean -DwarningAsError=true Proofs/KnillGreenProof.lean

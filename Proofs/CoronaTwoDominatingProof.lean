@@ -17,11 +17,12 @@ theorem corona_two_dominating [DecidableRel G.Adj] :
   have hImax : IsMaximumIndependent G I := ⟨hI.isIndepSet, hI.maximum⟩
   have hIC : ∀ w ∈ I, w ∈ corona G := by
     intro w hw
-    simpa only [corona, mem_filter, mem_univ, true_and] using ⟨I, hImax, hw⟩
+    simp only [corona, mem_filter, mem_univ, true_and]
+    exact ⟨I, hImax, hw⟩
   have hvI : v ∉ I := fun h => hv (hIC v h)
   have hneighbor : ∃ u ∈ I, G.Adj v u := by
     by_contra! hn
-    have hi : G.IsIndepSet (insert v I : Set V) := by
+    have hi : G.IsIndepSet ((insert v I : Finset V) : Set V) := by
       intro a ha b hb hab
       rcases mem_insert.mp ha with rfl | ha
       · rcases mem_insert.mp hb with rfl | hb

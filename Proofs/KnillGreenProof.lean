@@ -131,8 +131,7 @@ theorem blocks_charmatrix : diagonalBlocks.charmatrix =
   · subst l
     simp [Matrix.charmatrix_apply, Matrix.diagonal, Matrix.blockDiagonal_apply,
       Prod.ext_iff]
-  · simp [Matrix.charmatrix_apply, Matrix.diagonal, Matrix.blockDiagonal_apply,
-      Prod.ext_iff, h]
+  · simp [Matrix.blockDiagonal_apply, Prod.ext_iff, h]
 
 theorem green_charpoly :
     green.charpoly = (X^2 + 4*X - 1) * (X^2 + X - 1)^2 := by
@@ -153,8 +152,10 @@ theorem green_charpoly :
       _ = diagonalBlocks.charpoly := by rw [← mul_assoc, basis_left_inverse, one_mul]
   rw [hcp, Matrix.charpoly, blocks_charmatrix, Matrix.det_blockDiagonal]
   change (∏ k : Fin 3, (blocks k).charpoly) = _
+  rw [Fin.prod_univ_three]
   simp_rw [blocks_charpoly]
-  norm_num [Fin.prod_univ_succ, Fin.ext_iff]
+  change ((X^2 + 4*X - 1) * (X^2 + X - 1) * (X^2 + X - 1) : ℝ[X]) =
+    (X^2 + 4*X - 1) * (X^2 + X - 1)^2
   ring
 
 noncomputable def largest : ℝ := (Real.sqrt 5 - 1) / 2

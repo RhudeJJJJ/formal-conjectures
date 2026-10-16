@@ -76,8 +76,8 @@ noncomputable def inverseBasis : Matrix (Fin 6) (Fin 6) ℝ :=
      1/3,-2/3,1/3,0,0,0; 0,0,0,-1/3,-1/3,2/3;
      1/3,1/3,-2/3,0,0,0; 0,0,0,2/3,-1/3,-1/3]
 
-def blocks : Fin 3 → Matrix (Fin 2) (Fin 2) ℝ :=
-  ![!![-3,2;2,-1], !![0,1;1,-1], !![0,1;1,-1]]
+def blocks (k : Fin 3) : Matrix (Fin 2) (Fin 2) ℝ :=
+  if k = 0 then !![-3,2;2,-1] else !![0,1;1,-1]
 
 def greenIndexed : Matrix BlockIndex BlockIndex ℝ :=
   Matrix.of fun i j => green (flat i) (flat j)
@@ -137,7 +137,7 @@ theorem green_charpoly :
   rw [hcp, Matrix.charpoly, hch, Matrix.det_blockDiagonal]
   norm_num [blocks, Fin.prod_univ_succ, Matrix.charpoly, Matrix.charmatrix,
     Matrix.det_fin_two, Matrix.diagonal, Fin.ext_iff, Polynomial.C_ofNat]
-  <;> ring
+  ring
 
 noncomputable def largest : ℝ := (Real.sqrt 5 - 1) / 2
 

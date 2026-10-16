@@ -120,6 +120,9 @@ lemma toH_valid {x : ℕ} (p : (Fin 4 → Fin x) × (Fin x → Fin x → Bool))
     IsHomomorphicPair witnessH (toH p).1 (toH p).2 := by
   obtain ⟨ht, h01, h02, h12⟩ := (g_iff _ _).mp hp
   obtain ⟨hab, hac, hbc⟩ := core_distinct ht h01 h12
+  have hba := Ne.symm hab
+  have hca := Ne.symm hac
+  have hcb := Ne.symm hbc
   by_cases hd : p.1 3 = p.1 0
   · rw [toH, if_pos hd]
     apply (h_iff _ _).mpr
@@ -129,18 +132,22 @@ lemma toH_valid {x : ℕ} (p : (Fin 4 → Fin x) × (Fin x → Fin x → Bool))
       simp only [image_iff]
       simp [replaceLast, hd, or_comm, or_left_comm]
     refine ⟨same_image_tournament ht' hi, ?_⟩
-    simp_all [replaceLast, setDir, eq_comm]
-  · rw [toH, if_neg hd]
+    simp_all [replaceLast, setDir]
+  · have had := Ne.symm hd
+    rw [toH, if_neg hd]
     apply (h_iff _ _).mpr
     have ht' := setDir_tournament ht ⟨0, rfl⟩ ⟨2, rfl⟩ hac (p.2 (p.1 0) (p.1 3))
     refine ⟨setDir_tournament ht' ⟨0, rfl⟩ ⟨3, rfl⟩ (Ne.symm hd) true, ?_⟩
-    simp_all [pivotH, setDir, eq_comm]
+    simp_all [pivotH, setDir]
 
 lemma toG_valid {x : ℕ} (p : (Fin 4 → Fin x) × (Fin x → Fin x → Bool))
     (hp : IsHomomorphicPair witnessH p.1 p.2) :
     IsHomomorphicPair witnessG (toG p).1 (toG p).2 := by
   obtain ⟨ht, h01, h12, h03⟩ := (h_iff _ _).mp hp
   obtain ⟨hab, hac, hbc⟩ := core_distinct ht h01 h12
+  have hba := Ne.symm hab
+  have hca := Ne.symm hac
+  have hcb := Ne.symm hbc
   have had := (ht.1 _ _ h03).1
   by_cases hd : p.1 3 = p.1 1 ∧ p.2 (p.1 0) (p.1 2) = false
   · rw [toG, if_pos hd]
@@ -151,7 +158,7 @@ lemma toG_valid {x : ℕ} (p : (Fin 4 → Fin x) × (Fin x → Fin x → Bool))
       simp only [image_iff]
       simp [replaceLast, hd.1, or_comm, or_left_comm]
     refine ⟨same_image_tournament ht' hi, ?_⟩
-    simp_all [replaceLast, setDir, eq_comm]
+    simp_all [replaceLast, setDir]
   · rw [toG, if_neg hd]
     apply (g_iff _ _).mpr
     have ht' := setDir_tournament ht ⟨0, rfl⟩ ⟨3, rfl⟩ had (p.2 (p.1 0) (p.1 2))
@@ -159,8 +166,9 @@ lemma toG_valid {x : ℕ} (p : (Fin 4 → Fin x) × (Fin x → Fin x → Bool))
     by_cases hdb : p.1 3 = p.1 1
     · have h02 : p.2 (p.1 0) (p.1 2) = true := by
         cases h : p.2 (p.1 0) (p.1 2) <;> simp_all
-      simp_all [pivotG, setDir, eq_comm]
-    · simp_all [pivotG, setDir, eq_comm]
+      simp_all [pivotG, setDir]
+    · have hbd := Ne.symm hdb
+      simp_all [pivotG, setDir]
 
 lemma pivot_roundtrip {x : ℕ} {c : Fin 4 → Fin x} {T}
     (ht : IsTournamentOnImage c T) {a b d : Fin x}
@@ -219,7 +227,7 @@ lemma toG_toH {x : ℕ} (p : (Fin 4 → Fin x) × (Fin x → Fin x → Bool))
   · have hc : ¬(p.1 3 = p.1 1 ∧
         pivotH p.2 (p.1 0) (p.1 2) (p.1 3) (p.1 0) (p.1 2) = false) := by
       rintro ⟨he, ht'⟩
-      simp_all [pivotH, setDir, eq_comm]
+      simp_all [pivotH, setDir]
     rw [toH, if_neg hd]
     dsimp only [toG]
     rw [if_neg hc]

@@ -85,8 +85,14 @@ def forbiddenCycles : Finset (Finset (Fin 14)) :=
 
 set_option maxRecDepth 100000 in
 set_option maxHeartbeats 0 in
+lemma triple_cover : ∀ a b c : Fin 14,
+    ∃ C ∈ forbiddenCycles, Disjoint ({a, b, c} : Finset (Fin 14)) C := by decide
+
 lemma deletion_cover : ∀ B ∈ (univ : Finset (Fin 14)).powersetCard 3,
-    ∃ C ∈ forbiddenCycles, Disjoint B C := by decide
+    ∃ C ∈ forbiddenCycles, Disjoint B C := by
+  intro B hB
+  obtain ⟨a, b, c, _, _, _, rfl⟩ := card_eq_three.mp (mem_powersetCard.mp hB).2
+  exact triple_cover a b c
 
 lemma forbidden_cycle_not_acyclic (A C : Finset (Fin 14))
     (hC : C ∈ forbiddenCycles) (hsub : C ⊆ A) :

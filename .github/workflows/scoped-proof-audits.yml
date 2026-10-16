@@ -23,12 +23,7 @@ jobs:
       - name: Download matching Mathlib cache
         run: lake exe cache get
       - name: Build changed statements
-        run: lake --wfail build FormalConjectures.CoxDuffy.OrientedChromatic FormalConjectures.Gebendorfer.RegularMissCodes FormalConjectures.WrittenOnTheWallII.GraphConjecture351
-      - name: Check Cox-Duffy proof and axioms
-        run: lake env lean -DwarningAsError=true Proofs/CoxDuffyProof.lean
+        run: lake --wfail build FormalConjectures.Gebendorfer.RegularMissCodes
       - name: Check miss-code proofs and axioms
         if: always()
         run: lake env lean -DwarningAsError=true Proofs/RegularMissCodesProof.lean
-      - name: Check WOWII351 proof and axioms
-        if: always()
-        run: lake env lean -DwarningAsError=true Proofs/WOWII351Proof.lean

@@ -63,14 +63,16 @@ theorem family_degree (m : ℕ) (hm : 5 ≤ m) (third : Bool) (v : Fin m) :
     cases third
     · have hf : ((indices false).filter fun i => point m hm 0 ∈ sourceSet m hm i) = {0, 2} := by
         ext i
+        simp only [Finset.mem_filter]
         fin_cases i <;>
-          simp [indices, sourceSet, point, Fin.ext_iff]
+          norm_num [indices, sourceSet, point, Fin.ext_iff]
       rw [hf]
       decide
     · have hf : ((indices true).filter fun i => point m hm 0 ∈ sourceSet m hm i) = {0, 2, 5} := by
         ext i
+        simp only [Finset.mem_filter]
         fin_cases i <;>
-          simp [indices, sourceSet, point, Fin.ext_iff]
+          norm_num [indices, sourceSet, point, Fin.ext_iff]
       rw [hf]
       decide
   by_cases h1 : v = point m hm 1
@@ -78,14 +80,16 @@ theorem family_degree (m : ℕ) (hm : 5 ≤ m) (third : Bool) (v : Fin m) :
     cases third
     · have hf : ((indices false).filter fun i => point m hm 1 ∈ sourceSet m hm i) = {2, 4} := by
         ext i
+        simp only [Finset.mem_filter]
         fin_cases i <;>
-          simp [indices, sourceSet, point, Fin.ext_iff]
+          norm_num [indices, sourceSet, point, Fin.ext_iff]
       rw [hf]
       decide
     · have hf : ((indices true).filter fun i => point m hm 1 ∈ sourceSet m hm i) = {1, 2, 4} := by
         ext i
+        simp only [Finset.mem_filter]
         fin_cases i <;>
-          simp [indices, sourceSet, point, Fin.ext_iff]
+          norm_num [indices, sourceSet, point, Fin.ext_iff]
       rw [hf]
       decide
   by_cases h2 : v = point m hm 2
@@ -93,27 +97,31 @@ theorem family_degree (m : ℕ) (hm : 5 ≤ m) (third : Bool) (v : Fin m) :
     cases third
     · have hf : ((indices false).filter fun i => point m hm 2 ∈ sourceSet m hm i) = {2, 3} := by
         ext i
+        simp only [Finset.mem_filter]
         fin_cases i <;>
-          simp [indices, sourceSet, point, Fin.ext_iff]
+          norm_num [indices, sourceSet, point, Fin.ext_iff]
       rw [hf]
       decide
     · have hf : ((indices true).filter fun i => point m hm 2 ∈ sourceSet m hm i) = {1, 2, 3} := by
         ext i
+        simp only [Finset.mem_filter]
         fin_cases i <;>
-          simp [indices, sourceSet, point, Fin.ext_iff]
+          norm_num [indices, sourceSet, point, Fin.ext_iff]
       rw [hf]
       decide
   cases third
   · have hf : ((indices false).filter fun i => v ∈ sourceSet m hm i) = {3, 4} := by
       ext i
+      simp only [Finset.mem_filter]
       fin_cases i <;>
-        simp [indices, sourceSet, h0, h1, h2, Fin.ext_iff]
+        norm_num [indices, sourceSet, h0, h1, h2, Fin.ext_iff]
     rw [hf]
     decide
   · have hf : ((indices true).filter fun i => v ∈ sourceSet m hm i) = {3, 4, 5} := by
       ext i
+      simp only [Finset.mem_filter]
       fin_cases i <;>
-        simp [indices, sourceSet, h0, h1, h2, Fin.ext_iff]
+        norm_num [indices, sourceSet, h0, h1, h2, Fin.ext_iff]
     rw [hf]
     decide
 
@@ -133,48 +141,48 @@ theorem family_closed (m : ℕ) (hm : 5 ≤ m) (third : Bool)
     | (apply Finset.mem_image.mpr
        refine ⟨0, by norm_num [indices], ?_⟩
        ext v
-       simp [U, sourceSet, point, Fin.ext_iff] <;> omega)
+       (simp [U, sourceSet, point, Fin.ext_iff]; omega))
     | (apply Finset.mem_image.mpr
        refine ⟨1, by norm_num [indices], ?_⟩
        ext v
-       simp [U, sourceSet, point, Fin.ext_iff] <;> omega)
+       (simp [U, sourceSet, point, Fin.ext_iff]; omega))
     | (apply Finset.mem_image.mpr
        refine ⟨2, by norm_num [indices], ?_⟩
        ext v
-       simp [U, sourceSet, point, Fin.ext_iff] <;> omega)
+       (simp [U, sourceSet, point, Fin.ext_iff]; omega))
     | (apply Finset.mem_image.mpr
        refine ⟨3, by norm_num [indices], ?_⟩
        ext v
-       simp [U, sourceSet, point, Fin.ext_iff] <;> omega)
+       (simp [U, sourceSet, point, Fin.ext_iff]; omega))
     | (apply Finset.mem_image.mpr
        refine ⟨4, by norm_num [indices], ?_⟩
        ext v
-       simp [U, sourceSet, point, Fin.ext_iff] <;> omega)
+       (simp [U, sourceSet, point, Fin.ext_iff]; omega))
     | (apply Finset.mem_image.mpr
        refine ⟨5, by norm_num [indices], ?_⟩
        ext v
-       simp [U, sourceSet, point, Fin.ext_iff] <;> omega)
+       (simp [U, sourceSet, point, Fin.ext_iff]; omega))
     | (have hu : U = (univ \ {point m hm 0} : Finset (Fin m)) := by
          ext v
-         simp [U, sourceSet, point, Fin.ext_iff] <;> omega
+         (simp [U, sourceSet, point, Fin.ext_iff]; omega)
        rw [hu] at hc
        norm_num [Finset.card_sdiff] at hc
        omega)
     | (have hu : U = (univ \ {point m hm 1} : Finset (Fin m)) := by
          ext v
-         simp [U, sourceSet, point, Fin.ext_iff] <;> omega
+         (simp [U, sourceSet, point, Fin.ext_iff]; omega)
        rw [hu] at hc
        norm_num [Finset.card_sdiff] at hc
        omega)
     | (have hu : U = (univ \ {point m hm 2} : Finset (Fin m)) := by
          ext v
-         simp [U, sourceSet, point, Fin.ext_iff] <;> omega
+         (simp [U, sourceSet, point, Fin.ext_iff]; omega)
        rw [hu] at hc
        norm_num [Finset.card_sdiff] at hc
        omega)
     | (have hu : U = (univ : Finset (Fin m)) := by
          ext v
-         simp [U, sourceSet, point, Fin.ext_iff] <;> omega
+         (simp [U, sourceSet, point, Fin.ext_iff]; omega)
        rw [hu] at hc
        norm_num [Finset.card_sdiff] at hc
        omega)

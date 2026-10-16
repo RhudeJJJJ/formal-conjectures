@@ -60,11 +60,68 @@ theorem inverse_connection : connection⁻¹ = green := by
   fin_cases i <;> fin_cases j <;>
     norm_num [connection, green, Matrix.mul_apply, Fin.sum_univ_succ, Matrix.one_apply]
 
+abbrev BlockIndex := Fin 2 × Fin 3
+
+def flat (i : BlockIndex) : Fin 6 := ⟨2 * i.2.val + i.1.val, by omega⟩
+
+noncomputable def flatEquiv : BlockIndex ≃ Fin 6 :=
+  Equiv.ofBijective flat (by decide)
+
+def basisMatrix : Matrix (Fin 6) (Fin 6) ℝ :=
+  !![1,0,1,0,1,0; 1,0,-1,0,0,0; 1,0,0,0,-1,0;
+     0,1,0,0,0,1; 0,1,0,-1,0,-1; 0,1,0,1,0,0]
+
+def inverseBasis : Matrix (Fin 6) (Fin 6) ℝ :=
+  !![1/3,1/3,1/3,0,0,0; 0,0,0,1/3,1/3,1/3;
+     1/3,-2/3,1/3,0,0,0; 0,0,0,-1/3,-1/3,2/3;
+     1/3,1/3,-2/3,0,0,0; 0,0,0,2/3,-1/3,-1/3]
+
+def blocks : Fin 3 → Matrix (Fin 2) (Fin 2) ℝ :=
+  ![!![-3,2;2,-1], !![0,1;1,-1], !![0,1;1,-1]]
+
 theorem green_charpoly :
     green.charpoly = (X^2 + 4*X - 1) * (X^2 + X - 1)^2 := by
-  norm_num [green, Matrix.charpoly, Matrix.charmatrix, Matrix.det_succ_row_zero,
-    Matrix.det_fin_zero, Fin.sum_univ_succ, Matrix.submatrix, Matrix.diagonal,
-    Fin.succAbove, Fin.lt_def]
+  let A := Matrix.reindex flatEquiv.symm flatEquiv.symm green
+  let P : Matrix BlockIndex BlockIndex ℝ := fun i j => basisMatrix (flat i) (flat j)
+  let Q : Matrix BlockIndex BlockIndex ℝ := fun i j => inverseBasis (flat i) (flat j)
+  let D := Matrix.blockDiagonal blocks
+  have hpq : P * Q = 1 := by
+    ext ⟨i,k⟩ ⟨j,l⟩
+    fin_cases i <;> fin_cases k <;> fin_cases j <;> fin_cases l <;>
+      norm_num [P, Q, basisMatrix, inverseBasis, flat, Matrix.mul_apply,
+        Fintype.sum_prod_type, Fin.sum_univ_succ, Matrix.one_apply, Prod.ext_iff,
+        Fin.ext_iff]
+  have hqp : Q * P = 1 := by
+    ext ⟨i,k⟩ ⟨j,l⟩
+    fin_cases i <;> fin_cases k <;> fin_cases j <;> fin_cases l <;>
+      norm_num [P, Q, basisMatrix, inverseBasis, flat, Matrix.mul_apply,
+        Fintype.sum_prod_type, Fin.sum_univ_succ, Matrix.one_apply, Prod.ext_iff,
+        Fin.ext_iff]
+  have hAP : A * P = P * D := by
+    ext ⟨i,k⟩ ⟨j,l⟩
+    fin_cases i <;> fin_cases k <;> fin_cases j <;> fin_cases l <;>
+      norm_num [A, P, D, blocks, basisMatrix, flat, flatEquiv, green,
+        Matrix.reindex_apply, Matrix.mul_apply, Matrix.blockDiagonal_apply,
+        Fintype.sum_prod_type, Fin.sum_univ_succ, Fin.ext_iff]
+  have hsim : A = P * D * Q := by
+    calc
+      A = A * (P * Q) := by rw [hpq, mul_one]
+      _ = (A * P) * Q := (mul_assoc _ _ _).symm
+      _ = P * D * Q := by rw [hAP]
+  have hcp : green.charpoly = D.charpoly := by
+    calc
+      green.charpoly = A.charpoly := (Matrix.charpoly_reindex flatEquiv.symm green).symm
+      _ = (P * D * Q).charpoly := congrArg Matrix.charpoly hsim
+      _ = (Q * (P * D)).charpoly := Matrix.charpoly_mul_comm _ _
+      _ = D.charpoly := by rw [← mul_assoc, hqp, one_mul]
+  have hch : D.charmatrix = Matrix.blockDiagonal (fun k => (blocks k).charmatrix) := by
+    ext ⟨i,k⟩ ⟨j,l⟩
+    fin_cases i <;> fin_cases k <;> fin_cases j <;> fin_cases l <;>
+      norm_num [D, blocks, Matrix.charmatrix, Matrix.diagonal,
+        Matrix.blockDiagonal_apply, Prod.ext_iff, Fin.ext_iff]
+  rw [hcp, Matrix.charpoly, hch, Matrix.det_blockDiagonal]
+  norm_num [blocks, Fin.prod_univ_succ, Matrix.charpoly, Matrix.charmatrix,
+    Matrix.det_fin_two, Matrix.diagonal, Fin.ext_iff]
   <;> ring
 
 noncomputable def largest : ℝ := (Real.sqrt 5 - 1) / 2

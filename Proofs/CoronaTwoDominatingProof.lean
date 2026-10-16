@@ -24,13 +24,16 @@ theorem corona_two_dominating [DecidableRel G.Adj] :
     by_contra! hn
     have hi : G.IsIndepSet ((insert v I : Finset V) : Set V) := by
       intro a ha b hb hab
-      rcases mem_insert.mp ha with rfl | ha
-      · rcases mem_insert.mp hb with rfl | hb
-        · exact (hab rfl).elim
-        · exact hn b hb
-      · rcases mem_insert.mp hb with rfl | hb
-        · exact fun h => hn a ha h.symm
-        · exact hI.isIndepSet ha hb hab
+      by_cases hav : a = v
+      · subst a
+        by_cases hbv : b = v
+        · exact (hab hbv.symm).elim
+        · exact hn b ((mem_insert.mp hb).resolve_left hbv)
+      · have haI : a ∈ I := (mem_insert.mp ha).resolve_left hav
+        by_cases hbv : b = v
+        · subst b
+          exact fun h => hn a haI h.symm
+        · exact hI.isIndepSet haI ((mem_insert.mp hb).resolve_left hbv) hab
     have hc := hI.maximum (insert v I) hi
     rw [card_insert_of_notMem hvI] at hc
     omega
@@ -45,18 +48,24 @@ theorem corona_two_dominating [DecidableRel G.Adj] :
   let J := insert v (I.erase u)
   have hJind : G.IsIndepSet (J : Set V) := by
     intro a ha b hb hab
-    rcases mem_insert.mp ha with rfl | ha
-    · rcases mem_insert.mp hb with rfl | hb
-      · exact (hab rfl).elim
-      · intro hadj
-        have hbu := huniq b (mem_of_mem_erase hb) hadj
-        exact (ne_of_mem_erase hb) hbu
-    · rcases mem_insert.mp hb with rfl | hb
-      · intro hadj
-        have hau := huniq a (mem_of_mem_erase ha) hadj.symm
-        exact (ne_of_mem_erase ha) hau
-      · exact hI.isIndepSet (mem_of_mem_erase ha) (mem_of_mem_erase hb) hab
+    change a ∈ insert v (I.erase u) at ha
+    change b ∈ insert v (I.erase u) at hb
+    by_cases hav : a = v
+    · subst a
+      by_cases hbv : b = v
+      · exact (hab hbv.symm).elim
+      · have hbE : b ∈ I.erase u := (mem_insert.mp hb).resolve_left hbv
+        intro hadj
+        exact (ne_of_mem_erase hbE) (huniq b (mem_of_mem_erase hbE) hadj)
+    · have haE : a ∈ I.erase u := (mem_insert.mp ha).resolve_left hav
+      by_cases hbv : b = v
+      · subst b
+        intro hadj
+        exact (ne_of_mem_erase haE) (huniq a (mem_of_mem_erase haE) hadj.symm)
+      · exact hI.isIndepSet (mem_of_mem_erase haE)
+          (mem_of_mem_erase ((mem_insert.mp hb).resolve_left hbv)) hab
   have hJcard : J.card = I.card := by
+    have hpos : 0 < I.card := card_pos.mpr ⟨u, hu⟩
     dsimp [J]
     rw [card_insert_of_notMem (fun h => hvI (mem_of_mem_erase h)), card_erase_of_mem hu]
     omega

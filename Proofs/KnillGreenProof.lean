@@ -10,7 +10,7 @@ OpenAI Codex assisted with formalization and validation. -/
 namespace KnillGreenProof
 open Matrix Polynomial Knill.GreenEigenvalue
 set_option maxRecDepth 100000
-set_option maxHeartbeats 0
+set_option maxHeartbeats 1000000
 
 def triangle : PreAbstractSimplicialComplex (Fin 3) where
   faces := {s | s.Nonempty ∧ s.card ≤ 2}

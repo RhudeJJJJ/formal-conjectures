@@ -32,4 +32,5 @@ jobs:
         run: lake env lean -DwarningAsError=true Proofs/SupportComponentsProof.lean
       - name: Check Knill proof and axioms
         if: always()
+        timeout-minutes: 3
         run: lake env lean -DwarningAsError=true Proofs/KnillGreenProof.lean

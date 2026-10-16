@@ -156,12 +156,14 @@ theorem equality_isStar (hG : G.Connected) (hn : 2 ≤ Fintype.card V)
   obtain ⟨c, hc⟩ := hex
   have hcNat : G.degree c = Fintype.card V - 1 := by
     have hcast : ((Fintype.card V - 1 : ℕ) : ℝ) = (Fintype.card V : ℝ) - 1 := by
-      exact Nat.cast_sub (by omega : 1 ≤ Fintype.card V)
-    exact_mod_cast hc.trans hcast.symm
+      simp only [Nat.cast_sub (by omega : 1 ≤ Fintype.card V), Nat.cast_one]
+    have hr : (G.degree c : ℝ) = ((Fintype.card V - 1 : ℕ) : ℝ) := hc.trans hcast.symm
+    exact_mod_cast hr
   have hmNat : G.edgeFinset.card = Fintype.card V - 1 := by
     have hcast : ((Fintype.card V - 1 : ℕ) : ℝ) = (Fintype.card V : ℝ) - 1 := by
-      exact Nat.cast_sub (by omega : 1 ≤ Fintype.card V)
-    exact_mod_cast hm.trans hcast.symm
+      simp only [Nat.cast_sub (by omega : 1 ≤ Fintype.card V), Nat.cast_one]
+    have hr : (G.edgeFinset.card : ℝ) = ((Fintype.card V - 1 : ℕ) : ℝ) := hm.trans hcast.symm
+    exact_mod_cast hr
   have hu : G.IsUniversal c := (G.degree_eq_card_sub_one c).mp hcNat
   have hinc : G.incidenceFinset c = G.edgeFinset := by
     apply eq_of_subset_of_card_le (G.incidenceFinset_subset c)

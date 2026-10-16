@@ -60,7 +60,8 @@ theorem actual_polynomial :
         have := cycle_bound σ
         omega
       rw [hc]
-      norm_num [Polynomial.coeff_X] <;> split_ifs <;> norm_num <;> omega
+      norm_num [Polynomial.coeff_X]
+      split_ifs <;> norm_num <;> omega
 
 noncomputable def reciprocalQuartic : Polynomial ℂ := X^4 + 4*X^3 + C (13/2) * X^2 + C (7/2) * X + C (1/2)
 

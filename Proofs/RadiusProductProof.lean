@@ -123,11 +123,13 @@ theorem charpoly_of_intertwines (A D : Matrix (Fin 4) (Fin 4) ℝ)
 theorem cycle_charpoly : cycleMatrix.charpoly = X^2 * (X - 2) * (X + 2) := by
   rw [charpoly_of_intertwines _ _ cycle_intertwines]
   norm_num [cycleDiagonal, Matrix.charpoly_diagonal, Fin.prod_univ_succ, Polynomial.C_ofNat]
-  <;> ring
+  all_goals ring_nf
+  all_goals simp
 theorem complete_charpoly : completeMatrix.charpoly = (X - 3) * (X + 1)^3 := by
   rw [charpoly_of_intertwines _ _ complete_intertwines]
   norm_num [completeDiagonal, Matrix.charpoly_diagonal, Fin.prod_univ_succ, Polynomial.C_ofNat]
-  <;> ring
+  all_goals ring_nf
+  all_goals simp
 
 theorem cycle_spectral_sup : sSup (spectrum ℝ cycleMatrix) = 2 := by
   have hm : (2 : ℝ) ∈ spectrum ℝ cycleMatrix := by

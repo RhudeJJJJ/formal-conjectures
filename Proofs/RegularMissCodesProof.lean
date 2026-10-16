@@ -58,18 +58,64 @@ theorem family_degree (m : ℕ) (hm : 5 ≤ m) (third : Bool) (v : Fin m) :
     ((family m hm third).filter fun S => v ∈ S).card = if third then 3 else 2 := by
   rw [family, Finset.filter_image,
     Finset.card_image_of_injective _ (sourceSet_injective m hm)]
-  have hu : (univ : Finset (Fin 6)) = {0, 1, 2, 3, 4, 5} := by decide
   by_cases h0 : v = point m hm 0
   · subst v
-    cases third <;> norm_num [indices, sourceSet, point, Fin.ext_iff, hu, Finset.filter_insert]
+    cases third
+    · have hf : ((indices false).filter fun i => point m hm 0 ∈ sourceSet m hm i) = {0, 2} := by
+        ext i
+        fin_cases i <;>
+          simp [indices, sourceSet, point, Fin.ext_iff]
+      rw [hf]
+      decide
+    · have hf : ((indices true).filter fun i => point m hm 0 ∈ sourceSet m hm i) = {0, 2, 5} := by
+        ext i
+        fin_cases i <;>
+          simp [indices, sourceSet, point, Fin.ext_iff]
+      rw [hf]
+      decide
   by_cases h1 : v = point m hm 1
   · subst v
-    cases third <;> norm_num [indices, sourceSet, point, Fin.ext_iff, hu, Finset.filter_insert]
+    cases third
+    · have hf : ((indices false).filter fun i => point m hm 1 ∈ sourceSet m hm i) = {2, 4} := by
+        ext i
+        fin_cases i <;>
+          simp [indices, sourceSet, point, Fin.ext_iff]
+      rw [hf]
+      decide
+    · have hf : ((indices true).filter fun i => point m hm 1 ∈ sourceSet m hm i) = {1, 2, 4} := by
+        ext i
+        fin_cases i <;>
+          simp [indices, sourceSet, point, Fin.ext_iff]
+      rw [hf]
+      decide
   by_cases h2 : v = point m hm 2
   · subst v
-    cases third <;> norm_num [indices, sourceSet, point, Fin.ext_iff, hu, Finset.filter_insert]
-  cases third <;>
-    simp [indices, sourceSet, hu, Finset.filter_insert, h0, h1, h2]
+    cases third
+    · have hf : ((indices false).filter fun i => point m hm 2 ∈ sourceSet m hm i) = {2, 3} := by
+        ext i
+        fin_cases i <;>
+          simp [indices, sourceSet, point, Fin.ext_iff]
+      rw [hf]
+      decide
+    · have hf : ((indices true).filter fun i => point m hm 2 ∈ sourceSet m hm i) = {1, 2, 3} := by
+        ext i
+        fin_cases i <;>
+          simp [indices, sourceSet, point, Fin.ext_iff]
+      rw [hf]
+      decide
+  cases third
+  · have hf : ((indices false).filter fun i => v ∈ sourceSet m hm i) = {3, 4} := by
+      ext i
+      fin_cases i <;>
+        simp [indices, sourceSet, h0, h1, h2, Fin.ext_iff]
+    rw [hf]
+    decide
+  · have hf : ((indices true).filter fun i => v ∈ sourceSet m hm i) = {3, 4, 5} := by
+      ext i
+      fin_cases i <;>
+        simp [indices, sourceSet, h0, h1, h2, Fin.ext_iff]
+    rw [hf]
+    decide
 
 set_option maxHeartbeats 0 in
 theorem family_closed (m : ℕ) (hm : 5 ≤ m) (third : Bool)
@@ -81,7 +127,7 @@ theorem family_closed (m : ℕ) (hm : 5 ≤ m) (third : Bool)
   let U := sourceSet m hm i ∪ sourceSet m hm j
   change U ∈ family m hm third
   change U.card ≤ m - 2 at hc
-  cases third <;> fin_cases i <;> fin_cases j <;> norm_num [indices] at *
+  cases third <;> fin_cases i <;> fin_cases j <;> norm_num [indices, Fin.ext_iff] at *
   all_goals
     first
     | (apply Finset.mem_image.mpr

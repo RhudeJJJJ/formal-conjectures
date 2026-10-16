@@ -29,7 +29,7 @@ theorem reaches_zero (v : Fin 44) : witness.Reachable v 0 := by
       intro w hw
       by_cases hz : w = 0
       · subst w
-        exact .refl
+        exact .refl 0
       have hp := parent_lt w hz
       have ha : witness.Adj w (parent w) := by
         refine ⟨?_, Or.inl rfl⟩

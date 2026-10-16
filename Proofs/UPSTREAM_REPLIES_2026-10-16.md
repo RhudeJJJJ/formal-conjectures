@@ -4,7 +4,7 @@ The connected integration returned HTTP 403 when posting a PR comment. These tex
 
 ## PR #7392
 
-A further proof update: commit `af293d9255197e6eca76d9069c5d5e4ac34707c4` proves `small_orders` directly in the submitted file. For m=2 or m=3, every member containing a fixed element must be its singleton, so its incidence degree is at most one; degrees two and three are impossible. The local Lean 4.33.1 axiom audit reports only `propext`, `Classical.choice`, and `Quot.sound`. The exact-import CI audit is recorded separately.
+A further proof update: commit `af293d9255197e6eca76d9069c5d5e4ac34707c4` proves `small_orders` directly in the submitted file. For m=2 or m=3, every member containing a fixed element must be its singleton, so its incidence degree is at most one; degrees two and three are impossible. The local Lean 4.33.1 axiom audit reports only `propext`, `Classical.choice`, and `Quot.sound`. The upstream full-project build and script tests passed in [run 38922500197](https://github.com/google-deepmind/formal-conjectures/actions/runs/38922500197). The exact-import CI audit is recorded separately.
 
 The two attainment results remain externally certified. The two universal upper bounds still have Lean placeholders and rely on the written manuscript. The earlier clarification of the public source, existing Paper directory, solved status and author-posed origin remains unchanged. No claim about arbitrary degree or Frankl's conjecture is added.
 
@@ -16,13 +16,13 @@ The earlier minimum-five and census claims concern only the former adjacency-exc
 
 ## PR #7337
 
-Thank you for the independent finite check and the domain clarification. The additional `(remaining G).Nonempty` hypothesis restricts the universal assertion to graphs where the source's deleted-graph minimum degree is defined. The witness satisfies that restriction, so refuting the restricted universal also refutes any extension of the original bound that agrees on this domain. No claim about regular graphs with an empty remainder is needed.
+Thank you for the independent finite check and the domain clarification. The additional `(remaining G).Nonempty` hypothesis restricts the universal assertion to graphs where the source's deleted-graph minimum degree is defined. The witness satisfies that restriction, so refuting the restricted universal also refutes any extension of the original bound that agrees on this domain. No claim about regular graphs with an empty remainder is needed. Commit `daf42945f612ba8cc6dfa151fcd16d1b0bfda451` now explains this restriction and implication in the module documentation.
 
 I rechecked the [pinned proof](https://github.com/RhudeJJJJ/formal-conjectures/blob/66d81217cd33c8c37a3b1846289423ccff5c9ba4/Proofs/WOWII395bProof.lean) on 16 October; it is currently readable. This does not identify the cause of the outage reported on 15 October. The certificate covers the single fifteen-vertex witness and the universal disproof, not the manuscript's infinite connector family. Your independent exhaustive calculation is separate evidence, not an independent replay of Lean.
 
 ## PR #7320
 
-Thank you for checking the witness and flagging the unique-mode convention. This witness has the two tied degree modes {6,7}; both have frequency eight. The universal disproof therefore does not rely on extending the source's modal-degree dispersion to unique-mode graphs. No claim about all such extensions is needed.
+Thank you for checking the witness and flagging the unique-mode convention. This witness has the two tied degree modes {6,7}; both have frequency eight. The universal disproof therefore does not rely on extending the source's modal-degree dispersion to unique-mode graphs. No claim about all such extensions is needed. Commit `be54dcba766e375e4d03cf5f8192d5ff1b08eeea` now documents this convention and the scope of the disproof in the module.
 
 The [pinned proof](https://github.com/RhudeJJJJ/formal-conjectures/blob/a95d2f088ec6384d1739aaa115b750ba61b874f8/Proofs/WOWII396Proof.lean) is currently readable, checked on 16 October. The certificate covers the 39-vertex witness and universal disproof, not the whole infinite family. The reported earlier outage has not been attributed to any verified cause.
 

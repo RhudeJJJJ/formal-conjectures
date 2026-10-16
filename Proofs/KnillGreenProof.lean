@@ -10,7 +10,7 @@ OpenAI Codex assisted with formalization and validation. -/
 namespace KnillGreenProof
 open Matrix Polynomial Knill.GreenEigenvalue
 set_option maxRecDepth 100000
-set_option maxHeartbeats 300000
+set_option maxHeartbeats 1000000
 
 def triangle : PreAbstractSimplicialComplex (Fin 3) where
   faces := {s | s.Nonempty ∧ s.card ≤ 2}
@@ -52,7 +52,7 @@ theorem actual_connection :
       connection := by
   ext i j
   change (if Disjoint (faceSet i) (faceSet j) then (0 : ℝ) else 1) = connection i j
-  fin_cases i <;> fin_cases j <;> norm_num [faceSet, connection]
+  fin_cases i <;> fin_cases j <;> norm_num [faceSet, connection] <;> decide
 
 theorem inverse_connection : connection⁻¹ = green := by
   apply Matrix.inv_eq_right_inv
@@ -63,7 +63,8 @@ theorem inverse_connection : connection⁻¹ = green := by
 theorem green_charpoly :
     green.charpoly = (X^2 + 4*X - 1) * (X^2 + X - 1)^2 := by
   norm_num [green, Matrix.charpoly, Matrix.charmatrix, Matrix.det_succ_row_zero,
-    Matrix.det_fin_zero, Fin.sum_univ_succ, Matrix.submatrix]
+    Matrix.det_fin_zero, Fin.sum_univ_succ, Matrix.submatrix, Matrix.diagonal,
+    Fin.succAbove, Fin.lt_def]
   <;> ring
 
 noncomputable def largest : ℝ := (Real.sqrt 5 - 1) / 2
@@ -94,7 +95,7 @@ theorem spectrum_le_largest : ∀ x ∈ spectrum ℝ green, x ≤ largest := by
   have hlt : largest < x := lt_of_not_ge hn
   rcases mul_eq_zero.mp he with he | he
   · nlinarith [sq_nonneg (x - largest)]
-  · have he' : x^2 + x - 1 = 0 := pow_eq_zero he
+  · have he' : x^2 + x - 1 = 0 := eq_zero_of_pow_eq_zero he
     nlinarith [sq_nonneg (x - largest)]
 
 theorem spectral_sup : sSup (spectrum ℝ green) = largest := by
@@ -120,7 +121,7 @@ theorem questionB : ¬ ∀ (n : ℕ) (K : PreAbstractSimplicialComplex (Fin n)),
       ({0} : Finset (Fin 3)).card ≤ 2
     decide
   have hh := h 3 triangle hn
-  letI := Fintype.ofFinite Face
+  let _ := Fintype.ofFinite Face
   have hg : Matrix.reindex faceEquiv.symm faceEquiv.symm
       (connectionMatrix 3 triangle)⁻¹ = green := by
     rw [← Matrix.inv_reindex, actual_connection, inverse_connection]

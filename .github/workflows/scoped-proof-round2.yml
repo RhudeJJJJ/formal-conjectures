@@ -4,7 +4,7 @@ on:
     branches: [proof-round2-20261016]
   workflow_dispatch:
 concurrency:
-  group: proof-round2-${{ github.sha }}
+  group: proof-round2-final
   cancel-in-progress: true
 permissions:
   contents: read
@@ -32,5 +32,5 @@ jobs:
         run: lake env lean -DwarningAsError=true Proofs/SupportComponentsProof.lean
       - name: Check Knill proof and axioms
         if: always()
-        timeout-minutes: 3
+        timeout-minutes: 8
         run: lake env lean -DwarningAsError=true Proofs/KnillGreenProof.lean

@@ -66,28 +66,65 @@ def cycleMatrix : Matrix (Fin 4) (Fin 4) ℝ :=
 def completeMatrix : Matrix (Fin 4) (Fin 4) ℝ :=
   !![0,1,1,1; 1,0,1,1; 1,1,0,1; 1,1,1,0]
 
-theorem actual_cycle_matrix [DecidableRel fourCycle.Adj] : fourCycle.adjMatrix ℝ = cycleMatrix := by
+theorem actual_cycle_matrix [d : DecidableRel fourCycle.Adj] : fourCycle.adjMatrix ℝ = cycleMatrix := by
   ext u v
   fin_cases u <;> fin_cases v <;> norm_num [SimpleGraph.adjMatrix, fourCycle, cycleMatrix]
 
-theorem actual_complete_matrix [DecidableRel (⊤ : SimpleGraph (Fin 4)).Adj] : (⊤ : SimpleGraph (Fin 4)).adjMatrix ℝ = completeMatrix := by
+theorem actual_complete_matrix [d : DecidableRel (⊤ : SimpleGraph (Fin 4)).Adj] : (⊤ : SimpleGraph (Fin 4)).adjMatrix ℝ = completeMatrix := by
   ext u v
   fin_cases u <;> fin_cases v <;> norm_num [SimpleGraph.adjMatrix, completeMatrix]
 
-theorem cycle_charpoly : cycleMatrix.charpoly = X^2 * (X - 2) * (X + 2) := by
-  have hskip : ∀ i : Fin 4, ∀ j : Fin 3,
-      i.succAbove j = (!![1,2,3; 0,2,3; 0,1,3; 0,1,2] : Matrix (Fin 4) (Fin 3) (Fin 4)) i j := by decide
-  rw [Matrix.charpoly, Matrix.det_succ_row_zero]
-  simp only [Fin.sum_univ_succ, Matrix.det_fin_three]
-  norm_num [Matrix.charmatrix_apply, Matrix.diagonal, Matrix.submatrix, cycleMatrix, hskip]
-  <;> ring
+def basis : Matrix (Fin 4) (Fin 4) ℝ :=
+  !![1,1,1,1; 1,-1,1,-1; 1,1,-1,-1; 1,-1,-1,1]
+noncomputable def inverseBasis : Matrix (Fin 4) (Fin 4) ℝ :=
+  !![1/4,1/4,1/4,1/4; 1/4,-1/4,1/4,-1/4;
+     1/4,1/4,-1/4,-1/4; 1/4,-1/4,-1/4,1/4]
+def cycleDiagonal : Matrix (Fin 4) (Fin 4) ℝ :=
+  Matrix.diagonal ![2,-2,0,0]
+def completeDiagonal : Matrix (Fin 4) (Fin 4) ℝ :=
+  Matrix.diagonal ![3,-1,-1,-1]
 
+theorem basis_right_inverse : basis * inverseBasis = 1 := by
+  ext i j
+  fin_cases i <;> fin_cases j <;>
+    norm_num [Matrix.mul_apply, Fin.sum_univ_succ, basis, inverseBasis,
+      Matrix.one_apply, Fin.ext_iff]
+theorem basis_left_inverse : inverseBasis * basis = 1 := by
+  ext i j
+  fin_cases i <;> fin_cases j <;>
+    norm_num [Matrix.mul_apply, Fin.sum_univ_succ, basis, inverseBasis,
+      Matrix.one_apply, Fin.ext_iff]
+
+theorem cycle_intertwines : cycleMatrix * basis = basis * cycleDiagonal := by
+  ext i j
+  fin_cases i <;> fin_cases j <;>
+    norm_num [Matrix.mul_apply, Fin.sum_univ_succ, basis, cycleMatrix,
+      cycleDiagonal, Matrix.diagonal, Fin.ext_iff]
+theorem complete_intertwines : completeMatrix * basis = basis * completeDiagonal := by
+  ext i j
+  fin_cases i <;> fin_cases j <;>
+    norm_num [Matrix.mul_apply, Fin.sum_univ_succ, basis, completeMatrix,
+      completeDiagonal, Matrix.diagonal, Fin.ext_iff]
+
+theorem charpoly_of_intertwines (A D : Matrix (Fin 4) (Fin 4) ℝ)
+    (h : A * basis = basis * D) : A.charpoly = D.charpoly := by
+  have he : A = basis * D * inverseBasis := by
+    calc
+      A = A * (basis * inverseBasis) := by rw [basis_right_inverse, mul_one]
+      _ = (A * basis) * inverseBasis := (mul_assoc _ _ _).symm
+      _ = basis * D * inverseBasis := by rw [h]
+  calc
+    A.charpoly = (basis * D * inverseBasis).charpoly := congrArg Matrix.charpoly he
+    _ = (inverseBasis * (basis * D)).charpoly := Matrix.charpoly_mul_comm _ _
+    _ = D.charpoly := by rw [← mul_assoc, basis_left_inverse, one_mul]
+
+theorem cycle_charpoly : cycleMatrix.charpoly = X^2 * (X - 2) * (X + 2) := by
+  rw [charpoly_of_intertwines _ _ cycle_intertwines]
+  simp [cycleDiagonal, Matrix.charpoly_diagonal, Fin.prod_univ_succ]
+  <;> ring
 theorem complete_charpoly : completeMatrix.charpoly = (X - 3) * (X + 1)^3 := by
-  have hskip : ∀ i : Fin 4, ∀ j : Fin 3,
-      i.succAbove j = (!![1,2,3; 0,2,3; 0,1,3; 0,1,2] : Matrix (Fin 4) (Fin 3) (Fin 4)) i j := by decide
-  rw [Matrix.charpoly, Matrix.det_succ_row_zero]
-  simp only [Fin.sum_univ_succ, Matrix.det_fin_three]
-  norm_num [Matrix.charmatrix_apply, Matrix.diagonal, Matrix.submatrix, completeMatrix, hskip]
+  rw [charpoly_of_intertwines _ _ complete_intertwines]
+  simp [completeDiagonal, Matrix.charpoly_diagonal, Fin.prod_univ_succ]
   <;> ring
 
 theorem cycle_spectral_sup : sSup (spectrum ℝ cycleMatrix) = 2 := by
@@ -129,7 +166,8 @@ theorem conjecture4_4 : ¬ ∀ (n : ℕ) (G : SimpleGraph (Fin n)),
     simp [SimpleGraph.radius, SimpleGraph.eccent_top]
   rw [bag_four] at hh
   simp only [objective] at hh
-  rw [actual_cycle_matrix, actual_complete_matrix, cycle_spectral_sup,
+  rw [actual_cycle_matrix (d := Classical.decRel _),
+    actual_complete_matrix (d := Classical.decRel _), cycle_spectral_sup,
     complete_spectral_sup, radius_fourCycle, hr] at hh
   norm_num at hh
 

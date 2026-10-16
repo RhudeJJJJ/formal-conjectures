@@ -32,30 +32,34 @@ theorem actual_polynomial :
     unfold cycleCount countCycles
     congr 1
   unfold cyclePolynomial
-  change (∑ σ ∈ supportedPermutations, (X : ℝ[X]) ^ cycleCount σ) = _
-  simp_rw [hcc]
-  ext k
-  have hcoeff : (∑ σ ∈ supportedPermutations, (X : ℝ[X]) ^ countCycles σ).coeff k =
-      (coefficientCount k : ℝ) := by
-    simp [Polynomial.coeff_sum, Polynomial.coeff_X_pow, coefficientCount,
-      Finset.card_filter, Nat.cast_sum, eq_comm]
-  rw [hcoeff]
-  by_cases hk : k < 6
-  · have hc := enumeration ⟨k,hk⟩
-    interval_cases k <;> norm_num at hc ⊢ <;> exact_mod_cast hc
-  · have hc : coefficientCount k = 0 := by
-      apply Finset.card_eq_zero.mpr
-      apply Finset.filter_eq_empty_iff.mpr
-      intro σ _
-      have := cycle_bound σ
-      omega
-    rw [hc]
-    norm_num
-    simp [Polynomial.coeff_add, Polynomial.coeff_mul, Polynomial.coeff_X_pow,
-      Polynomial.coeff_C, show k ≠ 0 by omega, show k ≠ 1 by omega,
-      show k ≠ 2 by omega, show k ≠ 3 by omega, show k ≠ 4 by omega,
-      show k ≠ 5 by omega]
-
+  trans ∑ σ ∈ supportedPermutations, (X : ℝ[X]) ^ countCycles σ
+  · apply Finset.sum_congr
+    · ext σ
+      simp [supportedPermutations, supported, fanGraph]
+    · intro σ _
+      exact congrArg (fun n => (X : ℝ[X]) ^ n) (hcc σ)
+  · ext k
+    have hcoeff : (∑ σ ∈ supportedPermutations, (X : ℝ[X]) ^ countCycles σ).coeff k =
+        (coefficientCount k : ℝ) := by
+      simp [Polynomial.coeff_sum, Polynomial.coeff_X_pow, coefficientCount,
+        Finset.card_filter, Nat.cast_sum, eq_comm]
+    rw [hcoeff]
+    by_cases hk : k < 6
+    · have hc := enumeration ⟨k,hk⟩
+      interval_cases k <;> norm_num at hc ⊢ <;> exact_mod_cast hc
+    · have hc : coefficientCount k = 0 := by
+        apply Finset.card_eq_zero.mpr
+        apply Finset.filter_eq_empty_iff.mpr
+        intro σ _
+        have := cycle_bound σ
+        omega
+      rw [hc]
+      norm_num
+      simp [Polynomial.coeff_add, Polynomial.coeff_mul, Polynomial.coeff_X_pow,
+        Polynomial.coeff_C, show k ≠ 0 by omega, show k ≠ 1 by omega,
+        show k ≠ 2 by omega, show k ≠ 3 by omega, show k ≠ 4 by omega,
+        show k ≠ 5 by omega]
+  
 noncomputable def reciprocalQuartic : Polynomial ℂ := X^4 + 4*X^3 + C (13/2) * X^2 + C (7/2) * X + C (1/2)
 
 theorem quartic_monic : reciprocalQuartic.Monic := by
@@ -87,6 +91,7 @@ theorem quartic_no_real_roots_all :
     rw [hroots] at hv
     have hvre := congrArg Complex.re hv
     simpa [reciprocalQuartic, ha, hb, hc, hd, Complex.mul_re, Complex.mul_im,
+      ← Complex.ofReal_pow,
       Multiset.map_cons, Multiset.map_singleton, Multiset.prod_cons,
       Multiset.prod_singleton, mul_assoc] using hvre
   have h0 := heval 0

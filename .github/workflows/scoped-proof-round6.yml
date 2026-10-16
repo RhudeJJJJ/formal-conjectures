@@ -36,8 +36,10 @@ jobs:
           path: .lake/build
           key: round4-imports-${{ hashFiles('lean-toolchain', 'lake-manifest.json') }}-${{ github.sha }}
       - name: Check fan cycle polynomial proof
+        timeout-minutes: 5
         run: lake env lean -DwarningAsError=true Proofs/FanCycleProof.lean
 
       - name: Check radius product proof and axioms
+        timeout-minutes: 5
         if: ${{ !cancelled() }}
         run: lake env lean -DwarningAsError=true Proofs/RadiusProductProof.lean

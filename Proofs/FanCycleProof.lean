@@ -32,7 +32,7 @@ theorem actual_polynomial :
     unfold cycleCount countCycles
     congr 1
   unfold cyclePolynomial
-  change (∑ σ ∈ supportedPermutations, X ^ cycleCount σ) = _
+  change (∑ σ ∈ supportedPermutations, (X : ℝ[X]) ^ cycleCount σ) = _
   simp_rw [hcc]
   ext k
   have hcoeff : (∑ σ ∈ supportedPermutations, (X : ℝ[X]) ^ countCycles σ).coeff k =
@@ -73,9 +73,6 @@ theorem quartic_no_real_roots_all :
   have hcard : reciprocalQuartic.roots.card = 4 := by
     rw [hsplit.natDegree_eq_card_roots.symm, quartic_degree]
   obtain ⟨a,b,c,d,hroots⟩ := Multiset.card_eq_four.mp hcard
-  have hfac := hsplit.eq_prod_roots_of_monic quartic_monic
-  rw [hroots] at hfac
-  change reciprocalQuartic = (X - C a) * ((X - C b) * ((X - C c) * (X - C d))) at hfac
   have hmem : ∀ z ∈ reciprocalQuartic.roots, z.im = 0 := by
     intro z hz
     exact hreal z ((Polynomial.mem_roots quartic_monic.ne_zero).mp hz)
@@ -83,13 +80,24 @@ theorem quartic_no_real_roots_all :
   have hb : b.im = 0 := hmem b (by simp [hroots])
   have hc : c.im = 0 := hmem c (by simp [hroots])
   have hd : d.im = 0 := hmem d (by simp [hroots])
-  have hs := congrArg (fun p : ℂ[X] => (p.coeff 3).re) hfac
-  have hp := congrArg (fun p : ℂ[X] => (p.coeff 2).re) hfac
-  norm_num [reciprocalQuartic, Polynomial.coeff_mul, Finset.sum_range_succ,
-    ha, hb, hc, hd, Complex.mul_re] at hs hp
+  have heval (t : ℝ) :
+      t^4 + 4*t^3 + (13/2)*t^2 + (7/2)*t + 1/2 =
+        (t-a.re)*(t-b.re)*(t-c.re)*(t-d.re) := by
+    have hv := hsplit.eval_eq_prod_roots_of_monic quartic_monic (t : ℂ)
+    rw [hroots] at hv
+    have hvre := congrArg Complex.re hv
+    simpa [reciprocalQuartic, ha, hb, hc, hd, Complex.mul_re, Complex.mul_im,
+      Multiset.map_cons, Multiset.map_singleton, Multiset.prod_cons,
+      Multiset.prod_singleton, mul_assoc] using hvre
+  have h0 := heval 0
+  have h1 := heval 1
+  have hm1 := heval (-1)
+  have h2 := heval 2
+  have hm2 := heval (-2)
   apply fan_reciprocal_coefficient_obstruction a.re b.re c.re d.re
-  · linarith
-  · linarith
+  · linear_combination (1/12 : ℝ)*h2 - (1/12 : ℝ)*hm2 -
+      (1/6 : ℝ)*h1 + (1/6 : ℝ)*hm1
+  · linear_combination h0 - (1/2 : ℝ)*h1 - (1/2 : ℝ)*hm1
 
 theorem fan_not_realRooted : ¬ IsRealRooted (cyclePolynomial fanGraph) := by
   intro h

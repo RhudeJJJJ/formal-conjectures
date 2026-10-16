@@ -31,7 +31,9 @@ theorem edist_fourCycle (u v : Fin 4) :
       have hex : ∀ a b : Fin 4, a ≠ b → ¬fourCycle.Adj a b →
           ∃ c, fourCycle.Adj a c ∧ fourCycle.Adj c b := by decide
       obtain ⟨c, hc, hv⟩ := hex u v h ha
-      exact ⟨c, SimpleGraph.mem_commonNeighbors.mpr ⟨hc, hv.symm⟩⟩
+      refine ⟨c, ?_⟩
+      change fourCycle.Adj u c ∧ fourCycle.Adj v c
+      exact ⟨hc, hv.symm⟩
 
 theorem fourCycle_connected : fourCycle.Connected := by
   refine ⟨fun u v => ?_⟩
@@ -64,22 +66,28 @@ def cycleMatrix : Matrix (Fin 4) (Fin 4) ℝ :=
 def completeMatrix : Matrix (Fin 4) (Fin 4) ℝ :=
   !![0,1,1,1; 1,0,1,1; 1,1,0,1; 1,1,1,0]
 
-theorem actual_cycle_matrix : fourCycle.adjMatrix ℝ = cycleMatrix := by
+theorem actual_cycle_matrix [DecidableRel fourCycle.Adj] : fourCycle.adjMatrix ℝ = cycleMatrix := by
   ext u v
   fin_cases u <;> fin_cases v <;> norm_num [SimpleGraph.adjMatrix, fourCycle, cycleMatrix]
 
-theorem actual_complete_matrix : (⊤ : SimpleGraph (Fin 4)).adjMatrix ℝ = completeMatrix := by
+theorem actual_complete_matrix [DecidableRel (⊤ : SimpleGraph (Fin 4)).Adj] : (⊤ : SimpleGraph (Fin 4)).adjMatrix ℝ = completeMatrix := by
   ext u v
   fin_cases u <;> fin_cases v <;> norm_num [SimpleGraph.adjMatrix, completeMatrix]
 
 theorem cycle_charpoly : cycleMatrix.charpoly = X^2 * (X - 2) * (X + 2) := by
-  simp [Matrix.charpoly, Matrix.det_succ_row_zero, Fin.sum_univ_succ,
-    Matrix.charmatrix_apply, Matrix.diagonal, Matrix.submatrix, cycleMatrix, Fin.succAbove, Fin.insertNth, Fin.ext_iff]
+  have hskip : ∀ i : Fin 4, ∀ j : Fin 3,
+      i.succAbove j = (!![1,2,3; 0,2,3; 0,1,3; 0,1,2] : Matrix (Fin 4) (Fin 3) (Fin 4)) i j := by decide
+  rw [Matrix.charpoly, Matrix.det_succ_row_zero]
+  simp only [Fin.sum_univ_succ, Matrix.det_fin_three]
+  norm_num [Matrix.charmatrix_apply, Matrix.diagonal, Matrix.submatrix, cycleMatrix, hskip]
   <;> ring
 
 theorem complete_charpoly : completeMatrix.charpoly = (X - 3) * (X + 1)^3 := by
-  simp [Matrix.charpoly, Matrix.det_succ_row_zero, Fin.sum_univ_succ,
-    Matrix.charmatrix_apply, Matrix.diagonal, Matrix.submatrix, completeMatrix, Fin.succAbove, Fin.insertNth, Fin.ext_iff]
+  have hskip : ∀ i : Fin 4, ∀ j : Fin 3,
+      i.succAbove j = (!![1,2,3; 0,2,3; 0,1,3; 0,1,2] : Matrix (Fin 4) (Fin 3) (Fin 4)) i j := by decide
+  rw [Matrix.charpoly, Matrix.det_succ_row_zero]
+  simp only [Fin.sum_univ_succ, Matrix.det_fin_three]
+  norm_num [Matrix.charmatrix_apply, Matrix.diagonal, Matrix.submatrix, completeMatrix, hskip]
   <;> ring
 
 theorem cycle_spectral_sup : sSup (spectrum ℝ cycleMatrix) = 2 := by
@@ -114,6 +122,7 @@ theorem complete_spectral_sup : sSup (spectrum ℝ completeMatrix) = 3 := by
 
 theorem conjecture4_4 : ¬ ∀ (n : ℕ) (G : SimpleGraph (Fin n)),
     3 ≤ n → G.Connected → objective G ≤ objective (bag (n / 2 + 2) ((n + 1) / 2)) := by
+  classical
   intro h
   have hh := h 4 fourCycle (by norm_num) fourCycle_connected
   have hr : (⊤ : SimpleGraph (Fin 4)).radius = 1 := by

@@ -85,6 +85,7 @@ theorem green_charpoly :
   let P : Matrix BlockIndex BlockIndex ℝ := Matrix.of fun i j => basisMatrix (flat i) (flat j)
   let Q : Matrix BlockIndex BlockIndex ℝ := Matrix.of fun i j => inverseBasis (flat i) (flat j)
   let D := Matrix.blockDiagonal blocks
+  have hA (i j : BlockIndex) : A i j = green (flat i) (flat j) := rfl
   have hpq : P * Q = 1 := by
     ext ⟨i,k⟩ ⟨j,l⟩
     simp only [Matrix.mul_apply]
@@ -101,10 +102,10 @@ theorem green_charpoly :
         Fin.ext_iff]
   have hAP : A * P = P * D := by
     ext ⟨i,k⟩ ⟨j,l⟩
-    simp only [Matrix.mul_apply]
+    simp only [Matrix.mul_apply, hA]
     fin_cases i <;> fin_cases k <;> fin_cases j <;> fin_cases l <;>
-      norm_num [A, P, D, blocks, basisMatrix, flat, flatEquiv, green,
-        Matrix.reindex_apply, Matrix.mul_apply, Matrix.blockDiagonal_apply,
+      norm_num [P, D, blocks, basisMatrix, flat, green,
+        Matrix.mul_apply, Matrix.blockDiagonal_apply,
         Fintype.sum_prod_type, Fin.sum_univ_succ, Fin.ext_iff]
   have hsim : A = P * D * Q := by
     calc

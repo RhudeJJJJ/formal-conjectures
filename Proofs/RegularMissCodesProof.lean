@@ -141,48 +141,51 @@ theorem family_closed (m : ℕ) (hm : 5 ≤ m) (third : Bool)
     | (apply Finset.mem_image.mpr
        refine ⟨0, by norm_num [indices], ?_⟩
        ext v
-       (simp [U, sourceSet, point, Fin.ext_iff]; omega))
+       simp [U, sourceSet, point, Fin.ext_iff] <;> omega)
     | (apply Finset.mem_image.mpr
        refine ⟨1, by norm_num [indices], ?_⟩
        ext v
-       (simp [U, sourceSet, point, Fin.ext_iff]; omega))
+       simp [U, sourceSet, point, Fin.ext_iff] <;> omega)
     | (apply Finset.mem_image.mpr
        refine ⟨2, by norm_num [indices], ?_⟩
        ext v
-       (simp [U, sourceSet, point, Fin.ext_iff]; omega))
+       simp [U, sourceSet, point, Fin.ext_iff] <;> omega)
     | (apply Finset.mem_image.mpr
        refine ⟨3, by norm_num [indices], ?_⟩
        ext v
-       (simp [U, sourceSet, point, Fin.ext_iff]; omega))
+       simp [U, sourceSet, point, Fin.ext_iff] <;> omega)
     | (apply Finset.mem_image.mpr
        refine ⟨4, by norm_num [indices], ?_⟩
        ext v
-       (simp [U, sourceSet, point, Fin.ext_iff]; omega))
+       simp [U, sourceSet, point, Fin.ext_iff] <;> omega)
     | (apply Finset.mem_image.mpr
        refine ⟨5, by norm_num [indices], ?_⟩
        ext v
-       (simp [U, sourceSet, point, Fin.ext_iff]; omega))
+       simp [U, sourceSet, point, Fin.ext_iff] <;> omega)
     | (have hu : U = (univ \ {point m hm 0} : Finset (Fin m)) := by
          ext v
-         (simp [U, sourceSet, point, Fin.ext_iff]; omega)
+         simp [U, sourceSet, point, Fin.ext_iff]
+         omega
        rw [hu] at hc
        norm_num [Finset.card_sdiff] at hc
        omega)
     | (have hu : U = (univ \ {point m hm 1} : Finset (Fin m)) := by
          ext v
-         (simp [U, sourceSet, point, Fin.ext_iff]; omega)
+         simp [U, sourceSet, point, Fin.ext_iff]
+         omega
        rw [hu] at hc
        norm_num [Finset.card_sdiff] at hc
        omega)
     | (have hu : U = (univ \ {point m hm 2} : Finset (Fin m)) := by
          ext v
-         (simp [U, sourceSet, point, Fin.ext_iff]; omega)
+         simp [U, sourceSet, point, Fin.ext_iff]
+         omega
        rw [hu] at hc
        norm_num [Finset.card_sdiff] at hc
        omega)
     | (have hu : U = (univ : Finset (Fin m)) := by
          ext v
-         (simp [U, sourceSet, point, Fin.ext_iff]; omega)
+         simp [U, sourceSet, point, Fin.ext_iff] <;> omega
        rw [hu] at hc
        norm_num [Finset.card_sdiff] at hc
        omega)

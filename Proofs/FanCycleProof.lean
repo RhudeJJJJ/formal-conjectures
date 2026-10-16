@@ -35,18 +35,32 @@ theorem actual_polynomial :
   trans ∑ σ ∈ supportedPermutations, (X : ℝ[X]) ^ countCycles σ
   · apply Finset.sum_congr
     · ext σ
-      simp [supportedPermutations, supported, fanGraph]
+      constructor
+      · intro hs
+        apply Finset.mem_filter.mpr
+        refine ⟨Finset.mem_univ _, ?_⟩
+        exact (Finset.mem_filter.mp hs).2
+      · intro hs
+        apply Finset.mem_filter.mpr
+        refine ⟨Finset.mem_univ _, ?_⟩
+        exact (Finset.mem_filter.mp hs).2
     · intro σ _
       exact congrArg (fun n => (X : ℝ[X]) ^ n) (hcc σ)
   · ext k
     have hcoeff : (∑ σ ∈ supportedPermutations, (X : ℝ[X]) ^ countCycles σ).coeff k =
         (coefficientCount k : ℝ) := by
-      simp [Polynomial.coeff_sum, Polynomial.coeff_X_pow, coefficientCount,
-        Finset.card_filter, Nat.cast_sum, eq_comm]
+      simp only [Polynomial.coeff_sum, Polynomial.coeff_X_pow,
+        coefficientCount, Finset.card_filter]
+      push_cast
+      apply Finset.sum_congr rfl
+      intro σ _
+      by_cases he : countCycles σ = k
+      · simp [he]
+      · simp [he, Ne.symm he]
     rw [hcoeff]
     by_cases hk : k < 6
     · have hc := enumeration ⟨k,hk⟩
-      interval_cases k <;> norm_num at hc ⊢ <;> exact_mod_cast hc
+      interval_cases k <;> norm_num [Polynomial.coeff_X] at hc ⊢ <;> exact_mod_cast hc
     · have hc : coefficientCount k = 0 := by
         apply Finset.card_eq_zero.mpr
         apply Finset.filter_eq_empty_iff.mpr
@@ -54,12 +68,8 @@ theorem actual_polynomial :
         have := cycle_bound σ
         omega
       rw [hc]
-      norm_num
-      simp [Polynomial.coeff_add, Polynomial.coeff_mul, Polynomial.coeff_X_pow,
-        Polynomial.coeff_C, show k ≠ 0 by omega, show k ≠ 1 by omega,
-        show k ≠ 2 by omega, show k ≠ 3 by omega, show k ≠ 4 by omega,
-        show k ≠ 5 by omega]
-  
+      norm_num [Polynomial.coeff_X] <;> split_ifs <;> norm_num <;> omega
+
 noncomputable def reciprocalQuartic : Polynomial ℂ := X^4 + 4*X^3 + C (13/2) * X^2 + C (7/2) * X + C (1/2)
 
 theorem quartic_monic : reciprocalQuartic.Monic := by

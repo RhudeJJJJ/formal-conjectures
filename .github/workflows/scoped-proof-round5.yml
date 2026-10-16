@@ -37,3 +37,7 @@ jobs:
           key: round4-imports-${{ hashFiles('lean-toolchain', 'lake-manifest.json') }}-${{ github.sha }}
       - name: Check exact homomorphic-pair bijection
         run: lake env lean -DwarningAsError=true Proofs/Q25Proof.lean
+
+      - name: Check WOWII 91 proof and axioms
+        if: ${{ !cancelled() }}
+        run: lake env lean -DwarningAsError=true Proofs/WOWII91Proof.lean

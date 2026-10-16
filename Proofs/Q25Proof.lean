@@ -121,20 +121,20 @@ lemma toH_valid {x : ℕ} (p : (Fin 4 → Fin x) × (Fin x → Fin x → Bool))
   obtain ⟨ht, h01, h02, h12⟩ := (g_iff _ _).mp hp
   obtain ⟨hab, hac, hbc⟩ := core_distinct ht h01 h12
   by_cases hd : p.1 3 = p.1 0
-  · simp only [toH, hd, ↓reduceIte, Prod.fst, Prod.snd]
+  · rw [toH, if_pos hd]
     apply (h_iff _ _).mpr
     have ht' := setDir_tournament ht ⟨0, rfl⟩ ⟨2, rfl⟩ hac false
     have hi : ∀ i, (∃ v, p.1 v = i) ↔ ∃ v, replaceLast p.1 (p.1 1) v = i := by
       intro i
       simp only [image_iff]
-      simp [replaceLast, hd, or_assoc, or_comm, or_left_comm]
+      simp [replaceLast, hd, or_comm, or_left_comm]
     refine ⟨same_image_tournament ht' hi, ?_⟩
-    simp_all [replaceLast, setDir]
-  · simp only [toH, hd, ↓reduceIte, Prod.fst, Prod.snd]
+    simp_all [replaceLast, setDir, eq_comm]
+  · rw [toH, if_neg hd]
     apply (h_iff _ _).mpr
     have ht' := setDir_tournament ht ⟨0, rfl⟩ ⟨2, rfl⟩ hac (p.2 (p.1 0) (p.1 3))
-    refine ⟨setDir_tournament ht' ⟨0, rfl⟩ ⟨3, rfl⟩ hd.symm true, ?_⟩
-    simp_all [pivotH, setDir]
+    refine ⟨setDir_tournament ht' ⟨0, rfl⟩ ⟨3, rfl⟩ (Ne.symm hd) true, ?_⟩
+    simp_all [pivotH, setDir, eq_comm]
 
 lemma toG_valid {x : ℕ} (p : (Fin 4 → Fin x) × (Fin x → Fin x → Bool))
     (hp : IsHomomorphicPair witnessH p.1 p.2) :
@@ -143,28 +143,28 @@ lemma toG_valid {x : ℕ} (p : (Fin 4 → Fin x) × (Fin x → Fin x → Bool))
   obtain ⟨hab, hac, hbc⟩ := core_distinct ht h01 h12
   have had := (ht.1 _ _ h03).1
   by_cases hd : p.1 3 = p.1 1 ∧ p.2 (p.1 0) (p.1 2) = false
-  · simp only [toG, hd, ↓reduceIte, Prod.fst, Prod.snd]
+  · rw [toG, if_pos hd]
     apply (g_iff _ _).mpr
     have ht' := setDir_tournament ht ⟨0, rfl⟩ ⟨2, rfl⟩ hac true
     have hi : ∀ i, (∃ v, p.1 v = i) ↔ ∃ v, replaceLast p.1 (p.1 0) v = i := by
       intro i
       simp only [image_iff]
-      simp [replaceLast, hd.1, or_assoc, or_comm, or_left_comm]
+      simp [replaceLast, hd.1, or_comm, or_left_comm]
     refine ⟨same_image_tournament ht' hi, ?_⟩
-    simp_all [replaceLast, setDir]
-  · simp only [toG, hd, ↓reduceIte, Prod.fst, Prod.snd]
+    simp_all [replaceLast, setDir, eq_comm]
+  · rw [toG, if_neg hd]
     apply (g_iff _ _).mpr
     have ht' := setDir_tournament ht ⟨0, rfl⟩ ⟨3, rfl⟩ had (p.2 (p.1 0) (p.1 2))
     refine ⟨setDir_tournament ht' ⟨0, rfl⟩ ⟨2, rfl⟩ hac true, ?_⟩
     by_cases hdb : p.1 3 = p.1 1
     · have h02 : p.2 (p.1 0) (p.1 2) = true := by
         cases h : p.2 (p.1 0) (p.1 2) <;> simp_all
-      simp_all [pivotG, setDir]
-    · simp_all [pivotG, setDir]
+      simp_all [pivotG, setDir, eq_comm]
+    · simp_all [pivotG, setDir, eq_comm]
 
 lemma pivot_roundtrip {x : ℕ} {c : Fin 4 → Fin x} {T}
     (ht : IsTournamentOnImage c T) {a b d : Fin x}
-    (ha : ∃ v, c v = a) (hb : ∃ v, c v = b) (hd : ∃ v, c v = d)
+    (ha : ∃ v, c v = a) (_hb : ∃ v, c v = b) (hd : ∃ v, c v = d)
     (hab : a ≠ b) (had : a ≠ d) (h : T a b = true) :
     pivotG (pivotH T a b d) a b d = T := by
   have hba := tournament_asymm ht h
@@ -219,10 +219,13 @@ lemma toG_toH {x : ℕ} (p : (Fin 4 → Fin x) × (Fin x → Fin x → Bool))
   · have hc : ¬(p.1 3 = p.1 1 ∧
         pivotH p.2 (p.1 0) (p.1 2) (p.1 3) (p.1 0) (p.1 2) = false) := by
       rintro ⟨he, ht'⟩
-      simp_all [pivotH, setDir]
-    simp only [toH, hd, ↓reduceIte, toG, Prod.fst, Prod.snd, hc]
-    apply Prod.ext rfl
-    exact pivot_roundtrip ht ⟨0, rfl⟩ ⟨2, rfl⟩ ⟨3, rfl⟩ hac hd.symm h02
+      simp_all [pivotH, setDir, eq_comm]
+    rw [toH, if_neg hd]
+    dsimp only [toG]
+    rw [if_neg hc]
+    apply Prod.ext
+    · rfl
+    · exact pivot_roundtrip ht ⟨0, rfl⟩ ⟨2, rfl⟩ ⟨3, rfl⟩ hac (Ne.symm hd) h02
 
 lemma toH_toG {x : ℕ} (p : (Fin 4 → Fin x) × (Fin x → Fin x → Bool))
     (hp : IsHomomorphicPair witnessH p.1 p.2) : toH (toG p) = p := by
@@ -233,11 +236,14 @@ lemma toH_toG {x : ℕ} (p : (Fin 4 → Fin x) × (Fin x → Fin x → Bool))
   · have hr := setDir_restore' ht ⟨0, rfl⟩ ⟨2, rfl⟩ hac hd.2
     apply Prod.ext
     · funext v
-      fin_cases v <;> simp_all [toG, toH, replaceLast, setDir]
+      fin_cases v <;> simp_all [toG, toH, replaceLast]
     · simpa [toG, toH, hd, replaceLast, setDir, hac, hac.symm] using hr
-  · simp only [toG, hd, ↓reduceIte, toH, Prod.fst, Prod.snd, Ne.symm had]
-    apply Prod.ext rfl
-    exact pivot_roundtrip' ht ⟨0, rfl⟩ ⟨2, rfl⟩ ⟨3, rfl⟩ hac had h03
+  · rw [toG, if_neg hd]
+    dsimp only [toH]
+    rw [if_neg (Ne.symm had)]
+    apply Prod.ext
+    · rfl
+    · exact pivot_roundtrip' ht ⟨0, rfl⟩ ⟨2, rfl⟩ ⟨3, rfl⟩ hac had h03
 
 def homEquiv (x : ℕ) :
     {p : (Fin 4 → Fin x) × (Fin x → Fin x → Bool) // IsHomomorphicPair witnessG p.1 p.2} ≃
@@ -250,6 +256,34 @@ def homEquiv (x : ℕ) :
 theorem homomorphic_equal (x : ℕ) : homomorphicCount witnessG x = homomorphicCount witnessH x :=
   Nat.card_congr (homEquiv x)
 
+
+instance (A : Fin 4 → Fin 4 → Bool) (x : ℕ) :
+    DecidablePred (IsOrientedColoring A (x := x)) := fun c => by
+  unfold IsOrientedColoring
+  infer_instance
+
+set_option maxRecDepth 100000 in
+set_option maxHeartbeats 0 in
+lemma counts_three : orientedColoringCount witnessG 3 = 18 ∧
+    orientedColoringCount witnessH 3 = 12 := by
+  constructor
+  · rw [orientedColoringCount, Nat.card_eq_fintype_card]
+    decide
+  · rw [orientedColoringCount, Nat.card_eq_fintype_card]
+    decide
+
+theorem question25 : ¬ ∀ (V W : Type) [Fintype V] [Fintype W]
+    (A : V → V → Bool) (B : W → W → Bool), IsOriented A → IsOriented B →
+      (∀ x : ℕ, 0 < x → homomorphicCount A x = homomorphicCount B x) →
+        ∀ x : ℕ, 0 < x → orientedColoringCount A x = orientedColoringCount B x := by
+  intro h
+  have he := h (Fin 4) (Fin 4) witnessG witnessH
+    witnessG_isOriented witnessH_isOriented (fun x _ => homomorphic_equal x) 3 (by norm_num)
+  obtain ⟨hg, hh⟩ := counts_three
+  omega
+
 end Q25Proof
 
+#print axioms Q25Proof.question25
 #print axioms Q25Proof.homomorphic_equal
+#print axioms Q25Proof.counts_three

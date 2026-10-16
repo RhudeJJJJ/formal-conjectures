@@ -69,15 +69,24 @@ theorem card_high_degree_le_edges (A : Finset V) :
   let H := G.induce (A : Set V)
   have hdeg (v : (A : Set V)) :
       H.degree v = (G.neighborFinset v ∩ A).card := by
-    have h := congrArg Finset.card (G.map_neighborFinset_induce v)
-    simpa [H, card_neighborFinset_eq_degree] using h
+    change (H.neighborFinset v).card = _
+    rw [← card_map (f := Function.Embedding.subtype (· ∈ (A : Set V)))]
+    congr 1
+    ext w
+    simp [H]
   have hcard :
       (A.filter fun v => 2 ≤ (G.neighborFinset v ∩ A).card).card =
         (univ.filter fun v : (A : Set V) => 2 ≤ H.degree v).card := by
     rw [← card_map (f := Function.Embedding.subtype (· ∈ (A : Set V)))]
     congr 1
     ext v
-    simp [hdeg]
+    simp only [mem_filter, mem_map, mem_univ, true_and, hdeg]
+    constructor
+    · rintro ⟨ha, hd⟩
+      exact ⟨⟨v, ha⟩, hd, rfl⟩
+    · rintro ⟨w, hd, hw⟩
+      subst v
+      exact ⟨w.property, hd⟩
   have he : H.edgeFinset.card = edgesOn G A :=
     (G.card_filter_edgeFinset_toFinset_subset A).symm
   let B := univ.filter fun v : (A : Set V) => 2 ≤ H.degree v
@@ -89,8 +98,8 @@ theorem card_high_degree_le_edges (A : Finset V) :
         (subset_univ _) (by intros; omega)
   rw [H.sum_degrees_eq_twice_card_edges, he] at hsum
   rw [hcard]
-  dsimp [B] at hsum
-  omega
+  simpa only [B, Finset.attach_eq_univ] using
+    (Nat.le_of_mul_le_mul_left hsum (by omega : 0 < 2))
 
 /-- Completion from any subset, including the empty subset and isolated vertices. -/
 theorem completion_b (A : Finset V) :
@@ -126,7 +135,7 @@ theorem completion_b (A : Finset V) :
     have hn : (G.neighborFinset v ∩ A).card ≠ 1 := by
       intro h
       exact hvL (by simp [L, h])
-    have hc := card_le_card (inter_subset_inter_left (G.neighborFinset v) hAD)
+    have hc := card_le_card (inter_subset_inter_left (s := G.neighborFinset v) hAD)
     omega
   have hmin : twoDominationNumber G ≤ D.card :=
     csInf_le (OrderBot.bddBelow _) ⟨D, hD, rfl⟩

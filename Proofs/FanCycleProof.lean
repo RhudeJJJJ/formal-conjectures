@@ -11,30 +11,60 @@ set_option maxHeartbeats 4000000
 def countCycles (σ : Equiv.Perm (Fin 5)) : ℕ :=
   σ.cycleFactorsFinset.card + (univ.filter fun v => σ v = v).card
 
-def naturalPolynomial : Polynomial ℕ :=
-  ∑ σ ∈ (univ : Finset (Equiv.Perm (Fin 5))).filter
-    (fun σ => ∀ v, σ v = v ∨
-      (v ≠ σ v ∧ (v = 4 ∨ σ v = 4 ∨ Nat.dist v.val (σ v).val = 1))),
-    X ^ countCycles σ
-
-theorem enumeration : naturalPolynomial = X^5 + 7*X^4 + 13*X^3 + 8*X^2 + 2*X := by
-  decide
+def supported (σ : Equiv.Perm (Fin 5)) : Prop :=
+  ∀ v, σ v = v ∨ (v ≠ σ v ∧
+    (v = 4 ∨ σ v = 4 ∨ Nat.dist v.val (σ v).val = 1))
+instance : DecidablePred supported := fun σ =>
+  inferInstanceAs (Decidable (∀ v, σ v = v ∨ (v ≠ σ v ∧
+    (v = 4 ∨ σ v = 4 ∨ Nat.dist v.val (σ v).val = 1))))
+def supportedPermutations : Finset (Equiv.Perm (Fin 5)) := univ.filter supported
+def coefficientCount (k : ℕ) : ℕ :=
+  (supportedPermutations.filter fun σ => countCycles σ = k).card
+theorem enumeration : ∀ k : Fin 6,
+    coefficientCount k = (![0,2,8,13,7,1] : Fin 6 → ℕ) k := by decide
+theorem cycle_bound : ∀ σ : Equiv.Perm (Fin 5), countCycles σ ≤ 5 := by decide
 
 theorem actual_polynomial :
     cyclePolynomial fanGraph = (X^5 + 7*X^4 + 13*X^3 + 8*X^2 + 2*X : ℝ[X]) := by
-  have he := congrArg (Polynomial.map (Nat.castRingHom ℝ)) enumeration
-  simpa [naturalPolynomial, cyclePolynomial, cycleCount, countCycles, fanGraph,
-    Polynomial.map_sum, Polynomial.map_pow] using he
+  classical
+  have hcc : ∀ σ : Equiv.Perm (Fin 5), cycleCount σ = countCycles σ := by
+    intro σ
+    unfold cycleCount countCycles
+    congr 1
+  unfold cyclePolynomial
+  change (∑ σ ∈ supportedPermutations, X ^ cycleCount σ) = _
+  simp_rw [hcc]
+  ext k
+  have hcoeff : (∑ σ ∈ supportedPermutations, (X : ℝ[X]) ^ countCycles σ).coeff k =
+      (coefficientCount k : ℝ) := by
+    simp [Polynomial.coeff_sum, Polynomial.coeff_X_pow, coefficientCount,
+      Finset.card_filter, Nat.cast_sum, eq_comm]
+  rw [hcoeff]
+  by_cases hk : k < 6
+  · have hc := enumeration ⟨k,hk⟩
+    interval_cases k <;> norm_num at hc ⊢ <;> exact_mod_cast hc
+  · have hc : coefficientCount k = 0 := by
+      apply Finset.card_eq_zero.mpr
+      apply Finset.filter_eq_empty_iff.mpr
+      intro σ _
+      have := cycle_bound σ
+      omega
+    rw [hc]
+    norm_num
+    simp [Polynomial.coeff_add, Polynomial.coeff_mul, Polynomial.coeff_X_pow,
+      Polynomial.coeff_C, show k ≠ 0 by omega, show k ≠ 1 by omega,
+      show k ≠ 2 by omega, show k ≠ 3 by omega, show k ≠ 4 by omega,
+      show k ≠ 5 by omega]
 
-def reciprocalQuartic : Polynomial ℂ := X^4 + 4*X^3 + C (13/2) * X^2 + C (7/2) * X + C (1/2)
+noncomputable def reciprocalQuartic : Polynomial ℂ := X^4 + 4*X^3 + C (13/2) * X^2 + C (7/2) * X + C (1/2)
 
 theorem quartic_monic : reciprocalQuartic.Monic := by
   unfold reciprocalQuartic
-  monicity
+  monicity <;> norm_num
 
 theorem quartic_degree : reciprocalQuartic.natDegree = 4 := by
   unfold reciprocalQuartic
-  compute_degree
+  compute_degree <;> norm_num
 
 theorem quartic_no_real_roots_all :
     ¬ ∀ z : ℂ, reciprocalQuartic.eval z = 0 → z.im = 0 := by
@@ -45,8 +75,7 @@ theorem quartic_no_real_roots_all :
   obtain ⟨a,b,c,d,hroots⟩ := Multiset.card_eq_four.mp hcard
   have hfac := hsplit.eq_prod_roots_of_monic quartic_monic
   rw [hroots] at hfac
-  simp only [Multiset.map_cons, Multiset.map_zero, Multiset.prod_cons,
-    Multiset.prod_zero, mul_one] at hfac
+  change reciprocalQuartic = (X - C a) * ((X - C b) * ((X - C c) * (X - C d))) at hfac
   have hmem : ∀ z ∈ reciprocalQuartic.roots, z.im = 0 := by
     intro z hz
     exact hreal z ((Polynomial.mem_roots quartic_monic.ne_zero).mp hz)

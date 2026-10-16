@@ -30,7 +30,8 @@ theorem edist_fourCycle (u v : Fin 4) :
       refine ⟨h, ha, ?_⟩
       have hex : ∀ a b : Fin 4, a ≠ b → ¬fourCycle.Adj a b →
           ∃ c, fourCycle.Adj a c ∧ fourCycle.Adj c b := by decide
-      exact hex u v h ha
+      obtain ⟨c, hc, hv⟩ := hex u v h ha
+      exact ⟨c, SimpleGraph.mem_commonNeighbors.mpr ⟨hc, hv.symm⟩⟩
 
 theorem fourCycle_connected : fourCycle.Connected := by
   refine ⟨fun u v => ?_⟩
@@ -73,12 +74,12 @@ theorem actual_complete_matrix : (⊤ : SimpleGraph (Fin 4)).adjMatrix ℝ = com
 
 theorem cycle_charpoly : cycleMatrix.charpoly = X^2 * (X - 2) * (X + 2) := by
   simp [Matrix.charpoly, Matrix.det_succ_row_zero, Fin.sum_univ_succ,
-    Matrix.charmatrix_apply, Matrix.diagonal, Matrix.submatrix, cycleMatrix]
+    Matrix.charmatrix_apply, Matrix.diagonal, Matrix.submatrix, cycleMatrix, Fin.succAbove, Fin.insertNth, Fin.ext_iff]
   <;> ring
 
 theorem complete_charpoly : completeMatrix.charpoly = (X - 3) * (X + 1)^3 := by
   simp [Matrix.charpoly, Matrix.det_succ_row_zero, Fin.sum_univ_succ,
-    Matrix.charmatrix_apply, Matrix.diagonal, Matrix.submatrix, completeMatrix]
+    Matrix.charmatrix_apply, Matrix.diagonal, Matrix.submatrix, completeMatrix, Fin.succAbove, Fin.insertNth, Fin.ext_iff]
   <;> ring
 
 theorem cycle_spectral_sup : sSup (spectrum ℝ cycleMatrix) = 2 := by
@@ -91,7 +92,7 @@ theorem cycle_spectral_sup : sSup (spectrum ℝ cycleMatrix) = 2 := by
     have he : x^2 * (x - 2) * (x + 2) = 0 := by simpa [Polynomial.IsRoot] using hx
     rcases mul_eq_zero.mp he with hz | hz
     · rcases mul_eq_zero.mp hz with hz | hz
-      · have : x = 0 := pow_eq_zero hz
+      · have : x = 0 := eq_zero_of_pow_eq_zero hz
         linarith
       · linarith
     · linarith
@@ -107,7 +108,7 @@ theorem complete_spectral_sup : sSup (spectrum ℝ completeMatrix) = 3 := by
     have he : (x - 3) * (x + 1)^3 = 0 := by simpa [Polynomial.IsRoot] using hx
     rcases mul_eq_zero.mp he with hz | hz
     · linarith
-    · have : x + 1 = 0 := pow_eq_zero hz
+    · have : x + 1 = 0 := eq_zero_of_pow_eq_zero hz
       linarith
   exact le_antisymm (csSup_le ⟨3, hm⟩ hle) (le_csSup ⟨3, hle⟩ hm)
 
@@ -118,9 +119,7 @@ theorem conjecture4_4 : ¬ ∀ (n : ℕ) (G : SimpleGraph (Fin n)),
   have hr : (⊤ : SimpleGraph (Fin 4)).radius = 1 := by
     simp [SimpleGraph.radius, SimpleGraph.eccent_top]
   rw [bag_four] at hh
-  change sSup (spectrum ℝ (fourCycle.adjMatrix ℝ)) * (fourCycle.radius.toNat : ℝ) ≤
-    sSup (spectrum ℝ ((⊤ : SimpleGraph (Fin 4)).adjMatrix ℝ)) *
-      ((⊤ : SimpleGraph (Fin 4)).radius.toNat : ℝ) at hh
+  simp only [objective] at hh
   rw [actual_cycle_matrix, actual_complete_matrix, cycle_spectral_sup,
     complete_spectral_sup, radius_fourCycle, hr] at hh
   norm_num at hh

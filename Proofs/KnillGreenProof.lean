@@ -71,7 +71,7 @@ def basisMatrix : Matrix (Fin 6) (Fin 6) ℝ :=
   !![1,0,1,0,1,0; 1,0,-1,0,0,0; 1,0,0,0,-1,0;
      0,1,0,0,0,1; 0,1,0,-1,0,-1; 0,1,0,1,0,0]
 
-def inverseBasis : Matrix (Fin 6) (Fin 6) ℝ :=
+noncomputable def inverseBasis : Matrix (Fin 6) (Fin 6) ℝ :=
   !![1/3,1/3,1/3,0,0,0; 0,0,0,1/3,1/3,1/3;
      1/3,-2/3,1/3,0,0,0; 0,0,0,-1/3,-1/3,2/3;
      1/3,1/3,-2/3,0,0,0; 0,0,0,2/3,-1/3,-1/3]
@@ -82,23 +82,26 @@ def blocks : Fin 3 → Matrix (Fin 2) (Fin 2) ℝ :=
 theorem green_charpoly :
     green.charpoly = (X^2 + 4*X - 1) * (X^2 + X - 1)^2 := by
   let A := Matrix.reindex flatEquiv.symm flatEquiv.symm green
-  let P : Matrix BlockIndex BlockIndex ℝ := fun i j => basisMatrix (flat i) (flat j)
-  let Q : Matrix BlockIndex BlockIndex ℝ := fun i j => inverseBasis (flat i) (flat j)
+  let P : Matrix BlockIndex BlockIndex ℝ := Matrix.of fun i j => basisMatrix (flat i) (flat j)
+  let Q : Matrix BlockIndex BlockIndex ℝ := Matrix.of fun i j => inverseBasis (flat i) (flat j)
   let D := Matrix.blockDiagonal blocks
   have hpq : P * Q = 1 := by
     ext ⟨i,k⟩ ⟨j,l⟩
+    simp only [Matrix.mul_apply]
     fin_cases i <;> fin_cases k <;> fin_cases j <;> fin_cases l <;>
       norm_num [P, Q, basisMatrix, inverseBasis, flat, Matrix.mul_apply,
         Fintype.sum_prod_type, Fin.sum_univ_succ, Matrix.one_apply, Prod.ext_iff,
         Fin.ext_iff]
   have hqp : Q * P = 1 := by
     ext ⟨i,k⟩ ⟨j,l⟩
+    simp only [Matrix.mul_apply]
     fin_cases i <;> fin_cases k <;> fin_cases j <;> fin_cases l <;>
       norm_num [P, Q, basisMatrix, inverseBasis, flat, Matrix.mul_apply,
         Fintype.sum_prod_type, Fin.sum_univ_succ, Matrix.one_apply, Prod.ext_iff,
         Fin.ext_iff]
   have hAP : A * P = P * D := by
     ext ⟨i,k⟩ ⟨j,l⟩
+    simp only [Matrix.mul_apply]
     fin_cases i <;> fin_cases k <;> fin_cases j <;> fin_cases l <;>
       norm_num [A, P, D, blocks, basisMatrix, flat, flatEquiv, green,
         Matrix.reindex_apply, Matrix.mul_apply, Matrix.blockDiagonal_apply,
@@ -121,7 +124,7 @@ theorem green_charpoly :
         Matrix.blockDiagonal_apply, Prod.ext_iff, Fin.ext_iff]
   rw [hcp, Matrix.charpoly, hch, Matrix.det_blockDiagonal]
   norm_num [blocks, Fin.prod_univ_succ, Matrix.charpoly, Matrix.charmatrix,
-    Matrix.det_fin_two, Matrix.diagonal, Fin.ext_iff]
+    Matrix.det_fin_two, Matrix.diagonal, Fin.ext_iff, Polynomial.C_ofNat]
   <;> ring
 
 noncomputable def largest : ℝ := (Real.sqrt 5 - 1) / 2

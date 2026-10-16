@@ -22,8 +22,19 @@ jobs:
           echo "$HOME/.elan/bin" >> $GITHUB_PATH
       - name: Get pinned Mathlib cache
         run: lake exe cache get
+      - name: Restore statement build cache
+        uses: actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9
+        with:
+          path: .lake/build
+          key: round2-imports-${{ hashFiles('lean-toolchain', 'lake-manifest.json') }}-${{ github.sha }}
+          restore-keys: round2-imports-${{ hashFiles('lean-toolchain', 'lake-manifest.json') }}-
       - name: Build exact statement imports
         run: lake --wfail build FormalConjectures.WrittenOnTheWallII.GraphConjecture404To407 FormalConjectures.WrittenOnTheWallII.GraphConjecture362 FormalConjectures.Arxiv.«2601.18071».GreenEigenvalue
+      - name: Save checked statement imports
+        uses: actions/cache/save@55cc8345863c7cc4c66a329aec7e433d2d1c52a9
+        with:
+          path: .lake/build
+          key: round2-imports-${{ hashFiles('lean-toolchain', 'lake-manifest.json') }}-${{ github.sha }}
       - name: Check corona proof and axioms
         if: always()
         run: lake env lean -DwarningAsError=true Proofs/CoronaTwoDominatingProof.lean

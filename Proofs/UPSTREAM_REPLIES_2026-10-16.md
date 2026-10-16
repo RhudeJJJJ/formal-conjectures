@@ -4,7 +4,7 @@ The connected integration returned HTTP 403 when posting a PR comment. These tex
 
 ## PR #7392
 
-A further proof update: commit `af293d9255197e6eca76d9069c5d5e4ac34707c4` proves `small_orders` directly in the submitted file. For m=2 or m=3, every member containing a fixed element must be its singleton, so its incidence degree is at most one; degrees two and three are impossible. The local Lean 4.33.1 axiom audit reports only `propext`, `Classical.choice`, and `Quot.sound`. The upstream full-project build and script tests passed in [run 38922500197](https://github.com/google-deepmind/formal-conjectures/actions/runs/38922500197). The exact-import CI audit is recorded separately.
+A further proof update: commit `af293d9255197e6eca76d9069c5d5e4ac34707c4` proves `small_orders` directly in the submitted file. For m=2 or m=3, every member containing a fixed element must be its singleton, so its incidence degree is at most one; degrees two and three are impossible. The local Lean 4.33.1 axiom audit reports only `propext`, `Classical.choice`, and `Quot.sound`. The upstream full-project build and script tests passed in [run 38922500197](https://github.com/google-deepmind/formal-conjectures/actions/runs/38922500197). The [exact-import CI audit](https://github.com/RhudeJJJJ/formal-conjectures/actions/runs/38923916541) also passed and reports only those standard axioms.
 
 The two attainment results remain externally certified. The two universal upper bounds still have Lean placeholders and rely on the written manuscript. The earlier clarification of the public source, existing Paper directory, solved status and author-posed origin remains unchanged. No claim about arbitrary degree or Frankl's conjecture is added.
 

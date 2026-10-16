@@ -1,0 +1,28 @@
+name: Scoped proof round 2
+on:
+  push:
+    branches: [proof-round2-20261016]
+  workflow_dispatch:
+concurrency:
+  group: proof-round2
+  cancel-in-progress: true
+permissions:
+  contents: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          persist-credentials: false
+      - name: Install pinned Lean
+        run: |
+          curl -sSfL https://github.com/leanprover/elan/releases/download/v1.4.2/elan-x86_64-unknown-linux-gnu.tar.gz | tar xz
+          ./elan-init -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> $GITHUB_PATH
+      - name: Get pinned Mathlib cache
+        run: lake exe cache get
+      - name: Build exact statement imports
+        run: lake --wfail build FormalConjectures.WrittenOnTheWallII.GraphConjecture404To407 FormalConjectures.WrittenOnTheWallII.GraphConjecture362 FormalConjectures.Knill.GreenEigenvalue
+      - name: Check corona proof and axioms
+        run: lake env lean -DwarningAsError=true Proofs/CoronaTwoDominatingProof.lean

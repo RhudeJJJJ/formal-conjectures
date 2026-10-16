@@ -24,7 +24,8 @@ jobs:
         run: lake exe cache get
       - name: Build changed statements
         run: lake --wfail build FormalConjectures.CoxDuffy.OrientedChromatic FormalConjectures.Gebendorfer.RegularMissCodes
-      - name: Check complete proofs and axioms
-        run: |
-          lake env lean -DwarningAsError=true Proofs/CoxDuffyProof.lean
-          lake env lean -DwarningAsError=true Proofs/RegularMissCodesProof.lean
+      - name: Check Cox-Duffy proof and axioms
+        run: lake env lean -DwarningAsError=true Proofs/CoxDuffyProof.lean
+      - name: Check miss-code proofs and axioms
+        if: always()
+        run: lake env lean -DwarningAsError=true Proofs/RegularMissCodesProof.lean

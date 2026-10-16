@@ -1,5 +1,8 @@
 import FormalConjectures.Gebendorfer.RegularMissCodes
 
+/-! Explicit regular miss-codes attaining four and six members at every order
+at least four, following Proposition 2.2 of the cited manuscript. -/
+
 namespace RegularMissCodesProof
 open Finset Gebendorfer.RegularMissCodes
 
@@ -166,4 +169,3 @@ end RegularMissCodesProof
 
 #print axioms RegularMissCodesProof.degree_two_attained
 #print axioms RegularMissCodesProof.degree_three_attained
-

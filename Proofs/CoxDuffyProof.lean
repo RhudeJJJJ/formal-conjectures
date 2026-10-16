@@ -1,5 +1,8 @@
 import FormalConjectures.CoxDuffy.OrientedChromatic
 
+/-! Complete disproof under the literal published obstruction convention.
+The coloring equivalence works at every color count. -/
+
 namespace CoxDuffyProof
 open CoxDuffy
 
@@ -7,6 +10,9 @@ def crossArcGraph : SimpleGraph (Fin 4) where
   Adj u v := crossArcExample u v = true ∨ crossArcExample v u = true
   symm := ⟨fun _ _ h => h.elim Or.inr Or.inl⟩
   loopless := ⟨by decide⟩
+
+instance : DecidableRel crossArcGraph.Adj := fun u v =>
+  inferInstanceAs (Decidable (crossArcExample u v = true ∨ crossArcExample v u = true))
 
 theorem crossArcExample_coloring_iff {k : ℕ} (c : Fin 4 → Fin k) :
     IsOrientedColoring crossArcExample c ↔
@@ -47,4 +53,3 @@ theorem conjecture12 : ¬ ∀ (n : ℕ) (A : Fin n → Fin n → Bool), IsOrient
 end CoxDuffyProof
 
 #print axioms CoxDuffyProof.conjecture12
-

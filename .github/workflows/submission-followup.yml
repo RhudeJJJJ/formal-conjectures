@@ -1,0 +1,25 @@
+name: Submission follow-up proof audit
+on:
+  push:
+    branches: [submission-review-20261016]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  small-orders:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          persist-credentials: false
+      - name: Install pinned Lean
+        run: |
+          curl -sSfL https://github.com/leanprover/elan/releases/download/v1.4.2/elan-x86_64-unknown-linux-gnu.tar.gz | tar xz
+          ./elan-init -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> $GITHUB_PATH
+      - name: Download matching Mathlib cache
+        run: lake exe cache get
+      - name: Build changed statement
+        run: lake --wfail build FormalConjectures.Paper.RegularMissCodes
+      - name: Check exact theorem type and axioms
+        run: lake env lean -DwarningAsError=true Proofs/RegularMissCodesSmallOrdersAudit.lean

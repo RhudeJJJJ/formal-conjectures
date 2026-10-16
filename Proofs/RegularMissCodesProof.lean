@@ -5,6 +5,7 @@ at least four, following Proposition 2.2 of the cited manuscript. -/
 
 namespace RegularMissCodesProof
 open Finset Gebendorfer.RegularMissCodes
+set_option maxRecDepth 2000
 
 def point (m : ℕ) (hm : 5 ≤ m) (i : Fin 4) : Fin m := ⟨i.val, by omega⟩
 
@@ -31,7 +32,7 @@ theorem sourceSet_injective (m : ℕ) (hm : 5 ≤ m) :
   have h2 := congrArg (fun S => point m hm 2 ∈ S) h
   have h3 := congrArg (fun S => point m hm 3 ∈ S) h
   fin_cases i <;> fin_cases j <;>
-    norm_num [sourceSet, point, Fin.ext_iff] at h0 h1 h2 h3 ⊢
+    norm_num [sourceSet, point, Fin.ext_iff] at *
 
 theorem sourceSet_card (m : ℕ) (hm : 5 ≤ m) (i : Fin 6) :
     (sourceSet m hm i).card =
@@ -41,11 +42,12 @@ theorem sourceSet_card (m : ℕ) (hm : 5 ≤ m) (i : Fin 6) :
 
 theorem sourceSet_size (m : ℕ) (hm : 5 ≤ m) (i : Fin 6) :
     (sourceSet m hm i).Nonempty ∧ (sourceSet m hm i).card ≤ m - 2 := by
-  have hc := sourceSet_card m hm i
   constructor
   · apply Finset.card_pos.mp
-    fin_cases i <;> norm_num at hc <;> omega
-  · fin_cases i <;> norm_num at hc <;> omega
+    rw [sourceSet_card]
+    split_ifs <;> omega
+  · rw [sourceSet_card]
+    split_ifs <;> omega
 
 theorem family_card (m : ℕ) (hm : 5 ≤ m) (third : Bool) :
     (family m hm third).card = if third then 6 else 4 := by
@@ -56,17 +58,18 @@ theorem family_degree (m : ℕ) (hm : 5 ≤ m) (third : Bool) (v : Fin m) :
     ((family m hm third).filter fun S => v ∈ S).card = if third then 3 else 2 := by
   rw [family, Finset.filter_image,
     Finset.card_image_of_injective _ (sourceSet_injective m hm)]
+  have hu : (univ : Finset (Fin 6)) = {0, 1, 2, 3, 4, 5} := by decide
   by_cases h0 : v = point m hm 0
   · subst v
-    cases third <;> norm_num [indices, sourceSet, point, Fin.ext_iff, Finset.univ_fin_succ]
+    cases third <;> norm_num [indices, sourceSet, point, Fin.ext_iff, hu, Finset.filter_insert]
   by_cases h1 : v = point m hm 1
   · subst v
-    cases third <;> norm_num [indices, sourceSet, point, Fin.ext_iff, Finset.univ_fin_succ]
+    cases third <;> norm_num [indices, sourceSet, point, Fin.ext_iff, hu, Finset.filter_insert]
   by_cases h2 : v = point m hm 2
   · subst v
-    cases third <;> norm_num [indices, sourceSet, point, Fin.ext_iff, Finset.univ_fin_succ]
+    cases third <;> norm_num [indices, sourceSet, point, Fin.ext_iff, hu, Finset.filter_insert]
   cases third <;>
-    simp [indices, sourceSet, Finset.univ_fin_succ, h0, h1, h2]
+    simp [indices, sourceSet, hu, Finset.filter_insert, h0, h1, h2]
 
 set_option maxHeartbeats 0 in
 theorem family_closed (m : ℕ) (hm : 5 ≤ m) (third : Bool)
@@ -78,64 +81,54 @@ theorem family_closed (m : ℕ) (hm : 5 ≤ m) (third : Bool)
   let U := sourceSet m hm i ∪ sourceSet m hm j
   change U ∈ family m hm third
   change U.card ≤ m - 2 at hc
-  cases third <;> fin_cases i <;> fin_cases j <;> norm_num [indices] at hi hj
+  cases third <;> fin_cases i <;> fin_cases j <;> norm_num [indices] at *
   all_goals
     first
     | (apply Finset.mem_image.mpr
        refine ⟨0, by norm_num [indices], ?_⟩
        ext v
-       simp [U, sourceSet, point, Fin.ext_iff]
-       omega)
+       simp [U, sourceSet, point, Fin.ext_iff] <;> omega)
     | (apply Finset.mem_image.mpr
        refine ⟨1, by norm_num [indices], ?_⟩
        ext v
-       simp [U, sourceSet, point, Fin.ext_iff]
-       omega)
+       simp [U, sourceSet, point, Fin.ext_iff] <;> omega)
     | (apply Finset.mem_image.mpr
        refine ⟨2, by norm_num [indices], ?_⟩
        ext v
-       simp [U, sourceSet, point, Fin.ext_iff]
-       omega)
+       simp [U, sourceSet, point, Fin.ext_iff] <;> omega)
     | (apply Finset.mem_image.mpr
        refine ⟨3, by norm_num [indices], ?_⟩
        ext v
-       simp [U, sourceSet, point, Fin.ext_iff]
-       omega)
+       simp [U, sourceSet, point, Fin.ext_iff] <;> omega)
     | (apply Finset.mem_image.mpr
        refine ⟨4, by norm_num [indices], ?_⟩
        ext v
-       simp [U, sourceSet, point, Fin.ext_iff]
-       omega)
+       simp [U, sourceSet, point, Fin.ext_iff] <;> omega)
     | (apply Finset.mem_image.mpr
        refine ⟨5, by norm_num [indices], ?_⟩
        ext v
-       simp [U, sourceSet, point, Fin.ext_iff]
-       omega)
+       simp [U, sourceSet, point, Fin.ext_iff] <;> omega)
     | (have hu : U = (univ \ {point m hm 0} : Finset (Fin m)) := by
          ext v
-         simp [U, sourceSet, point, Fin.ext_iff]
-         omega
+         simp [U, sourceSet, point, Fin.ext_iff] <;> omega
        rw [hu] at hc
        norm_num [Finset.card_sdiff] at hc
        omega)
     | (have hu : U = (univ \ {point m hm 1} : Finset (Fin m)) := by
          ext v
-         simp [U, sourceSet, point, Fin.ext_iff]
-         omega
+         simp [U, sourceSet, point, Fin.ext_iff] <;> omega
        rw [hu] at hc
        norm_num [Finset.card_sdiff] at hc
        omega)
     | (have hu : U = (univ \ {point m hm 2} : Finset (Fin m)) := by
          ext v
-         simp [U, sourceSet, point, Fin.ext_iff]
-         omega
+         simp [U, sourceSet, point, Fin.ext_iff] <;> omega
        rw [hu] at hc
        norm_num [Finset.card_sdiff] at hc
        omega)
     | (have hu : U = (univ : Finset (Fin m)) := by
          ext v
-         simp [U, sourceSet, point, Fin.ext_iff]
-         omega
+         simp [U, sourceSet, point, Fin.ext_iff] <;> omega
        rw [hu] at hc
        norm_num [Finset.card_sdiff] at hc
        omega)
@@ -153,7 +146,7 @@ theorem degree_two_attained (m : ℕ) (hm : 4 ≤ m) :
     ∃ F : Finset (Finset (Fin m)), IsMissCode m 2 F ∧ F.card = 4 := by
   by_cases h4 : m = 4
   · subst m
-    exact ⟨{{0, 1}, {1, 2}, {2, 3}, {3, 0}}, by decide, by decide⟩
+    exact ⟨{{0, 1}, {1, 2}, {2, 3}, {3, 0}}, by unfold IsMissCode; decide, by decide⟩
   have h5 : 5 ≤ m := by omega
   exact ⟨family m h5 false, family_isMissCode m h5 false, family_card m h5 false⟩
 
@@ -161,7 +154,7 @@ theorem degree_three_attained (m : ℕ) (hm : 4 ≤ m) :
     ∃ F : Finset (Finset (Fin m)), IsMissCode m 3 F ∧ F.card = 6 := by
   by_cases h4 : m = 4
   · subst m
-    exact ⟨{{0, 1}, {0, 2}, {0, 3}, {1, 2}, {1, 3}, {2, 3}}, by decide, by decide⟩
+    exact ⟨{{0, 1}, {0, 2}, {0, 3}, {1, 2}, {1, 3}, {2, 3}}, by unfold IsMissCode; decide, by decide⟩
   have h5 : 5 ≤ m := by omega
   exact ⟨family m h5 true, family_isMissCode m h5 true, family_card m h5 true⟩
 

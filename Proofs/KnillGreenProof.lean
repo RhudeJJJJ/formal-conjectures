@@ -1,4 +1,4 @@
-import FormalConjectures.Knill.GreenEigenvalue
+import FormalConjectures.Arxiv.«2601.18071».GreenEigenvalue
 
 /-! A six-face counterexample to Knill's Question B: the unfilled triangle.
 It is the C3 member explicitly described in Gebendorfer's odd-cycle manuscript,
@@ -10,7 +10,7 @@ OpenAI Codex assisted with formalization and validation. -/
 namespace KnillGreenProof
 open Matrix Polynomial Knill.GreenEigenvalue
 set_option maxRecDepth 100000
-set_option maxHeartbeats 1000000
+set_option maxHeartbeats 300000
 
 def triangle : PreAbstractSimplicialComplex (Fin 3) where
   faces := {s | s.Nonempty ∧ s.card ≤ 2}

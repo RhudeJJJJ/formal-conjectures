@@ -4,7 +4,7 @@ on:
     branches: [proof-round2-20261016]
   workflow_dispatch:
 concurrency:
-  group: proof-round2
+  group: proof-round2-${{ github.sha }}
   cancel-in-progress: true
 permissions:
   contents: read
@@ -23,7 +23,7 @@ jobs:
       - name: Get pinned Mathlib cache
         run: lake exe cache get
       - name: Build exact statement imports
-        run: lake --wfail build FormalConjectures.WrittenOnTheWallII.GraphConjecture404To407 FormalConjectures.WrittenOnTheWallII.GraphConjecture362 FormalConjectures.Knill.GreenEigenvalue
+        run: lake --wfail build FormalConjectures.WrittenOnTheWallII.GraphConjecture404To407 FormalConjectures.WrittenOnTheWallII.GraphConjecture362 FormalConjectures.Arxiv.«2601.18071».GreenEigenvalue
       - name: Check corona proof and axioms
         if: always()
         run: lake env lean -DwarningAsError=true Proofs/CoronaTwoDominatingProof.lean

@@ -111,6 +111,29 @@ theorem green_intertwines : greenIndexed * basisIndexed = basisIndexed * diagona
     norm_num [greenIndexed, basisIndexed, diagonalBlocks, blocks, basisMatrix,
       flat, green, Matrix.blockDiagonal_apply, Fin.ext_iff]
 
+theorem blocks_charpoly (k : Fin 3) : (blocks k).charpoly =
+    if k = 0 then (X^2 + 4*X - 1 : ℝ[X]) else X^2 + X - 1 := by
+  by_cases h : k = 0
+  · simp only [blocks, if_pos h]
+    norm_num [Matrix.charpoly, Matrix.charmatrix, Matrix.det_fin_two,
+      Matrix.diagonal, Fin.ext_iff, Polynomial.C_ofNat]
+    ring
+  · simp only [blocks, if_neg h]
+    norm_num [Matrix.charpoly, Matrix.charmatrix, Matrix.det_fin_two,
+      Matrix.diagonal, Fin.ext_iff, Polynomial.C_ofNat]
+    ring
+
+theorem blocks_charmatrix : diagonalBlocks.charmatrix =
+    Matrix.blockDiagonal (fun k => (blocks k).charmatrix) := by
+  change (Matrix.blockDiagonal blocks).charmatrix = _
+  ext ⟨i,k⟩ ⟨j,l⟩
+  by_cases h : k = l
+  · subst l
+    simp [Matrix.charmatrix_apply, Matrix.diagonal, Matrix.blockDiagonal_apply,
+      Prod.ext_iff]
+  · simp [Matrix.charmatrix_apply, Matrix.diagonal, Matrix.blockDiagonal_apply,
+      Prod.ext_iff, h]
+
 theorem green_charpoly :
     green.charpoly = (X^2 + 4*X - 1) * (X^2 + X - 1)^2 := by
   have hsim : greenIndexed = basisIndexed * diagonalBlocks * inverseIndexed := by
@@ -128,15 +151,10 @@ theorem green_charpoly :
       _ = (inverseIndexed * (basisIndexed * diagonalBlocks)).charpoly :=
         Matrix.charpoly_mul_comm _ _
       _ = diagonalBlocks.charpoly := by rw [← mul_assoc, basis_left_inverse, one_mul]
-  have hch : diagonalBlocks.charmatrix =
-      Matrix.blockDiagonal (fun k => (blocks k).charmatrix) := by
-    ext ⟨i,k⟩ ⟨j,l⟩
-    fin_cases i <;> fin_cases k <;> fin_cases j <;> fin_cases l <;>
-      norm_num [diagonalBlocks, blocks, Matrix.charmatrix, Matrix.diagonal,
-        Matrix.blockDiagonal_apply, Prod.ext_iff, Fin.ext_iff]
-  rw [hcp, Matrix.charpoly, hch, Matrix.det_blockDiagonal]
-  norm_num [blocks, Fin.prod_univ_succ, Matrix.charpoly, Matrix.charmatrix,
-    Matrix.det_fin_two, Matrix.diagonal, Fin.ext_iff, Polynomial.C_ofNat]
+  rw [hcp, Matrix.charpoly, blocks_charmatrix, Matrix.det_blockDiagonal]
+  change (∏ k : Fin 3, (blocks k).charpoly) = _
+  simp_rw [blocks_charpoly]
+  norm_num [Fin.prod_univ_succ, Fin.ext_iff]
   ring
 
 noncomputable def largest : ℝ := (Real.sqrt 5 - 1) / 2

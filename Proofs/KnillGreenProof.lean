@@ -79,49 +79,60 @@ noncomputable def inverseBasis : Matrix (Fin 6) (Fin 6) ℝ :=
 def blocks : Fin 3 → Matrix (Fin 2) (Fin 2) ℝ :=
   ![!![-3,2;2,-1], !![0,1;1,-1], !![0,1;1,-1]]
 
+def greenIndexed : Matrix BlockIndex BlockIndex ℝ :=
+  Matrix.of fun i j => green (flat i) (flat j)
+
+def basisIndexed : Matrix BlockIndex BlockIndex ℝ :=
+  Matrix.of fun i j => basisMatrix (flat i) (flat j)
+
+noncomputable def inverseIndexed : Matrix BlockIndex BlockIndex ℝ :=
+  Matrix.of fun i j => inverseBasis (flat i) (flat j)
+
+def diagonalBlocks : Matrix BlockIndex BlockIndex ℝ := Matrix.blockDiagonal blocks
+
+theorem basis_right_inverse : basisIndexed * inverseIndexed = 1 := by
+  ext ⟨i,k⟩ ⟨j,l⟩
+  simp only [Matrix.mul_apply, Fintype.sum_prod_type, Fin.sum_univ_succ]
+  fin_cases i <;> fin_cases k <;> fin_cases j <;> fin_cases l <;>
+    norm_num [basisIndexed, inverseIndexed, basisMatrix, inverseBasis, flat,
+      Matrix.one_apply, Prod.ext_iff, Fin.ext_iff]
+
+theorem basis_left_inverse : inverseIndexed * basisIndexed = 1 := by
+  ext ⟨i,k⟩ ⟨j,l⟩
+  simp only [Matrix.mul_apply, Fintype.sum_prod_type, Fin.sum_univ_succ]
+  fin_cases i <;> fin_cases k <;> fin_cases j <;> fin_cases l <;>
+    norm_num [basisIndexed, inverseIndexed, basisMatrix, inverseBasis, flat,
+      Matrix.one_apply, Prod.ext_iff, Fin.ext_iff]
+
+theorem green_intertwines : greenIndexed * basisIndexed = basisIndexed * diagonalBlocks := by
+  ext ⟨i,k⟩ ⟨j,l⟩
+  simp only [Matrix.mul_apply, Fintype.sum_prod_type, Fin.sum_univ_succ]
+  fin_cases i <;> fin_cases k <;> fin_cases j <;> fin_cases l <;>
+    norm_num [greenIndexed, basisIndexed, diagonalBlocks, blocks, basisMatrix,
+      flat, green, Matrix.blockDiagonal_apply, Fin.ext_iff]
+
 theorem green_charpoly :
     green.charpoly = (X^2 + 4*X - 1) * (X^2 + X - 1)^2 := by
-  let A := Matrix.reindex flatEquiv.symm flatEquiv.symm green
-  let P : Matrix BlockIndex BlockIndex ℝ := Matrix.of fun i j => basisMatrix (flat i) (flat j)
-  let Q : Matrix BlockIndex BlockIndex ℝ := Matrix.of fun i j => inverseBasis (flat i) (flat j)
-  let D := Matrix.blockDiagonal blocks
-  have hA (i j : BlockIndex) : A i j = green (flat i) (flat j) := rfl
-  have hpq : P * Q = 1 := by
-    ext ⟨i,k⟩ ⟨j,l⟩
-    simp only [Matrix.mul_apply]
-    fin_cases i <;> fin_cases k <;> fin_cases j <;> fin_cases l <;>
-      norm_num [P, Q, basisMatrix, inverseBasis, flat, Matrix.mul_apply,
-        Fintype.sum_prod_type, Fin.sum_univ_succ, Matrix.one_apply, Prod.ext_iff,
-        Fin.ext_iff]
-  have hqp : Q * P = 1 := by
-    ext ⟨i,k⟩ ⟨j,l⟩
-    simp only [Matrix.mul_apply]
-    fin_cases i <;> fin_cases k <;> fin_cases j <;> fin_cases l <;>
-      norm_num [P, Q, basisMatrix, inverseBasis, flat, Matrix.mul_apply,
-        Fintype.sum_prod_type, Fin.sum_univ_succ, Matrix.one_apply, Prod.ext_iff,
-        Fin.ext_iff]
-  have hAP : A * P = P * D := by
-    ext ⟨i,k⟩ ⟨j,l⟩
-    simp only [Matrix.mul_apply, hA]
-    fin_cases i <;> fin_cases k <;> fin_cases j <;> fin_cases l <;>
-      norm_num [P, D, blocks, basisMatrix, flat, green,
-        Matrix.mul_apply, Matrix.blockDiagonal_apply,
-        Fintype.sum_prod_type, Fin.sum_univ_succ, Fin.ext_iff]
-  have hsim : A = P * D * Q := by
+  have hsim : greenIndexed = basisIndexed * diagonalBlocks * inverseIndexed := by
     calc
-      A = A * (P * Q) := by rw [hpq, mul_one]
-      _ = (A * P) * Q := (mul_assoc _ _ _).symm
-      _ = P * D * Q := by rw [hAP]
-  have hcp : green.charpoly = D.charpoly := by
+      greenIndexed = greenIndexed * (basisIndexed * inverseIndexed) := by
+        rw [basis_right_inverse, mul_one]
+      _ = (greenIndexed * basisIndexed) * inverseIndexed := (mul_assoc _ _ _).symm
+      _ = basisIndexed * diagonalBlocks * inverseIndexed := by rw [green_intertwines]
+  have hcp : green.charpoly = diagonalBlocks.charpoly := by
     calc
-      green.charpoly = A.charpoly := (Matrix.charpoly_reindex flatEquiv.symm green).symm
-      _ = (P * D * Q).charpoly := congrArg Matrix.charpoly hsim
-      _ = (Q * (P * D)).charpoly := Matrix.charpoly_mul_comm _ _
-      _ = D.charpoly := by rw [← mul_assoc, hqp, one_mul]
-  have hch : D.charmatrix = Matrix.blockDiagonal (fun k => (blocks k).charmatrix) := by
+      green.charpoly = greenIndexed.charpoly :=
+        (Matrix.charpoly_reindex flatEquiv.symm green).symm
+      _ = (basisIndexed * diagonalBlocks * inverseIndexed).charpoly :=
+        congrArg Matrix.charpoly hsim
+      _ = (inverseIndexed * (basisIndexed * diagonalBlocks)).charpoly :=
+        Matrix.charpoly_mul_comm _ _
+      _ = diagonalBlocks.charpoly := by rw [← mul_assoc, basis_left_inverse, one_mul]
+  have hch : diagonalBlocks.charmatrix =
+      Matrix.blockDiagonal (fun k => (blocks k).charmatrix) := by
     ext ⟨i,k⟩ ⟨j,l⟩
     fin_cases i <;> fin_cases k <;> fin_cases j <;> fin_cases l <;>
-      norm_num [D, blocks, Matrix.charmatrix, Matrix.diagonal,
+      norm_num [diagonalBlocks, blocks, Matrix.charmatrix, Matrix.diagonal,
         Matrix.blockDiagonal_apply, Prod.ext_iff, Fin.ext_iff]
   rw [hcp, Matrix.charpoly, hch, Matrix.det_blockDiagonal]
   norm_num [blocks, Fin.prod_univ_succ, Matrix.charpoly, Matrix.charmatrix,

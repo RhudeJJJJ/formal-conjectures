@@ -66,8 +66,8 @@ lemma cycle_three_false {V : Type*} (G : SimpleGraph V) (a b c : V)
     (eab : G.Adj a b) (ebc : G.Adj b c) (eca : G.Adj c a) : ¬ G.IsAcyclic := by
   intro h
   apply h (.cons eab (.cons ebc (.cons eca .nil)))
-  simp [Walk.cons_isCycle_iff, Walk.isPath_def, Sym2.eq_iff,
-    hab, hab.symm, hac, hac.symm, hbc, hbc.symm]
+  simp [Walk.cons_isCycle_iff, Walk.isPath_def,
+    hab, hab.symm, hac, hac.symm, hbc]
 
 lemma cycle_four_false {V : Type*} (G : SimpleGraph V) (a b c d : V)
     (hab : a ≠ b) (hac : a ≠ c) (had : a ≠ d)
@@ -76,9 +76,9 @@ lemma cycle_four_false {V : Type*} (G : SimpleGraph V) (a b c d : V)
     ¬ G.IsAcyclic := by
   intro h
   apply h (.cons eab (.cons ebc (.cons ecd (.cons eda .nil))))
-  simp [Walk.cons_isCycle_iff, Walk.isPath_def, Sym2.eq_iff,
+  simp [Walk.cons_isCycle_iff, Walk.isPath_def,
     hab, hab.symm, hac, hac.symm, had, had.symm,
-    hbc, hbc.symm, hbd, hbd.symm, hcd, hcd.symm]
+    hbc, hbd, hcd]
 
 def forbiddenCycles : Finset (Finset (Fin 14)) :=
   {{0, 1, 2, 3}, {4, 5, 6, 7}, {8, 9, 10, 11}, {0, 3, 12}, {4, 7, 12}, {4, 7, 13}, {4, 12, 13}, {7, 12, 13}, {8, 11, 13}}
@@ -105,22 +105,22 @@ lemma forbidden_cycle_not_acyclic (A C : Finset (Fin 14))
     let d : (A : Set (Fin 14)) := ⟨3, hsub (by decide)⟩
     apply cycle_four_false _ a b c d
     · intro he
-      have := congrArg Subtype.val he
+      have := congrArg (fun v : (A : Set (Fin 14)) => v.val.val) he
       norm_num [a, b, c, d] at this
     · intro he
-      have := congrArg Subtype.val he
+      have := congrArg (fun v : (A : Set (Fin 14)) => v.val.val) he
       norm_num [a, b, c, d] at this
     · intro he
-      have := congrArg Subtype.val he
+      have := congrArg (fun v : (A : Set (Fin 14)) => v.val.val) he
       norm_num [a, b, c, d] at this
     · intro he
-      have := congrArg Subtype.val he
+      have := congrArg (fun v : (A : Set (Fin 14)) => v.val.val) he
       norm_num [a, b, c, d] at this
     · intro he
-      have := congrArg Subtype.val he
+      have := congrArg (fun v : (A : Set (Fin 14)) => v.val.val) he
       norm_num [a, b, c, d] at this
     · intro he
-      have := congrArg Subtype.val he
+      have := congrArg (fun v : (A : Set (Fin 14)) => v.val.val) he
       norm_num [a, b, c, d] at this
     · change witnessGraph.Adj 0 1
       decide
@@ -136,22 +136,22 @@ lemma forbidden_cycle_not_acyclic (A C : Finset (Fin 14))
     let d : (A : Set (Fin 14)) := ⟨7, hsub (by decide)⟩
     apply cycle_four_false _ a b c d
     · intro he
-      have := congrArg Subtype.val he
+      have := congrArg (fun v : (A : Set (Fin 14)) => v.val.val) he
       norm_num [a, b, c, d] at this
     · intro he
-      have := congrArg Subtype.val he
+      have := congrArg (fun v : (A : Set (Fin 14)) => v.val.val) he
       norm_num [a, b, c, d] at this
     · intro he
-      have := congrArg Subtype.val he
+      have := congrArg (fun v : (A : Set (Fin 14)) => v.val.val) he
       norm_num [a, b, c, d] at this
     · intro he
-      have := congrArg Subtype.val he
+      have := congrArg (fun v : (A : Set (Fin 14)) => v.val.val) he
       norm_num [a, b, c, d] at this
     · intro he
-      have := congrArg Subtype.val he
+      have := congrArg (fun v : (A : Set (Fin 14)) => v.val.val) he
       norm_num [a, b, c, d] at this
     · intro he
-      have := congrArg Subtype.val he
+      have := congrArg (fun v : (A : Set (Fin 14)) => v.val.val) he
       norm_num [a, b, c, d] at this
     · change witnessGraph.Adj 4 5
       decide
@@ -167,22 +167,22 @@ lemma forbidden_cycle_not_acyclic (A C : Finset (Fin 14))
     let d : (A : Set (Fin 14)) := ⟨11, hsub (by decide)⟩
     apply cycle_four_false _ a b c d
     · intro he
-      have := congrArg Subtype.val he
+      have := congrArg (fun v : (A : Set (Fin 14)) => v.val.val) he
       norm_num [a, b, c, d] at this
     · intro he
-      have := congrArg Subtype.val he
+      have := congrArg (fun v : (A : Set (Fin 14)) => v.val.val) he
       norm_num [a, b, c, d] at this
     · intro he
-      have := congrArg Subtype.val he
+      have := congrArg (fun v : (A : Set (Fin 14)) => v.val.val) he
       norm_num [a, b, c, d] at this
     · intro he
-      have := congrArg Subtype.val he
+      have := congrArg (fun v : (A : Set (Fin 14)) => v.val.val) he
       norm_num [a, b, c, d] at this
     · intro he
-      have := congrArg Subtype.val he
+      have := congrArg (fun v : (A : Set (Fin 14)) => v.val.val) he
       norm_num [a, b, c, d] at this
     · intro he
-      have := congrArg Subtype.val he
+      have := congrArg (fun v : (A : Set (Fin 14)) => v.val.val) he
       norm_num [a, b, c, d] at this
     · change witnessGraph.Adj 8 9
       decide
@@ -197,13 +197,13 @@ lemma forbidden_cycle_not_acyclic (A C : Finset (Fin 14))
     let c : (A : Set (Fin 14)) := ⟨12, hsub (by decide)⟩
     apply cycle_three_false _ a b c
     · intro he
-      have := congrArg Subtype.val he
+      have := congrArg (fun v : (A : Set (Fin 14)) => v.val.val) he
       norm_num [a, b, c] at this
     · intro he
-      have := congrArg Subtype.val he
+      have := congrArg (fun v : (A : Set (Fin 14)) => v.val.val) he
       norm_num [a, b, c] at this
     · intro he
-      have := congrArg Subtype.val he
+      have := congrArg (fun v : (A : Set (Fin 14)) => v.val.val) he
       norm_num [a, b, c] at this
     · change witnessGraph.Adj 0 3
       decide
@@ -216,13 +216,13 @@ lemma forbidden_cycle_not_acyclic (A C : Finset (Fin 14))
     let c : (A : Set (Fin 14)) := ⟨12, hsub (by decide)⟩
     apply cycle_three_false _ a b c
     · intro he
-      have := congrArg Subtype.val he
+      have := congrArg (fun v : (A : Set (Fin 14)) => v.val.val) he
       norm_num [a, b, c] at this
     · intro he
-      have := congrArg Subtype.val he
+      have := congrArg (fun v : (A : Set (Fin 14)) => v.val.val) he
       norm_num [a, b, c] at this
     · intro he
-      have := congrArg Subtype.val he
+      have := congrArg (fun v : (A : Set (Fin 14)) => v.val.val) he
       norm_num [a, b, c] at this
     · change witnessGraph.Adj 4 7
       decide
@@ -235,13 +235,13 @@ lemma forbidden_cycle_not_acyclic (A C : Finset (Fin 14))
     let c : (A : Set (Fin 14)) := ⟨13, hsub (by decide)⟩
     apply cycle_three_false _ a b c
     · intro he
-      have := congrArg Subtype.val he
+      have := congrArg (fun v : (A : Set (Fin 14)) => v.val.val) he
       norm_num [a, b, c] at this
     · intro he
-      have := congrArg Subtype.val he
+      have := congrArg (fun v : (A : Set (Fin 14)) => v.val.val) he
       norm_num [a, b, c] at this
     · intro he
-      have := congrArg Subtype.val he
+      have := congrArg (fun v : (A : Set (Fin 14)) => v.val.val) he
       norm_num [a, b, c] at this
     · change witnessGraph.Adj 4 7
       decide
@@ -254,13 +254,13 @@ lemma forbidden_cycle_not_acyclic (A C : Finset (Fin 14))
     let c : (A : Set (Fin 14)) := ⟨13, hsub (by decide)⟩
     apply cycle_three_false _ a b c
     · intro he
-      have := congrArg Subtype.val he
+      have := congrArg (fun v : (A : Set (Fin 14)) => v.val.val) he
       norm_num [a, b, c] at this
     · intro he
-      have := congrArg Subtype.val he
+      have := congrArg (fun v : (A : Set (Fin 14)) => v.val.val) he
       norm_num [a, b, c] at this
     · intro he
-      have := congrArg Subtype.val he
+      have := congrArg (fun v : (A : Set (Fin 14)) => v.val.val) he
       norm_num [a, b, c] at this
     · change witnessGraph.Adj 4 12
       decide
@@ -273,13 +273,13 @@ lemma forbidden_cycle_not_acyclic (A C : Finset (Fin 14))
     let c : (A : Set (Fin 14)) := ⟨13, hsub (by decide)⟩
     apply cycle_three_false _ a b c
     · intro he
-      have := congrArg Subtype.val he
+      have := congrArg (fun v : (A : Set (Fin 14)) => v.val.val) he
       norm_num [a, b, c] at this
     · intro he
-      have := congrArg Subtype.val he
+      have := congrArg (fun v : (A : Set (Fin 14)) => v.val.val) he
       norm_num [a, b, c] at this
     · intro he
-      have := congrArg Subtype.val he
+      have := congrArg (fun v : (A : Set (Fin 14)) => v.val.val) he
       norm_num [a, b, c] at this
     · change witnessGraph.Adj 7 12
       decide
@@ -292,13 +292,13 @@ lemma forbidden_cycle_not_acyclic (A C : Finset (Fin 14))
     let c : (A : Set (Fin 14)) := ⟨13, hsub (by decide)⟩
     apply cycle_three_false _ a b c
     · intro he
-      have := congrArg Subtype.val he
+      have := congrArg (fun v : (A : Set (Fin 14)) => v.val.val) he
       norm_num [a, b, c] at this
     · intro he
-      have := congrArg Subtype.val he
+      have := congrArg (fun v : (A : Set (Fin 14)) => v.val.val) he
       norm_num [a, b, c] at this
     · intro he
-      have := congrArg Subtype.val he
+      have := congrArg (fun v : (A : Set (Fin 14)) => v.val.val) he
       norm_num [a, b, c] at this
     · change witnessGraph.Adj 8 11
       decide

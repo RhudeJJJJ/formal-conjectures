@@ -20,6 +20,14 @@ def triangle : PreAbstractSimplicialComplex (Fin 3) where
     intro t hts ht
     exact ⟨ht, (Finset.card_le_card hts).trans hs.2⟩
 
+/-- Every pair of vertices is a face (an edge when distinct), certifying the
+connected one-skeleton of the witness without a disconnected-domain shortcut. -/
+theorem triangle_all_pairs (u v : Fin 3) :
+    ({u, v} : Finset (Fin 3)) ∈ triangle := by
+  change (Finset.Nonempty ({u, v} : Finset (Fin 3))) ∧
+    ({u, v} : Finset (Fin 3)).card ≤ 2
+  fin_cases u <;> fin_cases v <;> decide
+
 def faceSet : Fin 6 → Finset (Fin 3) := ![{0}, {1}, {2}, {0, 1}, {1, 2}, {0, 2}]
 abbrev Face := {s : Finset (Fin 3) // s ∈ triangle}
 
@@ -229,7 +237,9 @@ theorem questionB : ¬ ∀ (n : ℕ) (K : PreAbstractSimplicialComplex (Fin n)),
 
 end KnillGreenProof
 
+#print axioms KnillGreenProof.triangle_all_pairs
 #print axioms KnillGreenProof.actual_connection
 #print axioms KnillGreenProof.green_charpoly
 #print axioms KnillGreenProof.green_multiplicity
 #print axioms KnillGreenProof.questionB
+

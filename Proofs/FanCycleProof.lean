@@ -34,22 +34,14 @@ theorem actual_polynomial :
   unfold cyclePolynomial
   trans ∑ σ ∈ supportedPermutations, (X : ℝ[X]) ^ countCycles σ
   · apply Finset.sum_congr
-    · ext σ
-      constructor
-      · intro hs
-        apply Finset.mem_filter.mpr
-        refine ⟨Finset.mem_univ _, ?_⟩
-        exact (Finset.mem_filter.mp hs).2
-      · intro hs
-        apply Finset.mem_filter.mpr
-        refine ⟨Finset.mem_univ _, ?_⟩
-        exact (Finset.mem_filter.mp hs).2
+    · unfold supportedPermutations supported
+      congr 1
     · intro σ _
       exact congrArg (fun n => (X : ℝ[X]) ^ n) (hcc σ)
   · ext k
     have hcoeff : (∑ σ ∈ supportedPermutations, (X : ℝ[X]) ^ countCycles σ).coeff k =
         (coefficientCount k : ℝ) := by
-      simp only [Polynomial.coeff_sum, Polynomial.coeff_X_pow,
+      simp only [Polynomial.finsetSum_coeff, Polynomial.coeff_X_pow,
         coefficientCount, Finset.card_filter]
       push_cast
       apply Finset.sum_congr rfl

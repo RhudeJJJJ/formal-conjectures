@@ -97,14 +97,14 @@ theorem basis_left_inverse : inverseBasis * basis = 1 := by
 
 theorem cycle_intertwines : cycleMatrix * basis = basis * cycleDiagonal := by
   unfold cycleDiagonal
-  rw [Matrix.mul_diagonal]
   ext i j
+  rw [Matrix.mul_diagonal]
   fin_cases i <;> fin_cases j <;>
     norm_num [Matrix.mul_apply, Fin.sum_univ_succ, basis, cycleMatrix]
 theorem complete_intertwines : completeMatrix * basis = basis * completeDiagonal := by
   unfold completeDiagonal
-  rw [Matrix.mul_diagonal]
   ext i j
+  rw [Matrix.mul_diagonal]
   fin_cases i <;> fin_cases j <;>
     norm_num [Matrix.mul_apply, Fin.sum_univ_succ, basis, completeMatrix]
 
@@ -122,11 +122,11 @@ theorem charpoly_of_intertwines (A D : Matrix (Fin 4) (Fin 4) ℝ)
 
 theorem cycle_charpoly : cycleMatrix.charpoly = X^2 * (X - 2) * (X + 2) := by
   rw [charpoly_of_intertwines _ _ cycle_intertwines]
-  norm_num [cycleDiagonal, Matrix.charpoly_diagonal, Fin.prod_univ_succ]
+  norm_num [cycleDiagonal, Matrix.charpoly_diagonal, Fin.prod_univ_succ, Polynomial.C_ofNat]
   <;> ring
 theorem complete_charpoly : completeMatrix.charpoly = (X - 3) * (X + 1)^3 := by
   rw [charpoly_of_intertwines _ _ complete_intertwines]
-  norm_num [completeDiagonal, Matrix.charpoly_diagonal, Fin.prod_univ_succ]
+  norm_num [completeDiagonal, Matrix.charpoly_diagonal, Fin.prod_univ_succ, Polynomial.C_ofNat]
   <;> ring
 
 theorem cycle_spectral_sup : sSup (spectrum ℝ cycleMatrix) = 2 := by

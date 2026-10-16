@@ -10,13 +10,12 @@ OpenAI Codex assisted with formalization. -/
 namespace DegreeDispersionProof
 open SimpleGraph Finset Clark.DegreeDispersion
 
-variable {V : Type*} [Fintype V] [DecidableEq V]
+variable {V : Type*} [Fintype V]
     (G : SimpleGraph V) [DecidableRel G.Adj]
 
 noncomputable def slack : ℝ :=
   ∑ v : V, ((G.degree v : ℝ) - 1) * ((Fintype.card V : ℝ) - 1 - G.degree v)
 
-omit [DecidableEq V] in
 theorem degree_sum : (∑ v : V, (G.degree v : ℝ)) = 2 * (G.edgeFinset.card : ℝ) := by
   exact_mod_cast G.sum_degrees_eq_twice_card_edges
 
@@ -46,7 +45,6 @@ theorem defect_identity (hn : 2 ≤ Fintype.card V) (hm : 0 < G.edgeFinset.card)
   field_simp [hn', hm']
   ring
 
-omit [DecidableEq V] in
 theorem degree_positive (hG : G.Connected) (hn : 2 ≤ Fintype.card V) (v : V) :
     1 ≤ G.degree v := by
   have : Nontrivial V := Fintype.one_lt_card_iff_nontrivial.mp (by omega)
@@ -74,7 +72,7 @@ theorem slack_nonneg (hG : G.Connected) (hn : 2 ≤ Fintype.card V) : 0 ≤ slac
     linarith
   exact mul_nonneg hp' hb'
 
-theorem conjecture2 (hG : G.Connected) (hn : 2 ≤ Fintype.card V) :
+theorem conjecture2 [DecidableEq V] (hG : G.Connected) (hn : 2 ≤ Fintype.card V) :
     dispersion G ≤ ((Fintype.card V : ℝ) - 2)^2 /
       (4 * ((Fintype.card V : ℝ) - 1)) := by
   have hid := defect_identity G hn (edge_positive G hG hn)
@@ -106,12 +104,16 @@ theorem equality_data (hG : G.Connected) (hn : 2 ≤ Fintype.card V)
   have hsecond0 : (Fintype.card V : ℝ)^2 *
       ((G.edgeFinset.card : ℝ) - Fintype.card V + 1)^2 /
       (4 * (G.edgeFinset.card : ℝ)^2 * ((Fintype.card V : ℝ) - 1)) = 0 := by linarith
+  have hd1 : 4 * (G.edgeFinset.card : ℝ)^2 ≠ 0 :=
+    mul_ne_zero (by norm_num) (pow_ne_zero 2 (ne_of_gt hmr))
+  have hd2 : 4 * (G.edgeFinset.card : ℝ)^2 * ((Fintype.card V : ℝ) - 1) ≠ 0 :=
+    mul_ne_zero hd1 (ne_of_gt hn1)
   have hs0 : slack G = 0 := by
-    have hprod := (div_eq_zero_iff.mp hfirst0).resolve_right (by positivity)
+    have hprod := (div_eq_zero_iff.mp hfirst0).resolve_right hd1
     exact (mul_eq_zero.mp hprod).resolve_left (ne_of_gt hnp)
   have hsquare : ((G.edgeFinset.card : ℝ) - Fintype.card V + 1)^2 = 0 := by
-    have hprod := (div_eq_zero_iff.mp hsecond0).resolve_right (by positivity)
-    exact (mul_eq_zero.mp hprod).resolve_left (by positivity)
+    have hprod := (div_eq_zero_iff.mp hsecond0).resolve_right hd2
+    exact (mul_eq_zero.mp hprod).resolve_left (pow_ne_zero 2 (ne_of_gt hnp))
   have hm0 := (sq_eq_zero_iff).mp hsquare
   exact ⟨by linarith, hs0⟩
 
@@ -132,6 +134,8 @@ theorem equality_degree_endpoints (hG : G.Connected) (hn : 2 ≤ Fintype.card V)
   · exact Or.inl (by linarith)
   · exact Or.inr (by linarith)
 
+variable [DecidableEq V]
+
 theorem equality_isStar (hG : G.Connected) (hn : 2 ≤ Fintype.card V)
     (he : dispersion G = ((Fintype.card V : ℝ) - 2)^2 /
       (4 * ((Fintype.card V : ℝ) - 1))) : IsStar G := by
@@ -142,7 +146,7 @@ theorem equality_isStar (hG : G.Connected) (hn : 2 ≤ Fintype.card V)
     by_cases hx : ∃ c : V, (G.degree c : ℝ) ≠ 1
     · obtain ⟨c, hc⟩ := hx
       exact ⟨c, (hends c).resolve_left hc⟩
-    · push_neg at hx
+    · push Not at hx
       have hsum := degree_sum G
       simp only [hx, sum_const, card_univ, nsmul_eq_mul, mul_one] at hsum
       have hn2 : (Fintype.card V : ℝ) = 2 := by linarith
@@ -152,11 +156,11 @@ theorem equality_isStar (hG : G.Connected) (hn : 2 ≤ Fintype.card V)
   obtain ⟨c, hc⟩ := hex
   have hcNat : G.degree c = Fintype.card V - 1 := by
     have hcast : ((Fintype.card V - 1 : ℕ) : ℝ) = (Fintype.card V : ℝ) - 1 := by
-      exact Nat.cast_sub (by omega)
+      exact Nat.cast_sub (by omega : 1 ≤ Fintype.card V)
     exact_mod_cast hc.trans hcast.symm
   have hmNat : G.edgeFinset.card = Fintype.card V - 1 := by
     have hcast : ((Fintype.card V - 1 : ℕ) : ℝ) = (Fintype.card V : ℝ) - 1 := by
-      exact Nat.cast_sub (by omega)
+      exact Nat.cast_sub (by omega : 1 ≤ Fintype.card V)
     exact_mod_cast hm.trans hcast.symm
   have hu : G.IsUniversal c := (G.degree_eq_card_sub_one c).mp hcNat
   have hinc : G.incidenceFinset c = G.edgeFinset := by
@@ -198,7 +202,7 @@ theorem star_data (hn : 2 ≤ Fintype.card V) (hs : IsStar G) :
           intro v hv
           exact hother v (ne_of_mem_erase hv)
         _ = Fintype.card V - 1 := by simp
-    have ht := sum_erase_add (s := (univ : Finset V)) (f := G.degree) (a := c) (mem_univ c)
+    have ht := sum_erase_add (s := (univ : Finset V)) (f := fun v => G.degree v) (a := c) (mem_univ c)
     rw [hrest, hd] at ht
     omega
   have hm : G.edgeFinset.card = Fintype.card V - 1 := by

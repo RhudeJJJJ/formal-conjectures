@@ -21,6 +21,7 @@ jobs:
         run: |
           lake exe cache get
           lake build FormalConjectures.WrittenOnTheWallII.GraphConjecture412d
-          lake env lean -DwarningAsError=true Proofs/WOWII412dCore.lean
-          lake env lean -DwarningAsError=true Proofs/WOWII412dAssembly.lean
+          mkdir -p .lake/build/lib/lean/Proofs
+          lake env lean -DwarningAsError=true -o .lake/build/lib/lean/Proofs/WOWII412dCore.olean Proofs/WOWII412dCore.lean
+          lake env lean -DwarningAsError=true -o .lake/build/lib/lean/Proofs/WOWII412dAssembly.olean Proofs/WOWII412dAssembly.lean
           lake env lean -DwarningAsError=true Proofs/WOWII412dBridge.lean

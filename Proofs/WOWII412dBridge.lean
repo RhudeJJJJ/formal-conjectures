@@ -104,6 +104,32 @@ theorem criticalUnion_eq_corona (hb : G.IsBipartite) :
     _ = WrittenOnTheWallII.GraphConjecture412d.criticalUnion G :=
       criticalUnion_eq G
 
+/-- Exact final assembly, conditional only on the missing core/excluded
+total-cover construction. The empty-core branch is already proved.
+The remaining combinatorial task is to construct D from strict Hall
+for every nonempty core, not to bridge the critical definitions. -/
+theorem strengthened_of_core_cover (hb : G.IsBipartite)
+    (hni : ∀ v, ∃ w, G.Adj v w)
+    (hcover : WOWII412dCore.core G = ∅ ∨
+      ∃ D : Finset V,
+        (∀ v ∈ WOWII412dCore.core G ∪
+            (univ \\ WOWII412dCore.corona G),
+          ∃ w ∈ D, G.Adj v w) ∧
+        D.card ≤ (WOWII412dCore.core G).card) :
+    G.totalDominationNumber ≤
+        (WrittenOnTheWallII.GraphConjecture412d.corona G).card ∧
+      WrittenOnTheWallII.GraphConjecture412d.corona G =
+        WrittenOnTheWallII.GraphConjecture412d.criticalUnion G := by
+  have heq := criticalUnion_eq_corona G hb
+  have hbound : G.totalDominationNumber ≤
+      (WOWII412dCore.criticalUnion G).card := by
+    rcases hcover with hempty | ⟨D, hD, hc⟩
+    · exact WOWII412dCore.total_bound_of_core_empty G hb hni hempty
+    · exact WOWII412dCore.total_bound_of_core_cover G hb D hD hc
+  rw [criticalUnion_eq G] at hbound
+  rw [← heq] at hbound
+  exact ⟨hbound, heq⟩
+
 end WOWII412dBridge
 
 #print axioms WOWII412dBridge.criticalUnion_eq_corona

@@ -1,0 +1,26 @@
+# Copyright 2026 The Formal Conjectures Authors.
+# Licensed under the Apache License, Version 2.0.
+name: WOWII412d exact-import bridge audit
+on:
+  push:
+    branches:
+      - wowii412d-critical-bridge-20261018
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  lean-proof:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: leanprover/lean-action@v1
+        with:
+          build: false
+          test: false
+      - name: Build exact statement and proof dependencies
+        run: |
+          lake exe cache get
+          lake build FormalConjectures.WrittenOnTheWallII.GraphConjecture412d
+          lake env lean -DwarningAsError=true Proofs/WOWII412dCore.lean
+          lake env lean -DwarningAsError=true Proofs/WOWII412dAssembly.lean
+          lake env lean -DwarningAsError=true Proofs/WOWII412dBridge.lean

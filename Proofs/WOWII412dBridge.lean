@@ -104,6 +104,19 @@ theorem criticalUnion_eq_corona (hb : G.IsBipartite) :
     _ = WrittenOnTheWallII.GraphConjecture412d.criticalUnion G :=
       criticalUnion_eq G
 
+/-- The strict Hall surplus for the excluded vertices, now stated
+against the actual corona definition of the submitted conjecture.
+This is the hypothesis needed for the forest selection step. -/
+theorem strictHall_excluded (hb : G.IsBipartite) (X : Finset V)
+    (hX : X ⊆ univ \\ WrittenOnTheWallII.GraphConjecture412d.corona G)
+    (hne : X.Nonempty) :
+    X.card + 1 ≤
+      (WOWII412dCore.neighbors G X ∩ WOWII412dCore.core G).card := by
+  obtain ⟨A, hA⟩ := WOWII412dCore.exists_bipartition G hb
+  apply WOWII412dCore.strict_neighbors G A X hA
+  · simpa only [← corona_eq G] using hX
+  · exact hne
+
 /-- Exact final assembly, conditional only on the missing core/excluded
 total-cover construction. The empty-core branch is already proved.
 The remaining combinatorial task is to construct D from strict Hall
@@ -134,3 +147,4 @@ end WOWII412dBridge
 
 #print axioms WOWII412dBridge.criticalUnion_eq_corona
 #print axioms WOWII412dBridge.strengthened_of_core_cover
+#print axioms WOWII412dBridge.strictHall_excluded

@@ -205,6 +205,12 @@ jobs:
           python3 scripts/lake-build-wrapper.py /tmp/build_summary_problems.json lake --wfail build
           rm -f FormalConjectures/All.lean
 
+      - name: Check WOWII412d core, assembly and critical-union bridge
+        run: |
+          lake env lean -DwarningAsError=true Proofs/WOWII412dCore.lean
+          lake env lean -DwarningAsError=true Proofs/WOWII412dAssembly.lean
+          lake env lean -DwarningAsError=true Proofs/WOWII412dBridge.lean
+
       - name: End Lean problem matcher
         if: always() && steps.mode.outputs.website_only != 'true'
         uses: leanprover-community/gh-problem-matcher-wrap@65a654fcdf7b64ff7633bc7a558f7b46d59a27bf # master

@@ -43,7 +43,7 @@ lemma forest_budget (hT : T.IsTree) (D I : Finset V)
     obtain ⟨v, _, rfl⟩ := mem_image.mp he
     simpa using hf v
   have hdis : Disjoint E (innerEdges T X) := by
-    apply disjoint_left.mpr
+    apply Finset.disjoint_left.mpr
     intro e he heX
     obtain ⟨v, _, rfl⟩ := mem_image.mp he
     have hfv := (mem_innerEdges T X v (f v)).mp heX
@@ -55,7 +55,7 @@ lemma forest_budget (hT : T.IsTree) (D I : Finset V)
     · exact (mem_filter.mp he).1
   have hbound := card_le_card hsub
   rw [card_union_of_disjoint hdis, hEcard] at hbound
-  have hXI : Disjoint X I := disjoint_left.mpr fun v hx hi => hX v hx (hID hi)
+  have hXI : Disjoint X I := Finset.disjoint_left.mpr fun v hx hi => hX v hx (hID hi)
   have hHcard : H.card = X.card + I.card := card_union_of_disjoint hXI
   have htotal : X.card + D.card = Fintype.card V := by
     dsimp [X]
@@ -98,9 +98,9 @@ lemma two_neighbors (v p u : V) (hv : T.degree v = 2)
   have hsub : {p,u} ⊆ T.neighborFinset v := by
     intro w hw
     rcases mem_insert.mp hw with h | h
-    · subst w; exact mem_neighborFinset.mpr hvp
+    · subst w; exact (mem_neighborFinset T v p).mpr hvp
     · have : w = u := mem_singleton.mp h
-      subst w; exact mem_neighborFinset.mpr hvu
+      subst w; exact (mem_neighborFinset T v u).mpr hvu
   have heq : T.neighborFinset v = {p,u} := by
     apply Eq.symm
     apply eq_of_subset_of_card_le hsub
@@ -177,17 +177,17 @@ lemma bad_support_card (D : Finset V) (hD : T.IsTotalDominating (D : Set V)) :
   classical
   have hex := bad_support_selected_leaf T D hD
   choose f hf using fun v : {v // v ∈ badSupports T D} => hex v v.property
-  apply card_le_card_of_injOn (fun v => if hv : v ∈ badSupports T D then f ⟨v,hv⟩ else v)
-  · intro v hv
-    simp only [dif_pos hv]
-    exact mem_filter.mpr ⟨(hf ⟨v,hv⟩).1, (hf ⟨v,hv⟩).2.1⟩
-  · intro v hv u hu he
-    simp only [dif_pos hv, dif_pos hu] at he
-    have hp := (hf ⟨v,hv⟩).2.1
-    obtain ⟨q, _, hq⟩ := degree_eq_one_iff_existsUnique_adj.mp hp
-    have hvp := (hf ⟨v,hv⟩).2.2.symm
-    have hup : T.Adj (f ⟨v,hv⟩) u := by rw [he]; exact (hf ⟨u,hu⟩).2.2.symm
-    exact (hq v hvp).trans (hq u hup).symm
+  let g : {v // v ∈ badSupports T D} →
+      {p // p ∈ ((D \ isolatedSupports T).filter fun p => T.degree p = 1)} :=
+    fun v => ⟨f v, mem_filter.mpr ⟨(hf v).1, (hf v).2.1⟩⟩
+  apply card_le_card_of_injective (f := g)
+  intro v u he
+  have he' : f v = f u := congrArg Subtype.val he
+  have hp := (hf v).2.1
+  obtain ⟨q, _, hq⟩ := degree_eq_one_iff_existsUnique_adj.mp hp
+  have hvp := (hf v).2.2.symm
+  have hup : T.Adj (f v) u.val := by rw [he']; exact (hf u).2.2.symm
+  exact Subtype.ext ((hq v.val hvp).trans (hq u.val hup).symm)
 
 lemma charge_edges (D : Finset V) (hD : T.IsTotalDominating (D : Set V)) :
     (innerEdges T (degreeTwo T)).card ≤
@@ -255,9 +255,8 @@ lemma charge_edges (D : Finset V) (hD : T.IsTotalDominating (D : Set V)) :
   have hc := (card_le_card hcover).trans ((card_union_le _ _).trans
     (Nat.add_le_add_right (card_union_le _ _) _))
   have hb := bad_support_card T D hD
-  change (badSupports T D).card ≤ _ at hb
+  change B.card ≤ _ at hb
   change (innerEdges T (degreeTwo T)).card ≤ 2 * A.card + _ + M.card
-  dsimp [B] at hB
   omega
 
 lemma degree_two_budget (hT : T.IsTree) (D : Finset V)
@@ -274,7 +273,7 @@ lemma degree_two_budget (hT : T.IsTree) (D : Finset V)
     rw [card_sdiff_of_subset hID]
     exact Nat.sub_add_cancel (card_le_card hID)
   have hdis : Disjoint A L := by
-    apply disjoint_left.mpr
+    apply Finset.disjoint_left.mpr
     intro v hvA hvL
     have h2 := (mem_filter.mp (mem_inter.mp hvA).2).2
     have h1 := (mem_filter.mp hvL).2
@@ -293,6 +292,7 @@ lemma degree_two_budget (hT : T.IsTree) (D : Finset V)
   change (innerEdges T (degreeTwo T)).card + 1 ≤ 3 * (D.card - I.card)
   omega
 
+omit [DecidableEq V] [DecidableRel T.Adj] in
 lemma minimum_total_set (hT : T.IsTree) (horder : 2 < Fintype.card V) :
     ∃ D : Finset V, T.IsTotalDominating (D : Set V) ∧ D.card = T.totalDominationNumber := by
   classical

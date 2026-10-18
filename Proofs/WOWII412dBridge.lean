@@ -13,6 +13,8 @@ The total domination inequality remains a separate, open obligation.
 
 namespace WOWII412dBridge
 
+set_option linter.unusedSectionVars false
+
 open Finset SimpleGraph
 variable {V : Type*} [Fintype V] [DecidableEq V] (G : SimpleGraph V)
 
@@ -108,7 +110,7 @@ theorem criticalUnion_eq_corona (hb : G.IsBipartite) :
 against the actual corona definition of the submitted conjecture.
 This is the hypothesis needed for the forest selection step. -/
 theorem strictHall_excluded (hb : G.IsBipartite) (X : Finset V)
-    (hX : X ⊆ univ \\ WrittenOnTheWallII.GraphConjecture412d.corona G)
+    (hX : X ⊆ univ \ WrittenOnTheWallII.GraphConjecture412d.corona G)
     (hne : X.Nonempty) :
     X.card + 1 ≤
       (WOWII412dCore.neighbors G X ∩ WOWII412dCore.core G).card := by
@@ -126,7 +128,7 @@ theorem strengthened_of_core_cover (hb : G.IsBipartite)
     (hcover : WOWII412dCore.core G = ∅ ∨
       ∃ D : Finset V,
         (∀ v ∈ WOWII412dCore.core G ∪
-            (univ \\ WOWII412dCore.corona G),
+            (univ \ WOWII412dCore.corona G),
           ∃ w ∈ D, G.Adj v w) ∧
         D.card ≤ (WOWII412dCore.core G).card) :
     G.totalDominationNumber ≤

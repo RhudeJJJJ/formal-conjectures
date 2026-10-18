@@ -20,10 +20,10 @@ def innerEdges (S : Finset V) : Finset (Sym2 V) :=
 lemma forest_budget (hT : T.IsTree) (D I : Finset V)
     (hD : T.IsTotalDominating (D : Set V)) (hID : I ⊆ D)
     (hI : T.IsIndepSet (I : Set V)) :
-    I.card + (innerEdges T (univ \\ D)).card + 1 ≤ D.card := by
+    I.card + (innerEdges T (univ \ D)).card + 1 ≤ D.card := by
   classical
   choose f hfD hf using hD
-  let X := univ \\ D
+  let X := univ \ D
   let H := X ∪ I
   let E := H.image fun v => s(v, f v)
   have hX : ∀ v ∈ X, v ∉ D := by simp [X]
@@ -62,9 +62,10 @@ lemma forest_budget (hT : T.IsTree) (D I : Finset V)
     rw [card_sdiff_of_subset (subset_univ D), card_univ]
     exact Nat.sub_add_cancel (card_le_univ D)
   have htree := hT.card_edgeFinset
-  dsimp [X] at hbound hHcard
+  dsimp [X] at hbound hHcard htotal
   omega
 
+omit [DecidableEq V] in
 lemma supports_forced (D : Finset V) (hD : T.IsTotalDominating (D : Set V)) :
     supports T ⊆ D := by
   intro s hs
@@ -74,14 +75,32 @@ lemma supports_forced (D : Finset V) (hD : T.IsTotalDominating (D : Set V)) :
   have hws : w = s := (huniq w hpw).trans (huniq s hsp.symm).symm
   exact hws ▸ hwD
 
+omit [DecidableEq V] in
+lemma mem_isolated (v : V) : v ∈ isolatedSupports T ↔
+    v ∈ supports T ∧ ∀ w ∈ supports T, ¬ T.Adj v w := by
+  simp only [isolatedSupports, mem_filter]
+
+omit [DecidableEq V] in
+lemma isolated_subset : isolatedSupports T ⊆ supports T := by
+  intro v hv
+  exact ((mem_isolated T v).mp hv).1
+
+omit [DecidableEq V] in
 lemma isolated_independent : T.IsIndepSet (isolatedSupports T : Set V) := by
   intro u hu v hv _ huv
-  exact (mem_filter.mp hu).2 v (mem_filter.mp hv).1 huv
+  exact ((mem_isolated T u).mp hu).2 v ((mem_isolated T v).mp hv).1 huv
 
+omit [DecidableEq V] in
 lemma two_neighbors (v p u : V) (hv : T.degree v = 2)
     (hvp : T.Adj v p) (hvu : T.Adj v u) (hpu : p ≠ u) :
     ∀ w, T.Adj v w → w = p ∨ w = u := by
-  have hsub : {p,u} ⊆ T.neighborFinset v := by simp [hvp, hvu]
+  classical
+  have hsub : {p,u} ⊆ T.neighborFinset v := by
+    intro w hw
+    rcases mem_insert.mp hw with h | h
+    · subst w; exact mem_neighborFinset.mpr hvp
+    · have : w = u := mem_singleton.mp h
+      subst w; exact mem_neighborFinset.mpr hvu
   have heq : T.neighborFinset v = {p,u} := by
     apply Eq.symm
     apply eq_of_subset_of_card_le hsub
@@ -90,6 +109,7 @@ lemma two_neighbors (v p u : V) (hv : T.degree v = 2)
   have : w ∈ ({p,u} : Finset V) := heq ▸ (mem_neighborFinset T v w).mpr hw
   simpa using this
 
+omit [DecidableEq V] in
 lemma leaf_not_support (v p : V) (hv : T.degree v = 2)
     (hp : T.degree p = 1) (hvp : T.Adj v p) : p ∉ supports T := by
   intro hs
@@ -137,23 +157,23 @@ def badSupports (D : Finset V) : Finset V :=
 
 lemma bad_support_selected_leaf (D : Finset V)
     (hD : T.IsTotalDominating (D : Set V)) (v : V) (hv : v ∈ badSupports T D) :
-    ∃ p ∈ D \\ isolatedSupports T, T.degree p = 1 ∧ T.Adj v p := by
+    ∃ p ∈ D \ isolatedSupports T, T.degree p = 1 ∧ T.Adj v p := by
   have hv' := mem_filter.mp hv
   have hvI := (mem_inter.mp hv'.1).1
   have hv2 : T.degree v = 2 := (mem_filter.mp (mem_inter.mp hv'.1).2).2
   obtain ⟨u, hu, hvu, huD⟩ := hv'.2
   have hu2 : T.degree u = 2 := (mem_filter.mp hu).2
-  obtain ⟨p, hp, hvp⟩ := (mem_filter.mp (mem_filter.mp hvI).1).2
+  obtain ⟨p, hp, hvp⟩ := (mem_filter.mp ((mem_isolated T v).mp hvI).1).2
   have hpu : p ≠ u := by intro h; rw [h, hu2] at hp; omega
   obtain ⟨w, hwD, hvw⟩ := hD v
   have hwp : w = p := (two_neighbors T v p u hv2 hvp hvu hpu w hvw).resolve_right
     (fun hwu => huD (hwu ▸ hwD))
   subst w
   refine ⟨p, mem_sdiff.mpr ⟨hwD, ?_⟩, hp, hvp⟩
-  exact fun hpi => leaf_not_support T v p hv2 hp hvp (mem_filter.mp hpi).1
+  exact fun hpi => leaf_not_support T v p hv2 hp hvp ((mem_isolated T p).mp hpi).1
 
 lemma bad_support_card (D : Finset V) (hD : T.IsTotalDominating (D : Set V)) :
-    (badSupports T D).card ≤ ((D \\ isolatedSupports T).filter fun p => T.degree p = 1).card := by
+    (badSupports T D).card ≤ ((D \ isolatedSupports T).filter fun p => T.degree p = 1).card := by
   classical
   have hex := bad_support_selected_leaf T D hD
   choose f hf using fun v : {v // v ∈ badSupports T D} => hex v v.property
@@ -171,15 +191,15 @@ lemma bad_support_card (D : Finset V) (hD : T.IsTotalDominating (D : Set V)) :
 
 lemma charge_edges (D : Finset V) (hD : T.IsTotalDominating (D : Set V)) :
     (innerEdges T (degreeTwo T)).card ≤
-      2 * ((D \\ isolatedSupports T) ∩ degreeTwo T).card +
-        ((D \\ isolatedSupports T).filter fun p => T.degree p = 1).card +
-          (innerEdges T (degreeTwo T \\ D)).card := by
+      2 * ((D \ isolatedSupports T) ∩ degreeTwo T).card +
+        ((D \ isolatedSupports T).filter fun p => T.degree p = 1).card +
+          (innerEdges T (degreeTwo T \ D)).card := by
   classical
   let I := isolatedSupports T
-  let A := (D \\ I) ∩ degreeTwo T
+  let A := (D \ I) ∩ degreeTwo T
   let B := badSupports T D
-  let M := innerEdges T (degreeTwo T \\ D)
-  have hID : I ⊆ D := (filter_subset _ _).trans (supports_forced T D hD)
+  let M := innerEdges T (degreeTwo T \ D)
+  have hID : I ⊆ D := (isolated_subset T).trans (supports_forced T D hD)
   have hind := isolated_independent T
   have hcover : innerEdges T (degreeTwo T) ⊆
       (A.biUnion (incidentTwo T) ∪ B.biUnion (incidentTwo T)) ∪ M := by
@@ -214,7 +234,7 @@ lemma charge_edges (D : Finset V) (hD : T.IsTotalDominating (D : Set V)) :
         have hvB : v ∈ B := mem_filter.mpr ⟨mem_inter.mpr ⟨hvI, hv2⟩,
           ⟨u, hu2, huv.symm, huD⟩⟩
         exact mem_union_left _ (mem_union_right _ (mem_biUnion.mpr ⟨v, hvB, hincv⟩))
-      · exact mem_union_right _ ((mem_innerEdges T (degreeTwo T \\ D) u v).mpr
+      · exact mem_union_right _ ((mem_innerEdges T (degreeTwo T \ D) u v).mpr
           ⟨huv, mem_sdiff.mpr ⟨hu2,huD⟩, mem_sdiff.mpr ⟨hv2,hvD⟩⟩)
   have hA : (A.biUnion (incidentTwo T)).card ≤ 2 * A.card := by
     calc
@@ -230,7 +250,7 @@ lemma charge_edges (D : Finset V) (hD : T.IsTotalDominating (D : Set V)) :
         intro v hv
         have hvI := (mem_inter.mp (mem_filter.mp hv).1).1
         have hv2 := (mem_filter.mp (mem_inter.mp (mem_filter.mp hv).1).2).2
-        exact incidentTwo_support_le T v hv2 (mem_filter.mp hvI).1
+        exact incidentTwo_support_le T v hv2 ((mem_isolated T v).mp hvI).1
       _ = _ := by simp
   have hc := (card_le_card hcover).trans ((card_union_le _ _).trans
     (Nat.add_le_add_right (card_union_le _ _) _))
@@ -245,10 +265,10 @@ lemma degree_two_budget (hT : T.IsTree) (D : Finset V)
     edgesOn T (degreeTwo T) + 1 ≤ 3 * (D.card - (isolatedSupports T).card) := by
   classical
   let I := isolatedSupports T
-  let R := D \\ I
+  let R := D \ I
   let A := R ∩ degreeTwo T
   let L := R.filter fun p => T.degree p = 1
-  have hID : I ⊆ D := (filter_subset _ _).trans (supports_forced T D hD)
+  have hID : I ⊆ D := (isolated_subset T).trans (supports_forced T D hD)
   have hR : R.card + I.card = D.card := by
     dsimp [R]
     rw [card_sdiff_of_subset hID]
@@ -262,7 +282,7 @@ lemma degree_two_budget (hT : T.IsTree) (D : Finset V)
   have hsub : A ∪ L ⊆ R := union_subset (inter_subset_left) (filter_subset _ _)
   have hsum := card_le_card hsub
   rw [card_union_of_disjoint hdis] at hsum
-  have hmono : innerEdges T (degreeTwo T \\ D) ⊆ innerEdges T (univ \\ D) := by
+  have hmono : innerEdges T (degreeTwo T \ D) ⊆ innerEdges T (univ \ D) := by
     intro e he
     obtain ⟨heT, heS⟩ := mem_filter.mp he
     exact mem_filter.mpr ⟨heT, heS.trans (sdiff_subset_sdiff (subset_univ _) Subset.rfl)⟩
@@ -276,13 +296,13 @@ lemma degree_two_budget (hT : T.IsTree) (D : Finset V)
 lemma minimum_total_set (hT : T.IsTree) (horder : 2 < Fintype.card V) :
     ∃ D : Finset V, T.IsTotalDominating (D : Set V) ∧ D.card = T.totalDominationNumber := by
   classical
-  letI : Nontrivial V := Fintype.one_lt_card_iff_nontrivial.mp (by omega)
-  have huniv : T.IsTotalDominating (univ : Set V) := by
+  let : Nontrivial V := Fintype.one_lt_card_iff_nontrivial.mp (by omega)
+  have huniv : T.IsTotalDominating (Set.univ : Set V) := by
     intro v
     obtain ⟨w, hvw⟩ := hT.preconnected.exists_adj_of_nontrivial v
     exact ⟨w, Set.mem_univ w, hvw⟩
   have hn : {n | ∃ D : Finset V, T.IsTotalNDominatingSet n D}.Nonempty :=
-    ⟨Fintype.card V, univ, ⟨huniv, card_univ⟩⟩
+    ⟨Fintype.card V, univ, ⟨by simpa using huniv, card_univ⟩⟩
   obtain ⟨D, hD⟩ := csInf_mem hn
   exact ⟨D, hD.isTotalDominating, hD.card_eq⟩
 
@@ -293,7 +313,7 @@ theorem conjecture365_strengthened (T : SimpleGraph V) [DecidableRel T.Adj]
   obtain ⟨D,hD,hcard⟩ := minimum_total_set T hT horder
   have hb := degree_two_budget T hT D hD
   have hi : (isolatedSupports T).card ≤ D.card :=
-    card_le_card ((filter_subset _ _).trans (supports_forced T D hD))
+    card_le_card ((isolated_subset T).trans (supports_forced T D hD))
   rw [hcard] at hb hi
   omega
 
@@ -304,7 +324,7 @@ theorem conjecture365 (T : SimpleGraph V) [DecidableRel T.Adj]
   obtain ⟨D,hD,hcard⟩ := minimum_total_set T hT horder
   have hb := degree_two_budget T hT D hD
   have hi : (isolatedSupports T).card ≤ D.card :=
-    card_le_card ((filter_subset _ _).trans (supports_forced T D hD))
+    card_le_card ((isolated_subset T).trans (supports_forced T D hD))
   have hn : edgesOn T (degreeTwo T) + 1 + 3 * (isolatedSupports T).card ≤ 3 * D.card := by
     omega
   have hq : (edgesOn T (degreeTwo T) : ℚ) + 1 + 3 * (isolatedSupports T).card ≤ 3 * D.card := by

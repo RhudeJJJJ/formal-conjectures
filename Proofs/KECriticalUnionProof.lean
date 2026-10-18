@@ -115,19 +115,19 @@ lemma edge_weight (J : Finset V) (e : Sym2 V) (he : e ∈ G.edgeSet) :
           simp [Sym2.toFinset_mk_eq, huN, hvN, hne]
         omega
       · have hc : (s(u,v).toFinset \ J).card = 1 := by
-          simp [Sym2.toFinset_mk_eq, sdiff_eq_filter, hu, hv]
+          simp [Sym2.toFinset_mk_eq, sdiff_eq_filter, filter_insert, filter_singleton, hu, hv]
         have hp : 1 ≤ (s(u,v).toFinset ∩ neighbors G J).card :=
           card_pos.mpr ⟨v, mem_inter.mpr ⟨by simp, hvN⟩⟩
         omega
     · by_cases hv : v ∈ J
       · have huN := neighbor_mem G hv huv.symm
         have hc : (s(u,v).toFinset \ J).card = 1 := by
-          simp [Sym2.toFinset_mk_eq, sdiff_eq_filter, hu, hv]
+          simp [Sym2.toFinset_mk_eq, sdiff_eq_filter, filter_insert, filter_singleton, hu, hv]
         have hp : 1 ≤ (s(u,v).toFinset ∩ neighbors G J).card :=
           card_pos.mpr ⟨u, mem_inter.mpr ⟨by simp, huN⟩⟩
         omega
       · have hc : (s(u,v).toFinset \ J).card = 2 := by
-          simp [Sym2.toFinset_mk_eq, sdiff_eq_filter, hu, hv, hne]
+          simp [Sym2.toFinset_mk_eq, sdiff_eq_filter, filter_insert, filter_singleton, hu, hv, hne]
         omega
 
 omit [DecidableRel G.Adj] in

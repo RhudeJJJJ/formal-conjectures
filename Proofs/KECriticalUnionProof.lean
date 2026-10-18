@@ -115,25 +115,19 @@ lemma edge_weight (J : Finset V) (e : Sym2 V) (he : e ∈ G.edgeSet) :
           simp [Sym2.toFinset_mk_eq, huN, hvN, hne]
         omega
       · have hc : (s(u,v).toFinset \ J).card = 1 := by
-          rw [Sym2.toFinset_mk_eq, insert_sdiff_of_mem _ hu,
-            insert_sdiff_of_notMem _ hv]
-          simp
+          simp [Sym2.toFinset_mk_eq, sdiff_eq_filter, hu, hv]
         have hp : 1 ≤ (s(u,v).toFinset ∩ neighbors G J).card :=
           card_pos.mpr ⟨v, mem_inter.mpr ⟨by simp, hvN⟩⟩
         omega
     · by_cases hv : v ∈ J
       · have huN := neighbor_mem G hv huv.symm
         have hc : (s(u,v).toFinset \ J).card = 1 := by
-          rw [Sym2.toFinset_mk_eq, insert_sdiff_of_notMem _ hu,
-            insert_sdiff_of_mem _ hv]
-          simp
+          simp [Sym2.toFinset_mk_eq, sdiff_eq_filter, hu, hv]
         have hp : 1 ≤ (s(u,v).toFinset ∩ neighbors G J).card :=
           card_pos.mpr ⟨u, mem_inter.mpr ⟨by simp, huN⟩⟩
         omega
       · have hc : (s(u,v).toFinset \ J).card = 2 := by
-          rw [Sym2.toFinset_mk_eq, insert_sdiff_of_notMem _ hu,
-            insert_sdiff_of_notMem _ hv]
-          simp [hne]
+          simp [Sym2.toFinset_mk_eq, sdiff_eq_filter, hu, hv, hne]
         omega
 
 omit [DecidableRel G.Adj] in
@@ -193,7 +187,7 @@ lemma matching_number_bound (J : Finset V) :
     apply csSup_le
     · refine ⟨0, ⊥, ?_, ?_⟩
       · intro v hv
-        simpa using hv
+        simp at hv
       · simp
     · rintro r ⟨M, hM, rfl⟩
       have hb := matching_weight_bound G J M hM
@@ -309,3 +303,10 @@ theorem critical_union_private_neighbors
 #print axioms critical_union_eq_corona
 #print axioms critical_union_private_neighbors
 end KECriticalUnionProof
+
+example {V : Type*} [Fintype V] [DecidableEq V]
+    (G : SimpleGraph V) [DecidableRel G.Adj]
+    (hKE : (G.indepNum : ℝ) + G.matchingNumber = Fintype.card V) :
+    WrittenOnTheWallII.GraphConjecture404To407.privateExternalNeighborCount G
+      (WrittenOnTheWallII.GraphConjecture404To407.criticalUnion G) = 0 :=
+  KECriticalUnionProof.critical_union_private_neighbors G hKE

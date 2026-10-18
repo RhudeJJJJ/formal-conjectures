@@ -133,3 +133,4 @@ theorem strengthened_of_core_cover (hb : G.IsBipartite)
 end WOWII412dBridge
 
 #print axioms WOWII412dBridge.criticalUnion_eq_corona
+#print axioms WOWII412dBridge.strengthened_of_core_cover

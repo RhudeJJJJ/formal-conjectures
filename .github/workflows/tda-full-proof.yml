@@ -54,8 +54,12 @@ jobs:
           uniform=$?
           lake env lean -DwarningAsError=true -o .lake/build/lib/lean/Proofs/TDAMixedBase.olean Proofs/TDAMixedBase.lean
           mixed=$?
-          lake env lean -DwarningAsError=true Proofs/TDAMixed.lean
+          lake env lean -DwarningAsError=true -o .lake/build/lib/lean/Proofs/TDAMixed.olean Proofs/TDAMixed.lean
           mixed_end=$?
-          lake env lean -DwarningAsError=true Proofs/TDAOptimal.lean
+          lake env lean -DwarningAsError=true -o .lake/build/lib/lean/Proofs/TDAOptimal.olean Proofs/TDAOptimal.lean
           optimal=$?
-          exit $((budget || hypergraph || brooks || uniform || mixed || mixed_end || optimal))
+          lake env lean -DwarningAsError=true Proofs/TDADegreeBudget.lean
+          rounding=$?
+          lake env lean -DwarningAsError=true Proofs/TDANeighborhood.lean
+          neighborhood=$?
+          exit $((budget || hypergraph || brooks || uniform || mixed || mixed_end || optimal || rounding || neighborhood))

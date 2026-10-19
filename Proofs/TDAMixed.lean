@@ -154,6 +154,37 @@ theorem mixed_cover (U : Finset V) (J : Finset I) (edge : I → Finset V)
     ∃ D : Finset V, D ⊆ U ∧ Hits J edge D ∧ 6 * D.card ≤ potential U J edge :=
   mixed_cover_aux (potential U J edge) U J edge le_rfl hsub hrank
 
+open scoped Classical in
+/-- The two/three-edge specialization, with the number of indexed two-edges explicit. -/
+theorem mixed_cover_two_three (U : Finset V) (J : Finset I) (edge : I → Finset V)
+    (hsub : ∀ i ∈ J, edge i ⊆ U)
+    (hrank : ∀ i ∈ J, 2 ≤ (edge i).card ∧ (edge i).card ≤ 3) :
+    ∃ D : Finset V, D ⊆ U ∧ Hits J edge D ∧
+      6 * D.card ≤ 2 * U.card + J.card + (J.filter (fun i => (edge i).card = 2)).card := by
+  obtain ⟨D, hDU, hDhit, hDb⟩ := mixed_cover U J edge hsub
+    (fun i hi => ⟨by have h := hrank i hi; omega, (hrank i hi).2⟩)
+  have hpot : potential U J edge =
+      2 * U.card + J.card + (J.filter (fun i => (edge i).card = 2)).card := by
+    have hpoint : ∀ i ∈ J, edgeWeight (edge i).card =
+        1 + if (edge i).card = 2 then 1 else 0 := by
+      intro i hi
+      have h := hrank i hi
+      by_cases htwo : (edge i).card = 2
+      · simp [htwo]
+      · have hthree : (edge i).card = 3 := by omega
+        simp [hthree]
+    have hsum : (∑ i ∈ J, edgeWeight (edge i).card) =
+        J.card + (J.filter (fun i => (edge i).card = 2)).card := by
+      rw [sum_congr rfl hpoint, sum_add_distrib]
+      simp only [sum_const, smul_eq_mul, mul_one]
+      rw [← sum_filter]
+      simp
+    unfold potential
+    rw [hsum]
+    omega
+  exact ⟨D, hDU, hDhit, by rwa [hpot] at hDb⟩
+
 end TotalDominationAnnihilationProof.Hypergraph
 
 #print axioms TotalDominationAnnihilationProof.Hypergraph.mixed_cover
+

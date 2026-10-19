@@ -91,7 +91,7 @@ theorem exists_subset_average (S : Finset V) (d : V → ℕ) (t : ℕ) (ht : t �
       _ = ∑ u ∈ T, ∑ _v ∈ S \ T, d u := by simp [sum_mul, Nat.mul_comm]
       _ ≤ ∑ _u ∈ T, ∑ v ∈ S \ T, d v :=
         sum_le_sum fun u hu => sum_le_sum fun v hv => horder u hu v hv
-      _ = _ := by simp [Nat.mul_comm]
+      _ = _ := by simp
   have hsum := sum_sdiff hTS (f := d)
   have hcards := card_sdiff_add_card_eq_card hTS
   refine ⟨T, hTS, hcard, ?_⟩
@@ -102,3 +102,6 @@ end TotalDominationAnnihilationProof
 
 #print axioms TotalDominationAnnihilationProof.exists_annihilation_set
 #print axioms TotalDominationAnnihilationProof.exists_subset_average
+#print axioms TotalDominationAnnihilationProof.lift_submultiset_map
+#print axioms TotalDominationAnnihilationProof.exists_cheapest_subset
+#print axioms Finset.exists_mem_eq_sup

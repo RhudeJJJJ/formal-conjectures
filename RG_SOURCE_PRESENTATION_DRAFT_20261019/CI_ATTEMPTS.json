@@ -1,0 +1,32 @@
+{
+  "ci_runs": [
+    {
+      "run_id": 39283598761,
+      "job_id": 118163263444,
+      "source_commit": "c915df24f63b3cc97b03677560d6f3b7316f8eb0",
+      "status": "queued",
+      "conclusion": null
+    }
+  ],
+  "windows_api_probe": {
+    "purpose": "Read the actual Mathlib API types; not a local proof replay",
+    "status": "ABORTED_TIMEOUT",
+    "exit_code": null,
+    "timeout_seconds": 60,
+    "seconds": 61.062
+  },
+  "windows_init_probe": {
+    "purpose": "Isolate local Lean startup without Mathlib; no RG proof checked",
+    "status": "ABORTED_TIMEOUT",
+    "exit_code": null,
+    "timeout_seconds": 30,
+    "seconds": 30.39
+  },
+  "wsl_environment_attempt": {
+    "status": "FAILED_BEFORE_SHELL",
+    "exit_code": 1,
+    "error": "Wsl/Service/E_UNEXPECTED",
+    "meaning": "The existing Ubuntu environment did not start the read-only discovery shell. No Lean command or proof check ran there."
+  },
+  "no_completed_new_kernel_check": true
+}

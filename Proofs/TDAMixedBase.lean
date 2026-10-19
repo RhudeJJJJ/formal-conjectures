@@ -191,8 +191,14 @@ theorem two_edge_potential_drop (U : Finset V) (J : Finset I) (edge : I → Fins
   have hsum := sum_weight_erase K edge v hthree
   have hchange : potential ((U.erase u).erase v) K (fun j => (edge j).erase v) =
       potential ((U.erase u).erase v) K edge + (incident K edge v).card := by
-    unfold potential
+    change 2 * ((U.erase u).erase v).card +
+      (∑ j ∈ K, edgeWeight ((edge j).erase v).card) =
+      (2 * ((U.erase u).erase v).card + (∑ j ∈ K, edgeWeight (edge j).card)) +
+        (incident K edge v).card
+    rw [hsum]
     omega
+  change potential ((U.erase u).erase v) K (fun j => (edge j).erase v) + 6 ≤
+    potential U J edge
   have hr := residual_incident_le_one J edge hi hui hvi hdeg
   have hw := weight_le_incidentWeight J edge hi hui
   rw [hsize, edgeWeight_two] at hw

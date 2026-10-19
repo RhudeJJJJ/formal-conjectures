@@ -43,7 +43,7 @@ jobs:
         run: |
           set +e
           mkdir -p .lake/build/lib/lean/Proofs
-          lake env lean -DwarningAsError=true Proofs/TDABudget.lean
+          lake env lean -DwarningAsError=true -o .lake/build/lib/lean/Proofs/TDABudget.olean Proofs/TDABudget.lean
           budget=$?
           lake env lean -DwarningAsError=true -o .lake/build/lib/lean/Proofs/TDAHypergraphBase.olean Proofs/TDAHypergraphBase.lean
           hypergraph=$?
@@ -56,4 +56,6 @@ jobs:
           mixed=$?
           lake env lean -DwarningAsError=true Proofs/TDAMixed.lean
           mixed_end=$?
-          exit $((budget || hypergraph || brooks || uniform || mixed || mixed_end))
+          lake env lean -DwarningAsError=true Proofs/TDAOptimal.lean
+          optimal=$?
+          exit $((budget || hypergraph || brooks || uniform || mixed || mixed_end || optimal))

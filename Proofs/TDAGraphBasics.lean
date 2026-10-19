@@ -34,6 +34,7 @@ omit [DecidableEq V] in
 @[simp] theorem mem_supports {G : SimpleGraph V} [DecidableRel G.Adj] {v : V} :
     v ∈ supports G ↔ ∃ p ∈ leaves G, G.Adj v p := by simp [supports]
 
+omit [DecidableEq V] in
 theorem leaf_neighbor_unique (G : SimpleGraph V) [DecidableRel G.Adj]
     {p u v : V} (hp : p ∈ leaves G) (hpu : G.Adj p u) (hpv : G.Adj p v) : u = v := by
   have hcard : (G.neighborFinset p).card = 1 := mem_leaves.mp hp
@@ -42,8 +43,8 @@ theorem leaf_neighbor_unique (G : SimpleGraph V) [DecidableRel G.Adj]
   have hv : v = w := by simpa only [hw, mem_singleton] using (mem_neighborFinset _ _ _).mpr hpv
   exact hu.trans hv.symm
 
-/-- A nonempty adjacency-closed vertex set in a connected graph is the whole graph. -/
 omit [DecidableEq V] in
+/-- A nonempty adjacency-closed vertex set in a connected graph is the whole graph. -/
 theorem closed_set_eq_univ (G : SimpleGraph V) (hG : G.Preconnected) (S : Finset V)
     (hne : S.Nonempty) (hclosed : ∀ u ∈ S, ∀ v, G.Adj u v → v ∈ S) : S = univ := by
   obtain ⟨u, hu⟩ := hne

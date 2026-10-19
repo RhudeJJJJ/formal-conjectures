@@ -1,0 +1,41 @@
+{
+  "runs": [
+    {
+      "run_id": 39255312564,
+      "source_commit": "9151f246288e3e64bf27ffb700c11e2d050785b5",
+      "result": "FAIL",
+      "reason": "Lean sum/API/rewrite errors"
+    },
+    {
+      "run_id": 39255897910,
+      "source_commit": "6c58a92fc449829ed997aab55a56fb3e597c5881",
+      "result": "FAIL",
+      "reason": "Summation binder scope; strict unused-simp warning"
+    },
+    {
+      "run_id": 39256442046,
+      "source_commit": "55ef63c556dc6d6bde07297739adf14eb84da9b2",
+      "result": "FAIL",
+      "reason": "Mathematical goals closed, but four local-instance style warnings; not accepted as strict pass"
+    },
+    {
+      "run_id": 39256915486,
+      "source_commit": "70fb8fc8b817e3a61c1d4f0dd59c922106452b69",
+      "result": "SUCCESS",
+      "job_id": 118074402011,
+      "modules": 15,
+      "mode": "FRESH_KERNEL_EXPORT"
+    }
+  ],
+  "native_attempt": {
+    "result": "INTENTIONALLY_INTERRUPTED",
+    "compiler_pid": 30020,
+    "verifier_session_id": 26424,
+    "verifier_exit_code": 1,
+    "reason": "Switch to faster Linux feedback during source iteration; no Windows terminal proof claim"
+  },
+  "storage": {
+    "workspace_ntfs_compression": "Completed within this workspace only; bytes preserved",
+    "unrelated_work": "Not stopped or cleaned"
+  }
+}

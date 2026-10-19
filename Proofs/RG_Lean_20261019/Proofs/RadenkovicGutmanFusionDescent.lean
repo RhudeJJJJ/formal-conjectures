@@ -47,7 +47,7 @@ theorem base_endpoint_degree (C : SimpleGraph V) (u : V) (p q : ℕ) :
         simp only [mem_neighborFinset, base, sup_adj, SimpleGraph.sum, edge_adj,
           pathGraph_adj, Finset.mem_singleton, Sum.inr.injEq, Sum.inl.injEq,
           Sum.inl_ne_inr, Sum.inr_ne_inl, false_and, and_false, false_or, or_false,
-          Fin.ext_iff, Fin.val_last, Fin.val_zero, Bool.false_eq_true] <;> omega
+          Fin.ext_iff, Fin.val_last, Fin.val_zero, Bool.false_eq_true] <;> trace_state <;> omega
     rw [degree, hn, Finset.card_singleton]
 
 omit [Fintype V] in

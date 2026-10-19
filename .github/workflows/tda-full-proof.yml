@@ -50,6 +50,8 @@ jobs:
           mkdir -p .lake/build/lib/lean/Proofs
           lake env lean -DwarningAsError=true -o .lake/build/lib/lean/Proofs/ZajacBrooks.olean Proofs/ZajacBrooks.lean
           brooks=$?
-          lake env lean -DwarningAsError=true Proofs/TDAUniform.lean
+          lake env lean -DwarningAsError=true -o .lake/build/lib/lean/Proofs/TDAUniform.olean Proofs/TDAUniform.lean
           uniform=$?
-          exit $((budget || hypergraph || brooks || uniform))
+          lake env lean -DwarningAsError=true Proofs/TDAMixedBase.lean
+          mixed=$?
+          exit $((budget || hypergraph || brooks || uniform || mixed))

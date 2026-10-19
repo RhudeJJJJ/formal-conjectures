@@ -51,7 +51,9 @@ private theorem three_cover_aux (edge : I → Finset V) (n : ℕ) :
       · intro i hi
         by_cases hvi : v ∈ edge i
         · exact ⟨v, mem_insert_self _ _, hvi⟩
-        · have hiK : i ∈ K := mem_sdiff.mpr ⟨hi, by simpa using hvi⟩
+        · have hiK : i ∈ K := mem_sdiff.mpr ⟨hi, by
+            intro hmem
+            exact hvi (mem_incident.mp hmem).2⟩
           obtain ⟨w, hwD, hwi⟩ := hDhits i hiK
           exact ⟨w, mem_insert_of_mem hwD, hwi⟩
       · rw [card_insert_of_notMem hvD]

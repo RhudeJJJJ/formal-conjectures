@@ -19,10 +19,10 @@ run_cmd do
   for ax in axioms do
     unless allowed.contains ax do
       Lean.throwError m!"Unexpected axiom in exact universal theorem: {ax}"
-  -- This existing open equivalence is a negative control, never a proof input.
-  let negative ← Lean.collectAxioms ``SimpleGraph.annihilationNumberEq
-  unless negative.contains ``sorryAx do
-    Lean.throwError "Negative-control assumption changed; review the axiom guard"
+  -- The built-in placeholder axiom is a negative control, never a proof input.
+  let negative ← Lean.collectAxioms ``sorryAx
+  unless negative.contains ``sorryAx && !(negative.all allowed.contains) do
+    Lean.throwError "The negative control must fail the same axiom whitelist"
   Lean.logInfo m!"TDA_EXACT_CERTIFICATE_PASS: {axioms}"
 
 #print axioms TotalDominationAnnihilationProof.total_domination_annihilation

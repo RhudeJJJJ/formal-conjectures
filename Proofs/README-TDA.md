@@ -14,9 +14,9 @@ The certificate entry point is `Proofs/TDACertificate.lean`. Its final check mus
 print `TDA_EXACT_CERTIFICATE_PASS`; a file compiling with a placeholder does not
 satisfy that check. The guard checks the full transitive axiom closure of
 `TotalDominationAnnihilationProof.total_domination_annihilation`, permitting only
-`propext`, `Classical.choice`, and `Quot.sound`. The existing open
-`SimpleGraph.annihilationNumberEq` declaration is a negative control for the
-guard. It is never used as a mathematical premise.
+`propext`, `Classical.choice`, and `Quot.sound`. The built-in placeholder axiom
+`sorryAx` is a negative control that must fail the same whitelist. It is never
+used as a mathematical premise.
 
 The graph may have pendant vertices, adjacent supports, or strong supports.
 The annihilation number is the repository's actual degree-submultiset supremum.

@@ -39,6 +39,8 @@ jobs:
         with:
           path: .lake/build
           key: tda-imports-${{ hashFiles('lean-toolchain', 'lake-manifest.json') }}-${{ github.sha }}
+      - name: Verify exact proof source hashes
+        run: sha256sum -c Proofs/TDA-SHA256SUMS
       - name: Kernel check current components
         run: |
           set +e

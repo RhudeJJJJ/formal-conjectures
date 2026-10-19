@@ -38,7 +38,7 @@ theorem base_endpoint_degree (C : SimpleGraph V) (u : V) (p q : ℕ) :
   | zero =>
     have hn : (base C u 0 q).neighborFinset (.inr (.inl (Fin.last 0))) = {.inl u} := by
       ext (x | (x | x)) <;>
-        simp [base, SimpleGraph.sum, edge_adj, pathGraph_adj, Fin.ext_iff] <;> omega
+        simp [base, SimpleGraph.sum, edge_adj, pathGraph_adj, Fin.ext_iff]
     rw [degree, hn, Finset.card_singleton]
   | succ p =>
     have hn : (base C u (p + 1) q).neighborFinset (.inr (.inl (Fin.last (p + 1)))) =

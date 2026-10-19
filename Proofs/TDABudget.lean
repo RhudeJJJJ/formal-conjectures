@@ -9,7 +9,7 @@ No equivalence with its separate sorted-prefix definition is assumed. -/
 namespace TotalDominationAnnihilationProof
 open Finset SimpleGraph
 
-variable {V : Type*} [Fintype V] [DecidableEq V]
+variable {V : Type*} [Fintype V]
 
 /-- A degree-budget vertex set gives an annihilation-number lower bound. -/
 theorem card_le_annihilationNumber (G : SimpleGraph V) [DecidableRel G.Adj]
@@ -24,8 +24,8 @@ theorem card_le_annihilationNumber (G : SimpleGraph V) [DecidableRel G.Adj]
   have h := Finset.le_sup (f := Multiset.card) hmem
   simpa [SimpleGraph.annihilationNumber] using h
 
+omit [Fintype V] in
 /-- A total dominating set gives the actual infimum-defined upper bound. -/
-omit [Fintype V] [DecidableEq V] in
 theorem totalDominationNumber_le_card (G : SimpleGraph V) (D : Finset V)
     (hD : G.IsTotalDominating (D : Set V)) : G.totalDominationNumber ≤ D.card := by
   exact Nat.sInf_le ⟨D, ⟨hD, rfl⟩⟩

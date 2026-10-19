@@ -15,9 +15,9 @@ variable {V : Type*} [Fintype V] [DecidableEq V]
 theorem card_le_annihilationNumber (G : SimpleGraph V) [DecidableRel G.Adj]
     (S : Finset V) (hS : ∑ v ∈ S, G.degree v ≤ G.edgeFinset.card) :
     S.card ≤ G.annihilationNumber := by
-  have hm : S.val.map G.degree ≤ G.degreeMultiset := by
+  have hm : S.val.map (fun v => G.degree v) ≤ G.degreeMultiset := by
     exact Multiset.map_le_map (Finset.val_le_iff.mpr (subset_univ S))
-  have hmem : S.val.map G.degree ∈
+  have hmem : S.val.map (fun v => G.degree v) ∈
       (Finset.Iic G.degreeMultiset).filter (fun M => M.sum ≤ G.edgeFinset.card) := by
     simp only [mem_filter, mem_Iic]
     exact ⟨hm, by simpa using hS⟩
@@ -25,6 +25,7 @@ theorem card_le_annihilationNumber (G : SimpleGraph V) [DecidableRel G.Adj]
   simpa [SimpleGraph.annihilationNumber] using h
 
 /-- A total dominating set gives the actual infimum-defined upper bound. -/
+omit [Fintype V] [DecidableEq V] in
 theorem totalDominationNumber_le_card (G : SimpleGraph V) (D : Finset V)
     (hD : G.IsTotalDominating (D : Set V)) : G.totalDominationNumber ≤ D.card := by
   exact Nat.sInf_le ⟨D, ⟨hD, rfl⟩⟩

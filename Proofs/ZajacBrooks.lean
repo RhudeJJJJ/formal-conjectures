@@ -27,7 +27,7 @@ namespace Gebendorfer.Zajac
 
 namespace Brooks
 
-variable {V : Type} [Fintype V] [DecidableEq V] {k : ℕ}
+variable {V : Type*} [Fintype V] [DecidableEq V] {k : ℕ}
 
 /-! ## Partial colourings and the greedy engine -/
 
@@ -709,7 +709,7 @@ open Brooks in
 strong-induction core: for `k ≥ 3`, every graph on at most `n` vertices with
 `Δ ≤ k` and no `K_{k+1}` is `k`-colourable. -/
 theorem brooks_strong (k : ℕ) (hk : 3 ≤ k) :
-    ∀ (n : ℕ) {V : Type} [Fintype V] [DecidableEq V] (H : SimpleGraph V)
+    ∀ (n : ℕ) {V : Type*} [Fintype V] [DecidableEq V] (H : SimpleGraph V)
       [DecidableRel H.Adj], Fintype.card V ≤ n → (∀ z, H.degree z ≤ k) →
       H.CliqueFree (k + 1) → H.Colorable k := by
   intro n
@@ -933,7 +933,7 @@ theorem brooks_strong (k : ℕ) (hk : 3 ≤ k) :
 /-- **Brooks' theorem, Zając's exception-free disconnected form**
 (arXiv:1805.11176): for `k ≥ 3`, `Δ(H) ≤ k` and no `K_{k+1}` imply `H` is
 `k`-colourable. -/
-theorem brooks_zajac (k : ℕ) (hk : 3 ≤ k) {V : Type} [Fintype V] [DecidableEq V]
+theorem brooks_zajac (k : ℕ) (hk : 3 ≤ k) {V : Type*} [Fintype V] [DecidableEq V]
     (H : SimpleGraph V) [DecidableRel H.Adj] (hdeg : ∀ z, H.degree z ≤ k)
     (hcf : H.CliqueFree (k + 1)) : H.Colorable k :=
   brooks_strong k hk (Fintype.card V) H le_rfl hdeg hcf

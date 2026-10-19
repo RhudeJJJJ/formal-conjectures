@@ -39,7 +39,14 @@ jobs:
         with:
           path: .lake/build
           key: tda-imports-${{ hashFiles('lean-toolchain', 'lake-manifest.json') }}-${{ github.sha }}
-      - name: Kernel check degree budget
-        run: lake env lean -DwarningAsError=true Proofs/TDABudget.lean
-      - name: Recheck credited Brooks theorem
-        run: lake env lean -DwarningAsError=true Proofs/ZajacBrooks.lean
+      - name: Kernel check current components
+        run: |
+          set +e
+          lake env lean -DwarningAsError=true Proofs/TDABudget.lean
+          budget=$?
+          lake env lean -DwarningAsError=true Proofs/TDAHypergraphBase.lean
+          hypergraph=$?
+          mkdir -p .lake/build/lib/lean/Proofs
+          lake env lean -DwarningAsError=true -o .lake/build/lib/lean/Proofs/ZajacBrooks.olean Proofs/ZajacBrooks.lean
+          brooks=$?
+          exit $((budget || hypergraph || brooks))

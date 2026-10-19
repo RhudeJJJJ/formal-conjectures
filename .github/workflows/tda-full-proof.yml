@@ -52,6 +52,8 @@ jobs:
           brooks=$?
           lake env lean -DwarningAsError=true -o .lake/build/lib/lean/Proofs/TDAUniform.olean Proofs/TDAUniform.lean
           uniform=$?
-          lake env lean -DwarningAsError=true Proofs/TDAMixedBase.lean
+          lake env lean -DwarningAsError=true -o .lake/build/lib/lean/Proofs/TDAMixedBase.olean Proofs/TDAMixedBase.lean
           mixed=$?
-          exit $((budget || hypergraph || brooks || uniform || mixed))
+          lake env lean -DwarningAsError=true Proofs/TDAMixed.lean
+          mixed_end=$?
+          exit $((budget || hypergraph || brooks || uniform || mixed || mixed_end))

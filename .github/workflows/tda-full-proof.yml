@@ -84,6 +84,8 @@ jobs:
           max_two=$?
           lake env lean -DwarningAsError=true -o .lake/build/lib/lean/Proofs/TDACycleEdge.olean Proofs/TDACycleEdge.lean
           cycle_edge=$?
-          lake env lean -DwarningAsError=true Proofs/TDAFull.lean
+          lake env lean -DwarningAsError=true -o .lake/build/lib/lean/Proofs/TDAFull.olean Proofs/TDAFull.lean
           full=$?
-          exit $((budget || hypergraph || brooks || uniform || mixed || mixed_end || optimal || rounding || neighborhood || basics || core_cover || leaf_counts || general || graph_budget || tree_color || tree_bound || transfer || graph_edge || max_two || cycle_edge || full))
+          lake env lean -DwarningAsError=true Proofs/TDACertificate.lean
+          certificate=$?
+          exit $((budget || hypergraph || brooks || uniform || mixed || mixed_end || optimal || rounding || neighborhood || basics || core_cover || leaf_counts || general || graph_budget || tree_color || tree_bound || transfer || graph_edge || max_two || cycle_edge || full || certificate))

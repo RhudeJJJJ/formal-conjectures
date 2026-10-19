@@ -1,0 +1,47 @@
+name: WOWII 340 exact counterexample certificate
+on:
+  push:
+    branches: [wowii340-proof-20261019]
+  workflow_dispatch:
+concurrency:
+  group: wowii340-proof-20261019
+  cancel-in-progress: true
+permissions:
+  contents: read
+jobs:
+  proof:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          persist-credentials: false
+      - name: Install pinned Lean
+        run: |
+          curl -sSfL https://github.com/leanprover/elan/releases/download/v1.4.2/elan-x86_64-unknown-linux-gnu.tar.gz | tar xz
+          ./elan-init -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> $GITHUB_PATH
+      - name: Get pinned Mathlib cache
+        run: lake exe cache get
+      - name: Restore exact statement imports
+        uses: actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9
+        with:
+          path: .lake/build
+          key: wow340-imports-${{ hashFiles('lean-toolchain', 'lake-manifest.json') }}-${{ github.sha }}
+          restore-keys: |
+            wow340-imports-${{ hashFiles('lean-toolchain', 'lake-manifest.json') }}-
+            tda-imports-${{ hashFiles('lean-toolchain', 'lake-manifest.json') }}-
+      - name: Compile exact target statement and shared definitions
+        run: lake --wfail build FormalConjectures.WrittenOnTheWallII.GraphConjecture340
+      - name: Save checked statement imports
+        uses: actions/cache/save@55cc8345863c7cc4c66a329aec7e433d2d1c52a9
+        with:
+          path: .lake/build
+          key: wow340-imports-${{ hashFiles('lean-toolchain', 'lake-manifest.json') }}-${{ github.sha }}
+      - name: Verify exact proof source hashes
+        run: sha256sum -c Proofs/WOWII340-SHA256SUMS
+      - name: Check counterexample and transitive axiom closure
+        run: |
+          mkdir -p .lake/build/lib/lean/Proofs
+          lake env lean -DwarningAsError=true -o .lake/build/lib/lean/Proofs/WOWII340Proof.olean Proofs/WOWII340Proof.lean
+          lake env lean -DwarningAsError=true Proofs/WOWII340Certificate.lean

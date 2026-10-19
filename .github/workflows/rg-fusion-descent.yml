@@ -1,4 +1,4 @@
-name: RG nonpath fork and residual
+name: RG unconditional source presentation
 
 on:
   push:
@@ -42,14 +42,12 @@ jobs:
                       visit(dep)
                   else:
                       external.add(dep)
-          visit('Proofs.RadenkovicGutmanGlobalAssembly')
-          visit('Proofs.RadenkovicGutmanForkResidual')
+          visit('Proofs.RadenkovicGutmanSourcePresentation')
           subprocess.run(['lake', 'exe', 'cache', 'get', *sorted(external)], check=True)
           PY
       - name: Check the source closure and axiom profiles
         run: |
           python3 -B Proofs/RG_Lean_20261019/verify_extension.py \
             --mathlib-project "$GITHUB_WORKSPACE" \
-            --endpoint Proofs.RadenkovicGutmanGlobalAssembly \
-            --endpoint Proofs.RadenkovicGutmanForkResidual \
+            --endpoint Proofs.RadenkovicGutmanSourcePresentation \
             --workers 1 --module-timeout 900 --print-receipt

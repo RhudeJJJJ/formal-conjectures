@@ -11,12 +11,14 @@ variable {V I : Type*} [DecidableEq V]
 noncomputable def trimThree (A : Finset V) : Finset V :=
   if h : 3 ≤ A.card then Classical.choose (exists_subset_card_eq h) else A
 
+omit [DecidableEq V] in
 theorem trimThree_subset (A : Finset V) : trimThree A ⊆ A := by
   unfold trimThree
   split_ifs with h
   · exact (Classical.choose_spec (exists_subset_card_eq h)).1
   · exact subset_refl _
 
+omit [DecidableEq V] in
 theorem trimThree_card (A : Finset V) : (trimThree A).card = min 3 A.card := by
   unfold trimThree
   split_ifs with h
@@ -43,7 +45,11 @@ theorem neighborhood_cover (Q : Finset V) (J : Finset I) (N : I → Finset V)
       J.filter (fun i => (N i).card = 2) := by
     ext i
     simp only [mem_filter, edge, trimThree_card]
-    omega
+    constructor
+    · rintro ⟨hi, hc⟩
+      exact ⟨hi, by omega⟩
+    · rintro ⟨hi, hc⟩
+      exact ⟨hi, by omega⟩
   refine ⟨D, hDQ, ?_, ?_⟩
   · intro i hi
     obtain ⟨v, hvD, hve⟩ := hDhit i hi
@@ -71,7 +77,8 @@ theorem total_domination_bound_min_degree_two (G : SimpleGraph V) [DecidableRel 
     obtain ⟨w, hwD, hwN⟩ := hDhit v (mem_univ v)
     exact ⟨w, hwD, (SimpleGraph.mem_neighborFinset _ _ _).mp hwN⟩
   have hle := totalDominationNumber_le_card G D hTD
-  simp only [card_univ, card_neighborFinset_eq_degree] at hDb
+  change 6 * D.card ≤ 2 * Fintype.card V + Fintype.card V +
+    (univ.filter (fun v => G.degree v = 2)).card at hDb
   omega
 
 end TotalDominationAnnihilationProof

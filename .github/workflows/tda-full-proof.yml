@@ -62,4 +62,6 @@ jobs:
           rounding=$?
           lake env lean -DwarningAsError=true Proofs/TDANeighborhood.lean
           neighborhood=$?
-          exit $((budget || hypergraph || brooks || uniform || mixed || mixed_end || optimal || rounding || neighborhood))
+          lake env lean -DwarningAsError=true Proofs/TDAGraphBasics.lean
+          basics=$?
+          exit $((budget || hypergraph || brooks || uniform || mixed || mixed_end || optimal || rounding || neighborhood || basics))

@@ -24,10 +24,11 @@ theorem lift_submultiset_map [DecidableEq V] (f : V → ℕ) (T : Finset V)
         simpa using Multiset.erase_le_erase (f a) hm
       obtain ⟨A, hAT, hmap⟩ := IH (M.erase (f a)) hres
       have haA : a ∉ A := fun h => ha (hAT h)
-      refine ⟨insert a A, insert_subset (mem_insert_self _ _) (subset_insert_of_subset hAT), ?_⟩
+      refine ⟨insert a A, insert_subset (mem_insert_self _ _)
+        (subset_trans hAT (subset_insert _ _)), ?_⟩
       simpa [haA, hmap] using Multiset.cons_erase hf
     · obtain ⟨A, hAT, hmap⟩ := IH M ((Multiset.le_cons_of_notMem hf).mp hm)
-      exact ⟨A, subset_insert_of_subset hAT, hmap⟩
+      exact ⟨A, subset_trans hAT (subset_insert _ _), hmap⟩
 
 /-- The supremum in the repository definition has an actual vertex-set witness. -/
 theorem exists_annihilation_set [Fintype V] [DecidableEq V]

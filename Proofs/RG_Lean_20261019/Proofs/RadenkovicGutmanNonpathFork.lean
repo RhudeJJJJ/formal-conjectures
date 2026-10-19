@@ -19,7 +19,7 @@ open SimpleGraph TreeTerminal
 open scoped Classical
 noncomputable section
 
-variable {V : Type*} [Fintype V] {G : SimpleGraph V}
+variable {V : Type*} {G : SimpleGraph V}
 
 theorem path_length_eq_dist (hT : G.IsTree) {u v : V}
     (p : G.Walk u v) (hp : p.IsPath) : p.length = G.dist u v := by
@@ -57,7 +57,7 @@ theorem parent_unique (hT : G.IsTree) (r u : V) {a b : V}
   exact (Walk.concat_inj he).1
 
 /-- Two of the neighbors of any branching vertex point away from a fixed root. -/
-theorem two_outward_neighbors (hT : G.IsTree) (r u : V) (hu : 3 ≤ G.degree u) :
+theorem two_outward_neighbors [Fintype V] (hT : G.IsTree) (r u : V) (hu : 3 ≤ G.degree u) :
     ∃ a b, a ≠ b ∧ G.Adj u a ∧ G.Adj u b ∧
       G.dist r a = G.dist r u + 1 ∧ G.dist r b = G.dist r u + 1 := by
   let s := G.neighborFinset u
@@ -102,18 +102,20 @@ theorem outward_concat (r : V) {u v w : V} (p : G.Walk u v)
     (hp : Outward r p) (h : G.Adj v w)
     (hd : G.dist r w = G.dist r v + 1) : Outward r (p.concat h) := by
   intro i hi
+  have hdv : G.dist r v = G.dist r u + p.length := by
+    simpa only [Walk.getVert_length] using hp p.length (by rfl)
   by_cases hil : i ≤ p.length
   · simpa only [Walk.concat_eq_append, Walk.getVert_append', if_pos hil] using hp i hil
   · have hi' : i = (p.concat h).length := by simp only [Walk.length_concat] at *; omega
-    rw [hi', Walk.getVert_length, hd, hp p.length (by rfl), Walk.length_concat]
+    rw [hi', Walk.getVert_length, hd, hdv, Walk.length_concat]
     omega
 
 /-- There is a longest outward path with a prescribed first edge. -/
-theorem maximal_outward_path (r : V) {u a : V} (ha : G.Adj u a)
+theorem maximal_outward_path [Fintype V] (r : V) {u a : V} (ha : G.Adj u a)
     (hd : G.dist r a = G.dist r u + 1) :
-    ∃ v (p : G.Walk u v), p.IsPath ∧ p.snd = a ∧ Outward r p ∧
+    ∃ (v : V) (p : G.Walk u v), p.IsPath ∧ p.snd = a ∧ Outward r p ∧
       ∀ w (q : G.Walk u w), q.IsPath → q.snd = a → Outward r q → q.length ≤ p.length := by
-  let s := {n | ∃ v (p : G.Walk u v), p.IsPath ∧ p.snd = a ∧ Outward r p ∧ p.length = n}
+  let s := {n | ∃ (v : V) (p : G.Walk u v), p.IsPath ∧ p.snd = a ∧ Outward r p ∧ p.length = n}
   have hs : s.Finite := (Set.finite_le_nat (Fintype.card V)).subset (by
     rintro n ⟨v, p, hp, _, _, rfl⟩
     exact hp.length_lt.le)
@@ -126,7 +128,7 @@ theorem maximal_outward_path (r : V) {u a : V} (ha : G.Adj u a)
   omega
 
 /-- A maximal outward path ends in a leaf of the original tree. -/
-theorem maximal_outward_ends_leaf (hT : G.IsTree) (r : V) {u a v : V}
+theorem maximal_outward_ends_leaf [Fintype V] (hT : G.IsTree) (r : V) {u a v : V}
     (ha : G.Adj u a) (p : G.Walk u v) (hp : p.IsPath) (hpa : p.snd = a)
     (hpo : Outward r p)
     (hmax : ∀ w (q : G.Walk u w), q.IsPath → q.snd = a → Outward r q →
@@ -156,6 +158,7 @@ theorem maximal_outward_ends_leaf (hT : G.IsTree) (r : V) {u a v : V}
     exact hne (hT.isAcyclic.eq_penultimate_of_adj_end hp hvw hw)
   have hq := hp.concat hw hvw
   have hqa : (p.concat hvw).snd = a := by
+    change (p.concat hvw).getVert 1 = a
     rw [Walk.concat_eq_append, Walk.getVert_append', if_pos (by omega : 1 ≤ p.length)]
     exact hpa
   have := hmax w (p.concat hvw) hq hqa (outward_concat r p hpo hvw hdw)
@@ -173,6 +176,8 @@ theorem paths_with_distinct_first_disjoint (hT : G.IsTree) {u v w : V}
   have := congrArg Walk.snd he
   rw [Walk.snd_takeUntil hxu, Walk.snd_takeUntil hxu] at this
   exact hfirst this
+
+variable [Fintype V]
 
 /-- The two actual positive arms selected in the original labelled tree. -/
 structure PendantFork (G : SimpleGraph V) where
@@ -197,7 +202,7 @@ theorem nonpath_has_pendant_fork [Nontrivial V] (hT : G.IsTree)
     (hpath : ¬Nonempty (G ≃g pathGraph (Fintype.card V))) : Nonempty (PendantFork G) := by
   have hbranch : ∃ r, 3 ≤ G.degree r := by
     by_contra h
-    push_neg at h
+    push Not at h
     exact hpath (tree_path_iso_of_degree_le_two G hT (fun v => by have := h v; omega))
   obtain ⟨r, hr⟩ := hbranch
   obtain ⟨u, hu, hmax⟩ := (Finset.univ.filter (fun v => 3 ≤ G.degree v)).exists_max_image

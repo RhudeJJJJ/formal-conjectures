@@ -252,5 +252,10 @@ theorem path_equality_of_inputs (N : ℕ) (hsmall : SmallOrders N)
 #print axioms path_minimum_of_inputs
 #print axioms path_equality_of_inputs
 
+#check @decomposesAbove
+#check @universal_conclusion_of_inputs
+#check @path_minimum_of_inputs
+#check @path_equality_of_inputs
+
 end
 end Gebendorfer.RadenkovicGutman.SourcePresentation

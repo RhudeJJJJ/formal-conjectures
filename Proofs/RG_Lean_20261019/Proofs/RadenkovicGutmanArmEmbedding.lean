@@ -23,10 +23,11 @@ theorem walk_subgraph_induced (hA : G.IsAcyclic) {u v : V} (p : G.Walk u v) :
   have hle : p.toSubgraph.coe ≤ G.induce p.toSubgraph.verts := by
     intro x y h
     exact p.toSubgraph.coe_adj_sub x y h
+  have hc : p.toSubgraph.coe.Connected := p.toSubgraph_connected
   have hT : (G.induce p.toSubgraph.verts).IsTree :=
-    ⟨p.toSubgraph_connected.mono hle, hA.induce _⟩
+    ⟨hc.mono hle, hA.induce _⟩
   exact le_antisymm hle
-    ((isTree_iff_minimal_connected.mp hT).2 p.toSubgraph_connected hle)
+    ((isTree_iff_minimal_connected.mp hT).2 hc hle)
 
 theorem mem_tail_iff {u v x : V} (p : G.Walk u v) (hp : p.IsPath)
     (hpos : 0 < p.length) : x ∈ p.tail.support ↔ x ∈ p.support ∧ x ≠ u := by

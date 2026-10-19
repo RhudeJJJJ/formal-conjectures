@@ -20,7 +20,8 @@ namespace Gebendorfer.RadenkovicGutman.GlobalAssembly
 open SimpleGraph CoreQuotient RewireTopology FusionDescent TreeTerminal IsoEnergy
 open scoped Classical
 noncomputable section
-set_option backward.isDefEq.respectTransparency false
+set_option backward.isDefEq.respectTransparency true
+attribute [local irreducible] laplacianEnergy
 
 /-- The minimum and equality conclusions on the original labelled vertex set. -/
 def Conclusion {n : ℕ} (G : SimpleGraph (Fin n)) : Prop :=
@@ -46,14 +47,24 @@ def StrictFusionAbove (N : ℕ) : Prop :=
     (source C u p q).IsTree → 1 ≤ C.degree u →
       laplacianEnergy (fused C u p q) < laplacianEnergy (source C u p q)
 
+theorem conclusion_of_iso {n : ℕ} (G : SimpleGraph (Fin n))
+    (f : G ≃g pathGraph n) : Conclusion G := by
+  have hE : laplacianEnergy G = laplacianEnergy (pathGraph n) := energy_eq f
+  change laplacianEnergy (pathGraph n) ≤ laplacianEnergy G ∧
+    (laplacianEnergy G = laplacianEnergy (pathGraph n) ↔ Nonempty (G ≃g pathGraph n))
+  exact ⟨hE.symm.le, ⟨fun _ => ⟨f⟩, fun _ => hE⟩⟩
+
 theorem singleton_conclusion (G : SimpleGraph (Fin 1)) : Conclusion G := by
   have heq : G = pathGraph 1 := by
     ext u v
     have h : v = u := Subsingleton.elim _ _
     subst v
     simp
-  rw [heq]
-  exact ⟨le_rfl, ⟨fun _ => ⟨Iso.refl _⟩, fun _ => rfl⟩⟩
+  have hiso : Nonempty (G ≃g pathGraph 1) := by
+    rw [heq]
+    exact ⟨Iso.refl _⟩
+  obtain ⟨f⟩ := hiso
+  exact conclusion_of_iso G f
 
 /-- Relabel the actual fused graph back to Fin n, preserving energy and leaves. -/
 theorem concrete_descent {N n : ℕ} (hD : DecomposesAbove N)
@@ -99,15 +110,14 @@ theorem conclusion_of_descent {n : ℕ} (hn : 2 ≤ n)
       by_cases hleaf : leafCount T ≤ 2
       · have he := leaf_count_eq_two_add_excess T hTree
         have hl : leafCount T = 2 := by omega
-        have hp : Nonempty (T ≃g pathGraph n) := by
-          simpa only [Fintype.card_fin] using (tree_two_leaves_iff_path T hTree).mp hl
+        have hp := (tree_two_leaves_iff_path T hTree).mp hl
+        rw [Fintype.card_fin] at hp
         obtain ⟨f⟩ := hp
-        have hE := energy_eq f
-        exact ⟨hE.symm.le, ⟨fun _ => ⟨f⟩, fun _ => hE⟩⟩
+        exact conclusion_of_iso T f
       · have hp : ¬Nonempty (T ≃g pathGraph n) := by
           intro hiso
           have hleaf' := (tree_two_leaves_iff_path T hTree).mpr
-            (by simpa only [Fintype.card_fin] using hiso)
+            (by rw [Fintype.card_fin]; exact hiso)
           omega
         obtain ⟨H, hHT, hL, hE⟩ := hstep T hTree hp
         have hlt : leafCount H < k := by omega
@@ -123,7 +133,7 @@ theorem conclusion_of_descent {n : ℕ} (hn : 2 ≤ n)
   exact main (leafCount G) G rfl hT
 
 /-- The global targets follow from three explicit remaining inputs. -/
-theorem universal_conclusion (N : ℕ) (hN : 2 ≤ N) (hsmall : SmallOrders N)
+theorem universal_conclusion (N : ℕ) (hsmall : SmallOrders N)
     (hD : DecomposesAbove N) (hF : StrictFusionAbove N)
     (n : ℕ) (hn : 1 ≤ n) (G : SimpleGraph (Fin n)) (hT : G.IsTree) : Conclusion G := by
   by_cases hn1 : n = 1
@@ -136,18 +146,19 @@ theorem universal_conclusion (N : ℕ) (hN : 2 ≤ N) (hsmall : SmallOrders N)
     intro T hTree hpath
     exact concrete_descent hD hF (by omega) T hTree hpath
 
-theorem path_minimum_of_inputs (N : ℕ) (hN : 2 ≤ N) (hsmall : SmallOrders N)
+theorem path_minimum_of_inputs (N : ℕ) (hsmall : SmallOrders N)
     (hD : DecomposesAbove N) (hF : StrictFusionAbove N)
     (n : ℕ) (hn : 1 ≤ n) (G : SimpleGraph (Fin n)) (hT : G.IsTree) :
     laplacianEnergy (pathGraph n) ≤ laplacianEnergy G :=
-  (universal_conclusion N hN hsmall hD hF n hn G hT).1
+  (universal_conclusion N hsmall hD hF n hn G hT).1
 
-theorem path_equality_of_inputs (N : ℕ) (hN : 2 ≤ N) (hsmall : SmallOrders N)
+theorem path_equality_of_inputs (N : ℕ) (hsmall : SmallOrders N)
     (hD : DecomposesAbove N) (hF : StrictFusionAbove N)
     (n : ℕ) (hn : 1 ≤ n) (G : SimpleGraph (Fin n)) (hT : G.IsTree) :
     laplacianEnergy G = laplacianEnergy (pathGraph n) ↔ Nonempty (G ≃g pathGraph n) :=
-  (universal_conclusion N hN hsmall hD hF n hn G hT).2
+  (universal_conclusion N hsmall hD hF n hn G hT).2
 
+#print axioms conclusion_of_iso
 #print axioms singleton_conclusion
 #print axioms concrete_descent
 #print axioms conclusion_of_descent

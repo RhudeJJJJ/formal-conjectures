@@ -42,11 +42,14 @@ jobs:
       - name: Kernel check current components
         run: |
           set +e
+          mkdir -p .lake/build/lib/lean/Proofs
           lake env lean -DwarningAsError=true Proofs/TDABudget.lean
           budget=$?
-          lake env lean -DwarningAsError=true Proofs/TDAHypergraphBase.lean
+          lake env lean -DwarningAsError=true -o .lake/build/lib/lean/Proofs/TDAHypergraphBase.olean Proofs/TDAHypergraphBase.lean
           hypergraph=$?
           mkdir -p .lake/build/lib/lean/Proofs
           lake env lean -DwarningAsError=true -o .lake/build/lib/lean/Proofs/ZajacBrooks.olean Proofs/ZajacBrooks.lean
           brooks=$?
-          exit $((budget || hypergraph || brooks))
+          lake env lean -DwarningAsError=true Proofs/TDAUniform.lean
+          uniform=$?
+          exit $((budget || hypergraph || brooks || uniform))

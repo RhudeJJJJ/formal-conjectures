@@ -107,7 +107,8 @@ theorem pairwise_conflict_card_le_four (J : Finset I) (edge : I → Finset V)
   have hSsub : S ⊆ edge a ∪ edge b := by
     intro y hy
     by_cases hyx : y = x
-    · exact hyx ▸ mem_union_left _ ha.2
+    · subst y
+      exact mem_union_left _ ha.2
     obtain ⟨i, hi, hxi, hyi⟩ := hpair x hx y hy (Ne.symm hyx)
     have hii : i ∈ incident J edge x := mem_incident.mpr ⟨hi, hxi⟩
     rw [hinc] at hii
@@ -156,7 +157,7 @@ theorem pairwise_conflict_card_le_four (J : Finset I) (edge : I → Finset V)
     hAnotb v hvA (mem_erase.mp hvB).2
   have hne : ∀ v ∈ A, ∀ w ∈ B, v ≠ w := by
     intro v hv w hw heq
-    exact Finset.disjoint_left.mp hdis hv (heq ▸ hw)
+    exact Finset.disjoint_left.mp hdis hv (heq.symm ▸ hw)
   obtain ⟨v, hv⟩ := card_pos.mp (show 0 < A.card by omega)
   obtain ⟨w, hw⟩ := card_pos.mp (show 0 < B.card by omega)
   obtain ⟨g, hg, hvg, hwg⟩ := hpair v (hAS hv) w (hBS hw) (hne v hv w hw)
@@ -173,7 +174,7 @@ theorem pairwise_conflict_card_le_four (J : Finset I) (edge : I → Finset V)
       rcases mem_insert.mp hi with rfl | hi
       · exact mem_incident.mpr ⟨ha.1, (mem_erase.mp hv).2⟩
       · have hig : i = g := mem_singleton.mp hi
-        exact hig ▸ mem_incident.mpr ⟨hg, hvg⟩
+        exact hig.symm ▸ mem_incident.mpr ⟨hg, hvg⟩
     · rw [hdeg v (hAS hv)]
       simp [Ne.symm hga]
   have hwi : incident J edge w = {b, g} := by
@@ -183,7 +184,7 @@ theorem pairwise_conflict_card_le_four (J : Finset I) (edge : I → Finset V)
       rcases mem_insert.mp hi with rfl | hi
       · exact mem_incident.mpr ⟨hb.1, (mem_erase.mp hw).2⟩
       · have hig : i = g := mem_singleton.mp hi
-        exact hig ▸ mem_incident.mpr ⟨hg, hwg⟩
+        exact hig.symm ▸ mem_incident.mpr ⟨hg, hwg⟩
     · rw [hdeg w (hBS hw)]
       simp [Ne.symm hgb]
   have hBg : B ⊆ edge g := by
@@ -213,7 +214,9 @@ theorem pairGraph_cliqueFree_five (U : Finset V) (J : Finset I)
     (pairGraph U J edge).CliqueFree 5 := by
   classical
   intro S hS
-  obtain ⟨hc, hcard⟩ := SimpleGraph.isNClique_iff.mp hS
+  rw [SimpleGraph.isNClique_iff] at hS
+  obtain ⟨hc, hcard⟩ := hS
+  rw [SimpleGraph.isClique_iff] at hc
   let R := S.image Subtype.val
   have hRcard : R.card = 5 := by
     rw [card_image_of_injective _ Subtype.val_injective]
@@ -228,7 +231,7 @@ theorem pairGraph_cliqueFree_five (U : Finset V) (J : Finset I)
     obtain ⟨x', hx', rfl⟩ := mem_image.mp hx
     obtain ⟨y', hy', rfl⟩ := mem_image.mp hy
     have hne : x' ≠ y' := fun h => hxy (congrArg Subtype.val h)
-    exact ((SimpleGraph.isClique_iff.mp hc) hx' hy' hne).2
+    exact (hc hx' hy' hne).2
   have hb := pairwise_conflict_card_le_four J edge hthree R hRdeg hRpair
   omega
 

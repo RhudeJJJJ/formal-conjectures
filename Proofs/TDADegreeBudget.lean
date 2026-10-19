@@ -21,6 +21,7 @@ theorem exists_rounded_budget (S L : Finset V) (d : V → ℕ) (m : ℕ)
   let E := ∑ v ∈ H, d v
   have hsum : E + B = 2 * m := by
     have hs := sum_sdiff hLS (f := d)
+    change (∑ v ∈ S \ L, d v) + (∑ v ∈ L, d v) = 2 * m
     omega
   have hE : 3 * r ≤ E := by
     calc

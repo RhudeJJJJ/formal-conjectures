@@ -60,8 +60,14 @@ jobs:
           optimal=$?
           lake env lean -DwarningAsError=true Proofs/TDADegreeBudget.lean
           rounding=$?
-          lake env lean -DwarningAsError=true Proofs/TDANeighborhood.lean
+          lake env lean -DwarningAsError=true -o .lake/build/lib/lean/Proofs/TDANeighborhood.olean Proofs/TDANeighborhood.lean
           neighborhood=$?
-          lake env lean -DwarningAsError=true Proofs/TDAGraphBasics.lean
+          lake env lean -DwarningAsError=true -o .lake/build/lib/lean/Proofs/TDAGraphBasics.olean Proofs/TDAGraphBasics.lean
           basics=$?
-          exit $((budget || hypergraph || brooks || uniform || mixed || mixed_end || optimal || rounding || neighborhood || basics))
+          lake env lean -DwarningAsError=true -o .lake/build/lib/lean/Proofs/TDACoreCover.olean Proofs/TDACoreCover.lean
+          core_cover=$?
+          lake env lean -DwarningAsError=true -o .lake/build/lib/lean/Proofs/TDALeafCounts.olean Proofs/TDALeafCounts.lean
+          leaf_counts=$?
+          lake env lean -DwarningAsError=true Proofs/TDAGeneralBound.lean
+          general=$?
+          exit $((budget || hypergraph || brooks || uniform || mixed || mixed_end || optimal || rounding || neighborhood || basics || core_cover || leaf_counts || general))

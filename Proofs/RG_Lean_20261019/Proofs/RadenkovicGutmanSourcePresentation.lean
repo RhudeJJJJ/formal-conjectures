@@ -197,7 +197,8 @@ theorem decomposesAbove (N : ℕ) : DecomposesAbove N := by
   by_cases hn : 2 ≤ n
   · let : Nontrivial (Fin n) := Fin.nontrivial_iff_two_le.mpr hn
     have hp : ¬Nonempty (T ≃g pathGraph (Fintype.card (Fin n))) := by
-      simpa only [Fintype.card_fin] using hpath
+      rw [Fintype.card_fin]
+      exact hpath
     obtain ⟨m, C, u, p, q, _, hd, hf⟩ := nonpath_source hT hp
     exact ⟨m, C, u, p, q, hd, hf⟩
   · have hpos : 0 < n := by

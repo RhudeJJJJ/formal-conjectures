@@ -13,7 +13,7 @@ theorem leaves_tree_max_two (G : SimpleGraph V) [DecidableRel G.Adj]
     (leaves G).card = 2 := by
   classical
   let : Nontrivial V := Fintype.one_lt_card_iff_nontrivial.mp (by omega)
-  have hpos := hG.connected.preconnected.degree_pos_of_nontrivial
+  have hpos : ∀ v, 0 < G.degree v := fun v => hG.connected.preconnected.degree_pos_of_nontrivial v
   have hlow : lowVertices G = univ := by
     ext v
     simp only [lowVertices, mem_filter, mem_univ, true_and]

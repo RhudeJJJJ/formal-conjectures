@@ -80,6 +80,10 @@ jobs:
           transfer=$?
           lake env lean -DwarningAsError=true -o .lake/build/lib/lean/Proofs/TDAGraphEdge.olean Proofs/TDAGraphEdge.lean
           graph_edge=$?
-          lake env lean -DwarningAsError=true Proofs/TDAMaxTwo.lean
+          lake env lean -DwarningAsError=true -o .lake/build/lib/lean/Proofs/TDAMaxTwo.olean Proofs/TDAMaxTwo.lean
           max_two=$?
-          exit $((budget || hypergraph || brooks || uniform || mixed || mixed_end || optimal || rounding || neighborhood || basics || core_cover || leaf_counts || general || graph_budget || tree_color || tree_bound || transfer || graph_edge || max_two))
+          lake env lean -DwarningAsError=true -o .lake/build/lib/lean/Proofs/TDACycleEdge.olean Proofs/TDACycleEdge.lean
+          cycle_edge=$?
+          lake env lean -DwarningAsError=true Proofs/TDAFull.lean
+          full=$?
+          exit $((budget || hypergraph || brooks || uniform || mixed || mixed_end || optimal || rounding || neighborhood || basics || core_cover || leaf_counts || general || graph_budget || tree_color || tree_bound || transfer || graph_edge || max_two || cycle_edge || full))

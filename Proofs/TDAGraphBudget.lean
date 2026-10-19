@@ -22,6 +22,7 @@ theorem low_vertices_partition (G : SimpleGraph V) [DecidableRel G.Adj]
   have hp := hpos v
   omega
 
+omit [DecidableEq V] in
 theorem leaves_disjoint_degreeTwo (G : SimpleGraph V) [DecidableRel G.Adj] :
     Disjoint (leaves G) (degreeTwo G) := by
   apply Finset.disjoint_left.mpr
@@ -30,12 +31,14 @@ theorem leaves_disjoint_degreeTwo (G : SimpleGraph V) [DecidableRel G.Adj] :
   have h2 := (mem_filter.mp hvB).2
   omega
 
+omit [DecidableEq V] in
 theorem sum_leaves_degree (G : SimpleGraph V) [DecidableRel G.Adj] :
     (∑ v ∈ leaves G, G.degree v) = (leaves G).card := by
   calc
     _ = ∑ _v ∈ leaves G, (1 : ℕ) := sum_congr rfl (fun v hv => mem_leaves.mp hv)
     _ = _ := by simp
 
+omit [DecidableEq V] in
 theorem sum_degreeTwo (G : SimpleGraph V) [DecidableRel G.Adj] :
     (∑ v ∈ degreeTwo G, G.degree v) = 2 * (degreeTwo G).card := by
   calc
@@ -55,7 +58,7 @@ theorem total_domination_le_annihilation_of_low_budget (G : SimpleGraph V)
     G.totalDominationNumber ≤ G.annihilationNumber := by
   classical
   let : Nontrivial V := Fintype.one_lt_card_iff_nontrivial.mp (by omega)
-  have hpos := hG.preconnected.degree_pos_of_nontrivial
+  have hpos : ∀ v, 0 < G.degree v := fun v => hG.preconnected.degree_pos_of_nontrivial v
   have hhigh : ∀ v ∈ univ \ lowVertices G, 3 ≤ G.degree v := by
     intro v hv
     have hnot := (mem_sdiff.mp hv).2
@@ -99,7 +102,7 @@ theorem edges_add_leaves_le_twice_annihilation_add_one (G : SimpleGraph V)
     G.edgeFinset.card + (leaves G).card ≤ 2 * G.annihilationNumber + 1 := by
   classical
   let : Nontrivial V := Fintype.one_lt_card_iff_nontrivial.mp (by omega)
-  have hpos := hG.preconnected.degree_pos_of_nontrivial
+  have hpos : ∀ v, 0 < G.degree v := fun v => hG.preconnected.degree_pos_of_nontrivial v
   have hl := leaves_card_le_edges G hG.preconnected hn
   rw [low_vertices_sum G hpos] at hlarge
   let t := (G.edgeFinset.card - (leaves G).card) / 2

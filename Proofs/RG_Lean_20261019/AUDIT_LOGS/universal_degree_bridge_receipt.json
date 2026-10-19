@@ -1,0 +1,1726 @@
+{
+  "lean": "Lean (version 4.33.1, x86_64-unknown-linux-gnu, commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6, Release)",
+  "mathlib": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "leancert": "621a43d7cf21f87872392a01e874f2f1dbddc926",
+  "global_rg": "NOT_PROVED",
+  "complete_submission": "NOT_SUBMITTED",
+  "scope": "EXPLICIT_EXTENSION_CLOSURE",
+  "endpoints": [
+    "Proofs.RadenkovicGutmanLongArmBothAllDegrees"
+  ],
+  "modules": {
+    "Proofs.RadenkovicGutmanCountGap": {
+      "module": "Proofs.RadenkovicGutmanCountGap",
+      "source_sha256": "17eefcfd9580f0df92eb9c1ce4dded759fd575602c6e53f57263ab4613f84d6e",
+      "source_closure_sha256": "e094d2590497c077143917af18a459f1b8bdc8324157118d3d2871fc65c65262",
+      "output_sha256": "3c373804baff872a94cee77b64049685f14b16ac1b2ca052aef334a81df92a8e",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PINNED_CHECKPOINT",
+      "seconds": 0
+    },
+    "Proofs.RadenkovicGutmanPathEnclosure": {
+      "module": "Proofs.RadenkovicGutmanPathEnclosure",
+      "source_sha256": "fa908a8e90a316981820ebf47445e0ab206f3cf32e546466d775fc908931cc85",
+      "source_closure_sha256": "ff7df41973217dcdfed0a7af9da22f3a1218526c9f35cd9a816500222bb492da",
+      "output_sha256": "0f850d1591d8ff4a712a2a3031ebdbb1b30f81d784fdd37f60722609344203fa",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PINNED_CHECKPOINT",
+      "seconds": 0
+    },
+    "Proofs.RadenkovicGutmanPathRecurrence": {
+      "module": "Proofs.RadenkovicGutmanPathRecurrence",
+      "source_sha256": "4e4eeb10961d7d9834c138cfe317e5f6dd2a153102b2e092662c75661230c4e6",
+      "source_closure_sha256": "b11c8835f40da37fb10e1cae3e5554b0692d07ddbecb2f270d8fc682276ecb8e",
+      "output_sha256": "9394d0c64712d0fb8fc8f4e77f10ee3edb7db18f8a74f4370362ab87fee84661",
+      "axiom_profiles": [
+        [
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PINNED_CHECKPOINT",
+      "seconds": 0
+    },
+    "Proofs.RadenkovicGutmanRationalLog": {
+      "module": "Proofs.RadenkovicGutmanRationalLog",
+      "source_sha256": "e602083892dfefe7d76d5f9d3c7067db0d76e7cd9be34ee1087f396bd4c1f0eb",
+      "source_closure_sha256": "9264cb2cf24fcaafc2609c78a767b3fd67798889bd348c22af7a8933fc2be8f2",
+      "output_sha256": "c1bca06c5a64537049305d4a4893a1e964b7119fdfe08cd1e810ffb98e1f84a4",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PINNED_CHECKPOINT",
+      "seconds": 0
+    },
+    "Proofs.RadenkovicGutmanRootIsolation": {
+      "module": "Proofs.RadenkovicGutmanRootIsolation",
+      "source_sha256": "252239aacd0149f20c91de7148d308606014aa8cbde3b4619eb82ae02a2c01e8",
+      "source_closure_sha256": "721995e4a5c44ccc7f9e2dc07cb3d8e29945757623cca0824e0cd252b38691da",
+      "output_sha256": "fff3133df8dbbd13e0c24a928644df71e6cb2045374f4afaf9e61ad7e316156c",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PINNED_CHECKPOINT",
+      "seconds": 0
+    },
+    "Proofs.RadenkovicGutmanCheckedRoots": {
+      "module": "Proofs.RadenkovicGutmanCheckedRoots",
+      "source_sha256": "a34251570fad7db92c412bde79b9c288c7be279efe505d69a8b0ea0b1f914539",
+      "source_closure_sha256": "eadad13857374b0415bf2b9b1f2d4e0ad8e87c19c7ac3aec852c286738458bf7",
+      "output_sha256": "e5716a650c1703486c58812aa9e842c2eab4f63371792ed9dc4d693c7705260e",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PINNED_CHECKPOINT",
+      "seconds": 0
+    },
+    "Proofs.RadenkovicGutmanPathDeterminant": {
+      "module": "Proofs.RadenkovicGutmanPathDeterminant",
+      "source_sha256": "d6121b7d9da80dabe42e1a33f87b6d60a7f968da8823fe829b15851be072d031",
+      "source_closure_sha256": "8b98b18afc3d7bea424153f2b268320498e33442b1876d0c31c42b23e8e2704a",
+      "output_sha256": "f769b5f24f323327fec31c59d572fbe928b794156677661185cb6309cd6dbea2",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PINNED_CHECKPOINT",
+      "seconds": 0
+    },
+    "Proofs.RadenkovicGutmanPathResolvent": {
+      "module": "Proofs.RadenkovicGutmanPathResolvent",
+      "source_sha256": "72a7442dc6be586455fdec61a674157048718060da11c5d4bf24eb129e78e627",
+      "source_closure_sha256": "3b74e0955f8ec2db84ef63ad50eb68eb697bf454fafd9076e242ef962f4ee5c7",
+      "output_sha256": "840e2cbb1cf91b0cac892a605f44c73dd34212d60ee82d75dad7ce267da16ae4",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PINNED_CHECKPOINT",
+      "seconds": 0
+    },
+    "Proofs.RadenkovicGutmanArmBridge": {
+      "module": "Proofs.RadenkovicGutmanArmBridge",
+      "source_sha256": "dbe29009159ad77cc551e19ad5a02816252cffabe171a6c3a89ed6ab9fb059ba",
+      "source_closure_sha256": "5c5424acf5a7ff6d26b30c4915091e139c5a3f7556b5c2b44c09e21408ed1cfe",
+      "output_sha256": "e7a79fab47e28eb97e0726c573c8a9d4005c4e9a349a3e66a50d00966fd91b14",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PINNED_CHECKPOINT",
+      "seconds": 0
+    },
+    "Proofs.RadenkovicGutmanScalarIntegral": {
+      "module": "Proofs.RadenkovicGutmanScalarIntegral",
+      "source_sha256": "5c6513466fe92cd9b0d1a16bf9c0589a26b580768bd88565ee06a5f88a4a43c4",
+      "source_closure_sha256": "58f1e13ad5e74c911c4b9c573a591a4bbcb6addae0759840436150cb64b30275",
+      "output_sha256": "1c53ff93e1156a50801dfb4ec4cb289f15da1fce0341e8802ccd6746a6ac604c",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PINNED_CHECKPOINT",
+      "seconds": 0
+    },
+    "Proofs.RadenkovicGutmanResolventDisk": {
+      "module": "Proofs.RadenkovicGutmanResolventDisk",
+      "source_sha256": "f7bd373fd0673afb3031ed0e1c2f1c6fd1d18261671545fb84c3155fd4f819ce",
+      "source_closure_sha256": "d6b9b5e93786605b81510bbf903a917562c24aebf50476ad28674cb7171d9d15",
+      "output_sha256": "c4ae74ee5483b2f4bcbfbb9e0dd709dc73d668deebdd1b7b548e222c440652d3",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PINNED_CHECKPOINT",
+      "seconds": 0
+    },
+    "Proofs.RadenkovicGutmanCoreQuotient": {
+      "module": "Proofs.RadenkovicGutmanCoreQuotient",
+      "source_sha256": "9a73956ea3e17c97208ee5522dc73d9feb2b5f209e5d707ef19d64bade8d3d82",
+      "source_closure_sha256": "e4ae07f61d2620d98311434d9bbb551f6f036435a6ab8285907d68eab42186d5",
+      "output_sha256": "1871b954b224b7855f346c801b91e2b784b4e82893c5552d2d17d9937d45f2e2",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PINNED_CHECKPOINT",
+      "seconds": 0
+    },
+    "Proofs.RadenkovicGutmanGraphJoin": {
+      "module": "Proofs.RadenkovicGutmanGraphJoin",
+      "source_sha256": "36d8d239d7a45bf63cfd0475180e208c72cf5bbe9f18873a32b966bdcfa7c428",
+      "source_closure_sha256": "c891c0eaf716f1a520e5fa97eb22fb98eae7ce80f235c626f9dad55020a68696",
+      "output_sha256": "49cc76498a747b50e44de69889260e6b4f31202f98cfbf8d00b3e66141e53f3b",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PINNED_CHECKPOINT",
+      "seconds": 0
+    },
+    "Proofs.RadenkovicGutmanReciprocalDisk": {
+      "module": "Proofs.RadenkovicGutmanReciprocalDisk",
+      "source_sha256": "f25822e9066676241b9fd4fd9554a38e7687377e4f1750549356d4358599b2b8",
+      "source_closure_sha256": "6a898f4cf5c359bc518e3c792a87997193734919a8724763ba05d0044472b349",
+      "output_sha256": "560c24c1ad1e1e048df86ac447087e06b7e537e943780b01758d8f79393ad0a5",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PINNED_CHECKPOINT",
+      "seconds": 0
+    },
+    "Proofs.RadenkovicGutmanFusionQuotient": {
+      "module": "Proofs.RadenkovicGutmanFusionQuotient",
+      "source_sha256": "af4340091b54039be8601ca21297236fe5983b34e9bc5e311a1709b87e1faaf8",
+      "source_closure_sha256": "318488a4d452c35a048a420595f65f5265337ecd72428c4093dbbd4faf07dc31",
+      "output_sha256": "bc50985bd78f9ada4d9769c4d9bf35caa7200c391927431b404966031fc8f778",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PINNED_CHECKPOINT",
+      "seconds": 0
+    },
+    "Proofs.RadenkovicGutmanMobiusDisk": {
+      "module": "Proofs.RadenkovicGutmanMobiusDisk",
+      "source_sha256": "7ec1df82295ae76acb46371d5e19213524479a8e1c822b1036420aa2f4695f21",
+      "source_closure_sha256": "5d010eb9b0481030e3dd76c816c354d029a06c2dab87fb883a82da183c6528e3",
+      "output_sha256": "989092f3768c3857b083902b417e2d34919a17b6e3ac85a34456ea8d2058cf90",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PINNED_CHECKPOINT",
+      "seconds": 0
+    },
+    "Proofs.RadenkovicGutmanRootSchur": {
+      "module": "Proofs.RadenkovicGutmanRootSchur",
+      "source_sha256": "e4d72cf821925d3f886fd118853ea8603e5db6eeece474bd516b26badaccb8e9",
+      "source_closure_sha256": "5489c9132ea8ade8aada94651a08baf004235319d5cbefd549d0c1a00f18c55e",
+      "output_sha256": "1e73036c8287dd0050d99973825cc8982e05cb805367d7c8cd34e1469933aaf9",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PINNED_CHECKPOINT",
+      "seconds": 0
+    },
+    "Proofs.RadenkovicGutmanBernstein": {
+      "module": "Proofs.RadenkovicGutmanBernstein",
+      "source_sha256": "24c6563f685e7ea5304b5d8563e055c526842c1131beb6c4551a3857f5d081fa",
+      "source_closure_sha256": "67a2c6c66542a152a60a93aaa4e388b808dbdf61b4e29a3c97f08529b5a89bc9",
+      "output_sha256": "028d650066aff9728a34ef13b428ff4c589b50700daf13f78608dbfa271dce3b",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PINNED_CHECKPOINT",
+      "seconds": 0
+    },
+    "Proofs.RadenkovicGutmanSpectral": {
+      "module": "Proofs.RadenkovicGutmanSpectral",
+      "source_sha256": "70d7fe9e91a930f1a2e62ea85b5ecea17484877d5150c5eb52cfee1776d98348",
+      "source_closure_sha256": "184b16762c75c2961cd905c2ef7f1d86351d1b7dbfa11da6bc62fb52ea58ecb9",
+      "output_sha256": "84d02b59e97a3e4c068cf62d50d2cadd9721547bee4baef4c5346155316ad074",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PINNED_CHECKPOINT",
+      "seconds": 0
+    },
+    "Proofs.RadenkovicGutmanCoulson": {
+      "module": "Proofs.RadenkovicGutmanCoulson",
+      "source_sha256": "4c91db9f8c55b6211a8ad1895eb4a35d6d68afd8e96e43d628f8d56a1b69a0e1",
+      "source_closure_sha256": "a85d2ce7840d0fb0029ef7eeac68d37cdd203bcc0942dfa89c91875d93ff7f36",
+      "output_sha256": "60eb4aeb6a23ed62f1ff6d398f4b3adbe1fc5d6dd9d0db0a9aba528c2973a134",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PINNED_CHECKPOINT",
+      "seconds": 0
+    },
+    "Proofs.RadenkovicGutmanFocus": {
+      "module": "Proofs.RadenkovicGutmanFocus",
+      "source_sha256": "730091016e9fce76e3f791ef26e4d09cc8c64c0c2bbb42e154788e37f1f874e3",
+      "source_closure_sha256": "3e2c21b6badfbc92f20f9799136d6361e4f62b8fdaa189c9191f1c074b2d905b",
+      "output_sha256": "2c75ad75a6c837e892851bdd2394eb6ec60b14b761f677e9501775713cfc92a7",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PINNED_CHECKPOINT",
+      "seconds": 0
+    },
+    "Proofs.RadenkovicGutmanPerturbation": {
+      "module": "Proofs.RadenkovicGutmanPerturbation",
+      "source_sha256": "166d8a987925c7c517b36f06796e36c78acd947c1bfcc13d13970ba5b527a54c",
+      "source_closure_sha256": "780adf4f60f37fc150d990bcedeb53bcf03b619020a75f16e7ee0984f623db96",
+      "output_sha256": "047720ab6a0b79525cd697bd1b9f5492bc997cb5efe328f919d5580c6cec0285",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PINNED_CHECKPOINT",
+      "seconds": 0
+    },
+    "Proofs.RadenkovicGutmanArmClasses": {
+      "module": "Proofs.RadenkovicGutmanArmClasses",
+      "source_sha256": "fbcbd66c3174524e4eca1925101fa8e22db0f641adf45a1076079bcfbc418d70",
+      "source_closure_sha256": "f5eae1c492b58eaa7c812a5d5116acf10815c41ee25f7be9552ee85470c91eb1",
+      "output_sha256": "91b57ccf8ea26bcdb98a3ea96c9bd0302c7d3e24c3d8cbda1be2d68832d6424c",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PINNED_CHECKPOINT",
+      "seconds": 0
+    },
+    "Proofs.RadenkovicGutmanCountTransport": {
+      "module": "Proofs.RadenkovicGutmanCountTransport",
+      "source_sha256": "700a56e67a26d218c655c148a04bdfb5820f06dc8f08fd49f6109d42b803bf43",
+      "source_closure_sha256": "4f622b9ce2fd5ffb47ad6145be10f8e6d0d757854b5e3c5974ec55a2ae199997",
+      "output_sha256": "1c66fdf427e8f89bfe7409c69deb7b330988604d455b703a908cb7792b494793",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PINNED_CHECKPOINT",
+      "seconds": 0
+    },
+    "Proofs.RadenkovicGutmanGraphIntegral": {
+      "module": "Proofs.RadenkovicGutmanGraphIntegral",
+      "source_sha256": "0a9f10cff64ce9c67b8312b014786025e313b58c1f8debad4263675bca8dab35",
+      "source_closure_sha256": "98c1de33fdae0f07fb736f4acbc9b5ef9fc3220c5a9eb0c5b5adf22408df2038",
+      "output_sha256": "77a2d272abda6e003508af954be115f453ab7303af6461b48348a2575e653d20",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PINNED_CHECKPOINT",
+      "seconds": 0
+    },
+    "Proofs.RadenkovicGutmanScaledQuotient": {
+      "module": "Proofs.RadenkovicGutmanScaledQuotient",
+      "source_sha256": "bb7053a4a3c03ea4367fc5ddcf0c0fe969698f8fd8a714ea4ebb86256e927d1c",
+      "source_closure_sha256": "13514d40cd6ce1fa83e32a9f0a4dde7a15d266e8daba31929f2c5f14830ab6e1",
+      "output_sha256": "8f19bc2dc4d3cfb48ed2d4bfceef4be0259dcca2f6f2180e069ae7151919fac5",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PINNED_CHECKPOINT",
+      "seconds": 0
+    },
+    "Proofs.RadenkovicGutmanRewireIso": {
+      "module": "Proofs.RadenkovicGutmanRewireIso",
+      "source_sha256": "300a08814b9356b998083b4393c099ae9ebb5eba9e6a6918f2388666d1b51998",
+      "source_closure_sha256": "07ba06d8d1747a8ee29434f4a2f2f6432ab7563c05a7145f5d824e31d254a753",
+      "output_sha256": "8ff9f40ce2465fe5d59ed28bfbe53128f53bb048c036d7b6cf6eafe2612ba7f9",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PINNED_CHECKPOINT",
+      "seconds": 0
+    },
+    "Proofs.RadenkovicGutmanQuotientBridge": {
+      "module": "Proofs.RadenkovicGutmanQuotientBridge",
+      "source_sha256": "28fb4dea023ae184092ae7a48f8ea0ee8e7ae27b4781eae0eb81526ceac6fbac",
+      "source_closure_sha256": "e522c50e16153d0ec948678bf3c6110ad68dfb6fda4321dbe0d34df320db1257",
+      "output_sha256": "c9e3acf597116d939e4b27aeb174002f04cf54091bb279556418bf957b824ccd",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PINNED_CHECKPOINT",
+      "seconds": 0
+    },
+    "Proofs.RadenkovicGutmanIsoEnergy": {
+      "module": "Proofs.RadenkovicGutmanIsoEnergy",
+      "source_sha256": "b68912b00217f93960b64d30093ec2d5eb0843ea716ea9afc41aa7b62156efd9",
+      "source_closure_sha256": "95f192969345db20f08cf39c8a37f267a7b708300d1698f8293dd3f4001e18c0",
+      "output_sha256": "c08834db3b611563c304916312736ee570ea09da44eccb5dae247fd460694ed5",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PINNED_CHECKPOINT",
+      "seconds": 0
+    },
+    "Proofs.RadenkovicGutmanConcreteGraphQuotient": {
+      "module": "Proofs.RadenkovicGutmanConcreteGraphQuotient",
+      "source_sha256": "ee234356bf07576cf303c00b0762c6e490a8291b1c0a93e5c1b5cc7f7fa2bb6e",
+      "source_closure_sha256": "b7642355a4f742bdb07fc31accc9d5bf911e43b93e17039399a0e60591f84d14",
+      "output_sha256": "d676a5a3d032c239f6618d7e74ec805fe6c6e6cd4d75dbb199ca8d2bbd6a9281",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PINNED_CHECKPOINT",
+      "seconds": 0
+    },
+    "Proofs.RadenkovicGutmanMixedGraphIntegral": {
+      "module": "Proofs.RadenkovicGutmanMixedGraphIntegral",
+      "source_sha256": "9fc651e7971b3eaf75d4d050d35b5a6f1dee29824cd3fde72ff3af782955ba08",
+      "source_closure_sha256": "71a23c338ff792b0e7d1ec39eaad45800e4ab49a05b689dc23096ec3946c0497",
+      "output_sha256": "a139f21f1c241f5c52259fd486bc5543c0677dd219380b6c8693ba702e2d1910",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PINNED_CHECKPOINT",
+      "seconds": 0
+    },
+    "Proofs.RadenkovicGutmanTensorPolynomial": {
+      "module": "Proofs.RadenkovicGutmanTensorPolynomial",
+      "source_sha256": "8495ec2b589b94150e1bd62bab217280f819a18630c3c8cec621ab37722efdf5",
+      "source_closure_sha256": "6665f37c83ff58ba78d98c27edc34584a8e6f512397f3f2e31a24f1b5de3cb6a",
+      "output_sha256": "6a706dd4735a6a93da97e32a95bfee53cce9cbded06ca18b5403915246c3c37e",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PINNED_CHECKPOINT",
+      "seconds": 0
+    },
+    "Proofs.RadenkovicGutmanRationalTensorPolynomial": {
+      "module": "Proofs.RadenkovicGutmanRationalTensorPolynomial",
+      "source_sha256": "a7da791d74887b404c79789bf83fe95af37722635d29043daf67727dd1c8bf27",
+      "source_closure_sha256": "6a149c0d076b116a224a7aef7ad7cfbde9479d7650b19fccef78a9a6cd481b7e",
+      "output_sha256": "895805c039fbe02620604398656fa6e410404f8b3889d41434da4e49c703bb36",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PINNED_CHECKPOINT",
+      "seconds": 0
+    },
+    "Proofs.RadenkovicGutmanRationalTensorFast": {
+      "module": "Proofs.RadenkovicGutmanRationalTensorFast",
+      "source_sha256": "14b6414c7ef2a21a7af1d2c51c3a0a84b794a237918608ecdab1dacb9d5481f9",
+      "source_closure_sha256": "a4bb846964b92aa7ba918d92ce53a48e2db2a7b89cd0783fb5d4cbe5bf72adb2",
+      "output_sha256": "5eb44a5117ccc6a43a40749ebac73dcac44448fd87427de3f1d48572bf95a695",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PINNED_CHECKPOINT",
+      "seconds": 0
+    },
+    "Proofs.RadenkovicGutmanNestedHorner": {
+      "module": "Proofs.RadenkovicGutmanNestedHorner",
+      "source_sha256": "4b4a7c934bb02d9d168ec38999726372a2c72e4fcf9fe0d7ba6b3117088e3b6a",
+      "source_closure_sha256": "d51175fd6e6eae4f0e2a9f63c3e8c3176e5124033ee100015bcf1f580c25c2b9",
+      "output_sha256": "d38a74dcf45c7a6d1acb59432b81b7564d961af247369b506c6dd640e9626738",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PINNED_CHECKPOINT",
+      "seconds": 0
+    },
+    "Proofs.RadenkovicGutmanHornerCertificates": {
+      "module": "Proofs.RadenkovicGutmanHornerCertificates",
+      "source_sha256": "e9c5d2471561d8d9fbf960160953787d3a0ac453c466d718838e137a476ee0f5",
+      "source_closure_sha256": "f536ce4d2837e4b5d3653bda8450ef6c8a6590815bc0f1c3d2d66830dbd2dc4f",
+      "output_sha256": "849da7f58baab79e82699fc4dc9933c765262a7d902de9883b82da1318841aaf",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PINNED_CHECKPOINT",
+      "seconds": 0
+    },
+    "Proofs.RadenkovicGutmanNestedHornerCells": {
+      "module": "Proofs.RadenkovicGutmanNestedHornerCells",
+      "source_sha256": "e4c8a14de46b3ffd47dfc75f8325aee607e9d6f2e79e10e2a9691cc424ead77d",
+      "source_closure_sha256": "1050c1adccf5cf379738585b79273f36bebf56fee9a8d85701f811ca346c4460",
+      "output_sha256": "3de7b8efae0c6f222024b7530cf08f2b14df5904d039b04a3765375a0492952b",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PINNED_CHECKPOINT",
+      "seconds": 0
+    },
+    "Proofs.RadenkovicGutmanLongArmCoordinates": {
+      "module": "Proofs.RadenkovicGutmanLongArmCoordinates",
+      "source_sha256": "f8fd34b27effb1f2638ed962d3fe59540edf5f75baf7000b1df444f7338def09",
+      "source_closure_sha256": "2882639d2499f8ef3b58e7638c47455992cbd9b47f59b01b4d4404ff0718a7fd",
+      "output_sha256": "472d55504f18685305ad654aa875c3958e8f6dbde76bc1722903cc4794022bfe",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PINNED_CHECKPOINT",
+      "seconds": 0
+    },
+    "Proofs.RadenkovicGutmanLongArmGeometry1L": {
+      "module": "Proofs.RadenkovicGutmanLongArmGeometry1L",
+      "source_sha256": "6d2754d5f413ddd6b43e7fa0a690a26dd7ce64c83e9fa2aab9d345795fc35950",
+      "source_closure_sha256": "64d5833e1353f7bbd697f12b49fbe047752b7b57cc05891e72d5f0508dee8e7f",
+      "output_sha256": "e8de35da4f3ee823245d1fd10640abe7017baffdeb321eb01572e6fb78f57723",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PINNED_CHECKPOINT",
+      "seconds": 0
+    },
+    "Proofs.RadenkovicGutmanNestedHornerTransform": {
+      "module": "Proofs.RadenkovicGutmanNestedHornerTransform",
+      "source_sha256": "3eacdfb7cab15b90cce0c468203a7830110f531f3b0af1f2c167baae1b6e48e4",
+      "source_closure_sha256": "106f6ec960d0ea6fc8fcb9a088216f84d1809e97451cf5ce30a4dde26ca9d01d",
+      "output_sha256": "aa2013b7837a372f2c2ef9cb507b6a1cab04f2ea7f5d8a9af00a6fed7c6efeec",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PINNED_CHECKPOINT",
+      "seconds": 0
+    },
+    "Proofs.RadenkovicGutmanLongArmBothGeometry": {
+      "module": "Proofs.RadenkovicGutmanLongArmBothGeometry",
+      "source_sha256": "e080a116c635e638e58c5ea7af50872e1bcdd70042a8e321c243c2961bb2c4d3",
+      "source_closure_sha256": "84c12fb0714776e9a79d204a99c9ae6f261719976213efec7b532f6b63da9827",
+      "output_sha256": "95357f1b7956ae2c559abbe8c3045ca89d1b45cb56a5e7b6d4f8ad17cb8538e3",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PINNED_CHECKPOINT",
+      "seconds": 0
+    },
+    "Proofs.RadenkovicGutmanNestedInteger": {
+      "module": "Proofs.RadenkovicGutmanNestedInteger",
+      "source_sha256": "fdae5bf1e8a4ed180cb6b1bad37f1814adbc9f92f5dc6ba7d6239fb3fc957648",
+      "source_closure_sha256": "9924a7039c6794a75fb7bbc71bbb629cd98aeb541c7f4051e1067f52a81dba2e",
+      "output_sha256": "090441b4f8e0144937d29dcd3d67f9d23cb3e0936403612a2908d9b824c6356e",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PINNED_CHECKPOINT",
+      "seconds": 0
+    },
+    "Proofs.RadenkovicGutmanNestedIntegerAffine": {
+      "module": "Proofs.RadenkovicGutmanNestedIntegerAffine",
+      "source_sha256": "40c7a57395fc02009c707ce915b4dde0ca5e2c889cc4ef1b0119e1dc204639b7",
+      "source_closure_sha256": "6fcd929f44d8f9a3278da4f2ab4a649a8d70216557f6562dceacae6439d5ba72",
+      "output_sha256": "643857964551a17ecd754986f1a82e8573c131705fb9d24ed98d108b6d697567",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PINNED_CHECKPOINT",
+      "seconds": 0
+    },
+    "Proofs.RadenkovicGutmanLongArmBothPolynomials": {
+      "module": "Proofs.RadenkovicGutmanLongArmBothPolynomials",
+      "source_sha256": "d4c66328efa72b6274d12dee2450c614c0fe3b1c240018e23ff33f5722fe062e",
+      "source_closure_sha256": "69e1728a20312f367a514972e9136d5cf04ec6b74cf407c79082fd4384d2d4f7",
+      "output_sha256": "3a1cb6d8a1ba01784dcfc547978f433de87b22ce3d11bc85b4d06631364a1049",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PINNED_CHECKPOINT",
+      "seconds": 0
+    },
+    "Proofs.RadenkovicGutmanBothLongD00": {
+      "module": "Proofs.RadenkovicGutmanBothLongD00",
+      "source_sha256": "0c90727e079171cb41765ef424c02220948cfe593e9d9822ce62374eedf470d6",
+      "source_closure_sha256": "4b3e88a317c57ac23c7b69c2771a845e4e94d2b78e3aae215175da0bf35e5a81",
+      "output_sha256": "410ae52de8b82b20f8b95e1aa2a6697f30a338455ad2313a0c69f2923aa21113",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "FRESH_KERNEL_EXPORT",
+      "seconds": 7.641
+    },
+    "Proofs.RadenkovicGutmanBothLongD02": {
+      "module": "Proofs.RadenkovicGutmanBothLongD02",
+      "source_sha256": "a1ddd43fdbb6342572c51260d23dd7c83e6c99c5272234fae6bef1bca0b8a666",
+      "source_closure_sha256": "6eaa4ace734f4aeaceae37bc523b5c35029a18f0786f6a143143a595062c79f6",
+      "output_sha256": "2843a6d2b9476573bbad06afd48d8231fb1219e5d8f24bc42d329deef65f3225",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "FRESH_KERNEL_EXPORT",
+      "seconds": 13.459
+    },
+    "Proofs.RadenkovicGutmanBothLongD03": {
+      "module": "Proofs.RadenkovicGutmanBothLongD03",
+      "source_sha256": "9301746e92257bdfa08c5b4208ce850f97158aab0c54fea67dd0a133409e4978",
+      "source_closure_sha256": "51770bb35b6bca24b1d3aa11f8d8a4396b9ae66208fa6db4905d9499a18f9dfa",
+      "output_sha256": "1b3a33c59e45cad70878800f3fd95322000e9b25f5c7661d8df44b33fb1723ee",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "FRESH_KERNEL_EXPORT",
+      "seconds": 8.75
+    },
+    "Proofs.RadenkovicGutmanBothLongD05": {
+      "module": "Proofs.RadenkovicGutmanBothLongD05",
+      "source_sha256": "c7d2d92045f9e76fc480e34614fc89b5d0e8f2e68ded64be5b37f5f149c06472",
+      "source_closure_sha256": "b0b33bf134c135e13986f4890fb8940a73d65456d30d0805c2f705758a4540b3",
+      "output_sha256": "796fdf4bd912a33c8a294c2953c506807eb29bd5b0d10aac61ec1ad1c87e19e0",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PINNED_CHECKPOINT",
+      "seconds": 0
+    },
+    "Proofs.RadenkovicGutmanBothLongD04": {
+      "module": "Proofs.RadenkovicGutmanBothLongD04",
+      "source_sha256": "2bf75c59d398a4bb909a0f96ad3f0459946529e2e159f3f9510cbb71a1b82ef8",
+      "source_closure_sha256": "bba0e1b726050c5d3b757cec0ba5aff4a9e568ce85b867d5a3a774ea7400f0ac",
+      "output_sha256": "7c620fdbaa59bad975f66b55fd068f6590d96d416cc20652008fdf56fa3f81c2",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "FRESH_KERNEL_EXPORT",
+      "seconds": 7.439
+    },
+    "Proofs.RadenkovicGutmanDegreeInterpolation": {
+      "module": "Proofs.RadenkovicGutmanDegreeInterpolation",
+      "source_sha256": "01cac6e95f492c10e51b0cd164404b537c7818a1100e786d07c5bf1026ea1d26",
+      "source_closure_sha256": "1719b5f2d3ad4b6dded49499d17b39694b90078701331af064783b6c02e7f1a1",
+      "output_sha256": "06040d9a41e4f3ad9c40ccabe5a35a1fca6e5606d878cf1c6eaf6a6a03b152cf",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "FRESH_KERNEL_EXPORT",
+      "seconds": 30.354
+    },
+    "Proofs.RadenkovicGutmanLongArmBothCoefficientJ02": {
+      "module": "Proofs.RadenkovicGutmanLongArmBothCoefficientJ02",
+      "source_sha256": "c4e08ec552a97771290a4fa41e6236a1ddd5ae414f38e8158ad746b10681dab2",
+      "source_closure_sha256": "b6e58361489d05b4b7984df7af7034d8f88b2b1df6c3f863fc9bcbebcfc22fea",
+      "output_sha256": "e484277e763f1b9ab958c17d7f16577c01e23efec75046965106602a90a747a5",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "FRESH_KERNEL_EXPORT",
+      "seconds": 46.16
+    },
+    "Proofs.RadenkovicGutmanLongArmBothCoefficientJ00": {
+      "module": "Proofs.RadenkovicGutmanLongArmBothCoefficientJ00",
+      "source_sha256": "c23da2632746156fdbccf403731a3c3ff5741fa585b3513bdb4bcaee22375b4e",
+      "source_closure_sha256": "05effac49cdfe0d6644c7f40f0e3b43f57fadf69e5a644900f45e2666d64fee6",
+      "output_sha256": "85e3ca4dd88e96b6fa81d8cb31f21c135aeff50a55087a213499c42e2df1b8fc",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "FRESH_KERNEL_EXPORT",
+      "seconds": 41.182
+    },
+    "Proofs.RadenkovicGutmanLongArmBothCoefficientJ03": {
+      "module": "Proofs.RadenkovicGutmanLongArmBothCoefficientJ03",
+      "source_sha256": "57084f39ad6935fb805755552362a583225ecbd6a97ead27367415474c4e52f5",
+      "source_closure_sha256": "fd0babb7d8ad0548722bbdd4d76f0dd9e0b5ca4c667db33f424b79498d5aa217",
+      "output_sha256": "a79d76f490480a2c511e892ae05f77bc6d258753b3b18440148f0fae4b079e4c",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "FRESH_KERNEL_EXPORT",
+      "seconds": 51.432
+    },
+    "Proofs.RadenkovicGutmanLongArmBothCoefficientJ04": {
+      "module": "Proofs.RadenkovicGutmanLongArmBothCoefficientJ04",
+      "source_sha256": "d7a817b32be0ad4ed01811ecf4d77699cd5c7de6f583412911cf16cea4bdfd36",
+      "source_closure_sha256": "3ddd5b5562d5ca581efd3d3329841d2b374c0dbad75ca19c8f93152d5aa96f4a",
+      "output_sha256": "7e0da989ed2cc04b1a11e49ebb9bb66cb8cc25aa8e1dbccf4d657c5f175b8315",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "FRESH_KERNEL_EXPORT",
+      "seconds": 50.203
+    },
+    "Proofs.RadenkovicGutmanLongArmBothCoefficientJ05": {
+      "module": "Proofs.RadenkovicGutmanLongArmBothCoefficientJ05",
+      "source_sha256": "4db1a702ccef535b5b80a9bfdf9dd42285e35b35b75f2fe12f8de4b930a4f7b5",
+      "source_closure_sha256": "1f82c9db684e14a6e4710ad47695ec756b03ae6dec6ea84496ffa4652797d351",
+      "output_sha256": "29268b83a90d789a4a2a0049c7942d83a0b082f8b5b301a70f862e0dec1ef055",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "FRESH_KERNEL_EXPORT",
+      "seconds": 52.716
+    },
+    "Proofs.RadenkovicGutmanLongArmBothCoefficientU00": {
+      "module": "Proofs.RadenkovicGutmanLongArmBothCoefficientU00",
+      "source_sha256": "99674163588f99fa15a75b34c084488c37dd085c2e13321845b5c91a1cbb171f",
+      "source_closure_sha256": "19d4ebed659ddbe314b98622eddc0d14d1d0382cb79c5c3e90bd6dcac8c35d09",
+      "output_sha256": "cedfde1003fb2c4c24c4683398b7909fe145cf3933687bd16cd371dcd94919c4",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "FRESH_KERNEL_EXPORT",
+      "seconds": 49.269
+    },
+    "Proofs.RadenkovicGutmanLongArmBothCoefficientJAll": {
+      "module": "Proofs.RadenkovicGutmanLongArmBothCoefficientJAll",
+      "source_sha256": "c4245def41956dbec3abaa272c489c0829af660a11f2bf7d344676d8022c493a",
+      "source_closure_sha256": "d040ae3f1920a59b97fc2b40fcc9bc5a482838f8d7064bb187ee67fcf3581d63",
+      "output_sha256": "49d7ac53b2837b2dad5aef4639254b8852a4e83e07c15a24579982f39eb6282c",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "FRESH_KERNEL_EXPORT",
+      "seconds": 2.522
+    },
+    "Proofs.RadenkovicGutmanLongArmBothCoefficientU02": {
+      "module": "Proofs.RadenkovicGutmanLongArmBothCoefficientU02",
+      "source_sha256": "6020fdaeb0c5d4c9999c7accb5f83230c4e653906f0ed4fbfb635231e94e3b87",
+      "source_closure_sha256": "09c6cee5a7169918fe7f06c677bca9041c87bd7364eda25a9aacfc009f7e613a",
+      "output_sha256": "def515d1333fc5158a35fbf1962f692c6b601d22b73140da89ca43c95c0d5e50",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "FRESH_KERNEL_EXPORT",
+      "seconds": 106.227
+    },
+    "Proofs.RadenkovicGutmanLongArmBothCoefficientU03": {
+      "module": "Proofs.RadenkovicGutmanLongArmBothCoefficientU03",
+      "source_sha256": "1e754ca3e35030278e6b016447515dc92e2282553a5510e50711e5f07891011b",
+      "source_closure_sha256": "0254e398f659f8db6caabf6f5096f724619e6ba02b467d8778bda33f12c09ffc",
+      "output_sha256": "f739c32ba22c96262207077e9621021b6ee4bf75c9a1ed1ceddb68bfb55a92b3",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "FRESH_KERNEL_EXPORT",
+      "seconds": 108.018
+    },
+    "Proofs.RadenkovicGutmanLongArmBothCoefficientU05": {
+      "module": "Proofs.RadenkovicGutmanLongArmBothCoefficientU05",
+      "source_sha256": "5f6f91b1c75c067c52f1a33e7ccb8b93311cb83bea9f363d03acb8ea6eac8a28",
+      "source_closure_sha256": "7d74a426a8f3137c87aa13521eab02793bcb301ed1efd713706feb2ed5b7cbab",
+      "output_sha256": "c02a2bcc0fb314a268bbb0d5b0dd645672936561561d096825dc9ea68b328a3a",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "FRESH_KERNEL_EXPORT",
+      "seconds": 170.863
+    },
+    "Proofs.RadenkovicGutmanLongArmBothCoefficientU04": {
+      "module": "Proofs.RadenkovicGutmanLongArmBothCoefficientU04",
+      "source_sha256": "cba0aee62c8b93e9b3a5001fd783ae1aeb7687d5faa79e6142c2843333553db5",
+      "source_closure_sha256": "438823c7819067593c67665de47b767234aaf975629f51608afc5c478562d935",
+      "output_sha256": "da88c0cb1b40cdd2696b01946c9fc9a717ef3934aa8f918bdfb9a1ac2a850227",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "FRESH_KERNEL_EXPORT",
+      "seconds": 175.302
+    },
+    "Proofs.RadenkovicGutmanLongArmBothCoefficientUAll": {
+      "module": "Proofs.RadenkovicGutmanLongArmBothCoefficientUAll",
+      "source_sha256": "ef3c5fbb3520c4a3a2fc357f61929d41e865d90755d0eb9439cb559857cd454a",
+      "source_closure_sha256": "4b37df40903a1ad8086e423811122adefce1d50de0c9a9617431ce99b4ba8f80",
+      "output_sha256": "7a6bf8159745b5b59eee1860b39b1e2c992911c3f3232001085688fbe47cb977",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "FRESH_KERNEL_EXPORT",
+      "seconds": 20.722
+    },
+    "Proofs.RadenkovicGutmanLongArmBothCoefficientV": {
+      "module": "Proofs.RadenkovicGutmanLongArmBothCoefficientV",
+      "source_sha256": "d977c113211fc4d2b667e7b031e1b3c8229257c5562f702500a9ddc59a586c74",
+      "source_closure_sha256": "aab591d4efe78f703eacdb5d32e0efe93fc4bc4309f4ebcf1036a75380408e87",
+      "output_sha256": "4751fdd4609e3f221bed8da54a491d964cae6f29bde74e4e5d9dc0d8a343d4c1",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "FRESH_KERNEL_EXPORT",
+      "seconds": 66.315
+    },
+    "Proofs.RadenkovicGutmanLongArmBothAllDegrees": {
+      "module": "Proofs.RadenkovicGutmanLongArmBothAllDegrees",
+      "source_sha256": "8cb74cf9f8b3918075c5d9d22ba51c6026e45162b6f49c239abbf90004f7932e",
+      "source_closure_sha256": "95e9414f3ea42691413bbdef124e6d06c7ea714603dbd1f708a78b951fc03ccd",
+      "output_sha256": "f1fa7df576a10bdc21142abe564f8a0d950191ff34d46ccde493ef168ab19f91",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "FRESH_KERNEL_EXPORT",
+      "seconds": 10.673
+    }
+  },
+  "wall_seconds": 358.769
+}

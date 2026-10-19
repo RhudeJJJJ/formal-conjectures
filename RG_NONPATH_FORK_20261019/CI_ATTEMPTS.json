@@ -1,0 +1,29 @@
+{
+  "attempts": [
+    {
+      "run_id": 39273592026,
+      "source_commit": "902b2403aa9b47f61efb012055faaced9dbcc298",
+      "conclusion": "failure",
+      "reason": "Strict linter, existential binder syntax and walk API development errors"
+    },
+    {
+      "run_id": 39274259087,
+      "source_commit": "e48a57fb54d045e6273015082dbbe87735579f7b",
+      "conclusion": "failure",
+      "reason": "Fork accepted; residual degree transport and explicit degree API required"
+    },
+    {
+      "run_id": 39274826078,
+      "source_commit": "16e56e972c715eeaa118ac30d0358f6ed37f9221",
+      "conclusion": "failure",
+      "reason": "Residual neighbor-count transport still failed; isolates ncard equality in final source"
+    },
+    {
+      "run_id": 39275364923,
+      "source_commit": "b546e3edbad3e45182649bc798182bf30a7457fe",
+      "conclusion": "success",
+      "modules": 19
+    }
+  ],
+  "local_windows": "ABORTED_MODULE_TIMEOUT at unchanged prerequisite; see windows_check.json"
+}

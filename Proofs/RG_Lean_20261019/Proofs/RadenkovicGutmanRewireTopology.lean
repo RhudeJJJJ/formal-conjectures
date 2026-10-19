@@ -17,10 +17,9 @@ open scoped Classical
 noncomputable section
 set_option backward.isDefEq.respectTransparency false
 
-variable {V : Type*} [Fintype V]
+variable {V : Type*}
 
 /-- Transport a walk by replacing each of its edges with a reachable pair. -/
-omit [Fintype V] in
 theorem reachable_transfer (G H : SimpleGraph V)
     (h : ∀ {x y}, G.Adj x y → H.Reachable x y) {x y : V}
     (hxy : G.Reachable x y) : H.Reachable x y := by
@@ -30,7 +29,6 @@ theorem reachable_transfer (G H : SimpleGraph V)
   | cons ha p ih => exact (h ha).trans ih
 
 /-- Moving one bridge attachment within its component preserves connectedness. -/
-omit [Fintype V] in
 theorem connected_rewire (G : SimpleGraph V) (u v w : V) (hvw : v ≠ w)
     (huv : G.Reachable u v) (hG : (G ⊔ edge u w).Connected) :
     (G ⊔ edge v w).Connected := by
@@ -38,14 +36,16 @@ theorem connected_rewire (G : SimpleGraph V) (u v w : V) (hvw : v ≠ w)
   have hvw' : H.Reachable v w :=
     (show H.Adj v w from Or.inr (by simp [edge_adj, hvw])).reachable
   have huw : H.Reachable u w := (huv.mono le_sup_left).trans hvw'
-  letI : Nonempty V := ⟨u⟩
+  let : Nonempty V := ⟨u⟩
   refine ⟨fun x y => reachable_transfer _ H ?_ (hG x y)⟩
   intro a b hab
   rcases hab with hab | hab
   · exact (show H.Adj a b from Or.inl hab).reachable
-  · rcases (edge_adj _ _ |>.mp hab).1 with ⟨rfl, rfl⟩ | ⟨rfl, rfl⟩
+  · rcases ((edge_adj u w a b).mp hab).1 with ⟨rfl, rfl⟩ | ⟨rfl, rfl⟩
     · exact huw
     · exact huw.symm
+
+variable [Fintype V]
 
 /-- The deleted and inserted edges are both new to the same base graph. -/
 theorem edge_count_rewire (G : SimpleGraph V) (u v w : V)
@@ -117,6 +117,7 @@ theorem leaf_count_rewire (G : SimpleGraph V) (u v w : V)
     (hguw : ¬G.Adj u w) (hgvw : ¬G.Adj v w)
     (hdu : 2 ≤ G.degree u) (hdv : G.degree v = 1) :
     leafCount (G ⊔ edge u w) = leafCount (G ⊔ edge v w) + 1 := by
+  classical
   have hv : v ∉ Finset.univ.filter (fun x => (G ⊔ edge v w).degree x = 1) := by
     simp [degree_sup_edge G v w v hvw hgvw, hdv]
   have he : Finset.univ.filter (fun x => (G ⊔ edge u w).degree x = 1) =
@@ -132,7 +133,9 @@ theorem leaf_count_rewire (G : SimpleGraph V) (u v w : V)
       · subst x
         simp [Ne.symm huv, hvw, hdv]
       · by_cases hxw : x = w <;> simp_all
-  simpa only [leafCount, Finset.card_insert_of_notMem hv] using congrArg Finset.card he
+  have hcard := congrArg Finset.card he
+  rw [Finset.card_insert_of_notMem hv] at hcard
+  simpa only [leafCount, ← card_neighborSet_eq_degree, ← Nat.card_eq_fintype_card] using hcard
 
 /-- A natural-number descent measure for every genuine pendant-path fusion. -/
 theorem leaf_count_strict (G : SimpleGraph V) (u v w : V)

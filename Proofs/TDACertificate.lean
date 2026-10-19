@@ -18,7 +18,7 @@ run_cmd do
   let axioms ← Lean.collectAxioms target
   for ax in axioms do
     unless allowed.contains ax do
-      Lean.throwError "Unexpected axiom in exact universal theorem: {ax}"
+      Lean.throwError m!"Unexpected axiom in exact universal theorem: {ax}"
   -- This existing open equivalence is a negative control, never a proof input.
   let negative ← Lean.collectAxioms ``SimpleGraph.annihilationNumberEq
   unless negative.contains ``sorryAx do

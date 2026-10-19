@@ -43,7 +43,7 @@ theorem target_max_degree_two (G : SimpleGraph V) [DecidableRel G.Adj]
     simpa only [Nat.card_eq_fintype_card, ← edgeFinset_card] using heq
   have hm : Fintype.card V ≤ G.edgeFinset.card := by omega
   obtain ⟨T, hTG, hT⟩ := hG.exists_isTree_le
-  letI : DecidableRel T.Adj := Classical.decRel _
+  let : DecidableRel T.Adj := Classical.decRel _
   have hTmax : ∀ v, T.degree v ≤ 2 := by
     intro v
     exact (T.degree_le_of_le (v := v) hTG).trans (hmax v)

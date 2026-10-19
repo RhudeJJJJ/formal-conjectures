@@ -1,0 +1,110 @@
+{
+  "scope": "explicit set and packing checks; not an exhaustive census or a Lean certificate",
+  "cases": [
+    {
+      "a": 5,
+      "b": 5,
+      "order": 22,
+      "edges": 21,
+      "degree_frequencies": {
+        "6": 2,
+        "2": 10,
+        "1": 10
+      },
+      "smallest_mode": 1,
+      "gamma_t": 8,
+      "gamma": 5,
+      "components": 2,
+      "rhs": 7,
+      "violates": true,
+      "open_packing": [
+        12,
+        0,
+        3,
+        4,
+        7,
+        8,
+        11,
+        17
+      ],
+      "closed_packing": [
+        12,
+        2,
+        5,
+        8,
+        11
+      ]
+    },
+    {
+      "a": 5,
+      "b": 6,
+      "order": 23,
+      "edges": 22,
+      "degree_frequencies": {
+        "6": 1,
+        "2": 10,
+        "7": 1,
+        "1": 11
+      },
+      "smallest_mode": 1,
+      "gamma_t": 8,
+      "gamma": 5,
+      "components": 2,
+      "rhs": 7,
+      "violates": true,
+      "open_packing": [
+        12,
+        0,
+        3,
+        4,
+        7,
+        8,
+        11,
+        17
+      ],
+      "closed_packing": [
+        12,
+        2,
+        5,
+        8,
+        11
+      ]
+    },
+    {
+      "a": 4,
+      "b": 5,
+      "order": 21,
+      "edges": 20,
+      "degree_frequencies": {
+        "5": 1,
+        "2": 10,
+        "6": 1,
+        "1": 9
+      },
+      "smallest_mode": 2,
+      "gamma_t": 8,
+      "gamma": 5,
+      "components": 2,
+      "rhs": 12,
+      "violates": false,
+      "open_packing": [
+        12,
+        0,
+        3,
+        4,
+        7,
+        8,
+        11,
+        16
+      ],
+      "closed_packing": [
+        12,
+        2,
+        5,
+        8,
+        11
+      ]
+    }
+  ],
+  "paper_sha256": "9ba256a81e9c76a15dbee66e44b28d8015bc430634b04b73413bac8ca811f869"
+}

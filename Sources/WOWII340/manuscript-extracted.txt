@@ -1,0 +1,319 @@
+
+--- PAGE 1 ---
+Double brooms refute Graﬃti.pc Conjecture 340
+on total domination in trees
+Jonas J. Gebendorfer
+17 October 2026
+Abstract
+Conjecture 340 of DeLaviña’s collection Written on the Wall II asserts that every tree T of
+order n > 2 satisﬁes γt(T ) ≤ c(⟨N (L) ∪ L⟩) + mode min(T ) γ(T ), where L is the set of leaves,
+c counts components, and modemin(T ) is the smallest most frequent vertex degree. We show
+that the conjecture is false. The double broom obtained from a path on twelve vertices by
+attaching a leaves to one end and b leaves to the other, with a, b ≥ 2 and a + b ≥ 10, has
+total domination number 8 while the right-hand side equals 7. This gives counterexamples of
+every order n ≥ 22. A one-ended broom family shows that the additive deﬁcit is unbounded,
+and that no inequality γt ≤ c(⟨N (L) ∪ L⟩) + αγ + C with a constant α < 3/ 2 can hold even
+among trees whose smallest mode is one, whereas α = 2 is valid. All exact values are proved by
+explicit sets and disjoint-neighbourhood packings. An exhaustive census of all 9 114 283 trees
+of orders 3 through 22 shows that 22 is the smallest order of a counterexample and that the
+four double brooms of that order are the only ones. A standard-library supplement reproduces
+every ﬁnite statement.
+Keywords. total domination; domination; trees; degree mode; Graﬃti.pc; counterexample.
+2020 Mathematics Subject Classiﬁcation. 05C69, 05C05.
+1 Introduction
+Graﬃti.pc is DeLaviña’s conjecture-generating program, a variant of Fajtlowicz’s Graﬃti [ 4]. Its
+conjectures are collected in Written on the Wall II (WOWII) [ 5]. A block of entries dated 18
+February 2009 concerns the total domination number of trees; several of them are discussed in
+[6], and many have since been proved or refuted. Entry 340 is an upper bound. It combines the
+ordinary domination number with two simple structural quantities: the number of components of
+the subgraph induced by the leaves and their neighbours, and the smallest mode of the degree
+sequence.
+The general inequality γt(G) ≤ 2γ(G) for graphs without isolated vertices (Lemma 3.2) already
+gives an upper bound of the same shape with coeﬃcient two. Conjecture 340 asks for much more
+when leaves are the most frequent degree: the coeﬃcient of γ then drops to one. We show that
+this is false. The obstruction is elementary. A long path has γt/γ close to 3/ 2, and a single
+bundle of leaves at each end of the path makes degree one the mode without creating any further
+leaf–support component.
+Results. Theorem 4.3 gives counterexamples of every order n ≥ 22, with fully hand-checkable
+certiﬁcates. Theorem 5.3 gives a second, one-ended family of counterexamples of every order
+n ≥ 23. Theorem 5.5 shows that the additive deﬁcit is unbounded. Theorem 5.6 shows that,
+1
+
+--- PAGE 2 ---
+among trees whose smallest mode is one, the coeﬃcient of γ cannot be lowered below 3/ 2 even
+with an additive constant, while the coeﬃcient 2 is valid for all trees. Proposition 6.1 records an
+exhaustive computation: no tree of order at most 21 is a counterexample, and exactly four trees
+of order 22 are, namely the double brooms of Theorem 4.3 with a + b = 10. Only Proposition 6.1
+depends on computation.
+2 Deﬁnitions and the source statement
+All graphs are ﬁnite, simple and undirected. For a vertex v, N (v) is its open neighbourhood and
+N [v] = N (v) ∪ {v} its closed neighbourhood; for a set X, N (X) = ∪
+x∈ X N (x). The subgraph
+induced by X is ⟨X⟩, and c(H) is the number of connected components of a graph H. A leaf is a
+vertex of degree one, and a support vertex is a vertex adjacent to a leaf. We write L = L(T ) and
+S = S(T ) for the sets of leaves and support vertices of a tree T .
+A set D ⊆ V (G) is dominating if D ∩ N [v] ̸= ∅ for every vertex v, and total dominating if
+D ∩ N (v) ̸= ∅ for every vertex v, including the vertices of D itself. Their minimum sizes are the
+domination number γ(G) and the total domination number γt(G); the latter exists when G has
+no isolated vertex [ 3, 9]. The mode of the degree sequence is a degree of maximum frequency, and
+modemin(G) is the smallest such degree.
+The conjecture. The archived WOWII list [ 5] contains the following entry, with status marker
+O (open):
+340. If T is a tree on n > 2 vertices, then γt ≤ number of components of ⟨N (L) ∪ L⟩+
+modemin(T ) ·γ(T ), where L is the set of leaves of T . (dated Feb. 18, 2009)
+The entry links WOWII deﬁnitions 94 (total domination number), 100 (induced subgraph), 45
+(mode; “in case there is more than one mode, modemin is the smallest mode”) and 49 (domination
+number); deﬁnition 46 deﬁnes N (S) as the set of vertices adjacent to at least one vertex of S. In
+symbols, the conjecture states
+γt(T ) ≤ c(⟨N (L) ∪ L⟩) + modemin(T ) γ(T ) for every tree T of order n > 2. (1)
+We write R(T ) for the right-hand side of ( 1).
+Lemma 2.1. If T is a tree of order n > 2, then N (L) = S and N (L) ∪ L = S ∪ L. The same set
+arises if N (L) is read as the closed neighbourhood N [L].
+Proof. A vertex lies in N (L) exactly when it is adjacent to a leaf, that is, when it is a support
+vertex; so N (L) = S. Moreover N [L] = N (L) ∪ L. (Since two adjacent leaves would form a
+component K2, which a tree of order n > 2 cannot have, S and L are even disjoint.)
+Thus the statement has no typographic ambiguity that aﬀects the constructions below.
+3 Three elementary lower and upper bounds
+Lemma 3.1. Let G be a graph and v1, . . . , v r distinct vertices.
+1. If N (v1), . . . , N (vr) are pairwise disjoint and G has no isolated vertex, then γt(G) ≥ r.
+2. If N [v1], . . . , N [vr] are pairwise disjoint, then γ(G) ≥ r.
+2
+
+--- PAGE 3 ---
+3. If P ⊆ V (G) and every vertex of G has at most two neighbours in P , then γt(G) ≥ |P |/ 2.
+Proof. (1) A total dominating set meets each N (vi), and these sets are disjoint. (2) is the same
+argument for closed neighbourhoods. (3) If D is total dominating, every vertex of P has a neighbour
+in D, so |P | ≤ ∑
+x∈ D |N (x) ∩ P | ≤ 2|D|.
+Lemma 3.2 (folklore). If G has no isolated vertex, then γt(G) ≤ 2γ(G).
+Proof. Let D be a minimum dominating set and choose for each x ∈ D one neighbour x′. Every
+vertex has a neighbour in D ∪ {x′ : x ∈ D}: a vertex outside D has one in D, and each x ∈ D is
+adjacent to x′. This set has at most 2γ(G) vertices.
+4 Double brooms
+Deﬁnition 4.1. For integers a, b ≥ 2, the double broom D(a, b ) consists of a path w1w2 · · ·w12,
+a further vertices ℓ1, . . . , ℓ a adjacent only to w1, and b further vertices ℓ′
+1, . . . , ℓ ′
+b adjacent only to
+w12. It is a tree of order 12 + a + b.
+w1 w12
+Figure 1: The double broom D(5, 5) of order 22. The ﬁlled vertices form a minimum total domi-
+nating set of size 8, whereas c(⟨N (L) ∪ L⟩) + modemin ·γ = 2 + 1 ·5 = 7 .
+Lemma 4.2. If a, b ≥ 2 and a + b ≥ 10, then c(⟨N (L) ∪ L⟩) = 2 and modemin(D(a, b )) = 1 ; hence
+R(D(a, b )) = 2 + γ(D(a, b )).
+Proof. The leaves are the ℓi and the ℓ′
+j, and the support vertices are w1 and w12. Thus N (L) ∪ L
+is the union of the vertex sets of the stars centred at w1 and at w12. No edge joins them, since
+w1 and w12 are not adjacent and leaves have no further neighbours. Hence there are exactly two
+components. The degree sequence consists of a + b ones, ten twos (the vertices w2, . . . , w 11), and
+the values a + 1, b + 1 ≥ 3 attained by w1 and w12; every degree class other than those of 1 and
+2 has at most two members. Because a + b ≥ 10, degree 1 has maximum frequency, and it is the
+smallest degree present. Hence modemin = 1.
+Theorem 4.3. If a, b ≥ 2 and a + b ≥ 10, then
+γt(D(a, b )) = 8 , γ (D(a, b )) = 5 , R (D(a, b )) = 7 .
+In particular Conjecture 340 is false, and for every n ≥ 22 there is a counterexample of order n.
+Proof. Upper bound for γt. Let X = {w1, w 2, w 3, w 4, w 7, w 8, w 11, w 12}. Every ℓi is adjacent to
+w1 ∈ X and every ℓ′
+j to w12 ∈ X. The path vertices have the following neighbours in X:
+v w1 w2 w3 w4 w5 w6 w7 w8 w9 w10 w11 w12
+neighbour in X w2 w1 w2 w3 w4 w7 w8 w7 w8 w11 w12 w11
+Hence X is total dominating and γt ≤ 8.
+3
+
+--- PAGE 4 ---
+Lower bound for γt. The eight vertices ℓ1, w 1, w 4, w 5, w 8, w 9, w 12, ℓ′
+1 have open neighbourhoods
+{w1}, {w2, ℓ1, . . . , ℓ a}, {w3, w 5}, {w4, w 6}, {w7, w 9}, {w8, w 10}, {w11, ℓ′
+1, . . . , ℓ ′
+b}, {w12},
+which are pairwise disjoint. By Lemma 3.1(1), γt ≥ 8.
+Domination. The set {w1, w 4, w 7, w 10, w 12} dominates: w1 covers all ℓi and w2; w4, w 7, w 10
+cover w3, w 5, w6, w 8 and w9, w 11; and w12 covers all ℓ′
+j. The ﬁve closed neighbourhoods
+{ℓ1, w 1}, {w2, w 3, w 4}, {w5, w 6, w 7}, {w8, w 9, w 10}, {w11, w 12, ℓ′
+1, . . . , ℓ ′
+b}
+of ℓ1, w 3, w 6, w 9, w 12 are pairwise disjoint, so γ ≥ 5 by Lemma 3.1(2). Thus γ = 5.
+By Lemma 4.2, R(D(a, b )) = 2 + 1 ·5 = 7 < 8 = γt(D(a, b )). Finally, 12 + a + b takes every
+integer value n ≥ 22 as (a, b ) ranges over the pairs with a, b ≥ 2 and a + b ≥ 10.
+Remark 4.4. For a + b = 10 the degrees 1 and 2 both occur ten times, and WOWII deﬁnition 45
+selects modemin = 1. For a + b ≥ 11 the mode is unique, so the refutation does not depend on the
+tie rule; the smallest such members have order 23. If a + b = 9, degree 2 becomes the unique mode,
+R = 2 + 2 ·5 = 12 , and ( 1) holds for D(a, b ). The threshold is therefore sharp in the double-broom
+family.
+5 One-ended brooms and the size of the failure
+Deﬁnition 5.1. For integers m ≥ 3 and k ≥ 1, the broom B(m, k ) consists of a path u0u1 · · ·um
+and k further vertices ℓ1, . . . , ℓ k adjacent only to u0. It is a tree of order m + 1 + k.
+Lemma 5.2. If m ≥ 3 and k ≥ max{2, m − 2}, then c(⟨N (L)∪ L⟩) = 2 and modemin(B(m, k )) = 1 ;
+hence R(B(m, k )) = 2 + γ(B(m, k )).
+Proof. The leaves are ℓ1, . . . , ℓ k, u m and the supports are u0 and um− 1, which are not adjacent
+because m ≥ 3. So N (L) ∪ L induces a star centred at u0 and the edge um− 1um, with no edge
+between them. The degree sequence has k + 1 ones, m − 1 twos and a single value k + 1 ≥ 3; as
+k + 1 ≥ m − 1, degree 1 is the smallest mode.
+Theorem 5.3. For every k ≥ 10, γt(B(12, k )) = 8 , γ(B(12, k )) = 5 and R(B(12, k )) = 7 . Hence
+there are also one-ended counterexamples of every order n ≥ 23.
+Proof. The set {u0, u 1, u 2, u 3, u 6, u 7, u 10, u 11} is total dominating: the ℓi use u0, and the path
+vertices u0, . . . , u 12 use, respectively,
+u1, u 0, u 1, u 2, u 3, u 6, u 7, u 6, u 7, u 10, u 11, u 10, u 11.
+The vertices ℓ1, u 0, u 3, u 4, u 7, u 8, u 11, u 12 have the pairwise disjoint open neighbourhoods {u0},
+{u1, ℓ1, . . . , ℓ k}, {u2, u 4}, {u3, u 5}, {u6, u 8}, {u7, u 9}, {u10, u 12}, {u11}. Hence γt = 8 . The set
+{u0, u 3, u 6, u 9, u 12} dominates, and the closed neighbourhoods of ℓ1, u 2, u 5, u 8, u 11 are pairwise
+disjoint; hence γ = 5. Lemma 5.2 with m = 12 gives R = 7, and the order 13 +k takes every value
+n ≥ 23.
+Lemma 5.4. For m ≥ 3 and k ≥ 1,
+γt(B(m, k )) ≥ m + 2
+2 and γ(B(m, k )) ≤ 1 +
+⌈m − 1
+3
+⌉
+≤ m + 4
+3 .
+4
+
+--- PAGE 5 ---
+Proof. Let P = {ℓ1, u 0, u 1, . . . , u m}, of size m + 2. The vertex u0 has the two neighbours ℓ1, u 1
+in P ; each ui with i ≥ 1 has at most the two neighbours ui− 1, u i+1; and each ℓj has the single
+neighbour u0. Lemma 3.1(3) gives the ﬁrst bound. For the second, u0 dominates all ℓj and u1,
+and the path u2 · · ·um of order m − 1 is dominated by ⌈(m − 1)/ 3⌉ of its vertices: take u3, u 6, . . . ,
+adding um when m ≡ 2 (mod 3) . Finally ⌈(m − 1)/ 3⌉ ≤ (m + 1)/ 3.
+Theorem 5.5. For m ≥ 15 and k ≥ m − 2,
+γt(B(m, k )) − R(B(m, k )) ≥ m − 14
+6 > 0.
+In particular the additive deﬁcit in (1) is unbounded.
+Proof. By Lemmas 5.2 and 5.4, γt − R ≥ m+2
+2 − 2 − m+4
+3 = m− 14
+6 .
+The next theorem places Conjecture 340 between a false and a true statement. Lemma 2.1 and
+Lemma 3.2 show that
+γt(T ) ≤ c(⟨N (L) ∪ L⟩) + α γ(T ) (2)
+holds for every tree of order n > 2 when α = 2, since c(⟨N (L) ∪ L⟩) ≥ 1.
+Theorem 5.6. Let α < 3/ 2 and C be real constants. There is a tree T of order n > 2 with
+modemin(T ) = 1 and
+γt(T ) > c(⟨N (L) ∪ L⟩) + α γ(T ) + C.
+Consequently, among trees whose smallest mode is one, inequality (2) with an additive constant
+fails for every α < 3/ 2 and holds for α = 2.
+Proof. Take T = B(m, m − 2) with m ≥ 4, so that modemin(T ) = 1 and c(⟨N (L) ∪ L⟩) = 2 by
+Lemma 5.2. If α ≥ 0, Lemma 5.4 gives
+γt − 2 − αγ − C ≥ m + 2
+2 − 2 − α m + 4
+3 − C =
+( 1
+2 − α
+3
+)
+m − 1 − 4α
+3 − C,
+which tends to inﬁnity as m → ∞ because α/ 3 < 1/ 2. If α < 0, then − αγ ≥ 0 and γt− 2− αγ− C ≥
+γt − 2 − C ≥ (m + 2)/ 2 − 2 − C, which also tends to inﬁnity. In both cases a suﬃciently large m
+gives the required tree.
+Question 5.7. What is the smallest constant α∗ ∈ [3/ 2, 2] such that γt(T ) ≤ c(⟨N (L) ∪ L⟩) +
+α∗γ(T ) + O(1) holds for all trees with modemin(T ) = 1 ?
+6 Smallest counterexamples
+Proposition 6.1 (computational). No tree of order at most 21 violates (1). Exactly four trees of
+order 22 violate it, namely D(2, 8), D(3, 7), D(4, 6) and D(5, 5); each has γt = 8 and R = 7.
+This statement was obtained by exhaustive computation over all 9 114 283 unlabelled trees
+of orders 3 to 22, as described in Section 7. It is the only result of this paper that relies on
+computation. The following table summarises the census for the largest orders; the full per-order
+record is part of the supplement.
+5
+
+--- PAGE 6 ---
+order n trees minT (R(T ) − γt(T )) violations
+19 317 955 0 0
+20 823 065 0 0
+21 2 144 505 0 0
+22 5 623 756 − 1 4
+3–22 9 114 283 4
+All orders 3 ≤ n ≤ 21 have minimum slack 0, so the inequality is attained with equality at
+every small order but is never violated there.
+7 Reproducibility
+The supplement wowii340-reproducibility.zip requires only Python 3.10 or later and no third-
+party package. After extraction into an empty directory, the command
+python -B -X utf8 reproduce340.py
+veriﬁes the SHA-256 hashes listed in MANIFEST340.json, copies the programs into a fresh tempo-
+rary directory without any stored results, runs them there, and compares the complete regenerated
+JSON reports with the frozen reports in expected/. The default run replays the census up to
+order 18 in a few minutes. The option --full replays orders 3 to 22; on a single core of a current
+laptop this takes on the order of half an hour. The driver exits with a nonzero status on any mis-
+match, and prints status: PASS otherwise. Assertions must be enabled; both programs refuse
+optimised execution.
+The certiﬁcate checker verify340.py. From explicit edge lists it recomputes γt and γ of
+D(2, 8), D (3, 7), D (4, 6), D (5, 5), B(12, 10) and B(12, 11) by enumerating vertex subsets in increas-
+ing cardinality, without any dynamic program. It checks the total dominating sets, dominating
+sets and both packings of Theorems 4.3 and 5.3 for all 264 pairs 2 ≤ a ≤ b ≤ 24 with a + b ≥ 10
+and for 10 ≤ k ≤ 40. It also checks the counting and covering bounds of Lemma 5.4 and the
+inequality of Theorem 5.5 for 15 ≤ m ≤ 120 and k ∈ { m − 2, m − 1}. Its controls conﬁrm that
+a single vertex never totally dominates, that repeated edges are rejected, and that D(4, 5) and
+B(12, 9), just below the mode threshold, satisfy ( 1).
+The census census340.py. Trees are generated by the constant-time free-tree successor algo-
+rithm of Wright, Richmond, Odlyzko and McKay [ 11], which lists each isomorphism class exactly
+once. The program checks completeness against the tree counts of OEIS A000055 [ 10] for every
+order. It checks distinctness by computing, for every tree, the Aho–Hopcroft–Ullman canonical
+code [ 1] of the tree rooted at its centre (the lexicographically smaller code at a bicentre), and
+requiring the 64-bit BLAKE2b digests of these codes to be pairwise diﬀerent. The parameters
+γt and γ are computed by two separately written linear-time tree dynamic programs: one with
+per-vertex state arrays, the other by min-plus folding of child state vectors. On every tree of order
+at most 11 both are compared with exhaustive subset enumeration. For orders up to 16 the two
+programs are compared on every tree. For larger orders the second program is evaluated whenever
+the ﬁrst gives γt > c (⟨N (L) ∪ L⟩) + mode min, which is necessary for a violation because γ ≥ 1;
+the programs must agree on all such trees. The census record lists, for each order, the number of
+trees, the minimum slack and every violation together with its parent array.
+6
+
+--- PAGE 7 ---
+Scope of the checks. The two programs were written in the same research session from the
+same deﬁnitions; they are internal self-checks, not an external replication or a proof-assistant
+certiﬁcate. The universal statements, Theorems 4.3– 5.6, are proved above and do not depend on
+them.
+8 Source, status and priority
+The statement and the linked deﬁnitions were taken from the Internet Archive capture of 23 July
+2026 of the original WOWII pages [ 5]. The supplement retains the compressed capture bytes with
+their SHA-256 hashes, the extracted row 340, and the extracted deﬁnitions 45, 46, 49, 94 and 100,
+and the replay re-extracts them from the stored bytes. On 17 October 2026 the original endpoint
+redirected and then timed out. The archived row bears the status marker O. This is historical
+evidence of open status, not a statement by the curator about the present.
+We found no earlier resolution. The 2009 paper of DeLaviña, Larson, Pepper and Waller
+[6] discusses other entries of the same block. A public worklog by Dubey [ 7] reports that entry
+340 survives every tree of order at most 18, which agrees with Proposition 6.1. The archive of
+Bhattacharjee [ 2] refutes Conjectures 319, 352, 358, 359 and 427 and does not mention 340. The
+repository formal-conjectures [8] contains no formalisation of WOWII 340. A full-text scan on
+17 October 2026 of all 244 issues and pull requests matching “WOWII”, “WrittenOnTheWallII”,
+“Written on the Wall” or “Graﬃti.pc” found no mention of it; the repository was then at commit
+c77fdd446d23. Targeted web searches found nothing further. These bounded searches do not
+establish worldwide priority.
+Acknowledgements and disclosure
+The search for the construction, the proofs, the veriﬁcation programs and the drafting were carried
+out with the assistance of Claude (Anthropic). The supplementary checks described in Section 7
+are self-audits within that assisted workﬂow; no external peer review or proof-assistant certiﬁcation
+is claimed. Jonas J. Gebendorfer is the sole author and takes responsibility for the content.
+References
+[1] A. V. Aho, J. E. Hopcroft and J. D. Ullman, The Design and Analysis of Computer Algorithms ,
+Addison-Wesley, Reading, MA, 1974.
+[2] D. Bhattacharjee, Counterexamples to ﬁve conjectures of Graﬃti.pc on domination, Zenodo
+record 23252220, 9 October 2026. https://zenodo.org/records/23252220.
+[3] E. J. Cockayne, R. M. Dawes and S. T. Hedetniemi, Total domination in graphs, Networks
+10 (1980) 211–219.
+[4] E. DeLaviña, Graﬃti.pc: a variant of Graﬃti, in: Graphs and Discovery , DIMACS Ser.
+Discrete Math. Theoret. Comput. Sci. 69, Amer. Math. Soc., Providence, RI, 2005, 71–79.
+[5] E. DeLaviña, Written on the Wall II (Conjectures of Graﬃti.pc) , entry 340 and
+deﬁnitions 45, 46, 49, 94, 100. Original pages http://cms.uhd.edu/faculty/
+7
+
+--- PAGE 8 ---
+delavinae/research/wowII/open.html and .../wowIIdefs.js; Internet Archive cap-
+ture https://web.archive.org/web/20260723211215/http://cms.uhd.edu/faculty/
+delavinae/research/wowII/open.html.
+[6] E. DeLaviña, C. E. Larson, R. Pepper and B. Waller, Graﬃti.pc on the total domination
+number of a tree, Congr. Numer. 195 (2009) 5–18.
+[7] S. Dubey, WoW / West accessible-problem dossier, public worklog, last updated 23 July 2026.
+https://gist.github.com/siddhantdubey/22f22a7a23db5174ee59e32eaa8724aa.
+[8] Google DeepMind, formal-conjectures, directory FormalConjectures/WrittenOnTheWallII,
+commit c77fdd446d23 (16 October 2026). https://github.com/google-deepmind/
+formal-conjectures.
+[9] M. A. Henning and A. Yeo, Total Domination in Graphs , Springer Monographs in Mathemat-
+ics, Springer, New York, 2013.
+[10] OEIS Foundation Inc., Sequence A000055: number of trees with n unlabeled nodes, The
+On-Line Encyclopedia of Integer Sequences , https://oeis.org/A000055.
+[11] R. A. Wright, B. Richmond, A. Odlyzko and B. D. McKay, Constant time generation of free
+trees, SIAM J. Comput. 15 (1986) 540–548.
+8

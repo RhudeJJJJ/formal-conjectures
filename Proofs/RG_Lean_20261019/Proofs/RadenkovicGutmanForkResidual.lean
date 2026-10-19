@@ -40,8 +40,11 @@ theorem path_nonroot_closed {u v : V} (p : G.Walk u v) (hp : p.IsPath)
         have he : i = p.length := by omega
         subst i
         exact hxv (by simpa using hi.symm)
-      rw [← hi, hp.ncard_neighborSet_toSubgraph_internal_eq_two hi0 hilt]
-      simpa only [hi] using hd x hx hxu
+      have hc : (p.toSubgraph.neighborSet x).ncard = 2 := by
+        rw [← hi]
+        exact hp.ncard_neighborSet_toSubgraph_internal_eq_two hi0 hilt
+      rw [hc]
+      exact hd x hx hxu
   exact p.mem_verts_toSubgraph.mp
     (p.toSubgraph.neighborSet_subset_verts x ((hn.symm) ▸ hxy))
 

@@ -22,9 +22,9 @@ variable {V : Type*} [Fintype V]
 theorem fusion_branching_excess (C : SimpleGraph V) (u : V) (p q : ℕ)
     (hT : (source C u p q).IsTree) (hd : 1 ≤ C.degree u) :
     branchingExcess (source C u p q) = branchingExcess (fused C u p q) + 1 := by
-  letI : Nontrivial (V ⊕ Fin (p + 1) ⊕ Fin (q + 1)) :=
+  let : Nontrivial (V ⊕ Fin (p + 1) ⊕ Fin (q + 1)) :=
     ⟨⟨.inl u, .inr (.inl 0), by simp⟩⟩
-  letI : Nontrivial (V ⊕ Fin (p + q + 2)) :=
+  let : Nontrivial (V ⊕ Fin (p + q + 2)) :=
     ⟨⟨.inl u, .inr 0, by simp⟩⟩
   have hF := fusion_tree_and_leaf_count C u p q hT hd
   have hS := leaf_count_eq_two_add_excess _ hT
@@ -37,7 +37,7 @@ theorem fusion_source_not_path (C : SimpleGraph V) (u : V) (p q : ℕ)
     (hT : (source C u p q).IsTree) (hd : 1 ≤ C.degree u) :
     ¬Nonempty (source C u p q ≃g pathGraph
       (Fintype.card (V ⊕ Fin (p + 1) ⊕ Fin (q + 1)))) := by
-  letI : Nontrivial (V ⊕ Fin (p + 1) ⊕ Fin (q + 1)) :=
+  let : Nontrivial (V ⊕ Fin (p + 1) ⊕ Fin (q + 1)) :=
     ⟨⟨.inl u, .inr (.inl 0), by simp⟩⟩
   intro hpath
   have hl := (tree_two_leaves_iff_path _ hT).mpr hpath
@@ -50,7 +50,7 @@ theorem three_leaf_fusion_is_path (C : SimpleGraph V) (u : V) (p q : ℕ)
     (hT : (source C u p q).IsTree) (hd : 1 ≤ C.degree u)
     (hl : leafCount (source C u p q) = 3) :
     Nonempty (fused C u p q ≃g pathGraph (Fintype.card (V ⊕ Fin (p + q + 2)))) := by
-  letI : Nontrivial (V ⊕ Fin (p + q + 2)) :=
+  let : Nontrivial (V ⊕ Fin (p + q + 2)) :=
     ⟨⟨.inl u, .inr 0, by simp⟩⟩
   have hF := fusion_tree_and_leaf_count C u p q hT hd
   apply (tree_two_leaves_iff_path _ hF.1).mp

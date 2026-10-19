@@ -29,6 +29,7 @@ theorem fusion_branching_excess (C : SimpleGraph V) (u : V) (p q : ℕ)
   have hF := fusion_tree_and_leaf_count C u p q hT hd
   have hS := leaf_count_eq_two_add_excess _ hT
   have hB := leaf_count_eq_two_add_excess _ hF.1
+  have hl := hF.2.2
   omega
 
 /-- A source tree with positive residual root degree cannot already be a path. -/
@@ -53,6 +54,7 @@ theorem three_leaf_fusion_is_path (C : SimpleGraph V) (u : V) (p q : ℕ)
     ⟨⟨.inl u, .inr 0, by simp⟩⟩
   have hF := fusion_tree_and_leaf_count C u p q hT hd
   apply (tree_two_leaves_iff_path _ hF.1).mp
+  have he := hF.2.2
   omega
 
 #print axioms fusion_branching_excess

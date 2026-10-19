@@ -29,7 +29,9 @@ theorem leaf_count_eq_two_add_excess [Nontrivial V] (G : SimpleGraph V)
     intro v
     have hp := hT.connected.preconnected.degree_pos_of_nontrivial v
     split_ifs <;> omega
-  have hs := Finset.sum_congr (s := Finset.univ) rfl (fun v _ => hlocal v)
+  have hs : (∑ v, G.degree v + (if G.degree v = 1 then 1 else 0)) =
+      ∑ v, (2 + (G.degree v - 2)) :=
+    Finset.sum_congr rfl (fun v _ => hlocal v)
   have he := hT.card_edgeFinset
   have hd := G.sum_degrees_eq_twice_card_edges
   simp only [Finset.sum_add_distrib, Finset.sum_const, Finset.card_univ,
@@ -40,7 +42,7 @@ theorem leaf_count_eq_two_add_excess [Nontrivial V] (G : SimpleGraph V)
 
 theorem branching_excess_eq_zero_iff (G : SimpleGraph V) :
     branchingExcess G = 0 ↔ ∀ v, G.degree v ≤ 2 := by
-  simp [branchingExcess, Finset.sum_eq_zero_iff]
+  simp [branchingExcess, Finset.sum_eq_zero_iff, Nat.sub_eq_zero_iff_le]
 
 theorem leaf_count_eq_two_iff_degree_le_two [Nontrivial V] (G : SimpleGraph V)
     (hT : G.IsTree) : leafCount G = 2 ↔ ∀ v, G.degree v ≤ 2 := by
@@ -57,7 +59,7 @@ theorem path_graph_degree_le_two (n : ℕ) (i : Fin n) : (pathGraph n).degree i 
     apply Subtype.ext
     apply Fin.ext
     dsimp [f] at hab
-    split_ifs at hab <;> simp_all only [Fin.mk.injEq] <;> omega
+    split_ifs at hab <;> simp at hab <;> omega
   have hc := Fintype.card_le_of_injective f hf
   simpa only [card_neighborSet_eq_degree, Fintype.card_fin] using hc
 
@@ -118,8 +120,7 @@ theorem tree_path_iso_of_degree_le_two [Nontrivial V] (G : SimpleGraph V)
     le_antisymm p.toSubgraph.spanningCoe_le
       ((isTree_iff_minimal_connected.mp hT).2 hc p.toSubgraph.spanningCoe_le)
   have f : pathGraph (p.length + 1) ≃g G := by
-    rw [← heq]
-    exact hp.pathGraphIsoToSubgraph.trans e.symm
+    simpa only [heq] using hp.pathGraphIsoToSubgraph.trans e.symm
   have hcard : p.length + 1 = Fintype.card V := by
     simpa only [Fintype.card_fin] using Fintype.card_congr f.toEquiv
   exact ⟨(hcard ▸ f).symm⟩

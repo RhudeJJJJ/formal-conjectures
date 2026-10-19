@@ -50,4 +50,4 @@ jobs:
           python3 -B Proofs/RG_Lean_20261019/verify_extension.py \
             --mathlib-project "$GITHUB_WORKSPACE" \
             --endpoint Proofs.RadenkovicGutmanFusionDescent \
-            --workers 1 --module-timeout 900
+            --workers 1 --module-timeout 900 --print-receipt

@@ -15,10 +15,12 @@ namespace Gebendorfer.RadenkovicGutman.RewireTopology
 open SimpleGraph
 open scoped Classical
 noncomputable section
+set_option backward.isDefEq.respectTransparency false
 
-variable {V : Type*} [Fintype V] [DecidableEq V]
+variable {V : Type*} [Fintype V]
 
 /-- Transport a walk by replacing each of its edges with a reachable pair. -/
+omit [Fintype V] in
 theorem reachable_transfer (G H : SimpleGraph V)
     (h : ∀ {x y}, G.Adj x y → H.Reachable x y) {x y : V}
     (hxy : G.Reachable x y) : H.Reachable x y := by
@@ -28,6 +30,7 @@ theorem reachable_transfer (G H : SimpleGraph V)
   | cons ha p ih => exact (h ha).trans ih
 
 /-- Moving one bridge attachment within its component preserves connectedness. -/
+omit [Fintype V] in
 theorem connected_rewire (G : SimpleGraph V) (u v w : V) (hvw : v ≠ w)
     (huv : G.Reachable u v) (hG : (G ⊔ edge u w).Connected) :
     (G ⊔ edge v w).Connected := by
@@ -35,7 +38,8 @@ theorem connected_rewire (G : SimpleGraph V) (u v w : V) (hvw : v ≠ w)
   have hvw' : H.Reachable v w :=
     (show H.Adj v w from Or.inr (by simp [edge_adj, hvw])).reachable
   have huw : H.Reachable u w := (huv.mono le_sup_left).trans hvw'
-  refine ⟨fun x y => reachable_transfer _ H ?_ (hG x y), hG.nonempty⟩
+  letI : Nonempty V := ⟨u⟩
+  refine ⟨fun x y => reachable_transfer _ H ?_ (hG x y)⟩
   intro a b hab
   rcases hab with hab | hab
   · exact (show H.Adj a b from Or.inl hab).reachable
@@ -87,13 +91,13 @@ theorem degree_sup_edge (G : SimpleGraph V) (u w x : V)
   have hd : Disjoint G (edge u w) := (disjoint_edge G).mpr hguw
   unfold degree
   rw [neighborFinset_sup_of_disjoint x hd, Finset.card_disjUnion]
-  exact congrArg (G.neighborFinset x |>.card + ·) (degree_edge u w x huw)
+  exact congrArg (fun k : ℕ => (G.neighborFinset x).card + k) (degree_edge u w x huw)
 
 /-- The number of degree-one vertices, including all vertex labels. -/
 def leafCount (G : SimpleGraph V) : ℕ :=
   (Finset.univ.filter fun x => G.degree x = 1).card
 
-theorem leaf_count_iso {W : Type*} [Fintype W] [DecidableEq W]
+theorem leaf_count_iso {W : Type*} [Fintype W]
     {G : SimpleGraph V} {H : SimpleGraph W} (f : G ≃g H) :
     leafCount G = leafCount H := by
   unfold leafCount
@@ -122,14 +126,13 @@ theorem leaf_count_rewire (G : SimpleGraph V) (u v w : V)
       degree_sup_edge G u w x huw hguw, degree_sup_edge G v w x hvw hgvw]
     by_cases hxu : x = u
     · subst x
-      simp only [huv, huw, Ne.symm huv, true_or, or_self, ite_true, ite_false]
+      simp [huv, huw]
       omega
     · by_cases hxv : x = v
       · subst x
         simp [Ne.symm huv, hvw, hdv]
       · by_cases hxw : x = w <;> simp_all
-  unfold leafCount
-  rw [he, Finset.card_insert_of_notMem hv]
+  simpa only [leafCount, Finset.card_insert_of_notMem hv] using congrArg Finset.card he
 
 /-- A natural-number descent measure for every genuine pendant-path fusion. -/
 theorem leaf_count_strict (G : SimpleGraph V) (u v w : V)

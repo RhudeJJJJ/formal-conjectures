@@ -16,13 +16,13 @@ def main():
  ap=argparse.ArgumentParser(description=__doc__)
  ap.add_argument('--mathlib-project',type=pathlib.Path,required=True)
  ap.add_argument('--lean-bin-directory',type=pathlib.Path,help='Use an installed toolchain directly, without Lake environment discovery')
- ap.add_argument('--extra-lean-path',type=pathlib.Path,action='append',default=[],help='Additional checked dependency exports')
  ap.add_argument('--build-directory',type=pathlib.Path,help='Separate exports for an independent verification closure')
  ap.add_argument('--endpoint',action='append',help='Explicit module head; recursively check its closure')
  ap.add_argument('--workers',type=int,default=2)
  ap.add_argument('--module-timeout',type=int,default=7200)
  ap.add_argument('--resume',action='store_true')
  ap.add_argument('--reuse-binaries',action='store_true')
+ ap.add_argument('--print-receipt',action='store_true',help='Emit the completed receipt for CI collection')
  a=ap.parse_args();assert 1<=a.workers<=8
  project=a.mathlib_project.resolve();dep=project if (project/'Mathlib').is_dir() else project/'.lake/packages/mathlib'
  def run(cmd,cwd=project,env=None):return subprocess.check_output(cmd,cwd=cwd,env=env,text=True,stderr=subprocess.STDOUT).strip()
@@ -44,7 +44,7 @@ def main():
  build=a.build_directory.resolve() if a.build_directory else ROOT/'build/extension'
  if build.exists() and not a.resume:shutil.rmtree(build)
  build.mkdir(parents=True,exist_ok=True)
- env['LEAN_PATH']=os.pathsep.join([str(build),*(str(p.resolve()) for p in a.extra_lean_path),*paths])
+ env['LEAN_PATH']=os.pathsep.join([str(build),*paths])
  ends=a.endpoint or json.loads((ROOT/'SHORT_ARM_ENDPOINTS.json').read_text());sources={};deps={};hashes={};closure={}
  def visit(n):
   if n in sources:return
@@ -114,4 +114,5 @@ def main():
  report=dict(lean=version,mathlib=PIN,leancert=LC,global_rg='NOT_PROVED',complete_submission='NOT_SUBMITTED',scope='EXPLICIT_EXTENSION_CLOSURE' if a.endpoint else 'ALL_ARM_DEGREES_TWO_THREE_FOUR_FIVE_AND_CONDITIONAL_GLOBAL_REDUCTION',endpoints=ends,modules=records,wall_seconds=round(time.monotonic()-started,3))
  (build/'receipt.json').write_text(json.dumps(report,indent=2)+'\n')
  print('PASS_EXTENSION_SCOPE' if a.endpoint else 'PASS_SHORT_ARM_SCOPE',len(done),'MODULES; GLOBAL RG NOT_PROVED',flush=True)
+ if a.print_receipt:print('RECEIPT_JSON '+json.dumps(report,separators=(',',':')),flush=True)
 if __name__=='__main__':main()

@@ -29,8 +29,8 @@ theorem leaf_count_eq_two_add_excess [Nontrivial V] (G : SimpleGraph V)
     intro v
     have hp := hT.connected.preconnected.degree_pos_of_nontrivial v
     split_ifs <;> omega
-  have hs : (∑ v, G.degree v + (if G.degree v = 1 then 1 else 0)) =
-      ∑ v, (2 + (G.degree v - 2)) :=
+  have hs : (∑ v : V, (G.degree v + (if G.degree v = 1 then 1 else 0))) =
+      ∑ v : V, (2 + (G.degree v - 2)) :=
     Finset.sum_congr rfl (fun v _ => hlocal v)
   have he := hT.card_edgeFinset
   have hd := G.sum_degrees_eq_twice_card_edges

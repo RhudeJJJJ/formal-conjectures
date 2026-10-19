@@ -5,7 +5,7 @@ Default: fresh kernel exports. --resume reuses content- and dependency-checked
 exports from this verifier. --reuse-binaries explicitly restores the optional
 pinned compiler checkpoints supplied with this partial formalization.
 """
-import argparse, concurrent.futures, hashlib, json, os, pathlib, re, shutil, subprocess, time, zlib
+import argparse, concurrent.futures, hashlib, json, os, pathlib, re, shutil, subprocess, sys, time, zlib
 from verify import without_comments
 ROOT=pathlib.Path(__file__).resolve().parent
 PIN='0df444a360eaa60ab8c11dca51a86af692955474'
@@ -15,6 +15,8 @@ def digest(data):return hashlib.sha256(data).hexdigest()
 def main():
  ap=argparse.ArgumentParser(description=__doc__)
  ap.add_argument('--mathlib-project',type=pathlib.Path,required=True)
+ ap.add_argument('--lean-bin-directory',type=pathlib.Path,help='Use an installed toolchain directly, without Lake environment discovery')
+ ap.add_argument('--extra-lean-path',type=pathlib.Path,action='append',default=[],help='Additional checked dependency exports')
  ap.add_argument('--build-directory',type=pathlib.Path,help='Separate exports for an independent verification closure')
  ap.add_argument('--endpoint',action='append',help='Explicit module head; recursively check its closure')
  ap.add_argument('--workers',type=int,default=2)
@@ -27,7 +29,14 @@ def main():
  assert run(['git','rev-parse','HEAD'],cwd=dep)==PIN,'Mathlib pin mismatch'
  up=json.loads((ROOT/'ThirdParty/LeanCert/UPSTREAM.json').read_text());assert up['commit']==LC
  for p,h in up['source_sha256'].items():assert digest((ROOT/'ThirdParty/LeanCert'/p).read_bytes())==h,p
- settings=json.loads(run(['lake','env','python3','-c',"import os,json;print(json.dumps({k:os.environ[k] for k in ('PATH','LEAN_PATH')}))"]))
+ if a.lean_bin_directory:
+  package_dir=project/'.lake/packages'
+  libraries=[project/'.lake/build/lib/lean']
+  libraries.extend(p/'.lake/build/lib/lean' for p in sorted(package_dir.iterdir()) if p.is_dir())
+  settings={'PATH':str(a.lean_bin_directory.resolve())+os.pathsep+os.environ['PATH'],
+            'LEAN_PATH':os.pathsep.join(str(p.resolve()) for p in libraries)}
+ else:
+  settings=json.loads(run(['lake','env',sys.executable,'-c',"import os,json;print(json.dumps({k:os.environ[k] for k in ('PATH','LEAN_PATH')}))"]))
  env=os.environ.copy();env.update(settings)
  paths=[str((project/p).resolve()) if not pathlib.Path(p).is_absolute() else p for p in env['LEAN_PATH'].split(os.pathsep) if p]
  lean=shutil.which('lean',path=env['PATH']);assert lean
@@ -35,7 +44,7 @@ def main():
  build=a.build_directory.resolve() if a.build_directory else ROOT/'build/extension'
  if build.exists() and not a.resume:shutil.rmtree(build)
  build.mkdir(parents=True,exist_ok=True)
- env['LEAN_PATH']=os.pathsep.join([str(build),*paths])
+ env['LEAN_PATH']=os.pathsep.join([str(build),*(str(p.resolve()) for p in a.extra_lean_path),*paths])
  ends=a.endpoint or json.loads((ROOT/'SHORT_ARM_ENDPOINTS.json').read_text());sources={};deps={};hashes={};closure={}
  def visit(n):
   if n in sources:return
@@ -76,7 +85,7 @@ def main():
     assert r['axiom_profiles'] or n.startswith('LeanCert.'),'Missing resumed axiom profile: '+n
     return n,r
   log=build/(n+'.log');tmp=out.with_suffix('.olean.pending');start=time.monotonic()
-  cmd=[lean,'-j1','-DwarningAsError=true']
+  cmd=[lean,'-j1','-DElab.async=false','-DwarningAsError=true']
   cmd+=['-R',str(ROOT/'ThirdParty/LeanCert')] if n.startswith('LeanCert.') else ['-DautoImplicit=false','-DrelaxedAutoImplicit=false']
   cmd+=['-o',str(tmp),str(p)]
   with log.open('w') as f:

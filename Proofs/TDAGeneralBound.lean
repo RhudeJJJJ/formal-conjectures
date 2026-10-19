@@ -30,7 +30,7 @@ theorem total_domination_general_bound (G : SimpleGraph V) [DecidableRel G.Adj]
       intro u v
       by_cases hu : u ∈ core G <;> by_cases hv : v ∈ core G
       · simp only [N, if_pos hu, if_pos hv, mem_coreNeighbors, hu, hv, and_true]
-        exact adj_comm
+        exact G.adj_comm u v
       · simp only [N, if_pos hu, if_neg hv, mem_coreNeighbors, hv, and_false, notMem_empty]
       · simp only [N, if_neg hu, if_pos hv, mem_coreNeighbors, hu, and_false, notMem_empty]
       · simp only [N, if_neg hu, if_neg hv, notMem_empty]

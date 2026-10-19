@@ -52,7 +52,7 @@ theorem tree_parent_child (G : SimpleGraph V) [DecidableRel G.Adj] (hG : G.IsTre
     ((hG.isAcyclic.subsingleton_path q r).elim ⟨_, hcons⟩ ⟨Q, hQ⟩)
   have hlen := congrArg SimpleGraph.Walk.length heq
   simp only [SimpleGraph.Walk.length_cons] at hlen
-  rw [G.dist_comm q r] at hQlen
+  rw [G.dist_comm] at hQlen
   exact ⟨p, q, hup, huq, hpdist, by omega⟩
 
 omit [DecidableEq V] in

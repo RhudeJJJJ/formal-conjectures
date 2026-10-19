@@ -70,12 +70,16 @@ jobs:
           leaf_counts=$?
           lake env lean -DwarningAsError=true -o .lake/build/lib/lean/Proofs/TDAGeneralBound.olean Proofs/TDAGeneralBound.lean
           general=$?
-          lake env lean -DwarningAsError=true Proofs/TDAGraphBudget.lean
+          lake env lean -DwarningAsError=true -o .lake/build/lib/lean/Proofs/TDAGraphBudget.olean Proofs/TDAGraphBudget.lean
           graph_budget=$?
           lake env lean -DwarningAsError=true -o .lake/build/lib/lean/Proofs/TDATreeColor.olean Proofs/TDATreeColor.lean
           tree_color=$?
-          lake env lean -DwarningAsError=true Proofs/TDATreeBound.lean
+          lake env lean -DwarningAsError=true -o .lake/build/lib/lean/Proofs/TDATreeBound.olean Proofs/TDATreeBound.lean
           tree_bound=$?
-          lake env lean -DwarningAsError=true Proofs/TDATransfer.lean
+          lake env lean -DwarningAsError=true -o .lake/build/lib/lean/Proofs/TDATransfer.olean Proofs/TDATransfer.lean
           transfer=$?
-          exit $((budget || hypergraph || brooks || uniform || mixed || mixed_end || optimal || rounding || neighborhood || basics || core_cover || leaf_counts || general || graph_budget || tree_color || tree_bound || transfer))
+          lake env lean -DwarningAsError=true -o .lake/build/lib/lean/Proofs/TDAGraphEdge.olean Proofs/TDAGraphEdge.lean
+          graph_edge=$?
+          lake env lean -DwarningAsError=true Proofs/TDAMaxTwo.lean
+          max_two=$?
+          exit $((budget || hypergraph || brooks || uniform || mixed || mixed_end || optimal || rounding || neighborhood || basics || core_cover || leaf_counts || general || graph_budget || tree_color || tree_bound || transfer || graph_edge || max_two))

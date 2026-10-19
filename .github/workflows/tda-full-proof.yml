@@ -72,4 +72,10 @@ jobs:
           general=$?
           lake env lean -DwarningAsError=true Proofs/TDAGraphBudget.lean
           graph_budget=$?
-          exit $((budget || hypergraph || brooks || uniform || mixed || mixed_end || optimal || rounding || neighborhood || basics || core_cover || leaf_counts || general || graph_budget))
+          lake env lean -DwarningAsError=true -o .lake/build/lib/lean/Proofs/TDATreeColor.olean Proofs/TDATreeColor.lean
+          tree_color=$?
+          lake env lean -DwarningAsError=true Proofs/TDATreeBound.lean
+          tree_bound=$?
+          lake env lean -DwarningAsError=true Proofs/TDATransfer.lean
+          transfer=$?
+          exit $((budget || hypergraph || brooks || uniform || mixed || mixed_end || optimal || rounding || neighborhood || basics || core_cover || leaf_counts || general || graph_budget || tree_color || tree_bound || transfer))

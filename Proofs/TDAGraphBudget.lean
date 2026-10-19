@@ -24,7 +24,7 @@ theorem low_vertices_partition (G : SimpleGraph V) [DecidableRel G.Adj]
 
 theorem leaves_disjoint_degreeTwo (G : SimpleGraph V) [DecidableRel G.Adj] :
     Disjoint (leaves G) (degreeTwo G) := by
-  apply disjoint_left.mpr
+  apply Finset.disjoint_left.mpr
   intro v hvP hvB
   have h1 := mem_leaves.mp hvP
   have h2 := (mem_filter.mp hvB).2

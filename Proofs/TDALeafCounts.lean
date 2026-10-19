@@ -14,7 +14,7 @@ theorem degree_core_add_leaf (G : SimpleGraph V) [DecidableRel G.Adj] (v : V) :
     (coreNeighbors G v).card + (leafNeighbors G v).card = G.degree v := by
   classical
   have hdis : Disjoint (coreNeighbors G v) (leafNeighbors G v) := by
-    apply disjoint_left.mpr
+    apply Finset.disjoint_left.mpr
     intro p hpK hpL
     exact (mem_sdiff.mp hpK).2 (mem_filter.mp hpL).1
   have hunion : coreNeighbors G v ∪ leafNeighbors G v = G.neighborFinset v := by
@@ -46,7 +46,6 @@ theorem sum_leaf_neighbors (G : SimpleGraph V) [DecidableRel G.Adj]
     rw [heq, sum_const]
     simpa using mem_leaves.mp hp
   rw [sum_congr rfl hpoint]
-  simp
 
 theorem supports_card_le_leaves (G : SimpleGraph V) [DecidableRel G.Adj]
     (hG : G.Preconnected) (hn : 3 ≤ Fintype.card V) :

@@ -1,0 +1,24 @@
+{
+  "runs": [
+    {
+      "run_id": 39261624683,
+      "source_commit": "c75237bd44754b590c980b2a3ba97282008e0668",
+      "result": "FAIL",
+      "reason": "Energy unfolding exceeded deterministic heartbeat budget; terminal cardinal transport mismatch"
+    },
+    {
+      "run_id": 39262682233,
+      "source_commit": "dbb8fa88e3169cb547ebdbb453a17d701d82f829",
+      "result": "FAIL",
+      "reason": "Concrete path adjacency decider differed from the classical decider in the imported energy theorem; singleton identity isomorphism application"
+    },
+    {
+      "run_id": 39263424867,
+      "source_commit": "997d8d2931b45ea792aa12e812e2ae34153b086e",
+      "result": "SUCCESS",
+      "job_id": 118096735808,
+      "modules": 17,
+      "mode": "FRESH_KERNEL_EXPORT"
+    }
+  ]
+}

@@ -47,9 +47,26 @@ def StrictFusionAbove (N : ℕ) : Prop :=
     (source C u p q).IsTree → 1 ≤ C.degree u →
       laplacianEnergy (fused C u p q) < laplacianEnergy (source C u p q)
 
+/-- Energy does not depend on the chosen adjacency decision procedure. -/
+theorem energy_decidable_irrel {V : Type*} [Fintype V] [DecidableEq V]
+    (G : SimpleGraph V) (d₁ d₂ : DecidableRel G.Adj) :
+    @laplacianEnergy V _ _ G d₁ = @laplacianEnergy V _ _ G d₂ := by
+  exact congrArg (fun d => @laplacianEnergy V _ _ G d) (Subsingleton.elim d₁ d₂)
+
+/-- Isomorphism invariance with either classical or concrete adjacency deciders. -/
+theorem energy_iso {V W : Type*} [Fintype V] [DecidableEq V] [Fintype W] [DecidableEq W]
+    {G : SimpleGraph V} {H : SimpleGraph W} [DecidableRel G.Adj] [DecidableRel H.Adj]
+    (f : G ≃g H) : laplacianEnergy G = laplacianEnergy H := by
+  calc
+    laplacianEnergy G = @laplacianEnergy V _ _ G
+        (fun a b => Classical.propDecidable (G.Adj a b)) := energy_decidable_irrel G _ _
+    _ = @laplacianEnergy W _ _ H
+        (fun a b => Classical.propDecidable (H.Adj a b)) := IsoEnergy.energy_eq f
+    _ = laplacianEnergy H := energy_decidable_irrel H _ _
+
 theorem conclusion_of_iso {n : ℕ} (G : SimpleGraph (Fin n))
     (f : G ≃g pathGraph n) : Conclusion G := by
-  have hE : laplacianEnergy G = laplacianEnergy (pathGraph n) := energy_eq f
+  have hE : laplacianEnergy G = laplacianEnergy (pathGraph n) := energy_iso f
   change laplacianEnergy (pathGraph n) ≤ laplacianEnergy G ∧
     (laplacianEnergy G = laplacianEnergy (pathGraph n) ↔ Nonempty (G ≃g pathGraph n))
   exact ⟨hE.symm.le, ⟨fun _ => ⟨f⟩, fun _ => hE⟩⟩
@@ -62,7 +79,7 @@ theorem singleton_conclusion (G : SimpleGraph (Fin 1)) : Conclusion G := by
     simp
   have hiso : Nonempty (G ≃g pathGraph 1) := by
     rw [heq]
-    exact ⟨Iso.refl _⟩
+    exact ⟨Iso.refl⟩
   obtain ⟨f⟩ := hiso
   exact conclusion_of_iso G f
 
@@ -88,10 +105,10 @@ theorem concrete_descent {N n : ℕ} (hD : DecomposesAbove N)
     have hl := ht.2.2
     omega
   · calc
-      laplacianEnergy H = laplacianEnergy (fused C u p q) := energy_eq g
+      laplacianEnergy H = laplacianEnergy (fused C u p q) := energy_iso g
       _ < laplacianEnergy (source C u p q) :=
         hF m C u p q (by rw [← hnS]; exact hn) hS hd
-      _ = laplacianEnergy G := (energy_eq f).symm
+      _ = laplacianEnergy G := (energy_iso f).symm
 
 /-- Leaf induction closes the minimum and its equality characterization together. -/
 theorem conclusion_of_descent {n : ℕ} (hn : 2 ≤ n)
@@ -158,6 +175,8 @@ theorem path_equality_of_inputs (N : ℕ) (hsmall : SmallOrders N)
     laplacianEnergy G = laplacianEnergy (pathGraph n) ↔ Nonempty (G ≃g pathGraph n) :=
   (universal_conclusion N hsmall hD hF n hn G hT).2
 
+#print axioms energy_decidable_irrel
+#print axioms energy_iso
 #print axioms conclusion_of_iso
 #print axioms singleton_conclusion
 #print axioms concrete_descent

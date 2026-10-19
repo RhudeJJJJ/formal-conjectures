@@ -41,7 +41,7 @@ theorem path_nonroot_closed {u v : V} (p : G.Walk u v) (hp : p.IsPath)
         subst i
         exact hxv (by simpa using hi.symm)
       rw [← hi, hp.ncard_neighborSet_toSubgraph_internal_eq_two hi0 hilt]
-      exact hd x hx hxu
+      simpa only [hi] using hd x hx hxu
   exact p.mem_verts_toSubgraph.mp
     (p.toSubgraph.neighborSet_subset_verts x ((hn.symm) ▸ hxy))
 
@@ -90,13 +90,77 @@ theorem PendantFork.residual_root_neighbor (F : PendantFork G) (hT : G.IsTree) :
 theorem PendantFork.residual_root_degree (F : PendantFork G) (hT : G.IsTree) :
     1 ≤ F.residual.degree F.residualRoot := by
   obtain ⟨z, hz⟩ := F.residual_root_neighbor hT
-  exact Nat.succ_le_iff.mpr (degree_pos_iff_exists_adj.mpr ⟨z, hz⟩)
+  exact Nat.succ_le_iff.mpr hz.degree_pos_left
+
+/-- The only possible boundary vertex of either removed arm is its common root. -/
+theorem PendantFork.residual_boundary (F : PendantFork G) {x y : V}
+    (hx : x ∉ F.residualSet) (hy : y ∈ F.residualSet) (hxy : G.Adj x y) :
+    y = F.root := by
+  have hxu : x ≠ F.root := fun h => hx (Or.inl h)
+  have hmem : x ∈ F.left.support ∨ x ∈ F.right.support := by
+    by_contra h
+    exact hx (Or.inr ⟨fun hl => h (Or.inl hl), fun hr => h (Or.inr hr)⟩)
+  rcases hy with hy | hy
+  · exact hy
+  · rcases hmem with hl | hr
+    · exact (hy.1 (F.left_closed hl hxu hxy)).elim
+    · exact (hy.2 (F.right_closed hr hxu hxy)).elim
+
+/-- Collapse the selected arms to their common root and retain all residual labels. -/
+def PendantFork.retract (F : PendantFork G) (x : V) : F.residualSet :=
+  if hx : x ∈ F.residualSet then ⟨x, hx⟩ else F.residualRoot
+
+theorem PendantFork.residual_connected (F : PendantFork G) (hT : G.IsTree) :
+    F.residual.Connected := by
+  have hstep : ∀ {x y}, G.Adj x y →
+      F.residual.Reachable (F.retract x) (F.retract y) := by
+    intro x y hxy
+    by_cases hx : x ∈ F.residualSet
+    · by_cases hy : y ∈ F.residualSet
+      · have hadj : F.residual.Adj ⟨x, hx⟩ ⟨y, hy⟩ := hxy
+        simpa only [PendantFork.retract, dif_pos hx, dif_pos hy] using hadj.reachable
+      · have he : (⟨x, hx⟩ : F.residualSet) = F.residualRoot :=
+          Subtype.ext (F.residual_boundary hy hx hxy.symm)
+        simpa only [PendantFork.retract, dif_pos hx, dif_neg hy, he] using
+          (Reachable.rfl : F.residual.Reachable F.residualRoot F.residualRoot)
+    · by_cases hy : y ∈ F.residualSet
+      · have he : (⟨y, hy⟩ : F.residualSet) = F.residualRoot :=
+          Subtype.ext (F.residual_boundary hx hy hxy)
+        simpa only [PendantFork.retract, dif_neg hx, dif_pos hy, he] using
+          (Reachable.rfl : F.residual.Reachable F.residualRoot F.residualRoot)
+      · simp only [PendantFork.retract, dif_neg hx, dif_neg hy]
+        exact Reachable.rfl
+  have hwalk : ∀ {x y} (p : G.Walk x y),
+      F.residual.Reachable (F.retract x) (F.retract y) := by
+    intro x y p
+    induction p with
+    | nil => exact Reachable.rfl
+    | cons h p ih => exact (hstep h).trans ih
+  let : Nonempty F.residualSet := ⟨F.residualRoot⟩
+  refine ⟨fun x y => ?_⟩
+  obtain ⟨p⟩ := hT.connected x.val y.val
+  simpa only [PendantFork.retract, dif_pos x.property, dif_pos y.property] using hwalk p
+
+theorem PendantFork.residual_tree (F : PendantFork G) (hT : G.IsTree) :
+    F.residual.IsTree :=
+  ⟨F.residual_connected hT, hT.isAcyclic.induce F.residualSet⟩
+
+/-- The selected arms and their own admissible residual exist without spectral assumptions. -/
+theorem nonpath_fork_with_residual [Nontrivial V] (hT : G.IsTree)
+    (hpath : ¬Nonempty (G ≃g pathGraph (Fintype.card V))) :
+    ∃ F : PendantFork G, F.residual.IsTree ∧ 1 ≤ F.residual.degree F.residualRoot := by
+  obtain ⟨F⟩ := nonpath_has_pendant_fork hT hpath
+  exact ⟨F, F.residual_tree hT, F.residual_root_degree hT⟩
 
 #print axioms path_nonroot_closed
 #print axioms PendantFork.left_closed
 #print axioms PendantFork.right_closed
 #print axioms PendantFork.residual_root_neighbor
 #print axioms PendantFork.residual_root_degree
+#print axioms PendantFork.residual_boundary
+#print axioms PendantFork.residual_connected
+#print axioms PendantFork.residual_tree
+#print axioms nonpath_fork_with_residual
 
 end
 end Gebendorfer.RadenkovicGutman.NonpathFork

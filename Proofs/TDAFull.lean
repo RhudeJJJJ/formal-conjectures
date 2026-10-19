@@ -9,6 +9,7 @@ open Finset SimpleGraph
 
 variable {V : Type*} [Fintype V] [DecidableEq V]
 
+omit [DecidableEq V] in
 private theorem target_order_two (G : SimpleGraph V) [DecidableRel G.Adj]
     (hG : G.Connected) (hn : Fintype.card V = 2) :
     G.totalDominationNumber ≤ G.annihilationNumber + 1 := by
@@ -49,7 +50,7 @@ private theorem full_aux (n : ℕ) :
         · by_cases hmax : ∀ v, G.degree v ≤ 2
           · exact target_max_degree_two G hG hn htree hmax
           · have hhigh : ∃ v, 3 ≤ G.degree v := by
-              push_neg at hmax
+              push Not at hmax
               obtain ⟨v, hv⟩ := hmax
               exact ⟨v, by omega⟩
             obtain ⟨u, v, huv, hvhigh, hnonbridge⟩ :=

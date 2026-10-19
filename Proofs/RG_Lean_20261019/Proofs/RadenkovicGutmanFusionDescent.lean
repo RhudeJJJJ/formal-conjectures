@@ -16,23 +16,21 @@ open scoped Classical
 noncomputable section
 set_option backward.isDefEq.respectTransparency false
 
-variable {V : Type*} [Fintype V] [DecidableEq V]
+variable {V : Type*} [Fintype V]
 
 theorem base_root_degree (C : SimpleGraph V) (u : V) (p q : ℕ) :
     (base C u p q).degree (.inl u) = C.degree u + 1 := by
-  rw [base, degree_sup_edge _ _ _ _ (by simp) (by simp [SimpleGraph.sum])]
-  simp only [true_or, ite_true]
-  congr 1
   calc
-    _ = ∑ j, if (C ⊕g (pathGraph (p + 1) ⊕g pathGraph (q + 1))).Adj (.inl u) j
+    _ = ∑ j, if (base C u p q).Adj (.inl u) j
         then 1 else 0 := by
       simpa only [Nat.cast_id] using
-        (C ⊕g (pathGraph (p + 1) ⊕g pathGraph (q + 1))).degree_eq_sum_if_adj
-          (R := ℕ) (.inl u)
-    _ = ∑ j, if C.Adj u j then 1 else 0 := by
-      rw [Fintype.sum_sum_type]
-      simp
-    _ = _ := by simpa only [Nat.cast_id] using (C.degree_eq_sum_if_adj (R := ℕ) u).symm
+        (base C u p q).degree_eq_sum_if_adj (R := ℕ) (.inl u)
+    _ = (∑ j, if C.Adj u j then 1 else 0) + 1 := by
+      rw [Fintype.sum_sum_type, Fintype.sum_sum_type]
+      simp [base, SimpleGraph.sum, edge_adj]
+    _ = _ := by
+      congr 1
+      simpa only [Nat.cast_id] using (C.degree_eq_sum_if_adj (R := ℕ) u).symm
 
 theorem base_endpoint_degree (C : SimpleGraph V) (u : V) (p q : ℕ) :
     (base C u p q).degree (.inr (.inl (Fin.last p))) = 1 := by
@@ -40,18 +38,16 @@ theorem base_endpoint_degree (C : SimpleGraph V) (u : V) (p q : ℕ) :
   | zero =>
     have hn : (base C u 0 q).neighborFinset (.inr (.inl (Fin.last 0))) = {.inl u} := by
       ext (x | (x | x)) <;>
-        simp [base, SimpleGraph.sum, edge_adj, pathGraph_adj, Fin.ext_iff]
-    simp [degree, hn]
+        simp [base, SimpleGraph.sum, edge_adj, pathGraph_adj, Fin.ext_iff] <;> omega
+    rw [degree, hn, Finset.card_singleton]
   | succ p =>
     have hn : (base C u (p + 1) q).neighborFinset (.inr (.inl (Fin.last (p + 1)))) =
         {.inr (.inl (⟨p, by omega⟩ : Fin (p + 1 + 1)))} := by
       ext (x | (x | x)) <;>
-        simp only [mem_neighborFinset, base, sup_adj, SimpleGraph.sum,
-          edge_adj, pathGraph_adj, Finset.mem_singleton, Sum.inr.injEq, Sum.inl.injEq,
-          Sum.inl_ne_inr, Sum.inr_ne_inl, false_and, and_false, false_or, or_false,
-          Fin.ext_iff, Fin.val_last, Fin.val_zero, Fin.val_mk] <;> omega
-    simp [degree, hn]
+        simp [base, SimpleGraph.sum, edge_adj, pathGraph_adj, Fin.ext_iff] <;> omega
+    rw [degree, hn, Finset.card_singleton]
 
+omit [Fintype V] in
 theorem base_root_endpoint_reachable (C : SimpleGraph V) (u : V) (p q : ℕ) :
     (base C u p q).Reachable (.inl u) (.inr (.inl (Fin.last p))) := by
   let f : pathGraph (p + 1) →g base C u p q :=

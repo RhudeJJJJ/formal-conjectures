@@ -1,0 +1,79 @@
+{
+  "source_root": "C:\\Users\\jonas\\Documents\\Codex\\2026-09-21\\bitte-nutze-unsere-aletheion-architektur-und\\output\\rg-conceptual-review\\Gebendorfer_RG_Universal_Revision",
+  "status": "PROVENANCE_INVENTORY_NOT_FRESH_REPLAY_OR_LEAN_CERTIFICATION",
+  "expected_json_counts": {
+    "d1_finite": 628,
+    "d2_d3": 18,
+    "other_degrees": 658
+  },
+  "mathematical_witness_counts": {
+    "d1_finite": 628,
+    "d2_d3": 16,
+    "other_degrees": 658
+  },
+  "parameter_identity": "Original positive physical lengths (P,Q) equal Lean indices (p+1,q+1). Actual complete order, core and root are retained.",
+  "open_lean_inputs": [
+    {
+      "field": "degreeOneSmall",
+      "range": "d=1,n<=13",
+      "proof": "Exhaustive rooted-core census: small_d1.json; stored report says 2486 cases. Completeness and spectral certificates remain to be proved in Lean."
+    },
+    {
+      "field": "degreeOneMiddle",
+      "range": "d=1,14<=n<=52",
+      "proof": "625 physical arm pairs, 10600 order/arm instances; 688 anchors cover 10592 instances, 8 residual parameter instances require 1203 rooted-core cases. Stored counts, not fresh replay. Prove anchor integral bounds under actual n<=anchor order and exact |2/n-2/a| transport; prove exhaustive residual census."
+    },
+    {
+      "field": "degreeOneLarge",
+      "range": "d=1,n>=53",
+      "proof": "Prove all 15 class bounds with low strip, escape and tail, integrated on each fixed physical arm class. Need I(2)>189/5000. Stored common normalized lower 1069033/28160000."
+    },
+    {
+      "field": "degreeTwoThree",
+      "range": "d=2 or 3,all n",
+      "proof": "Uniform bounds 14/125 at d=2 and 37/250 at d=3 imply large-order cases n>=18 and n>=14; stored finite checkpoint has 5508 exception cases. Prove interval certificates and census completeness."
+    },
+    {
+      "field": "degreeGeFourSmall",
+      "range": "d>=4,n<=12",
+      "proof": "Exhaustive rooted-core census small_d_ge4.json; stored report says 247 cases. Prove graph coverage and spectral isolation."
+    },
+    {
+      "field": "degreeFourToFortyfive",
+      "range": "4<=d<=45,n>=13",
+      "proof": "630 degree/class pairs. Prove actual class bounds and integrals giving I(2)>2/13; stored common lower 3518613/22528000."
+    },
+    {
+      "field": "degreeGeFortysix",
+      "range": "d>=46,all n",
+      "proof": "Exact original half-tail and its actual graph specialization are now proved for every d>=46,y>=1/2. Scalar reserve and all tail/escape integrals are proved. Remaining: original graph low-strip integral bound and escape pointwise bound. No inhabitant of this input field yet."
+    }
+  ],
+  "next_concrete_front": "Prove actual low-strip and escape graph comparisons and apply HighDegreeTail.strict_fusion_of_lowstrip_escape; the other six original input families remain OPEN.",
+  "reproduction": "Original half-tail polynomials were freshly reconstructed by exact rational arithmetic in the generator; supplied coefficients and polynomial identities are independently checked in Lean. No full 1302-witness Python replay or full-paper reading is claimed.",
+  "inventory_record_count": 1361,
+  "full_inventory_reference": {
+    "url": "https://github.com/RhudeJJJJ/formal-conjectures/blob/c2f45095d91fa0e875c3b17a028a981cf7677098/RG_ANALYTIC_BRIDGES_20261020/ORIGINAL_CERTIFICATE_OBLIGATIONS.json",
+    "sha256": "c82b19b2984ab8c00211140aa2747379ea87967bf7a9a29a5cef8e2df892ff51",
+    "archive_copy": "PREDECESSOR_ORIGINAL_CERTIFICATE_INVENTORY.json",
+    "scope": "Unchanged hash inventory, not full reading or fresh replay"
+  },
+  "degree46_scalar_progress": {
+    "status": "VERIFIED",
+    "source_commit": "11df1bdd7029fcc3e4870bc6f9eee0b5ac1bfed0",
+    "remaining_at_that_checkpoint": "Actual graph low-strip and pointwise tail/escape polynomial bounds remain unproved. All seven Inputs fields remain OPEN."
+  },
+  "degree46_graph_tail_progress": {
+    "status": "VERIFIED",
+    "source_commit": "ba472fc6c49267399bb4e341a352af1a72393dac",
+    "quantifiers": "Every real d>=46,y>=1/2, a,b in [0,1], every point in the original Schur disk; actual graph specialization for all physical arm pairs",
+    "remaining": "The original low-strip integral and escape graph bounds remain OPEN; middle and far tail are discharged."
+  },
+  "degree46_lowstrip_partial_progress": {
+    "status": "VERIFIED_PARTIAL",
+    "source_commit": "ba472fc6c49267399bb4e341a352af1a72393dac",
+    "physical_parity": "Every actual recurrence index: odd physical length gives arm=y*A; even physical length gives arm=(y+A)/(1+y); A in [0,1]",
+    "tangent_leading_coefficient": "For every y>0,P,Q>=y and 0<=c<=1/2, |A|^2-(c^2/4)*|B|^2>0; applies to all three original parity cases",
+    "remaining": "Outside, directed and reserve conditions, constant small-ordinate strip, and low-strip integration remain OPEN."
+  }
+}

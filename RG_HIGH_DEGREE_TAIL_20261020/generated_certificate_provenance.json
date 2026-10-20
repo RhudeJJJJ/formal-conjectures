@@ -1,0 +1,46 @@
+{
+  "source_file": "C:\\Users\\jonas\\Documents\\Codex\\2026-09-21\\bitte-nutze-unsere-aletheion-architektur-und\\output\\rg-conceptual-review\\Gebendorfer_RG_Universal_Revision\\proof_components\\other_degrees\\source\\rg_multiarm_tail_halfplane_certificate.py",
+  "source_sha256": "7bda759dfa4104fe29644669263df24e0029add38669b27abba40dfa76a34352",
+  "auxiliary_source_sha256": "6302df987603dc58a544c759567907271f53553bde6835edddc0225b5401d489",
+  "expected_report_sha256": "bf7ccd8481e129bedac9afd8676b2b5f43cfe26faa9aaae17a77139f43975e1d",
+  "application_parameters": {
+    "degree_minimum": 46,
+    "ordinate_minimum": "1/2",
+    "fixed_degree": false
+  },
+  "expected_report_role": "Provenance and dimension comparison only; PASS is not a proof premise",
+  "exact_generator_form_identity": "PASS_RATIONAL_POLYNOMIAL_EQUALITY; not a Lean proof",
+  "rows": {
+    "v": {
+      "power_terms": 101,
+      "degrees": [
+        1,
+        14,
+        3,
+        3
+      ],
+      "common_scale": 46,
+      "expected_tensor_coefficients": 480
+    },
+    "k": {
+      "power_terms": 833,
+      "degrees": [
+        2,
+        30,
+        6,
+        6
+      ],
+      "common_scale": 2116,
+      "expected_tensor_coefficients": 4557
+    }
+  },
+  "lean_source_sha256": "ded1ceaebf944cb643b8e04f59a4935ae2257021b02a56a5e110234aa73be813",
+  "status": "VERIFIED_BY_FRESH_KERNEL",
+  "kernel_verification": {
+    "source_commit": "ba472fc6c49267399bb4e341a352af1a72393dac",
+    "source_tree": "f142f4fdb9253d63804ffe047886a2853f517cdf",
+    "run_id": 39439735351,
+    "job_id": 118686120774,
+    "conclusion": "success"
+  }
+}

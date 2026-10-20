@@ -15,6 +15,9 @@ open CoreQuotient ArmClasses Focus Set MeasureTheory ActualFusionIntegral
 open scoped Classical
 noncomputable section
 set_option backward.isDefEq.respectTransparency false
+set_option maxHeartbeats 2000000
+
+attribute [-instance] SimpleGraph.fintypeEdgeSetSup
 
 def pair (p q : ℕ) : Fin 5 × Fin 5 :=
   if classify p ≤ classify q then (classify p, classify q) else (classify q, classify p)
@@ -66,5 +69,6 @@ theorem integral_lower (C : SimpleGraph V) (u : V) (p q d : ℕ)
 #print axioms pair_mem
 #print axioms graph_lower
 #print axioms integral_lower
+attribute [instance] SimpleGraph.fintypeEdgeSetSup
 end
 end Gebendorfer.RadenkovicGutman.ClassEnvelope

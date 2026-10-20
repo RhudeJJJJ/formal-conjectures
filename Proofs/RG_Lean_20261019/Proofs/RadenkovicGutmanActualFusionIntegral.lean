@@ -16,7 +16,10 @@ open SimpleGraph CoreQuotient Set MeasureTheory
 open scoped Classical
 noncomputable section
 set_option backward.isDefEq.respectTransparency false
+set_option maxHeartbeats 2000000
 variable {V : Type*} [Fintype V] [DecidableEq V]
+
+attribute [-instance] SimpleGraph.fintypeEdgeSetSup
 
 def delta (C : SimpleGraph V) (u : V) (p q : ℕ) (t : ℝ) : ℝ :=
   stopLoss (laplacianSpectrum (source C u p q)) t -
@@ -38,6 +41,7 @@ theorem logarithm_integrable (C : SimpleGraph V) (u : V) (p q : ℕ) (t : ℝ) :
       (Ioi 0) :=
   MixedGraphIntegral.integrable _ _ (source_fused_card (V := V) p q) t
 
+omit [DecidableEq V] in
 theorem source_fused_edges (C : SimpleGraph V) (u : V) (p q : ℕ)
     (hT : (source C u p q).IsTree) (hd : 1 ≤ C.degree u) :
     (source C u p q).edgeFinset.card = (fused C u p q).edgeFinset.card := by
@@ -90,6 +94,27 @@ theorem mean_transport (C : SimpleGraph V) (u : V) (p q : ℕ) :
   rw [he, abs_le] at h
   linarith [h.1]
 
+theorem integral_lipschitz (C : SimpleGraph V) (u : V) (p q : ℕ)
+    (hT : (source C u p q).IsTree) (hd : 1 ≤ C.degree u) (s t : ℝ) :
+    |normalizedIntegral C u p q s - normalizedIntegral C u p q t| ≤ |s - t| := by
+  rw [integral_eq_delta C u p q hT hd, integral_eq_delta C u p q hT hd]
+  exact delta_lipschitz C u p q s t
+
+/-- Exact transport from a certificate's threshold, with the same physical graph pair. -/
+theorem anchor_transport (C : SimpleGraph V) (u : V) (p q a : ℕ)
+    (hT : (source C u p q).IsTree) (hd : 1 ≤ C.degree u) :
+    normalizedIntegral C u p q (2 - 2 / (a : ℝ)) -
+      |2 / (Fintype.card (V ⊕ Fin (p + 1) ⊕ Fin (q + 1)) : ℝ) - 2 / (a : ℝ)| ≤
+    normalizedIntegral C u p q (2 - 2 /
+      (Fintype.card (V ⊕ Fin (p + 1) ⊕ Fin (q + 1)) : ℝ)) := by
+  have h := integral_lipschitz C u p q hT hd (2 - 2 / (a : ℝ))
+    (2 - 2 / (Fintype.card (V ⊕ Fin (p + 1) ⊕ Fin (q + 1)) : ℝ))
+  rw [show (2 - 2 / (a : ℝ)) -
+      (2 - 2 / (Fintype.card (V ⊕ Fin (p + 1) ⊕ Fin (q + 1)) : ℝ)) =
+      2 / (Fintype.card (V ⊕ Fin (p + 1) ⊕ Fin (q + 1)) : ℝ) - 2 / (a : ℝ) by ring,
+    abs_le] at h
+  linarith [h.2]
+
 theorem energy_difference (C : SimpleGraph V) (u : V) (p q : ℕ)
     (hT : (source C u p q).IsTree) (hd : 1 ≤ C.degree u) :
     laplacianEnergy (source C u p q) - laplacianEnergy (fused C u p q) =
@@ -121,6 +146,16 @@ theorem strict_of_reserve (C : SimpleGraph V) (u : V) (p q : ℕ)
   have h := mean_transport C u p q
   linarith
 
+/-- Certificate validity (including any order bound n <= a) must be proved by its producer. -/
+theorem strict_of_anchor (C : SimpleGraph V) (u : V) (p q a : ℕ)
+    (hT : (source C u p q).IsTree) (hd : 1 ≤ C.degree u)
+    (hr : |2 / (Fintype.card (V ⊕ Fin (p + 1) ⊕ Fin (q + 1)) : ℝ) - 2 / (a : ℝ)| <
+      normalizedIntegral C u p q (2 - 2 / (a : ℝ))) :
+    laplacianEnergy (fused C u p q) < laplacianEnergy (source C u p q) := by
+  apply (strict_iff_mean_integral_pos C u p q hT hd).mpr
+  have h := anchor_transport C u p q a hT hd
+  linarith
+
 #check @strict_iff_mean_integral_pos
 #check @strict_of_reserve
 #print axioms source_fused_card
@@ -130,8 +165,12 @@ theorem strict_of_reserve (C : SimpleGraph V) (u : V) (p q : ℕ)
 #print axioms count_gap
 #print axioms delta_lipschitz
 #print axioms mean_transport
+#print axioms integral_lipschitz
+#print axioms anchor_transport
 #print axioms energy_difference
 #print axioms strict_iff_mean_integral_pos
 #print axioms strict_of_reserve
+#print axioms strict_of_anchor
+attribute [instance] SimpleGraph.fintypeEdgeSetSup
 end
 end Gebendorfer.RadenkovicGutman.ActualFusionIntegral

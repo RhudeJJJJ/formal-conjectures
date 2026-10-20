@@ -1,0 +1,36 @@
+{
+  "result": "passed",
+  "toolchain": "official Lean 4.33.1",
+  "mathlib_commit": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "statement_heads_before_certificate_links": {
+    "7379": "01f5e4ecdab2cddb0ab0f462b19de7b14744802a",
+    "7380": "d8fbf7af790fad3e942e4556fae339d7709b6501"
+  },
+  "inherited_certificate_commit": "07027a2c73bfa6802c0acbc7ab51788214b4ef78",
+  "fresh_export_modules": [
+    "WOWII412dCore",
+    "WOWII412dAssembly",
+    "CoronaExchange",
+    "PendantSupport",
+    "FiniteMatchingCover",
+    "ForestCounting",
+    "EdgePartitionCounts",
+    "TotalDominationForestBudget",
+    "WOWII393aProof",
+    "WOWII379Proof",
+    "WOWII379393Audit"
+  ],
+  "exact_target_checks": 3,
+  "transitive_axiom_checks": 12,
+  "allowed_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "sorryAx_negative_control": "passed",
+  "warning_as_error": true,
+  "autoImplicit": false,
+  "relaxedAutoImplicit": false,
+  "sandbox_adapter": "environment/process_path.c; failed /proc/<pid>/exe readlink retries /proc/self/exe; official Lean unchanged",
+  "upstream_ci_and_new_human_review": "separate; not established by this local record"
+}

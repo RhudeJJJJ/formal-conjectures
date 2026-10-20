@@ -18,6 +18,7 @@ namespace Gebendorfer.RadenkovicGutman.MinimalFusion
 open SimpleGraph CoreQuotient RewireTopology GlobalAssembly FourVertexSpectrum
 open scoped Classical
 noncomputable section
+set_option backward.isDefEq.respectTransparency false
 
 theorem starFour_leaves : leafCount starFour = 3 := by
   have hc : starFour.degree 0 = 3 := by
@@ -35,7 +36,7 @@ theorem starFour_leaves : leafCount starFour = 3 := by
   rw [he]
   norm_num
 
-variable {V : Type*} [Fintype V]
+variable {V : Type*} [Fintype V] [DecidableEq V]
 
 /-- Relabeling preserves the given source, rather than choosing a replacement graph. -/
 theorem source_iso_star_four (C : SimpleGraph V) (u : V) (p q : ℕ)
@@ -65,7 +66,8 @@ theorem fused_iso_path_four (C : SimpleGraph V) (u : V) (p q : ℕ)
   have ht := FusionDescent.fusion_tree_and_leaf_count C u p q hT hd
   have hnF : Fintype.card (V ⊕ Fin (p + q + 2)) = 4 := ht.2.1.symm.trans hn
   have hp := FusionTerminal.three_leaf_fusion_is_path C u p q hT hd hl
-  simpa only [hnF] using hp
+  simp only [Fintype.card_sum, Fintype.card_fin] at hnF
+  simpa only [Fintype.card_sum, Fintype.card_fin, hnF] using hp
 
 theorem actual_energies_four (C : SimpleGraph V) (u : V) (p q : ℕ)
     (hT : (source C u p q).IsTree) (hd : 1 ≤ C.degree u)

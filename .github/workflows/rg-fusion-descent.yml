@@ -45,13 +45,13 @@ jobs:
           visit('Proofs.RadenkovicGutmanHighDegreeEscape')
           subprocess.run(['lake', 'exe', 'cache', 'get', *sorted(external)], check=True)
           PY
-      - name: Check original polynomial clearing identities
+      - name: Check the analytic bridge and checker step
         run: |
           python3 -B Proofs/RG_Lean_20261019/verify_extension.py \
             --mathlib-project "$GITHUB_WORKSPACE" \
-            --endpoint Proofs.RadenkovicGutmanEscapeClearing \
+            --endpoint Proofs.RadenkovicGutmanCorrelatedEscape \
             --endpoint Proofs.RadenkovicGutmanNestedIntegerStep \
-            --workers 1 --module-timeout 900 --print-receipt
+            --workers 1 --module-timeout 600 --print-receipt
       - name: Check all 23 directed coefficient polynomials
         run: |
           python3 -B Proofs/RG_Lean_20261019/verify_extension.py \
@@ -79,6 +79,57 @@ jobs:
             --endpoint Proofs.RadenkovicGutmanEscapeDirectedSlice20 \
             --endpoint Proofs.RadenkovicGutmanEscapeDirectedSlice21 \
             --endpoint Proofs.RadenkovicGutmanEscapeDirectedSlice22 \
+            --workers 2 --module-timeout 600 --resume --print-receipt
+      - name: Check all 45 reserve power-data modules
+        run: |
+          python3 -B Proofs/RG_Lean_20261019/verify_extension.py \
+            --mathlib-project "$GITHUB_WORKSPACE" \
+            --endpoint Proofs.RadenkovicGutmanEscapeReservePower00 \
+            --endpoint Proofs.RadenkovicGutmanEscapeReservePower01 \
+            --endpoint Proofs.RadenkovicGutmanEscapeReservePower02 \
+            --endpoint Proofs.RadenkovicGutmanEscapeReservePower03 \
+            --endpoint Proofs.RadenkovicGutmanEscapeReservePower04 \
+            --endpoint Proofs.RadenkovicGutmanEscapeReservePower05 \
+            --endpoint Proofs.RadenkovicGutmanEscapeReservePower06 \
+            --endpoint Proofs.RadenkovicGutmanEscapeReservePower07 \
+            --endpoint Proofs.RadenkovicGutmanEscapeReservePower08 \
+            --endpoint Proofs.RadenkovicGutmanEscapeReservePower09 \
+            --endpoint Proofs.RadenkovicGutmanEscapeReservePower10 \
+            --endpoint Proofs.RadenkovicGutmanEscapeReservePower11 \
+            --endpoint Proofs.RadenkovicGutmanEscapeReservePower12 \
+            --endpoint Proofs.RadenkovicGutmanEscapeReservePower13 \
+            --endpoint Proofs.RadenkovicGutmanEscapeReservePower14 \
+            --endpoint Proofs.RadenkovicGutmanEscapeReservePower15 \
+            --endpoint Proofs.RadenkovicGutmanEscapeReservePower16 \
+            --endpoint Proofs.RadenkovicGutmanEscapeReservePower17 \
+            --endpoint Proofs.RadenkovicGutmanEscapeReservePower18 \
+            --endpoint Proofs.RadenkovicGutmanEscapeReservePower19 \
+            --endpoint Proofs.RadenkovicGutmanEscapeReservePower20 \
+            --endpoint Proofs.RadenkovicGutmanEscapeReservePower21 \
+            --endpoint Proofs.RadenkovicGutmanEscapeReservePower22 \
+            --endpoint Proofs.RadenkovicGutmanEscapeReservePower23 \
+            --endpoint Proofs.RadenkovicGutmanEscapeReservePower24 \
+            --endpoint Proofs.RadenkovicGutmanEscapeReservePower25 \
+            --endpoint Proofs.RadenkovicGutmanEscapeReservePower26 \
+            --endpoint Proofs.RadenkovicGutmanEscapeReservePower27 \
+            --endpoint Proofs.RadenkovicGutmanEscapeReservePower28 \
+            --endpoint Proofs.RadenkovicGutmanEscapeReservePower29 \
+            --endpoint Proofs.RadenkovicGutmanEscapeReservePower30 \
+            --endpoint Proofs.RadenkovicGutmanEscapeReservePower31 \
+            --endpoint Proofs.RadenkovicGutmanEscapeReservePower32 \
+            --endpoint Proofs.RadenkovicGutmanEscapeReservePower33 \
+            --endpoint Proofs.RadenkovicGutmanEscapeReservePower34 \
+            --endpoint Proofs.RadenkovicGutmanEscapeReservePower35 \
+            --endpoint Proofs.RadenkovicGutmanEscapeReservePower36 \
+            --endpoint Proofs.RadenkovicGutmanEscapeReservePower37 \
+            --endpoint Proofs.RadenkovicGutmanEscapeReservePower38 \
+            --endpoint Proofs.RadenkovicGutmanEscapeReservePower39 \
+            --endpoint Proofs.RadenkovicGutmanEscapeReservePower40 \
+            --endpoint Proofs.RadenkovicGutmanEscapeReservePower41 \
+            --endpoint Proofs.RadenkovicGutmanEscapeReservePower42 \
+            --endpoint Proofs.RadenkovicGutmanEscapeReservePower43 \
+            --endpoint Proofs.RadenkovicGutmanEscapeReservePower44 \
+            --endpoint Proofs.RadenkovicGutmanEscapeReserveData \
             --workers 2 --module-timeout 600 --resume --print-receipt
       - name: Check all 45 reserve coefficient polynomials
         run: |
@@ -130,6 +181,12 @@ jobs:
             --endpoint Proofs.RadenkovicGutmanEscapeReserveSlice43 \
             --endpoint Proofs.RadenkovicGutmanEscapeReserveSlice44 \
             --workers 2 --module-timeout 900 --resume --print-receipt
+      - name: Check original polynomial clearing identities
+        run: |
+          python3 -B Proofs/RG_Lean_20261019/verify_extension.py \
+            --mathlib-project "$GITHUB_WORKSPACE" \
+            --endpoint Proofs.RadenkovicGutmanEscapeClearing \
+            --workers 1 --module-timeout 900 --resume --print-receipt
       - name: Check complete tensors and actual graph specialization
         run: |
           python3 -B Proofs/RG_Lean_20261019/verify_extension.py \

@@ -127,7 +127,10 @@ lemma no_low_degree (G : SimpleGraph V) [DecidableRel G.Adj]
         · exact (hz w hw).2.1
         · exact (hz w hw).2.2.1
         · exact (hz w hw).2.2.2
-      exact (h3 y hyX u (hz u hu).1 w (hz w hw).1 hyu hyw huw).resolve_right hn
+      rcases h3 y hyX u (hz u hu).1 w (hz w hw).1 hyu hyw huw with h|h|h
+      · exact Or.inl h
+      · exact Or.inr h
+      · exact (hn h).elim
     have ca := cover a (by simp)
     have cb := cover b (by simp)
     have cc := cover c (by simp)

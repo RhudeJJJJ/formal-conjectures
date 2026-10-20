@@ -1,0 +1,33 @@
+name: Erdos617 development compiler feedback
+on:
+  push:
+    branches: [dev-617-round9-20261020]
+permissions:
+  contents: read
+concurrency:
+  group: dev-617-round9-20261020
+  cancel-in-progress: true
+jobs:
+  develop:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          persist-credentials: false
+      - name: Install pinned Lean
+        run: |
+          curl -sSfL https://github.com/leanprover/elan/releases/download/v1.4.2/elan-x86_64-unknown-linux-gnu.tar.gz | tar xz
+          ./elan-init -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> $GITHUB_PATH
+      - name: Get pinned Mathlib cache
+        run: lake exe cache get
+      - name: Compile both new proofs independently of the statement bundle
+        run: |
+          set +e
+          lake env lean -DwarningAsError=true Proofs/Erdos617AffineProof.lean
+          affine_exit=$?
+          lake env lean -DwarningAsError=true Proofs/Erdos617ThreeCore.lean
+          core_exit=$?
+          echo "AFFINE_EXIT=$affine_exit CORE_EXIT=$core_exit"
+          if [ "$affine_exit" -ne 0 ] || [ "$core_exit" -ne 0 ]; then exit 1; fi

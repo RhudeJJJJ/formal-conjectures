@@ -1,0 +1,38 @@
+{
+  "date": "2026-10-20T16:41:10.605530+00:00",
+  "lean": "4.33.1",
+  "lean_commit": "819816b2e0a3bf405af45ae5c7af2491d8f5bee6",
+  "mathlib_commit": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "statement_base": "bca3fde7df59d1ca618d02456a3c40383e874fdf",
+  "proof_modules": [
+    "WOWII412dCore",
+    "WOWII412dAssembly",
+    "StrictHallForest",
+    "RankedForestCover",
+    "WOWII412dForest",
+    "WOWII412dCover",
+    "WOWII412dProof",
+    "WOWII412dAudit"
+  ],
+  "fresh_exports": 8,
+  "all_warnings_as_errors": true,
+  "auto_implicit": false,
+  "relaxed_auto_implicit": false,
+  "exact_targets": [
+    "WOWII412dProof.conjecture412d_isolate_free",
+    "WOWII412dProof.conjecture412d"
+  ],
+  "allowed_transitive_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "checks_passed": 7,
+  "placeholder_negative_control": "PASS",
+  "reused_unchanged": {
+    "WOWII412dCore.lean": "9860f8a4c1931f5d33191fd5561783dc9ec7b1e4",
+    "WOWII412dAssembly.lean": "ed327805d4d1c4bc487e28ab6c098ec0a65a12f8"
+  },
+  "adapter": "environment/process_path.c, executable-path lookup only; official Lean binary/kernel unmodified",
+  "scope": "Both universal isolate-free strengthening and original connected WOWII 412d, with exact submitted definitions. No remaining conditional proof obligation."
+}

@@ -1,6 +1,7 @@
 /- Copyright 2026 Jonas J. Gebendorfer. Apache 2.0. -/
 import Proofs.RadenkovicGutmanQuadraticDiskConvex
 import Proofs.RadenkovicGutmanHighDegreeTail
+import Proofs.RadenkovicGutmanLowStripPrimitive
 
 /-! Original tangent-strip modulus comparison on the same Schur disk.
 The outside/directed/full-reserve signs remain explicit hypotheses.
@@ -49,8 +50,10 @@ theorem log_lower_of_signs (d y P Q c : ℝ) (hd : 0 ≤ d) (hy : 0 < y)
   rw [← quadratic_identity] at hH
   have hb := Complex.normSq_pos.mpr (TailHalfGeometry.denominator_ne_zero d y P Q hy hP hQ ζ hζ)
   have hs : (c/2)^2 ≤ ‖quotient y P Q ζ‖^2 := by
-    rw [quotient,norm_div,div_pow,← Complex.normSq_eq_norm_sq,← Complex.normSq_eq_norm_sq]
+    rw [quotient,norm_div]
+    simp only [div_pow,← Complex.normSq_eq_norm_sq]
     apply (le_div_iff₀ hb).mpr
+    norm_num
     nlinarith only [hH]
   have hk : 0 < c/2 := by linarith only [hc.1]
   have hn := (sq_le_sq₀ hk.le (norm_nonneg (quotient y P Q ζ))).mp hs
@@ -64,6 +67,7 @@ theorem tangent_log_identity (c : ℝ) (hc : c ∈ Ioc (0 : ℝ) (1/2)) :
     nlinarith only [h]
   have hr : 2/(4*c/(1-c^2))=(1-c^2)/(2*c) := by
     field_simp [hc.1.ne',hd.ne']
+    norm_num
   have hs : Real.sqrt (1+((1-c^2)/(2*c))^2)=(1+c^2)/(2*c) := by
     apply (Real.sqrt_eq_iff_eq_sq (by positivity) (by positivity)).2
     field_simp [hc.1.ne']

@@ -92,7 +92,8 @@ theorem original_lowstrip_lower (f : ℝ → ℝ) (d : ℝ) (hd : 46 ≤ d)
   calc
     (-(8/3 : ℝ)*log 2-2*log 3)/d-log 2/2 =
       ( -((8/3)*log 2+2*log 3)/d-cut*log 2)+((1/2-cut)*(-log 2)) := by ring
-    _ ≤ (∫ y : ℝ in (0 : ℝ)..cut, f y)+(∫ y : ℝ in cut..(1/2), f y) := by nlinarith only [ht,hc]
+    _ ≤ (∫ y : ℝ in (0 : ℝ)..cut, f y)+(∫ y : ℝ in cut..(1/2), f y) := by
+      simpa only [neg_div] using (add_le_add ht hc)
     _ = ∫ y : ℝ in (0 : ℝ)..(1/2), f y := hadd
 
 attribute [-instance] SimpleGraph.fintypeEdgeSetSup

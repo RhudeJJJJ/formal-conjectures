@@ -30,6 +30,10 @@ jobs:
           restore-keys: |
             round9-imports-${{ hashFiles('lean-toolchain', 'lake-manifest.json') }}-
             round8-imports-${{ hashFiles('lean-toolchain', 'lake-manifest.json') }}-
+      - name: Load the exact submitted statement
+        run: |
+          curl -fsSL https://raw.githubusercontent.com/RhudeJJJJ/formal-conjectures/57560b70d06fd5b7f0c8cb050e55b84059ca33db/FormalConjectures/ErdosProblems/617.lean -o FormalConjectures/ErdosProblems/617.lean
+          echo 'f969bc4d8d91b7cc84e2c1ebbab06a563f28cf847fff66f9693f24bbf76135a1  FormalConjectures/ErdosProblems/617.lean' | sha256sum -c -
       - name: Build exact statement
         run: lake --wfail build 'FormalConjectures.ErdosProblems.«617»'
       - uses: actions/cache/save@55cc8345863c7cc4c66a329aec7e433d2d1c52a9

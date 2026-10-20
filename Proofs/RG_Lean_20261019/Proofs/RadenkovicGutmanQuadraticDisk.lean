@@ -54,8 +54,9 @@ theorem concave_nonneg (a bx bt c r : ℝ) (g : ℂ) (ha : a < 0) (hr : 0 ≤ r)
   have hc : (qx*dx+qt*dy)^2 ≤ (qx^2+qt^2)*(dx^2+dy^2) := by
     nlinarith only [sq_nonneg (qx*dy-qt*dx)]
   have hm := mul_le_mul_of_nonneg_left hd (show 0 ≤ qx^2+qt^2 by positivity)
+  have hsq : (qx*dx+qt*dy)^2 ≤ L^2 := by nlinarith only [hc,hm,hs]
   have habs : |qx*dx+qt*dy| ≤ L :=
-    (sq_le_sq₀ (abs_nonneg _) hL).mp (by nlinarith only [hc,hm,hs])
+    (sq_le_sq₀ (abs_nonneg _) hL).mp (by simpa only [sq_abs] using hsq)
   have hlin := (abs_le.mp habs).1
   have hquad := mul_nonneg_of_nonpos_of_nonpos ha.le (sub_nonpos.mpr hd)
   have he : value a bx bt c z = L+(qx*dx+qt*dy)+a*(dx^2+dy^2-r^2) := by

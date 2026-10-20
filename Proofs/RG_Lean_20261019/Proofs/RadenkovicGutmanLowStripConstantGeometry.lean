@@ -13,7 +13,7 @@ set_option backward.isDefEq.respectTransparency false
 
 theorem lead_pos (y P Q : ℝ) (hy : 0 < y) (hP : y ≤ P) (hQ : y ≤ Q) :
     0 < lead y P Q 1 := by
-  have hb := Complex.normSq_pos.mpr (TailHalfGeometry.B_ne_zero y P Q hy hP hQ)
+  have hb := Complex.normSq_pos.mpr (Focus.B_ne_zero y P Q hy hP hQ)
   have hh := (le_div_iff₀ hb).mp (TailHalfGeometry.infinity_ratio_ge_half y P Q hy hP hQ)
   unfold lead
   norm_num

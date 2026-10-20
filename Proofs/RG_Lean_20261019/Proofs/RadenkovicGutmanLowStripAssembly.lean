@@ -43,7 +43,6 @@ theorem scaled_primitive_derivative (d y : ℝ) (hd : 0 < d) (hy : 0 < y) :
   have h := ((primitive_derivative (d*y) (mul_pos hd hy)).comp y
     ((hasDerivAt_id y).const_mul d)).div_const d
   convert! h using 1
-  dsimp only [id]
   field_simp [hd.ne']
 
 theorem scaled_arsinh_integral (d B : ℝ) (hd : 0 < d) (hB : 0 < B) :
@@ -79,7 +78,9 @@ theorem original_lowstrip_lower (f : ℝ → ℝ) (d : ℝ) (hd : 46 ≤ d)
     apply integral_mono_ae hm.1 hf1.1
     filter_upwards [ae_restrict_mem measurableSet_Ioc] with y hy
     exact htangent y hy
-  rw [intervalIntegral.integral_sub hi.neg intervalIntegrable_const,
+  have hni : IntervalIntegrable (fun y : ℝ => -arsinh (2/(d*y))) volume 0 cut := hi.neg
+  have hci : IntervalIntegrable (fun _ : ℝ => log 2) volume 0 cut := intervalIntegrable_const
+  rw [intervalIntegral.integral_sub hni hci,
     intervalIntegral.integral_neg,scaled_arsinh_integral d cut hd0 hcut,
     he,primitive_eight_thirds,intervalIntegral.integral_const] at ht
   simp only [sub_zero,smul_eq_mul] at ht
@@ -91,7 +92,7 @@ theorem original_lowstrip_lower (f : ℝ → ℝ) (d : ℝ) (hd : 46 ≤ d)
   calc
     (-(8/3 : ℝ)*log 2-2*log 3)/d-log 2/2 =
       ( -((8/3)*log 2+2*log 3)/d-cut*log 2)+((1/2-cut)*(-log 2)) := by ring
-    _ ≤ (∫ y : ℝ in (0 : ℝ)..cut, f y)+(∫ y : ℝ in cut..(1/2), f y) := add_le_add ht hc
+    _ ≤ (∫ y : ℝ in (0 : ℝ)..cut, f y)+(∫ y : ℝ in cut..(1/2), f y) := by nlinarith only [ht,hc]
     _ = ∫ y : ℝ in (0 : ℝ)..(1/2), f y := hadd
 
 attribute [-instance] SimpleGraph.fintypeEdgeSetSup

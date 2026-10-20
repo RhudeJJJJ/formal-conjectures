@@ -19,6 +19,7 @@ remain separate obligations. In particular this module does not inhabit
 -/
 namespace Gebendorfer.RadenkovicGutman.LargeDegreeReserve
 open Real Set
+open scoped Classical
 noncomputable section
 
 def atanLower (x : ℝ) : ℝ := x - x ^ 3 / 3
@@ -29,8 +30,9 @@ theorem atan_lower (x : ℝ) (hx : 0 ≤ x) : atanLower x ≤ arctan x := by
       (y ^ 4 / (1 + y ^ 2)) y := by
     have h := (hasDerivAt_arctan y).sub
       ((hasDerivAt_id y).sub (((hasDerivAt_id y).pow 3).div_const 3))
-    convert h using 1 <;> dsimp [atanLower] <;>
-      field_simp [show 1+y^2 ≠ 0 by positivity] <;> ring
+    convert h using 1 <;> first
+      | rfl
+      | (field_simp [show 1+y^2 ≠ 0 by positivity]; ring)
   have hm := monotone_of_hasDerivAt_nonneg hd (by intro y; positivity)
   have h := hm hx
   norm_num [atanLower] at h
@@ -42,8 +44,9 @@ theorem atan_upper (x : ℝ) (hx : 0 ≤ x) : arctan x ≤ atanUpper x := by
       (y ^ 6 / (1 + y ^ 2)) y := by
     have h := (((hasDerivAt_id y).sub (((hasDerivAt_id y).pow 3).div_const 3)).add
       (((hasDerivAt_id y).pow 5).div_const 5)).sub (hasDerivAt_arctan y)
-    convert h using 1 <;> dsimp [atanUpper] <;>
-      field_simp [show 1+y^2 ≠ 0 by positivity] <;> ring
+    convert h using 1 <;> first
+      | rfl
+      | (field_simp [show 1+y^2 ≠ 0 by positivity]; ring)
   have hm := monotone_of_hasDerivAt_nonneg hd (by intro y; positivity)
   have h := hm hx
   norm_num [atanUpper] at h
@@ -53,9 +56,9 @@ theorem atan_upper (x : ℝ) (hx : 0 ≤ x) : arctan x ≤ atanUpper x := by
 theorem atan_le_self (x : ℝ) (hx : 0 ≤ x) : arctan x ≤ x := by
   have hd (y : ℝ) : HasDerivAt (fun z => z - arctan z)
       (y ^ 2 / (1 + y ^ 2)) y := by
-    convert (hasDerivAt_id y).sub (hasDerivAt_arctan y) using 1
-    field_simp [show 1+y^2 ≠ 0 by positivity]
-    <;> ring
+    convert (hasDerivAt_id y).sub (hasDerivAt_arctan y) using 1 <;> first
+      | rfl
+      | (field_simp [show 1+y^2 ≠ 0 by positivity]; ring)
   have hm := monotone_of_hasDerivAt_nonneg hd (by intro y; positivity)
   have h := hm hx
   norm_num at h
@@ -83,7 +86,7 @@ def tailParameter (y : ℝ) : ℝ := (sqrt (y ^ 2 + 4) - y) / 2
 
 /-- The original tail primitive, not an asserted value of an integral. -/
 def tailPrimitive (y : ℝ) : ℝ :=
-  let t := tailParameter y
+  let t := tailParameter y;
   -((t - 1/t) * log (1 + t ^ 2) - 2*t + 4*arctan t) / 2
 
 theorem tail_parameter_properties (y : ℝ) (hy : 0 ≤ y) :
@@ -138,11 +141,11 @@ theorem half_angle :
   have ht : 0 < t := (tail_parameter_properties (1/2) (by norm_num)).1
   have hd : 0 < 1+t := by positivity
   have hp : t * ((1-t)/(1+t)) < 1 := by
-    rw [mul_div_assoc]
+    rw [← mul_div_assoc]
     apply (div_lt_one hd).mpr
     nlinarith [sq_nonneg t]
   have he : (t+(1-t)/(1+t))/(1-t*((1-t)/(1+t))) = 1 := by
-    field_simp [ne_of_gt hd, ne_of_gt (sub_pos.mpr hp)]
+    field_simp [ne_of_gt hd, ne_of_gt (sub_pos.mpr hp), show 1+t^2 ≠ 0 by positivity]
     <;> ring
   have h := Real.arctan_add hp
   rw [he, Real.arctan_one] at h

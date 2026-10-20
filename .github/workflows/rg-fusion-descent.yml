@@ -1,4 +1,4 @@
-name: RG exact degree-46 transcendental reserve
+name: RG exact tail integral and degree-uniform transcendental reserve
 
 on:
   push:
@@ -42,12 +42,12 @@ jobs:
                       visit(dep)
                   else:
                       external.add(dep)
-          visit('Proofs.RadenkovicGutmanLargeDegreeReserve')
+          visit('Proofs.RadenkovicGutmanTailIntegral')
           subprocess.run(['lake', 'exe', 'cache', 'get', *sorted(external)], check=True)
           PY
       - name: Check the source closure and axiom profiles
         run: |
           python3 -B Proofs/RG_Lean_20261019/verify_extension.py \
             --mathlib-project "$GITHUB_WORKSPACE" \
-            --endpoint Proofs.RadenkovicGutmanLargeDegreeReserve \
+            --endpoint Proofs.RadenkovicGutmanTailIntegral \
             --workers 1 --module-timeout 900 --print-receipt

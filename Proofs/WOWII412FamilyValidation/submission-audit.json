@@ -1,0 +1,2062 @@
+{
+  "scope": "Live audit before the new 412a/b/e certificate updates in this package.",
+  "repository": "google-deepmind/formal-conjectures",
+  "counts": {
+    "total": 62,
+    "open": 59,
+    "merged": 1,
+    "closed_without_merge": 2
+  },
+  "ci_counts_at_audit": {
+    "success": 58,
+    "running": 1
+  },
+  "prs": [
+    {
+      "number": 7492,
+      "title": "feat: formalize and refute WOWII 340",
+      "state": "open",
+      "merged": false,
+      "head": "9273b082d7d98404cd4c0edb42c21c1eccfb75a5",
+      "updated": "2026-10-20T17:47:16Z",
+      "formal_proof_attributes_in_diff": 1,
+      "ci": {
+        "n": 7492,
+        "state": "running",
+        "runs": [
+          {
+            "id": 39468972814,
+            "name": "Google GitHub Admin: Actions Workflow Security Scan",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "id": 39468971611,
+            "name": "Build Lean project and deploy docs",
+            "status": "in_progress",
+            "conclusion": null
+          },
+          {
+            "id": 39468971675,
+            "name": "Check Copyright Header",
+            "status": "completed",
+            "conclusion": "success"
+          }
+        ]
+      },
+      "comments_on_2026_10_20": []
+    },
+    {
+      "number": 7376,
+      "title": "feat: certify WOWII 412d and its isolate-free strengthening",
+      "state": "open",
+      "merged": false,
+      "head": "90406e790e552ccf72eccb6cdf936b86c0d0258d",
+      "updated": "2026-10-20T16:44:24Z",
+      "formal_proof_attributes_in_diff": 2,
+      "ci": {
+        "n": 7376,
+        "state": "success",
+        "runs": [
+          {
+            "id": 39459864724,
+            "name": "Check Copyright Header",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "id": 39459864709,
+            "name": "Google GitHub Admin: Actions Workflow Security Scan",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "id": 39459864691,
+            "name": "Build Lean project and deploy docs",
+            "status": "completed",
+            "conclusion": "success"
+          }
+        ]
+      },
+      "comments_on_2026_10_20": []
+    },
+    {
+      "number": 7381,
+      "title": "feat: certify all four WOWII 404–407 tree bounds",
+      "state": "open",
+      "merged": false,
+      "head": "76ca206fcbffda5ba82b381f51327acc4ed88395",
+      "updated": "2026-10-20T16:38:23Z",
+      "formal_proof_attributes_in_diff": 6,
+      "ci": {
+        "n": 7381,
+        "state": "success",
+        "runs": [
+          {
+            "id": 39456967474,
+            "name": "Build Lean project and deploy docs",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "id": 39456967557,
+            "name": "Google GitHub Admin: Actions Workflow Security Scan",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "id": 39456967423,
+            "name": "Check Copyright Header",
+            "status": "completed",
+            "conclusion": "success"
+          }
+        ]
+      },
+      "comments_on_2026_10_20": []
+    },
+    {
+      "number": 7388,
+      "title": "feat: add complete Lean certificate for total domination annihilation",
+      "state": "open",
+      "merged": false,
+      "head": "e98d6fd377bf2d3da3513496146bdbefc5ef875d",
+      "updated": "2026-10-20T12:47:53Z",
+      "formal_proof_attributes_in_diff": 1,
+      "ci": {
+        "n": 7388,
+        "state": "success",
+        "runs": [
+          {
+            "id": 39264157523,
+            "name": "Check Copyright Header",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "id": 39264157456,
+            "name": "Google GitHub Admin: Actions Workflow Security Scan",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "id": 39264157375,
+            "name": "Build Lean project and deploy docs",
+            "status": "completed",
+            "conclusion": "success"
+          }
+        ]
+      },
+      "comments_on_2026_10_20": [
+        {
+          "user": "bocowgill",
+          "date": "2026-10-20T12:47:53Z",
+          "body": "LGTM, thanks. The linked universal theorem has the same hypotheses and conclusion as this statement, using the same FC definitions and dependency pins. I checked the pinned [certificate CI](https://github.com/RhudeJJJJ/formal-conjectures/actions/runs/39263487194): it rebuilds the proof components and reports only `propext`, `Classical.choice`, and `Quot.sound` for the final theorem. This adds formal-proof evidence to the earlier source review; I did not independently rerun the external proof.",
+          "review": "APPROVED"
+        }
+      ]
+    },
+    {
+      "number": 7392,
+      "title": "feat: formalize regular miss-code degree two and three bounds",
+      "state": "closed",
+      "merged": false,
+      "head": "af293d9255197e6eca76d9069c5d5e4ac34707c4",
+      "updated": "2026-10-19T17:49:30Z",
+      "formal_proof_attributes_in_diff": 2,
+      "ci": null,
+      "comments_on_2026_10_20": []
+    },
+    {
+      "number": 7405,
+      "title": "feat: add cumulative zeta and certificate-class variants",
+      "state": "closed",
+      "merged": false,
+      "head": "7996fe4e55d3fc0560c14a3ac1bcec9c4a048aa8",
+      "updated": "2026-10-19T17:38:49Z",
+      "formal_proof_attributes_in_diff": 0,
+      "ci": null,
+      "comments_on_2026_10_20": []
+    },
+    {
+      "number": 7399,
+      "title": "feat: formalize Radenkovic-Gutman path minimum",
+      "state": "open",
+      "merged": false,
+      "head": "3654bf2bddc5217f904b7b85207b1091e833de49",
+      "updated": "2026-10-19T15:15:25Z",
+      "formal_proof_attributes_in_diff": 0,
+      "ci": {
+        "n": 7399,
+        "state": "success",
+        "runs": [
+          {
+            "id": 39233632695,
+            "name": "Build Lean project and deploy docs",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "id": 39233632613,
+            "name": "Check Copyright Header",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "id": 39233632406,
+            "name": "Google GitHub Admin: Actions Workflow Security Scan",
+            "status": "completed",
+            "conclusion": "success"
+          }
+        ]
+      },
+      "comments_on_2026_10_20": []
+    },
+    {
+      "number": 7402,
+      "title": "feat: formalize spectral radius-diameter Conjecture 4.3",
+      "state": "open",
+      "merged": false,
+      "head": "1a0c737c3eb8f06da47a3371d4efe4fcdce5a3df",
+      "updated": "2026-10-19T10:45:02Z",
+      "formal_proof_attributes_in_diff": 0,
+      "ci": {
+        "n": 7402,
+        "state": "success",
+        "runs": [
+          {
+            "id": 39151678747,
+            "name": "Check Copyright Header",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "id": 39151678753,
+            "name": "Google GitHub Admin: Actions Workflow Security Scan",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "id": 39151678760,
+            "name": "Build Lean project and deploy docs",
+            "status": "completed",
+            "conclusion": "success"
+          }
+        ]
+      },
+      "comments_on_2026_10_20": []
+    },
+    {
+      "number": 7370,
+      "title": "feat(WrittenOnTheWallII): add 365 and its stronger bound",
+      "state": "open",
+      "merged": false,
+      "head": "d7c2a65d158aaafe239b0c7a038c0138089892cf",
+      "updated": "2026-10-19T10:36:48Z",
+      "formal_proof_attributes_in_diff": 2,
+      "ci": {
+        "n": 7370,
+        "state": "success",
+        "runs": [
+          {
+            "id": 39151456680,
+            "name": "Check Copyright Header",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "id": 39151456671,
+            "name": "Google GitHub Admin: Actions Workflow Security Scan",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "id": 39151456702,
+            "name": "Build Lean project and deploy docs",
+            "status": "completed",
+            "conclusion": "success"
+          }
+        ]
+      },
+      "comments_on_2026_10_20": []
+    },
+    {
+      "number": 7391,
+      "title": "feat: formalize chordal cycle-polynomial conjecture",
+      "state": "open",
+      "merged": false,
+      "head": "5147011c7d71cc3b9df29ef4b8c753430d5edde6",
+      "updated": "2026-10-17T17:07:12Z",
+      "formal_proof_attributes_in_diff": 1,
+      "ci": {
+        "n": 7391,
+        "state": "success",
+        "runs": [
+          {
+            "id": 38978396230,
+            "name": "Build Lean project and deploy docs",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "id": 38978396234,
+            "name": "Check Copyright Header",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "id": 38978396220,
+            "name": "Google GitHub Admin: Actions Workflow Security Scan",
+            "status": "completed",
+            "conclusion": "success"
+          }
+        ]
+      },
+      "comments_on_2026_10_20": []
+    },
+    {
+      "number": 7401,
+      "title": "feat: formalize spectral radius-radius product conjecture",
+      "state": "open",
+      "merged": false,
+      "head": "d0efbf0e8e0df8474542b79cd06d171baff12adc",
+      "updated": "2026-10-17T17:05:57Z",
+      "formal_proof_attributes_in_diff": 1,
+      "ci": {
+        "n": 7401,
+        "state": "success",
+        "runs": [
+          {
+            "id": 38978401291,
+            "name": "Build Lean project and deploy docs",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "id": 38978401221,
+            "name": "Google GitHub Admin: Actions Workflow Security Scan",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "id": 38978401156,
+            "name": "Check Copyright Header",
+            "status": "completed",
+            "conclusion": "success"
+          }
+        ]
+      },
+      "comments_on_2026_10_20": []
+    },
+    {
+      "number": 7394,
+      "title": "feat: formalize WOWII 91 bipartite-forest bound",
+      "state": "open",
+      "merged": false,
+      "head": "12785f86cc13cecf6501c8e84107464c7e741ff3",
+      "updated": "2026-10-17T17:04:11Z",
+      "formal_proof_attributes_in_diff": 1,
+      "ci": {
+        "n": 7394,
+        "state": "success",
+        "runs": [
+          {
+            "id": 38949171342,
+            "name": "Build Lean project and deploy docs",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "id": 38949171264,
+            "name": "Google GitHub Admin: Actions Workflow Security Scan",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "id": 38949171406,
+            "name": "Check Copyright Header",
+            "status": "completed",
+            "conclusion": "success"
+          }
+        ]
+      },
+      "comments_on_2026_10_20": []
+    },
+    {
+      "number": 7389,
+      "title": "feat: formalize Clark degree-dispersion Conjecture 2",
+      "state": "open",
+      "merged": false,
+      "head": "88959b351a2ce7583fe72682b5d1b3986d35f479",
+      "updated": "2026-10-17T16:58:38Z",
+      "formal_proof_attributes_in_diff": 2,
+      "ci": {
+        "n": 7389,
+        "state": "success",
+        "runs": [
+          {
+            "id": 38942453562,
+            "name": "Build Lean project and deploy docs",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "id": 38942453408,
+            "name": "Check Copyright Header",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "id": 38942453542,
+            "name": "Google GitHub Admin: Actions Workflow Security Scan",
+            "status": "completed",
+            "conclusion": "success"
+          }
+        ]
+      },
+      "comments_on_2026_10_20": []
+    },
+    {
+      "number": 7380,
+      "title": "feat: formalize WOWII 393 two-domination bounds",
+      "state": "open",
+      "merged": false,
+      "head": "d8fbf7af790fad3e942e4556fae339d7709b6501",
+      "updated": "2026-10-17T16:57:16Z",
+      "formal_proof_attributes_in_diff": 2,
+      "ci": {
+        "n": 7380,
+        "state": "success",
+        "runs": [
+          {
+            "id": 38925586119,
+            "name": "Build Lean project and deploy docs",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "id": 38925585577,
+            "name": "Check Copyright Header",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "id": 38925586330,
+            "name": "Google GitHub Admin: Actions Workflow Security Scan",
+            "status": "completed",
+            "conclusion": "success"
+          }
+        ]
+      },
+      "comments_on_2026_10_20": []
+    },
+    {
+      "number": 7384,
+      "title": "feat: formalize Das-Ghosh-Prabhu-Sen Question 25",
+      "state": "open",
+      "merged": false,
+      "head": "17d07fb7744d86f5a59f73335f583fb914463215",
+      "updated": "2026-10-17T16:56:32Z",
+      "formal_proof_attributes_in_diff": 2,
+      "ci": {
+        "n": 7384,
+        "state": "success",
+        "runs": [
+          {
+            "id": 38949140094,
+            "name": "Build Lean project and deploy docs",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "id": 38949140092,
+            "name": "Google GitHub Admin: Actions Workflow Security Scan",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "id": 38949140039,
+            "name": "Check Copyright Header",
+            "status": "completed",
+            "conclusion": "success"
+          }
+        ]
+      },
+      "comments_on_2026_10_20": []
+    },
+    {
+      "number": 7371,
+      "title": "feat(WrittenOnTheWallII): add 362 and diameter strengthening",
+      "state": "open",
+      "merged": false,
+      "head": "58825f53fd4e1ed6eca01fe778258b0dbe005ac6",
+      "updated": "2026-10-17T16:55:17Z",
+      "formal_proof_attributes_in_diff": 1,
+      "ci": {
+        "n": 7371,
+        "state": "success",
+        "runs": [
+          {
+            "id": 38902605069,
+            "name": "Build Lean project and deploy docs",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "id": 38902605089,
+            "name": "Check Copyright Header",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "id": 38902605237,
+            "name": "Google GitHub Admin: Actions Workflow Security Scan",
+            "status": "completed",
+            "conclusion": "success"
+          }
+        ]
+      },
+      "comments_on_2026_10_20": []
+    },
+    {
+      "number": 7390,
+      "title": "feat: formalize Knill Question B on Green eigenvalues",
+      "state": "open",
+      "merged": false,
+      "head": "9d06d6eaf6f13f9116e3586d04fd7e4496ae94a8",
+      "updated": "2026-10-17T16:52:28Z",
+      "formal_proof_attributes_in_diff": 1,
+      "ci": {
+        "n": 7390,
+        "state": "success",
+        "runs": [
+          {
+            "id": 38911735391,
+            "name": "Check Copyright Header",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "id": 38911735337,
+            "name": "Google GitHub Admin: Actions Workflow Security Scan",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "id": 38911735444,
+            "name": "Build Lean project and deploy docs",
+            "status": "completed",
+            "conclusion": "success"
+          }
+        ]
+      },
+      "comments_on_2026_10_20": []
+    },
+    {
+      "number": 7372,
+      "title": "feat(WrittenOnTheWallII): state the refutation of 351",
+      "state": "open",
+      "merged": false,
+      "head": "54ad6c0a9a3d80040f25990631a1afa1c4574442",
+      "updated": "2026-10-17T16:52:26Z",
+      "formal_proof_attributes_in_diff": 1,
+      "ci": {
+        "n": 7372,
+        "state": "success",
+        "runs": [
+          {
+            "id": 38899459957,
+            "name": "Build Lean project and deploy docs",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "id": 38899459982,
+            "name": "Check Copyright Header",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "id": 38899459944,
+            "name": "Google GitHub Admin: Actions Workflow Security Scan",
+            "status": "completed",
+            "conclusion": "success"
+          }
+        ]
+      },
+      "comments_on_2026_10_20": []
+    },
+    {
+      "number": 7393,
+      "title": "feat: formalize Cox-Duffy oriented polynomial conjecture",
+      "state": "open",
+      "merged": false,
+      "head": "b16739855e6f36723a87b65ac2cffae6a18feacd",
+      "updated": "2026-10-17T16:48:09Z",
+      "formal_proof_attributes_in_diff": 1,
+      "ci": {
+        "n": 7393,
+        "state": "success",
+        "runs": [
+          {
+            "id": 38899493087,
+            "name": "Build Lean project and deploy docs",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "id": 38899493090,
+            "name": "Check Copyright Header",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "id": 38899493211,
+            "name": "Google GitHub Admin: Actions Workflow Security Scan",
+            "status": "completed",
+            "conclusion": "success"
+          }
+        ]
+      },
+      "comments_on_2026_10_20": []
+    },
+    {
+      "number": 7387,
+      "title": "feat: formalize uniform energy-independence gap",
+      "state": "open",
+      "merged": false,
+      "head": "697d1ff57437d6fbc4e0de948a18e12797cb517e",
+      "updated": "2026-10-17T16:44:37Z",
+      "formal_proof_attributes_in_diff": 0,
+      "ci": {
+        "n": 7387,
+        "state": "success",
+        "runs": [
+          {
+            "id": 38899532616,
+            "name": "Build Lean project and deploy docs",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "id": 38899532344,
+            "name": "Google GitHub Admin: Actions Workflow Security Scan",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "id": 38899532362,
+            "name": "Check Copyright Header",
+            "status": "completed",
+            "conclusion": "success"
+          }
+        ]
+      },
+      "comments_on_2026_10_20": []
+    },
+    {
+      "number": 7337,
+      "title": "feat(WrittenOnTheWallII): add solved Conjecture 395b",
+      "state": "open",
+      "merged": false,
+      "head": "daf42945f612ba8cc6dfa151fcd16d1b0bfda451",
+      "updated": "2026-10-16T15:20:59Z",
+      "formal_proof_attributes_in_diff": 1,
+      "ci": {
+        "n": 7337,
+        "state": "success",
+        "runs": [
+          {
+            "id": 38923208735,
+            "name": "Google GitHub Admin: Actions Workflow Security Scan",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "id": 38923208786,
+            "name": "Check Copyright Header",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "id": 38923208891,
+            "name": "Build Lean project and deploy docs",
+            "status": "completed",
+            "conclusion": "success"
+          }
+        ]
+      },
+      "comments_on_2026_10_20": []
+    },
+    {
+      "number": 7320,
+      "title": "feat(WrittenOnTheWallII): add solved Conjecture 396",
+      "state": "open",
+      "merged": false,
+      "head": "be54dcba766e375e4d03cf5f8192d5ff1b08eeea",
+      "updated": "2026-10-16T15:20:43Z",
+      "formal_proof_attributes_in_diff": 1,
+      "ci": {
+        "n": 7320,
+        "state": "success",
+        "runs": [
+          {
+            "id": 38923175147,
+            "name": "Check Copyright Header",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "id": 38923175354,
+            "name": "Google GitHub Admin: Actions Workflow Security Scan",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "id": 38923175139,
+            "name": "Build Lean project and deploy docs",
+            "status": "completed",
+            "conclusion": "success"
+          }
+        ]
+      },
+      "comments_on_2026_10_20": []
+    },
+    {
+      "number": 7321,
+      "title": "feat(WrittenOnTheWallII): add solved Conjecture 360",
+      "state": "open",
+      "merged": false,
+      "head": "8f40e9219b19af19e9b2412e858223fbc17c1a46",
+      "updated": "2026-10-16T12:45:31Z",
+      "formal_proof_attributes_in_diff": 1,
+      "ci": {
+        "n": 7321,
+        "state": "success",
+        "runs": [
+          {
+            "id": 38901976545,
+            "name": "Check Copyright Header",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "id": 38901976450,
+            "name": "Google GitHub Admin: Actions Workflow Security Scan",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "id": 38901976333,
+            "name": "Build Lean project and deploy docs",
+            "status": "completed",
+            "conclusion": "success"
+          }
+        ]
+      },
+      "comments_on_2026_10_20": []
+    },
+    {
+      "number": 7326,
+      "title": "feat(WrittenOnTheWallII): add disproofs of reconstructed 420b and 420c",
+      "state": "open",
+      "merged": false,
+      "head": "dd62e3ebaf363e1c90f6151e708ee18f983ba516",
+      "updated": "2026-10-16T12:45:11Z",
+      "formal_proof_attributes_in_diff": 2,
+      "ci": {
+        "n": 7326,
+        "state": "success",
+        "runs": [
+          {
+            "id": 38901967035,
+            "name": "Check Copyright Header",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "id": 38901966971,
+            "name": "Google GitHub Admin: Actions Workflow Security Scan",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "id": 38901967012,
+            "name": "Build Lean project and deploy docs",
+            "status": "completed",
+            "conclusion": "success"
+          }
+        ]
+      },
+      "comments_on_2026_10_20": []
+    },
+    {
+      "number": 7339,
+      "title": "feat(Arxiv/2311.18059): refute general anti-unimodal plucking claim",
+      "state": "open",
+      "merged": false,
+      "head": "2e45313c42aff1f3d2c08bfb1dc94ea1746a99b1",
+      "updated": "2026-10-16T12:44:58Z",
+      "formal_proof_attributes_in_diff": 1,
+      "ci": {
+        "n": 7339,
+        "state": "success",
+        "runs": [
+          {
+            "id": 38901952854,
+            "name": "Check Copyright Header",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "id": 38901952850,
+            "name": "Google GitHub Admin: Actions Workflow Security Scan",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "id": 38901952855,
+            "name": "Build Lean project and deploy docs",
+            "status": "completed",
+            "conclusion": "success"
+          }
+        ]
+      },
+      "comments_on_2026_10_20": []
+    },
+    {
+      "number": 7310,
+      "title": "WrittenOnTheWallII: certify the disproof of conjecture 353",
+      "state": "open",
+      "merged": false,
+      "head": "42d6a667c87ebd61c61a370db90a7dcde22c9719",
+      "updated": "2026-10-16T12:44:52Z",
+      "formal_proof_attributes_in_diff": 1,
+      "ci": {
+        "n": 7310,
+        "state": "success",
+        "runs": [
+          {
+            "id": 38901940671,
+            "name": "Check Copyright Header",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "id": 38901940658,
+            "name": "Google GitHub Admin: Actions Workflow Security Scan",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "id": 38901940944,
+            "name": "Build Lean project and deploy docs",
+            "status": "completed",
+            "conclusion": "success"
+          }
+        ]
+      },
+      "comments_on_2026_10_20": []
+    },
+    {
+      "number": 7322,
+      "title": "feat(WrittenOnTheWallII): add solved Conjecture 373",
+      "state": "open",
+      "merged": false,
+      "head": "4e012179f68174fec4edd289ab456c648dc38dde",
+      "updated": "2026-10-16T12:44:37Z",
+      "formal_proof_attributes_in_diff": 1,
+      "ci": {
+        "n": 7322,
+        "state": "success",
+        "runs": [
+          {
+            "id": 38901928155,
+            "name": "Build Lean project and deploy docs",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "id": 38901928152,
+            "name": "Check Copyright Header",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "id": 38901928149,
+            "name": "Google GitHub Admin: Actions Workflow Security Scan",
+            "status": "completed",
+            "conclusion": "success"
+          }
+        ]
+      },
+      "comments_on_2026_10_20": []
+    },
+    {
+      "number": 7382,
+      "title": "feat: formalize Chen delta-complement Conjecture 4",
+      "state": "open",
+      "merged": false,
+      "head": "a88e5bfee137251fed2f7eb3f3f40528e7dd3a8f",
+      "updated": "2026-10-16T12:42:55Z",
+      "formal_proof_attributes_in_diff": 0,
+      "ci": {
+        "n": 7382,
+        "state": "success",
+        "runs": [
+          {
+            "id": 38900110373,
+            "name": "Check Copyright Header",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "id": 38900110243,
+            "name": "Google GitHub Admin: Actions Workflow Security Scan",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "id": 38900110452,
+            "name": "Build Lean project and deploy docs",
+            "status": "completed",
+            "conclusion": "success"
+          }
+        ]
+      },
+      "comments_on_2026_10_20": []
+    },
+    {
+      "number": 7385,
+      "title": "feat: formalize graphical Bell and Stirling minimization",
+      "state": "open",
+      "merged": false,
+      "head": "25051f58799ee3a7eae6254ad79806b018e575af",
+      "updated": "2026-10-16T12:42:46Z",
+      "formal_proof_attributes_in_diff": 0,
+      "ci": {
+        "n": 7385,
+        "state": "success",
+        "runs": [
+          {
+            "id": 38900076707,
+            "name": "Build Lean project and deploy docs",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "id": 38900076608,
+            "name": "Check Copyright Header",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "id": 38900076553,
+            "name": "Google GitHub Admin: Actions Workflow Security Scan",
+            "status": "completed",
+            "conclusion": "success"
+          }
+        ]
+      },
+      "comments_on_2026_10_20": []
+    },
+    {
+      "number": 7383,
+      "title": "feat: formalize Kazemi hypercube Conjecture 6.1",
+      "state": "open",
+      "merged": false,
+      "head": "5b5c2a6e2a6aac8560d8f3171f0e4aa4fbe2cea2",
+      "updated": "2026-10-16T12:42:26Z",
+      "formal_proof_attributes_in_diff": 0,
+      "ci": {
+        "n": 7383,
+        "state": "success",
+        "runs": [
+          {
+            "id": 38900041685,
+            "name": "Check Copyright Header",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "id": 38900041784,
+            "name": "Google GitHub Admin: Actions Workflow Security Scan",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "id": 38900041625,
+            "name": "Build Lean project and deploy docs",
+            "status": "completed",
+            "conclusion": "success"
+          }
+        ]
+      },
+      "comments_on_2026_10_20": []
+    },
+    {
+      "number": 7386,
+      "title": "feat: formalize spectral radius minus chromatic extremum",
+      "state": "open",
+      "merged": false,
+      "head": "e85cf5c47e914f4b140c8b029bc9878b62dbae30",
+      "updated": "2026-10-16T12:42:11Z",
+      "formal_proof_attributes_in_diff": 0,
+      "ci": {
+        "n": 7386,
+        "state": "success",
+        "runs": [
+          {
+            "id": 38900010954,
+            "name": "Check Copyright Header",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "id": 38900010949,
+            "name": "Google GitHub Admin: Actions Workflow Security Scan",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "id": 38900011342,
+            "name": "Build Lean project and deploy docs",
+            "status": "completed",
+            "conclusion": "success"
+          }
+        ]
+      },
+      "comments_on_2026_10_20": []
+    },
+    {
+      "number": 7397,
+      "title": "feat: formalize Burghart M-polynomial Conjecture 20",
+      "state": "open",
+      "merged": false,
+      "head": "5ec26dcdeab9336bb332cac66948a6fdf2094687",
+      "updated": "2026-10-16T12:41:07Z",
+      "formal_proof_attributes_in_diff": 0,
+      "ci": {
+        "n": 7397,
+        "state": "success",
+        "runs": [
+          {
+            "id": 38899817466,
+            "name": "Build Lean project and deploy docs",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "id": 38899817418,
+            "name": "Check Copyright Header",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "id": 38899817593,
+            "name": "Google GitHub Admin: Actions Workflow Security Scan",
+            "status": "completed",
+            "conclusion": "success"
+          }
+        ]
+      },
+      "comments_on_2026_10_20": []
+    },
+    {
+      "number": 7398,
+      "title": "feat: formalize normalized score determinant numerator",
+      "state": "open",
+      "merged": false,
+      "head": "ac00485512c543789dbe188263565e066e0f2e2b",
+      "updated": "2026-10-16T12:41:00Z",
+      "formal_proof_attributes_in_diff": 0,
+      "ci": {
+        "n": 7398,
+        "state": "success",
+        "runs": [
+          {
+            "id": 38899775119,
+            "name": "Build Lean project and deploy docs",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "id": 38899775095,
+            "name": "Check Copyright Header",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "id": 38899774808,
+            "name": "Google GitHub Admin: Actions Workflow Security Scan",
+            "status": "completed",
+            "conclusion": "success"
+          }
+        ]
+      },
+      "comments_on_2026_10_20": []
+    },
+    {
+      "number": 7400,
+      "title": "feat: formalize Jia-Song remoteness extremum",
+      "state": "open",
+      "merged": false,
+      "head": "da7b03fbc4d5e4866ca739cedce232359137c2ce",
+      "updated": "2026-10-16T12:40:30Z",
+      "formal_proof_attributes_in_diff": 0,
+      "ci": {
+        "n": 7400,
+        "state": "success",
+        "runs": [
+          {
+            "id": 38899743545,
+            "name": "Build Lean project and deploy docs",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "id": 38899742526,
+            "name": "Check Copyright Header",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "id": 38899742524,
+            "name": "Google GitHub Admin: Actions Workflow Security Scan",
+            "status": "completed",
+            "conclusion": "success"
+          }
+        ]
+      },
+      "comments_on_2026_10_20": []
+    },
+    {
+      "number": 7396,
+      "title": "feat: formalize restricted Bound 44 variants",
+      "state": "open",
+      "merged": false,
+      "head": "c6b85be643b13ac794987c01ace677e71502d15f",
+      "updated": "2026-10-16T12:40:00Z",
+      "formal_proof_attributes_in_diff": 0,
+      "ci": {
+        "n": 7396,
+        "state": "success",
+        "runs": [
+          {
+            "id": 38899678879,
+            "name": "Build Lean project and deploy docs",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "id": 38899678604,
+            "name": "Check Copyright Header",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "id": 38899678527,
+            "name": "Google GitHub Admin: Actions Workflow Security Scan",
+            "status": "completed",
+            "conclusion": "success"
+          }
+        ]
+      },
+      "comments_on_2026_10_20": []
+    },
+    {
+      "number": 7395,
+      "title": "feat: formalize AHZ Randic quotient and tadpole threshold",
+      "state": "open",
+      "merged": false,
+      "head": "fa2748a054c3dac2e4a42a508959f85b3c9c458a",
+      "updated": "2026-10-16T12:39:55Z",
+      "formal_proof_attributes_in_diff": 0,
+      "ci": {
+        "n": 7395,
+        "state": "success",
+        "runs": [
+          {
+            "id": 38899649054,
+            "name": "Build Lean project and deploy docs",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "id": 38899649409,
+            "name": "Check Copyright Header",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "id": 38899649359,
+            "name": "Google GitHub Admin: Actions Workflow Security Scan",
+            "status": "completed",
+            "conclusion": "success"
+          }
+        ]
+      },
+      "comments_on_2026_10_20": []
+    },
+    {
+      "number": 7303,
+      "title": "feat(WrittenOnTheWallII): add conjecture 271 with complete external L…",
+      "state": "open",
+      "merged": false,
+      "head": "009728065a4142fdd8406b6b001be2e2ee356a8f",
+      "updated": "2026-10-16T12:27:53Z",
+      "formal_proof_attributes_in_diff": 1,
+      "ci": {
+        "n": 7303,
+        "state": "success",
+        "runs": [
+          {
+            "id": 38900693617,
+            "name": "Check Copyright Header",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "id": 38900693556,
+            "name": "Google GitHub Admin: Actions Workflow Security Scan",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "id": 38900693714,
+            "name": "Build Lean project and deploy docs",
+            "status": "completed",
+            "conclusion": "success"
+          }
+        ]
+      },
+      "comments_on_2026_10_20": []
+    },
+    {
+      "number": 7325,
+      "title": "feat(WrittenOnTheWallII): add solved Conjecture 416",
+      "state": "open",
+      "merged": false,
+      "head": "575908bc898e42dcec1c0a081e96e75778adfc4d",
+      "updated": "2026-10-16T12:27:36Z",
+      "formal_proof_attributes_in_diff": 2,
+      "ci": {
+        "n": 7325,
+        "state": "success",
+        "runs": [
+          {
+            "id": 38900661319,
+            "name": "Check Copyright Header",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "id": 38900661384,
+            "name": "Google GitHub Admin: Actions Workflow Security Scan",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "id": 38900661329,
+            "name": "Build Lean project and deploy docs",
+            "status": "completed",
+            "conclusion": "success"
+          }
+        ]
+      },
+      "comments_on_2026_10_20": []
+    },
+    {
+      "number": 7324,
+      "title": "feat(WrittenOnTheWallII): add solved Conjectures 410a and 410b",
+      "state": "open",
+      "merged": false,
+      "head": "ff4a11f2de1ee97ca44a4a414c771f8d3449d52c",
+      "updated": "2026-10-16T12:27:29Z",
+      "formal_proof_attributes_in_diff": 2,
+      "ci": {
+        "n": 7324,
+        "state": "success",
+        "runs": [
+          {
+            "id": 38900648062,
+            "name": "Check Copyright Header",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "id": 38900648061,
+            "name": "Google GitHub Admin: Actions Workflow Security Scan",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "id": 38900647883,
+            "name": "Build Lean project and deploy docs",
+            "status": "completed",
+            "conclusion": "success"
+          }
+        ]
+      },
+      "comments_on_2026_10_20": []
+    },
+    {
+      "number": 7323,
+      "title": "feat(Arxiv/2311.18059): add solved star unimodality",
+      "state": "open",
+      "merged": false,
+      "head": "9b89e75ede9d7acf0eb7138a1cb8f9805508c3b0",
+      "updated": "2026-10-16T12:26:41Z",
+      "formal_proof_attributes_in_diff": 1,
+      "ci": {
+        "n": 7323,
+        "state": "success",
+        "runs": [
+          {
+            "id": 38900553160,
+            "name": "Build Lean project and deploy docs",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "id": 38900551885,
+            "name": "Check Copyright Header",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "id": 38900551690,
+            "name": "Google GitHub Admin: Actions Workflow Security Scan",
+            "status": "completed",
+            "conclusion": "success"
+          }
+        ]
+      },
+      "comments_on_2026_10_20": []
+    },
+    {
+      "number": 7338,
+      "title": "feat(WrittenOnTheWallII): add solved Conjecture 397c",
+      "state": "open",
+      "merged": false,
+      "head": "7d8134e8ed92b6a87fc870aa93f4cbeb017b49d1",
+      "updated": "2026-10-16T12:26:36Z",
+      "formal_proof_attributes_in_diff": 1,
+      "ci": {
+        "n": 7338,
+        "state": "success",
+        "runs": [
+          {
+            "id": 38900541818,
+            "name": "Check Copyright Header",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "id": 38900542410,
+            "name": "Google GitHub Admin: Actions Workflow Security Scan",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "id": 38900542059,
+            "name": "Build Lean project and deploy docs",
+            "status": "completed",
+            "conclusion": "success"
+          }
+        ]
+      },
+      "comments_on_2026_10_20": []
+    },
+    {
+      "number": 7363,
+      "title": "feat(WrittenOnTheWallII): refute upper reading 422d-U",
+      "state": "open",
+      "merged": false,
+      "head": "12f24cabd8731957cdcf02e83ca73bee9facbd0f",
+      "updated": "2026-10-16T12:25:58Z",
+      "formal_proof_attributes_in_diff": 1,
+      "ci": {
+        "n": 7363,
+        "state": "success",
+        "runs": [
+          {
+            "id": 38900472334,
+            "name": "Check Copyright Header",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "id": 38900472521,
+            "name": "Google GitHub Admin: Actions Workflow Security Scan",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "id": 38900472195,
+            "name": "Build Lean project and deploy docs",
+            "status": "completed",
+            "conclusion": "success"
+          }
+        ]
+      },
+      "comments_on_2026_10_20": []
+    },
+    {
+      "number": 7361,
+      "title": "feat(WrittenOnTheWallII): add disproof of conjecture 363",
+      "state": "open",
+      "merged": false,
+      "head": "81b2aec8b84a14b94fa2674a6ede19c2aeb4cb02",
+      "updated": "2026-10-16T12:24:54Z",
+      "formal_proof_attributes_in_diff": 1,
+      "ci": {
+        "n": 7361,
+        "state": "success",
+        "runs": [
+          {
+            "id": 38900341955,
+            "name": "Check Copyright Header",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "id": 38900341963,
+            "name": "Google GitHub Admin: Actions Workflow Security Scan",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "id": 38900341882,
+            "name": "Build Lean project and deploy docs",
+            "status": "completed",
+            "conclusion": "success"
+          }
+        ]
+      },
+      "comments_on_2026_10_20": []
+    },
+    {
+      "number": 7362,
+      "title": "feat(WrittenOnTheWallII): add proof of conjecture 381",
+      "state": "open",
+      "merged": false,
+      "head": "c68d01d76710a0ba28b873366d882ce1dad007af",
+      "updated": "2026-10-16T12:24:46Z",
+      "formal_proof_attributes_in_diff": 1,
+      "ci": {
+        "n": 7362,
+        "state": "success",
+        "runs": [
+          {
+            "id": 38900327711,
+            "name": "Check Copyright Header",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "id": 38900327100,
+            "name": "Google GitHub Admin: Actions Workflow Security Scan",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "id": 38900327931,
+            "name": "Build Lean project and deploy docs",
+            "status": "completed",
+            "conclusion": "success"
+          }
+        ]
+      },
+      "comments_on_2026_10_20": []
+    },
+    {
+      "number": 7365,
+      "title": "feat(WrittenOnTheWallII): refute conjecture 364",
+      "state": "open",
+      "merged": false,
+      "head": "42a5885f1cffd12d8c9c83cce8cb6f26e7408ff4",
+      "updated": "2026-10-16T12:24:40Z",
+      "formal_proof_attributes_in_diff": 1,
+      "ci": {
+        "n": 7365,
+        "state": "success",
+        "runs": [
+          {
+            "id": 38900315450,
+            "name": "Check Copyright Header",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "id": 38900315508,
+            "name": "Google GitHub Admin: Actions Workflow Security Scan",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "id": 38900315437,
+            "name": "Build Lean project and deploy docs",
+            "status": "completed",
+            "conclusion": "success"
+          }
+        ]
+      },
+      "comments_on_2026_10_20": []
+    },
+    {
+      "number": 7364,
+      "title": "feat(WrittenOnTheWallII): add disproof of conjecture 352",
+      "state": "open",
+      "merged": false,
+      "head": "11a083705a6e92eca332b0e655bdb4e2015c80f9",
+      "updated": "2026-10-16T12:24:34Z",
+      "formal_proof_attributes_in_diff": 1,
+      "ci": {
+        "n": 7364,
+        "state": "success",
+        "runs": [
+          {
+            "id": 38900303493,
+            "name": "Google GitHub Admin: Actions Workflow Security Scan",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "id": 38900303658,
+            "name": "Check Copyright Header",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "id": 38900303632,
+            "name": "Build Lean project and deploy docs",
+            "status": "completed",
+            "conclusion": "success"
+          }
+        ]
+      },
+      "comments_on_2026_10_20": []
+    },
+    {
+      "number": 7367,
+      "title": "feat(WrittenOnTheWallII): add disproof of conjecture 253",
+      "state": "open",
+      "merged": false,
+      "head": "1b37a047f42c14c345bdae680594c167ba7c7d21",
+      "updated": "2026-10-16T12:24:28Z",
+      "formal_proof_attributes_in_diff": 1,
+      "ci": {
+        "n": 7367,
+        "state": "success",
+        "runs": [
+          {
+            "id": 38900292888,
+            "name": "Check Copyright Header",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "id": 38900292866,
+            "name": "Google GitHub Admin: Actions Workflow Security Scan",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "id": 38900292729,
+            "name": "Build Lean project and deploy docs",
+            "status": "completed",
+            "conclusion": "success"
+          }
+        ]
+      },
+      "comments_on_2026_10_20": []
+    },
+    {
+      "number": 7368,
+      "title": "feat(WrittenOnTheWallII): refute upper reading 433-M",
+      "state": "open",
+      "merged": false,
+      "head": "eaba39d0c9ce0396439f3c0ca765484e1ec7e52e",
+      "updated": "2026-10-16T12:24:22Z",
+      "formal_proof_attributes_in_diff": 1,
+      "ci": {
+        "n": 7368,
+        "state": "success",
+        "runs": [
+          {
+            "id": 38900282212,
+            "name": "Check Copyright Header",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "id": 38900282289,
+            "name": "Google GitHub Admin: Actions Workflow Security Scan",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "id": 38900282188,
+            "name": "Build Lean project and deploy docs",
+            "status": "completed",
+            "conclusion": "success"
+          }
+        ]
+      },
+      "comments_on_2026_10_20": []
+    },
+    {
+      "number": 7366,
+      "title": "feat(WrittenOnTheWallII): add disproof of conjecture 252",
+      "state": "open",
+      "merged": false,
+      "head": "f448e74973e26fb3a5adf95e24a79a7ce9cd0ec0",
+      "updated": "2026-10-16T12:24:17Z",
+      "formal_proof_attributes_in_diff": 1,
+      "ci": {
+        "n": 7366,
+        "state": "success",
+        "runs": [
+          {
+            "id": 38900270145,
+            "name": "Check Copyright Header",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "id": 38900270127,
+            "name": "Google GitHub Admin: Actions Workflow Security Scan",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "id": 38900269784,
+            "name": "Build Lean project and deploy docs",
+            "status": "completed",
+            "conclusion": "success"
+          }
+        ]
+      },
+      "comments_on_2026_10_20": []
+    },
+    {
+      "number": 7369,
+      "title": "feat(WrittenOnTheWallII): refute both upper readings of 430c",
+      "state": "open",
+      "merged": false,
+      "head": "da3f50e3ab7d72775fc2f0767283d35e496ffca5",
+      "updated": "2026-10-16T12:24:05Z",
+      "formal_proof_attributes_in_diff": 2,
+      "ci": {
+        "n": 7369,
+        "state": "success",
+        "runs": [
+          {
+            "id": 38900247128,
+            "name": "Check Copyright Header",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "id": 38900247530,
+            "name": "Google GitHub Admin: Actions Workflow Security Scan",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "id": 38900247366,
+            "name": "Build Lean project and deploy docs",
+            "status": "completed",
+            "conclusion": "success"
+          }
+        ]
+      },
+      "comments_on_2026_10_20": []
+    },
+    {
+      "number": 7375,
+      "title": "feat: formalize WOWII 412a and 412b",
+      "state": "open",
+      "merged": false,
+      "head": "9c8d760f4c40fb54a734751d3371d8097febf9ed",
+      "updated": "2026-10-16T12:23:48Z",
+      "formal_proof_attributes_in_diff": 0,
+      "ci": {
+        "n": 7375,
+        "state": "success",
+        "runs": [
+          {
+            "id": 38900213899,
+            "name": "Check Copyright Header",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "id": 38900213946,
+            "name": "Google GitHub Admin: Actions Workflow Security Scan",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "id": 38900214021,
+            "name": "Build Lean project and deploy docs",
+            "status": "completed",
+            "conclusion": "success"
+          }
+        ]
+      },
+      "comments_on_2026_10_20": []
+    },
+    {
+      "number": 7378,
+      "title": "feat: formalize WOWII 376 median bound",
+      "state": "open",
+      "merged": false,
+      "head": "024332672bcb763ba126f8a45e228078b16aa409",
+      "updated": "2026-10-16T12:23:40Z",
+      "formal_proof_attributes_in_diff": 0,
+      "ci": {
+        "n": 7378,
+        "state": "success",
+        "runs": [
+          {
+            "id": 38900200011,
+            "name": "Check Copyright Header",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "id": 38900199943,
+            "name": "Google GitHub Admin: Actions Workflow Security Scan",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "id": 38900199987,
+            "name": "Build Lean project and deploy docs",
+            "status": "completed",
+            "conclusion": "success"
+          }
+        ]
+      },
+      "comments_on_2026_10_20": []
+    },
+    {
+      "number": 7373,
+      "title": "feat(WrittenOnTheWallII): add the closed variant of 354",
+      "state": "open",
+      "merged": false,
+      "head": "4d4f0eedae9dc95266426d4fe2bcb1ff424e9912",
+      "updated": "2026-10-16T12:23:17Z",
+      "formal_proof_attributes_in_diff": 0,
+      "ci": {
+        "n": 7373,
+        "state": "success",
+        "runs": [
+          {
+            "id": 38900155006,
+            "name": "Check Copyright Header",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "id": 38900154959,
+            "name": "Google GitHub Admin: Actions Workflow Security Scan",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "id": 38900154809,
+            "name": "Build Lean project and deploy docs",
+            "status": "completed",
+            "conclusion": "success"
+          }
+        ]
+      },
+      "comments_on_2026_10_20": []
+    },
+    {
+      "number": 7377,
+      "title": "feat: formalize WOWII 361 support-center bound",
+      "state": "open",
+      "merged": false,
+      "head": "351c08e7ee0e77d2346f794de5ba48d135266498",
+      "updated": "2026-10-16T12:23:11Z",
+      "formal_proof_attributes_in_diff": 0,
+      "ci": {
+        "n": 7377,
+        "state": "success",
+        "runs": [
+          {
+            "id": 38900144129,
+            "name": "Check Copyright Header",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "id": 38900144635,
+            "name": "Google GitHub Admin: Actions Workflow Security Scan",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "id": 38900144449,
+            "name": "Build Lean project and deploy docs",
+            "status": "completed",
+            "conclusion": "success"
+          }
+        ]
+      },
+      "comments_on_2026_10_20": []
+    },
+    {
+      "number": 7379,
+      "title": "feat: formalize WOWII 379 degree-diversity bound",
+      "state": "open",
+      "merged": false,
+      "head": "01f5e4ecdab2cddb0ab0f462b19de7b14744802a",
+      "updated": "2026-10-16T12:23:06Z",
+      "formal_proof_attributes_in_diff": 0,
+      "ci": {
+        "n": 7379,
+        "state": "success",
+        "runs": [
+          {
+            "id": 38900133356,
+            "name": "Google GitHub Admin: Actions Workflow Security Scan",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "id": 38900133485,
+            "name": "Build Lean project and deploy docs",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "id": 38900132985,
+            "name": "Check Copyright Header",
+            "status": "completed",
+            "conclusion": "success"
+          }
+        ]
+      },
+      "comments_on_2026_10_20": []
+    },
+    {
+      "number": 7374,
+      "title": "feat: formalize WOWII 412e neighborhood bounds",
+      "state": "open",
+      "merged": false,
+      "head": "97e88b93ad62d7518b7d400d90773cfbd40f0e48",
+      "updated": "2026-10-16T12:23:01Z",
+      "formal_proof_attributes_in_diff": 0,
+      "ci": {
+        "n": 7374,
+        "state": "success",
+        "runs": [
+          {
+            "id": 38900121416,
+            "name": "Check Copyright Header",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "id": 38900122184,
+            "name": "Google GitHub Admin: Actions Workflow Security Scan",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "id": 38900121925,
+            "name": "Build Lean project and deploy docs",
+            "status": "completed",
+            "conclusion": "success"
+          }
+        ]
+      },
+      "comments_on_2026_10_20": []
+    },
+    {
+      "number": 7404,
+      "title": "feat: add restricted girth-six variants of Erdos 64",
+      "state": "open",
+      "merged": false,
+      "head": "20583afb2f0cd0f0f96662ef061ab47bec101903",
+      "updated": "2026-10-16T12:17:55Z",
+      "formal_proof_attributes_in_diff": 0,
+      "ci": {
+        "n": 7404,
+        "state": "success",
+        "runs": [
+          {
+            "id": 38899543774,
+            "name": "Build Lean project and deploy docs",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "id": 38899543822,
+            "name": "Check Copyright Header",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "id": 38899543801,
+            "name": "Google GitHub Admin: Actions Workflow Security Scan",
+            "status": "completed",
+            "conclusion": "success"
+          }
+        ]
+      },
+      "comments_on_2026_10_20": []
+    },
+    {
+      "number": 7403,
+      "title": "feat: formalize Byzov-Pushkarev Conjecture 8",
+      "state": "open",
+      "merged": false,
+      "head": "122b594333cae0dc4e35a15fa31484146ccf4226",
+      "updated": "2026-10-16T12:17:33Z",
+      "formal_proof_attributes_in_diff": 0,
+      "ci": {
+        "n": 7403,
+        "state": "success",
+        "runs": [
+          {
+            "id": 38899503117,
+            "name": "Build Lean project and deploy docs",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "id": 38899502683,
+            "name": "Check Copyright Header",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "id": 38899502494,
+            "name": "Google GitHub Admin: Actions Workflow Security Scan",
+            "status": "completed",
+            "conclusion": "success"
+          }
+        ]
+      },
+      "comments_on_2026_10_20": []
+    },
+    {
+      "number": 7223,
+      "title": "feat(ErdosProblems/617): certify the five- and six-colour variants",
+      "state": "open",
+      "merged": false,
+      "head": "e78edb9713ab2a51d12fec930c5b038e97fb65a6",
+      "updated": "2026-10-15T16:24:59Z",
+      "formal_proof_attributes_in_diff": 2,
+      "ci": {
+        "n": 7223,
+        "state": "success",
+        "runs": [
+          {
+            "id": 38702733324,
+            "name": "Build Lean project and deploy docs",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "id": 38702734177,
+            "name": "Google GitHub Admin: Actions Workflow Security Scan",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "id": 38702733260,
+            "name": "Check Copyright Header",
+            "status": "completed",
+            "conclusion": "success"
+          }
+        ]
+      },
+      "comments_on_2026_10_20": []
+    },
+    {
+      "number": 7287,
+      "title": "WrittenOnTheWallII: certify 423 and its additive cut strengthening",
+      "state": "open",
+      "merged": false,
+      "head": "fbbad84cbd4c37fb79090d4b551ea202cd57f5a6",
+      "updated": "2026-10-13T22:36:34Z",
+      "formal_proof_attributes_in_diff": 2,
+      "ci": {
+        "n": 7287,
+        "state": "success",
+        "runs": [
+          {
+            "id": 38445294102,
+            "name": "Check Copyright Header",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "id": 38445293929,
+            "name": "Google GitHub Admin: Actions Workflow Security Scan",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "id": 38445294082,
+            "name": "Build Lean project and deploy docs",
+            "status": "completed",
+            "conclusion": "success"
+          }
+        ]
+      },
+      "comments_on_2026_10_20": []
+    },
+    {
+      "number": 7225,
+      "title": "WrittenOnTheWallII: add solved conjecture 317",
+      "state": "open",
+      "merged": false,
+      "head": "9f59f60b9fb1675962280813048f430fdf96e3f9",
+      "updated": "2026-10-13T17:14:01Z",
+      "formal_proof_attributes_in_diff": 1,
+      "ci": {
+        "n": 7225,
+        "state": "success",
+        "runs": [
+          {
+            "id": 38431066974,
+            "name": "Build Lean project and deploy docs",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "id": 38431067084,
+            "name": "Check Copyright Header",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "id": 38431066998,
+            "name": "Google GitHub Admin: Actions Workflow Security Scan",
+            "status": "completed",
+            "conclusion": "success"
+          }
+        ]
+      },
+      "comments_on_2026_10_20": []
+    },
+    {
+      "number": 7221,
+      "title": "WrittenOnTheWallII: add solved conjecture 64 and external proof link",
+      "state": "closed",
+      "merged": true,
+      "head": "f3cece4b19d759b4be17b8eef9c10b0c5bdb6f1d",
+      "updated": "2026-10-13T14:54:57Z",
+      "formal_proof_attributes_in_diff": 1,
+      "ci": null,
+      "comments_on_2026_10_20": []
+    }
+  ]
+}

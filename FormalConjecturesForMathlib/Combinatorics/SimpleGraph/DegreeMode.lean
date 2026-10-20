@@ -34,8 +34,8 @@ variable {V : Type*} [Fintype V] [DecidableEq V]
 
 /-- The degrees with maximum frequency among the degrees occurring in the graph. -/
 def degreeModes (G : SimpleGraph V) [DecidableRel G.Adj] : Finset ℕ :=
-  (Finset.univ.image G.degree).filter fun d =>
-    ∀ e ∈ Finset.univ.image G.degree,
+  (Finset.univ.image (fun v : V => G.degree v)).filter fun d =>
+    ∀ e ∈ Finset.univ.image (fun v : V => G.degree v),
       (Finset.univ.filter fun v => G.degree v = e).card ≤
         (Finset.univ.filter fun v => G.degree v = d).card
 

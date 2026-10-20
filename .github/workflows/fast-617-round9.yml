@@ -1,4 +1,4 @@
-name: Erdos617 development compiler feedback
+name: Full submitted Erdos617 head build
 on:
   push:
     branches: [dev-617-round9-20261020]
@@ -8,13 +8,17 @@ concurrency:
   group: dev-617-round9-20261020
   cancel-in-progress: true
 jobs:
-  develop:
+  full-build:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
         with:
+          repository: RhudeJJJJ/formal-conjectures
+          ref: 57560b70d06fd5b7f0c8cb050e55b84059ca33db
           persist-credentials: false
+      - name: Confirm exact submitted commit
+        run: test "$(git rev-parse HEAD)" = 57560b70d06fd5b7f0c8cb050e55b84059ca33db
       - name: Install pinned Lean
         run: |
           curl -sSfL https://github.com/leanprover/elan/releases/download/v1.4.2/elan-x86_64-unknown-linux-gnu.tar.gz | tar xz
@@ -22,12 +26,27 @@ jobs:
           echo "$HOME/.elan/bin" >> $GITHUB_PATH
       - name: Get pinned Mathlib cache
         run: lake exe cache get
-      - name: Compile both new proofs independently of the statement bundle
+      - uses: actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9
+        with:
+          path: .lake/build
+          key: round9-full-${{ hashFiles('lean-toolchain', 'lake-manifest.json') }}-${{ github.sha }}
+          restore-keys: |
+            round9-full-${{ hashFiles('lean-toolchain', 'lake-manifest.json') }}-
+            round9-imports-${{ hashFiles('lean-toolchain', 'lake-manifest.json') }}-
+      - name: Generate complete library imports
         run: |
-          set +e
-          lake env lean -DwarningAsError=true Proofs/Erdos617AffineProof.lean
-          affine_exit=$?
-          lake env lean -DwarningAsError=true Proofs/Erdos617ThreeCore.lean
-          core_exit=$?
-          echo "AFFINE_EXIT=$affine_exit CORE_EXIT=$core_exit"
-          if [ "$affine_exit" -ne 0 ] || [ "$core_exit" -ne 0 ]; then exit 1; fi
+          ./scripts/mk_all_formathlib.sh
+          rm -f FormalConjectures/All.lean
+          lake exe mk_all --lib FormalConjectures
+          mv FormalConjectures.lean FormalConjectures/All.lean
+          echo "set_option linter.style.moduleDocstring false" >> FormalConjectures/All.lean
+      - name: Build utilities and run Lean tests
+        run: |
+          lake --wfail build FormalConjecturesForMathlib FormalConjecturesUtil
+          lake --wfail test
+      - name: Full strict Lean project build
+        run: lake --wfail build
+      - uses: actions/cache/save@55cc8345863c7cc4c66a329aec7e433d2d1c52a9
+        with:
+          path: .lake/build
+          key: round9-full-${{ hashFiles('lean-toolchain', 'lake-manifest.json') }}-${{ github.sha }}

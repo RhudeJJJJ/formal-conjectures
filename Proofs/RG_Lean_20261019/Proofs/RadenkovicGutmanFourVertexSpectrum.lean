@@ -53,6 +53,7 @@ theorem starFour_charpoly : (starFour.lapMatrix ℝ).charpoly =
       norm_num [Matrix.scalar_apply, Matrix.diagonal_apply, Fin.ext_iff]
   rw [hm]
   eval_det
+  norm_num
   ring
 
 theorem pathFour_charpoly : ((pathGraph 4).lapMatrix ℝ).charpoly =

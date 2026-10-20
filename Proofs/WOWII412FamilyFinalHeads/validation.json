@@ -1,0 +1,17 @@
+{
+  "certificate_commit": "773d2ad877c643319608009a72a4c39eb71b5e86",
+  "statement_heads": {
+    "7374": "9aeaa1688b48090c27c1f15a6e6f1cae937a4e22",
+    "7375": "6cf3edbedc31a0aa1b1be2f7711199d5138d2cac"
+  },
+  "result": "passed",
+  "scope": "Final statement-module build and fresh exact-target proof/audit exports against final statement files",
+  "axiom_guards": 10,
+  "allowed_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "sorryAx_negative_control": "passed",
+  "note": "Empty proof.log means successful warning-free Lean export. Full reproduction, official toolchain hashes and sandbox adapter disclosure are in the pinned certificate validation directory."
+}

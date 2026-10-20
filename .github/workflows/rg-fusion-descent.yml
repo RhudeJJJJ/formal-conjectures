@@ -1,4 +1,4 @@
-name: RG original correlated escape bridge
+name: RG original correlated degree-46 escape
 
 on:
   push:
@@ -42,8 +42,7 @@ jobs:
                       visit(dep)
                   else:
                       external.add(dep)
-          visit('Proofs.RadenkovicGutmanCorrelatedEscape')
-          visit('Proofs.RadenkovicGutmanNestedIntegerHybrid')
+          visit('Proofs.RadenkovicGutmanHighDegreeEscape')
           subprocess.run(['lake', 'exe', 'cache', 'get', *sorted(external)], check=True)
           PY
       - name: Check the source closure and axiom profiles
@@ -51,9 +50,9 @@ jobs:
           python3 -B Proofs/RG_Lean_20261019/verify_extension.py \
             --mathlib-project "$GITHUB_WORKSPACE" \
             --endpoint Proofs.RadenkovicGutmanQuadraticDisk \
+            --endpoint Proofs.RadenkovicGutmanNestedIntegerHybrid \
             --workers 1 --module-timeout 900 --print-receipt
           python3 -B Proofs/RG_Lean_20261019/verify_extension.py \
             --mathlib-project "$GITHUB_WORKSPACE" \
-            --endpoint Proofs.RadenkovicGutmanCorrelatedEscape \
-            --endpoint Proofs.RadenkovicGutmanNestedIntegerHybrid \
+            --endpoint Proofs.RadenkovicGutmanHighDegreeEscape \
             --workers 1 --module-timeout 900 --resume --print-receipt

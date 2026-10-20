@@ -20,13 +20,14 @@ theorem exp_quadratic_upper (t : ℝ) (ht : 0 ≤ t) : Real.exp (-t) ≤ quadrat
       (Real.exp (-x)-1+x) x := by
     have h := (((hasDerivAt_const x 1).sub (hasDerivAt_id x)).add
       (((hasDerivAt_id x).pow 2).div_const 2)).sub ((hasDerivAt_id x).neg.exp)
-    convert h using 1 <;> simp only [id_eq,quadratic] <;> ring
+    convert h using 1 <;> first | rfl | (dsimp [quadratic]; ring)
   have hm := monotone_of_hasDerivAt_nonneg hd (by
     intro x
+    change (0 : ℝ) ≤ Real.exp (-x)-1+x
     linarith only [Real.add_one_le_exp (-x)])
   have h := hm ht
   norm_num [quadratic] at h
-  linarith only [h]
+  exact h
 
 theorem cubic_le_exp (t : ℝ) (ht : 0 ≤ t) : cubic t ≤ Real.exp (-t) := by
   have hd (x : ℝ) : HasDerivAt (fun s => Real.exp (-s)-cubic s)
@@ -35,7 +36,7 @@ theorem cubic_le_exp (t : ℝ) (ht : 0 ≤ t) : cubic t ≤ Real.exp (-t) := by
       ((((hasDerivAt_const x 1).sub (hasDerivAt_id x)).add
         (((hasDerivAt_id x).pow 2).div_const 2)).sub
         (((hasDerivAt_id x).pow 3).div_const 6))
-    convert h using 1 <;> simp only [id_eq,cubic,quadratic] <;> ring
+    convert h using 1 <;> first | rfl | (dsimp [cubic,quadratic]; ring)
   have hc : Continuous (fun s : ℝ => Real.exp (-s)-cubic s) :=
     continuous_iff_continuousAt.mpr (fun x => (hd x).continuousAt)
   have hm := monotoneOn_of_hasDerivWithinAt_nonneg (convex_Ici (0 : ℝ))
@@ -43,6 +44,7 @@ theorem cubic_le_exp (t : ℝ) (ht : 0 ≤ t) : cubic t ≤ Real.exp (-t) := by
     (fun x hx => sub_nonneg.mpr (exp_quadratic_upper x (interior_subset hx)))
   have h := hm (show (0 : ℝ) ∈ Ici 0 by simp) ht ht
   norm_num [cubic,quadratic] at h
+  dsimp [cubic,quadratic]
   linarith only [h]
 
 theorem cubic_bounds (t : ℝ) (ht : t ∈ Ico (0 : ℝ) 1) : 0 < cubic t ∧ cubic t ≤ 1 := by
@@ -146,7 +148,7 @@ theorem graph_lower_of_signs {V : Type*} [Fintype V] [DecidableEq V]
     TailIntegral.escapeDensity (C.degree u) y ≤
       MixedGraphIntegral.logarithm (source C u p q) (fused C u p q) 2 y := by
   let d : ℝ := C.degree u
-  have hd' : 46 ≤ d := by exact_mod_cast hd
+  have hd' : 46 ≤ d := by dsimp [d]; exact_mod_cast hd
   have hd0 : 0 < d := by linarith only [hd']
   have hy0 : 0 < y := by change _ ≤ y ∧ y ≤ _ at hy; nlinarith only [hy.1,hd']
   have hx : y/d ∈ Icc (653/2000 : ℝ) 10 := by

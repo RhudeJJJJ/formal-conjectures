@@ -21,5 +21,7 @@ def tForm (u a b : ℝ) := -2*(bb u a b*(ai u a b*nr u a b-ar u a b*ni u a b)-aa
 def cForm (u a b : ℝ) := bb u a b*((nr u a b)^2+u^2*(ni u a b)^2)-aa u a b*((dr u a b)^2+u^2*(di u a b)^2)
 def vForm (h u a b : ℝ) := xForm u a b*(2*h-1)+tForm u a b*(h+u^2/2)+h*cForm u a b
 def kForm (h u a b : ℝ) := (vForm h u a b)^2-u^2/4*((xForm u a b)^2+u^2*(tForm u a b)^2)
+#print axioms vForm
+#print axioms kForm
 end
 end Gebendorfer.RadenkovicGutman.TailHalfPolynomial

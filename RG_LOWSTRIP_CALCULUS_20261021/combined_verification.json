@@ -1,16 +1,16 @@
 {
-  "source_commit": "015d9111af0836604ee8edf81c87e4a2699074e9",
-  "run": 39509661477,
-  "job": 118927240676,
+  "source_commit": "f0254eda044e7b538bd92de6cfca5e2bd242fd5b",
+  "run": 39511948256,
+  "job": 118934878475,
   "job_conclusion": "success",
-  "full_log_sha256": "b08252d608abf975e926a49867e29b8cf1ae0858fab9bdf87f265ef92eccd84a",
+  "full_log_sha256": "515c8fd2b4497c02061ba3e65fbe7d38fb90c500e5ad20d227a48f9c91dac7ba",
   "completed_endpoint_receipts": 1,
   "completed_endpoints": [
     [
       "Proofs.RadenkovicGutmanLowStripCombined"
     ]
   ],
-  "individual_modules": 68,
+  "individual_modules": 72,
   "source_checks": [
     {
       "module": "Proofs.RadenkovicGutmanCountGap",
@@ -273,11 +273,27 @@
       "source_matches_current": true
     },
     {
+      "module": "Proofs.RadenkovicGutmanCorrelatedEscape",
+      "source_matches_current": true
+    },
+    {
       "module": "Proofs.RadenkovicGutmanQuadraticDiskConvex",
       "source_matches_current": true
     },
     {
       "module": "Proofs.RadenkovicGutmanLowStripGeometry",
+      "source_matches_current": true
+    },
+    {
+      "module": "Proofs.RadenkovicGutmanLowStripConstantGeometry",
+      "source_matches_current": true
+    },
+    {
+      "module": "Proofs.RadenkovicGutmanLowStripCoordinates",
+      "source_matches_current": true
+    },
+    {
+      "module": "Proofs.RadenkovicGutmanLowStripSignAssembly",
       "source_matches_current": true
     },
     {
@@ -289,5 +305,8 @@
   "all_fresh_in_this_job": true,
   "universal_RG_Lean": "OPEN",
   "all_seven_complete_Input_families": "OPEN",
-  "boundary": "Only a completed endpoint receipt proves that entire explicit closure. Individual completed modules do not prove later skipped or failing endpoints."
+  "boundary": "Only a completed endpoint receipt proves that entire explicit closure. Individual completed modules do not prove later skipped or failing endpoints.",
+  "source_modules_at_commit": 221,
+  "predecessor_sources_byte_identical": 87,
+  "baseline": "658a1eff4995058c71f0873f623ac48f50448136"
 }

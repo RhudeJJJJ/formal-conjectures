@@ -1,4 +1,4 @@
-name: RG unconditional source presentation
+name: RG exact small-order basis and conditional strict-fusion reduction
 
 on:
   push:
@@ -42,12 +42,12 @@ jobs:
                       visit(dep)
                   else:
                       external.add(dep)
-          visit('Proofs.RadenkovicGutmanSourcePresentation')
+          visit('Proofs.RadenkovicGutmanSmallOrders')
           subprocess.run(['lake', 'exe', 'cache', 'get', *sorted(external)], check=True)
           PY
       - name: Check the source closure and axiom profiles
         run: |
           python3 -B Proofs/RG_Lean_20261019/verify_extension.py \
             --mathlib-project "$GITHUB_WORKSPACE" \
-            --endpoint Proofs.RadenkovicGutmanSourcePresentation \
+            --endpoint Proofs.RadenkovicGutmanSmallOrders \
             --workers 1 --module-timeout 900 --print-receipt

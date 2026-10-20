@@ -1,5 +1,6 @@
 /- Copyright 2026 Jonas J. Gebendorfer. Apache 2.0. -/
 import Proofs.RadenkovicGutmanLargeDegreeReserve
+import Mathlib.MeasureTheory.Integral.IntervalIntegral.FundThmCalculus
 
 /-!
 # Exact original tail integral and its payments
@@ -32,6 +33,7 @@ theorem parameter_derivative (t : ℝ) (ht : 0 < t) :
     (show 1+t^2 ≠ 0 by positivity)
   have h := (((((hasDerivAt_id t).sub hi).mul hl).sub
     ((hasDerivAt_id t).const_mul 2)).add ((hasDerivAt_arctan t).const_mul 4)).neg.div_const 2
+  simp only [id_eq] at h
   convert h using 1 <;> first
     | rfl
     | (field_simp [ht.ne', show 1+t^2 ≠ 0 by positivity]; ring)
@@ -41,6 +43,7 @@ theorem tail_parameter_derivative (y : ℝ) :
   have hs : 0 < sqrt (y^2+4) := Real.sqrt_pos.mpr (by positivity)
   have h := (((((hasDerivAt_id y).pow 2).add_const 4).sqrt hs.ne').sub
     (hasDerivAt_id y)).div_const 2
+  simp only [id_eq] at h
   convert h using 1 <;> first
     | rfl
     | (dsimp [tailParameter]; field_simp [hs.ne']; ring)
@@ -56,7 +59,7 @@ theorem primitive_derivative (y : ℝ) (hy : 0 ≤ y) :
   have hm : (1+1/t^2)*t/sqrt (y^2+4)=1 := by
     calc
       _ = (1+t^2)/(t*sqrt (y^2+4)) := by field_simp [ht.ne',hs.ne']; ring
-      _ = 1 := by rw [hts]; field_simp
+      _ = 1 := by rw [hts]; exact div_self (by positivity)
   have h := (parameter_derivative t ht).comp y (tail_parameter_derivative y)
   have hd : (-(1+1/t^2)*log (1+t^2)/2)*(-t/sqrt (y^2+4)) = positiveTail y := by
     change _ = log (1+t^2)/2
@@ -167,6 +170,67 @@ theorem tail_cost (Y : ℝ) (hY : 0 < Y) : -(1/(2*Y)) ≤ tailPrimitive Y := by
     (inv_square_integrable_integral (1/2) Y (by norm_num) hY).2] at h
   convert neg_le_neg h using 1 <;> ring
 
+theorem positive_tail_lower (y : ℝ) (hy : 4 ≤ y) :
+    (2/5 : ℝ)/y^2 ≤ positiveTail y := by
+  let t := tailParameter y
+  have hy0 : 0 < y := by linarith
+  obtain ⟨ht,_,hq⟩ := tail_parameter_properties y hy0.le
+  have hm := mul_le_mul_of_nonneg_right hy ht.le
+  have hb : t ≤ (1/4 : ℝ) := by nlinarith [sq_nonneg t]
+  have hs : t^2 ≤ (1/16 : ℝ) := by nlinarith
+  have he : y*t=1-t^2 := by linarith [hq]
+  have he2 := congrArg (fun z : ℝ => z^2) he
+  have hf : (4/5 : ℝ)/y^2 ≤ t^2/(1+t^2) := by
+    apply (div_le_div_iff₀ (sq_pos_of_pos hy0) (by positivity : 0 < 1+t^2)).mpr
+    nlinarith [sq_nonneg (t^2)]
+  have hl := Real.one_sub_inv_le_log_of_pos (show 0 < 1+t^2 by positivity)
+  have hr : 1-(1+t^2)⁻¹=t^2/(1+t^2) := by
+    field_simp [show 1+t^2 ≠ 0 by positivity]; ring
+  rw [hr] at hl
+  change (2/5 : ℝ)/y^2 ≤ log (1+t^2)/2
+  linarith only [hf,hl]
+
+theorem tail_gain (Y : ℝ) (hY : 4 ≤ Y) : (2/(5*Y) : ℝ) ≤ -tailPrimitive Y := by
+  have hY0 : 0 < Y := by linarith
+  have h := integral_mono_ae
+    (inv_square_integrable_integral (2/5) Y (by norm_num) hY0).1
+    (positive_tail_integrable Y hY0)
+    (by
+      filter_upwards [ae_restrict_mem measurableSet_Ioi] with y hy
+      exact positive_tail_lower y (by linarith))
+  rw [positive_tail_integral Y hY0,
+    (inv_square_integrable_integral (2/5) Y (by norm_num) hY0).2] at h
+  convert h using 1 <;> ring
+
+theorem escape_start_gain (d : ℝ) (hd : 46 ≤ d) :
+    (2/(5*(653/2000 : ℝ)))/d ≤ -tailPrimitive ((653/2000)*d) := by
+  have h := tail_gain ((653/2000)*d) (by linarith)
+  convert h using 1 <;> ring
+
+theorem tail_cost_1024 : -(1/2048 : ℝ) ≤ tailPrimitive 1024 := by
+  convert tail_cost 1024 (by norm_num) using 1 <;> norm_num
+
+def escapeDensity (d y : ℝ) : ℝ := (21/25 : ℝ)/(d*(1+(y/d)^2))
+
+/-- Exact payment for the original scaled escape region. -/
+theorem escape_integral (d : ℝ) (hd : 0 < d) :
+    (∫ y : ℝ in ((653/2000)*d)..(10*d), escapeDensity d y) =
+      (21/25 : ℝ)*(arctan 10 - arctan (653/2000)) := by
+  let F : ℝ → ℝ := fun y => (21/25 : ℝ)*arctan (y/d)
+  have hf (y : ℝ) : HasDerivAt F (escapeDensity d y) y := by
+    have h := ((hasDerivAt_id y).div_const d).arctan.const_mul (21/25 : ℝ)
+    convert h using 1 <;> first
+      | rfl
+      | (dsimp [escapeDensity]; field_simp [hd.ne',show 1+(y/d)^2 ≠ 0 by positivity]; ring)
+  have hc : Continuous (fun y : ℝ => d*(1+(y/d)^2)) := by fun_prop
+  have hg : Continuous (escapeDensity d) :=
+    continuous_const.div hc (fun y => by positivity)
+  have h := intervalIntegral.integral_eq_sub_of_hasDerivAt (fun y _ => hf y)
+    (hg.intervalIntegrable ((653/2000)*d) (10*d))
+  have h10 : (10*d)/d=(10 : ℝ) := by field_simp [hd.ne']
+  have hlo : ((653/2000 : ℝ)*d)/d=653/2000 := by field_simp [hd.ne']
+  simpa only [F,h10,hlo,mul_sub] using h
+
 #print axioms parameter_derivative
 #print axioms tail_parameter_derivative
 #print axioms primitive_derivative
@@ -180,5 +244,10 @@ theorem tail_cost (Y : ℝ) (hY : 0 < Y) : -(1/(2*Y)) ≤ tailPrimitive Y := by
 #print axioms inv_square_integrable_integral
 #print axioms positive_tail_upper
 #print axioms tail_cost
+#print axioms positive_tail_lower
+#print axioms tail_gain
+#print axioms escape_start_gain
+#print axioms tail_cost_1024
+#print axioms escape_integral
 end
 end Gebendorfer.RadenkovicGutman.TailIntegral

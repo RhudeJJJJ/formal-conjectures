@@ -30,6 +30,7 @@ theorem atan_lower (x : ℝ) (hx : 0 ≤ x) : atanLower x ≤ arctan x := by
       (y ^ 4 / (1 + y ^ 2)) y := by
     have h := (hasDerivAt_arctan y).sub
       ((hasDerivAt_id y).sub (((hasDerivAt_id y).pow 3).div_const 3))
+    simp only [id_eq] at h
     convert h using 1 <;> first
       | rfl
       | (field_simp [show 1+y^2 ≠ 0 by positivity]; ring)
@@ -44,6 +45,7 @@ theorem atan_upper (x : ℝ) (hx : 0 ≤ x) : arctan x ≤ atanUpper x := by
       (y ^ 6 / (1 + y ^ 2)) y := by
     have h := (((hasDerivAt_id y).sub (((hasDerivAt_id y).pow 3).div_const 3)).add
       (((hasDerivAt_id y).pow 5).div_const 5)).sub (hasDerivAt_arctan y)
+    simp only [id_eq] at h
     convert h using 1 <;> first
       | rfl
       | (field_simp [show 1+y^2 ≠ 0 by positivity]; ring)
@@ -146,7 +148,7 @@ theorem half_angle :
     nlinarith [sq_nonneg t]
   have he : (t+(1-t)/(1+t))/(1-t*((1-t)/(1+t))) = 1 := by
     field_simp [ne_of_gt hd, ne_of_gt (sub_pos.mpr hp), show 1+t^2 ≠ 0 by positivity]
-    <;> ring
+    <;> ring_nf <;> field_simp [show 1+t^2 ≠ 0 by positivity] <;> ring
   have h := Real.arctan_add hp
   rw [he, Real.arctan_one] at h
   exact h

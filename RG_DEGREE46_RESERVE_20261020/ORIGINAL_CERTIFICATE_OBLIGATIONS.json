@@ -1,0 +1,66 @@
+{
+  "source_root": "C:\\Users\\jonas\\Documents\\Codex\\2026-09-21\\bitte-nutze-unsere-aletheion-architektur-und\\output\\rg-conceptual-review\\Gebendorfer_RG_Universal_Revision",
+  "status": "PROVENANCE_INVENTORY_NOT_FRESH_REPLAY_OR_LEAN_CERTIFICATION",
+  "expected_json_counts": {
+    "d1_finite": 628,
+    "d2_d3": 18,
+    "other_degrees": 658
+  },
+  "mathematical_witness_counts": {
+    "d1_finite": 628,
+    "d2_d3": 16,
+    "other_degrees": 658
+  },
+  "parameter_identity": "Original positive physical lengths (P,Q) equal Lean indices (p+1,q+1). Actual complete order, core and root are retained.",
+  "open_lean_inputs": [
+    {
+      "field": "degreeOneSmall",
+      "range": "d=1,n<=13",
+      "proof": "Exhaustive rooted-core census: small_d1.json; stored report says 2486 cases. Completeness and spectral certificates remain to be proved in Lean."
+    },
+    {
+      "field": "degreeOneMiddle",
+      "range": "d=1,14<=n<=52",
+      "proof": "625 physical arm pairs, 10600 order/arm instances; 688 anchors cover 10592 instances, 8 residual parameter instances require 1203 rooted-core cases. Stored counts, not fresh replay. Prove anchor integral bounds under actual n<=anchor order and exact |2/n-2/a| transport; prove exhaustive residual census."
+    },
+    {
+      "field": "degreeOneLarge",
+      "range": "d=1,n>=53",
+      "proof": "Prove all 15 class bounds with low strip, escape and tail, integrated on each fixed physical arm class. Need I(2)>189/5000. Stored common normalized lower 1069033/28160000."
+    },
+    {
+      "field": "degreeTwoThree",
+      "range": "d=2 or 3,all n",
+      "proof": "Uniform bounds 14/125 at d=2 and 37/250 at d=3 imply large-order cases n>=18 and n>=14; stored finite checkpoint has 5508 exception cases. Prove interval certificates and census completeness."
+    },
+    {
+      "field": "degreeGeFourSmall",
+      "range": "d>=4,n<=12",
+      "proof": "Exhaustive rooted-core census small_d_ge4.json; stored report says 247 cases. Prove graph coverage and spectral isolation."
+    },
+    {
+      "field": "degreeFourToFortyfive",
+      "range": "4<=d<=45,n>=13",
+      "proof": "630 degree/class pairs. Prove actual class bounds and integrals giving I(2)>2/13; stored common lower 3518613/22528000."
+    },
+    {
+      "field": "degreeGeFortysix",
+      "range": "d>=46,all n",
+      "proof": "Prove compactified degree interval, low strip, middle strip, escape and tail with I(2)>2/47. Actual source order is at least d+3, so cutoff payment applies."
+    }
+  ],
+  "next_concrete_front": "Port compactified d>=46 interval inequalities and checked integration with exact rational payments, or port a complete finite census. Generic positivity hypotheses do not discharge either route.",
+  "reproduction": "The source reproduce.py was read but not executed in this turn. Python PASS labels and byte hashes are not Lean proofs.",
+  "inventory_record_count": 1361,
+  "full_inventory_reference": {
+    "url": "https://github.com/RhudeJJJJ/formal-conjectures/blob/c2f45095d91fa0e875c3b17a028a981cf7677098/RG_ANALYTIC_BRIDGES_20261020/ORIGINAL_CERTIFICATE_OBLIGATIONS.json",
+    "sha256": "c82b19b2984ab8c00211140aa2747379ea87967bf7a9a29a5cef8e2df892ff51",
+    "archive_copy": "PREDECESSOR_ORIGINAL_CERTIFICATE_INVENTORY.json",
+    "scope": "Unchanged hash inventory, not full reading or fresh replay"
+  },
+  "degree46_scalar_progress": {
+    "status": "VERIFIED",
+    "source_commit": "11df1bdd7029fcc3e4870bc6f9eee0b5ac1bfed0",
+    "remaining": "Actual graph low-strip and pointwise tail/escape polynomial bounds remain unproved. All seven Inputs fields remain OPEN."
+  }
+}

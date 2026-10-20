@@ -1,0 +1,30 @@
+{
+  "source_root": "C:\\Users\\jonas\\Documents\\Codex\\2026-09-21\\bitte-nutze-unsere-aletheion-architektur-und\\output\\rg-conceptual-review\\Gebendorfer_RG_Universal_Revision",
+  "records": [
+    {
+      "path": "proof_components/other_degrees/source/rg_multiarm_large_degree_integral_certificate.py",
+      "bytes": 7345,
+      "sha256": "37c0bf7d4f0146f25da6f81558c057f52cf18eb196920361108c627b7c018b3f",
+      "read_scope": "FULL_SOURCE_READ_THIS_TURN"
+    },
+    {
+      "path": "proof_components/other_degrees/source/rg_multiarm_tail_halfplane_certificate.py",
+      "bytes": 6924,
+      "sha256": "7bda759dfa4104fe29644669263df24e0029add38669b27abba40dfa76a34352",
+      "read_scope": "FULL_SOURCE_READ_THIS_TURN; confirms d>=2,y>=1, not the required half-tail at d>=46"
+    },
+    {
+      "path": "proof_components/other_degrees/source/rg_multiarm_small_ordinate_lowstrip.py",
+      "bytes": 9017,
+      "sha256": "99aed193364dd1b6a2308740245a67e35d39643b8d0c46b8465484320651fbbd",
+      "read_scope": "LINES_1_TO_160_ONLY; no full reading claimed"
+    },
+    {
+      "path": "manuscript.tex",
+      "bytes": 105918,
+      "sha256": "3fd51318ce5009d2f2b4390f625786726b5ee6af562717fb06ed72ab0d78405d",
+      "read_scope": "SELECTED_LINES_987_TO_1100_AND_TARGETED_DEFINITIONS; no full-paper reading claimed"
+    }
+  ],
+  "limits": "No fresh Python certificate-family replay. One selected print of a large ledger endpoint was truncated and does not establish full reading. Stored PASS and inventory hashes are not Lean certificates."
+}

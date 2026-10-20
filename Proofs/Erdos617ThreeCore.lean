@@ -19,6 +19,7 @@ def DiamondFree (G : SimpleGraph V) : Prop :=
 def NoIndependentFour (G : SimpleGraph V) : Prop :=
   ∀ S : Finset V, S.card = 4 → ¬ G.IsIndepSet (S : Set V)
 
+omit [Fintype V] in
 lemma triangle_of_no_independent_three (G : SimpleGraph V) (X : Finset V)
     (hX : 6 ≤ X.card)
     (h3 : ∀ a ∈ X, ∀ b ∈ X, ∀ c ∈ X, a ≠ b → a ≠ c → b ≠ c →
@@ -83,9 +84,12 @@ lemma no_low_degree (G : SimpleGraph V) [DecidableRel G.Adj]
     intro a ha b hb c hc hab hac hbc
     by_contra! hn
     have hs : ({v,a,b,c} : Finset V).card = 4 := by
-      simp [hab,hac,hbc,(hx a ha).1,(hx b hb).1,(hx c hc).1,
+      simp [hab,hac,hbc,
         Ne.symm (hx a ha).1,Ne.symm (hx b hb).1,Ne.symm (hx c hc).1]
     apply h4 {v,a,b,c} hs
+    have hva := (hx a ha).2
+    have hvb := (hx b hb).2
+    have hvc := (hx c hc).2
     intro x hxs y hys hxy
     simp only [Finset.mem_coe, mem_insert, mem_singleton] at hxs hys
     rcases hxs with rfl | rfl | rfl | rfl <;>
@@ -127,7 +131,10 @@ lemma no_low_degree (G : SimpleGraph V) [DecidableRel G.Adj]
         · exact (hz w hw).2.1
         · exact (hz w hw).2.2.1
         · exact (hz w hw).2.2.2
-      exact (h3 y hyX u (hz u hu).1 w (hz w hw).1 hyu hyw huw).resolve_right hn
+      rcases h3 y hyX u (hz u hu).1 w (hz w hw).1 hyu hyw huw with h|h|h
+      · exact Or.inl h
+      · exact Or.inr h
+      · exact (hn h).elim
     have ca := cover a (by simp)
     have cb := cover b (by simp)
     have cc := cover c (by simp)

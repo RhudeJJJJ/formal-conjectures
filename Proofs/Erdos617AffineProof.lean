@@ -35,7 +35,7 @@ lemma intercept_fiber (k : ZMod p) (a b : Point p) (hab : a ≠ b)
   have hx : a.1 - b.1 ≠ 0 := by
     intro h
     have hfst : a.1 = b.1 := sub_eq_zero.mp h
-    have hsnd : a.2 = b.2 := by rw [hfst] at he; exact sub_right_cancel he
+    have hsnd : a.2 = b.2 := by rw [hfst] at he; linear_combination he
     exact hab (Prod.ext hfst hsnd)
   apply (div_eq_iff hx).mpr
   linear_combination he
@@ -54,11 +54,12 @@ theorem balanced (S : Finset (Point p)) (hS : S.card = p + 1) (k : Fin p) :
   rw [intercept_fiber p k' a b hab he]
   exact (ZMod.finEquiv p).symm_apply_apply k
 
+omit [Fact p.Prime] in
 theorem prime_parameter (hp : p.Prime) :
     ∃ (V : Type) (_ : Fintype V) (_ : DecidableEq V), Fintype.card V = p^2 ∧
       ∃ (c : Sym2 V → Fin p), ∀ S : Finset V, S.card = p + 1 →
         ∀ k : Fin p, ∃ u ∈ S, ∃ v ∈ S, u ≠ v ∧ c s(u,v) = k := by
-  letI : Fact p.Prime := ⟨hp⟩
+  haveI : Fact p.Prime := ⟨hp⟩
   refine ⟨Point p, inferInstance, inferInstance, ?_, coloring p, ?_⟩
   · simp [Point, Fintype.card_prod, ZMod.card, pow_two]
   · exact fun S hS k => balanced p S hS k

@@ -37,8 +37,15 @@ jobs:
           path: .lake/build
           key: round9-imports-${{ hashFiles('lean-toolchain', 'lake-manifest.json') }}-${{ github.sha }}
       - name: Check affine proof
-        run: lake env lean -DwarningAsError=true Proofs/Erdos617AffineProof.lean
+        run: |
+          mkdir -p .lake/build/lib/lean/Proofs
+          lake env lean -DwarningAsError=true -o .lake/build/lib/lean/Proofs/Erdos617AffineProof.olean Proofs/Erdos617AffineProof.lean
       - name: Check three-colour core
+        if: success() || failure()
         run: lake env lean -DwarningAsError=true -o .lake/build/lib/lean/Proofs/Erdos617ThreeCore.olean Proofs/Erdos617ThreeCore.lean
       - name: Check inherited Brooks proof
+        if: success() || failure()
         run: lake env lean -DwarningAsError=true -o .lake/build/lib/lean/Proofs/ZajacBrooks.olean Proofs/ZajacBrooks.lean
+      - name: Check exact three-colour bridge
+        if: success() || failure()
+        run: lake env lean -DwarningAsError=true -o .lake/build/lib/lean/Proofs/Erdos617ThreeProof.olean Proofs/Erdos617ThreeProof.lean

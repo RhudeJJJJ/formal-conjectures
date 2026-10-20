@@ -40,7 +40,10 @@ theorem accepted : NestedIntegerHybrid.accepts 4 degrees data = true := by
   apply NestedIntegerHybrid.bernstein_step
   · change EscapeDirectedData.data.length ≤ 23
     exact le_of_eq EscapeDirectedData.data_length
-  · intro j
+  · change ∀ j : Fin 23, NestedIntegerHybrid.accepts 3
+      (fun i => EscapeDirectedData.degrees i.succ)
+      (NestedInteger.coefficientFrom 22 j.val 0 EscapeDirectedData.data) = true
+    intro j
     fin_cases j
     · rw [EscapeDirectedSlice00.identity]
       exact EscapeDirectedSlice00.accepted

@@ -62,7 +62,10 @@ theorem accepted : NestedIntegerHybrid.accepts 4 degrees data = true := by
   apply NestedIntegerHybrid.bernstein_step
   · change EscapeReserveData.data.length ≤ 45
     exact le_of_eq EscapeReserveData.data_length
-  · intro j
+  · change ∀ j : Fin 45, NestedIntegerHybrid.accepts 3
+      (fun i => EscapeReserveData.degrees i.succ)
+      (NestedInteger.coefficientFrom 44 j.val 0 EscapeReserveData.data) = true
+    intro j
     fin_cases j
     · rw [EscapeReserveSlice00.identity]
       exact EscapeReserveSlice00.accepted

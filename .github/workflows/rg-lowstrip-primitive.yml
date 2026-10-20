@@ -1,4 +1,4 @@
-name: RG original low-strip convex disk
+name: RG original low-strip actual graph bridge
 
 on:
   push:
@@ -42,12 +42,12 @@ jobs:
                       visit(dep)
                   else:
                       external.add(dep)
-          visit('Proofs.RadenkovicGutmanQuadraticDiskConvex')
+          visit('Proofs.RadenkovicGutmanLowStripGeometry')
           subprocess.run(['lake', 'exe', 'cache', 'get', *sorted(external)], check=True)
           PY
-      - name: Check original convex disk criterion
+      - name: Check original actual-graph tangent-strip bridge
         run: |
           python3 -B Proofs/RG_Lean_20261019/verify_extension.py \
             --mathlib-project "$GITHUB_WORKSPACE" \
-            --endpoint Proofs.RadenkovicGutmanQuadraticDiskConvex \
+            --endpoint Proofs.RadenkovicGutmanLowStripGeometry \
             --workers 1 --module-timeout 300 --print-receipt

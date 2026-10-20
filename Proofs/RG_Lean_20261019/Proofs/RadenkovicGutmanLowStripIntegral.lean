@@ -20,6 +20,7 @@ theorem arsinh_upper (x : ℝ) (hx : 0 ≤ x) :
   rw [Real.log_mul (by norm_num : (2 : ℝ) ≠ 0) hs.ne'] at hl
   have he := congrArg Real.log hsq
   rw [Real.log_pow] at he
+  norm_num at he
   unfold Real.arsinh
   linarith
 

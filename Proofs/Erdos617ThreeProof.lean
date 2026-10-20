@@ -50,6 +50,7 @@ lemma third_colour (a b : Fin 3) : ∃ k : Fin 3, k ≠ a ∧ k ≠ b := by
   revert a b
   decide
 
+omit [Fintype V] in
 lemma diamond_forbidden (c : Sym2 V → Fin 3) (k : Fin 3)
     (hbal : ∀ S : Finset V, S.card = 4 →
       ∀ ell : Fin 3, ∃ u ∈ S, ∃ v ∈ S, u ≠ v ∧ c s(u,v) = ell) :
@@ -123,7 +124,7 @@ theorem three (hV : Fintype.card V = 10) (c : Sym2 V → Fin 3) :
   have hb : ∀ S : Finset V, S.card = 4 →
       ∀ k : Fin 3, ∃ u ∈ S, ∃ v ∈ S, u ≠ v ∧ c s(u,v) = k := by
     intro S hS k
-    simpa only [not_forall,_root_.not_imp,not_not] using hbal S k hS
+    simpa only [not_forall,Classical.not_imp,not_not] using hbal S k hS
   obtain ⟨k,hm⟩ := minority hV c
   let G := colorGraph c k
   have h4 : NoIndependentFour G := by

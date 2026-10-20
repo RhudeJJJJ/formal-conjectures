@@ -59,7 +59,7 @@ theorem prime_parameter (hp : p.Prime) :
     ∃ (V : Type) (_ : Fintype V) (_ : DecidableEq V), Fintype.card V = p^2 ∧
       ∃ (c : Sym2 V → Fin p), ∀ S : Finset V, S.card = p + 1 →
         ∀ k : Fin p, ∃ u ∈ S, ∃ v ∈ S, u ≠ v ∧ c s(u,v) = k := by
-  haveI : Fact p.Prime := ⟨hp⟩
+  have : Fact p.Prime := ⟨hp⟩
   refine ⟨Point p, inferInstance, inferInstance, ?_, coloring p, ?_⟩
   · simp [Point, Fintype.card_prod, ZMod.card, pow_two]
   · exact fun S hS k => balanced p S hS k

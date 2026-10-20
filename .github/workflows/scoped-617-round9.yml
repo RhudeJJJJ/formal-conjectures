@@ -49,3 +49,6 @@ jobs:
       - name: Check exact three-colour bridge
         if: success() || failure()
         run: lake env lean -DwarningAsError=true -o .lake/build/lib/lean/Proofs/Erdos617ThreeProof.olean Proofs/Erdos617ThreeProof.lean
+      - name: Check exact targets and axiom negative control
+        if: success() || failure()
+        run: lake env lean -DwarningAsError=true Proofs/Erdos617Round9Certificate.lean

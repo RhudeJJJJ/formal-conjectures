@@ -29,7 +29,8 @@ lemma minority (hV : Fintype.card V = 10) (c : Sym2 V → Fin 3) :
       (⊤ : SimpleGraph V).edgeFinset.filter (fun e => c e = k) := by
     ext e
     induction e using Sym2.ind with
-    | _ a b => simp [colorGraph,SimpleGraph.top_adj]
+    | _ a b => simp only [SimpleGraph.mem_edgeFinset, SimpleGraph.mem_edgeSet,
+        mem_filter, SimpleGraph.top_adj]; rfl
   have hsum : (∑ k : Fin 3, (colorGraph c k).edgeFinset.card) = 45 := by
     simp_rw [he]
     rw [← card_eq_sum_card_fiberwise (f := c) (s := (⊤ : SimpleGraph V).edgeFinset)
@@ -40,11 +41,14 @@ lemma minority (hV : Fintype.card V = 10) (c : Sym2 V → Fin 3) :
   have h0 := hn 0
   have h1 := hn 1
   have h2 := hn 2
-  simp only [Fin.sum_univ_succ,Finset.sum_empty,add_zero] at hsum
-  norm_num at hsum
+  simp only [Fin.sum_univ_succ] at hsum
+  change (colorGraph c 0).edgeFinset.card +
+    ((colorGraph c 1).edgeFinset.card + ((colorGraph c 2).edgeFinset.card + 0)) = 45 at hsum
   omega
 
-lemma third_colour (a b : Fin 3) : ∃ k : Fin 3, k ≠ a ∧ k ≠ b := by decide
+lemma third_colour (a b : Fin 3) : ∃ k : Fin 3, k ≠ a ∧ k ≠ b := by
+  revert a b
+  decide
 
 lemma diamond_forbidden (c : Sym2 V → Fin 3) (k : Fin 3)
     (hbal : ∀ S : Finset V, S.card = 4 →
@@ -57,10 +61,16 @@ lemma diamond_forbidden (c : Sym2 V → Fin 3) (k : Fin 3)
   obtain ⟨u,hu,v,hv,huv,he⟩ := hbal {a,b,d,e} hcard ell
   have hkell := hellk.symm
   have heell := helle.symm
+  change a ≠ b ∧ c s(a,b) = k at hab
+  change a ≠ d ∧ c s(a,d) = k at had
+  change b ≠ d ∧ c s(b,d) = k at hbd
+  change a ≠ e ∧ c s(a,e) = k at hae'
+  change b ≠ e ∧ c s(b,e) = k at hbe'
   simp only [mem_insert,mem_singleton] at hu hv
   rcases hu with rfl|rfl|rfl|rfl <;> rcases hv with rfl|rfl|rfl|rfl <;>
     simp_all [Sym2.eq_swap]
 
+omit [Fintype V] [DecidableEq V] in
 lemma no_four_clique (G : SimpleGraph V) (hd : DiamondFree G) : G.CliqueFree 4 := by
   intro S hS
   obtain ⟨a,ha,b,hb,c,hc,d,hdS,hab,hac,had,hbc,hbd,hcd⟩ :=
@@ -81,6 +91,7 @@ lemma degree_le_three (G : SimpleGraph V) [DecidableRel G.Adj]
   have hs := G.sum_degrees_eq_twice_card_edges
   omega
 
+omit [DecidableEq V] in
 lemma independent_four_of_colorable (G : SimpleGraph V) [DecidableRel G.Adj]
     (hV : Fintype.card V = 10) (hC : G.Colorable 3) :
     ∃ S : Finset V, S.card = 4 ∧ G.IsIndepSet (S : Set V) := by
@@ -112,7 +123,7 @@ theorem three (hV : Fintype.card V = 10) (c : Sym2 V → Fin 3) :
   have hb : ∀ S : Finset V, S.card = 4 →
       ∀ k : Fin 3, ∃ u ∈ S, ∃ v ∈ S, u ≠ v ∧ c s(u,v) = k := by
     intro S hS k
-    simpa only [not_forall,not_imp,not_not] using hbal S k hS
+    simpa only [not_forall,_root_.not_imp,not_not] using hbal S k hS
   obtain ⟨k,hm⟩ := minority hV c
   let G := colorGraph c k
   have h4 : NoIndependentFour G := by

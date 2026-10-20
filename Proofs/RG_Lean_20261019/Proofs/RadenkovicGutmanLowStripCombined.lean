@@ -1,5 +1,5 @@
 /- Copyright 2026 Jonas J. Gebendorfer. Apache 2.0. -/
-import Proofs.RadenkovicGutmanLowStripSignAssembly
+import Proofs.RadenkovicGutmanHighDegreeInputFromSigns
 
 /-! Joint verification of original low-strip scalar integration and actual-graph
 specialization. The original polynomial sign comparisons remain premises. -/
@@ -14,5 +14,6 @@ namespace Gebendorfer.RadenkovicGutman.LowStripCombined
 #check @LowStripCoordinates.tangent_coordinate_exists
 #check @LowStripConstantGeometry.lead_pos
 #print axioms LowStripSignAssembly.strict_fusion_of_original_sign_families
+#print axioms HighDegreeInputFromSigns.normalized_lower_of_original_sign_families
 
 end Gebendorfer.RadenkovicGutman.LowStripCombined

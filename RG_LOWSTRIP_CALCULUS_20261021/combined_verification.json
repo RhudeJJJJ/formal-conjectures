@@ -1,16 +1,16 @@
 {
-  "source_commit": "f0254eda044e7b538bd92de6cfca5e2bd242fd5b",
-  "run": 39511948256,
-  "job": 118934878475,
+  "source_commit": "7aa04f1bae1cf0674284edb1058655bc5feecf6e",
+  "run": 39514473696,
+  "job": 118943208211,
   "job_conclusion": "success",
-  "full_log_sha256": "515c8fd2b4497c02061ba3e65fbe7d38fb90c500e5ad20d227a48f9c91dac7ba",
+  "full_log_sha256": "7177c92d86c76bab3754decf2de86d3911777b219bb341f73476fac85d2d8b81",
   "completed_endpoint_receipts": 1,
   "completed_endpoints": [
     [
       "Proofs.RadenkovicGutmanLowStripCombined"
     ]
   ],
-  "individual_modules": 72,
+  "individual_modules": 73,
   "source_checks": [
     {
       "module": "Proofs.RadenkovicGutmanCountGap",
@@ -297,6 +297,10 @@
       "source_matches_current": true
     },
     {
+      "module": "Proofs.RadenkovicGutmanHighDegreeInputFromSigns",
+      "source_matches_current": true
+    },
+    {
       "module": "Proofs.RadenkovicGutmanLowStripCombined",
       "source_matches_current": true
     }
@@ -306,7 +310,7 @@
   "universal_RG_Lean": "OPEN",
   "all_seven_complete_Input_families": "OPEN",
   "boundary": "Only a completed endpoint receipt proves that entire explicit closure. Individual completed modules do not prove later skipped or failing endpoints.",
-  "source_modules_at_commit": 221,
+  "source_modules_at_commit": 222,
   "predecessor_sources_byte_identical": 87,
   "baseline": "658a1eff4995058c71f0873f623ac48f50448136"
 }

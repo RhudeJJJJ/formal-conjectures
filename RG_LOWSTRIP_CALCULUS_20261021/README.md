@@ -4,7 +4,7 @@ Jonas J. Gebendorfer. OpenAI Codex assisted with implementation and validation.
 
 **VERIFIED analytic and conditional actual-graph components. Universal Lean proof OPEN.**
 
-The joint 72-module closure at [source f0254eda044e7b538bd92de6cfca5e2bd242fd5b](https://github.com/RhudeJJJJ/formal-conjectures/tree/f0254eda044e7b538bd92de6cfca5e2bd242fd5b/Proofs/RG_Lean_20261019) was freshly exported in [run 39511948256](https://github.com/RhudeJJJJ/formal-conjectures/actions/runs/39511948256), job 118934878475. It uses official Lean 4.33.1, Mathlib 0df444a360eaa60ab8c11dca51a86af692955474, warnings as errors and only propext, Classical.choice and Quot.sound. All 87 predecessor sources at 658a1eff4995058c71f0873f623ac48f50448136 are byte-identical. The source commit contains 221 RG modules; this is not a fresh check of all of them.
+The joint 73-module closure at [source 7aa04f1bae1cf0674284edb1058655bc5feecf6e](https://github.com/RhudeJJJJ/formal-conjectures/tree/7aa04f1bae1cf0674284edb1058655bc5feecf6e/Proofs/RG_Lean_20261019) was freshly exported in [run 39514473696](https://github.com/RhudeJJJJ/formal-conjectures/actions/runs/39514473696), job 118943208211. It uses official Lean 4.33.1, Mathlib 0df444a360eaa60ab8c11dca51a86af692955474, warnings as errors and only propext, Classical.choice and Quot.sound. All 87 predecessor sources at 658a1eff4995058c71f0873f623ac48f50448136 are byte-identical. The source commit contains 222 RG modules; this is not a fresh check of all of them.
 
 ## Checked original calculus
 
@@ -24,6 +24,8 @@ on (0,1/2), under the two original pointwise graph comparisons on (0,8/(3*d)] an
 
 `LowStripSignAssembly.strict_fusion_of_original_sign_families` reduces actual high-degree strict fusion to three explicit remaining families: original tangent signs, original constant-strip signs, and the original correlated escape signs. Every sign is evaluated on the same core C, root u and physical arms p+1,q+1. The original c/2 tangent target, 1/2 constant target, parameter intervals and complete error squares are retained. No replacement graph, arm sample, separate numerator/denominator extrema or stored Python PASS report is used as a proof premise.
 
+`HighDegreeInputFromSigns.normalized_lower_of_original_sign_families` additionally proves the exact original target 2/47 < normalizedIntegral C u p q 2 for every actual root degree >=46, conditional on those same three original sign families. This retains the normalized margin required by `OriginalAssembly.Inputs.degreeGeFortysix`; proving strict fusion alone would not supply that field. Four-region integral assembly and the scalar reserve pay the original margin. No complete Input field is supplied until the remaining original sign families are established.
+
 ## Exact remaining scope
 
 Those sign families are inputs to this checkpoint. It does not supply their polynomial certificates or positive clearing identities. The original tangent signs in all three physical parity cases and the original constant-strip chart signs still require work. The separate correlated-escape certificate run has its own evidence; its later failing, pending or skipped endpoints cannot be inferred from this receipt.
@@ -34,4 +36,4 @@ All seven complete `OriginalAssembly.Inputs` fields remain OPEN, including remai
 
     python3 -B Proofs/RG_Lean_20261019/verify_extension.py --mathlib-project /absolute/path/to/pinned/mathlib4 --endpoint Proofs.RadenkovicGutmanLowStripCombined --workers 1 --module-timeout 600 --print-receipt
 
-Use `combined_kernel_receipt.json` and `combined_verification.json` for the current joint source. The earlier three-module calculus and 51-module convex receipts are preserved as historical component checks at their own immutable sources; their counts are not added to the 72-module job. Original producer hashes and reading scope are in `original_source_provenance.json`.
+Use `combined_kernel_receipt.json` and `combined_verification.json` for the current joint source. The earlier three-module calculus and 51-module convex receipts are preserved as historical component checks at their own immutable sources; their counts are not added to the 73-module job. Original producer hashes and reading scope are in `original_source_provenance.json`.

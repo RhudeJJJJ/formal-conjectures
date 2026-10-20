@@ -1,0 +1,46 @@
+{
+  "checked_at_utc": "2026-10-20T14:13:47.707573+00:00",
+  "statement_base": "9029187a7d1448f3dfb5c28dfdd8a9e088c12326",
+  "lean": "4.33.1",
+  "lean_commit": "819816b2e0a3bf405af45ae5c7af2491d8f5bee6",
+  "mathlib": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "targets": [
+    "WOWII405407Proof.conjecture405",
+    "WOWII405407Proof.conjecture407"
+  ],
+  "scope_build_exit_code": 0,
+  "fresh_proof_exports": [
+    "WOWII412dCore",
+    "CoronaTwoDominatingProof",
+    "WOWII405407Proof",
+    "WOWII405407Audit"
+  ],
+  "proof_and_audit_exit_code": 0,
+  "warnings_as_errors": true,
+  "auto_implicit": false,
+  "relaxed_auto_implicit": false,
+  "full_transitive_axiom_whitelist": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "placeholder_negative_control": "PASS",
+  "source_inputs_sha256": {
+    "Proofs/WOWII412dCore.lean": "7e978d2beac063c0f1de235c479a6f65a93be86dc5518b4bcfd17177ac60e44d",
+    "Proofs/CoronaTwoDominatingProof.lean": "258e87d234b8b182123b80315e41b552ea12990141813bbceaf387f691fad108",
+    "Proofs/WOWII405407Proof.lean": "df03fa9d58244dff81031d1c2cd3dac458f9ddf1094de4d4fd0d7cc53b40148b",
+    "Proofs/WOWII405407Audit.lean": "44e297fa0a7b4b2ac41e47e7c33b3d05a02950d5f9e7247b4f99e620844b8913",
+    "Proofs/README-WOWII405407.md": "96b2b354be9ebfa0325517e85eca79caa6d47a39237e9be535f68680a6da344f",
+    "Proofs/WOWII405407Validation/check.sh": "0fd988af1e9016009abecf2978ca1c01ae5fae4bd082fc2aedb6b8ed6bb30a3b",
+    "Proofs/WOWII405407Validation/environment/process_path.c": "3b4838c37f53d17789ace477cbb7d0ad426f205d9a5391695d2e242f629b112f",
+    "lean-toolchain": "3aac669c7a910ec2389f4e4f921b605adf6ebf2d1e0c9b9cd0be4d33f3f5db71",
+    "lake-manifest.json": "c8ffc0d59f492007162fe54c68396e4b9f2f305fcf69210a7fbaf0b18fcd8cd9",
+    "FormalConjectures/WrittenOnTheWallII/GraphConjecture404To407.lean": "7fd35e9ee7a3df754bb7004afb5a89fcf3d1ac72f84a55916947b4647cb14dc3"
+  },
+  "environment_adapter": "Proofs/WOWII405407Validation/environment/process_path.c",
+  "scope_limits": [
+    "405 and 407 are certified; 404 and 406 remain Lean placeholders",
+    "No complete universal 412d proof is claimed",
+    "No fresh external review or upstream acceptance is claimed"
+  ]
+}

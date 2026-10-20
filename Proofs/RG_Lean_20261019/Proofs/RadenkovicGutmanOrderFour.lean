@@ -22,7 +22,7 @@ def starIso (r : Fin 4) : starGraph r ≃g starFour := by
     { toEquiv := e
       map_rel_iff' := by
         intro a b
-        simp only [starGraph_adj, e.injective.eq_iff] }
+        simp only [starGraph_adj, ne_eq, e.injective.eq_iff] }
   simpa only [he, starFour] using f
 
 theorem nonpath_iso_starFour (T : SimpleGraph (Fin 4)) (hT : T.IsTree)
@@ -33,7 +33,7 @@ theorem nonpath_iso_starFour (T : SimpleGraph (Fin 4)) (hT : T.IsTree)
     have hi := tree_path_iso_of_degree_le_two T hT h
     rw [Fintype.card_fin] at hi
     exact hi
-  push_neg at hd
+  push Not at hd
   obtain ⟨r, hr⟩ := hd
   have hlt := T.degree_lt_card_verts r
   rw [Fintype.card_fin] at hlt

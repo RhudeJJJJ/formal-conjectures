@@ -1,0 +1,39 @@
+{
+  "source_commit": "e10830073a90a1a88103706ebc8b71bd33bdf60e",
+  "run": 39505370942,
+  "job": 118912838144,
+  "job_conclusion": "success",
+  "full_log_sha256": "fa5a1dd7bdace1321fd276f99fe80b3c6bfe6dddf05a48af08ee92f198e46b8a",
+  "completed_endpoint_receipts": 1,
+  "completed_endpoints": [
+    [
+      "Proofs.RadenkovicGutmanLowStripIntegral"
+    ]
+  ],
+  "individual_modules": 3,
+  "all_standard_axioms": true,
+  "all_fresh_in_this_job": true,
+  "universal_RG_Lean": "OPEN",
+  "all_seven_complete_Input_families": "OPEN",
+  "boundary": "Only a completed endpoint receipt proves that entire explicit closure. Individual completed modules do not prove later skipped or failing endpoints.",
+  "source_files": [
+    {
+      "module": "Proofs.RadenkovicGutmanScalarIntegral",
+      "source_sha256": "5c6513466fe92cd9b0d1a16bf9c0589a26b580768bd88565ee06a5f88a4a43c4",
+      "source_link": "https://github.com/RhudeJJJJ/formal-conjectures/blob/e10830073a90a1a88103706ebc8b71bd33bdf60e/Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanScalarIntegral.lean"
+    },
+    {
+      "module": "Proofs.RadenkovicGutmanLowStripPrimitive",
+      "source_sha256": "065bf9ab3a72714fff6a86c45c2c2d1e400205104e6410030be88bd881163e98",
+      "source_link": "https://github.com/RhudeJJJJ/formal-conjectures/blob/e10830073a90a1a88103706ebc8b71bd33bdf60e/Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanLowStripPrimitive.lean"
+    },
+    {
+      "module": "Proofs.RadenkovicGutmanLowStripIntegral",
+      "source_sha256": "75d84a9d9e97efc4b5384ce41538ff13acc597d0c0cee7b06d8a60d3ec7b8209",
+      "source_link": "https://github.com/RhudeJJJJ/formal-conjectures/blob/e10830073a90a1a88103706ebc8b71bd33bdf60e/Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanLowStripIntegral.lean"
+    }
+  ],
+  "source_hashes_currently_verified": true,
+  "predecessor_sources_byte_identical": 87,
+  "baseline": "658a1eff4995058c71f0873f623ac48f50448136"
+}

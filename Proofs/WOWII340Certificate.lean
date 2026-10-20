@@ -1,6 +1,8 @@
 import Proofs.WOWII340Proof
 import Lean.Util.CollectAxioms
 
+/-! Exact imported target and fail-closed axiom check for the WOWII 340 refutation. -/
+
 example : ¬ WrittenOnTheWallII.GraphConjecture340.conjecture340Statement :=
   WOWII340Proof.conjecture340
 

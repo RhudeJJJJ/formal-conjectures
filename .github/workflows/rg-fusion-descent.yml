@@ -1,4 +1,4 @@
-name: RG exact small-order basis and conditional strict-fusion reduction
+name: RG exact four-vertex energies and complete finite basis below five
 
 on:
   push:
@@ -42,12 +42,12 @@ jobs:
                       visit(dep)
                   else:
                       external.add(dep)
-          visit('Proofs.RadenkovicGutmanSmallOrders')
+          visit('Proofs.RadenkovicGutmanOrderFour')
           subprocess.run(['lake', 'exe', 'cache', 'get', *sorted(external)], check=True)
           PY
       - name: Check the source closure and axiom profiles
         run: |
           python3 -B Proofs/RG_Lean_20261019/verify_extension.py \
             --mathlib-project "$GITHUB_WORKSPACE" \
-            --endpoint Proofs.RadenkovicGutmanSmallOrders \
+            --endpoint Proofs.RadenkovicGutmanOrderFour \
             --workers 1 --module-timeout 900 --print-receipt

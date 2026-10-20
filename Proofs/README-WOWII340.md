@@ -37,7 +37,7 @@ lake env lean -DwarningAsError=true Proofs/WOWII340Certificate.lean
 
 The construction and packings are Theorem 4.3 of Jonas J. Gebendorfer,
 *Double brooms refute Graffiti.pc Conjecture 340 on total domination in trees*,
-October 17, 2026. The supplied eight-page manuscript has SHA-256
+October 17, 2026. The [supplied eight-page manuscript](../Sources/WOWII340/wowii340.pdf) has SHA-256
 `9ba256a81e9c76a15dbee66e44b28d8015bc430634b04b73413bac8ca811f869`.
 It credits Claude assistance for the mathematical work and drafting.
 OpenAI Codex assisted with this source audit and new Lean formalization.

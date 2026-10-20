@@ -31,7 +31,7 @@ theorem denominator_ne_zero (d y P Q : ℝ) (hy : 0 < y)
   have him : 0 < ζ.im := by
     simp only [g,Complex.add_im,Complex.ofReal_im,Complex.mul_im,Complex.ofReal_re,
       Complex.I_im,Complex.I_re,mul_one,mul_zero,zero_add,add_zero,Complex.sub_im] at hi
-    unfold r at hζ
+    unfold r g at hζ
     linarith
   intro hz
   have he : ζ = -D₀ y P Q/B y P Q := by
@@ -54,7 +54,7 @@ theorem ratio_lower_of_margins (d y P Q : ℝ) (hd : 0 ≤ d) (hy : 0 < y)
   have hr : 0 ≤ r d y := by unfold r; positivity
   have hn : dx^2+dy^2 ≤ (r d y)^2 := by
     have h : ‖ζ-g d y‖^2 ≤ (r d y)^2 := by nlinarith [norm_nonneg (ζ-g d y)]
-    simpa only [← Complex.normSq_eq_norm_sq,Complex.normSq_apply,Complex.sub_re,Complex.sub_im,dx,dy] using h
+    simpa only [← Complex.normSq_eq_norm_sq,Complex.normSq_apply,Complex.sub_re,Complex.sub_im,dx,dy,pow_two] using h
   have hc : (X*dx+T*dy)^2 ≤ (X^2+T^2)*(dx^2+dy^2) := by
     nlinarith [sq_nonneg (X*dy-T*dx)]
   have hm := mul_le_mul_of_nonneg_left hn (show 0 ≤ X^2+T^2 by positivity)
@@ -66,7 +66,7 @@ theorem ratio_lower_of_margins (d y P Q : ℝ) (hd : 0 ≤ d) (hy : 0 < y)
   have ha := (abs_le.mp habs).1
   have he : xCoeff y P Q*ζ.re+tCoeff y P Q*ζ.im+cCoeff y P Q = V+(X*dx+T*dy) := by
     dsimp [V,X,T,dx,dy,centerValue,g]
-    simp only [Complex.add_re,Complex.add_im,Complex.ofReal_re,Complex.ofReal_im,
+    simp only [Complex.ofReal_re,Complex.ofReal_im,
       Complex.mul_re,Complex.mul_im,Complex.I_re,Complex.I_im]
     ring
   have hH : 0 ≤ Complex.normSq (B y P Q)*Complex.normSq (A P Q*ζ+N₀ y P Q)-
@@ -110,6 +110,7 @@ theorem log_lower_of_margins (d y P Q : ℝ) (hd : 0 ≤ d) (hy : 0 < y)
   have hl := Real.log_le_log (by positivity : 0 < 1/(1+(tailParameter y)^2)) hs
   rw [Real.log_div (by norm_num : (1 : ℝ) ≠ 0) (by positivity : 1+(tailParameter y)^2 ≠ 0),
     Real.log_one,zero_sub,Real.log_pow] at hl
+  norm_num at hl
   unfold TailIntegral.phi TailIntegral.positiveTail
   linarith only [hl]
 

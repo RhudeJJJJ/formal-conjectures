@@ -21,22 +21,29 @@ noncomputable section
 set_option backward.isDefEq.respectTransparency false
 
 theorem starFour_leaves : leafCount starFour = 3 := by
+  have hdeg (i : Fin 4) : starFour.degree i = if i = 0 then 3 else 1 := by
+    have hs : starFour.degree i =
+        ∑ j : Fin 4, if starFour.Adj i j then (1 : ℕ) else 0 :=
+      starFour.degree_eq_sum_if_adj i
+    rw [hs]
+    fin_cases i <;>
+      simp only [Fin.sum_univ_succ, Fin.sum_univ_zero] <;>
+      norm_num [starFour, starGraph_adj, Fin.ext_iff]
   have hc : starFour.degree 0 = 3 := by
-    rw [starFour, degree_starGraph_center]
-    norm_num
+    simpa using hdeg 0
   have he : (Finset.univ.filter fun i : Fin 4 => starFour.degree i = 1) =
       Finset.univ.erase 0 := by
     ext i
     by_cases hi : i = 0
     · subst i
       simp [hc]
-    · have hd : starFour.degree i = 1 := degree_starGraph_of_ne_center hi
+    · have hd : starFour.degree i = 1 := by simpa only [if_neg hi] using hdeg i
       simp [hd, hi]
   unfold leafCount
   rw [he]
   norm_num
 
-variable {V : Type*} [Fintype V] [DecidableEq V]
+variable {V : Type*} [Fintype V]
 
 /-- Relabeling preserves the given source, rather than choosing a replacement graph. -/
 theorem source_iso_star_four (C : SimpleGraph V) (u : V) (p q : ℕ)
@@ -66,8 +73,10 @@ theorem fused_iso_path_four (C : SimpleGraph V) (u : V) (p q : ℕ)
   have ht := FusionDescent.fusion_tree_and_leaf_count C u p q hT hd
   have hnF : Fintype.card (V ⊕ Fin (p + q + 2)) = 4 := ht.2.1.symm.trans hn
   have hp := FusionTerminal.three_leaf_fusion_is_path C u p q hT hd hl
-  simp only [Fintype.card_sum, Fintype.card_fin] at hnF
-  simpa only [Fintype.card_sum, Fintype.card_fin, hnF] using hp
+  rw [hnF] at hp
+  exact hp
+
+variable [DecidableEq V]
 
 theorem actual_energies_four (C : SimpleGraph V) (u : V) (p q : ℕ)
     (hT : (source C u p q).IsTree) (hd : 1 ≤ C.degree u)

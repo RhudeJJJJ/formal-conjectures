@@ -1,0 +1,34 @@
+{
+  "ci_runs": [
+    {
+      "source_commit": "37e6cb6ffde8d7d93e61e238fbcb9bc727ac9b25",
+      "source_tree": "cd09192283c17d434b8b58c58a7b2401b14aa56f",
+      "run_id": 39408725550,
+      "job_id": 118580933881,
+      "status": "completed",
+      "conclusion": "failure",
+      "log": "CI_01_failed.log",
+      "errors": "Decision-instance matching in star degree/energy and unreduced fused cardinality; source isomorphism and minimal parameters accepted."
+    },
+    {
+      "source_commit": "c1e021e27249ad035b0768b664d7b8cc6217f990",
+      "source_tree": "f207604af6ad4b8433722b2db0a796e486d64f78",
+      "run_id": 39409278423,
+      "job_id": 118582746348,
+      "status": "completed",
+      "conclusion": "failure",
+      "log": "CI_02_failed.log",
+      "errors": "Degree lemmas still fixed another adjacency decision instance; direct cardinality rewrite and structural/energy binder separation needed."
+    },
+    {
+      "source_commit": "4cc1385bdeaf46ba68c0c66307b99822606c1e5a",
+      "source_tree": "54be93ef70414a44b24d8118f4c399f986ef6a4a",
+      "run_id": 39409834388,
+      "job_id": 118584589830,
+      "status": "completed",
+      "conclusion": "success",
+      "log": "CI_03_success.log"
+    }
+  ],
+  "global_lean": "OPEN"
+}

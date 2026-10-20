@@ -1,16 +1,16 @@
 {
-  "source_commit": "7aa04f1bae1cf0674284edb1058655bc5feecf6e",
-  "run": 39514473696,
-  "job": 118943208211,
+  "source_commit": "d8d6a616b87213e514519e01e67a32d304a22767",
+  "run": 39516155963,
+  "job": 118948681270,
   "job_conclusion": "success",
-  "full_log_sha256": "7177c92d86c76bab3754decf2de86d3911777b219bb341f73476fac85d2d8b81",
+  "full_log_sha256": "7b7b73aaadf0a75ec5b93cf12c096ab7bc67fbf17ac933e518636c1597084281",
   "completed_endpoint_receipts": 1,
   "completed_endpoints": [
     [
       "Proofs.RadenkovicGutmanLowStripCombined"
     ]
   ],
-  "individual_modules": 73,
+  "individual_modules": 74,
   "source_checks": [
     {
       "module": "Proofs.RadenkovicGutmanCountGap",
@@ -301,16 +301,23 @@
       "source_matches_current": true
     },
     {
+      "module": "Proofs.RadenkovicGutmanLowStripParityBridge",
+      "source_matches_current": true
+    },
+    {
       "module": "Proofs.RadenkovicGutmanLowStripCombined",
       "source_matches_current": true
     }
   ],
   "all_standard_axioms": true,
   "all_fresh_in_this_job": true,
+  "fresh_modules_in_this_job": 74,
+  "prior_verified_job_exports": 0,
+  "prior_verification_origins": [],
   "universal_RG_Lean": "OPEN",
   "all_seven_complete_Input_families": "OPEN",
   "boundary": "Only a completed endpoint receipt proves that entire explicit closure. Individual completed modules do not prove later skipped or failing endpoints.",
-  "source_modules_at_commit": 222,
+  "source_modules_at_commit": 223,
   "predecessor_sources_byte_identical": 87,
   "baseline": "658a1eff4995058c71f0873f623ac48f50448136"
 }

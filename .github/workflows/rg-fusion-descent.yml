@@ -1,4 +1,4 @@
-name: RG directed tensor kernel slab probes
+name: RG complete original correlated escape certificate
 
 on:
   push:
@@ -13,7 +13,7 @@ permissions:
 jobs:
   check:
     runs-on: ubuntu-latest
-    timeout-minutes: 40
+    timeout-minutes: 90
     steps:
       - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
         with:
@@ -42,19 +42,100 @@ jobs:
                       visit(dep)
                   else:
                       external.add(dep)
-          visit('Proofs.RadenkovicGutmanEscapeDirectedSlice00')
-          visit('Proofs.RadenkovicGutmanEscapeDirectedSlice11')
-          visit('Proofs.RadenkovicGutmanEscapeDirectedSlice22')
+          visit('Proofs.RadenkovicGutmanHighDegreeEscape')
           subprocess.run(['lake', 'exe', 'cache', 'get', *sorted(external)], check=True)
           PY
-      - name: Check three exact directed slabs
+      - name: Check original polynomial clearing identities
+        run: |
+          python3 -B Proofs/RG_Lean_20261019/verify_extension.py \
+            --mathlib-project "$GITHUB_WORKSPACE" \
+            --endpoint Proofs.RadenkovicGutmanEscapeClearing \
+            --endpoint Proofs.RadenkovicGutmanNestedIntegerStep \
+            --workers 1 --module-timeout 900 --print-receipt
+      - name: Check all 23 directed coefficient polynomials
         run: |
           python3 -B Proofs/RG_Lean_20261019/verify_extension.py \
             --mathlib-project "$GITHUB_WORKSPACE" \
             --endpoint Proofs.RadenkovicGutmanEscapeDirectedSlice00 \
+            --endpoint Proofs.RadenkovicGutmanEscapeDirectedSlice01 \
+            --endpoint Proofs.RadenkovicGutmanEscapeDirectedSlice02 \
+            --endpoint Proofs.RadenkovicGutmanEscapeDirectedSlice03 \
+            --endpoint Proofs.RadenkovicGutmanEscapeDirectedSlice04 \
+            --endpoint Proofs.RadenkovicGutmanEscapeDirectedSlice05 \
+            --endpoint Proofs.RadenkovicGutmanEscapeDirectedSlice06 \
+            --endpoint Proofs.RadenkovicGutmanEscapeDirectedSlice07 \
+            --endpoint Proofs.RadenkovicGutmanEscapeDirectedSlice08 \
+            --endpoint Proofs.RadenkovicGutmanEscapeDirectedSlice09 \
+            --endpoint Proofs.RadenkovicGutmanEscapeDirectedSlice10 \
             --endpoint Proofs.RadenkovicGutmanEscapeDirectedSlice11 \
+            --endpoint Proofs.RadenkovicGutmanEscapeDirectedSlice12 \
+            --endpoint Proofs.RadenkovicGutmanEscapeDirectedSlice13 \
+            --endpoint Proofs.RadenkovicGutmanEscapeDirectedSlice14 \
+            --endpoint Proofs.RadenkovicGutmanEscapeDirectedSlice15 \
+            --endpoint Proofs.RadenkovicGutmanEscapeDirectedSlice16 \
+            --endpoint Proofs.RadenkovicGutmanEscapeDirectedSlice17 \
+            --endpoint Proofs.RadenkovicGutmanEscapeDirectedSlice18 \
+            --endpoint Proofs.RadenkovicGutmanEscapeDirectedSlice19 \
+            --endpoint Proofs.RadenkovicGutmanEscapeDirectedSlice20 \
+            --endpoint Proofs.RadenkovicGutmanEscapeDirectedSlice21 \
             --endpoint Proofs.RadenkovicGutmanEscapeDirectedSlice22 \
-            --workers 1 --module-timeout 300 --print-receipt
+            --workers 2 --module-timeout 600 --resume --print-receipt
+      - name: Check all 45 reserve coefficient polynomials
+        run: |
+          python3 -B Proofs/RG_Lean_20261019/verify_extension.py \
+            --mathlib-project "$GITHUB_WORKSPACE" \
+            --endpoint Proofs.RadenkovicGutmanEscapeReserveSlice00 \
+            --endpoint Proofs.RadenkovicGutmanEscapeReserveSlice01 \
+            --endpoint Proofs.RadenkovicGutmanEscapeReserveSlice02 \
+            --endpoint Proofs.RadenkovicGutmanEscapeReserveSlice03 \
+            --endpoint Proofs.RadenkovicGutmanEscapeReserveSlice04 \
+            --endpoint Proofs.RadenkovicGutmanEscapeReserveSlice05 \
+            --endpoint Proofs.RadenkovicGutmanEscapeReserveSlice06 \
+            --endpoint Proofs.RadenkovicGutmanEscapeReserveSlice07 \
+            --endpoint Proofs.RadenkovicGutmanEscapeReserveSlice08 \
+            --endpoint Proofs.RadenkovicGutmanEscapeReserveSlice09 \
+            --endpoint Proofs.RadenkovicGutmanEscapeReserveSlice10 \
+            --endpoint Proofs.RadenkovicGutmanEscapeReserveSlice11 \
+            --endpoint Proofs.RadenkovicGutmanEscapeReserveSlice12 \
+            --endpoint Proofs.RadenkovicGutmanEscapeReserveSlice13 \
+            --endpoint Proofs.RadenkovicGutmanEscapeReserveSlice14 \
+            --endpoint Proofs.RadenkovicGutmanEscapeReserveSlice15 \
+            --endpoint Proofs.RadenkovicGutmanEscapeReserveSlice16 \
+            --endpoint Proofs.RadenkovicGutmanEscapeReserveSlice17 \
+            --endpoint Proofs.RadenkovicGutmanEscapeReserveSlice18 \
+            --endpoint Proofs.RadenkovicGutmanEscapeReserveSlice19 \
+            --endpoint Proofs.RadenkovicGutmanEscapeReserveSlice20 \
+            --endpoint Proofs.RadenkovicGutmanEscapeReserveSlice21 \
+            --endpoint Proofs.RadenkovicGutmanEscapeReserveSlice22 \
+            --endpoint Proofs.RadenkovicGutmanEscapeReserveSlice23 \
+            --endpoint Proofs.RadenkovicGutmanEscapeReserveSlice24 \
+            --endpoint Proofs.RadenkovicGutmanEscapeReserveSlice25 \
+            --endpoint Proofs.RadenkovicGutmanEscapeReserveSlice26 \
+            --endpoint Proofs.RadenkovicGutmanEscapeReserveSlice27 \
+            --endpoint Proofs.RadenkovicGutmanEscapeReserveSlice28 \
+            --endpoint Proofs.RadenkovicGutmanEscapeReserveSlice29 \
+            --endpoint Proofs.RadenkovicGutmanEscapeReserveSlice30 \
+            --endpoint Proofs.RadenkovicGutmanEscapeReserveSlice31 \
+            --endpoint Proofs.RadenkovicGutmanEscapeReserveSlice32 \
+            --endpoint Proofs.RadenkovicGutmanEscapeReserveSlice33 \
+            --endpoint Proofs.RadenkovicGutmanEscapeReserveSlice34 \
+            --endpoint Proofs.RadenkovicGutmanEscapeReserveSlice35 \
+            --endpoint Proofs.RadenkovicGutmanEscapeReserveSlice36 \
+            --endpoint Proofs.RadenkovicGutmanEscapeReserveSlice37 \
+            --endpoint Proofs.RadenkovicGutmanEscapeReserveSlice38 \
+            --endpoint Proofs.RadenkovicGutmanEscapeReserveSlice39 \
+            --endpoint Proofs.RadenkovicGutmanEscapeReserveSlice40 \
+            --endpoint Proofs.RadenkovicGutmanEscapeReserveSlice41 \
+            --endpoint Proofs.RadenkovicGutmanEscapeReserveSlice42 \
+            --endpoint Proofs.RadenkovicGutmanEscapeReserveSlice43 \
+            --endpoint Proofs.RadenkovicGutmanEscapeReserveSlice44 \
+            --workers 2 --module-timeout 900 --resume --print-receipt
+      - name: Check complete tensors and actual graph specialization
+        run: |
+          python3 -B Proofs/RG_Lean_20261019/verify_extension.py \
+            --mathlib-project "$GITHUB_WORKSPACE" \
+            --endpoint Proofs.RadenkovicGutmanHighDegreeEscape \
+            --workers 1 --module-timeout 900 --resume --print-receipt
       - name: Retain completed records and diagnostic log tails
         if: always()
         run: |
@@ -63,8 +144,8 @@ jobs:
           root=pathlib.Path('Proofs/RG_Lean_20261019/build/extension')
           records=[json.loads(p.read_text()) for p in sorted(root.glob('Proofs.*.json'))]
           print('PARTIAL_RECORDS_JSON '+json.dumps({'scope':'INDIVIDUAL_COMPLETED_MODULES; not a complete extension receipt','modules':records},separators=(',',':')))
-          for p in sorted(root.glob('Proofs.*EscapeDirected*.log')):
-              t=p.read_text(); print('MODULE_LOG_TAIL '+p.name+' '+t[-12000:])
+          for p in sorted(root.glob('Proofs.*Escape*.log')):
+              t=p.read_text(); print('MODULE_LOG_TAIL '+p.name+' '+t[-16000:])
           PY
       - name: Retain local exports and kernel logs
         if: always()

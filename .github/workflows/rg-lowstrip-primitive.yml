@@ -1,0 +1,53 @@
+name: RG original low-strip primitive
+
+on:
+  push:
+    branches: [rg-lowstrip-primitive-20261020]
+    paths:
+      - 'Proofs/RG_Lean_20261019/**'
+      - '.github/workflows/rg-lowstrip-primitive.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          persist-credentials: false
+      - name: Install the project toolchain
+        run: |
+          set -o pipefail
+          curl -sSfL https://github.com/leanprover/elan/releases/download/v1.4.2/elan-x86_64-unknown-linux-gnu.tar.gz | tar xz
+          ./elan-init -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Materialize the exact dependency lock
+        run: python3 -B ci/rg_dependencies.py
+      - name: Fetch the required Mathlib cache
+        run: |
+          python3 - <<'PY'
+          import pathlib, re, subprocess
+          root = pathlib.Path('Proofs/RG_Lean_20261019')
+          seen, external = set(), set()
+          def visit(name):
+              if name in seen:
+                  return
+              seen.add(name)
+              source = (root / (name.replace('.', '/') + '.lean')).read_text()
+              for dep in re.findall(r'^\s*import\s+([\w.]+)', source, re.M):
+                  if dep.startswith('Proofs.'):
+                      visit(dep)
+                  else:
+                      external.add(dep)
+          visit('Proofs.RadenkovicGutmanLowStripPrimitive')
+          subprocess.run(['lake', 'exe', 'cache', 'get', *sorted(external)], check=True)
+          PY
+      - name: Check original low-strip primitive
+        run: |
+          python3 -B Proofs/RG_Lean_20261019/verify_extension.py \
+            --mathlib-project "$GITHUB_WORKSPACE" \
+            --endpoint Proofs.RadenkovicGutmanLowStripPrimitive \
+            --workers 1 --module-timeout 300 --print-receipt

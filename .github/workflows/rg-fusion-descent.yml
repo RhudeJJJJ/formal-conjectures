@@ -42,12 +42,12 @@ jobs:
                       visit(dep)
                   else:
                       external.add(dep)
-          visit('Proofs.RadenkovicGutmanTailHalfCertificate')
+          visit('Proofs.RadenkovicGutmanTailHalfGeometry')
           subprocess.run(['lake', 'exe', 'cache', 'get', *sorted(external)], check=True)
           PY
       - name: Check the source closure and axiom profiles
         run: |
           python3 -B Proofs/RG_Lean_20261019/verify_extension.py \
             --mathlib-project "$GITHUB_WORKSPACE" \
-            --endpoint Proofs.RadenkovicGutmanTailHalfCertificate \
+            --endpoint Proofs.RadenkovicGutmanTailHalfGeometry \
             --workers 1 --module-timeout 900 --print-receipt

@@ -2,6 +2,7 @@
 import Proofs.RadenkovicGutmanLowStripPrimitive
 
 /-! The original arsinh integral, including integrability at zero.
+Source target: rg_multiarm_large_degree_integral_certificate.py.
 The pointwise graph comparisons are separate outstanding obligations. -/
 namespace Gebendorfer.RadenkovicGutman.LowStripPrimitive
 open Real Set Filter MeasureTheory

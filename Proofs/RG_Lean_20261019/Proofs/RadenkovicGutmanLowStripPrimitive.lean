@@ -2,7 +2,9 @@
 import Proofs.RadenkovicGutmanScalarIntegral
 import Mathlib.Analysis.SpecialFunctions.Arsinh
 
-/-! Calculus for the original small-ordinate integral.  No graph-sign
+/-! Calculus for the original small-ordinate integral.
+Source target: rg_multiarm_large_degree_integral_certificate.py.
+No graph-sign
 certificate or complete degree family is asserted by this module. -/
 namespace Gebendorfer.RadenkovicGutman.LowStripPrimitive
 open Real Set Filter

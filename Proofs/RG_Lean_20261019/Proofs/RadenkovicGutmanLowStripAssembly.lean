@@ -3,6 +3,7 @@ import Proofs.RadenkovicGutmanLowStripIntegral
 import Proofs.RadenkovicGutmanTailIntegral
 
 /-! Exact integration and gap-free assembly of the original two low strips.
+Source target: rg_multiarm_large_degree_integral_certificate.py.
 Only their original pointwise graph comparisons remain as premises. -/
 namespace Gebendorfer.RadenkovicGutman.LowStripPrimitive
 open Real Set Filter MeasureTheory

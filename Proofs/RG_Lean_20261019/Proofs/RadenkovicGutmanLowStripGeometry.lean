@@ -74,7 +74,8 @@ theorem tangent_log_identity (c : ℝ) (hc : c ∈ Ioc (0 : ℝ) (1/2)) :
     ring
   rw [hr,Real.arsinh,hs,
     show (1-c^2)/(2*c)+(1+c^2)/(2*c)=1/c by field_simp; ring,
-    Real.log_one_div,Real.log_div hc.1.ne' (by norm_num : (2 : ℝ) ≠ 0)]
+    Real.log_div hc.1.ne' (by norm_num : (2 : ℝ) ≠ 0),
+    Real.log_div (by norm_num : (1 : ℝ) ≠ 0) hc.1.ne',Real.log_one]
   ring
 
 attribute [-instance] SimpleGraph.fintypeEdgeSetSup

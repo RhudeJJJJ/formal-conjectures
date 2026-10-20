@@ -2,6 +2,7 @@
 import Proofs.RadenkovicGutmanQuadraticDisk
 
 /-! Original convex Apollonius disk test, including the outside condition.
+Source: rg_multiarm_small_ordinate_lowstrip.py, build_general_conditions.
 No low-strip polynomial signs are assumed proved by this generic lemma. -/
 namespace Gebendorfer.RadenkovicGutman.QuadraticDisk
 noncomputable section

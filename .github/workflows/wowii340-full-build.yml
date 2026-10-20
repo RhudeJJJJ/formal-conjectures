@@ -1,0 +1,37 @@
+name: WOWII 340 submitted source full build
+on:
+  push:
+    branches: [wowii340-submission-check-20261020]
+permissions:
+  contents: read
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          persist-credentials: false
+          fetch-depth: 2
+      - name: Verify exact submitted sources
+        run: git diff --exit-code 9273b082d7d98404cd4c0edb42c21c1eccfb75a5 HEAD -- FormalConjecturesForMathlib.lean FormalConjecturesForMathlib/Combinatorics/SimpleGraph/DegreeMode.lean FormalConjectures/WrittenOnTheWallII/GraphConjecture340.lean
+      - name: Install pinned Lean
+        run: |
+          curl -sSfL https://github.com/leanprover/elan/releases/download/v1.4.2/elan-x86_64-unknown-linux-gnu.tar.gz | tar xz
+          ./elan-init -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> $GITHUB_PATH
+      - name: Get pinned Mathlib cache
+        run: lake exe cache get
+      - name: Restore checked imports
+        uses: actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9
+        with:
+          path: .lake/build
+          key: wow340-full-${{ hashFiles('lean-toolchain', 'lake-manifest.json') }}-${{ github.sha }}
+          restore-keys: |
+            wow340-imports-${{ hashFiles('lean-toolchain', 'lake-manifest.json') }}-
+      - name: Build complete libraries with warnings as errors
+        run: lake --wfail build FormalConjecturesForMathlib FormalConjecturesUtil
+      - name: Build complete repository with warnings as errors
+        run: lake --wfail build
+      - name: Test repository scripts
+        run: python -m unittest discover -s scripts -p 'test_*.py'

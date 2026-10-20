@@ -1,0 +1,54 @@
+{
+  "ci_runs": [
+    {
+      "run_id": 39283598761,
+      "job_id": 118163263444,
+      "source_commit": "c915df24f63b3cc97b03677560d6f3b7316f8eb0",
+      "status": "completed",
+      "conclusion": "failure",
+      "error": "Subgraph.Connected.mono selected instead of graph Connected.mono",
+      "log": "CI_01_failed.log"
+    },
+    {
+      "run_id": 39285888320,
+      "job_id": 118171626823,
+      "source_commit": "cd3f798264998a65567818a6d10cd19a39fc10ef",
+      "status": "completed",
+      "conclusion": "failure",
+      "error": "Dependent Fin cardinality was not rewritten by simpa only",
+      "log": "CI_02_failed.log"
+    },
+    {
+      "run_id": 39286747536,
+      "job_id": 118175385639,
+      "source_commit": "ad06b651590a02d406dd75f83c8ff7eec06e5636",
+      "status": "completed",
+      "conclusion": "success",
+      "log": "CI_03_success.log",
+      "modules": 21,
+      "mode": "FRESH_KERNEL_EXPORT"
+    }
+  ],
+  "windows_api_probe": {
+    "purpose": "Read the actual Mathlib API types; not a local proof replay",
+    "status": "ABORTED_TIMEOUT",
+    "exit_code": null,
+    "timeout_seconds": 60,
+    "seconds": 61.062
+  },
+  "windows_init_probe": {
+    "purpose": "Isolate local Lean startup without Mathlib; no RG proof checked",
+    "status": "ABORTED_TIMEOUT",
+    "exit_code": null,
+    "timeout_seconds": 30,
+    "seconds": 30.39
+  },
+  "wsl_environment_attempt": {
+    "status": "FAILED_BEFORE_SHELL",
+    "exit_code": 1,
+    "error": "Wsl/Service/E_UNEXPECTED",
+    "meaning": "The existing Ubuntu environment did not start the read-only discovery shell. No Lean command or proof check ran there."
+  },
+  "no_completed_new_kernel_check": false,
+  "metadata_observation": "Jobs API reported queued after completed execution during the Actions incident. Execution is established by actual compiler logs and final completed/success readback, not that stale queued snapshot."
+}

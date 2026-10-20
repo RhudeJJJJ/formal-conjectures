@@ -54,7 +54,8 @@ theorem ratio_lower_of_margins (d y P Q : ℝ) (hd : 0 ≤ d) (hy : 0 < y)
   have hr : 0 ≤ r d y := by unfold r; positivity
   have hn : dx^2+dy^2 ≤ (r d y)^2 := by
     have h : ‖ζ-g d y‖^2 ≤ (r d y)^2 := by nlinarith [norm_nonneg (ζ-g d y)]
-    simpa only [← Complex.normSq_eq_norm_sq,Complex.normSq_apply,Complex.sub_re,Complex.sub_im,dx,dy,pow_two] using h
+    rw [← Complex.normSq_eq_norm_sq] at h
+    simpa only [Complex.normSq_apply,Complex.sub_re,Complex.sub_im,dx,dy,pow_two] using h
   have hc : (X*dx+T*dy)^2 ≤ (X^2+T^2)*(dx^2+dy^2) := by
     nlinarith [sq_nonneg (X*dy-T*dx)]
   have hm := mul_le_mul_of_nonneg_left hn (show 0 ≤ X^2+T^2 by positivity)

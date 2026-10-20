@@ -29,7 +29,7 @@ theorem t_rescale (y a b : ℝ) (hy : 0 < y) :
 theorem c_rescale (y a b : ℝ) (hy : 0 < y) :
     cForm (1/y) a b = (1/y)^8*cCoeff y (y+a/y) (y+b/y) := by
   simp [cForm,aa,bb,ar,ai,nr,ni,br,bi,dr,di,cCoeff,A,B,N₀,D₀,z,
-    Complex.normSq_apply,Complex.star_def]
+    Complex.normSq_apply]
   field_simp [hy.ne']
   ring
 
@@ -121,3 +121,85 @@ theorem strict_fusion_of_lowstrip_escape {m : ℕ} (C : SimpleGraph (Fin m))
 attribute [instance] SimpleGraph.fintypeEdgeSetSup
 end
 end Gebendorfer.RadenkovicGutman.HighDegreeTail
+
+/-! Exact physical-parity boxes required by the original low-strip producer.
+The index is one less than physical length. These enclosures alone do not
+prove the remaining low-strip polynomial signs or its integral. -/
+namespace Gebendorfer.RadenkovicGutman.LowStripParity
+open PathEnclosure Set
+noncomputable section
+
+theorem step_lower (y a : ℝ) (hy : 0 < y) (ha : 0 ≤ a) (hb : a ≤ y) :
+    y/(1+y) ≤ y^2/(y^2+a) := by
+  apply (div_le_div_iff₀ (by positivity : 0 < 1+y) (by positivity : 0 < y^2+a)).mpr
+  nlinarith [mul_le_mul_of_nonneg_left hb hy.le]
+
+theorem step_upper (y b : ℝ) (hy : 0 < y) (hb : 0 ≤ b) (hl : y/(1+y) ≤ b) :
+    y^2/(y^2+b) ≤ y := by
+  have hh : y-y^2 ≤ y/(1+y) := by
+    apply (le_div_iff₀ (by positivity : 0 < 1+y)).mpr
+    nlinarith only [pow_nonneg hy.le 3]
+  have he : y ≤ y^2+b := by linarith only [hh,hl]
+  apply (div_le_iff₀ (by positivity : 0 < y^2+b)).mpr
+  nlinarith only [mul_le_mul_of_nonneg_left he hy.le]
+
+theorem parity_bounds (y : ℝ) (hy : 0 < y) (n : ℕ) :
+    arm y (2*n) ≤ y ∧ y/(1+y) ≤ arm y (2*n+1) := by
+  induction n with
+  | zero =>
+    constructor
+    · change (0 : ℝ) ≤ y
+      exact hy.le
+    · change y/(1+y) ≤ y^2/(y^2+0)
+      exact step_lower y 0 hy (by norm_num) hy.le
+  | succ n ih =>
+    have he : arm y (2*(n+1)) ≤ y := by
+      rw [show 2*(n+1)=(2*n+1)+1 by omega,arm]
+      exact step_upper y _ hy (arm_nonneg y _) ih.2
+    refine ⟨he,?_⟩
+    change y/(1+y) ≤ y^2/(y^2+arm y (2*(n+1)))
+    exact step_lower y _ hy (arm_nonneg y _) he
+
+/-- Every odd physical arm has the original low-strip form alpha=y*A. -/
+theorem odd_physical_parameter (y : ℝ) (hy : 0 < y) (n : ℕ) :
+    ∃ a ∈ Icc (0 : ℝ) 1, arm y (2*n)=y*a := by
+  refine ⟨arm y (2*n)/y,⟨div_nonneg (arm_nonneg y _) hy.le,
+    (div_le_one hy).mpr (parity_bounds y hy n).1⟩,?_⟩
+  field_simp [hy.ne']
+
+/-- Every even physical arm has the original form alpha=(y+A)/(1+y). -/
+theorem even_physical_parameter (y : ℝ) (hy : 0 < y) (n : ℕ) :
+    ∃ a ∈ Icc (0 : ℝ) 1, arm y (2*n+1)=(y+a)/(1+y) := by
+  let a := (1+y)*arm y (2*n+1)-y
+  have hlow := (div_le_iff₀ (by positivity : 0 < 1+y)).mp (parity_bounds y hy n).2
+  have hhigh := mul_le_mul_of_nonneg_left (arm_le_one y hy (2*n+1)) (by positivity : 0 ≤ 1+y)
+  refine ⟨a,⟨?_,?_⟩,?_⟩
+  · dsimp [a]
+    nlinarith only [hlow]
+  · dsimp [a]
+    nlinarith only [hhigh]
+  · apply (eq_div_iff (by positivity : 1+y ≠ 0)).mpr
+    dsimp [a]
+    ring
+
+theorem actual_parameter (y : ℝ) (hy : 0 < y) (p : ℕ) :
+    (p%2=0 ∧ ∃ a ∈ Icc (0 : ℝ) 1, arm y p=y*a) ∨
+    (p%2=1 ∧ ∃ a ∈ Icc (0 : ℝ) 1, arm y p=(y+a)/(1+y)) := by
+  by_cases h : p%2=0
+  · left
+    refine ⟨h,?_⟩
+    have he : 2*(p/2)=p := by omega
+    simpa only [he] using odd_physical_parameter y hy (p/2)
+  · right
+    refine ⟨by omega,?_⟩
+    have he : 2*(p/2)+1=p := by omega
+    simpa only [he] using even_physical_parameter y hy (p/2)
+
+#print axioms step_lower
+#print axioms step_upper
+#print axioms parity_bounds
+#print axioms odd_physical_parameter
+#print axioms even_physical_parameter
+#print axioms actual_parameter
+end
+end Gebendorfer.RadenkovicGutman.LowStripParity

@@ -49,5 +49,9 @@ jobs:
         run: |
           python3 -B Proofs/RG_Lean_20261019/verify_extension.py \
             --mathlib-project "$GITHUB_WORKSPACE" \
-            --endpoint Proofs.RadenkovicGutmanHighDegreeTail \
+            --endpoint Proofs.RadenkovicGutmanTailHalfGeometry \
             --workers 1 --module-timeout 900 --print-receipt
+          python3 -B Proofs/RG_Lean_20261019/verify_extension.py \
+            --mathlib-project "$GITHUB_WORKSPACE" \
+            --endpoint Proofs.RadenkovicGutmanHighDegreeTail \
+            --workers 1 --module-timeout 900 --resume --print-receipt

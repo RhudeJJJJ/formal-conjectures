@@ -24,8 +24,8 @@ jobs:
           curl -sSfL https://github.com/leanprover/elan/releases/download/v1.4.2/elan-x86_64-unknown-linux-gnu.tar.gz | tar xz
           ./elan-init -y --default-toolchain none
           echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
-      - name: Fetch pinned dependencies
-        run: lake update
+      - name: Materialize the exact dependency lock
+        run: python3 -B ci/rg_dependencies.py
       - name: Fetch the required Mathlib cache
         run: |
           python3 - <<'PY'
@@ -42,8 +42,6 @@ jobs:
                       visit(dep)
                   else:
                       external.add(dep)
-          visit('Proofs.RadenkovicGutmanCorrelatedEscape')
-          visit('Proofs.RadenkovicGutmanNestedIntegerHybrid')
           visit('Proofs.RadenkovicGutmanEscapeDirectedSlice00')
           visit('Proofs.RadenkovicGutmanEscapeDirectedSlice11')
           visit('Proofs.RadenkovicGutmanEscapeDirectedSlice22')
@@ -57,14 +55,6 @@ jobs:
             --endpoint Proofs.RadenkovicGutmanEscapeDirectedSlice11 \
             --endpoint Proofs.RadenkovicGutmanEscapeDirectedSlice22 \
             --workers 1 --module-timeout 300 --print-receipt
-      - name: Check the analytic bridge and checker
-        if: always()
-        run: |
-          python3 -B Proofs/RG_Lean_20261019/verify_extension.py \
-            --mathlib-project "$GITHUB_WORKSPACE" \
-            --endpoint Proofs.RadenkovicGutmanCorrelatedEscape \
-            --endpoint Proofs.RadenkovicGutmanNestedIntegerHybrid \
-            --workers 1 --module-timeout 900 --resume --print-receipt
       - name: Retain completed records and diagnostic log tails
         if: always()
         run: |

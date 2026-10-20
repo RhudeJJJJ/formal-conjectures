@@ -35,7 +35,8 @@ theorem starFour_lapMatrix : starFour.lapMatrix ℝ =
   simp only [SimpleGraph.lapMatrix, Matrix.sub_apply, SimpleGraph.degMatrix,
     Matrix.diagonal_apply, hd, SimpleGraph.adjMatrix, Matrix.of_apply]
   fin_cases i <;> fin_cases j <;>
-    norm_num [starFour, starGraph_adj, Fin.sum_univ_succ]
+    simp only [Fin.sum_univ_succ, Fin.sum_univ_zero] <;>
+    norm_num [starFour, starGraph_adj, Fin.ext_iff]
 
 set_option maxRecDepth 4096 in
 theorem starFour_charpoly : (starFour.lapMatrix ℝ).charpoly =
@@ -44,7 +45,8 @@ theorem starFour_charpoly : (starFour.lapMatrix ℝ).charpoly =
   intro x
   rw [Matrix.eval_charpoly, starFour_lapMatrix, Matrix.det_succ_row_zero]
   norm_num [Fin.sum_univ_succ, Matrix.det_fin_three, Matrix.scalar_apply,
-    Matrix.submatrix_apply, Matrix.diagonal_apply]
+    Matrix.submatrix_apply, Matrix.diagonal_apply, Fin.ext_iff, Fin.lt_def,
+    Fin.succAbove, Matrix.cons_val_two, Matrix.cons_val_three]
   ring
 
 theorem pathFour_charpoly : ((pathGraph 4).lapMatrix ℝ).charpoly =

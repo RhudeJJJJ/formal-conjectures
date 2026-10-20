@@ -15,14 +15,14 @@ set_option backward.isDefEq.respectTransparency false
 theorem x_rescale (y a b : ℝ) (hy : 0 < y) :
     xForm (1/y) a b = (1/y)^8*xCoeff y (y+a/y) (y+b/y) := by
   simp [xForm,aa,bb,ar,ai,nr,ni,br,bi,dr,di,xCoeff,A,B,N₀,D₀,z,
-    Complex.normSq_apply,Complex.star_def]
+    Complex.normSq_apply]
   field_simp [hy.ne']
   ring
 
 theorem t_rescale (y a b : ℝ) (hy : 0 < y) :
     tForm (1/y) a b = (1/y)^7*tCoeff y (y+a/y) (y+b/y) := by
   simp [tForm,aa,bb,ar,ai,nr,ni,br,bi,dr,di,tCoeff,A,B,N₀,D₀,z,
-    Complex.normSq_apply,Complex.star_def]
+    Complex.normSq_apply]
   field_simp [hy.ne']
   ring
 
@@ -39,7 +39,6 @@ theorem v_rescale (d y a b : ℝ) (hd : 0 < d) (hy : 0 < y) :
   rw [x_rescale y a b hy,t_rescale y a b hy,c_rescale y a b hy]
   unfold centerValue
   field_simp [hd.ne',hy.ne']
-  ring
 
 theorem k_rescale (d y a b : ℝ) (hd : 0 < d) (hy : 0 < y) :
     kForm (1/d) (1/y) a b = ((1/d)*(1/y)^8)^2*squareMargin d y (y+a/y) (y+b/y) := by

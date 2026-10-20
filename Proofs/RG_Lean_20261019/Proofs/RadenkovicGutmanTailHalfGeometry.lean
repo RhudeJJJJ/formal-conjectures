@@ -101,6 +101,27 @@ theorem infinity_ratio_lower (y P Q : ℝ) (hy : 0 < y) (hP : y ≤ P) (hQ : y �
   simp only [hb,ha]
   nlinarith only [hm]
 
+theorem infinity_ratio_ge_half (y P Q : ℝ) (hy : 0 < y) (hP : y ≤ P) (hQ : y ≤ Q) :
+    (1/2 : ℝ) ≤ Complex.normSq (A P Q)/Complex.normSq (B y P Q) := by
+  obtain ⟨ht,ht1,_⟩ := tail_parameter_properties y hy.le
+  have hs : (tailParameter y)^2 ≤ 1 := by simpa using pow_le_pow_left₀ ht.le ht1 2
+  have hh : (1/2 : ℝ) ≤ 1/(1+(tailParameter y)^2) := by
+    apply (div_le_div_iff₀ (by norm_num : (0 : ℝ) < 2) (by positivity : 0 < 1+(tailParameter y)^2)).mpr
+    nlinarith only [hs]
+  exact hh.trans (infinity_ratio_lower y P Q hy hP hQ)
+
+/-- The original tangent low-strip leading coefficient is strictly positive
+by the infinity envelope, for every actual arm interval and 0<=c<=1/2. -/
+theorem tangent_lead_pos (y P Q c : ℝ) (hy : 0 < y) (hP : y ≤ P) (hQ : y ≤ Q)
+    (hc : c ∈ Set.Icc (0 : ℝ) (1/2)) :
+    0 < Complex.normSq (A P Q)-(c^2/4)*Complex.normSq (B y P Q) := by
+  have hb := Complex.normSq_pos.mpr (B_ne_zero y P Q hy hP hQ)
+  have hh := (le_div_iff₀ hb).mp (infinity_ratio_ge_half y P Q hy hP hQ)
+  have hs : c^2/4 ≤ (1/16 : ℝ) := by
+    nlinarith only [pow_le_pow_left₀ hc.1 hc.2 2]
+  have hm := mul_le_mul_of_nonneg_right hs hb.le
+  nlinarith only [hh,hm,hb]
+
 theorem log_lower_of_margins (d y P Q : ℝ) (hd : 0 ≤ d) (hy : 0 < y)
     (hP : y ≤ P) (hQ : y ≤ Q)
     (hV : 0 ≤ centerValue d y P Q) (hK : 0 ≤ squareMargin d y P Q)
@@ -119,6 +140,8 @@ theorem log_lower_of_margins (d y P Q : ℝ) (hd : 0 ≤ d) (hy : 0 < y)
 #print axioms denominator_ne_zero
 #print axioms ratio_lower_of_margins
 #print axioms infinity_ratio_lower
+#print axioms infinity_ratio_ge_half
+#print axioms tangent_lead_pos
 #print axioms log_lower_of_margins
 end
 end Gebendorfer.RadenkovicGutman.TailHalfGeometry

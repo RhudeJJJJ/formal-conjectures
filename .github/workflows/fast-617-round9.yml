@@ -37,7 +37,8 @@ jobs:
         run: |
           ./scripts/mk_all_formathlib.sh
           rm -f FormalConjectures/All.lean
-          lake exe mk_all --lib FormalConjectures
+          lake exe mk_all --lib FormalConjectures || test "$?" -eq 1
+          test -s FormalConjectures.lean
           mv FormalConjectures.lean FormalConjectures/All.lean
           echo "set_option linter.style.moduleDocstring false" >> FormalConjectures/All.lean
       - name: Build utilities and run Lean tests

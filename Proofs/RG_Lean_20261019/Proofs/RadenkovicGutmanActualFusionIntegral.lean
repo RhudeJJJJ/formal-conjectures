@@ -16,7 +16,6 @@ open SimpleGraph CoreQuotient Set MeasureTheory
 open scoped Classical
 noncomputable section
 set_option backward.isDefEq.respectTransparency false
-set_option maxHeartbeats 2000000
 variable {V : Type*} [Fintype V] [DecidableEq V]
 
 attribute [-instance] SimpleGraph.fintypeEdgeSetSup
@@ -60,27 +59,20 @@ theorem count_gap (C : SimpleGraph V) (u : V) (p q : ℕ) (t : ℝ) :
     |aboveCount (laplacianSpectrum (source C u p q)) t -
       aboveCount (laplacianSpectrum (fused C u p q)) t| ≤ 1 := by
   have hm := RewireIso.base_missing_edges C u p q
-  have h := CountGap.rewire_count_gap (RewireIso.base C u p q)
+  exact MixedStopLoss.rewire_count_gap_iso (RewireIso.base C u p q)
     (.inl u) (.inr (.inl (Fin.last p))) (.inr (.inr 0))
-    (by simp) (by simp) hm.1 hm.2 t
-  change |aboveCount (laplacianSpectrum (source C u p q)) t -
-    aboveCount (laplacianSpectrum (RewireIso.rewired C u p q)) t| ≤ 1 at h
-  rw [MixedStopLoss.aboveCount_iso (RewireIso.fusedIso C u p q) t] at h
-  exact h
+    (by simp) (by simp) hm.1 hm.2
+    { toEquiv := Equiv.refl _, map_rel_iff' := by intro a b; rfl }
+    (RewireIso.fusedIso C u p q) t
 
 theorem delta_lipschitz (C : SimpleGraph V) (u : V) (p q : ℕ) (s t : ℝ) :
     |delta C u p q s - delta C u p q t| ≤ |s - t| := by
   have hm := RewireIso.base_missing_edges C u p q
-  have h := CountGap.rewire_stopLoss_transport (RewireIso.base C u p q)
+  exact MixedStopLoss.rewire_stopLoss_transport_iso (RewireIso.base C u p q)
     (.inl u) (.inr (.inl (Fin.last p))) (.inr (.inr 0))
-    (by simp) (by simp) hm.1 hm.2 s t
-  change |(stopLoss (laplacianSpectrum (source C u p q)) s -
-      stopLoss (laplacianSpectrum (RewireIso.rewired C u p q)) s) -
-    (stopLoss (laplacianSpectrum (source C u p q)) t -
-      stopLoss (laplacianSpectrum (RewireIso.rewired C u p q)) t)| ≤ |s - t| at h
-  rw [MixedStopLoss.stopLoss_iso (RewireIso.fusedIso C u p q) s,
-    MixedStopLoss.stopLoss_iso (RewireIso.fusedIso C u p q) t] at h
-  exact h
+    (by simp) (by simp) hm.1 hm.2
+    { toEquiv := Equiv.refl _, map_rel_iff' := by intro a b; rfl }
+    (RewireIso.fusedIso C u p q) s t
 
 theorem mean_transport (C : SimpleGraph V) (u : V) (p q : ℕ) :
     delta C u p q 2 - 2 / (Fintype.card (V ⊕ Fin (p + 1) ⊕ Fin (q + 1)) : ℝ) ≤

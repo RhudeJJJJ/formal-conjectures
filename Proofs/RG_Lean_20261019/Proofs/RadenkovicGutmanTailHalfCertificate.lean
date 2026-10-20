@@ -30,7 +30,14 @@ theorem v_nonneg (h u a b : ℝ) (hh : h ∈ Set.Icc (0 : ℝ) (1/46))
     (hu : u ∈ Set.Icc (0 : ℝ) 2) (ha : a ∈ Set.Icc (0 : ℝ) 1)
     (hb : b ∈ Set.Icc (0 : ℝ) 1) : 0 ≤ TailHalfPolynomial.vForm h u a b := by
   have hx : ∀ i : Fin 4, (![46*h,u/2,a,b] : Fin 4 → ℝ) i ∈ Set.Icc (0 : ℝ) 1 := by
-    intro i; fin_cases i <;> simp only [Matrix.cons_val_zero,Matrix.cons_val_one,Matrix.cons_val_two,Matrix.cons_val_three] <;> constructor <;> linarith [hh.1,hh.2,hu.1,hu.2,ha.1,ha.2,hb.1,hb.2]
+    intro i
+    fin_cases i
+    · change 46*h ∈ Set.Icc (0 : ℝ) 1
+      constructor <;> linarith [hh.1,hh.2]
+    · change u/2 ∈ Set.Icc (0 : ℝ) 1
+      constructor <;> linarith [hu.1,hu.2]
+    · exact ha
+    · exact hb
   have he := NestedInteger.accepts_sound 4 vDegrees vData v_accepted _ hx
   rw [v_data] at he
   have h1 : (46*h)/46=h := by ring
@@ -63,7 +70,14 @@ theorem k_nonneg (h u a b : ℝ) (hh : h ∈ Set.Icc (0 : ℝ) (1/46))
     (hu : u ∈ Set.Icc (0 : ℝ) 2) (ha : a ∈ Set.Icc (0 : ℝ) 1)
     (hb : b ∈ Set.Icc (0 : ℝ) 1) : 0 ≤ TailHalfPolynomial.kForm h u a b := by
   have hx : ∀ i : Fin 4, (![46*h,u/2,a,b] : Fin 4 → ℝ) i ∈ Set.Icc (0 : ℝ) 1 := by
-    intro i; fin_cases i <;> simp only [Matrix.cons_val_zero,Matrix.cons_val_one,Matrix.cons_val_two,Matrix.cons_val_three] <;> constructor <;> linarith [hh.1,hh.2,hu.1,hu.2,ha.1,ha.2,hb.1,hb.2]
+    intro i
+    fin_cases i
+    · change 46*h ∈ Set.Icc (0 : ℝ) 1
+      constructor <;> linarith [hh.1,hh.2]
+    · change u/2 ∈ Set.Icc (0 : ℝ) 1
+      constructor <;> linarith [hu.1,hu.2]
+    · exact ha
+    · exact hb
   have he := NestedInteger.accepts_sound 4 kDegrees kData k_accepted _ hx
   rw [k_data] at he
   have h1 : (46*h)/46=h := by ring

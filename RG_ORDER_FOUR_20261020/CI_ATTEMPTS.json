@@ -1,0 +1,59 @@
+{
+  "ci_runs": [
+    {
+      "run_id": 39403552312,
+      "job_id": 118563903801,
+      "source_commit": "e82bfcb2f2d02ef7323183f92ead2837e9231f91",
+      "status": "completed",
+      "conclusion": "failure",
+      "log": "CI_01_failed.log",
+      "errors": "Matrix entries, cofactor normalization, polynomial C numerals, decision-instance matching and tactic linter."
+    },
+    {
+      "run_id": 39404433218,
+      "job_id": 118566799886,
+      "source_commit": "7d99298d4f8d17870b1f26c5aace940df7e6ea65",
+      "status": "completed",
+      "conclusion": "failure",
+      "log": "CI_02_failed.log",
+      "errors": "Only star matrix and cofactor Fin-index normalization remained; actual path energy and both root multiset proofs accepted."
+    },
+    {
+      "run_id": 39405376005,
+      "job_id": 118569902080,
+      "source_commit": "857fa4ed610c8d2d3c68768e95ff0e8c12a22877",
+      "status": "completed",
+      "conclusion": "failure",
+      "log": "CI_03_failed.log",
+      "errors": "Star matrix accepted; recursive cofactor simplification exceeded depth."
+    },
+    {
+      "run_id": 39406144553,
+      "job_id": 118572433804,
+      "source_commit": "483c529c6a1c5e80245d1afe6e2923add398299c",
+      "status": "completed",
+      "conclusion": "failure",
+      "log": "CI_04_failed.log",
+      "errors": "Certified explicit star determinant normalized correctly; right polynomial evaluation still needed simplification."
+    },
+    {
+      "run_id": 39406676843,
+      "job_id": 118574176899,
+      "source_commit": "1a5228f8b364e91f04199395536cc71c6b35a912",
+      "status": "completed",
+      "conclusion": "failure",
+      "log": "CI_05_failed.log",
+      "errors": "Full actual path/star energy module accepted. Star relabeling needed explicit negation unfolding; negation tactic name deprecated."
+    },
+    {
+      "run_id": 39407148136,
+      "job_id": 118575734511,
+      "source_commit": "04922f451294d96bb9a2c00d60ee0e47e487e4d7",
+      "status": "completed",
+      "conclusion": "success",
+      "log": "CI_06_success.log"
+    }
+  ],
+  "global_lean_proof": "OPEN",
+  "new_endpoint": "24_FRESH_KERNEL_EXPORTS_STANDARD_AXIOMS_ONLY"
+}

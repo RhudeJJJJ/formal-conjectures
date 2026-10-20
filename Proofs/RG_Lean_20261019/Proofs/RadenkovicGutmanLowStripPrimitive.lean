@@ -19,7 +19,7 @@ theorem radical_reciprocal (s : ℝ) (hs : 0 < s) :
   apply (Real.sqrt_eq_iff_eq_sq (by positivity) (by positivity)).2
   simp only [div_pow, Real.sq_sqrt (show (0 : ℝ) ≤ s^2+4 by positivity)]
   field_simp
-  <;> ring
+  ring
 
 theorem radical_half (s : ℝ) :
     sqrt (1+(s/2)^2) = sqrt (s^2+4)/2 := by
@@ -50,7 +50,7 @@ theorem primitive_derivative (s : ℝ) (hs : 0 < s) :
     dsimp only [id]
     rw [radical_reciprocal s hs, radical_half s]
     field_simp [hs.ne', show sqrt (s^2+4) ≠ 0 by positivity]
-    <;> ring
+    ring
   apply hd.congr_of_eventuallyEq
   filter_upwards [Ioi_mem_nhds hs] with t ht
   exact primitive_eq_arsinh t ht

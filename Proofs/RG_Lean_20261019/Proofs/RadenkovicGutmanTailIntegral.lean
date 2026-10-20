@@ -33,7 +33,7 @@ theorem parameter_derivative (t : ℝ) (ht : 0 < t) :
     (show 1+t^2 ≠ 0 by positivity)
   have h := (((((hasDerivAt_id t).sub hi).mul hl).sub
     ((hasDerivAt_id t).const_mul 2)).add ((hasDerivAt_arctan t).const_mul 4)).neg.div_const 2
-  simp only [id_eq] at h
+  simp only [id_eq, Pi.pow_apply, Pi.sub_apply, Pi.div_apply] at h
   convert h using 1 <;> first
     | rfl
     | (field_simp [ht.ne', show 1+t^2 ≠ 0 by positivity]; ring)
@@ -41,9 +41,10 @@ theorem parameter_derivative (t : ℝ) (ht : 0 < t) :
 theorem tail_parameter_derivative (y : ℝ) :
     HasDerivAt tailParameter (-tailParameter y / sqrt (y^2+4)) y := by
   have hs : 0 < sqrt (y^2+4) := Real.sqrt_pos.mpr (by positivity)
-  have h := (((((hasDerivAt_id y).pow 2).add_const 4).sqrt hs.ne').sub
+  have h := (((((hasDerivAt_id y).pow 2).add_const 4).sqrt
+    (by change y^2+4 ≠ 0; positivity)).sub
     (hasDerivAt_id y)).div_const 2
-  simp only [id_eq] at h
+  simp only [id_eq, Pi.pow_apply] at h
   convert h using 1 <;> first
     | rfl
     | (dsimp [tailParameter]; field_simp [hs.ne']; ring)
@@ -81,7 +82,7 @@ theorem primitive_nonpos (y : ℝ) (hy : 0 ≤ y) : tailPrimitive y ≤ 0 := by
     linarith
   have hm := mul_le_mul_of_nonneg_left hl hc
   have ha := atan_lower t ht.le
-  have he : (1/t-t)*t^2 = t-t^3 := by field_simp [ht.ne']; ring
+  have he : (1/t-t)*t^2 = t-t^3 := by field_simp [ht.ne']
   rw [he] at hm
   have h3 : t^3 ≤ t := by
     have hsq : t^2 ≤ 1 := by nlinarith
@@ -116,14 +117,14 @@ theorem positive_tail_integrable (Y : ℝ) (hY : 0 < Y) :
     IntegrableOn positiveTail (Ioi Y) :=
   integrableOn_Ioi_deriv_of_nonneg
     (primitive_derivative Y hY.le).continuousAt.continuousWithinAt
-    (fun y hy => primitive_derivative y (by linarith : 0 ≤ y))
+    (fun y hy => primitive_derivative y (lt_trans hY hy).le)
     (fun y _ => positive_tail_nonneg y) primitive_tendsto
 
 theorem positive_tail_integral (Y : ℝ) (hY : 0 < Y) :
     (∫ y : ℝ in Ioi Y, positiveTail y) = -tailPrimitive Y := by
   have h := integral_Ioi_of_hasDerivAt_of_nonneg
     (primitive_derivative Y hY.le).continuousAt.continuousWithinAt
-    (fun y hy => primitive_derivative y (by linarith : 0 ≤ y))
+    (fun y hy => primitive_derivative y (lt_trans hY hy).le)
     (fun y _ => positive_tail_nonneg y) primitive_tendsto
   simpa using h
 
@@ -140,14 +141,18 @@ theorem inv_square_integrable_integral (k Y : ℝ) (hk : 0 ≤ k) (hY : 0 < Y) :
       (∫ y : ℝ in Ioi Y, k/y^2) = k/Y := by
   have hd (y : ℝ) (hy : 0 < y) :
       HasDerivAt (fun z : ℝ => -k/z) (k/y^2) y := by
-    convert (hasDerivAt_const y (-k)).div (hasDerivAt_id y) hy.ne' using 1 <;> ring
+    have h := (hasDerivAt_const y (-k)).div (hasDerivAt_id y) hy.ne'
+    simp only [id_eq] at h
+    convert h using 1 <;> first
+      | rfl
+      | ring
   have ht : Tendsto (fun y : ℝ => -k/y) atTop (𝓝 0) :=
     tendsto_const_nhds.div_atTop tendsto_id
   refine ⟨integrableOn_Ioi_deriv_of_nonneg (hd Y hY).continuousAt.continuousWithinAt
-    (fun y hy => hd y (by linarith)) (fun y _ => by positivity) ht, ?_⟩
+    (fun y hy => hd y (lt_trans hY hy)) (fun y _ => by positivity) ht, ?_⟩
   have h := integral_Ioi_of_hasDerivAt_of_nonneg (hd Y hY).continuousAt.continuousWithinAt
-    (fun y hy => hd y (by linarith)) (fun y _ => by positivity) ht
-  simpa using h
+    (fun y hy => hd y (lt_trans hY hy)) (fun y _ => by positivity) ht
+  simpa only [zero_sub,neg_div,neg_neg] using h
 
 theorem positive_tail_upper (y : ℝ) (hy : 0 < y) : positiveTail y ≤ (1/2 : ℝ)/y^2 := by
   have ht := (tail_parameter_properties y hy.le).1
@@ -158,17 +163,23 @@ theorem positive_tail_upper (y : ℝ) (hy : 0 < y) : positiveTail y ≤ (1/2 : �
   unfold positiveTail
   have he : (1/y)^2 = 1/y^2 := by ring
   rw [he] at hs
-  linarith
+  have hb' : log (1+(tailParameter y)^2) ≤ 1/y^2 := by linarith only [hl,hs]
+  calc
+    _ ≤ (1/y^2)/2 := div_le_div_of_nonneg_right hb' (by norm_num)
+    _ = _ := by ring
 
 theorem tail_cost (Y : ℝ) (hY : 0 < Y) : -(1/(2*Y)) ≤ tailPrimitive Y := by
   have h := integral_mono_ae (positive_tail_integrable Y hY)
     (inv_square_integrable_integral (1/2) Y (by norm_num) hY).1
     (by
       filter_upwards [ae_restrict_mem measurableSet_Ioi] with y hy
-      exact positive_tail_upper y (by linarith))
+      exact positive_tail_upper y (lt_trans hY hy))
   rw [positive_tail_integral Y hY,
     (inv_square_integrable_integral (1/2) Y (by norm_num) hY).2] at h
-  convert neg_le_neg h using 1 <;> ring
+  have he : -((1/2 : ℝ)/Y) = -(1/(2*Y)) := by ring
+  have hh := neg_le_neg h
+  rw [neg_neg,he] at hh
+  exact hh
 
 theorem positive_tail_lower (y : ℝ) (hy : 4 ≤ y) :
     (2/5 : ℝ)/y^2 ≤ positiveTail y := by
@@ -188,7 +199,10 @@ theorem positive_tail_lower (y : ℝ) (hy : 4 ≤ y) :
     field_simp [show 1+t^2 ≠ 0 by positivity]; ring
   rw [hr] at hl
   change (2/5 : ℝ)/y^2 ≤ log (1+t^2)/2
-  linarith only [hf,hl]
+  calc
+    _ = ((4/5 : ℝ)/y^2)/2 := by ring
+    _ ≤ (t^2/(1+t^2))/2 := div_le_div_of_nonneg_right hf (by norm_num)
+    _ ≤ _ := div_le_div_of_nonneg_right hl (by norm_num)
 
 theorem tail_gain (Y : ℝ) (hY : 4 ≤ Y) : (2/(5*Y) : ℝ) ≤ -tailPrimitive Y := by
   have hY0 : 0 < Y := by linarith
@@ -197,18 +211,21 @@ theorem tail_gain (Y : ℝ) (hY : 4 ≤ Y) : (2/(5*Y) : ℝ) ≤ -tailPrimitive 
     (positive_tail_integrable Y hY0)
     (by
       filter_upwards [ae_restrict_mem measurableSet_Ioi] with y hy
-      exact positive_tail_lower y (by linarith))
+      exact positive_tail_lower y (le_trans hY hy.le))
   rw [positive_tail_integral Y hY0,
     (inv_square_integrable_integral (2/5) Y (by norm_num) hY0).2] at h
-  convert h using 1 <;> ring
+  have he : (2/5 : ℝ)/Y = 2/(5*Y) := by ring
+  simpa only [he] using h
 
 theorem escape_start_gain (d : ℝ) (hd : 46 ≤ d) :
     (2/(5*(653/2000 : ℝ)))/d ≤ -tailPrimitive ((653/2000)*d) := by
   have h := tail_gain ((653/2000)*d) (by linarith)
-  convert h using 1 <;> ring
+  convert h using 1
+  ring
 
 theorem tail_cost_1024 : -(1/2048 : ℝ) ≤ tailPrimitive 1024 := by
-  convert tail_cost 1024 (by norm_num) using 1 <;> norm_num
+  convert tail_cost 1024 (by norm_num) using 1
+  norm_num
 
 def escapeDensity (d y : ℝ) : ℝ := (21/25 : ℝ)/(d*(1+(y/d)^2))
 
@@ -221,7 +238,7 @@ theorem escape_integral (d : ℝ) (hd : 0 < d) :
     have h := ((hasDerivAt_id y).div_const d).arctan.const_mul (21/25 : ℝ)
     convert h using 1 <;> first
       | rfl
-      | (dsimp [escapeDensity]; field_simp [hd.ne',show 1+(y/d)^2 ≠ 0 by positivity]; ring)
+      | (dsimp [escapeDensity]; field_simp [hd.ne',show 1+(y/d)^2 ≠ 0 by positivity])
   have hc : Continuous (fun y : ℝ => d*(1+(y/d)^2)) := by fun_prop
   have hg : Continuous (escapeDensity d) :=
     continuous_const.div hc (fun y => by positivity)
@@ -308,7 +325,7 @@ theorem strict_fusion_of_four_regions {m : ℕ} (C : SimpleGraph (Fin m))
   have h := four_region_lower _ (C.degree u) (by exact_mod_cast hd)
     (ActualFusionIntegral.logarithm_integrable C u p q 2) hlow hmiddle hescape htail
   change reserveAt (C.degree u) / Real.pi ≤ (1/Real.pi)*_
-  simpa only [div_eq_mul_inv,mul_comm] using
+  simpa only [div_eq_mul_inv,mul_comm,one_mul,mul_one] using
     mul_le_mul_of_nonneg_left h (show 0 ≤ 1/Real.pi by positivity)
 
 #print axioms parameter_derivative

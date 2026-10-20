@@ -1,6 +1,7 @@
 /- Copyright 2026 Jonas J. Gebendorfer. Apache 2.0. -/
 import Proofs.RadenkovicGutmanSmallOrders
 import Mathlib.Combinatorics.SimpleGraph.Star
+import Mathlib.Tactic.NormDet
 
 /-!
 # Exact Laplacian energies at the first nonpath order
@@ -43,10 +44,15 @@ theorem starFour_charpoly : (starFour.lapMatrix ℝ).charpoly =
     X * (X - 1) ^ 2 * (X - 4) := by
   apply Polynomial.funext
   intro x
-  rw [Matrix.eval_charpoly, starFour_lapMatrix, Matrix.det_succ_row_zero]
-  norm_num [Fin.sum_univ_succ, Matrix.det_fin_three, Matrix.scalar_apply,
-    Matrix.submatrix_apply, Matrix.diagonal_apply, Fin.ext_iff, Fin.lt_def,
-    Fin.succAbove, Matrix.cons_val_two, Matrix.cons_val_three]
+  rw [Matrix.eval_charpoly, starFour_lapMatrix]
+  have hm : Matrix.scalar (Fin 4) x -
+      !![3, -1, -1, -1; -1, 1, 0, 0; -1, 0, 1, 0; -1, 0, 0, 1] =
+      !![x - 3, 1, 1, 1; 1, x - 1, 0, 0; 1, 0, x - 1, 0; 1, 0, 0, x - 1] := by
+    ext i j
+    fin_cases i <;> fin_cases j <;>
+      norm_num [Matrix.scalar_apply, Matrix.diagonal_apply, Fin.ext_iff]
+  rw [hm]
+  eval_det
   ring
 
 theorem pathFour_charpoly : ((pathGraph 4).lapMatrix ℝ).charpoly =

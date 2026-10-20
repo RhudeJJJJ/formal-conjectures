@@ -11,7 +11,7 @@ The graph-to-tail polynomial inequalities remain separate obligations.
 -/
 namespace Gebendorfer.RadenkovicGutman.TailIntegral
 open Real Set Filter MeasureTheory LargeDegreeReserve
-open scoped Topology
+open scoped Topology Classical
 noncomputable section
 
 def positiveTail (y : ℝ) : ℝ := log (1 + (tailParameter y)^2)/2
@@ -231,6 +231,86 @@ theorem escape_integral (d : ℝ) (hd : 0 < d) :
   have hlo : ((653/2000 : ℝ)*d)/d=653/2000 := by field_simp [hd.ne']
   simpa only [F,h10,hlo,mul_sub] using h
 
+theorem phi_interval_integral (a b : ℝ) (ha : 0 < a) (hab : a ≤ b) :
+    (∫ y : ℝ in a..b, phi y) = tailPrimitive a - tailPrimitive b := by
+  have h := intervalIntegral.integral_Ioi_sub_Ioi (phi_integrable a ha) hab
+  rw [phi_integral a ha, phi_integral b (lt_of_lt_of_le ha hab)] at h
+  exact h.symm
+
+theorem interval_integrable_of_Ioi {f : ℝ → ℝ} (hf : IntegrableOn f (Ioi 0))
+    {a b : ℝ} (ha : 0 ≤ a) (hab : a ≤ b) : IntervalIntegrable f volume a b := by
+  apply (intervalIntegrable_iff_integrableOn_Ioc_of_le hab).mpr
+  exact hf.mono_set (by intro y hy; exact lt_of_le_of_lt ha hy.1)
+
+theorem escape_continuous (d : ℝ) (hd : 0 < d) : Continuous (escapeDensity d) := by
+  have hc : Continuous (fun y : ℝ => d*(1+(y/d)^2)) := by fun_prop
+  exact continuous_const.div hc (fun y => by positivity)
+
+/-- Assemble the four original, gap-free regions. The graph bounds are inputs;
+all scalar integration and the original tail gain are discharged here. -/
+theorem four_region_lower (f : ℝ → ℝ) (d : ℝ) (hd : 46 ≤ d)
+    (hf : IntegrableOn f (Ioi 0))
+    (hlow : (-(8/3 : ℝ)*log 2-2*log 3)/d-log 2/2 ≤ ∫ y : ℝ in (0 : ℝ)..(1/2), f y)
+    (hmiddle : ∀ y ∈ Icc (1/2 : ℝ) ((653/2000)*d), phi y ≤ f y)
+    (hescape : ∀ y ∈ Icc ((653/2000 : ℝ)*d) (10*d), escapeDensity d y ≤ f y)
+    (htail : ∀ y ∈ Ioi (10*d), phi y ≤ f y) :
+    reserveAt d ≤ ∫ y : ℝ in Ioi 0, f y := by
+  have hd0 : 0 < d := by linarith
+  have ha : (0 : ℝ) ≤ 1/2 := by norm_num
+  have hab : (1/2 : ℝ) ≤ (653/2000)*d := by linarith
+  have hbc : (653/2000 : ℝ)*d ≤ 10*d := by linarith
+  have hb0 : 0 ≤ (653/2000 : ℝ)*d := by positivity
+  have hc0 : 0 < 10*d := by positivity
+  have hfa := hf.mono_set (Ioi_subset_Ioi ha)
+  have hfb := hf.mono_set (Ioi_subset_Ioi hb0)
+  have hfc := hf.mono_set (Ioi_subset_Ioi hc0.le)
+  have hpab : IntervalIntegrable phi volume (1/2) ((653/2000)*d) := by
+    apply (intervalIntegrable_iff_integrableOn_Ioc_of_le hab).mpr
+    exact (phi_integrable (1/2) (by norm_num)).mono_set Ioc_subset_Ioi_self
+  have hm := intervalIntegral.integral_mono_on hab hpab
+    (interval_integrable_of_Ioi hf ha hab) hmiddle
+  rw [phi_interval_integral (1/2) _ (by norm_num) hab] at hm
+  have he := intervalIntegral.integral_mono_on hbc
+    ((escape_continuous d hd0).intervalIntegrable _ _)
+    (interval_integrable_of_Ioi hf hb0 hbc) hescape
+  rw [escape_integral d hd0] at he
+  have ht := integral_mono_ae (phi_integrable (10*d) hc0) hfc (by
+    filter_upwards [ae_restrict_mem measurableSet_Ioi] with y hy
+    exact htail y hy)
+  rw [phi_integral (10*d) hc0] at ht
+  have h1 := intervalIntegral.integral_Ioi_sub_Ioi hf ha
+  have h2 := intervalIntegral.integral_Ioi_sub_Ioi hfa hab
+  have h3 := intervalIntegral.integral_Ioi_sub_Ioi hfb hbc
+  have hg := escape_start_gain d hd
+  unfold reserveAt coefficient
+  rw [add_div]
+  linarith only [hlow,hm,he,ht,h1,h2,h3,hg]
+
+/-- Conditional actual-graph endpoint. The remaining premises are the original
+low-strip bound and three pointwise graph-to-envelope comparisons. -/
+theorem strict_fusion_of_four_regions {m : ℕ} (C : SimpleGraph (Fin m))
+    (u : Fin m) (p q : ℕ) (hT : (CoreQuotient.source C u p q).IsTree)
+    (hd : 46 ≤ C.degree u)
+    (hlow : (-(8/3 : ℝ)*log 2-2*log 3)/(C.degree u : ℝ)-log 2/2 ≤
+      ∫ y : ℝ in (0 : ℝ)..(1/2),
+        MixedGraphIntegral.logarithm (CoreQuotient.source C u p q) (CoreQuotient.fused C u p q) 2 y)
+    (hmiddle : ∀ y ∈ Icc (1/2 : ℝ) ((653/2000)*(C.degree u : ℝ)), phi y ≤
+      MixedGraphIntegral.logarithm (CoreQuotient.source C u p q) (CoreQuotient.fused C u p q) 2 y)
+    (hescape : ∀ y ∈ Icc ((653/2000 : ℝ)*(C.degree u : ℝ)) (10*(C.degree u : ℝ)),
+      escapeDensity (C.degree u) y ≤
+        MixedGraphIntegral.logarithm (CoreQuotient.source C u p q) (CoreQuotient.fused C u p q) 2 y)
+    (htail : ∀ y ∈ Ioi (10*(C.degree u : ℝ)), phi y ≤
+      MixedGraphIntegral.logarithm (CoreQuotient.source C u p q) (CoreQuotient.fused C u p q) 2 y) :
+    laplacianEnergy (CoreQuotient.fused C u p q) <
+      laplacianEnergy (CoreQuotient.source C u p q) := by
+  classical
+  apply strict_fusion_of_original_integral_bound C u p q hT hd
+  have h := four_region_lower _ (C.degree u) (by exact_mod_cast hd)
+    (ActualFusionIntegral.logarithm_integrable C u p q 2) hlow hmiddle hescape htail
+  change reserveAt (C.degree u) / Real.pi ≤ (1/Real.pi)*_
+  simpa only [div_eq_mul_inv,mul_comm] using
+    mul_le_mul_of_nonneg_left h (show 0 ≤ 1/Real.pi by positivity)
+
 #print axioms parameter_derivative
 #print axioms tail_parameter_derivative
 #print axioms primitive_derivative
@@ -249,5 +329,10 @@ theorem escape_integral (d : ℝ) (hd : 0 < d) :
 #print axioms escape_start_gain
 #print axioms tail_cost_1024
 #print axioms escape_integral
+#print axioms phi_interval_integral
+#print axioms interval_integrable_of_Ioi
+#print axioms escape_continuous
+#print axioms four_region_lower
+#print axioms strict_fusion_of_four_regions
 end
 end Gebendorfer.RadenkovicGutman.TailIntegral

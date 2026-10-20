@@ -148,7 +148,9 @@ theorem half_angle :
     nlinarith [sq_nonneg t]
   have he : (t+(1-t)/(1+t))/(1-t*((1-t)/(1+t))) = 1 := by
     field_simp [ne_of_gt hd, ne_of_gt (sub_pos.mpr hp), show 1+t^2 ≠ 0 by positivity]
-    <;> ring_nf <;> field_simp [show 1+t^2 ≠ 0 by positivity] <;> ring
+    ring_nf
+    field_simp [show 1+t^2 ≠ 0 by positivity]
+    ring
   have h := Real.arctan_add hp
   rw [he, Real.arctan_one] at h
   exact h

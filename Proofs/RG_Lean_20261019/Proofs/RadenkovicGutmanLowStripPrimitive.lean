@@ -17,14 +17,14 @@ def primitive (s : ℝ) : ℝ :=
 theorem radical_reciprocal (s : ℝ) (hs : 0 < s) :
     sqrt (1+(2/s)^2) = sqrt (s^2+4)/s := by
   apply (Real.sqrt_eq_iff_eq_sq (by positivity) (by positivity)).2
-  rw [div_pow, Real.sq_sqrt (by positivity)]
+  simp only [div_pow, Real.sq_sqrt (show (0 : ℝ) ≤ s^2+4 by positivity)]
   field_simp
   <;> ring
 
 theorem radical_half (s : ℝ) :
     sqrt (1+(s/2)^2) = sqrt (s^2+4)/2 := by
   apply (Real.sqrt_eq_iff_eq_sq (by positivity) (by positivity)).2
-  rw [div_pow, Real.sq_sqrt (by positivity)]
+  simp only [div_pow, Real.sq_sqrt (show (0 : ℝ) ≤ s^2+4 by positivity)]
   ring
 
 theorem arsinh_reciprocal (s : ℝ) (hs : 0 < s) :
@@ -47,11 +47,12 @@ theorem primitive_derivative (s : ℝ) (hs : 0 < s) :
       (arsinh (2/s)) s := by
     dsimp at h1 h2
     convert! ((hasDerivAt_id s).mul h1).add (h2.const_mul 2) using 1
+    dsimp only [id]
     rw [radical_reciprocal s hs, radical_half s]
     field_simp [hs.ne', show sqrt (s^2+4) ≠ 0 by positivity]
     <;> ring
   apply hd.congr_of_eventuallyEq
-  filter_upwards [eventually_lt_nhds hs] with t ht
+  filter_upwards [Ioi_mem_nhds hs] with t ht
   exact primitive_eq_arsinh t ht
 
 theorem primitive_zero : primitive 0 = 0 := by simp [primitive]
@@ -67,8 +68,9 @@ theorem primitive_continuousAt_zero : ContinuousAt primitive 0 := by
   · fun_prop
 
 theorem primitive_tendsto_zero : Tendsto primitive (𝓝[>] (0 : ℝ)) (𝓝 0) := by
-  rw [← primitive_zero]
-  exact primitive_continuousAt_zero.tendsto.mono_left nhdsWithin_le_nhds
+  simpa only [primitive_zero] using
+    (primitive_continuousAt_zero.tendsto.mono_left
+      (show 𝓝[>] (0 : ℝ) ≤ 𝓝 (0 : ℝ) from nhdsWithin_le_nhds))
 
 theorem arsinh_three_quarters : arsinh (3/4 : ℝ) = log 2 := by
   have hs : sqrt (1+(3/4 : ℝ)^2) = 5/4 := by

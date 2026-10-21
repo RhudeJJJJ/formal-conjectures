@@ -30,16 +30,16 @@ private theorem a_family_eq (m n k : ℕ) (hk : Admissible m n k)
 /-- The sequence A381054 itself is the member with gap one. -/
 noncomputable def a (n : ℕ) : ℕ := aFamily 1 n
 
-theorem a_1 : a 1 = 5 := a_family_eq 1 1 5 (by decide) (by decide)
-theorem a_2 : a 2 = 4 := a_family_eq 1 2 4 (by decide) (by decide)
-theorem a_3 : a 3 = 4 := a_family_eq 1 3 4 (by decide) (by decide)
-theorem a_4 : a 4 = 2 := a_family_eq 1 4 2 (by decide) (by decide)
-theorem a_5 : a 5 = 1 := a_family_eq 1 5 1 (by decide) (by decide)
+theorem a_1 : a 1 = 5 := a_family_eq 1 1 5 (by decide +kernel) (by decide +kernel)
+theorem a_2 : a 2 = 4 := a_family_eq 1 2 4 (by decide +kernel) (by decide +kernel)
+theorem a_3 : a 3 = 4 := a_family_eq 1 3 4 (by decide +kernel) (by decide +kernel)
+theorem a_4 : a 4 = 2 := a_family_eq 1 4 2 (by decide +kernel) (by decide +kernel)
+theorem a_5 : a 5 = 1 := a_family_eq 1 5 1 (by decide +kernel) (by decide +kernel)
 
 set_option maxRecDepth 100000 in
 set_option maxHeartbeats 0 in
 theorem a_family_3_11 : aFamily 3 11 = 37 :=
-  a_family_eq 3 11 37 (by decide) (by decide)
+  a_family_eq 3 11 37 (by decide +kernel) (by decide +kernel)
 
 /-- The general-family comment, restricted to inputs where the minimum exists.
 The square uses integer subtraction, including when the proposed value is zero. -/
@@ -50,9 +50,9 @@ def FamilyConjecture : Prop :=
 
 theorem not_family_conjecture : ¬ FamilyConjecture := by
   intro h
-  have heq := (h 3 11 (by decide) (by decide) ⟨37, by decide⟩).mpr (by decide)
+  have heq := (h 3 11 (by decide +kernel) (by decide +kernel) ⟨37, by decide +kernel⟩).mpr (by decide +kernel)
   rw [a_family_3_11] at heq
-  norm_num [show Nat.sqrt 11 = 3 from by decide] at heq
+  norm_num [show Nat.sqrt 11 = 3 from by decide +kernel] at heq
 
 end OeisA381054
 

@@ -25,6 +25,8 @@ jobs:
       - name: Baloui exact minimum and universal negation
         run: lake env lean -DwarningAsError=true Proofs/Baloui.lean
       - name: Build statement infrastructure
+        if: success() || failure()
         run: lake --wfail build FormalConjecturesUtil
       - name: WOWII 367 tied-mode refutation
+        if: success() || failure()
         run: lake env lean -DwarningAsError=true Proofs/WOWII367.lean

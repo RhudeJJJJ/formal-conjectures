@@ -18,7 +18,7 @@ variable (G : SimpleGraph V) [DecidableRel G.Adj]
 lemma exists_parent (hc : G.Connected) (r : V) :
     ∃ p : V → V, p r = r ∧ ∀ v, v ≠ r →
       G.Adj v (p v) ∧ G.dist (p v) r + 1 = G.dist v r := by
-  classical
+
   have hex : ∀ v, ∃ w, (v = r → w = r) ∧
       (v ≠ r → G.Adj v w ∧ G.dist w r + 1 = G.dist v r) := by
     intro v
@@ -43,7 +43,7 @@ def children (p : V → V) (r v : V) : Finset V :=
 lemma parent_classification (hT : G.IsTree) (r : V) (p : V → V)
     (hp : ∀ v, v ≠ r → G.Adj v (p v) ∧ G.dist (p v) r + 1 = G.dist v r) :
     ∀ v w, G.Adj v w ↔ (v ≠ r ∧ p v = w) ∨ (w ≠ r ∧ p w = v) := by
-  classical
+
   let S := (Finset.univ : Finset V).erase r
   let E := S.image fun v => s(v, p v)
   have hinj : Set.InjOn (fun v => s(v, p v)) (S : Set V) := by
@@ -70,10 +70,12 @@ lemma parent_classification (hT : G.IsTree) (r : V) (p : V → V)
     have he : s(v, w) ∈ E := by rw [hEq]; simpa using hadj
     obtain ⟨u, hu, heq⟩ := Finset.mem_image.mp he
     rcases Sym2.eq_iff.mp heq with heq | heq
-    · obtain ⟨rfl, he⟩ := heq
-      exact Or.inl ⟨(Finset.mem_erase.mp hu).1, he⟩
-    · obtain ⟨rfl, he⟩ := heq
-      exact Or.inr ⟨(Finset.mem_erase.mp hu).1, he⟩
+    · obtain ⟨hfirst, hsecond⟩ := heq
+      subst v
+      exact Or.inl ⟨(Finset.mem_erase.mp hu).1, hsecond⟩
+    · obtain ⟨hfirst, hsecond⟩ := heq
+      subst w
+      exact Or.inr ⟨(Finset.mem_erase.mp hu).1, hsecond⟩
   · rintro (⟨hv, rfl⟩ | ⟨hw, rfl⟩)
     · exact (hp v hv).1
     · exact (hp w hw).1.symm
@@ -109,7 +111,7 @@ lemma root_degree_children (hT : G.IsTree) (r : V) (p : V → V)
 
 lemma sum_children (r : V) (p : V → V) (f : V → ℤ) :
     (∑ v : V, ∑ w ∈ children p r v, f w) = ∑ w ∈ Finset.univ.erase r, f w := by
-  classical
+
   have herase : (Finset.univ : Finset V).erase r =
       Finset.univ.filter fun w => w ≠ r := by
     ext w

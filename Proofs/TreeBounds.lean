@@ -43,7 +43,7 @@ lemma degree_split (v : V) (D : Finset V) :
   rw [hi, Finset.card_inter_add_card_sdiff]
 
 lemma internal_sum_even (D : Finset V) : Even (rowSum G D D) := by
-  classical
+
   let H := G.induce (D : Set V)
   have he : ∀ v : (D : Set V),
       H.degree v = (G.neighborFinset v ∩ D).card := by
@@ -52,7 +52,7 @@ lemma internal_sum_even (D : Finset V) : Even (rowSum G D D) := by
     have hc := congrArg Finset.card hm
     simp only [Finset.card_map, Finset.toFinset_coe] at hc
     convert hc using 1
-    exact Fintype.card_congr (Equiv.refl _)
+    exact Fintype.card_congr (Equiv.refl (H.neighborSet v))
   have hs : rowSum G D D = ∑ v : (D : Set V), H.degree v := by
     simp only [rowSum, he]
     exact (Finset.sum_coe_sort D _).symm
@@ -95,7 +95,7 @@ lemma total_degree_lower (D : Finset V) (hD : G.IsTotalDominating (D : Set V))
 lemma nonleaf_internal_bound (hT : G.IsTree) (D : Finset V)
     (hD : G.IsTotalDominating (D : Set V)) :
     (nonleaves G).card + rowSum G D D + 2 ≤ 3 * D.card := by
-  classical
+
   have ht := hT.card_edgeFinset
   have handshake := G.sum_degrees_eq_twice_card_edges
   have hpartition := Finset.sum_add_sum_compl D (fun v => G.degree v)
@@ -130,15 +130,19 @@ lemma leaf_identity (hT : G.IsTree) (D : Finset V)
       2 + (G.degree v - 2) := by
     have := positive_degree G D hD v
     split_ifs <;> omega
-  have hs := Finset.sum_congr (s₁ := (Finset.univ : Finset V)) rfl (fun v _ => hp v)
-  simp only [Finset.sum_add_distrib, Finset.sum_boole, Finset.sum_const,
-    Finset.card_univ, smul_eq_mul] at hs
-  simp only [Finset.sum_ite_irrel] at hs
-  linarith
+  have hs : (∑ v : V, G.degree v) +
+      (Finset.univ.filter fun v => G.degree v = 1).card =
+      2 * Fintype.card V + ∑ v : V, (G.degree v - 2) := by
+    calc
+      _ = ∑ v : V, (G.degree v + if G.degree v = 1 then 1 else 0) := by
+        rw [Finset.sum_add_distrib, Finset.sum_boole]
+      _ = ∑ v : V, (2 + (G.degree v - 2)) := Finset.sum_congr rfl (fun v _ => hp v)
+      _ = _ := by simp [Finset.sum_add_distrib]; omega
+  omega
 
 lemma triangular_lower (S : Finset ℕ) (hS : ∀ a ∈ S, 3 ≤ a) :
     S.card * (S.card + 1) ≤ 2 * ∑ a ∈ S, (a - 2) := by
-  classical
+
   induction S using Finset.strongInductionOn with
   | _ S ih =>
     by_cases hn : S.Nonempty
@@ -166,7 +170,7 @@ lemma degree_diversity_bound (hT : G.IsTree) (D : Finset V)
     (WrittenOnTheWallII.GraphConjecture367.distinctDegreeCount G) ^ 2 + 4 ≤
       2 * (nonleaves G).card +
         WrittenOnTheWallII.GraphConjecture367.distinctDegreeCount G := by
-  classical
+
   let L := Finset.univ.filter fun v => G.degree v = 1
   let N := Finset.univ.filter fun v => G.degree v = 2
   let H := Finset.univ.filter fun v => 3 ≤ G.degree v
@@ -199,22 +203,8 @@ lemma degree_diversity_bound (hT : G.IsTree) (D : Finset V)
   have hsum1 : (∑ k ∈ K, (k - 2)) ≤ ∑ k ∈ A, (k - 2) :=
     Finset.sum_le_sum_of_subset_of_nonneg hksub (fun _ _ _ => Nat.zero_le _)
   have hsum2 : (∑ k ∈ A, (k - 2)) ≤ ∑ v : V, (G.degree v - 2) := by
-    classical
-    let pick : A → V := fun a => Classical.choose (Finset.mem_image.mp a.2)
-    have hpick (a : A) : G.degree (pick a) = a.val :=
-      (Classical.choose_spec (Finset.mem_image.mp a.2)).2
-    have hinj : Function.Injective pick := by
-      intro a b h
-      apply Subtype.ext
-      calc
-        a.val = G.degree (pick a) := (hpick a).symm
-        _ = G.degree (pick b) := congrArg G.degree h
-        _ = b.val := hpick b
-    calc
-      (∑ k ∈ A, (k - 2)) = ∑ a : A, (G.degree (pick a) - 2) := by
-        rw [Finset.sum_coe_sort]
-        simp only [hpick]
-      _ ≤ ∑ v : V, (G.degree v - 2) := Finset.sum_le_sum_of_injective pick hinj (fun _ => Nat.zero_le _) (fun _ => le_rfl)
+    exact Finset.sum_image_le_of_nonneg (fun _ _ => Nat.zero_le _)
+
   have himage : K ⊆ H.image (fun v => G.degree v) := by
     intro k hk
     obtain ⟨v, hv, heq⟩ := Finset.mem_image.mp (hksub hk)
@@ -262,7 +252,7 @@ lemma positive_bound_set (hT : G.IsTree) (D : Finset V)
   have hd : d = 2 ∨ d = 3 ∨ d = 4 := by
     have hleaf := leaf_identity G hT D hD
     have h2 : 2 ≤ d := by
-      classical
+
       have hne : ∃ v : V, G.degree v = 1 := by
         have hp : 0 < (Finset.univ.filter fun v => G.degree v = 1).card := by omega
         obtain ⟨v, hv⟩ := Finset.card_pos.mp hp
@@ -302,7 +292,7 @@ theorem positive_367 (hT : G.IsTree) (hcard : 2 < Fintype.card V)
     (hmode : WrittenOnTheWallII.GraphConjecture367.TwoIsUniqueMode G) :
     4 * WrittenOnTheWallII.GraphConjecture367.distinctDegreeCount G ≤
       3 * G.totalDominationNumber := by
-  classical
+
   have : Nontrivial V := Fintype.one_lt_card_iff_nontrivial.mp (by omega)
   have hfull : G.IsTotalDominating (Finset.univ : Finset V) := by
     intro v

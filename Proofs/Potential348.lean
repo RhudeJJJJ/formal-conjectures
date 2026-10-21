@@ -260,7 +260,7 @@ lemma local_potential (hT : G.IsTree) (D : Finset V)
     · simp only [hs, hpar, ite_false, ite_true, charge]
       split_ifs <;>
         (simp only [SimpleGraph.degree, SimpleGraph.neighborFinset, Set.toFinset_card,
-          ← Nat.card_eq_fintype_card] at *; omega)
+          ← Nat.card_eq_fintype_card] at *; first | omega | (trace_state; omega))
     have hwitness : v ∈ WrittenOnTheWallII.GraphConjecture348.externalDegreeTwoNeighbors G →
         1 ≤ ∑ w ∈ children p r v, message G D p w := by
       intro hb
@@ -365,7 +365,7 @@ lemma root_potential (hT : G.IsTree) (hn : 2 < Fintype.card V)
   simp only [charge, message, hvleaf, hvsel, hpv, hr, hb, ite_false, ite_true]
   split_ifs <;>
     (simp only [SimpleGraph.degree, SimpleGraph.neighborFinset, Set.toFinset_card,
-      ← Nat.card_eq_fintype_card] at *; omega)
+      ← Nat.card_eq_fintype_card] at *; first | omega | (trace_state; omega))
 
 lemma bound_set_348 (hT : G.IsTree) (hn : 2 < Fintype.card V)
     (D : Finset V) (hD : G.IsTotalDominating (D : Set V)) :

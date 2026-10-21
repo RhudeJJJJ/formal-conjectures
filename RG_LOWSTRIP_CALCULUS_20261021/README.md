@@ -39,3 +39,5 @@ All seven complete `OriginalAssembly.Inputs` fields remain OPEN, including remai
     python3 -B Proofs/RG_Lean_20261019/verify_extension.py --mathlib-project /absolute/path/to/pinned/mathlib4 --endpoint Proofs.RadenkovicGutmanLowStripCombined --workers 1 --module-timeout 600 --print-receipt
 
 Use `combined_kernel_receipt.json` and `combined_verification.json` for the current joint source. The earlier three-module calculus and 51-module convex receipts are preserved as historical component checks at their own immutable sources; their counts are not added to the 74-module job. Original producer hashes and reading scope are in `original_source_provenance.json`.
+
+Subsequent complete-strip checkpoint: every original tangent and constant-strip sign family, including the full reserve squares and same-graph transfer, is now discharged in run39529790803. See ../RG_LOWSTRIP_RESERVES_20261021/README.md. The exact >2/47 target then requires only original correlated-escape Signs. This historical 74-fresh-module checkpoint is not relabelled as a new global replay.

@@ -1,11 +1,7 @@
 name: RG degree two three verified wave3 evidence
 on:
-  push:
-    branches: [rg-remaining-six-spectral-20261021]
-    paths:
-      - 'ci/rg_d2_wave3_evidence_plan000.json'
-      - 'ci/rg_d2_wave3_evidence_plan001.json'
-      - '.github/workflows/rg-d2-wave3-evidence.yml'
+  workflow_dispatch:
+
 permissions:
   contents: read
   actions: read

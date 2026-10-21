@@ -1,12 +1,7 @@
 name: RG actual small core and arms exact graph maps
 
 on:
-  push:
-    branches: [rg-remaining-six-spectral-20261021]
-    paths:
-      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanActualSmallGeFourCase*.lean'
-      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanActualSmallGeFourBatch*.lean'
-      - '.github/workflows/rg-actual-small-ge4.yml'
+  workflow_dispatch:
 
 permissions:
   contents: read

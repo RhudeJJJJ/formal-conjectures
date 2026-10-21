@@ -1,11 +1,7 @@
 name: RG uniform tail polynomials
 
 on:
-  push:
-    branches: [rg-remaining-six-spectral-20261021]
-    paths:
-      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanUniformTailPolynomials.lean'
-      - '.github/workflows/rg-uniform-tail-polynomials.yml'
+  workflow_dispatch:
 
 permissions:
   contents: read

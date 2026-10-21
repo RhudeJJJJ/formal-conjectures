@@ -1,23 +1,7 @@
 name: RG degree two three coverage final
 
 on:
-  push:
-    branches: [rg-remaining-six-spectral-20261021]
-    paths:
-      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeTwoThreeFiniteCoreCoverage03Block000.lean'
-      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeTwoThreeFiniteCoreCoverage04Block000.lean'
-      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeTwoThreeFiniteCoreCoverage05Block001.lean'
-      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeTwoThreeFiniteCoreCoverage05Block002.lean'
-      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeTwoThreeFiniteCoverage03.lean'
-      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeTwoThreeFiniteCoverage04.lean'
-      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeTwoThreeFiniteCoverage05.lean'
-      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeTwoThreeFiniteCoverage06.lean'
-      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeTwoThreeFiniteCoverage07.lean'
-      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeTwoThreeFiniteCoverage08.lean'
-      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeTwoThreeFiniteCoverage09.lean'
-      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeTwoThreeFiniteCoverage10.lean'
-      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeTwoThreeFiniteCoverageComplete.lean'
-      - '.github/workflows/rg-degree-two-three-coverage-final.yml'
+  workflow_dispatch:
 
 permissions:
   contents: read

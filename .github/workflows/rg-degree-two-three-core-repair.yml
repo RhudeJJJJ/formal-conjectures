@@ -1,22 +1,7 @@
 name: RG degree two three core repair
 
 on:
-  push:
-    branches: [rg-remaining-six-spectral-20261021]
-    paths:
-      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeTwoThreeFiniteCoreRepair03At000.lean'
-      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeTwoThreeFiniteCoreRepair03At002.lean'
-      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeTwoThreeFiniteCoreRepair04At000.lean'
-      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeTwoThreeFiniteCoreRepair04At002.lean'
-      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeTwoThreeFiniteCoreRepair04At004.lean'
-      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeTwoThreeFiniteCoreRepair04At006.lean'
-      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeTwoThreeFiniteCoreRepair05At008.lean'
-      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeTwoThreeFiniteCoreRepair05At010.lean'
-      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeTwoThreeFiniteCoreRepair05At012.lean'
-      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeTwoThreeFiniteCoreRepair05At014.lean'
-      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeTwoThreeFiniteCoreRepair05At016.lean'
-      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeTwoThreeFiniteCoreRepair05At018.lean'
-      - '.github/workflows/rg-degree-two-three-core-repair.yml'
+  workflow_dispatch:
 
 permissions:
   contents: read

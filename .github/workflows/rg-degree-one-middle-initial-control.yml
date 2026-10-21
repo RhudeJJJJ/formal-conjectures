@@ -1,15 +1,7 @@
 name: RG degree one middle initial control
 
 on:
-  push:
-    branches: [rg-remaining-six-spectral-20261021]
-    paths:
-      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreControl.lean'
-      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage.lean'
-      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneMiddleResidualFiniteKeyLookup.lean'
-      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneMiddleResidualFiniteKeysData.lean'
-      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneMiddleResidualSpectrum000.lean'
-      - '.github/workflows/rg-degree-one-middle-initial-control.yml'
+  workflow_dispatch:
 
 permissions:
   contents: read

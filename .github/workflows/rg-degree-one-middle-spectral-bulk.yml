@@ -1,0 +1,90 @@
+name: RG degree one middle spectral bulk
+
+on:
+  push:
+    branches: [rg-remaining-six-spectral-20261021]
+    paths:
+      - '.github/workflows/rg-degree-one-middle-spectral-bulk.yml'
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  check:
+    strategy:
+      fail-fast: false
+      max-parallel: 8
+      matrix:
+        endpoint: [Proofs.RadenkovicGutmanDegreeOneMiddleResidualSpectraBatch000,Proofs.RadenkovicGutmanDegreeOneMiddleResidualSpectraBatch001,Proofs.RadenkovicGutmanDegreeOneMiddleResidualSpectraBatch002,Proofs.RadenkovicGutmanDegreeOneMiddleResidualSpectraBatch003,Proofs.RadenkovicGutmanDegreeOneMiddleResidualSpectraBatch004,Proofs.RadenkovicGutmanDegreeOneMiddleResidualSpectraBatch005,Proofs.RadenkovicGutmanDegreeOneMiddleResidualSpectraBatch006,Proofs.RadenkovicGutmanDegreeOneMiddleResidualSpectraBatch007,Proofs.RadenkovicGutmanDegreeOneMiddleResidualSpectraBatch008,Proofs.RadenkovicGutmanDegreeOneMiddleResidualSpectraBatch009,Proofs.RadenkovicGutmanDegreeOneMiddleResidualSpectraBatch010,Proofs.RadenkovicGutmanDegreeOneMiddleResidualSpectraBatch011,Proofs.RadenkovicGutmanDegreeOneMiddleResidualSpectraBatch012,Proofs.RadenkovicGutmanDegreeOneMiddleResidualSpectraBatch013,Proofs.RadenkovicGutmanDegreeOneMiddleResidualSpectraBatch014,Proofs.RadenkovicGutmanDegreeOneMiddleResidualSpectraBatch015,Proofs.RadenkovicGutmanDegreeOneMiddleResidualSpectraBatch016,Proofs.RadenkovicGutmanDegreeOneMiddleResidualSpectraBatch017,Proofs.RadenkovicGutmanDegreeOneMiddleResidualSpectraBatch018,Proofs.RadenkovicGutmanDegreeOneMiddleResidualSpectraBatch019,Proofs.RadenkovicGutmanDegreeOneMiddleResidualSpectraBatch020,Proofs.RadenkovicGutmanDegreeOneMiddleResidualSpectraBatch021,Proofs.RadenkovicGutmanDegreeOneMiddleResidualSpectraBatch022,Proofs.RadenkovicGutmanDegreeOneMiddleResidualSpectraBatch023,Proofs.RadenkovicGutmanDegreeOneMiddleResidualSpectraBatch024,Proofs.RadenkovicGutmanDegreeOneMiddleResidualSpectraBatch025,Proofs.RadenkovicGutmanDegreeOneMiddleResidualSpectraBatch026,Proofs.RadenkovicGutmanDegreeOneMiddleResidualSpectraBatch027,Proofs.RadenkovicGutmanDegreeOneMiddleResidualSpectraBatch028,Proofs.RadenkovicGutmanDegreeOneMiddleResidualSpectraBatch029,Proofs.RadenkovicGutmanDegreeOneMiddleResidualSpectraBatch030,Proofs.RadenkovicGutmanDegreeOneMiddleResidualSpectraBatch031,Proofs.RadenkovicGutmanDegreeOneMiddleResidualSpectraBatch032,Proofs.RadenkovicGutmanDegreeOneMiddleResidualSpectraBatch033,Proofs.RadenkovicGutmanDegreeOneMiddleResidualSpectraBatch034,Proofs.RadenkovicGutmanDegreeOneMiddleResidualSpectraBatch035,Proofs.RadenkovicGutmanDegreeOneMiddleResidualSpectraBatch036,Proofs.RadenkovicGutmanDegreeOneMiddleResidualSpectraBatch037,Proofs.RadenkovicGutmanDegreeOneMiddleResidualSpectraBatch038,Proofs.RadenkovicGutmanDegreeOneMiddleResidualSpectraBatch039,Proofs.RadenkovicGutmanDegreeOneMiddleResidualSpectraBatch040,Proofs.RadenkovicGutmanDegreeOneMiddleResidualSpectraBatch041,Proofs.RadenkovicGutmanDegreeOneMiddleResidualSpectraBatch042,Proofs.RadenkovicGutmanDegreeOneMiddleResidualSpectraBatch043,Proofs.RadenkovicGutmanDegreeOneMiddleResidualSpectraBatch044,Proofs.RadenkovicGutmanDegreeOneMiddleResidualSpectraBatch045,Proofs.RadenkovicGutmanDegreeOneMiddleResidualSpectraBatch046,Proofs.RadenkovicGutmanDegreeOneMiddleResidualSpectraBatch047,Proofs.RadenkovicGutmanDegreeOneMiddleResidualSpectraBatch048,Proofs.RadenkovicGutmanDegreeOneMiddleResidualSpectraBatch049,Proofs.RadenkovicGutmanDegreeOneMiddleResidualSpectraBatch050,Proofs.RadenkovicGutmanDegreeOneMiddleResidualSpectraBatch051,Proofs.RadenkovicGutmanDegreeOneMiddleResidualSpectraBatch052,Proofs.RadenkovicGutmanDegreeOneMiddleResidualSpectraBatch053,Proofs.RadenkovicGutmanDegreeOneMiddleResidualSpectraBatch054,Proofs.RadenkovicGutmanDegreeOneMiddleResidualSpectraBatch055,Proofs.RadenkovicGutmanDegreeOneMiddleResidualSpectraBatch056,Proofs.RadenkovicGutmanDegreeOneMiddleResidualSpectraBatch057,Proofs.RadenkovicGutmanDegreeOneMiddleResidualSpectraBatch058,Proofs.RadenkovicGutmanDegreeOneMiddleResidualSpectraBatch059,Proofs.RadenkovicGutmanDegreeOneMiddleResidualSpectraBatch060,Proofs.RadenkovicGutmanDegreeOneMiddleResidualSpectraBatch061,Proofs.RadenkovicGutmanDegreeOneMiddleResidualSpectraBatch062,Proofs.RadenkovicGutmanDegreeOneMiddleResidualSpectraBatch063,Proofs.RadenkovicGutmanDegreeOneMiddleResidualSpectraBatch064,Proofs.RadenkovicGutmanDegreeOneMiddleResidualSpectraBatch065,Proofs.RadenkovicGutmanDegreeOneMiddleResidualSpectraBatch066,Proofs.RadenkovicGutmanDegreeOneMiddleResidualSpectraBatch067,Proofs.RadenkovicGutmanDegreeOneMiddleResidualSpectraBatch068,Proofs.RadenkovicGutmanDegreeOneMiddleResidualSpectraBatch069,Proofs.RadenkovicGutmanDegreeOneMiddleResidualSpectraBatch070,Proofs.RadenkovicGutmanDegreeOneMiddleResidualSpectraBatch071,Proofs.RadenkovicGutmanDegreeOneMiddleResidualSpectraBatch072,Proofs.RadenkovicGutmanDegreeOneMiddleResidualSpectraBatch073,Proofs.RadenkovicGutmanDegreeOneMiddleResidualSpectraBatch074,Proofs.RadenkovicGutmanDegreeOneMiddleResidualSpectraBatch075,Proofs.RadenkovicGutmanDegreeOneMiddleResidualSpectraBatch076,Proofs.RadenkovicGutmanDegreeOneMiddleResidualSpectraBatch077,Proofs.RadenkovicGutmanDegreeOneMiddleResidualSpectraBatch078,Proofs.RadenkovicGutmanDegreeOneMiddleResidualSpectraBatch079,Proofs.RadenkovicGutmanDegreeOneMiddleResidualSpectraBatch080,Proofs.RadenkovicGutmanDegreeOneMiddleResidualSpectraBatch081,Proofs.RadenkovicGutmanDegreeOneMiddleResidualSpectraBatch082,Proofs.RadenkovicGutmanDegreeOneMiddleResidualSpectraBatch083,Proofs.RadenkovicGutmanDegreeOneMiddleResidualSpectraBatch084,Proofs.RadenkovicGutmanDegreeOneMiddleResidualSpectraBatch085,Proofs.RadenkovicGutmanDegreeOneMiddleResidualSpectraBatch086,Proofs.RadenkovicGutmanDegreeOneMiddleResidualSpectraBatch087,Proofs.RadenkovicGutmanDegreeOneMiddleResidualSpectraBatch088,Proofs.RadenkovicGutmanDegreeOneMiddleResidualSpectraBatch089,Proofs.RadenkovicGutmanDegreeOneMiddleResidualSpectraBatch090,Proofs.RadenkovicGutmanDegreeOneMiddleResidualSpectraBatch091,Proofs.RadenkovicGutmanDegreeOneMiddleResidualSpectraBatch092,Proofs.RadenkovicGutmanDegreeOneMiddleResidualSpectraBatch093,Proofs.RadenkovicGutmanDegreeOneMiddleResidualSpectraBatch094,Proofs.RadenkovicGutmanDegreeOneMiddleResidualSpectraBatch095,Proofs.RadenkovicGutmanDegreeOneMiddleResidualSpectraBatch096,Proofs.RadenkovicGutmanDegreeOneMiddleResidualSpectraBatch097,Proofs.RadenkovicGutmanDegreeOneMiddleResidualSpectraBatch098,Proofs.RadenkovicGutmanDegreeOneMiddleResidualSpectraBatch099,Proofs.RadenkovicGutmanDegreeOneMiddleResidualSpectraBatch100,Proofs.RadenkovicGutmanDegreeOneMiddleResidualSpectraBatch101,Proofs.RadenkovicGutmanDegreeOneMiddleResidualSpectraBatch102,Proofs.RadenkovicGutmanDegreeOneMiddleResidualSpectraBatch103,Proofs.RadenkovicGutmanDegreeOneMiddleResidualSpectraBatch104,Proofs.RadenkovicGutmanDegreeOneMiddleResidualSpectraBatch105,Proofs.RadenkovicGutmanDegreeOneMiddleResidualSpectraBatch106,Proofs.RadenkovicGutmanDegreeOneMiddleResidualSpectraBatch107,Proofs.RadenkovicGutmanDegreeOneMiddleResidualSpectraBatch108,Proofs.RadenkovicGutmanDegreeOneMiddleResidualSpectraBatch109,Proofs.RadenkovicGutmanDegreeOneMiddleResidualSpectraBatch110,Proofs.RadenkovicGutmanDegreeOneMiddleResidualSpectraBatch111,Proofs.RadenkovicGutmanDegreeOneMiddleResidualSpectraBatch112,Proofs.RadenkovicGutmanDegreeOneMiddleResidualSpectraBatch113,Proofs.RadenkovicGutmanDegreeOneMiddleResidualSpectraBatch114,Proofs.RadenkovicGutmanDegreeOneMiddleResidualSpectraBatch115,Proofs.RadenkovicGutmanDegreeOneMiddleResidualSpectraBatch116,Proofs.RadenkovicGutmanDegreeOneMiddleResidualSpectraBatch117,Proofs.RadenkovicGutmanDegreeOneMiddleResidualSpectraBatch118,Proofs.RadenkovicGutmanDegreeOneMiddleResidualSpectraBatch119,Proofs.RadenkovicGutmanDegreeOneMiddleResidualSpectraBatch120,Proofs.RadenkovicGutmanDegreeOneMiddleResidualSpectraBatch121,Proofs.RadenkovicGutmanDegreeOneMiddleResidualSpectraBatch122,Proofs.RadenkovicGutmanDegreeOneMiddleResidualSpectraBatch123,Proofs.RadenkovicGutmanDegreeOneMiddleResidualSpectraBatch124,Proofs.RadenkovicGutmanDegreeOneMiddleResidualSpectraBatch125,Proofs.RadenkovicGutmanDegreeOneMiddleResidualSpectraBatch126,Proofs.RadenkovicGutmanDegreeOneMiddleResidualSpectraBatch127,Proofs.RadenkovicGutmanDegreeOneMiddleResidualSpectraBatch128,Proofs.RadenkovicGutmanDegreeOneMiddleResidualSpectraBatch129,Proofs.RadenkovicGutmanDegreeOneMiddleResidualSpectraBatch130,Proofs.RadenkovicGutmanDegreeOneMiddleResidualSpectraBatch131,Proofs.RadenkovicGutmanDegreeOneMiddleResidualSpectraBatch132,Proofs.RadenkovicGutmanDegreeOneMiddleResidualSpectraBatch133,Proofs.RadenkovicGutmanDegreeOneMiddleResidualSpectraBatch134,Proofs.RadenkovicGutmanDegreeOneMiddleResidualSpectraBatch135,Proofs.RadenkovicGutmanDegreeOneMiddleResidualSpectraBatch136,Proofs.RadenkovicGutmanDegreeOneMiddleResidualSpectraBatch137]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          persist-credentials: false
+      - name: Install the project toolchain
+        run: |
+          set -o pipefail
+          curl -sSfL https://github.com/leanprover/elan/releases/download/v1.4.2/elan-x86_64-unknown-linux-gnu.tar.gz | tar xz
+          ./elan-init -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Materialize the exact dependency lock
+        run: python3 -B ci/rg_dependencies.py
+      - name: Fetch the required Mathlib cache
+        run: |
+          python3 - <<'PY'
+          import pathlib, re, subprocess
+          root = pathlib.Path('Proofs/RG_Lean_20261019')
+          seen, external = set(), set()
+          def visit(name):
+              if name in seen:
+                  return
+              seen.add(name)
+              source = (root / (name.replace('.', '/') + '.lean')).read_text()
+              for dep in re.findall(r'^\s*import\s+([\w.]+)', source, re.M):
+                  if dep.startswith('Proofs.'):
+                      visit(dep)
+                  else:
+                      external.add(dep)
+          visit('${{ matrix.endpoint }}')
+          subprocess.run(['lake', 'exe', 'cache', 'get', *sorted(external)], check=True)
+          PY
+      - name: Restore exact source-bound prerequisites
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_one_middle_spectral_bulk_scope000_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_one_middle_spectral_bulk_scope001_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_one_middle_spectral_bulk_scope002_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+      - name: Check multiplicities and actual graph spectral comparison
+        shell: bash
+        run: |
+          set -o pipefail
+          python3 -B Proofs/RG_Lean_20261019/verify_extension.py --mathlib-project "$GITHUB_WORKSPACE" --endpoint ${{ matrix.endpoint }} --workers 1 --module-timeout 600 --resume | python3 -B ci/rg_compact_ci_output.py
+      - name: Retain completed records and diagnostics
+        if: always()
+        run: |
+          python3 - <<'PY'
+          import json,pathlib,shutil
+          root=pathlib.Path('Proofs/RG_Lean_20261019/build/extension')
+          records=[json.loads(p.read_text()) for p in sorted(root.glob('Proofs.*.json'))]
+          fresh=root.parent/'fresh_exports';fresh.mkdir(parents=True,exist_ok=True)
+          (fresh/'diagnostics_records.json').write_text(json.dumps({'modules':records},separators=(',',':'))+'\n')
+          if (root/'receipt.json').is_file():shutil.copyfile(root/'receipt.json',fresh/'receipt.json')
+          print('RETAINED_RECORD_COUNTS '+json.dumps({'total':len(records),'fresh':sum(r['mode']=='FRESH_KERNEL_EXPORT' for r in records)}))
+          for row in records:
+              if row['mode']=='FRESH_KERNEL_EXPORT':
+                  name=row['module'];rel=name.replace('.','/')+'.olean';dest=fresh/rel
+                  dest.parent.mkdir(parents=True,exist_ok=True)
+                  shutil.copyfile(root/rel,dest);shutil.copyfile(root/(name+'.json'),fresh/(name+'.json'))
+          for log in root.glob('Proofs.*.log'):
+              shutil.copyfile(log,fresh/log.name);print('MODULE_LOG_TAIL '+log.name+' '+log.read_text()[-18000:])
+          PY
+      - name: Retain new exports only
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: rg-degree-one-middle-spectral-bulk-exports-${{ github.run_id }}-${{ strategy.job-index }}
+          path: Proofs/RG_Lean_20261019/build/fresh_exports
+          retention-days: 7

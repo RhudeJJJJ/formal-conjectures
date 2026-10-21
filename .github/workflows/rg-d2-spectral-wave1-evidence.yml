@@ -1,11 +1,7 @@
 name: RG verified spectral evidence collection
 on:
-  push:
-    branches: [rg-remaining-six-spectral-20261021]
-    paths:
-      - 'ci/rg_collect_verified_evidence.py'
-      - 'ci/rg_d2_spectral_wave1_evidence_plan.json'
-      - '.github/workflows/rg-d2-spectral-wave1-evidence.yml'
+  workflow_dispatch:
+
 permissions:
   contents: read
   actions: read

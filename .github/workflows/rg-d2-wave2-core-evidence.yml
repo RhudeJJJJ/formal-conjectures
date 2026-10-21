@@ -1,18 +1,7 @@
 name: RG degree two three verified wave2 and core evidence
 on:
-  push:
-    branches: [rg-remaining-six-spectral-20261021]
-    paths:
-      - 'ci/rg_d2_wave2_core_evidence_plan000.json'
-      - 'ci/rg_d2_wave2_core_evidence_plan001.json'
-      - 'ci/rg_d2_wave2_core_evidence_plan002.json'
-      - 'ci/rg_d2_wave2_core_evidence_plan003.json'
-      - 'ci/rg_d2_wave2_core_evidence_plan004.json'
-      - 'ci/rg_d2_wave2_core_evidence_plan005.json'
-      - 'ci/rg_d2_wave2_core_evidence_plan006.json'
-      - 'ci/rg_d2_wave2_core_evidence_plan007.json'
-      - 'ci/rg_d2_wave2_core_evidence_plan008.json'
-      - '.github/workflows/rg-d2-wave2-core-evidence.yml'
+  workflow_dispatch:
+
 permissions:
   contents: read
   actions: read

@@ -1,13 +1,7 @@
 name: RG remaining six finite spectral certificate foundations
 
 on:
-  push:
-    branches: [rg-remaining-six-spectral-20261021]
-    paths:
-      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanActualSmallGeFourCase000.lean'
-      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanFiniteTreeNative.lean'
-      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanCoreTreeTransfer.lean'
-      - '.github/workflows/rg-finite-tree-native.yml'
+  workflow_dispatch:
 
 permissions:
   contents: read

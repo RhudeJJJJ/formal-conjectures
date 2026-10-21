@@ -1,13 +1,7 @@
 name: RG degree two three core coverage control
 
 on:
-  push:
-    branches: [rg-remaining-six-spectral-20261021]
-    paths:
-      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeTwoThreeCoreCoverageControl07.lean'
-      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeTwoThreeCoreCoverageControl10.lean'
-      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeTwoThreeFiniteCoreCoverage.lean'
-      - '.github/workflows/rg-degree-two-three-core-coverage-control.yml'
+  workflow_dispatch:
 
 permissions:
   contents: read

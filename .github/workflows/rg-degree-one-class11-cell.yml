@@ -1,11 +1,7 @@
 name: RG degree one class11 cell
 
 on:
-  push:
-    branches: [rg-remaining-six-spectral-20261021]
-    paths:
-      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneClass11Cell.lean'
-      - '.github/workflows/rg-degree-one-class11-cell.yml'
+  workflow_dispatch:
 
 permissions:
   contents: read

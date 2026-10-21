@@ -1,11 +1,7 @@
 name: RG degree two three thresholds
 
 on:
-  push:
-    branches: [rg-remaining-six-spectral-20261021]
-    paths:
-      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeTwoThreeThresholds.lean'
-      - '.github/workflows/rg-degree-two-three-thresholds.yml'
+  workflow_dispatch:
 
 permissions:
   contents: read

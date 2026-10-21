@@ -1,11 +1,7 @@
 name: RG small degree at least four exact spectral comparisons
 
 on:
-  push:
-    branches: [rg-remaining-six-spectral-20261021]
-    paths:
-      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanSmallGeFour*.lean'
-      - '.github/workflows/rg-small-ge4-spectra.yml'
+  workflow_dispatch:
 
 permissions:
   contents: read

@@ -1,12 +1,7 @@
 name: RG complete small degree at least four parameter coverage
 
 on:
-  push:
-    branches: [rg-remaining-six-spectral-20261021]
-    paths:
-      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanActualSmallGeFourCoverage*.lean'
-      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanActualSmallGeFourKeysData.lean'
-      - '.github/workflows/rg-small-parameter-coverage.yml'
+  workflow_dispatch:
 
 permissions:
   contents: read

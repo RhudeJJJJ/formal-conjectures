@@ -112,9 +112,19 @@ jobs:
         if: always()
         run: |
           python3 - <<'PY'
-          import json,pathlib
+          import json,pathlib,shutil
           root=pathlib.Path('Proofs/RG_Lean_20261019/build/extension')
           records=[json.loads(p.read_text()) for p in sorted(root.glob('Proofs.*.json'))]
+          fresh_root=root.parent/'fresh_exports'
+          fresh_root.mkdir(parents=True,exist_ok=True)
+          for row in records:
+              if row['mode']=='FRESH_KERNEL_EXPORT':
+                  name=row['module']; rel=name.replace('.','/')+'.olean'
+                  destination=fresh_root/rel; destination.parent.mkdir(parents=True,exist_ok=True)
+                  shutil.copyfile(root/rel,destination)
+                  shutil.copyfile(root/(name+'.json'),fresh_root/(name+'.json'))
+          for log in root.glob('Proofs.*.log'):
+              shutil.copyfile(log,fresh_root/log.name)
           print('PARTIAL_RECORDS_JSON '+json.dumps({'scope':'INDIVIDUAL_COMPLETED_MODULES; not a complete extension receipt','modules':records},separators=(',',':')))
           for p in sorted(root.glob('Proofs.*Escape*.log')):
               t=p.read_text(); print('MODULE_LOG_TAIL '+p.name+' '+t[-16000:])
@@ -124,5 +134,5 @@ jobs:
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:
           name: rg-exports-${{ github.run_id }}-${{ matrix.endpoint }}
-          path: Proofs/RG_Lean_20261019/build/extension
+          path: Proofs/RG_Lean_20261019/build/fresh_exports
           retention-days: 7

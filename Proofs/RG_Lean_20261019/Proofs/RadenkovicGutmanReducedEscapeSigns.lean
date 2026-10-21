@@ -16,8 +16,8 @@ theorem signs (d : ℝ) (hd : 46 ≤ d) : CorrelatedEscape.Signs d := by
   have hS := ReducedEscapeForms.directedCore_nonneg (1/d) x a b hh hx ha hb
   have hR := ReducedEscapeForms.reserveInner_nonneg (1/d) x a b hh hx ha hb
   have h1 : 1/(1/d)=d := by field_simp [hd0.ne']
-  have h2 : x/(1/d)=d*x := by field_simp [hd0.ne'] <;> ring
-  have h3 (a : ℝ) : a*(1/d)/x=a/(d*x) := by field_simp [hd0.ne',hx0.ne'] <;> ring
+  have h2 : x/(1/d)=d*x := by field_simp [hd0.ne']
+  have h3 (a : ℝ) : a*(1/d)/x=a/(d*x) := by field_simp [hd0.ne',hx0.ne']
   rw [h1,h2,h3 a,h3 b] at hS hR
   have hy0 : 0 < d*x := mul_pos hd0 hx0
   have hP : d*x ≤ d*x+a/(d*x) := le_add_of_nonneg_right (div_nonneg ha.1 hy0.le)

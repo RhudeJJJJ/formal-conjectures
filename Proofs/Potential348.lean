@@ -188,9 +188,9 @@ lemma message_lower (D : Finset V) (p : V → V) (v : V) :
   simp only [message]
   split_ifs <;> omega
 
-lemma child_sum_nonneg (hT : G.IsTree) (D : Finset V)
-    (hD : G.IsTotalDominating (D : Set V)) (r : V) (p : V → V)
-    (hp : ∀ v, v ≠ r → G.Adj v (p v) ∧ G.dist (p v) r + 1 = G.dist v r)
+lemma child_sum_nonneg (_hT : G.IsTree) (D : Finset V)
+    (_hD : G.IsTotalDominating (D : Set V)) (r : V) (p : V → V)
+    (_hp : ∀ v, v ≠ r → G.Adj v (p v) ∧ G.dist (p v) r + 1 = G.dist v r)
     (v : V) (hv : v ∈ D) (hdeg : G.degree v ≠ 2) :
     0 ≤ ∑ w ∈ children p r v, message G D p w := by
   apply Finset.sum_nonneg
@@ -258,7 +258,9 @@ lemma local_potential (hT : G.IsTree) (D : Finset V)
   · have hsum := child_sum_nonneg G hT D hD r p hp v hs htwo
     by_cases hpar : p v ∈ D ∧ G.degree (p v) = 2
     · simp only [hs, hpar, ite_false, ite_true, charge]
-      split_ifs <;> omega
+      split_ifs <;>
+        (simp only [SimpleGraph.degree, SimpleGraph.neighborFinset, Set.toFinset_card,
+          ← Nat.card_eq_fintype_card] at *; omega)
     have hwitness : v ∈ WrittenOnTheWallII.GraphConjecture348.externalDegreeTwoNeighbors G →
         1 ≤ ∑ w ∈ children p r v, message G D p w := by
       intro hb
@@ -361,7 +363,9 @@ lemma root_potential (hT : G.IsTree) (hn : 2 < Fintype.card V)
       simpa only [SimpleGraph.degree, SimpleGraph.neighborFinset, Set.toFinset_card, ← Nat.card_eq_fintype_card] using (show G.degree r ≠ 2 by omega)
   rw [hv, Finset.sum_singleton]
   simp only [charge, message, hvleaf, hvsel, hpv, hr, hb, ite_false, ite_true]
-  split_ifs <;> omega
+  split_ifs <;>
+    (simp only [SimpleGraph.degree, SimpleGraph.neighborFinset, Set.toFinset_card,
+      ← Nat.card_eq_fintype_card] at *; omega)
 
 lemma bound_set_348 (hT : G.IsTree) (hn : 2 < Fintype.card V)
     (D : Finset V) (hD : G.IsTotalDominating (D : Set V)) :

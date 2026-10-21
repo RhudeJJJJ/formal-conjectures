@@ -1,0 +1,309 @@
+name: RG degree two three coverage final
+
+on:
+  push:
+    branches: [rg-remaining-six-spectral-20261021]
+    paths:
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeTwoThreeFiniteCoreCoverage03Block000.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeTwoThreeFiniteCoreCoverage04Block000.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeTwoThreeFiniteCoreCoverage05Block001.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeTwoThreeFiniteCoreCoverage05Block002.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeTwoThreeFiniteCoverage03.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeTwoThreeFiniteCoverage04.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeTwoThreeFiniteCoverage05.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeTwoThreeFiniteCoverage06.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeTwoThreeFiniteCoverage07.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeTwoThreeFiniteCoverage08.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeTwoThreeFiniteCoverage09.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeTwoThreeFiniteCoverage10.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeTwoThreeFiniteCoverageComplete.lean'
+      - '.github/workflows/rg-degree-two-three-coverage-final.yml'
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  check:
+    strategy:
+      fail-fast: false
+      matrix:
+        endpoint: [Proofs.RadenkovicGutmanDegreeTwoThreeFiniteCoverageComplete]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          persist-credentials: false
+      - name: Install the project toolchain
+        run: |
+          set -o pipefail
+          curl -sSfL https://github.com/leanprover/elan/releases/download/v1.4.2/elan-x86_64-unknown-linux-gnu.tar.gz | tar xz
+          ./elan-init -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Materialize the exact dependency lock
+        run: python3 -B ci/rg_dependencies.py
+      - name: Fetch the required Mathlib cache
+        run: |
+          python3 - <<'PY'
+          import pathlib, re, subprocess
+          root = pathlib.Path('Proofs/RG_Lean_20261019')
+          seen, external = set(), set()
+          def visit(name):
+              if name in seen:
+                  return
+              seen.add(name)
+              source = (root / (name.replace('.', '/') + '.lean')).read_text()
+              for dep in re.findall(r'^\s*import\s+([\w.]+)', source, re.M):
+                  if dep.startswith('Proofs.'):
+                      visit(dep)
+                  else:
+                      external.add(dep)
+          visit('${{ matrix.endpoint }}')
+          subprocess.run(['lake', 'exe', 'cache', 'get', *sorted(external)], check=True)
+          PY
+      - name: Restore exact source-bound prerequisites
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope000_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope001_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope002_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope003_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope004_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope005_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope006_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope007_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope008_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope009_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope010_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope011_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope012_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope013_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope014_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope015_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope016_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope017_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope018_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope019_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope020_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope021_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope022_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope023_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope024_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope025_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope026_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope027_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope028_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope029_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope030_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope031_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope032_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope033_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope034_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope035_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope036_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope037_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope038_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope039_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope040_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope041_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope042_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope043_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope044_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope045_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope046_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope047_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope048_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope049_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope050_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope051_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope052_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope053_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope054_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope055_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope056_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope057_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope058_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope059_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope060_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope061_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope062_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope063_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope064_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope065_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope066_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope067_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope068_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope069_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope070_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope071_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope072_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope073_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope074_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope075_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope076_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope077_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope078_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope079_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope080_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope081_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope082_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope083_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope084_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope085_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope086_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope087_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope088_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope089_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope090_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope091_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope092_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope093_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope094_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope095_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope096_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope097_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope098_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope099_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope100_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope101_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope102_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope103_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope104_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope105_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope106_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope107_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope108_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope109_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope110_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope111_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope112_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope113_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope114_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope115_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope116_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope117_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope118_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope119_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope120_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope121_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope122_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope123_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope124_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope125_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope126_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope127_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope128_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope129_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope130_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope131_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope132_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope133_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope134_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope135_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope136_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope137_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope138_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope139_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope140_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope141_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope142_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope143_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope144_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope145_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope146_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope147_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope148_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope149_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope150_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope151_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope152_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope153_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope154_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope155_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope156_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope157_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope158_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope159_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope160_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope161_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope162_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope163_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope164_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope165_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope166_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope167_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope168_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope169_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope170_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope171_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope172_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope173_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope174_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope175_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope176_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope177_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope178_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope179_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope180_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope181_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope182_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope183_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope184_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope185_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope186_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope187_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope188_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope189_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope190_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope191_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope192_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope193_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope194_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope195_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope196_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope197_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope198_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope199_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope200_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope201_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope202_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope203_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope204_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope205_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope206_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope207_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope208_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_coverage_final_scope209_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+      - name: Check multiplicities and actual graph spectral comparison
+        shell: bash
+        run: |
+          set -o pipefail
+          python3 -B Proofs/RG_Lean_20261019/verify_extension.py --mathlib-project "$GITHUB_WORKSPACE" --endpoint ${{ matrix.endpoint }} --workers 1 --module-timeout 600 --resume | python3 -B ci/rg_compact_ci_output.py
+      - name: Retain completed records and diagnostics
+        if: always()
+        run: |
+          python3 - <<'PY'
+          import json,pathlib,shutil
+          root=pathlib.Path('Proofs/RG_Lean_20261019/build/extension')
+          records=[json.loads(p.read_text()) for p in sorted(root.glob('Proofs.*.json'))]
+          fresh=root.parent/'fresh_exports';fresh.mkdir(parents=True,exist_ok=True)
+          (fresh/'diagnostics_records.json').write_text(json.dumps({'modules':records},separators=(',',':'))+'\n')
+          if (root/'receipt.json').is_file():shutil.copyfile(root/'receipt.json',fresh/'receipt.json')
+          print('RETAINED_RECORD_COUNTS '+json.dumps({'total':len(records),'fresh':sum(r['mode']=='FRESH_KERNEL_EXPORT' for r in records)}))
+          for row in records:
+              if row['mode']=='FRESH_KERNEL_EXPORT':
+                  name=row['module'];rel=name.replace('.','/')+'.olean';dest=fresh/rel
+                  dest.parent.mkdir(parents=True,exist_ok=True)
+                  shutil.copyfile(root/rel,dest);shutil.copyfile(root/(name+'.json'),fresh/(name+'.json'))
+          for log in root.glob('Proofs.*.log'):
+              shutil.copyfile(log,fresh/log.name);print('MODULE_LOG_TAIL '+log.name+' '+log.read_text()[-18000:])
+          PY
+      - name: Retain new exports only
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: rg-degree-two-three-coverage-final-exports-${{ github.run_id }}-${{ strategy.job-index }}
+          path: Proofs/RG_Lean_20261019/build/fresh_exports
+          retention-days: 7

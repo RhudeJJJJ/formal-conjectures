@@ -24,9 +24,20 @@ jobs:
         run: lake exe cache get
       - name: Baloui exact minimum and universal negation
         run: lake env lean -DwarningAsError=true Proofs/Baloui.lean
-      - name: Build statement infrastructure
+      - uses: actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9
+        with:
+          path: .lake/build
+          key: intake-imports-${{ hashFiles('lean-toolchain', 'lake-manifest.json') }}-${{ github.sha }}
+          restore-keys: |
+            intake-imports-${{ hashFiles('lean-toolchain', 'lake-manifest.json') }}-
+            round9-imports-${{ hashFiles('lean-toolchain', 'lake-manifest.json') }}-
+      - name: Build all three exact statement files
+        run: lake --wfail build FormalConjectures.OEIS.«381054» FormalConjectures.WrittenOnTheWallII.GraphConjecture348 FormalConjectures.WrittenOnTheWallII.GraphConjecture367
+      - uses: actions/cache/save@55cc8345863c7cc4c66a329aec7e433d2d1c52a9
         if: success() || failure()
-        run: lake --wfail build FormalConjecturesUtil
-      - name: WOWII 367 tied-mode refutation
+        with:
+          path: .lake/build
+          key: intake-imports-${{ hashFiles('lean-toolchain', 'lake-manifest.json') }}-${{ github.sha }}
+      - name: Exact theorem axiom audit with placeholder negative control
         if: success() || failure()
-        run: lake env lean -DwarningAsError=true Proofs/WOWII367.lean
+        run: lake env lean -DwarningAsError=true Proofs/IntakeCertificate.lean

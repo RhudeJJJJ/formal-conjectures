@@ -72,7 +72,7 @@ theorem coversAllFamilies (C : ∀ n, List (Family n)) (N : ℕ)
     refine ⟨i,?_⟩
     rw [hi]
     cases t
-    exact ⟨SimpleGraph.Iso.refl _,rfl⟩
+    exact ⟨SimpleGraph.Iso.refl,rfl⟩
   | succ n ih =>
     intro hn t
     obtain ⟨i,e,hr⟩ := ih (by omega) t.1

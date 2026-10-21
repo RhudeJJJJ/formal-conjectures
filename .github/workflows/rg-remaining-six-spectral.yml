@@ -4,7 +4,9 @@ on:
   push:
     branches: [rg-remaining-six-spectral-20261021]
     paths:
-      - 'Proofs/RG_Lean_20261019/**'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanRooted*.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanCanonicalTreeCoverage.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanTreeLeafInduction.lean'
       - '.github/workflows/rg-remaining-six-spectral.yml'
 
 permissions:

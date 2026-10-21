@@ -23,20 +23,20 @@ theorem data_identity (H U a b : ℝ) (hH : H ≠ 0)
       (9519459831916749656232983908361175040000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 : ℝ)*form (H/46) ((653/2000)+(19347/2000)*U) a b := by
   change NestedHorner.eval (NestedInteger.castPoly 4 EscapeDirectedData.data) ![H,U,a,b] = _
   rw [EscapeDirectedEvaluation.data_eval]
-  run_tac liftIO (IO.eprintln "RG_STAGE_TABLE_REWRITTEN")
+  run_tac Lean.logInfo "RG_STAGE_TABLE_REWRITTEN"
   dsimp only [form]
-  run_tac liftIO (IO.eprintln "RG_STAGE_FORM_UNFOLDED")
+  run_tac Lean.logInfo "RG_STAGE_FORM_UNFOLDED"
   rw [CorrelatedEscapeReduction.directed_reduced]
-  run_tac liftIO (IO.eprintln "RG_STAGE_DIRECTED_REDUCED")
+  run_tac Lean.logInfo "RG_STAGE_DIRECTED_REDUCED"
   have hh : (H/46 : ℝ) ≠ 0 := div_ne_zero hH (by norm_num)
   simp only [CorrelatedEscapeReduction.payment_reciprocal _ _ hh,
     CorrelatedEscapeReduction.radius_reciprocal _ _ hh hX]
   dsimp only [CorrelatedEscapeReduction.factorCore,CorrelatedEscapeReduction.factorLead,
     CorrelatedEscapeReduction.factorBase,CorrelatedEscapeReduction.factorHorizontal,
     CorrelatedEscapeReduction.factorVertical,CorrelatedEscapeReduction.errorWeight]
-  run_tac liftIO (IO.eprintln "RG_STAGE_FACTORS_UNFOLDED")
+  run_tac Lean.logInfo "RG_STAGE_FACTORS_UNFOLDED"
   field_simp [hH,hX,show (1+((653/2000 : ℝ)+(19347/2000 : ℝ)*U)^2) ≠ 0 by positivity]
-  run_tac liftIO (IO.eprintln "RG_STAGE_DENOMINATORS_CLEARED")
+  run_tac Lean.logInfo "RG_STAGE_DENOMINATORS_CLEARED"
   ring
 
 #print axioms data_identity

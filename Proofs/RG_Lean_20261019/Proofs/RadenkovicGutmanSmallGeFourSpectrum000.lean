@@ -9,8 +9,8 @@ attribute [-instance] SimpleGraph.fintypeEdgeSetSup
 def adjacency : Fin 7 → Fin 7 → Bool := ![![false,true,true,true,true,true,false],![true,false,false,false,false,false,false],![true,false,false,false,false,false,false],![true,false,false,false,false,false,false],![true,false,false,false,false,false,false],![true,false,false,false,false,false,true],![false,false,false,false,false,true,false]]
 def graph : SimpleGraph (Fin 7) where
   Adj i j := adjacency i j=true
-  symm := by decide +kernel
-  loopless := by decide +kernel
+  symm := by constructor; decide +kernel
+  loopless := by constructor; decide +kernel
 instance : DecidableRel graph.Adj := fun i j => inferInstanceAs (Decidable (adjacency i j=true))
 def coefficients : List ℚ := [0,7,-40,87,-92,49,-12,1]
 def lowerMatrices : Fin 8 → Matrix (Fin 7) (Fin 7) ℚ := ![!![1,0,0,0,0,0,0;(-1/6),1,0,0,0,0,0;(-1/6),(-1/11),1,0,0,0,0;(-1/6),(-1/11),(-1/10),1,0,0,0;(-1/6),(-1/11),(-1/10),(-1/9),1,0,0;(-1/6),(-1/11),(-1/10),(-1/9),(-1/8),1,0;0,0,0,0,0,(-4/11),1],!![1,0,0,0,0,0,0;(-1/7),1,0,0,0,0,0;(-1/7),(-1/20),1,0,0,0,0;(-1/7),(-1/20),(-1/19),1,0,0,0;(-1/7),(-1/20),(-1/19),(-1/18),1,0,0;(-1/7),(-1/20),(-1/19),(-1/18),(-1/17),1,0;0,0,0,0,0,(-17/65),1],!![1,0,0,0,0,0,0;(-1/8),1,0,0,0,0,0;(-1/8),(-1/31),1,0,0,0,0;(-1/8),(-1/31),(-1/30),1,0,0,0;(-1/8),(-1/31),(-1/30),(-1/29),1,0,0;(-1/8),(-1/31),(-1/30),(-1/29),(-1/28),1,0;0,0,0,0,0,(-7/34),1],!![1,0,0,0,0,0,0;(-1/9),1,0,0,0,0,0;(-1/9),(-1/44),1,0,0,0,0;(-1/9),(-1/44),(-1/43),1,0,0,0;(-1/9),(-1/44),(-1/43),(-1/42),1,0,0;(-1/9),(-1/44),(-1/43),(-1/42),(-1/41),1,0;0,0,0,0,0,(-41/241),1],!![1,0,0,0,0,0,0;(-1/10),1,0,0,0,0,0;(-1/10),(-1/59),1,0,0,0,0;(-1/10),(-1/59),(-1/58),1,0,0,0;(-1/10),(-1/59),(-1/58),(-1/57),1,0,0;(-1/10),(-1/59),(-1/58),(-1/57),(-1/56),1,0;0,0,0,0,0,(-28/193),1],!![1,0,0,0,0,0,0;(-1/11),1,0,0,0,0,0;(-1/11),(-1/76),1,0,0,0,0;(-1/11),(-1/76),(-1/75),1,0,0,0;(-1/11),(-1/76),(-1/75),(-1/74),1,0,0;(-1/11),(-1/76),(-1/75),(-1/74),(-1/73),1,0;0,0,0,0,0,(-73/577),1],!![1,0,0,0,0,0,0;(-1/12),1,0,0,0,0,0;(-1/12),(-1/95),1,0,0,0,0;(-1/12),(-1/95),(-1/94),1,0,0,0;(-1/12),(-1/95),(-1/94),(-1/93),1,0,0;(-1/12),(-1/95),(-1/94),(-1/93),(-1/92),1,0;0,0,0,0,0,(-23/205),1],!![1,0,0,0,0,0,0;(-1/13),1,0,0,0,0,0;(-1/13),(-1/116),1,0,0,0,0;(-1/13),(-1/116),(-1/115),1,0,0,0;(-1/13),(-1/116),(-1/115),(-1/114),1,0,0;(-1/13),(-1/116),(-1/115),(-1/114),(-1/113),1,0;0,0,0,0,0,(-113/1121),1]]
@@ -26,15 +26,19 @@ theorem graph_charpoly : (graph.lapMatrix ℝ).charpoly=CheckedRoots.polynomial 
 def boxes : List FactoredRoots.Box := [{coefficients := [0,-7,19,-9,1],count := 4,lower := ![(-1/268435456),(125072069/268435456),(666443609/268435456),(1624403399/268435456)],upper := ![(7/134217728),(31268021/67108864),(83305453/33554432),(812201707/134217728)],copies := 1},{coefficients := [-1,1],count := 1,lower := ![(134217727/134217728)],upper := ![(268435469/268435456)],copies := 3}]
 theorem boxes_accepted : FactoredRoots.allAccepted boxes=true := by decide +kernel
 theorem factorization : CheckedRoots.polynomial coefficients=FactoredRoots.product boxes := by
-  norm_num [coefficients,boxes,CheckedRoots.polynomial,FactoredRoots.product,FactoredRoots.factor]
+  norm_num [coefficients,boxes,CheckedRoots.polynomial,FactoredRoots.product,FactoredRoots.factor,
+    Polynomial.C_ofNat]
   <;> ring
 theorem actual_graph_bounds :
     ((299796191/58720256) : ℝ) ≤ stopLoss (laplacianSpectrum graph) (2-2/7) ∧
     stopLoss (laplacianSpectrum graph) (2-2/7) ≤ ((4796739161/939524096) : ℝ) := by
-  have h := FactoredRoots.graph_stopLoss_bounds graph boxes boxes_accepted
-    (graph_charpoly.trans factorization) (2-2/7)
+  have hi : (inferInstance : DecidableRel graph.Adj)=
+      (fun i j => Classical.propDecidable (graph.Adj i j)) := Subsingleton.elim _ _
+  have hp := graph_charpoly.trans factorization
+  rw [hi] at hp ⊢
+  have h := FactoredRoots.graph_stopLoss_bounds graph boxes boxes_accepted hp (2-2/7)
   norm_num [boxes,FactoredRoots.lowerTotal,FactoredRoots.upperTotal,FactoredRoots.lower,
-    FactoredRoots.upper,Fin.sum_univ_succ] at h
+    FactoredRoots.upper,Fin.sum_univ_succ] at h ⊢
   exact h
 #print axioms matrix_certificates
 #print axioms graph_charpoly

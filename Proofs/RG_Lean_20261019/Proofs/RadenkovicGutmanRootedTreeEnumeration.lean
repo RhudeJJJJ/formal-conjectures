@@ -99,7 +99,7 @@ theorem complete {V : Type} [Fintype V] [DecidableEq V]
     (G : SimpleGraph V) (r : V) (hG : G.IsTree) : Representable V G r := by
   apply finite_tree_induction Representable ?_ ?_ ?_ G r hG
   · intro V _ G r
-    let e : G ≃g graph (() : Family 0) := {
+    let e : G ≃g graph (n := 0) () := {
       toEquiv := {
         toFun := fun _ => ()
         invFun := fun _ => r

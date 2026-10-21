@@ -40,7 +40,9 @@ theorem outside_nonneg_of_lead (d y P Q c : ℝ) (hd : 0 ≤ d) (hy : 0 < y)
     exact mul_nonneg (mul_nonneg (mul_nonneg (by norm_num) hk) (by linarith only [hpq])) hbracket
   have hr : 0 ≤ Focus.r d y := by unfold Focus.r; positivity
   have hbase : 0 ≤ 2*lead y P Q c*Focus.r d y := by positivity
-  have hg : (Focus.g d y).im=y+Focus.r d y := by simp [Focus.g,Focus.r]
+  have hg : (Focus.g d y).im=y+Focus.r d y := by
+    simp only [Focus.g,Focus.r,Complex.add_im,Complex.ofReal_im,Complex.mul_im,
+      Complex.ofReal_re,Complex.I_im,Complex.I_re,mul_one,mul_zero,zero_add,add_zero]
   have he : 2*lead y P Q c*(Focus.g d y).im+bt y P Q c =
       2*lead y P Q c*Focus.r d y+delta := by rw [hg]; dsimp only [delta]; ring
   unfold outside QuadraticDisk.outside QuadraticDisk.gradientSq

@@ -28,7 +28,7 @@ theorem boxes_accepted : FactoredRoots.allAccepted boxes=true := by decide +kern
 theorem factorization : CheckedRoots.polynomial coefficients=FactoredRoots.product boxes := by
   norm_num [coefficients,boxes,CheckedRoots.polynomial,FactoredRoots.product,FactoredRoots.factor,
     Polynomial.C_ofNat]
-  ring
+  
 theorem actual_graph_bounds :
     ((3504471935/402653184) : ℝ) ≤ stopLoss (laplacianSpectrum graph) (2-2/12) ∧
     stopLoss (laplacianSpectrum graph) (2-2/12) ≤ ((14017888115/1610612736) : ℝ) := by

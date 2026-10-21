@@ -16,7 +16,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        endpoint: [Proofs.RadenkovicGutmanSmallGeFourComparisons00,Proofs.RadenkovicGutmanSmallGeFourComparisons01,Proofs.RadenkovicGutmanSmallGeFourComparisons02,Proofs.RadenkovicGutmanSmallGeFourComparisons03,Proofs.RadenkovicGutmanSmallGeFourComparisons04,Proofs.RadenkovicGutmanSmallGeFourComparisons05,Proofs.RadenkovicGutmanSmallGeFourComparisons06,Proofs.RadenkovicGutmanSmallGeFourComparisons07,Proofs.RadenkovicGutmanSmallGeFourComparisons08,Proofs.RadenkovicGutmanSmallGeFourComparisons09,Proofs.RadenkovicGutmanSmallGeFourComparisons10,Proofs.RadenkovicGutmanSmallGeFourComparisons11,Proofs.RadenkovicGutmanSmallGeFourComparisons12,Proofs.RadenkovicGutmanSmallGeFourComparisons13,Proofs.RadenkovicGutmanSmallGeFourComparisons14]
+        endpoint: [Proofs.RadenkovicGutmanSmallGeFourComparisons02,Proofs.RadenkovicGutmanSmallGeFourComparisons04,Proofs.RadenkovicGutmanSmallGeFourComparisons07,Proofs.RadenkovicGutmanSmallGeFourComparisons08,Proofs.RadenkovicGutmanSmallGeFourComparisons09,Proofs.RadenkovicGutmanSmallGeFourComparisons10,Proofs.RadenkovicGutmanSmallGeFourComparisons11,Proofs.RadenkovicGutmanSmallGeFourComparisons12,Proofs.RadenkovicGutmanSmallGeFourComparisons13]
     runs-on: ubuntu-latest
     timeout-minutes: 90
     steps:
@@ -54,6 +54,16 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ github.token }}
         run: python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_small_ge4_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+      - name: Restore unchanged exports from this exact preceding group
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          python3 - <<'PY'
+          import subprocess
+          endpoint='${{ matrix.endpoint }}'
+          batch=endpoint.rsplit('Comparisons',1)[1]
+          subprocess.run(['python3','-B','ci/rg_restore_job_exports.py','--manifest',f'ci/rg_small_ge4_wave1_batch{batch}_prior_exports.json','--build-directory','Proofs/RG_Lean_20261019/build/extension'],check=True)
+          PY
       - name: Check multiplicities and actual graph spectral comparison
         run: python3 -B Proofs/RG_Lean_20261019/verify_extension.py --mathlib-project "$GITHUB_WORKSPACE" --endpoint ${{ matrix.endpoint }} --workers 1 --module-timeout 600 --resume --print-receipt
       - name: Retain completed records and diagnostics

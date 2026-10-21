@@ -86,6 +86,7 @@ def Certified (C : SimpleGraph V) (u : V) (p q : ℕ) : Prop :=
       stopLoss (laplacianSpectrum H) (2-2/(N : ℝ))<
         stopLoss (laplacianSpectrum G) (2-2/(N : ℝ))
 
+omit [Fintype V] [DecidableEq V] [Fintype W] [DecidableEq W] in
 theorem certified_transport {C : SimpleGraph V} {D : SimpleGraph W} (e : C ≃g D)
     (u : V) (p q : ℕ) (h : Certified D (e u) p q) : Certified C u p q := by
   obtain ⟨N,G,H,⟨es⟩,⟨et⟩,hcomp⟩ := h

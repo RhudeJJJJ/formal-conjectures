@@ -25,16 +25,16 @@ theorem directedCore_nonneg (h x a b : ℝ) (hh : h ∈ Ioc (0 : ℝ) (1/46))
     · exact hU
     · exact ha
     · exact hb
-  have h := EscapeReducedDirected.unit_box_nonneg _ hv
+  have hp := EscapeReducedDirected.unit_box_nonneg _ hv
   have he : (653/2000 : ℝ)+(19347/2000 : ℝ)*U=x := by dsimp [U]; ring
   have hx0 : 0 < x := by linarith only [hx.1]
-  have hH : 46*h ≠ 0 := mul_ne_zero (by norm_num) hh.1.ne'
+  have hH : 46*h ≠ 0 := mul_ne_zero (by norm_num : (46 : ℝ) ≠ 0) hh.1.ne'
   have hX : (653/2000 : ℝ)+(19347/2000 : ℝ)*U ≠ 0 := by rw [he]; exact hx0.ne'
-  rw [EscapeReducedDirectedIdentity.data_identity (46*h) U a b hH hX] at h
+  rw [EscapeReducedDirectedIdentity.data_identity (46*h) U a b hH hX] at hp
   have heh : (46*h)/46=h := by ring
-  rw [heh,he] at h
+  rw [heh,he] at hp
   have hform : 0 ≤ EscapeReducedDirectedIdentity.form h x a b :=
-    nonneg_of_mul_nonneg_right h (by norm_num)
+    nonneg_of_mul_nonneg_right hp (by norm_num)
   unfold EscapeReducedDirectedIdentity.form at hform
   have hh0 : 0 < h := hh.1
   exact nonneg_of_mul_nonneg_right hform (by positivity)
@@ -57,16 +57,16 @@ theorem reserveInner_nonneg (h x a b : ℝ) (hh : h ∈ Ioc (0 : ℝ) (1/46))
     · exact hU
     · exact ha
     · exact hb
-  have h := EscapeReducedReserve.unit_box_nonneg _ hv
+  have hp := EscapeReducedReserve.unit_box_nonneg _ hv
   have he : (653/2000 : ℝ)+(19347/2000 : ℝ)*U=x := by dsimp [U]; ring
   have hx0 : 0 < x := by linarith only [hx.1]
-  have hH : 46*h ≠ 0 := mul_ne_zero (by norm_num) hh.1.ne'
+  have hH : 46*h ≠ 0 := mul_ne_zero (by norm_num : (46 : ℝ) ≠ 0) hh.1.ne'
   have hX : (653/2000 : ℝ)+(19347/2000 : ℝ)*U ≠ 0 := by rw [he]; exact hx0.ne'
-  rw [EscapeReducedReserveIdentity.data_identity (46*h) U a b hH hX] at h
+  rw [EscapeReducedReserveIdentity.data_identity (46*h) U a b hH hX] at hp
   have heh : (46*h)/46=h := by ring
-  rw [heh,he] at h
+  rw [heh,he] at hp
   have hform : 0 ≤ EscapeReducedReserveIdentity.form h x a b :=
-    nonneg_of_mul_nonneg_right h (by norm_num)
+    nonneg_of_mul_nonneg_right hp (by norm_num)
   unfold EscapeReducedReserveIdentity.form at hform
   have hh0 : 0 < h := hh.1
   exact nonneg_of_mul_nonneg_right hform (by positivity)

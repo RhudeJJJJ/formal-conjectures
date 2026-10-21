@@ -38,29 +38,29 @@ instance sourceDecidable {n : ℕ} (t : Family n) (p q : ℕ) :
     (SimpleGraph.pathGraph (p+1) ⊕g SimpleGraph.pathGraph (q+1))
   let edgeOne : SimpleGraph A := SimpleGraph.edge (.inl (root n)) (.inr (.inl 0))
   let edgeTwo : SimpleGraph A := SimpleGraph.edge (.inl (root n)) (.inr (.inr 0))
-  letI : DecidableRel forest.Adj :=
+  let dForest : DecidableRel forest.Adj :=
     @nativeSumDecidable (Vertices n) (Fin (p+1) ⊕ Fin (q+1)) (graph t)
       (SimpleGraph.pathGraph (p+1) ⊕g SimpleGraph.pathGraph (q+1))
       (CanonicalTreeCoverage.graphDecidable t)
       (@nativeSumDecidable (Fin (p+1)) (Fin (q+1))
         (SimpleGraph.pathGraph (p+1)) (SimpleGraph.pathGraph (q+1))
         (nativePathDecidable (p+1)) (nativePathDecidable (q+1)))
-  letI : DecidableRel edgeOne.Adj := nativeEdgeDecidable _ _
-  letI : DecidableRel edgeTwo.Adj := nativeEdgeDecidable _ _
-  exact fun a b => inferInstanceAs
-    (Decidable ((forest.Adj a b ∨ edgeOne.Adj a b) ∨ edgeTwo.Adj a b))
+  let dOne : DecidableRel edgeOne.Adj := nativeEdgeDecidable _ _
+  let dTwo : DecidableRel edgeTwo.Adj := nativeEdgeDecidable _ _
+  exact fun a b => @instDecidableOr (forest.Adj a b ∨ edgeOne.Adj a b) (edgeTwo.Adj a b)
+    (@instDecidableOr (forest.Adj a b) (edgeOne.Adj a b) (dForest a b) (dOne a b)) (dTwo a b)
 
 instance fusedDecidable {n : ℕ} (t : Family n) (p q : ℕ) :
     DecidableRel (fused (graph t) (root n) p q).Adj := by
   let A := Vertices n ⊕ Fin (p+q+2)
   let forest : SimpleGraph A := graph t ⊕g SimpleGraph.pathGraph (p+q+2)
   let edgeOne : SimpleGraph A := SimpleGraph.edge (.inl (root n)) (.inr 0)
-  letI : DecidableRel forest.Adj :=
+  let dForest : DecidableRel forest.Adj :=
     @nativeSumDecidable (Vertices n) (Fin (p+q+2)) (graph t)
       (SimpleGraph.pathGraph (p+q+2)) (CanonicalTreeCoverage.graphDecidable t)
       (nativePathDecidable (p+q+2))
-  letI : DecidableRel edgeOne.Adj := nativeEdgeDecidable _ _
-  exact fun a b => inferInstanceAs (Decidable (forest.Adj a b ∨ edgeOne.Adj a b))
+  let dOne : DecidableRel edgeOne.Adj := nativeEdgeDecidable _ _
+  exact fun a b => @instDecidableOr (forest.Adj a b) (edgeOne.Adj a b) (dForest a b) (dOne a b)
 
 noncomputable section
 

@@ -11,7 +11,7 @@ def coveredRange (n start count : ℕ) : Bool :=
       (⟨n,start+i.val,p.val,q.val⟩ : Key) ∈ keys)
 
 theorem range_sound (n start count : ℕ) (hc : coveredRange n start count=true)
-    (i : ℕ) (p q : Fin 11) (hlo : start≤i) (hhi : i<start+count)
+    (i : ℕ) (p q : Fin 11) (hlo : start ≤ i) (hhi : i < start + count)
     (he : eligible n i p.val q.val=true) : (⟨n,i,p.val,q.val⟩ : Key) ∈ keys := by
   have hk := of_decide_eq_true hc (⟨i-start,by omega⟩ : Fin count) p q
   have hi : start+(i-start)=i := by omega

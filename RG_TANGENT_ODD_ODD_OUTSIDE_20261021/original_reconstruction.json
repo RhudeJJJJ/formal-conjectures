@@ -1,0 +1,48 @@
+{
+  "status": "VERIFIED_COMPLETE_UNIT_BOX_POLYNOMIAL",
+  "source_sha256": "113b86da5e01c6a4d7faccdb1c06ab0b3bd8aa693ee19adedac0df15e986829c",
+  "original_source_pins": {
+    "rg_multiarm_small_ordinate_lowstrip.py": "99aed193364dd1b6a2308740245a67e35d39643b8d0c46b8465484320651fbbd",
+    "rg_multiarm_small_ordinate_midstrip.py": "10bee0471c201e0b2e2b6a223f1e9e6d3b4f006dc94b64f2fa2ef24b9550bdb2"
+  },
+  "original_condition": "outside",
+  "original_physical_parity": [
+    "odd",
+    "odd"
+  ],
+  "cutoff": 46,
+  "unit_coordinates": [
+    "H=46*h",
+    "C=2*c",
+    "a",
+    "b"
+  ],
+  "degrees": [
+    12,
+    26,
+    4,
+    4
+  ],
+  "bernstein_coefficients": 8775,
+  "integer_positive_scale": "11765324404956231737802752",
+  "clearing": {
+    "clearing_power": 10,
+    "laurent_minima": [
+      -2,
+      -1,
+      0,
+      0
+    ]
+  },
+  "parity_denominator_power": 0,
+  "nonzero_power_terms": 2083,
+  "identity_obligation": "eval integer table at (46*h,2*c,a,b) = scale*h^2*c*(1-c^2)^10*outside (1/h) y (y+a) (y+b) c, y=4*c*h/(1-c^2). Not a proof premise or established theorem.",
+  "boundary": "Complete unit-box polynomial only; no original graph sign, parity family or complete Input is claimed.",
+  "source_commit": "03c2cedc651269be0b82d44ad5fa3a2b36553c99",
+  "run": 39518437924,
+  "job": 118956138808,
+  "closure_modules": 12,
+  "fresh_exports": 12,
+  "original_geometry_identity": "PROVEN",
+  "identity_status": "PROVEN at fb81f52369d5647ae1effd04a9adcaa4f7c0c320, run39518879837"
+}

@@ -30,7 +30,7 @@ on (0,1/2), under the two original pointwise graph comparisons on (0,8/(3*d)] an
 
 ## Exact remaining scope
 
-Those sign families are inputs to this checkpoint. It does not supply their polynomial certificates or positive clearing identities. The original tangent signs in all three physical parity cases and the original constant-strip chart signs still require work. The separate correlated-escape certificate run has its own evidence; its later failing, pending or skipped endpoints cannot be inferred from this receipt.
+Those sign families are inputs to this checkpoint. It does not supply their polynomial certificates or positive clearing identities. The original outside conditions have since been proved analytically for all physical arm pairs; see ../RG_LOWSTRIP_OUTSIDE_20261021/README.md. The remaining original tangent and constant-strip directed/full-reserve signs still require work. The separate correlated-escape certificate run has its own evidence; its later failing, pending or skipped endpoints cannot be inferred from this receipt.
 
 All seven complete `OriginalAssembly.Inputs` fields remain OPEN, including remaining degree ranges and rooted-core census completeness. Uniform strict fusion from source order five and the universal Lean path-minimum/equality theorem remain OPEN. SmallOrders 5 and actual order-four fusion are retained. The separate written computer-assisted theorem is unchanged. No full 1302-witness replay, full-paper reading, peer review, acceptance, merge or universal formal_proof certificate is claimed.
 

@@ -1,0 +1,72 @@
+{
+  "source_commit": "03c2cedc651269be0b82d44ad5fa3a2b36553c99",
+  "run": 39518437924,
+  "job": 118956138808,
+  "job_conclusion": "success",
+  "full_log_sha256": "776cb2ddffef0ab95c8f9854cd850d7991037670170453f3a978adab0fdc5043",
+  "completed_endpoint_receipts": 1,
+  "completed_endpoints": [
+    [
+      "Proofs.RadenkovicGutmanTangentOddOddOutside"
+    ]
+  ],
+  "individual_modules": 12,
+  "source_checks": [
+    {
+      "module": "Proofs.RadenkovicGutmanRootIsolation",
+      "source_matches_current": true
+    },
+    {
+      "module": "Proofs.RadenkovicGutmanCheckedRoots",
+      "source_matches_current": true
+    },
+    {
+      "module": "Proofs.RadenkovicGutmanTensorPolynomial",
+      "source_matches_current": true
+    },
+    {
+      "module": "Proofs.RadenkovicGutmanNestedHorner",
+      "source_matches_current": true
+    },
+    {
+      "module": "Proofs.RadenkovicGutmanRationalTensorPolynomial",
+      "source_matches_current": true
+    },
+    {
+      "module": "Proofs.RadenkovicGutmanRationalTensorFast",
+      "source_matches_current": true
+    },
+    {
+      "module": "Proofs.RadenkovicGutmanHornerCertificates",
+      "source_matches_current": true
+    },
+    {
+      "module": "Proofs.RadenkovicGutmanNestedHornerCells",
+      "source_matches_current": true
+    },
+    {
+      "module": "Proofs.RadenkovicGutmanNestedHornerTransform",
+      "source_matches_current": true
+    },
+    {
+      "module": "Proofs.RadenkovicGutmanNestedInteger",
+      "source_matches_current": true
+    },
+    {
+      "module": "Proofs.RadenkovicGutmanNestedIntegerHybrid",
+      "source_matches_current": true
+    },
+    {
+      "module": "Proofs.RadenkovicGutmanTangentOddOddOutside",
+      "source_matches_current": true
+    }
+  ],
+  "all_standard_axioms": true,
+  "all_fresh_in_this_job": true,
+  "fresh_modules_in_this_job": 12,
+  "prior_verified_job_exports": 0,
+  "prior_verification_origins": [],
+  "universal_RG_Lean": "OPEN",
+  "all_seven_complete_Input_families": "OPEN",
+  "boundary": "Only a completed endpoint receipt proves that entire explicit closure. Individual completed modules do not prove later skipped or failing endpoints."
+}

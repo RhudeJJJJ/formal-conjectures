@@ -1,22 +1,7 @@
-name: RG degree one small coverage
+name: RG original whole-order coverage attempts (manual historical scope)
 
 on:
-  push:
-    branches: [rg-remaining-six-spectral-20261021]
-    paths:
-      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallCoverage00.lean'
-      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallCoverage01.lean'
-      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallCoverage02.lean'
-      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallCoverage03.lean'
-      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallCoverage04.lean'
-      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallCoverage05.lean'
-      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallCoverage06.lean'
-      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallCoverage07.lean'
-      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallCoverage08.lean'
-      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallCoverage09.lean'
-      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallCoverage10.lean'
-      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallKeysData.lean'
-      - '.github/workflows/rg-degree-one-small-coverage.yml'
+  workflow_dispatch:
 
 permissions:
   contents: read

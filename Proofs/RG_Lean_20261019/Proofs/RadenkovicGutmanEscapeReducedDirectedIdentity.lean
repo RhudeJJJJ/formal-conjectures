@@ -21,7 +21,17 @@ theorem data_identity (H U a b : ℝ) (hH : H ≠ 0)
   dsimp only [CorrelatedEscapeReduction.factorCore,CorrelatedEscapeReduction.factorLead,
     CorrelatedEscapeReduction.factorBase,CorrelatedEscapeReduction.factorHorizontal,
     CorrelatedEscapeReduction.factorVertical,CorrelatedEscapeReduction.errorWeight]
-  field_simp [hH,hX,show (1+((653/2000 : ℝ)+(19347/2000 : ℝ)*U)^2) ≠ 0 by positivity]
+  have hlin : (653 : ℝ)+19347*U ≠ 0 := by
+    intro hz
+    apply hX
+    nlinarith only [hz]
+  have hquad : (426409 : ℝ)+25267182*U+374306409*U^2 ≠ 0 := by
+    rw [show (426409 : ℝ)+25267182*U+374306409*U^2=((653 : ℝ)+19347*U)^2 by ring]
+    exact pow_ne_zero 2 hlin
+  have hpn : (4426409 : ℝ)+25267182*U+374306409*U^2 ≠ 0 := by
+    rw [show (4426409 : ℝ)+25267182*U+374306409*U^2=4000000+((653 : ℝ)+19347*U)^2 by ring]
+    positivity
+  field_simp [hH,hX,hlin,hquad,hpn,show (1+((653/2000 : ℝ)+(19347/2000 : ℝ)*U)^2) ≠ 0 by positivity]
   rw [EscapeReducedDirected.data_eval]
   norm_num only [Rat.cast_intCast]
   ring

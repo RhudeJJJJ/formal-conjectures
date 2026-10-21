@@ -9,7 +9,7 @@ set_option maxHeartbeats 0
 set_option backward.isDefEq.respectTransparency false
 
 def a (y P Q c : ℝ) : ℝ :=
-  (1-c^2/4)*(1+P^2)*(1+Q^2)+(c^2/4)*(2*y*(P+Q)-y^2)
+  (1-c^2/4)*(1+P^2)*(1+Q^2)-(c^2/4)*(2*P-y)*(2*Q-y)
 def b (y P Q c : ℝ) : ℝ :=
   -2*(LowStripDirected.anNegative y P Q-(c^2/4)*LowStripDirected.bdNegative y P Q)
 def anchor (y P Q c : ℝ) : ℝ := (1-c^2/4)*(4+y^2)*(P*Q+1)^2

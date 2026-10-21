@@ -1,0 +1,38 @@
+{
+  "repository": "RhudeJJJJ/formal-conjectures",
+  "run": 39639294558,
+  "job": 119358293487,
+  "source_commit": "30059952c7a69e5a4b4304a00e9d93ef0ca22429",
+  "artifact_id": 12364301540,
+  "artifact_sha256": "13acec675163630e8ba5da45e405e9b31e1069301651dc2a7a6ccc588e44861d",
+  "lean_version": "4.33.1",
+  "mathlib": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "modules": {
+    "Proofs.RadenkovicGutmanActualSmallGeFourKeysData": {
+      "module": "Proofs.RadenkovicGutmanActualSmallGeFourKeysData",
+      "source_sha256": "410aa0543f09fbd2f3ff54e254fbb0241e1524a84bea7a07b8ea785a90bf6d73",
+      "source_closure_sha256": "14f1e83f394f3914865192e9e4698bd2bd516af173c80ebf7d20c21a91cff3ed",
+      "output_sha256": "5939e1dfea9b78fe177688141df317e0eb1c9d1c31b4523d3e83664ee4698bf5",
+      "axiom_profiles": [
+        []
+      ],
+      "mode": "FRESH_KERNEL_EXPORT",
+      "seconds": 2.772
+    },
+    "Proofs.RadenkovicGutmanActualSmallGeFourCoverage03": {
+      "module": "Proofs.RadenkovicGutmanActualSmallGeFourCoverage03",
+      "source_sha256": "44a5e4764c9174f59fb6f7faea8cc01ac7446583f0a65b00ab635344b4351e98",
+      "source_closure_sha256": "c1195ba294b2d4d02f5463133d57e659737dca1c783c7aefdbc83a98835c517a",
+      "output_sha256": "cd5124ec5595157f17e2e2a8a2ab12ead49b70dfbd5bb5e642cb4e520b701013",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "FRESH_KERNEL_EXPORT",
+      "seconds": 2.269
+    }
+  }
+}

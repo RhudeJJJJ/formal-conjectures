@@ -1,0 +1,38 @@
+{
+  "repository": "RhudeJJJJ/formal-conjectures",
+  "run": 39639294204,
+  "job": 119358292159,
+  "source_commit": "30059952c7a69e5a4b4304a00e9d93ef0ca22429",
+  "artifact_id": 12363203244,
+  "artifact_sha256": "8ebed8789e83c84f063552fd6b9ec16e010d5d88e9b4d6970a94d704e61bfe7b",
+  "lean_version": "4.33.1",
+  "mathlib": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "modules": {
+    "Proofs.RadenkovicGutmanActualSmallGeFourKeysData": {
+      "module": "Proofs.RadenkovicGutmanActualSmallGeFourKeysData",
+      "source_sha256": "410aa0543f09fbd2f3ff54e254fbb0241e1524a84bea7a07b8ea785a90bf6d73",
+      "source_closure_sha256": "14f1e83f394f3914865192e9e4698bd2bd516af173c80ebf7d20c21a91cff3ed",
+      "output_sha256": "5939e1dfea9b78fe177688141df317e0eb1c9d1c31b4523d3e83664ee4698bf5",
+      "axiom_profiles": [
+        []
+      ],
+      "mode": "FRESH_KERNEL_EXPORT",
+      "seconds": 3.023
+    },
+    "Proofs.RadenkovicGutmanActualSmallGeFourCertificateBatch07": {
+      "module": "Proofs.RadenkovicGutmanActualSmallGeFourCertificateBatch07",
+      "source_sha256": "5f094b0e53de4e9790b50ee94e9d87e6392fefa17e25f74a25ea1fffd336a792",
+      "source_closure_sha256": "2f52de6cc06671e314bccf3acdea378058ee7b0d1c7dc3fe7fbcb683029ac658",
+      "output_sha256": "2bf7366855d4c948a11088db8a90b6a467f18db73ccd9d51b8cfd21c444eead0",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "FRESH_KERNEL_EXPORT",
+      "seconds": 4.776
+    }
+  }
+}

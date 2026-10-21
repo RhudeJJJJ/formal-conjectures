@@ -28,7 +28,7 @@ theorem evaluation (U a b : ℝ) :
     ext i
     fin_cases i <;> norm_num [lower,width]
   rw [he] at h
-  norm_num only [Rat.cast_pow,Rat.cast_div,Rat.cast_one,Rat.cast_ofNat] at h
+  norm_num only [Rat.cast_pow,Rat.cast_div,Rat.cast_one,Rat.cast_ofNat] at h ⊢
   exact h
 #print axioms accepted
 #print axioms evaluation

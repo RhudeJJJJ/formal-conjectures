@@ -20,8 +20,7 @@ theorem linear_positive (d y : ℝ) (hd : 0 < d) (hy : 0 < y)
     dsimp [w,z,g,r]
     simp only [Complex.normSq_apply,Complex.sub_re,Complex.sub_im,
       Complex.add_re,Complex.add_im,Complex.mul_re,Complex.mul_im,
-      Complex.ofReal_re,Complex.ofReal_im,Complex.I_re,Complex.I_im,
-      Complex.re_ofNat,Complex.im_ofNat]
+      Complex.ofReal_re,Complex.ofReal_im,Complex.I_re,Complex.I_im]
     ring
   rw [he] at hn
   let t := y*w.re-2*w.im

@@ -1,4 +1,5 @@
 import FormalConjectures.WrittenOnTheWallII.GraphConjecture348
+import Lean.Util.CollectAxioms
 
 /-!
 A finite rooted description of an actual simple tree, used to telescope local
@@ -141,12 +142,12 @@ noncomputable def charge (D : Finset V) (v : V) : ℤ :=
 
 lemma message_selected (D : Finset V) (p : V → V) (v : V) (hv : v ∈ D) :
     1 ≤ message G D p v := by
-  simp only [message, hv, if_true]
+  simp only [message, hv, ite_true]
   split_ifs <;> omega
 
 lemma message_degree_two (D : Finset V) (p : V → V) (v : V) (hv : G.degree v = 2) :
     1 ≤ message G D p v := by
-  simp only [message, hv, (show (2 : ℕ) ≠ 1 by decide), if_false, if_true]
+  simp only [message, hv, (show (2 : ℕ) ≠ 1 by decide), ite_false, ite_true]
   split_ifs <;> omega
 
 lemma leaf_neighbor_eq_parent (hT : G.IsTree) (r : V) (p : V → V)
@@ -174,12 +175,12 @@ lemma message_parent_not_selected (hT : G.IsTree) (D : Finset V)
     (hp : ∀ v, v ≠ r → G.Adj v (p v) ∧ G.dist (p v) r + 1 = G.dist v r)
     (v : V) (hv : v ≠ r) (hn : p v ∉ D) : 2 ≤ message G D p v := by
   have hleaf : G.degree v ≠ 1 := fun h => hn (leaf_parent_selected G hT D hD r p hp v hv h)
-  simp only [message, hleaf, hn, false_and, if_false]
+  simp only [message, hleaf, hn, false_and, ite_false]
   split_ifs <;> omega
 
 lemma message_parent_not_two (D : Finset V) (p : V → V) (v : V)
     (hp : p v ∈ D) (hq : G.degree (p v) ≠ 2) : 0 ≤ message G D p v := by
-  simp only [message, hp, hq, true_and, if_true, if_false]
+  simp only [message, hp, hq, true_and, ite_true, ite_false]
   split_ifs <;> omega
 
 lemma message_lower (D : Finset V) (p : V → V) (v : V) :
@@ -195,7 +196,7 @@ lemma child_sum_nonneg (hT : G.IsTree) (D : Finset V)
   apply Finset.sum_nonneg
   intro w hw
   obtain ⟨_, he⟩ := (Finset.mem_filter.mp hw).2
-  exact message_parent_not_two G D p w (by simpa only [he] using hv) (by simpa only [he] using hdeg)
+  exact message_parent_not_two G D p w (by simpa only [he] using hv) (by simpa only [SimpleGraph.degree, SimpleGraph.neighborFinset, Set.toFinset_card, ← Nat.card_eq_fintype_card, he] using hdeg)
 
 lemma local_potential (hT : G.IsTree) (D : Finset V)
     (hD : G.IsTotalDominating (D : Set V)) (r : V) (p : V → V)
@@ -226,13 +227,13 @@ lemma local_potential (hT : G.IsTree) (D : Finset V)
       simp [WrittenOnTheWallII.GraphConjecture348.externalDegreeTwoNeighbors, htwo]
     rw [hw, Finset.sum_singleton]
     have hmv : message G D p v = (if v ∈ D then (if p v ∈ D then 1 else 4) else 2) := by
-      simp only [message, hleaf, htwo, if_false, if_true]
+      simp [message, hleaf, htwo]
     rw [hmv]
     by_cases hs : v ∈ D
     · by_cases ht : p v ∈ D
       · have hlow := message_lower G D p w
-        simp only [hs, ht, if_false, if_true] 
-        simp only [charge, hs, hb, if_true, if_false, sub_zero]
+        simp only [hs, ht, ite_false, ite_true] 
+        simp only [charge, hs, hb, ite_true, ite_false, sub_zero]
         omega
       · obtain ⟨u, hu, hadj⟩ := hD v
         change u ∈ D at hu
@@ -243,20 +244,20 @@ lemma local_potential (hT : G.IsTree) (D : Finset V)
         have hue : u = w := by simpa [hw] using hus
         have hwsel : w ∈ D := hue ▸ hu
         have hlow := message_selected G D p w hwsel
-        simp only [hs, ht, if_false, if_true, charge, hb, sub_zero]
+        simp only [hs, ht, ite_false, ite_true, charge, hb, sub_zero]
         omega
     · have hlow := message_parent_not_selected G hT D hD r p hp w hwr (by simpa only [hpw] using hs)
-      simp only [hs, if_false, if_true, charge, hb, sub_zero]
+      simp only [hs, ite_false, ite_true, charge, hb, sub_zero]
       omega
   have hc : 2 ≤ (children p r v).card := by omega
   have hmv : message G D p v = (if v ∈ D then
       (if p v ∈ D ∧ G.degree (p v) = 2 then 1 else 2) else 2) := by
-    simp only [message, hleaf, htwo, if_false]
+    simp only [message, hleaf, htwo, ite_false]
   rw [hmv]
   by_cases hs : v ∈ D
   · have hsum := child_sum_nonneg G hT D hD r p hp v hs htwo
     by_cases hpar : p v ∈ D ∧ G.degree (p v) = 2
-    · simp only [hs, hpar, if_false, if_true, charge]
+    · simp only [hs, hpar, ite_false, ite_true, charge]
       split_ifs <;> omega
     have hwitness : v ∈ WrittenOnTheWallII.GraphConjecture348.externalDegreeTwoNeighbors G →
         1 ≤ ∑ w ∈ children p r v, message G D p w := by
@@ -268,10 +269,10 @@ lemma local_potential (hT : G.IsTree) (D : Finset V)
           Finset.single_le_sum (fun z hz => by
             obtain ⟨_, hez⟩ := (Finset.mem_filter.mp hz).2
             exact message_parent_not_two G D p z
-              (by simpa only [hez] using hs) (by simpa only [hez] using htwo)) hu
+              (by simpa only [hez] using hs) (by simpa only [SimpleGraph.degree, SimpleGraph.neighborFinset, Set.toFinset_card, ← Nat.card_eq_fintype_card, hez] using htwo)) hu
         omega
       rcases (hclass v w).mp hadj with ⟨_, he⟩ | ⟨hwr, he⟩
-      · have hpdeg : G.degree (p v) = 2 := by simpa [he] using hd
+      · have hpdeg : G.degree (p v) = 2 := by simpa only [SimpleGraph.degree, SimpleGraph.neighborFinset, Set.toFinset_card, ← Nat.card_eq_fintype_card, he] using hd
         have hpnot : p v ∉ D := fun h => hpar ⟨h, hpdeg⟩
         obtain ⟨u, hu, hau⟩ := hD v
         change u ∈ D at hu
@@ -279,7 +280,7 @@ lemma local_potential (hT : G.IsTree) (D : Finset V)
         · exact (hpnot (by simpa only [heu] using hu)).elim
         · exact hsingle u (by simp [children, hur, heu]) (message_selected G D p u hu)
       · exact hsingle w (by simp [children, hwr, he]) (message_degree_two G D p w hd)
-    simp only [hs, hpar, if_false, if_true, charge]
+    simp only [hs, hpar, ite_false, ite_true, charge]
     split_ifs with hb
     · have := hwitness hb
       omega
@@ -293,7 +294,7 @@ lemma local_potential (hT : G.IsTree) (D : Finset V)
           obtain ⟨hwr, he⟩ := (Finset.mem_filter.mp hw).2
           exact message_parent_not_selected G hT D hD r p hp w hwr (by simpa only [he] using hs)
     have hcZ : (2 : ℤ) ≤ (children p r v).card := by exact_mod_cast hc
-    simp only [hs, if_false, charge]
+    simp only [hs, ite_false, charge]
     split_ifs <;> omega
 end WOWIIRootedFlow
 
@@ -355,9 +356,11 @@ lemma root_potential (hT : G.IsTree) (hn : 2 < Fintype.card V)
     · rintro ⟨_, w, hw, hd⟩
       have he : w = v := (SimpleGraph.degree_eq_one_iff_existsUnique_adj.mp hr).unique hw hadj
       exact he ▸ hd
-    · exact fun hd => ⟨by omega, v, hadj, hd⟩
+    · intro hd
+      refine ⟨?_, v, hadj, hd⟩
+      simpa only [SimpleGraph.degree, SimpleGraph.neighborFinset, Set.toFinset_card, ← Nat.card_eq_fintype_card] using (show G.degree r ≠ 2 by omega)
   rw [hv, Finset.sum_singleton]
-  simp only [charge, message, hvleaf, hvsel, hpv, hr, hb, if_false, if_true]
+  simp only [charge, message, hvleaf, hvsel, hpv, hr, hb, ite_false, ite_true]
   split_ifs <;> omega
 
 lemma bound_set_348 (hT : G.IsTree) (hn : 2 < Fintype.card V)
@@ -428,3 +431,16 @@ theorem positive_348 (hT : G.IsTree) (hn : 2 < Fintype.card V) :
   omega
 end WOWIIRootedFlow
 #print axioms WOWIIRootedFlow.positive_348
+
+run_cmd do
+  let allowed : Array Lean.Name := #[``propext, ``Classical.choice, ``Quot.sound]
+  for target in #[``WOWIIRootedFlow.positive_348, ``WOWIIRootedFlow.bound_set_348, ``WOWIIRootedFlow.parent_classification] do
+    let axioms ← Lean.collectAxioms target
+    for ax in axioms do
+      unless allowed.contains ax do
+        Lean.throwError m!"Unexpected axiom in {target}: {ax}"
+    Lean.logInfo m!"Checked {target}: {axioms}"
+  let negative ← Lean.collectAxioms ``sorryAx
+  unless negative.contains ``sorryAx && !(negative.all allowed.contains) do
+    Lean.throwError "Placeholder negative control was not rejected"
+  Lean.logInfo "WOWII348_FULL_PROOF_PASS"

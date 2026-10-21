@@ -1,5 +1,6 @@
 import FormalConjectures.WrittenOnTheWallII.GraphConjecture348
 import FormalConjectures.WrittenOnTheWallII.GraphConjecture367
+import Lean.Util.CollectAxioms
 
 /-!
 General tree bounds for WOWII 348 and the positive reading of WOWII 367.
@@ -52,7 +53,8 @@ lemma internal_sum_even (D : Finset V) : Even (rowSum G D D) := by
     have hc := congrArg Finset.card hm
     simp only [Finset.card_map, Finset.toFinset_coe] at hc
     convert hc using 1
-    exact Fintype.card_congr (Equiv.refl (H.neighborSet v))
+    simp only [H, SimpleGraph.degree, SimpleGraph.neighborFinset, Set.toFinset_card,
+      ← Nat.card_eq_fintype_card]
   have hs : rowSum G D D = ∑ v : (D : Set V), H.degree v := by
     simp only [rowSum, he]
     exact (Finset.sum_coe_sort D _).symm
@@ -136,6 +138,7 @@ lemma leaf_identity (hT : G.IsTree) (D : Finset V)
     calc
       _ = ∑ v : V, (G.degree v + if G.degree v = 1 then 1 else 0) := by
         rw [Finset.sum_add_distrib, Finset.sum_boole]
+        norm_cast
       _ = ∑ v : V, (2 + (G.degree v - 2)) := Finset.sum_congr rfl (fun v _ => hp v)
       _ = _ := by simp [Finset.sum_add_distrib]; omega
   omega
@@ -314,3 +317,16 @@ theorem positive_367 (hT : G.IsTree) (hcard : 2 < Fintype.card V)
 end WOWIITreeProof
 
 #print axioms WOWIITreeProof.positive_367
+
+run_cmd do
+  let allowed : Array Lean.Name := #[``propext, ``Classical.choice, ``Quot.sound]
+  for target in #[``WOWIITreeProof.positive_367, ``WOWIITreeProof.degree_diversity_bound, ``WOWIITreeProof.positive_bound_set] do
+    let axioms ← Lean.collectAxioms target
+    for ax in axioms do
+      unless allowed.contains ax do
+        Lean.throwError m!"Unexpected axiom in {target}: {ax}"
+    Lean.logInfo m!"Checked {target}: {axioms}"
+  let negative ← Lean.collectAxioms ``sorryAx
+  unless negative.contains ``sorryAx && !(negative.all allowed.contains) do
+    Lean.throwError "Placeholder negative control was not rejected"
+  Lean.logInfo "WOWII367_FULL_PROOF_PASS"

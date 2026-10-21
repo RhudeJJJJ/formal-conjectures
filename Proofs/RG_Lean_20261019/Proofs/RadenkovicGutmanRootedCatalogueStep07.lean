@@ -20,33 +20,33 @@ theorem step7 : ∀ i : Fin level7.length, ∀ v : Vertices 7,
   change i.val < 115 at hi
   by_cases h0 : i.val < 16
   · exact range_sound 7 level7 level8 0 16 (by decide) witnesses7b000 checked7b000
-      ⟨i.val-0,by omega⟩ v i (by omega)
+      ⟨i.val-0,by omega⟩ v i (by change 0+(i.val-0)=i.val; omega)
   ·
     by_cases h1 : i.val < 32
     · exact range_sound 7 level7 level8 16 16 (by decide) witnesses7b001 checked7b001
-        ⟨i.val-16,by omega⟩ v i (by omega)
+        ⟨i.val-16,by omega⟩ v i (by change 16+(i.val-16)=i.val; omega)
     ·
       by_cases h2 : i.val < 48
       · exact range_sound 7 level7 level8 32 16 (by decide) witnesses7b002 checked7b002
-          ⟨i.val-32,by omega⟩ v i (by omega)
+          ⟨i.val-32,by omega⟩ v i (by change 32+(i.val-32)=i.val; omega)
       ·
         by_cases h3 : i.val < 64
         · exact range_sound 7 level7 level8 48 16 (by decide) witnesses7b003 checked7b003
-            ⟨i.val-48,by omega⟩ v i (by omega)
+            ⟨i.val-48,by omega⟩ v i (by change 48+(i.val-48)=i.val; omega)
         ·
           by_cases h4 : i.val < 80
           · exact range_sound 7 level7 level8 64 16 (by decide) witnesses7b004 checked7b004
-              ⟨i.val-64,by omega⟩ v i (by omega)
+              ⟨i.val-64,by omega⟩ v i (by change 64+(i.val-64)=i.val; omega)
           ·
             by_cases h5 : i.val < 96
             · exact range_sound 7 level7 level8 80 16 (by decide) witnesses7b005 checked7b005
-                ⟨i.val-80,by omega⟩ v i (by omega)
+                ⟨i.val-80,by omega⟩ v i (by change 80+(i.val-80)=i.val; omega)
             ·
               by_cases h6 : i.val < 112
               · exact range_sound 7 level7 level8 96 16 (by decide) witnesses7b006 checked7b006
-                  ⟨i.val-96,by omega⟩ v i (by omega)
+                  ⟨i.val-96,by omega⟩ v i (by change 96+(i.val-96)=i.val; omega)
               ·
                 exact range_sound 7 level7 level8 112 3 (by decide) witnesses7b007 checked7b007
-                    ⟨i.val-112,by omega⟩ v i (by omega)
+                    ⟨i.val-112,by omega⟩ v i (by change 112+(i.val-112)=i.val; omega)
 #print axioms step7
 end Gebendorfer.RadenkovicGutman.RootedCatalogueData

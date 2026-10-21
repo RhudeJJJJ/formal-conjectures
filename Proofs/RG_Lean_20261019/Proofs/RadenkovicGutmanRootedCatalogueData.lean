@@ -1,5 +1,6 @@
 /- Copyright 2026 Jonas J. Gebendorfer. Apache 2.0. -/
 import Proofs.RadenkovicGutmanCanonicalTreeCoverage
+import Mathlib.Data.Fin.VecNotation
 namespace Gebendorfer.RadenkovicGutman.RootedCatalogueData
 open RootedTreeEnumeration CanonicalTreeCoverage
 set_option maxHeartbeats 0

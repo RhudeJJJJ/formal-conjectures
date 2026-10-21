@@ -2,7 +2,7 @@
 
 Jonas J. Gebendorfer. OpenAI Codex assisted with implementation and validation.
 
-**PROVEN: the original outside condition for every physical arm pair, in both the tangent and constant strips. The original directed and full-reserve conditions remain OPEN.**
+**PROVEN: the original outside condition for every physical arm pair, in both the tangent and constant strips. The directed conditions were subsequently proved for all physical arm pairs at degree >=4; the full-reserve conditions remain OPEN. See ../RG_LOWSTRIP_DIRECTED_20261021/README.md.**
 
 Write a=LowStripGeometry.lead and bt=LowStripGeometry.bt. From exactly the original Focus coefficients, `LowStripOutside.vertical_offset_identity` proves
 
@@ -10,7 +10,7 @@ Write a=LowStripGeometry.lead and bt=LowStripGeometry.bt. From exactly the origi
 
 For y>0, P,Q>=y and 0<=c<=1 this offset is nonnegative. When a>=0 and d>=0, the Schur radius r=d/(2*y) is nonnegative, and the imaginary gradient at the same original center is 2*a*r plus this offset. Squaring proves the same original outside inequality gradientSq-4*(a*r)^2>=0. The tangent and constant leading coefficients are already strictly positive. `actual_tangent_outside` and `actual_constant_outside` specialize this result to the same C,u and actual physical arms p+1,q+1 for every y>0. No original outside premise, parity sample, different graph or different disk is introduced.
 
-This one universal geometric condition covers all three physical parity boxes. Their separate directed and complete full-reserve conditions remain distinct obligations. The original outside test is proved rather than removed from the convex criterion. The singular endpoint y=0 is handled by the separate checked integrability argument; it is not part of this pointwise claim.
+This one universal geometric condition covers all three physical parity boxes. Their separate directed conditions have subsequently been proved; complete full-reserve conditions remain obligations. The original outside test is proved rather than removed from the convex criterion. The singular endpoint y=0 is handled by the separate checked integrability argument; it is not part of this pointwise claim.
 
 `HighDegreeInputFromTwoSigns.normalized_target_of_two_sign_families` proves the exact original `OriginalAssembly.Inputs.degreeGeFortysix` target, 2/47 < normalizedIntegral C u p q 2, from the remaining original tangent and constant directed/full-reserve families and the original correlated-escape signs. Thus the same target and physical graph pair are preserved. No complete Input field is inhabited.
 
@@ -22,6 +22,6 @@ Source, full local dependency-closure and object hashes are checked before reuse
 
 ## Exact remaining scope
 
-The original low-strip directed and complete reserve signs, constant-strip chart signs, both original correlated-escape clearing identities and the final actual graph escape assembly remain separate work. The original odd/odd outside table and its positive clearing identity also succeeded independently in run 39518879837, but that narrower route is not needed to prove this universal outside condition.
+The original low-strip and constant-strip complete reserve signs, both original correlated-escape clearing identities and the final actual graph escape assembly remain separate work. The original odd/odd outside table and its positive clearing identity also succeeded independently in run 39518879837, but that narrower route is not needed to prove this universal outside condition.
 
 All seven complete OriginalAssembly.Inputs families, remaining degree ranges, finite rooted-core census completeness and the universal Lean minimum/equality theorem remain OPEN. The written computer-assisted theorem remains separate. The current user's exclusion of Aletheion was respected: this insight is retained locally and in these research artifacts, without a central import.

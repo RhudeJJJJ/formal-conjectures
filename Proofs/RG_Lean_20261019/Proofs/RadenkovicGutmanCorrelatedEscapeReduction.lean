@@ -53,9 +53,9 @@ def factorCore (d y P Q t : ℝ) : ℝ :=
 
 theorem lead_factor (y P Q t : ℝ) : lead y P Q t=factorLead y P Q t := by
   simp only [lead,factorLead,errorWeight,cubic,quadratic,A,B,Complex.normSq_apply,
-    Complex.add_re,Complex.add_im,Complex.mul_re,Complex.mul_im,
+    Complex.mul_re,Complex.mul_im,
     Complex.sub_re,Complex.sub_im,Complex.ofReal_re,Complex.ofReal_im,
-    Complex.I_re,Complex.I_im,Complex.re_ofNat,Complex.im_ofNat]
+    Complex.I_re,Complex.I_im]
   ring
 
 theorem base_factor (y P Q t : ℝ) :
@@ -95,7 +95,8 @@ theorem directed_reduced (d y P Q t : ℝ) : directed d y P Q t =
   rw [directed_translation]
   unfold coreValue
   simp only [base_factor,horizontal_factor,vertical_factor]
-  simp only [lead_factor] <;> rfl
+  simp only [lead_factor]
+  rfl
 
 theorem reserve_reduced (d y P Q t : ℝ) : reserve d y P Q t =
     16*(factorLead y P Q t)^2*((factorCore d y P Q t)^2+
@@ -106,17 +107,18 @@ theorem reserve_reduced (d y P Q t : ℝ) : reserve d y P Q t =
   rw [reserve_translation]
   unfold coreValue
   simp only [base_factor,horizontal_factor,vertical_factor]
-  simp only [lead_factor] <;> rfl
+  simp only [lead_factor]
+  rfl
 
 theorem payment_reciprocal (h x : ℝ) (hh : h ≠ 0) :
     payment (1/h) x=(42/25 : ℝ)*h/(1+x^2) := by
   unfold payment
-  field_simp [hh,show (1+x^2) ≠ 0 by positivity] <;> ring
+  field_simp [hh,show (1+x^2) ≠ 0 by positivity]
 
 theorem radius_reciprocal (h x : ℝ) (hh : h ≠ 0) (hx : x ≠ 0) :
     r (1/h) (x/h)=1/(2*x) := by
   unfold r
-  field_simp [hh,hx] <;> ring
+  field_simp [hh,hx]
 
 #print axioms directed_translation
 #print axioms reserve_translation

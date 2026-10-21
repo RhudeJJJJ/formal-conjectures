@@ -16,7 +16,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        endpoint: [Proofs.RadenkovicGutmanSmallGeFourSpectrum000,Proofs.RadenkovicGutmanTreeLeafInduction]
+        endpoint: [Proofs.RadenkovicGutmanRootedTreeEnumeration]
     runs-on: ubuntu-latest
     timeout-minutes: 90
     steps:

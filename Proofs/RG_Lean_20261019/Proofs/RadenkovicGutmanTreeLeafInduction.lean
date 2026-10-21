@@ -18,13 +18,15 @@ def attach {V : Type} (G : SimpleGraph V) (v : V) : SimpleGraph (Option V) where
     | some a, none => a=v
     | none, none => False
   symm := by
+    constructor
     intro a b h
-    cases a <;> cases b <;> first | exact h | exact G.symm h
+    cases a <;> cases b <;> first | exact h | exact h.symm
   loopless := by
+    constructor
     intro a
     cases a
     · exact id
-    · exact G.loopless _
+    · exact G.irrefl
 
 theorem exists_leaf_ne_root {V : Type} [Fintype V] [DecidableEq V]
     [Nontrivial V] (G : SimpleGraph V) [DecidableRel G.Adj]
@@ -43,7 +45,7 @@ def deletionIso {V : Type} [DecidableEq V] (G : SimpleGraph V) (v w : V)
     cases a with
     | none =>
       cases b with
-      | none => exact iff_of_false (G.loopless v) id
+      | none => exact iff_of_false G.irrefl id
       | some b =>
         change G.Adj v b.val ↔ b=⟨w,hvw.ne'⟩
         constructor
@@ -76,7 +78,7 @@ theorem finite_tree_induction
     | h n ih =>
       intro V _ _ G r hn hG
       by_cases hnt : Nontrivial V
-      · letI : Nontrivial V := hnt
+      · let : Nontrivial V := hnt
         obtain ⟨v,hvr,hdeg⟩ := exists_leaf_ne_root G hG r
         obtain ⟨w,hvw,hw⟩ := SimpleGraph.degree_eq_one_iff_existsUnique_adj.mp hdeg
         let W := {x : V // x≠v}
@@ -94,7 +96,7 @@ theorem finite_tree_induction
         have he := extension H root parent hp
         have hi := isomorphism (attach H parent) G (deletionIso G v w hvw hw) (some root) he
         exact hi
-      · letI : Subsingleton V := not_nontrivial_iff_subsingleton.mp hnt
+      · let : Subsingleton V := not_nontrivial_iff_subsingleton.mp hnt
         exact singleton V G r
   exact main (Fintype.card V) V G r rfl hG
 

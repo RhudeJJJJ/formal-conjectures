@@ -31,21 +31,21 @@ theorem max_cast (a b : ℚ) : ((max a b : ℚ) : ℝ)=max (a : ℝ) (b : ℝ) :
 
 theorem lowerQ_cast (b : Box) (t : ℚ) :
     (lowerQ b t : ℝ)=lower b (t : ℝ) := by
-  simp [lowerQ,lower,max_cast]
+  simp [lowerQ,lower]
 theorem upperQ_cast (b : Box) (t : ℚ) :
     (upperQ b t : ℝ)=upper b (t : ℝ) := by
-  simp [upperQ,upper,max_cast]
+  simp [upperQ,upper]
 theorem lowerTotalQ_cast (bs : List Box) (t : ℚ) :
     (lowerTotalQ bs t : ℝ)=lowerTotal bs (t : ℝ) := by
   induction bs with
-  | nil => rfl
+  | nil => simp [lowerTotalQ,lowerTotal]
   | cons b bs ih =>
     change ((lowerQ b t+lowerTotalQ bs t : ℚ) : ℝ)=lower b (t : ℝ)+lowerTotal bs (t : ℝ)
     rw [Rat.cast_add,lowerQ_cast,ih]
 theorem upperTotalQ_cast (bs : List Box) (t : ℚ) :
     (upperTotalQ bs t : ℝ)=upperTotal bs (t : ℝ) := by
   induction bs with
-  | nil => rfl
+  | nil => simp [upperTotalQ,upperTotal]
   | cons b bs ih =>
     change ((upperQ b t+upperTotalQ bs t : ℚ) : ℝ)=upper b (t : ℝ)+upperTotal bs (t : ℝ)
     rw [Rat.cast_add,upperQ_cast,ih]

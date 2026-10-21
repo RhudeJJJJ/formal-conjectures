@@ -18,12 +18,12 @@ theorem data_identity (h c s t : ℝ) (hh : h ≠ 0) (hc : c ≠ 0) (hd : 1-c^2 
     (1685719115165366705018091480285184 : ℝ)*h^4*c^2*(1-c^2)^12*
       LowStripReserveReduction.inner (1/h) (4*c*h/(1-c^2))
         (4*c*h/(1-c^2)+s) (4*c*h/(1-c^2)+t) c := by
-  rw [SymmetricTangentReserve.data_eval]
   simp (maxSteps := 10000000) only [LowStripReserveReduction.inner,
     LowStripReserveReduction.core,LowStripReserveReduction.horizontal,
     LowStripReserveReduction.anchor,LowStripReserveReduction.a,LowStripReserveReduction.b,
     LowStripReserveReduction.delta,LowStripDirected.anNegative,LowStripDirected.bdNegative]
   field_simp [hh,hc,hd]
+  rw [SymmetricTangentReserve.data_eval]
   ring
 
 theorem original_inner_nonneg (h c P Q : ℝ) (hh : h ∈ Ioc (0 : ℝ) (1/46))
@@ -54,6 +54,8 @@ theorem original_inner_nonneg (h c P Q : ℝ) (hh : h ∈ Ioc (0 : ℝ) (1/46))
   change 0 ≤ (1685719115165366705018091480285184 : ℝ)*h^4*c^2*(1-c^2)^12*
     LowStripReserveReduction.inner (1/h) y (y+(P-y)) (y+(Q-y)) c at hp
   rw [heP,heQ] at hp
+  have hh0 : 0 < h := hh.1
+  have hc0 : 0 < c := hc.1
   exact nonneg_of_mul_nonneg_right hp (by positivity)
 
 #print axioms data_identity

@@ -37,6 +37,7 @@ theorem original_inner_nonneg (v y P Q : ℝ) (hv : 0 ≤ v)
   have heP : y+(P-y)=P := by ring
   have heQ : y+(Q-y)=Q := by ring
   rw [heP,heQ] at hp
+  have hy0 : 0 < y := hy.1
   exact nonneg_of_mul_nonneg_right hp (by positivity)
 
 #print axioms data_identity

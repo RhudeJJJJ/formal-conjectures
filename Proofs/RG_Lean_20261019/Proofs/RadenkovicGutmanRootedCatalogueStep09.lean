@@ -47,6 +47,7 @@ import Proofs.RadenkovicGutmanRootedCatalogueStep09Block044
 namespace Gebendorfer.RadenkovicGutman.RootedCatalogueData
 open RootedTreeEnumeration CanonicalTreeCoverage
 set_option maxHeartbeats 0
+set_option maxRecDepth 100000
 theorem step9 : ∀ i : Fin level9.length, ∀ v : Vertices 9,
     ∃ j : Fin level10.length,
       ∃ e : graph (n := 10) (level9.get i,v) ≃g graph (level10.get j),

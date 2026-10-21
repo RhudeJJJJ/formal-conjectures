@@ -5,6 +5,7 @@ import Proofs.RadenkovicGutmanRootedCatalogueStep06Block002
 namespace Gebendorfer.RadenkovicGutman.RootedCatalogueData
 open RootedTreeEnumeration CanonicalTreeCoverage
 set_option maxHeartbeats 0
+set_option maxRecDepth 100000
 theorem step6 : ∀ i : Fin level6.length, ∀ v : Vertices 6,
     ∃ j : Fin level7.length,
       ∃ e : graph (n := 7) (level6.get i,v) ≃g graph (level7.get j),

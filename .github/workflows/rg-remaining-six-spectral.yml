@@ -16,7 +16,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        endpoint: [Proofs.RadenkovicGutmanRootedCataloguePart00,Proofs.RadenkovicGutmanRootedCataloguePart01,Proofs.RadenkovicGutmanRootedCataloguePart02,Proofs.RadenkovicGutmanRootedCataloguePart03,Proofs.RadenkovicGutmanRootedCataloguePart04,Proofs.RadenkovicGutmanRootedCataloguePart05,Proofs.RadenkovicGutmanRootedCataloguePart06,Proofs.RadenkovicGutmanRootedCataloguePart07]
+        endpoint: [Proofs.RadenkovicGutmanRootedCatalogueComplete]
     runs-on: ubuntu-latest
     timeout-minutes: 90
     steps:
@@ -54,6 +54,18 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ github.token }}
         run: python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_catalogue_ranges_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+      - name: Restore exactly checked catalogue parts
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_catalogue_part00_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_catalogue_part06_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_catalogue_part03_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_catalogue_part04_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_catalogue_part07_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_catalogue_part01_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_catalogue_part02_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_catalogue_part05_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
       - name: Check multiplicities and actual graph spectral comparison
         run: python3 -B Proofs/RG_Lean_20261019/verify_extension.py --mathlib-project "$GITHUB_WORKSPACE" --endpoint ${{ matrix.endpoint }} --workers 1 --module-timeout 600 --resume --print-receipt
       - name: Retain completed records and diagnostics

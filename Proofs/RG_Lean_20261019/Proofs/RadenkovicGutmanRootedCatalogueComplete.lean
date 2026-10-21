@@ -13,6 +13,7 @@ import Proofs.RadenkovicGutmanRootedCatalogueStep09
 namespace Gebendorfer.RadenkovicGutman.RootedCatalogueData
 open RootedTreeEnumeration CanonicalTreeCoverage
 set_option maxHeartbeats 0
+set_option maxRecDepth 100000
 theorem singleton_covered : ∃ i : Fin (catalogue 0).length, (catalogue 0).get i=() :=
   ⟨⟨0,by decide⟩,rfl⟩
 theorem all_steps : ∀ n, n < 10 → ∀ i : Fin (catalogue n).length, ∀ v : Vertices n,

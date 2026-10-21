@@ -29,8 +29,8 @@ theorem all_steps : ∀ n, n < 10 → ∀ i : Fin (catalogue n).length, ∀ v : 
   · exact step_sound 5 level5 level6 witnesses5 step5
   · exact step_sound 6 level6 level7 witnesses6 step6
   · exact step_sound 7 level7 level8 witnesses7 step7
-  · exact step_sound 8 level8 level9 witnesses8 step8
-  · exact step_sound 9 level9 level10 witnesses9 step9
+  · exact step8
+  · exact step9
 theorem all_actual_trees {V : Type} [Fintype V] [DecidableEq V]
     (G : SimpleGraph V) (r : V) (hG : G.IsTree) (n : ℕ) (hn : n≤10)
     (hc : Fintype.card V=n+1) :

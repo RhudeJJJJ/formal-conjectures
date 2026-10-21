@@ -17,17 +17,17 @@ theorem logarithm_check : RationalLog.accepts (13/10) (13/100) 0 12=true := by d
 theorem representationU (y : ℝ) :
     ClassNormPolynomials.U 1 y y y=∑ i, (cu i : ℝ)*weights y i := by
   norm_num [ClassNormPolynomials.U,ClassNormPolynomials.polyA,ClassNormPolynomials.polyB,ClassNormPolynomials.polyC,ClassNormPolynomials.polyE,
-    cu,weights,coordinate,Bernstein.basis,bernsteinPolynomial,Fin.sum_univ_succ]
+    cu,weights,coordinate,Bernstein.basis,bernsteinPolynomial,Nat.choose,Fin.sum_univ_succ]
   ring
 theorem representationV (y : ℝ) :
     ClassNormPolynomials.V 1 y y y=∑ i, (cv i : ℝ)*weights y i := by
   norm_num [ClassNormPolynomials.V,ClassNormPolynomials.polyA,ClassNormPolynomials.polyB,ClassNormPolynomials.polyC,ClassNormPolynomials.polyE,
-    cv,weights,coordinate,Bernstein.basis,bernsteinPolynomial,Fin.sum_univ_succ]
+    cv,weights,coordinate,Bernstein.basis,bernsteinPolynomial,Nat.choose,Fin.sum_univ_succ]
   ring
 theorem representationJ (y : ℝ) :
     ClassNormPolynomials.J 1 y y y=∑ i, (cj i : ℝ)*weights y i := by
   norm_num [ClassNormPolynomials.J,ClassNormPolynomials.polyA,ClassNormPolynomials.polyB,
-    cj,weights,coordinate,Bernstein.basis,bernsteinPolynomial,Fin.sum_univ_succ]
+    cj,weights,coordinate,Bernstein.basis,bernsteinPolynomial,Nat.choose,Fin.sum_univ_succ]
   ring
 theorem actual_log_lower (y : ℝ) (hy : y ∈ Set.Icc (1 : ℝ) (101/100))
     (ζ : ℂ) (hζ : ‖ζ-Focus.g 1 y‖ ≤ Focus.r 1 y) :

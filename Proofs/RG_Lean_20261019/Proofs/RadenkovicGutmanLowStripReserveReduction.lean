@@ -23,9 +23,9 @@ def inner (d y P Q c : ℝ) : ℝ :=
 
 theorem lead_identity (y P Q c : ℝ) : lead y P Q c = a y P Q c := by
   simp only [lead,a,Focus.A,Focus.B,Complex.normSq_apply,
-    Complex.add_re,Complex.add_im,Complex.mul_re,Complex.mul_im,
+    Complex.mul_re,Complex.mul_im,
     Complex.sub_re,Complex.sub_im,Complex.ofReal_re,Complex.ofReal_im,
-    Complex.I_re,Complex.I_im,Complex.re_ofNat,Complex.im_ofNat]
+    Complex.I_re,Complex.I_im]
   ring
 
 theorem reserve_identity (d y P Q c : ℝ) :

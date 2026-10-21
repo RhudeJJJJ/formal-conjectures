@@ -64,7 +64,7 @@ theorem characteristic_polynomial {n : ℕ} (A : Matrix (Fin n) (Fin n) ℚ)
         (sample k : ℝ) • (1 : Matrix (Fin n) (Fin n) ℝ)-A.map (Rat.castHom ℝ) := by
       ext i j
       by_cases hij : i = j <;>
-        simp [shifted,Matrix.map_apply,Matrix.sub_apply,Matrix.smul_apply,Matrix.one_apply,hij]
+        simp [shifted,Matrix.map_apply,Matrix.sub_apply,Matrix.smul_apply,hij]
     rw [he] at h
     simpa only [Matrix.smul_one_eq_diagonal,Matrix.scalar_apply] using h
   · have hp := CheckedRoots.degree_bound cs
@@ -83,7 +83,7 @@ theorem laplacian_map {n : ℕ} (G : SimpleGraph (Fin n)) [DecidableRel G.Adj] :
   ext i j
   by_cases hij : i = j <;> by_cases ha : G.Adj i j <;>
     simp [laplacian,SimpleGraph.lapMatrix,SimpleGraph.degMatrix,SimpleGraph.adjMatrix,
-      Matrix.map_apply,Matrix.sub_apply,Matrix.diagonal_apply,hd,hij,ha]
+      Matrix.map_apply,Matrix.sub_apply,hd,hij,ha]
 
 theorem graph_characteristic_polynomial {n : ℕ} (G : SimpleGraph (Fin n))
     [DecidableRel G.Adj] (cs : List ℚ) (hlen : cs.length≤n+1)

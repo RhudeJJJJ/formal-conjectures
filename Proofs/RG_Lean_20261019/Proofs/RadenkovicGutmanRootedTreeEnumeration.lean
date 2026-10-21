@@ -104,12 +104,13 @@ theorem complete {V : Type} [Fintype V] [DecidableEq V]
         toFun := fun _ => ()
         invFun := fun _ => r
         left_inv := fun _ => Subsingleton.elim _ _
-        right_inv := fun _ => Subsingleton.elim _ _ }
+        right_inv := by intro x; change Unit at x; cases x; rfl }
       map_rel_iff' := by
         intro a b
+        change False ↔ G.Adj a b
         have hab : a=b := Subsingleton.elim _ _
         subst b
-        exact iff_of_false (by trivial) G.irrefl }
+        exact iff_of_false id G.irrefl }
     exact ⟨0,(),e,rfl⟩
   · intro V W G H e r hp
     obtain ⟨n,t,f,hr⟩ := hp

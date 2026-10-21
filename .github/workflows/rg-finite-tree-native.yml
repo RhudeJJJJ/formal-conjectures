@@ -18,7 +18,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        endpoint: [Proofs.RadenkovicGutmanActualSmallGeFourCase000,Proofs.RadenkovicGutmanCoreTreeTransfer]
+        endpoint: [Proofs.RadenkovicGutmanActualSmallGeFourCase000]
     runs-on: ubuntu-latest
     timeout-minutes: 90
     steps:

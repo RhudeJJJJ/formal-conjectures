@@ -15,6 +15,12 @@ instance (priority := 2000) nativeEdgeDecidable {A : Type} [DecidableEq A] (a b 
     DecidableRel (SimpleGraph.edge a b).Adj :=
   inferInstanceAs (DecidableRel (SimpleGraph.fromEdgeSet {s(a,b)}).Adj)
 
+instance (priority := 2000) nativePathDecidable (n : ℕ) :
+    DecidableRel (SimpleGraph.pathGraph n).Adj := fun a b => by
+  change Decidable (a ⋖ b ∨ b ⋖ a)
+  unfold CovBy
+  infer_instance
+
 def sourceLabel (n p q : ℕ) :
     (Vertices n ⊕ Fin (p+1) ⊕ Fin (q+1)) → Fin (n+p+q+3)
   | .inl v => ⟨(label v).val,by have := (label v).isLt; omega⟩

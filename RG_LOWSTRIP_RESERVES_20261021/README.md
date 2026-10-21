@@ -19,7 +19,7 @@ and original_inner_nonneg are both proved for every v>=0, 0<y<=1/2 and P,Q>=y. T
 
 For the tangent curve y=4*c*h/(1-c^2), 0<h<=1/46, 0<c<=1/2, the complete reduced symmetric polynomial has 16,830 coefficients in N,W,M,H=46*h,C=2*c and positive integer scale 1685719115165366705018091480285184. Its complete polynomial nonnegativity and exact definitional evaluation are proved. Its exact equality to scale*h^4*c^2*(1-c^2)^12*inner(1/h,y,P,Q,c) and original_inner_nonneg are also proved.
 
-The same actual core C, root u and physical arms p+1,q+1 are used in LowStripReserves and HighDegreeInputFromEscape.normalized_target_of_escape_signs. Both original full-reserve families are discharged on the original tangent relation and constant interval for every root degree>=46. Together with the independently proved original outside and directed conditions, the exact original target 2/47 < normalizedIntegral C u p q 2 now requires only the original correlated-escape Signs. No full OriginalAssembly.Inputs family is supplied until those escape signs are proved independently.
+The same actual core C, root u and physical arms p+1,q+1 are used in LowStripReserves and HighDegreeInputFromEscape.normalized_target_of_escape_signs. Both original full-reserve families are discharged on the original tangent relation and constant interval for every root degree>=46. Together with the independently proved original outside and directed conditions, the exact original target 2/47 < normalizedIntegral C u p q 2 now requires only the original correlated-escape Signs. The subsequent exact degree46 assembly discharges those same original escape signs and supplies degreeGeFortysix without additional proof hypotheses.
 
 ## Verification
 
@@ -30,4 +30,4 @@ The same actual core C, root u and physical arms p+1,q+1 are used in LowStripRes
 
 The collections of individual records contain unused restored modules and do not enlarge an endpoint. Official Lean 4.33.1, pinned Mathlib, warnings as errors and standard axioms only are used. Source, complete local dependency-closure, object and original artifact hashes are checked before reuse. Distinct receipts are not one fresh global build.
 
-All seven complete OriginalAssembly.Inputs families and the universal Lean theorem remain OPEN. Other degree ranges and finite census completeness remain separate work. The original escape signs remain OPEN. The written computer-assisted theorem is separate. Aletheion was untouched under the user's instruction.
+The exact original degreeGeFortysix family is proved in the subsequent assembly. The other six complete OriginalAssembly.Inputs families and the universal Lean theorem remain OPEN. Other degree ranges and finite census completeness remain separate work. The original escape signs are proved on their complete original box. The written computer-assisted theorem is separate. Aletheion was untouched under the user's instruction.

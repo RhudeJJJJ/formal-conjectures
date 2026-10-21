@@ -1,5 +1,9 @@
 # Original low-strip outside condition discharged
 
+<!-- CURRENT_EXACT_DEGREE46_FRONT -->
+Current continuation: the subsequent [exact original degree46 assembly](../RG_ESCAPE_REDUCED_20261021/README.md) proves the unchanged original degreeGeFortysix Input family and the original full-box escape signs. Six other complete Input families and the universal Lean theorem remain OPEN. The earlier status statements below describe this document's own historical endpoint; they do not override the subsequent checked assembly.
+<!-- END_CURRENT_EXACT_DEGREE46_FRONT -->
+
 Jonas J. Gebendorfer. OpenAI Codex assisted with implementation and validation.
 
 **PROVEN: the original outside condition for every physical arm pair, in both the tangent and constant strips. The directed conditions were subsequently proved for all physical arm pairs at degree >=4; the full-reserve conditions remain OPEN. See ../RG_LOWSTRIP_DIRECTED_20261021/README.md.**

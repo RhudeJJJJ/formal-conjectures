@@ -1,5 +1,9 @@
 # First original tangent parity polynomial
 
+<!-- CURRENT_EXACT_DEGREE46_FRONT -->
+Current continuation: the subsequent [exact original degree46 assembly](../RG_ESCAPE_REDUCED_20261021/README.md) proves the unchanged original degreeGeFortysix Input family and the original full-box escape signs. Six other complete Input families and the universal Lean theorem remain OPEN. The earlier status statements below describe this document's own historical endpoint; they do not override the subsequent checked assembly.
+<!-- END_CURRENT_EXACT_DEGREE46_FRONT -->
+
 Jonas J. Gebendorfer. OpenAI Codex assisted with implementation and validation.
 
 **PROVEN: the complete reconstructed odd/odd outside integer polynomial is nonnegative on [0,1]^4. The original geometric clearing identity and odd/odd outside sign are also PROVEN in the separate 68-module check.**

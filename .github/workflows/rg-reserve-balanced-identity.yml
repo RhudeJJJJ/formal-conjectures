@@ -1,0 +1,183 @@
+name: RG reduced original escape complete polynomial certificates and identities
+
+on:
+  push:
+    branches: [rg-reserve-balanced-identity-20261021]
+    paths:
+      - 'Proofs/RG_Lean_20261019/**'
+      - '.github/workflows/rg-reserve-balanced-identity.yml'
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  check:
+    strategy:
+      fail-fast: false
+      matrix:
+        endpoint: [Proofs.RadenkovicGutmanEscapeReducedReserveIdentity]
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          persist-credentials: false
+      - name: Install the project toolchain
+        run: |
+          set -o pipefail
+          curl -sSfL https://github.com/leanprover/elan/releases/download/v1.4.2/elan-x86_64-unknown-linux-gnu.tar.gz | tar xz
+          ./elan-init -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Materialize the exact dependency lock
+        run: python3 -B ci/rg_dependencies.py
+      - name: Fetch the required Mathlib cache
+        run: |
+          python3 - <<'PY'
+          import pathlib, re, subprocess
+          root = pathlib.Path('Proofs/RG_Lean_20261019')
+          seen, external = set(), set()
+          def visit(name):
+              if name in seen:
+                  return
+              seen.add(name)
+              source = (root / (name.replace('.', '/') + '.lean')).read_text()
+              for dep in re.findall(r'^\s*import\s+([\w.]+)', source, re.M):
+                  if dep.startswith('Proofs.'):
+                      visit(dep)
+                  else:
+                      external.add(dep)
+          visit('${{ matrix.endpoint }}')
+          subprocess.run(['lake', 'exe', 'cache', 'get', *sorted(external)], check=True)
+          PY
+      - name: Restore exactly recorded prior-job exports
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          python3 -B ci/rg_restore_job_exports.py \
+            --manifest ci/rg_escape_prior_exports.json \
+            --build-directory Proofs/RG_Lean_20261019/build/extension
+      - name: Restore the separately verified algebraic reduction
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_reduction_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+      - name: Restore verified general low-strip signs
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_lowstrip_directed_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+      - name: Restore verified complete symmetric tangent polynomial
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_symmetric_tangent_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+      - name: Restore individually verified smaller directed certificate and exact factors
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_reduced_directed_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+      - name: Restore the separately completed full reserve polynomial
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_reduced_reserve_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+      - name: Restore the completed balanced coefficient and raw-polynomial exports
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_reserve_balanced_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+      - name: Check cleared coefficient fractions and raw balanced polynomial
+        run: |
+          python3 -B Proofs/RG_Lean_20261019/verify_extension.py \
+            --mathlib-project "$GITHUB_WORKSPACE" \
+            --endpoint Proofs.RadenkovicGutmanEscapeReserveRawBalancedIdentity \
+            --workers 1 --module-timeout 1200 --resume
+      - name: Secure completed balanced coefficient phase
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: rg-balanced-exports-${{ github.run_id }}
+          path: Proofs/RG_Lean_20261019/build/extension
+          retention-days: 7
+      - name: Check exact affine coefficient rows 0 to 4
+        run: |
+          for i in 00 01 02 03 04; do
+            python3 -B Proofs/RG_Lean_20261019/verify_extension.py --mathlib-project "$GITHUB_WORKSPACE" --endpoint Proofs.RadenkovicGutmanEscapeReserveAffineRow$i --workers 1 --module-timeout 300 --resume || exit $?
+          done
+      - name: Secure completed affine rows through 4
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: rg-affine-rows-4-${{ github.run_id }}
+          path: Proofs/RG_Lean_20261019/build/extension
+          retention-days: 7
+      - name: Check exact affine coefficient rows 5 to 9
+        run: |
+          for i in 05 06 07 08 09; do
+            python3 -B Proofs/RG_Lean_20261019/verify_extension.py --mathlib-project "$GITHUB_WORKSPACE" --endpoint Proofs.RadenkovicGutmanEscapeReserveAffineRow$i --workers 1 --module-timeout 300 --resume || exit $?
+          done
+      - name: Secure completed affine rows through 9
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: rg-affine-rows-9-${{ github.run_id }}
+          path: Proofs/RG_Lean_20261019/build/extension
+          retention-days: 7
+      - name: Check exact affine coefficient rows 10 to 14
+        run: |
+          for i in 10 11 12 13 14; do
+            python3 -B Proofs/RG_Lean_20261019/verify_extension.py --mathlib-project "$GITHUB_WORKSPACE" --endpoint Proofs.RadenkovicGutmanEscapeReserveAffineRow$i --workers 1 --module-timeout 300 --resume || exit $?
+          done
+      - name: Secure completed affine rows through 14
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: rg-affine-rows-14-${{ github.run_id }}
+          path: Proofs/RG_Lean_20261019/build/extension
+          retention-days: 7
+      - name: Check exact affine coefficient rows 15 to 19
+        run: |
+          for i in 15 16 17 18 19; do
+            python3 -B Proofs/RG_Lean_20261019/verify_extension.py --mathlib-project "$GITHUB_WORKSPACE" --endpoint Proofs.RadenkovicGutmanEscapeReserveAffineRow$i --workers 1 --module-timeout 300 --resume || exit $?
+          done
+      - name: Secure completed affine rows through 19
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: rg-affine-rows-19-${{ github.run_id }}
+          path: Proofs/RG_Lean_20261019/build/extension
+          retention-days: 7
+      - name: Check exact affine coefficient rows 20 to 24
+        run: |
+          for i in 20 21 22 23 24; do
+            python3 -B Proofs/RG_Lean_20261019/verify_extension.py --mathlib-project "$GITHUB_WORKSPACE" --endpoint Proofs.RadenkovicGutmanEscapeReserveAffineRow$i --workers 1 --module-timeout 300 --resume || exit $?
+          done
+      - name: Secure completed affine rows through 24
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: rg-affine-rows-24-${{ github.run_id }}
+          path: Proofs/RG_Lean_20261019/build/extension
+          retention-days: 7
+      - name: Compose all twenty-five coefficient rows
+        run: python3 -B Proofs/RG_Lean_20261019/verify_extension.py --mathlib-project "$GITHUB_WORKSPACE" --endpoint Proofs.RadenkovicGutmanEscapeReserveRawAffine --workers 1 --module-timeout 300 --resume
+      - name: Secure the complete affine identity
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: rg-affine-exports-${{ github.run_id }}
+          path: Proofs/RG_Lean_20261019/build/extension
+          retention-days: 7
+      - name: Compose the unchanged original full reserve functional identity
+        run: |
+          python3 -B Proofs/RG_Lean_20261019/verify_extension.py \
+            --mathlib-project "$GITHUB_WORKSPACE" \
+            --endpoint ${{ matrix.endpoint }} \
+            --workers 1 --module-timeout 1200 --resume --print-receipt
+      - name: Retain completed records and diagnostic log tails
+        if: always()
+        run: |
+          python3 - <<'PY'
+          import json,pathlib
+          root=pathlib.Path('Proofs/RG_Lean_20261019/build/extension')
+          records=[json.loads(p.read_text()) for p in sorted(root.glob('Proofs.*.json'))]
+          print('PARTIAL_RECORDS_JSON '+json.dumps({'scope':'INDIVIDUAL_COMPLETED_MODULES; not a complete extension receipt','modules':records},separators=(',',':')))
+          for p in sorted(root.glob('Proofs.*Escape*.log')):
+              t=p.read_text(); print('MODULE_LOG_TAIL '+p.name+' '+t[-16000:])
+          PY
+      - name: Retain local exports and kernel logs
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: rg-exports-${{ github.run_id }}-${{ matrix.endpoint }}
+          path: Proofs/RG_Lean_20261019/build/extension
+          retention-days: 7

@@ -1,5 +1,9 @@
 # Complete original correlated-escape tensors
 
+<!-- CURRENT_EXACT_DEGREE46_FRONT -->
+Current continuation: the subsequent [exact original degree46 assembly](../RG_ESCAPE_REDUCED_20261021/README.md) proves the unchanged original degreeGeFortysix Input family and the original full-box escape signs. Six other complete Input families and the universal Lean theorem remain OPEN. The earlier status statements below describe this document's own historical endpoint; they do not override the subsequent checked assembly.
+<!-- END_CURRENT_EXACT_DEGREE46_FRONT -->
+
 Jonas J. Gebendorfer. OpenAI Codex assisted with implementation and validation.
 
 **PROVEN: both complete original integer polynomials are nonnegative on their full four-dimensional unit boxes. Original clearing identities and the actual graph specialization remain OPEN.**

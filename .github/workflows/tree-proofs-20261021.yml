@@ -37,11 +37,16 @@ jobs:
           path: .lake/build
           key: tree-proof-imports-${{ hashFiles('lean-toolchain', 'lake-manifest.json') }}-${{ github.sha }}
       - name: Check general tree proof development
-        run: lake env lean -DwarningAsError=true Proofs/TreeBounds.lean
+        run: |
+          mkdir -p .lake/build/lib/lean/Proofs
+          lake env lean -DwarningAsError=true -o .lake/build/lib/lean/Proofs/TreeBounds.olean Proofs/TreeBounds.lean
       - name: Check rooted tree graph bridge
         if: success() || failure()
         run: lake env lean -DwarningAsError=true Proofs/RootedFlow.lean
 
       - name: Check full potential proof 348
         if: success() || failure()
-        run: lake env lean -DwarningAsError=true Proofs/Potential348.lean
+        run: lake env lean -DwarningAsError=true -o .lake/build/lib/lean/Proofs/Potential348.olean Proofs/Potential348.lean
+
+      - name: Check exact quantified PR endpoints
+        run: lake env lean -DwarningAsError=true Proofs/TreeEndpoints.lean

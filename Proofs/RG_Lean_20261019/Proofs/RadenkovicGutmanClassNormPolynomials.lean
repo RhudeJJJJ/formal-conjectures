@@ -19,29 +19,27 @@ def polyE (d y P Q : ℝ) : ℂ :=
    (2*y^2+d)*(P*Q+1)+2*d*y*(P+Q-y)⟩
 
 theorem a_eq (d P Q : ℝ) : a d P Q=polyA d P Q := by
-  apply Complex.ext <;>
-    simp only [a,A,polyA,Complex.mul_re,Complex.mul_im,Complex.sub_re,Complex.sub_im,
-      Complex.add_re,Complex.add_im,Complex.ofReal_re,Complex.ofReal_im,
-      Complex.I_re,Complex.I_im,Complex.re_ofNat,Complex.im_ofNat,
-      Complex.mk_re,Complex.mk_im] <;> ring
+  apply Complex.ext
+  all_goals
+    dsimp [a,A,polyA]
+    ring
 theorem c_eq (d y P Q : ℝ) : c d y P Q=polyC d y P Q := by
-  apply Complex.ext <;>
-    simp only [c,B,polyC,Complex.mul_re,Complex.mul_im,Complex.sub_re,Complex.sub_im,
-      Complex.add_re,Complex.add_im,Complex.ofReal_re,Complex.ofReal_im,
-      Complex.I_re,Complex.I_im,Complex.re_ofNat,Complex.im_ofNat,
-      Complex.mk_re,Complex.mk_im] <;> ring
+  apply Complex.ext
+  all_goals
+    dsimp [c,B,polyC]
+    ring
 theorem b_eq (d y P Q : ℝ) (hy : 0<y) : b d y P Q=polyB d y P Q := by
-  apply Complex.ext <;>
-    simp only [b,A,g,N₀,z,polyB,Complex.mul_re,Complex.mul_im,Complex.sub_re,Complex.sub_im,
-      Complex.add_re,Complex.add_im,Complex.ofReal_re,Complex.ofReal_im,
-      Complex.I_re,Complex.I_im,Complex.re_ofNat,Complex.im_ofNat,
-      Complex.mk_re,Complex.mk_im] <;> field_simp [hy.ne'] <;> ring
+  apply Complex.ext
+  all_goals
+    dsimp [b,A,g,N₀,z,polyB]
+    field_simp [hy.ne']
+    ring
 theorem e_eq (d y P Q : ℝ) (hy : 0<y) : e d y P Q=polyE d y P Q := by
-  apply Complex.ext <;>
-    simp only [e,B,g,D₀,z,polyE,Complex.mul_re,Complex.mul_im,Complex.sub_re,Complex.sub_im,
-      Complex.add_re,Complex.add_im,Complex.ofReal_re,Complex.ofReal_im,
-      Complex.I_re,Complex.I_im,Complex.re_ofNat,Complex.im_ofNat,
-      Complex.mk_re,Complex.mk_im] <;> field_simp [hy.ne'] <;> ring
+  apply Complex.ext
+  all_goals
+    dsimp [e,B,g,D₀,z,polyE]
+    field_simp [hy.ne']
+    ring
 
 def U (d y P Q : ℝ) : ℝ :=
   let ar := (polyA d P Q).re; let ai := (polyA d P Q).im

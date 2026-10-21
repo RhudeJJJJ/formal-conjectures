@@ -1,0 +1,138 @@
+name: RG degree one actual tree certificates wave1
+
+on:
+  push:
+    branches: [rg-remaining-six-spectral-20261021]
+    paths:
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallActualCase0000.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallActualCase0001.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallActualCase0002.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallActualCase0003.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallActualCase0004.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallActualCase0005.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallActualCase0006.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallActualCase0007.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallActualCase0008.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallActualCase0009.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallActualCase0010.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallActualCase0011.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallActualCase0012.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallActualCase0013.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallActualCase0014.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallActualCase0015.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallActualCase0016.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallActualCase0017.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallActualCase0018.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallActualCase0019.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallActualCase0020.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallActualCase0021.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallActualCase0022.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallActualCase0023.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallActualCase0024.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallActualCase0025.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallActualCase0026.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallActualCase0027.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallActualCase0028.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallActualCase0029.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallActualCase0030.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallActualCase0031.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallActualCase0032.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallActualCase0033.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallActualCase0034.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallActualCase0035.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallActualCase0036.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallActualCase0037.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallActualCase0038.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallActualCase0039.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallActualCase0040.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallActualCase0041.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallActualCase0042.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallActualCase0043.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallActualCase0044.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallActualCase0045.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallActualCase0046.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallActualCase0047.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallActualCase0048.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallActualCase0049.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallCertificateBatch00.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallComparisons00.lean'
+      - '.github/workflows/rg-degree-one-actual-wave1.yml'
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  check:
+    strategy:
+      fail-fast: false
+      matrix:
+        include: [{"endpoint":"Proofs.RadenkovicGutmanDegreeOneSmallCertificateBatch00","plan":"ci/rg_degree_one_actual_wave1_batch00_plan.json"}]
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          persist-credentials: false
+      - name: Install the project toolchain
+        run: |
+          set -o pipefail
+          curl -sSfL https://github.com/leanprover/elan/releases/download/v1.4.2/elan-x86_64-unknown-linux-gnu.tar.gz | tar xz
+          ./elan-init -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Materialize the exact dependency lock
+        run: python3 -B ci/rg_dependencies.py
+      - name: Fetch the required Mathlib cache
+        run: |
+          python3 - <<'PY'
+          import pathlib, re, subprocess
+          root = pathlib.Path('Proofs/RG_Lean_20261019')
+          seen, external = set(), set()
+          def visit(name):
+              if name in seen:
+                  return
+              seen.add(name)
+              source = (root / (name.replace('.', '/') + '.lean')).read_text()
+              for dep in re.findall(r'^\s*import\s+([\w.]+)', source, re.M):
+                  if dep.startswith('Proofs.'):
+                      visit(dep)
+                  else:
+                      external.add(dep)
+          visit('${{ matrix.endpoint }}')
+          subprocess.run(['lake', 'exe', 'cache', 'get', *sorted(external)], check=True)
+          PY
+      - name: Restore exactly the prerequisites of this actual-tree batch
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          python3 - <<'PY'
+          import json,subprocess
+          for manifest in json.load(open('${{ matrix.plan }}')):
+              subprocess.run(['python3','-B','ci/rg_restore_job_exports.py','--manifest',manifest,'--build-directory','Proofs/RG_Lean_20261019/build/extension'],check=True)
+          PY
+      - name: Check multiplicities and actual graph spectral comparison
+        run: python3 -B Proofs/RG_Lean_20261019/verify_extension.py --mathlib-project "$GITHUB_WORKSPACE" --endpoint ${{ matrix.endpoint }} --workers 1 --module-timeout 600 --resume --print-receipt
+      - name: Retain completed records and diagnostics
+        if: always()
+        run: |
+          python3 - <<'PY'
+          import json,pathlib,shutil
+          root=pathlib.Path('Proofs/RG_Lean_20261019/build/extension')
+          records=[json.loads(p.read_text()) for p in sorted(root.glob('Proofs.*.json'))]
+          print('PARTIAL_RECORDS_JSON '+json.dumps({'modules':records},separators=(',',':')))
+          fresh=root.parent/'fresh_exports';fresh.mkdir(parents=True,exist_ok=True)
+          for row in records:
+              if row['mode']=='FRESH_KERNEL_EXPORT':
+                  name=row['module'];rel=name.replace('.','/')+'.olean';dest=fresh/rel
+                  dest.parent.mkdir(parents=True,exist_ok=True)
+                  shutil.copyfile(root/rel,dest);shutil.copyfile(root/(name+'.json'),fresh/(name+'.json'))
+          for log in root.glob('Proofs.*.log'):
+              shutil.copyfile(log,fresh/log.name);print('MODULE_LOG_TAIL '+log.name+' '+log.read_text()[-18000:])
+          PY
+      - name: Retain new exports only
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: rg-degree-one-actual-wave1-exports-${{ github.run_id }}-${{ strategy.job-index }}
+          path: Proofs/RG_Lean_20261019/build/fresh_exports
+          retention-days: 7

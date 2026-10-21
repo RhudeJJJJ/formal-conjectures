@@ -5,7 +5,6 @@ on:
     branches: [rg-remaining-six-spectral-20261021]
     paths:
       - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanClassCellCertificates.lean'
-      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanRationalLog.lean'
       - '.github/workflows/rg-class-cell-certificates.yml'
 
 permissions:
@@ -56,6 +55,7 @@ jobs:
           GITHUB_TOKEN: ${{ github.token }}
         run: |
           python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_class_cell_certificates_scope000_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_class_cell_certificates_scope001_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
       - name: Check multiplicities and actual graph spectral comparison
         run: python3 -B Proofs/RG_Lean_20261019/verify_extension.py --mathlib-project "$GITHUB_WORKSPACE" --endpoint ${{ matrix.endpoint }} --workers 1 --module-timeout 600 --resume --print-receipt
       - name: Retain completed records and diagnostics

@@ -43,6 +43,7 @@ theorem log_lower_of_square (L R : ℚ) (k n : ℕ)
   have hpos : (0 : ℝ)<L := by exact_mod_cast (of_decide_eq_true hc).1
   have hlog := Real.log_le_log hpos hL
   rw [Real.log_pow] at hlog
+  norm_num at hlog
   have hR := RationalLog.sound L R k n hc
   linarith
 

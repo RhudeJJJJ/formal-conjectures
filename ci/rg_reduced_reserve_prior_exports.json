@@ -1,0 +1,35 @@
+{
+  "repository": "RhudeJJJJ/formal-conjectures",
+  "run": 39530082786,
+  "job": 118993712998,
+  "source_commit": "6ff4c0f904b122e5a6cefa6dbb52663eca547740",
+  "artifact_id": 12314947830,
+  "artifact_sha256": "2d48bcd70e93d038c8d4459052532e1fe548d4ae0ad655f43faf08a42970f53a",
+  "lean_version": "4.33.1",
+  "mathlib": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "modules": {
+    "Proofs.RadenkovicGutmanEscapeReducedReserve": {
+      "module": "Proofs.RadenkovicGutmanEscapeReducedReserve",
+      "source_sha256": "cafecd99d1755286e6fe6d5b31614e993502a2d63eecb1ce6df1d8cb2f1a05e2",
+      "source_closure_sha256": "ead5d4e142f01dade7208ff766d232e8fab6cd08b1f09e683f23c2f5db051c0e",
+      "output_sha256": "68f1af373c0e5169dd962e2f465157d8247d40c7535497c9d29a42fbf4adfd52",
+      "axiom_profiles": [
+        [
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "FRESH_KERNEL_EXPORT",
+      "seconds": 198.481
+    }
+  }
+}

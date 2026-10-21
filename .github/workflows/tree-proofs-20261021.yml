@@ -1,0 +1,40 @@
+name: Missing-paper intake verification
+on:
+  push:
+    branches: [proof-trees-348-367-20261021]
+permissions:
+  contents: read
+concurrency:
+  group: proof-trees-348-367-20261021
+  cancel-in-progress: true
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          persist-credentials: false
+      - name: Install pinned Lean
+        run: |
+          curl -sSfL https://github.com/leanprover/elan/releases/download/v1.4.2/elan-x86_64-unknown-linux-gnu.tar.gz | tar xz
+          ./elan-init -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> $GITHUB_PATH
+      - name: Get pinned Mathlib cache
+        run: lake exe cache get
+      - uses: actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9
+        with:
+          path: .lake/build
+          key: tree-proof-imports-${{ hashFiles('lean-toolchain', 'lake-manifest.json') }}-${{ github.sha }}
+          restore-keys: |
+            tree-proof-imports-${{ hashFiles('lean-toolchain', 'lake-manifest.json') }}-
+            intake-imports-${{ hashFiles('lean-toolchain', 'lake-manifest.json') }}-
+      - name: Build original statements
+        run: lake --wfail build FormalConjectures.WrittenOnTheWallII.GraphConjecture348 FormalConjectures.WrittenOnTheWallII.GraphConjecture367
+      - uses: actions/cache/save@55cc8345863c7cc4c66a329aec7e433d2d1c52a9
+        if: success() || failure()
+        with:
+          path: .lake/build
+          key: tree-proof-imports-${{ hashFiles('lean-toolchain', 'lake-manifest.json') }}-${{ github.sha }}
+      - name: Check general tree proof development
+        run: lake env lean -DwarningAsError=true Proofs/TreeBounds.lean

@@ -16,3 +16,4 @@ import Proofs.RadenkovicGutmanActualSmallGeFourCase081
 import Proofs.RadenkovicGutmanActualSmallGeFourCase082
 import Proofs.RadenkovicGutmanActualSmallGeFourCase083
 import Proofs.RadenkovicGutmanActualSmallGeFourCase084
+#print axioms Gebendorfer.RadenkovicGutman.SmallGeFourActualCases.certified068

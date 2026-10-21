@@ -4,7 +4,8 @@ on:
   push:
     branches: [rg-remaining-six-spectral-20261021]
     paths:
-      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanActualSmallGeFour*.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanActualSmallGeFourCase*.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanActualSmallGeFourBatch*.lean'
       - '.github/workflows/rg-actual-small-ge4.yml'
 
 permissions:
@@ -65,6 +66,9 @@ jobs:
             02|04|07|08|09|10|11|12|13) python3 -B ci/rg_restore_job_exports.py --manifest "ci/rg_small_ge4_wave2_batch${batch}_prior_exports.json" --build-directory Proofs/RG_Lean_20261019/build/extension ;;
           esac
           python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_first_native_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          case "$batch" in
+            00|01|03|05|06|14) python3 -B ci/rg_restore_job_exports.py --manifest "ci/rg_actual_maps_wave1_batch${batch}_prior_exports.json" --build-directory Proofs/RG_Lean_20261019/build/extension ;;
+          esac
       - name: Check multiplicities and actual graph spectral comparison
         run: python3 -B Proofs/RG_Lean_20261019/verify_extension.py --mathlib-project "$GITHUB_WORKSPACE" --endpoint ${{ matrix.endpoint }} --workers 1 --module-timeout 600 --resume --print-receipt
       - name: Retain completed records and diagnostics

@@ -4,6 +4,17 @@ namespace Gebendorfer.RadenkovicGutman.FiniteTreeTransfer
 open CoreQuotient RootedTreeEnumeration CanonicalTreeCoverage
 set_option maxHeartbeats 0
 
+instance nativeSumDecidable {A B : Type} (G : SimpleGraph A) (H : SimpleGraph B)
+    [dG : DecidableRel G.Adj] [dH : DecidableRel H.Adj] : DecidableRel (G ⊕g H).Adj
+  | .inl a, .inl b => dG a b
+  | .inr a, .inr b => dH a b
+  | .inl _, .inr _ => inferInstanceAs (Decidable (false=true))
+  | .inr _, .inl _ => inferInstanceAs (Decidable (false=true))
+
+instance (priority := 2000) nativeEdgeDecidable {A : Type} [DecidableEq A] (a b : A) :
+    DecidableRel (SimpleGraph.edge a b).Adj :=
+  inferInstanceAs (DecidableRel (SimpleGraph.fromEdgeSet {s(a,b)}).Adj)
+
 def sourceLabel (n p q : ℕ) :
     (Vertices n ⊕ Fin (p+1) ⊕ Fin (q+1)) → Fin (n+p+q+3)
   | .inl v => ⟨(label v).val,by have := (label v).isLt; omega⟩

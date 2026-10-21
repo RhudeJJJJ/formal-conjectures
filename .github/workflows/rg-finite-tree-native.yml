@@ -6,6 +6,7 @@ on:
     paths:
       - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanActualSmallGeFourCase000.lean'
       - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanFiniteTreeNative.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanCoreTreeTransfer.lean'
       - '.github/workflows/rg-finite-tree-native.yml'
 
 permissions:
@@ -17,7 +18,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        endpoint: [Proofs.RadenkovicGutmanActualSmallGeFourCase000]
+        endpoint: [Proofs.RadenkovicGutmanActualSmallGeFourCase000,Proofs.RadenkovicGutmanCoreTreeTransfer]
     runs-on: ubuntu-latest
     timeout-minutes: 90
     steps:
@@ -56,6 +57,7 @@ jobs:
           GITHUB_TOKEN: ${{ github.token }}
         run: python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_finite_tree_native_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
       - name: Restore checked first-group spectral and comparison exports
+        if: matrix.endpoint == 'Proofs.RadenkovicGutmanActualSmallGeFourCase000'
         env:
           GITHUB_TOKEN: ${{ github.token }}
         run: python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_small_ge4_wave1_batch00_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension

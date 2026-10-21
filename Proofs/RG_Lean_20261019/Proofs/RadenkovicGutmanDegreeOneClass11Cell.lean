@@ -35,6 +35,8 @@ theorem actual_log_lower (y : ℝ) (hy : y ∈ Set.Icc (1 : ℝ) (101/100))
   have hpos : 0<y := by linarith [hy.1]
   have ht : coordinate y ∈ Set.Icc (0 : ℝ) 1 := by
     constructor <;> dsimp [coordinate] <;> linarith [hy.1,hy.2]
+  have hcast : ((13/100 : ℚ) : ℝ)=(13/100 : ℝ) := by norm_num
+  rw [← hcast]
   apply ClassCellCertificates.cell_log_lower cu cv cj (1/5) (13/10) (13/100) 0 12
     coefficient_check logarithm_check (weights y)
     (fun i => mul_nonneg (sq_nonneg y) (Bernstein.basis_nonneg _ _ _ ht))

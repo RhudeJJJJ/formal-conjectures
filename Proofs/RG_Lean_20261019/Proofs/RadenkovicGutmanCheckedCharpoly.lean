@@ -16,9 +16,9 @@ set_option backward.isDefEq.respectTransparency false
 attribute [-instance] SimpleGraph.fintypeEdgeSetSup
 
 def acceptsLU {n : ℕ} (A L U : Matrix (Fin n) (Fin n) ℚ) (value : ℚ) : Bool :=
-  decide ((∀ i j, A i j=∑ k, L i k*U k j) ∧
-    (∀ i j, i<j → L i j=0) ∧ (∀ i, L i i=1) ∧
-    (∀ i j, j<i → U i j=0) ∧ (∏ i, U i i)=value)
+  decide ((∀ i j, A i j = ∑ k, L i k * U k j) ∧
+    (∀ i j, i < j → L i j = 0) ∧ (∀ i, L i i = 1) ∧
+    (∀ i j, j < i → U i j = 0) ∧ (∏ i, U i i) = value)
 
 theorem determinant_of_acceptsLU {n : ℕ} (A L U : Matrix (Fin n) (Fin n) ℚ)
     (value : ℚ) (h : acceptsLU A L U value=true) : A.det=value := by
@@ -33,8 +33,9 @@ theorem determinant_of_acceptsLU {n : ℕ} (A L U : Matrix (Fin n) (Fin n) ℚ)
 theorem real_determinant_of_acceptsLU {n : ℕ} (A L U : Matrix (Fin n) (Fin n) ℚ)
     (value : ℚ) (h : acceptsLU A L U value=true) :
     (A.map (Rat.castHom ℝ)).det=(value : ℝ) := by
-  rw [← (Rat.castHom ℝ).map_det]
-  exact_mod_cast determinant_of_acceptsLU A L U value h
+  calc
+    _ = (Rat.castHom ℝ) A.det := ((Rat.castHom ℝ).map_det A).symm
+    _ = _ := by rw [determinant_of_acceptsLU A L U value h]; rfl
 
 def sample {n : ℕ} (k : Fin (n+1)) : ℚ := -((k.val : ℚ)+1)
 def shifted {n : ℕ} (A : Matrix (Fin n) (Fin n) ℚ) (x : ℚ) :
@@ -49,9 +50,10 @@ theorem characteristic_polynomial {n : ℕ} (A : Matrix (Fin n) (Fin n) ℚ)
   apply Polynomial.eq_of_natDegree_lt_card_of_eval_eq _ _
     (f := fun k : Fin (n+1) => (sample k : ℝ))
   · intro i j h
+    change (sample i : ℝ) = (sample j : ℝ) at h
     apply Fin.ext
     have he : (i.val : ℚ)=(j.val : ℚ) := by
-      have hh : sample i=sample j := by exact_mod_cast h
+      have hh : sample i=sample j := Rat.cast_injective h
       dsimp only [sample] at hh
       linarith
     exact_mod_cast he
@@ -61,7 +63,8 @@ theorem characteristic_polynomial {n : ℕ} (A : Matrix (Fin n) (Fin n) ℚ)
     have he : (shifted A (sample k)).map (Rat.castHom ℝ)=
         (sample k : ℝ) • (1 : Matrix (Fin n) (Fin n) ℝ)-A.map (Rat.castHom ℝ) := by
       ext i j
-      simp [shifted,Matrix.map_apply,Matrix.sub_apply,Matrix.smul_apply,Matrix.one_apply]
+      by_cases hij : i = j <;>
+        simp [shifted,Matrix.map_apply,Matrix.sub_apply,Matrix.smul_apply,Matrix.one_apply,hij]
     rw [he] at h
     simpa only [Matrix.smul_one_eq_diagonal,Matrix.scalar_apply] using h
   · have hp := CheckedRoots.degree_bound cs
@@ -78,8 +81,9 @@ theorem laplacian_map {n : ℕ} (G : SimpleGraph (Fin n)) [DecidableRel G.Adj] :
   have hd (i : Fin n) : (G.degree i : ℝ)=∑ j : Fin n, if G.Adj i j then 1 else 0 :=
     G.degree_eq_sum_if_adj i
   ext i j
-  simp [laplacian,SimpleGraph.lapMatrix,SimpleGraph.degMatrix,SimpleGraph.adjMatrix,
-    Matrix.map_apply,Matrix.sub_apply,Matrix.diagonal_apply,hd]
+  by_cases hij : i = j <;> by_cases ha : G.Adj i j <;>
+    simp [laplacian,SimpleGraph.lapMatrix,SimpleGraph.degMatrix,SimpleGraph.adjMatrix,
+      Matrix.map_apply,Matrix.sub_apply,Matrix.diagonal_apply,hd,hij,ha]
 
 theorem graph_characteristic_polynomial {n : ℕ} (G : SimpleGraph (Fin n))
     [DecidableRel G.Adj] (cs : List ℚ) (hlen : cs.length≤n+1)

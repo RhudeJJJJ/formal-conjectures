@@ -1,0 +1,169 @@
+name: RG degree two three actual control
+
+on:
+  push:
+    branches: [rg-remaining-six-spectral-20261021]
+    paths:
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeTwoThreeFiniteActualCase0000.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeTwoThreeFiniteActualCase0001.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeTwoThreeFiniteActualCase0002.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeTwoThreeFiniteActualCase0003.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeTwoThreeFiniteActualCase0004.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeTwoThreeFiniteActualCase0005.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeTwoThreeFiniteActualCase0006.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeTwoThreeFiniteActualCase0007.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeTwoThreeFiniteActualCase0008.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeTwoThreeFiniteActualCase0009.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeTwoThreeFiniteActualCase0010.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeTwoThreeFiniteActualCase0011.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeTwoThreeFiniteActualCase0012.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeTwoThreeFiniteActualCase0013.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeTwoThreeFiniteActualCase0014.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeTwoThreeFiniteActualCase0015.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeTwoThreeFiniteActualCase0016.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeTwoThreeFiniteActualCase0017.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeTwoThreeFiniteActualCase0018.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeTwoThreeFiniteActualCase0019.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeTwoThreeFiniteActualCase0020.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeTwoThreeFiniteActualCase0021.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeTwoThreeFiniteActualCase0022.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeTwoThreeFiniteActualCase0023.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeTwoThreeFiniteActualCase0024.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeTwoThreeFiniteActualCase0025.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeTwoThreeFiniteActualCase0026.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeTwoThreeFiniteActualCase0027.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeTwoThreeFiniteActualCase0028.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeTwoThreeFiniteActualCase0029.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeTwoThreeFiniteActualCase0030.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeTwoThreeFiniteActualCase0031.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeTwoThreeFiniteActualCase0032.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeTwoThreeFiniteActualCase0033.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeTwoThreeFiniteActualCase0034.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeTwoThreeFiniteActualCase0035.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeTwoThreeFiniteActualCase0036.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeTwoThreeFiniteActualCase0037.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeTwoThreeFiniteActualCase0038.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeTwoThreeFiniteActualCase0039.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeTwoThreeFiniteActualCase0040.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeTwoThreeFiniteActualCase0041.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeTwoThreeFiniteActualCase0042.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeTwoThreeFiniteActualCase0043.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeTwoThreeFiniteActualCase0044.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeTwoThreeFiniteActualCase0045.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeTwoThreeFiniteActualCase0046.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeTwoThreeFiniteActualCase0047.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeTwoThreeFiniteActualCase0048.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeTwoThreeFiniteActualCase0049.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeTwoThreeFiniteActualCase5500.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeTwoThreeFiniteActualCase5501.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeTwoThreeFiniteActualCase5502.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeTwoThreeFiniteActualCase5503.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeTwoThreeFiniteActualCase5504.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeTwoThreeFiniteActualCase5505.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeTwoThreeFiniteActualCase5506.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeTwoThreeFiniteActualCase5507.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeTwoThreeFiniteCertificateBatch000.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeTwoThreeFiniteCertificateBatch110.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeTwoThreeFiniteComparisons00.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeTwoThreeFiniteComparisons110.lean'
+      - '.github/workflows/rg-degree-two-three-actual-control.yml'
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  check:
+    strategy:
+      fail-fast: false
+      matrix:
+        endpoint: [Proofs.RadenkovicGutmanDegreeTwoThreeFiniteCertificateBatch000,Proofs.RadenkovicGutmanDegreeTwoThreeFiniteCertificateBatch110]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          persist-credentials: false
+      - name: Install the project toolchain
+        run: |
+          set -o pipefail
+          curl -sSfL https://github.com/leanprover/elan/releases/download/v1.4.2/elan-x86_64-unknown-linux-gnu.tar.gz | tar xz
+          ./elan-init -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Materialize the exact dependency lock
+        run: python3 -B ci/rg_dependencies.py
+      - name: Fetch the required Mathlib cache
+        run: |
+          python3 - <<'PY'
+          import pathlib, re, subprocess
+          root = pathlib.Path('Proofs/RG_Lean_20261019')
+          seen, external = set(), set()
+          def visit(name):
+              if name in seen:
+                  return
+              seen.add(name)
+              source = (root / (name.replace('.', '/') + '.lean')).read_text()
+              for dep in re.findall(r'^\s*import\s+([\w.]+)', source, re.M):
+                  if dep.startswith('Proofs.'):
+                      visit(dep)
+                  else:
+                      external.add(dep)
+          visit('${{ matrix.endpoint }}')
+          subprocess.run(['lake', 'exe', 'cache', 'get', *sorted(external)], check=True)
+          PY
+      - name: Restore exact source-bound prerequisites
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_actual_control_scope000_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_actual_control_scope001_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_actual_control_scope002_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_actual_control_scope003_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_actual_control_scope004_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_actual_control_scope005_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_actual_control_scope006_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_actual_control_scope007_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_actual_control_scope008_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_actual_control_scope009_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_actual_control_scope010_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_actual_control_scope011_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_actual_control_scope012_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_actual_control_scope013_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_actual_control_scope014_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_actual_control_scope015_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_actual_control_scope016_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_actual_control_scope017_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_actual_control_scope018_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_actual_control_scope019_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_two_three_actual_control_scope020_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+      - name: Check multiplicities and actual graph spectral comparison
+        shell: bash
+        run: |
+          set -o pipefail
+          python3 -B Proofs/RG_Lean_20261019/verify_extension.py --mathlib-project "$GITHUB_WORKSPACE" --endpoint ${{ matrix.endpoint }} --workers 1 --module-timeout 600 --resume | python3 -B ci/rg_compact_ci_output.py
+      - name: Retain completed records and diagnostics
+        if: always()
+        run: |
+          python3 - <<'PY'
+          import json,pathlib,shutil
+          root=pathlib.Path('Proofs/RG_Lean_20261019/build/extension')
+          records=[json.loads(p.read_text()) for p in sorted(root.glob('Proofs.*.json'))]
+          fresh=root.parent/'fresh_exports';fresh.mkdir(parents=True,exist_ok=True)
+          (fresh/'diagnostics_records.json').write_text(json.dumps({'modules':records},separators=(',',':'))+'\n')
+          if (root/'receipt.json').is_file():shutil.copyfile(root/'receipt.json',fresh/'receipt.json')
+          print('RETAINED_RECORD_COUNTS '+json.dumps({'total':len(records),'fresh':sum(r['mode']=='FRESH_KERNEL_EXPORT' for r in records)}))
+          for row in records:
+              if row['mode']=='FRESH_KERNEL_EXPORT':
+                  name=row['module'];rel=name.replace('.','/')+'.olean';dest=fresh/rel
+                  dest.parent.mkdir(parents=True,exist_ok=True)
+                  shutil.copyfile(root/rel,dest);shutil.copyfile(root/(name+'.json'),fresh/(name+'.json'))
+          for log in root.glob('Proofs.*.log'):
+              shutil.copyfile(log,fresh/log.name);print('MODULE_LOG_TAIL '+log.name+' '+log.read_text()[-18000:])
+          PY
+      - name: Retain new exports only
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: rg-degree-two-three-actual-control-exports-${{ github.run_id }}-${{ strategy.job-index }}
+          path: Proofs/RG_Lean_20261019/build/fresh_exports
+          retention-days: 7

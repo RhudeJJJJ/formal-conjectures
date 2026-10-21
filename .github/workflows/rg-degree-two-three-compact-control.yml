@@ -1,11 +1,7 @@
 name: RG degree two three compact control
 
 on:
-  push:
-    branches: [rg-remaining-six-spectral-20261021]
-    paths:
-      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeTwoThreeSpectrum4959.lean'
-      - '.github/workflows/rg-degree-two-three-compact-control.yml'
+  workflow_dispatch:
 
 permissions:
   contents: read

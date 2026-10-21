@@ -1,0 +1,57 @@
+{
+  "repository": "RhudeJJJJ/formal-conjectures",
+  "run": 39640918626,
+  "job": 119363887425,
+  "source_commit": "52762d40e2caf98761b9db66c53216bbd9c6a2f5",
+  "artifact_id": 12365312855,
+  "artifact_sha256": "9362be860e7997f0cf84eb1c170cfef4988f1aac9a60af56648f239a5506f4a8",
+  "lean_version": "4.33.1",
+  "mathlib": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "modules": {
+    "Proofs.RadenkovicGutmanActualSmallGeFourCertificatesComplete": {
+      "module": "Proofs.RadenkovicGutmanActualSmallGeFourCertificatesComplete",
+      "source_sha256": "f49bfca1024af221337e0f16193c5d10c91d5126964db70f1ba40fb2cbeba5ac",
+      "source_closure_sha256": "10c31ba32f1dbfb218dcb5a08a2a0d335050012d5403a66f92d8bab8f1f95f21",
+      "output_sha256": "6f0f4c3728b4a289409a56ebbbb3dbc0be13a40cd435842e88b544f7a945e781",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "FRESH_KERNEL_EXPORT",
+      "seconds": 2.973
+    },
+    "Proofs.RadenkovicGutmanActualSmallGeFourCoverageComplete": {
+      "module": "Proofs.RadenkovicGutmanActualSmallGeFourCoverageComplete",
+      "source_sha256": "edfc5f38d59688800c663bd1af8a357e1d835654bf028c5075041a5bf53d680b",
+      "source_closure_sha256": "9d0108e2b6fb2f9679077016a93478403444c821be19c02b9434d379bb917e1a",
+      "output_sha256": "daccb8cbd5f1003897ac77d1be9411bce78121e90b7170a77ea763c395b497de",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "FRESH_KERNEL_EXPORT",
+      "seconds": 2.521
+    },
+    "Proofs.RadenkovicGutmanOriginalSmallGeFour": {
+      "module": "Proofs.RadenkovicGutmanOriginalSmallGeFour",
+      "source_sha256": "69510a3a50c1642378eb089b9a625f6c8aa7228665a6b2e1f210e0f1d06255c2",
+      "source_closure_sha256": "5121992ad6702399ac5ffd97f2763140e3af05e3c17c5b9ccd54074f7a040279",
+      "output_sha256": "0db50d2e59b6957fa1d5cddfc70f99434fe0776002e5e3e02d6e6aa69957c3d4",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "FRESH_KERNEL_EXPORT",
+      "seconds": 2.872
+    }
+  }
+}

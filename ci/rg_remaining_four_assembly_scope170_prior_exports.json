@@ -1,0 +1,55 @@
+{
+  "repository": "RhudeJJJJ/formal-conjectures",
+  "run": 39527615144,
+  "job": 118985864778,
+  "source_commit": "4f384c6bec1a76db7d0361b608cead91bd85178e",
+  "artifact_id": 12314265667,
+  "artifact_sha256": "a4594f0257a5e747a2be7e78c505f1eb3cf15d96d4ba5e5fb1799a12e8497ffb",
+  "lean_version": "4.33.1",
+  "mathlib": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "modules": {
+    "Proofs.RadenkovicGutmanEscapeFactorSigns": {
+      "module": "Proofs.RadenkovicGutmanEscapeFactorSigns",
+      "source_sha256": "e7923b8e72b18e3802fbfc6c2f4c96451662bf799de71d261a3e8efee33084b0",
+      "source_closure_sha256": "994188526cce8f89c5a63e1bb77334ddd6622b27cf58d62878b158a09059db1b",
+      "output_sha256": "a47333351e4afa8b33a8ec5b1696894dbfefc277b8eb25ae999865fbf8f62069",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "FRESH_KERNEL_EXPORT",
+      "seconds": 2.672
+    },
+    "Proofs.RadenkovicGutmanEscapeReducedDirected": {
+      "module": "Proofs.RadenkovicGutmanEscapeReducedDirected",
+      "source_sha256": "7120f0dc25444b1ee41c6261df84a4dc35d625f112b3626fa9d13b2363c8fcb4",
+      "source_closure_sha256": "bc6eace624fe3c370d92948ec2f2fbf3ecb9bd7105ecaa0e223cdcce4fe39e19",
+      "output_sha256": "9025df9d3677f3da26861b7253fe3ee871ba2b85dda7e2d9a985694ffef65384",
+      "axiom_profiles": [
+        [
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "FRESH_KERNEL_EXPORT",
+      "seconds": 15.31
+    }
+  }
+}

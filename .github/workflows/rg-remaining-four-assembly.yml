@@ -1,0 +1,302 @@
+name: RG remaining four assembly
+
+on:
+  push:
+    branches: [rg-remaining-six-spectral-20261021]
+    paths:
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanRemainingFourAssembly.lean'
+      - '.github/workflows/rg-remaining-four-assembly.yml'
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  check:
+    strategy:
+      fail-fast: false
+      matrix:
+        endpoint: [Proofs.RadenkovicGutmanRemainingFourAssembly]
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          persist-credentials: false
+      - name: Install the project toolchain
+        run: |
+          set -o pipefail
+          curl -sSfL https://github.com/leanprover/elan/releases/download/v1.4.2/elan-x86_64-unknown-linux-gnu.tar.gz | tar xz
+          ./elan-init -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Materialize the exact dependency lock
+        run: python3 -B ci/rg_dependencies.py
+      - name: Fetch the required Mathlib cache
+        run: |
+          python3 - <<'PY'
+          import pathlib, re, subprocess
+          root = pathlib.Path('Proofs/RG_Lean_20261019')
+          seen, external = set(), set()
+          def visit(name):
+              if name in seen:
+                  return
+              seen.add(name)
+              source = (root / (name.replace('.', '/') + '.lean')).read_text()
+              for dep in re.findall(r'^\s*import\s+([\w.]+)', source, re.M):
+                  if dep.startswith('Proofs.'):
+                      visit(dep)
+                  else:
+                      external.add(dep)
+          visit('${{ matrix.endpoint }}')
+          subprocess.run(['lake', 'exe', 'cache', 'get', *sorted(external)], check=True)
+          PY
+      - name: Restore exact source-bound prerequisites
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope000_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope001_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope002_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope003_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope004_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope005_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope006_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope007_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope008_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope009_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope010_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope011_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope012_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope013_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope014_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope015_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope016_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope017_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope018_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope019_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope020_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope021_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope022_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope023_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope024_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope025_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope026_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope027_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope028_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope029_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope030_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope031_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope032_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope033_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope034_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope035_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope036_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope037_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope038_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope039_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope040_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope041_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope042_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope043_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope044_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope045_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope046_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope047_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope048_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope049_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope050_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope051_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope052_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope053_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope054_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope055_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope056_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope057_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope058_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope059_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope060_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope061_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope062_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope063_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope064_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope065_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope066_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope067_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope068_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope069_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope070_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope071_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope072_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope073_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope074_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope075_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope076_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope077_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope078_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope079_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope080_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope081_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope082_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope083_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope084_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope085_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope086_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope087_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope088_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope089_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope090_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope091_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope092_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope093_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope094_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope095_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope096_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope097_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope098_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope099_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope100_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope101_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope102_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope103_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope104_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope105_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope106_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope107_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope108_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope109_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope110_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope111_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope112_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope113_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope114_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope115_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope116_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope117_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope118_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope119_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope120_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope121_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope122_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope123_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope124_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope125_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope126_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope127_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope128_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope129_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope130_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope131_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope132_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope133_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope134_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope135_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope136_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope137_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope138_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope139_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope140_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope141_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope142_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope143_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope144_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope145_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope146_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope147_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope148_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope149_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope150_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope151_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope152_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope153_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope154_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope155_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope156_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope157_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope158_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope159_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope160_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope161_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope162_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope163_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope164_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope165_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope166_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope167_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope168_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope169_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope170_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope171_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope172_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope173_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope174_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope175_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope176_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope177_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope178_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope179_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope180_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope181_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope182_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope183_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope184_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope185_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope186_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope187_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope188_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope189_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope190_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope191_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope192_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope193_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope194_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope195_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope196_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope197_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope198_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope199_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope200_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope201_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope202_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope203_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope204_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope205_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope206_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope207_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope208_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope209_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope210_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope211_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope212_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope213_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_remaining_four_assembly_scope214_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+      - name: Check multiplicities and actual graph spectral comparison
+        shell: bash
+        run: |
+          set -o pipefail
+          python3 -B Proofs/RG_Lean_20261019/verify_extension.py --mathlib-project "$GITHUB_WORKSPACE" --endpoint ${{ matrix.endpoint }} --workers 1 --module-timeout 600 --resume | python3 -B ci/rg_compact_ci_output.py
+      - name: Retain completed records and diagnostics
+        if: always()
+        run: |
+          python3 - <<'PY'
+          import json,pathlib,shutil
+          root=pathlib.Path('Proofs/RG_Lean_20261019/build/extension')
+          records=[json.loads(p.read_text()) for p in sorted(root.glob('Proofs.*.json'))]
+          fresh=root.parent/'fresh_exports';fresh.mkdir(parents=True,exist_ok=True)
+          (fresh/'diagnostics_records.json').write_text(json.dumps({'modules':records},separators=(',',':'))+'\n')
+          if (root/'receipt.json').is_file():shutil.copyfile(root/'receipt.json',fresh/'receipt.json')
+          print('RETAINED_RECORD_COUNTS '+json.dumps({'total':len(records),'fresh':sum(r['mode']=='FRESH_KERNEL_EXPORT' for r in records)}))
+          for row in records:
+              if row['mode']=='FRESH_KERNEL_EXPORT':
+                  name=row['module'];rel=name.replace('.','/')+'.olean';dest=fresh/rel
+                  dest.parent.mkdir(parents=True,exist_ok=True)
+                  shutil.copyfile(root/rel,dest);shutil.copyfile(root/(name+'.json'),fresh/(name+'.json'))
+          for log in root.glob('Proofs.*.log'):
+              shutil.copyfile(log,fresh/log.name);print('MODULE_LOG_TAIL '+log.name+' '+log.read_text()[-18000:])
+          PY
+      - name: Retain new exports only
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: rg-remaining-four-assembly-exports-${{ github.run_id }}-${{ strategy.job-index }}
+          path: Proofs/RG_Lean_20261019/build/fresh_exports
+          retention-days: 7

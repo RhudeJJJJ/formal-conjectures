@@ -1,0 +1,80 @@
+{
+  "repository": "RhudeJJJJ/formal-conjectures",
+  "run": 39527783221,
+  "job": 118986382063,
+  "source_commit": "0bb9e7bf55f35d132f396205b29eb07d1ef8f2b2",
+  "artifact_id": 12312849435,
+  "artifact_sha256": "ad6a44a79d595fc240ca19e0fe94867bd3f3de618e63a513064a80cbe777c032",
+  "lean_version": "4.33.1",
+  "mathlib": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "modules": {
+    "Proofs.RadenkovicGutmanLowStripReserveReduction": {
+      "module": "Proofs.RadenkovicGutmanLowStripReserveReduction",
+      "source_sha256": "fa72138e318fa8bfed25bdee7d6cf5758276da186d6707f07e7004dd912c2c64",
+      "source_closure_sha256": "be11fe5a1dce53463326b85b9d389c293d8d17c5d270fb73989d9bc3a30385c6",
+      "output_sha256": "f90cda3914b68890093db4d8ae5020228d5b738daf491f6507327a035dcfc642",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "FRESH_KERNEL_EXPORT",
+      "seconds": 2.322
+    },
+    "Proofs.RadenkovicGutmanSymmetricConstantReserve": {
+      "module": "Proofs.RadenkovicGutmanSymmetricConstantReserve",
+      "source_sha256": "40c052ac7436b24282f4ec93a8a5ff89bd8e353e34569b85a6df3c739cc4eaa7",
+      "source_closure_sha256": "754210141a16ce693f6b0299955db171dabda93875ae9b0bea2d5fb5c458e73f",
+      "output_sha256": "387f360d01893a3b7f3e45a072613adc6138b4c01c572d6c992f0145f123ae73",
+      "axiom_profiles": [
+        [
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "FRESH_KERNEL_EXPORT",
+      "seconds": 5.877
+    },
+    "Proofs.RadenkovicGutmanSymmetricConstantReserveIdentity": {
+      "module": "Proofs.RadenkovicGutmanSymmetricConstantReserveIdentity",
+      "source_sha256": "3b1348ace01dda4cd913e95f2b395ac3bf01d3f67918a5110d6524f926125b27",
+      "source_closure_sha256": "4b05dcb16ba793c6decbd0fd49024af0094f3dae800595b0d34a84d039234e11",
+      "output_sha256": "5e6e18947946c61f082e7552bfb974db9afa9d957dfbaf3ea9da5eed4091588d",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "FRESH_KERNEL_EXPORT",
+      "seconds": 114.707
+    }
+  }
+}

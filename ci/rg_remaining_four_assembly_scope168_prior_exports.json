@@ -1,0 +1,42 @@
+{
+  "run": 39661366591,
+  "job": 119434912741,
+  "artifact_id": 12372959483,
+  "artifact_sha256": "d6055a7d737ac8a8a1df7027bba31c9efbfc77b1fbcc9d6d0bf86b504265e047",
+  "repository": "RhudeJJJJ/formal-conjectures",
+  "source_commit": "26bb5cc5f337e2182f06700cb2ed97ba2bbf16c8",
+  "lean_version": "4.33.1",
+  "mathlib": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "modules": {
+    "Proofs.RadenkovicGutmanDegreeOneSmallCertificatesComplete": {
+      "module": "Proofs.RadenkovicGutmanDegreeOneSmallCertificatesComplete",
+      "source_sha256": "99d5652236620e5315a413e261dd874f8f1ec83a128c0cf380f03be7d64be896",
+      "source_closure_sha256": "bf46a5e7b01c60561768ed3b1635ee8386716da9f5018ac11e8941dd160425fd",
+      "output_sha256": "af622c91d65417cbac9dce6541d6d65b457291ac6242fbe068125a23ad20c7e9",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "FRESH_KERNEL_EXPORT",
+      "seconds": 25.514
+    },
+    "Proofs.RadenkovicGutmanOriginalDegreeOneSmall": {
+      "module": "Proofs.RadenkovicGutmanOriginalDegreeOneSmall",
+      "source_sha256": "48efb99009fd19261e3977ef084caec8253b08e7889d9edeb481dc232a10b72e",
+      "source_closure_sha256": "31519dcc279707f97205c18be6cbf09851f706542e790b6423d6e70ede95e92e",
+      "output_sha256": "ef146f6f9762286e6560dd23c6782cc350e58047fc95d81d20a0740e1eced697",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "FRESH_KERNEL_EXPORT",
+      "seconds": 4.323
+    }
+  }
+}

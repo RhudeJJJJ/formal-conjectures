@@ -1,12 +1,7 @@
 name: RG original degree one small
 
 on:
-  push:
-    branches: [rg-remaining-six-spectral-20261021]
-    paths:
-      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallCertificatesComplete.lean'
-      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanOriginalDegreeOneSmall.lean'
-      - '.github/workflows/rg-original-degree-one-small.yml'
+  workflow_dispatch:
 
 permissions:
   contents: read

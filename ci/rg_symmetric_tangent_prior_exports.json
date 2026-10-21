@@ -1,0 +1,50 @@
+{
+  "repository": "RhudeJJJJ/formal-conjectures",
+  "run": 39526376712,
+  "job": 118981866160,
+  "source_commit": "365f4a1a20e645cf7a572d2cfd5f6fb50e8c42e5",
+  "artifact_id": 12313782554,
+  "artifact_sha256": "d3a9a03549f9bd7424ed70d1de4dca96df7e12564f552ec4a971ac2a347d2123",
+  "lean_version": "4.33.1",
+  "mathlib": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "modules": {
+    "Proofs.RadenkovicGutmanNestedIntegerMixed": {
+      "module": "Proofs.RadenkovicGutmanNestedIntegerMixed",
+      "source_sha256": "ac27b32738f136c1f804dbce23658ee08f039e6f6b45768792a9887a683117f9",
+      "source_closure_sha256": "cf3f3492ef5e0103ae2189358709a69fcb6d17c927ba476321e30e9d3329979f",
+      "output_sha256": "b82449138e8f020007edaab96b72f25d52b2c66f579be52ec9e5a74fed5e0b7d",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "FRESH_KERNEL_EXPORT",
+      "seconds": 2.219
+    },
+    "Proofs.RadenkovicGutmanSymmetricTangentReserve": {
+      "module": "Proofs.RadenkovicGutmanSymmetricTangentReserve",
+      "source_sha256": "64fe9b0a5638e104777c49ed186a51ac9e64c65ad3a972783a4ae2594d8647fd",
+      "source_closure_sha256": "a7398895bc392a854225f5aa7eb8561f7a9fb73a882732cec8e672ee26284e88",
+      "output_sha256": "cc658ae42cfa927f42546ce0e5a93406d694e1fbc4c4518d522abc2851872aca",
+      "axiom_profiles": [
+        [
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "FRESH_KERNEL_EXPORT",
+      "seconds": 70.628
+    }
+  }
+}

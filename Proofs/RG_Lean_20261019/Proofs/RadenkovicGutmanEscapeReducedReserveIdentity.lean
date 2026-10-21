@@ -1,6 +1,8 @@
 /- Copyright 2026 Jonas J. Gebendorfer. Apache 2.0. -/
 import Proofs.RadenkovicGutmanEscapeReducedReserve
 import Proofs.RadenkovicGutmanEscapeFactorSigns
+import Proofs.RadenkovicGutmanEscapeReserveRawAffine
+import Proofs.RadenkovicGutmanEscapeReserveRawBalancedIdentity
 namespace Gebendorfer.RadenkovicGutman.EscapeReducedReserveIdentity
 open Set
 noncomputable section
@@ -14,27 +16,18 @@ theorem data_identity (H U a b : ℝ) (hH : H ≠ 0)
     (hX : (653/2000 : ℝ)+(19347/2000 : ℝ)*U ≠ 0) :
     NestedHorner.eval (NestedInteger.castPoly 4 EscapeReducedReserve.data) ![H,U,a,b] =
       (1258948562770990142036812121880765399040000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 : ℝ)*form (H/46) ((653/2000)+(19347/2000)*U) a b := by
-  dsimp only [form,EscapeFactorSigns.reserveInner]
+
   have hh : (H/46 : ℝ) ≠ 0 := div_ne_zero hH (by norm_num)
-  simp only [CorrelatedEscapeReduction.payment_reciprocal _ _ hh,
-    CorrelatedEscapeReduction.radius_reciprocal _ _ hh hX]
-  dsimp only [CorrelatedEscapeReduction.factorCore,CorrelatedEscapeReduction.factorLead,
-    CorrelatedEscapeReduction.factorBase,CorrelatedEscapeReduction.factorHorizontal,
-    CorrelatedEscapeReduction.factorVertical,CorrelatedEscapeReduction.errorWeight]
-  have hlin : (653 : ℝ)+19347*U ≠ 0 := by
-    intro hz
-    apply hX
-    nlinarith only [hz]
-  have hquad : (426409 : ℝ)+25267182*U+374306409*U^2 ≠ 0 := by
-    rw [show (426409 : ℝ)+25267182*U+374306409*U^2=((653 : ℝ)+19347*U)^2 by ring]
-    exact pow_ne_zero 2 hlin
-  have hpn : (4426409 : ℝ)+25267182*U+374306409*U^2 ≠ 0 := by
-    rw [show (4426409 : ℝ)+25267182*U+374306409*U^2=4000000+((653 : ℝ)+19347*U)^2 by ring]
-    positivity
-  field_simp [hH,hX,hlin,hquad,hpn,show (1+((653/2000 : ℝ)+(19347/2000 : ℝ)*U)^2) ≠ 0 by positivity]
-  rw [EscapeReducedReserve.data_eval]
-  norm_num only [Rat.cast_intCast]
+  have h := EscapeReserveRawBalancedIdentity.data_identity (H/46)
+    ((653/2000)+(19347/2000)*U) a b
+  rw [← EscapeReserveRawAffine.evaluation H U a b] at h
+  rw [← EscapeReserveBalanced.inner_clearing (H/46)
+    ((653/2000)+(19347/2000)*U) a b hh hX] at h
+  apply mul_right_cancel₀ (pow_ne_zero 2 hX)
+  convert h using 1
+  dsimp only [form]
   ring
+
 #print axioms data_identity
 end
 end Gebendorfer.RadenkovicGutman.EscapeReducedReserveIdentity

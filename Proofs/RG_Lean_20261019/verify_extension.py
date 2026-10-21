@@ -111,6 +111,7 @@ def main():
    for f in finished:
     n,row=f.result();del running[f];done.add(n);records[n]=row
     print('PASS',n,row['mode'],row['seconds'],flush=True)
+    print('COMPLETED_MODULE_JSON '+json.dumps(row,separators=(',',':')),flush=True)
  report=dict(lean=version,mathlib=PIN,leancert=LC,global_rg='NOT_PROVED',complete_submission='NOT_SUBMITTED',scope='EXPLICIT_EXTENSION_CLOSURE' if a.endpoint else 'ALL_ARM_DEGREES_TWO_THREE_FOUR_FIVE_AND_CONDITIONAL_GLOBAL_REDUCTION',endpoints=ends,modules=records,wall_seconds=round(time.monotonic()-started,3))
  (build/'receipt.json').write_text(json.dumps(report,indent=2)+'\n')
  print('PASS_EXTENSION_SCOPE' if a.endpoint else 'PASS_SHORT_ARM_SCOPE',len(done),'MODULES; GLOBAL RG NOT_PROVED',flush=True)

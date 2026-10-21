@@ -1,0 +1,146 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[ngerman]{babel}
+\usepackage{lmodern,amsmath,amssymb,amsthm,booktabs}
+\usepackage[margin=27mm]{geometry}
+\usepackage[hidelinks]{hyperref}
+\newtheorem{satz}{Satz}
+\newtheorem{lemma}{Lemma}
+\title{Eine Randfall-Widerlegung der verallgemeinerten\newline Baloui-Vermutung in OEIS A381054}
+\author{Arbeitsnotiz für Jonas J. Gebendorfer}
+\date{13. Oktober 2026}
+\begin{document}
+\maketitle
+\noindent\textbf{Ergebnis.} Die in den Kommentaren von A381054 formulierte allgemeine
+Äquivalenz ist falsch. Für den dort zulässigen Primzahlfall $m=3$, $n=11$ gilt
+\[
+ a_3(11)=37\ne 0=(\lfloor\sqrt{11}\rfloor-3)^2.
+\]
+Der Abschluss betrifft genau diese veröffentlichte Fassung. Die Ursache ist eine
+unzureichende untere Primzahlgrenze. Der folgende Handbeweis benötigt keine
+numerische Näherung, keine endliche Suchraumannahme und keine externe mathematische
+Prämisse. Neuheit und externes Review sind nicht festgestellt.
+
+\section{Originalziel und Definitionen}
+Die am 13.10.2026 abgerufene Originalseite \href{https://oeis.org/A381054}{OEIS A381054}
+von Hassan Baloui definiert die Familie über den jeweils kleinsten positiven
+Multiplikator. Setze für $q\ge1$
+\[
+ d(q)=\max\{d\in\mathbb Z_{\ge1}:d\mid q,\ d^2\le q\},\qquad
+ C(q)=\left\lfloor\sqrt{q/d(q)}\right\rfloor-\left\lfloor\sqrt{d(q)}\right\rfloor,
+\]
+und, wenn die Menge nicht leer ist,
+\[
+ a_m(n)=\min\{k\in\mathbb Z_{\ge1}:C(nk)=m\}.
+\]
+Der Index A000196 bezeichnet ausdrücklich $\lfloor\sqrt n\rfloor$.
+Die verallgemeinerte Vermutung im Kommentar verlangt für positive ganze $m,n$
+\begin{equation}\label{original}
+ a_m(n)=(\lfloor\sqrt n\rfloor-m)^2
+ \quad\Longleftrightarrow\quad
+ n\text{ ist prim und }n>m^2+1.
+\end{equation}
+Die Seite nennt die Fälle $m=0,1$ bereits beantwortet. Das heutige Ziel ist die
+allgemeine Aussage, konkret ihre Richtung von der Primzahlbedingung zur Gleichheit
+im Fall $m=3$. Die Programme der Quelle beginnen die Multiplikatorsuche bei $k=1$.
+Eine Lesart mit $k=0$ würde zudem $d(0)$ verlangen und entspricht dieser Definition nicht.
+
+\section{Vollständiger Gegenbeweis}
+\begin{satz}\label{counter}
+Es gilt $a_3(11)=37$. Damit ist die universelle Aussage \eqref{original} widerlegt.
+\end{satz}
+\begin{proof}
+Die Zahl $11$ ist prim und $11>3^2+1=10$. Da
+$3^2\le11<4^2$, ist der von \eqref{original} verlangte Wert
+$(3-3)^2=0$.
+
+Wir bestimmen das tatsächlich definierte Minimum.
+Für $1\le k<11$ gilt $d(11k)=k$: Einerseits ist $k<\sqrt{11k}<11$;
+andererseits ist jeder Teiler von $11k$ unterhalb von $11$ wegen der Primheit von
+$11$ ein Teiler von $k$. Daher
+\[
+ C(11k)=3-\lfloor\sqrt k\rfloor\le2 \qquad(1\le k\le10).
+\]
+Für $11\le k\le35$ ist $11\le\sqrt{11k}$, also $d(11k)\ge11$.
+Hieraus folgen $11k/d(11k)\le k\le35$ und
+\[
+ C(11k)\le\lfloor\sqrt{35}\rfloor-\lfloor\sqrt{11}\rfloor
+ =5-3=2.
+\]
+Für $k=36$ ist $11k=396$. Die Teiler bis $\lfloor\sqrt{396}\rfloor=19$
+sind genau $1,2,3,4,6,9,11,12,18$. Somit $d(396)=18$, $396/d(396)=22$ und
+\[
+ C(396)=\lfloor\sqrt{22}\rfloor-\lfloor\sqrt{18}\rfloor=4-4=0.
+\]
+Für $k=37$ ist $407=11\cdot37$. Die Faktoren $11$ und $37$ sind prim,
+$11^2<407<37^2$, und daher $d(407)=11$. Folglich
+\[
+ C(407)=\lfloor\sqrt{37}\rfloor-\lfloor\sqrt{11}\rfloor=6-3=3.
+\]
+Es existiert also ein zulässiger Multiplikator, und keiner der kleineren positiven
+Multiplikatoren ist zulässig. Damit $a_3(11)=37$.
+Die rechte Seite von \eqref{original} ist wahr und die linke Seite falsch.
+Ein einziger solcher Fall negiert die gesamte universelle Äquivalenz.
+\end{proof}
+
+Der noch kürzere Widerspruch benötigt nur die Existenz des Multiplikators $37$:
+Ein Minimum über positive ganze Zahlen kann niemals $0$ sein. Die Minimalitätsprüfung
+oben erhält zusätzlich den exakten Wert und schützt die Aufgabenabbildung.
+
+\section{Was an der Primzahlformel trotzdem trägt}
+\begin{lemma}\label{prime}
+Sei $p$ prim, $s=\lfloor\sqrt p\rfloor$ und $1\le m<s$.
+Dann ist $a_m(p)$ definiert und
+\[
+ a_m(p)=(s-m)^2.
+\]
+\end{lemma}
+\begin{proof}
+Setze $k_0=(s-m)^2$. Wegen $1\le m<s$ gilt $1\le k_0<p$.
+Für jedes $1\le k\le k_0$ ist $d(pk)=k$: Ein Teiler unter
+$\sqrt{pk}<p$ kann den Primfaktor $p$ nicht enthalten, und $k$ selbst liegt unter
+$\sqrt{pk}$. Also $C(pk)=s-\lfloor\sqrt k\rfloor$.
+Bei $k=k_0$ ist dies $m$. Bei $k<k_0$ gilt
+$\lfloor\sqrt k\rfloor\le s-m-1$, also $C(pk)\ge m+1$.
+Das beweist das Minimum.
+\end{proof}
+Die notwendige Bereichsbedingung für diese Herleitung ist $m<s$, äquivalent zu
+$p\ge(m+1)^2$. Die in der Quelle verwendete Bedingung $p>m^2+1$ reicht dafür
+nicht aus. Die Lemma-Aussage belegt eine gültige Primzahlrichtung im engeren Bereich;
+sie entscheidet keinen allgemeinen Umkehrschluss für zusammengesetzte Zahlen.
+Sie wird nicht als neuer vollständiger Ersatz der Quellvermutung ausgegeben.
+
+\section{Quellenstand, Kontrollen und Reichweite}
+Die Original- und Internal-Seite von A381054 wurden direkt per HTTP abgerufen.
+Die Internal-Fassung trägt Revision \texttt{\#43}, 5. Juni 2025.
+Der am 13.10.2026 erhaltene HTML-Snapshot der Originalseite hat SHA-256
+\begin{center}\small\ttfamily
+29ef6fff68532a0cb7d46953dea656a30616c1c7c5f258a58e7484a20ee57eb0
+\end{center}
+Die passende Quellstelle ist der Familienkommentar unmittelbar vor den Links;
+Definition und Startwert werden durch die Maple-/PARI-Abschnitte bestätigt.
+Gezielte Suchwege fanden keine früher gespeicherte eigene Behandlung dieser Familie
+und keinen anderen Schluss des hier geprüften allgemeinen Kommentars. Das ist
+kein weltweiter Prioritätsnachweis.
+
+\texttt{verify.py} verwendet Teilerprüfung bis zur ganzzahligen Quadratwurzel.
+\texttt{verify.js} faktorisiert die Zahlen, erzeugt alle Teiler und nimmt den mittleren
+Teiler; die Quadratwurzeln werden ganzzahlig per Binärsuche ermittelt.
+Beide Kontrollen geben für alle $1\le k\le37$ dieselben Paare und Lücken aus.
+Positive Kontrollen, $k=0$, $k=36$ und ein absichtlich nicht nächstes Faktorenpaar
+werden geprüft. Insbesondere würde das falsche Paar $(11,36)$ für $396$ die Lücke
+$3$ vortäuschen; das korrekte Paar $(18,22)$ hat Lücke $0$.
+Diese Prüfungen sind intern und teilen Quelle und Bearbeiter. Sie werden nicht
+als externes unabhängiges Review ausgegeben. Der universelle Negationsschluss trägt
+durch Satz~\ref{counter}, nicht durch die Wiederholung eines Programms.
+
+\medskip
+\noindent\textbf{Zielwahl.} A383115 war ein zuvor erwogener Kandidat. Vor dem Angriff
+wurde ein öffentlicher Beweisvorschlag gefunden
+(\href{https://math.stackexchange.com/questions/5148643/}{Math.SE 5148643}).
+Diese bereits veröffentlichte Arbeit wird zugeschrieben. Der Zielwechsel zur
+verallgemeinerten A381054-Aussage ist ausdrücklich; A383115 wird hier weder als
+eigene neue Lösung noch als durch diesen Gegenbeweis entschieden verbucht.
+
+\end{document}

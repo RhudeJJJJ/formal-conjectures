@@ -1,0 +1,154 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=27mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs}
+\usepackage[hidelinks]{hyperref}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\newcommand{\gt}{\gamma_t}
+\newcommand{\dd}{\operatorname{dd}}
+\title{A quadratic degree-diversity bound for trees with\newline more degree-two vertices than leaves\newline and the two modal readings of WOWII 367}
+\author{Jonas J. Gebendorfer\\\small With mathematical and computational assistance from OpenAI Codex}
+\date{14 October 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+For a finite tree $T$ with more degree-two vertices than leaves, let $d=\dd(T)$ be the number of distinct degrees. We prove
+\[
+ \gt(T)\ge \left\lceil\frac{d^2-d+8}{4}\right\rceil,
+ \qquad \gt(T)\ge \frac43 d.
+\]
+The second bound resolves the unique-degree-two-mode reading of Graffiti.pc/Written on the Wall II Conjecture 367, published as Conjecture 6 by DeLaVi\~na, Larson, Pepper and Waller. The four-degree case uses a parity refinement of the classical nonleaf bound. If tied modes are admitted instead, the conjectured inequality is false: $P_4$ and a twelve-vertex double broom are explicit counterexamples. The proof is independent of the finite verification. Historical modal intention, current curator status, priority and external review remain separate questions.
+\end{abstract}
+
+\section{Source and exact mathematical targets}
+Throughout, a tree is finite, simple and connected, of order $n>2$. A total dominating set $D$ satisfies $N(v)\cap D\ne\varnothing$ for \emph{every} vertex $v$, including the vertices in $D$. The minimum size is $\gt(T)$. Let $n_j$ count vertices of degree $j$, let $\ell=n_1$, let $q=n-\ell$ count nonleaves, and let $d=\dd(T)$ count distinct degrees.
+
+The original row 367 is historically marked O and dated 18 February 2009. The same assertion is Conjecture 6 in Section 3, printed page 12, of \cite{DLPW}: the most frequently occurring degree is two, and the proposed conclusion is $\gt(T)\ge\tfrac43\dd(T)$. The linked definitions 27 and 94 fix distinct degrees and total domination. Definition 45 describes tied modes but the row does not state how its singular modal hypothesis treats them. Accordingly we keep these targets distinct:
+\begin{enumerate}
+\item $n_2>n_j$ for every occurring $j\ne2$: degree two is the unique mode.
+\item $n_2\ge n_j$ for every occurring $j$: degree two is allowed to tie.
+\end{enumerate}
+The first is proved; the second is refuted. In fact, the proof only needs $n_2>n_1$, so it also covers the smallest-modal-degree reading $\operatorname{mode}_{\min}=2$, even if degree two ties with a larger degree. This paper does not choose a historical intention by excluding its counterexamples. Nor does it silently narrow the tied-mode statement.
+
+\section{The same dominating set pays the nonleaf count}
+The classical estimate $\gt(T)\ge(q+2)/2$ is due to Chellali and Haynes \cite{CH}; it is also reproduced as Theorem 5 of \cite{DLPW}. We give a self-contained proof of the parity refinement needed here.
+
+\begin{lemma}\label{lem:parity}
+Let $D$ be any total dominating set, put $g=|D|$, and let $c$ be the number of components of $T[D]$. Then
+\[
+ q\le g+2c-2\le g+2\lfloor g/2\rfloor-2. \tag{1}
+\]
+Consequently $q\le2g-2$ if $g$ is even and $q\le2g-3$ if $g$ is odd.
+\end{lemma}
+\begin{proof}
+Put $X=V(T)\setminus D$. Let $e_X$ count the edges of $T[X]$, and let $a(x)=|N(x)\cap D|$ for $x\in X$. Every $a(x)\ge1$. As $T[D]$ is a forest with $g-c$ edges, counting all edges of the same tree gives
+\[
+ n-1=(g-c)+e_X+\sum_{x\in X}a(x).
+\]
+Using $n=g+|X|$, this is exactly
+\[
+ e_X+\sum_{x\in X}(a(x)-1)=c-1. \tag{2}
+\]
+In particular $e_X\le c-1$. The number of nonleaves in $X$ is at most $\sum_{x\in X}(\deg_T(x)-1)$, since all degrees are positive and each nonleaf contributes at least one. This sum equals
+\[
+ 2e_X+\sum_{x\in X}(a(x)-1)=e_X+c-1\le2c-2.
+\]
+There are at most $g$ further nonleaves in $D$. Thus $q\le g+2c-2$. Finally, $T[D]$ has no isolated vertices: every selected vertex must itself have a selected neighbor. Each of its components contains at least two vertices, so $c\le\lfloor g/2\rfloor$. This proves (1), including the odd case. Empty $X$ is covered by the same identity.
+\end{proof}
+
+\section{Degree diversity costs leaves and degree-two vertices}
+\begin{lemma}\label{lem:degrees}
+If $n_2>n_1$, then $d\ge2$ and
+\[
+ q\ge\frac{d^2-d+4}{2}. \tag{3}
+\]
+\end{lemma}
+\begin{proof}
+A tree of order greater than two has leaves. The strict inequality ensures degree two occurs. Put $h=d-2$ and list the distinct occurring degrees at least three as $b_1<\cdots<b_h$. They are distinct integers, so $b_i\ge i+2$.
+
+The degree sum $\sum_v\deg_T(v)=2(n-1)$ gives the exact leaf identity
+\[
+ \ell=2+\sum_{\deg_T(v)\ge3}(\deg_T(v)-2).
+\]
+There is at least one vertex of each degree $b_i$, hence
+\[
+ \ell\ge2+\sum_{i=1}^{h}(b_i-2)\ge2+\frac{h(h+1)}2.
+\]
+There are at least $h$ vertices of degree at least three, and $n_2\ge\ell+1$. Therefore
+\[
+ q\ge n_2+h\ge3+\frac{h(h+1)}2+h
+   =\frac{d^2-d+4}{2}.
+\]
+For $h=0$ the empty sum and the same inequalities apply.
+\end{proof}
+
+\begin{theorem}\label{thm:main}
+Let $T$ have $n_2>n_1$, and put $d=\dd(T)$ and $g=\gt(T)$. Then
+\[
+ g\ge\left\lceil\frac{d^2-d+8}{4}\right\rceil.
+ \tag{4}
+\]
+More precisely, $g$ is at least the smallest integer $s\ge2$ such that
+\[
+ s+2\lfloor s/2\rfloor-2\ge\frac{d^2-d+4}{2}. \tag{5}
+\]
+In particular $g\ge\tfrac43 d$.
+\end{theorem}
+\begin{proof}
+Apply Lemma~\ref{lem:parity} to a minimum total dominating set and combine it with Lemma~\ref{lem:degrees}. Their comparison proves (5). Dropping only the odd improvement gives $2g-2\ge(d^2-d+4)/2$, proving (4).
+
+It remains to justify the last conclusion for every integer $d$, including the small degrees. If $d=2$, (4) gives $g\ge3>8/3$. If $d=3$, it gives $g\ge4=4d/3$. If $d=4$, (3) gives $q\ge8$. A set of size at most four has $q\le6$ by (1); a set of size five has $q\le7$ by its odd refinement. Thus $g\ge6>16/3$.
+
+For $d\ge5$, the polynomial $F(d)=3d^2-19d+24$ satisfies $F(5)=4>0$ and $F(d+1)-F(d)=6d-16>0$. Hence
+\[
+ \frac{d^2-d+8}{4}\ge\frac43d
+\]
+for every such $d$, and (4) supplies the required inequality. These cases exhaust the domain.
+\end{proof}
+
+\begin{corollary}
+Every tree with unique modal degree two satisfies WOWII 367. The same is true when the smallest modal degree is two.
+\end{corollary}
+\begin{proof}
+Either condition implies $n_2>n_1$, because a tie with degree one would either destroy uniqueness or make the smallest mode one. Apply Theorem~\ref{thm:main}.
+\end{proof}
+
+\section{Sharpness and tied modes}
+The coefficient $4/3$ is optimal even under the weaker sufficient condition $n_2>n_1$. Indeed, start with the path $0-1-2-3-4-5$ and attach leaves $6,7$ to vertex $0$. Its degree frequencies are $(n_1,n_2,n_3)=(3,4,1)$, so degree two is its unique mode and $d=3$. The set $\{0,1,4,5\}$ totally dominates it. Its five nonleaves exclude a total dominating set of size at most three by Lemma~\ref{lem:parity}. Hence $\gt(T)=4=\tfrac43d$. This is a sharpness witness for the coefficient, not a claim that every part of the quadratic bound is sharp.
+
+\begin{proposition}
+The hypothesis that degree two merely attains the maximum frequency does not imply the conclusion of WOWII 367.
+\end{proposition}
+\begin{proof}
+For $P_4$, the degree multiset is $\{1,1,2,2\}$. Degrees one and two both have frequency two, while $d=2$ and $\gt(P_4)=2<8/3$. The two internal vertices totally dominate it; no singleton can totally dominate any loopless graph.
+
+There is also a four-degree counterexample, so deleting this one small path would not suffice to repair the tied-mode assertion. Start with the path $0-1-2-3-4-5-6$, attach leaves $7,8$ to vertex $0$, and attach leaves $9,10,11$ to vertex $6$. The resulting tree has degree frequencies
+\[
+ (n_1,n_2,n_3,n_4)=(5,5,1,1).
+\]
+It has seven nonleaves. The set $\{0,1,4,5,6\}$ totally dominates it, so $g\le5$. Lemma~\ref{lem:parity} excludes every set of size at most four, as such a set permits at most six nonleaves. Therefore $g=5<16/3$.
+\end{proof}
+
+The strict comparison $n_2>n_1$ is thus material. It cannot be replaced by a non-strict comparison in the theorem. This observation does not refute the unique-mode or smallest-mode assertion that was just proved.
+
+\section{Verification and limits}
+The archive contains a standard-library Python checker and a separately written JavaScript checker. The Python code tests (2) and the parity bound on every total dominating set of every labelled tree of orders three through seven; its tree dynamic program is checked against complete subset enumeration. It also checks all nonisomorphic trees through order sixteen using NetworkX 3.5, and 1,500 seeded trees of orders eight through 180. The JavaScript code reconstructs adjacency matrices and uses subset enumeration rather than the dynamic program. Both reject ordinary-domination substitutes and malformed tree inputs. The cycle $C_3$ is a scope counterobject: its three nonleaves and total domination number two violate (1), showing why the tree hypothesis must be retained.
+
+These are internal finite checks from the same authoring session. They are not a machine formalization, external peer review or a blind nonproducing counterconstruction. No numerical calculation or census is a premise of Theorem~\ref{thm:main}. Hashes and a fresh archive replay authenticate the preserved artifacts, rather than certify mathematical truth or priority.
+
+The historical O marker and the published Conjecture 6 are source-confirmed. The current original table was unavailable at retrieval time. Bounded literature and own-corpus searches did not locate an earlier general proof of the strict-modal assertion; worldwide priority and current public openness remain unestablished. Since the two modal readings have different truth values, this paper does not add one unqualified target to any exclusive-priority total.
+
+\begin{thebibliography}{9}
+\bibitem{DLPW} E. DeLaVi\~na, C. E. Larson, R. Pepper and B. Waller,
+\emph{Graffiti.pc on the total domination number of a tree}, author-hosted manuscript, 2009, Section 3, Conjecture 6, p.~12.
+\url{https://www.uhd.edu/documents/academics/sciences/boca2009-dlpw.pdf}.
+\bibitem{CH} M. Chellali and T. W. Haynes,
+\emph{A note on the total domination number of a tree}, Journal of Combinatorial Mathematics and Combinatorial Computing \textbf{58} (2006), 189--193.
+\bibitem{WOWII} E. DeLaVi\~na, \emph{Written on the Wall II}, row 367, dated 18 February 2009; definitions 27, 45 and 94. Preserved complete original HTML and definitions responses are supplied in the archive.
+\url{http://cms.uhd.edu/faculty/delavinae/research/wowII/open.html}.
+\end{thebibliography}
+\end{document}

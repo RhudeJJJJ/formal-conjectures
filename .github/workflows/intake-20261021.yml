@@ -1,0 +1,30 @@
+name: Missing-paper intake verification
+on:
+  push:
+    branches: [proof-intake-20261021]
+permissions:
+  contents: read
+concurrency:
+  group: proof-intake-20261021
+  cancel-in-progress: true
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          persist-credentials: false
+      - name: Install pinned Lean
+        run: |
+          curl -sSfL https://github.com/leanprover/elan/releases/download/v1.4.2/elan-x86_64-unknown-linux-gnu.tar.gz | tar xz
+          ./elan-init -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> $GITHUB_PATH
+      - name: Get pinned Mathlib cache
+        run: lake exe cache get
+      - name: Baloui exact minimum and universal negation
+        run: lake env lean -DwarningAsError=true Proofs/Baloui.lean
+      - name: Build statement infrastructure
+        run: lake --wfail build FormalConjecturesUtil
+      - name: WOWII 367 tied-mode refutation
+        run: lake env lean -DwarningAsError=true Proofs/WOWII367.lean

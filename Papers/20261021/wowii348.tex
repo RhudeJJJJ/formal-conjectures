@@ -1,0 +1,729 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{lmodern,amsmath,amssymb,amsthm,booktabs,array}
+\usepackage[margin=26mm]{geometry}
+\usepackage{microtype}
+\setlength{\emergencystretch}{2em}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\hypersetup{pdftitle={A degree-two neighborhood bound for total domination in trees},
+ pdfauthor={Jonas J. Gebendorfer},pdfsubject={Total domination; WOWII 348},
+ pdfkeywords={total domination, trees, degree-two vertices, Graffiti.pc}}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\td}{\gamma_t}
+\newcommand{\BB}{B}
+\newcommand{\ind}{\mathbf{1}}
+\newcommand{\parv}{\operatorname{par}}
+\newcommand{\ch}{\operatorname{Ch}}
+\newcommand{\OR}{\mathbin{\vee}}
+\title{A degree-two neighborhood bound\newline for total domination in trees}
+\author{Jonas J. Gebendorfer}
+\date{13 October 2026}
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Let $T$ be a finite simple tree of order at least three, let $D_2(T)$ be
+the set of its degree-two vertices, and put
+$b(T)=|N_T(D_2(T))\setminus D_2(T)|$, where $N_T$ denotes the open
+neighborhood. We prove that every total dominating set $D$ of $T$ satisfies
+$3|D|\ge 2b(T)+2$. Consequently,
+$\gamma_t(T)\ge\lceil(2b(T)+2)/3\rceil$, which implies the inequality
+recorded as Conjecture 348 in \emph{Written on the Wall II}.
+The proof is a structural induction using seven explicit bounds for
+rooted subtrees, with no upper bound on the order or degrees.
+The additive constant is best possible with the coefficients $3$ and $2$
+fixed, as witnessed by $P_3$ and $P_4$. An explicit family of connected
+graphs shows that the tree hypothesis is essential even for the original
+inequality. A supplementary standard-library Python package checks all
+labelled trees of orders three through seven and includes a second
+algorithm for exact total domination. These finite checks are separate
+from the proof of the universal statement.
+\end{abstract}
+
+\noindent\textbf{Keywords.} Total domination; trees; degree-two vertices;
+Graffiti.pc; rooted-tree induction.\\
+\textbf{2020 Mathematics Subject Classification.} 05C69, 05C05.
+
+\section{Introduction and statement}
+\label{sec:introduction}
+
+Graffiti.pc generated a number of conjectures concerning the total
+domination number of a graph. DeLaVi\~na's collection \emph{Written on
+the Wall II} \cite{wowii} records the following assertion as number 348,
+dated 18 February 2009: if $T$ is a tree on $n>2$ vertices, then
+\begin{equation}\label{eq:original}
+ \td(T)\ge\frac{2}{3}\,|N_T(D_2(T))\setminus D_2(T)|,
+ \qquad D_2(T)=\{v\in V(T):\deg_T(v)=2\}.
+\end{equation}
+The original entry uses $\gamma_T$ for the total domination number;
+we use the customary notation $\gamma_t$ throughout. The neighborhood
+and set subtraction in \eqref{eq:original} are those of the original
+definitions. In particular, degree-two vertices lying in
+$N_T(D_2(T))$ do not contribute to the quantity on the right.
+
+The study of Graffiti.pc bounds for total domination in trees includes
+the paper of DeLaVi\~na, Larson, Pepper, and Waller \cite{dlpw}.
+Desormeaux and Henning \cite{dh} also investigated Graffiti.pc lower
+bounds for total domination. We supply here a direct proof of
+\eqref{eq:original} with an additional constant. No result from either
+paper is used as a premise. The source identification and the limits of
+the literature comparison are stated in Appendix~\ref{app:sources};
+no assertion of first priority is made.
+
+All graphs in this paper are finite, simple, and undirected. A tree is
+a connected graph containing no cycle. Its order is $|V(T)|$.
+For a graph $G$ and a vertex $v$, let
+\[
+ N_G(v)=\{w\in V(G):vw\in E(G)\},\qquad \deg_G(v)=|N_G(v)|.
+\]
+For $X\subseteq V(G)$, define its open neighborhood by
+\[
+ N_G(X)=\bigcup_{x\in X}N_G(x).
+\]
+This union can intersect $X$; a vertex does not belong to the union
+merely because it belongs to $X$. A set $D\subseteq V(G)$ is
+\emph{total dominating} if $N_G(v)\cap D\ne\varnothing$ for every
+$v\in V(G)$. Thus every vertex of $D$ itself must have a neighbor in
+$D$. The total domination number $\td(G)$ is the minimum size of such
+a set. It exists for any graph with no isolated vertex, since its full
+vertex set is total dominating. A tree of order at least two has no
+isolated vertex.
+
+For a tree $T$, set
+\begin{equation}\label{eq:boundary}
+ D_2(T)=\{v\in V(T):\deg_T(v)=2\},\qquad
+ \BB(T)=N_T(D_2(T))\setminus D_2(T),\qquad b(T)=|\BB(T)|.
+\end{equation}
+Equivalently, $v\in\BB(T)$ if and only if $\deg_T(v)\ne 2$ and
+$v$ has a neighbor of degree two. This follows directly
+from the open neighborhood and the set difference.
+
+\begin{theorem}\label{thm:main}
+Let $T$ be a tree of order at least three. Every total dominating set
+$D$ of $T$ satisfies
+\begin{equation}\label{eq:main}
+ 3|D|\ge 2b(T)+2.
+\end{equation}
+\end{theorem}
+
+\begin{corollary}\label{cor:348}
+Every tree $T$ of order at least three satisfies
+\begin{equation}\label{eq:ceiling}
+ \td(T)\ge\left\lceil\frac{2b(T)+2}{3}\right\rceil.
+\end{equation}
+In particular, \eqref{eq:original} holds on its full stated domain.
+\end{corollary}
+
+\begin{proof}
+Apply Theorem~\ref{thm:main} to a minimum total dominating set.
+Division by three gives $\td(T)\ge(2b(T)+2)/3$. Since
+$\td(T)$ is an integer, this implies \eqref{eq:ceiling}. Finally,
+$(2b(T)+2)/3\ge 2b(T)/3$, proving \eqref{eq:original}.
+\end{proof}
+
+\section{The rooted-subtree bounds}
+\label{sec:local}
+
+Fix a tree $T$ of order at least three, a total dominating set $D$,
+and initially an arbitrary root $r$. Between any two vertices of a
+tree there is a unique simple path: connectedness gives a path, and
+two different simple paths would contain a cycle. For $v\ne r$, its
+\emph{parent} $\parv(v)$ is the neighbor on its path to $r$.
+The other neighbors are its \emph{children}, whose set is
+$\ch(v)$. A nonroot vertex of degree $d$ has exactly $d-1$
+children. Let $T_v$ be the subtree induced by $v$ and its descendants,
+including $v$. The sets $V(T_w)$ for $w\in\ch(v)$ are pairwise
+disjoint and partition $V(T_v)\setminus\{v\}$, because each descendant
+path to $v$ passes through a unique first child.
+
+For every vertex $x$, put $s_x=\ind_{\{x\in D\}}$. For $v\ne r$, put
+\[
+ p_v=s_{\parv(v)},\qquad
+ q_v=\ind_{\{\deg_T(\parv(v))=2\}}.
+\]
+Define the subtree weight
+\begin{equation}\label{eq:weight}
+ F(v)=\sum_{x\in V(T_v)}\bigl(3s_x-2\ind_{\{x\in\BB(T)\}}\bigr).
+\end{equation}
+All degrees, and all membership tests for $\BB(T)$, refer to the
+original tree $T$. They are never recomputed in $T_v$.
+The parent of $v$ is outside the sum in \eqref{eq:weight}.
+The disjoint partition above gives the exact identity
+\begin{equation}\label{eq:recurrence}
+ F(v)=3s_v-2\ind_{\{v\in\BB(T)\}}+
+       \sum_{w\in\ch(v)}F(w).
+\end{equation}
+
+Two consequences of total domination will be used repeatedly. If
+$v\ne r$ and $p_v=0$, then $v$ has at least one selected child:
+its neighbors are its parent and children, and the parent is not in
+$D$. This holds whether or not $s_v=1$. A nonroot leaf must
+have $p_v=1$, since its parent is its only neighbor.
+
+\begin{lemma}\label{lem:states}
+For every nonroot vertex $v$, the applicable row of Table~\ref{tab:states}
+is a lower bound for $F(v)$. A nonroot leaf with $p_v=0$ is impossible.
+\end{lemma}
+
+\begin{table}[htbp]
+\centering
+\renewcommand{\arraystretch}{1.15}
+\begin{tabular}{@{}llll@{}}
+\toprule
+$\deg_T(v)$ & $s_v$ & Parent condition & Bound for $F(v)$\\
+\midrule
+$1$ & $0$ or $1$ & $p_v=1$ & $3s_v-2q_v$ (exact)\\
+$2$ & $0$ & Any & $2$\\
+$2$ & $1$ & $p_v=0$ & $4$\\
+$2$ & $1$ & $p_v=1$ & $1$\\
+$\ge 3$ & $0$ & Any & $2$\\
+$\ge 3$ & $1$ & $p_v=q_v=1$ & $1$\\
+$\ge 3$ & $1$ & All other cases & $2$\\
+\bottomrule
+\end{tabular}
+\caption{Lower bounds in the original tree. \emph{Any} allows either value
+of each unspecified parent indicator, subject to total domination.}
+\label{tab:states}
+\end{table}
+
+\begin{proof}
+We induct on the height of $T_v$, the maximum number of edges
+on a path from $v$ to a descendant. A nonroot vertex of
+height zero has no child and therefore degree one. At positive
+height, every child has smaller height, so all applicable table rows
+are already valid for that child. Each case below uses only
+these previously established child bounds and \eqref{eq:recurrence}.
+
+\smallskip\noindent\emph{Case 1: $\deg_T(v)=1$.}
+The only neighbor of $v$ is its parent. Hence $p_v=1$.
+Since $v\notin D_2(T)$, it belongs to $\BB(T)$ precisely when its
+parent has degree two, that is, when $q_v=1$. It has no child, and
+\eqref{eq:weight} gives $F(v)=3s_v-2q_v$. This proves
+the induction base and the first row.
+
+\smallskip\noindent\emph{Case 2: $\deg_T(v)=2$.}
+There is exactly one child $w$. The subtraction in
+\eqref{eq:boundary} ensures $v\notin\BB(T)$. Thus
+\begin{equation}\label{eq:degree2rec}
+ F(v)=3s_v+F(w),\qquad (p_w,q_w)=(s_v,1).
+\end{equation}
+There are three selection conditions at $v$.
+
+If $s_v=0$, then $p_w=0$. The child $w$ cannot be a leaf: its only
+neighbor would be the unselected vertex $v$. For a degree-two child
+with $p_w=0$, the induction hypothesis gives $F(w)\ge 2$ if
+$s_w=0$, and $F(w)\ge 4$ if $s_w=1$. For a child of degree at least
+three, it gives $F(w)\ge 2$ when $s_w=0$, and also $F(w)\ge 2$
+when $s_w=1$, since $p_w=0$ excludes the sixth row.
+These are all possible child degrees. Therefore $F(w)\ge 2$, and
+\eqref{eq:degree2rec} gives $F(v)\ge 2$.
+
+If $s_v=1$ and $p_v=0$, total domination of $v$ forces $s_w=1$.
+Now $(p_w,q_w)=(1,1)$. A selected leaf has weight $3-2=1$ by
+Case~1. A selected degree-two child has weight at least $1$ by the
+fourth row of the induction hypothesis. A selected child of degree
+at least three has weight at least $1$ by its sixth row. Hence
+$F(w)\ge 1$ and $F(v)=3+F(w)\ge 4$.
+
+If $s_v=1$ and $p_v=1$, again $(p_w,q_w)=(1,1)$, but $s_w$ may
+have either value. The possible child bounds are $-2$ for an
+unselected leaf, $1$ for a selected leaf, $2$ for an unselected
+degree-two child, $1$ for a selected degree-two child, $2$ for an
+unselected child of degree at least three, and $1$ for a selected
+child of degree at least three. All are at least $-2$.
+Consequently $F(v)=3+F(w)\ge 1$. This proves the three degree-two rows.
+
+\smallskip\noindent\emph{Case 3: $\deg_T(v)\ge 3$ and $s_v=0$.}
+The vertex $v$ has at least two children. Each child $w$ has
+$(p_w,q_w)=(0,0)$, since $v$ is unselected and not of degree two.
+No child can be a leaf, by total domination of that child.
+For a degree-two child, the second and third rows give bounds $2$
+and $4$, according to its selection. For a child of degree at least
+three, the fifth and seventh rows both give $2$; the sixth row
+cannot apply because $p_w=0$. Thus every child contributes at least
+$2$. The contribution of $v$ itself is at least $-2$, and so
+\[
+ F(v)\ge -2+2|\ch(v)|\ge -2+2\cdot 2=2.
+\]
+There is no upper bound on the number of children.
+
+\smallskip\noindent\emph{Case 4: $\deg_T(v)\ge 3$ and $s_v=1$.}
+Each child $w$ has $(p_w,q_w)=(1,0)$. The induction hypothesis
+gives this exhaustive list of child contributions:
+\[
+\begin{array}{c|cc}
+ &s_w=0&s_w=1\\ \hline
+\deg_T(w)=1&0&3\\
+\deg_T(w)=2&\ge 2&\ge 1\\
+\deg_T(w)\ge 3&\ge 2&\ge 2
+\end{array}
+\]
+Every child weight is nonnegative, every selected child has weight
+at least $1$, and every degree-two child has weight at least $1$.
+
+If $q_v=1$, the parent of $v$ has degree two. Since $v$ does
+not have degree two, $v\in\BB(T)$, and its contribution is
+$3-2=1$. If $p_v=1$, the nonnegative child sum gives $F(v)\ge 1$,
+as in the sixth row. If $p_v=0$, total domination of $v$ requires
+a selected child. That child contributes at least $1$, so
+$F(v)\ge 1+1=2$, as in the seventh row.
+
+If $q_v=0$, the parent of $v$ does not have degree two.
+Therefore $v\in\BB(T)$ if and only if at least one child has degree
+two, since its parent and children are all its neighbors.
+When such a child exists, $v$ contributes $1$, that child contributes
+at least $1$, and all other contributions are nonnegative.
+Hence $F(v)\ge 2$. Otherwise $v\notin\BB(T)$, its contribution is
+$3$, and $F(v)\ge 3\ge 2$. This proves the seventh row for either
+value of $p_v$.
+
+The cases cover every nonroot vertex and every feasible selection
+of its indicators. The induction is complete.
+\end{proof}
+
+\section{Closing the induction at a leaf}
+\label{sec:root}
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+A finite tree of order at least two has a leaf. Choose a longest
+simple path. An endpoint has no neighbor outside the path, since
+that would extend it, and no neighbor on the path other than the
+next vertex, since that would create a cycle. Its degree is one.
+
+Choose a leaf $r$ as the root and let $v$ be its unique neighbor.
+Total domination of $r$ forces $s_v=1$. Since $|V(T)|\ge 3$,
+we have $\deg_T(v)\ge 2$: if both endpoints of $rv$ had degree one,
+connectedness would force $V(T)=\{r,v\}$.
+Also $p_v=s_r$ and $q_v=0$, since $\deg_T(r)=1$.
+All vertices except $r$ belong to $T_v$, and therefore
+\begin{equation}\label{eq:globalweight}
+ 3|D|-2b(T)=3s_r-2\ind_{\{r\in\BB(T)\}}+F(v).
+\end{equation}
+
+If $\deg_T(v)=2$, then $r\in\BB(T)$, since $r$ is a leaf adjacent
+to a degree-two vertex. When $s_r=0$, the third row of
+Table~\ref{tab:states} gives $F(v)\ge 4$, and
+\[
+ 3|D|-2b(T)\ge -2+4=2.
+\]
+When $s_r=1$, the fourth row gives $F(v)\ge 1$, and
+\[
+ 3|D|-2b(T)\ge (3-2)+1=2.
+\]
+
+If $\deg_T(v)\ge 3$, then $r\notin\BB(T)$, because its only
+neighbor does not have degree two. Since $s_v=1$ and $q_v=0$,
+the seventh row gives $F(v)\ge 2$ for either value of $p_v=s_r$.
+Equation~\eqref{eq:globalweight} yields
+\[
+ 3|D|-2b(T)\ge 3s_r+2\ge 2.
+\]
+These are all possibilities for $v$. The argument applies to the
+arbitrary total dominating set $D$, proving \eqref{eq:main}.
+\end{proof}
+
+\begin{remark}
+The proof does not require $D$ to be minimum, inclusion-minimal, or
+free of leaves. The seven local bounds apply to the actual selection
+of any total dominating set; no exchange argument is needed.
+\end{remark}
+
+\section{Equality examples and the tree hypothesis}
+\label{sec:examples}
+
+Let $P_m$ be the path with vertices $z_1,\ldots,z_m$ and edges
+$z_i z_{i+1}$ for $1\le i<m$.
+
+\begin{proposition}\label{prop:constant}
+The additive constant $2$ in \eqref{eq:main} is best possible among
+uniform bounds with the coefficients $3$ and $2$ fixed. Equality
+holds for $P_3$ and $P_4$ with a minimum total dominating set.
+\end{proposition}
+
+\begin{proof}
+For $P_3$, the only degree-two vertex is $z_2$, and
+$\BB(P_3)=\{z_1,z_3\}$. The set $\{z_1,z_2\}$ is total dominating:
+$z_1$ and $z_2$ are adjacent to one another, and $z_3$ is adjacent
+to $z_2$. No singleton is total dominating in a simple graph,
+because its selected vertex has no selected neighbor. Hence
+$\td(P_3)=2$ and $3\td(P_3)-2b(P_3)=6-4=2$.
+
+For $P_4$, $D_2(P_4)=\{z_2,z_3\}$ and $N(D_2(P_4))=V(P_4)$.
+Subtracting $D_2(P_4)$ gives $\BB(P_4)=\{z_1,z_4\}$.
+The set $\{z_2,z_3\}$ is total dominating; the singleton obstruction
+gives $\td(P_4)=2$. Again $3\td(P_4)-2b(P_4)=2$.
+Either example excludes a uniform additive constant greater than $2$.
+\end{proof}
+
+\begin{remark}
+These examples establish sharpness of the additive constant with
+the displayed coefficients fixed. They do not establish asymptotic
+optimality of $2/3$ as $b(T)$ grows. Trees without degree-two vertices
+have $b(T)=0$ and are included in the theorem. The tree $K_2$ is
+outside the domain of \eqref{eq:original}, but satisfies
+\eqref{eq:main} as well: $b(K_2)=0$ and $\td(K_2)=2$.
+The one-vertex tree has no total dominating set.
+\end{remark}
+
+In the following proposition, $D_2(G)$ and $\BB(G)$ have the
+definitions in \eqref{eq:boundary} with $G$ replacing $T$.
+
+\begin{proposition}\label{prop:cycles}
+For every integer $k\ge 3$, there is a connected simple graph $G_k$
+of order $3k+2$ with $\td(G_k)=2$ and $|\BB(G_k)|=k+1$.
+Even \eqref{eq:original} consequently fails if its tree hypothesis
+is replaced by connectedness.
+\end{proposition}
+
+\begin{proof}
+Take distinct vertices
+\[
+ V(G_k)=\{u,v\}\cup\{c_i,x_i,y_i:1\le i\le k\}
+\]
+and precisely the edges
+\[
+ E(G_k)=\{uv\}\cup
+ \bigcup_{i=1}^{k}\{vc_i,ux_i,uy_i,c_ix_i,c_iy_i\}.
+\]
+All endpoints are distinct within each edge, and no edge is repeated.
+Each $c_i$ is joined to $v$, each $x_i,y_i$ to $u$, and $u$ to $v$,
+so the graph is simple and connected. The distinct vertices
+$u,v,c_i,x_i$ form a cycle of length four.
+
+The degrees are
+\[
+ \deg(u)=2k+1,\quad \deg(v)=k+1,\quad
+ \deg(c_i)=3,\quad \deg(x_i)=\deg(y_i)=2.
+\]
+For $k\ge 3$, the degree-two vertices are exactly the $x_i,y_i$.
+Their neighborhoods are $\{u,c_i\}$; thus
+$\BB(G_k)=\{u,c_1,\ldots,c_k\}$ and $|\BB(G_k)|=k+1$.
+The set $\{u,v\}$ is total dominating: the selected vertices
+dominate each other, each $c_i$ has selected neighbor $v$, and
+each $x_i,y_i$ has selected neighbor $u$. The singleton obstruction
+shows $\td(G_k)=2$. The extended version of \eqref{eq:original}
+would require $6\ge 2(k+1)$, which is false for $k\ge 3$.
+\end{proof}
+
+\section{Supplementary exact verification}
+\label{sec:verification}
+
+The proof of Theorem~\ref{thm:main} has no computational premise.
+The accompanying package supplies finite checks of the definitions,
+local bounds, examples, and minimum values. We specify the checks
+so that they can be reproduced without an internal workspace or
+an external service.
+
+\subsection{Representation and exhaustive checks}
+
+Vertices are labelled $0,\ldots,n-1$. A subset is an integer mask
+whose bit $i$ is one exactly when vertex $i$ is selected.
+The neighborhood mask $A_i$ has a one at each neighbor of $i$.
+A mask $M$ is accepted as total dominating precisely when
+\begin{equation}\label{eq:masktd}
+ A_i\mathbin{\&}M\ne 0\quad\hbox{for every }i,
+\end{equation}
+where $\&$ is bitwise intersection. This is the definition of total
+domination, including at selected vertices. Degrees are the numbers
+of one-bits in $A_i$. If $Q$ is the degree-two mask and $U$ the
+bitwise union of its vertices' neighborhood masks, then the boundary
+mask is $U\mathbin{\&}\neg Q$. Since $U$ has no bit outside
+$0,\ldots,n-1$, Python's unbounded integer complement adds no vertex.
+
+The routine \texttt{adjacency} rejects order less than three,
+invalid endpoint labels, loops, repeated edges, and disconnected
+inputs. In tree mode it requires exactly $n-1$ edges.
+This recognizes the tree domain: from one vertex in a connected
+graph, repeatedly choose an edge to a new vertex. These edges form
+a connected acyclic spanning subgraph with $n-1$ edges. If the
+original graph has $n-1$ edges, it equals that subgraph.
+Conversely, leaf deletion and induction show that every tree of
+order $n$ has $n-1$ edges.
+
+For each $n=3,\ldots,7$, the program decodes every length-$(n-2)$
+sequence over $\{0,\ldots,n-1\}$ by the Pr\"ufer procedure.
+Appendix~\ref{app:pruefer} proves that this gives every labelled tree
+exactly once. For each tree, all $2^n$ masks are tested. Every accepted
+total dominating set $D$ is checked for $3|D|\ge 2b(T)+2$.
+The minimum accepted size is compared with the four-state optimizer
+of Appendix~\ref{app:dp}. At orders three through five, every accepted
+set is also checked against every nonroot bound in
+Table~\ref{tab:states}, under every possible root, using original-tree
+degrees and boundary membership.
+
+\begin{table}[htbp]
+\centering
+\small
+\setlength{\tabcolsep}{6pt}
+\begin{tabular}{@{}rrrrr@{}}
+\toprule
+Order & Labelled trees & Subsets tested & Accepted TD sets & Equality trees\\
+\midrule
+3 & 3 & 24 & 9 & 3\\
+4 & 16 & 256 & 76 & 12\\
+5 & 125 & 4\,000 & 855 & 60\\
+6 & 1\,296 & 82\,944 & 13\,626 & 120\\
+7 & 16\,807 & 2\,151\,296 & 277\,431 & 210\\
+\midrule
+Total & 18\,247 & 2\,238\,520 & 291\,997 & 405\\
+\bottomrule
+\end{tabular}
+\caption{Exhaustive labelled-tree checks. An equality tree satisfies
+$3\td(T)=2b(T)+2$; different labellings are counted separately.}
+\label{tab:counts}
+\end{table}
+
+Table~\ref{tab:counts} gives the frozen expected output.
+There are $18\,066$ further local-bound checks under all roots at
+orders three through five. A further $70$ instances consist of a
+path, a star, and twelve Pr\"ufer trees for each order in
+$\{8,12,20,50,100\}$. One generator \texttt{random.Random(20261013)}
+is used, visiting these orders in the displayed order; each code is
+obtained by $n-2$ calls to \texttt{randrange(n)}. These larger cases
+use exact optimization and check the selected-set witnesses.
+They constitute a finite sample.
+
+\subsection{Calibration and reproducibility}
+
+Before the enumeration, calibration tests check the minimum values
+$2,2,3,4,4$ for $P_3$ through $P_7$ by subset enumeration and the
+optimizer. They accept an adjacent pair on $P_3$, reject its middle
+singleton, and reject $\{z_1,z_3\}$ on $P_4$. They check the
+degree-two and boundary masks of $P_3$ and $P_4$. On $P_6$,
+$|N(D_2)|=6$ but $|\BB|=2$: omitting the subtraction would
+incorrectly demand $3\cdot 4\ge 2\cdot 6+2$.
+
+The local checker is deliberately given a damaged bound function
+that replaces the unselected-leaf value $-2$ by $-1$ when the parent
+has degree two. For the actual $P_3$ selection $\{z_1,z_2\}$, root
+$z_1$ makes $z_3$ an unselected leaf of weight $-2$; the checker
+must reject the damaged bound. Invalid graph inputs exercise the
+domain rejections. The eleven-vertex $G_3$ is accepted as a connected
+graph and rejected as a tree. For orders three through five, the
+Pr\"ufer edge sets are compared with the connected graphs obtained
+by enumerating every $(n-1)$-element subset of all possible edges;
+the two sets coincide.
+
+The archive includes the complete LaTeX source, its compiled PDF,
+the verifier and replay driver, frozen expected results, source
+metadata, and a file-digest manifest. The computational files are
+\begin{quote}\small\ttfamily
+scripts/verify348.py\quad reproduce.py\\
+evidence/verification348.json\quad manifest348.json
+\end{quote}
+Python 3.10 or later, with optimization
+disabled, suffices for verification; no third-party Python package
+or network is used. From the extracted directory, run
+\begin{quote}\ttfamily
+python -B -X utf8 reproduce.py
+\end{quote}
+The driver verifies every file digest listed in the SHA-256 manifest,
+copies those files to a fresh temporary directory, runs the verifier
+there, and compares the entire output JSON with the frozen report.
+A mismatch or failed check gives a nonzero exit status. Success
+prints \texttt{PASS} and the aggregate counts. Assertions must remain
+enabled; the verifier explicitly refuses optimized execution.
+The README gives direct verifier and LaTeX build commands.
+
+Subset enumeration, optimization, and direct edge-set enumeration
+differ in mechanism, but share graph and domination definitions in
+this implementation. They are not an external independent review
+or a formal proof-assistant verification. Hashes establish byte
+identity relative to the supplied manifest, rather than mathematical
+correctness or priority. The universal warrant is the induction of
+Lemma~\ref{lem:states} and the proof of Theorem~\ref{thm:main}.
+
+\appendix
+\section{Coverage of the labelled-tree enumeration}
+\label{app:pruefer}
+
+Given a labelled tree of order $n\ge 2$, repeatedly delete its
+least-labelled current leaf and record that leaf's neighbor,
+stopping when two vertices remain. Leaf deletion preserves
+connectedness and creates no cycle, so this is defined throughout.
+It records a sequence of length $n-2$, the Pr\"ufer code; the
+two surviving vertices are adjacent.
+
+To decode a sequence $a_1,\ldots,a_{n-2}$, initialize
+\[
+ d_i=1+|\{j:a_j=i\}|\quad(0\le i<n).
+\]
+At step $j$, choose the least label $u$ with current $d_u=1$, add
+$ua_j$, and decrease $d_u$ and $d_{a_j}$ by one.
+Finally join the two labels with current degree value one.
+Removed vertices have degree value zero.
+
+When $m$ labels are active, the remaining code has length $m-2$.
+Each active degree value is one plus the occurrences of its label
+in that code, and removed labels have no remaining occurrence.
+This invariant holds initially and is preserved at each step.
+At least two active labels have no occurrence, because $m-2$
+symbols cannot contain all but one of $m$ labels. The next symbol
+$a_j$ has a remaining occurrence, so it is active with value at
+least two and differs from the chosen $u$. Removing $u$ loses no
+later symbol. Thus the decoder is defined at every step and ends
+with exactly two active labels of value one.
+
+Reverse the construction from its final edge. Each reverse step
+attaches a new vertex by one edge to an already present vertex,
+preserving connectedness and acyclicity. The result is a tree.
+In the active graph at any stage, each label has one incident edge
+at its own later removal or at the final pair, and one additional
+incident edge per occurrence in the remaining code.
+Its actual degree equals the maintained degree value. Encoding
+the decoded tree therefore chooses the same least leaf at each
+step and returns the starting code.
+
+Conversely, encoding a tree records label $i$ once for each incident
+edge deleted before $i$ is removed, or before the final edge remains.
+Exactly one incident edge survives to that point. Hence its code
+contains $i$ exactly $\deg_T(i)-1$ times.
+Decoder initialization recovers the actual degrees; the first
+least leaf and its recorded neighbor agree. After deleting that
+leaf, the same argument applies to the smaller tree. Induction
+recovers all edges, including the final edge. The procedures are
+mutual inverses, so the $n^{n-2}$ sequences give exactly that many
+labelled trees, with no repetition or omission.
+
+\section{The exact four-state optimizer}
+\label{app:dp}
+
+Root a tree at any vertex $r$. For $a,b\in\{0,1\}$, let $C_v(a,b)$
+be the minimum size of $S\subseteq V(T_v)$ with these conditions:
+\begin{enumerate}
+\item $v\in S$ if and only if $a=1$;
+\item every vertex of $T_v$ other than $v$ has a neighbor in $S$;
+\item $v$ has a selected child if and only if $b=1$.
+\end{enumerate}
+Domination of $v$ is not required at this stage; its parent may
+eventually supply a neighbor. An infeasible state has cost
+$+\infty$ and is omitted in the implementation.
+At a leaf the values are $C_v(0,0)=0$, $C_v(1,0)=1$, and
+$C_v(0,1)=C_v(1,1)=+\infty$.
+
+Let $w_1,\ldots,w_m$ be the children of $v$ and fix $a$.
+Choose feasible child states $(a_i,b_i)$. The child $w_i$ is
+dominated after attaching it to $v$ exactly when
+\begin{equation}\label{eq:dpcompat}
+ b_i\OR a=1.
+\end{equation}
+Its neighbors are its children and $v$; $b_i$ records a selected
+child and $a$ the selection of $v$. Its own selection is irrelevant
+to its domination. Therefore
+\begin{equation}\label{eq:dprec}
+ C_v(a,b)=a+
+ \min\left\{
+ \sum_{i=1}^{m}C_{w_i}(a_i,b_i):
+ b_i\OR a=1\ \hbox{for every }i,\ 
+ \bigvee_{i=1}^{m}a_i=b
+ \right\}.
+\end{equation}
+An empty disjunction is zero; a minimum with no feasible choice
+is $+\infty$.
+
+For the lower-bound direction, restrict any feasible set at $v$
+to each child subtree. Every proper descendant of $w_i$ has all
+its neighbors in that subtree, by uniqueness of paths, and is
+therefore dominated within the restriction. It defines a feasible
+child state. Domination of $w_i$ gives \eqref{eq:dpcompat}, and
+the selected-child condition at $v$ gives the disjunction constraint.
+Disjointness of child subtrees gives total size $a$ plus the child
+sizes. Replacing each size by its state minimum proves the lower bound.
+
+For the upper-bound direction, choose minimum sets for a feasible
+collection of child states and include $v$ exactly when $a=1$.
+Proper descendants are dominated by their state conditions,
+children by \eqref{eq:dpcompat}, and the disjunction gives the
+selected-child condition at $v$. The union is feasible with the
+displayed cost. This proves \eqref{eq:dprec} in both directions.
+
+At the root no parent can dominate it, so a selected child is necessary:
+\begin{equation}\label{eq:dproot}
+ \td(T)=\min\{C_r(0,1),C_r(1,1)\}.
+\end{equation}
+Every total dominating set restricts to one of these root states,
+and every feasible root state gives a total dominating set, proving
+\eqref{eq:dproot}.
+
+The implementation processes children one at a time.
+For fixed $a$, the initial cost is $a$ and the initial disjunction is
+zero. A compatible child state adds its cost and changes the
+running disjunction to its disjunction with $a_i$.
+The least cost is retained for each resulting bit. This implements
+repeated minimization of exactly the same finite expression.
+Each cost carries the union of its selected-vertex masks; the final
+mask is checked against \eqref{eq:masktd} and its cardinality against
+the cost. All calculations are integer calculations without a
+numerical optimization tolerance.
+
+\section{Source identification and literature scope}
+\label{app:sources}
+
+The primary source identifying the target is the 23 July 2026
+archival capture of DeLaVi\~na's WOWII page \cite{wowii}, retrieved
+on 13 October 2026. Entry 348 is dated 18 February 2009 and has
+historical marker \texttt{O}. Its original linked definitions are
+94 (total domination), 46 (neighborhood of a vertex subset), and
+66 (set difference); the degree-two set is defined in the entry.
+These identify \eqref{eq:original} with its quantifiers and
+open-neighborhood convention. The source record retains the row,
+definition excerpts, URLs, retrieval dates, and SHA-256 digests.
+Two later public transcriptions agree, but both derive from the
+collection and are not independent mathematical reviews.
+
+The live original curator endpoint was not reached. The archival
+marker and a current secondary catalogue do not establish the
+current original curator status. The full text of
+Desormeaux--Henning \cite{dh} was not available in the literature
+check; only its bibliographic record and abstract were inspected.
+Its possible relationship to this exact inequality is unchecked.
+The paper proves the recorded mathematical statement and the
+displayed strengthening; worldwide first priority is not established
+by the bounded source search.
+
+\section*{Acknowledgment and assistance disclosure}
+OpenAI Codex assisted in developing the proof, drafting the exposition,
+and preparing the supplementary programs. It is not listed as an author.
+The package records self-checks and a reproducible finite replay,
+rather than external peer review.
+
+\section*{Data and code availability}
+The supplementary archive contains the complete LaTeX source,
+compiled manuscript, standard-library Python verifier and replay driver,
+frozen expected results, source metadata, and a SHA-256 manifest.
+These files suffice to read the proof and run the verification
+without an internal archive. No public repository or DOI for this
+manuscript is asserted.
+
+\begin{thebibliography}{9}
+\bibitem{wowii}
+E. DeLaVi\~na,
+\emph{Written on the Wall II}, Graffiti.pc conjecture collection,
+entry 348, dated 18 February 2009.
+Original page:
+\url{https://cms.uhd.edu/faculty/delavinae/research/wowII/open.html}.
+\href{https://web.archive.org/web/20260723211215id_/http://cms.uhd.edu/faculty/delavinae/research/wowII/open.html}{Archival capture of 23 July 2026}.
+Accessed 13 October 2026.
+
+\bibitem{dlpw}
+E. DeLaVi\~na, C. E. Larson, R. Pepper, and B. Waller,
+Graffiti.pc on the total domination number of a tree,
+\emph{Congressus Numerantium} \textbf{195} (2009), 5--18.
+Author-hosted manuscript: \url{https://math1um.github.io/Research/r05.pdf}.
+
+\bibitem{dh}
+W. J. Desormeaux and M. A. Henning,
+Lower bounds on the total domination number of a graph,
+\emph{Journal of Combinatorial Optimization} \textbf{31} (2016), 52--66.
+\url{https://doi.org/10.1007/s10878-014-9708-2}.
+Bibliographic record and abstract inspected; full text not inspected.
+\end{thebibliography}
+
+\end{document}

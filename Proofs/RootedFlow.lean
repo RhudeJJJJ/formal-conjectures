@@ -5,6 +5,9 @@ A finite rooted description of an actual simple tree, used to telescope local
 integer potentials. No recursively substituted graph invariant is introduced.
 -/
 
+set_option linter.unusedSimpArgs false
+set_option linter.unusedSectionVars false
+
 open Finset SimpleGraph
 
 namespace WOWIIRootedFlow
@@ -67,10 +70,10 @@ lemma parent_classification (hT : G.IsTree) (r : V) (p : V → V)
     have he : s(v, w) ∈ E := by rw [hEq]; simpa using hadj
     obtain ⟨u, hu, heq⟩ := Finset.mem_image.mp he
     rcases Sym2.eq_iff.mp heq with heq | heq
-    · subst u
-      exact Or.inl ⟨(Finset.mem_erase.mp hu).1, heq.2⟩
-    · subst u
-      exact Or.inr ⟨(Finset.mem_erase.mp hu).1, heq.2⟩
+    · obtain ⟨rfl, he⟩ := heq
+      exact Or.inl ⟨(Finset.mem_erase.mp hu).1, he⟩
+    · obtain ⟨rfl, he⟩ := heq
+      exact Or.inr ⟨(Finset.mem_erase.mp hu).1, he⟩
   · rintro (⟨hv, rfl⟩ | ⟨hw, rfl⟩)
     · exact (hp v hv).1
     · exact (hp w hw).1.symm

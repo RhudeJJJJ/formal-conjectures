@@ -41,3 +41,7 @@ jobs:
       - name: Check rooted tree graph bridge
         if: success() || failure()
         run: lake env lean -DwarningAsError=true Proofs/RootedFlow.lean
+
+      - name: Check full potential proof 348
+        if: success() || failure()
+        run: lake env lean -DwarningAsError=true Proofs/Potential348.lean

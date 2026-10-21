@@ -1,0 +1,6 @@
+/- Copyright 2026 Jonas J. Gebendorfer. Apache 2.0. -/
+import Proofs.RadenkovicGutmanDegreeOneSmallCoverage10Block044
+import Proofs.RadenkovicGutmanDegreeOneSmallCoverage10Block045
+import Proofs.RadenkovicGutmanDegreeOneSmallCoverage10Block046
+import Proofs.RadenkovicGutmanDegreeOneSmallCoverage10Block047
+#print axioms Gebendorfer.RadenkovicGutman.DegreeOneSmallKeys.checked10b044

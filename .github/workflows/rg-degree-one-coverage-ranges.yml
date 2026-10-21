@@ -1,0 +1,199 @@
+name: RG degree one coverage ranges
+
+on:
+  push:
+    branches: [rg-remaining-six-spectral-20261021]
+    paths:
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallCoverage08Block000.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallCoverage08Block001.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallCoverage08Block002.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallCoverage08Block003.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallCoverage08Block004.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallCoverage08Block005.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallCoverage08Block006.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallCoverage08Block007.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallCoverage08Block008.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallCoverage09Block000.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallCoverage09Block001.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallCoverage09Block002.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallCoverage09Block003.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallCoverage09Block004.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallCoverage09Block005.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallCoverage09Block006.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallCoverage09Block007.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallCoverage09Block008.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallCoverage09Block009.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallCoverage09Block010.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallCoverage09Block011.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallCoverage09Block012.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallCoverage09Block013.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallCoverage09Block014.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallCoverage09Block015.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallCoverage09Block016.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallCoverage09Block017.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallCoverage09Block018.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallCoverage09Block019.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallCoverage09Block020.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallCoverage09Block021.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallCoverage09Block022.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallCoverage10Block000.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallCoverage10Block001.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallCoverage10Block002.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallCoverage10Block003.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallCoverage10Block004.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallCoverage10Block005.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallCoverage10Block006.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallCoverage10Block007.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallCoverage10Block008.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallCoverage10Block009.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallCoverage10Block010.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallCoverage10Block011.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallCoverage10Block012.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallCoverage10Block013.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallCoverage10Block014.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallCoverage10Block015.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallCoverage10Block016.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallCoverage10Block017.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallCoverage10Block018.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallCoverage10Block019.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallCoverage10Block020.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallCoverage10Block021.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallCoverage10Block022.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallCoverage10Block023.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallCoverage10Block024.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallCoverage10Block025.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallCoverage10Block026.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallCoverage10Block027.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallCoverage10Block028.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallCoverage10Block029.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallCoverage10Block030.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallCoverage10Block031.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallCoverage10Block032.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallCoverage10Block033.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallCoverage10Block034.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallCoverage10Block035.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallCoverage10Block036.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallCoverage10Block037.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallCoverage10Block038.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallCoverage10Block039.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallCoverage10Block040.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallCoverage10Block041.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallCoverage10Block042.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallCoverage10Block043.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallCoverage10Block044.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallCoverage10Block045.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallCoverage10Block046.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallCoverage10Block047.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallCoverage10Block048.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallCoverage10Block049.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallCoverage10Block050.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallCoverage10Block051.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallCoverage10Block052.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallCoverage10Block053.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallCoverage10Block054.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallCoverage10Block055.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallCoverage10Block056.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallCoverage10Block057.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallCoveragePart00.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallCoveragePart01.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallCoveragePart02.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallCoveragePart03.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallCoveragePart04.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallCoveragePart05.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallCoveragePart06.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallCoveragePart07.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallCoveragePart08.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallCoveragePart09.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallCoveragePart10.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallCoveragePart11.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallCoveragePart12.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallCoveragePart13.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallCoveragePart14.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallCoveragePart15.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallCoveragePart16.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallCoveragePart17.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallCoveragePart18.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallCoveragePart19.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallCoveragePart20.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallCoveragePart21.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallCoveragePart22.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneSmallKeyRanges.lean'
+      - '.github/workflows/rg-degree-one-coverage-ranges.yml'
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  check:
+    strategy:
+      fail-fast: false
+      matrix:
+        endpoint: [Proofs.RadenkovicGutmanDegreeOneSmallCoveragePart00,Proofs.RadenkovicGutmanDegreeOneSmallCoveragePart01,Proofs.RadenkovicGutmanDegreeOneSmallCoveragePart02,Proofs.RadenkovicGutmanDegreeOneSmallCoveragePart03,Proofs.RadenkovicGutmanDegreeOneSmallCoveragePart04,Proofs.RadenkovicGutmanDegreeOneSmallCoveragePart05,Proofs.RadenkovicGutmanDegreeOneSmallCoveragePart06,Proofs.RadenkovicGutmanDegreeOneSmallCoveragePart07,Proofs.RadenkovicGutmanDegreeOneSmallCoveragePart08,Proofs.RadenkovicGutmanDegreeOneSmallCoveragePart09,Proofs.RadenkovicGutmanDegreeOneSmallCoveragePart10,Proofs.RadenkovicGutmanDegreeOneSmallCoveragePart11,Proofs.RadenkovicGutmanDegreeOneSmallCoveragePart12,Proofs.RadenkovicGutmanDegreeOneSmallCoveragePart13,Proofs.RadenkovicGutmanDegreeOneSmallCoveragePart14,Proofs.RadenkovicGutmanDegreeOneSmallCoveragePart15,Proofs.RadenkovicGutmanDegreeOneSmallCoveragePart16,Proofs.RadenkovicGutmanDegreeOneSmallCoveragePart17,Proofs.RadenkovicGutmanDegreeOneSmallCoveragePart18,Proofs.RadenkovicGutmanDegreeOneSmallCoveragePart19,Proofs.RadenkovicGutmanDegreeOneSmallCoveragePart20,Proofs.RadenkovicGutmanDegreeOneSmallCoveragePart21,Proofs.RadenkovicGutmanDegreeOneSmallCoveragePart22]
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          persist-credentials: false
+      - name: Install the project toolchain
+        run: |
+          set -o pipefail
+          curl -sSfL https://github.com/leanprover/elan/releases/download/v1.4.2/elan-x86_64-unknown-linux-gnu.tar.gz | tar xz
+          ./elan-init -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Materialize the exact dependency lock
+        run: python3 -B ci/rg_dependencies.py
+      - name: Fetch the required Mathlib cache
+        run: |
+          python3 - <<'PY'
+          import pathlib, re, subprocess
+          root = pathlib.Path('Proofs/RG_Lean_20261019')
+          seen, external = set(), set()
+          def visit(name):
+              if name in seen:
+                  return
+              seen.add(name)
+              source = (root / (name.replace('.', '/') + '.lean')).read_text()
+              for dep in re.findall(r'^\s*import\s+([\w.]+)', source, re.M):
+                  if dep.startswith('Proofs.'):
+                      visit(dep)
+                  else:
+                      external.add(dep)
+          visit('${{ matrix.endpoint }}')
+          subprocess.run(['lake', 'exe', 'cache', 'get', *sorted(external)], check=True)
+          PY
+      - name: Restore exact source-bound prerequisites
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_one_coverage_ranges_scope000_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_one_coverage_ranges_scope001_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_one_coverage_ranges_scope002_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_one_coverage_ranges_scope003_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+      - name: Check multiplicities and actual graph spectral comparison
+        run: python3 -B Proofs/RG_Lean_20261019/verify_extension.py --mathlib-project "$GITHUB_WORKSPACE" --endpoint ${{ matrix.endpoint }} --workers 1 --module-timeout 600 --resume --print-receipt
+      - name: Retain completed records and diagnostics
+        if: always()
+        run: |
+          python3 - <<'PY'
+          import json,pathlib,shutil
+          root=pathlib.Path('Proofs/RG_Lean_20261019/build/extension')
+          records=[json.loads(p.read_text()) for p in sorted(root.glob('Proofs.*.json'))]
+          print('PARTIAL_RECORDS_JSON '+json.dumps({'modules':records},separators=(',',':')))
+          fresh=root.parent/'fresh_exports';fresh.mkdir(parents=True,exist_ok=True)
+          for row in records:
+              if row['mode']=='FRESH_KERNEL_EXPORT':
+                  name=row['module'];rel=name.replace('.','/')+'.olean';dest=fresh/rel
+                  dest.parent.mkdir(parents=True,exist_ok=True)
+                  shutil.copyfile(root/rel,dest);shutil.copyfile(root/(name+'.json'),fresh/(name+'.json'))
+          for log in root.glob('Proofs.*.log'):
+              shutil.copyfile(log,fresh/log.name);print('MODULE_LOG_TAIL '+log.name+' '+log.read_text()[-18000:])
+          PY
+      - name: Retain new exports only
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: rg-degree-one-coverage-ranges-exports-${{ github.run_id }}-${{ strategy.job-index }}
+          path: Proofs/RG_Lean_20261019/build/fresh_exports
+          retention-days: 7

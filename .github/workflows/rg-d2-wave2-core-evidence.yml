@@ -1,0 +1,39 @@
+name: RG degree two three verified wave2 and core evidence
+on:
+  push:
+    branches: [rg-remaining-six-spectral-20261021]
+    paths:
+      - 'ci/rg_d2_wave2_core_evidence_plan000.json'
+      - 'ci/rg_d2_wave2_core_evidence_plan001.json'
+      - 'ci/rg_d2_wave2_core_evidence_plan002.json'
+      - 'ci/rg_d2_wave2_core_evidence_plan003.json'
+      - 'ci/rg_d2_wave2_core_evidence_plan004.json'
+      - 'ci/rg_d2_wave2_core_evidence_plan005.json'
+      - 'ci/rg_d2_wave2_core_evidence_plan006.json'
+      - 'ci/rg_d2_wave2_core_evidence_plan007.json'
+      - 'ci/rg_d2_wave2_core_evidence_plan008.json'
+      - '.github/workflows/rg-d2-wave2-core-evidence.yml'
+permissions:
+  contents: read
+  actions: read
+jobs:
+  collect:
+    strategy:
+      fail-fast: false
+      matrix:
+        part: ['000','001','002','003','004','005','006','007','008']
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+      - name: Verify original archive and object bytes without recompiling mathematics
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 -B ci/rg_collect_verified_evidence.py --plan ci/rg_d2_wave2_core_evidence_plan${{ matrix.part }}.json --output build/rg_d2_wave2_core_evidence
+      - name: Preserve full receipts, logs and verification reports
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: rg-d2-wave2-core-evidence-${{ github.run_id }}-${{ matrix.part }}
+          path: build/rg_d2_wave2_core_evidence
+          retention-days: 7

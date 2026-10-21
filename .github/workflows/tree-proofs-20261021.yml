@@ -1,4 +1,4 @@
-name: Missing-paper intake verification
+name: General tree proofs 348 and 367
 on:
   push:
     branches: [proof-trees-348-367-20261021]
@@ -38,3 +38,6 @@ jobs:
           key: tree-proof-imports-${{ hashFiles('lean-toolchain', 'lake-manifest.json') }}-${{ github.sha }}
       - name: Check general tree proof development
         run: lake env lean -DwarningAsError=true Proofs/TreeBounds.lean
+      - name: Check rooted tree graph bridge
+        if: success() || failure()
+        run: lake env lean -DwarningAsError=true Proofs/RootedFlow.lean

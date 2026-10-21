@@ -23,6 +23,7 @@ theorem data_identity (H U a b : ℝ) (hH : H ≠ 0)
     CorrelatedEscapeReduction.factorVertical,CorrelatedEscapeReduction.errorWeight]
   field_simp [hH,hX,show (1+((653/2000 : ℝ)+(19347/2000 : ℝ)*U)^2) ≠ 0 by positivity]
   rw [EscapeReducedDirected.data_eval]
+  norm_num only [Rat.cast_intCast]
   ring
 #print axioms data_identity
 end

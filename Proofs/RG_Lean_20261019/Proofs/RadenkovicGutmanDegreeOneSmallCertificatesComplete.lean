@@ -1,0 +1,115 @@
+/- Copyright 2026 Jonas J. Gebendorfer. Apache 2.0. -/
+import Proofs.RadenkovicGutmanDegreeOneSmallCertificateBatch00
+import Proofs.RadenkovicGutmanDegreeOneSmallCertificateBatch01
+import Proofs.RadenkovicGutmanDegreeOneSmallCertificateBatch02
+import Proofs.RadenkovicGutmanDegreeOneSmallCertificateBatch03
+import Proofs.RadenkovicGutmanDegreeOneSmallCertificateBatch04
+import Proofs.RadenkovicGutmanDegreeOneSmallCertificateBatch05
+import Proofs.RadenkovicGutmanDegreeOneSmallCertificateBatch06
+import Proofs.RadenkovicGutmanDegreeOneSmallCertificateBatch07
+import Proofs.RadenkovicGutmanDegreeOneSmallCertificateBatch08
+import Proofs.RadenkovicGutmanDegreeOneSmallCertificateBatch09
+import Proofs.RadenkovicGutmanDegreeOneSmallCertificateBatch10
+import Proofs.RadenkovicGutmanDegreeOneSmallCertificateBatch11
+import Proofs.RadenkovicGutmanDegreeOneSmallCertificateBatch12
+import Proofs.RadenkovicGutmanDegreeOneSmallCertificateBatch13
+import Proofs.RadenkovicGutmanDegreeOneSmallCertificateBatch14
+import Proofs.RadenkovicGutmanDegreeOneSmallCertificateBatch15
+import Proofs.RadenkovicGutmanDegreeOneSmallCertificateBatch16
+import Proofs.RadenkovicGutmanDegreeOneSmallCertificateBatch17
+import Proofs.RadenkovicGutmanDegreeOneSmallCertificateBatch18
+import Proofs.RadenkovicGutmanDegreeOneSmallCertificateBatch19
+import Proofs.RadenkovicGutmanDegreeOneSmallCertificateBatch20
+import Proofs.RadenkovicGutmanDegreeOneSmallCertificateBatch21
+import Proofs.RadenkovicGutmanDegreeOneSmallCertificateBatch22
+import Proofs.RadenkovicGutmanDegreeOneSmallCertificateBatch23
+import Proofs.RadenkovicGutmanDegreeOneSmallCertificateBatch24
+import Proofs.RadenkovicGutmanDegreeOneSmallCertificateBatch25
+import Proofs.RadenkovicGutmanDegreeOneSmallCertificateBatch26
+import Proofs.RadenkovicGutmanDegreeOneSmallCertificateBatch27
+import Proofs.RadenkovicGutmanDegreeOneSmallCertificateBatch28
+import Proofs.RadenkovicGutmanDegreeOneSmallCertificateBatch29
+import Proofs.RadenkovicGutmanDegreeOneSmallCertificateBatch30
+import Proofs.RadenkovicGutmanDegreeOneSmallCertificateBatch31
+import Proofs.RadenkovicGutmanDegreeOneSmallCertificateBatch32
+import Proofs.RadenkovicGutmanDegreeOneSmallCertificateBatch33
+import Proofs.RadenkovicGutmanDegreeOneSmallCertificateBatch34
+import Proofs.RadenkovicGutmanDegreeOneSmallCertificateBatch35
+import Proofs.RadenkovicGutmanDegreeOneSmallCertificateBatch36
+import Proofs.RadenkovicGutmanDegreeOneSmallCertificateBatch37
+import Proofs.RadenkovicGutmanDegreeOneSmallCertificateBatch38
+import Proofs.RadenkovicGutmanDegreeOneSmallCertificateBatch39
+import Proofs.RadenkovicGutmanDegreeOneSmallCertificateBatch40
+import Proofs.RadenkovicGutmanDegreeOneSmallCertificateBatch41
+import Proofs.RadenkovicGutmanDegreeOneSmallCertificateBatch42
+import Proofs.RadenkovicGutmanDegreeOneSmallCertificateBatch43
+import Proofs.RadenkovicGutmanDegreeOneSmallCertificateBatch44
+import Proofs.RadenkovicGutmanDegreeOneSmallCertificateBatch45
+import Proofs.RadenkovicGutmanDegreeOneSmallCertificateBatch46
+import Proofs.RadenkovicGutmanDegreeOneSmallCertificateBatch47
+import Proofs.RadenkovicGutmanDegreeOneSmallCertificateBatch48
+import Proofs.RadenkovicGutmanDegreeOneSmallCertificateBatch49
+namespace Gebendorfer.RadenkovicGutman.DegreeOneSmallKeys
+open SmallGeFourKeys
+set_option maxHeartbeats 0
+set_option maxRecDepth 100000
+theorem certified_append {xs ys : List Key} (hx : ∀ k ∈ xs, Certified k)
+    (hy : ∀ k ∈ ys, Certified k) : ∀ k ∈ xs++ys, Certified k := by
+  intro k hk
+  rcases List.mem_append.mp hk with h | h
+  · exact hx k h
+  · exact hy k h
+theorem all_keys_certified : ∀ k ∈ keys, Certified k := by
+  apply certified_append certified_keys00
+  apply certified_append certified_keys01
+  apply certified_append certified_keys02
+  apply certified_append certified_keys03
+  apply certified_append certified_keys04
+  apply certified_append certified_keys05
+  apply certified_append certified_keys06
+  apply certified_append certified_keys07
+  apply certified_append certified_keys08
+  apply certified_append certified_keys09
+  apply certified_append certified_keys10
+  apply certified_append certified_keys11
+  apply certified_append certified_keys12
+  apply certified_append certified_keys13
+  apply certified_append certified_keys14
+  apply certified_append certified_keys15
+  apply certified_append certified_keys16
+  apply certified_append certified_keys17
+  apply certified_append certified_keys18
+  apply certified_append certified_keys19
+  apply certified_append certified_keys20
+  apply certified_append certified_keys21
+  apply certified_append certified_keys22
+  apply certified_append certified_keys23
+  apply certified_append certified_keys24
+  apply certified_append certified_keys25
+  apply certified_append certified_keys26
+  apply certified_append certified_keys27
+  apply certified_append certified_keys28
+  apply certified_append certified_keys29
+  apply certified_append certified_keys30
+  apply certified_append certified_keys31
+  apply certified_append certified_keys32
+  apply certified_append certified_keys33
+  apply certified_append certified_keys34
+  apply certified_append certified_keys35
+  apply certified_append certified_keys36
+  apply certified_append certified_keys37
+  apply certified_append certified_keys38
+  apply certified_append certified_keys39
+  apply certified_append certified_keys40
+  apply certified_append certified_keys41
+  apply certified_append certified_keys42
+  apply certified_append certified_keys43
+  apply certified_append certified_keys44
+  apply certified_append certified_keys45
+  apply certified_append certified_keys46
+  apply certified_append certified_keys47
+  apply certified_append certified_keys48
+  apply certified_append certified_keys49
+  simp
+#print axioms all_keys_certified
+end Gebendorfer.RadenkovicGutman.DegreeOneSmallKeys

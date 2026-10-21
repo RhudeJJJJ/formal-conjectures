@@ -1,0 +1,21 @@
+/- Copyright 2026 Jonas J. Gebendorfer. Apache 2.0. -/
+import Proofs.RadenkovicGutmanRootedCatalogueStep08Block009
+import Proofs.RadenkovicGutmanRootedCatalogueStep08Block010
+import Proofs.RadenkovicGutmanRootedCatalogueStep08Block011
+import Proofs.RadenkovicGutmanRootedCatalogueStep08Block012
+import Proofs.RadenkovicGutmanRootedCatalogueStep08Block013
+import Proofs.RadenkovicGutmanRootedCatalogueStep08Block014
+import Proofs.RadenkovicGutmanRootedCatalogueStep08Block015
+import Proofs.RadenkovicGutmanRootedCatalogueStep08Block016
+import Proofs.RadenkovicGutmanRootedCatalogueStep08Block017
+import Proofs.RadenkovicGutmanRootedCatalogueStep09Block000
+#print axioms Gebendorfer.RadenkovicGutman.RootedCatalogueData.checked8b009
+#print axioms Gebendorfer.RadenkovicGutman.RootedCatalogueData.checked8b010
+#print axioms Gebendorfer.RadenkovicGutman.RootedCatalogueData.checked8b011
+#print axioms Gebendorfer.RadenkovicGutman.RootedCatalogueData.checked8b012
+#print axioms Gebendorfer.RadenkovicGutman.RootedCatalogueData.checked8b013
+#print axioms Gebendorfer.RadenkovicGutman.RootedCatalogueData.checked8b014
+#print axioms Gebendorfer.RadenkovicGutman.RootedCatalogueData.checked8b015
+#print axioms Gebendorfer.RadenkovicGutman.RootedCatalogueData.checked8b016
+#print axioms Gebendorfer.RadenkovicGutman.RootedCatalogueData.checked8b017
+#print axioms Gebendorfer.RadenkovicGutman.RootedCatalogueData.checked9b000

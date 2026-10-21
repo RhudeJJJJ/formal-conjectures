@@ -27,8 +27,8 @@ theorem all_steps : ∀ n, n < 10 → ∀ i : Fin (catalogue n).length, ∀ v : 
   · exact step_sound 3 level3 level4 witnesses3 step3
   · exact step_sound 4 level4 level5 witnesses4 step4
   · exact step_sound 5 level5 level6 witnesses5 step5
-  · exact step_sound 6 level6 level7 witnesses6 step6
-  · exact step_sound 7 level7 level8 witnesses7 step7
+  · exact step6
+  · exact step7
   · exact step8
   · exact step9
 theorem all_actual_trees {V : Type} [Fintype V] [DecidableEq V]

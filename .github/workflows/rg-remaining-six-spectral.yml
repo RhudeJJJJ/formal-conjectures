@@ -16,7 +16,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        endpoint: [Proofs.RadenkovicGutmanFactoredRoots]
+        endpoint: [Proofs.RadenkovicGutmanFiniteSpectralCertificates]
     runs-on: ubuntu-latest
     timeout-minutes: 90
     steps:

@@ -1,0 +1,25 @@
+/- Copyright 2026 Jonas J. Gebendorfer. Apache 2.0. -/
+import Proofs.RadenkovicGutmanFiniteTreeNative
+import Proofs.RadenkovicGutmanRootedCatalogueData
+import Proofs.RadenkovicGutmanDegreeOneSmallComparisons08
+namespace Gebendorfer.RadenkovicGutman.DegreeOneSmallActualCases
+open RootedTreeEnumeration RootedCatalogueData FiniteTreeTransfer CoreQuotient
+set_option maxHeartbeats 0
+set_option maxRecDepth 100000
+def core0410 : Family 6 := level6.get ⟨22,by decide⟩
+def sourceMap0410 : (Vertices 6 ⊕ Fin 3 ⊕ Fin 3) → Fin 13 :=
+  fun v => ![0,1,2,3,4,5,6,7,8,9,10,11,12] (sourceLabel 6 2 2 v)
+def fusedMap0410 : (Vertices 6 ⊕ Fin 6) → Fin 13 :=
+  fun v => ![1,2,3,4,5,6,7,0,8,9,10,11,12] (fusedLabel 6 2 2 v)
+theorem sourceMap0410_checked : acceptsGraphIso
+    (source (graph core0410) (root 6) 2 2) DegreeOneSmallSpectrum1770.graph sourceMap0410=true := by decide +kernel
+theorem fusedMap0410_checked : acceptsGraphIso
+    (fused (graph core0410) (root 6) 2 2) DegreeOneSmallSpectrum871.graph fusedMap0410=true := by decide +kernel
+theorem certified0410 : Certified (graph core0410) (root 6) 2 2 :=
+  of_native_maps core0410 DegreeOneSmallSpectrum1770.graph DegreeOneSmallSpectrum871.graph
+    sourceMap0410 fusedMap0410 sourceMap0410_checked fusedMap0410_checked
+    DegreeOneSmallComparisons.comparison0410
+#print axioms sourceMap0410_checked
+#print axioms fusedMap0410_checked
+#print axioms certified0410
+end Gebendorfer.RadenkovicGutman.DegreeOneSmallActualCases

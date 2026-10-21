@@ -19,13 +19,29 @@ def polyE (d y P Q : ℝ) : ℂ :=
    (2*y^2+d)*(P*Q+1)+2*d*y*(P+Q-y)⟩
 
 theorem a_eq (d P Q : ℝ) : a d P Q=polyA d P Q := by
-  apply Complex.ext <;> simp [a,A,polyA] <;> ring
+  apply Complex.ext <;>
+    simp only [a,A,polyA,Complex.mul_re,Complex.mul_im,Complex.sub_re,Complex.sub_im,
+      Complex.add_re,Complex.add_im,Complex.ofReal_re,Complex.ofReal_im,
+      Complex.I_re,Complex.I_im,Complex.re_ofNat,Complex.im_ofNat,
+      Complex.mk_re,Complex.mk_im] <;> ring
 theorem c_eq (d y P Q : ℝ) : c d y P Q=polyC d y P Q := by
-  apply Complex.ext <;> simp [c,B,polyC] <;> ring
+  apply Complex.ext <;>
+    simp only [c,B,polyC,Complex.mul_re,Complex.mul_im,Complex.sub_re,Complex.sub_im,
+      Complex.add_re,Complex.add_im,Complex.ofReal_re,Complex.ofReal_im,
+      Complex.I_re,Complex.I_im,Complex.re_ofNat,Complex.im_ofNat,
+      Complex.mk_re,Complex.mk_im] <;> ring
 theorem b_eq (d y P Q : ℝ) (hy : 0<y) : b d y P Q=polyB d y P Q := by
-  apply Complex.ext <;> simp [b,A,g,N₀,z,polyB] <;> field_simp [hy.ne'] <;> ring
+  apply Complex.ext <;>
+    simp only [b,A,g,N₀,z,polyB,Complex.mul_re,Complex.mul_im,Complex.sub_re,Complex.sub_im,
+      Complex.add_re,Complex.add_im,Complex.ofReal_re,Complex.ofReal_im,
+      Complex.I_re,Complex.I_im,Complex.re_ofNat,Complex.im_ofNat,
+      Complex.mk_re,Complex.mk_im] <;> field_simp [hy.ne'] <;> ring
 theorem e_eq (d y P Q : ℝ) (hy : 0<y) : e d y P Q=polyE d y P Q := by
-  apply Complex.ext <;> simp [e,B,g,D₀,z,polyE] <;> field_simp [hy.ne'] <;> ring
+  apply Complex.ext <;>
+    simp only [e,B,g,D₀,z,polyE,Complex.mul_re,Complex.mul_im,Complex.sub_re,Complex.sub_im,
+      Complex.add_re,Complex.add_im,Complex.ofReal_re,Complex.ofReal_im,
+      Complex.I_re,Complex.I_im,Complex.re_ofNat,Complex.im_ofNat,
+      Complex.mk_re,Complex.mk_im] <;> field_simp [hy.ne'] <;> ring
 
 def U (d y P Q : ℝ) : ℝ :=
   let ar := (polyA d P Q).re; let ai := (polyA d P Q).im
@@ -46,7 +62,7 @@ def J (d y P Q : ℝ) : ℝ :=
 theorem U_actual (d y P Q : ℝ) (hy : 0<y) :
     U d y P Q=‖b d y P Q*star (e d y P Q)-a d P Q*star (c d y P Q)‖^2 := by
   rw [a_eq,b_eq d y P Q hy,c_eq,e_eq d y P Q hy]
-  simp [U,Complex.sq_norm,Complex.normSq_apply,Complex.star_def]
+  simp [U,Complex.sq_norm,Complex.normSq_apply]
   ring
 theorem V_actual (d y P Q : ℝ) (hy : 0<y) :
     V d y P Q=‖a d P Q*e d y P Q-b d y P Q*c d y P Q‖^2 := by

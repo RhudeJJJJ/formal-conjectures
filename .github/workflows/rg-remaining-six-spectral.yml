@@ -16,7 +16,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        endpoint: [Proofs.RadenkovicGutmanFiniteSpectralCertificates]
+        endpoint: [Proofs.RadenkovicGutmanSmallGeFourSpectrum000,Proofs.RadenkovicGutmanTreeLeafInduction]
     runs-on: ubuntu-latest
     timeout-minutes: 90
     steps:
@@ -77,6 +77,6 @@ jobs:
         if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:
-          name: rg-remaining-six-exports-${{ github.run_id }}
+          name: rg-remaining-six-exports-${{ github.run_id }}-${{ strategy.job-index }}
           path: Proofs/RG_Lean_20261019/build/fresh_exports
           retention-days: 7

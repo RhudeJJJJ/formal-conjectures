@@ -33,7 +33,6 @@ theorem arm_fraction (h x a : ℝ) (hh : h ≠ 0) (hx : x ≠ 0) :
     x/h+a*h/x=A h x a/(h*x) := by
   unfold A
   field_simp [hh,hx]
-  ring
 
 theorem error_fraction (h x : ℝ) (hh : h ≠ 0) :
     errorWeight (CorrelatedEscape.payment (1/h) x)=h*E h x/(p x)^3 := by
@@ -58,7 +57,6 @@ theorem base_fraction (h x a b : ℝ) (hh : h ≠ 0) (hx : x ≠ 0) :
   rw [error_fraction h x hh,arm_fraction h x a hh hx,arm_fraction h x b hh hx]
   dsimp only [B,Z,A]
   field_simp [hh,hx,p_ne_zero x]
-  ring
 
 theorem horizontal_fraction (h x a b : ℝ) (hh : h ≠ 0) (hx : x ≠ 0) :
     factorHorizontal (x/h) (x/h+a*h/x) (x/h+b*h/x) (CorrelatedEscape.payment (1/h) x)=
@@ -76,7 +74,6 @@ theorem vertical_fraction (h x a b : ℝ) (hh : h ≠ 0) (hx : x ≠ 0) :
   rw [error_fraction h x hh,arm_fraction h x a hh hx,arm_fraction h x b hh hx]
   dsimp only [V,Z,A]
   field_simp [hh,hx,p_ne_zero x]
-  ring
 
 theorem core_fraction (h x a b : ℝ) (hh : h ≠ 0) (hx : x ≠ 0) :
     factorCore (1/h) (x/h) (x/h+a*h/x) (x/h+b*h/x) (CorrelatedEscape.payment (1/h) x)=
@@ -85,7 +82,6 @@ theorem core_fraction (h x a b : ℝ) (hh : h ≠ 0) (hx : x ≠ 0) :
   rw [base_fraction h x a b hh hx,lead_fraction h x a b hh hx,horizontal_fraction h x a b hh hx]
   dsimp only [U]
   field_simp [hh,hx,p_ne_zero x]
-  ring
 
 theorem inner_clearing (h x a b : ℝ) (hh : h ≠ 0) (hx : x ≠ 0) :
     h^10*x^10*(1+x^2)^6*EscapeFactorSigns.reserveInner (1/h) (x/h)

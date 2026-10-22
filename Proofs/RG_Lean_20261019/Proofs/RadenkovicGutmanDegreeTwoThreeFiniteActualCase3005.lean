@@ -1,0 +1,40 @@
+/- Copyright 2026 Jonas J. Gebendorfer. Apache 2.0. -/
+import Proofs.RadenkovicGutmanFiniteTreeNative
+import Proofs.RadenkovicGutmanRootedCatalogueData
+import Proofs.RadenkovicGutmanDegreeTwoThreeFiniteComparisons60
+namespace Gebendorfer.RadenkovicGutman.DegreeTwoThreeFiniteActualCases
+open RootedTreeEnumeration RootedCatalogueData FiniteTreeTransfer CoreQuotient
+set_option maxHeartbeats 0
+set_option maxRecDepth 100000
+def core3005 : Family 10 := level10.get ⟨1579,by decide⟩
+def sourceMap3005 : (Vertices 10 ⊕ Fin 1 ⊕ Fin 5) → Fin 17 :=
+  fun v => ![1,2,3,4,5,6,7,8,9,10,11,12,0,13,14,15,16] (sourceLabel 10 0 4 v)
+def fusedMap3005 : (Vertices 10 ⊕ Fin 6) → Fin 17 :=
+  fun v => ![1,2,3,4,5,6,7,8,9,10,11,0,12,13,14,15,16] (fusedLabel 10 0 4 v)
+theorem sourceMap3005_checked : acceptsGraphIso
+    (source (graph core3005) (root 10) 0 4) DegreeTwoThreeSpectrum7117.graph sourceMap3005=true := by decide +kernel
+theorem fusedMap3005_checked : acceptsGraphIso
+    (fused (graph core3005) (root 10) 0 4) DegreeTwoThreeSpectrum6062.graph fusedMap3005=true := by decide +kernel
+theorem certified3005 : Certified (graph core3005) (root 10) 0 4 :=
+  of_native_maps core3005 DegreeTwoThreeSpectrum7117.graph DegreeTwoThreeSpectrum6062.graph
+    sourceMap3005 fusedMap3005 sourceMap3005_checked fusedMap3005_checked
+    DegreeTwoThreeFiniteComparisons.comparison3005
+#print axioms sourceMap3005_checked
+#print axioms fusedMap3005_checked
+#print axioms certified3005
+def sourceMap3005swap : (Vertices 10 ⊕ Fin 5 ⊕ Fin 1) → Fin 17 :=
+  fun v => ![1,2,3,4,5,6,7,8,9,10,11,0,13,14,15,16,12] (sourceLabel 10 4 0 v)
+def fusedMap3005swap : (Vertices 10 ⊕ Fin 6) → Fin 17 :=
+  fun v => ![1,2,3,4,5,6,7,8,9,10,11,0,12,13,14,15,16] (fusedLabel 10 4 0 v)
+theorem sourceMap3005swap_checked : acceptsGraphIso
+    (source (graph core3005) (root 10) 4 0) DegreeTwoThreeSpectrum7117.graph sourceMap3005swap=true := by decide +kernel
+theorem fusedMap3005swap_checked : acceptsGraphIso
+    (fused (graph core3005) (root 10) 4 0) DegreeTwoThreeSpectrum6062.graph fusedMap3005swap=true := by decide +kernel
+theorem certified3005swap : Certified (graph core3005) (root 10) 4 0 :=
+  of_native_maps core3005 DegreeTwoThreeSpectrum7117.graph DegreeTwoThreeSpectrum6062.graph
+    sourceMap3005swap fusedMap3005swap sourceMap3005swap_checked fusedMap3005swap_checked
+    DegreeTwoThreeFiniteComparisons.comparison3005
+#print axioms sourceMap3005swap_checked
+#print axioms fusedMap3005swap_checked
+#print axioms certified3005swap
+end Gebendorfer.RadenkovicGutman.DegreeTwoThreeFiniteActualCases

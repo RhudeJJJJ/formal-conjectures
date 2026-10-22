@@ -1,0 +1,40 @@
+/- Copyright 2026 Jonas J. Gebendorfer. Apache 2.0. -/
+import Proofs.RadenkovicGutmanFiniteTreeNative
+import Proofs.RadenkovicGutmanRootedCatalogueData
+import Proofs.RadenkovicGutmanDegreeTwoThreeFiniteComparisons52
+namespace Gebendorfer.RadenkovicGutman.DegreeTwoThreeFiniteActualCases
+open RootedTreeEnumeration RootedCatalogueData FiniteTreeTransfer CoreQuotient
+set_option maxHeartbeats 0
+set_option maxRecDepth 100000
+def core2617 : Family 10 := level10.get ⟨587,by decide⟩
+def sourceMap2617 : (Vertices 10 ⊕ Fin 1 ⊕ Fin 5) → Fin 17 :=
+  fun v => ![0,1,2,3,4,5,6,7,8,9,15,16,10,11,12,13,14] (sourceLabel 10 0 4 v)
+def fusedMap2617 : (Vertices 10 ⊕ Fin 6) → Fin 17 :=
+  fun v => ![0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16] (fusedLabel 10 0 4 v)
+theorem sourceMap2617_checked : acceptsGraphIso
+    (source (graph core2617) (root 10) 0 4) DegreeTwoThreeSpectrum6275.graph sourceMap2617=true := by decide +kernel
+theorem fusedMap2617_checked : acceptsGraphIso
+    (fused (graph core2617) (root 10) 0 4) DegreeTwoThreeSpectrum5257.graph fusedMap2617=true := by decide +kernel
+theorem certified2617 : Certified (graph core2617) (root 10) 0 4 :=
+  of_native_maps core2617 DegreeTwoThreeSpectrum6275.graph DegreeTwoThreeSpectrum5257.graph
+    sourceMap2617 fusedMap2617 sourceMap2617_checked fusedMap2617_checked
+    DegreeTwoThreeFiniteComparisons.comparison2617
+#print axioms sourceMap2617_checked
+#print axioms fusedMap2617_checked
+#print axioms certified2617
+def sourceMap2617swap : (Vertices 10 ⊕ Fin 5 ⊕ Fin 1) → Fin 17 :=
+  fun v => ![0,1,2,3,4,5,6,7,8,9,15,10,11,12,13,14,16] (sourceLabel 10 4 0 v)
+def fusedMap2617swap : (Vertices 10 ⊕ Fin 6) → Fin 17 :=
+  fun v => ![0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16] (fusedLabel 10 4 0 v)
+theorem sourceMap2617swap_checked : acceptsGraphIso
+    (source (graph core2617) (root 10) 4 0) DegreeTwoThreeSpectrum6275.graph sourceMap2617swap=true := by decide +kernel
+theorem fusedMap2617swap_checked : acceptsGraphIso
+    (fused (graph core2617) (root 10) 4 0) DegreeTwoThreeSpectrum5257.graph fusedMap2617swap=true := by decide +kernel
+theorem certified2617swap : Certified (graph core2617) (root 10) 4 0 :=
+  of_native_maps core2617 DegreeTwoThreeSpectrum6275.graph DegreeTwoThreeSpectrum5257.graph
+    sourceMap2617swap fusedMap2617swap sourceMap2617swap_checked fusedMap2617swap_checked
+    DegreeTwoThreeFiniteComparisons.comparison2617
+#print axioms sourceMap2617swap_checked
+#print axioms fusedMap2617swap_checked
+#print axioms certified2617swap
+end Gebendorfer.RadenkovicGutman.DegreeTwoThreeFiniteActualCases

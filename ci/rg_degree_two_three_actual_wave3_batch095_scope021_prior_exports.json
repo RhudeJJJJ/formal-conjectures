@@ -1,0 +1,38 @@
+{
+  "repository": "RhudeJJJJ/formal-conjectures",
+  "run": 39638445459,
+  "job": 119355338122,
+  "source_commit": "0af20c7438cce37a1857b33c752732a6f76c6e30",
+  "artifact_id": 12365000383,
+  "artifact_sha256": "01941df15481c27a3b6c61a2ba63fb2df1229d3583c5183fa5bc22f490c4066c",
+  "lean_version": "4.33.1",
+  "mathlib": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "modules": {
+    "Proofs.RadenkovicGutmanActualSmallGeFourKeys": {
+      "module": "Proofs.RadenkovicGutmanActualSmallGeFourKeys",
+      "source_sha256": "ca7a3fc64a46c72c9ad3a5bb7b985eeb2d6dec6d8cdc2a9d44033828d542c86d",
+      "source_closure_sha256": "267e5fc710fccd15cde64f16d3cbb846752d93a5dfab22a91506b793050e4607",
+      "output_sha256": "e915b62bfc61f7179d2b14fcce668aca947d998990ef9eb8ae7cb6e4731b4745",
+      "axiom_profiles": [
+        [
+          "propext"
+        ],
+        [
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "FRESH_KERNEL_EXPORT",
+      "seconds": 1.968
+    }
+  }
+}

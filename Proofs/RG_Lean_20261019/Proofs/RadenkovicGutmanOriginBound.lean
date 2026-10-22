@@ -48,15 +48,15 @@ theorem norm_lower (d y P Q : ℝ) (hd : 0 < d) (hy : 0 < y) (hy1 : y ≤ 1)
   have hn := numerator_norm d y P Q hd hy hP hQ ζ hζ
   have hzn : ‖z y‖^2=4+y^2 := by
     rw [← Complex.normSq_eq_norm_sq]
-    norm_num [z,Complex.normSq_apply]
+    norm_num [z,Complex.normSq_apply,pow_two]
   have hzb : ‖z y‖ ≤ 3 := by nlinarith [norm_nonneg (z y)]
   have htri : ‖B y P Q*ζ+D₀ y P Q‖ ≤
       ‖A P Q*ζ+N₀ y P Q‖+3*‖z y-ζ‖ := by
     rw [denominator_identity]
     have ht := norm_sub_le (A P Q*ζ+N₀ y P Q) (z y*(z y-ζ))
     rw [norm_mul] at ht
-    exact ht.trans (add_le_add_left
-      (mul_le_mul_of_nonneg_right hzb (norm_nonneg _)) _)
+    have hm := mul_le_mul_of_nonneg_right hzb (norm_nonneg (z y-ζ))
+    linarith
   have hden := denominator_nonzero d y P Q hd hy hP hQ ζ hζ
   rw [quotient,norm_div]
   apply (le_div_iff₀ (norm_pos_iff.mpr hden)).mpr

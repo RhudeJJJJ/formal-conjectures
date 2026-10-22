@@ -17,7 +17,7 @@ theorem disk_rectangle (d y : ℝ) (hd : 1 ≤ d) (hy : 1 ≤ y)
   have hiy : (g d y).im-ζ.im ≤ r d y := by
     have hn : ‖g d y-ζ‖ ≤ r d y := by simpa only [norm_sub_rev] using hζ
     simpa only [Complex.sub_im] using (Complex.im_le_norm (g d y-ζ)).trans hn
-  simp [g,r] at hrx hiy
+  simp [g,r,-Complex.ofReal_mul,-Complex.ofReal_div] at hrx hiy
   have hf : d/(2*y) ≤ d/2 := by
     apply (div_le_div_iff₀ (by positivity) (by norm_num)).mpr
     nlinarith [mul_nonneg hdp.le (sub_nonneg.mpr hy)]
@@ -89,8 +89,11 @@ theorem actual_log_lower (d y a b : ℝ) (hd : 1 ≤ d) (hy : 1 ≤ y)
   have hl := Real.log_le_sub_one_of_pos
     (by positivity : 0<(1:ℝ)/‖quotient y (y+a/y) (y+b/y) ζ‖^2)
   rw [one_div,Real.log_inv,Real.log_pow] at hl
-  have ht : (-1:ℝ)/(2*y^2)=-(1/y^2)/2 := by field_simp; ring
+  have ht : (-1:ℝ)/(2*y^2)=-(1/y^2)/2 := by field_simp
   rw [ht]
+  simp only [one_div] at hratio
+  norm_num at hl
+  simp only [one_div]
   linarith
 
 #print axioms disk_rectangle

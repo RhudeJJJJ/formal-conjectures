@@ -22,17 +22,67 @@ def ce : Fin 9 → ℚ := ![(9296816/117649),(467417679/5882450),(329006491447/4
 def young : ℚ := (1/5)
 def squareLower : ℚ := (611/500)
 def payment : ℚ := (1/10)
-theorem path_checked : GeneralPathPolynomials.accepts (13/7) 0 0 as bs cs es=true := by decide +kernel
-theorem norms_checked : RationalMobiusPolynomials.accepts as bs cs es us vs js ns sep=true := by decide +kernel
+theorem path_checked : GeneralPathPolynomials.accepts (13/7) 0 0 as bs cs es=true := by
+  rw [GeneralPathPolynomials.accepts,decide_eq_true_eq]
+  refine ⟨?_,?_,?_,?_⟩
+  all_goals apply Polynomial.funext
+  all_goals intro t
+  all_goals norm_num [as,bs,cs,es,ofList,GeneralPathPolynomials.sourceSlope,
+    GeneralPathPolynomials.sourceCenter,GeneralPathPolynomials.sourceOffset,
+    GeneralPathPolynomials.fusedSlope,GeneralPathPolynomials.fusedCenter,
+    GeneralPathPolynomials.fusedOffset,GeneralPathPolynomials.centerPoly,
+    GeneralPathPolynomials.scalePoly,numPoly,denPoly,pointPoly,
+    PathRecurrence.num,PathRecurrence.den,PathRecurrence.state]
+  all_goals ring
+theorem norms_checked : RationalMobiusPolynomials.accepts as bs cs es us vs js ns sep=true := by
+  rw [RationalMobiusPolynomials.accepts,decide_eq_true_eq]
+  refine ⟨?_,?_,?_,?_,?_⟩
+  all_goals apply Polynomial.funext
+  all_goals intro t
+  all_goals norm_num [as,bs,cs,es,us,vs,js,ns,sep,ofList,parts,normPolynomial,
+    RationalMobiusPolynomials.U,RationalMobiusPolynomials.V,RationalMobiusPolynomials.J,
+    RationalMobiusPolynomials.N,RationalMobiusPolynomials.E]
+  all_goals ring
 theorem coefficients_checked : ClassCellCertificates.accepts cu cv cj young squareLower=true := by decide +kernel
 theorem logarithm_checked : RationalLog.accepts squareLower payment 0 40=true := by decide +kernel
-theorem u_checked : RationalPolynomialCell.accepts us 1 (101/100) 16 cu=true := by decide +kernel
-theorem v_checked : RationalPolynomialCell.accepts vs 1 (101/100) 16 cv=true := by decide +kernel
-theorem j_checked : RationalPolynomialCell.accepts js 1 (101/100) 16 cj=true := by decide +kernel
-theorem n_checked : RationalPolynomialCell.accepts ns 1 (101/100) 8 cn=true := by decide +kernel
-theorem e_checked : RationalPolynomialCell.accepts sep 1 (101/100) 8 ce=true := by decide +kernel
+theorem u_checked : RationalPolynomialCell.accepts us 1 (101/100) 16 cu=true := by
+  rw [RationalPolynomialCell.accepts,decide_eq_true_eq]
+  apply Polynomial.funext
+  intro t
+  norm_num [us,cu,ofList,RationalPolynomialCell.affine,RationalPolynomialCell.form,
+    bernsteinPolynomial,Nat.choose,Fin.sum_univ_succ]
+  all_goals ring
+theorem v_checked : RationalPolynomialCell.accepts vs 1 (101/100) 16 cv=true := by
+  rw [RationalPolynomialCell.accepts,decide_eq_true_eq]
+  apply Polynomial.funext
+  intro t
+  norm_num [vs,cv,ofList,RationalPolynomialCell.affine,RationalPolynomialCell.form,
+    bernsteinPolynomial,Nat.choose,Fin.sum_univ_succ]
+  all_goals ring
+theorem j_checked : RationalPolynomialCell.accepts js 1 (101/100) 16 cj=true := by
+  rw [RationalPolynomialCell.accepts,decide_eq_true_eq]
+  apply Polynomial.funext
+  intro t
+  norm_num [js,cj,ofList,RationalPolynomialCell.affine,RationalPolynomialCell.form,
+    bernsteinPolynomial,Nat.choose,Fin.sum_univ_succ]
+  all_goals ring
+theorem n_checked : RationalPolynomialCell.accepts ns 1 (101/100) 8 cn=true := by
+  rw [RationalPolynomialCell.accepts,decide_eq_true_eq]
+  apply Polynomial.funext
+  intro t
+  norm_num [ns,cn,ofList,RationalPolynomialCell.affine,RationalPolynomialCell.form,
+    bernsteinPolynomial,Nat.choose,Fin.sum_univ_succ]
+  all_goals ring
+theorem e_checked : RationalPolynomialCell.accepts sep 1 (101/100) 8 ce=true := by
+  rw [RationalPolynomialCell.accepts,decide_eq_true_eq]
+  apply Polynomial.funext
+  intro t
+  norm_num [sep,ce,ofList,RationalPolynomialCell.affine,RationalPolynomialCell.form,
+    bernsteinPolynomial,Nat.choose,Fin.sum_univ_succ]
+  all_goals ring
 theorem n_positive : ∀ i, 0 < cn i := by decide +kernel
 theorem e_positive : ∀ i, 0 < ce i := by decide +kernel
+open scoped Classical
 theorem actual_control {V : Type*} [Fintype V] [DecidableEq V]
     (C : SimpleGraph V) (u : V) (hd : C.degree u=1) (y : ℝ)
     (hy : y ∈ Set.Icc (1 : ℝ) (101/100)) :
@@ -40,7 +90,7 @@ theorem actual_control {V : Type*} [Fintype V] [DecidableEq V]
   have hyp : 0 < y := by linarith only [hy.1]
   have hab : (1 : ℚ) < 101/100 := by norm_num
   have hcell : y ∈ Set.Icc ((1 : ℚ) : ℝ) ((101/100 : ℚ) : ℝ) := by
-    convert hy using 1 <;> norm_num
+    convert hy using 1; norm_num
   apply GeneralPathCellCertificates.actual_log_lower (13/7) y hyp 0 0 as bs cs es us vs js ns sep
     path_checked norms_checked cu cv cj young squareLower payment 0 40 coefficients_checked logarithm_checked
     (fun i => Bernstein.basis 16 i ((y-((1 : ℚ) : ℝ))/(((101/100 : ℚ) : ℝ)-((1 : ℚ) : ℝ)))) ?_ ?_ ?_ ?_ ?_ ?_ C u hd
@@ -55,7 +105,7 @@ theorem actual_mean14 {V : Type*} [Fintype V] [DecidableEq V]
     (C : SimpleGraph V) (u : V) (hd : C.degree u=1) (y : ℝ)
     (hy : y ∈ Set.Icc (1 : ℝ) (101/100)) :
     (payment : ℝ) ≤ MixedGraphIntegral.logarithm (source C u 0 0) (fused C u 0 0) (2-2/(14 : ℝ)) y := by
-  convert actual_control C u hd y hy using 1 <;> norm_num
+  convert actual_control C u hd y hy using 1; norm_num
 #print axioms path_checked
 #print axioms norms_checked
 #print axioms coefficients_checked

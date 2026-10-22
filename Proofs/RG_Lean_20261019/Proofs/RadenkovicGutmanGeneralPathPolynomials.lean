@@ -5,6 +5,7 @@ import Proofs.RadenkovicGutmanGeneralScaledQuotient
 /-! Rational polynomial identities for the four actual coefficients. The shift
 is an arbitrary rational, so the mean shift 2-2/N is retained exactly. -/
 namespace Gebendorfer.RadenkovicGutman.GeneralPathPolynomials
+noncomputable section
 open Polynomial PolynomialPathMap GeneralGraphQuotient
 set_option maxHeartbeats 0
 set_option maxRecDepth 100000
@@ -87,4 +88,5 @@ theorem accepts_sound (x : ℚ) (p q : ℕ) (as bs cs es : List ℚ)
 #print axioms sourceCenter_evaluation
 #print axioms fusedCenter_evaluation
 #print axioms accepts_sound
+end
 end Gebendorfer.RadenkovicGutman.GeneralPathPolynomials

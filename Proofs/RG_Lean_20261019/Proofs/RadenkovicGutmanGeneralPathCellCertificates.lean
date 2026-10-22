@@ -5,6 +5,7 @@ import Proofs.RadenkovicGutmanClassCellCertificates
 
 namespace Gebendorfer.RadenkovicGutman.GeneralPathCellCertificates
 open CoreQuotient PolynomialPathMap RationalComplexPolynomial
+open scoped Classical
 noncomputable section
 set_option maxHeartbeats 0
 

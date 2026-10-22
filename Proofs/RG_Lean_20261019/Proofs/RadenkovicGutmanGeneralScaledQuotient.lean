@@ -6,6 +6,7 @@ import Proofs.RadenkovicGutmanBernstein
 from its four scaled coefficients, including at the actual mean shifts. -/
 namespace Gebendorfer.RadenkovicGutman.GeneralScaledQuotient
 open GeneralGraphQuotient CoreQuotient
+open scoped Classical
 noncomputable section
 set_option maxHeartbeats 0
 
@@ -29,14 +30,15 @@ theorem center_identity (x y : ℝ) (hy : 0 < y) :
     simp only [centerPolynomial,scale,center,pow_two,Complex.mul_re,Complex.mul_im,
       Complex.sub_re,Complex.sub_im,Complex.add_re,Complex.add_im,
       Complex.ofReal_re,Complex.ofReal_im,Complex.I_re,Complex.I_im,
-      Complex.re_ofNat,Complex.im_ofNat] <;>
+      Complex.re_ofNat,Complex.im_ofNat,Complex.one_re,Complex.one_im] <;>
     field_simp [hy.ne'] <;> ring
 
 theorem parameter_norm (x y : ℝ) (hy : 0 < y) (ζ : ℂ)
     (hζ : ‖ζ-center x y 1‖ ≤ 1/(2*y)) : ‖parameter x y ζ‖ ≤ 1 := by
   have hp : 0 < 2*y := by positivity
   have hs : ‖scale y‖=2*y := by
-    simp [scale,norm_mul,Complex.norm_real,Real.norm_eq_abs,abs_of_pos hp]
+    unfold scale
+    rw [norm_mul,Complex.norm_I,mul_one,Complex.norm_real,Real.norm_eq_abs,abs_of_pos hp]
   rw [parameter,norm_mul,hs]
   calc
     (2*y)*‖ζ-center x y 1‖ ≤ (2*y)*(1/(2*y)) :=

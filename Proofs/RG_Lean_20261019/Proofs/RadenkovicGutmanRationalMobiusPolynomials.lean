@@ -3,6 +3,7 @@ import Proofs.RadenkovicGutmanRationalComplexPolynomial
 import Mathlib.Analysis.Complex.Norm
 
 namespace Gebendorfer.RadenkovicGutman.RationalMobiusPolynomials
+noncomputable section
 open Polynomial PolynomialPathMap RationalComplexPolynomial
 set_option maxHeartbeats 0
 
@@ -77,4 +78,5 @@ theorem accepts_sound (a b c e us vs js ns es : List ℚ)
 #print axioms E_sound
 #print axioms J_sound
 #print axioms accepts_sound
+end
 end Gebendorfer.RadenkovicGutman.RationalMobiusPolynomials

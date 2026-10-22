@@ -1,9 +1,12 @@
 /- Copyright 2026 Jonas J. Gebendorfer. Apache 2.0. -/
 import Proofs.RadenkovicGutmanPathRecurrence
 import Mathlib.Algebra.Polynomial.Eval.Defs
+import Mathlib.Algebra.Polynomial.Roots
+import Mathlib.Algebra.CharZero.Infinite
 import Mathlib.Data.Complex.Basic
 
 namespace Gebendorfer.RadenkovicGutman.PolynomialPathMap
+noncomputable section
 open PathRecurrence Polynomial
 set_option maxHeartbeats 0
 set_option maxRecDepth 100000
@@ -66,8 +69,19 @@ theorem pathAccepts_sound (x : ℚ) (n : ℕ) (ns ds : List ℚ)
   · rw [hh.2]
     exact eval_den x y n
 
-theorem mean14_path1 : pathAccepts (13/7) 1 [1] [13/7,1]=true := by decide +kernel
-theorem mean14_path2 : pathAccepts (13/7) 2 [6/7,1] [-13/49,12/7,1]=true := by decide +kernel
+theorem mean14_path1 : pathAccepts (13/7) 1 [1] [13/7,1]=true := by
+  rw [pathAccepts,decide_eq_true_eq]
+  constructor
+  all_goals apply Polynomial.funext
+  all_goals intro t
+  all_goals norm_num [ofList,numPoly,denPoly,pointPoly,num,den,state]
+theorem mean14_path2 : pathAccepts (13/7) 2 [6/7,1] [-13/49,12/7,1]=true := by
+  rw [pathAccepts,decide_eq_true_eq]
+  constructor
+  all_goals apply Polynomial.funext
+  all_goals intro t
+  all_goals norm_num [ofList,numPoly,denPoly,pointPoly,num,den,state]
+  all_goals ring
 
 #print axioms map_num_den
 #print axioms eval_point
@@ -76,4 +90,5 @@ theorem mean14_path2 : pathAccepts (13/7) 2 [6/7,1] [-13/49,12/7,1]=true := by d
 #print axioms pathAccepts_sound
 #print axioms mean14_path1
 #print axioms mean14_path2
+end
 end Gebendorfer.RadenkovicGutman.PolynomialPathMap

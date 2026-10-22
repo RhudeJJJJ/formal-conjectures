@@ -1,5 +1,6 @@
 /- Copyright 2026 Jonas J. Gebendorfer. Apache 2.0. -/
 import Proofs.RadenkovicGutmanDegreeOneMiddleAnchorData
+import Proofs.RadenkovicGutmanOriginalAssembly
 
 /-! Exact assembly of the paid anchors and the eight finite residual parameter
 instances. The 680 analytic integral bounds remain explicit obligations. -/

@@ -50,7 +50,6 @@ theorem actual_quotient (C : SimpleGraph V) (u : V) (z : ℂ) (hz : 0 < z.im)
   have he : denominatorCoefficient z p q-s⁻¹*fusedConstant z p q=
       (denominatorCoefficient z p q*s-fusedConstant z p q)/s := by
     field_simp [hs]
-    all_goals ring
   have hden : denominatorCoefficient z p q*s-fusedConstant z p q ≠ 0 := by
     intro hzero
     apply hf
@@ -61,7 +60,6 @@ theorem actual_quotient (C : SimpleGraph V) (u : V) (z : ℂ) (hz : 0 < z.im)
     (numeratorCoefficient z p q*s-sourceConstant z p q)/
       (denominatorCoefficient z p q*s-fusedConstant z p q)
   field_simp [hc,hs,hf,hden]
-  all_goals ring
 
 theorem actual_disk (C : SimpleGraph V) (u : V) (x y : ℝ) (hy : 0 < y) :
     ‖RootSchur.schurScalar C u (point x y)-center x y (C.degree u)‖ ≤

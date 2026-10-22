@@ -4,6 +4,7 @@ import Proofs.RadenkovicGutmanPolynomialPathMap
 /-! Exact real and imaginary polynomial representatives of rational Horner
 lists evaluated on the imaginary axis. No sampled identity is used. -/
 namespace Gebendorfer.RadenkovicGutman.RationalComplexPolynomial
+noncomputable section
 open Polynomial PolynomialPathMap
 set_option maxHeartbeats 0
 
@@ -44,7 +45,7 @@ def normPolynomial (p : List ℚ) : ℚ[X] := (parts p).1^2+(parts p).2^2
 theorem normPolynomial_sound (p : List ℚ) (y : ℝ) :
     realEvaluator y (normPolynomial p)=Complex.normSq (evaluator y (ofList p)) := by
   rw [eval_parts]
-  simp [normPolynomial,Complex.normSq_apply]
+  simp [normPolynomial,Complex.normSq_apply,pow_two]
 
 /-- The checker compares complete rational polynomials. Its soundness retains
 every real ordinate, including irrational cell endpoints. -/
@@ -55,12 +56,22 @@ theorem normAccepts_sound (p cs : List ℚ) (hc : normAccepts p cs=true) (y : �
   rw [show ofList cs=normPolynomial p from of_decide_eq_true hc]
   exact normPolynomial_sound p y
 
-theorem norm_control : normAccepts [2,3] [4,0,9]=true := by decide +kernel
-theorem reject_false_norm : normAccepts [2,3] [4,0,8]=false := by decide +kernel
+theorem norm_control : normAccepts [2,3] [4,0,9]=true := by
+  rw [normAccepts,decide_eq_true_eq]
+  apply Polynomial.funext
+  intro t
+  norm_num [ofList,normPolynomial,parts]
+  all_goals ring
+theorem reject_false_norm : normAccepts [2,3] [4,0,8]=false := by
+  rw [normAccepts,decide_eq_false_iff_not]
+  intro h
+  have he := congrArg (fun p : ℚ[X] => p.eval 1) h
+  norm_num [ofList,normPolynomial,parts] at he
 
 #print axioms eval_parts
 #print axioms normPolynomial_sound
 #print axioms normAccepts_sound
 #print axioms norm_control
 #print axioms reject_false_norm
+end
 end Gebendorfer.RadenkovicGutman.RationalComplexPolynomial

@@ -18,9 +18,15 @@ theorem residual_parameters (m p q : ℕ) (hm : 0 < m)
     m ≤ 11 ∧ p < 5 ∧ q < 5 ∧ (m-1,p,q) ∈ DegreeOneMiddleResidualFiniteKeys.domains := by
   simp only [DegreeOneMiddleAnchors.residual,List.mem_cons,List.not_mem_nil,
     Prod.mk.injEq,or_false] at hr
-  simp only [DegreeOneMiddleResidualFiniteKeys.domains,List.mem_cons,List.not_mem_nil,
-    Prod.mk.injEq,or_false]
-  omega
+  have split (N a b : ℕ) (h : m+p+q+2=N ∧ min p q=a ∧ max p q=b) :
+      m=N-a-b-2 ∧ ((p=a ∧ q=b) ∨ (p=b ∧ q=a)) := by omega
+  rcases hr with h | h | h | h | h | h | h | h
+  all_goals
+    obtain ⟨he,hpq⟩ := split _ _ _ h
+    rcases hpq with ⟨rfl,rfl⟩ | ⟨rfl,rfl⟩
+    all_goals
+      subst m
+      norm_num [DegreeOneMiddleResidualFiniteKeys.domains]
 
 def Coverage : Prop :=
   ∀ (n : ℕ), n ≤ 10 → ∀ (i : Fin (RootedCatalogueData.catalogue n).length)

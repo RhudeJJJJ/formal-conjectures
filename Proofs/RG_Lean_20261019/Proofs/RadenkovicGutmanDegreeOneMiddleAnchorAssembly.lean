@@ -24,7 +24,10 @@ theorem covered_sound (n p q : ℕ) (hc : covered n p q=true) :
       change anchors[lookup n p q]?=some a at ho
       refine ⟨a,Array.mem_toList_iff.mpr (Array.mem_of_getElem? ho),?_⟩
       obtain ⟨hp,hq,hn,hgap⟩ := of_decide_eq_true ha
-      exact ⟨hp,hq,hn,by exact_mod_cast hgap⟩
+      refine ⟨hp,hq,hn,?_⟩
+      have hg : ((|(2 : ℚ)/(n : ℚ)-2/(a.n : ℚ)| : ℚ) : ℝ) < (a.lower : ℝ) := by
+        exact_mod_cast hgap
+      simpa only [Rat.cast_abs,Rat.cast_sub,Rat.cast_div,Rat.cast_ofNat,Rat.cast_natCast] using hg
 
 def Checks : Prop := ∀ n : ℕ, 14 ≤ n → n ≤ 52 → checkAt n=true
 
@@ -64,6 +67,8 @@ theorem input_family_of_certificates (hchecks : Checks) (hanchors : AnalyticCert
   rcases covered_sound _ _ _ hc with hr | ⟨a,ha,hap,haq,hn,hgap⟩
   · exact hresidual m C u p q hT hd hr
   · have hor : (p=a.p ∧ q=a.q) ∨ (p=a.q ∧ q=a.p) := by
+      change a.p=min p q at hap
+      change a.q=max p q at haq
       by_cases hpq : p ≤ q
       · rw [min_eq_left hpq] at hap
         rw [max_eq_right hpq] at haq

@@ -3,7 +3,7 @@
 This is explicit prior-job reuse, never a fresh replay. The next verifier still
 recomputes each module's current source and complete dependency-closure hash.
 """
-import argparse,hashlib,io,json,os,pathlib,urllib.error,urllib.parse,urllib.request,zipfile
+import argparse,hashlib,io,json,os,pathlib,time,urllib.error,urllib.parse,urllib.request,zipfile
 
 ap=argparse.ArgumentParser(description=__doc__)
 ap.add_argument('--manifest',type=pathlib.Path,required=True)
@@ -16,15 +16,43 @@ allowed={'propext','Classical.choice','Quot.sound'}
 token=os.environ['GITHUB_TOKEN']
 api=f"https://api.github.com/repos/{m['repository']}/actions/artifacts/{m['artifact_id']}"
 headers={'Authorization':'Bearer '+token,'Accept':'application/vnd.github+json','X-GitHub-Api-Version':'2022-11-28'}
+def api_open(url,opener=urllib.request.urlopen):
+ started=time.monotonic()
+ for attempt in range(4):
+  try:return opener(urllib.request.Request(url,headers=headers),timeout=120)
+  except urllib.error.HTTPError as error:
+   if error.code in (301,302,303,307,308):raise
+   body=error.read(4096).decode('utf-8',errors='replace')
+   try:message=json.loads(body).get('message',body)
+   except json.JSONDecodeError:message=body
+   remaining=error.headers.get('x-ratelimit-remaining')
+   reset=error.headers.get('x-ratelimit-reset')
+   retry_after=error.headers.get('retry-after')
+   print(json.dumps({'status':'GITHUB_ARTIFACT_API_ERROR','http_status':error.code,
+     'rate_remaining':remaining,'rate_reset':reset,'retry_after':retry_after,
+     'message':str(message)[:512],'attempt':attempt+1}),flush=True)
+   delay=None
+   if error.code in (403,429):
+    if retry_after and retry_after.isdigit():delay=int(retry_after)+1
+    elif remaining=='0' and reset and reset.isdigit():delay=max(1,int(reset)-int(time.time())+2)
+    elif 'secondary rate limit' in str(message).lower():delay=60*(2**attempt)
+   if delay is None or attempt==3 or time.monotonic()-started+delay>3700:raise
+   deadline=time.monotonic()+delay
+   while time.monotonic()<deadline:
+    wait=min(30,deadline-time.monotonic())
+    print(json.dumps({'status':'WAITING_FOR_DOCUMENTED_GITHUB_RATE_RESET',
+      'remaining_seconds':round(deadline-time.monotonic()),'no_request_during_wait':True}),flush=True)
+    time.sleep(wait)
+ raise AssertionError('Unreachable API retry state')
 def get(url):
- with urllib.request.urlopen(urllib.request.Request(url,headers=headers),timeout=120) as r:return r.read()
+ with api_open(url) as r:return r.read()
 meta=json.loads(get(api))
 assert not meta['expired'] and meta['digest']=='sha256:'+m['artifact_sha256']
 assert meta['workflow_run']['id']==m['run'] and meta['workflow_run']['head_sha']==m['source_commit']
 class NoRedirect(urllib.request.HTTPRedirectHandler):
  def redirect_request(self,req,fp,code,msg,hdrs,newurl):return None
 try:
- with urllib.request.build_opener(NoRedirect).open(urllib.request.Request(api+'/zip',headers=headers),timeout=120) as r:
+ with api_open(api+'/zip',urllib.request.build_opener(NoRedirect).open) as r:
   data=r.read()
 except urllib.error.HTTPError as e:
  assert e.code in (301,302,303,307,308)

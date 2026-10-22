@@ -1,15 +1,8 @@
 name: RG d1 integer data controls
 
+# Superseded identity-control scope; manual replay remains available.
 on:
-  push:
-    branches: [rg-remaining-six-spectral-20261021]
-    paths:
-      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanD1IntegerDataControl00.lean'
-      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanD1IntegerDataControl10.lean'
-      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanD1IntegerDataControl30.lean'
-      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanIntegerDataElaboration.lean'
-      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanIntegerLiteral.lean'
-      - '.github/workflows/rg-d1-integer-data-controls.yml'
+  workflow_dispatch:
 
 permissions:
   contents: read

@@ -6,7 +6,7 @@ set_option maxHeartbeats 0
 set_option maxRecDepth 100000
 def certificate00406 : NestedInteger.Poly 3 := rg_integer_data%
   (PackedIntegerClassCell.integerAffine DegreeOneNormPack10.pack true (29096676651/250000000000) (5296067311/4294967296) ![52,0,4] ![(7/8),0,(1/2)] ![(1/8),1,(1/4)])
-theorem leaf00406_identity : PackedIntegerClassCell.integerAffine DegreeOneNormPack10.pack true (29096676651/250000000000) (5296067311/4294967296) ![52,0,4] ![(7/8),0,(1/2)] ![(1/8),1,(1/4)]=certificate00406 := by rfl
+theorem leaf00406_identity : PackedIntegerClassCell.integerAffine DegreeOneNormPack10.pack true (29096676651/250000000000) (5296067311/4294967296) ![52,0,4] ![(7/8),0,(1/2)] ![(1/8),1,(1/4)]=certificate00406 := by decide +kernel
 #print axioms leaf00406_identity
 theorem leaf00406_sign : NestedInteger.bernsteinCheck 3 ![52,0,4] certificate00406=true := by decide +kernel
 #print axioms leaf00406_sign
@@ -21,7 +21,7 @@ theorem leaf00406_checked : FastNestedCellData.accepts 1 0 4 leaf00406=true := b
 #print axioms leaf00406_checked
 def certificate00407 : NestedInteger.Poly 3 := rg_integer_data%
   (PackedIntegerClassCell.integerAffine DegreeOneNormPack10.pack true (58087105111/500000000000) (5292682637/4294967296) ![52,0,4] ![(7/8),0,(3/4)] ![(1/8),1,(1/4)])
-theorem leaf00407_identity : PackedIntegerClassCell.integerAffine DegreeOneNormPack10.pack true (58087105111/500000000000) (5292682637/4294967296) ![52,0,4] ![(7/8),0,(3/4)] ![(1/8),1,(1/4)]=certificate00407 := by rfl
+theorem leaf00407_identity : PackedIntegerClassCell.integerAffine DegreeOneNormPack10.pack true (58087105111/500000000000) (5292682637/4294967296) ![52,0,4] ![(7/8),0,(3/4)] ![(1/8),1,(1/4)]=certificate00407 := by decide +kernel
 #print axioms leaf00407_identity
 theorem leaf00407_sign : NestedInteger.bernsteinCheck 3 ![52,0,4] certificate00407=true := by decide +kernel
 #print axioms leaf00407_sign

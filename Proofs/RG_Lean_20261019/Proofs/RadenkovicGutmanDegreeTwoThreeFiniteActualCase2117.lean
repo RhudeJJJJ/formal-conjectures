@@ -1,0 +1,40 @@
+/- Copyright 2026 Jonas J. Gebendorfer. Apache 2.0. -/
+import Proofs.RadenkovicGutmanFiniteTreeNative
+import Proofs.RadenkovicGutmanRootedCatalogueData
+import Proofs.RadenkovicGutmanDegreeTwoThreeFiniteComparisons42
+namespace Gebendorfer.RadenkovicGutman.DegreeTwoThreeFiniteActualCases
+open RootedTreeEnumeration RootedCatalogueData FiniteTreeTransfer CoreQuotient
+set_option maxHeartbeats 0
+set_option maxRecDepth 100000
+def core2117 : Family 7 := level7.get ⟨102,by decide⟩
+def sourceMap2117 : (Vertices 7 ⊕ Fin 1 ⊕ Fin 5) → Fin 14 :=
+  fun v => ![1,2,3,4,5,6,7,8,9,0,10,11,12,13] (sourceLabel 7 0 4 v)
+def fusedMap2117 : (Vertices 7 ⊕ Fin 6) → Fin 14 :=
+  fun v => ![2,3,4,5,6,7,8,9,1,0,10,11,12,13] (fusedLabel 7 0 4 v)
+theorem sourceMap2117_checked : acceptsGraphIso
+    (source (graph core2117) (root 7) 0 4) DegreeTwoThreeSpectrum1932.graph sourceMap2117=true := by decide +kernel
+theorem fusedMap2117_checked : acceptsGraphIso
+    (fused (graph core2117) (root 7) 0 4) DegreeTwoThreeSpectrum1934.graph fusedMap2117=true := by decide +kernel
+theorem certified2117 : Certified (graph core2117) (root 7) 0 4 :=
+  of_native_maps core2117 DegreeTwoThreeSpectrum1932.graph DegreeTwoThreeSpectrum1934.graph
+    sourceMap2117 fusedMap2117 sourceMap2117_checked fusedMap2117_checked
+    DegreeTwoThreeFiniteComparisons.comparison2117
+#print axioms sourceMap2117_checked
+#print axioms fusedMap2117_checked
+#print axioms certified2117
+def sourceMap2117swap : (Vertices 7 ⊕ Fin 5 ⊕ Fin 1) → Fin 14 :=
+  fun v => ![1,2,3,4,5,6,7,8,0,10,11,12,13,9] (sourceLabel 7 4 0 v)
+def fusedMap2117swap : (Vertices 7 ⊕ Fin 6) → Fin 14 :=
+  fun v => ![2,3,4,5,6,7,8,9,1,0,10,11,12,13] (fusedLabel 7 4 0 v)
+theorem sourceMap2117swap_checked : acceptsGraphIso
+    (source (graph core2117) (root 7) 4 0) DegreeTwoThreeSpectrum1932.graph sourceMap2117swap=true := by decide +kernel
+theorem fusedMap2117swap_checked : acceptsGraphIso
+    (fused (graph core2117) (root 7) 4 0) DegreeTwoThreeSpectrum1934.graph fusedMap2117swap=true := by decide +kernel
+theorem certified2117swap : Certified (graph core2117) (root 7) 4 0 :=
+  of_native_maps core2117 DegreeTwoThreeSpectrum1932.graph DegreeTwoThreeSpectrum1934.graph
+    sourceMap2117swap fusedMap2117swap sourceMap2117swap_checked fusedMap2117swap_checked
+    DegreeTwoThreeFiniteComparisons.comparison2117
+#print axioms sourceMap2117swap_checked
+#print axioms fusedMap2117swap_checked
+#print axioms certified2117swap
+end Gebendorfer.RadenkovicGutman.DegreeTwoThreeFiniteActualCases

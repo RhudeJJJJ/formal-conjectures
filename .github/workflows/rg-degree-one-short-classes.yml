@@ -1,0 +1,176 @@
+name: RG degree one short classes
+
+on:
+  push:
+    branches: [rg-remaining-six-spectral-20261021]
+    paths:
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanD1Short12.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanD1Short12Cells00.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanD1Short12Cells01.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanD1Short12Cells02.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanD1Short13.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanD1Short13Cells00.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanD1Short13Cells01.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanD1Short13Cells02.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanD1Short13Cells03.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanD1Short13Cells04.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanD1Short13Cells05.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanD1Short13Cells06.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanD1Short13Cells07.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanD1Short13Cells08.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanD1Short13Cells09.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanD1Short13Cells10.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanD1Short13Cells11.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanD1Short13Cells12.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanD1Short13Cells13.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanD1Short13Cells14.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanD1Short13Cells15.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanD1Short14.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanD1Short14Cells00.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanD1Short14Cells01.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanD1Short14Cells02.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanD1Short22.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanD1Short22Cells00.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanD1Short22Cells01.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanD1Short22Cells02.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanD1Short23.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanD1Short23Cells00.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanD1Short23Cells01.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanD1Short23Cells02.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanD1Short24.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanD1Short24Cells00.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanD1Short24Cells01.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanD1Short24Cells02.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanD1Short33.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanD1Short33Cells00.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanD1Short33Cells01.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanD1Short33Cells02.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanD1Short33Cells03.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanD1Short33Cells04.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanD1Short33Cells05.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanD1Short33Cells06.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanD1Short33Cells07.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanD1Short33Cells08.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanD1Short33Cells09.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanD1Short33Cells10.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanD1Short33Cells11.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanD1Short33Cells12.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanD1Short33Cells13.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanD1Short33Cells14.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanD1Short33Cells15.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanD1Short33Cells16.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanD1Short33Cells17.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanD1Short33Cells18.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanD1Short33Cells19.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanD1Short33Cells20.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanD1Short33Cells21.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanD1Short33Cells22.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanD1Short33Cells23.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanD1Short33Cells24.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanD1Short33Cells25.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanD1Short33Cells26.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanD1Short33Cells27.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanD1Short33Cells28.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanD1Short33Cells29.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanD1Short33Cells30.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanD1Short33Cells31.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanD1Short33Cells32.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanD1Short33Cells33.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanD1Short33Cells34.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanD1Short33Cells35.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanD1Short33Cells36.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanD1Short33Cells37.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanD1Short34.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanD1Short34Cells00.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanD1Short34Cells01.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanD1Short34Cells02.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanD1Short44.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanD1Short44Cells00.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanD1Short44Cells01.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanD1Short44Cells02.lean'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanPaidDegreeOneClass.lean'
+      - '.github/workflows/rg-degree-one-short-classes.yml'
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  check:
+    strategy:
+      fail-fast: false
+      matrix:
+        endpoint: [Proofs.RadenkovicGutmanD1Short12,Proofs.RadenkovicGutmanD1Short13,Proofs.RadenkovicGutmanD1Short14,Proofs.RadenkovicGutmanD1Short22,Proofs.RadenkovicGutmanD1Short23,Proofs.RadenkovicGutmanD1Short24,Proofs.RadenkovicGutmanD1Short33,Proofs.RadenkovicGutmanD1Short34,Proofs.RadenkovicGutmanD1Short44]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          persist-credentials: false
+      - name: Install the project toolchain
+        run: |
+          set -o pipefail
+          curl -sSfL https://github.com/leanprover/elan/releases/download/v1.4.2/elan-x86_64-unknown-linux-gnu.tar.gz | tar xz
+          ./elan-init -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Materialize the exact dependency lock
+        run: python3 -B ci/rg_dependencies.py
+      - name: Fetch the required Mathlib cache
+        run: |
+          python3 - <<'PY'
+          import pathlib, re, subprocess
+          root = pathlib.Path('Proofs/RG_Lean_20261019')
+          seen, external = set(), set()
+          def visit(name):
+              if name in seen:
+                  return
+              seen.add(name)
+              source = (root / (name.replace('.', '/') + '.lean')).read_text()
+              for dep in re.findall(r'^\s*import\s+([\w.]+)', source, re.M):
+                  if dep.startswith('Proofs.'):
+                      visit(dep)
+                  else:
+                      external.add(dep)
+          visit('${{ matrix.endpoint }}')
+          subprocess.run(['lake', 'exe', 'cache', 'get', *sorted(external)], check=True)
+          PY
+      - name: Restore exact source-bound prerequisites
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_one_short_classes_scope000_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_one_short_classes_scope001_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_one_short_classes_scope002_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_one_short_classes_scope003_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_degree_one_short_classes_scope004_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+      - name: Check multiplicities and actual graph spectral comparison
+        shell: bash
+        run: |
+          set -o pipefail
+          python3 -B Proofs/RG_Lean_20261019/verify_extension.py --mathlib-project "$GITHUB_WORKSPACE" --endpoint ${{ matrix.endpoint }} --workers 1 --module-timeout 600 --resume | python3 -B ci/rg_compact_ci_output.py
+      - name: Retain completed records and diagnostics
+        if: always()
+        run: |
+          python3 - <<'PY'
+          import json,pathlib,shutil
+          root=pathlib.Path('Proofs/RG_Lean_20261019/build/extension')
+          records=[json.loads(p.read_text()) for p in sorted(root.glob('Proofs.*.json'))]
+          fresh=root.parent/'fresh_exports';fresh.mkdir(parents=True,exist_ok=True)
+          (fresh/'diagnostics_records.json').write_text(json.dumps({'modules':records},separators=(',',':'))+'\n')
+          if (root/'receipt.json').is_file():shutil.copyfile(root/'receipt.json',fresh/'receipt.json')
+          print('RETAINED_RECORD_COUNTS '+json.dumps({'total':len(records),'fresh':sum(r['mode']=='FRESH_KERNEL_EXPORT' for r in records)}))
+          for row in records:
+              if row['mode']=='FRESH_KERNEL_EXPORT':
+                  name=row['module'];rel=name.replace('.','/')+'.olean';dest=fresh/rel
+                  dest.parent.mkdir(parents=True,exist_ok=True)
+                  shutil.copyfile(root/rel,dest);shutil.copyfile(root/(name+'.json'),fresh/(name+'.json'))
+          for log in root.glob('Proofs.*.log'):
+              shutil.copyfile(log,fresh/log.name);print('MODULE_LOG_TAIL '+log.name+' '+log.read_text()[-18000:])
+          PY
+      - name: Retain new exports only
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: rg-degree-one-short-classes-exports-${{ github.run_id }}-${{ strategy.job-index }}
+          path: Proofs/RG_Lean_20261019/build/fresh_exports
+          retention-days: 7

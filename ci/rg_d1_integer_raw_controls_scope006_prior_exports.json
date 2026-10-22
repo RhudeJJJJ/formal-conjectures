@@ -1,0 +1,52 @@
+{
+  "repository": "RhudeJJJJ/formal-conjectures",
+  "run": 39852834387,
+  "job": 120083254484,
+  "source_commit": "d3e3e930b7d8e92deed18fee1d9aca65c91b43a5",
+  "artifact_id": 12457977556,
+  "artifact_sha256": "7fdd97877870f863ebb8a0961eaff58d59d07ec2dde75928705337f84a120202",
+  "lean_version": "4.33.1",
+  "mathlib": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "modules": {
+    "Proofs.RadenkovicGutmanNestedAffineComplete": {
+      "module": "Proofs.RadenkovicGutmanNestedAffineComplete",
+      "source_sha256": "dfd5c99bda99bb3ae077281cdeed4472c510df032f9dca03e216510665c8943e",
+      "source_closure_sha256": "82fe0db0cb7d6c38f9c71ae56b6e64286e360eb854d7be5e2eeef2b31ea9a803",
+      "output_sha256": "72b85e26c01d54afb34a5860f9d0eb2be867f0c6b4e0baf14afcd723f6cc887a",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "FRESH_KERNEL_EXPORT",
+      "seconds": 2.22
+    },
+    "Proofs.RadenkovicGutmanPackedIntegerSemanticAffine": {
+      "module": "Proofs.RadenkovicGutmanPackedIntegerSemanticAffine",
+      "source_sha256": "d1f8dadf6b645ed48faff46bef50940b9a58225f28b14e02030955b7b1b9cd32",
+      "source_closure_sha256": "6b6e7ba168734da39fba47ce413ab2583cf8089eb16c4e32c236a7d0c91af1ef",
+      "output_sha256": "a2c0373638eb5281b332ba85035ea0c06c399fee6742f6760fdac7ddc8e799f0",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "FRESH_KERNEL_EXPORT",
+      "seconds": 2.62
+    }
+  }
+}

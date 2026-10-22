@@ -48,7 +48,7 @@ jobs:
               for dep in re.findall(r'^\s*import\s+([\w.]+)', source, re.M):
                   if dep.startswith('Proofs.'):
                       visit(dep)
-                  else:
+                  elif not dep.startswith(('Lean.', 'Init.', 'Std.')) and dep not in ('Lean','Init','Std'):
                       external.add(dep)
           visit('${{ matrix.endpoint }}')
           subprocess.run(['lake', 'exe', 'cache', 'get', *sorted(external)], check=True)

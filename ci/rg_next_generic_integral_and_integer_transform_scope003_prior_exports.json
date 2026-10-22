@@ -1,0 +1,88 @@
+{
+  "repository": "RhudeJJJJ/formal-conjectures",
+  "run": 39863997243,
+  "job": 120121482279,
+  "source_commit": "0b76a5a953b2507c3e106b201e0ba2ae36f5ce2f",
+  "artifact_id": 12463875095,
+  "artifact_sha256": "ccbb412fa2f78a044b5eafd8ea474c68fa2500627773eb4c6ff3ef4ddb3ef09c",
+  "lean_version": "4.33.1",
+  "mathlib": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "modules": {
+    "Proofs.RadenkovicGutmanIntegerDataElaboration": {
+      "module": "Proofs.RadenkovicGutmanIntegerDataElaboration",
+      "source_sha256": "49f234a0993a258be62c3fa8d9efeb05ed1c6418c9b11ea568c2bdba65da4a3b",
+      "source_closure_sha256": "f5a62b8635d8e1f5d0404d8ad175c21ba277f494f2b082228f3f7938506a33f8",
+      "output_sha256": "c9901392a969fda85490e72bf67206c6489bba466702fb8964b373bcd223b4a3",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        []
+      ],
+      "mode": "FRESH_KERNEL_EXPORT",
+      "seconds": 2.32
+    },
+    "Proofs.RadenkovicGutmanIntegerLiteral": {
+      "module": "Proofs.RadenkovicGutmanIntegerLiteral",
+      "source_sha256": "f7a7b88ce30082079696e80953c801d58ec9f6972e9a4117cbd540e31b4e686c",
+      "source_closure_sha256": "3675a18ab27831aee25338c3525dd6e584ad248b288b05da0040159ded7a8e18",
+      "output_sha256": "f059dbb91f02e9ddf2633f0eaae0ebe46882fd05f25f961b55e24664e97592df",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "FRESH_KERNEL_EXPORT",
+      "seconds": 2.421
+    },
+    "Proofs.RadenkovicGutmanIntegerNormProgramPack": {
+      "module": "Proofs.RadenkovicGutmanIntegerNormProgramPack",
+      "source_sha256": "c6ee199f2bb9584c13f67b5b555b4fc599564b05ec20c10cf93171a24297a7bb",
+      "source_closure_sha256": "428716f93dd6ab1f3ae63f04c50807c5970e76ebb0146ca4dd5dc1ed4d81e0cc",
+      "output_sha256": "47cb7bc9bd4074b1ab4d9face862b419ffd142c1199075b61920f3159035cac2",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "FRESH_KERNEL_EXPORT",
+      "seconds": 3.022
+    },
+    "Proofs.RadenkovicGutmanLiteralIntegerCell": {
+      "module": "Proofs.RadenkovicGutmanLiteralIntegerCell",
+      "source_sha256": "5e4c3c6e2b6e4f6bff2eda5faafa17898f52b24c2dd9687ee99fcc1b4be8e9d9",
+      "source_closure_sha256": "705683fc5c858af645679b696d5c813a55d7c59efb10a0f736deff7ee8486661",
+      "output_sha256": "1f1cd8a4566db2fa797df423f0566fb07fe268f677ae0bcbc6016c25fa3a8336",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "FRESH_KERNEL_EXPORT",
+      "seconds": 2.571
+    }
+  }
+}

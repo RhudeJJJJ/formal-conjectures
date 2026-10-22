@@ -1,0 +1,52 @@
+{
+  "repository": "RhudeJJJJ/formal-conjectures",
+  "run": 39846670050,
+  "job": 120061646073,
+  "source_commit": "bdc4e2b186338383f40846e972242ac92c13ab59",
+  "artifact_id": 12456085539,
+  "artifact_sha256": "12ead6cbd1b25263f4846a9dc1065290f0c3e43b0c09cbba4724773d56ce52db",
+  "lean_version": "4.33.1",
+  "mathlib": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "modules": {
+    "Proofs.RadenkovicGutmanComputedClassCell": {
+      "module": "Proofs.RadenkovicGutmanComputedClassCell",
+      "source_sha256": "b358f479edb66e979eaa67c3a63ac04c10ea117a6c6585ffeab577476f9028c4",
+      "source_closure_sha256": "56a3526cb2bbc8b7b3c9fb6b178c8fa140317f3f932e89e91d163eb67407fd29",
+      "output_sha256": "aba47b801ef4d3d19252415396521d808007caab61e836b868c956ac27372041",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "FRESH_KERNEL_EXPORT",
+      "seconds": 1.918
+    },
+    "Proofs.RadenkovicGutmanNormProgramPack": {
+      "module": "Proofs.RadenkovicGutmanNormProgramPack",
+      "source_sha256": "599711cd553f4707beccfba4cf67c67dece6252637c7704a1e779964a22fe0ef",
+      "source_closure_sha256": "2719a85c9e93c9c8ab66b95cd7bba47f96dbefe272bbc22ab0aa80ea32025a81",
+      "output_sha256": "7853f5f57dcb91a73cdef1df058f1ed00ece2867ed3d80d0fe11502ad62eaa06",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "FRESH_KERNEL_EXPORT",
+      "seconds": 2.119
+    }
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "repository": "RhudeJJJJ/formal-conjectures",
+  "run": 39849992646,
+  "job": 120073270398,
+  "source_commit": "7fc83b45f8d62b8db71edd4a1d2237ac9cf00426",
+  "artifact_id": 12457017143,
+  "artifact_sha256": "86eac8c2ebf0a10c645d129181dda8bc629c9b0f16f9ef4c3fa9f4cc51055eac",
+  "lean_version": "4.33.1",
+  "mathlib": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "modules": {
+    "Proofs.RadenkovicGutmanIntegerComputedClassCell": {
+      "module": "Proofs.RadenkovicGutmanIntegerComputedClassCell",
+      "source_sha256": "32b2f687362cb0ae41527ef4714acfce7876bbebcb7a04296ed473770d5ff1e6",
+      "source_closure_sha256": "165e879bfc9a13bc413490f666a7b3f57a814159fb104f2f0659287b83f38cf5",
+      "output_sha256": "3d7e504a437338f0f64a43eb73e923ce5997bd4f43fcc1fbfcfb5a6b1d04540f",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "FRESH_KERNEL_EXPORT",
+      "seconds": 2.622
+    },
+    "Proofs.RadenkovicGutmanNestedIntegerAffine": {
+      "module": "Proofs.RadenkovicGutmanNestedIntegerAffine",
+      "source_sha256": "40c7a57395fc02009c707ce915b4dde0ca5e2c889cc4ef1b0119e1dc204639b7",
+      "source_closure_sha256": "6fcd929f44d8f9a3278da4f2ab4a649a8d70216557f6562dceacae6439d5ba72",
+      "output_sha256": "2521347d1637d316659f32a9b789b1d897d4e35316e1efab3a6cf8c970512ab5",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "FRESH_KERNEL_EXPORT",
+      "seconds": 3.875
+    },
+    "Proofs.RadenkovicGutmanNestedPositiveScale": {
+      "module": "Proofs.RadenkovicGutmanNestedPositiveScale",
+      "source_sha256": "58ffdcdd35d8ab0e883a205a1f7c4ebc3114b9c9fa7ecf3acb6e053816c8921a",
+      "source_closure_sha256": "fc9474ae6cb7cd6171e814bb79c39f05bb798390bdb0b1c7e017b701e59362a3",
+      "output_sha256": "6ed8c5de2b8cd2fd134522e957db26d5292abbdd41f4b765b69cb6f9db75c3d5",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "FRESH_KERNEL_EXPORT",
+      "seconds": 2.472
+    },
+    "Proofs.RadenkovicGutmanPackedIntegerClassCell": {
+      "module": "Proofs.RadenkovicGutmanPackedIntegerClassCell",
+      "source_sha256": "d562e23a3f096a66edf8ca271b2904fd7d5e5393d48d5a4f394df62feb0ad5ae",
+      "source_closure_sha256": "0d62ec82931e28c0a53e68e1215263b97041026c92fcb854480da0d802ef5130",
+      "output_sha256": "a38599768439b231e6b6779c2d3744d58d2ca755759f26d5ce24316bd3cbf082",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "FRESH_KERNEL_EXPORT",
+      "seconds": 2.522
+    }
+  }
+}

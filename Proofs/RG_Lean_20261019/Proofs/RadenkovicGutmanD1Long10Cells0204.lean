@@ -1,3 +1,5 @@
 /- Copyright 2026 Jonas J. Gebendorfer. Apache 2.0. -/
 import Proofs.RadenkovicGutmanD1Long10Leaf00408
 import Proofs.RadenkovicGutmanD1Long10Leaf00409
+#print axioms Gebendorfer.RadenkovicGutman.DegreeOneLongClass10.leaf00408_checked
+#print axioms Gebendorfer.RadenkovicGutman.DegreeOneLongClass10.leaf00409_checked

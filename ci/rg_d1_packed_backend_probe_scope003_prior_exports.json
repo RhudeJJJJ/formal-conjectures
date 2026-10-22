@@ -1,0 +1,42 @@
+{
+  "repository": "RhudeJJJJ/formal-conjectures",
+  "run": 39840868637,
+  "job": 120041203245,
+  "source_commit": "acfbe187a3d062fccb3da255c8532b8152789d4b",
+  "artifact_id": 12451564621,
+  "artifact_sha256": "f11c76f9ea78344dce07243cff44c3e072d5e6396a82804daba7ce26e01ad60b",
+  "lean_version": "4.33.1",
+  "mathlib": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "modules": {
+    "Proofs.RadenkovicGutmanFastArmCover": {
+      "module": "Proofs.RadenkovicGutmanFastArmCover",
+      "source_sha256": "af3d51d9887fb225108dd8f70297db88e4d189c03343c41c9bdf96ca80be64eb",
+      "source_closure_sha256": "458ced9219769a1cc6525966d4d75fbeeeac2d23f36a25aeae6e42d0a72bc1b8",
+      "output_sha256": "2bc7e095e4114dc17bab8fdba58e01de1fa2488ec54e8c683697534484585ef7",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "FRESH_KERNEL_EXPORT",
+      "seconds": 2.27
+    },
+    "Proofs.RadenkovicGutmanFastRectangularCell": {
+      "module": "Proofs.RadenkovicGutmanFastRectangularCell",
+      "source_sha256": "33f29f6979bd80a4253080695c2f4a36a13f7dd21d7609f3f4c5e16b25c673c6",
+      "source_closure_sha256": "dd4acfbcae08d0afa457ad67302fecb15f5ac96cb01189a47c9bb5cfbed84984",
+      "output_sha256": "62572c32801596e829d057e7b6416cc36aa845b73969a4d03f338b35704b78cc",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "FRESH_KERNEL_EXPORT",
+      "seconds": 2.57
+    }
+  }
+}

@@ -1,50 +1,8 @@
 name: RG degree one long norm packs
 
+# Retained for manual replay; automatic checking uses the shared split scope.
 on:
-  push:
-    branches: [rg-remaining-six-spectral-20261021]
-    paths:
-      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanComputedClassCell.lean'
-      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanD1Norm00JDirect.lean'
-      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanD1Norm00JInverse.lean'
-      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanD1Norm00Pack.lean'
-      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanD1Norm00UDirect.lean'
-      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanD1Norm00UInverse.lean'
-      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanD1Norm00VDirect.lean'
-      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanD1Norm00VInverse.lean'
-      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanD1Norm10JDirect.lean'
-      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanD1Norm10JInverse.lean'
-      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanD1Norm10Pack.lean'
-      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanD1Norm10UDirect.lean'
-      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanD1Norm10UInverse.lean'
-      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanD1Norm10VDirect.lean'
-      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanD1Norm10VInverse.lean'
-      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanD1Norm20JDirect.lean'
-      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanD1Norm20JInverse.lean'
-      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanD1Norm20Pack.lean'
-      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanD1Norm20UDirect.lean'
-      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanD1Norm20UInverse.lean'
-      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanD1Norm20VDirect.lean'
-      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanD1Norm20VInverse.lean'
-      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanD1Norm30JDirect.lean'
-      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanD1Norm30JInverse.lean'
-      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanD1Norm30Pack.lean'
-      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanD1Norm30UDirect.lean'
-      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanD1Norm30UInverse.lean'
-      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanD1Norm30VDirect.lean'
-      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanD1Norm30VInverse.lean'
-      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanD1Norm40JDirect.lean'
-      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanD1Norm40JInverse.lean'
-      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanD1Norm40Pack.lean'
-      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanD1Norm40UDirect.lean'
-      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanD1Norm40UInverse.lean'
-      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanD1Norm40VDirect.lean'
-      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanD1Norm40VInverse.lean'
-      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanFastNestedCellData.lean'
-      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanFastNestedClassBoxes.lean'
-      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanNestedAffine.lean'
-      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanNormProgramPack.lean'
-      - '.github/workflows/rg-degree-one-long-norm-packs.yml'
+  workflow_dispatch:
 
 permissions:
   contents: read

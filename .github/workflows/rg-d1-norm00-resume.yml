@@ -1,17 +1,8 @@
 name: RG d1 norm00 resume
 
+# Retained for manual replay; automatic checking uses the shared split scope.
 on:
-  push:
-    branches: [rg-remaining-six-spectral-20261021]
-    paths:
-      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanD1Norm00JDirect.lean'
-      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanD1Norm00JInverse.lean'
-      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanD1Norm00Pack.lean'
-      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanD1Norm00UDirect.lean'
-      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanD1Norm00UInverse.lean'
-      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanD1Norm00VDirect.lean'
-      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanD1Norm00VInverse.lean'
-      - '.github/workflows/rg-d1-norm00-resume.yml'
+  workflow_dispatch:
 
 permissions:
   contents: read

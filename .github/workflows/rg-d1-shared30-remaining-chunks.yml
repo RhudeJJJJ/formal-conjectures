@@ -1,0 +1,408 @@
+name: RG remaining exact class three long arm chunks
+
+on:
+  push:
+    branches: [rg-remaining-six-spectral-20261021]
+    paths: ['.github/workflows/rg-d1-shared30-remaining-chunks.yml']
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  check:
+    strategy:
+      fail-fast: false
+      max-parallel: 8
+      matrix:
+        include:
+          - tag: '30'
+            chunk: 18
+            endpoint: Proofs.RadenkovicGutmanD1Long30Chunk018
+          - tag: '30'
+            chunk: 20
+            endpoint: Proofs.RadenkovicGutmanD1Long30Chunk020
+          - tag: '30'
+            chunk: 21
+            endpoint: Proofs.RadenkovicGutmanD1Long30Chunk021
+          - tag: '30'
+            chunk: 22
+            endpoint: Proofs.RadenkovicGutmanD1Long30Chunk022
+          - tag: '30'
+            chunk: 23
+            endpoint: Proofs.RadenkovicGutmanD1Long30Chunk023
+          - tag: '30'
+            chunk: 25
+            endpoint: Proofs.RadenkovicGutmanD1Long30Chunk025
+          - tag: '30'
+            chunk: 26
+            endpoint: Proofs.RadenkovicGutmanD1Long30Chunk026
+          - tag: '30'
+            chunk: 28
+            endpoint: Proofs.RadenkovicGutmanD1Long30Chunk028
+          - tag: '30'
+            chunk: 29
+            endpoint: Proofs.RadenkovicGutmanD1Long30Chunk029
+          - tag: '30'
+            chunk: 31
+            endpoint: Proofs.RadenkovicGutmanD1Long30Chunk031
+          - tag: '30'
+            chunk: 32
+            endpoint: Proofs.RadenkovicGutmanD1Long30Chunk032
+          - tag: '30'
+            chunk: 33
+            endpoint: Proofs.RadenkovicGutmanD1Long30Chunk033
+          - tag: '30'
+            chunk: 34
+            endpoint: Proofs.RadenkovicGutmanD1Long30Chunk034
+          - tag: '30'
+            chunk: 35
+            endpoint: Proofs.RadenkovicGutmanD1Long30Chunk035
+          - tag: '30'
+            chunk: 36
+            endpoint: Proofs.RadenkovicGutmanD1Long30Chunk036
+          - tag: '30'
+            chunk: 37
+            endpoint: Proofs.RadenkovicGutmanD1Long30Chunk037
+          - tag: '30'
+            chunk: 38
+            endpoint: Proofs.RadenkovicGutmanD1Long30Chunk038
+          - tag: '30'
+            chunk: 39
+            endpoint: Proofs.RadenkovicGutmanD1Long30Chunk039
+          - tag: '30'
+            chunk: 40
+            endpoint: Proofs.RadenkovicGutmanD1Long30Chunk040
+          - tag: '30'
+            chunk: 41
+            endpoint: Proofs.RadenkovicGutmanD1Long30Chunk041
+          - tag: '30'
+            chunk: 42
+            endpoint: Proofs.RadenkovicGutmanD1Long30Chunk042
+          - tag: '30'
+            chunk: 43
+            endpoint: Proofs.RadenkovicGutmanD1Long30Chunk043
+          - tag: '30'
+            chunk: 44
+            endpoint: Proofs.RadenkovicGutmanD1Long30Chunk044
+          - tag: '30'
+            chunk: 45
+            endpoint: Proofs.RadenkovicGutmanD1Long30Chunk045
+          - tag: '30'
+            chunk: 46
+            endpoint: Proofs.RadenkovicGutmanD1Long30Chunk046
+          - tag: '30'
+            chunk: 47
+            endpoint: Proofs.RadenkovicGutmanD1Long30Chunk047
+          - tag: '30'
+            chunk: 48
+            endpoint: Proofs.RadenkovicGutmanD1Long30Chunk048
+          - tag: '30'
+            chunk: 49
+            endpoint: Proofs.RadenkovicGutmanD1Long30Chunk049
+          - tag: '30'
+            chunk: 51
+            endpoint: Proofs.RadenkovicGutmanD1Long30Chunk051
+          - tag: '30'
+            chunk: 52
+            endpoint: Proofs.RadenkovicGutmanD1Long30Chunk052
+          - tag: '30'
+            chunk: 54
+            endpoint: Proofs.RadenkovicGutmanD1Long30Chunk054
+          - tag: '30'
+            chunk: 55
+            endpoint: Proofs.RadenkovicGutmanD1Long30Chunk055
+          - tag: '30'
+            chunk: 56
+            endpoint: Proofs.RadenkovicGutmanD1Long30Chunk056
+          - tag: '30'
+            chunk: 57
+            endpoint: Proofs.RadenkovicGutmanD1Long30Chunk057
+          - tag: '30'
+            chunk: 59
+            endpoint: Proofs.RadenkovicGutmanD1Long30Chunk059
+          - tag: '30'
+            chunk: 61
+            endpoint: Proofs.RadenkovicGutmanD1Long30Chunk061
+          - tag: '30'
+            chunk: 62
+            endpoint: Proofs.RadenkovicGutmanD1Long30Chunk062
+          - tag: '30'
+            chunk: 63
+            endpoint: Proofs.RadenkovicGutmanD1Long30Chunk063
+          - tag: '30'
+            chunk: 65
+            endpoint: Proofs.RadenkovicGutmanD1Long30Chunk065
+          - tag: '30'
+            chunk: 68
+            endpoint: Proofs.RadenkovicGutmanD1Long30Chunk068
+          - tag: '30'
+            chunk: 69
+            endpoint: Proofs.RadenkovicGutmanD1Long30Chunk069
+          - tag: '30'
+            chunk: 70
+            endpoint: Proofs.RadenkovicGutmanD1Long30Chunk070
+          - tag: '30'
+            chunk: 72
+            endpoint: Proofs.RadenkovicGutmanD1Long30Chunk072
+          - tag: '30'
+            chunk: 74
+            endpoint: Proofs.RadenkovicGutmanD1Long30Chunk074
+          - tag: '30'
+            chunk: 75
+            endpoint: Proofs.RadenkovicGutmanD1Long30Chunk075
+          - tag: '30'
+            chunk: 76
+            endpoint: Proofs.RadenkovicGutmanD1Long30Chunk076
+          - tag: '30'
+            chunk: 77
+            endpoint: Proofs.RadenkovicGutmanD1Long30Chunk077
+          - tag: '30'
+            chunk: 78
+            endpoint: Proofs.RadenkovicGutmanD1Long30Chunk078
+          - tag: '30'
+            chunk: 79
+            endpoint: Proofs.RadenkovicGutmanD1Long30Chunk079
+          - tag: '30'
+            chunk: 80
+            endpoint: Proofs.RadenkovicGutmanD1Long30Chunk080
+          - tag: '30'
+            chunk: 81
+            endpoint: Proofs.RadenkovicGutmanD1Long30Chunk081
+          - tag: '30'
+            chunk: 82
+            endpoint: Proofs.RadenkovicGutmanD1Long30Chunk082
+          - tag: '30'
+            chunk: 83
+            endpoint: Proofs.RadenkovicGutmanD1Long30Chunk083
+          - tag: '30'
+            chunk: 84
+            endpoint: Proofs.RadenkovicGutmanD1Long30Chunk084
+          - tag: '30'
+            chunk: 85
+            endpoint: Proofs.RadenkovicGutmanD1Long30Chunk085
+          - tag: '30'
+            chunk: 86
+            endpoint: Proofs.RadenkovicGutmanD1Long30Chunk086
+          - tag: '30'
+            chunk: 87
+            endpoint: Proofs.RadenkovicGutmanD1Long30Chunk087
+          - tag: '30'
+            chunk: 88
+            endpoint: Proofs.RadenkovicGutmanD1Long30Chunk088
+          - tag: '30'
+            chunk: 89
+            endpoint: Proofs.RadenkovicGutmanD1Long30Chunk089
+          - tag: '30'
+            chunk: 90
+            endpoint: Proofs.RadenkovicGutmanD1Long30Chunk090
+          - tag: '30'
+            chunk: 91
+            endpoint: Proofs.RadenkovicGutmanD1Long30Chunk091
+          - tag: '30'
+            chunk: 92
+            endpoint: Proofs.RadenkovicGutmanD1Long30Chunk092
+          - tag: '30'
+            chunk: 93
+            endpoint: Proofs.RadenkovicGutmanD1Long30Chunk093
+          - tag: '30'
+            chunk: 94
+            endpoint: Proofs.RadenkovicGutmanD1Long30Chunk094
+          - tag: '30'
+            chunk: 95
+            endpoint: Proofs.RadenkovicGutmanD1Long30Chunk095
+          - tag: '30'
+            chunk: 96
+            endpoint: Proofs.RadenkovicGutmanD1Long30Chunk096
+          - tag: '30'
+            chunk: 97
+            endpoint: Proofs.RadenkovicGutmanD1Long30Chunk097
+          - tag: '30'
+            chunk: 98
+            endpoint: Proofs.RadenkovicGutmanD1Long30Chunk098
+          - tag: '30'
+            chunk: 99
+            endpoint: Proofs.RadenkovicGutmanD1Long30Chunk099
+          - tag: '30'
+            chunk: 100
+            endpoint: Proofs.RadenkovicGutmanD1Long30Chunk100
+          - tag: '30'
+            chunk: 101
+            endpoint: Proofs.RadenkovicGutmanD1Long30Chunk101
+          - tag: '30'
+            chunk: 102
+            endpoint: Proofs.RadenkovicGutmanD1Long30Chunk102
+          - tag: '30'
+            chunk: 103
+            endpoint: Proofs.RadenkovicGutmanD1Long30Chunk103
+          - tag: '30'
+            chunk: 104
+            endpoint: Proofs.RadenkovicGutmanD1Long30Chunk104
+          - tag: '30'
+            chunk: 105
+            endpoint: Proofs.RadenkovicGutmanD1Long30Chunk105
+          - tag: '30'
+            chunk: 106
+            endpoint: Proofs.RadenkovicGutmanD1Long30Chunk106
+          - tag: '30'
+            chunk: 107
+            endpoint: Proofs.RadenkovicGutmanD1Long30Chunk107
+          - tag: '30'
+            chunk: 108
+            endpoint: Proofs.RadenkovicGutmanD1Long30Chunk108
+          - tag: '30'
+            chunk: 109
+            endpoint: Proofs.RadenkovicGutmanD1Long30Chunk109
+          - tag: '30'
+            chunk: 110
+            endpoint: Proofs.RadenkovicGutmanD1Long30Chunk110
+          - tag: '30'
+            chunk: 111
+            endpoint: Proofs.RadenkovicGutmanD1Long30Chunk111
+          - tag: '30'
+            chunk: 112
+            endpoint: Proofs.RadenkovicGutmanD1Long30Chunk112
+          - tag: '30'
+            chunk: 113
+            endpoint: Proofs.RadenkovicGutmanD1Long30Chunk113
+          - tag: '30'
+            chunk: 114
+            endpoint: Proofs.RadenkovicGutmanD1Long30Chunk114
+          - tag: '30'
+            chunk: 115
+            endpoint: Proofs.RadenkovicGutmanD1Long30Chunk115
+          - tag: '30'
+            chunk: 116
+            endpoint: Proofs.RadenkovicGutmanD1Long30Chunk116
+          - tag: '30'
+            chunk: 117
+            endpoint: Proofs.RadenkovicGutmanD1Long30Chunk117
+          - tag: '30'
+            chunk: 118
+            endpoint: Proofs.RadenkovicGutmanD1Long30Chunk118
+          - tag: '30'
+            chunk: 119
+            endpoint: Proofs.RadenkovicGutmanD1Long30Chunk119
+          - tag: '30'
+            chunk: 120
+            endpoint: Proofs.RadenkovicGutmanD1Long30Chunk120
+          - tag: '30'
+            chunk: 121
+            endpoint: Proofs.RadenkovicGutmanD1Long30Chunk121
+          - tag: '30'
+            chunk: 122
+            endpoint: Proofs.RadenkovicGutmanD1Long30Chunk122
+          - tag: '30'
+            chunk: 123
+            endpoint: Proofs.RadenkovicGutmanD1Long30Chunk123
+          - tag: '30'
+            chunk: 124
+            endpoint: Proofs.RadenkovicGutmanD1Long30Chunk124
+          - tag: '30'
+            chunk: 125
+            endpoint: Proofs.RadenkovicGutmanD1Long30Chunk125
+          - tag: '30'
+            chunk: 126
+            endpoint: Proofs.RadenkovicGutmanD1Long30Chunk126
+          - tag: '30'
+            chunk: 127
+            endpoint: Proofs.RadenkovicGutmanD1Long30Chunk127
+          - tag: '30'
+            chunk: 128
+            endpoint: Proofs.RadenkovicGutmanD1Long30Chunk128
+          - tag: '30'
+            chunk: 129
+            endpoint: Proofs.RadenkovicGutmanD1Long30Chunk129
+          - tag: '30'
+            chunk: 130
+            endpoint: Proofs.RadenkovicGutmanD1Long30Chunk130
+          - tag: '30'
+            chunk: 131
+            endpoint: Proofs.RadenkovicGutmanD1Long30Chunk131
+          - tag: '30'
+            chunk: 132
+            endpoint: Proofs.RadenkovicGutmanD1Long30Chunk132
+          - tag: '30'
+            chunk: 133
+            endpoint: Proofs.RadenkovicGutmanD1Long30Chunk133
+          - tag: '30'
+            chunk: 134
+            endpoint: Proofs.RadenkovicGutmanD1Long30Chunk134
+          - tag: '30'
+            chunk: 135
+            endpoint: Proofs.RadenkovicGutmanD1Long30Chunk135
+          - tag: '30'
+            chunk: 136
+            endpoint: Proofs.RadenkovicGutmanD1Long30Chunk136
+    runs-on: ubuntu-24.04
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          persist-credentials: false
+      - name: Materialize exact unproved leaf sources from pinned rational data
+        run: python3 -B ci/rg_materialize_shared_arm.py --tag ${{ matrix.tag }} --chunk ${{ matrix.chunk }}
+      - name: Install the project toolchain
+        run: |
+          set -o pipefail
+          curl -sSfL https://github.com/leanprover/elan/releases/download/v1.4.2/elan-x86_64-unknown-linux-gnu.tar.gz | tar xz
+          ./elan-init -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Materialize the exact dependency lock
+        run: python3 -B ci/rg_dependencies.py
+      - name: Fetch the required Mathlib cache
+        run: |
+          python3 - <<'PY'
+          import pathlib, re, subprocess
+          root = pathlib.Path('Proofs/RG_Lean_20261019')
+          seen, external = set(), set()
+          def visit(name):
+              if name in seen:
+                  return
+              seen.add(name)
+              source = (root / (name.replace('.', '/') + '.lean')).read_text()
+              for dep in re.findall(r'^\s*import\s+([\w.]+)', source, re.M):
+                  if dep.startswith('Proofs.'):
+                      visit(dep)
+                  elif not dep.startswith(('Lean.', 'Init.', 'Std.')) and dep not in ('Lean','Init','Std'):
+                      external.add(dep)
+          visit('${{ matrix.endpoint }}')
+          subprocess.run(['lake', 'exe', 'cache', 'get', *sorted(external)], check=True)
+          PY
+      - name: Restore one independently audited complete source-bound base scope
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 -B ci/rg_restore_complete_scope.py --manifest ci/rg_shared_arm_kernel_base_complete_scope_capsule.json --build-directory Proofs/RG_Lean_20261019/build/extension
+      - name: Check multiplicities and actual graph spectral comparison
+        shell: bash
+        run: |
+          set -o pipefail
+          python3 -B Proofs/RG_Lean_20261019/verify_extension.py --mathlib-project "$GITHUB_WORKSPACE" --endpoint ${{ matrix.endpoint }} --workers 1 --module-timeout 900 --resume | python3 -B ci/rg_compact_ci_output.py
+      - name: Retain completed records and diagnostics
+        if: always()
+        run: |
+          python3 - <<'PY'
+          import json,pathlib,shutil
+          root=pathlib.Path('Proofs/RG_Lean_20261019/build/extension')
+          records=[json.loads(p.read_text()) for p in sorted(root.glob('Proofs.*.json'))]
+          fresh=root.parent/'fresh_exports';fresh.mkdir(parents=True,exist_ok=True)
+          (fresh/'diagnostics_records.json').write_text(json.dumps({'modules':records},separators=(',',':'))+'\n')
+          if (root/'receipt.json').is_file():shutil.copyfile(root/'receipt.json',fresh/'receipt.json')
+          print('RETAINED_RECORD_COUNTS '+json.dumps({'total':len(records),'fresh':sum(r['mode']=='FRESH_KERNEL_EXPORT' for r in records)}))
+          for row in records:
+              if row['mode']=='FRESH_KERNEL_EXPORT':
+                  name=row['module'];rel=name.replace('.','/')+'.olean';dest=fresh/rel
+                  dest.parent.mkdir(parents=True,exist_ok=True)
+                  shutil.copyfile(root/rel,dest);shutil.copyfile(root/(name+'.json'),fresh/(name+'.json'))
+                  source=pathlib.Path('Proofs/RG_Lean_20261019')/(name.replace('.','/')+'.lean')
+                  target=fresh/'sources'/(name.replace('.','/')+'.lean');target.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(source,target)
+          for log in root.glob('Proofs.*.log'):
+              shutil.copyfile(log,fresh/log.name);print('MODULE_LOG_TAIL '+log.name+' '+log.read_text()[-18000:])
+          PY
+      - name: Retain new exports only
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: rg-d1-shared30-remaining-chunks-exports-${{ github.run_id }}-${{ strategy.job-index }}
+          path: Proofs/RG_Lean_20261019/build/fresh_exports
+          retention-days: 7

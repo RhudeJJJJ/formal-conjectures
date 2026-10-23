@@ -139,7 +139,8 @@ theorem centerList_sound (x : ℚ) : ofList (centerList x)=GeneralPathPolynomial
     GeneralPathPolynomials.centerPoly]
   ring
 theorem scaleList_sound : ofList scaleList=GeneralPathPolynomials.scalePoly := by
-  norm_num [scaleList,ofList,GeneralPathPolynomials.scalePoly,Polynomial.C_ofNat] <;> ring
+  simpa only [scaleList,ofList,Polynomial.C_ofNat,map_zero,mul_zero,add_zero,zero_add,
+    GeneralPathPolynomials.scalePoly] using (mul_comm (X : ℚ[X]) (2 : ℚ[X]))
 theorem sourceCenterList_sound (x : ℚ) (p q : ℕ) :
     ofList (sourceCenterList x p q)=GeneralPathPolynomials.sourceCenter x p q := by
   simp only [sourceCenterList,ofList_minus,ofList_mul,sourceSlopeList_sound,

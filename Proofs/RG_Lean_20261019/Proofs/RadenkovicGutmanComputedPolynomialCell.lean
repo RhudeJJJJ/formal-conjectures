@@ -1,6 +1,7 @@
 /- Copyright 2026 Jonas J. Gebendorfer. Apache 2.0. -/
 import Proofs.RadenkovicGutmanComputedGeneralPathData
 import Proofs.RadenkovicGutmanFastPolynomialPaymentCell
+import Proofs.RadenkovicGutmanTailIntegral
 
 /-! Compact data use the proved coefficient programs and affine identities.
 The original fast-cell theorem still supplies the actual-matrix integral bound. -/

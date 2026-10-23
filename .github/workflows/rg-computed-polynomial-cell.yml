@@ -94,3 +94,5 @@ jobs:
           name: rg-computed-polynomial-cell-exports-${{ github.run_id }}-${{ strategy.job-index }}
           path: Proofs/RG_Lean_20261019/build/fresh_exports
           retention-days: 7
+
+# Retain the interval-integrability theorem explicitly in this endpoint closure.

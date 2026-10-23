@@ -1,0 +1,18 @@
+/- Copyright 2026 Jonas J. Gebendorfer. Apache 2.0. -/
+import Proofs.RadenkovicGutmanMeanHornerKernelBase
+import Proofs.RadenkovicGutmanMeanAnchor221PositiveTail
+import Proofs.RadenkovicGutmanMeanAnchor220FastPolynomialCell175
+import Proofs.RadenkovicGutmanMeanAnchor221Origin
+import Proofs.RadenkovicGutmanMeanAnchor220PositiveTail
+import Proofs.RadenkovicGutmanMeanAnchor221FastPolynomialCell175
+import Proofs.RadenkovicGutmanMeanAnchor220Origin
+#print axioms Gebendorfer.RadenkovicGutman.MeanAnchor220FastPolynomialCell175.actual_integral
+#print axioms Gebendorfer.RadenkovicGutman.MeanAnchor220Origin.actual_integral
+#print axioms Gebendorfer.RadenkovicGutman.MeanAnchor220PolynomialBase.path_checked
+#print axioms Gebendorfer.RadenkovicGutman.MeanAnchor220PolynomialBase.norms_checked
+#print axioms Gebendorfer.RadenkovicGutman.MeanAnchor220PositiveTail.actual_integral
+#print axioms Gebendorfer.RadenkovicGutman.MeanAnchor221FastPolynomialCell175.actual_integral
+#print axioms Gebendorfer.RadenkovicGutman.MeanAnchor221Origin.actual_integral
+#print axioms Gebendorfer.RadenkovicGutman.MeanAnchor221PolynomialBase.path_checked
+#print axioms Gebendorfer.RadenkovicGutman.MeanAnchor221PolynomialBase.norms_checked
+#print axioms Gebendorfer.RadenkovicGutman.MeanAnchor221PositiveTail.actual_integral

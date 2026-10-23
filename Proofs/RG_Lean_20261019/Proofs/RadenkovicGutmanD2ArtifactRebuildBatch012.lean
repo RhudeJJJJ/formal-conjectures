@@ -1,0 +1,12 @@
+/- Copyright 2026 Jonas J. Gebendorfer. Apache 2.0. -/
+import Proofs.RadenkovicGutmanDegreeTwoThreeSpectrum6875
+import Proofs.RadenkovicGutmanDegreeTwoThreeSpectrum6876
+import Proofs.RadenkovicGutmanDegreeTwoThreeSpectrum6877
+import Proofs.RadenkovicGutmanDegreeTwoThreeSpectrum6878
+import Proofs.RadenkovicGutmanDegreeTwoThreeSpectrum6879
+
+#print axioms Gebendorfer.RadenkovicGutman.DegreeTwoThreeSpectrum6875.actual_graph_bounds
+#print axioms Gebendorfer.RadenkovicGutman.DegreeTwoThreeSpectrum6876.actual_graph_bounds
+#print axioms Gebendorfer.RadenkovicGutman.DegreeTwoThreeSpectrum6877.actual_graph_bounds
+#print axioms Gebendorfer.RadenkovicGutman.DegreeTwoThreeSpectrum6878.actual_graph_bounds
+#print axioms Gebendorfer.RadenkovicGutman.DegreeTwoThreeSpectrum6879.actual_graph_bounds

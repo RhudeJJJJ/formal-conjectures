@@ -6,15 +6,27 @@ import Proofs.RadenkovicGutmanRationalPolynomialAffineIntegral
 namespace Gebendorfer.RadenkovicGutman.PolynomialPaymentCell
 open Polynomial PolynomialPathMap RationalComplexPolynomial RationalPolynomialCell
 open Set MeasureTheory
+open scoped Classical
 noncomputable section
 set_option maxHeartbeats 0
+set_option backward.isDefEq.respectTransparency false
 
 structure Cell where
-  a b : ℚ
-  s L pay primitive : List ℚ
-  c R unitIntegral total : ℚ
-  k n : ℕ
-  comparisonDegree nDegree eDegree : ℕ
+  a : ℚ
+  b : ℚ
+  s : List ℚ
+  L : List ℚ
+  pay : List ℚ
+  primitive : List ℚ
+  c : ℚ
+  R : ℚ
+  unitIntegral : ℚ
+  total : ℚ
+  k : ℕ
+  n : ℕ
+  comparisonDegree : ℕ
+  nDegree : ℕ
+  eDegree : ℕ
   sCoefficients : Fin 3 → ℚ
   lowerCoefficients : Fin 5 → ℚ
   comparisonCoefficients : Fin (comparisonDegree+1) → ℚ

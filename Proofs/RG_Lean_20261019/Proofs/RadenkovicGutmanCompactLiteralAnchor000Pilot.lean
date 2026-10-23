@@ -9,6 +9,7 @@ set_option maxRecDepth 100000
 set_option backward.isDefEq.respectTransparency false
 abbrev witness := CompactAnchor000Cell000.witness
 theorem checked : ComputedPolynomialCell.checks data witness=true := by decide +kernel
+open scoped Classical
 noncomputable section
 theorem actual_integral {V : Type*} [Fintype V] [DecidableEq V]
     (G : SimpleGraph V) (u : V) (hd : G.degree u=1) :

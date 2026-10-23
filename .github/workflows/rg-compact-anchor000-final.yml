@@ -92,3 +92,5 @@ jobs:
           name: rg-compact-anchor000-final-exports-${{ github.run_id }}-${{ strategy.job-index }}
           path: Proofs/RG_Lean_20261019/build/fresh_exports
           retention-days: 30
+
+# The terminal empty-list obligation is proved by elimination of impossible membership.

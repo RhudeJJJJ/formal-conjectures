@@ -1,0 +1,51 @@
+name: Chen and Burghart exact proof certificates
+on:
+  push:
+    branches: [proof-chen-burghart-20261023]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  certificates:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          persist-credentials: false
+      - name: Install pinned Lean
+        run: |
+          curl -sSfL https://github.com/leanprover/elan/releases/download/v1.4.2/elan-x86_64-unknown-linux-gnu.tar.gz | tar xz
+          ./elan-init -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> $GITHUB_PATH
+      - name: Get pinned Mathlib cache
+        run: lake exe cache get
+      - uses: actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9
+        with:
+          path: .lake/build
+          key: chen-burghart-imports-${{ hashFiles('lean-toolchain', 'lake-manifest.json') }}-${{ github.sha }}
+          restore-keys: |
+            chen-burghart-imports-${{ hashFiles('lean-toolchain', 'lake-manifest.json') }}-
+            round9-imports-${{ hashFiles('lean-toolchain', 'lake-manifest.json') }}-
+            round8-imports-${{ hashFiles('lean-toolchain', 'lake-manifest.json') }}-
+      - name: Build exact Chen statement
+        run: lake --wfail build FormalConjectures.Paper.ChenTotalDomination
+      - uses: actions/cache/save@55cc8345863c7cc4c66a329aec7e433d2d1c52a9
+        with:
+          path: .lake/build
+          key: chen-burghart-imports-${{ hashFiles('lean-toolchain', 'lake-manifest.json') }}-${{ github.sha }}
+      - name: Check complete Chen proof and exact endpoint
+        run: |
+          mkdir -p .lake/build/lib/lean/Proofs
+          lake env lean -DwarningAsError=true -DautoImplicit=false -DrelaxedAutoImplicit=false -o .lake/build/lib/lean/Proofs/ChenFull.olean Proofs/ChenFull.lean | tee chen-proof.log
+          python3 - <<'PY'
+          import re
+          log = open('chen-proof.log').read()
+          expected = {'ChenCertificate.local_cover', 'ChenCertificate.partition_bound', 'Chen.DeltaComplement.full_conjecture4'}
+          rows = re.findall(r"'([^']+)' depends on axioms: \[([^\]]*)\]", log)
+          assert {n for n,_ in rows} == expected, rows
+          allowed = {'propext', 'Classical.choice', 'Quot.sound'}
+          for n, names in rows:
+              assert set(names.split(', ')) <= allowed, (n,names)
+          print('PASS: complete Chen proof, exact imported endpoint, standard axioms only')
+          PY

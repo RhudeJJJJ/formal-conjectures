@@ -51,6 +51,7 @@ lemma independent_component_representatives (S : Finset V) :
     subst E
     exact hab.ne rfl
 
+omit [DecidableRel G.Adj] in
 lemma distance_two_cover {D S : Finset V}
     (hD : G.IsTotalDominating (D : Set V)) (hSD : S ⊆ D) :
     ∃ F : Finset V,
@@ -120,6 +121,7 @@ lemma diameter_of_two_cover (hc : G.Connected) (F : Finset V)
         (v:=f i) (w:=p.getVert (5*j.val))
       have hiF := hd i
       have hjF := hd j
+      rw [heq] at hiF
       rw [heq, G.dist_comm (u:=f j) (v:=p.getVert (5*j.val))] at htri
       omega
     have h1 := hc.dist_triangle (u:=a) (v:=p.getVert (5*i.val))
@@ -142,7 +144,7 @@ lemma minimum_total_set (hc : G.Connected) (ho : 1 < Fintype.card V) :
       D.card=G.totalDominationNumber := by
   classical
   let _ : Nontrivial V := Fintype.one_lt_card_iff_nontrivial.mp ho
-  have htd : G.IsTotalDominating (univ : Set V) := by
+  have htd : G.IsTotalDominating ((univ : Finset V) : Set V) := by
     intro v
     obtain ⟨w,hw⟩ := hc.preconnected.exists_adj_of_nontrivial v
     exact ⟨w,mem_univ w,hw⟩

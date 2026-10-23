@@ -140,5 +140,7 @@ lemma radius_midpoint_bound (hT : G.IsTree) :
   rw [G.dist_comm (u:=x) (v:=p.getVert i)] at hx
   dsimp [i] at hx
   rw [hlen,hab] at hx
+  dsimp [i]
+  rw [hlen,hab]
   rcases hx with hx | hx <;> omega
 end WOWIIGeometry

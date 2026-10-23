@@ -36,14 +36,32 @@ jobs:
           key: wowii361362-imports-${{ hashFiles('lean-toolchain', 'lake-manifest.json') }}-${{ github.sha }}
       - name: Check proof-development modules
         run: |
+          set -o pipefail
           mkdir -p .lake/build/lib/lean/Proofs/WOWII361362
           failed=0
-          for f in GeometryNumeric GraphCover TreeGeometry TreeCenter SupportComponents WOWII362Full WOWII361Full; do
+          for f in GeometryNumeric GraphCover TreeGeometry TreeCenter SupportComponents WOWII362Full WOWII361Full ExactAudit; do
             echo "CHECKING $f"
-            if lake env lean -DwarningAsError=true -DautoImplicit=false -DrelaxedAutoImplicit=false -o ".lake/build/lib/lean/Proofs/WOWII361362/$f.olean" "Proofs/WOWII361362/$f.lean"; then
+            if lake env lean -DwarningAsError=true -DautoImplicit=false -DrelaxedAutoImplicit=false -o ".lake/build/lib/lean/Proofs/WOWII361362/$f.olean" "Proofs/WOWII361362/$f.lean" | tee "$f.log"; then
               echo "PASSED $f"
             else
               failed=1
             fi
           done
-          exit "$failed"
+          if [ "$failed" -ne 0 ]; then exit "$failed"; fi
+          python3 - <<'PY'
+          import re
+          log=open('ExactAudit.log').read()
+          rows=dict(re.findall(r"'([^']+)' depends on axioms: \[([^\]]*)\]",log))
+          expected={
+            'WrittenOnTheWallII.GraphConjecture362.full_conjecture362',
+            'WrittenOnTheWallII.GraphConjecture362.full_conjecture362_diameter',
+            'WrittenOnTheWallII.GraphConjecture361.full_conjecture361',
+            'WrittenOnTheWallII.GraphConjecture361.full_conjecture361_nontrivial'}
+          allowed={'propext','Classical.choice','Quot.sound'}
+          for name in expected:
+              assert name in rows, (name,rows)
+              assert set(rows[name].split(', '))<=allowed,(name,rows[name])
+          assert 'sorryAx' in rows['WrittenOnTheWallII.GraphConjecture361.conjecture361']
+          assert log.count('EXACT TYPE:')==4
+          print('PASS: all four exact endpoints, kernel proofs, standard axioms only; admitted negative control rejected')
+          PY

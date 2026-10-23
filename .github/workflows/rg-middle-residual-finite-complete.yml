@@ -1,13 +1,10 @@
+# Historical restore route retained for explicit manual diagnostics; exact recovered final workflows handle active work.
 # Relative ci manifest paths validated against the real restore helper before restart.
 # Authorized bounded restart after fork Actions re-enabled, 2026-10-23.
 name: RG middle residual finite complete
 
 on:
-  push:
-    branches: [rg-remaining-six-spectral-20261021]
-    paths:
-      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneMiddleResidualFiniteAllCertificates.lean'
-      - '.github/workflows/rg-middle-residual-finite-complete.yml'
+  workflow_dispatch:
 
 permissions:
   contents: read

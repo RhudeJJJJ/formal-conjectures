@@ -36,6 +36,7 @@ jobs:
           key: chen-burghart-imports-${{ hashFiles('lean-toolchain', 'lake-manifest.json') }}-${{ github.sha }}
       - name: Check complete Chen proof and exact endpoint
         run: |
+          set -euo pipefail
           mkdir -p .lake/build/lib/lean/Proofs
           lake env lean -DwarningAsError=true -DautoImplicit=false -DrelaxedAutoImplicit=false -o .lake/build/lib/lean/Proofs/ChenFull.olean Proofs/ChenFull.lean | tee chen-proof.log
           python3 - <<'PY'

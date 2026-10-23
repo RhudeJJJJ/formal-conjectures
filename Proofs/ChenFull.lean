@@ -5,6 +5,14 @@ import Mathlib.Algebra.BigOperators.Group.Finset.Basic
 import Mathlib.Algebra.Order.BigOperators.Group.Finset
 import FormalConjectures.Paper.ChenTotalDomination
 
+/-!
+# Complete certificate for Chen Conjecture 4
+
+Construct local total-neighbor covers for complementary induced parts and combine them.
+The length-two-path construction also proves the ordinary-complement bound.
+The exact target uses the unchanged definitions imported from the statement PR.
+-/
+
 set_option Elab.async false
 
 namespace ChenCertificate
@@ -206,13 +214,12 @@ end ChenCertificate
 namespace Chen.DeltaComplement
 open SimpleGraph Finset
 variable {V : Type*} [Fintype V] [DecidableEq V]
-
 theorem full_conjecture4 (G : SimpleGraph V) [DecidableRel G.Adj]
     (hG : ∀ v, ∃ w, G.Adj v w)
     (hDelta : ∀ v, ∃ w, (deltaComplement G).Adj v w) :
     G.totalDominationNumber + (deltaComplement G).totalDominationNumber ≤
       Fintype.card V + 2 * degreeClassCount G := by
-  apply ChenCertificate.partition_bound G (deltaComplement G) hG hDelta (G.degree)
+  apply ChenCertificate.partition_bound G (deltaComplement G) hG hDelta (fun v => G.degree v)
   intro v w hd hn
   simp [deltaComplement, hd, hn]
 

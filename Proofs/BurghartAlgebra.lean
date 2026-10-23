@@ -6,7 +6,7 @@ All finite computations are checked by the Lean kernel. -/
 
 set_option Elab.async false
 set_option maxRecDepth 100000
-set_option maxHeartbeats 5000
+set_option maxHeartbeats 20000
 namespace BurghartPolynomial
 open Finset
 theorem quotient_expansion {α : Type*} (s : Finset α) (c : α → ℤ) (k : α → ℕ) :
@@ -47,7 +47,7 @@ theorem fringe_expanded (G : SimpleGraph (Fin 28)) (v : Fin 28) :
 
 #print axioms fringe_expanded
 
-set_option maxHeartbeats 5000 in
+set_option maxHeartbeats 20000 in
 open scoped Classical in
 theorem m_eq_rep (G : SimpleGraph (Fin 28)) [DecidableRel G.Adj]
     (r : Fin 28 → Fin 28 → List (Fin 28)) (hr : RoutesOK G r) (ht : G.IsTree)
@@ -56,14 +56,20 @@ theorem m_eq_rep (G : SimpleGraph (Fin 28)) [DecidableRel G.Adj]
     Burghart.MPolynomial.mPolynomial G 0 =
       BurghartReflection.eval (repOf G (distanceCode r) C) := by
   classical
+  trace "m0"
   unfold Burghart.MPolynomial.mPolynomial repOf
+  trace "m1"
   rw [hC,BurghartReflection.eval_sum]
+  trace "m2"
   apply Finset.sum_congr rfl
   intro S _
+  trace "m3"
   change MvPolynomial.X (0:Fin 3)^S.card *
     MvPolynomial.X (1:Fin 3)^((boundaryCode G S).card - 1) *
       (∑ v ∈ boundaryCode G S, _) = _
+  trace "m4"
   rw [Finset.mul_sum,BurghartReflection.eval_sum]
+  trace "m5"
   apply Finset.sum_congr rfl
   intro v _
   rw [fringe_expanded,fringe_eq_code G r hr ht v,Finset.mul_sum,BurghartReflection.eval_sum]

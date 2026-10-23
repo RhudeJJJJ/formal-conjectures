@@ -22,7 +22,7 @@ theorem order (a b : ℚ) (cs : List Slice) (hc : check a b cs = true) : a ≤ b
   | nil => exact (of_decide_eq_true hc).le
   | cons c cs ih =>
       have h : decide (c.a=a ∧ c.a≤c.b) = true ∧ check c.b b cs = true :=
-        Bool.and_eq_true.mp hc
+        by simpa only [check,Bool.and_eq_true] using hc
       obtain ⟨he,hb⟩ := of_decide_eq_true h.1
       rw [← he]
       exact hb.trans (ih c.b h.2)
@@ -41,7 +41,7 @@ theorem integral_lower (f : ℝ → ℝ) (hf : IntegrableOn f (Ioi 0))
       simp [total]
   | cons c cs ih =>
       have h : decide (c.a=a ∧ c.a≤c.b) = true ∧ check c.b b cs = true :=
-        Bool.and_eq_true.mp hc
+        by simpa only [check,Bool.and_eq_true] using hc
       obtain ⟨he,hab⟩ := of_decide_eq_true h.1
       have hcb : a ≤ c.b := by simpa [he] using hab
       have hcb0 : 0 ≤ c.b := ha.trans hcb

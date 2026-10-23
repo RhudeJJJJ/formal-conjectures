@@ -1,0 +1,14 @@
+/- Copyright 2026 Jonas J. Gebendorfer. Apache 2.0. -/
+import Proofs.RadenkovicGutmanMean16FastPolynomialCell220
+import Proofs.RadenkovicGutmanMean16FastPolynomialCell221
+import Proofs.RadenkovicGutmanMean16FastPolynomialCell222
+import Proofs.RadenkovicGutmanMean16FastPolynomialCell223
+import Proofs.RadenkovicGutmanMean16FastPolynomialCell224
+import Proofs.RadenkovicGutmanMean16FastPolynomialCell225
+
+#print axioms Gebendorfer.RadenkovicGutman.Mean16FastPolynomialCell220.actual_integral
+#print axioms Gebendorfer.RadenkovicGutman.Mean16FastPolynomialCell221.actual_integral
+#print axioms Gebendorfer.RadenkovicGutman.Mean16FastPolynomialCell222.actual_integral
+#print axioms Gebendorfer.RadenkovicGutman.Mean16FastPolynomialCell223.actual_integral
+#print axioms Gebendorfer.RadenkovicGutman.Mean16FastPolynomialCell224.actual_integral
+#print axioms Gebendorfer.RadenkovicGutman.Mean16FastPolynomialCell225.actual_integral

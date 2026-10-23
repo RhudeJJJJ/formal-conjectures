@@ -29,6 +29,7 @@ theorem actual_integral {V : Type*} [Fintype V] [DecidableEq V]
   have h := ActualMeanOrigin.actual_origin_lower G u 0 0 16 (by simpa using hN)
     (15/8) (1/16777216) (by norm_num) (by norm_num) (by norm_num)
   norm_num only [Nat.cast_ofNat,show (16 : ℝ)^2+3=259 by norm_num] at h
+  rw [show (16 : ℝ)*(1/16777216)=1/1048576 by norm_num] at hp
   exact hp.trans h
 
 #print axioms epsilon_log_checked

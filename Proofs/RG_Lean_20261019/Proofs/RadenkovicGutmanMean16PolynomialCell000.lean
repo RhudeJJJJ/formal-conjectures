@@ -30,10 +30,33 @@ def cell : Cell := {
   eCoefficients := ![(78911565959558116970134899660250882634678273/1569275433846670190958947355801916604025588861116008628224),(84813381705564978273577709518350372836527293176217/1645504557321206042154969182557350504982735865633579863348609024),(637933489102804735345083851048033939806239945330376814103/12078056106883486628010822758984794541789440701298176471534417391648768),(97899691629355535157786424568212069624761290539458286154432905/1809251394333065553493296640760748560207343510400633813116524750123642650624),(3679984712637424773031613040661053990405361360502716538947856921960387/66399815652246599103692545643381993879379140006664925042786556973497705060724899840),(790254592773217377955767499755039841644617062549065387481318579509422195023/13925050619474025980350702948110983522812772222325736088332991353008465916350934514925568),(848309029082685732009858665847503449638083485076625656174007700881512315442167607/14601473878365596266372218694518422658416925445797431044559854740972205156703597509922592391168),(130059118118632160187904621543266429317354176227089882309294121734395068268517984664681/2187250724783011924372502227117621365353169430893212436425770606409952999199375923223513177023053824),(139548408071263248134254151994362173155690435350886454468870109082444583221538848824517401537/2293498615990071511610820895302086940796564989168281123737588839386922876088484808070018553110125686554624)]
 }
 
-theorem geometry_checked : accepts us vs js ns sep cell = true := by decide +kernel
-theorem payment_checked : paymentAccepts cell = true := by decide +kernel
+theorem geometry_checked : accepts us vs js ns sep cell = true := by
+  rw [PolynomialPaymentCell.accepts,decide_eq_true_eq]
+  refine ⟨by decide +kernel,by decide +kernel,by decide +kernel,?_,by decide +kernel,
+    ?_,by decide +kernel,?_,by decide +kernel,?_,by decide +kernel,?_,by decide +kernel⟩
+  all_goals apply Polynomial.funext
+  all_goals intro t
+  all_goals norm_num [cell,us,vs,js,ns,sep,PolynomialPathMap.ofList,
+    PolynomialPaymentCell.comparison,RationalPolynomialCell.affine,RationalPolynomialCell.form,
+    Polynomial.bernsteinPolynomial,Nat.choose,Fin.sum_univ_succ]
+  all_goals ring
+theorem payment_checked : paymentAccepts cell = true := by
+  rw [PolynomialPaymentCell.paymentAccepts,decide_eq_true_eq]
+  constructor
+  · apply Polynomial.funext
+    intro t
+    norm_num [cell,PolynomialPathMap.ofList,GeneralPathPolynomialPayments.paymentPolynomial]
+    ring
+  · norm_num [cell]
 theorem logarithm_checked : RationalLog.accepts cell.c cell.R cell.k cell.n = true := by decide +kernel
-theorem primitive_checked : RationalPolynomialIntegral.accepts cell.pay cell.primitive 0 1 cell.unitIntegral = true := by decide +kernel
+theorem primitive_checked : RationalPolynomialIntegral.accepts cell.pay cell.primitive 0 1 cell.unitIntegral = true := by
+  rw [RationalPolynomialIntegral.accepts,decide_eq_true_eq]
+  constructor
+  · apply Polynomial.funext
+    intro t
+    norm_num [cell,PolynomialPathMap.ofList]
+    ring
+  · norm_num [cell,PolynomialPathMap.ofList]
 
 #print axioms geometry_checked
 #print axioms payment_checked

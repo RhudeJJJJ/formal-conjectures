@@ -7,6 +7,7 @@ import Proofs.RadenkovicGutmanQuantitativePositiveTail
 namespace Gebendorfer.RadenkovicGutman.Mean16PositiveTail
 open CoreQuotient GeneralGraphQuotient Polynomial PolynomialPathMap RationalComplexPolynomial
 open Mean16PolynomialBase Set MeasureTheory
+open scoped Classical
 noncomputable section
 set_option maxHeartbeats 0
 set_option maxRecDepth 100000
@@ -19,9 +20,30 @@ def comparisonCoefficients : List ℚ := [(2294530219859304528831447718907048288
 def nCoefficients : List ℚ := [(1153470234163920625/4),(4613332133841452785/256),(32290032413042786033/65536),(15395779055843/2),(76973662605539/1024),469786000,(29360627/16),4096,4]
 def eCoefficients : List ℚ := [(1153329464461895537/4),(4612909856950462321/256),(32287921157442512753/65536),(15395107936483/2),(76971649308899/1024),469779856,(29360499/16),4096,4]
 
-theorem comparison_checked : RationalPolynomialOrder.rayAccepts comparison 128 comparisonCoefficients = true := by decide +kernel
-theorem n_checked : RationalPolynomialOrder.rayAccepts (ofList ns) 128 nCoefficients = true := by decide +kernel
-theorem e_checked : RationalPolynomialOrder.rayAccepts (ofList sep) 128 eCoefficients = true := by decide +kernel
+theorem comparison_checked : RationalPolynomialOrder.rayAccepts comparison 128 comparisonCoefficients = true := by
+  rw [RationalPolynomialOrder.rayAccepts,decide_eq_true_eq]
+  constructor
+  · apply Polynomial.funext
+    intro t
+    norm_num [comparison,denominator,scale,us,vs,js,ns,sep,comparisonCoefficients,ofList,RationalPolynomialCell.affine]
+    ring
+  · decide +kernel
+theorem n_checked : RationalPolynomialOrder.rayAccepts (ofList ns) 128 nCoefficients = true := by
+  rw [RationalPolynomialOrder.rayAccepts,decide_eq_true_eq]
+  constructor
+  · apply Polynomial.funext
+    intro t
+    norm_num [comparison,denominator,scale,us,vs,js,ns,sep,nCoefficients,ofList,RationalPolynomialCell.affine]
+    ring
+  · decide +kernel
+theorem e_checked : RationalPolynomialOrder.rayAccepts (ofList sep) 128 eCoefficients = true := by
+  rw [RationalPolynomialOrder.rayAccepts,decide_eq_true_eq]
+  constructor
+  · apply Polynomial.funext
+    intro t
+    norm_num [comparison,denominator,scale,us,vs,js,ns,sep,eCoefficients,ofList,RationalPolynomialCell.affine]
+    ring
+  · decide +kernel
 theorem n_constant_positive : 0 < nCoefficients.headD 0 := by decide +kernel
 theorem e_constant_positive : 0 < eCoefficients.headD 0 := by decide +kernel
 
@@ -57,7 +79,7 @@ theorem actual_integral {V : Type*} [Fintype V] [DecidableEq V]
     (127483968/16385991937 : ℝ) ≤ ∫ y : ℝ in Ioi 128,
       MixedGraphIntegral.logarithm (source G u 0 0) (fused G u 0 0) (15/8) y := by
   have hf := (ActualFusionIntegral.logarithm_integrable G u 0 0 (15/8)).mono_set
-    (show Ioi (128 : ℝ) ⊆ Ioi 0 from fun y hy => by change 0 < y; linarith [hy])
+    (show Ioi (128 : ℝ) ⊆ Ioi 0 from fun y hy => lt_trans (by norm_num : (0 : ℝ) < 128) hy)
   have h := QuantitativePositiveTail.integral_lower _ (1991937/1000000) 128
     (by norm_num) (by norm_num) hf (fun y hy => actual_logarithm G u hd y hy.le)
   norm_num [QuantitativePositiveTail.coefficient] at h

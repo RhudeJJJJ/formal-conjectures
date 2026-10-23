@@ -30,10 +30,33 @@ def cell : Cell := {
   eCoefficients := ![(35357965375493788621182894996420971347094811159713/365375409332725729550921208179070754913983135744),(37363654845715927229714416635146790783193488859947/365375409332725729550921208179070754913983135744),(276406956776376977078273957380831836949616506990383/2557627865329080106856448457253495284397881950208),(292140225854758177938397733987775400058417277076165/2557627865329080106856448457253495284397881950208),(1543995047527182086515102556281198381454618588618387/12788139326645400534282242286267476421989409751040),(326440422433117266537428548528208517361785858833053/2557627865329080106856448457253495284397881950208),(345125320619286180786232655561714227512860999154687/2557627865329080106856448457253495284397881950208),(52131223565201924203388360490911976202821196576611/365375409332725729550921208179070754913983135744),(55127043598561915565100257973362976008073868519937/365375409332725729550921208179070754913983135744)]
 }
 
-theorem geometry_checked : accepts us vs js ns sep cell = true := by decide +kernel
-theorem payment_checked : paymentAccepts cell = true := by decide +kernel
+theorem geometry_checked : accepts us vs js ns sep cell = true := by
+  rw [PolynomialPaymentCell.accepts,decide_eq_true_eq]
+  refine ⟨by decide +kernel,by decide +kernel,by decide +kernel,?_,by decide +kernel,
+    ?_,by decide +kernel,?_,by decide +kernel,?_,by decide +kernel,?_,by decide +kernel⟩
+  all_goals apply Polynomial.funext
+  all_goals intro t
+  all_goals norm_num [cell,us,vs,js,ns,sep,PolynomialPathMap.ofList,
+    PolynomialPaymentCell.comparison,RationalPolynomialCell.affine,RationalPolynomialCell.form,
+    Polynomial.bernsteinPolynomial,Nat.choose,Fin.sum_univ_succ]
+  all_goals ring
+theorem payment_checked : paymentAccepts cell = true := by
+  rw [PolynomialPaymentCell.paymentAccepts,decide_eq_true_eq]
+  constructor
+  · apply Polynomial.funext
+    intro t
+    norm_num [cell,PolynomialPathMap.ofList,GeneralPathPolynomialPayments.paymentPolynomial]
+    ring
+  · norm_num [cell]
 theorem logarithm_checked : RationalLog.accepts cell.c cell.R cell.k cell.n = true := by decide +kernel
-theorem primitive_checked : RationalPolynomialIntegral.accepts cell.pay cell.primitive 0 1 cell.unitIntegral = true := by decide +kernel
+theorem primitive_checked : RationalPolynomialIntegral.accepts cell.pay cell.primitive 0 1 cell.unitIntegral = true := by
+  rw [RationalPolynomialIntegral.accepts,decide_eq_true_eq]
+  constructor
+  · apply Polynomial.funext
+    intro t
+    norm_num [cell,PolynomialPathMap.ofList]
+    ring
+  · norm_num [cell,PolynomialPathMap.ofList]
 
 #print axioms geometry_checked
 #print axioms payment_checked

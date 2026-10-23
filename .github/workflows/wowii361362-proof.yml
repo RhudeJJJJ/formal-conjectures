@@ -60,7 +60,7 @@ jobs:
           allowed={'propext','Classical.choice','Quot.sound'}
           for name in expected:
               assert name in rows, (name,rows)
-              assert set(rows[name].split(', '))<=allowed,(name,rows[name])
+              assert {part.strip() for part in rows[name].split(',')}<=allowed,(name,rows[name])
           assert 'sorryAx' in rows['WrittenOnTheWallII.GraphConjecture361.conjecture361']
           assert log.count('EXACT TYPE:')==4
           print('PASS: all four exact endpoints, kernel proofs, standard axioms only; admitted negative control rejected')

@@ -24,6 +24,7 @@ lemma third_vertex (ho : 2 < Fintype.card V) (a b : V) :
   rw [card_univ] at hcard
   omega
 
+omit [DecidableEq V] in
 lemma leaf_distance (hc : G.Connected) {l c x : V} (hl : G.degree l=1)
     (hlc : G.Adj l c) (hx : x ≠ l) :
     G.dist c x + 1 = G.dist l x := by
@@ -64,6 +65,7 @@ lemma center_not_leaf (hT : G.IsTree) (ho : 2 < Fintype.card V)
   have hr := radius_le_of_bound G hT.connected w (R-1) hb
   omega
 
+omit [DecidableRel G.Adj] in
 lemma center_card_small_radius (hT : G.IsTree) (ho : 2 < Fintype.card V)
     (hr : G.radius.toNat ≤ 1) : Nat.card G.center ≤ 1 := by
   classical
@@ -110,6 +112,7 @@ lemma center_card_of_depth_two (hT : G.IsTree) (ho : 2 < Fintype.card V)
   have hfin := (G.radius_ne_top_iff).mpr hT.connected
   have hrad : G.radius=(2 : ℕ∞) := by
     rw [← ENat.natCast_toNat hfin,hr]
+    norm_num
   have hzcent : z ∈ G.center := by
     change G.eccent z=G.radius
     apply le_antisymm ?_ G.radius_le_eccent
@@ -121,7 +124,7 @@ lemma center_card_of_depth_two (hT : G.IsTree) (ho : 2 < Fintype.card V)
   have honly : ∀ c, c ∈ G.center → c=z := by
     intro c hc
     by_contra hcz
-    have hzc := center_adj G hT hzcent hc hcz.symm
+    have hzc := center_adj G hT hzcent hc (Ne.symm hcz)
     obtain ⟨t,hzt,htc⟩ := other_neighbor G hzc (center_not_leaf G hT ho hzcent)
     obtain ⟨x,htx,hxz⟩ := other_neighbor G hzt.symm (hz t hzt)
     have hxc : x ≠ c := by
@@ -135,6 +138,7 @@ lemma center_card_of_depth_two (hT : G.IsTree) (ho : 2 < Fintype.card V)
       have htz := hzt.ne.symm
       have hxt := htx.ne.symm
       simp_all [p,Walk.cons_isPath_iff]
+      exact ⟨⟨htx.ne,hzt.ne,Ne.symm hxz⟩,Ne.symm htc,Ne.symm hxc⟩
     have hlen := tree_path_length G hT p hp
     have hlen3 : p.length=3 := rfl
     rw [hlen3] at hlen

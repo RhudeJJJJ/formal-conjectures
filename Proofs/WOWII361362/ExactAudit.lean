@@ -2,6 +2,8 @@ import Proofs.WOWII361362.WOWII362Full
 import Proofs.WOWII361362.WOWII361Full
 import Lean.Util.CollectAxioms
 
+/-! Exact type and transitive-axiom audits, including an admitted negative control. -/
+
 open Lean Meta Elab Command in
 run_elab do
   let pairs : Array (Name × Name) := #[

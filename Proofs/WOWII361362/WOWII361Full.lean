@@ -2,10 +2,14 @@ import FormalConjectures.WrittenOnTheWallII.GraphConjecture361
 import Proofs.WOWII361362.GraphCover
 import Proofs.WOWII361362.TreeCenter
 
+/-! Complete certificates for the exact submitted tree bounds.
+The proof imports the original problem definitions and uses only proved helpers. -/
+
 namespace WrittenOnTheWallII.GraphConjecture361
 open Finset SimpleGraph
 variable {V : Type*} [Fintype V] [DecidableEq V]
 
+omit [DecidableEq V] in
 lemma supports_forced (T : SimpleGraph V) [DecidableRel T.Adj]
     {D : Finset V} (hD : T.IsTotalDominating (D : Set V)) : supports T ⊆ D := by
   intro s hs

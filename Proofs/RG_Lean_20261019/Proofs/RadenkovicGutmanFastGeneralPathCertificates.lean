@@ -5,8 +5,10 @@ import Proofs.RadenkovicGutmanRationalMobiusPolynomials
 
 /-! Computable rational list identities for arbitrary original mean shifts and
 finite arm lengths. The soundness results prove the complete existing polynomial
-contracts, rather than an identity at finitely many numerical ordinates. -/
+contracts for every ordinate. -/
 namespace Gebendorfer.RadenkovicGutman.FastGeneralPathCertificates
+set_option maxHeartbeats 0
+set_option maxRecDepth 100000
 open Polynomial PolynomialPathMap
 abbrev Poly := HornerCertificates.Poly
 
@@ -64,9 +66,9 @@ theorem zeroCheck_sound (p : Poly) (hc : zeroCheck p=true) : ofList p=0 := by
       have he : c=0 := of_decide_eq_true hh.1
       simp only [ofList,he,map_zero,ih hh.2,mul_zero,add_zero]
 
-def matches (p q : Poly) : Bool := zeroCheck (minus p q)
+def coefficientCheck (p q : Poly) : Bool := zeroCheck (minus p q)
 
-theorem matches_sound (p q : Poly) (hc : matches p q=true) : ofList p=ofList q := by
+theorem coefficientCheck_sound (p q : Poly) (hc : coefficientCheck p q=true) : ofList p=ofList q := by
   have h := zeroCheck_sound (minus p q) hc
   rw [ofList_minus] at h
   exact sub_eq_zero.mp h
@@ -137,7 +139,7 @@ theorem centerList_sound (x : ℚ) : ofList (centerList x)=GeneralPathPolynomial
     GeneralPathPolynomials.centerPoly]
   ring
 theorem scaleList_sound : ofList scaleList=GeneralPathPolynomials.scalePoly := by
-  norm_num [scaleList,ofList,GeneralPathPolynomials.scalePoly] <;> ring
+  norm_num [scaleList,ofList,GeneralPathPolynomials.scalePoly,Polynomial.C_ofNat] <;> ring
 theorem sourceCenterList_sound (x : ℚ) (p q : ℕ) :
     ofList (sourceCenterList x p q)=GeneralPathPolynomials.sourceCenter x p q := by
   simp only [sourceCenterList,ofList_minus,ofList_mul,sourceSlopeList_sound,
@@ -148,17 +150,17 @@ theorem fusedCenterList_sound (x : ℚ) (p q : ℕ) :
     centerList_sound,scaleList_sound,denList_sound,GeneralPathPolynomials.fusedCenter,GeneralPathPolynomials.fusedOffset]
 
 def pathChecks (x : ℚ) (p q : ℕ) (a b c e : Poly) : Bool :=
-  decide (matches a (sourceSlopeList x p q)=true ∧ matches b (sourceCenterList x p q)=true ∧
-    matches c (fusedSlopeList x p q)=true ∧ matches e (fusedCenterList x p q)=true)
+  decide (coefficientCheck a (sourceSlopeList x p q)=true ∧ coefficientCheck b (sourceCenterList x p q)=true ∧
+    coefficientCheck c (fusedSlopeList x p q)=true ∧ coefficientCheck e (fusedCenterList x p q)=true)
 
 theorem path_sound (x : ℚ) (p q : ℕ) (a b c e : Poly) (hc : pathChecks x p q a b c e=true) :
     GeneralPathPolynomials.accepts x p q a b c e=true := by
   obtain ⟨ha,hb,hc,he⟩ := of_decide_eq_true hc
   rw [GeneralPathPolynomials.accepts,decide_eq_true_eq]
-  exact ⟨(matches_sound _ _ ha).trans (sourceSlopeList_sound x p q),
-    (matches_sound _ _ hb).trans (sourceCenterList_sound x p q),
-    (matches_sound _ _ hc).trans (fusedSlopeList_sound x p q),
-    (matches_sound _ _ he).trans (fusedCenterList_sound x p q)⟩
+  exact ⟨(coefficientCheck_sound _ _ ha).trans (sourceSlopeList_sound x p q),
+    (coefficientCheck_sound _ _ hb).trans (sourceCenterList_sound x p q),
+    (coefficientCheck_sound _ _ hc).trans (fusedSlopeList_sound x p q),
+    (coefficientCheck_sound _ _ he).trans (fusedCenterList_sound x p q)⟩
 
 def partLists : Poly → Poly × Poly
   | [] => ([],[])
@@ -223,20 +225,20 @@ theorem JList_sound (a b : Poly) : ofList (JList a b)=RationalMobiusPolynomials.
   simp only [JList,ofList_square,NList_sound,RationalMobiusPolynomials.J]
 
 def normChecks (a b c e u v j n ee : Poly) : Bool :=
-  decide (matches u (UList a b c e)=true ∧ matches v (VList a b c e)=true ∧
-    matches j (JList a b)=true ∧ matches n (NList a b)=true ∧ matches ee (EList c e)=true)
+  decide (coefficientCheck u (UList a b c e)=true ∧ coefficientCheck v (VList a b c e)=true ∧
+    coefficientCheck j (JList a b)=true ∧ coefficientCheck n (NList a b)=true ∧ coefficientCheck ee (EList c e)=true)
 
 theorem norms_sound (a b c e u v j n ee : Poly) (hc : normChecks a b c e u v j n ee=true) :
     RationalMobiusPolynomials.accepts a b c e u v j n ee=true := by
   obtain ⟨hu,hv,hj,hn,he⟩ := of_decide_eq_true hc
   rw [RationalMobiusPolynomials.accepts,decide_eq_true_eq]
-  exact ⟨(matches_sound _ _ hu).trans (UList_sound a b c e),
-    (matches_sound _ _ hv).trans (VList_sound a b c e),
-    (matches_sound _ _ hj).trans (JList_sound a b),
-    (matches_sound _ _ hn).trans (NList_sound a b),
-    (matches_sound _ _ he).trans (EList_sound c e)⟩
+  exact ⟨(coefficientCheck_sound _ _ hu).trans (UList_sound a b c e),
+    (coefficientCheck_sound _ _ hv).trans (VList_sound a b c e),
+    (coefficientCheck_sound _ _ hj).trans (JList_sound a b),
+    (coefficientCheck_sound _ _ hn).trans (NList_sound a b),
+    (coefficientCheck_sound _ _ he).trans (EList_sound c e)⟩
 
-#print axioms matches_sound
+#print axioms coefficientCheck_sound
 #print axioms pathState_sound
 #print axioms path_sound
 #print axioms partLists_sound

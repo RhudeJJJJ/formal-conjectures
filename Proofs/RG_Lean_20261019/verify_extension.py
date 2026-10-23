@@ -12,6 +12,8 @@ PIN='0df444a360eaa60ab8c11dca51a86af692955474'
 LC='621a43d7cf21f87872392a01e874f2f1dbddc926'
 ALLOWED={'propext','Classical.choice','Quot.sound'}
 def digest(data):return hashlib.sha256(data).hexdigest()
+from module_outputs import check_additional_outputs, remove_pending_outputs, finalize_outputs
+
 def main():
  ap=argparse.ArgumentParser(description=__doc__)
  ap.add_argument('--mathlib-project',type=pathlib.Path,required=True)
@@ -66,6 +68,7 @@ def main():
   for row in man['objects']:
    n=row['module']
    if n not in sources:continue
+   assert not row.get('additional_outputs'),'Use source-bound archive restoration for module-system sidecars'
    assert row['source_sha256']==hashes[n] and row['source_closure_sha256']==closure[n],n
    assert all(set(p)<=ALLOWED for p in row['axiom_profiles']),n
    data=(ROOT/row['compressed_path']).read_bytes();assert digest(data)==row['compressed_sha256'],n
@@ -81,25 +84,27 @@ def main():
   if rp.exists() and out.exists():
    r=json.loads(rp.read_text())
    if r['source_sha256']==hashes[n] and r['source_closure_sha256']==closure[n] and r['output_sha256']==digest(out.read_bytes()):
+    check_additional_outputs(out,r)
     assert all(set(p)<=ALLOWED for p in r['axiom_profiles']),n
     assert r['axiom_profiles'] or n.startswith('LeanCert.'),'Missing resumed axiom profile: '+n
     return n,r
-  log=build/(n+'.log');tmp=out.with_suffix('.olean.pending');start=time.monotonic()
+  log=build/(n+'.log');tmp=out.with_suffix('.olean.pending');remove_pending_outputs(tmp);start=time.monotonic()
   cmd=[lean,'-j1','-DElab.async=false','-DwarningAsError=true']
   cmd+=['-R',str(ROOT/'ThirdParty/LeanCert')] if n.startswith('LeanCert.') else ['-DautoImplicit=false','-DrelaxedAutoImplicit=false']
   cmd+=['-o',str(tmp),str(p)]
   with log.open('w') as f:
    try:r=subprocess.run(cmd,cwd=ROOT,env=env,stdout=f,stderr=subprocess.STDOUT,timeout=a.module_timeout)
-   except subprocess.TimeoutExpired:tmp.unlink(missing_ok=True);raise RuntimeError('Timeout: '+n)
+   except subprocess.TimeoutExpired:remove_pending_outputs(tmp);raise RuntimeError('Timeout: '+n)
   text=log.read_text()
-  if r.returncode or re.search(r'\b(error|warning)(?:\([^\n]*?\))?:',text):tmp.unlink(missing_ok=True);raise RuntimeError(text)
+  if r.returncode or re.search(r'\b(error|warning)(?:\([^\n]*?\))?:',text):remove_pending_outputs(tmp);raise RuntimeError(text)
   profiles=[sorted(set(x.strip() for x in s.split(',') if x.strip())) for s in re.findall(r'depends on axioms:\s*\[([^\]]*)\]',text)]
   profiles += [[] for _ in re.findall('does not depend on any axioms',text)]
   assert all(set(p)<=ALLOWED for p in profiles),n
   assert profiles or n.startswith('LeanCert.'),'Missing axiom profile: '+n
   assert digest(p.read_bytes())==hashes[n],'Source changed during run: '+n
-  tmp.replace(out)
+  additional_outputs=finalize_outputs(tmp,out)
   row=dict(module=n,source_sha256=hashes[n],source_closure_sha256=closure[n],output_sha256=digest(out.read_bytes()),axiom_profiles=profiles,mode='FRESH_KERNEL_EXPORT',seconds=round(time.monotonic()-start,3))
+  if additional_outputs:row['additional_outputs']=additional_outputs
   rp.write_text(json.dumps(row,indent=2)+'\n');return n,row
  done=set();running={};started=time.monotonic()
  with concurrent.futures.ThreadPoolExecutor(max_workers=a.workers) as pool:

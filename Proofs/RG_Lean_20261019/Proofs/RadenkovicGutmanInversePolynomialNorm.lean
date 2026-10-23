@@ -8,7 +8,9 @@ theorem inverse_parameter (U V J M L : ℝ) (hM : 0 < M)
     (hb : L*((M+1)*U+(M^2+M)*V) ≤ M*J) :
     L*((1/M+(1/M)^2)*U+(1/M+1)*V) ≤ (1/M)*J := by
   calc
-    _ = (L*((M+1)*U+(M^2+M)*V))/(M^2) := by field_simp [hM.ne']
+    _ = (L*((M+1)*U+(M^2+M)*V))/(M^2) := by
+      field_simp [hM.ne']
+      ring
     _ ≤ (M*J)/(M^2) := div_le_div_of_nonneg_right hb (sq_nonneg M)
     _ = _ := by field_simp [hM.ne']
 

@@ -82,7 +82,7 @@ theorem pointwise (x : ℚ) (p q : ℕ) (as bs cs es us vs js ns sep : List ℚ)
   have hcoord : (z.a : ℝ)+((z.b : ℝ)-z.a)*t = y := by
     dsimp [t,ordinate]
     field_simp [ne_of_gt (sub_pos.mpr habr)]
-    <;> ring
+    ring
   rw [affine_evaluation,hcoord] at hN hE
   simp only [comparison,map_sub,map_mul,map_add,map_pow,map_one,affine_evaluation,hcoord] at hPr
   have hy0 : 0 < y := lt_of_lt_of_le (by exact_mod_cast ha) hy.1

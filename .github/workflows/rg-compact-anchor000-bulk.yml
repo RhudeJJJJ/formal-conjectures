@@ -1,0 +1,114 @@
+name: RG original anchor 0 remaining compact cells
+
+on:
+  push:
+    branches: [rg-remaining-six-spectral-20261021]
+    paths: ['.github/workflows/rg-compact-anchor000-bulk.yml']
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  check:
+    strategy:
+      fail-fast: false
+      max-parallel: 8
+      matrix:
+        endpoint: [Proofs.RadenkovicGutmanCompactAnchor000Batch000,Proofs.RadenkovicGutmanCompactAnchor000Batch001,Proofs.RadenkovicGutmanCompactAnchor000Batch002,Proofs.RadenkovicGutmanCompactAnchor000Batch003,Proofs.RadenkovicGutmanCompactAnchor000Batch004,Proofs.RadenkovicGutmanCompactAnchor000Batch005,Proofs.RadenkovicGutmanCompactAnchor000Batch006,Proofs.RadenkovicGutmanCompactAnchor000Batch007,Proofs.RadenkovicGutmanCompactAnchor000Batch008,Proofs.RadenkovicGutmanCompactAnchor000Batch009,Proofs.RadenkovicGutmanCompactAnchor000Batch010,Proofs.RadenkovicGutmanCompactAnchor000Batch011,Proofs.RadenkovicGutmanCompactAnchor000Batch012,Proofs.RadenkovicGutmanCompactAnchor000Batch013,Proofs.RadenkovicGutmanCompactAnchor000Batch014,Proofs.RadenkovicGutmanCompactAnchor000Batch015,Proofs.RadenkovicGutmanCompactAnchor000Batch016,Proofs.RadenkovicGutmanCompactAnchor000Batch017,Proofs.RadenkovicGutmanCompactAnchor000Batch018,Proofs.RadenkovicGutmanCompactAnchor000Batch019,Proofs.RadenkovicGutmanCompactAnchor000Batch020,Proofs.RadenkovicGutmanCompactAnchor000Batch021,Proofs.RadenkovicGutmanCompactAnchor000Batch022,Proofs.RadenkovicGutmanCompactAnchor000Batch023,Proofs.RadenkovicGutmanCompactAnchor000Batch024,Proofs.RadenkovicGutmanCompactAnchor000Batch025]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 150
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          persist-credentials: false
+      - name: Install the project toolchain
+        run: |
+          set -o pipefail
+          curl -sSfL https://github.com/leanprover/elan/releases/download/v1.4.2/elan-x86_64-unknown-linux-gnu.tar.gz | tar xz
+          ./elan-init -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Materialize the exact dependency lock
+        run: python3 -B ci/rg_dependencies.py
+      - name: Fetch the required Mathlib cache
+        run: |
+          python3 - <<'PY'
+          import pathlib, re, subprocess
+          root = pathlib.Path('Proofs/RG_Lean_20261019')
+          seen, external = set(), set()
+          def visit(name):
+              if name in seen:
+                  return
+              seen.add(name)
+              source = (root / (name.replace('.', '/') + '.lean')).read_text()
+              for dep in re.findall(r'^\s*import\s+([\w.]+)', source, re.M):
+                  if dep.startswith('Proofs.'):
+                      visit(dep)
+                  elif not dep.startswith(('Lean.', 'Init.', 'Std.')) and dep not in ('Lean','Init','Std'):
+                      external.add(dep)
+          visit('${{ matrix.endpoint }}')
+          subprocess.run(['lake', 'exe', 'cache', 'get', *sorted(external)], check=True)
+          PY
+      - name: Restore one independently audited complete source-bound base scope
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 -B ci/rg_restore_complete_scope.py --manifest ci/rg_mean_horner_kernel_base_complete_scope_capsule.json --build-directory Proofs/RG_Lean_20261019/build/extension
+      - name: Restore the original proved general path and norm list compiler
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_fast_general_path_original_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+      - name: Restore both original computed coefficient program exports
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_computed_general_path_data_original_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+      - name: Restore the original proved compact cell bridge
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_computed_polynomial_cell_original_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+      - name: Restore a proved original control cell
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_compact_anchor000_cell000_original_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+      - name: Restore a proved original control cell
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_compact_anchor000_cell175_original_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+      - name: Restore a proved original control cell
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_compact_anchor000_cell254_original_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+      - name: Require at most ten new cells and their batch
+        run: python3 -B ci/rg_restore_with_kernel_fallback.py --plan ci/rg_compact_anchor000_bulk_restore_plan.json --build-directory Proofs/RG_Lean_20261019/build/extension --endpoint ${{ matrix.endpoint }} --max-fresh 11 --preflight-only
+      - name: Check multiplicities and actual graph spectral comparison
+        shell: bash
+        run: |
+          set -o pipefail
+          python3 -B Proofs/RG_Lean_20261019/verify_extension.py --mathlib-project "$GITHUB_WORKSPACE" --endpoint ${{ matrix.endpoint }} --workers 1 --module-timeout 600 --resume | python3 -B ci/rg_compact_ci_output.py
+      - name: Retain completed records and diagnostics
+        if: always()
+        run: |
+          python3 - <<'PY'
+          import json,pathlib,shutil
+          root=pathlib.Path('Proofs/RG_Lean_20261019/build/extension')
+          records=[json.loads(p.read_text()) for p in sorted(root.glob('Proofs.*.json'))]
+          fresh=root.parent/'fresh_exports';fresh.mkdir(parents=True,exist_ok=True)
+          (fresh/'diagnostics_records.json').write_text(json.dumps({'modules':records},separators=(',',':'))+'\n')
+          if (root/'receipt.json').is_file():shutil.copyfile(root/'receipt.json',fresh/'receipt.json')
+          print('RETAINED_RECORD_COUNTS '+json.dumps({'total':len(records),'fresh':sum(r['mode']=='FRESH_KERNEL_EXPORT' for r in records)}))
+          for row in records:
+              if row['mode']=='FRESH_KERNEL_EXPORT':
+                  name=row['module'];rel=name.replace('.','/')+'.olean';dest=fresh/rel
+                  dest.parent.mkdir(parents=True,exist_ok=True)
+                  shutil.copyfile(root/rel,dest);shutil.copyfile(root/(name+'.json'),fresh/(name+'.json'))
+          for log in root.glob('Proofs.*.log'):
+              shutil.copyfile(log,fresh/log.name);print('MODULE_LOG_TAIL '+log.name+' '+log.read_text()[-18000:])
+          PY
+      - name: Retain new exports only
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: rg-compact-anchor000-bulk-exports-${{ github.run_id }}-${{ strategy.job-index }}
+          path: Proofs/RG_Lean_20261019/build/fresh_exports
+          retention-days: 7
+
+# Retain the interval-integrability theorem explicitly in this endpoint closure.

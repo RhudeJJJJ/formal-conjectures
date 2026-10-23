@@ -1,0 +1,41 @@
+/- Copyright 2026 Jonas J. Gebendorfer. Apache 2.0. -/
+import Proofs.RadenkovicGutmanComputedPolynomialCell
+
+namespace Gebendorfer.RadenkovicGutman.CompactAnchor000Cell108
+open Set MeasureTheory
+open scoped Classical
+set_option maxHeartbeats 0
+set_option maxRecDepth 100000
+set_option backward.isDefEq.respectTransparency false
+
+def data : ComputedGeneralPathData.Data := ComputedGeneralPathData.build (51/26) 9 9
+def witness : ComputedPolynomialCell.Witness := {
+  a := (945237/8589934592)
+  b := (64985/536870912)
+  s := [(2197108929619/2199023255552),(-47795193/274877906944),(-9500535/1099511627776)]
+  L := [(46137373772682533071171659/79228162514264337593543950336),(393039077477/3377699720527872),(6527367325/1125899906842624),(-434717/211106232532992),(-3577/70368744177664)]
+  c := (1311303031249/2251799813685248)
+  R := (-186211594235989/50000000000000)
+  total := (-5056127379/125000000000000)
+  k := 11
+  n := 32
+  sFloor := (2196707567005/4398046511104)
+  nFloor := (396117992483/576460752303423488)
+  eFloor := (592415508093/1152921504606846976)
+}
+
+#check "COMPACT_WITNESS_READY"
+theorem checked : ComputedPolynomialCell.checks data witness=true := by decide +kernel
+#check "COMPACT_CHECK_PASSED"
+
+noncomputable section
+theorem actual_integral {V : Type*} [Fintype V] [DecidableEq V]
+    (G : SimpleGraph V) (u : V) (hd : G.degree u=1) :
+    (witness.total : ℝ)≤∫ y : ℝ in (witness.a : ℝ)..(witness.b : ℝ),
+      MixedGraphIntegral.logarithm (CoreQuotient.source G u 9 9)
+        (CoreQuotient.fused G u 9 9) ((51/26 : ℚ) : ℝ) y :=
+  ComputedPolynomialCell.computed_actual_integral (51/26) 9 9 witness checked G u hd
+#print axioms checked
+#print axioms actual_integral
+end
+end Gebendorfer.RadenkovicGutman.CompactAnchor000Cell108

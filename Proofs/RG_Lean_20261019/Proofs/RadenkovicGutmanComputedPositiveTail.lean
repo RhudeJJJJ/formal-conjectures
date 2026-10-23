@@ -6,7 +6,7 @@ import Proofs.RadenkovicGutmanQuantitativePositiveTail
 
 namespace Gebendorfer.RadenkovicGutman.ComputedPositiveTail
 open Polynomial PolynomialPathMap RationalComplexPolynomial CoreQuotient
-open Set MeasureTheory
+open GeneralGraphQuotient Set MeasureTheory
 open scoped Classical
 abbrev Poly := HornerCertificates.Poly
 abbrev Data := ComputedGeneralPathData.Data

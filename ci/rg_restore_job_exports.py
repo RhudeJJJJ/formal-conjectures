@@ -8,13 +8,16 @@ import argparse,hashlib,io,json,os,pathlib,time,urllib.error,urllib.parse,urllib
 ap=argparse.ArgumentParser(description=__doc__)
 ap.add_argument('--manifest',type=pathlib.Path,required=True)
 ap.add_argument('--build-directory',type=pathlib.Path,required=True)
+ap.add_argument('--verified-local-archive',type=pathlib.Path,
+    help='Use an explicitly retained original ZIP only after matching its full original artifact digest')
 a=ap.parse_args()
 m=json.loads(a.manifest.read_text())
 assert m['mathlib']=='0df444a360eaa60ab8c11dca51a86af692955474'
 assert m['lean_version']=='4.33.1'
 allowed={'propext','Classical.choice','Quot.sound'}
 from rg_github_artifacts import fetch_archive
-data=fetch_archive(m)
+data=a.verified_local_archive.read_bytes() if a.verified_local_archive else fetch_archive(m)
+assert hashlib.sha256(data).hexdigest()==m['artifact_sha256']
 build=a.build_directory.resolve();build.mkdir(parents=True,exist_ok=True)
 with zipfile.ZipFile(io.BytesIO(data)) as z:
  names=z.namelist();assert len(set(names))==len(names)

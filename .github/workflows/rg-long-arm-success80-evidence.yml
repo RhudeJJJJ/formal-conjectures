@@ -1,8 +1,6 @@
 name: RG long arm 80 completed proof scopes
 on:
-  push:
-    branches: [rg-remaining-six-spectral-20261021]
-    paths: ['.github/workflows/rg-long-arm-success80-evidence.yml','ci/rg_long_arm_success80_evidence_plan*.json']
+  workflow_dispatch:
 
 permissions:
   contents: read

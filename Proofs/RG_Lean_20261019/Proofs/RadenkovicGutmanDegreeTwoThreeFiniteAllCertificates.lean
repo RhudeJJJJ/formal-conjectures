@@ -116,6 +116,7 @@ namespace Gebendorfer.RadenkovicGutman.DegreeTwoThreeFiniteAllCertificates
 open SmallGeFourKeys DegreeTwoThreeFiniteKeys
 set_option maxHeartbeats 0
 set_option maxRecDepth 100000
+set_option backward.isDefEq.respectTransparency false
 noncomputable section
 theorem certified_all_keys : ∀ (k : SmallGeFourKeys.Key), k ∈ DegreeTwoThreeFiniteKeys.keys → SmallGeFourKeys.Certified k := by
   intro k hk

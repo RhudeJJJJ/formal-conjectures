@@ -1,0 +1,40 @@
+name: RG exact original proof object compression control
+on:
+  push:
+    branches: [rg-remaining-six-spectral-20261021]
+    paths: ['.github/workflows/rg-compressed-proofstore-control.yml']
+permissions:
+  contents: read
+  actions: read
+jobs:
+  check:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          persist-credentials: false
+      - name: Reserve host space only on this new hosted runner
+        run: python3 -B ci/rg_prepare_finite_runner_storage.py --required-free-gib 45
+      - name: Install the Ubuntu filesystem utility
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y btrfs-progs
+      - name: Create a new eight GiB logical compressed image
+        run: python3 -B ci/rg_ephemeral_compressed_proofstore.py --logical-gib 8
+      - name: Restore and independently read back all selected original object bytes
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          python3 -B ci/rg_guarded_proofstore_restore.py --manifest ci/rg_proofstore_control_original000.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_guarded_proofstore_restore.py --manifest ci/rg_proofstore_control_original001.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_guarded_proofstore_restore.py --manifest ci/rg_proofstore_control_original002.json --build-directory Proofs/RG_Lean_20261019/build/extension
+      - name: Retain capacity and complete byte identity evidence
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: rg-compressed-proofstore-control-${{ github.run_id }}
+          path: |
+            rg-proofstore-setup.json
+            rg-proofstore-roundtrip-reports
+          retention-days: 7

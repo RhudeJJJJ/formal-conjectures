@@ -47,6 +47,15 @@ theorem fringe_expanded (G : SimpleGraph (Fin 28)) (v : Fin 28) :
 
 #print axioms fringe_expanded
 
+theorem boundary_eq_code (G : SimpleGraph (Fin 28)) [DecidableRel G.Adj]
+    (S : Finset (Fin 28)) : Burghart.MPolynomial.boundary G 0 S = boundaryCode G S := by
+  classical
+  by_cases he : S = ∅
+  · subst S
+    simp [Burghart.MPolynomial.boundary,boundaryCode]
+  · ext v
+    simp only [Burghart.MPolynomial.boundary,boundaryCode,he,if_false,Finset.mem_filter]
+
 set_option maxHeartbeats 20000 in
 open scoped Classical in
 theorem m_eq_rep (G : SimpleGraph (Fin 28)) [DecidableRel G.Adj]
@@ -64,9 +73,7 @@ theorem m_eq_rep (G : SimpleGraph (Fin 28)) [DecidableRel G.Adj]
   apply Finset.sum_congr rfl
   intro S _
   trace "m3"
-  change MvPolynomial.X (0:Fin 3)^S.card *
-    MvPolynomial.X (1:Fin 3)^((boundaryCode G S).card - 1) *
-      (∑ v ∈ boundaryCode G S, _) = _
+  rw [boundary_eq_code G S]
   trace "m4"
   rw [Finset.mul_sum,BurghartReflection.eval_sum]
   trace "m5"

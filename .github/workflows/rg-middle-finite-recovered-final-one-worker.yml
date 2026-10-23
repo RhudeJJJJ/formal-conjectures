@@ -92,3 +92,5 @@ jobs:
           name: rg-middle-finite-recovered-final-one-worker-exports-${{ github.run_id }}-${{ strategy.job-index }}
           path: Proofs/RG_Lean_20261019/build/extension/fresh_exports
           retention-days: 7
+
+# Use the explicit definition-transparency setting of the already proved transfer modules.

@@ -29,6 +29,7 @@ namespace Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualFiniteAllCertifica
 open SmallGeFourKeys DegreeOneMiddleResidualFiniteKeys
 set_option maxHeartbeats 0
 set_option maxRecDepth 100000
+set_option backward.isDefEq.respectTransparency false
 noncomputable section
 theorem certified_all_keys : ∀ (k : SmallGeFourKeys.Key), k ∈ DegreeOneMiddleResidualFiniteKeys.keys → SmallGeFourKeys.Certified k := by
   intro k hk

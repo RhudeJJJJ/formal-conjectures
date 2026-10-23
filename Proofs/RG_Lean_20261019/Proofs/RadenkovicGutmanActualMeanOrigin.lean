@@ -54,12 +54,9 @@ theorem mixed_origin_lower {W : Type*} [Fintype W] [DecidableEq W]
     funext y
     unfold MixedGraphIntegral.logarithm GraphIntegral.graphLogarithm
     rw [MixedGraphIntegral.shifted_det_eq f]
-  have heC : Coulson.matrixLogarithm (G.lapMatrix ℝ) (H'.lapMatrix ℝ) t =
-      Coulson.logarithm (G.isHermitian_lapMatrix ℝ).eigenvalues
-        (H'.isHermitian_lapMatrix ℝ).eigenvalues t :=
-    funext (Coulson.matrixLogarithm_eq _ _ (G.isHermitian_lapMatrix ℝ)
-      (H'.isHermitian_lapMatrix ℝ) t)
-  rw [he, GraphIntegral.graphLogarithm_eq G H' t, heC]
+  rw [he, GraphIntegral.graphLogarithm_eq G H' t]
+  simp_rw [Coulson.matrixLogarithm_eq _ _ (G.isHermitian_lapMatrix ℝ)
+    (H'.isHermitian_lapMatrix ℝ) t]
   have hbound (i : V) : |(H'.isHermitian_lapMatrix ℝ).eigenvalues i - t| ≤
       (n : ℝ) ^ 2 + 2 := shifted_spectrum_bound H' n hN t ht i
   have hspec := FiniteSpectrumIntegralRemainders.spectral_origin_integral_lower

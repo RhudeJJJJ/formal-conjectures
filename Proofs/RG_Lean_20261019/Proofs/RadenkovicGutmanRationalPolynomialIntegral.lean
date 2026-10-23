@@ -10,13 +10,14 @@ noncomputable section
 
 theorem derivative_evaluation (p : ℚ[X]) (x : ℝ) :
     HasDerivAt (fun y => realEvaluator y p) (realEvaluator x p.derivative) x := by
-  simpa [realEvaluator, Polynomial.aeval_def] using p.hasDerivAt_aeval x
+  simpa [realEvaluator, Polynomial.derivative_map, Polynomial.eval_map] using
+    (p.map (Rat.castHom ℝ)).hasDerivAt x
 
 theorem evaluation_continuous (p : ℚ[X]) : Continuous (fun y => realEvaluator y p) :=
   continuous_iff_continuousAt.mpr (fun y => (derivative_evaluation p y).continuousAt)
 
 theorem rational_evaluation (p : ℚ[X]) (x : ℚ) :
-    realEvaluator (x : ℝ) p = (p.eval x : ℝ) := by
+    realEvaluator (x : ℝ) p = ((p.eval x : ℚ) : ℝ) := by
   induction p using Polynomial.induction_on' with
   | add p q hp hq =>
       simp only [map_add, Polynomial.eval_add, Rat.cast_add, hp, hq]

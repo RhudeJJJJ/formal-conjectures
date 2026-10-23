@@ -1,0 +1,37 @@
+/- Copyright 2026 Jonas J. Gebendorfer. Apache 2.0. -/
+import Proofs.RadenkovicGutmanFixedClassKernelBase
+import Proofs.RadenkovicGutmanFixedDegree02Class12Batch000
+import Proofs.RadenkovicGutmanFixedDegree02Class12Batch001
+import Proofs.RadenkovicGutmanFixedDegree02Class12Batch002
+import Proofs.RadenkovicGutmanFixedDegree02Class12Batch003
+import Proofs.RadenkovicGutmanFixedDegree02Class12Batch004
+import Proofs.RadenkovicGutmanFixedDegree02Class12Batch005
+
+namespace Gebendorfer.RadenkovicGutman.FixedDegree02Class12
+set_option maxHeartbeats 0
+set_option maxRecDepth 100000
+set_option backward.isDefEq.respectTransparency false
+def partition : List FastArmCoverIntegral.Slice := [FixedDegree02Class12Cell000.slice,FixedDegree02Class12Cell001.slice,FixedDegree02Class12Cell002.slice,FixedDegree02Class12Cell003.slice,FixedDegree02Class12Cell004.slice,FixedDegree02Class12Cell005.slice,FixedDegree02Class12Cell006.slice,FixedDegree02Class12Cell007.slice,FixedDegree02Class12Cell008.slice,FixedDegree02Class12Cell009.slice,FixedDegree02Class12Cell010.slice,FixedDegree02Class12Cell011.slice,FixedDegree02Class12Cell012.slice,FixedDegree02Class12Cell013.slice,FixedDegree02Class12Cell014.slice,FixedDegree02Class12Cell015.slice,FixedDegree02Class12Cell016.slice,FixedDegree02Class12Cell017.slice,FixedDegree02Class12Cell018.slice,FixedDegree02Class12Cell019.slice,FixedDegree02Class12Cell020.slice,FixedDegree02Class12Cell021.slice,FixedDegree02Class12Cell022.slice,FixedDegree02Class12Cell023.slice,FixedDegree02Class12Cell024.slice,FixedDegree02Class12Cell025.slice,FixedDegree02Class12Cell026.slice,FixedDegree02Class12Cell027.slice,FixedDegree02Class12Cell028.slice,FixedDegree02Class12Cell029.slice,FixedDegree02Class12Cell030.slice,FixedDegree02Class12Cell031.slice,FixedDegree02Class12Cell032.slice,FixedDegree02Class12Cell033.slice,FixedDegree02Class12Cell034.slice,FixedDegree02Class12Cell035.slice,FixedDegree02Class12Cell036.slice,FixedDegree02Class12Cell037.slice,FixedDegree02Class12Cell038.slice,FixedDegree02Class12Cell039.slice,FixedDegree02Class12Cell040.slice,FixedDegree02Class12Cell041.slice,FixedDegree02Class12Cell042.slice,FixedDegree02Class12Cell043.slice,FixedDegree02Class12Cell044.slice,FixedDegree02Class12Cell045.slice,FixedDegree02Class12Cell046.slice,FixedDegree02Class12Cell047.slice,FixedDegree02Class12Cell048.slice,FixedDegree02Class12Cell049.slice,FixedDegree02Class12Cell050.slice]
+def reserve : ℚ := (1/5)
+theorem all_checked : ∀ s∈partition, FastArmCoverIntegral.accepts 2 0 1 s=true := by
+  simp only [partition,List.forall_mem_cons]
+  exact ⟨FixedDegree02Class12Cell000.slice_checked,FixedDegree02Class12Cell001.slice_checked,FixedDegree02Class12Cell002.slice_checked,FixedDegree02Class12Cell003.slice_checked,FixedDegree02Class12Cell004.slice_checked,FixedDegree02Class12Cell005.slice_checked,FixedDegree02Class12Cell006.slice_checked,FixedDegree02Class12Cell007.slice_checked,FixedDegree02Class12Cell008.slice_checked,FixedDegree02Class12Cell009.slice_checked,FixedDegree02Class12Cell010.slice_checked,FixedDegree02Class12Cell011.slice_checked,FixedDegree02Class12Cell012.slice_checked,FixedDegree02Class12Cell013.slice_checked,FixedDegree02Class12Cell014.slice_checked,FixedDegree02Class12Cell015.slice_checked,FixedDegree02Class12Cell016.slice_checked,FixedDegree02Class12Cell017.slice_checked,FixedDegree02Class12Cell018.slice_checked,FixedDegree02Class12Cell019.slice_checked,FixedDegree02Class12Cell020.slice_checked,FixedDegree02Class12Cell021.slice_checked,FixedDegree02Class12Cell022.slice_checked,FixedDegree02Class12Cell023.slice_checked,FixedDegree02Class12Cell024.slice_checked,FixedDegree02Class12Cell025.slice_checked,FixedDegree02Class12Cell026.slice_checked,FixedDegree02Class12Cell027.slice_checked,FixedDegree02Class12Cell028.slice_checked,FixedDegree02Class12Cell029.slice_checked,FixedDegree02Class12Cell030.slice_checked,FixedDegree02Class12Cell031.slice_checked,FixedDegree02Class12Cell032.slice_checked,FixedDegree02Class12Cell033.slice_checked,FixedDegree02Class12Cell034.slice_checked,FixedDegree02Class12Cell035.slice_checked,FixedDegree02Class12Cell036.slice_checked,FixedDegree02Class12Cell037.slice_checked,FixedDegree02Class12Cell038.slice_checked,FixedDegree02Class12Cell039.slice_checked,FixedDegree02Class12Cell040.slice_checked,FixedDegree02Class12Cell041.slice_checked,FixedDegree02Class12Cell042.slice_checked,FixedDegree02Class12Cell043.slice_checked,FixedDegree02Class12Cell044.slice_checked,FixedDegree02Class12Cell045.slice_checked,FixedDegree02Class12Cell046.slice_checked,FixedDegree02Class12Cell047.slice_checked,FixedDegree02Class12Cell048.slice_checked,FixedDegree02Class12Cell049.slice_checked,FixedDegree02Class12Cell050.slice_checked,fun _ h => False.elim (List.not_mem_nil h)⟩
+theorem adjacent_checked : FixedClassChain.adjacent (1/1000) 1024 partition=true := by decide +kernel
+theorem partition_checked : FastArmCoverIntegral.checkAt 2 0 1 (1/1000) 1024 partition=true :=
+  FixedClassChain.check_of_adjacent 2 0 1 (1/1000) 1024 partition adjacent_checked all_checked
+theorem budget_checked : PaidFixedClassIntegral.accepts reserve (FastArmCoverIntegral.payment partition)=true := by decide +kernel
+open scoped Classical
+noncomputable section
+theorem normalized_target {V : Type*} [Fintype V] [DecidableEq V]
+    (G : SimpleGraph V) (u : V) (p q : ℕ) (hd : G.degree u=2)
+    (hp : ArmClasses.classify p=0) (hq : ArmClasses.classify q=1) :
+    (reserve : ℝ)<ActualFusionIntegral.normalizedIntegral G u p q 2 :=
+  PaidFixedClassIntegral.normalized_target G u p q 2 (by decide) hd 0 1 hp hq
+    reserve partition partition_checked budget_checked
+end
+#print axioms all_checked
+#print axioms adjacent_checked
+#print axioms partition_checked
+#print axioms budget_checked
+#print axioms normalized_target
+end Gebendorfer.RadenkovicGutman.FixedDegree02Class12

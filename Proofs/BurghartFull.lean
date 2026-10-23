@@ -7,10 +7,8 @@ All finite computations are checked by the Lean kernel. -/
 
 namespace BurghartCertificate
 
-theorem polynomial_eq : Burghart.MPolynomial.mPolynomial T1 0 = Burghart.MPolynomial.mPolynomial T2 0 := by
-  rw [m_eq_rep T1 route1 route1_ok T1_tree admissiblesFast1 admissiblesFast1_eq,
-    m_eq_rep T2 route2 route2_ok T2_tree admissiblesFast2 admissiblesFast2_eq,
-    distances1_eq, distances2_eq, equal_reps_fast]
+theorem polynomial_eq : Burghart.MPolynomial.mPolynomial T1 0 = Burghart.MPolynomial.mPolynomial T2 0 :=
+  BurghartLists.polynomial_eq
 
 theorem full_conjecture20 : ¬ ∀ (n m : ℕ) (T : SimpleGraph (Fin n))
     (U : SimpleGraph (Fin m)) (r : Fin n) (s : Fin m), T.IsTree → U.IsTree →

@@ -14,6 +14,7 @@ lemma increasing_tail (f : ℕ → ℕ) (N a : ℕ)
       intro hb
       have hprev := ih (by omega)
       have h := hp b (by omega)
+      change f (b+1) + 1 ≤ f (b+2)
       omega
   have hbound : ∀ k, k ≤ N-a → f a + k ≤ f (a+k) := by
     intro k
@@ -23,6 +24,7 @@ lemma increasing_tail (f : ℕ → ℕ) (N a : ℕ)
       intro hk
       have hv := ih (by omega)
       have hs' := hstep (a+k) (by omega) (by omega)
+      change f a + (k+1) ≤ f (a+k+1)
       omega
   have h := hbound (N-a) (by omega)
   have he : a+(N-a)=N := by omega
@@ -59,6 +61,6 @@ lemma path_cone (f : ℕ → ℕ) (N : ℕ)
     simpa only [g,e1,e2] using hleft
   have h := increasing_tail g N (N-i) hg (by omega) hsg
   dsimp [g] at h
-  rw [e1, Nat.sub_self, e1] at h
+  rw [e1, Nat.sub_self] at h
   exact Or.inl h
 end WOWIIGeometry

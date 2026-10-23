@@ -14,7 +14,7 @@ lemma forced_support {D : Finset V} (hD : G.IsTotalDominating (D : Set V))
   have hw' := huniq w hlw
   have hs' := huniq s hsl.symm
   have : w=s := hw'.trans hs'.symm
-  simpa only [this] using hw
+  simpa only [Finset.mem_coe, this] using hw
 
 lemma independent_component_representatives (S : Finset V) :
     ∃ R : Finset V, R ⊆ S ∧
@@ -22,7 +22,7 @@ lemma independent_component_representatives (S : Finset V) :
       ∀ a ∈ R, ∀ b ∈ R, ¬ G.Adj a b := by
   classical
   let H := G.induce (S : Set V)
-  letI := Fintype.ofFinite H.ConnectedComponent
+  let _ := Fintype.ofFinite H.ConnectedComponent
   let r : H.ConnectedComponent → V := fun C => C.out.val
   have hm : ∀ C : H.ConnectedComponent, H.connectedComponentMk C.out = C :=
     fun C => C.out_eq
@@ -46,7 +46,7 @@ lemma independent_component_representatives (S : Finset V) :
       exact ConnectedComponent.connectedComponentMk_eq_of_adj
         (show H.Adj C.out E.out from hab)
     subst E
-    exact G.loopless _ hab
+    exact hab.ne rfl
 
 lemma distance_two_cover {D S : Finset V}
     (hD : G.IsTotalDominating (D : Set V)) (hSD : S ⊆ D) :
@@ -57,7 +57,7 @@ lemma distance_two_cover {D S : Finset V}
   obtain ⟨R, hRS, hcard, hR⟩ := independent_component_representatives G S
   have hRD : R ⊆ D := hRS.trans hSD
   refine ⟨D \ R, ?_, ?_⟩
-  · rw [card_sdiff hRD, ← hcard]
+  · rw [card_sdiff_of_subset hRD, ← hcard]
     exact Nat.sub_add_cancel (card_le_card hRD)
   · intro v
     obtain ⟨d, hd, hvd⟩ := hD v

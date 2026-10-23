@@ -21,7 +21,8 @@ def cell : FastNestedCellData.Cell := {
 theorem checked : FastNestedCellData.accepts 2 0 0 cell=true := by decide +kernel
 def slice : FastArmCoverIntegral.Slice := ⟨.leaf cell,(256/91),(128/45),cell.payment⟩
 theorem cover_checked : FastArmCover.accepts 2 0 0 slice.lower slice.upper 0 1 0 1 slice.bound slice.cover=true := by
-  rw [FastArmCover.accepts,decide_eq_true_eq]
+  change decide (FastNestedCellData.accepts 2 0 0 cell=true ∧ FastRectangularCell.shape cell (256/91) (128/45) 0 1 0 1=true ∧ cell.payment≤cell.payment)=true
+  rw [decide_eq_true_eq]
   exact ⟨checked,by decide +kernel,le_rfl⟩
 theorem slice_checked : FastArmCoverIntegral.accepts 2 0 0 slice=true :=
   FastArmCoverIntegral.accepts_of_checks 2 0 0 slice (by decide +kernel) (by decide +kernel) cover_checked

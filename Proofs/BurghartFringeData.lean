@@ -14,4 +14,19 @@ def rootParts2 (i : Fin 16) : V1 := (([[0,0,1,1,5,-6,-5,0,-2,23,-9,-15,6,-13,27,
 set_option maxHeartbeats 0 in
 theorem rootParts2_sum : norm1 (sum1 Finset.univ rootParts2) = fringeTable2 0 := by decide +kernel
 #print axioms rootParts2_sum
+def rootLeaves1 : Finset (Fin 28) := ([6,7,8,10,12,13,19,20,22,23,25,26,27]: List (Fin 28)).toFinset
+theorem rootLeaves1_eq : fringeCode (leavesCode T1 distances1) distances1 0 = rootLeaves1 := by decide +kernel
+theorem rootPaths1_eq : pathSet distances1 0 = ancestors1 := by
+  funext l
+  have h : ∀ l : Fin 28, pathSet distances1 0 l = ancestors1 l := by decide +kernel
+  exact h l
+#print axioms rootPaths1_eq
+def rootLeaves2 : Finset (Fin 28) := ([6,7,8,10,11,13,14,20,21,23,24,26,27]: List (Fin 28)).toFinset
+theorem rootLeaves2_eq : fringeCode (leavesCode T2 distances2) distances2 0 = rootLeaves2 := by decide +kernel
+theorem rootPaths2_eq : pathSet distances2 0 = ancestors2 := by
+  funext l
+  have h : ∀ l : Fin 28, pathSet distances2 0 l = ancestors2 l := by decide +kernel
+  exact h l
+#print axioms rootPaths2_eq
+
 end BurghartLists

@@ -5,6 +5,9 @@ set_option maxRecDepth 100000
 namespace BurghartLists
 open BurghartCertificate
 set_option maxHeartbeats 0 in
-theorem root2_part15 : norm1 (fringePart T2 distances2 0 15) = rootParts2 15 := by decide +kernel
+theorem root2_part15 : norm1 (fringePart T2 distances2 0 15) = rootParts2 15 := by
+  rw [fringePart_root_eq_fast T2 distances2 rootLeaves2 ancestors2
+    rootLeaves2_eq rootPaths2_eq (15:Fin 16)]
+  decide +kernel
 #print axioms root2_part15
 end BurghartLists

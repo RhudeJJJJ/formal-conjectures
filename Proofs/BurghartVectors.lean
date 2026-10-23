@@ -1,6 +1,6 @@
 import Proofs.BurghartAlgebra
 import Proofs.BurghartIdeals
-/-! # Verified coefficient-list evaluation and exhaustive leaf-class partition -/
+/-! # Verified coefficient lists, exhaustive leaf classes and path-union transport -/
 set_option Elab.async false
 set_option maxRecDepth 100000
 set_option maxHeartbeats 300000
@@ -332,5 +332,30 @@ theorem eval_fringe_from_parts (G : SimpleGraph (Fin 28)) [DecidableRel G.Adj]
     _ = eval1 (sum1 univ f) := (eval_sum1 _ _).symm
     _ = eval1 p := (eval_norm1 _).symm.trans (congrArg eval1 hs)
 #print axioms eval_fringe_from_parts
+
+
+def pathSet (d : Fin 28 → Fin 28 → ℕ) (v l : Fin 28) : Finset (Fin 28) :=
+  Finset.univ.filter (fun w => d v w + d w l = d v l)
+
+theorem pathsCode_eq_union (d : Fin 28 → Fin 28 → ℕ) (v : Fin 28) (A : Finset (Fin 28)) :
+    pathsCode d v A = A.biUnion (pathSet d v) := by
+  classical
+  ext w
+  simp [pathsCode,pathSet]
+
+def fastRootPart (L : Finset (Fin 28)) (p : Fin 28 → Finset (Fin 28)) (i : Fin 16) : V1 :=
+  sum1 (L.powerset.filter (fun A => leafMask A = i)) fun A =>
+    if (A.biUnion p).card = 0 then [] else
+      mono 0 ((A.biUnion p).card - 1) (-((-1:ℤ)^A.card))
+
+theorem fringePart_root_eq_fast (G : SimpleGraph (Fin 28)) [DecidableRel G.Adj]
+    (d : Fin 28 → Fin 28 → ℕ) (L : Finset (Fin 28)) (p : Fin 28 → Finset (Fin 28))
+    (hL : fringeCode (leavesCode G d) d 0 = L) (hp : pathSet d 0 = p) (i : Fin 16) :
+    fringePart G d 0 i = fastRootPart L p i := by
+  classical
+  unfold fringePart fastRootPart
+  rw [hL]
+  simp_rw [pathsCode_eq_union,hp]
+#print axioms fringePart_root_eq_fast
 
 end BurghartLists

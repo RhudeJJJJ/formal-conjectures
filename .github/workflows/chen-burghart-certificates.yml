@@ -57,9 +57,9 @@ jobs:
         run: |
           set -euo pipefail
           mkdir -p .lake/build/lib/lean/Proofs
-          for f in BurghartReflection BurghartBase BurghartRep BurghartAlgebra BurghartIdeals BurghartVectors BurghartCompute BurghartFull; do
+          for f in BurghartReflection BurghartBase BurghartRep BurghartAlgebra BurghartIdeals BurghartVectors BurghartFringe1 BurghartFringe2 BurghartCompute BurghartFull; do
             echo "Checking $f"
-            lake env lean -DwarningAsError=true -DautoImplicit=false -DrelaxedAutoImplicit=false -o ".lake/build/lib/lean/Proofs/$f.olean" "Proofs/$f.lean" | tee "$f.log"
+            /usr/bin/time -f "elapsed=%e peak_kib=%M" lake env lean -DwarningAsError=true -DautoImplicit=false -DrelaxedAutoImplicit=false -o ".lake/build/lib/lean/Proofs/$f.olean" "Proofs/$f.lean" | tee "$f.log"
           done
           python3 - <<'PY'
           import re

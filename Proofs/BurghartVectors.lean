@@ -1,7 +1,6 @@
 import Proofs.BurghartAlgebra
 import Proofs.BurghartIdeals
-/-! # Verified nested coefficient lists for Burghart's polynomial
-Prove evaluation, normalization and completeness before concrete kernel comparison. -/
+/-! # Verified coefficient-list evaluation, normalization and table transport -/
 set_option Elab.async false
 set_option maxRecDepth 100000
 set_option maxHeartbeats 300000
@@ -257,5 +256,34 @@ theorem m_eq_vec (G : SimpleGraph (Fin 28)) [DecidableRel G.Adj]
 
 #print axioms m_eq_vec
 
+
+
+def polyOf (G : SimpleGraph (Fin 28)) [DecidableRel G.Adj]
+    (C : Finset (Finset (Fin 28))) (f : Fin 28 → V1) : V3 :=
+  sum3 C fun S => mono ([]:V2) S.card (mono ([]:V1) ((boundaryCode G S).card - 1)
+    (sum1 (boundaryCode G S) f))
+
+theorem eval_polyOf_congr (G : SimpleGraph (Fin 28)) [DecidableRel G.Adj]
+    (C : Finset (Finset (Fin 28))) (f g : Fin 28 → V1)
+    (h : ∀ v, eval1 (f v) = eval1 (g v)) : eval3 (polyOf G C f) = eval3 (polyOf G C g) := by
+  classical
+  unfold polyOf
+  rw [eval_sum3,eval_sum3]
+  apply Finset.sum_congr rfl
+  intro S _
+  rw [eval_mono3,eval_mono3,eval_mono2,eval_mono2,eval_sum1,eval_sum1]
+  simp only [h]
+
+open scoped Classical in
+theorem m_eq_table (G : SimpleGraph (Fin 28)) [DecidableRel G.Adj]
+    (r : Fin 28 → Fin 28 → List (Fin 28)) (hr : RoutesOK G r) (ht : G.IsTree)
+    (C : Finset (Finset (Fin 28)))
+    (hC : univ.powerset.filter (Burghart.MPolynomial.IsAdmissible G 0) = C)
+    (d : Fin 28 → Fin 28 → ℕ) (hd : distanceCode r = d) (f : Fin 28 → V1)
+    (hf : ∀ v, norm1 (fringeVec G d v) = f v) :
+    Burghart.MPolynomial.mPolynomial G 0 = eval3 (polyOf G C f) := by
+  rw [m_eq_vec G r hr ht C hC,hd]
+  exact eval_polyOf_congr G C _ f (fun v => (eval_norm1 _).symm.trans (congrArg eval1 (hf v)))
+#print axioms m_eq_table
 
 end BurghartLists

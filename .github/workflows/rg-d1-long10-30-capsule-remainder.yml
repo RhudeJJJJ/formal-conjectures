@@ -1,0 +1,86 @@
+name: RG d1 long10 30 capsule remainder
+
+on:
+  push:
+    branches: [rg-remaining-six-spectral-20261021]
+    paths: ['.github/workflows/rg-d1-long10-30-capsule-remainder.yml']
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  check:
+    strategy:
+      fail-fast: false
+      max-parallel: 8
+      matrix:
+        endpoint: [Proofs.RadenkovicGutmanD1Long30Chunk010,Proofs.RadenkovicGutmanD1Long10Chunk013,Proofs.RadenkovicGutmanD1Long10Chunk037,Proofs.RadenkovicGutmanD1Long10Chunk044,Proofs.RadenkovicGutmanD1Long30Chunk017,Proofs.RadenkovicGutmanD1Long30Chunk019,Proofs.RadenkovicGutmanD1Long30Chunk050,Proofs.RadenkovicGutmanD1Long30Chunk058,Proofs.RadenkovicGutmanD1Long30Chunk015,Proofs.RadenkovicGutmanD1Long30Chunk067,Proofs.RadenkovicGutmanD1Long30Chunk030,Proofs.RadenkovicGutmanD1Long30Chunk071,Proofs.RadenkovicGutmanD1Long30Chunk024,Proofs.RadenkovicGutmanD1Long30Chunk064,Proofs.RadenkovicGutmanD1Long30Chunk060,Proofs.RadenkovicGutmanD1Long30Chunk027,Proofs.RadenkovicGutmanD1Long30Chunk073,Proofs.RadenkovicGutmanD1Long30Chunk053,Proofs.RadenkovicGutmanD1Long30Chunk016,Proofs.RadenkovicGutmanD1Long30Chunk014,Proofs.RadenkovicGutmanD1Long30Chunk013,Proofs.RadenkovicGutmanD1Long30Chunk066,Proofs.RadenkovicGutmanD1Long30Chunk021,Proofs.RadenkovicGutmanD1Long30Chunk036,Proofs.RadenkovicGutmanD1Long30Chunk075,Proofs.RadenkovicGutmanD1Long30Chunk063,Proofs.RadenkovicGutmanD1Long30Chunk029,Proofs.RadenkovicGutmanD1Long30Chunk037,Proofs.RadenkovicGutmanD1Long30Chunk023,Proofs.RadenkovicGutmanD1Long30Chunk032,Proofs.RadenkovicGutmanD1Long30Chunk056,Proofs.RadenkovicGutmanD1Long30Chunk065,Proofs.RadenkovicGutmanD1Long30Chunk057,Proofs.RadenkovicGutmanD1Long30Chunk044,Proofs.RadenkovicGutmanD1Long30Chunk070,Proofs.RadenkovicGutmanD1Long30Chunk020,Proofs.RadenkovicGutmanD1Long30Chunk062,Proofs.RadenkovicGutmanD1Long30Chunk026,Proofs.RadenkovicGutmanD1Long30Chunk069,Proofs.RadenkovicGutmanD1Long30Chunk022,Proofs.RadenkovicGutmanD1Long30Chunk049,Proofs.RadenkovicGutmanD1Long30Chunk072,Proofs.RadenkovicGutmanD1Long30Chunk051,Proofs.RadenkovicGutmanD1Long30Chunk076,Proofs.RadenkovicGutmanD1Long30Chunk018,Proofs.RadenkovicGutmanD1Long30Chunk042,Proofs.RadenkovicGutmanD1Long30Chunk043,Proofs.RadenkovicGutmanD1Long30Chunk033,Proofs.RadenkovicGutmanD1Long30Chunk034,Proofs.RadenkovicGutmanD1Long30Chunk059,Proofs.RadenkovicGutmanD1Long30Chunk061,Proofs.RadenkovicGutmanD1Long30Chunk039,Proofs.RadenkovicGutmanD1Long30Chunk068,Proofs.RadenkovicGutmanD1Long30Chunk041,Proofs.RadenkovicGutmanD1Long30Chunk038,Proofs.RadenkovicGutmanD1Long30Chunk047,Proofs.RadenkovicGutmanD1Long30Chunk031,Proofs.RadenkovicGutmanD1Long30Chunk045,Proofs.RadenkovicGutmanD1Long30Chunk028,Proofs.RadenkovicGutmanD1Long30Chunk054,Proofs.RadenkovicGutmanD1Long30Chunk048,Proofs.RadenkovicGutmanD1Long30Chunk040,Proofs.RadenkovicGutmanD1Long30Chunk046,Proofs.RadenkovicGutmanD1Long30Chunk074,Proofs.RadenkovicGutmanD1Long30Chunk055,Proofs.RadenkovicGutmanD1Long30Chunk035,Proofs.RadenkovicGutmanD1Long30Chunk052,Proofs.RadenkovicGutmanD1Long30Chunk025,Proofs.RadenkovicGutmanD1Long30Chunk079,Proofs.RadenkovicGutmanD1Long30Chunk078,Proofs.RadenkovicGutmanD1Long30Chunk077,Proofs.RadenkovicGutmanD1Long30Chunk081,Proofs.RadenkovicGutmanD1Long30Chunk085,Proofs.RadenkovicGutmanD1Long30Chunk093,Proofs.RadenkovicGutmanD1Long30Chunk086,Proofs.RadenkovicGutmanD1Long30Chunk088,Proofs.RadenkovicGutmanD1Long30Chunk101,Proofs.RadenkovicGutmanD1Long30Chunk098,Proofs.RadenkovicGutmanD1Long30Chunk096,Proofs.RadenkovicGutmanD1Long30Chunk080,Proofs.RadenkovicGutmanD1Long30Chunk083,Proofs.RadenkovicGutmanD1Long30Chunk094,Proofs.RadenkovicGutmanD1Long30Chunk109,Proofs.RadenkovicGutmanD1Long30Chunk084,Proofs.RadenkovicGutmanD1Long30Chunk107,Proofs.RadenkovicGutmanD1Long30Chunk108,Proofs.RadenkovicGutmanD1Long30Chunk089,Proofs.RadenkovicGutmanD1Long30Chunk120,Proofs.RadenkovicGutmanD1Long30Chunk104,Proofs.RadenkovicGutmanD1Long30Chunk102,Proofs.RadenkovicGutmanD1Long30Chunk092,Proofs.RadenkovicGutmanD1Long30Chunk090,Proofs.RadenkovicGutmanD1Long30Chunk087,Proofs.RadenkovicGutmanD1Long30Chunk105,Proofs.RadenkovicGutmanD1Long30Chunk110,Proofs.RadenkovicGutmanD1Long30Chunk100,Proofs.RadenkovicGutmanD1Long30Chunk091,Proofs.RadenkovicGutmanD1Long30Chunk099,Proofs.RadenkovicGutmanD1Long30Chunk082,Proofs.RadenkovicGutmanD1Long30Chunk103,Proofs.RadenkovicGutmanD1Long30Chunk128,Proofs.RadenkovicGutmanD1Long30Chunk113,Proofs.RadenkovicGutmanD1Long30Chunk097,Proofs.RadenkovicGutmanD1Long30Chunk125,Proofs.RadenkovicGutmanD1Long30Chunk114,Proofs.RadenkovicGutmanD1Long30Chunk121,Proofs.RadenkovicGutmanD1Long30Chunk106,Proofs.RadenkovicGutmanD1Long30Chunk112,Proofs.RadenkovicGutmanD1Long30Chunk095,Proofs.RadenkovicGutmanD1Long30Chunk127,Proofs.RadenkovicGutmanD1Long30Chunk134,Proofs.RadenkovicGutmanD1Long30Chunk130,Proofs.RadenkovicGutmanD1Long30Chunk115,Proofs.RadenkovicGutmanD1Long30Chunk117,Proofs.RadenkovicGutmanD1Long30Chunk124,Proofs.RadenkovicGutmanD1Long30Chunk119,Proofs.RadenkovicGutmanD1Long30Chunk118,Proofs.RadenkovicGutmanD1Long30Chunk133,Proofs.RadenkovicGutmanD1Long30Chunk132,Proofs.RadenkovicGutmanD1Long30Chunk129,Proofs.RadenkovicGutmanD1Long30Chunk122,Proofs.RadenkovicGutmanD1Long30Chunk135,Proofs.RadenkovicGutmanD1Long30Chunk126,Proofs.RadenkovicGutmanD1Long30Chunk111,Proofs.RadenkovicGutmanD1Long30Chunk131,Proofs.RadenkovicGutmanD1Long30Chunk123,Proofs.RadenkovicGutmanD1Long30Chunk116,Proofs.RadenkovicGutmanD1Long30Chunk136]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 150
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          persist-credentials: false
+      - name: Install the project toolchain
+        run: |
+          set -o pipefail
+          curl -sSfL https://github.com/leanprover/elan/releases/download/v1.4.2/elan-x86_64-unknown-linux-gnu.tar.gz | tar xz
+          ./elan-init -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Materialize the exact dependency lock
+        run: python3 -B ci/rg_dependencies.py
+      - name: Fetch the required Mathlib cache
+        run: |
+          python3 - <<'PY'
+          import pathlib, re, subprocess
+          root = pathlib.Path('Proofs/RG_Lean_20261019')
+          seen, external = set(), set()
+          def visit(name):
+              if name in seen:
+                  return
+              seen.add(name)
+              source = (root / (name.replace('.', '/') + '.lean')).read_text()
+              for dep in re.findall(r'^\s*import\s+([\w.]+)', source, re.M):
+                  if dep.startswith('Proofs.'):
+                      visit(dep)
+                  elif not dep.startswith(('Lean.', 'Init.', 'Std.')) and dep not in ('Lean','Init','Std'):
+                      external.add(dep)
+          visit('${{ matrix.endpoint }}')
+          subprocess.run(['lake', 'exe', 'cache', 'get', *sorted(external)], check=True)
+          PY
+      - name: Restore one independently audited complete source-bound base scope
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 -B ci/rg_restore_complete_scope.py --manifest ci/rg_long_arm_prerequisite_base_complete_scope_capsule.json --build-directory Proofs/RG_Lean_20261019/build/extension
+      - name: Check multiplicities and actual graph spectral comparison
+        shell: bash
+        run: |
+          set -o pipefail
+          python3 -B Proofs/RG_Lean_20261019/verify_extension.py --mathlib-project "$GITHUB_WORKSPACE" --endpoint ${{ matrix.endpoint }} --workers 1 --module-timeout 600 --resume | python3 -B ci/rg_compact_ci_output.py
+      - name: Retain completed records and diagnostics
+        if: always()
+        run: |
+          python3 - <<'PY'
+          import json,pathlib,shutil
+          root=pathlib.Path('Proofs/RG_Lean_20261019/build/extension')
+          records=[json.loads(p.read_text()) for p in sorted(root.glob('Proofs.*.json'))]
+          fresh=root.parent/'fresh_exports';fresh.mkdir(parents=True,exist_ok=True)
+          (fresh/'diagnostics_records.json').write_text(json.dumps({'modules':records},separators=(',',':'))+'\n')
+          if (root/'receipt.json').is_file():shutil.copyfile(root/'receipt.json',fresh/'receipt.json')
+          print('RETAINED_RECORD_COUNTS '+json.dumps({'total':len(records),'fresh':sum(r['mode']=='FRESH_KERNEL_EXPORT' for r in records)}))
+          for row in records:
+              if row['mode']=='FRESH_KERNEL_EXPORT':
+                  name=row['module'];rel=name.replace('.','/')+'.olean';dest=fresh/rel
+                  dest.parent.mkdir(parents=True,exist_ok=True)
+                  shutil.copyfile(root/rel,dest);shutil.copyfile(root/(name+'.json'),fresh/(name+'.json'))
+          for log in root.glob('Proofs.*.log'):
+              shutil.copyfile(log,fresh/log.name);print('MODULE_LOG_TAIL '+log.name+' '+log.read_text()[-18000:])
+          PY
+      - name: Retain new exports only
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: rg-d1-long10-30-capsule-remainder-exports-${{ github.run_id }}-${{ strategy.job-index }}
+          path: Proofs/RG_Lean_20261019/build/fresh_exports
+          retention-days: 7

@@ -1,0 +1,49 @@
+name: WOWII 361 and 362 proof development
+on:
+  push:
+    branches: [proof-wowii361362-20261023]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  development:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          persist-credentials: false
+      - name: Install pinned Lean
+        run: |
+          curl -sSfL https://github.com/leanprover/elan/releases/download/v1.4.2/elan-x86_64-unknown-linux-gnu.tar.gz | tar xz
+          ./elan-init -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> $GITHUB_PATH
+      - name: Get pinned Mathlib cache
+        run: lake exe cache get
+      - uses: actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9
+        with:
+          path: .lake/build
+          key: wowii361362-imports-${{ hashFiles('lean-toolchain', 'lake-manifest.json') }}-${{ github.sha }}
+          restore-keys: |
+            wowii361362-imports-${{ hashFiles('lean-toolchain', 'lake-manifest.json') }}-
+            chen-burghart-imports-${{ hashFiles('lean-toolchain', 'lake-manifest.json') }}-
+            round9-imports-${{ hashFiles('lean-toolchain', 'lake-manifest.json') }}-
+      - name: Build exact statement modules
+        run: lake --wfail build FormalConjectures.WrittenOnTheWallII.GraphConjecture361 FormalConjectures.WrittenOnTheWallII.GraphConjecture362
+      - uses: actions/cache/save@55cc8345863c7cc4c66a329aec7e433d2d1c52a9
+        with:
+          path: .lake/build
+          key: wowii361362-imports-${{ hashFiles('lean-toolchain', 'lake-manifest.json') }}-${{ github.sha }}
+      - name: Check proof-development modules
+        run: |
+          mkdir -p .lake/build/lib/lean/Proofs/WOWII361362
+          failed=0
+          for f in GeometryNumeric GraphCover; do
+            echo "CHECKING $f"
+            if lake env lean -DwarningAsError=true -DautoImplicit=false -DrelaxedAutoImplicit=false -o ".lake/build/lib/lean/Proofs/WOWII361362/$f.olean" "Proofs/WOWII361362/$f.lean"; then
+              echo "PASSED $f"
+            else
+              failed=1
+            fi
+          done
+          exit "$failed"

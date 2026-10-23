@@ -22,7 +22,7 @@ theorem sound (p F : List ℚ) (a b L : ℚ) (hab : a < b)
     have h := (hp.comp y (((hasDerivAt_id y).sub_const (a : ℝ)).div_const w)).const_mul w
     convert h using 1 <;> first
       | rfl
-      | (field_simp [hw']; ring)
+      | (field_simp [hw'] <;> ring)
   have hc : Continuous (fun y : ℝ => realEvaluator ((y-(a : ℝ))/w) (ofList p)) :=
     (RationalPolynomialIntegral.evaluation_continuous (ofList p)).comp
       ((continuous_id.sub continuous_const).div_const w)
@@ -30,8 +30,8 @@ theorem sound (p F : List ℚ) (a b L : ℚ) (hab : a < b)
     (hc.intervalIntegrable (a : ℝ) (b : ℝ))
   have h0 : ((a : ℝ)-a)/w = 0 := by simp
   have h1 : ((b : ℝ)-a)/w = 1 := div_self hw'
-  rw [h0,h1,show (0 : ℝ)=((0 : ℚ) : ℝ) from rfl,
-    show (1 : ℝ)=((1 : ℚ) : ℝ) from rfl,
+  rw [h0,h1,show (0 : ℝ)=((0 : ℚ) : ℝ) by norm_num,
+    show (1 : ℝ)=((1 : ℚ) : ℝ) by norm_num,
     RationalPolynomialIntegral.rational_evaluation,
     RationalPolynomialIntegral.rational_evaluation] at hi
   calc

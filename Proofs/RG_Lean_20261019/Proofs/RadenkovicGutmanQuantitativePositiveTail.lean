@@ -24,10 +24,15 @@ theorem pointwise (K Y y q : ℝ) (hK : 0 ≤ K) (hY : 0 < Y) (hy : Y ≤ y)
   norm_num at hq
   have hsq : Y^2 ≤ y^2 := by nlinarith
   have hb : 2*(coefficient K Y/y^2) ≤ K/(y^2+K) := by
-    unfold coefficient
+    have hid : 2*(coefficient K Y/y^2) = (K*Y^2/(Y^2+K))/y^2 := by
+      unfold coefficient
+      field_simp [hy0.ne',show Y^2+K ≠ 0 by positivity]
+      <;> ring
+    rw [hid]
     apply (div_le_div_iff₀ (by positivity : 0 < y^2)
       (by positivity : 0 < y^2+K)).mpr
-    apply (div_le_iff₀ (by positivity : 0 < 2*(Y^2+K))).mpr
+    rw [div_mul_eq_mul_div]
+    apply (div_le_iff₀ (by positivity : 0 < Y^2+K)).mpr
     nlinarith [mul_nonneg hK (mul_nonneg hK (sub_nonneg.mpr hsq))]
   linarith
 

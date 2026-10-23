@@ -1,0 +1,45 @@
+{
+  "repository": "RhudeJJJJ/formal-conjectures",
+  "run": 39670931160,
+  "job": 119468294697,
+  "source_commit": "371ec1896239bcf6327febc7da0eeec96c3ac62f",
+  "artifact_id": 12379152156,
+  "artifact_sha256": "250e99e0efe81ccaeb1ad4bc382ca13f2bd2ffb3575c197145adb4704c798fbd",
+  "lean_version": "4.33.1",
+  "mathlib": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "modules": {
+    "Proofs.RadenkovicGutmanDegreeTwoThreeClassAssembly": {
+      "module": "Proofs.RadenkovicGutmanDegreeTwoThreeClassAssembly",
+      "source_sha256": "734aa9b39d1ece3ce291106ebfba9319ae5478b7a9c7a7cd7a9d2d5f6307e4ef",
+      "source_closure_sha256": "442e0af9f6a542dd613416bf72eada0c97a31882f76cfd6346214a8ce9870e83",
+      "output_sha256": "e62b08ae55dc79b6adcfbd20de1288293ff8d1b0621c3a7fd35b824d6e5b6c43",
+      "axiom_profiles": [
+        [
+          "propext"
+        ],
+        [
+          "propext"
+        ],
+        [
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "FRESH_KERNEL_EXPORT",
+      "seconds": 2.62
+    }
+  }
+}

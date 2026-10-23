@@ -7,6 +7,7 @@ namespace Gebendorfer.RadenkovicGutman.ActualMeanOrigin
 open Finset Set MeasureTheory
 open scoped Classical
 noncomputable section
+set_option backward.isDefEq.respectTransparency false
 
 attribute [-instance] SimpleGraph.fintypeEdgeSetSup
 

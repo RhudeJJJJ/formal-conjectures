@@ -34,57 +34,56 @@ theorem of_batches (Q : SmallGeFourKeys.Key → Prop)
     (h024 : ∀ k ∈ keys024, Q k)
     : ∀ k ∈ DegreeOneMiddleResidualFiniteKeys.keys, Q k := by
   intro k hk
-  rcases List.mem_append.mp hk with h | hk
-  · exact h000 k h
-  rcases List.mem_append.mp hk with h | hk
-  · exact h001 k h
-  rcases List.mem_append.mp hk with h | hk
-  · exact h002 k h
-  rcases List.mem_append.mp hk with h | hk
-  · exact h003 k h
-  rcases List.mem_append.mp hk with h | hk
-  · exact h004 k h
-  rcases List.mem_append.mp hk with h | hk
-  · exact h005 k h
-  rcases List.mem_append.mp hk with h | hk
-  · exact h006 k h
-  rcases List.mem_append.mp hk with h | hk
-  · exact h007 k h
-  rcases List.mem_append.mp hk with h | hk
-  · exact h008 k h
-  rcases List.mem_append.mp hk with h | hk
-  · exact h009 k h
-  rcases List.mem_append.mp hk with h | hk
-  · exact h010 k h
-  rcases List.mem_append.mp hk with h | hk
-  · exact h011 k h
-  rcases List.mem_append.mp hk with h | hk
-  · exact h012 k h
-  rcases List.mem_append.mp hk with h | hk
-  · exact h013 k h
-  rcases List.mem_append.mp hk with h | hk
-  · exact h014 k h
-  rcases List.mem_append.mp hk with h | hk
-  · exact h015 k h
-  rcases List.mem_append.mp hk with h | hk
-  · exact h016 k h
-  rcases List.mem_append.mp hk with h | hk
-  · exact h017 k h
-  rcases List.mem_append.mp hk with h | hk
-  · exact h018 k h
-  rcases List.mem_append.mp hk with h | hk
-  · exact h019 k h
-  rcases List.mem_append.mp hk with h | hk
-  · exact h020 k h
-  rcases List.mem_append.mp hk with h | hk
-  · exact h021 k h
-  rcases List.mem_append.mp hk with h | hk
-  · exact h022 k h
-  rcases List.mem_append.mp hk with h | hk
-  · exact h023 k h
-  rcases List.mem_append.mp hk with h | hk
+  have hk := (List.mem_append.mp hk).resolve_right (List.not_mem_nil k)
+  rcases List.mem_append.mp hk with hk | h
+  · rcases List.mem_append.mp hk with hk | h
+    · rcases List.mem_append.mp hk with hk | h
+      · rcases List.mem_append.mp hk with hk | h
+        · rcases List.mem_append.mp hk with hk | h
+          · rcases List.mem_append.mp hk with hk | h
+            · rcases List.mem_append.mp hk with hk | h
+              · rcases List.mem_append.mp hk with hk | h
+                · rcases List.mem_append.mp hk with hk | h
+                  · rcases List.mem_append.mp hk with hk | h
+                    · rcases List.mem_append.mp hk with hk | h
+                      · rcases List.mem_append.mp hk with hk | h
+                        · rcases List.mem_append.mp hk with hk | h
+                          · rcases List.mem_append.mp hk with hk | h
+                            · rcases List.mem_append.mp hk with hk | h
+                              · rcases List.mem_append.mp hk with hk | h
+                                · rcases List.mem_append.mp hk with hk | h
+                                  · rcases List.mem_append.mp hk with hk | h
+                                    · rcases List.mem_append.mp hk with hk | h
+                                      · rcases List.mem_append.mp hk with hk | h
+                                        · rcases List.mem_append.mp hk with hk | h
+                                          · rcases List.mem_append.mp hk with hk | h
+                                            · rcases List.mem_append.mp hk with hk | h
+                                              · rcases List.mem_append.mp hk with hk | h
+                                                · exact h000 k hk
+                                                · exact h001 k h
+                                              · exact h002 k h
+                                            · exact h003 k h
+                                          · exact h004 k h
+                                        · exact h005 k h
+                                      · exact h006 k h
+                                    · exact h007 k h
+                                  · exact h008 k h
+                                · exact h009 k h
+                              · exact h010 k h
+                            · exact h011 k h
+                          · exact h012 k h
+                        · exact h013 k h
+                      · exact h014 k h
+                    · exact h015 k h
+                  · exact h016 k h
+                · exact h017 k h
+              · exact h018 k h
+            · exact h019 k h
+          · exact h020 k h
+        · exact h021 k h
+      · exact h022 k h
+    · exact h023 k h
   · exact h024 k h
-  exact False.elim (List.not_mem_nil k hk)
 
 #print axioms of_batches
 end Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualFiniteListAssembly

@@ -120,229 +120,228 @@ theorem of_batches (Q : SmallGeFourKeys.Key → Prop)
     (h110 : ∀ k ∈ keys110, Q k)
     : ∀ k ∈ DegreeTwoThreeFiniteKeys.keys, Q k := by
   intro k hk
-  rcases List.mem_append.mp hk with h | hk
-  · exact h000 k h
-  rcases List.mem_append.mp hk with h | hk
-  · exact h001 k h
-  rcases List.mem_append.mp hk with h | hk
-  · exact h002 k h
-  rcases List.mem_append.mp hk with h | hk
-  · exact h003 k h
-  rcases List.mem_append.mp hk with h | hk
-  · exact h004 k h
-  rcases List.mem_append.mp hk with h | hk
-  · exact h005 k h
-  rcases List.mem_append.mp hk with h | hk
-  · exact h006 k h
-  rcases List.mem_append.mp hk with h | hk
-  · exact h007 k h
-  rcases List.mem_append.mp hk with h | hk
-  · exact h008 k h
-  rcases List.mem_append.mp hk with h | hk
-  · exact h009 k h
-  rcases List.mem_append.mp hk with h | hk
-  · exact h010 k h
-  rcases List.mem_append.mp hk with h | hk
-  · exact h011 k h
-  rcases List.mem_append.mp hk with h | hk
-  · exact h012 k h
-  rcases List.mem_append.mp hk with h | hk
-  · exact h013 k h
-  rcases List.mem_append.mp hk with h | hk
-  · exact h014 k h
-  rcases List.mem_append.mp hk with h | hk
-  · exact h015 k h
-  rcases List.mem_append.mp hk with h | hk
-  · exact h016 k h
-  rcases List.mem_append.mp hk with h | hk
-  · exact h017 k h
-  rcases List.mem_append.mp hk with h | hk
-  · exact h018 k h
-  rcases List.mem_append.mp hk with h | hk
-  · exact h019 k h
-  rcases List.mem_append.mp hk with h | hk
-  · exact h020 k h
-  rcases List.mem_append.mp hk with h | hk
-  · exact h021 k h
-  rcases List.mem_append.mp hk with h | hk
-  · exact h022 k h
-  rcases List.mem_append.mp hk with h | hk
-  · exact h023 k h
-  rcases List.mem_append.mp hk with h | hk
-  · exact h024 k h
-  rcases List.mem_append.mp hk with h | hk
-  · exact h025 k h
-  rcases List.mem_append.mp hk with h | hk
-  · exact h026 k h
-  rcases List.mem_append.mp hk with h | hk
-  · exact h027 k h
-  rcases List.mem_append.mp hk with h | hk
-  · exact h028 k h
-  rcases List.mem_append.mp hk with h | hk
-  · exact h029 k h
-  rcases List.mem_append.mp hk with h | hk
-  · exact h030 k h
-  rcases List.mem_append.mp hk with h | hk
-  · exact h031 k h
-  rcases List.mem_append.mp hk with h | hk
-  · exact h032 k h
-  rcases List.mem_append.mp hk with h | hk
-  · exact h033 k h
-  rcases List.mem_append.mp hk with h | hk
-  · exact h034 k h
-  rcases List.mem_append.mp hk with h | hk
-  · exact h035 k h
-  rcases List.mem_append.mp hk with h | hk
-  · exact h036 k h
-  rcases List.mem_append.mp hk with h | hk
-  · exact h037 k h
-  rcases List.mem_append.mp hk with h | hk
-  · exact h038 k h
-  rcases List.mem_append.mp hk with h | hk
-  · exact h039 k h
-  rcases List.mem_append.mp hk with h | hk
-  · exact h040 k h
-  rcases List.mem_append.mp hk with h | hk
-  · exact h041 k h
-  rcases List.mem_append.mp hk with h | hk
-  · exact h042 k h
-  rcases List.mem_append.mp hk with h | hk
-  · exact h043 k h
-  rcases List.mem_append.mp hk with h | hk
-  · exact h044 k h
-  rcases List.mem_append.mp hk with h | hk
-  · exact h045 k h
-  rcases List.mem_append.mp hk with h | hk
-  · exact h046 k h
-  rcases List.mem_append.mp hk with h | hk
-  · exact h047 k h
-  rcases List.mem_append.mp hk with h | hk
-  · exact h048 k h
-  rcases List.mem_append.mp hk with h | hk
-  · exact h049 k h
-  rcases List.mem_append.mp hk with h | hk
-  · exact h050 k h
-  rcases List.mem_append.mp hk with h | hk
-  · exact h051 k h
-  rcases List.mem_append.mp hk with h | hk
-  · exact h052 k h
-  rcases List.mem_append.mp hk with h | hk
-  · exact h053 k h
-  rcases List.mem_append.mp hk with h | hk
-  · exact h054 k h
-  rcases List.mem_append.mp hk with h | hk
-  · exact h055 k h
-  rcases List.mem_append.mp hk with h | hk
-  · exact h056 k h
-  rcases List.mem_append.mp hk with h | hk
-  · exact h057 k h
-  rcases List.mem_append.mp hk with h | hk
-  · exact h058 k h
-  rcases List.mem_append.mp hk with h | hk
-  · exact h059 k h
-  rcases List.mem_append.mp hk with h | hk
-  · exact h060 k h
-  rcases List.mem_append.mp hk with h | hk
-  · exact h061 k h
-  rcases List.mem_append.mp hk with h | hk
-  · exact h062 k h
-  rcases List.mem_append.mp hk with h | hk
-  · exact h063 k h
-  rcases List.mem_append.mp hk with h | hk
-  · exact h064 k h
-  rcases List.mem_append.mp hk with h | hk
-  · exact h065 k h
-  rcases List.mem_append.mp hk with h | hk
-  · exact h066 k h
-  rcases List.mem_append.mp hk with h | hk
-  · exact h067 k h
-  rcases List.mem_append.mp hk with h | hk
-  · exact h068 k h
-  rcases List.mem_append.mp hk with h | hk
-  · exact h069 k h
-  rcases List.mem_append.mp hk with h | hk
-  · exact h070 k h
-  rcases List.mem_append.mp hk with h | hk
-  · exact h071 k h
-  rcases List.mem_append.mp hk with h | hk
-  · exact h072 k h
-  rcases List.mem_append.mp hk with h | hk
-  · exact h073 k h
-  rcases List.mem_append.mp hk with h | hk
-  · exact h074 k h
-  rcases List.mem_append.mp hk with h | hk
-  · exact h075 k h
-  rcases List.mem_append.mp hk with h | hk
-  · exact h076 k h
-  rcases List.mem_append.mp hk with h | hk
-  · exact h077 k h
-  rcases List.mem_append.mp hk with h | hk
-  · exact h078 k h
-  rcases List.mem_append.mp hk with h | hk
-  · exact h079 k h
-  rcases List.mem_append.mp hk with h | hk
-  · exact h080 k h
-  rcases List.mem_append.mp hk with h | hk
-  · exact h081 k h
-  rcases List.mem_append.mp hk with h | hk
-  · exact h082 k h
-  rcases List.mem_append.mp hk with h | hk
-  · exact h083 k h
-  rcases List.mem_append.mp hk with h | hk
-  · exact h084 k h
-  rcases List.mem_append.mp hk with h | hk
-  · exact h085 k h
-  rcases List.mem_append.mp hk with h | hk
-  · exact h086 k h
-  rcases List.mem_append.mp hk with h | hk
-  · exact h087 k h
-  rcases List.mem_append.mp hk with h | hk
-  · exact h088 k h
-  rcases List.mem_append.mp hk with h | hk
-  · exact h089 k h
-  rcases List.mem_append.mp hk with h | hk
-  · exact h090 k h
-  rcases List.mem_append.mp hk with h | hk
-  · exact h091 k h
-  rcases List.mem_append.mp hk with h | hk
-  · exact h092 k h
-  rcases List.mem_append.mp hk with h | hk
-  · exact h093 k h
-  rcases List.mem_append.mp hk with h | hk
-  · exact h094 k h
-  rcases List.mem_append.mp hk with h | hk
-  · exact h095 k h
-  rcases List.mem_append.mp hk with h | hk
-  · exact h096 k h
-  rcases List.mem_append.mp hk with h | hk
-  · exact h097 k h
-  rcases List.mem_append.mp hk with h | hk
-  · exact h098 k h
-  rcases List.mem_append.mp hk with h | hk
-  · exact h099 k h
-  rcases List.mem_append.mp hk with h | hk
-  · exact h100 k h
-  rcases List.mem_append.mp hk with h | hk
-  · exact h101 k h
-  rcases List.mem_append.mp hk with h | hk
-  · exact h102 k h
-  rcases List.mem_append.mp hk with h | hk
-  · exact h103 k h
-  rcases List.mem_append.mp hk with h | hk
-  · exact h104 k h
-  rcases List.mem_append.mp hk with h | hk
-  · exact h105 k h
-  rcases List.mem_append.mp hk with h | hk
-  · exact h106 k h
-  rcases List.mem_append.mp hk with h | hk
-  · exact h107 k h
-  rcases List.mem_append.mp hk with h | hk
-  · exact h108 k h
-  rcases List.mem_append.mp hk with h | hk
-  · exact h109 k h
-  rcases List.mem_append.mp hk with h | hk
+  have hk := (List.mem_append.mp hk).resolve_right (List.not_mem_nil k)
+  rcases List.mem_append.mp hk with hk | h
+  · rcases List.mem_append.mp hk with hk | h
+    · rcases List.mem_append.mp hk with hk | h
+      · rcases List.mem_append.mp hk with hk | h
+        · rcases List.mem_append.mp hk with hk | h
+          · rcases List.mem_append.mp hk with hk | h
+            · rcases List.mem_append.mp hk with hk | h
+              · rcases List.mem_append.mp hk with hk | h
+                · rcases List.mem_append.mp hk with hk | h
+                  · rcases List.mem_append.mp hk with hk | h
+                    · rcases List.mem_append.mp hk with hk | h
+                      · rcases List.mem_append.mp hk with hk | h
+                        · rcases List.mem_append.mp hk with hk | h
+                          · rcases List.mem_append.mp hk with hk | h
+                            · rcases List.mem_append.mp hk with hk | h
+                              · rcases List.mem_append.mp hk with hk | h
+                                · rcases List.mem_append.mp hk with hk | h
+                                  · rcases List.mem_append.mp hk with hk | h
+                                    · rcases List.mem_append.mp hk with hk | h
+                                      · rcases List.mem_append.mp hk with hk | h
+                                        · rcases List.mem_append.mp hk with hk | h
+                                          · rcases List.mem_append.mp hk with hk | h
+                                            · rcases List.mem_append.mp hk with hk | h
+                                              · rcases List.mem_append.mp hk with hk | h
+                                                · rcases List.mem_append.mp hk with hk | h
+                                                  · rcases List.mem_append.mp hk with hk | h
+                                                    · rcases List.mem_append.mp hk with hk | h
+                                                      · rcases List.mem_append.mp hk with hk | h
+                                                        · rcases List.mem_append.mp hk with hk | h
+                                                          · rcases List.mem_append.mp hk with hk | h
+                                                            · rcases List.mem_append.mp hk with hk | h
+                                                              · rcases List.mem_append.mp hk with hk | h
+                                                                · rcases List.mem_append.mp hk with hk | h
+                                                                  · rcases List.mem_append.mp hk with hk | h
+                                                                    · rcases List.mem_append.mp hk with hk | h
+                                                                      · rcases List.mem_append.mp hk with hk | h
+                                                                        · rcases List.mem_append.mp hk with hk | h
+                                                                          · rcases List.mem_append.mp hk with hk | h
+                                                                            · rcases List.mem_append.mp hk with hk | h
+                                                                              · rcases List.mem_append.mp hk with hk | h
+                                                                                · rcases List.mem_append.mp hk with hk | h
+                                                                                  · rcases List.mem_append.mp hk with hk | h
+                                                                                    · rcases List.mem_append.mp hk with hk | h
+                                                                                      · rcases List.mem_append.mp hk with hk | h
+                                                                                        · rcases List.mem_append.mp hk with hk | h
+                                                                                          · rcases List.mem_append.mp hk with hk | h
+                                                                                            · rcases List.mem_append.mp hk with hk | h
+                                                                                              · rcases List.mem_append.mp hk with hk | h
+                                                                                                · rcases List.mem_append.mp hk with hk | h
+                                                                                                  · rcases List.mem_append.mp hk with hk | h
+                                                                                                    · rcases List.mem_append.mp hk with hk | h
+                                                                                                      · rcases List.mem_append.mp hk with hk | h
+                                                                                                        · rcases List.mem_append.mp hk with hk | h
+                                                                                                          · rcases List.mem_append.mp hk with hk | h
+                                                                                                            · rcases List.mem_append.mp hk with hk | h
+                                                                                                              · rcases List.mem_append.mp hk with hk | h
+                                                                                                                · rcases List.mem_append.mp hk with hk | h
+                                                                                                                  · rcases List.mem_append.mp hk with hk | h
+                                                                                                                    · rcases List.mem_append.mp hk with hk | h
+                                                                                                                      · rcases List.mem_append.mp hk with hk | h
+                                                                                                                        · rcases List.mem_append.mp hk with hk | h
+                                                                                                                          · rcases List.mem_append.mp hk with hk | h
+                                                                                                                            · rcases List.mem_append.mp hk with hk | h
+                                                                                                                              · rcases List.mem_append.mp hk with hk | h
+                                                                                                                                · rcases List.mem_append.mp hk with hk | h
+                                                                                                                                  · rcases List.mem_append.mp hk with hk | h
+                                                                                                                                    · rcases List.mem_append.mp hk with hk | h
+                                                                                                                                      · rcases List.mem_append.mp hk with hk | h
+                                                                                                                                        · rcases List.mem_append.mp hk with hk | h
+                                                                                                                                          · rcases List.mem_append.mp hk with hk | h
+                                                                                                                                            · rcases List.mem_append.mp hk with hk | h
+                                                                                                                                              · rcases List.mem_append.mp hk with hk | h
+                                                                                                                                                · rcases List.mem_append.mp hk with hk | h
+                                                                                                                                                  · rcases List.mem_append.mp hk with hk | h
+                                                                                                                                                    · rcases List.mem_append.mp hk with hk | h
+                                                                                                                                                      · rcases List.mem_append.mp hk with hk | h
+                                                                                                                                                        · rcases List.mem_append.mp hk with hk | h
+                                                                                                                                                          · rcases List.mem_append.mp hk with hk | h
+                                                                                                                                                            · rcases List.mem_append.mp hk with hk | h
+                                                                                                                                                              · rcases List.mem_append.mp hk with hk | h
+                                                                                                                                                                · rcases List.mem_append.mp hk with hk | h
+                                                                                                                                                                  · rcases List.mem_append.mp hk with hk | h
+                                                                                                                                                                    · rcases List.mem_append.mp hk with hk | h
+                                                                                                                                                                      · rcases List.mem_append.mp hk with hk | h
+                                                                                                                                                                        · rcases List.mem_append.mp hk with hk | h
+                                                                                                                                                                          · rcases List.mem_append.mp hk with hk | h
+                                                                                                                                                                            · rcases List.mem_append.mp hk with hk | h
+                                                                                                                                                                              · rcases List.mem_append.mp hk with hk | h
+                                                                                                                                                                                · rcases List.mem_append.mp hk with hk | h
+                                                                                                                                                                                  · rcases List.mem_append.mp hk with hk | h
+                                                                                                                                                                                    · rcases List.mem_append.mp hk with hk | h
+                                                                                                                                                                                      · rcases List.mem_append.mp hk with hk | h
+                                                                                                                                                                                        · rcases List.mem_append.mp hk with hk | h
+                                                                                                                                                                                          · rcases List.mem_append.mp hk with hk | h
+                                                                                                                                                                                            · rcases List.mem_append.mp hk with hk | h
+                                                                                                                                                                                              · rcases List.mem_append.mp hk with hk | h
+                                                                                                                                                                                                · rcases List.mem_append.mp hk with hk | h
+                                                                                                                                                                                                  · rcases List.mem_append.mp hk with hk | h
+                                                                                                                                                                                                    · rcases List.mem_append.mp hk with hk | h
+                                                                                                                                                                                                      · rcases List.mem_append.mp hk with hk | h
+                                                                                                                                                                                                        · rcases List.mem_append.mp hk with hk | h
+                                                                                                                                                                                                          · rcases List.mem_append.mp hk with hk | h
+                                                                                                                                                                                                            · rcases List.mem_append.mp hk with hk | h
+                                                                                                                                                                                                              · rcases List.mem_append.mp hk with hk | h
+                                                                                                                                                                                                                · rcases List.mem_append.mp hk with hk | h
+                                                                                                                                                                                                                  · rcases List.mem_append.mp hk with hk | h
+                                                                                                                                                                                                                    · rcases List.mem_append.mp hk with hk | h
+                                                                                                                                                                                                                      · rcases List.mem_append.mp hk with hk | h
+                                                                                                                                                                                                                        · rcases List.mem_append.mp hk with hk | h
+                                                                                                                                                                                                                          · rcases List.mem_append.mp hk with hk | h
+                                                                                                                                                                                                                            · exact h000 k hk
+                                                                                                                                                                                                                            · exact h001 k h
+                                                                                                                                                                                                                          · exact h002 k h
+                                                                                                                                                                                                                        · exact h003 k h
+                                                                                                                                                                                                                      · exact h004 k h
+                                                                                                                                                                                                                    · exact h005 k h
+                                                                                                                                                                                                                  · exact h006 k h
+                                                                                                                                                                                                                · exact h007 k h
+                                                                                                                                                                                                              · exact h008 k h
+                                                                                                                                                                                                            · exact h009 k h
+                                                                                                                                                                                                          · exact h010 k h
+                                                                                                                                                                                                        · exact h011 k h
+                                                                                                                                                                                                      · exact h012 k h
+                                                                                                                                                                                                    · exact h013 k h
+                                                                                                                                                                                                  · exact h014 k h
+                                                                                                                                                                                                · exact h015 k h
+                                                                                                                                                                                              · exact h016 k h
+                                                                                                                                                                                            · exact h017 k h
+                                                                                                                                                                                          · exact h018 k h
+                                                                                                                                                                                        · exact h019 k h
+                                                                                                                                                                                      · exact h020 k h
+                                                                                                                                                                                    · exact h021 k h
+                                                                                                                                                                                  · exact h022 k h
+                                                                                                                                                                                · exact h023 k h
+                                                                                                                                                                              · exact h024 k h
+                                                                                                                                                                            · exact h025 k h
+                                                                                                                                                                          · exact h026 k h
+                                                                                                                                                                        · exact h027 k h
+                                                                                                                                                                      · exact h028 k h
+                                                                                                                                                                    · exact h029 k h
+                                                                                                                                                                  · exact h030 k h
+                                                                                                                                                                · exact h031 k h
+                                                                                                                                                              · exact h032 k h
+                                                                                                                                                            · exact h033 k h
+                                                                                                                                                          · exact h034 k h
+                                                                                                                                                        · exact h035 k h
+                                                                                                                                                      · exact h036 k h
+                                                                                                                                                    · exact h037 k h
+                                                                                                                                                  · exact h038 k h
+                                                                                                                                                · exact h039 k h
+                                                                                                                                              · exact h040 k h
+                                                                                                                                            · exact h041 k h
+                                                                                                                                          · exact h042 k h
+                                                                                                                                        · exact h043 k h
+                                                                                                                                      · exact h044 k h
+                                                                                                                                    · exact h045 k h
+                                                                                                                                  · exact h046 k h
+                                                                                                                                · exact h047 k h
+                                                                                                                              · exact h048 k h
+                                                                                                                            · exact h049 k h
+                                                                                                                          · exact h050 k h
+                                                                                                                        · exact h051 k h
+                                                                                                                      · exact h052 k h
+                                                                                                                    · exact h053 k h
+                                                                                                                  · exact h054 k h
+                                                                                                                · exact h055 k h
+                                                                                                              · exact h056 k h
+                                                                                                            · exact h057 k h
+                                                                                                          · exact h058 k h
+                                                                                                        · exact h059 k h
+                                                                                                      · exact h060 k h
+                                                                                                    · exact h061 k h
+                                                                                                  · exact h062 k h
+                                                                                                · exact h063 k h
+                                                                                              · exact h064 k h
+                                                                                            · exact h065 k h
+                                                                                          · exact h066 k h
+                                                                                        · exact h067 k h
+                                                                                      · exact h068 k h
+                                                                                    · exact h069 k h
+                                                                                  · exact h070 k h
+                                                                                · exact h071 k h
+                                                                              · exact h072 k h
+                                                                            · exact h073 k h
+                                                                          · exact h074 k h
+                                                                        · exact h075 k h
+                                                                      · exact h076 k h
+                                                                    · exact h077 k h
+                                                                  · exact h078 k h
+                                                                · exact h079 k h
+                                                              · exact h080 k h
+                                                            · exact h081 k h
+                                                          · exact h082 k h
+                                                        · exact h083 k h
+                                                      · exact h084 k h
+                                                    · exact h085 k h
+                                                  · exact h086 k h
+                                                · exact h087 k h
+                                              · exact h088 k h
+                                            · exact h089 k h
+                                          · exact h090 k h
+                                        · exact h091 k h
+                                      · exact h092 k h
+                                    · exact h093 k h
+                                  · exact h094 k h
+                                · exact h095 k h
+                              · exact h096 k h
+                            · exact h097 k h
+                          · exact h098 k h
+                        · exact h099 k h
+                      · exact h100 k h
+                    · exact h101 k h
+                  · exact h102 k h
+                · exact h103 k h
+              · exact h104 k h
+            · exact h105 k h
+          · exact h106 k h
+        · exact h107 k h
+      · exact h108 k h
+    · exact h109 k h
   · exact h110 k h
-  exact False.elim (List.not_mem_nil k hk)
 
 #print axioms of_batches
 end Gebendorfer.RadenkovicGutman.DegreeTwoThreeFiniteListAssembly

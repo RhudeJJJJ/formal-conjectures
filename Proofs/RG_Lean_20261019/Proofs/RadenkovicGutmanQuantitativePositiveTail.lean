@@ -27,7 +27,6 @@ theorem pointwise (K Y y q : ℝ) (hK : 0 ≤ K) (hY : 0 < Y) (hy : Y ≤ y)
     have hid : 2*(coefficient K Y/y^2) = (K*Y^2/(Y^2+K))/y^2 := by
       unfold coefficient
       field_simp [hy0.ne',show Y^2+K ≠ 0 by positivity]
-      <;> ring
     rw [hid]
     apply (div_le_div_iff₀ (by positivity : 0 < y^2)
       (by positivity : 0 < y^2+K)).mpr

@@ -1,0 +1,5013 @@
+{
+  "kind": "INDEPENDENTLY_AUDITED_COMPLETE_SCOPE_CAPSULE",
+  "repository": "RhudeJJJJ/formal-conjectures",
+  "run": 39873037947,
+  "job": 120151840325,
+  "source_commit": "c4b207e877cdd1e3d85a416a241a2242225999b7",
+  "artifact_id": 12467810947,
+  "artifact_sha256": "417f999889b900b9608719490939d42473287c2edcaa5368b68bb9cd02a15c47",
+  "lean_version": "4.33.1",
+  "mathlib": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "modules": {
+    "Proofs.RadenkovicGutmanCountGap": {
+      "module": "Proofs.RadenkovicGutmanCountGap",
+      "source_sha256": "17eefcfd9580f0df92eb9c1ce4dded759fd575602c6e53f57263ab4613f84d6e",
+      "source_closure_sha256": "e094d2590497c077143917af18a459f1b8bdc8324157118d3d2871fc65c65262",
+      "output_sha256": "a3826cfbd0e1b130e4301a33be1d3f5252af799abd94a2579890e1855f89e59b",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PRIOR_VERIFIED_JOB_EXPORT",
+      "seconds": 3.072,
+      "origin": {
+        "repository": "RhudeJJJJ/formal-conjectures",
+        "run": 39503978917,
+        "job": 118908155072,
+        "source_commit": "bf607656537ce3cf1c9092b6887adcb03dd2635b",
+        "artifact_id": 12307286965,
+        "artifact_sha256": "3f9b96cb67aacaf21dd2a6611403378163d169cceb279160d0e8dfbeda306237"
+      }
+    },
+    "Proofs.RadenkovicGutmanPathEnclosure": {
+      "module": "Proofs.RadenkovicGutmanPathEnclosure",
+      "source_sha256": "fa908a8e90a316981820ebf47445e0ab206f3cf32e546466d775fc908931cc85",
+      "source_closure_sha256": "ff7df41973217dcdfed0a7af9da22f3a1218526c9f35cd9a816500222bb492da",
+      "output_sha256": "550bb9d846a652af660ee8a7e4c7944939ada1ba0d91fda0f5865e4fe3511737",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PRIOR_VERIFIED_JOB_EXPORT",
+      "seconds": 2.22,
+      "origin": {
+        "repository": "RhudeJJJJ/formal-conjectures",
+        "run": 39503978917,
+        "job": 118908155072,
+        "source_commit": "bf607656537ce3cf1c9092b6887adcb03dd2635b",
+        "artifact_id": 12307286965,
+        "artifact_sha256": "3f9b96cb67aacaf21dd2a6611403378163d169cceb279160d0e8dfbeda306237"
+      }
+    },
+    "Proofs.RadenkovicGutmanPathRecurrence": {
+      "module": "Proofs.RadenkovicGutmanPathRecurrence",
+      "source_sha256": "4e4eeb10961d7d9834c138cfe317e5f6dd2a153102b2e092662c75661230c4e6",
+      "source_closure_sha256": "b11c8835f40da37fb10e1cae3e5554b0692d07ddbecb2f270d8fc682276ecb8e",
+      "output_sha256": "7fa0a06299caf4890228139185769086b6c0b785673272c500e5c948d2a2c5d6",
+      "axiom_profiles": [
+        [
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PRIOR_VERIFIED_JOB_EXPORT",
+      "seconds": 1.518,
+      "origin": {
+        "repository": "RhudeJJJJ/formal-conjectures",
+        "run": 39503978917,
+        "job": 118908155072,
+        "source_commit": "bf607656537ce3cf1c9092b6887adcb03dd2635b",
+        "artifact_id": 12307286965,
+        "artifact_sha256": "3f9b96cb67aacaf21dd2a6611403378163d169cceb279160d0e8dfbeda306237"
+      }
+    },
+    "Proofs.RadenkovicGutmanPathDeterminant": {
+      "module": "Proofs.RadenkovicGutmanPathDeterminant",
+      "source_sha256": "d6121b7d9da80dabe42e1a33f87b6d60a7f968da8823fe829b15851be072d031",
+      "source_closure_sha256": "8b98b18afc3d7bea424153f2b268320498e33442b1876d0c31c42b23e8e2704a",
+      "output_sha256": "fd7ebd5428aa3b83191d6baddc082d470aaaaa833fdd437a4ef01e6211e44f7c",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PRIOR_VERIFIED_JOB_EXPORT",
+      "seconds": 3.875,
+      "origin": {
+        "repository": "RhudeJJJJ/formal-conjectures",
+        "run": 39503978917,
+        "job": 118908155072,
+        "source_commit": "bf607656537ce3cf1c9092b6887adcb03dd2635b",
+        "artifact_id": 12307286965,
+        "artifact_sha256": "3f9b96cb67aacaf21dd2a6611403378163d169cceb279160d0e8dfbeda306237"
+      }
+    },
+    "Proofs.RadenkovicGutmanPathResolvent": {
+      "module": "Proofs.RadenkovicGutmanPathResolvent",
+      "source_sha256": "72a7442dc6be586455fdec61a674157048718060da11c5d4bf24eb129e78e627",
+      "source_closure_sha256": "3b74e0955f8ec2db84ef63ad50eb68eb697bf454fafd9076e242ef962f4ee5c7",
+      "output_sha256": "8bfb52e727d3d9a6f88ffac88e2db4be7cfa7a71ed1e006a1a169f58824480de",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PRIOR_VERIFIED_JOB_EXPORT",
+      "seconds": 2.27,
+      "origin": {
+        "repository": "RhudeJJJJ/formal-conjectures",
+        "run": 39503978917,
+        "job": 118908155072,
+        "source_commit": "bf607656537ce3cf1c9092b6887adcb03dd2635b",
+        "artifact_id": 12307286965,
+        "artifact_sha256": "3f9b96cb67aacaf21dd2a6611403378163d169cceb279160d0e8dfbeda306237"
+      }
+    },
+    "Proofs.RadenkovicGutmanArmBridge": {
+      "module": "Proofs.RadenkovicGutmanArmBridge",
+      "source_sha256": "dbe29009159ad77cc551e19ad5a02816252cffabe171a6c3a89ed6ab9fb059ba",
+      "source_closure_sha256": "5c5424acf5a7ff6d26b30c4915091e139c5a3f7556b5c2b44c09e21408ed1cfe",
+      "output_sha256": "9c47acbc0c640b6d61ce04ac43695b32bb52b97a146928882db0fa23ccf5e076",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PRIOR_VERIFIED_JOB_EXPORT",
+      "seconds": 2.421,
+      "origin": {
+        "repository": "RhudeJJJJ/formal-conjectures",
+        "run": 39503978917,
+        "job": 118908155072,
+        "source_commit": "bf607656537ce3cf1c9092b6887adcb03dd2635b",
+        "artifact_id": 12307286965,
+        "artifact_sha256": "3f9b96cb67aacaf21dd2a6611403378163d169cceb279160d0e8dfbeda306237"
+      }
+    },
+    "Proofs.RadenkovicGutmanCoreQuotient": {
+      "module": "Proofs.RadenkovicGutmanCoreQuotient",
+      "source_sha256": "9a73956ea3e17c97208ee5522dc73d9feb2b5f209e5d707ef19d64bade8d3d82",
+      "source_closure_sha256": "e4ae07f61d2620d98311434d9bbb551f6f036435a6ab8285907d68eab42186d5",
+      "output_sha256": "3be134b4047eb2054061f2dd924ace566176db95f4f7fbd3e569e968e58133a5",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PRIOR_VERIFIED_JOB_EXPORT",
+      "seconds": 5.177,
+      "origin": {
+        "repository": "RhudeJJJJ/formal-conjectures",
+        "run": 39503978917,
+        "job": 118908155072,
+        "source_commit": "bf607656537ce3cf1c9092b6887adcb03dd2635b",
+        "artifact_id": 12307286965,
+        "artifact_sha256": "3f9b96cb67aacaf21dd2a6611403378163d169cceb279160d0e8dfbeda306237"
+      }
+    },
+    "Proofs.RadenkovicGutmanGraphJoin": {
+      "module": "Proofs.RadenkovicGutmanGraphJoin",
+      "source_sha256": "36d8d239d7a45bf63cfd0475180e208c72cf5bbe9f18873a32b966bdcfa7c428",
+      "source_closure_sha256": "c891c0eaf716f1a520e5fa97eb22fb98eae7ce80f235c626f9dad55020a68696",
+      "output_sha256": "e7d6c0ee20fe403f46ec15a8272b7ef454ee26b4637466ceeaf54357d0a951f1",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PRIOR_VERIFIED_JOB_EXPORT",
+      "seconds": 7.183,
+      "origin": {
+        "repository": "RhudeJJJJ/formal-conjectures",
+        "run": 39503978917,
+        "job": 118908155072,
+        "source_commit": "bf607656537ce3cf1c9092b6887adcb03dd2635b",
+        "artifact_id": 12307286965,
+        "artifact_sha256": "3f9b96cb67aacaf21dd2a6611403378163d169cceb279160d0e8dfbeda306237"
+      }
+    },
+    "Proofs.RadenkovicGutmanFusionQuotient": {
+      "module": "Proofs.RadenkovicGutmanFusionQuotient",
+      "source_sha256": "af4340091b54039be8601ca21297236fe5983b34e9bc5e311a1709b87e1faaf8",
+      "source_closure_sha256": "318488a4d452c35a048a420595f65f5265337ecd72428c4093dbbd4faf07dc31",
+      "output_sha256": "bf3fef072b3d4d29d79bb732d111f46b265e3febf4781c6b583413d92af9869d",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PRIOR_VERIFIED_JOB_EXPORT",
+      "seconds": 3.173,
+      "origin": {
+        "repository": "RhudeJJJJ/formal-conjectures",
+        "run": 39503978917,
+        "job": 118908155072,
+        "source_commit": "bf607656537ce3cf1c9092b6887adcb03dd2635b",
+        "artifact_id": 12307286965,
+        "artifact_sha256": "3f9b96cb67aacaf21dd2a6611403378163d169cceb279160d0e8dfbeda306237"
+      }
+    },
+    "Proofs.RadenkovicGutmanRationalLog": {
+      "module": "Proofs.RadenkovicGutmanRationalLog",
+      "source_sha256": "e602083892dfefe7d76d5f9d3c7067db0d76e7cd9be34ee1087f396bd4c1f0eb",
+      "source_closure_sha256": "9264cb2cf24fcaafc2609c78a767b3fd67798889bd348c22af7a8933fc2be8f2",
+      "output_sha256": "d40d6ab32a53b85165a58f31a0c6aa452f06fcfad1b5487cb5051b0849717742",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PRIOR_VERIFIED_JOB_EXPORT",
+      "seconds": 2.922,
+      "origin": {
+        "repository": "RhudeJJJJ/formal-conjectures",
+        "run": 39646215937,
+        "job": 119382368110,
+        "source_commit": "07787695420e4ab3a94613948e1619dde739113d",
+        "artifact_id": 12366908534,
+        "artifact_sha256": "360d0b9d337bf5843039c461db22a5812a315df3d0efb14da30badf212d49916"
+      }
+    },
+    "Proofs.RadenkovicGutmanResolventDisk": {
+      "module": "Proofs.RadenkovicGutmanResolventDisk",
+      "source_sha256": "f7bd373fd0673afb3031ed0e1c2f1c6fd1d18261671545fb84c3155fd4f819ce",
+      "source_closure_sha256": "d6b9b5e93786605b81510bbf903a917562c24aebf50476ad28674cb7171d9d15",
+      "output_sha256": "4bdb4f418bd30dedbc8005f9bb399ac7a5322ee7106127fe7bff6d2fe763cee5",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PRIOR_VERIFIED_JOB_EXPORT",
+      "seconds": 3.423,
+      "origin": {
+        "repository": "RhudeJJJJ/formal-conjectures",
+        "run": 39503978917,
+        "job": 118908155072,
+        "source_commit": "bf607656537ce3cf1c9092b6887adcb03dd2635b",
+        "artifact_id": 12307286965,
+        "artifact_sha256": "3f9b96cb67aacaf21dd2a6611403378163d169cceb279160d0e8dfbeda306237"
+      }
+    },
+    "Proofs.RadenkovicGutmanReciprocalDisk": {
+      "module": "Proofs.RadenkovicGutmanReciprocalDisk",
+      "source_sha256": "f25822e9066676241b9fd4fd9554a38e7687377e4f1750549356d4358599b2b8",
+      "source_closure_sha256": "6a898f4cf5c359bc518e3c792a87997193734919a8724763ba05d0044472b349",
+      "output_sha256": "63643704f20514df6aea67fe86ef9780be6aaaad1605b0551708a54379c47c4c",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PRIOR_VERIFIED_JOB_EXPORT",
+      "seconds": 3.524,
+      "origin": {
+        "repository": "RhudeJJJJ/formal-conjectures",
+        "run": 39503978917,
+        "job": 118908155072,
+        "source_commit": "bf607656537ce3cf1c9092b6887adcb03dd2635b",
+        "artifact_id": 12307286965,
+        "artifact_sha256": "3f9b96cb67aacaf21dd2a6611403378163d169cceb279160d0e8dfbeda306237"
+      }
+    },
+    "Proofs.RadenkovicGutmanMobiusDisk": {
+      "module": "Proofs.RadenkovicGutmanMobiusDisk",
+      "source_sha256": "7ec1df82295ae76acb46371d5e19213524479a8e1c822b1036420aa2f4695f21",
+      "source_closure_sha256": "5d010eb9b0481030e3dd76c816c354d029a06c2dab87fb883a82da183c6528e3",
+      "output_sha256": "abe2fc6dae3e1edd09f9738ce730daaa8c099c35665ad7a03f08124531b78f37",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PRIOR_VERIFIED_JOB_EXPORT",
+      "seconds": 4.075,
+      "origin": {
+        "repository": "RhudeJJJJ/formal-conjectures",
+        "run": 39503978917,
+        "job": 118908155072,
+        "source_commit": "bf607656537ce3cf1c9092b6887adcb03dd2635b",
+        "artifact_id": 12307286965,
+        "artifact_sha256": "3f9b96cb67aacaf21dd2a6611403378163d169cceb279160d0e8dfbeda306237"
+      }
+    },
+    "Proofs.RadenkovicGutmanBernstein": {
+      "module": "Proofs.RadenkovicGutmanBernstein",
+      "source_sha256": "24c6563f685e7ea5304b5d8563e055c526842c1131beb6c4551a3857f5d081fa",
+      "source_closure_sha256": "67a2c6c66542a152a60a93aaa4e388b808dbdf61b4e29a3c97f08529b5a89bc9",
+      "output_sha256": "d8ad78c43d95038e674bd990f1397c130637c1003e858bd17eb83dcd5ff293b9",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PRIOR_VERIFIED_JOB_EXPORT",
+      "seconds": 3.273,
+      "origin": {
+        "repository": "RhudeJJJJ/formal-conjectures",
+        "run": 39503978917,
+        "job": 118908155072,
+        "source_commit": "bf607656537ce3cf1c9092b6887adcb03dd2635b",
+        "artifact_id": 12307286965,
+        "artifact_sha256": "3f9b96cb67aacaf21dd2a6611403378163d169cceb279160d0e8dfbeda306237"
+      }
+    },
+    "Proofs.RadenkovicGutmanRewireTopology": {
+      "module": "Proofs.RadenkovicGutmanRewireTopology",
+      "source_sha256": "ca4b40c0c3acf8a84cf38167d7df2b24cda864bdc120da26f6d001ad37e3a619",
+      "source_closure_sha256": "8adb8dc4ec86bf7b326988ca8829d81d48467eb215c6ed5bed03d64fda762a79",
+      "output_sha256": "1537f76d2f67f563d23201077e695e97b043f6a0be9a19af37334b38249ca108",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        []
+      ],
+      "mode": "PRIOR_VERIFIED_JOB_EXPORT",
+      "seconds": 2.02,
+      "origin": {
+        "repository": "RhudeJJJJ/formal-conjectures",
+        "run": 39503978917,
+        "job": 118908155072,
+        "source_commit": "bf607656537ce3cf1c9092b6887adcb03dd2635b",
+        "artifact_id": 12307286965,
+        "artifact_sha256": "3f9b96cb67aacaf21dd2a6611403378163d169cceb279160d0e8dfbeda306237"
+      }
+    },
+    "Proofs.RadenkovicGutmanRootIsolation": {
+      "module": "Proofs.RadenkovicGutmanRootIsolation",
+      "source_sha256": "252239aacd0149f20c91de7148d308606014aa8cbde3b4619eb82ae02a2c01e8",
+      "source_closure_sha256": "721995e4a5c44ccc7f9e2dc07cb3d8e29945757623cca0824e0cd252b38691da",
+      "output_sha256": "668c649ab9c23ccdd5eabc3dab550521d45dfe879a6f809e9cdb51931e0f89ce",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PRIOR_VERIFIED_JOB_EXPORT",
+      "seconds": 2.371,
+      "origin": {
+        "repository": "RhudeJJJJ/formal-conjectures",
+        "run": 39503978917,
+        "job": 118908155072,
+        "source_commit": "bf607656537ce3cf1c9092b6887adcb03dd2635b",
+        "artifact_id": 12307286965,
+        "artifact_sha256": "3f9b96cb67aacaf21dd2a6611403378163d169cceb279160d0e8dfbeda306237"
+      }
+    },
+    "Proofs.RadenkovicGutmanCheckedRoots": {
+      "module": "Proofs.RadenkovicGutmanCheckedRoots",
+      "source_sha256": "a34251570fad7db92c412bde79b9c288c7be279efe505d69a8b0ea0b1f914539",
+      "source_closure_sha256": "eadad13857374b0415bf2b9b1f2d4e0ad8e87c19c7ac3aec852c286738458bf7",
+      "output_sha256": "2b59e684e380ba7256f8cdde036b2f9434d8acf5490c5a7f7716d10b94819ac1",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PRIOR_VERIFIED_JOB_EXPORT",
+      "seconds": 2.972,
+      "origin": {
+        "repository": "RhudeJJJJ/formal-conjectures",
+        "run": 39503978917,
+        "job": 118908155072,
+        "source_commit": "bf607656537ce3cf1c9092b6887adcb03dd2635b",
+        "artifact_id": 12307286965,
+        "artifact_sha256": "3f9b96cb67aacaf21dd2a6611403378163d169cceb279160d0e8dfbeda306237"
+      }
+    },
+    "Proofs.RadenkovicGutmanRootSchur": {
+      "module": "Proofs.RadenkovicGutmanRootSchur",
+      "source_sha256": "e4d72cf821925d3f886fd118853ea8603e5db6eeece474bd516b26badaccb8e9",
+      "source_closure_sha256": "5489c9132ea8ade8aada94651a08baf004235319d5cbefd549d0c1a00f18c55e",
+      "output_sha256": "ea7a68151bc854e3c419482df486da421704412e9c312fc008dfed22a71b206c",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PRIOR_VERIFIED_JOB_EXPORT",
+      "seconds": 3.322,
+      "origin": {
+        "repository": "RhudeJJJJ/formal-conjectures",
+        "run": 39503978917,
+        "job": 118908155072,
+        "source_commit": "bf607656537ce3cf1c9092b6887adcb03dd2635b",
+        "artifact_id": 12307286965,
+        "artifact_sha256": "3f9b96cb67aacaf21dd2a6611403378163d169cceb279160d0e8dfbeda306237"
+      }
+    },
+    "Proofs.RadenkovicGutmanFocus": {
+      "module": "Proofs.RadenkovicGutmanFocus",
+      "source_sha256": "730091016e9fce76e3f791ef26e4d09cc8c64c0c2bbb42e154788e37f1f874e3",
+      "source_closure_sha256": "3e2c21b6badfbc92f20f9799136d6361e4f62b8fdaa189c9191f1c074b2d905b",
+      "output_sha256": "e28b216a40a17274257d136de558399e7e3036070e6d77cfc13a1b660771f835",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PRIOR_VERIFIED_JOB_EXPORT",
+      "seconds": 3.223,
+      "origin": {
+        "repository": "RhudeJJJJ/formal-conjectures",
+        "run": 39503978917,
+        "job": 118908155072,
+        "source_commit": "bf607656537ce3cf1c9092b6887adcb03dd2635b",
+        "artifact_id": 12307286965,
+        "artifact_sha256": "3f9b96cb67aacaf21dd2a6611403378163d169cceb279160d0e8dfbeda306237"
+      }
+    },
+    "Proofs.RadenkovicGutmanArmClasses": {
+      "module": "Proofs.RadenkovicGutmanArmClasses",
+      "source_sha256": "fbcbd66c3174524e4eca1925101fa8e22db0f641adf45a1076079bcfbc418d70",
+      "source_closure_sha256": "f5eae1c492b58eaa7c812a5d5116acf10815c41ee25f7be9552ee85470c91eb1",
+      "output_sha256": "854c1b45ac72198187b80add08af2a29928866826c65f481651108ceca5e313f",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PRIOR_VERIFIED_JOB_EXPORT",
+      "seconds": 2.371,
+      "origin": {
+        "repository": "RhudeJJJJ/formal-conjectures",
+        "run": 39503978917,
+        "job": 118908155072,
+        "source_commit": "bf607656537ce3cf1c9092b6887adcb03dd2635b",
+        "artifact_id": 12307286965,
+        "artifact_sha256": "3f9b96cb67aacaf21dd2a6611403378163d169cceb279160d0e8dfbeda306237"
+      }
+    },
+    "Proofs.RadenkovicGutmanArmRationalForm": {
+      "module": "Proofs.RadenkovicGutmanArmRationalForm",
+      "source_sha256": "dbaa3d598747bf4c372f51f0b12876a1bd64b3ea0311134d33434800444024db",
+      "source_closure_sha256": "2c4519d93254442cfe325bd4a0d7b6663865ac881671ce63e11c22943913ee6a",
+      "output_sha256": "8209fe4573fb528a4575d401351318cdb9f8b259b002fa2a325600ea92aae827",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PRIOR_VERIFIED_JOB_EXPORT",
+      "seconds": 3.926,
+      "origin": {
+        "repository": "RhudeJJJJ/formal-conjectures",
+        "run": 39716169791,
+        "job": 119618688633,
+        "source_commit": "38d6d1a0b1be6bcea0702fb686fafd2c55a60340",
+        "artifact_id": 12399073885,
+        "artifact_sha256": "ac00bc20f4c2fbdf8c4bf86881a479fef29407f83d8e1cc15e0c24173fa9ee64"
+      }
+    },
+    "Proofs.RadenkovicGutmanOriginHalfplane": {
+      "module": "Proofs.RadenkovicGutmanOriginHalfplane",
+      "source_sha256": "8e744274ea15e39b2b69ca9e8d39416a38b38f0cd57285666bd33bcc399a0255",
+      "source_closure_sha256": "42cded2e1ef1a5c3a60c08fabf3862436413e92598d6d908caed58acc48de5d1",
+      "output_sha256": "22585099da62074cc7d5109cede1597140f62d852ada67995f21616da97461fe",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PRIOR_VERIFIED_JOB_EXPORT",
+      "seconds": 4.478,
+      "origin": {
+        "repository": "RhudeJJJJ/formal-conjectures",
+        "run": 39716169791,
+        "job": 119618688633,
+        "source_commit": "38d6d1a0b1be6bcea0702fb686fafd2c55a60340",
+        "artifact_id": 12399073885,
+        "artifact_sha256": "ac00bc20f4c2fbdf8c4bf86881a479fef29407f83d8e1cc15e0c24173fa9ee64"
+      }
+    },
+    "Proofs.RadenkovicGutmanScalarIntegral": {
+      "module": "Proofs.RadenkovicGutmanScalarIntegral",
+      "source_sha256": "5c6513466fe92cd9b0d1a16bf9c0589a26b580768bd88565ee06a5f88a4a43c4",
+      "source_closure_sha256": "58f1e13ad5e74c911c4b9c573a591a4bbcb6addae0759840436150cb64b30275",
+      "output_sha256": "e643d93b9a76f76d44308ae3cc825b810f073dd310ddcb391785c1e7d2afa2eb",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PRIOR_VERIFIED_JOB_EXPORT",
+      "seconds": 3.824,
+      "origin": {
+        "repository": "RhudeJJJJ/formal-conjectures",
+        "run": 39503978917,
+        "job": 118908155072,
+        "source_commit": "bf607656537ce3cf1c9092b6887adcb03dd2635b",
+        "artifact_id": 12307286965,
+        "artifact_sha256": "3f9b96cb67aacaf21dd2a6611403378163d169cceb279160d0e8dfbeda306237"
+      }
+    },
+    "Proofs.RadenkovicGutmanScaledQuotient": {
+      "module": "Proofs.RadenkovicGutmanScaledQuotient",
+      "source_sha256": "bb7053a4a3c03ea4367fc5ddcf0c0fe969698f8fd8a714ea4ebb86256e927d1c",
+      "source_closure_sha256": "13514d40cd6ce1fa83e32a9f0a4dde7a15d266e8daba31929f2c5f14830ab6e1",
+      "output_sha256": "b058f246e5a3f9e1d98b43fb53509f19fe2292a4e47c835c939be3752d793d28",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PRIOR_VERIFIED_JOB_EXPORT",
+      "seconds": 2.721,
+      "origin": {
+        "repository": "RhudeJJJJ/formal-conjectures",
+        "run": 39503978917,
+        "job": 118908155072,
+        "source_commit": "bf607656537ce3cf1c9092b6887adcb03dd2635b",
+        "artifact_id": 12307286965,
+        "artifact_sha256": "3f9b96cb67aacaf21dd2a6611403378163d169cceb279160d0e8dfbeda306237"
+      }
+    },
+    "Proofs.RadenkovicGutmanClassCellCertificates": {
+      "module": "Proofs.RadenkovicGutmanClassCellCertificates",
+      "source_sha256": "8c6b27efc12c7f2793178bb5ab54cab001118002e58de2939532eecb7ddd43c5",
+      "source_closure_sha256": "c7e9d33c65261296e884b5eeb46261664fba23d449c7433d62b5976aeed9a61a",
+      "output_sha256": "538f2c13803c9b2304fddba75383d92a2fd4a92e72830e3059077e3847e097a6",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PRIOR_VERIFIED_JOB_EXPORT",
+      "seconds": 2.47,
+      "origin": {
+        "repository": "RhudeJJJJ/formal-conjectures",
+        "run": 39647090461,
+        "job": 119385399875,
+        "source_commit": "f2d527a1ef65ad4214adf2bf8e0c1b95dbfa09f4",
+        "artifact_id": 12366919362,
+        "artifact_sha256": "a73380f6a34307a0eaa734a1efe5bdd9b9f8935761f45354d0ca9ea0e2dcc428"
+      }
+    },
+    "Proofs.RadenkovicGutmanClassNormPolynomials": {
+      "module": "Proofs.RadenkovicGutmanClassNormPolynomials",
+      "source_sha256": "e46a6ae7f4baac9e2a64019785d405d37a156282ec237f788028ac21e75a0bab",
+      "source_closure_sha256": "3c6f72d6538c9ac6a8a464f9ebd311e96900da1460246dccd3698fe122818e3b",
+      "output_sha256": "c9809b21e338394fa995bafde4641de597806888d381c5ab5fceb906110941b0",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PRIOR_VERIFIED_JOB_EXPORT",
+      "seconds": 3.325,
+      "origin": {
+        "repository": "RhudeJJJJ/formal-conjectures",
+        "run": 39664921760,
+        "job": 119447313986,
+        "source_commit": "eba65e7347a2ba3481b5281b64ebb0d2762cab27",
+        "artifact_id": 12377226886,
+        "artifact_sha256": "ec431946d942a2e85b42478d0ee9e831d4e91a71c3b6b84f73aa2f988f9d4783"
+      }
+    },
+    "Proofs.RadenkovicGutmanOriginBound": {
+      "module": "Proofs.RadenkovicGutmanOriginBound",
+      "source_sha256": "f0c30b9336b5354445bc95ad4b1847c442b8879ee5cd9aca46e079aada86109a",
+      "source_closure_sha256": "d898007034f6f9ba7d19991488d416859426dcdc8530923016479635ea9e9e55",
+      "output_sha256": "4cd5ca66c3d1b3f60550be3803eb735b8e552d1ac6dfce8796c8bbfd3a29edea",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PRIOR_VERIFIED_JOB_EXPORT",
+      "seconds": 3.575,
+      "origin": {
+        "repository": "RhudeJJJJ/formal-conjectures",
+        "run": 39716169791,
+        "job": 119618688633,
+        "source_commit": "38d6d1a0b1be6bcea0702fb686fafd2c55a60340",
+        "artifact_id": 12399073885,
+        "artifact_sha256": "ac00bc20f4c2fbdf8c4bf86881a479fef29407f83d8e1cc15e0c24173fa9ee64"
+      }
+    },
+    "Proofs.RadenkovicGutmanQuotientBridge": {
+      "module": "Proofs.RadenkovicGutmanQuotientBridge",
+      "source_sha256": "28fb4dea023ae184092ae7a48f8ea0ee8e7ae27b4781eae0eb81526ceac6fbac",
+      "source_closure_sha256": "e522c50e16153d0ec948678bf3c6110ad68dfb6fda4321dbe0d34df320db1257",
+      "output_sha256": "36b912bf26d5fe2ac17649523dea683a26c230026d51407e923b63092533f86b",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PRIOR_VERIFIED_JOB_EXPORT",
+      "seconds": 3.073,
+      "origin": {
+        "repository": "RhudeJJJJ/formal-conjectures",
+        "run": 39503978917,
+        "job": 118908155072,
+        "source_commit": "bf607656537ce3cf1c9092b6887adcb03dd2635b",
+        "artifact_id": 12307286965,
+        "artifact_sha256": "3f9b96cb67aacaf21dd2a6611403378163d169cceb279160d0e8dfbeda306237"
+      }
+    },
+    "Proofs.RadenkovicGutmanConcreteGraphQuotient": {
+      "module": "Proofs.RadenkovicGutmanConcreteGraphQuotient",
+      "source_sha256": "ee234356bf07576cf303c00b0762c6e490a8291b1c0a93e5c1b5cc7f7fa2bb6e",
+      "source_closure_sha256": "b7642355a4f742bdb07fc31accc9d5bf911e43b93e17039399a0e60591f84d14",
+      "output_sha256": "ca89c12965438632bf5ef019551f51edf9a3a34b0225a6eb720645aac1368bb8",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PRIOR_VERIFIED_JOB_EXPORT",
+      "seconds": 2.27,
+      "origin": {
+        "repository": "RhudeJJJJ/formal-conjectures",
+        "run": 39503978917,
+        "job": 118908155072,
+        "source_commit": "bf607656537ce3cf1c9092b6887adcb03dd2635b",
+        "artifact_id": 12307286965,
+        "artifact_sha256": "3f9b96cb67aacaf21dd2a6611403378163d169cceb279160d0e8dfbeda306237"
+      }
+    },
+    "Proofs.RadenkovicGutmanSpectral": {
+      "module": "Proofs.RadenkovicGutmanSpectral",
+      "source_sha256": "70d7fe9e91a930f1a2e62ea85b5ecea17484877d5150c5eb52cfee1776d98348",
+      "source_closure_sha256": "184b16762c75c2961cd905c2ef7f1d86351d1b7dbfa11da6bc62fb52ea58ecb9",
+      "output_sha256": "05c524d1c115eebac715d425d7bc93516091f445d17e933e7d4d20320ddd0c94",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PRIOR_VERIFIED_JOB_EXPORT",
+      "seconds": 3.874,
+      "origin": {
+        "repository": "RhudeJJJJ/formal-conjectures",
+        "run": 39503978917,
+        "job": 118908155072,
+        "source_commit": "bf607656537ce3cf1c9092b6887adcb03dd2635b",
+        "artifact_id": 12307286965,
+        "artifact_sha256": "3f9b96cb67aacaf21dd2a6611403378163d169cceb279160d0e8dfbeda306237"
+      }
+    },
+    "Proofs.RadenkovicGutmanCoulson": {
+      "module": "Proofs.RadenkovicGutmanCoulson",
+      "source_sha256": "4c91db9f8c55b6211a8ad1895eb4a35d6d68afd8e96e43d628f8d56a1b69a0e1",
+      "source_closure_sha256": "a85d2ce7840d0fb0029ef7eeac68d37cdd203bcc0942dfa89c91875d93ff7f36",
+      "output_sha256": "7f92a07558a12ebe3e44c754f1563614ec112eda412b6c38606b394ae0d3fc5f",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PRIOR_VERIFIED_JOB_EXPORT",
+      "seconds": 2.922,
+      "origin": {
+        "repository": "RhudeJJJJ/formal-conjectures",
+        "run": 39503978917,
+        "job": 118908155072,
+        "source_commit": "bf607656537ce3cf1c9092b6887adcb03dd2635b",
+        "artifact_id": 12307286965,
+        "artifact_sha256": "3f9b96cb67aacaf21dd2a6611403378163d169cceb279160d0e8dfbeda306237"
+      }
+    },
+    "Proofs.RadenkovicGutmanPerturbation": {
+      "module": "Proofs.RadenkovicGutmanPerturbation",
+      "source_sha256": "166d8a987925c7c517b36f06796e36c78acd947c1bfcc13d13970ba5b527a54c",
+      "source_closure_sha256": "780adf4f60f37fc150d990bcedeb53bcf03b619020a75f16e7ee0984f623db96",
+      "output_sha256": "2e12cfc12b3f61fbc047e084439b3c357e10836d9e6071723ad743d373a67315",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PRIOR_VERIFIED_JOB_EXPORT",
+      "seconds": 3.473,
+      "origin": {
+        "repository": "RhudeJJJJ/formal-conjectures",
+        "run": 39503978917,
+        "job": 118908155072,
+        "source_commit": "bf607656537ce3cf1c9092b6887adcb03dd2635b",
+        "artifact_id": 12307286965,
+        "artifact_sha256": "3f9b96cb67aacaf21dd2a6611403378163d169cceb279160d0e8dfbeda306237"
+      }
+    },
+    "Proofs.RadenkovicGutmanCountTransport": {
+      "module": "Proofs.RadenkovicGutmanCountTransport",
+      "source_sha256": "700a56e67a26d218c655c148a04bdfb5820f06dc8f08fd49f6109d42b803bf43",
+      "source_closure_sha256": "4f622b9ce2fd5ffb47ad6145be10f8e6d0d757854b5e3c5974ec55a2ae199997",
+      "output_sha256": "29f25514ec6790e476b52ca3c4e8f8ae1cc4a109d1824d34e8928ab87f7ffe4a",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PRIOR_VERIFIED_JOB_EXPORT",
+      "seconds": 4.776,
+      "origin": {
+        "repository": "RhudeJJJJ/formal-conjectures",
+        "run": 39503978917,
+        "job": 118908155072,
+        "source_commit": "bf607656537ce3cf1c9092b6887adcb03dd2635b",
+        "artifact_id": 12307286965,
+        "artifact_sha256": "3f9b96cb67aacaf21dd2a6611403378163d169cceb279160d0e8dfbeda306237"
+      }
+    },
+    "Proofs.RadenkovicGutmanGraphIntegral": {
+      "module": "Proofs.RadenkovicGutmanGraphIntegral",
+      "source_sha256": "0a9f10cff64ce9c67b8312b014786025e313b58c1f8debad4263675bca8dab35",
+      "source_closure_sha256": "98c1de33fdae0f07fb736f4acbc9b5ef9fc3220c5a9eb0c5b5adf22408df2038",
+      "output_sha256": "35357357527fa3b5632f12ccccc4b250c694c32d3d56abb1b1443b0724c213d1",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PRIOR_VERIFIED_JOB_EXPORT",
+      "seconds": 2.823,
+      "origin": {
+        "repository": "RhudeJJJJ/formal-conjectures",
+        "run": 39503978917,
+        "job": 118908155072,
+        "source_commit": "bf607656537ce3cf1c9092b6887adcb03dd2635b",
+        "artifact_id": 12307286965,
+        "artifact_sha256": "3f9b96cb67aacaf21dd2a6611403378163d169cceb279160d0e8dfbeda306237"
+      }
+    },
+    "Proofs.RadenkovicGutmanRewireIso": {
+      "module": "Proofs.RadenkovicGutmanRewireIso",
+      "source_sha256": "300a08814b9356b998083b4393c099ae9ebb5eba9e6a6918f2388666d1b51998",
+      "source_closure_sha256": "07ba06d8d1747a8ee29434f4a2f2f6432ab7563c05a7145f5d824e31d254a753",
+      "output_sha256": "caa3e1f4d1c58ca22939ee60309a1c1baa42dffdbe8abb89cd347ec75e81a74e",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PRIOR_VERIFIED_JOB_EXPORT",
+      "seconds": 3.526,
+      "origin": {
+        "repository": "RhudeJJJJ/formal-conjectures",
+        "run": 39503978917,
+        "job": 118908155072,
+        "source_commit": "bf607656537ce3cf1c9092b6887adcb03dd2635b",
+        "artifact_id": 12307286965,
+        "artifact_sha256": "3f9b96cb67aacaf21dd2a6611403378163d169cceb279160d0e8dfbeda306237"
+      }
+    },
+    "Proofs.RadenkovicGutmanFusionDescent": {
+      "module": "Proofs.RadenkovicGutmanFusionDescent",
+      "source_sha256": "c0ff8556e7e10269102c32f4f9dd473f97c434361ea351b6d45b52f01b6fc4bd",
+      "source_closure_sha256": "2e376ce221284f743ecbbef8e481a795091978fd1a14151fa109121aa6c76451",
+      "output_sha256": "1f329544a2de14aaf149a35009bc219e01ca59a707808a7a30f2445a81e37d94",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PRIOR_VERIFIED_JOB_EXPORT",
+      "seconds": 4.678,
+      "origin": {
+        "repository": "RhudeJJJJ/formal-conjectures",
+        "run": 39503978917,
+        "job": 118908155072,
+        "source_commit": "bf607656537ce3cf1c9092b6887adcb03dd2635b",
+        "artifact_id": 12307286965,
+        "artifact_sha256": "3f9b96cb67aacaf21dd2a6611403378163d169cceb279160d0e8dfbeda306237"
+      }
+    },
+    "Proofs.RadenkovicGutmanIsoEnergy": {
+      "module": "Proofs.RadenkovicGutmanIsoEnergy",
+      "source_sha256": "b68912b00217f93960b64d30093ec2d5eb0843ea716ea9afc41aa7b62156efd9",
+      "source_closure_sha256": "95f192969345db20f08cf39c8a37f267a7b708300d1698f8293dd3f4001e18c0",
+      "output_sha256": "590dd0a33f0dbf752ef7dd6647ca73625ca84409f03e6536aabe62eb9a79fa6d",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PRIOR_VERIFIED_JOB_EXPORT",
+      "seconds": 2.42,
+      "origin": {
+        "repository": "RhudeJJJJ/formal-conjectures",
+        "run": 39503978917,
+        "job": 118908155072,
+        "source_commit": "bf607656537ce3cf1c9092b6887adcb03dd2635b",
+        "artifact_id": 12307286965,
+        "artifact_sha256": "3f9b96cb67aacaf21dd2a6611403378163d169cceb279160d0e8dfbeda306237"
+      }
+    },
+    "Proofs.RadenkovicGutmanMixedGraphIntegral": {
+      "module": "Proofs.RadenkovicGutmanMixedGraphIntegral",
+      "source_sha256": "9fc651e7971b3eaf75d4d050d35b5a6f1dee29824cd3fde72ff3af782955ba08",
+      "source_closure_sha256": "71a23c338ff792b0e7d1ec39eaad45800e4ab49a05b689dc23096ec3946c0497",
+      "output_sha256": "ee40d6d1cb401c9e3c3144825d23b9036336a16075b722fd6899846848aa0aed",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PRIOR_VERIFIED_JOB_EXPORT",
+      "seconds": 2.42,
+      "origin": {
+        "repository": "RhudeJJJJ/formal-conjectures",
+        "run": 39503978917,
+        "job": 118908155072,
+        "source_commit": "bf607656537ce3cf1c9092b6887adcb03dd2635b",
+        "artifact_id": 12307286965,
+        "artifact_sha256": "3f9b96cb67aacaf21dd2a6611403378163d169cceb279160d0e8dfbeda306237"
+      }
+    },
+    "Proofs.RadenkovicGutmanMixedStopLoss": {
+      "module": "Proofs.RadenkovicGutmanMixedStopLoss",
+      "source_sha256": "98e238802dccd72d1f546692c5f06fbfad93cf916bda5a5d8fe80f21c979469d",
+      "source_closure_sha256": "edbf1215cff94d3a6fdbb060542deaf9d215f57bad1af2558339b2a892dc5106",
+      "output_sha256": "a1013824a008edce8235f9e73006a2cbac8f74f197f8e16758236a4322631662",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PRIOR_VERIFIED_JOB_EXPORT",
+      "seconds": 2.621,
+      "origin": {
+        "repository": "RhudeJJJJ/formal-conjectures",
+        "run": 39503978917,
+        "job": 118908155072,
+        "source_commit": "bf607656537ce3cf1c9092b6887adcb03dd2635b",
+        "artifact_id": 12307286965,
+        "artifact_sha256": "3f9b96cb67aacaf21dd2a6611403378163d169cceb279160d0e8dfbeda306237"
+      }
+    },
+    "Proofs.RadenkovicGutmanTensorPolynomial": {
+      "module": "Proofs.RadenkovicGutmanTensorPolynomial",
+      "source_sha256": "8495ec2b589b94150e1bd62bab217280f819a18630c3c8cec621ab37722efdf5",
+      "source_closure_sha256": "6665f37c83ff58ba78d98c27edc34584a8e6f512397f3f2e31a24f1b5de3cb6a",
+      "output_sha256": "8effd688e1a3cf4cff1ecadc355809047dc99ed20109f88ef43c0025d4d1a104",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PRIOR_VERIFIED_JOB_EXPORT",
+      "seconds": 2.822,
+      "origin": {
+        "repository": "RhudeJJJJ/formal-conjectures",
+        "run": 39503978917,
+        "job": 118908155072,
+        "source_commit": "bf607656537ce3cf1c9092b6887adcb03dd2635b",
+        "artifact_id": 12307286965,
+        "artifact_sha256": "3f9b96cb67aacaf21dd2a6611403378163d169cceb279160d0e8dfbeda306237"
+      }
+    },
+    "Proofs.RadenkovicGutmanNestedHorner": {
+      "module": "Proofs.RadenkovicGutmanNestedHorner",
+      "source_sha256": "4b4a7c934bb02d9d168ec38999726372a2c72e4fcf9fe0d7ba6b3117088e3b6a",
+      "source_closure_sha256": "d51175fd6e6eae4f0e2a9f63c3e8c3176e5124033ee100015bcf1f580c25c2b9",
+      "output_sha256": "49f8e51d0ae0600136e93d2ba3bcf529a9d1ed56f1788c742df4b4b7f5833d6b",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PRIOR_VERIFIED_JOB_EXPORT",
+      "seconds": 3.875,
+      "origin": {
+        "repository": "RhudeJJJJ/formal-conjectures",
+        "run": 39503978917,
+        "job": 118908155072,
+        "source_commit": "bf607656537ce3cf1c9092b6887adcb03dd2635b",
+        "artifact_id": 12307286965,
+        "artifact_sha256": "3f9b96cb67aacaf21dd2a6611403378163d169cceb279160d0e8dfbeda306237"
+      }
+    },
+    "Proofs.RadenkovicGutmanNestedArithmetic": {
+      "module": "Proofs.RadenkovicGutmanNestedArithmetic",
+      "source_sha256": "1fb2ef9b9785ca08e5ed27980d77404b51202d4f4b507c5db3b0e18d45634a89",
+      "source_closure_sha256": "c8ddb8dba6f3c5b3fbba56ab284a8a5f5c111ae24b01c28214d580dbaf8b9bce",
+      "output_sha256": "f25ec8a425b87b08c78b24b9e2f5e9613ba796f713f69ad680fcab84a19e53d1",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PRIOR_VERIFIED_JOB_EXPORT",
+      "seconds": 3.324,
+      "origin": {
+        "repository": "RhudeJJJJ/formal-conjectures",
+        "run": 39716169791,
+        "job": 119618688633,
+        "source_commit": "38d6d1a0b1be6bcea0702fb686fafd2c55a60340",
+        "artifact_id": 12399073885,
+        "artifact_sha256": "ac00bc20f4c2fbdf8c4bf86881a479fef29407f83d8e1cc15e0c24173fa9ee64"
+      }
+    },
+    "Proofs.RadenkovicGutmanNestedAffine": {
+      "module": "Proofs.RadenkovicGutmanNestedAffine",
+      "source_sha256": "4018bb7d3eafd55cf19da27066d217d5140ca5906981c27bbf5658606f61ec24",
+      "source_closure_sha256": "3c89906be668ed92e842ae8d444467d36093d0788deb98cf048a72aef50d2c0b",
+      "output_sha256": "2fec6e970cdc7268ae162a8a4dbe8d8cae13bb8e922cc2ba8561bac4862a6cf1",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PRIOR_VERIFIED_JOB_EXPORT",
+      "seconds": 2.169,
+      "origin": {
+        "repository": "RhudeJJJJ/formal-conjectures",
+        "run": 39846670050,
+        "job": 120061646073,
+        "source_commit": "bdc4e2b186338383f40846e972242ac92c13ab59",
+        "artifact_id": 12456085539,
+        "artifact_sha256": "12ead6cbd1b25263f4846a9dc1065290f0c3e43b0c09cbba4724773d56ce52db"
+      }
+    },
+    "Proofs.RadenkovicGutmanNestedAffineComplete": {
+      "module": "Proofs.RadenkovicGutmanNestedAffineComplete",
+      "source_sha256": "dfd5c99bda99bb3ae077281cdeed4472c510df032f9dca03e216510665c8943e",
+      "source_closure_sha256": "82fe0db0cb7d6c38f9c71ae56b6e64286e360eb854d7be5e2eeef2b31ea9a803",
+      "output_sha256": "72b85e26c01d54afb34a5860f9d0eb2be867f0c6b4e0baf14afcd723f6cc887a",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PRIOR_VERIFIED_JOB_EXPORT",
+      "seconds": 2.22,
+      "origin": {
+        "repository": "RhudeJJJJ/formal-conjectures",
+        "run": 39852834387,
+        "job": 120083254484,
+        "source_commit": "d3e3e930b7d8e92deed18fee1d9aca65c91b43a5",
+        "artifact_id": 12457977556,
+        "artifact_sha256": "7fdd97877870f863ebb8a0961eaff58d59d07ec2dde75928705337f84a120202"
+      }
+    },
+    "Proofs.RadenkovicGutmanNestedClassPolynomials": {
+      "module": "Proofs.RadenkovicGutmanNestedClassPolynomials",
+      "source_sha256": "3e9afedee2696c0e0f73a1761f6705010a3b268328cf0e168d673354f7d19132",
+      "source_closure_sha256": "f6cb4e055ab36d2ac722894428b8a131bb6eaa35033b118e4951139042bc7243",
+      "output_sha256": "7844d369fcbb82e52fc1f1c29f1b08c8dd0e8672e9e9a56bd758981d4ca3db7b",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PRIOR_VERIFIED_JOB_EXPORT",
+      "seconds": 3.927,
+      "origin": {
+        "repository": "RhudeJJJJ/formal-conjectures",
+        "run": 39716169791,
+        "job": 119618688633,
+        "source_commit": "38d6d1a0b1be6bcea0702fb686fafd2c55a60340",
+        "artifact_id": 12399073885,
+        "artifact_sha256": "ac00bc20f4c2fbdf8c4bf86881a479fef29407f83d8e1cc15e0c24173fa9ee64"
+      }
+    },
+    "Proofs.RadenkovicGutmanNestedClassNorms": {
+      "module": "Proofs.RadenkovicGutmanNestedClassNorms",
+      "source_sha256": "5d3d4c50c5f69be1ef0c046ca4c0c1d6aee468220fb0f624ffb56a7cd0856cd6",
+      "source_closure_sha256": "51b5d94a3f42f053d5ea968830f2324054c8d43fabe4540c9e9db31d2dee2139",
+      "output_sha256": "7507d4840e2f76cae5fc8343a69c5669fca1bc751b0f4b60d43a48e7e0245fda",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PRIOR_VERIFIED_JOB_EXPORT",
+      "seconds": 3.676,
+      "origin": {
+        "repository": "RhudeJJJJ/formal-conjectures",
+        "run": 39716169791,
+        "job": 119618688633,
+        "source_commit": "38d6d1a0b1be6bcea0702fb686fafd2c55a60340",
+        "artifact_id": 12399073885,
+        "artifact_sha256": "ac00bc20f4c2fbdf8c4bf86881a479fef29407f83d8e1cc15e0c24173fa9ee64"
+      }
+    },
+    "Proofs.RadenkovicGutmanNestedClassCell": {
+      "module": "Proofs.RadenkovicGutmanNestedClassCell",
+      "source_sha256": "250c1593c74a880807232b5af06e56f502b0cd3ecc8dc0efe8bebf885d47db37",
+      "source_closure_sha256": "ddad6519081c77695d9b692b0faa32c92f4090ed5af0cbddddb3e0d5dba20811",
+      "output_sha256": "c9f7a4466ec3eab8821e14f93236bfb0b36d73423b9e2858410f37e596f1394a",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PRIOR_VERIFIED_JOB_EXPORT",
+      "seconds": 2.772,
+      "origin": {
+        "repository": "RhudeJJJJ/formal-conjectures",
+        "run": 39716169791,
+        "job": 119618688633,
+        "source_commit": "38d6d1a0b1be6bcea0702fb686fafd2c55a60340",
+        "artifact_id": 12399073885,
+        "artifact_sha256": "ac00bc20f4c2fbdf8c4bf86881a479fef29407f83d8e1cc15e0c24173fa9ee64"
+      }
+    },
+    "Proofs.RadenkovicGutmanNestedPositiveScale": {
+      "module": "Proofs.RadenkovicGutmanNestedPositiveScale",
+      "source_sha256": "58ffdcdd35d8ab0e883a205a1f7c4ebc3114b9c9fa7ecf3acb6e053816c8921a",
+      "source_closure_sha256": "fc9474ae6cb7cd6171e814bb79c39f05bb798390bdb0b1c7e017b701e59362a3",
+      "output_sha256": "6ed8c5de2b8cd2fd134522e957db26d5292abbdd41f4b765b69cb6f9db75c3d5",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PRIOR_VERIFIED_JOB_EXPORT",
+      "seconds": 2.472,
+      "origin": {
+        "repository": "RhudeJJJJ/formal-conjectures",
+        "run": 39849992646,
+        "job": 120073270398,
+        "source_commit": "7fc83b45f8d62b8db71edd4a1d2237ac9cf00426",
+        "artifact_id": 12457017143,
+        "artifact_sha256": "86eac8c2ebf0a10c645d129181dda8bc629c9b0f16f9ef4c3fa9f4cc51055eac"
+      }
+    },
+    "Proofs.RadenkovicGutmanNestedReciprocal": {
+      "module": "Proofs.RadenkovicGutmanNestedReciprocal",
+      "source_sha256": "fce0885b1abecb4308458b9488408aa917c774f0a60720b99fade10f11d1ced7",
+      "source_closure_sha256": "1be4cad2ea0ececd55e89be8a1ad84c6279230f07bcde648d02c916237c373b3",
+      "output_sha256": "67eb5eb5a463759d75c983cea4f9d124e3340d83281a5a6efa286d96ea2e08e1",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PRIOR_VERIFIED_JOB_EXPORT",
+      "seconds": 2.823,
+      "origin": {
+        "repository": "RhudeJJJJ/formal-conjectures",
+        "run": 39716169791,
+        "job": 119618688633,
+        "source_commit": "38d6d1a0b1be6bcea0702fb686fafd2c55a60340",
+        "artifact_id": 12399073885,
+        "artifact_sha256": "ac00bc20f4c2fbdf8c4bf86881a479fef29407f83d8e1cc15e0c24173fa9ee64"
+      }
+    },
+    "Proofs.RadenkovicGutmanFastNestedClassBoxes": {
+      "module": "Proofs.RadenkovicGutmanFastNestedClassBoxes",
+      "source_sha256": "7536bd92d9a4ee14214474e1787c014a03972f10e724dc00b08b7d2a8b8229d2",
+      "source_closure_sha256": "2124bf9d27f8c7459da887b4a8154248c6eb632465264a16d16bdb707df57efc",
+      "output_sha256": "141415202a6e6f44c7e94432943fe5003708c3c888b871f3462b9fcd49cb27d2",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PRIOR_VERIFIED_JOB_EXPORT",
+      "seconds": 2.219,
+      "origin": {
+        "repository": "RhudeJJJJ/formal-conjectures",
+        "run": 39846670050,
+        "job": 120061646073,
+        "source_commit": "bdc4e2b186338383f40846e972242ac92c13ab59",
+        "artifact_id": 12456085539,
+        "artifact_sha256": "12ead6cbd1b25263f4846a9dc1065290f0c3e43b0c09cbba4724773d56ce52db"
+      }
+    },
+    "Proofs.RadenkovicGutmanFastNestedCellData": {
+      "module": "Proofs.RadenkovicGutmanFastNestedCellData",
+      "source_sha256": "e57b5f4074f43a3975b6a5699432ab9179a5c5fa92464115e465fb1daa8292f4",
+      "source_closure_sha256": "6bf36511fb3ed48c80d88575175c9e9d7175ca22fd510b7b1986f67a957a477c",
+      "output_sha256": "f8b4a6d63dd98122588d2179941009d927b096fdc7ba10158ebf2f6b119f90ad",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PRIOR_VERIFIED_JOB_EXPORT",
+      "seconds": 2.018,
+      "origin": {
+        "repository": "RhudeJJJJ/formal-conjectures",
+        "run": 39846670050,
+        "job": 120061646073,
+        "source_commit": "bdc4e2b186338383f40846e972242ac92c13ab59",
+        "artifact_id": 12456085539,
+        "artifact_sha256": "12ead6cbd1b25263f4846a9dc1065290f0c3e43b0c09cbba4724773d56ce52db"
+      }
+    },
+    "Proofs.RadenkovicGutmanComputedClassCell": {
+      "module": "Proofs.RadenkovicGutmanComputedClassCell",
+      "source_sha256": "b358f479edb66e979eaa67c3a63ac04c10ea117a6c6585ffeab577476f9028c4",
+      "source_closure_sha256": "56a3526cb2bbc8b7b3c9fb6b178c8fa140317f3f932e89e91d163eb67407fd29",
+      "output_sha256": "aba47b801ef4d3d19252415396521d808007caab61e836b868c956ac27372041",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PRIOR_VERIFIED_JOB_EXPORT",
+      "seconds": 1.918,
+      "origin": {
+        "repository": "RhudeJJJJ/formal-conjectures",
+        "run": 39846670050,
+        "job": 120061646073,
+        "source_commit": "bdc4e2b186338383f40846e972242ac92c13ab59",
+        "artifact_id": 12456085539,
+        "artifact_sha256": "12ead6cbd1b25263f4846a9dc1065290f0c3e43b0c09cbba4724773d56ce52db"
+      }
+    },
+    "Proofs.RadenkovicGutmanFastPhysicalCell": {
+      "module": "Proofs.RadenkovicGutmanFastPhysicalCell",
+      "source_sha256": "06a03387c854f53bff480e7a9426dd4042833b2d936293601f953dbe6d1c6768",
+      "source_closure_sha256": "9c2e4bd81751118d22f565ffb7aa90601538683fa6c0ef7748c2a606df11e0f3",
+      "output_sha256": "9063b014c36400541f5d37a332f53e479c43390f4b6d83125d84bbea194b72c8",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PRIOR_VERIFIED_JOB_EXPORT",
+      "seconds": 2.47,
+      "origin": {
+        "repository": "RhudeJJJJ/formal-conjectures",
+        "run": 39840868637,
+        "job": 120041203245,
+        "source_commit": "acfbe187a3d062fccb3da255c8532b8152789d4b",
+        "artifact_id": 12451564621,
+        "artifact_sha256": "f11c76f9ea78344dce07243cff44c3e072d5e6396a82804daba7ce26e01ad60b"
+      }
+    },
+    "Proofs.RadenkovicGutmanFastRectangularCell": {
+      "module": "Proofs.RadenkovicGutmanFastRectangularCell",
+      "source_sha256": "33f29f6979bd80a4253080695c2f4a36a13f7dd21d7609f3f4c5e16b25c673c6",
+      "source_closure_sha256": "dd4acfbcae08d0afa457ad67302fecb15f5ac96cb01189a47c9bb5cfbed84984",
+      "output_sha256": "62572c32801596e829d057e7b6416cc36aa845b73969a4d03f338b35704b78cc",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PRIOR_VERIFIED_JOB_EXPORT",
+      "seconds": 2.57,
+      "origin": {
+        "repository": "RhudeJJJJ/formal-conjectures",
+        "run": 39840868637,
+        "job": 120041203245,
+        "source_commit": "acfbe187a3d062fccb3da255c8532b8152789d4b",
+        "artifact_id": 12451564621,
+        "artifact_sha256": "f11c76f9ea78344dce07243cff44c3e072d5e6396a82804daba7ce26e01ad60b"
+      }
+    },
+    "Proofs.RadenkovicGutmanFastArmCover": {
+      "module": "Proofs.RadenkovicGutmanFastArmCover",
+      "source_sha256": "af3d51d9887fb225108dd8f70297db88e4d189c03343c41c9bdf96ca80be64eb",
+      "source_closure_sha256": "458ced9219769a1cc6525966d4d75fbeeeac2d23f36a25aeae6e42d0a72bc1b8",
+      "output_sha256": "2bc7e095e4114dc17bab8fdba58e01de1fa2488ec54e8c683697534484585ef7",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PRIOR_VERIFIED_JOB_EXPORT",
+      "seconds": 2.27,
+      "origin": {
+        "repository": "RhudeJJJJ/formal-conjectures",
+        "run": 39840868637,
+        "job": 120041203245,
+        "source_commit": "acfbe187a3d062fccb3da255c8532b8152789d4b",
+        "artifact_id": 12451564621,
+        "artifact_sha256": "f11c76f9ea78344dce07243cff44c3e072d5e6396a82804daba7ce26e01ad60b"
+      }
+    },
+    "Proofs.RadenkovicGutmanArmCoverChecks": {
+      "module": "Proofs.RadenkovicGutmanArmCoverChecks",
+      "source_sha256": "587dba1a6414a1969f643677935270a543d8c5b97f4091ec1eb4c9369a27f55f",
+      "source_closure_sha256": "867792eead5992da378cbf7058f7c23055393404d6013f67152a16d4f4148a70",
+      "output_sha256": "0778c88cb35543272be0c17b6d306697aa2167b092a581193d55eed80364a70a",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PRIOR_VERIFIED_JOB_EXPORT",
+      "seconds": 1.767,
+      "origin": {
+        "repository": "RhudeJJJJ/formal-conjectures",
+        "run": 39849992646,
+        "job": 120073270231,
+        "source_commit": "7fc83b45f8d62b8db71edd4a1d2237ac9cf00426",
+        "artifact_id": 12457535465,
+        "artifact_sha256": "180c0dc3ac4c4825a9777465bcafb1728c18edb60448343a9eafcf876f1498eb"
+      }
+    },
+    "Proofs.RadenkovicGutmanNormProgramPack": {
+      "module": "Proofs.RadenkovicGutmanNormProgramPack",
+      "source_sha256": "599711cd553f4707beccfba4cf67c67dece6252637c7704a1e779964a22fe0ef",
+      "source_closure_sha256": "2719a85c9e93c9c8ab66b95cd7bba47f96dbefe272bbc22ab0aa80ea32025a81",
+      "output_sha256": "7853f5f57dcb91a73cdef1df058f1ed00ece2867ed3d80d0fe11502ad62eaa06",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PRIOR_VERIFIED_JOB_EXPORT",
+      "seconds": 2.119,
+      "origin": {
+        "repository": "RhudeJJJJ/formal-conjectures",
+        "run": 39846670050,
+        "job": 120061646073,
+        "source_commit": "bdc4e2b186338383f40846e972242ac92c13ab59",
+        "artifact_id": 12456085539,
+        "artifact_sha256": "12ead6cbd1b25263f4846a9dc1065290f0c3e43b0c09cbba4724773d56ce52db"
+      }
+    },
+    "Proofs.RadenkovicGutmanD1Norm00JDirect": {
+      "module": "Proofs.RadenkovicGutmanD1Norm00JDirect",
+      "source_sha256": "b4981d3ed015f84250416a3ded78313b6be6aa2f9c8ce320bfe4150d1a5999d5",
+      "source_closure_sha256": "9868342a4954573c7f03583db7cd329690c40c33fad29f9d25724589b970099e",
+      "output_sha256": "e738569e8b05fe7b125190d2ab36d9e47183545f61e07a5f61a78aee090ce0b9",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PRIOR_VERIFIED_JOB_EXPORT",
+      "seconds": 52.187,
+      "origin": {
+        "repository": "RhudeJJJJ/formal-conjectures",
+        "run": 39852526415,
+        "job": 120082177736,
+        "source_commit": "4f384b85762503f94433b3e622fab443fb92d424",
+        "artifact_id": 12458097746,
+        "artifact_sha256": "db8feaa0a46aa9470d02018957884369bb660dbd39fc83db95fb5cea627e5995"
+      }
+    },
+    "Proofs.RadenkovicGutmanD1Norm00UDirect": {
+      "module": "Proofs.RadenkovicGutmanD1Norm00UDirect",
+      "source_sha256": "9e136eb1d39cdc554cdf2568210cc625d3d3ef5cf2cb16b5bd3f4ed4d3545cff",
+      "source_closure_sha256": "bec750abe3c8b80d1047aaddd194564e5f73960df92d7f8e8070b5b470e16144",
+      "output_sha256": "8f6d74f7d25aa57ad2ead2451ddda9c3b376ff8c349bb4bb887e11eac99dae6d",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PRIOR_VERIFIED_JOB_EXPORT",
+      "seconds": 152.18,
+      "origin": {
+        "repository": "RhudeJJJJ/formal-conjectures",
+        "run": 39852526415,
+        "job": 120082177736,
+        "source_commit": "4f384b85762503f94433b3e622fab443fb92d424",
+        "artifact_id": 12458097746,
+        "artifact_sha256": "db8feaa0a46aa9470d02018957884369bb660dbd39fc83db95fb5cea627e5995"
+      }
+    },
+    "Proofs.RadenkovicGutmanD1Norm00VDirect": {
+      "module": "Proofs.RadenkovicGutmanD1Norm00VDirect",
+      "source_sha256": "c87a9ab142f8d8c06ea9fc0ec17f50da78d89dfb4a55d255bc78110ab1ddcb10",
+      "source_closure_sha256": "732caf9572337b1643712e246352d1657369de79263a2574c48cea5849d6c187",
+      "output_sha256": "ab48f217f29ab655900403b6c89e2a533f626834795ab051548a7864bd2d842a",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PRIOR_VERIFIED_JOB_EXPORT",
+      "seconds": 100.368,
+      "origin": {
+        "repository": "RhudeJJJJ/formal-conjectures",
+        "run": 39852526415,
+        "job": 120082177736,
+        "source_commit": "4f384b85762503f94433b3e622fab443fb92d424",
+        "artifact_id": 12458097746,
+        "artifact_sha256": "db8feaa0a46aa9470d02018957884369bb660dbd39fc83db95fb5cea627e5995"
+      }
+    },
+    "Proofs.RadenkovicGutmanD1Norm10JDirect": {
+      "module": "Proofs.RadenkovicGutmanD1Norm10JDirect",
+      "source_sha256": "3c418c301ae356aab599c0a798e34281f2eb545254c71d8dc8416d1afe3764e5",
+      "source_closure_sha256": "22701b296490be86f6a33f65a44adf6281cfefff50a421af71b37ffc222ad907",
+      "output_sha256": "30f84dd9610242755184806198b3970c4cf96a28ab6d3b18b9a837f28f7cba72",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PRIOR_VERIFIED_JOB_EXPORT",
+      "seconds": 4.976,
+      "origin": {
+        "repository": "RhudeJJJJ/formal-conjectures",
+        "run": 39846670050,
+        "job": 120061646073,
+        "source_commit": "bdc4e2b186338383f40846e972242ac92c13ab59",
+        "artifact_id": 12456085539,
+        "artifact_sha256": "12ead6cbd1b25263f4846a9dc1065290f0c3e43b0c09cbba4724773d56ce52db"
+      }
+    },
+    "Proofs.RadenkovicGutmanD1Norm10JInverse": {
+      "module": "Proofs.RadenkovicGutmanD1Norm10JInverse",
+      "source_sha256": "6e6a2b27aaeac01b0d5d8b0d787431906d52eece736b97e9546c10cb88aa71b3",
+      "source_closure_sha256": "b00ef68a545c8d86ae5eda87e09698d993b961e41980c843ed33212822f1a148",
+      "output_sha256": "e1626ec5d829af74af16e233f45c148fc35494e80a9eac925a056d131eed0b61",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PRIOR_VERIFIED_JOB_EXPORT",
+      "seconds": 8.533,
+      "origin": {
+        "repository": "RhudeJJJJ/formal-conjectures",
+        "run": 39846670050,
+        "job": 120061646073,
+        "source_commit": "bdc4e2b186338383f40846e972242ac92c13ab59",
+        "artifact_id": 12456085539,
+        "artifact_sha256": "12ead6cbd1b25263f4846a9dc1065290f0c3e43b0c09cbba4724773d56ce52db"
+      }
+    },
+    "Proofs.RadenkovicGutmanD1Norm10UDirect": {
+      "module": "Proofs.RadenkovicGutmanD1Norm10UDirect",
+      "source_sha256": "45ae7f2d0a412d59a426c137f2143950a803f3cc2ef1c7b8883f537d5d01a4ec",
+      "source_closure_sha256": "e17b6fe306959bb3bc7ad534e04e6a5e65a93b420be4f10f02f1408fe341842f",
+      "output_sha256": "e4502b106b7a88f78d3181bfade46c948d0121fb19a78224fcd65760e9233e8c",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PRIOR_VERIFIED_JOB_EXPORT",
+      "seconds": 7.882,
+      "origin": {
+        "repository": "RhudeJJJJ/formal-conjectures",
+        "run": 39846670050,
+        "job": 120061646073,
+        "source_commit": "bdc4e2b186338383f40846e972242ac92c13ab59",
+        "artifact_id": 12456085539,
+        "artifact_sha256": "12ead6cbd1b25263f4846a9dc1065290f0c3e43b0c09cbba4724773d56ce52db"
+      }
+    },
+    "Proofs.RadenkovicGutmanD1Norm10UInverse": {
+      "module": "Proofs.RadenkovicGutmanD1Norm10UInverse",
+      "source_sha256": "854f26fc8eae8dd82fbe3a11686ef230d4208a44ea8b495c1f7825f28b42e978",
+      "source_closure_sha256": "7ab52c77f5442988fb3372a65643a7a6f506cb03d30298cd4504164c2eb90492",
+      "output_sha256": "f9fa25eee26951a74aab59e86b1ad3c3d827a1004632b9afb3ec37839427b832",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PRIOR_VERIFIED_JOB_EXPORT",
+      "seconds": 15.35,
+      "origin": {
+        "repository": "RhudeJJJJ/formal-conjectures",
+        "run": 39846670050,
+        "job": 120061646073,
+        "source_commit": "bdc4e2b186338383f40846e972242ac92c13ab59",
+        "artifact_id": 12456085539,
+        "artifact_sha256": "12ead6cbd1b25263f4846a9dc1065290f0c3e43b0c09cbba4724773d56ce52db"
+      }
+    },
+    "Proofs.RadenkovicGutmanD1Norm10VDirect": {
+      "module": "Proofs.RadenkovicGutmanD1Norm10VDirect",
+      "source_sha256": "ab1a35560c76f8a44f0f33df51b7d2b54bca4b2422c495dc41aa44ed7a0e0c98",
+      "source_closure_sha256": "0699a2dac987c86fe50ecbeaa7f86c3812557d6a10e3fb9a1e33552f2cb34de1",
+      "output_sha256": "856a5879391d869baf7fdd474a178cdb8b149027d6b6a74f215d642af948bea8",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PRIOR_VERIFIED_JOB_EXPORT",
+      "seconds": 7.031,
+      "origin": {
+        "repository": "RhudeJJJJ/formal-conjectures",
+        "run": 39846670050,
+        "job": 120061646073,
+        "source_commit": "bdc4e2b186338383f40846e972242ac92c13ab59",
+        "artifact_id": 12456085539,
+        "artifact_sha256": "12ead6cbd1b25263f4846a9dc1065290f0c3e43b0c09cbba4724773d56ce52db"
+      }
+    },
+    "Proofs.RadenkovicGutmanD1Norm10VInverse": {
+      "module": "Proofs.RadenkovicGutmanD1Norm10VInverse",
+      "source_sha256": "c752b442e3a2cbc5f4f102208ad2bcbed9893510ad4e19d1fc837e82117fba22",
+      "source_closure_sha256": "e2c81b8f4dce36b1cb36db8d77b0d47b2130ac91ee9c4eebc63aa9f789935163",
+      "output_sha256": "7a032fc94ceb223dbd8fdf039467594823c636cb4ef2979252bac5ea9d6a8048",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PRIOR_VERIFIED_JOB_EXPORT",
+      "seconds": 13.192,
+      "origin": {
+        "repository": "RhudeJJJJ/formal-conjectures",
+        "run": 39846670050,
+        "job": 120061646073,
+        "source_commit": "bdc4e2b186338383f40846e972242ac92c13ab59",
+        "artifact_id": 12456085539,
+        "artifact_sha256": "12ead6cbd1b25263f4846a9dc1065290f0c3e43b0c09cbba4724773d56ce52db"
+      }
+    },
+    "Proofs.RadenkovicGutmanD1Norm10Pack": {
+      "module": "Proofs.RadenkovicGutmanD1Norm10Pack",
+      "source_sha256": "78d7b73fdef66b85a88d8b000cec300afd01e01dd84c11c05554dc4b7340630e",
+      "source_closure_sha256": "0aa9813a1fc7b9795002170402faff05140b69b5cd1408d92c42b2445c45f3f8",
+      "output_sha256": "454c25e89ee30463ebfb5f9e8c7d1db2fd6c8019e9cb88d068ba8572959da81a",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PRIOR_VERIFIED_JOB_EXPORT",
+      "seconds": 1.767,
+      "origin": {
+        "repository": "RhudeJJJJ/formal-conjectures",
+        "run": 39846670050,
+        "job": 120061646073,
+        "source_commit": "bdc4e2b186338383f40846e972242ac92c13ab59",
+        "artifact_id": 12456085539,
+        "artifact_sha256": "12ead6cbd1b25263f4846a9dc1065290f0c3e43b0c09cbba4724773d56ce52db"
+      }
+    },
+    "Proofs.RadenkovicGutmanD1Norm30JDirect": {
+      "module": "Proofs.RadenkovicGutmanD1Norm30JDirect",
+      "source_sha256": "bd3c2842e4e2192e9697db49dee5a8fac5d4f9ad6a0755ce3938d2aaab5126cf",
+      "source_closure_sha256": "9b62902bcdab3880a545bd0dcfa20acf1ae5326af293e13dce995cdd473154d4",
+      "output_sha256": "f1b8bcc9edbaacf8c294e82d270bec8a502e81f8ddba486979974dff8ff99c48",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PRIOR_VERIFIED_JOB_EXPORT",
+      "seconds": 6.831,
+      "origin": {
+        "repository": "RhudeJJJJ/formal-conjectures",
+        "run": 39846670050,
+        "job": 120061646014,
+        "source_commit": "bdc4e2b186338383f40846e972242ac92c13ab59",
+        "artifact_id": 12455413196,
+        "artifact_sha256": "3d2c07c0c1f7f378d3c9841b739c5d2d4a4d77cf97bb5bdee93b1ae8a7b46f2f"
+      }
+    },
+    "Proofs.RadenkovicGutmanD1Norm30JInverse": {
+      "module": "Proofs.RadenkovicGutmanD1Norm30JInverse",
+      "source_sha256": "b1b20529e49d9f0b8e936e46d15f14a3ae0f842ac2b99a88e200a9a6c071e4f1",
+      "source_closure_sha256": "8e61f073255d1b4aba40f7d463434ca2f249aaac4ea5c58b8f53459d0085601d",
+      "output_sha256": "6898e0183cf19d4da99f68405d3a69dcd5a18e560075bbe8e84ef4372da70d22",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PRIOR_VERIFIED_JOB_EXPORT",
+      "seconds": 11.091,
+      "origin": {
+        "repository": "RhudeJJJJ/formal-conjectures",
+        "run": 39846670050,
+        "job": 120061646014,
+        "source_commit": "bdc4e2b186338383f40846e972242ac92c13ab59",
+        "artifact_id": 12455413196,
+        "artifact_sha256": "3d2c07c0c1f7f378d3c9841b739c5d2d4a4d77cf97bb5bdee93b1ae8a7b46f2f"
+      }
+    },
+    "Proofs.RadenkovicGutmanD1Norm30UDirect": {
+      "module": "Proofs.RadenkovicGutmanD1Norm30UDirect",
+      "source_sha256": "013e4874de2feda4f03b592171f26b4f3bdfe77d0a3e47bd9ee612c18bd32651",
+      "source_closure_sha256": "f05e21e39ca496b6dae0023e5d94a2c3b6f0783ad4ba880a99bcfc7e7bbcb7c4",
+      "output_sha256": "a4a583b10649c012c9a5808e450ed70ddc9784812b4168cd35268712a84cb392",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PRIOR_VERIFIED_JOB_EXPORT",
+      "seconds": 11.398,
+      "origin": {
+        "repository": "RhudeJJJJ/formal-conjectures",
+        "run": 39846670050,
+        "job": 120061646014,
+        "source_commit": "bdc4e2b186338383f40846e972242ac92c13ab59",
+        "artifact_id": 12455413196,
+        "artifact_sha256": "3d2c07c0c1f7f378d3c9841b739c5d2d4a4d77cf97bb5bdee93b1ae8a7b46f2f"
+      }
+    },
+    "Proofs.RadenkovicGutmanD1Norm30UInverse": {
+      "module": "Proofs.RadenkovicGutmanD1Norm30UInverse",
+      "source_sha256": "d3c475041680f56e7d0227c5bef15e437ebd6ceceada77cc3bbf87d5817dfede",
+      "source_closure_sha256": "1375dd56d9122bb317ef08d9e76a07ce413ecbdeff4c25bf9588dd5b10d341bf",
+      "output_sha256": "c20f072ac165b20aa2bc70860a5de643db54b0360f0c2c1f359d38118001f4eb",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PRIOR_VERIFIED_JOB_EXPORT",
+      "seconds": 20.665,
+      "origin": {
+        "repository": "RhudeJJJJ/formal-conjectures",
+        "run": 39846670050,
+        "job": 120061646014,
+        "source_commit": "bdc4e2b186338383f40846e972242ac92c13ab59",
+        "artifact_id": 12455413196,
+        "artifact_sha256": "3d2c07c0c1f7f378d3c9841b739c5d2d4a4d77cf97bb5bdee93b1ae8a7b46f2f"
+      }
+    },
+    "Proofs.RadenkovicGutmanD1Norm30VDirect": {
+      "module": "Proofs.RadenkovicGutmanD1Norm30VDirect",
+      "source_sha256": "fbe4a74a000daccc09a5e927145b679920698703958cf32eff9a3e6baa0636be",
+      "source_closure_sha256": "93f6b134789df78da129d12ab9fe4d2701edc3b5b7cdd2234c3c814344434eee",
+      "output_sha256": "632c9113bbd34d85b4b05525d3b0c46e97218c7c3c949be523597692b685b550",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PRIOR_VERIFIED_JOB_EXPORT",
+      "seconds": 10.487,
+      "origin": {
+        "repository": "RhudeJJJJ/formal-conjectures",
+        "run": 39846670050,
+        "job": 120061646014,
+        "source_commit": "bdc4e2b186338383f40846e972242ac92c13ab59",
+        "artifact_id": 12455413196,
+        "artifact_sha256": "3d2c07c0c1f7f378d3c9841b739c5d2d4a4d77cf97bb5bdee93b1ae8a7b46f2f"
+      }
+    },
+    "Proofs.RadenkovicGutmanD1Norm30VInverse": {
+      "module": "Proofs.RadenkovicGutmanD1Norm30VInverse",
+      "source_sha256": "ba8f801fabeee68de11d7486b3427e17aff33c3debfd168dc7fe26e1d459aa0d",
+      "source_closure_sha256": "6ebdf2837d2865256cff64fb256f4d98a71528403f9d1d035b6cc49f724cced5",
+      "output_sha256": "641d474f733c08837175831527c4983cf8bbd933e35015969e651f1b029e2e2f",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PRIOR_VERIFIED_JOB_EXPORT",
+      "seconds": 18.507,
+      "origin": {
+        "repository": "RhudeJJJJ/formal-conjectures",
+        "run": 39846670050,
+        "job": 120061646014,
+        "source_commit": "bdc4e2b186338383f40846e972242ac92c13ab59",
+        "artifact_id": 12455413196,
+        "artifact_sha256": "3d2c07c0c1f7f378d3c9841b739c5d2d4a4d77cf97bb5bdee93b1ae8a7b46f2f"
+      }
+    },
+    "Proofs.RadenkovicGutmanD1Norm30Pack": {
+      "module": "Proofs.RadenkovicGutmanD1Norm30Pack",
+      "source_sha256": "e464b37e914c941fe516facda826c41feaf15f54682602820df1687bb9304d7c",
+      "source_closure_sha256": "d8be7cae98405376513b922f211e319059b72a4c0dd4854ebf2d2046673071ae",
+      "output_sha256": "412e511594916f21138c55048a96e9415566386facd474b403fdbf37fc5af897",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PRIOR_VERIFIED_JOB_EXPORT",
+      "seconds": 1.819,
+      "origin": {
+        "repository": "RhudeJJJJ/formal-conjectures",
+        "run": 39846670050,
+        "job": 120061646014,
+        "source_commit": "bdc4e2b186338383f40846e972242ac92c13ab59",
+        "artifact_id": 12455413196,
+        "artifact_sha256": "3d2c07c0c1f7f378d3c9841b739c5d2d4a4d77cf97bb5bdee93b1ae8a7b46f2f"
+      }
+    },
+    "Proofs.RadenkovicGutmanInverseNormCompilation": {
+      "module": "Proofs.RadenkovicGutmanInverseNormCompilation",
+      "source_sha256": "ac767d2504eea1bfbe7af22e8c54a41ed75b523422b502397473ea5de0bc5621",
+      "source_closure_sha256": "bc24e4cfe7519c65646a7e225ad68564e74ffa1d0d11221e63600a7a857e6a0f",
+      "output_sha256": "6785290ebd92368022939b2e49c709553e91ba64a86731bc3f06e42763d39855",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PRIOR_VERIFIED_JOB_EXPORT",
+      "seconds": 10.438,
+      "origin": {
+        "repository": "RhudeJJJJ/formal-conjectures",
+        "run": 39852526415,
+        "job": 120082177736,
+        "source_commit": "4f384b85762503f94433b3e622fab443fb92d424",
+        "artifact_id": 12458097746,
+        "artifact_sha256": "db8feaa0a46aa9470d02018957884369bb660dbd39fc83db95fb5cea627e5995"
+      }
+    },
+    "Proofs.RadenkovicGutmanD1Norm00JBaseInverseBase": {
+      "module": "Proofs.RadenkovicGutmanD1Norm00JBaseInverseBase",
+      "source_sha256": "2a4763ab202b9a7294747d7d1697cccaac7f1d5f054ce241d65e81779b349573",
+      "source_closure_sha256": "5adfd7f0efc1c98be3d1d881a2d9995aa8d4fab21e88a6338a71ad545acbf451",
+      "output_sha256": "bbd15d9dfc1a1777de1ce85bee481c32d181e8fff864f57f13204bb4ff332e3e",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PRIOR_VERIFIED_JOB_EXPORT",
+      "seconds": 26.027,
+      "origin": {
+        "repository": "RhudeJJJJ/formal-conjectures",
+        "run": 39852526415,
+        "job": 120082177736,
+        "source_commit": "4f384b85762503f94433b3e622fab443fb92d424",
+        "artifact_id": 12458097746,
+        "artifact_sha256": "db8feaa0a46aa9470d02018957884369bb660dbd39fc83db95fb5cea627e5995"
+      }
+    },
+    "Proofs.RadenkovicGutmanD1Norm00JInverse": {
+      "module": "Proofs.RadenkovicGutmanD1Norm00JInverse",
+      "source_sha256": "eff6f2bd3a237eb7089b7e6be5df09d0e08b8f403a064a5341b34c7c79bbd046",
+      "source_closure_sha256": "159bd70005e498c40efa516be80e000746ac5df33ed3772c53a862d68148b175",
+      "output_sha256": "f0977cd36ba039c4f55ded07fead9bcae9ce2419b8625041658805c273c672dd",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PRIOR_VERIFIED_JOB_EXPORT",
+      "seconds": 21.92,
+      "origin": {
+        "repository": "RhudeJJJJ/formal-conjectures",
+        "run": 39852526415,
+        "job": 120082177736,
+        "source_commit": "4f384b85762503f94433b3e622fab443fb92d424",
+        "artifact_id": 12458097746,
+        "artifact_sha256": "db8feaa0a46aa9470d02018957884369bb660dbd39fc83db95fb5cea627e5995"
+      }
+    },
+    "Proofs.RadenkovicGutmanD1Norm00UImagInverseBase": {
+      "module": "Proofs.RadenkovicGutmanD1Norm00UImagInverseBase",
+      "source_sha256": "93cae9b229cf16e4ad3696abf150d7a024ce40bafd1f452ca4115ce54b129da1",
+      "source_closure_sha256": "3be6043a06f9d4bb00137917775f74b6cf9879e0745d0a61306fa1fa6d983a0f",
+      "output_sha256": "d80604f1ecc0c43077e13b40be824cef0e2cd8206c4c9b8677761212b76a9a48",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PRIOR_VERIFIED_JOB_EXPORT",
+      "seconds": 26.078,
+      "origin": {
+        "repository": "RhudeJJJJ/formal-conjectures",
+        "run": 39852526415,
+        "job": 120082177736,
+        "source_commit": "4f384b85762503f94433b3e622fab443fb92d424",
+        "artifact_id": 12458097746,
+        "artifact_sha256": "db8feaa0a46aa9470d02018957884369bb660dbd39fc83db95fb5cea627e5995"
+      }
+    },
+    "Proofs.RadenkovicGutmanD1Norm00URealInverseBase": {
+      "module": "Proofs.RadenkovicGutmanD1Norm00URealInverseBase",
+      "source_sha256": "dd665687b3941c0dc50f0d1334134cdb4b4af511f743f85739afdd691f8c570a",
+      "source_closure_sha256": "8ad804539f45d884f58299196aa6b4049ab671f2a77c1301c99627e6a798a264",
+      "output_sha256": "c5658cb542b055a0b53a2da29f517d1a65981d3cca4eff887212a4d3aada46de",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PRIOR_VERIFIED_JOB_EXPORT",
+      "seconds": 26.929,
+      "origin": {
+        "repository": "RhudeJJJJ/formal-conjectures",
+        "run": 39852526415,
+        "job": 120082177736,
+        "source_commit": "4f384b85762503f94433b3e622fab443fb92d424",
+        "artifact_id": 12458097746,
+        "artifact_sha256": "db8feaa0a46aa9470d02018957884369bb660dbd39fc83db95fb5cea627e5995"
+      }
+    },
+    "Proofs.RadenkovicGutmanD1Norm00UInverse": {
+      "module": "Proofs.RadenkovicGutmanD1Norm00UInverse",
+      "source_sha256": "64b9cf8d7c74c0b0330763ec944d5e82b2ef463ee7f1ebb063684ba41fceb4d0",
+      "source_closure_sha256": "de343781d67d40e813f644df7643c7cb23fbb306afbdac7a3d5fd8fdd990faf7",
+      "output_sha256": "395d50856ca3f546415cac40349eaac8050493d4037a5adb53d803d6744fd90e",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PRIOR_VERIFIED_JOB_EXPORT",
+      "seconds": 37.393,
+      "origin": {
+        "repository": "RhudeJJJJ/formal-conjectures",
+        "run": 39852526415,
+        "job": 120082177736,
+        "source_commit": "4f384b85762503f94433b3e622fab443fb92d424",
+        "artifact_id": 12458097746,
+        "artifact_sha256": "db8feaa0a46aa9470d02018957884369bb660dbd39fc83db95fb5cea627e5995"
+      }
+    },
+    "Proofs.RadenkovicGutmanD1Norm00VImagInverseBase": {
+      "module": "Proofs.RadenkovicGutmanD1Norm00VImagInverseBase",
+      "source_sha256": "22617f0138ff9358fe092352dad54aa40cfcb912229eef4c5d8af57dfa9e538c",
+      "source_closure_sha256": "f5f04bed0df5865363c981c46d5ec5f55cfb3f76b19a3f68a189cedabeaa614f",
+      "output_sha256": "8431a0e9112a27265ee966096219552213e7f161c7fb036aff36b1c6f26edd26",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PRIOR_VERIFIED_JOB_EXPORT",
+      "seconds": 24.913,
+      "origin": {
+        "repository": "RhudeJJJJ/formal-conjectures",
+        "run": 39852526415,
+        "job": 120082177736,
+        "source_commit": "4f384b85762503f94433b3e622fab443fb92d424",
+        "artifact_id": 12458097746,
+        "artifact_sha256": "db8feaa0a46aa9470d02018957884369bb660dbd39fc83db95fb5cea627e5995"
+      }
+    },
+    "Proofs.RadenkovicGutmanD1Norm00VRealInverseBase": {
+      "module": "Proofs.RadenkovicGutmanD1Norm00VRealInverseBase",
+      "source_sha256": "a9524a5787c7b4e4dc903a9b5f31d2e95f2dbd2795a307f0980e02eb1f6f3451",
+      "source_closure_sha256": "0d4803df3d315c14bc078fbbd308731ef124d152a82c467ee6793afac42cb9e1",
+      "output_sha256": "e71c826696dabfe801739e36ff36f66676ed5c2aab9a1795b5bd224a42e6ca6d",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PRIOR_VERIFIED_JOB_EXPORT",
+      "seconds": 24.413,
+      "origin": {
+        "repository": "RhudeJJJJ/formal-conjectures",
+        "run": 39852526415,
+        "job": 120082177736,
+        "source_commit": "4f384b85762503f94433b3e622fab443fb92d424",
+        "artifact_id": 12458097746,
+        "artifact_sha256": "db8feaa0a46aa9470d02018957884369bb660dbd39fc83db95fb5cea627e5995"
+      }
+    },
+    "Proofs.RadenkovicGutmanD1Norm00VInverse": {
+      "module": "Proofs.RadenkovicGutmanD1Norm00VInverse",
+      "source_sha256": "928712f27c4803eca017059df42d92fea5d266abd172334cf05604c7d59971ee",
+      "source_closure_sha256": "777e08075a4a0658d6c5abe9d7b97e6901d9065ab544371411a802e413de09b9",
+      "output_sha256": "10f39b6d89e51d1e7e1469840cccf064c6fa10936364ea6e01539931bf4f4ba2",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PRIOR_VERIFIED_JOB_EXPORT",
+      "seconds": 27.976,
+      "origin": {
+        "repository": "RhudeJJJJ/formal-conjectures",
+        "run": 39852526415,
+        "job": 120082177736,
+        "source_commit": "4f384b85762503f94433b3e622fab443fb92d424",
+        "artifact_id": 12458097746,
+        "artifact_sha256": "db8feaa0a46aa9470d02018957884369bb660dbd39fc83db95fb5cea627e5995"
+      }
+    },
+    "Proofs.RadenkovicGutmanD1Norm00Pack": {
+      "module": "Proofs.RadenkovicGutmanD1Norm00Pack",
+      "source_sha256": "5cb4f2a4df2cfec56f8b35182bb60241bd950d614ca7cb5f1b1ff11e3c1ca1ff",
+      "source_closure_sha256": "5ceca5b713d31f1a46d5a9a0ddcd6c516081b297e9d5a28ef1f844ed1b7d1173",
+      "output_sha256": "fabea4cabf047d78b36b022710abedd01c196dde5b30df4bc497dbaf4b8fdde5",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PRIOR_VERIFIED_JOB_EXPORT",
+      "seconds": 1.918,
+      "origin": {
+        "repository": "RhudeJJJJ/formal-conjectures",
+        "run": 39852526415,
+        "job": 120082177736,
+        "source_commit": "4f384b85762503f94433b3e622fab443fb92d424",
+        "artifact_id": 12458097746,
+        "artifact_sha256": "db8feaa0a46aa9470d02018957884369bb660dbd39fc83db95fb5cea627e5995"
+      }
+    },
+    "Proofs.RadenkovicGutmanRationalTensorPolynomial": {
+      "module": "Proofs.RadenkovicGutmanRationalTensorPolynomial",
+      "source_sha256": "a7da791d74887b404c79789bf83fe95af37722635d29043daf67727dd1c8bf27",
+      "source_closure_sha256": "6a149c0d076b116a224a7aef7ad7cfbde9479d7650b19fccef78a9a6cd481b7e",
+      "output_sha256": "bf2c0955710d8ffec217eaf96e5172c165dc4d7f6d717a2ff746b0a54fcf0e99",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PRIOR_VERIFIED_JOB_EXPORT",
+      "seconds": 2.571,
+      "origin": {
+        "repository": "RhudeJJJJ/formal-conjectures",
+        "run": 39503978917,
+        "job": 118908155072,
+        "source_commit": "bf607656537ce3cf1c9092b6887adcb03dd2635b",
+        "artifact_id": 12307286965,
+        "artifact_sha256": "3f9b96cb67aacaf21dd2a6611403378163d169cceb279160d0e8dfbeda306237"
+      }
+    },
+    "Proofs.RadenkovicGutmanRationalTensorFast": {
+      "module": "Proofs.RadenkovicGutmanRationalTensorFast",
+      "source_sha256": "14b6414c7ef2a21a7af1d2c51c3a0a84b794a237918608ecdab1dacb9d5481f9",
+      "source_closure_sha256": "a4bb846964b92aa7ba918d92ce53a48e2db2a7b89cd0783fb5d4cbe5bf72adb2",
+      "output_sha256": "7db0774a783bf762366f5582cf181aeb70d46d50c39b5f3436daf2dea75ea5d3",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PRIOR_VERIFIED_JOB_EXPORT",
+      "seconds": 2.219,
+      "origin": {
+        "repository": "RhudeJJJJ/formal-conjectures",
+        "run": 39503978917,
+        "job": 118908155072,
+        "source_commit": "bf607656537ce3cf1c9092b6887adcb03dd2635b",
+        "artifact_id": 12307286965,
+        "artifact_sha256": "3f9b96cb67aacaf21dd2a6611403378163d169cceb279160d0e8dfbeda306237"
+      }
+    },
+    "Proofs.RadenkovicGutmanHornerCertificates": {
+      "module": "Proofs.RadenkovicGutmanHornerCertificates",
+      "source_sha256": "e9c5d2471561d8d9fbf960160953787d3a0ac453c466d718838e137a476ee0f5",
+      "source_closure_sha256": "f536ce4d2837e4b5d3653bda8450ef6c8a6590815bc0f1c3d2d66830dbd2dc4f",
+      "output_sha256": "c22336efcb29fd4820b0bb7442b18fa32b437e56f0d82c6368da3903dc65b405",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PRIOR_VERIFIED_JOB_EXPORT",
+      "seconds": 3.324,
+      "origin": {
+        "repository": "RhudeJJJJ/formal-conjectures",
+        "run": 39503978917,
+        "job": 118908155072,
+        "source_commit": "bf607656537ce3cf1c9092b6887adcb03dd2635b",
+        "artifact_id": 12307286965,
+        "artifact_sha256": "3f9b96cb67aacaf21dd2a6611403378163d169cceb279160d0e8dfbeda306237"
+      }
+    },
+    "Proofs.RadenkovicGutmanNestedHornerCells": {
+      "module": "Proofs.RadenkovicGutmanNestedHornerCells",
+      "source_sha256": "e4c8a14de46b3ffd47dfc75f8325aee607e9d6f2e79e10e2a9691cc424ead77d",
+      "source_closure_sha256": "1050c1adccf5cf379738585b79273f36bebf56fee9a8d85701f811ca346c4460",
+      "output_sha256": "5514eb5ee9ba25d6ca2ac0c3294fe9c50e0f239d0e46bf5d10616fe67b382436",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PRIOR_VERIFIED_JOB_EXPORT",
+      "seconds": 3.474,
+      "origin": {
+        "repository": "RhudeJJJJ/formal-conjectures",
+        "run": 39503978917,
+        "job": 118908155072,
+        "source_commit": "bf607656537ce3cf1c9092b6887adcb03dd2635b",
+        "artifact_id": 12307286965,
+        "artifact_sha256": "3f9b96cb67aacaf21dd2a6611403378163d169cceb279160d0e8dfbeda306237"
+      }
+    },
+    "Proofs.RadenkovicGutmanNestedHornerTransform": {
+      "module": "Proofs.RadenkovicGutmanNestedHornerTransform",
+      "source_sha256": "3eacdfb7cab15b90cce0c468203a7830110f531f3b0af1f2c167baae1b6e48e4",
+      "source_closure_sha256": "106f6ec960d0ea6fc8fcb9a088216f84d1809e97451cf5ce30a4dde26ca9d01d",
+      "output_sha256": "bd9afc49e40ba7e5471d756dfc6e359cc035c0aba1d28d4bce207a47f62db3b0",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PRIOR_VERIFIED_JOB_EXPORT",
+      "seconds": 2.821,
+      "origin": {
+        "repository": "RhudeJJJJ/formal-conjectures",
+        "run": 39503978917,
+        "job": 118908155072,
+        "source_commit": "bf607656537ce3cf1c9092b6887adcb03dd2635b",
+        "artifact_id": 12307286965,
+        "artifact_sha256": "3f9b96cb67aacaf21dd2a6611403378163d169cceb279160d0e8dfbeda306237"
+      }
+    },
+    "Proofs.RadenkovicGutmanNestedInteger": {
+      "module": "Proofs.RadenkovicGutmanNestedInteger",
+      "source_sha256": "fdae5bf1e8a4ed180cb6b1bad37f1814adbc9f92f5dc6ba7d6239fb3fc957648",
+      "source_closure_sha256": "9924a7039c6794a75fb7bbc71bbb629cd98aeb541c7f4051e1067f52a81dba2e",
+      "output_sha256": "13ee44e4cf34c90e16ffe5f53e592cbb046b865b8faeff205749bd4de4e351fb",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PRIOR_VERIFIED_JOB_EXPORT",
+      "seconds": 3.223,
+      "origin": {
+        "repository": "RhudeJJJJ/formal-conjectures",
+        "run": 39503978917,
+        "job": 118908155072,
+        "source_commit": "bf607656537ce3cf1c9092b6887adcb03dd2635b",
+        "artifact_id": 12307286965,
+        "artifact_sha256": "3f9b96cb67aacaf21dd2a6611403378163d169cceb279160d0e8dfbeda306237"
+      }
+    },
+    "Proofs.RadenkovicGutmanNestedIntegerAffine": {
+      "module": "Proofs.RadenkovicGutmanNestedIntegerAffine",
+      "source_sha256": "40c7a57395fc02009c707ce915b4dde0ca5e2c889cc4ef1b0119e1dc204639b7",
+      "source_closure_sha256": "6fcd929f44d8f9a3278da4f2ab4a649a8d70216557f6562dceacae6439d5ba72",
+      "output_sha256": "2521347d1637d316659f32a9b789b1d897d4e35316e1efab3a6cf8c970512ab5",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PRIOR_VERIFIED_JOB_EXPORT",
+      "seconds": 3.875,
+      "origin": {
+        "repository": "RhudeJJJJ/formal-conjectures",
+        "run": 39849992646,
+        "job": 120073270398,
+        "source_commit": "7fc83b45f8d62b8db71edd4a1d2237ac9cf00426",
+        "artifact_id": 12457017143,
+        "artifact_sha256": "86eac8c2ebf0a10c645d129181dda8bc629c9b0f16f9ef4c3fa9f4cc51055eac"
+      }
+    },
+    "Proofs.RadenkovicGutmanIntegerComputedClassCell": {
+      "module": "Proofs.RadenkovicGutmanIntegerComputedClassCell",
+      "source_sha256": "32b2f687362cb0ae41527ef4714acfce7876bbebcb7a04296ed473770d5ff1e6",
+      "source_closure_sha256": "165e879bfc9a13bc413490f666a7b3f57a814159fb104f2f0659287b83f38cf5",
+      "output_sha256": "3d7e504a437338f0f64a43eb73e923ce5997bd4f43fcc1fbfcfb5a6b1d04540f",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PRIOR_VERIFIED_JOB_EXPORT",
+      "seconds": 2.622,
+      "origin": {
+        "repository": "RhudeJJJJ/formal-conjectures",
+        "run": 39849992646,
+        "job": 120073270398,
+        "source_commit": "7fc83b45f8d62b8db71edd4a1d2237ac9cf00426",
+        "artifact_id": 12457017143,
+        "artifact_sha256": "86eac8c2ebf0a10c645d129181dda8bc629c9b0f16f9ef4c3fa9f4cc51055eac"
+      }
+    },
+    "Proofs.RadenkovicGutmanPackedIntegerClassCell": {
+      "module": "Proofs.RadenkovicGutmanPackedIntegerClassCell",
+      "source_sha256": "d562e23a3f096a66edf8ca271b2904fd7d5e5393d48d5a4f394df62feb0ad5ae",
+      "source_closure_sha256": "0d62ec82931e28c0a53e68e1215263b97041026c92fcb854480da0d802ef5130",
+      "output_sha256": "a38599768439b231e6b6779c2d3744d58d2ca755759f26d5ce24316bd3cbf082",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PRIOR_VERIFIED_JOB_EXPORT",
+      "seconds": 2.522,
+      "origin": {
+        "repository": "RhudeJJJJ/formal-conjectures",
+        "run": 39849992646,
+        "job": 120073270398,
+        "source_commit": "7fc83b45f8d62b8db71edd4a1d2237ac9cf00426",
+        "artifact_id": 12457017143,
+        "artifact_sha256": "86eac8c2ebf0a10c645d129181dda8bc629c9b0f16f9ef4c3fa9f4cc51055eac"
+      }
+    },
+    "Proofs.RadenkovicGutmanPackedIntegerSemanticAffine": {
+      "module": "Proofs.RadenkovicGutmanPackedIntegerSemanticAffine",
+      "source_sha256": "d1f8dadf6b645ed48faff46bef50940b9a58225f28b14e02030955b7b1b9cd32",
+      "source_closure_sha256": "6b6e7ba168734da39fba47ce413ab2583cf8089eb16c4e32c236a7d0c91af1ef",
+      "output_sha256": "a2c0373638eb5281b332ba85035ea0c06c399fee6742f6760fdac7ddc8e799f0",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PRIOR_VERIFIED_JOB_EXPORT",
+      "seconds": 2.62,
+      "origin": {
+        "repository": "RhudeJJJJ/formal-conjectures",
+        "run": 39852834387,
+        "job": 120083254484,
+        "source_commit": "d3e3e930b7d8e92deed18fee1d9aca65c91b43a5",
+        "artifact_id": 12457977556,
+        "artifact_sha256": "7fdd97877870f863ebb8a0961eaff58d59d07ec2dde75928705337f84a120202"
+      }
+    },
+    "Proofs.RadenkovicGutmanIntegerLiteral": {
+      "module": "Proofs.RadenkovicGutmanIntegerLiteral",
+      "source_sha256": "f7a7b88ce30082079696e80953c801d58ec9f6972e9a4117cbd540e31b4e686c",
+      "source_closure_sha256": "3675a18ab27831aee25338c3525dd6e584ad248b288b05da0040159ded7a8e18",
+      "output_sha256": "f059dbb91f02e9ddf2633f0eaae0ebe46882fd05f25f961b55e24664e97592df",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PRIOR_VERIFIED_JOB_EXPORT",
+      "seconds": 2.873,
+      "origin": {
+        "repository": "RhudeJJJJ/formal-conjectures",
+        "run": 39863997243,
+        "job": 120121482291,
+        "source_commit": "0b76a5a953b2507c3e106b201e0ba2ae36f5ce2f",
+        "artifact_id": 12463890324,
+        "artifact_sha256": "e69ca2147f0c9e3708b91717177321c81bedcef2507bdcbffd973fe46ccca29c"
+      }
+    },
+    "Proofs.RadenkovicGutmanIntegerDataElaboration": {
+      "module": "Proofs.RadenkovicGutmanIntegerDataElaboration",
+      "source_sha256": "49f234a0993a258be62c3fa8d9efeb05ed1c6418c9b11ea568c2bdba65da4a3b",
+      "source_closure_sha256": "f5a62b8635d8e1f5d0404d8ad175c21ba277f494f2b082228f3f7938506a33f8",
+      "output_sha256": "c9901392a969fda85490e72bf67206c6489bba466702fb8964b373bcd223b4a3",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        []
+      ],
+      "mode": "PRIOR_VERIFIED_JOB_EXPORT",
+      "seconds": 2.722,
+      "origin": {
+        "repository": "RhudeJJJJ/formal-conjectures",
+        "run": 39863997243,
+        "job": 120121482291,
+        "source_commit": "0b76a5a953b2507c3e106b201e0ba2ae36f5ce2f",
+        "artifact_id": 12463890324,
+        "artifact_sha256": "e69ca2147f0c9e3708b91717177321c81bedcef2507bdcbffd973fe46ccca29c"
+      }
+    },
+    "Proofs.RadenkovicGutmanLiteralIntegerCell": {
+      "module": "Proofs.RadenkovicGutmanLiteralIntegerCell",
+      "source_sha256": "5e4c3c6e2b6e4f6bff2eda5faafa17898f52b24c2dd9687ee99fcc1b4be8e9d9",
+      "source_closure_sha256": "705683fc5c858af645679b696d5c813a55d7c59efb10a0f736deff7ee8486661",
+      "output_sha256": "1f1cd8a4566db2fa797df423f0566fb07fe268f677ae0bcbc6016c25fa3a8336",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PRIOR_VERIFIED_JOB_EXPORT",
+      "seconds": 3.022,
+      "origin": {
+        "repository": "RhudeJJJJ/formal-conjectures",
+        "run": 39863997243,
+        "job": 120121482291,
+        "source_commit": "0b76a5a953b2507c3e106b201e0ba2ae36f5ce2f",
+        "artifact_id": 12463890324,
+        "artifact_sha256": "e69ca2147f0c9e3708b91717177321c81bedcef2507bdcbffd973fe46ccca29c"
+      }
+    },
+    "Proofs.RadenkovicGutmanIntegerNormProgramPack": {
+      "module": "Proofs.RadenkovicGutmanIntegerNormProgramPack",
+      "source_sha256": "c6ee199f2bb9584c13f67b5b555b4fc599564b05ec20c10cf93171a24297a7bb",
+      "source_closure_sha256": "428716f93dd6ab1f3ae63f04c50807c5970e76ebb0146ca4dd5dc1ed4d81e0cc",
+      "output_sha256": "47cb7bc9bd4074b1ab4d9face862b419ffd142c1199075b61920f3159035cac2",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PRIOR_VERIFIED_JOB_EXPORT",
+      "seconds": 3.526,
+      "origin": {
+        "repository": "RhudeJJJJ/formal-conjectures",
+        "run": 39863997243,
+        "job": 120121482291,
+        "source_commit": "0b76a5a953b2507c3e106b201e0ba2ae36f5ce2f",
+        "artifact_id": 12463890324,
+        "artifact_sha256": "e69ca2147f0c9e3708b91717177321c81bedcef2507bdcbffd973fe46ccca29c"
+      }
+    },
+    "Proofs.RadenkovicGutmanD1IntegerNorm00": {
+      "module": "Proofs.RadenkovicGutmanD1IntegerNorm00",
+      "source_sha256": "3aa2141057181e4b83bc44d71ac8c36460ed269c927e77c4806f114bd73863e9",
+      "source_closure_sha256": "2e3483235b84fd236d3b499870fcbe4e353ee1d2c07538b9e3ffb862db50e721",
+      "output_sha256": "e93c5d82f039932a70d15f2f1797566b4b57dd7a39985d03f74e2dbec420efcc",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PRIOR_VERIFIED_JOB_EXPORT",
+      "seconds": 4.129,
+      "origin": {
+        "repository": "RhudeJJJJ/formal-conjectures",
+        "run": 39863997243,
+        "job": 120121482279,
+        "source_commit": "0b76a5a953b2507c3e106b201e0ba2ae36f5ce2f",
+        "artifact_id": 12463875095,
+        "artifact_sha256": "ccbb412fa2f78a044b5eafd8ea474c68fa2500627773eb4c6ff3ef4ddb3ef09c"
+      }
+    },
+    "Proofs.RadenkovicGutmanD1IntegerNorm10": {
+      "module": "Proofs.RadenkovicGutmanD1IntegerNorm10",
+      "source_sha256": "beb5c9c440ffda056b6df0c987541b226122eab266121ac5e65f484a6bf19697",
+      "source_closure_sha256": "3d135c500686450e8c99dd9661e06fe6ff9351e0d19590cbe9248ac8bb966cad",
+      "output_sha256": "21b1b1bfb9bf40122f51f425049a1af8a7a31e471b31a3cb12ac1e204ccd6752",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PRIOR_VERIFIED_JOB_EXPORT",
+      "seconds": 3.176,
+      "origin": {
+        "repository": "RhudeJJJJ/formal-conjectures",
+        "run": 39863997243,
+        "job": 120121482291,
+        "source_commit": "0b76a5a953b2507c3e106b201e0ba2ae36f5ce2f",
+        "artifact_id": 12463890324,
+        "artifact_sha256": "e69ca2147f0c9e3708b91717177321c81bedcef2507bdcbffd973fe46ccca29c"
+      }
+    },
+    "Proofs.RadenkovicGutmanD1IntegerNorm30": {
+      "module": "Proofs.RadenkovicGutmanD1IntegerNorm30",
+      "source_sha256": "22dd4f96c8bee88f675e4f3a8d66f9eda835e7b4da3a3721d7bc5697da8c4b00",
+      "source_closure_sha256": "12226f616be23a1893e51d1498bc61ff49412f491436e179d6c29f34a6caa038",
+      "output_sha256": "7a387773adad8cb9679c44b04d72e895f576f44028e9f34c716c3e05c5248ddf",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PRIOR_VERIFIED_JOB_EXPORT",
+      "seconds": 2.622,
+      "origin": {
+        "repository": "RhudeJJJJ/formal-conjectures",
+        "run": 39863997243,
+        "job": 120121481857,
+        "source_commit": "0b76a5a953b2507c3e106b201e0ba2ae36f5ce2f",
+        "artifact_id": 12463855333,
+        "artifact_sha256": "4c9fa0b72cb38470bb13f8f9df0324a012dd2250f56f9128806bbcec776e9584"
+      }
+    },
+    "Proofs.RadenkovicGutmanIntegerAffineStages": {
+      "module": "Proofs.RadenkovicGutmanIntegerAffineStages",
+      "source_sha256": "48fe53d7531f27409f857d7cbee17d0f48c8d0a736d7a856dadd2a32c2941d0d",
+      "source_closure_sha256": "73488a68b082c14ee546e2ec7decdbd81009deaf67c99da08325251988e49506",
+      "output_sha256": "ebc4388ed0dbd354061b8056159c9dafec64f6dc8a5123972dacbf9cf8dc52d7",
+      "axiom_profiles": [
+        [
+          "propext"
+        ]
+      ],
+      "mode": "PRIOR_VERIFIED_JOB_EXPORT",
+      "seconds": 2.37,
+      "origin": {
+        "repository": "RhudeJJJJ/formal-conjectures",
+        "run": 39868265080,
+        "job": 120135868358,
+        "source_commit": "f39508cb34478afd4caf940ddfaa0a7bea77d738",
+        "artifact_id": 12464029377,
+        "artifact_sha256": "51c110c6edc99321c7eae70502151a7d4ccb815272585c81244a62622ae98202"
+      }
+    },
+    "Proofs.RadenkovicGutmanIntegerOuterTerms": {
+      "module": "Proofs.RadenkovicGutmanIntegerOuterTerms",
+      "source_sha256": "06ad85ca38408f8316b4c5165b9509308d4f93beb16dd03cb05c3ca5dcf55470",
+      "source_closure_sha256": "c33b11ee611577649ea552ff1f65f52d249d30669bdfbba2dfba57c3e3c7b966",
+      "output_sha256": "c2700f2eb47b47c7d85035c8734d054051e9ff7996b768d57df8d1cc8ad87c0b",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PRIOR_VERIFIED_JOB_EXPORT",
+      "seconds": 3.172,
+      "origin": {
+        "repository": "RhudeJJJJ/formal-conjectures",
+        "run": 39868265080,
+        "job": 120135868358,
+        "source_commit": "f39508cb34478afd4caf940ddfaa0a7bea77d738",
+        "artifact_id": 12464029377,
+        "artifact_sha256": "51c110c6edc99321c7eae70502151a7d4ccb815272585c81244a62622ae98202"
+      }
+    },
+    "Proofs.RadenkovicGutmanIntegerOuterClassCell": {
+      "module": "Proofs.RadenkovicGutmanIntegerOuterClassCell",
+      "source_sha256": "9c567db91fbc472e4e8c428ac6933dd8699aaea28da1161e2c8044f63e87ad50",
+      "source_closure_sha256": "b9090173d2c9ba96a0e061a74c0d17136ecaab8b31f8b9effc629b83b779d23d",
+      "output_sha256": "1d2d34ea6887a19c714701eff236f3ccb8a366ec1d63c4516dd224ff1f407bdb",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "FRESH_KERNEL_EXPORT",
+      "seconds": 2.671
+    },
+    "Proofs.RadenkovicGutmanTreeTerminal": {
+      "module": "Proofs.RadenkovicGutmanTreeTerminal",
+      "source_sha256": "80c7ad1a75f506b8c06bb36040c8b3b7a521b64bcfa143047317602ab6fbc747",
+      "source_closure_sha256": "99447102a4bd370008aad64215170f13de97152dd52d1b8242c153ccaaf9f65e",
+      "output_sha256": "83ed5e884ff07c2eb3841dc22118a23d4092812fd3945cb0a0c5d65c3e036444",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PRIOR_VERIFIED_JOB_EXPORT",
+      "seconds": 1.819,
+      "origin": {
+        "repository": "RhudeJJJJ/formal-conjectures",
+        "run": 39503978917,
+        "job": 118908155072,
+        "source_commit": "bf607656537ce3cf1c9092b6887adcb03dd2635b",
+        "artifact_id": 12307286965,
+        "artifact_sha256": "3f9b96cb67aacaf21dd2a6611403378163d169cceb279160d0e8dfbeda306237"
+      }
+    },
+    "Proofs.RadenkovicGutmanFusionTerminal": {
+      "module": "Proofs.RadenkovicGutmanFusionTerminal",
+      "source_sha256": "bc16cf9f5bc2b7e2ee4e05d01f10ccff60e5b1a255a4f1000d144001d25def7d",
+      "source_closure_sha256": "5d00ac0a5e15f14b66e49925a54b671d60e5d3131ce180d2e9d7d4d958c07b7f",
+      "output_sha256": "e40ba26b58b22a322bc2da3b16ed6d6f4de1466fff9a35972b2c0abafc72556f",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PRIOR_VERIFIED_JOB_EXPORT",
+      "seconds": 2.37,
+      "origin": {
+        "repository": "RhudeJJJJ/formal-conjectures",
+        "run": 39503978917,
+        "job": 118908155072,
+        "source_commit": "bf607656537ce3cf1c9092b6887adcb03dd2635b",
+        "artifact_id": 12307286965,
+        "artifact_sha256": "3f9b96cb67aacaf21dd2a6611403378163d169cceb279160d0e8dfbeda306237"
+      }
+    },
+    "Proofs.RadenkovicGutmanGlobalAssembly": {
+      "module": "Proofs.RadenkovicGutmanGlobalAssembly",
+      "source_sha256": "7ecd79f3b58a271c5921481be8b2180675ca840ee62c5d00e8b6ab0024ba95ea",
+      "source_closure_sha256": "68338b2678801246299084c5c72087d51837da385f2927217c26434717ad04b7",
+      "output_sha256": "61a60967f4853c10172051b63142497bfc2ed28724d21610a0d4e3e2ff1ff6da",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PRIOR_VERIFIED_JOB_EXPORT",
+      "seconds": 2.573,
+      "origin": {
+        "repository": "RhudeJJJJ/formal-conjectures",
+        "run": 39503978917,
+        "job": 118908155072,
+        "source_commit": "bf607656537ce3cf1c9092b6887adcb03dd2635b",
+        "artifact_id": 12307286965,
+        "artifact_sha256": "3f9b96cb67aacaf21dd2a6611403378163d169cceb279160d0e8dfbeda306237"
+      }
+    },
+    "Proofs.RadenkovicGutmanNonpathFork": {
+      "module": "Proofs.RadenkovicGutmanNonpathFork",
+      "source_sha256": "4bb96fc7641b19119b56af9246b7e9b81054264d08096ff3fdedc32eb4d29b34",
+      "source_closure_sha256": "ee4e46afa2e542ca9f2d69698993169de2cc24aac2e1bcc71ba1b30b6f17173a",
+      "output_sha256": "1467af4812c7f0bca5d5527956e2708a68584e7e1b3d79344d844a194b577edb",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PRIOR_VERIFIED_JOB_EXPORT",
+      "seconds": 2.421,
+      "origin": {
+        "repository": "RhudeJJJJ/formal-conjectures",
+        "run": 39503978917,
+        "job": 118908155072,
+        "source_commit": "bf607656537ce3cf1c9092b6887adcb03dd2635b",
+        "artifact_id": 12307286965,
+        "artifact_sha256": "3f9b96cb67aacaf21dd2a6611403378163d169cceb279160d0e8dfbeda306237"
+      }
+    },
+    "Proofs.RadenkovicGutmanForkResidual": {
+      "module": "Proofs.RadenkovicGutmanForkResidual",
+      "source_sha256": "52b708273156266900ce1b5150ab47fef4661c2c588637ee7ef2a28eeca272d2",
+      "source_closure_sha256": "e69192082ae34ffd965ee83654d024ddf985cb9fe477fe1139c33fbc892adac2",
+      "output_sha256": "81f4c174c8e0b50cbd10cee7a92d40721db692d88885dd441645b483845a5c24",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PRIOR_VERIFIED_JOB_EXPORT",
+      "seconds": 1.618,
+      "origin": {
+        "repository": "RhudeJJJJ/formal-conjectures",
+        "run": 39503978917,
+        "job": 118908155072,
+        "source_commit": "bf607656537ce3cf1c9092b6887adcb03dd2635b",
+        "artifact_id": 12307286965,
+        "artifact_sha256": "3f9b96cb67aacaf21dd2a6611403378163d169cceb279160d0e8dfbeda306237"
+      }
+    },
+    "Proofs.RadenkovicGutmanArmEmbedding": {
+      "module": "Proofs.RadenkovicGutmanArmEmbedding",
+      "source_sha256": "a67925799555e93e2fd9b11efadd721ca12400b2045deac2afebcefe86538538",
+      "source_closure_sha256": "a447e236450e45c1a7af92fb7d74976fa5948748a2b40970336711f55fc06c24",
+      "output_sha256": "97d0ef24f81d3a108fd30a09a02f42decdd3a63b72b8c853ad4c7d5d39bdc85a",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PRIOR_VERIFIED_JOB_EXPORT",
+      "seconds": 1.518,
+      "origin": {
+        "repository": "RhudeJJJJ/formal-conjectures",
+        "run": 39503978917,
+        "job": 118908155072,
+        "source_commit": "bf607656537ce3cf1c9092b6887adcb03dd2635b",
+        "artifact_id": 12307286965,
+        "artifact_sha256": "3f9b96cb67aacaf21dd2a6611403378163d169cceb279160d0e8dfbeda306237"
+      }
+    },
+    "Proofs.RadenkovicGutmanSourcePresentation": {
+      "module": "Proofs.RadenkovicGutmanSourcePresentation",
+      "source_sha256": "68e35d0e0fd36309175e8ff35a0b20619965689d32c35504cd3f5421cf5bbae7",
+      "source_closure_sha256": "3e11d411fd3ec08744c86181cdec3d7ac65229887ae620c4968ec6942b0bbc2f",
+      "output_sha256": "49bb245f6d3076ba1e32b6a88711965f29ea2decde0a0245b6f7531873d7930a",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PRIOR_VERIFIED_JOB_EXPORT",
+      "seconds": 14.602,
+      "origin": {
+        "repository": "RhudeJJJJ/formal-conjectures",
+        "run": 39503978917,
+        "job": 118908155072,
+        "source_commit": "bf607656537ce3cf1c9092b6887adcb03dd2635b",
+        "artifact_id": 12307286965,
+        "artifact_sha256": "3f9b96cb67aacaf21dd2a6611403378163d169cceb279160d0e8dfbeda306237"
+      }
+    },
+    "Proofs.RadenkovicGutmanSmallOrders": {
+      "module": "Proofs.RadenkovicGutmanSmallOrders",
+      "source_sha256": "757fc7d654b4e532c0ac3b5b5f8d7c48544c835f1fb09e96975afe82c27b3cb6",
+      "source_closure_sha256": "a215bb3992c94571a67183844c1ece0e8b02be5b074441c1712064a11a2a94fa",
+      "output_sha256": "b8a83242ef0a7cb20626de8f60f2ad475ba7099721c624a67143dd3e6cc0aa76",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PRIOR_VERIFIED_JOB_EXPORT",
+      "seconds": 2.421,
+      "origin": {
+        "repository": "RhudeJJJJ/formal-conjectures",
+        "run": 39503978917,
+        "job": 118908155072,
+        "source_commit": "bf607656537ce3cf1c9092b6887adcb03dd2635b",
+        "artifact_id": 12307286965,
+        "artifact_sha256": "3f9b96cb67aacaf21dd2a6611403378163d169cceb279160d0e8dfbeda306237"
+      }
+    },
+    "Proofs.RadenkovicGutmanFourVertexSpectrum": {
+      "module": "Proofs.RadenkovicGutmanFourVertexSpectrum",
+      "source_sha256": "bc4c525182d0e46627d4e8a8db327272123fce92560f1d950d83c3e6a9a3b51a",
+      "source_closure_sha256": "c96995b7d8ca19b3eb4541593f5e0e049cb4aa9603b2ac933c24b25d4b2948bf",
+      "output_sha256": "920e3886fde1e45130c2a21fedda3ff13fd24cd3d4a89d20bc2533e7ef0a3208",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PRIOR_VERIFIED_JOB_EXPORT",
+      "seconds": 6.031,
+      "origin": {
+        "repository": "RhudeJJJJ/formal-conjectures",
+        "run": 39503978917,
+        "job": 118908155072,
+        "source_commit": "bf607656537ce3cf1c9092b6887adcb03dd2635b",
+        "artifact_id": 12307286965,
+        "artifact_sha256": "3f9b96cb67aacaf21dd2a6611403378163d169cceb279160d0e8dfbeda306237"
+      }
+    },
+    "Proofs.RadenkovicGutmanOrderFour": {
+      "module": "Proofs.RadenkovicGutmanOrderFour",
+      "source_sha256": "c8ce0d4139db81098f867ae809d8a8a5f9c1cfdbdd087e0cb3b6f27b008abdb1",
+      "source_closure_sha256": "00e4bccd853e8fb3f5f182595346f80e9c682fe6829c29e94a369469171e89fa",
+      "output_sha256": "f8a5c87cd39b82baa3f47cbcee45b865a1493c447df688cda364b7745373ca74",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PRIOR_VERIFIED_JOB_EXPORT",
+      "seconds": 2.421,
+      "origin": {
+        "repository": "RhudeJJJJ/formal-conjectures",
+        "run": 39503978917,
+        "job": 118908155072,
+        "source_commit": "bf607656537ce3cf1c9092b6887adcb03dd2635b",
+        "artifact_id": 12307286965,
+        "artifact_sha256": "3f9b96cb67aacaf21dd2a6611403378163d169cceb279160d0e8dfbeda306237"
+      }
+    },
+    "Proofs.RadenkovicGutmanMinimalFusion": {
+      "module": "Proofs.RadenkovicGutmanMinimalFusion",
+      "source_sha256": "5a49e023bcdd6b9f513d7477f30ea88603317cbc36be6aa043a1a18bb4b65bf3",
+      "source_closure_sha256": "52f8324ac9793123a266a48eda9ba8ffad7097def9c2a466f07e8301bccc8448",
+      "output_sha256": "5fb4706208963529a7e042d0245d427f5302968be0aeb210f9a0d54dc0ecef78",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PRIOR_VERIFIED_JOB_EXPORT",
+      "seconds": 3.072,
+      "origin": {
+        "repository": "RhudeJJJJ/formal-conjectures",
+        "run": 39503978917,
+        "job": 118908155072,
+        "source_commit": "bf607656537ce3cf1c9092b6887adcb03dd2635b",
+        "artifact_id": 12307286965,
+        "artifact_sha256": "3f9b96cb67aacaf21dd2a6611403378163d169cceb279160d0e8dfbeda306237"
+      }
+    },
+    "Proofs.RadenkovicGutmanActualFusionIntegral": {
+      "module": "Proofs.RadenkovicGutmanActualFusionIntegral",
+      "source_sha256": "909981a2b0872bdb1701ce68145af1234f25c127b849b6d5c7ad87b8d9eecae3",
+      "source_closure_sha256": "94d192281e7d44facdb32cfe3d0972e830f37b16fb48dd412a33e97cc1642baf",
+      "output_sha256": "9fcf9cb3db1070e40687eb550edf6ecaff74a54e19ad460bf3cf577cbb103676",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PRIOR_VERIFIED_JOB_EXPORT",
+      "seconds": 3.474,
+      "origin": {
+        "repository": "RhudeJJJJ/formal-conjectures",
+        "run": 39503978917,
+        "job": 118908155072,
+        "source_commit": "bf607656537ce3cf1c9092b6887adcb03dd2635b",
+        "artifact_id": 12307286965,
+        "artifact_sha256": "3f9b96cb67aacaf21dd2a6611403378163d169cceb279160d0e8dfbeda306237"
+      }
+    },
+    "Proofs.RadenkovicGutmanClassEnvelope": {
+      "module": "Proofs.RadenkovicGutmanClassEnvelope",
+      "source_sha256": "83ea92358fa4634ef4823f3ecfd8eb9217a2015e55e962f6e2b3527404bb9b89",
+      "source_closure_sha256": "d4f138f80530b6ca4bc294ad80dbd42840704d23d5c56247f80e168ddc1c7a83",
+      "output_sha256": "93a12160279dc40ddfdd196e261d0e4f1eb4c3ffa9e78d3f7934f6aba9a03c6b",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PRIOR_VERIFIED_JOB_EXPORT",
+      "seconds": 2.57,
+      "origin": {
+        "repository": "RhudeJJJJ/formal-conjectures",
+        "run": 39503978917,
+        "job": 118908155072,
+        "source_commit": "bf607656537ce3cf1c9092b6887adcb03dd2635b",
+        "artifact_id": 12307286965,
+        "artifact_sha256": "3f9b96cb67aacaf21dd2a6611403378163d169cceb279160d0e8dfbeda306237"
+      }
+    },
+    "Proofs.RadenkovicGutmanOriginalAssembly": {
+      "module": "Proofs.RadenkovicGutmanOriginalAssembly",
+      "source_sha256": "3f3bd6719299090443071576e72d8c13974e878b5621b4a6b90091ce09cdeeae",
+      "source_closure_sha256": "68f20188f7b3613c537c9d0cc732f4d1523545235f5797aec978771b9d920b4b",
+      "output_sha256": "2b9e35fe4fd9f8b17de3520d5907b18455416eeef7f2a94cb5139a9ee34d48fb",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PRIOR_VERIFIED_JOB_EXPORT",
+      "seconds": 2.872,
+      "origin": {
+        "repository": "RhudeJJJJ/formal-conjectures",
+        "run": 39503978917,
+        "job": 118908155072,
+        "source_commit": "bf607656537ce3cf1c9092b6887adcb03dd2635b",
+        "artifact_id": 12307286965,
+        "artifact_sha256": "3f9b96cb67aacaf21dd2a6611403378163d169cceb279160d0e8dfbeda306237"
+      }
+    },
+    "Proofs.RadenkovicGutmanLargeDegreeReserve": {
+      "module": "Proofs.RadenkovicGutmanLargeDegreeReserve",
+      "source_sha256": "6d76b43cdfdad7a95c1061cdcf8f04fbbb075884b864f80e8e35997f21539812",
+      "source_closure_sha256": "c20f6407334f810f5d750702c656d34c9b3735d928b4be73e1562c01b7960f02",
+      "output_sha256": "5ec2c1d4059251937e959a598bc131653ea41cd513119cf3a3051219931ecc40",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PRIOR_VERIFIED_JOB_EXPORT",
+      "seconds": 8.038,
+      "origin": {
+        "repository": "RhudeJJJJ/formal-conjectures",
+        "run": 39503978917,
+        "job": 118908155072,
+        "source_commit": "bf607656537ce3cf1c9092b6887adcb03dd2635b",
+        "artifact_id": 12307286965,
+        "artifact_sha256": "3f9b96cb67aacaf21dd2a6611403378163d169cceb279160d0e8dfbeda306237"
+      }
+    },
+    "Proofs.RadenkovicGutmanTailIntegral": {
+      "module": "Proofs.RadenkovicGutmanTailIntegral",
+      "source_sha256": "7b2c0c4b5ace8c4a7424e1627e78f0688838c5735a2b57a5710b57c5f832df8f",
+      "source_closure_sha256": "cd964928d9891da5dfe2c8d415d9c08519bf1e04983ee023e661f15471b8c762",
+      "output_sha256": "f79a41ec86e8f54ef50d647918479219e52bdf99ea2f74fc8af0aa19319c4be8",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PRIOR_VERIFIED_JOB_EXPORT",
+      "seconds": 7.935,
+      "origin": {
+        "repository": "RhudeJJJJ/formal-conjectures",
+        "run": 39503978917,
+        "job": 118908155072,
+        "source_commit": "bf607656537ce3cf1c9092b6887adcb03dd2635b",
+        "artifact_id": 12307286965,
+        "artifact_sha256": "3f9b96cb67aacaf21dd2a6611403378163d169cceb279160d0e8dfbeda306237"
+      }
+    },
+    "Proofs.RadenkovicGutmanClassScalarIntegrals": {
+      "module": "Proofs.RadenkovicGutmanClassScalarIntegrals",
+      "source_sha256": "a302d82c52ad2a46debf382582e3141356359cca020648a6cc23ab145299df09",
+      "source_closure_sha256": "7a1e91ef4933053e884cae51a5162309b2d08dc6cc351b5b9790b65d5b8db9dd",
+      "output_sha256": "e44f0988fc2dbc9edec288bd1ddd43f855f568d6ec52e042a486c5556321827e",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PRIOR_VERIFIED_JOB_EXPORT",
+      "seconds": 2.822,
+      "origin": {
+        "repository": "RhudeJJJJ/formal-conjectures",
+        "run": 39716169791,
+        "job": 119618688633,
+        "source_commit": "38d6d1a0b1be6bcea0702fb686fafd2c55a60340",
+        "artifact_id": 12399073885,
+        "artifact_sha256": "ac00bc20f4c2fbdf8c4bf86881a479fef29407f83d8e1cc15e0c24173fa9ee64"
+      }
+    },
+    "Proofs.RadenkovicGutmanUniformTailPolynomials": {
+      "module": "Proofs.RadenkovicGutmanUniformTailPolynomials",
+      "source_sha256": "912a50b5e3f7390e49616c33552ffc64506201531c2c66c8c61df7aecf32c56f",
+      "source_closure_sha256": "1f41d50743f254df3b03d7982ce1e1f81e5875ca2c40700f52cf4e973708199f",
+      "output_sha256": "a0639cbef958e4f8f1b6f53040feb68643539a698a7c6bcb43d57089e10ad86f",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PRIOR_VERIFIED_JOB_EXPORT",
+      "seconds": 20.02,
+      "origin": {
+        "repository": "RhudeJJJJ/formal-conjectures",
+        "run": 39716169791,
+        "job": 119618688633,
+        "source_commit": "38d6d1a0b1be6bcea0702fb686fafd2c55a60340",
+        "artifact_id": 12399073885,
+        "artifact_sha256": "ac00bc20f4c2fbdf8c4bf86881a479fef29407f83d8e1cc15e0c24173fa9ee64"
+      }
+    },
+    "Proofs.RadenkovicGutmanUniformTail": {
+      "module": "Proofs.RadenkovicGutmanUniformTail",
+      "source_sha256": "7186a51ef682f5d18051690953fddad1e08559e70473221dde6f5348b04e48e7",
+      "source_closure_sha256": "04a6ca0924490a4a1c9f19124b9a1219279d7eda9f7cba7e76b056186e127772",
+      "output_sha256": "39e0bed17a45bcb37c499b1d026c43e70051c6e33effbc427de3fc922485dac5",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PRIOR_VERIFIED_JOB_EXPORT",
+      "seconds": 4.728,
+      "origin": {
+        "repository": "RhudeJJJJ/formal-conjectures",
+        "run": 39716169791,
+        "job": 119618688633,
+        "source_commit": "38d6d1a0b1be6bcea0702fb686fafd2c55a60340",
+        "artifact_id": 12399073885,
+        "artifact_sha256": "ac00bc20f4c2fbdf8c4bf86881a479fef29407f83d8e1cc15e0c24173fa9ee64"
+      }
+    },
+    "Proofs.RadenkovicGutmanClassGraphRemainders": {
+      "module": "Proofs.RadenkovicGutmanClassGraphRemainders",
+      "source_sha256": "269ef8f78ac8902db2564a8385e065adc8bf2c387ece19b0edf1151cd7689ba9",
+      "source_closure_sha256": "af7a3a4953d018f7b8bf4844423f2a56433f9907ba5cc9ca6a45d66df906c944",
+      "output_sha256": "69522cd0772b492d914914df6e651769cb7fb666450a7752747fe89501f092f6",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PRIOR_VERIFIED_JOB_EXPORT",
+      "seconds": 3.022,
+      "origin": {
+        "repository": "RhudeJJJJ/formal-conjectures",
+        "run": 39716169791,
+        "job": 119618688633,
+        "source_commit": "38d6d1a0b1be6bcea0702fb686fafd2c55a60340",
+        "artifact_id": 12399073885,
+        "artifact_sha256": "ac00bc20f4c2fbdf8c4bf86881a479fef29407f83d8e1cc15e0c24173fa9ee64"
+      }
+    },
+    "Proofs.RadenkovicGutmanFastCellGraphIntegral": {
+      "module": "Proofs.RadenkovicGutmanFastCellGraphIntegral",
+      "source_sha256": "d5a570b0ce7e2fbdefbbf9395dee63cd549fb8843659b4fecf61bb8258373f22",
+      "source_closure_sha256": "aeec84a57749858b925f8f203634c610b58fe1042b0b371e7c81591822fb4e9b",
+      "output_sha256": "9043bd577af3e9f89919f58b1d3407c5a34037478859eb65cc059943f7e0ea11",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PRIOR_VERIFIED_JOB_EXPORT",
+      "seconds": 2.37,
+      "origin": {
+        "repository": "RhudeJJJJ/formal-conjectures",
+        "run": 39840868637,
+        "job": 120041203245,
+        "source_commit": "acfbe187a3d062fccb3da255c8532b8152789d4b",
+        "artifact_id": 12451564621,
+        "artifact_sha256": "f11c76f9ea78344dce07243cff44c3e072d5e6396a82804daba7ce26e01ad60b"
+      }
+    },
+    "Proofs.RadenkovicGutmanFastCellPartition": {
+      "module": "Proofs.RadenkovicGutmanFastCellPartition",
+      "source_sha256": "c5e54ea022d5cac1e53dfede461ab14c9af0daa35f6e2c6c9263e394f4e8ae18",
+      "source_closure_sha256": "def4eccf725c9f20a7453f481a81d189b15190a30cc34d6f04e0ed0d22194d85",
+      "output_sha256": "c5dc1cf30b5d2bc98740f8a14696b3ec4e5ca8b70b98ac40ce6676ab037aa886",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PRIOR_VERIFIED_JOB_EXPORT",
+      "seconds": 2.47,
+      "origin": {
+        "repository": "RhudeJJJJ/formal-conjectures",
+        "run": 39840868637,
+        "job": 120041203245,
+        "source_commit": "acfbe187a3d062fccb3da255c8532b8152789d4b",
+        "artifact_id": 12451564621,
+        "artifact_sha256": "f11c76f9ea78344dce07243cff44c3e072d5e6396a82804daba7ce26e01ad60b"
+      }
+    },
+    "Proofs.RadenkovicGutmanFastPaidDegreeOneClass": {
+      "module": "Proofs.RadenkovicGutmanFastPaidDegreeOneClass",
+      "source_sha256": "9ada158e98835b93899b1161557a9f9c379fb6101eece096e3751e44246eb39b",
+      "source_closure_sha256": "edc14ecf4421ba7ed4d7816bc852b918e683f6d7aca30cf5720da1db478e9a3d",
+      "output_sha256": "c4a428d0f150d1a129f06c57416b776ab77eea9cfb398d76a9a1ce7a061abb84",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PRIOR_VERIFIED_JOB_EXPORT",
+      "seconds": 2.872,
+      "origin": {
+        "repository": "RhudeJJJJ/formal-conjectures",
+        "run": 39840868637,
+        "job": 120041203245,
+        "source_commit": "acfbe187a3d062fccb3da255c8532b8152789d4b",
+        "artifact_id": 12451564621,
+        "artifact_sha256": "f11c76f9ea78344dce07243cff44c3e072d5e6396a82804daba7ce26e01ad60b"
+      }
+    },
+    "Proofs.RadenkovicGutmanFastArmCoverIntegral": {
+      "module": "Proofs.RadenkovicGutmanFastArmCoverIntegral",
+      "source_sha256": "d1fa4eccd85e4a41bbe7370ac93c0b5f6a0494b9571139e4bacafa95c2a62674",
+      "source_closure_sha256": "03dd26cd5004f4e8ba4cb8371a0c40cc8e4f902e25d083bbe82b60b730823d1d",
+      "output_sha256": "cf57377f405f35e742f07a7af8394a50ff98c51bb6a0dd00ecd7be749cc2ad97",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "PRIOR_VERIFIED_JOB_EXPORT",
+      "seconds": 3.223,
+      "origin": {
+        "repository": "RhudeJJJJ/formal-conjectures",
+        "run": 39840868637,
+        "job": 120041203245,
+        "source_commit": "acfbe187a3d062fccb3da255c8532b8152789d4b",
+        "artifact_id": 12451564621,
+        "artifact_sha256": "f11c76f9ea78344dce07243cff44c3e072d5e6396a82804daba7ce26e01ad60b"
+      }
+    },
+    "Proofs.RadenkovicGutmanLongArmPrerequisiteBase": {
+      "module": "Proofs.RadenkovicGutmanLongArmPrerequisiteBase",
+      "source_sha256": "b4b6b1d11ea7f7a31e139114c31b19183b6424930f1ebf0caa365cf4e72576df",
+      "source_closure_sha256": "b807f04b6583d245841ef068c6d4d35b02ad2f2c46c52915fdc777c2abff0386",
+      "output_sha256": "4cd6e6622d1759862df014c6f450dccd63ea3a08130ec8e748239a57cadf1bf7",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "FRESH_KERNEL_EXPORT",
+      "seconds": 2.321
+    }
+  },
+  "endpoints": [
+    "Proofs.RadenkovicGutmanLongArmPrerequisiteBase"
+  ],
+  "all_prior_origins_preserved": true
+}

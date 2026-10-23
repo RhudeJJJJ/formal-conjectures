@@ -2,10 +2,13 @@
 import argparse,hashlib,io,json,pathlib,zipfile
 from rg_github_artifacts import fetch_archive
 ap=argparse.ArgumentParser();ap.add_argument('--manifest',type=pathlib.Path,required=True)
-ap.add_argument('--build-directory',type=pathlib.Path,required=True);a=ap.parse_args()
+ap.add_argument('--build-directory',type=pathlib.Path,required=True)
+ap.add_argument('--verified-local-archive',type=pathlib.Path);a=ap.parse_args()
 m=json.loads(a.manifest.read_text());assert m['kind']=='INDEPENDENTLY_AUDITED_COMPLETE_SCOPE_CAPSULE'
 assert m['mathlib']=='0df444a360eaa60ab8c11dca51a86af692955474' and m['lean_version']=='4.33.1'
-data=fetch_archive(m);build=a.build_directory.resolve();build.mkdir(parents=True,exist_ok=True)
+data=a.verified_local_archive.read_bytes() if a.verified_local_archive else fetch_archive(m)
+assert hashlib.sha256(data).hexdigest()==m['artifact_sha256']
+build=a.build_directory.resolve();build.mkdir(parents=True,exist_ok=True)
 with zipfile.ZipFile(io.BytesIO(data)) as z:
     assert len(z.namelist())==len(set(z.namelist()))
     capsule=json.loads(z.read('capsule.json'));assert capsule['kind']=='VERIFIED_COMPLETE_SCOPE_OBJECTS'

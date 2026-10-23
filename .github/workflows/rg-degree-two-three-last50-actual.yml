@@ -1,10 +1,8 @@
-name: RG degree two and three actual tree certificates wave3
+name: RG degree two and three final fifty actual tree certificates
 
 # The dispatched final wave is retained for manual replay.
 on:
-  push:
-    branches: [rg-remaining-six-spectral-20261021]
-    paths: ['.github/workflows/rg-degree-two-three-last50-actual.yml','ci/rg_restore_plan_parallel.py']
+  workflow_dispatch:
 
 permissions:
   contents: read

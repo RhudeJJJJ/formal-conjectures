@@ -16,6 +16,7 @@ theorem remainder_derivative (x : ℝ) (hx : 0 ≤ x) :
   have hp := ((((hasDerivAt_id x).sub (((hasDerivAt_id x).pow 2).div_const 2)).add
     (((hasDerivAt_id x).pow 3).div_const 3)).sub
     (((hasDerivAt_id x).pow 4).div_const 4))
+  simp only [id_eq] at hl hp
   convert hl.sub hp using 1 <;> first
     | rfl
     | (field_simp [show 1 + x ≠ 0 by linarith]; ring)

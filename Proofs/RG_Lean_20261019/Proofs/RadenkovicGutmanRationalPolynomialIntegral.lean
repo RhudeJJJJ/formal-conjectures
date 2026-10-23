@@ -5,7 +5,7 @@ import Mathlib.Analysis.SpecialFunctions.Integrals.Basic
 
 namespace Gebendorfer.RadenkovicGutman.RationalPolynomialIntegral
 
-open PolynomialPathMap RationalComplexPolynomial MeasureTheory
+open Polynomial PolynomialPathMap RationalComplexPolynomial MeasureTheory
 noncomputable section
 
 theorem derivative_evaluation (p : ℚ[X]) (x : ℝ) :
@@ -39,8 +39,18 @@ theorem sound (p F : List ℚ) (a b L : ℚ) (hcheck : accepts p F a b L = true)
   rw [rational_evaluation, rational_evaluation, ← Rat.cast_sub, he] at h
   exact h
 
-theorem control : accepts [1,1] [0,1,1/2] 0 1 (3/2) = true := by decide +kernel
-theorem rejects_wrong_payment : accepts [1,1] [0,1,1/2] 0 1 2 = false := by decide +kernel
+theorem control : accepts [1,1] [0,1,1/2] 0 1 (3/2) = true := by
+  rw [accepts, decide_eq_true_eq]
+  constructor
+  · apply Polynomial.funext
+    intro t
+    norm_num [ofList]
+    ring
+  · norm_num [ofList]
+theorem rejects_wrong_payment : accepts [1,1] [0,1,1/2] 0 1 2 = false := by
+  rw [accepts, decide_eq_false_iff_not]
+  rintro ⟨_, h⟩
+  norm_num [ofList] at h
 
 #print axioms derivative_evaluation
 #print axioms evaluation_continuous

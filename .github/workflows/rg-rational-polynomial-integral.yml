@@ -84,3 +84,5 @@ jobs:
           name: rg-rational-polynomial-integral-exports-${{ github.run_id }}-${{ strategy.job-index }}
           path: Proofs/RG_Lean_20261019/build/fresh_exports
           retention-days: 7
+
+# Recheck explicit identity reduction and polynomial primitive controls.

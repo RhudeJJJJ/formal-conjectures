@@ -1,0 +1,612 @@
+name: RG remaining exact long long arm chunks
+
+on:
+  push:
+    branches: [rg-remaining-six-spectral-20261021]
+    paths: ['.github/workflows/rg-d1-shared00-remaining-chunks.yml']
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  check:
+    strategy:
+      fail-fast: false
+      max-parallel: 8
+      matrix:
+        include:
+          - tag: '00'
+            chunk: 1
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk001
+          - tag: '00'
+            chunk: 2
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk002
+          - tag: '00'
+            chunk: 3
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk003
+          - tag: '00'
+            chunk: 4
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk004
+          - tag: '00'
+            chunk: 5
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk005
+          - tag: '00'
+            chunk: 6
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk006
+          - tag: '00'
+            chunk: 7
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk007
+          - tag: '00'
+            chunk: 8
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk008
+          - tag: '00'
+            chunk: 9
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk009
+          - tag: '00'
+            chunk: 10
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk010
+          - tag: '00'
+            chunk: 11
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk011
+          - tag: '00'
+            chunk: 12
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk012
+          - tag: '00'
+            chunk: 13
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk013
+          - tag: '00'
+            chunk: 14
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk014
+          - tag: '00'
+            chunk: 15
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk015
+          - tag: '00'
+            chunk: 16
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk016
+          - tag: '00'
+            chunk: 17
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk017
+          - tag: '00'
+            chunk: 18
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk018
+          - tag: '00'
+            chunk: 19
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk019
+          - tag: '00'
+            chunk: 20
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk020
+          - tag: '00'
+            chunk: 21
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk021
+          - tag: '00'
+            chunk: 22
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk022
+          - tag: '00'
+            chunk: 23
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk023
+          - tag: '00'
+            chunk: 24
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk024
+          - tag: '00'
+            chunk: 25
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk025
+          - tag: '00'
+            chunk: 26
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk026
+          - tag: '00'
+            chunk: 27
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk027
+          - tag: '00'
+            chunk: 28
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk028
+          - tag: '00'
+            chunk: 29
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk029
+          - tag: '00'
+            chunk: 30
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk030
+          - tag: '00'
+            chunk: 31
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk031
+          - tag: '00'
+            chunk: 32
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk032
+          - tag: '00'
+            chunk: 33
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk033
+          - tag: '00'
+            chunk: 34
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk034
+          - tag: '00'
+            chunk: 35
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk035
+          - tag: '00'
+            chunk: 36
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk036
+          - tag: '00'
+            chunk: 37
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk037
+          - tag: '00'
+            chunk: 38
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk038
+          - tag: '00'
+            chunk: 39
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk039
+          - tag: '00'
+            chunk: 40
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk040
+          - tag: '00'
+            chunk: 41
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk041
+          - tag: '00'
+            chunk: 42
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk042
+          - tag: '00'
+            chunk: 43
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk043
+          - tag: '00'
+            chunk: 44
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk044
+          - tag: '00'
+            chunk: 45
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk045
+          - tag: '00'
+            chunk: 46
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk046
+          - tag: '00'
+            chunk: 47
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk047
+          - tag: '00'
+            chunk: 48
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk048
+          - tag: '00'
+            chunk: 49
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk049
+          - tag: '00'
+            chunk: 50
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk050
+          - tag: '00'
+            chunk: 51
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk051
+          - tag: '00'
+            chunk: 52
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk052
+          - tag: '00'
+            chunk: 53
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk053
+          - tag: '00'
+            chunk: 54
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk054
+          - tag: '00'
+            chunk: 55
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk055
+          - tag: '00'
+            chunk: 56
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk056
+          - tag: '00'
+            chunk: 57
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk057
+          - tag: '00'
+            chunk: 58
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk058
+          - tag: '00'
+            chunk: 59
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk059
+          - tag: '00'
+            chunk: 60
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk060
+          - tag: '00'
+            chunk: 61
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk061
+          - tag: '00'
+            chunk: 62
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk062
+          - tag: '00'
+            chunk: 63
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk063
+          - tag: '00'
+            chunk: 64
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk064
+          - tag: '00'
+            chunk: 65
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk065
+          - tag: '00'
+            chunk: 66
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk066
+          - tag: '00'
+            chunk: 67
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk067
+          - tag: '00'
+            chunk: 68
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk068
+          - tag: '00'
+            chunk: 69
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk069
+          - tag: '00'
+            chunk: 70
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk070
+          - tag: '00'
+            chunk: 71
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk071
+          - tag: '00'
+            chunk: 72
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk072
+          - tag: '00'
+            chunk: 73
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk073
+          - tag: '00'
+            chunk: 74
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk074
+          - tag: '00'
+            chunk: 75
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk075
+          - tag: '00'
+            chunk: 76
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk076
+          - tag: '00'
+            chunk: 77
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk077
+          - tag: '00'
+            chunk: 78
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk078
+          - tag: '00'
+            chunk: 79
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk079
+          - tag: '00'
+            chunk: 80
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk080
+          - tag: '00'
+            chunk: 81
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk081
+          - tag: '00'
+            chunk: 82
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk082
+          - tag: '00'
+            chunk: 83
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk083
+          - tag: '00'
+            chunk: 84
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk084
+          - tag: '00'
+            chunk: 85
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk085
+          - tag: '00'
+            chunk: 86
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk086
+          - tag: '00'
+            chunk: 87
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk087
+          - tag: '00'
+            chunk: 88
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk088
+          - tag: '00'
+            chunk: 89
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk089
+          - tag: '00'
+            chunk: 90
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk090
+          - tag: '00'
+            chunk: 91
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk091
+          - tag: '00'
+            chunk: 92
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk092
+          - tag: '00'
+            chunk: 93
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk093
+          - tag: '00'
+            chunk: 94
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk094
+          - tag: '00'
+            chunk: 95
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk095
+          - tag: '00'
+            chunk: 96
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk096
+          - tag: '00'
+            chunk: 97
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk097
+          - tag: '00'
+            chunk: 98
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk098
+          - tag: '00'
+            chunk: 99
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk099
+          - tag: '00'
+            chunk: 100
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk100
+          - tag: '00'
+            chunk: 101
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk101
+          - tag: '00'
+            chunk: 102
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk102
+          - tag: '00'
+            chunk: 103
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk103
+          - tag: '00'
+            chunk: 104
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk104
+          - tag: '00'
+            chunk: 105
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk105
+          - tag: '00'
+            chunk: 106
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk106
+          - tag: '00'
+            chunk: 107
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk107
+          - tag: '00'
+            chunk: 108
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk108
+          - tag: '00'
+            chunk: 109
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk109
+          - tag: '00'
+            chunk: 110
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk110
+          - tag: '00'
+            chunk: 111
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk111
+          - tag: '00'
+            chunk: 112
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk112
+          - tag: '00'
+            chunk: 113
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk113
+          - tag: '00'
+            chunk: 114
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk114
+          - tag: '00'
+            chunk: 115
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk115
+          - tag: '00'
+            chunk: 116
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk116
+          - tag: '00'
+            chunk: 117
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk117
+          - tag: '00'
+            chunk: 118
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk118
+          - tag: '00'
+            chunk: 119
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk119
+          - tag: '00'
+            chunk: 120
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk120
+          - tag: '00'
+            chunk: 121
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk121
+          - tag: '00'
+            chunk: 122
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk122
+          - tag: '00'
+            chunk: 123
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk123
+          - tag: '00'
+            chunk: 124
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk124
+          - tag: '00'
+            chunk: 125
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk125
+          - tag: '00'
+            chunk: 126
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk126
+          - tag: '00'
+            chunk: 127
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk127
+          - tag: '00'
+            chunk: 128
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk128
+          - tag: '00'
+            chunk: 129
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk129
+          - tag: '00'
+            chunk: 130
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk130
+          - tag: '00'
+            chunk: 131
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk131
+          - tag: '00'
+            chunk: 132
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk132
+          - tag: '00'
+            chunk: 133
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk133
+          - tag: '00'
+            chunk: 134
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk134
+          - tag: '00'
+            chunk: 135
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk135
+          - tag: '00'
+            chunk: 136
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk136
+          - tag: '00'
+            chunk: 137
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk137
+          - tag: '00'
+            chunk: 138
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk138
+          - tag: '00'
+            chunk: 139
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk139
+          - tag: '00'
+            chunk: 140
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk140
+          - tag: '00'
+            chunk: 141
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk141
+          - tag: '00'
+            chunk: 142
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk142
+          - tag: '00'
+            chunk: 143
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk143
+          - tag: '00'
+            chunk: 144
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk144
+          - tag: '00'
+            chunk: 145
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk145
+          - tag: '00'
+            chunk: 146
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk146
+          - tag: '00'
+            chunk: 147
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk147
+          - tag: '00'
+            chunk: 148
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk148
+          - tag: '00'
+            chunk: 149
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk149
+          - tag: '00'
+            chunk: 150
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk150
+          - tag: '00'
+            chunk: 151
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk151
+          - tag: '00'
+            chunk: 152
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk152
+          - tag: '00'
+            chunk: 153
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk153
+          - tag: '00'
+            chunk: 154
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk154
+          - tag: '00'
+            chunk: 155
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk155
+          - tag: '00'
+            chunk: 156
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk156
+          - tag: '00'
+            chunk: 157
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk157
+          - tag: '00'
+            chunk: 158
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk158
+          - tag: '00'
+            chunk: 159
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk159
+          - tag: '00'
+            chunk: 160
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk160
+          - tag: '00'
+            chunk: 161
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk161
+          - tag: '00'
+            chunk: 162
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk162
+          - tag: '00'
+            chunk: 163
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk163
+          - tag: '00'
+            chunk: 164
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk164
+          - tag: '00'
+            chunk: 165
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk165
+          - tag: '00'
+            chunk: 166
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk166
+          - tag: '00'
+            chunk: 167
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk167
+          - tag: '00'
+            chunk: 168
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk168
+          - tag: '00'
+            chunk: 169
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk169
+          - tag: '00'
+            chunk: 170
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk170
+          - tag: '00'
+            chunk: 171
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk171
+          - tag: '00'
+            chunk: 172
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk172
+          - tag: '00'
+            chunk: 173
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk173
+          - tag: '00'
+            chunk: 174
+            endpoint: Proofs.RadenkovicGutmanD1Long00Chunk174
+    runs-on: ubuntu-24.04
+    timeout-minutes: 240
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          persist-credentials: false
+      - name: Materialize exact unproved leaf sources from pinned rational data
+        run: python3 -B ci/rg_materialize_shared_arm.py --tag ${{ matrix.tag }} --chunk ${{ matrix.chunk }}
+      - name: Install the project toolchain
+        run: |
+          set -o pipefail
+          curl -sSfL https://github.com/leanprover/elan/releases/download/v1.4.2/elan-x86_64-unknown-linux-gnu.tar.gz | tar xz
+          ./elan-init -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Materialize the exact dependency lock
+        run: python3 -B ci/rg_dependencies.py
+      - name: Fetch the required Mathlib cache
+        run: |
+          python3 - <<'PY'
+          import pathlib, re, subprocess
+          root = pathlib.Path('Proofs/RG_Lean_20261019')
+          seen, external = set(), set()
+          def visit(name):
+              if name in seen:
+                  return
+              seen.add(name)
+              source = (root / (name.replace('.', '/') + '.lean')).read_text()
+              for dep in re.findall(r'^\s*import\s+([\w.]+)', source, re.M):
+                  if dep.startswith('Proofs.'):
+                      visit(dep)
+                  elif not dep.startswith(('Lean.', 'Init.', 'Std.')) and dep not in ('Lean','Init','Std'):
+                      external.add(dep)
+          visit('${{ matrix.endpoint }}')
+          subprocess.run(['lake', 'exe', 'cache', 'get', *sorted(external)], check=True)
+          PY
+      - name: Restore one independently audited complete source-bound base scope
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 -B ci/rg_restore_complete_scope.py --manifest ci/rg_shared_arm_kernel_base_complete_scope_capsule.json --build-directory Proofs/RG_Lean_20261019/build/extension
+      - name: Check multiplicities and actual graph spectral comparison
+        shell: bash
+        run: |
+          set -o pipefail
+          python3 -B Proofs/RG_Lean_20261019/verify_extension.py --mathlib-project "$GITHUB_WORKSPACE" --endpoint ${{ matrix.endpoint }} --workers 2 --module-timeout 1200 --resume | python3 -B ci/rg_compact_ci_output.py
+      - name: Retain completed records and diagnostics
+        if: always()
+        run: |
+          python3 - <<'PY'
+          import json,pathlib,shutil
+          root=pathlib.Path('Proofs/RG_Lean_20261019/build/extension')
+          records=[json.loads(p.read_text()) for p in sorted(root.glob('Proofs.*.json'))]
+          fresh=root.parent/'fresh_exports';fresh.mkdir(parents=True,exist_ok=True)
+          (fresh/'diagnostics_records.json').write_text(json.dumps({'modules':records},separators=(',',':'))+'\n')
+          if (root/'receipt.json').is_file():shutil.copyfile(root/'receipt.json',fresh/'receipt.json')
+          print('RETAINED_RECORD_COUNTS '+json.dumps({'total':len(records),'fresh':sum(r['mode']=='FRESH_KERNEL_EXPORT' for r in records)}))
+          for row in records:
+              if row['mode']=='FRESH_KERNEL_EXPORT':
+                  name=row['module'];rel=name.replace('.','/')+'.olean';dest=fresh/rel
+                  dest.parent.mkdir(parents=True,exist_ok=True)
+                  shutil.copyfile(root/rel,dest);shutil.copyfile(root/(name+'.json'),fresh/(name+'.json'))
+                  source=pathlib.Path('Proofs/RG_Lean_20261019')/(name.replace('.','/')+'.lean')
+                  target=fresh/'sources'/(name.replace('.','/')+'.lean');target.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(source,target)
+          for log in root.glob('Proofs.*.log'):
+              shutil.copyfile(log,fresh/log.name);print('MODULE_LOG_TAIL '+log.name+' '+log.read_text()[-18000:])
+          PY
+      - name: Retain new exports only
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: rg-d1-shared00-remaining-chunks-exports-${{ github.run_id }}-${{ strategy.job-index }}
+          path: Proofs/RG_Lean_20261019/build/fresh_exports
+          retention-days: 7

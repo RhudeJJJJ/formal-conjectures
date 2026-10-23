@@ -64,8 +64,9 @@ theorem actual_squared_norm {V : Type*} [Fintype V] [DecidableEq V]
     real_C,real_X,Rat.cast_div,Rat.cast_ofNat] at hP
   have hb := InversePolynomialNorm.reserve_bound _ _ _ (1991937/1000000) y hy0 hP
   have hi := InversePolynomialNorm.inverse_parameter _ _ _ (2*y^3) (1+(1991937/1000000)/y^2) hM hb
-  exact GeneralPathPolynomialPayments.actual_norm_lower (15/8) y hy0 0 0 as bs cs es us vs js ns sep
-    path_checked norms_checked (1/(2*y^3)) (1+(1991937/1000000)/y^2) (by positivity) hN hE hi G u hd
+  simpa only [Rat.cast_div,Rat.cast_ofNat] using
+    (GeneralPathPolynomialPayments.actual_norm_lower (15/8) y hy0 0 0 as bs cs es us vs js ns sep
+    path_checked norms_checked (1/(2*y^3)) (1+(1991937/1000000)/y^2) (by positivity) hN hE hi G u hd)
 
 theorem actual_logarithm {V : Type*} [Fintype V] [DecidableEq V]
     (G : SimpleGraph V) (u : V) (hd : G.degree u = 1) (y : ℝ) (hy : 128 ≤ y) :

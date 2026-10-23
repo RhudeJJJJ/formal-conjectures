@@ -38,7 +38,7 @@ theorem geometry_checked : accepts us vs js ns sep cell = true := by
   all_goals intro t
   all_goals norm_num [cell,us,vs,js,ns,sep,PolynomialPathMap.ofList,
     PolynomialPaymentCell.comparison,RationalPolynomialCell.affine,RationalPolynomialCell.form,
-    Polynomial.bernsteinPolynomial,Nat.choose,Fin.sum_univ_succ]
+    bernsteinPolynomial,Nat.choose,Fin.sum_univ_succ]
   all_goals ring
 theorem payment_checked : paymentAccepts cell = true := by
   rw [PolynomialPaymentCell.paymentAccepts,decide_eq_true_eq]

@@ -57,18 +57,10 @@ jobs:
         run: |
           set -euo pipefail
           mkdir -p .lake/build/lib/lean/Proofs
-          for f in BurghartReflection BurghartBase BurghartRep BurghartIdeals; do
+          for f in BurghartReflection BurghartBase BurghartRep BurghartAlgebra BurghartIdeals BurghartCompute BurghartFull; do
             echo "Checking $f"
             lake env lean -DwarningAsError=true -DautoImplicit=false -DrelaxedAutoImplicit=false -o ".lake/build/lib/lean/Proofs/$f.olean" "Proofs/$f.lean" | tee "$f.log"
           done
-          lake env lean -DwarningAsError=true -DautoImplicit=false -DrelaxedAutoImplicit=false -o .lake/build/lib/lean/Proofs/BurghartAlgebra.olean Proofs/BurghartAlgebra.lean > BurghartAlgebra.log 2>&1 &
-          algebra_pid=$!
-          lake env lean -DwarningAsError=true -DautoImplicit=false -DrelaxedAutoImplicit=false -o .lake/build/lib/lean/Proofs/BurghartCompute.olean Proofs/BurghartCompute.lean | tee BurghartCompute.log
-          algebra_status=0
-          wait "$algebra_pid" || algebra_status=$?
-          cat BurghartAlgebra.log
-          test "$algebra_status" -eq 0
-          lake env lean -DwarningAsError=true -DautoImplicit=false -DrelaxedAutoImplicit=false -o .lake/build/lib/lean/Proofs/BurghartFull.olean Proofs/BurghartFull.lean | tee BurghartFull.log
           python3 - <<'PY'
           import re
           log = open('BurghartFull.log').read()

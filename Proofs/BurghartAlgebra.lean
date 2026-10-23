@@ -65,18 +65,12 @@ theorem m_eq_rep (G : SimpleGraph (Fin 28)) [DecidableRel G.Adj]
     Burghart.MPolynomial.mPolynomial G 0 =
       BurghartReflection.eval (repOf G (distanceCode r) C) := by
   classical
-  trace "m0"
   unfold Burghart.MPolynomial.mPolynomial repOf
-  trace "m1"
   rw [hC,BurghartReflection.eval_sum]
-  trace "m2"
   apply Finset.sum_congr rfl
   intro S _
-  trace "m3"
   rw [boundary_eq_code G S]
-  trace "m4"
   rw [Finset.mul_sum,BurghartReflection.eval_sum]
-  trace "m5"
   apply Finset.sum_congr rfl
   intro v _
   rw [fringe_expanded,fringe_eq_code G r hr ht v,Finset.mul_sum,BurghartReflection.eval_sum]

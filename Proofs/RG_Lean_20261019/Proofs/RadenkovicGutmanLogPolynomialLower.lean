@@ -16,8 +16,9 @@ theorem remainder_derivative (x : ℝ) (hx : 0 ≤ x) :
   have hp := ((((hasDerivAt_id x).sub (((hasDerivAt_id x).pow 2).div_const 2)).add
     (((hasDerivAt_id x).pow 3).div_const 3)).sub
     (((hasDerivAt_id x).pow 4).div_const 4))
-  convert hl.sub hp using 1 <;> dsimp [remainder, lowerFour] <;>
-    field_simp [show 1 + x ≠ 0 by linarith] <;> ring
+  convert hl.sub hp using 1 <;> first
+    | rfl
+    | (field_simp [show 1 + x ≠ 0 by linarith]; ring)
 
 /-- The fourth alternating polynomial is a lower bound on the whole positive ray. -/
 theorem logarithm_lower_four (x : ℝ) (hx : 0 ≤ x) :
@@ -30,7 +31,7 @@ theorem logarithm_lower_four (x : ℝ) (hx : 0 ≤ x) :
       (fun y hy => by
         have hy0 : 0 ≤ y := interior_subset hy
         exact div_nonneg (by positivity) (by linarith))
-  have h := hm (show (0 : ℝ) ∈ Ici 0 from le_rfl) hx hx
+  have h := hm (by simp) (by simpa using hx) hx
   have hz : remainder 0 = 0 := by simp [remainder, lowerFour]
   rw [hz] at h
   exact sub_nonneg.mp h

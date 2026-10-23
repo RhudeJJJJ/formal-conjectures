@@ -1,3 +1,4 @@
+# Relative ci manifest paths validated against the real restore helper before restart.
 # Authorized bounded restart after fork Actions re-enabled, 2026-10-23.
 name: RG middle residual finite complete
 
@@ -54,7 +55,7 @@ jobs:
       - name: Restore the same exact prerequisites with two workers
         env:
           GITHUB_TOKEN: ${{ github.token }}
-        run: python3 -B ci/rg_restore_with_kernel_fallback.py --plan ci/rg_middle_residual_finite_complete_restore_plan.json --build-directory Proofs/RG_Lean_20261019/build/extension --workers 2 --endpoint Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteAllCertificates --max-fresh 256 --unavailable-artifacts ci/rg_unavailable_prior_artifacts_20261023.json
+        run: python3 -B ci/rg_restore_with_kernel_fallback.py --plan ci/rg_middle_residual_finite_complete_restore_plan.json --build-directory Proofs/RG_Lean_20261019/build/extension --workers 2 --endpoint Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteAllCertificates --max-fresh 512 --unavailable-artifacts ci/rg_unavailable_prior_artifacts_20261023.json
       - name: Check multiplicities and actual graph spectral comparison
         shell: bash
         run: |

@@ -6,7 +6,8 @@ namespace Gebendorfer.RadenkovicGutman.GeneralPathPolynomialPayments
 open CoreQuotient Polynomial PolynomialPathMap RationalComplexPolynomial
 open scoped Classical
 noncomputable section
-set_option maxHeartbeats 0
+set_option maxHeartbeats 800000
+set_option backward.isDefEq.respectTransparency false
 
 /-- The Young parameter and the norm payment may vary with the ordinate.
 Multiplication by the positive parameter keeps all coefficient obligations polynomial. -/
@@ -46,6 +47,8 @@ theorem actual_norm_lower
   rw [huv,hvv,hjv] at hbnd
   exact GeneralScaledQuotient.actual_norm_certificate C u hd x y hy p q s L hs he hn hbnd
 
+#print axioms actual_norm_lower
+
 /-- A rational polynomial payment for the logarithm of the actual determinant quotient. -/
 theorem actual_log_lower
     (x : ℚ) (y : ℝ) (hy : 0 < y) (p q : ℕ)
@@ -67,6 +70,8 @@ theorem actual_log_lower
     (actual_norm_lower x y hy p q as bs cs es us vs js ns sep hpath hpoly
       s L hs hn he hbound C u hd)
 
+#print axioms actual_log_lower
+
 def paymentPolynomial (L : ℚ[X]) (c R : ℚ) : ℚ[X] :=
   let z := C (1/c)*L-1
   C R + (z-C (1/2)*z^2+C (1/3)*z^3-C (1/4)*z^4)*C (1/2)
@@ -79,8 +84,6 @@ theorem payment_evaluation (L : ℚ[X]) (c R : ℚ) (y : ℝ) :
   unfold LogPolynomialLower.lowerFour
   ring
 
-#print axioms actual_norm_lower
-#print axioms actual_log_lower
 #print axioms payment_evaluation
 end
 end Gebendorfer.RadenkovicGutman.GeneralPathPolynomialPayments

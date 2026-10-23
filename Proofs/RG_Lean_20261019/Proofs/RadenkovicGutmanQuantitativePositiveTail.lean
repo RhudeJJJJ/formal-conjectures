@@ -17,7 +17,7 @@ theorem pointwise (K Y y q : ℝ) (hK : 0 ≤ K) (hY : 0 < Y) (hy : Y ≤ y)
   have hl := Real.one_sub_inv_le_log_of_pos hu
   have he : 1-(1+K/y^2)⁻¹ = K/(y^2+K) := by
     field_simp [hy0.ne',show y^2+K ≠ 0 by positivity]
-    <;> ring
+    ring
   rw [he] at hl
   have hq := Real.log_le_log hu hbound
   rw [Real.log_pow] at hq

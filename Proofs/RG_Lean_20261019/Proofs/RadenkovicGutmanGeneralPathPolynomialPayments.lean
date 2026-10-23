@@ -38,7 +38,6 @@ theorem actual_norm_lower
   have hscale (U V : ℝ) :
       s*(L*((1+s)*U+(1+1/s)*V)) = L*((s+s^2)*U+(s+1)*V) := by
     field_simp [hs.ne']
-    <;> ring
   have hbnd : L*((1+s)*realEvaluator y (ofList us)+
       (1+1/s)*realEvaluator y (ofList vs)) ≤ realEvaluator y (ofList js) := by
     apply (mul_le_mul_iff_right₀ hs).mp

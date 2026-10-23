@@ -1,0 +1,100 @@
+name: RG original degree 2 class 1 1 remaining cells
+
+on:
+  push:
+    branches: [rg-remaining-six-spectral-20261021]
+    paths: ['.github/workflows/rg-fixed-degree02-class11-bulk.yml']
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  check:
+    strategy:
+      fail-fast: false
+      max-parallel: 8
+      matrix:
+        endpoint: [Proofs.RadenkovicGutmanFixedDegree02Class11Batch000,Proofs.RadenkovicGutmanFixedDegree02Class11Batch001,Proofs.RadenkovicGutmanFixedDegree02Class11Batch002,Proofs.RadenkovicGutmanFixedDegree02Class11Batch003,Proofs.RadenkovicGutmanFixedDegree02Class11Batch004,Proofs.RadenkovicGutmanFixedDegree02Class11Batch005,Proofs.RadenkovicGutmanFixedDegree02Class11Batch006,Proofs.RadenkovicGutmanFixedDegree02Class11Batch007,Proofs.RadenkovicGutmanFixedDegree02Class11Batch008,Proofs.RadenkovicGutmanFixedDegree02Class11Batch009,Proofs.RadenkovicGutmanFixedDegree02Class11Batch010,Proofs.RadenkovicGutmanFixedDegree02Class11Batch011,Proofs.RadenkovicGutmanFixedDegree02Class11Batch012,Proofs.RadenkovicGutmanFixedDegree02Class11Batch013,Proofs.RadenkovicGutmanFixedDegree02Class11Batch014,Proofs.RadenkovicGutmanFixedDegree02Class11Batch015,Proofs.RadenkovicGutmanFixedDegree02Class11Batch016,Proofs.RadenkovicGutmanFixedDegree02Class11Batch017,Proofs.RadenkovicGutmanFixedDegree02Class11Batch018,Proofs.RadenkovicGutmanFixedDegree02Class11Batch019,Proofs.RadenkovicGutmanFixedDegree02Class11Batch020,Proofs.RadenkovicGutmanFixedDegree02Class11Batch021,Proofs.RadenkovicGutmanFixedDegree02Class11Batch022,Proofs.RadenkovicGutmanFixedDegree02Class11Batch023,Proofs.RadenkovicGutmanFixedDegree02Class11Batch024,Proofs.RadenkovicGutmanFixedDegree02Class11Batch025,Proofs.RadenkovicGutmanFixedDegree02Class11Batch026,Proofs.RadenkovicGutmanFixedDegree02Class11Batch027,Proofs.RadenkovicGutmanFixedDegree02Class11Batch028,Proofs.RadenkovicGutmanFixedDegree02Class11Batch029,Proofs.RadenkovicGutmanFixedDegree02Class11Batch030,Proofs.RadenkovicGutmanFixedDegree02Class11Batch031,Proofs.RadenkovicGutmanFixedDegree02Class11Batch032,Proofs.RadenkovicGutmanFixedDegree02Class11Batch033,Proofs.RadenkovicGutmanFixedDegree02Class11Batch034,Proofs.RadenkovicGutmanFixedDegree02Class11Batch035,Proofs.RadenkovicGutmanFixedDegree02Class11Batch036,Proofs.RadenkovicGutmanFixedDegree02Class11Batch037,Proofs.RadenkovicGutmanFixedDegree02Class11Batch038,Proofs.RadenkovicGutmanFixedDegree02Class11Batch039,Proofs.RadenkovicGutmanFixedDegree02Class11Batch040,Proofs.RadenkovicGutmanFixedDegree02Class11Batch041,Proofs.RadenkovicGutmanFixedDegree02Class11Batch042,Proofs.RadenkovicGutmanFixedDegree02Class11Batch043,Proofs.RadenkovicGutmanFixedDegree02Class11Batch044,Proofs.RadenkovicGutmanFixedDegree02Class11Batch045,Proofs.RadenkovicGutmanFixedDegree02Class11Batch046,Proofs.RadenkovicGutmanFixedDegree02Class11Batch047,Proofs.RadenkovicGutmanFixedDegree02Class11Batch048,Proofs.RadenkovicGutmanFixedDegree02Class11Batch049,Proofs.RadenkovicGutmanFixedDegree02Class11Batch050,Proofs.RadenkovicGutmanFixedDegree02Class11Batch051,Proofs.RadenkovicGutmanFixedDegree02Class11Batch052]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 150
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          persist-credentials: false
+      - name: Install the project toolchain
+        run: |
+          set -o pipefail
+          curl -sSfL https://github.com/leanprover/elan/releases/download/v1.4.2/elan-x86_64-unknown-linux-gnu.tar.gz | tar xz
+          ./elan-init -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Materialize the exact dependency lock
+        run: python3 -B ci/rg_dependencies.py
+      - name: Fetch the required Mathlib cache
+        run: |
+          python3 - <<'PY'
+          import pathlib, re, subprocess
+          root = pathlib.Path('Proofs/RG_Lean_20261019')
+          seen, external = set(), set()
+          def visit(name):
+              if name in seen:
+                  return
+              seen.add(name)
+              source = (root / (name.replace('.', '/') + '.lean')).read_text()
+              for dep in re.findall(r'^\s*import\s+([\w.]+)', source, re.M):
+                  if dep.startswith('Proofs.'):
+                      visit(dep)
+                  elif not dep.startswith(('Lean.', 'Init.', 'Std.')) and dep not in ('Lean','Init','Std'):
+                      external.add(dep)
+          visit('${{ matrix.endpoint }}')
+          subprocess.run(['lake', 'exe', 'cache', 'get', *sorted(external)], check=True)
+          PY
+      - name: Restore one independently audited complete source-bound base scope
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 -B ci/rg_restore_complete_scope.py --manifest ci/rg_mean_horner_kernel_base_complete_scope_capsule.json --build-directory Proofs/RG_Lean_20261019/build/extension
+      - name: Restore a proved original class control cell
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_fixed_degree02_class11_cell000_original_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+      - name: Restore a proved original class control cell
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_fixed_degree02_class11_cell261_original_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+      - name: Restore a proved original class control cell
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_fixed_degree02_class11_cell521_original_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+      - name: Require at most ten new class cells and their batch
+        run: python3 -B ci/rg_restore_with_kernel_fallback.py --plan ci/rg_fixed_degree02_class11_bulk_restore_plan.json --build-directory Proofs/RG_Lean_20261019/build/extension --endpoint ${{ matrix.endpoint }} --max-fresh 11 --preflight-only
+      - name: Check multiplicities and actual graph spectral comparison
+        shell: bash
+        run: |
+          set -o pipefail
+          python3 -B Proofs/RG_Lean_20261019/verify_extension.py --mathlib-project "$GITHUB_WORKSPACE" --endpoint ${{ matrix.endpoint }} --workers 1 --module-timeout 600 --resume | python3 -B ci/rg_compact_ci_output.py
+      - name: Retain completed records and diagnostics
+        if: always()
+        run: |
+          python3 - <<'PY'
+          import json,pathlib,shutil
+          root=pathlib.Path('Proofs/RG_Lean_20261019/build/extension')
+          records=[json.loads(p.read_text()) for p in sorted(root.glob('Proofs.*.json'))]
+          fresh=root.parent/'fresh_exports';fresh.mkdir(parents=True,exist_ok=True)
+          (fresh/'diagnostics_records.json').write_text(json.dumps({'modules':records},separators=(',',':'))+'\n')
+          if (root/'receipt.json').is_file():shutil.copyfile(root/'receipt.json',fresh/'receipt.json')
+          print('RETAINED_RECORD_COUNTS '+json.dumps({'total':len(records),'fresh':sum(r['mode']=='FRESH_KERNEL_EXPORT' for r in records)}))
+          for row in records:
+              if row['mode']=='FRESH_KERNEL_EXPORT':
+                  name=row['module'];rel=name.replace('.','/')+'.olean';dest=fresh/rel
+                  dest.parent.mkdir(parents=True,exist_ok=True)
+                  shutil.copyfile(root/rel,dest);shutil.copyfile(root/(name+'.json'),fresh/(name+'.json'))
+          for log in root.glob('Proofs.*.log'):
+              shutil.copyfile(log,fresh/log.name);print('MODULE_LOG_TAIL '+log.name+' '+log.read_text()[-18000:])
+          PY
+      - name: Retain new exports only
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: rg-fixed-degree02-class11-bulk-exports-${{ github.run_id }}-${{ strategy.job-index }}
+          path: Proofs/RG_Lean_20261019/build/fresh_exports
+          retention-days: 30

@@ -36,11 +36,11 @@ theorem actual_bound {V : Type*} [Fintype V] [DecidableEq V]
   have hm := mul_le_mul_of_nonneg_left hpi ht
   have hb : (target : ℝ)*(3927/1250) ≤
       (Mean16Origin.payment : ℝ)+(Mean16FinitePayment.payment : ℝ)+(127483968/16385991937) := by
-    exact_mod_cast budget_checked
+    norm_num [target,Mean16Origin.payment,Mean16FinitePayment.payment]
   have hi : (target : ℝ)*Real.pi ≤ ∫ y : ℝ in Ioi 0, f y := hm.trans (hb.trans hall)
   have hdiv := (le_div_iff₀ Real.pi_pos).mpr hi
   change (target : ℝ) ≤ (1/Real.pi)*(∫ y : ℝ in Ioi 0, f y)
-  simpa only [one_div,div_eq_mul_inv,mul_comm] using hdiv
+  simpa only [one_div,div_eq_mul_inv,mul_comm,mul_one] using hdiv
 
 #print axioms original_anchor_checked
 #print axioms budget_checked

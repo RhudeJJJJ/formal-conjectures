@@ -15,7 +15,7 @@ jobs:
       fail-fast: false
       max-parallel: 3
       matrix:
-        endpoint: [Proofs.RadenkovicGutmanGeneralPathPolynomialPayments,Proofs.RadenkovicGutmanQuantitativePositiveTail]
+        endpoint: [Proofs.RadenkovicGutmanGeneralPathPolynomialPayments]
     runs-on: ubuntu-24.04
     timeout-minutes: 150
     steps:

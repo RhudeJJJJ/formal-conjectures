@@ -3,7 +3,7 @@ import Proofs.RadenkovicGutmanGeneralPathCellCertificates
 import Proofs.RadenkovicGutmanLogPolynomialLower
 
 namespace Gebendorfer.RadenkovicGutman.GeneralPathPolynomialPayments
-open CoreQuotient Polynomial PolynomialPathMap RationalComplexPolynomial
+open CoreQuotient GeneralGraphQuotient Polynomial PolynomialPathMap RationalComplexPolynomial
 open scoped Classical
 noncomputable section
 set_option maxHeartbeats 800000
@@ -36,14 +36,14 @@ theorem actual_norm_lower
   rw [hnv] at hn
   rw [hev] at he
   have hscale (U V : ℝ) :
-      (L*((1+s)*U+(1+1/s)*V))*s = L*((s+s^2)*U+(s+1)*V) := by
+      s*(L*((1+s)*U+(1+1/s)*V)) = L*((s+s^2)*U+(s+1)*V) := by
     field_simp [hs.ne']
     <;> ring
   have hbnd : L*((1+s)*realEvaluator y (ofList us)+
       (1+1/s)*realEvaluator y (ofList vs)) ≤ realEvaluator y (ofList js) := by
     apply (mul_le_mul_iff_right₀ hs).mp
     rw [hscale]
-    simpa only [mul_comm s] using hbound
+    exact hbound
   rw [huv,hvv,hjv] at hbnd
   exact GeneralScaledQuotient.actual_norm_certificate C u hd x y hy p q s L hs he hn hbnd
 

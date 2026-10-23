@@ -1,4 +1,5 @@
 /- Copyright 2026 Jonas J. Gebendorfer. Apache 2.0. -/
+import Proofs.RadenkovicGutmanDegreeTwoThreeFiniteListAssembly
 import Proofs.RadenkovicGutmanDegreeTwoThreeFiniteCoverageComplete
 import Proofs.RadenkovicGutmanDegreeTwoThreeFiniteTransfer
 import Proofs.RadenkovicGutmanDegreeTwoThreeFiniteCertificateBatch000
@@ -118,121 +119,31 @@ set_option maxHeartbeats 0
 set_option maxRecDepth 100000
 set_option backward.isDefEq.respectTransparency false
 noncomputable section
-theorem certified_all_keys : ∀ (k : SmallGeFourKeys.Key), k ∈ DegreeTwoThreeFiniteKeys.keys → SmallGeFourKeys.Certified k := by
-  intro k hk
-  simp only [DegreeTwoThreeFiniteKeys.keys,List.mem_append,List.not_mem_nil,or_false] at hk
-  rcases hk with h000 | h001 | h002 | h003 | h004 | h005 | h006 | h007 | h008 | h009 | h010 | h011 | h012 | h013 | h014 | h015 | h016 | h017 | h018 | h019 | h020 | h021 | h022 | h023 | h024 | h025 | h026 | h027 | h028 | h029 | h030 | h031 | h032 | h033 | h034 | h035 | h036 | h037 | h038 | h039 | h040 | h041 | h042 | h043 | h044 | h045 | h046 | h047 | h048 | h049 | h050 | h051 | h052 | h053 | h054 | h055 | h056 | h057 | h058 | h059 | h060 | h061 | h062 | h063 | h064 | h065 | h066 | h067 | h068 | h069 | h070 | h071 | h072 | h073 | h074 | h075 | h076 | h077 | h078 | h079 | h080 | h081 | h082 | h083 | h084 | h085 | h086 | h087 | h088 | h089 | h090 | h091 | h092 | h093 | h094 | h095 | h096 | h097 | h098 | h099 | h100 | h101 | h102 | h103 | h104 | h105 | h106 | h107 | h108 | h109 | h110
-  · exact certified_keys000 k h000
-  · exact certified_keys001 k h001
-  · exact certified_keys002 k h002
-  · exact certified_keys003 k h003
-  · exact certified_keys004 k h004
-  · exact certified_keys005 k h005
-  · exact certified_keys006 k h006
-  · exact certified_keys007 k h007
-  · exact certified_keys008 k h008
-  · exact certified_keys009 k h009
-  · exact certified_keys010 k h010
-  · exact certified_keys011 k h011
-  · exact certified_keys012 k h012
-  · exact certified_keys013 k h013
-  · exact certified_keys014 k h014
-  · exact certified_keys015 k h015
-  · exact certified_keys016 k h016
-  · exact certified_keys017 k h017
-  · exact certified_keys018 k h018
-  · exact certified_keys019 k h019
-  · exact certified_keys020 k h020
-  · exact certified_keys021 k h021
-  · exact certified_keys022 k h022
-  · exact certified_keys023 k h023
-  · exact certified_keys024 k h024
-  · exact certified_keys025 k h025
-  · exact certified_keys026 k h026
-  · exact certified_keys027 k h027
-  · exact certified_keys028 k h028
-  · exact certified_keys029 k h029
-  · exact certified_keys030 k h030
-  · exact certified_keys031 k h031
-  · exact certified_keys032 k h032
-  · exact certified_keys033 k h033
-  · exact certified_keys034 k h034
-  · exact certified_keys035 k h035
-  · exact certified_keys036 k h036
-  · exact certified_keys037 k h037
-  · exact certified_keys038 k h038
-  · exact certified_keys039 k h039
-  · exact certified_keys040 k h040
-  · exact certified_keys041 k h041
-  · exact certified_keys042 k h042
-  · exact certified_keys043 k h043
-  · exact certified_keys044 k h044
-  · exact certified_keys045 k h045
-  · exact certified_keys046 k h046
-  · exact certified_keys047 k h047
-  · exact certified_keys048 k h048
-  · exact certified_keys049 k h049
-  · exact certified_keys050 k h050
-  · exact certified_keys051 k h051
-  · exact certified_keys052 k h052
-  · exact certified_keys053 k h053
-  · exact certified_keys054 k h054
-  · exact certified_keys055 k h055
-  · exact certified_keys056 k h056
-  · exact certified_keys057 k h057
-  · exact certified_keys058 k h058
-  · exact certified_keys059 k h059
-  · exact certified_keys060 k h060
-  · exact certified_keys061 k h061
-  · exact certified_keys062 k h062
-  · exact certified_keys063 k h063
-  · exact certified_keys064 k h064
-  · exact certified_keys065 k h065
-  · exact certified_keys066 k h066
-  · exact certified_keys067 k h067
-  · exact certified_keys068 k h068
-  · exact certified_keys069 k h069
-  · exact certified_keys070 k h070
-  · exact certified_keys071 k h071
-  · exact certified_keys072 k h072
-  · exact certified_keys073 k h073
-  · exact certified_keys074 k h074
-  · exact certified_keys075 k h075
-  · exact certified_keys076 k h076
-  · exact certified_keys077 k h077
-  · exact certified_keys078 k h078
-  · exact certified_keys079 k h079
-  · exact certified_keys080 k h080
-  · exact certified_keys081 k h081
-  · exact certified_keys082 k h082
-  · exact certified_keys083 k h083
-  · exact certified_keys084 k h084
-  · exact certified_keys085 k h085
-  · exact certified_keys086 k h086
-  · exact certified_keys087 k h087
-  · exact certified_keys088 k h088
-  · exact certified_keys089 k h089
-  · exact certified_keys090 k h090
-  · exact certified_keys091 k h091
-  · exact certified_keys092 k h092
-  · exact certified_keys093 k h093
-  · exact certified_keys094 k h094
-  · exact certified_keys095 k h095
-  · exact certified_keys096 k h096
-  · exact certified_keys097 k h097
-  · exact certified_keys098 k h098
-  · exact certified_keys099 k h099
-  · exact certified_keys100 k h100
-  · exact certified_keys101 k h101
-  · exact certified_keys102 k h102
-  · exact certified_keys103 k h103
-  · exact certified_keys104 k h104
-  · exact certified_keys105 k h105
-  · exact certified_keys106 k h106
-  · exact certified_keys107 k h107
-  · exact certified_keys108 k h108
-  · exact certified_keys109 k h109
-  · exact certified_keys110 k h110
+theorem certified_all_keys : ∀ (k : SmallGeFourKeys.Key), k ∈ DegreeTwoThreeFiniteKeys.keys → SmallGeFourKeys.Certified k :=
+  DegreeTwoThreeFiniteListAssembly.of_batches SmallGeFourKeys.Certified
+    certified_keys000 certified_keys001 certified_keys002 certified_keys003 certified_keys004
+    certified_keys005 certified_keys006 certified_keys007 certified_keys008 certified_keys009
+    certified_keys010 certified_keys011 certified_keys012 certified_keys013 certified_keys014
+    certified_keys015 certified_keys016 certified_keys017 certified_keys018 certified_keys019
+    certified_keys020 certified_keys021 certified_keys022 certified_keys023 certified_keys024
+    certified_keys025 certified_keys026 certified_keys027 certified_keys028 certified_keys029
+    certified_keys030 certified_keys031 certified_keys032 certified_keys033 certified_keys034
+    certified_keys035 certified_keys036 certified_keys037 certified_keys038 certified_keys039
+    certified_keys040 certified_keys041 certified_keys042 certified_keys043 certified_keys044
+    certified_keys045 certified_keys046 certified_keys047 certified_keys048 certified_keys049
+    certified_keys050 certified_keys051 certified_keys052 certified_keys053 certified_keys054
+    certified_keys055 certified_keys056 certified_keys057 certified_keys058 certified_keys059
+    certified_keys060 certified_keys061 certified_keys062 certified_keys063 certified_keys064
+    certified_keys065 certified_keys066 certified_keys067 certified_keys068 certified_keys069
+    certified_keys070 certified_keys071 certified_keys072 certified_keys073 certified_keys074
+    certified_keys075 certified_keys076 certified_keys077 certified_keys078 certified_keys079
+    certified_keys080 certified_keys081 certified_keys082 certified_keys083 certified_keys084
+    certified_keys085 certified_keys086 certified_keys087 certified_keys088 certified_keys089
+    certified_keys090 certified_keys091 certified_keys092 certified_keys093 certified_keys094
+    certified_keys095 certified_keys096 certified_keys097 certified_keys098 certified_keys099
+    certified_keys100 certified_keys101 certified_keys102 certified_keys103 certified_keys104
+    certified_keys105 certified_keys106 certified_keys107 certified_keys108 certified_keys109
+    certified_keys110
 theorem certificates : DegreeTwoThreeFiniteTransfer.Certificates := by
   intro n i p q hk
   exact certified_all_keys ⟨n,i,p,q⟩ hk

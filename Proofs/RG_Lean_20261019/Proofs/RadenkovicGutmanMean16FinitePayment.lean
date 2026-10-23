@@ -505,7 +505,7 @@ theorem actual_integral {V : Type*} [Fintype V] [DecidableEq V]
   have h := RationalIntegralPartition.integral_lower f hf (1/16777216) 128 slices
     (by norm_num) chain_checked hp
   rw [total_checked] at h
-  exact h
+  simpa only [Rat.cast_div,Rat.cast_one,Rat.cast_ofNat] using h
 
 #print axioms chain_checked
 #print axioms total_checked

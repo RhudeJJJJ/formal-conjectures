@@ -1,0 +1,62 @@
+{
+  "repository": "RhudeJJJJ/formal-conjectures",
+  "run": 40021626501,
+  "job": 120647343659,
+  "source_commit": "c4fec8b710bab36319fed4865bd780372b32cec5",
+  "artifact_id": 12530877238,
+  "artifact_sha256": "f01b78f3fd441230ea07b93fbea658ca84a57728cc423106040ddc4116a4639b",
+  "lean_version": "4.33.1",
+  "mathlib": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "modules": {
+    "Proofs.RadenkovicGutmanFixedClassChain": {
+      "module": "Proofs.RadenkovicGutmanFixedClassChain",
+      "source_sha256": "0de56cae35905fd05151277a082070ffdb95d210b57e5de1eff8a383c93e84a9",
+      "source_closure_sha256": "a96cfdf3001f33cae1ee26b0750f6f1df4a98a2c3a9025e447435de4f5525ea2",
+      "output_sha256": "21f9eb0cc4152ca71eba1f6315b89b56ce97f5678a9bc2d013c8c0e520db30e5",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "FRESH_KERNEL_EXPORT",
+      "seconds": 2.37
+    },
+    "Proofs.RadenkovicGutmanPaidFixedClassIntegral": {
+      "module": "Proofs.RadenkovicGutmanPaidFixedClassIntegral",
+      "source_sha256": "7e598701f69ff22766205cc5452f242f44299f4125b174e8dee499850e8f3b79",
+      "source_closure_sha256": "fd8899d9acba99661ee82a2175d8b0d761872eedc1a156e9f976dbc4aa98c2ed",
+      "output_sha256": "63b41b732393ad4807924ad8b67ab762bb76fcdd2ead467013afd1e994fda26c",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "FRESH_KERNEL_EXPORT",
+      "seconds": 3.022
+    },
+    "Proofs.RadenkovicGutmanFixedClassKernelBase": {
+      "module": "Proofs.RadenkovicGutmanFixedClassKernelBase",
+      "source_sha256": "a62a30255da192adc7024e47a10745a154cab565f936e74335c0740e08a195b6",
+      "source_closure_sha256": "41c6fa76757d9ad66ae9845b5148fd41909ecc9016a8095cb27e6e7c70673515",
+      "output_sha256": "914785b9f010515ade68b44a0c310e5d51a57db20b0a3d93ff2fd85eb9e91d0b",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "FRESH_KERNEL_EXPORT",
+      "seconds": 2.269
+    }
+  }
+}

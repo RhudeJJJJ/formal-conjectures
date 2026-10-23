@@ -120,7 +120,7 @@ theorem of_batches (Q : SmallGeFourKeys.Key → Prop)
     (h110 : ∀ k ∈ keys110, Q k)
     : ∀ k ∈ DegreeTwoThreeFiniteKeys.keys, Q k := by
   intro k hk
-  have hk := (List.mem_append.mp hk).resolve_right (List.not_mem_nil k)
+  have hk := (List.mem_append.mp hk).resolve_right List.not_mem_nil
   rcases List.mem_append.mp hk with hk | h
   · rcases List.mem_append.mp hk with hk | h
     · rcases List.mem_append.mp hk with hk | h

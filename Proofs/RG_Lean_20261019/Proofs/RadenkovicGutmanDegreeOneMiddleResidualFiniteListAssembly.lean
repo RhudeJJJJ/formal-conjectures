@@ -34,7 +34,7 @@ theorem of_batches (Q : SmallGeFourKeys.Key → Prop)
     (h024 : ∀ k ∈ keys024, Q k)
     : ∀ k ∈ DegreeOneMiddleResidualFiniteKeys.keys, Q k := by
   intro k hk
-  have hk := (List.mem_append.mp hk).resolve_right (List.not_mem_nil k)
+  have hk := (List.mem_append.mp hk).resolve_right List.not_mem_nil
   rcases List.mem_append.mp hk with hk | h
   · rcases List.mem_append.mp hk with hk | h
     · rcases List.mem_append.mp hk with hk | h

@@ -66,7 +66,12 @@ theorem integral_lower (w : J → ℝ → ℝ) (c d : J → ℝ) (z a b : ℝ)
     (hwint i).mul_const _
   have hsum : IntervalIntegrable
       (fun y => ∑ i, w i y * (Real.log (c i) - d i / z)) volume a b := by
-    simpa only [Finset.sum_apply] using IntervalIntegrable.sum Finset.univ (fun i _ => hwc i)
+    have he : (∑ i, (fun y : ℝ => w i y * (Real.log (c i) - d i / z))) =
+        (fun y : ℝ => ∑ i, w i y * (Real.log (c i) - d i / z)) := by
+      funext y
+      simp only [Finset.sum_apply]
+    rw [← he]
+    exact IntervalIntegrable.sum Finset.univ (fun i _ => hwc i)
   have hg : IntervalIntegrable (lowerDensity w c d z) volume a b :=
     (hsum.sub intervalIntegrable_const).const_mul (1 / 2 : ℝ)
   have hm := intervalIntegral.integral_mono_on_of_le_Ioo hab hg hf
@@ -90,7 +95,7 @@ theorem polynomial_cell_log_lower (p : List ℚ) (a b : ℚ) (n : ℕ)
     (hcs : ∀ i, 0 < cs i) (hab : a < b) (y : ℝ)
     (hy : y ∈ Icc (a : ℝ) (b : ℝ)) :
     ∑ i, Bernstein.basis n i ((y-a)/(b-a)) * Real.log (cs i : ℝ) ≤
-      Real.log (PolynomialPathMap.realEvaluator y (RationalComplexPolynomial.ofList p)) := by
+      Real.log (RationalComplexPolynomial.realEvaluator y (PolynomialPathMap.ofList p)) := by
   rw [RationalPolynomialCell.representation p a b n cs hcheck y hab]
   simpa only [mul_comm] using weighted_log_lower
     (fun i => Bernstein.basis n i ((y-a)/(b-a))) (fun i => (cs i : ℝ))

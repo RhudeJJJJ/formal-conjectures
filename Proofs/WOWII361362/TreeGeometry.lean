@@ -5,13 +5,13 @@ import Mathlib.Tactic
 
 open Finset SimpleGraph
 namespace WOWIIGeometry
-variable {V : Type*} [Fintype V] [DecidableEq V]
-variable (G : SimpleGraph V) [DecidableRel G.Adj]
+variable {V : Type*}
+variable (G : SimpleGraph V)
 
 lemma tree_path_length (hT : G.IsTree) {u v : V} (p : G.Walk u v)
     (hp : p.IsPath) : p.length = G.dist u v := by
   obtain ⟨q,hq,hqdist⟩ := hT.connected.exists_path_of_dist u v
-  have he := hT.isAcyclic.path_unique (⟨p,hp⟩ : G.Path u v) ⟨q,hq⟩
+  have he := (hT.isAcyclic.subsingleton_path u v).elim (⟨p,hp⟩ : G.Path u v) ⟨q,hq⟩
   have : p=q := congrArg Subtype.val he
   simpa only [this] using hqdist
 
@@ -27,7 +27,7 @@ lemma closer_unique (hT : G.IsTree) {w b a c : V}
   have hq' : (q.concat hbc.symm).IsPath := by
     apply Walk.isPath_of_length_eq_dist
     simpa only [Walk.length_concat,hqlen] using hc
-  have he := hT.isAcyclic.path_unique
+  have he := (hT.isAcyclic.subsingleton_path w b).elim
     (⟨p.concat hba.symm,hp'⟩ : G.Path w b) ⟨q.concat hbc.symm,hq'⟩
   have he' := congrArg (fun t : G.Path w b => t.val.penultimate) he
   simpa only [Walk.penultimate_concat] using he'
@@ -59,6 +59,8 @@ lemma walk_cone (hT : G.IsTree) {a b : V} (p : G.Walk a b)
   simpa only [Walk.getVert_zero,Walk.getVert_length] using
     path_cone (fun j => G.dist w (p.getVert j)) p.length hn i hi
 
+variable [Fintype V]
+
 lemma center_dist_le (hc : G.Connected) {c : V} (hcent : c ∈ G.center) (x : V) :
     G.dist c x ≤ G.radius.toNat := by
   let _ := hc.nonempty
@@ -68,6 +70,7 @@ lemma center_dist_le (hc : G.Connected) {c : V} (hcent : c ∈ G.center) (x : V)
     exact G.edist_le_eccent
   exact ENat.toNat_le_toNat hh hfin
 
+omit [Fintype V] in
 lemma radius_le_of_bound (hc : G.Connected) (c : V) (k : ℕ)
     (h : ∀ x, G.dist c x ≤ k) : G.radius.toNat ≤ k := by
   have he : G.eccent c ≤ (k : ℕ∞) := by
@@ -89,7 +92,7 @@ lemma center_adj (hT : G.IsTree) {a b : V} (ha : a ∈ G.center)
     have hcone := walk_cone G hT p hp x 1 (by omega)
     have hax := center_dist_le G hT.connected ha x
     have hbx := center_dist_le G hT.connected hb x
-    rw [G.dist_comm x a,G.dist_comm x b,G.dist_comm x (p.getVert 1)] at hcone
+    rw [G.dist_comm (u:=x) (v:=a),G.dist_comm (u:=x) (v:=b),G.dist_comm (u:=x) (v:=p.getVert 1)] at hcone
     dsimp [R]
     rcases hcone with hcone | hcone <;> omega
   have hr := radius_le_of_bound G hT.connected (p.getVert 1) (R-1) hbound
@@ -134,7 +137,7 @@ lemma radius_midpoint_bound (hT : G.IsTree) :
   have hx := walk_cone G hT p hp x i (by dsimp [i]; omega)
   have ha : G.dist x a ≤ G.diam := G.dist_le_diam hfin
   have hb : G.dist x b ≤ G.diam := G.dist_le_diam hfin
-  rw [G.dist_comm x (p.getVert i)] at hx
+  rw [G.dist_comm (u:=x) (v:=p.getVert i)] at hx
   dsimp [i] at hx
   rw [hlen,hab] at hx
   rcases hx with hx | hx <;> omega

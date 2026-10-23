@@ -38,7 +38,7 @@ jobs:
         run: |
           mkdir -p .lake/build/lib/lean/Proofs/WOWII361362
           failed=0
-          for f in GeometryNumeric GraphCover TreeGeometry; do
+          for f in GeometryNumeric GraphCover TreeGeometry TreeCenter SupportComponents WOWII362Full WOWII361Full; do
             echo "CHECKING $f"
             if lake env lean -DwarningAsError=true -DautoImplicit=false -DrelaxedAutoImplicit=false -o ".lake/build/lib/lean/Proofs/WOWII361362/$f.olean" "Proofs/WOWII361362/$f.lean"; then
               echo "PASSED $f"

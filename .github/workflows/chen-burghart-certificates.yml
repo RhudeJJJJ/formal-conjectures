@@ -28,6 +28,8 @@ jobs:
             chen-burghart-imports-${{ hashFiles('lean-toolchain', 'lake-manifest.json') }}-
             round9-imports-${{ hashFiles('lean-toolchain', 'lake-manifest.json') }}-
             round8-imports-${{ hashFiles('lean-toolchain', 'lake-manifest.json') }}-
+      - name: Build exact Burghart statement
+        run: lake --wfail build 'FormalConjectures.Arxiv.«2302.08394».MPolynomial'
       - name: Build exact Chen statement
         run: lake --wfail build FormalConjectures.Paper.ChenTotalDomination
       - uses: actions/cache/save@55cc8345863c7cc4c66a329aec7e433d2d1c52a9
@@ -49,4 +51,24 @@ jobs:
           for n, names in rows:
               assert set(names.split(', ')) <= allowed, (n,names)
           print('PASS: complete Chen proof, exact imported endpoint, standard axioms only')
+          PY
+
+      - name: Check exact Burghart certificate modules
+        run: |
+          set -euo pipefail
+          mkdir -p .lake/build/lib/lean/Proofs
+          for f in BurghartReflection BurghartBase BurghartRep BurghartAlgebra BurghartIdeals BurghartCompute BurghartFull; do
+            echo "Checking $f"
+            lake env lean -DwarningAsError=true -DautoImplicit=false -DrelaxedAutoImplicit=false -o ".lake/build/lib/lean/Proofs/$f.olean" "Proofs/$f.lean" | tee "$f.log"
+          done
+          python3 - <<'PY'
+          import re
+          log = open('BurghartFull.log').read()
+          expected = {'BurghartCertificate.polynomial_eq', 'BurghartCertificate.full_conjecture20'}
+          rows = re.findall(r"'([^']+)' depends on axioms: \[([^\]]*)\]", log)
+          assert {n for n,_ in rows} == expected, rows
+          allowed = {'propext', 'Classical.choice', 'Quot.sound'}
+          for n,names in rows:
+              assert set(names.split(', ')) <= allowed, (n,names)
+          print('PASS: exact Burghart endpoint, complete kernel polynomial equality, standard axioms only')
           PY

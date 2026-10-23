@@ -1,14 +1,44 @@
-import Proofs.BurghartVectors
+import Proofs.BurghartRoot2Part0
+import Proofs.BurghartRoot2Part1
+import Proofs.BurghartRoot2Part2
+import Proofs.BurghartRoot2Part3
+import Proofs.BurghartRoot2Part4
+import Proofs.BurghartRoot2Part5
+import Proofs.BurghartRoot2Part6
+import Proofs.BurghartRoot2Part7
+import Proofs.BurghartRoot2Part8
+import Proofs.BurghartRoot2Part9
+import Proofs.BurghartRoot2Part10
+import Proofs.BurghartRoot2Part11
+import Proofs.BurghartRoot2Part12
+import Proofs.BurghartRoot2Part13
+import Proofs.BurghartRoot2Part14
+import Proofs.BurghartRoot2Part15
 /-! # Complete fringe polynomial certificates for witness 2 -/
 set_option Elab.async false
 set_option maxRecDepth 100000
 namespace BurghartLists
 open BurghartCertificate
-def fringeTable2 (v : Fin 28) : V1 := (([[0,0,1,1,7,-9,-6,-1,-7,52,-26,-23,5,-66,145,-27,-88,57,-114,184,-6,-208,165,0,-65,39,-10,1],[0,1,0,4,-5,-2,2,-2,13,-12,-5,12,-6,1],[0,0,4,-1,-3,-1,-3,10,-2,-7,5,-1],[0,1,0,2,-3,1],[0,0,2,-1],[0,2,-1],[1],[1],[1],[0,2,-1],[1],[1],[0,1],[1],[1],[0,0,1,3,-3,-1,-2,1,8,-6,-3,4,-1],[0,1,3,-3,-1,-2,1,8,-6,-3,4,-1],[0,0,1,1,-1],[0,1,1,-1],[0,1],[1],[1],[0,2,-1],[1],[1],[0,1],[1],[1]]: List V1).getD v.val [])
-
-set_option maxHeartbeats 0 in
-theorem fringe2_0 : norm1 (fringeVec T2 distances2 0) = fringeTable2 0 := by decide +kernel
-#print axioms fringe2_0
+theorem rootParts2_correct (i : Fin 16) : norm1 (fringePart T2 distances2 0 i) = rootParts2 i := by
+  fin_cases i
+  · exact root2_part0
+  · exact root2_part1
+  · exact root2_part2
+  · exact root2_part3
+  · exact root2_part4
+  · exact root2_part5
+  · exact root2_part6
+  · exact root2_part7
+  · exact root2_part8
+  · exact root2_part9
+  · exact root2_part10
+  · exact root2_part11
+  · exact root2_part12
+  · exact root2_part13
+  · exact root2_part14
+  · exact root2_part15
+theorem fringe2_0 : eval1 (fringeVec T2 distances2 0) = eval1 (fringeTable2 0) :=
+  eval_fringe_from_parts T2 distances2 0 rootParts2 (fringeTable2 0) rootParts2_correct rootParts2_sum
 set_option maxHeartbeats 0 in
 theorem fringe2_1 : norm1 (fringeVec T2 distances2 1) = fringeTable2 1 := by decide +kernel
 set_option maxHeartbeats 0 in
@@ -63,35 +93,35 @@ set_option maxHeartbeats 0 in
 theorem fringe2_26 : norm1 (fringeVec T2 distances2 26) = fringeTable2 26 := by decide +kernel
 set_option maxHeartbeats 0 in
 theorem fringe2_27 : norm1 (fringeVec T2 distances2 27) = fringeTable2 27 := by decide +kernel
-theorem fringeTable2_correct (v : Fin 28) : norm1 (fringeVec T2 distances2 v) = fringeTable2 v := by
+theorem fringeTable2_correct (v : Fin 28) : eval1 (fringeVec T2 distances2 v) = eval1 (fringeTable2 v) := by
   fin_cases v
   · exact fringe2_0
-  · exact fringe2_1
-  · exact fringe2_2
-  · exact fringe2_3
-  · exact fringe2_4
-  · exact fringe2_5
-  · exact fringe2_6
-  · exact fringe2_7
-  · exact fringe2_8
-  · exact fringe2_9
-  · exact fringe2_10
-  · exact fringe2_11
-  · exact fringe2_12
-  · exact fringe2_13
-  · exact fringe2_14
-  · exact fringe2_15
-  · exact fringe2_16
-  · exact fringe2_17
-  · exact fringe2_18
-  · exact fringe2_19
-  · exact fringe2_20
-  · exact fringe2_21
-  · exact fringe2_22
-  · exact fringe2_23
-  · exact fringe2_24
-  · exact fringe2_25
-  · exact fringe2_26
-  · exact fringe2_27
+  · exact (eval_norm1 _).symm.trans (congrArg eval1 fringe2_1)
+  · exact (eval_norm1 _).symm.trans (congrArg eval1 fringe2_2)
+  · exact (eval_norm1 _).symm.trans (congrArg eval1 fringe2_3)
+  · exact (eval_norm1 _).symm.trans (congrArg eval1 fringe2_4)
+  · exact (eval_norm1 _).symm.trans (congrArg eval1 fringe2_5)
+  · exact (eval_norm1 _).symm.trans (congrArg eval1 fringe2_6)
+  · exact (eval_norm1 _).symm.trans (congrArg eval1 fringe2_7)
+  · exact (eval_norm1 _).symm.trans (congrArg eval1 fringe2_8)
+  · exact (eval_norm1 _).symm.trans (congrArg eval1 fringe2_9)
+  · exact (eval_norm1 _).symm.trans (congrArg eval1 fringe2_10)
+  · exact (eval_norm1 _).symm.trans (congrArg eval1 fringe2_11)
+  · exact (eval_norm1 _).symm.trans (congrArg eval1 fringe2_12)
+  · exact (eval_norm1 _).symm.trans (congrArg eval1 fringe2_13)
+  · exact (eval_norm1 _).symm.trans (congrArg eval1 fringe2_14)
+  · exact (eval_norm1 _).symm.trans (congrArg eval1 fringe2_15)
+  · exact (eval_norm1 _).symm.trans (congrArg eval1 fringe2_16)
+  · exact (eval_norm1 _).symm.trans (congrArg eval1 fringe2_17)
+  · exact (eval_norm1 _).symm.trans (congrArg eval1 fringe2_18)
+  · exact (eval_norm1 _).symm.trans (congrArg eval1 fringe2_19)
+  · exact (eval_norm1 _).symm.trans (congrArg eval1 fringe2_20)
+  · exact (eval_norm1 _).symm.trans (congrArg eval1 fringe2_21)
+  · exact (eval_norm1 _).symm.trans (congrArg eval1 fringe2_22)
+  · exact (eval_norm1 _).symm.trans (congrArg eval1 fringe2_23)
+  · exact (eval_norm1 _).symm.trans (congrArg eval1 fringe2_24)
+  · exact (eval_norm1 _).symm.trans (congrArg eval1 fringe2_25)
+  · exact (eval_norm1 _).symm.trans (congrArg eval1 fringe2_26)
+  · exact (eval_norm1 _).symm.trans (congrArg eval1 fringe2_27)
 #print axioms fringeTable2_correct
 end BurghartLists

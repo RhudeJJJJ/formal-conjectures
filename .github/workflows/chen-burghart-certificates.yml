@@ -57,7 +57,7 @@ jobs:
         run: |
           set -euo pipefail
           mkdir -p .lake/build/lib/lean/Proofs
-          for f in BurghartReflection BurghartBase BurghartRep BurghartAlgebra BurghartIdeals BurghartVectors BurghartFringe1 BurghartFringe2 BurghartCompute BurghartFull; do
+          for f in BurghartReflection BurghartBase BurghartRep BurghartAlgebra BurghartIdeals BurghartVectors BurghartFringeData BurghartRoot1Part0 BurghartRoot1Part1 BurghartRoot1Part2 BurghartRoot1Part3 BurghartRoot1Part4 BurghartRoot1Part5 BurghartRoot1Part6 BurghartRoot1Part7 BurghartRoot1Part8 BurghartRoot1Part9 BurghartRoot1Part10 BurghartRoot1Part11 BurghartRoot1Part12 BurghartRoot1Part13 BurghartRoot1Part14 BurghartRoot1Part15 BurghartRoot2Part0 BurghartRoot2Part1 BurghartRoot2Part2 BurghartRoot2Part3 BurghartRoot2Part4 BurghartRoot2Part5 BurghartRoot2Part6 BurghartRoot2Part7 BurghartRoot2Part8 BurghartRoot2Part9 BurghartRoot2Part10 BurghartRoot2Part11 BurghartRoot2Part12 BurghartRoot2Part13 BurghartRoot2Part14 BurghartRoot2Part15 BurghartFringe1 BurghartFringe2 BurghartCompute BurghartFull; do
             echo "Checking $f"
             /usr/bin/time -f "elapsed=%e peak_kib=%M" lake env lean -DwarningAsError=true -DautoImplicit=false -DrelaxedAutoImplicit=false -o ".lake/build/lib/lean/Proofs/$f.olean" "Proofs/$f.lean" | tee "$f.log"
           done

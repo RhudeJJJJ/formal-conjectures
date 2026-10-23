@@ -1,6 +1,6 @@
 import Proofs.BurghartAlgebra
 import Proofs.BurghartIdeals
-/-! # Verified coefficient-list evaluation, normalization and table transport -/
+/-! # Verified coefficient-list evaluation and exhaustive leaf-class partition -/
 set_option Elab.async false
 set_option maxRecDepth 100000
 set_option maxHeartbeats 300000
@@ -285,5 +285,52 @@ theorem m_eq_table (G : SimpleGraph (Fin 28)) [DecidableRel G.Adj]
   rw [m_eq_vec G r hr ht C hC,hd]
   exact eval_polyOf_congr G C _ f (fun v => (eval_norm1 _).symm.trans (congrArg eval1 (hf v)))
 #print axioms m_eq_table
+
+
+def leafMask (A : Finset (Fin 28)) : Fin 16 :=
+  ⟨(if 6 ∈ A then 1 else 0) + (if 7 ∈ A then 2 else 0) +
+    (if 8 ∈ A then 4 else 0) + (if 10 ∈ A then 8 else 0), by split_ifs <;> omega⟩
+
+def fringePart (G : SimpleGraph (Fin 28)) [DecidableRel G.Adj]
+    (d : Fin 28 → Fin 28 → ℕ) (v : Fin 28) (i : Fin 16) : V1 :=
+  sum1 ((fringeCode (leavesCode G d) d v).powerset.filter (fun A => leafMask A = i)) fun A =>
+    if (pathsCode d v A).card = 0 then [] else
+      mono 0 ((pathsCode d v A).card - 1) (-((-1:ℤ)^A.card))
+
+theorem eval_fringe_parts (G : SimpleGraph (Fin 28)) [DecidableRel G.Adj]
+    (d : Fin 28 → Fin 28 → ℕ) (v : Fin 28) :
+    eval1 (fringeVec G d v) = ∑ i : Fin 16, eval1 (fringePart G d v i) := by
+  classical
+  unfold fringeVec fringePart
+  simp_rw [eval_sum1]
+  exact (Finset.sum_fiberwise _ leafMask _).symm
+
+open scoped Classical in
+theorem m_eq_table_eval (G : SimpleGraph (Fin 28)) [DecidableRel G.Adj]
+    (r : Fin 28 → Fin 28 → List (Fin 28)) (hr : RoutesOK G r) (ht : G.IsTree)
+    (C : Finset (Finset (Fin 28)))
+    (hC : univ.powerset.filter (Burghart.MPolynomial.IsAdmissible G 0) = C)
+    (d : Fin 28 → Fin 28 → ℕ) (hd : distanceCode r = d) (f : Fin 28 → V1)
+    (hf : ∀ v, eval1 (fringeVec G d v) = eval1 (f v)) :
+    Burghart.MPolynomial.mPolynomial G 0 = eval3 (polyOf G C f) := by
+  rw [m_eq_vec G r hr ht C hC,hd]
+  exact eval_polyOf_congr G C _ f hf
+#print axioms eval_fringe_parts
+#print axioms m_eq_table_eval
+
+
+theorem eval_fringe_from_parts (G : SimpleGraph (Fin 28)) [DecidableRel G.Adj]
+    (d : Fin 28 → Fin 28 → ℕ) (v : Fin 28) (f : Fin 16 → V1) (p : V1)
+    (hf : ∀ i, norm1 (fringePart G d v i) = f i) (hs : norm1 (sum1 univ f) = p) :
+    eval1 (fringeVec G d v) = eval1 p := by
+  rw [eval_fringe_parts]
+  calc
+    ∑ i : Fin 16, eval1 (fringePart G d v i) = ∑ i : Fin 16, eval1 (f i) := by
+      apply Finset.sum_congr rfl
+      intro i _
+      exact (eval_norm1 _).symm.trans (congrArg eval1 (hf i))
+    _ = eval1 (sum1 univ f) := (eval_sum1 _ _).symm
+    _ = eval1 p := (eval_norm1 _).symm.trans (congrArg eval1 hs)
+#print axioms eval_fringe_from_parts
 
 end BurghartLists

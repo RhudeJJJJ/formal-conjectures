@@ -68,7 +68,7 @@ theorem origin_integral (x epsilon logEpsilon logReciprocalB : ℚ) (p q n kE kB
   have hpr : (originPayment n epsilon logEpsilon logReciprocalB : ℝ)≤
       (n : ℝ)*(epsilon : ℝ)*(Real.log (epsilon : ℝ)-Real.log ((n : ℝ)^2+3)-1) := by
     simpa only [originPayment,Rat.cast_mul,Rat.cast_add,Rat.cast_sub,Rat.cast_ofNat,
-      Rat.cast_natCast] using hp
+      Rat.cast_natCast,Rat.cast_one] using hp
   exact hpr.trans (ActualMeanOrigin.actual_origin_lower G u p q n hN x epsilon
     ⟨by exact_mod_cast hx.1,by exact_mod_cast hx.2⟩ her (by exact_mod_cast he1))
 
@@ -89,7 +89,10 @@ theorem normalized_lower (x a Y target O B T : ℚ) (p q : ℕ)
     (by exact_mod_cast ha) (by exact_mod_cast haY) ho hb hT
   have hpi : Real.pi≤(3927/1250 : ℝ) := le_trans Real.pi_lt_d4.le (by norm_num)
   have hm := mul_le_mul_of_nonneg_left hpi (show (0 : ℝ)≤target by exact_mod_cast ht)
-  have hbr : (target : ℝ)*(3927/1250)≤(O : ℝ)+(B : ℝ)+(T : ℝ) := by exact_mod_cast hbudget
+  have hbr0 : ((target*(3927/1250) : ℚ) : ℝ)≤((O+B+T : ℚ) : ℝ) := by
+    exact Rat.cast_le.mpr hbudget
+  have hbr : (target : ℝ)*(3927/1250)≤(O : ℝ)+(B : ℝ)+(T : ℝ) := by
+    simpa only [Rat.cast_mul,Rat.cast_div,Rat.cast_ofNat,Rat.cast_add] using hbr0
   have hi := hm.trans (hbr.trans hall)
   have hdiv := (le_div_iff₀ Real.pi_pos).mpr hi
   change (target : ℝ)≤(1/Real.pi)*(∫ y : ℝ in Ioi 0, f y)

@@ -32,6 +32,7 @@ def cell : Cell := {
 
 theorem geometry_checked : accepts us vs js ns sep cell = true := by
   rw [PolynomialPaymentCell.accepts,decide_eq_true_eq]
+  dsimp only [cell]
   refine ⟨by decide +kernel,by decide +kernel,by decide +kernel,?_,by decide +kernel,
     ?_,by decide +kernel,?_,by decide +kernel,?_,by decide +kernel,?_,by decide +kernel⟩
   all_goals apply Polynomial.funext

@@ -16,6 +16,12 @@ lemma supports_forced (T : SimpleGraph V) [DecidableRel T.Adj]
   obtain ⟨l,hl,hsl⟩ := (mem_filter.mp hs).2
   exact WOWIICover.forced_support T hD hl hsl
 
+omit [DecidableEq V] in
+lemma mem_isolated_supports (T : SimpleGraph V) [DecidableRel T.Adj] (v : V) :
+    v ∈ isolatedSupports T ↔ v ∈ supports T ∧
+      ∀ w ∈ supports T, ¬ T.Adj v w := by
+  simp only [isolatedSupports,mem_filter]
+
 lemma support_center_set_bound (T : SimpleGraph V) [DecidableRel T.Adj]
     (hT : T.IsTree) (horder : 1 < Fintype.card V)
     (D : Finset V) (hD : T.IsTotalDominating (D : Set V)) :
@@ -42,22 +48,22 @@ lemma support_center_set_bound (T : SimpleGraph V) [DecidableRel T.Adj]
       have hwS : w ∈ supports T := by
         apply mem_filter.mpr
         exact ⟨mem_univ _,v,hd,hvw.symm⟩
-      exact (mem_filter.mp hv).2 w hwS hvw
+      exact ((mem_isolated_supports T v).mp hv).2 w hwS hvw
     rw [hI,card_empty]
     omega
   by_cases he : ∃ a ∈ supports T, ∃ b ∈ supports T, T.Adj a b
   · obtain ⟨a,ha,b,hb,hab⟩ := he
     have haI : a ∉ isolatedSupports T := fun h =>
-      (mem_filter.mp h).2 b hb hab
+      ((mem_isolated_supports T a).mp h).2 b hb hab
     have hbI : b ∉ isolatedSupports T := fun h =>
-      (mem_filter.mp h).2 a ha hab.symm
+      ((mem_isolated_supports T b).mp h).2 a ha hab.symm
     have hsub : insert a (insert b (isolatedSupports T)) ⊆ D := by
       intro x hx
       rcases mem_insert.mp hx with rfl | hx
       · exact hSD ha
       rcases mem_insert.mp hx with rfl | hx
       · exact hSD hb
-      exact hSD (mem_filter.mp hx).1
+      exact hSD ((mem_isolated_supports T x).mp hx).1
     have hcard : (insert a (insert b (isolatedSupports T))).card =
         (isolatedSupports T).card+2 := by
       simp [haI,hbI,hab.ne,Nat.add_assoc]
@@ -70,9 +76,9 @@ lemma support_center_set_bound (T : SimpleGraph V) [DecidableRel T.Adj]
   have hIeq : isolatedSupports T=supports T := by
     ext v
     constructor
-    · intro hv; exact (mem_filter.mp hv).1
+    · intro hv; exact ((mem_isolated_supports T v).mp hv).1
     · intro hv
-      exact mem_filter.mpr ⟨hv,hIndependent v hv⟩
+      exact (mem_isolated_supports T v).mpr ⟨hv,hIndependent v hv⟩
   rw [hIeq]
   by_cases hlarge : (supports T).card+2 ≤ D.card
   · omega

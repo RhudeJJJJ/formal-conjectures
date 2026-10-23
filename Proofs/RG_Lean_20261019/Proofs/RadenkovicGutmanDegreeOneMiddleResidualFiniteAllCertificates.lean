@@ -30,7 +30,7 @@ open SmallGeFourKeys DegreeOneMiddleResidualFiniteKeys
 set_option maxHeartbeats 0
 set_option maxRecDepth 100000
 noncomputable section
-theorem certified_all_keys : ∀ k ∈ DegreeOneMiddleResidualFiniteKeys.keys, SmallGeFourKeys.Certified k := by
+theorem certified_all_keys : ∀ (k : SmallGeFourKeys.Key), k ∈ DegreeOneMiddleResidualFiniteKeys.keys → SmallGeFourKeys.Certified k := by
   intro k hk
   simp only [DegreeOneMiddleResidualFiniteKeys.keys,List.mem_append,List.not_mem_nil,or_false] at hk
   rcases hk with h000 | h001 | h002 | h003 | h004 | h005 | h006 | h007 | h008 | h009 | h010 | h011 | h012 | h013 | h014 | h015 | h016 | h017 | h018 | h019 | h020 | h021 | h022 | h023 | h024

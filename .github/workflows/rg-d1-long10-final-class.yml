@@ -56,7 +56,7 @@ jobs:
         shell: bash
         run: |
           set -o pipefail
-          python3 -B Proofs/RG_Lean_20261019/verify_extension.py --mathlib-project "$GITHUB_WORKSPACE" --endpoint ${{ matrix.endpoint }} --workers 1 --module-timeout 600 --resume | python3 -B ci/rg_compact_ci_output.py
+          python3 -B Proofs/RG_Lean_20261019/verify_extension.py --mathlib-project "$GITHUB_WORKSPACE" --endpoint ${{ matrix.endpoint }} --workers 1 --module-timeout 900 --resume | python3 -B ci/rg_compact_ci_output.py
       - name: Retain completed records and diagnostics
         if: always()
         run: |

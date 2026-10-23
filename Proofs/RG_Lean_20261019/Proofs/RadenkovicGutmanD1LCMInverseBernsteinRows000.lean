@@ -1,10 +1,10 @@
 /- Copyright 2026 Jonas J. Gebendorfer. Apache 2.0. -/
 import Proofs.RadenkovicGutmanIntegerBernsteinRows
-import Proofs.RadenkovicGutmanD1LCMInverseStageAffine
+import Proofs.RadenkovicGutmanD1LCMInverseOuterCombined00
 namespace Gebendorfer.RadenkovicGutman.DegreeOneLCMInverseRows
 set_option maxHeartbeats 0
 set_option maxRecDepth 100000
-open DegreeOneLCMInverseStages
+open DegreeOneLCMInverseStages DegreeOneLCMInversePieces
 def bernsteinRow00 : NestedInteger.Poly 2 := rg_integer_row%
   (NestedInteger.coefficientFrom 88 0 0 affine01753)
 theorem bernsteinRow00_identity : bernsteinRow00=NestedInteger.coefficientFrom 88 0 0 affine01753 := by decide +kernel

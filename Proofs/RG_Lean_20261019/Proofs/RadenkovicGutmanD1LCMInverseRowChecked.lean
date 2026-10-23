@@ -1,4 +1,5 @@
 /- Copyright 2026 Jonas J. Gebendorfer. Apache 2.0. -/
+import Proofs.RadenkovicGutmanIntegerPiecewiseCell
 import Proofs.RadenkovicGutmanD1LCMInverseBernsteinRows000
 import Proofs.RadenkovicGutmanD1LCMInverseBernsteinRows001
 import Proofs.RadenkovicGutmanD1LCMInverseBernsteinRows002
@@ -20,7 +21,7 @@ import Proofs.RadenkovicGutmanD1LCMInverseBernsteinRows017
 namespace Gebendorfer.RadenkovicGutman.DegreeOneLCMInverseRows
 set_option maxHeartbeats 0
 set_option maxRecDepth 100000
-open DegreeOneLCMInverseStages
+open DegreeOneLCMInverseStages DegreeOneLCMInversePieces
 def rows01753 : Fin 89 → NestedInteger.Poly 2 := ![bernsteinRow00,bernsteinRow01,bernsteinRow02,bernsteinRow03,bernsteinRow04,bernsteinRow05,bernsteinRow06,bernsteinRow07,bernsteinRow08,bernsteinRow09,bernsteinRow10,bernsteinRow11,bernsteinRow12,bernsteinRow13,bernsteinRow14,bernsteinRow15,bernsteinRow16,bernsteinRow17,bernsteinRow18,bernsteinRow19,bernsteinRow20,bernsteinRow21,bernsteinRow22,bernsteinRow23,bernsteinRow24,bernsteinRow25,bernsteinRow26,bernsteinRow27,bernsteinRow28,bernsteinRow29,bernsteinRow30,bernsteinRow31,bernsteinRow32,bernsteinRow33,bernsteinRow34,bernsteinRow35,bernsteinRow36,bernsteinRow37,bernsteinRow38,bernsteinRow39,bernsteinRow40,bernsteinRow41,bernsteinRow42,bernsteinRow43,bernsteinRow44,bernsteinRow45,bernsteinRow46,bernsteinRow47,bernsteinRow48,bernsteinRow49,bernsteinRow50,bernsteinRow51,bernsteinRow52,bernsteinRow53,bernsteinRow54,bernsteinRow55,bernsteinRow56,bernsteinRow57,bernsteinRow58,bernsteinRow59,bernsteinRow60,bernsteinRow61,bernsteinRow62,bernsteinRow63,bernsteinRow64,bernsteinRow65,bernsteinRow66,bernsteinRow67,bernsteinRow68,bernsteinRow69,bernsteinRow70,bernsteinRow71,bernsteinRow72,bernsteinRow73,bernsteinRow74,bernsteinRow75,bernsteinRow76,bernsteinRow77,bernsteinRow78,bernsteinRow79,bernsteinRow80,bernsteinRow81,bernsteinRow82,bernsteinRow83,bernsteinRow84,bernsteinRow85,bernsteinRow86,bernsteinRow87,bernsteinRow88]
 theorem leaf01753_sign : NestedInteger.bernsteinCheck 3 ![88,4,4] affine01753=true := by
   apply IntegerBernsteinRows.checked ![88,4,4] affine01753 rows01753 (by decide +kernel)
@@ -211,9 +212,9 @@ theorem leaf01753_log : RationalLog.accepts (536871935/536870912) (4091/42949672
 #print axioms leaf01753_log
 def leaf01753 : FastNestedCellData.Cell := IntegerScaledCell.make DegreeOneNormPack00.pack true (1571/1000000000000) (536871935/536870912) (4091/4294967296) 0 8 ![88,4,4] ![(1/1024),0,0] ![(1/1024),1,1] 168684840550400000000000 ![1024,1,1] affine01753
 theorem leaf01753_checked : FastNestedCellData.accepts 1 4 4 leaf01753=true :=
-  IntegerScaledCell.accepts_make DegreeOneIntegerNorm00.pack true (1571/1000000000000) (536871935/536870912) (4091/4294967296) 0 8 ![88,4,4] ![(1/1024),0,0] ![(1/1024),1,1] 168684840550400000000000 168685162242004389465867 107374387168685161977000000000000 ![1,0,0] ![1,1,1] ![1024,1,1] raw01753 inner01753 affine01753
+  IntegerPiecewiseCell.accepts_make DegreeOneIntegerNorm00.pack true (1571/1000000000000) (536871935/536870912) (4091/4294967296) 0 8 ![88,4,4] ![(1/1024),0,0] ![(1/1024),1,1] 168684840550400000000000 168685162242004389465867 107374387168685161977000000000000 ![1,0,0] ![1,1,1] ![1024,1,1] raw01753 inner01753 affine01753
     (by decide +kernel) (by decide +kernel) (by decide +kernel)
     (by decide +kernel) (by decide +kernel) (by decide +kernel) (by decide +kernel)
-    leaf01753_raw leaf01753_rectangular leaf01753_inner leaf01753_outer leaf01753_sign leaf01753_log
+    leaf01753_raw leaf01753_rectangular leaf01753_inner affine01753_eval leaf01753_sign leaf01753_log
 #print axioms leaf01753_checked
 end Gebendorfer.RadenkovicGutman.DegreeOneLCMInverseRows

@@ -1,0 +1,38 @@
+name: RG original degree4 both long parameter budget search
+
+on:
+  push:
+    branches: [rg-remaining-six-spectral-20261021]
+    paths: ['.github/workflows/rg-d4-both-long-parameter-budget-search.yml']
+
+permissions:
+  contents: read
+
+jobs:
+  search:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 105
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          persist-credentials: false
+      - name: Verify the exact original-reserve candidate producer
+        run: |
+          python3 -B - <<'PY'
+          import hashlib,json,pathlib
+          m=json.loads(pathlib.Path('ci/rg_d4_both_long_search_sources.json').read_bytes())
+          assert m['degree']==4 and m['classes']==[4,4] and m['reserve']=='2/13'
+          for row in m['sources']:
+              assert hashlib.sha256(pathlib.Path(row['file']).read_bytes()).hexdigest()==row['sha256'],row['file']
+          PY
+      - name: Install the pinned candidate arithmetic runtime
+        run: python3 -m pip install --disable-pip-version-check numpy==2.3.5
+      - name: Search a complete cover of both long arm parameters
+        run: python3 -B ci/rg_d4_both_long_parameter_budget_search.py --degree 4 --p 0 --core-depth 1 --search-only --run-label D4_BOTH_LONG_DEPTH1 --max-evaluations 6000 --max-search-seconds 5400 --max-candidate-mib 128
+      - name: Retain exact candidates and every bounded-progress checkpoint
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: rg-d4-both-long-parameter-budget-search-${{ github.run_id }}
+          path: work/rg_parameter_budget_search
+          retention-days: 90

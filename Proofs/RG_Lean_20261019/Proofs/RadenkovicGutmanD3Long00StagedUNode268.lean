@@ -1,6 +1,7 @@
 /- Copyright 2026 Jonas J. Gebendorfer. Apache 2.0. -/
 import Proofs.RadenkovicGutmanD3Long00StagedUNode267
 import Proofs.RadenkovicGutmanD3Long00StagedUNode003
+import Proofs.RadenkovicGutmanStagedExprCompile
 namespace Gebendorfer.RadenkovicGutman.FixedDegree03Long00StagedU
 set_option maxHeartbeats 0
 set_option maxRecDepth 100000
@@ -9,9 +10,6 @@ noncomputable def e268 : NestedArithmetic.Expr 3 := .times e267 e003
 noncomputable def p268 : NestedHorner.Poly 3 := [[[],[],[]],[[0],[0],[0]],[[6,0],[0,0],[0]],[[0,0,0],[0,0],[0,0]],[[144,0,0],[0,0,0],[0,0]],[[0,0,0],[0,0,0],[0,0]],[[1368,0,0],[0,0,0],[0,0]],[[0,0,0],[0,0,0],[0,0]],[[5070,0,0],[0,0,0],[0,0]],[[0,0,0],[0,0,0],[0,0]],[[-16380,0,0],[0,0,0],[0,0]],[[0,0,0],[0,0,0],[0,0]],[[-298854,12,0],[12,0,0],[0,0]],[[0,0,0],[0,0,0],[0,0]],[[-1798254,225,0],[225,0,0],[0,0]],[[0,0,0],[0,0,0],[0,0]],[[-6745338,1725,0],[1725,0,0],[0,0]],[[0,0,0],[0,0,0],[0,0]],[[-17761050,6435,0],[6435,0,0],[0,0]],[[0,0,0],[0,0,0],[0,0]],[[-34286760,7410,0],[7410,0,0],[0,0]],[[0,0,0],[0,0,0],[0,0]],[[-49373844,-36639,6],[-36639,18,0],[6,0]],[[0,0,0],[0,0,0],[0,0]],[[-53217198,-198021,81],[-198021,258,0],[81,0]],[[0,0,0],[0,0,0],[0,0]],[[-42627576,-477072,438],[-477072,1518,0],[438,0]],[[0,0,0],[0,0,0],[0,0]],[[-24920430,-702159,1185],[-702159,4698,0],[1185,0]],[[0,0,0],[0,0,0],[0,0]],[[-10287990,-672687,1566],[-672687,8100,0],[1566,0]],[[0,0,0],[0,0,0],[0,0]],[[-2829654,-420276,546],[-420276,7428,6],[546,6]],[[0,0,0],[0,0,0],[0,0]],[[-463320,-164619,-990],[-164619,2694,42],[-990,42]],[[0,0,0],[0,0,0],[0,0]],[[-34020,-36531,-1251],[-36531,-702,96],[-1251,96]],[[0,0,0],[0,0,0],[0,0]],[[0,-3483,-540],[-3483,-810,78],[-540,78]],[[0,0,0],[0,0,0],[0,0]],[[0,0,-81],[0,-162,18],[-81,18]]]
 theorem step268 : p268=NestedArithmetic.mul p267 p003 := by decide +kernel
 #print axioms step268
-theorem h268 : NestedArithmetic.compile e268=p268 := by
-  change NestedArithmetic.mul (NestedArithmetic.compile e267) (NestedArithmetic.compile e003)=p268
-  rw [h267,h003]
-  exact step268.symm
+theorem h268 : NestedArithmetic.compile e268=p268 := StagedExprCompile.compile_times e268 e267 e003 p267 p003 p268 rfl h267 h003 step268
 #print axioms h268
 end Gebendorfer.RadenkovicGutman.FixedDegree03Long00StagedU

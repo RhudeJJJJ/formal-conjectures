@@ -1,6 +1,7 @@
 /- Copyright 2026 Jonas J. Gebendorfer. Apache 2.0. -/
 import Proofs.RadenkovicGutmanD3Long00StagedUNode069
 import Proofs.RadenkovicGutmanD3Long00StagedUNode070
+import Proofs.RadenkovicGutmanStagedExprCompile
 namespace Gebendorfer.RadenkovicGutman.FixedDegree03Long00StagedU
 set_option maxHeartbeats 0
 set_option maxRecDepth 100000
@@ -9,9 +10,6 @@ noncomputable def e071 : NestedArithmetic.Expr 3 := .plus e069 e070
 noncomputable def p071 : NestedHorner.Poly 3 := [[[0],[0,0],[0,0]],[[0,0],[0,0,0],[0,0,0]],[[0,0,0],[0,0,0],[0,0,0]],[[0,-486,0],[-486,-297,0],[0,0,0]],[[0,0,0],[0,0,0],[0,0]],[[-9963,-10935,0],[-10935,-2952,0],[0,0]],[[0,0,0],[0,0,0],[0,0]],[[-214731,-94122,0],[-94122,-12021,0],[0,0]],[[0,0,0],[0,0,0],[0,0]],[[-1993734,-436527,0],[-436527,-26244,0],[0,0]],[[0,0,0],[0,0,0],[0,0]],[[-10744749,-1250838,0],[-1250838,-33888,0],[0,0]],[[0,0,0],[0,0,0],[0,0]],[[-37998555,-2377149,0],[-2377149,-26898,0],[0,0]],[[0,0,0],[0,0],[0]],[[-94249236,-3121482,0],[-3121482,-13173],[0]],[[0,0,0],[0,0],[0]],[[-170800392,-2900412,0],[-2900412,-3864],[0]],[[0,0,0],[0,0],[0]],[[-232252323,-1929774,0],[-1929774,-621],[0]],[[0,0,0],[0,0],[0]],[[-241144908,-920775,0],[-920775,-42],[0]],[[0,0,0],[0,0],[0]],[[-193268310,-311970,0],[-311970,0],[0]],[[0,0],[0]],[[-120224292,-73173],[-73173]],[[0,0],[0]],[[-58076379,-11286],[-11286]],[[0,0],[0]],[[-21683211,-1029],[-1029]],[[0,0],[0]],[[-6187836,-42],[-42]],[[0,0],[0]],[[-1323180,0],[0]],[[0]],[[-205029]],[[0]],[[-21723]],[[0]],[[-1407]],[[0]],[[-42]],[[0]],[[0]]]
 theorem step071 : p071=NestedHorner.add p069 p070 := by decide +kernel
 #print axioms step071
-theorem h071 : NestedArithmetic.compile e071=p071 := by
-  change NestedHorner.add (NestedArithmetic.compile e069) (NestedArithmetic.compile e070)=p071
-  rw [h069,h070]
-  exact step071.symm
+theorem h071 : NestedArithmetic.compile e071=p071 := StagedExprCompile.compile_plus e071 e069 e070 p069 p070 p071 rfl h069 h070 step071
 #print axioms h071
 end Gebendorfer.RadenkovicGutman.FixedDegree03Long00StagedU

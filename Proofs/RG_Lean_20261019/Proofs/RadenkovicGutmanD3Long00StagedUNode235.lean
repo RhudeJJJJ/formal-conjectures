@@ -1,6 +1,7 @@
 /- Copyright 2026 Jonas J. Gebendorfer. Apache 2.0. -/
 import Proofs.RadenkovicGutmanD3Long00StagedUNode234
 import Proofs.RadenkovicGutmanD3Long00StagedUNode120
+import Proofs.RadenkovicGutmanStagedExprCompile
 namespace Gebendorfer.RadenkovicGutman.FixedDegree03Long00StagedU
 set_option maxHeartbeats 0
 set_option maxRecDepth 100000
@@ -9,9 +10,6 @@ noncomputable def e235 : NestedArithmetic.Expr 3 := .times e234 e120
 noncomputable def p235 : NestedHorner.Poly 3 := [[[-18],[0],[0]],[[0,0],[0,0],[0]],[[-576,0,0],[0,0],[0,0]],[[0,0,0],[0,0,0],[0,0]],[[-8478,0,0],[0,0,0],[0,0]],[[0,0,0],[0,0,0],[0,0]],[[-76104,0,0],[0,0,0],[0,0]],[[0,0,0],[0,0,0],[0,0]],[[-465804,0,0],[0,0,0],[0,0]],[[0,0,0],[0,0,0],[0,0]],[[-2058930,-27,0],[-27,0,0],[0,0]],[[0,0,0],[0,0,0],[0,0]],[[-6791328,-630,0],[-630,0,0],[0,0]],[[0,0,0],[0,0,0],[0,0]],[[-17035200,-6561,0],[-6561,0,0],[0,0]],[[0,0,0],[0,0,0],[0,0]],[[-32814126,-40230,0],[-40230,0,0],[0,0]],[[0,0,0],[0,0,0],[0,0]],[[-48675906,-161361,0],[-161361,0,0],[0,0]],[[0,0,0],[0,0,0],[0,0]],[[-55414926,-444933,-9],[-444933,-36,0],[-9,0]],[[0,0,0],[0,0,0],[0,0]],[[-47938104,-862893,-135],[-862893,-540,0],[-135,0]],[[0,0,0],[0,0,0],[0,0]],[[-30950496,-1183770,-846],[-1183770,-3384,0],[-846,0]],[[0,0,0],[0,0,0],[0,0]],[[-14482422,-1138752,-2871],[-1138752,-11484,0],[-2871,0]],[[0,0,0],[0,0,0],[0,0]],[[-4682772,-749034,-5724],[-749034,-22896,0],[-5724,0]],[[0,0,0],[0,0,0],[0,0]],[[-964224,-320526,-6813],[-320526,-27252,-9],[-6813,-9]],[[0,0,0],[0,0,0],[0,0]],[[-107892,-81000,-4698],[-81000,-18792,-63],[-4698,-63]],[[0,0,0],[0,0,0],[0,0]],[[-4374,-9720,-1701],[-9720,-6804,-144],[-1701,-144]],[[0,0,0],[0,0,0],[0,0]],[[0,-243,-243],[-243,-972,-117],[-243,-117]],[[0,0],[0,0,0],[0,0]],[[0,0],[0,0,-27],[0,-27]]]
 theorem step235 : p235=NestedArithmetic.mul p234 p120 := by decide +kernel
 #print axioms step235
-theorem h235 : NestedArithmetic.compile e235=p235 := by
-  change NestedArithmetic.mul (NestedArithmetic.compile e234) (NestedArithmetic.compile e120)=p235
-  rw [h234,h120]
-  exact step235.symm
+theorem h235 : NestedArithmetic.compile e235=p235 := StagedExprCompile.compile_times e235 e234 e120 p234 p120 p235 rfl h234 h120 step235
 #print axioms h235
 end Gebendorfer.RadenkovicGutman.FixedDegree03Long00StagedU

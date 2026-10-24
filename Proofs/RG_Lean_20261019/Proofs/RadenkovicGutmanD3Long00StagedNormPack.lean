@@ -7,6 +7,7 @@ import Proofs.RadenkovicGutmanD3Long00StagedUNode116
 import Proofs.RadenkovicGutmanD3Long00StagedUNode242
 import Proofs.RadenkovicGutmanD3Long00StagedUNode277
 import Proofs.RadenkovicGutmanD3Long00StagedUNode292
+import Proofs.RadenkovicGutmanStagedExprCompile
 namespace Gebendorfer.RadenkovicGutman.FixedDegree03Long00StagedNormPack
 set_option maxHeartbeats 0
 set_option maxRecDepth 100000
@@ -37,14 +38,14 @@ noncomputable def pack : NormProgramPack.Pack 3 4 4 := {
   j := j
   ji := ji
   dj := 88
-  hu := by rw [← u_expression]; exact h086
-  hui := by rw [← u_inverse_expression]; exact h242
+  hu := StagedExprCompile.compile_of_identity e086 (NestedClassPolynomials.programU 3 4 4) p086 u_expression h086
+  hui := StagedExprCompile.compile_of_identity e242 (NestedReciprocal.homogenize (NestedClassPolynomials.programU 3 4 4)).2 p242 u_inverse_expression h242
   hdu := u_degree
-  hv := by rw [← v_expression]; exact h107
-  hvi := by rw [← v_inverse_expression]; exact h277
+  hv := StagedExprCompile.compile_of_identity e107 (NestedClassPolynomials.programV 3 4 4) p107 v_expression h107
+  hvi := StagedExprCompile.compile_of_identity e277 (NestedReciprocal.homogenize (NestedClassPolynomials.programV 3 4 4)).2 p277 v_inverse_expression h277
   hdv := v_degree
-  hj := by rw [← j_expression]; exact h116
-  hji := by rw [← j_inverse_expression]; exact h292
+  hj := StagedExprCompile.compile_of_identity e116 (NestedClassPolynomials.programJ 3 4 4) p116 j_expression h116
+  hji := StagedExprCompile.compile_of_identity e292 (NestedReciprocal.homogenize (NestedClassPolynomials.programJ 3 4 4)).2 p292 j_inverse_expression h292
   hdj := j_degree
 }
 #print axioms pack

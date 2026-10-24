@@ -1,6 +1,7 @@
 /- Copyright 2026 Jonas J. Gebendorfer. Apache 2.0. -/
 import Proofs.RadenkovicGutmanD3Long00StagedUNode284
 import Proofs.RadenkovicGutmanD3Long00StagedUNode120
+import Proofs.RadenkovicGutmanStagedExprCompile
 namespace Gebendorfer.RadenkovicGutman.FixedDegree03Long00StagedU
 set_option maxHeartbeats 0
 set_option maxRecDepth 100000
@@ -9,9 +10,6 @@ noncomputable def e285 : NestedArithmetic.Expr 3 := .times e284 e120
 noncomputable def p285 : NestedHorner.Poly 3 := [[[9],[0],[0]],[[0,0],[0,0],[0]],[[270,0,0],[0,0],[0,0]],[[0,0,0],[0,0,0],[0,0]],[[3717,0,0],[0,0,0],[0,0,0]],[[0,0,0],[0,0,0],[0,0,0]],[[31122,0,0],[0,0,0],[0,0,0]],[[0,0,0],[0,0,0],[0,0,0]],[[177102,0,0],[0,0,0],[0,0,0]],[[0,0,0],[0,0,0],[0,0,0]],[[725076,18,0],[18,0,0],[0,0,0]],[[0,0,0],[0,0,0],[0,0,0]],[[2205333,414,0],[414,0,0],[0,0,0]],[[0,0,0],[0,0,0],[0,0,0]],[[5072850,4248,0],[4248,0,0],[0,0,0]],[[0,0,0],[0,0,0],[0,0,0]],[[8896248,25650,0],[25650,0,0],[0,0,0]],[[0,0,0],[0,0,0],[0,0,0]],[[11889288,101250,0],[101250,0,0],[0,0,0]],[[0,0,0],[0,0,0],[0,0,0]],[[11989656,274554,9],[274554,36,0],[9,0,0]],[[0,0,0],[0,0,0],[0,0,0]],[[8908326,523008,144],[523008,558,0],[144,0,0]],[[0,0,0],[0,0,0],[0,0,0]],[[4632966,702828,972],[702828,3636,0],[972,0,0]],[[0,0,0],[0,0,0],[0,0,0]],[[1482876,657270,3600],[657270,12942,0],[3600,0,0]],[[0,0,0],[0,0,0],[0,0,0]],[[156285,410922,7974],[410922,27396,0],[7974,0,0]],[[0,0,0],[0,0,0],[0,0,0]],[[-74250,155304,10800],[155304,35208,18],[10800,18,0]],[[0,0,0],[0,0,0],[0,0,0]],[[-26973,24786,8748],[24786,26748,144],[8748,144,0]],[[0,0,0],[0,0,0],[0,0,0]],[[-486,-3402,3888],[-3402,10782,396],[3888,396,0]],[[0,0,0],[0,0,0],[0,0,0]],[[729,-1458,729],[-1458,1512,432],[729,432,0]],[[0,0],[0,0,0],[0,0,0]],[[0,0],[0,-162,162],[0,162,0]],[[0],[0,0],[0,0,0]],[[0],[0,0],[0,0,9]]]
 theorem step285 : p285=NestedArithmetic.mul p284 p120 := by decide +kernel
 #print axioms step285
-theorem h285 : NestedArithmetic.compile e285=p285 := by
-  change NestedArithmetic.mul (NestedArithmetic.compile e284) (NestedArithmetic.compile e120)=p285
-  rw [h284,h120]
-  exact step285.symm
+theorem h285 : NestedArithmetic.compile e285=p285 := StagedExprCompile.compile_times e285 e284 e120 p284 p120 p285 rfl h284 h120 step285
 #print axioms h285
 end Gebendorfer.RadenkovicGutman.FixedDegree03Long00StagedU

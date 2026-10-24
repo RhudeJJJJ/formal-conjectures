@@ -1,5 +1,6 @@
 /- Copyright 2026 Jonas J. Gebendorfer. Apache 2.0. -/
 import Proofs.RadenkovicGutmanD3Long00StagedUNode066
+import Proofs.RadenkovicGutmanStagedExprCompile
 namespace Gebendorfer.RadenkovicGutman.FixedDegree03Long00StagedU
 set_option maxHeartbeats 0
 set_option maxRecDepth 100000
@@ -8,9 +9,6 @@ noncomputable def e067 : NestedArithmetic.Expr 3 := .scaled (-1) e066
 noncomputable def p067 : NestedHorner.Poly 3 := [[[0],[0,0],[0,0,9]],[[0,0],[0,0,0],[0,0,0]],[[0,0,0],[0,0,270],[0,270,12]],[[0,0,0],[0,0,0],[0,0,0]],[[-729,0,2025],[0,7398,1188],[2025,1188,4]],[[0,0,0],[0,0,0],[0,0]],[[-11178,50220,15120],[50220,54360,1932],[15120,1932]],[[0,0,0],[0,0,0],[0,0]],[[238221,515808,47124],[515808,167514,1500],[47124,1500]],[[0,0,0],[0,0,0],[0,0]],[[3807648,2340198,80460],[2340198,285056,590],[80460,590]],[[0,0,0],[0,0,0],[0,0]],[[23669109,6215964,83310],[6215964,296776,112],[83310,112]],[[0,0,0],[0,0,0],[0,0]],[[86560482,10800900,54780],[10800900,197844,8],[54780,8]],[[0,0,0],[0,0],[0]],[[212659906,12991568,23272],[12991568,85770],[23272]],[[0,0,0],[0,0],[0]],[[374715868,11160452,6340],[11160452,23944],[6340]],[[0,0,0],[0,0],[0]],[[491834170,6960892,1065],[6960892,4126],[1065]],[[0,0,0],[0,0],[0]],[[492256084,3170420,100],[3170420,396],[100]],[[0,0,0],[0,0],[0]],[[381136996,1050340,4],[1050340,16],[4]],[[0,0],[0]],[[230138024,249342],[249342]],[[0,0],[0]],[[108684277,41144],[41144]],[[0,0],[0]],[[40064954,4460],[4460]],[[0,0],[0]],[[11446114,284],[284]],[[0,0],[0]],[[2499924,8],[8]],[[0]],[[408105]],[[0]],[[48010]],[[0]],[[3827]],[[0]],[[184]],[[0]],[[4]]]
 theorem step067 : p067=NestedHorner.scale (-1) p066 := by decide +kernel
 #print axioms step067
-theorem h067 : NestedArithmetic.compile e067=p067 := by
-  change NestedHorner.scale (-1) (NestedArithmetic.compile e066)=p067
-  rw [h066]
-  exact step067.symm
+theorem h067 : NestedArithmetic.compile e067=p067 := StagedExprCompile.compile_scaled (-1) e067 e066 p066 p067 rfl h066 step067
 #print axioms h067
 end Gebendorfer.RadenkovicGutman.FixedDegree03Long00StagedU

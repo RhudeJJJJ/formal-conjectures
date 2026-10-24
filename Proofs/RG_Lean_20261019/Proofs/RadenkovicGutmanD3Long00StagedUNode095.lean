@@ -1,6 +1,7 @@
 /- Copyright 2026 Jonas J. Gebendorfer. Apache 2.0. -/
 import Proofs.RadenkovicGutmanD3Long00StagedUNode050
 import Proofs.RadenkovicGutmanD3Long00StagedUNode056
+import Proofs.RadenkovicGutmanStagedExprCompile
 namespace Gebendorfer.RadenkovicGutman.FixedDegree03Long00StagedU
 set_option maxHeartbeats 0
 set_option maxRecDepth 100000
@@ -9,9 +10,6 @@ noncomputable def e095 : NestedArithmetic.Expr 3 := .times e050 e056
 noncomputable def p095 : NestedHorner.Poly 3 := [[[0],[0,0],[0,0]],[[0,0],[0,0,-27],[0,-27]],[[0,0,0],[0,0,0],[0,0]],[[0,243,-405],[243,-1215,-135],[-405,-135]],[[0,0,0],[0,0,0],[0,0]],[[3645,-8181,-3267],[-8181,-9504,-222],[-3267,-222]],[[0,0,0],[0,0,0],[0,0]],[[-23085,-103356,-10602],[-103356,-30015,-159],[-10602,-159]],[[0,0,0],[0,0,0],[0,0]],[[-669546,-504189,-18189],[-504189,-50556,-51],[-18189,-51]],[[0,0,0],[0,0,0],[0,0]],[[-4755051,-1381200,-18258],[-1381200,-50304,-6],[-18258,-6]],[[0,0,0],[0,0],[0]],[[-18457839,-2414349,-11187],[-2414349,-30834],[-11187]],[[0,0,0],[0,0],[0]],[[-46643052,-2863254,-4218],[-2863254,-11727],[-4218]],[[0,0,0],[0,0],[0]],[[-82924944,-2378709,-951],[-2378709,-2688],[-951]],[[0,0,0],[0,0],[0]],[[-108231615,-1405131,-117],[-1405131,-339],[-117]],[[0,0,0],[0,0],[0]],[[-106348530,-591354,-6],[-591354,-18],[-6]],[[0,0],[0]],[[-79838604,-175386],[-175386]],[[0,0],[0]],[[-46129212,-35658],[-35658]],[[0,0],[0]],[[-20536065,-4704],[-4704]],[[0,0],[0]],[[-7009587,-360],[-360]],[[0,0],[0]],[[-1812600,-12],[-12]],[[0]],[[-347580]],[[0]],[[-47685]],[[0]],[[-4401]],[[0]],[[-243]],[[0]],[[-6]]]
 theorem step095 : p095=NestedArithmetic.mul p050 p056 := by decide +kernel
 #print axioms step095
-theorem h095 : NestedArithmetic.compile e095=p095 := by
-  change NestedArithmetic.mul (NestedArithmetic.compile e050) (NestedArithmetic.compile e056)=p095
-  rw [h050,h056]
-  exact step095.symm
+theorem h095 : NestedArithmetic.compile e095=p095 := StagedExprCompile.compile_times e095 e050 e056 p050 p056 p095 rfl h050 h056 step095
 #print axioms h095
 end Gebendorfer.RadenkovicGutman.FixedDegree03Long00StagedU

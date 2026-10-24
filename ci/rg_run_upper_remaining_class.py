@@ -15,7 +15,13 @@ for name,arguments in [
     ('prepare_rg_fixed_class_kernel_sources.py',['--degree',str(degree),'--p',str(arm),'--q','0','--max-source-mib','64'])]:
     with (work/(name+'.log')).open('wb') as stream:
         result=subprocess.run([sys.executable,'-B',str(reference/name),*arguments],cwd=R,stdout=stream,stderr=subprocess.STDOUT,timeout=1000)
-    assert result.returncode==0,(name,result.returncode)
+    if result.returncode:
+        diagnostics=S/'build/fresh_exports/generated_source'
+        diagnostics.mkdir(parents=True,exist_ok=True)
+        for diagnostic in work.iterdir():
+            if diagnostic.is_file():shutil.copyfile(diagnostic,diagnostics/diagnostic.name)
+        print((work/(name+'.log')).read_text(encoding='utf-8')[-24000:],flush=True)
+        raise RuntimeError((name,result.returncode))
 plan_path=work/f'FixedDegree{degree:02d}Class{arm}0_SOURCE_PLAN.json';plan=json.loads(plan_path.read_bytes())
 assert plan['endpoint']==a.endpoint and plan['normalized_original_reserve']=='2/13'
 assert 1<=len(plan['members'])<=512 and plan['raw_bytes']<64*1024**2

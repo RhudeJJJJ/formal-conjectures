@@ -1,0 +1,96 @@
+name: RG remaining110 complete original actual tree case batches
+
+on:
+  push:
+    branches: [rg-remaining-six-spectral-20261021]
+    paths: ['.github/workflows/rg-compact-finite-remaining110-original-case-batches.yml']
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  check:
+    strategy:
+      fail-fast: false
+      max-parallel: 8
+      matrix:
+        endpoint: [Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteCertificateBatch001,Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteCertificateBatch002,Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteCertificateBatch003,Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteCertificateBatch004,Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteCertificateBatch005,Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteCertificateBatch006,Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteCertificateBatch007,Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteCertificateBatch008,Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteCertificateBatch009,Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteCertificateBatch010,Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteCertificateBatch011,Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteCertificateBatch012,Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteCertificateBatch013,Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteCertificateBatch014,Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteCertificateBatch015,Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteCertificateBatch016,Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteCertificateBatch017,Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteCertificateBatch018,Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteCertificateBatch019,Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteCertificateBatch020,Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteCertificateBatch021,Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteCertificateBatch022,Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteCertificateBatch023,Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteCertificateBatch024,Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteCertificateBatch025,Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteCertificateBatch026,Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteCertificateBatch027,Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteCertificateBatch028,Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteCertificateBatch029,Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteCertificateBatch030,Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteCertificateBatch031,Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteCertificateBatch032,Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteCertificateBatch033,Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteCertificateBatch034,Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteCertificateBatch035,Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteCertificateBatch036,Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteCertificateBatch037,Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteCertificateBatch038,Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteCertificateBatch039,Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteCertificateBatch040,Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteCertificateBatch041,Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteCertificateBatch042,Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteCertificateBatch043,Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteCertificateBatch044,Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteCertificateBatch045,Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteCertificateBatch046,Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteCertificateBatch047,Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteCertificateBatch048,Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteCertificateBatch049,Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteCertificateBatch050,Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteCertificateBatch051,Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteCertificateBatch052,Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteCertificateBatch053,Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteCertificateBatch054,Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteCertificateBatch055,Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteCertificateBatch056,Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteCertificateBatch057,Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteCertificateBatch058,Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteCertificateBatch059,Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteCertificateBatch060,Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteCertificateBatch061,Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteCertificateBatch062,Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteCertificateBatch063,Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteCertificateBatch064,Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteCertificateBatch065,Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteCertificateBatch066,Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteCertificateBatch067,Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteCertificateBatch068,Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteCertificateBatch069,Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteCertificateBatch070,Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteCertificateBatch071,Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteCertificateBatch072,Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteCertificateBatch073,Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteCertificateBatch074,Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteCertificateBatch075,Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteCertificateBatch076,Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteCertificateBatch077,Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteCertificateBatch078,Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteCertificateBatch079,Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteCertificateBatch080,Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteCertificateBatch081,Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteCertificateBatch082,Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteCertificateBatch083,Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteCertificateBatch084,Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteCertificateBatch085,Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteCertificateBatch086,Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteCertificateBatch087,Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteCertificateBatch088,Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteCertificateBatch089,Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteCertificateBatch090,Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteCertificateBatch091,Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteCertificateBatch092,Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteCertificateBatch093,Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteCertificateBatch094,Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteCertificateBatch095,Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteCertificateBatch096,Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteCertificateBatch097,Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteCertificateBatch098,Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteCertificateBatch099,Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteCertificateBatch100,Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteCertificateBatch101,Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteCertificateBatch102,Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteCertificateBatch103,Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteCertificateBatch104,Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteCertificateBatch105,Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteCertificateBatch106,Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteCertificateBatch107,Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteCertificateBatch108,Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteCertificateBatch109,Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteCertificateBatch110]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 360
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          persist-credentials: false
+      - name: Install the project toolchain
+        run: |
+          set -o pipefail
+          curl -sSfL https://github.com/leanprover/elan/releases/download/v1.4.2/elan-x86_64-unknown-linux-gnu.tar.gz | tar xz
+          ./elan-init -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Materialize the exact dependency lock
+        run: python3 -B ci/rg_dependencies.py
+      - name: Reproduce the exact source-hashed original statements and proofs
+        run: python3 -B ci/rg_materialize_compact_finite.py --endpoint ${{ matrix.endpoint }} --max-raw-mib 64
+      - name: Fetch the required Mathlib cache
+        run: |
+          python3 - <<'PY'
+          import pathlib, re, subprocess
+          root = pathlib.Path('Proofs/RG_Lean_20261019')
+          seen, external = set(), set()
+          def visit(name):
+              if name in seen:
+                  return
+              seen.add(name)
+              source = (root / (name.replace('.', '/') + '.lean')).read_text()
+              for dep in re.findall(r'^\s*import\s+([\w.]+)', source, re.M):
+                  if dep.startswith('Proofs.'):
+                      visit(dep)
+                  elif not dep.startswith(('Lean.', 'Init.', 'Std.')) and dep not in ('Lean','Init','Std'):
+                      external.add(dep)
+          visit('${{ matrix.endpoint }}')
+          subprocess.run(['lake', 'exe', 'cache', 'get', *sorted(external)], check=True)
+          PY
+      - name: Restore one independently audited complete source-bound base scope
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 -B ci/rg_restore_complete_scope.py --manifest ci/rg_reusable_analytic_kernel_base_complete_scope_capsule.json --build-directory Proofs/RG_Lean_20261019/build/extension
+      - name: Restore the fresh kernel-checked unchanged common base
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_compact_finite_common_fresh_original_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+      - name: Bound the remaining fresh module frontier
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 -B ci/rg_restore_with_kernel_fallback.py --plan ci/rg_empty_restore_plan.json --build-directory Proofs/RG_Lean_20261019/build/extension --endpoint ${{ matrix.endpoint }} --max-fresh 152 --preflight-only
+      - name: Check multiplicities and actual graph spectral comparison
+        shell: bash
+        run: |
+          set -o pipefail
+          python3 -B Proofs/RG_Lean_20261019/verify_extension.py --mathlib-project "$GITHUB_WORKSPACE" --endpoint ${{ matrix.endpoint }} --workers 1 --module-timeout 600 --resume | python3 -B ci/rg_compact_ci_output.py
+      - name: Retain completed records and diagnostics
+        if: always()
+        run: |
+          python3 - <<'PY'
+          import json,pathlib,shutil
+          root=pathlib.Path('Proofs/RG_Lean_20261019/build/extension')
+          records=[json.loads(p.read_text()) for p in sorted(root.glob('Proofs.*.json'))]
+          fresh=root.parent/'fresh_exports';fresh.mkdir(parents=True,exist_ok=True)
+          (fresh/'diagnostics_records.json').write_text(json.dumps({'modules':records},separators=(',',':'))+'\n')
+          if (root/'receipt.json').is_file():shutil.copyfile(root/'receipt.json',fresh/'receipt.json')
+          print('RETAINED_RECORD_COUNTS '+json.dumps({'total':len(records),'fresh':sum(r['mode']=='FRESH_KERNEL_EXPORT' for r in records)}))
+          for row in records:
+              if row['mode']=='FRESH_KERNEL_EXPORT':
+                  name=row['module'];rel=name.replace('.','/')+'.olean';dest=fresh/rel
+                  dest.parent.mkdir(parents=True,exist_ok=True)
+                  shutil.copyfile(root/rel,dest);shutil.copyfile(root/(name+'.json'),fresh/(name+'.json'))
+          for log in root.glob('Proofs.*.log'):
+              shutil.copyfile(log,fresh/log.name);print('MODULE_LOG_TAIL '+log.name+' '+log.read_text()[-18000:])
+          PY
+      - name: Retain new exports only
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: rg-compact-finite-remaining110-original-case-batches-exports-${{ github.run_id }}-${{ strategy.job-index }}
+          path: Proofs/RG_Lean_20261019/build/fresh_exports
+          retention-days: 90

@@ -19,7 +19,7 @@ source=original.read_bytes();entries=re.findall(r'⟨(\d+),(\d+),(\d+),\((\d+)/(
 assert len(entries)==680 and 0<=args.anchor_index<680
 n0,pp,qq,num,den=map(int,entries[args.anchor_index]);assert 14<=n0<=52
 x=F(2)-F(2,n0);target=F(num,den);epsilon=F(1,2**args.epsilon_power)
-producer=sha(pathlib.Path(__file__));helper=sha(B/'rg_integer_affine_arithmetic.py')
+producer=sha(pathlib.Path(__file__));helper=sha(pathlib.Path(__file__).with_name('rg_integer_affine_arithmetic.py'))
 tag=f"COMPACT_ORIGINAL_ANCHOR_{args.anchor_index:03d}_EPS{args.epsilon_power}_RATIO_{args.ratio.replace('.','_')}"
 checkpoint=O/(tag+'_CHECKPOINT.json');final=O/(tag+'_CANDIDATE.json')
 assert not final.exists(),'A completed candidate is retained; use another explicit parameter choice'

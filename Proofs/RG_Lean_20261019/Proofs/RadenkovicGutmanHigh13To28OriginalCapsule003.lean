@@ -1,0 +1,27 @@
+/- Copyright 2026 Jonas J. Gebendorfer. Apache 2.0. -/
+import Proofs.RadenkovicGutmanFixedDegree17Class24
+import Proofs.RadenkovicGutmanFixedDegree17Class33
+import Proofs.RadenkovicGutmanFixedDegree17Class34
+import Proofs.RadenkovicGutmanFixedDegree17Class44
+import Proofs.RadenkovicGutmanFixedDegree18Class12
+import Proofs.RadenkovicGutmanFixedDegree18Class13
+import Proofs.RadenkovicGutmanFixedDegree18Class14
+import Proofs.RadenkovicGutmanFixedDegree18Class22
+import Proofs.RadenkovicGutmanFixedDegree18Class23
+import Proofs.RadenkovicGutmanFixedDegree18Class24
+import Proofs.RadenkovicGutmanFixedDegree18Class33
+import Proofs.RadenkovicGutmanFixedDegree18Class34
+import Proofs.RadenkovicGutmanFixedDegree18Class44
+#print axioms Gebendorfer.RadenkovicGutman.FixedDegree17Class24.normalized_target
+#print axioms Gebendorfer.RadenkovicGutman.FixedDegree17Class33.normalized_target
+#print axioms Gebendorfer.RadenkovicGutman.FixedDegree17Class34.normalized_target
+#print axioms Gebendorfer.RadenkovicGutman.FixedDegree17Class44.normalized_target
+#print axioms Gebendorfer.RadenkovicGutman.FixedDegree18Class12.normalized_target
+#print axioms Gebendorfer.RadenkovicGutman.FixedDegree18Class13.normalized_target
+#print axioms Gebendorfer.RadenkovicGutman.FixedDegree18Class14.normalized_target
+#print axioms Gebendorfer.RadenkovicGutman.FixedDegree18Class22.normalized_target
+#print axioms Gebendorfer.RadenkovicGutman.FixedDegree18Class23.normalized_target
+#print axioms Gebendorfer.RadenkovicGutman.FixedDegree18Class24.normalized_target
+#print axioms Gebendorfer.RadenkovicGutman.FixedDegree18Class33.normalized_target
+#print axioms Gebendorfer.RadenkovicGutman.FixedDegree18Class34.normalized_target
+#print axioms Gebendorfer.RadenkovicGutman.FixedDegree18Class44.normalized_target

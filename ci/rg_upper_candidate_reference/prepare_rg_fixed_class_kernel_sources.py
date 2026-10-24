@@ -50,6 +50,8 @@ t+='theorem budget_checked : PaidFixedClassIntegral.accepts reserve (FastArmCove
 t+=f'theorem normalized_target {{V : Type*}} [Fintype V] [DecidableEq V]\n    (G : SimpleGraph V) (u : V) (p q : ℕ) (hd : G.degree u={a.degree})\n    (hp : ArmClasses.classify p={c1}) (hq : ArmClasses.classify q={c2}) :\n    (reserve : ℝ)<ActualFusionIntegral.normalizedIntegral G u p q 2 :=\n  PaidFixedClassIntegral.normalized_target G u p q {a.degree} (by decide) hd {c1} {c2} hp hq\n    reserve partition partition_checked budget_checked\nend\n'
 t+='#print axioms all_checked\n#print axioms adjacent_checked\n#print axioms partition_checked\n#print axioms budget_checked\n#print axioms normalized_target\n'
 t+=f'end Gebendorfer.RadenkovicGutman.{ns}\n';endpoint='Proofs.RadenkovicGutman'+ns;sources.append((endpoint,t.encode()))
+# Avoid retaining VM copies of certificate data; all proof bodies remain unchanged.
+sources=[(ep,re.sub(r'^def ', 'noncomputable def ',blob.decode(),flags=re.M).encode()) for ep,blob in sources]
 raw=sum(len(b) for _,b in sources);free=shutil.disk_usage(B).free
 assert raw<a.max_source_mib*1024**2 and free>8*1024**3+raw
 plan={'status':'ORIGINAL_CLASS_CANDIDATE_SOURCES_REQUIRE_KERNEL','degree':a.degree,'class_indices':[c1,c2],

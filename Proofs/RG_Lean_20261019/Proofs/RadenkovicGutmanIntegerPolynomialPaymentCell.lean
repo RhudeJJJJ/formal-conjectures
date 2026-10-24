@@ -22,10 +22,10 @@ theorem value_cast (p : IP) (x : Fin 1 → ℝ) :
       change (0 : ℝ)=HornerCertificates.evaluate [] (x 0)
       exact (HornerCertificates.evaluate_nil (x 0)).symm
   | cons c p ih =>
-      change NestedHorner.eval ((c : ℚ)::NestedInteger.castPoly 1 p) x=
-        HornerCertificates.evaluate ((c : ℚ)::NestedInteger.castPoly 1 p) (x 0)
-      rw [NestedHorner.eval_cons,HornerCertificates.evaluate_cons,ih]
-      rfl
+      calc
+        _ = ((c : ℚ) : ℝ)+x 0*NestedHorner.eval (NestedInteger.castPoly 1 p) x := rfl
+        _ = ((c : ℚ) : ℝ)+x 0*HornerCertificates.evaluate (NestedInteger.castPoly 1 p) (x 0) := by rw [ih]
+        _ = _ := (HornerCertificates.evaluate_cons (c : ℚ) (NestedInteger.castPoly 1 p) (x 0)).symm
 
 theorem value_cons (c : ℤ) (p : IP) (t : ℝ) :
     value (c::p) t=(c : ℝ)+t*value p t := by
@@ -214,7 +214,7 @@ theorem conditions (d : Data) (s : Source) (w : Witness) (g : Geometry)
           (HornerCertificates.evaluate w.s t+1)*
             HornerCertificates.evaluate d.V (SemanticPolynomialPaymentCell.location w t))) := by
     convert hm using 1 <;> ring
-  exact sub_nonneg.mp (nonneg_of_mul_nonneg_left hm' (mul_pos (pow_pos hDSr _) hDGr))
+  exact sub_nonneg.mp (nonneg_of_mul_nonneg_right hm' (mul_pos (pow_pos hDSr _) hDGr))
 
 #print axioms binding_sound
 #print axioms affine_value

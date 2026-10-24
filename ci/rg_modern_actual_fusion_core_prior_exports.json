@@ -1,0 +1,1673 @@
+{
+  "repository": "RhudeJJJJ/formal-conjectures",
+  "run": 40050471843,
+  "job": 120741790709,
+  "source_commit": "57ac81bf805f0bdae944ec2c661e194b08f9d307",
+  "artifact_id": 12543605018,
+  "artifact_sha256": "3236f092b604bf4ebdf7c92713ee14a333105df0c3a84b92a0f26456055ea088",
+  "lean_version": "4.33.1",
+  "mathlib": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "modules": {
+    "Proofs.RGModernRadenkovicGutmanCountGap": {
+      "module": "Proofs.RGModernRadenkovicGutmanCountGap",
+      "source_sha256": "a2bb62f14b1030c662c7c3f2629343e96def763f3bb715fd7d41a654a0c9686b",
+      "source_closure_sha256": "3b6003a3f27de666f7c447249ebee2be5366b2b44a9f764d3ec8b7270687fec6",
+      "output_sha256": "b50a9f6346f6bebd472eae8412f8caee8ff8977f729d603f96c30fa658c7f36d",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "FRESH_KERNEL_EXPORT",
+      "seconds": 2.671,
+      "additional_outputs": {
+        "server": {
+          "sha256": "fa33e5694f5823a095278c2c91b260914693f62b2bd9fcb6fb4ad716df1caccd",
+          "bytes": 2600
+        },
+        "private": {
+          "sha256": "9cae838d99d6aa4bf133cac7d0ac766a72c1a84092d4b4ad99c330a5cd556a60",
+          "bytes": 255744
+        }
+      }
+    },
+    "Proofs.RGModernRadenkovicGutmanPathRecurrence": {
+      "module": "Proofs.RGModernRadenkovicGutmanPathRecurrence",
+      "source_sha256": "14703bcb93f4ffde83d5237215ab50f6939515557ad0ff3c155617a7928a1abc",
+      "source_closure_sha256": "0332b45579834dcea382d1d7fc7fe7dc6764fc88ca370f02d05c448ae984d24f",
+      "output_sha256": "077e7443c08aa07f1c3aec90010f322e8a2e3a677aee43a4cdcc1db27817b0e5",
+      "axiom_profiles": [
+        [
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "FRESH_KERNEL_EXPORT",
+      "seconds": 1.268,
+      "additional_outputs": {
+        "server": {
+          "sha256": "3a7ea3b1f056bdfc26a032eb8d3daf301ded3ce280b23d0862647924de3406f3",
+          "bytes": 4184
+        },
+        "private": {
+          "sha256": "74e90df08a7df99cd4ac398e48c3d89d3a667e37057a4b95259642b42e54c06d",
+          "bytes": 336024
+        }
+      }
+    },
+    "Proofs.RGModernRadenkovicGutmanPathDeterminant": {
+      "module": "Proofs.RGModernRadenkovicGutmanPathDeterminant",
+      "source_sha256": "f3066d624eec5f8f91ffe9cd51f870fcb58ae996224f53752ecfd525914c37d4",
+      "source_closure_sha256": "d1c32564afa9c3ef66dcb0655281dfea42dbcae6b9853c3e642f9d6574278cda",
+      "output_sha256": "7ca58e45d3c22e31392c2c32301a7541f48abeaa3f02ec9ab58760ec2d3238dd",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "FRESH_KERNEL_EXPORT",
+      "seconds": 3.323,
+      "additional_outputs": {
+        "server": {
+          "sha256": "c78c8fe4b4e510ea316d494a4708397f98f8b371a711a4bef85c3c73b66c0b57",
+          "bytes": 5272
+        },
+        "private": {
+          "sha256": "ce6be09d24170ac39eae3024741074be3e994755cbdb2121e3b2b2b30cf5aeae",
+          "bytes": 761176
+        }
+      }
+    },
+    "Proofs.RGModernRadenkovicGutmanPathResolvent": {
+      "module": "Proofs.RGModernRadenkovicGutmanPathResolvent",
+      "source_sha256": "f1b7d1674b46024f2365e1f36f98776f297ffba7ade88f6c8b1765f5c7437753",
+      "source_closure_sha256": "9d88bc386abffb7244f53b8e659d5416fa59afdba1845331ec3af0397ec1fded",
+      "output_sha256": "712b2a8afda9e7e22a4166c2b06f12a9137858c85701c2a2d460a0e10f49b511",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "FRESH_KERNEL_EXPORT",
+      "seconds": 1.819,
+      "additional_outputs": {
+        "server": {
+          "sha256": "28720eb58441f98ac34a43d8f85deb115e71c612ccb295c4f666fafb6428bca0",
+          "bytes": 2216
+        },
+        "private": {
+          "sha256": "79dccd983cf7a53f060649fd774049c3d5810333b54d4ef2c59bf7d0a914c1b0",
+          "bytes": 45616
+        }
+      }
+    },
+    "Proofs.RGModernRadenkovicGutmanCoreQuotient": {
+      "module": "Proofs.RGModernRadenkovicGutmanCoreQuotient",
+      "source_sha256": "c2378c1906f30614e1de1a4a5515244eb061b7927098d2845a77cba969b38c86",
+      "source_closure_sha256": "8f5608944413afd5bf2b5ded08cae4b3db46178ddf38d92639ea8efad0a55f6d",
+      "output_sha256": "d8340688731890c4f3d4ca6deeebbb6061db5f8b717ef51ed53724d1c004fe0b",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "FRESH_KERNEL_EXPORT",
+      "seconds": 4.024,
+      "additional_outputs": {
+        "server": {
+          "sha256": "f48f766539e0ce076c3acea0c923151974f0b9d1bc7d69ac535950d3ff197a92",
+          "bytes": 4280
+        },
+        "private": {
+          "sha256": "c1673b29b9ddd82ee6b1719aab24f4ad88ebf00fafb0857994fbe0463277bf0b",
+          "bytes": 354176
+        }
+      }
+    },
+    "Proofs.RGModernRadenkovicGutmanGraphJoin": {
+      "module": "Proofs.RGModernRadenkovicGutmanGraphJoin",
+      "source_sha256": "b3dce1eb3ba85a2badbedcf5c7647afc401b17d93ed5cea9b401a15e0a07642a",
+      "source_closure_sha256": "07fb882262365c9c94d0df903aba4b8551a5cc91395cf1989b3bb7d1dcea289a",
+      "output_sha256": "d8e8757fcb2169acb18bb5d3ac00e9b4ae54acce03439dcb7697807cf83f52cb",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "FRESH_KERNEL_EXPORT",
+      "seconds": 5.929,
+      "additional_outputs": {
+        "server": {
+          "sha256": "549d9a2bc09aff6e6edd9bc49ef57c590db0c88f718300e6d2273b34cf696909",
+          "bytes": 3072
+        },
+        "private": {
+          "sha256": "c4fd0397caa8286cdb48b74634f5357b3d568ae638d3d5242d9a27347abae15d",
+          "bytes": 576976
+        }
+      }
+    },
+    "Proofs.RGModernRadenkovicGutmanFusionQuotient": {
+      "module": "Proofs.RGModernRadenkovicGutmanFusionQuotient",
+      "source_sha256": "e8d6765d9972f16dcdee63cdcd3a96f53db9c177bf91d7af7ffe55944d9ba52e",
+      "source_closure_sha256": "d02cb299b0c5d8a2912513d76b3cd39ad0e6b801934fc03703911aa922db9701",
+      "output_sha256": "9304373d1f65164b7eae007aa3b060f313d81189542d9fe13cddf6a2f42007da",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "FRESH_KERNEL_EXPORT",
+      "seconds": 2.721,
+      "additional_outputs": {
+        "server": {
+          "sha256": "dfe555b520fa9ddef86820464a815c09d5fed8618ab966c48a1c1f6175dfb0ad",
+          "bytes": 4440
+        },
+        "private": {
+          "sha256": "a63b71a6e2250c5bdc4c77ad839e38fcd1cd1852d64232fdd96741218e80c621",
+          "bytes": 749856
+        }
+      }
+    },
+    "Proofs.RGModernRadenkovicGutmanRewireTopology": {
+      "module": "Proofs.RGModernRadenkovicGutmanRewireTopology",
+      "source_sha256": "c8ddcd3e868cc998ed5768db962a314c9fcb1894545b8797a7e935747c579cf6",
+      "source_closure_sha256": "9647aa00ef05760ee39bef19446e316cd60386a012babf75bf06d30c2e9bbf62",
+      "output_sha256": "90f0827cef72215e39d11eed48305c6d43fc247ad136bd28cdd397108b4e97e9",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        []
+      ],
+      "mode": "FRESH_KERNEL_EXPORT",
+      "seconds": 1.669,
+      "additional_outputs": {
+        "server": {
+          "sha256": "45bd53d658f356f2781121f943ecfaf719e91c2545d392407b581241ce22c5e0",
+          "bytes": 4696
+        },
+        "private": {
+          "sha256": "61fd0d2c936ddb5104249476118f3721e696a1f0aed3bd69f9c005331ee887b4",
+          "bytes": 270952
+        }
+      }
+    },
+    "Proofs.RGModernRadenkovicGutmanScalarIntegral": {
+      "module": "Proofs.RGModernRadenkovicGutmanScalarIntegral",
+      "source_sha256": "1da06ce98bc6a9488fa691b96a7555c18214fa5aaad32109232085f11cdb9e1d",
+      "source_closure_sha256": "87f252b726d03d5c105c6b33a6f60b9182be6047747b56ca3fdb21a3284e26ed",
+      "output_sha256": "0e9c05297d63c0a9f06058e775734942101e37a85d32db0b88f11c0e86cdc433",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "FRESH_KERNEL_EXPORT",
+      "seconds": 3.272,
+      "additional_outputs": {
+        "server": {
+          "sha256": "26d4372cbb770ba4db85886b9113839a79b91b33a36d31cffe08e8b195e5aa87",
+          "bytes": 3904
+        },
+        "private": {
+          "sha256": "dac3ffbbc4685979bae2628acebac7cf7dd92535b50bd3facf0ec55df7ff173e",
+          "bytes": 599744
+        }
+      }
+    },
+    "Proofs.RGModernRadenkovicGutmanSpectral": {
+      "module": "Proofs.RGModernRadenkovicGutmanSpectral",
+      "source_sha256": "2d0fba3268bbd39530e3c3f41a8666de8e7729b4a7553cd4e303be1f945d3c16",
+      "source_closure_sha256": "986ae7963fb49085c97aa6715081f6277c7deb0ed14d375274b9b10705b2ff37",
+      "output_sha256": "2ccf9b73a6ece11a32fa06d7a0b9d8a3fd8b25ab8929cecbce4af55b8d9c7e35",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "FRESH_KERNEL_EXPORT",
+      "seconds": 3.272,
+      "additional_outputs": {
+        "server": {
+          "sha256": "9d4f38d04c7007aacd2fc3a4786af14a82d13fa2b96fa2325d054c642c6e4433",
+          "bytes": 6952
+        },
+        "private": {
+          "sha256": "989807a523ed7aee2d4b90561697eeb7a5b027d2b435712ced186d693888c142",
+          "bytes": 303144
+        }
+      }
+    },
+    "Proofs.RGModernRadenkovicGutmanCoulson": {
+      "module": "Proofs.RGModernRadenkovicGutmanCoulson",
+      "source_sha256": "649e305e8b7854cd13f51df5fa13c89a3478809a77bc52056331a59012a73ba9",
+      "source_closure_sha256": "137b6984b3e4018c712c84366259a3fee476a39cdb059ba69a9d542ae7cdd141",
+      "output_sha256": "1233ff4169329f12a9f5229c5277b310c46a71f1dd640e96402f8a05aacef258",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "FRESH_KERNEL_EXPORT",
+      "seconds": 2.47,
+      "additional_outputs": {
+        "server": {
+          "sha256": "f6d7202b94044d7df8684b926f2e2f7c98ffb0a0d07cdf208cebd4e587e54327",
+          "bytes": 3416
+        },
+        "private": {
+          "sha256": "2eb6071ab685de660e0eacf302d77926f1d49a0271a61b67110ef7b664868863",
+          "bytes": 214128
+        }
+      }
+    },
+    "Proofs.RGModernRadenkovicGutmanPerturbation": {
+      "module": "Proofs.RGModernRadenkovicGutmanPerturbation",
+      "source_sha256": "f7c50addb65b9a8f2b868cf364a76c74a992393529c01648bb833c2adb05d222",
+      "source_closure_sha256": "4ae990941f995880086cd3cf7fed80b50ef042c882231b43d500f76ca373eebf",
+      "output_sha256": "dfa983bb0b673b974a644796f8f1ff2e2a9e2bed5c33e8c1265b7051aa9007b0",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "FRESH_KERNEL_EXPORT",
+      "seconds": 2.972,
+      "additional_outputs": {
+        "server": {
+          "sha256": "6a78d91e8449bb63ad6275c7c11a3701909e19db5bf9a33a39ee2ed858e50342",
+          "bytes": 3240
+        },
+        "private": {
+          "sha256": "9eb5b5ec47325f15ee1c9426a884abf6584d2ec87dc11221baac1b0073eaa558",
+          "bytes": 317576
+        }
+      }
+    },
+    "Proofs.RGModernRadenkovicGutmanCountTransport": {
+      "module": "Proofs.RGModernRadenkovicGutmanCountTransport",
+      "source_sha256": "ad870dc4dec1fb72e86aca2911dc82ded543a8b92292d65c32b96bf85b9fc050",
+      "source_closure_sha256": "a7e7687ec76398047076e2e2efe2232964e6e8162cf6195dbfacc36145c21912",
+      "output_sha256": "ebe70385299de63aed0e154a35bfcaabd8bde9ff11280c37743e8f3ad4a9abd0",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "FRESH_KERNEL_EXPORT",
+      "seconds": 4.174,
+      "additional_outputs": {
+        "server": {
+          "sha256": "df0727f10b2d3ecf5663c86c7d3b84e29812a925d0783a846322263d1ff71da5",
+          "bytes": 2200
+        },
+        "private": {
+          "sha256": "3da7b77066bd2ccf4e826d325779465b790141d296aaa977d4e8dc31244ce085",
+          "bytes": 334776
+        }
+      }
+    },
+    "Proofs.RGModernRadenkovicGutmanGraphIntegral": {
+      "module": "Proofs.RGModernRadenkovicGutmanGraphIntegral",
+      "source_sha256": "71e5674b5188b55dcc5245ac2f82f4baf56b80446d73a228dbb3e17b7292970f",
+      "source_closure_sha256": "2b33937ccdfa0e69c4a9cf5edbe082eb09f974de2edb9d2284a7e8a1c6180a58",
+      "output_sha256": "327ee482f1db94d55a901e5476e2b6d7a1d93805ffd1647fd777bff1bfe51970",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "FRESH_KERNEL_EXPORT",
+      "seconds": 2.37,
+      "additional_outputs": {
+        "server": {
+          "sha256": "250cbee103a33d19fa7a5b4f1dc38ce079607f3b60a2f4f16c478119d88cc2c1",
+          "bytes": 2072
+        },
+        "private": {
+          "sha256": "23441ea87d5569421085f48a3e0fabdc0e3894791f503c03f135ca72d04215f7",
+          "bytes": 168184
+        }
+      }
+    },
+    "Proofs.RGModernRadenkovicGutmanRewireIso": {
+      "module": "Proofs.RGModernRadenkovicGutmanRewireIso",
+      "source_sha256": "221cecf160d01a9f60d0148d751cabdd49fcbbc2a785b2991f4dc92f5c1e6753",
+      "source_closure_sha256": "4189ea6ebbcd624e0959c797375d276af170a4f34a9e72c2d5a3b1dde85a723c",
+      "output_sha256": "f737ae9afa7fdb923128c48fbbc66d836149b031b573d073742036d28500609f",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "FRESH_KERNEL_EXPORT",
+      "seconds": 3.072,
+      "additional_outputs": {
+        "server": {
+          "sha256": "54b13513bb0a475ec711e7b358be514b922e933efd67a961a745376941b11559",
+          "bytes": 3048
+        },
+        "private": {
+          "sha256": "d25c07c51e175d56b11301ea52c6d667b66185e8d7e03963cd45dc1064e1d3d5",
+          "bytes": 507560
+        }
+      }
+    },
+    "Proofs.RGModernRadenkovicGutmanFusionDescent": {
+      "module": "Proofs.RGModernRadenkovicGutmanFusionDescent",
+      "source_sha256": "032ee5447bbafe6aee1fc385175614597eb9cbaa2e1001c1748a424510b12faa",
+      "source_closure_sha256": "2f0bb22808102529a3f60945a3e3b6ddbd4fca9d685abaf6f40f89712305dd08",
+      "output_sha256": "d951332a76f3f11e1715147bc178dbf5fb8fbed255c0a6e02f1d739fb74f1174",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "FRESH_KERNEL_EXPORT",
+      "seconds": 4.175,
+      "additional_outputs": {
+        "server": {
+          "sha256": "64cc32f06cc66b02f9912fa0d86dbaaa8992873fb246c0c6ee510ff135bccf8e",
+          "bytes": 2640
+        },
+        "private": {
+          "sha256": "8669e3a813254f5146ca7e6654b967f9f77f352bbc4bbcb391edd40e3dda5d06",
+          "bytes": 380920
+        }
+      }
+    },
+    "Proofs.RGModernRadenkovicGutmanIsoEnergy": {
+      "module": "Proofs.RGModernRadenkovicGutmanIsoEnergy",
+      "source_sha256": "315d2883c095573923c61be58249d38804e74b04efddcd36d7dcff0a8578e2f9",
+      "source_closure_sha256": "74a99274ecb1e40c57639d06eb5d26d465c276db4a48cbb18fa230fe3d30fdd4",
+      "output_sha256": "edc6ce63738992969eff1ea2e71fc334c98f837ff91936c286e15c157f7dffd4",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "FRESH_KERNEL_EXPORT",
+      "seconds": 1.969,
+      "additional_outputs": {
+        "server": {
+          "sha256": "14112c0e84fbe676d3f4350ced5cd15f40d8f545af89713fa024b921db2f3c9a",
+          "bytes": 2008
+        },
+        "private": {
+          "sha256": "6bc2363001cc2ac78cd66486f3a21e38d08f314bfa68e6dc516b6b02d8f39116",
+          "bytes": 78248
+        }
+      }
+    },
+    "Proofs.RGModernRadenkovicGutmanMixedGraphIntegral": {
+      "module": "Proofs.RGModernRadenkovicGutmanMixedGraphIntegral",
+      "source_sha256": "58390b4fb335b980a0bf6f1fd1534c32b017540b97184d79b9b8fbb542aa0ae9",
+      "source_closure_sha256": "030d53f0d9565d6f265a9e32c14eb6a7541607332488137bfcefd5c1de71c240",
+      "output_sha256": "d5a0a78a81ac0f50490ebf76966a3af58a0ec0e581ccef2564691658a3d1426c",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "FRESH_KERNEL_EXPORT",
+      "seconds": 1.969,
+      "additional_outputs": {
+        "server": {
+          "sha256": "d2a870b1051ae783673e1376bb2c8d9b886e8bc87af5a42e79c910d1c585b5a7",
+          "bytes": 1088
+        },
+        "private": {
+          "sha256": "74c3c4e6b1d6483f03bad4a4ae5e1425a99565ce4a3e5c5f1ee04184f8949dd9",
+          "bytes": 37080
+        }
+      }
+    },
+    "Proofs.RGModernRadenkovicGutmanMixedStopLoss": {
+      "module": "Proofs.RGModernRadenkovicGutmanMixedStopLoss",
+      "source_sha256": "60fb73f28053e8616827ceec7d09cff9c42d13e948d01af742871fecc5ee4164",
+      "source_closure_sha256": "01715048b9eb30496b786eba5f96a88f973e4d2529b874b123f17f7556045717",
+      "output_sha256": "fd09639f362c3b51a9cb9de76b2aa6aea2972443fa6c582326e8960121bf5f48",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "FRESH_KERNEL_EXPORT",
+      "seconds": 2.07,
+      "additional_outputs": {
+        "server": {
+          "sha256": "681ba639ab5438e8616c300ceb6487d76baff4a979ec10722ae1bd7b9147f46c",
+          "bytes": 2376
+        },
+        "private": {
+          "sha256": "8d4ed4eb61c3e3e45143cc3038662f3004ce43da396736af3610ca04a7e78bae",
+          "bytes": 62272
+        }
+      }
+    },
+    "Proofs.RGModernRadenkovicGutmanTreeTerminal": {
+      "module": "Proofs.RGModernRadenkovicGutmanTreeTerminal",
+      "source_sha256": "ad0bdd1fdb9a0d1411963e3e691a22200a8f81a9c5502dbe3b962bad69fcbb71",
+      "source_closure_sha256": "34bd18c4009733886e2ced3e7cae57abdb411082ee4493cfd90fe991a5b77c25",
+      "output_sha256": "82b0081b99c5716346152263db6b411934638c24181bdd0a12bd9a1075cfc582",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "FRESH_KERNEL_EXPORT",
+      "seconds": 1.468,
+      "additional_outputs": {
+        "server": {
+          "sha256": "8f4858119f48ec5d5620f19602df7722a69a71825ac617345b82d3bfe085096a",
+          "bytes": 3824
+        },
+        "private": {
+          "sha256": "d4ecef82f77498bca7ac29246430e9cc3812eb9f24326a40f0bb3c0fbef7def0",
+          "bytes": 322176
+        }
+      }
+    },
+    "Proofs.RGModernRadenkovicGutmanFusionTerminal": {
+      "module": "Proofs.RGModernRadenkovicGutmanFusionTerminal",
+      "source_sha256": "357d9bc94ba6390c234106d278f7f902cf37de60a575dc03c2673d16324cc48d",
+      "source_closure_sha256": "05f583e37e2ca3f957c7ac2fec1cdc3ede563c46fbeb0c15c812ab7b9fc614ae",
+      "output_sha256": "fb71900399d48158c200af69916416320617f5d8b3c1e31aa693e8d5424d4517",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "FRESH_KERNEL_EXPORT",
+      "seconds": 1.919,
+      "additional_outputs": {
+        "server": {
+          "sha256": "4365119abda960b3626b29330cda05e671daecf6d0421da84828e9c983657c06",
+          "bytes": 2408
+        },
+        "private": {
+          "sha256": "66762acbae7e8e09eeea4fd8e487a83c3a0739e86ee57622b8cd9df75e9030d3",
+          "bytes": 92112
+        }
+      }
+    },
+    "Proofs.RGModernRadenkovicGutmanGlobalAssembly": {
+      "module": "Proofs.RGModernRadenkovicGutmanGlobalAssembly",
+      "source_sha256": "480538bb6599ea1ae0cf04066306c41c11c2dd9f3d6ef7f9d7d340bc75b3bd0d",
+      "source_closure_sha256": "b6eed1e5098d7c2ae9f7d7711f913f3646b1dae3c236e2698b5f5577fba38906",
+      "output_sha256": "a291ffe56b9436aa442a14e81bc5efd5279542d727daa180c1df46cb665f68da",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "FRESH_KERNEL_EXPORT",
+      "seconds": 2.12,
+      "additional_outputs": {
+        "server": {
+          "sha256": "7d40b6d9b54a52a55af7e912e3585327e64867d9bfa7e09c53782c5580e9725d",
+          "bytes": 5856
+        },
+        "private": {
+          "sha256": "59cc54982d4de978b5e19a4d382cface37af6a38d0a3dfe3157c85e7bd8de6d0",
+          "bytes": 192568
+        }
+      }
+    },
+    "Proofs.RGModernRadenkovicGutmanNonpathFork": {
+      "module": "Proofs.RGModernRadenkovicGutmanNonpathFork",
+      "source_sha256": "6c421a036411b0441aa58b518b11dd19976459e112d9ac832f26021dee4df721",
+      "source_closure_sha256": "32de2c98e49001186c5876bcfd109c4307a4f84d0d4ac6e6eee00ea63fedde84",
+      "output_sha256": "69a514db863c936b7e75135dcc759ca2cd2d3b3ba029e39a3cdc700a016e9cb2",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "FRESH_KERNEL_EXPORT",
+      "seconds": 2.12,
+      "additional_outputs": {
+        "server": {
+          "sha256": "a2d09a4f05b94eda9e4a3a19070748e35a2c7abac4ba42389bd26642906591be",
+          "bytes": 7592
+        },
+        "private": {
+          "sha256": "a1ddfdcc1aa358d09557cfb88159beba7a0a6b116185b7764124750897b53e93",
+          "bytes": 661240
+        }
+      }
+    },
+    "Proofs.RGModernRadenkovicGutmanForkResidual": {
+      "module": "Proofs.RGModernRadenkovicGutmanForkResidual",
+      "source_sha256": "79c5663c6e66a5531a99fe2050537548f78cf0784ebe135f780f77b359958f59",
+      "source_closure_sha256": "8b937e9dcd7dbede3535ce75a582dcb19c3d736e96db3948daaea07244b5c0ed",
+      "output_sha256": "86ad137adfa8e397771b5efa4eb969ea334e6bcb5570855805a1e6bb68dc875b",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "FRESH_KERNEL_EXPORT",
+      "seconds": 1.318,
+      "additional_outputs": {
+        "server": {
+          "sha256": "1a49facab7dd7b2c6ead38611ff09fd0c3df0c62b8f1fa4529c475f6caae5148",
+          "bytes": 5200
+        },
+        "private": {
+          "sha256": "7d4e91df4edc2744ffada3614f6cfd137e5c2f95d7650ffea1f2d2a3df8cd148",
+          "bytes": 168536
+        }
+      }
+    },
+    "Proofs.RGModernRadenkovicGutmanArmEmbedding": {
+      "module": "Proofs.RGModernRadenkovicGutmanArmEmbedding",
+      "source_sha256": "4793dd1e6dd38f9c1b0a3b51203d027ae3577a79eccc448e4e160da0fdaeffd9",
+      "source_closure_sha256": "ab74d7e915e7305568f5deae4cb8eea93c679c7e8e8f247669782dbf9930c19a",
+      "output_sha256": "c708e798966a7779099f2bd67267d4d63b3624adaa605f2f8ae37d86eed98dc7",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "FRESH_KERNEL_EXPORT",
+      "seconds": 1.217,
+      "additional_outputs": {
+        "server": {
+          "sha256": "b038c8c3f813dabf2ba5491f0d33a5279cd6d727c17446fb86a500bc5ba36ac6",
+          "bytes": 4176
+        },
+        "private": {
+          "sha256": "dbac4ce2f4737c3eaee02c97a7ed3f209b5aecfc66c46e9b33a8d47f0db0cb72",
+          "bytes": 81264
+        }
+      }
+    },
+    "Proofs.RGModernRadenkovicGutmanSourcePresentation": {
+      "module": "Proofs.RGModernRadenkovicGutmanSourcePresentation",
+      "source_sha256": "8118db83b7f346ee14f3cad19406503113c3d4c3c55511afa2ab5a233c9bb6cb",
+      "source_closure_sha256": "391bcbc8ca6513ae6ffa230be9bfc3f46d6937e8209b9f67764c223655895970",
+      "output_sha256": "3bb49253d13ef7a5a322d3e2070d320da26dee09ca5c940451f62427bfb18852",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "FRESH_KERNEL_EXPORT",
+      "seconds": 13.746,
+      "additional_outputs": {
+        "server": {
+          "sha256": "7f1a96ad254dbd5a08b07da09ef3d7707f03ea1bfea98cba29da0ada7fc601ce",
+          "bytes": 8128
+        },
+        "private": {
+          "sha256": "5806146892560373e75e2aa66a581eb1435adf1d23699319583d4bd18190963c",
+          "bytes": 366872
+        }
+      }
+    },
+    "Proofs.RGModernRadenkovicGutmanSmallOrders": {
+      "module": "Proofs.RGModernRadenkovicGutmanSmallOrders",
+      "source_sha256": "4f64fd15cfc50d1240f01ab823a490a7a836e22249c7066e027db63d6788be8b",
+      "source_closure_sha256": "6cfee567a1e60129996479a38e1b23de507e0b31529e019dd355c12abc6265bc",
+      "output_sha256": "15daf5a0b09998b92e516567a1960b1199262b00dcc6880de8ac26b53c080c06",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "FRESH_KERNEL_EXPORT",
+      "seconds": 1.969,
+      "additional_outputs": {
+        "server": {
+          "sha256": "bbad1b1e5e2f2e41f3711d0d08120836d4b9c00ce5b6df87a48c1b16789502bc",
+          "bytes": 4664
+        },
+        "private": {
+          "sha256": "8e22a12b74eac041e1ba25807a1fc4c7ae50788651ba672ba8e4b2742e5805df",
+          "bytes": 87656
+        }
+      }
+    },
+    "Proofs.RGModernRadenkovicGutmanFourVertexSpectrum": {
+      "module": "Proofs.RGModernRadenkovicGutmanFourVertexSpectrum",
+      "source_sha256": "f01ee553b1c215e16590f39034d785680630d56ebe64c185d1665ed11ed44534",
+      "source_closure_sha256": "a86a2b200f48471e49f77ece26b3da46e327bb0dae3cc7926b6e4895c6b29b2b",
+      "output_sha256": "9dcbd7d0293f580f658cd42ca7092e4fc7df1b77c8221633576c0e63d6fdfc6f",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "FRESH_KERNEL_EXPORT",
+      "seconds": 5.328,
+      "additional_outputs": {
+        "server": {
+          "sha256": "2f877ae121cf2f3a8d1239fdbfba179bd1a5f0ef1b873b2c1adddb094c98405f",
+          "bytes": 3984
+        },
+        "private": {
+          "sha256": "9d9193aa00524b1d38ac0377aed4d24f78751dde2f8dc3fbde241f8e0a34eb86",
+          "bytes": 1480824
+        }
+      }
+    },
+    "Proofs.RGModernRadenkovicGutmanOrderFour": {
+      "module": "Proofs.RGModernRadenkovicGutmanOrderFour",
+      "source_sha256": "933a4e1c6a2dc425938489c13414c1be021a2a43bf0d32c482c8a2868ab1ee8e",
+      "source_closure_sha256": "69b82c398aa79bea04361d183b8d6a0669a0bdb550550799d212878ba260109d",
+      "output_sha256": "f0bb892653f05b2c72f2814d9619a42f641fa643af409c7caf88e6af71a0c0bf",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "FRESH_KERNEL_EXPORT",
+      "seconds": 1.97,
+      "additional_outputs": {
+        "server": {
+          "sha256": "4f0427691cc110bcb09aa4ab39233669077aaca2ea28f1da35b0a49f1b6201e2",
+          "bytes": 3040
+        },
+        "private": {
+          "sha256": "f532cb1cdef4367d945a350348774459f54eff3649688e05ae4e922e32f3b951",
+          "bytes": 106976
+        }
+      }
+    },
+    "Proofs.RGModernRadenkovicGutmanMinimalFusion": {
+      "module": "Proofs.RGModernRadenkovicGutmanMinimalFusion",
+      "source_sha256": "6dfbb5b482344b4b72a606a27336abd1133120fcd98e24831a936c591d475176",
+      "source_closure_sha256": "db0702c18355f7000f6ff71402ba97b3cffd2fd674ff402694d680de834fb3da",
+      "output_sha256": "af152754783babfe5d3a474422fd80fc41dd628a99b537559af016bdeae27f36",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "FRESH_KERNEL_EXPORT",
+      "seconds": 2.571,
+      "additional_outputs": {
+        "server": {
+          "sha256": "0d702f273751aeadb31446917a32777e4e154c030e272658d001d6d58a079b7c",
+          "bytes": 4592
+        },
+        "private": {
+          "sha256": "5b095d94d0741e62425af3f60b9356dd9977ead3deac02df55c2bbf9c840cd81",
+          "bytes": 383016
+        }
+      }
+    },
+    "Proofs.RGModernRadenkovicGutmanActualFusionIntegral": {
+      "module": "Proofs.RGModernRadenkovicGutmanActualFusionIntegral",
+      "source_sha256": "1a1d6af92aaa9f965505c0d420546ef0eac5468144a759114a15c32688385cf1",
+      "source_closure_sha256": "3e3cd0c050ceec951ae8a886eb78b5904127b297150b60fe5a508958b59cbda6",
+      "output_sha256": "eef3fa167d190d15c1357b58e70e22ca594c001bbcd4e874f8d36b8adadd3eca",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "FRESH_KERNEL_EXPORT",
+      "seconds": 2.971,
+      "additional_outputs": {
+        "server": {
+          "sha256": "b861c79fef696dbf17361e0804dbeaa8023c2ddc316c06182ad08d453f209db1",
+          "bytes": 5280
+        },
+        "private": {
+          "sha256": "1ec352d7d4ffa385254c9c78727a5e13d4755ebb9dd54b7bf7c635764530c6f1",
+          "bytes": 296224
+        }
+      }
+    }
+  }
+}

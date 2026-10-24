@@ -1,0 +1,7 @@
+/- Copyright 2026 Jonas J. Gebendorfer. Apache 2.0. -/
+import Proofs.RadenkovicGutmanFixedDegree02Class40Cell020
+import Proofs.RadenkovicGutmanFixedDegree02Class40Cell021
+import Proofs.RadenkovicGutmanFixedDegree02Class40Cell022
+#print axioms Gebendorfer.RadenkovicGutman.FixedDegree02Class40Cell020.slice_checked
+#print axioms Gebendorfer.RadenkovicGutman.FixedDegree02Class40Cell021.slice_checked
+#print axioms Gebendorfer.RadenkovicGutman.FixedDegree02Class40Cell022.slice_checked

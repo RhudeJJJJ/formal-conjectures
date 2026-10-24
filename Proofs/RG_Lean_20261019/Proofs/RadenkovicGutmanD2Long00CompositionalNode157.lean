@@ -1,0 +1,15 @@
+/- Copyright 2026 Jonas J. Gebendorfer. Apache 2.0. -/
+import Proofs.RadenkovicGutmanD2Long00CompositionalNode036
+import Proofs.RadenkovicGutmanD2Long00CompositionalNode156
+import Proofs.RadenkovicGutmanStagedExprCompile
+namespace Gebendorfer.RadenkovicGutman.FixedDegree02Long00Compositional
+set_option maxHeartbeats 0
+set_option maxRecDepth 100000
+set_option backward.isDefEq.respectTransparency false
+noncomputable def e157 : NestedArithmetic.Expr 3 := .times e036 e156
+noncomputable def p157 : NestedHorner.Poly 3 := [[[0],[0]],[[0,0],[0]],[[0,0],[0,0]],[[0,0],[0,0]],[[0,0],[0,0]],[[0,0],[0,0]],[[0,0],[0,0]],[[0,0],[0,0]],[[0,0],[0,0]],[[0,0],[0,0]],[[0,0],[0,0]],[[0,0],[0,0]],[[0,0],[0,0]],[[0,0],[0,0]],[[0,0],[0,0]],[[0,0],[0,0]],[[0,0],[0,0]],[[0,0],[0,0]],[[0,0],[0,0]],[[0],[0,0]],[[0],[0,0]]]
+theorem step157 : p157=NestedArithmetic.mul p036 p156 := by decide +kernel
+#print axioms step157
+theorem h157 : NestedArithmetic.compile e157=p157 := StagedExprCompile.compile_times e157 e036 e156 p036 p156 p157 rfl h036 h156 step157
+#print axioms h157
+end Gebendorfer.RadenkovicGutman.FixedDegree02Long00Compositional

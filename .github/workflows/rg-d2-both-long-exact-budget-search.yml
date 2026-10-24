@@ -1,0 +1,35 @@
+name: RG d2 both long bounded candidate search ONLY no Lean proof
+
+on:
+  push:
+    branches: [rg-remaining-six-spectral-20261021]
+    paths: ['.github/workflows/rg-d2-both-long-exact-budget-search.yml']
+
+permissions:
+  contents: read
+
+jobs:
+  search:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          persist-credentials: false
+      - name: Install the same exact arithmetic array dependency
+        run: |
+          python3 -m venv work/rg_parameter_search_environment
+          work/rg_parameter_search_environment/bin/python -m pip install numpy==2.3.5
+      - name: Preserve the original complete unit parameter cover and target
+        run: |
+          mkdir -p work/rg_parameter_budget_search
+          cp ci/rg_d2_both_long_depth2_resume_grid.json work/rg_parameter_budget_search/resume_grid.json
+          cp ci/rg_parameter_budget_search_source_manifest.json work/rg_parameter_budget_search/source_manifest.json
+          work/rg_parameter_search_environment/bin/python -B ci/rg_bounded_parameter_budget_search.py --degree 2 --p 0 --core-depth 2 --max-evaluations 4000 --max-search-seconds 9000 --max-candidate-mib 512 --search-only --run-label CI_DEPTH2_CONTINUED --resume-grid work/rg_parameter_budget_search/resume_grid.json
+      - name: Retain candidate data and all explicit open-search limits
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: rg-d2-both-long-candidate-search-NOT-A-LEAN-PROOF-${{ github.run_id }}
+          path: work/rg_parameter_budget_search
+          retention-days: 30

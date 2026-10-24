@@ -1,0 +1,27 @@
+{
+  "kind": "UNTRUSTED_EXACT_CANDIDATE_SEARCH_ONLY_NO_LEAN_PROOF",
+  "numpy": "2.3.5",
+  "references": [
+    {
+      "path": "ci/rg_parameter_search_reference/rg_tensor_transfer.py",
+      "sha256": "b3870866061e3e1fa1cd063ad4bc8d8ea482eb00ab1d3f0bdc102e61e518eecd",
+      "bytes": 5668
+    },
+    {
+      "path": "ci/rg_parameter_search_reference/rg_correlated_arm_transfer.py",
+      "sha256": "51450eb252cc802f63693f3279c1c8f8e07a85df18bbdc21f6df23026eb80216",
+      "bytes": 1801
+    },
+    {
+      "path": "ci/rg_parameter_search_reference/rg_small_degree_interval_attack.py",
+      "sha256": "a3c7f87796aeb36d43863670281d36ff48e4c72c491b08b898589da6381a0407",
+      "bytes": 11825
+    }
+  ],
+  "resume_grid_sha256": "917e9d6d486ac7e3630923723d3304c4bcf04d5cf85e8bc58c459c3e44fa37e5",
+  "original_reserve": "1/9",
+  "complete_parameter_cover_rule": "MINIMUM_OVER_ALL_SIXTEEN_LEAVES_NOT_SUM",
+  "max_seconds": 9000,
+  "max_evaluations": 4000,
+  "universal_rg": "OPEN"
+}

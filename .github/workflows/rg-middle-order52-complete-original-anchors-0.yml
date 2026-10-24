@@ -1,0 +1,96 @@
+name: RG complete original order52 middle anchors part 0
+
+on:
+  push:
+    branches: [rg-remaining-six-spectral-20261021]
+    paths: ['.github/workflows/rg-middle-order52-complete-original-anchors-0.yml']
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  check:
+    strategy:
+      fail-fast: false
+      max-parallel: 4
+      matrix:
+        endpoint: [Proofs.RadenkovicGutmanWideAnchor007OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor008OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor009OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor010OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor011OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor012OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor013OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor014OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor015OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor016OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor017OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor018OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor019OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor020OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor021OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor022OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor023OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor024OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor025OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor026OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor027OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor028OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor029OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor030OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor031OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor032OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor033OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor034OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor036OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor037OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor038OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor039OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor040OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor041OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor042OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor043OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor044OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor045OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor046OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor047OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor048OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor049OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor050OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor051OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor052OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor053OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor054OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor055OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor056OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor057OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor058OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor059OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor060OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor061OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor062OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor063OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor064OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor065OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor066OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor067OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor068OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor069OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor070OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor071OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor072OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor073OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor074OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor075OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor076OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor077OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor078OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor079OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor080OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor081OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor082OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor083OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor084OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor085OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor086OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor087OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor088OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor089OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor090OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor091OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor092OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor093OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor094OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor095OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor096OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor097OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor098OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor099OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor100OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor101OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor102OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor103OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor104OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor105OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor106OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor107OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor108OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor109OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor110OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor111OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor112OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor113OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor114OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor115OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor116OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor117OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor118OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor119OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor120OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor121OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor122OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor123OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor124OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor125OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor126OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor127OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor128OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor129OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor130OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor131OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor132OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor133OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor134OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor135OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor136OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor137OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor138OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor139OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor140OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor141OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor142OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor143OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor144OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor145OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor146OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor147OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor148OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor149OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor150OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor151OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor152OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor153OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor154OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor155OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor156OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor157OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor158OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor159OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor160OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor161OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor162OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor163OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor164OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor165OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor166OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor167OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor168OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor169OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor170OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor171OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor172OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor173OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor174OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor175OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor176OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor177OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor178OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor179OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor180OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor181OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor182OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor183OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor184OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor185OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor186OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor187OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor188OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor189OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor190OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor191OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor192OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor193OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor194OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor195OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor196OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor197OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor198OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor199OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor200OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor201OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor202OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor203OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor204OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor205OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor206OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor207OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor208OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor209OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor210OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor211OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor212OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor213OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor214OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor215OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor216OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor217OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor218OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor219OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor223OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor224OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor226OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor227OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor229OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor230OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor232OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor233OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor234OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor235OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor236OriginalAnchor,Proofs.RadenkovicGutmanWideAnchor237OriginalAnchor]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 360
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          persist-credentials: false
+      - name: Install the project toolchain
+        run: |
+          set -o pipefail
+          curl -sSfL https://github.com/leanprover/elan/releases/download/v1.4.2/elan-x86_64-unknown-linux-gnu.tar.gz | tar xz
+          ./elan-init -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Materialize the exact dependency lock
+        run: python3 -B ci/rg_dependencies.py
+      - name: Produce exact data and the complete original anchor proof
+        run: python3 -B ci/rg_run_original_anchor_kernel.py --endpoint ${{ matrix.endpoint }}
+      - name: Fetch the required Mathlib cache
+        run: |
+          python3 - <<'PY'
+          import pathlib, re, subprocess
+          root = pathlib.Path('Proofs/RG_Lean_20261019')
+          seen, external = set(), set()
+          def visit(name):
+              if name in seen:
+                  return
+              seen.add(name)
+              source = (root / (name.replace('.', '/') + '.lean')).read_text()
+              for dep in re.findall(r'^\s*import\s+([\w.]+)', source, re.M):
+                  if dep.startswith('Proofs.'):
+                      visit(dep)
+                  elif not dep.startswith(('Lean.', 'Init.', 'Std.')) and dep not in ('Lean','Init','Std'):
+                      external.add(dep)
+          visit('${{ matrix.endpoint }}')
+          subprocess.run(['lake', 'exe', 'cache', 'get', *sorted(external)], check=True)
+          PY
+      - name: Restore one independently audited complete source-bound base scope
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 -B ci/rg_restore_complete_scope.py --manifest ci/rg_reusable_analytic_kernel_base_complete_scope_capsule.json --build-directory Proofs/RG_Lean_20261019/build/extension
+      - name: Restore independently audited exact control proofs
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 -B ci/rg_restore_plan_parallel.py --plan ci/rg_symbolic_anchor005_control_prior_restore_plan.json --build-directory Proofs/RG_Lean_20261019/build/extension --workers 2
+      - name: Bound the remaining fresh module frontier
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 -B ci/rg_restore_with_kernel_fallback.py --plan ci/rg_symbolic_anchor005_control_prior_restore_plan.json --build-directory Proofs/RG_Lean_20261019/build/extension --endpoint ${{ matrix.endpoint }} --max-fresh 512 --preflight-only
+      - name: Check multiplicities and actual graph spectral comparison
+        shell: bash
+        run: |
+          set -o pipefail
+          python3 -B Proofs/RG_Lean_20261019/verify_extension.py --mathlib-project "$GITHUB_WORKSPACE" --endpoint ${{ matrix.endpoint }} --workers 1 --module-timeout 600 --resume | python3 -B ci/rg_compact_ci_output.py
+      - name: Retain completed records and diagnostics
+        if: always()
+        run: |
+          python3 - <<'PY'
+          import json,pathlib,shutil
+          root=pathlib.Path('Proofs/RG_Lean_20261019/build/extension')
+          records=[json.loads(p.read_text()) for p in sorted(root.glob('Proofs.*.json'))]
+          fresh=root.parent/'fresh_exports';fresh.mkdir(parents=True,exist_ok=True)
+          (fresh/'diagnostics_records.json').write_text(json.dumps({'modules':records},separators=(',',':'))+'\n')
+          if (root/'receipt.json').is_file():shutil.copyfile(root/'receipt.json',fresh/'receipt.json')
+          print('RETAINED_RECORD_COUNTS '+json.dumps({'total':len(records),'fresh':sum(r['mode']=='FRESH_KERNEL_EXPORT' for r in records)}))
+          for row in records:
+              if row['mode']=='FRESH_KERNEL_EXPORT':
+                  name=row['module'];rel=name.replace('.','/')+'.olean';dest=fresh/rel
+                  dest.parent.mkdir(parents=True,exist_ok=True)
+                  shutil.copyfile(root/rel,dest);shutil.copyfile(root/(name+'.json'),fresh/(name+'.json'))
+          for log in root.glob('Proofs.*.log'):
+              shutil.copyfile(log,fresh/log.name);print('MODULE_LOG_TAIL '+log.name+' '+log.read_text()[-18000:])
+          PY
+      - name: Retain new exports only
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: rg-middle-order52-complete-original-anchors-0-exports-${{ github.run_id }}-${{ strategy.job-index }}
+          path: Proofs/RG_Lean_20261019/build/fresh_exports
+          retention-days: 90

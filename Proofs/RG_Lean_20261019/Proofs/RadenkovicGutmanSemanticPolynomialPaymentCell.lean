@@ -4,6 +4,7 @@ import Proofs.RadenkovicGutmanComputedPolynomialCell
 namespace Gebendorfer.RadenkovicGutman.SemanticPolynomialPaymentCell
 open Set MeasureTheory PolynomialPathMap RationalComplexPolynomial
 open PolynomialPaymentCell HornerCertificates
+open scoped Classical
 abbrev Witness := ComputedPolynomialCell.Witness
 abbrev Data := ComputedGeneralPathData.Data
 set_option maxHeartbeats 0
@@ -82,7 +83,7 @@ theorem pointwise (x : ℚ) (p q : ℕ) (d : Data)
   obtain ⟨hpayment,_⟩ := of_decide_eq_true (payment_checked w hb)
   change realEvaluator t (ofList (cell w).pay)≤_
   rw [hpayment,GeneralPathPolynomialPayments.payment_evaluation,
-    ← HornerArithmetic.real_evaluation w.L t]
+    ← HornerArithmetic.real_evaluation (cell w).L t]
   exact h
 
 theorem actual_integral_lower (x : ℚ) (p q : ℕ) (d : Data)

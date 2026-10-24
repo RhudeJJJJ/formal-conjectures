@@ -53,7 +53,8 @@ theorem normalized_target {V : Type*} [Fintype V] [DecidableEq V]
     convert hr using 1
     norm_num [B,Y]
   have hpi : Real.pi < (3927/1250 : ℝ) := by
-    convert Real.pi_lt_d4 using 1 <;> norm_num
+    convert Real.pi_lt_d4 using 1
+    norm_num
   have hraw : (T : ℝ)*Real.pi < a*(Real.log (2*a/5)-1)+B-1/(2*Y) := by
     have hprod := mul_le_mul_of_nonneg_left hpi.le hTr
     linarith only [hprod,ho,hb]

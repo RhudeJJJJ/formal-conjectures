@@ -213,7 +213,8 @@ theorem conditions (d : Data) (s : Source) (w : Witness) (g : Geometry)
           HornerCertificates.evaluate d.U (SemanticPolynomialPaymentCell.location w t)+
           (HornerCertificates.evaluate w.s t+1)*
             HornerCertificates.evaluate d.V (SemanticPolynomialPaymentCell.location w t))) := by
-    convert hm using 1 <;> ring
+    convert hm using 1
+    ring
   exact sub_nonneg.mp (nonneg_of_mul_nonneg_right hm' (mul_pos (pow_pos hDSr _) hDGr))
 
 #print axioms binding_sound

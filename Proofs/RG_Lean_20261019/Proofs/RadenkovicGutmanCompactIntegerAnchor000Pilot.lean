@@ -28,7 +28,9 @@ def geometry : IntegerPolynomialPaymentCell.Geometry := {
 set_option profiler true
 set_option profiler.threshold 10
 theorem checked : IntegerPolynomialPaymentCell.checks CompactIntegerAnchor000Source.source witness geometry=true := by decide +kernel
-theorem budget : SemanticPolynomialPaymentCell.Budget witness := by decide +kernel
+theorem budget : SemanticPolynomialPaymentCell.Budget witness := by
+  unfold SemanticPolynomialPaymentCell.Budget
+  decide +kernel
 theorem logarithm_checked : RationalLog.accepts witness.c witness.R witness.k witness.n=true := by decide +kernel
 noncomputable section
 theorem actual_integral {V : Type*} [Fintype V] [DecidableEq V]

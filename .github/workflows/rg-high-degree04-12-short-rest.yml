@@ -1,0 +1,86 @@
+name: RG high degree04 12 short rest
+
+on:
+  push:
+    branches: [rg-remaining-six-spectral-20261021]
+    paths: ['.github/workflows/rg-high-degree04-12-short-rest.yml']
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  check:
+    strategy:
+      fail-fast: false
+      max-parallel: 8
+      matrix:
+        endpoint: [Proofs.RadenkovicGutmanFixedDegree04Class12,Proofs.RadenkovicGutmanFixedDegree04Class13,Proofs.RadenkovicGutmanFixedDegree04Class14,Proofs.RadenkovicGutmanFixedDegree04Class22,Proofs.RadenkovicGutmanFixedDegree04Class23,Proofs.RadenkovicGutmanFixedDegree04Class24,Proofs.RadenkovicGutmanFixedDegree04Class34,Proofs.RadenkovicGutmanFixedDegree04Class33,Proofs.RadenkovicGutmanFixedDegree05Class12,Proofs.RadenkovicGutmanFixedDegree04Class44,Proofs.RadenkovicGutmanFixedDegree05Class13,Proofs.RadenkovicGutmanFixedDegree05Class14,Proofs.RadenkovicGutmanFixedDegree05Class22,Proofs.RadenkovicGutmanFixedDegree05Class23,Proofs.RadenkovicGutmanFixedDegree05Class24,Proofs.RadenkovicGutmanFixedDegree05Class33,Proofs.RadenkovicGutmanFixedDegree05Class34,Proofs.RadenkovicGutmanFixedDegree06Class12,Proofs.RadenkovicGutmanFixedDegree05Class44,Proofs.RadenkovicGutmanFixedDegree06Class13,Proofs.RadenkovicGutmanFixedDegree06Class14,Proofs.RadenkovicGutmanFixedDegree06Class22,Proofs.RadenkovicGutmanFixedDegree06Class23,Proofs.RadenkovicGutmanFixedDegree06Class24,Proofs.RadenkovicGutmanFixedDegree06Class33,Proofs.RadenkovicGutmanFixedDegree06Class34,Proofs.RadenkovicGutmanFixedDegree06Class44,Proofs.RadenkovicGutmanFixedDegree07Class12,Proofs.RadenkovicGutmanFixedDegree07Class13,Proofs.RadenkovicGutmanFixedDegree07Class14,Proofs.RadenkovicGutmanFixedDegree07Class22,Proofs.RadenkovicGutmanFixedDegree07Class23,Proofs.RadenkovicGutmanFixedDegree07Class24,Proofs.RadenkovicGutmanFixedDegree07Class34,Proofs.RadenkovicGutmanFixedDegree07Class33,Proofs.RadenkovicGutmanFixedDegree07Class44,Proofs.RadenkovicGutmanFixedDegree08Class12,Proofs.RadenkovicGutmanFixedDegree08Class13,Proofs.RadenkovicGutmanFixedDegree08Class14,Proofs.RadenkovicGutmanFixedDegree08Class22,Proofs.RadenkovicGutmanFixedDegree08Class23,Proofs.RadenkovicGutmanFixedDegree08Class24,Proofs.RadenkovicGutmanFixedDegree08Class33,Proofs.RadenkovicGutmanFixedDegree08Class44,Proofs.RadenkovicGutmanFixedDegree08Class34,Proofs.RadenkovicGutmanFixedDegree09Class12,Proofs.RadenkovicGutmanFixedDegree09Class13,Proofs.RadenkovicGutmanFixedDegree09Class14,Proofs.RadenkovicGutmanFixedDegree09Class22,Proofs.RadenkovicGutmanFixedDegree09Class23,Proofs.RadenkovicGutmanFixedDegree09Class24,Proofs.RadenkovicGutmanFixedDegree09Class33,Proofs.RadenkovicGutmanFixedDegree09Class34,Proofs.RadenkovicGutmanFixedDegree09Class44,Proofs.RadenkovicGutmanFixedDegree10Class12,Proofs.RadenkovicGutmanFixedDegree10Class13,Proofs.RadenkovicGutmanFixedDegree10Class14,Proofs.RadenkovicGutmanFixedDegree10Class22,Proofs.RadenkovicGutmanFixedDegree10Class23,Proofs.RadenkovicGutmanFixedDegree10Class24,Proofs.RadenkovicGutmanFixedDegree10Class33,Proofs.RadenkovicGutmanFixedDegree10Class34,Proofs.RadenkovicGutmanFixedDegree11Class12,Proofs.RadenkovicGutmanFixedDegree10Class44,Proofs.RadenkovicGutmanFixedDegree11Class14,Proofs.RadenkovicGutmanFixedDegree11Class13,Proofs.RadenkovicGutmanFixedDegree11Class22,Proofs.RadenkovicGutmanFixedDegree11Class23,Proofs.RadenkovicGutmanFixedDegree11Class24,Proofs.RadenkovicGutmanFixedDegree11Class33,Proofs.RadenkovicGutmanFixedDegree11Class34,Proofs.RadenkovicGutmanFixedDegree12Class12,Proofs.RadenkovicGutmanFixedDegree11Class44,Proofs.RadenkovicGutmanFixedDegree12Class14,Proofs.RadenkovicGutmanFixedDegree12Class13,Proofs.RadenkovicGutmanFixedDegree12Class22,Proofs.RadenkovicGutmanFixedDegree12Class23,Proofs.RadenkovicGutmanFixedDegree12Class24,Proofs.RadenkovicGutmanFixedDegree12Class34,Proofs.RadenkovicGutmanFixedDegree12Class33,Proofs.RadenkovicGutmanFixedDegree12Class44]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 150
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          persist-credentials: false
+      - name: Install the project toolchain
+        run: |
+          set -o pipefail
+          curl -sSfL https://github.com/leanprover/elan/releases/download/v1.4.2/elan-x86_64-unknown-linux-gnu.tar.gz | tar xz
+          ./elan-init -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Materialize the exact dependency lock
+        run: python3 -B ci/rg_dependencies.py
+      - name: Fetch the required Mathlib cache
+        run: |
+          python3 - <<'PY'
+          import pathlib, re, subprocess
+          root = pathlib.Path('Proofs/RG_Lean_20261019')
+          seen, external = set(), set()
+          def visit(name):
+              if name in seen:
+                  return
+              seen.add(name)
+              source = (root / (name.replace('.', '/') + '.lean')).read_text()
+              for dep in re.findall(r'^\s*import\s+([\w.]+)', source, re.M):
+                  if dep.startswith('Proofs.'):
+                      visit(dep)
+                  elif not dep.startswith(('Lean.', 'Init.', 'Std.')) and dep not in ('Lean','Init','Std'):
+                      external.add(dep)
+          visit('${{ matrix.endpoint }}')
+          subprocess.run(['lake', 'exe', 'cache', 'get', *sorted(external)], check=True)
+          PY
+      - name: Restore one independently audited complete source-bound base scope
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 -B ci/rg_restore_complete_scope.py --manifest ci/rg_reusable_analytic_kernel_base_complete_scope_capsule.json --build-directory Proofs/RG_Lean_20261019/build/extension
+      - name: Check multiplicities and actual graph spectral comparison
+        shell: bash
+        run: |
+          set -o pipefail
+          python3 -B Proofs/RG_Lean_20261019/verify_extension.py --mathlib-project "$GITHUB_WORKSPACE" --endpoint ${{ matrix.endpoint }} --workers 1 --module-timeout 600 --resume | python3 -B ci/rg_compact_ci_output.py
+      - name: Retain completed records and diagnostics
+        if: always()
+        run: |
+          python3 - <<'PY'
+          import json,pathlib,shutil
+          root=pathlib.Path('Proofs/RG_Lean_20261019/build/extension')
+          records=[json.loads(p.read_text()) for p in sorted(root.glob('Proofs.*.json'))]
+          fresh=root.parent/'fresh_exports';fresh.mkdir(parents=True,exist_ok=True)
+          (fresh/'diagnostics_records.json').write_text(json.dumps({'modules':records},separators=(',',':'))+'\n')
+          if (root/'receipt.json').is_file():shutil.copyfile(root/'receipt.json',fresh/'receipt.json')
+          print('RETAINED_RECORD_COUNTS '+json.dumps({'total':len(records),'fresh':sum(r['mode']=='FRESH_KERNEL_EXPORT' for r in records)}))
+          for row in records:
+              if row['mode']=='FRESH_KERNEL_EXPORT':
+                  name=row['module'];rel=name.replace('.','/')+'.olean';dest=fresh/rel
+                  dest.parent.mkdir(parents=True,exist_ok=True)
+                  shutil.copyfile(root/rel,dest);shutil.copyfile(root/(name+'.json'),fresh/(name+'.json'))
+          for log in root.glob('Proofs.*.log'):
+              shutil.copyfile(log,fresh/log.name);print('MODULE_LOG_TAIL '+log.name+' '+log.read_text()[-18000:])
+          PY
+      - name: Retain new exports only
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: rg-high-degree04-12-short-rest-exports-${{ github.run_id }}-${{ strategy.job-index }}
+          path: Proofs/RG_Lean_20261019/build/fresh_exports
+          retention-days: 7

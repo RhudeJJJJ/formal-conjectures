@@ -22,9 +22,10 @@ theorem value_cast (p : IP) (x : Fin 1 → ℝ) :
       change (0 : ℝ)=HornerCertificates.evaluate [] (x 0)
       exact (HornerCertificates.evaluate_nil (x 0)).symm
   | cons c p ih =>
-      change ((c : ℚ) : ℝ)+x 0*NestedHorner.eval (NestedInteger.castPoly 1 p) x=
-        ((c : ℚ) : ℝ)+x 0*HornerCertificates.evaluate (NestedInteger.castPoly 1 p) (x 0)
-      rw [ih]
+      change NestedHorner.eval ((c : ℚ)::NestedInteger.castPoly 1 p) x=
+        HornerCertificates.evaluate ((c : ℚ)::NestedInteger.castPoly 1 p) (x 0)
+      rw [NestedHorner.eval_cons,HornerCertificates.evaluate_cons,ih]
+      rfl
 
 theorem value_cons (c : ℤ) (p : IP) (t : ℝ) :
     value (c::p) t=(c : ℝ)+t*value p t := by
@@ -123,7 +124,6 @@ def floorPoly (p : IP) (c : ℤ) : IP := NestedInteger.add p [-c]
 theorem value_floor (p : IP) (c : ℤ) (t : ℝ) :
     value (floorPoly p c) t=value p t-(c : ℝ) := by
   rw [floorPoly,value_add]
-  change value p t+value [(-c : ℤ)] t=_
   rw [value_singleton,Int.cast_neg]
   ring
 
@@ -197,12 +197,15 @@ theorem conditions (d : Data) (s : Source) (w : Witness) (g : Geometry)
     nlinarith only [hE0,hDGr]
   refine ⟨hsr,hlr,hnr,her,?_⟩
   have hm := positive_sound _ hmp t ht
-  simp only [margin,value_add,value_scale,value_times,value_singleton,
+  simp only [margin,value_add,value_scale,value_times,
     Int.cast_neg,Int.cast_one,Int.cast_pow,hsv,hlv,hv] at hm
-  change 0≤DS^2*(DS*HornerCertificates.evaluate w.s t*(DG*HornerCertificates.evaluate d.J _))+
+  rw [value_singleton] at hm
+  change 0≤DS^2*(DS*HornerCertificates.evaluate w.s t*
+    (DG*HornerCertificates.evaluate d.J (SemanticPolynomialPaymentCell.location w t)))+
     -1*(DS*HornerCertificates.evaluate w.L t*((DS*HornerCertificates.evaluate w.s t+DS)*
-      (DS*HornerCertificates.evaluate w.s t*(DG*HornerCertificates.evaluate d.U _)+
-        DS*(DG*HornerCertificates.evaluate d.V _)))) at hm
+      (DS*HornerCertificates.evaluate w.s t*
+        (DG*HornerCertificates.evaluate d.U (SemanticPolynomialPaymentCell.location w t))+
+        DS*(DG*HornerCertificates.evaluate d.V (SemanticPolynomialPaymentCell.location w t))))) at hm
   have hm' : 0≤DS^3*DG*(HornerCertificates.evaluate w.s t*
       HornerCertificates.evaluate d.J (SemanticPolynomialPaymentCell.location w t)-
       HornerCertificates.evaluate w.L t*

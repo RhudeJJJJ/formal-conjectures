@@ -1,0 +1,5 @@
+/- Copyright 2026 Jonas J. Gebendorfer. Apache 2.0. -/
+import Proofs.RadenkovicGutmanFixedDegree02Class30ParameterDepth2Group1280
+import Proofs.RadenkovicGutmanFixedDegree02Class30ParameterDepth2Group1281
+#print axioms Gebendorfer.RadenkovicGutman.FixedDegree02Class30ParameterDepth2Group1280.slice_checked
+#print axioms Gebendorfer.RadenkovicGutman.FixedDegree02Class30ParameterDepth2Group1281.slice_checked

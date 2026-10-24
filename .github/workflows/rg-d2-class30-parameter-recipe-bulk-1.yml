@@ -1,0 +1,96 @@
+name: RG d2 class30 parameter recipe bulk 1
+
+on:
+  push:
+    branches: [rg-remaining-six-spectral-20261021]
+    paths: ['.github/workflows/rg-d2-class30-parameter-recipe-bulk-1.yml']
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  check:
+    strategy:
+      fail-fast: false
+      max-parallel: 8
+      matrix:
+        endpoint: [Proofs.RadenkovicGutmanFixedDegree02Class30ParameterDepth2HalfBatch129,Proofs.RadenkovicGutmanFixedDegree02Class30ParameterDepth2HalfBatch130,Proofs.RadenkovicGutmanFixedDegree02Class30ParameterDepth2HalfBatch131,Proofs.RadenkovicGutmanFixedDegree02Class30ParameterDepth2HalfBatch132,Proofs.RadenkovicGutmanFixedDegree02Class30ParameterDepth2HalfBatch133,Proofs.RadenkovicGutmanFixedDegree02Class30ParameterDepth2HalfBatch134,Proofs.RadenkovicGutmanFixedDegree02Class30ParameterDepth2HalfBatch135,Proofs.RadenkovicGutmanFixedDegree02Class30ParameterDepth2HalfBatch136,Proofs.RadenkovicGutmanFixedDegree02Class30ParameterDepth2HalfBatch137,Proofs.RadenkovicGutmanFixedDegree02Class30ParameterDepth2HalfBatch138,Proofs.RadenkovicGutmanFixedDegree02Class30ParameterDepth2HalfBatch139,Proofs.RadenkovicGutmanFixedDegree02Class30ParameterDepth2HalfBatch140,Proofs.RadenkovicGutmanFixedDegree02Class30ParameterDepth2HalfBatch141,Proofs.RadenkovicGutmanFixedDegree02Class30ParameterDepth2HalfBatch142,Proofs.RadenkovicGutmanFixedDegree02Class30ParameterDepth2HalfBatch143,Proofs.RadenkovicGutmanFixedDegree02Class30ParameterDepth2HalfBatch144,Proofs.RadenkovicGutmanFixedDegree02Class30ParameterDepth2HalfBatch145,Proofs.RadenkovicGutmanFixedDegree02Class30ParameterDepth2HalfBatch146,Proofs.RadenkovicGutmanFixedDegree02Class30ParameterDepth2HalfBatch147,Proofs.RadenkovicGutmanFixedDegree02Class30ParameterDepth2HalfBatch148,Proofs.RadenkovicGutmanFixedDegree02Class30ParameterDepth2HalfBatch149,Proofs.RadenkovicGutmanFixedDegree02Class30ParameterDepth2HalfBatch150,Proofs.RadenkovicGutmanFixedDegree02Class30ParameterDepth2HalfBatch151,Proofs.RadenkovicGutmanFixedDegree02Class30ParameterDepth2HalfBatch152,Proofs.RadenkovicGutmanFixedDegree02Class30ParameterDepth2HalfBatch153,Proofs.RadenkovicGutmanFixedDegree02Class30ParameterDepth2HalfBatch154,Proofs.RadenkovicGutmanFixedDegree02Class30ParameterDepth2HalfBatch155,Proofs.RadenkovicGutmanFixedDegree02Class30ParameterDepth2HalfBatch156,Proofs.RadenkovicGutmanFixedDegree02Class30ParameterDepth2HalfBatch157,Proofs.RadenkovicGutmanFixedDegree02Class30ParameterDepth2HalfBatch158,Proofs.RadenkovicGutmanFixedDegree02Class30ParameterDepth2HalfBatch159,Proofs.RadenkovicGutmanFixedDegree02Class30ParameterDepth2HalfBatch160,Proofs.RadenkovicGutmanFixedDegree02Class30ParameterDepth2HalfBatch161,Proofs.RadenkovicGutmanFixedDegree02Class30ParameterDepth2HalfBatch162,Proofs.RadenkovicGutmanFixedDegree02Class30ParameterDepth2HalfBatch163,Proofs.RadenkovicGutmanFixedDegree02Class30ParameterDepth2HalfBatch164,Proofs.RadenkovicGutmanFixedDegree02Class30ParameterDepth2HalfBatch165,Proofs.RadenkovicGutmanFixedDegree02Class30ParameterDepth2HalfBatch166,Proofs.RadenkovicGutmanFixedDegree02Class30ParameterDepth2HalfBatch167,Proofs.RadenkovicGutmanFixedDegree02Class30ParameterDepth2HalfBatch168,Proofs.RadenkovicGutmanFixedDegree02Class30ParameterDepth2HalfBatch169,Proofs.RadenkovicGutmanFixedDegree02Class30ParameterDepth2HalfBatch170,Proofs.RadenkovicGutmanFixedDegree02Class30ParameterDepth2HalfBatch171,Proofs.RadenkovicGutmanFixedDegree02Class30ParameterDepth2HalfBatch172,Proofs.RadenkovicGutmanFixedDegree02Class30ParameterDepth2HalfBatch173,Proofs.RadenkovicGutmanFixedDegree02Class30ParameterDepth2HalfBatch174,Proofs.RadenkovicGutmanFixedDegree02Class30ParameterDepth2HalfBatch175,Proofs.RadenkovicGutmanFixedDegree02Class30ParameterDepth2HalfBatch176,Proofs.RadenkovicGutmanFixedDegree02Class30ParameterDepth2HalfBatch177,Proofs.RadenkovicGutmanFixedDegree02Class30ParameterDepth2HalfBatch178,Proofs.RadenkovicGutmanFixedDegree02Class30ParameterDepth2HalfBatch179,Proofs.RadenkovicGutmanFixedDegree02Class30ParameterDepth2HalfBatch180,Proofs.RadenkovicGutmanFixedDegree02Class30ParameterDepth2HalfBatch181,Proofs.RadenkovicGutmanFixedDegree02Class30ParameterDepth2HalfBatch182,Proofs.RadenkovicGutmanFixedDegree02Class30ParameterDepth2HalfBatch183,Proofs.RadenkovicGutmanFixedDegree02Class30ParameterDepth2HalfBatch184,Proofs.RadenkovicGutmanFixedDegree02Class30ParameterDepth2HalfBatch185,Proofs.RadenkovicGutmanFixedDegree02Class30ParameterDepth2HalfBatch186,Proofs.RadenkovicGutmanFixedDegree02Class30ParameterDepth2HalfBatch187,Proofs.RadenkovicGutmanFixedDegree02Class30ParameterDepth2HalfBatch188,Proofs.RadenkovicGutmanFixedDegree02Class30ParameterDepth2HalfBatch189,Proofs.RadenkovicGutmanFixedDegree02Class30ParameterDepth2HalfBatch190,Proofs.RadenkovicGutmanFixedDegree02Class30ParameterDepth2HalfBatch191,Proofs.RadenkovicGutmanFixedDegree02Class30ParameterDepth2HalfBatch192,Proofs.RadenkovicGutmanFixedDegree02Class30ParameterDepth2HalfBatch193,Proofs.RadenkovicGutmanFixedDegree02Class30ParameterDepth2HalfBatch194,Proofs.RadenkovicGutmanFixedDegree02Class30ParameterDepth2HalfBatch195,Proofs.RadenkovicGutmanFixedDegree02Class30ParameterDepth2HalfBatch196,Proofs.RadenkovicGutmanFixedDegree02Class30ParameterDepth2HalfBatch197,Proofs.RadenkovicGutmanFixedDegree02Class30ParameterDepth2HalfBatch198,Proofs.RadenkovicGutmanFixedDegree02Class30ParameterDepth2HalfBatch199,Proofs.RadenkovicGutmanFixedDegree02Class30ParameterDepth2HalfBatch200,Proofs.RadenkovicGutmanFixedDegree02Class30ParameterDepth2HalfBatch201,Proofs.RadenkovicGutmanFixedDegree02Class30ParameterDepth2HalfBatch202,Proofs.RadenkovicGutmanFixedDegree02Class30ParameterDepth2HalfBatch203,Proofs.RadenkovicGutmanFixedDegree02Class30ParameterDepth2HalfBatch204,Proofs.RadenkovicGutmanFixedDegree02Class30ParameterDepth2HalfBatch205,Proofs.RadenkovicGutmanFixedDegree02Class30ParameterDepth2HalfBatch206,Proofs.RadenkovicGutmanFixedDegree02Class30ParameterDepth2HalfBatch207,Proofs.RadenkovicGutmanFixedDegree02Class30ParameterDepth2HalfBatch208,Proofs.RadenkovicGutmanFixedDegree02Class30ParameterDepth2HalfBatch209,Proofs.RadenkovicGutmanFixedDegree02Class30ParameterDepth2HalfBatch210,Proofs.RadenkovicGutmanFixedDegree02Class30ParameterDepth2HalfBatch211,Proofs.RadenkovicGutmanFixedDegree02Class30ParameterDepth2HalfBatch212,Proofs.RadenkovicGutmanFixedDegree02Class30ParameterDepth2HalfBatch213,Proofs.RadenkovicGutmanFixedDegree02Class30ParameterDepth2HalfBatch214,Proofs.RadenkovicGutmanFixedDegree02Class30ParameterDepth2HalfBatch215,Proofs.RadenkovicGutmanFixedDegree02Class30ParameterDepth2HalfBatch216,Proofs.RadenkovicGutmanFixedDegree02Class30ParameterDepth2HalfBatch217,Proofs.RadenkovicGutmanFixedDegree02Class30ParameterDepth2HalfBatch218,Proofs.RadenkovicGutmanFixedDegree02Class30ParameterDepth2HalfBatch219,Proofs.RadenkovicGutmanFixedDegree02Class30ParameterDepth2HalfBatch220,Proofs.RadenkovicGutmanFixedDegree02Class30ParameterDepth2HalfBatch221,Proofs.RadenkovicGutmanFixedDegree02Class30ParameterDepth2HalfBatch222,Proofs.RadenkovicGutmanFixedDegree02Class30ParameterDepth2HalfBatch223,Proofs.RadenkovicGutmanFixedDegree02Class30ParameterDepth2HalfBatch224,Proofs.RadenkovicGutmanFixedDegree02Class30ParameterDepth2HalfBatch225,Proofs.RadenkovicGutmanFixedDegree02Class30ParameterDepth2HalfBatch226,Proofs.RadenkovicGutmanFixedDegree02Class30ParameterDepth2HalfBatch227,Proofs.RadenkovicGutmanFixedDegree02Class30ParameterDepth2HalfBatch228,Proofs.RadenkovicGutmanFixedDegree02Class30ParameterDepth2HalfBatch229,Proofs.RadenkovicGutmanFixedDegree02Class30ParameterDepth2HalfBatch230,Proofs.RadenkovicGutmanFixedDegree02Class30ParameterDepth2HalfBatch231,Proofs.RadenkovicGutmanFixedDegree02Class30ParameterDepth2HalfBatch232,Proofs.RadenkovicGutmanFixedDegree02Class30ParameterDepth2HalfBatch233,Proofs.RadenkovicGutmanFixedDegree02Class30ParameterDepth2HalfBatch234,Proofs.RadenkovicGutmanFixedDegree02Class30ParameterDepth2HalfBatch235,Proofs.RadenkovicGutmanFixedDegree02Class30ParameterDepth2HalfBatch236,Proofs.RadenkovicGutmanFixedDegree02Class30ParameterDepth2HalfBatch237,Proofs.RadenkovicGutmanFixedDegree02Class30ParameterDepth2HalfBatch238,Proofs.RadenkovicGutmanFixedDegree02Class30ParameterDepth2HalfBatch239,Proofs.RadenkovicGutmanFixedDegree02Class30ParameterDepth2HalfBatch240,Proofs.RadenkovicGutmanFixedDegree02Class30ParameterDepth2HalfBatch241,Proofs.RadenkovicGutmanFixedDegree02Class30ParameterDepth2HalfBatch242,Proofs.RadenkovicGutmanFixedDegree02Class30ParameterDepth2HalfBatch243,Proofs.RadenkovicGutmanFixedDegree02Class30ParameterDepth2HalfBatch244,Proofs.RadenkovicGutmanFixedDegree02Class30ParameterDepth2HalfBatch245,Proofs.RadenkovicGutmanFixedDegree02Class30ParameterDepth2HalfBatch246,Proofs.RadenkovicGutmanFixedDegree02Class30ParameterDepth2HalfBatch247,Proofs.RadenkovicGutmanFixedDegree02Class30ParameterDepth2HalfBatch248,Proofs.RadenkovicGutmanFixedDegree02Class30ParameterDepth2HalfBatch249,Proofs.RadenkovicGutmanFixedDegree02Class30ParameterDepth2HalfBatch250,Proofs.RadenkovicGutmanFixedDegree02Class30ParameterDepth2HalfBatch251,Proofs.RadenkovicGutmanFixedDegree02Class30ParameterDepth2HalfBatch252,Proofs.RadenkovicGutmanFixedDegree02Class30ParameterDepth2HalfBatch253,Proofs.RadenkovicGutmanFixedDegree02Class30ParameterDepth2HalfBatch254,Proofs.RadenkovicGutmanFixedDegree02Class30ParameterDepth2HalfBatch255,Proofs.RadenkovicGutmanFixedDegree02Class30ParameterDepth2HalfBatch256]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 150
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          persist-credentials: false
+      - name: Install the project toolchain
+        run: |
+          set -o pipefail
+          curl -sSfL https://github.com/leanprover/elan/releases/download/v1.4.2/elan-x86_64-unknown-linux-gnu.tar.gz | tar xz
+          ./elan-init -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Materialize the exact dependency lock
+        run: python3 -B ci/rg_dependencies.py
+      - name: Reproduce the selected exact source-hashed polynomial leaves
+        run: python3 -B ci/rg_materialize_parameter_cover.py --packet ci/rg_d2_class30_parameter_depth2_source_recipes.json --endpoint ${{ matrix.endpoint }}
+      - name: Fetch the required Mathlib cache
+        run: |
+          python3 - <<'PY'
+          import pathlib, re, subprocess
+          root = pathlib.Path('Proofs/RG_Lean_20261019')
+          seen, external = set(), set()
+          def visit(name):
+              if name in seen:
+                  return
+              seen.add(name)
+              source = (root / (name.replace('.', '/') + '.lean')).read_text()
+              for dep in re.findall(r'^\s*import\s+([\w.]+)', source, re.M):
+                  if dep.startswith('Proofs.'):
+                      visit(dep)
+                  elif not dep.startswith(('Lean.', 'Init.', 'Std.')) and dep not in ('Lean','Init','Std'):
+                      external.add(dep)
+          visit('${{ matrix.endpoint }}')
+          subprocess.run(['lake', 'exe', 'cache', 'get', *sorted(external)], check=True)
+          PY
+      - name: Restore one independently audited complete source-bound base scope
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 -B ci/rg_restore_complete_scope.py --manifest ci/rg_reusable_analytic_kernel_base_complete_scope_capsule.json --build-directory Proofs/RG_Lean_20261019/build/extension
+      - name: Restore independently audited exact control proofs
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 -B ci/rg_restore_plan_parallel.py --plan ci/rg_d2_class30_parameter_cover_control_restore_plan.json --build-directory Proofs/RG_Lean_20261019/build/extension --workers 2
+      - name: Bound the remaining fresh module frontier
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 -B ci/rg_restore_with_kernel_fallback.py --plan ci/rg_d2_class30_parameter_cover_control_restore_plan.json --build-directory Proofs/RG_Lean_20261019/build/extension --endpoint ${{ matrix.endpoint }} --max-fresh 26 --preflight-only
+      - name: Check multiplicities and actual graph spectral comparison
+        shell: bash
+        run: |
+          set -o pipefail
+          python3 -B Proofs/RG_Lean_20261019/verify_extension.py --mathlib-project "$GITHUB_WORKSPACE" --endpoint ${{ matrix.endpoint }} --workers 1 --module-timeout 600 --resume | python3 -B ci/rg_compact_ci_output.py
+      - name: Retain completed records and diagnostics
+        if: always()
+        run: |
+          python3 - <<'PY'
+          import json,pathlib,shutil
+          root=pathlib.Path('Proofs/RG_Lean_20261019/build/extension')
+          records=[json.loads(p.read_text()) for p in sorted(root.glob('Proofs.*.json'))]
+          fresh=root.parent/'fresh_exports';fresh.mkdir(parents=True,exist_ok=True)
+          (fresh/'diagnostics_records.json').write_text(json.dumps({'modules':records},separators=(',',':'))+'\n')
+          if (root/'receipt.json').is_file():shutil.copyfile(root/'receipt.json',fresh/'receipt.json')
+          print('RETAINED_RECORD_COUNTS '+json.dumps({'total':len(records),'fresh':sum(r['mode']=='FRESH_KERNEL_EXPORT' for r in records)}))
+          for row in records:
+              if row['mode']=='FRESH_KERNEL_EXPORT':
+                  name=row['module'];rel=name.replace('.','/')+'.olean';dest=fresh/rel
+                  dest.parent.mkdir(parents=True,exist_ok=True)
+                  shutil.copyfile(root/rel,dest);shutil.copyfile(root/(name+'.json'),fresh/(name+'.json'))
+          for log in root.glob('Proofs.*.log'):
+              shutil.copyfile(log,fresh/log.name);print('MODULE_LOG_TAIL '+log.name+' '+log.read_text()[-18000:])
+          PY
+      - name: Retain new exports only
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: rg-d2-class30-parameter-recipe-bulk-1-exports-${{ github.run_id }}-${{ strategy.job-index }}
+          path: Proofs/RG_Lean_20261019/build/fresh_exports
+          retention-days: 7

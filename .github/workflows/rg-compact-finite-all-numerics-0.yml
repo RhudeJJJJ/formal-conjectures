@@ -1,0 +1,96 @@
+name: RG fresh exact original finite numerical proofs part 0
+
+on:
+  push:
+    branches: [rg-remaining-six-spectral-20261021]
+    paths: ['.github/workflows/rg-compact-finite-all-numerics-0.yml']
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  check:
+    strategy:
+      fail-fast: false
+      max-parallel: 8
+      matrix:
+        endpoint: [Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch000,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch001,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch002,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch003,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch004,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch005,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch006,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch007,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch008,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch009,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch010,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch011,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch012,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch013,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch014,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch015,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch016,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch017,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch018,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch019,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch020,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch021,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch022,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch023,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch024,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch025,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch026,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch027,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch028,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch029,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch030,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch031,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch032,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch033,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch034,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch035,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch036,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch037,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch038,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch039,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch040,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch041,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch042,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch043,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch044,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch045,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch046,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch047,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch048,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch049,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch050,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch051,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch052,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch053,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch054,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch055,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch056,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch057,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch058,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch059,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch060,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch061,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch062,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch063,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch064,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch065,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch066,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch067,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch068,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch069,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch070,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch071,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch072,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch073,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch074,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch075,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch076,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch077,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch078,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch079,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch080,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch081,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch082,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch083,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch084,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch085,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch086,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch087,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch088,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch089,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch090,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch091,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch092,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch093,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch094,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch095,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch096,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch097,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch098,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch099,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch100,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch101,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch102,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch103,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch104,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch105,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch106,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch107,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch108,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch109,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch110,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch111,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch112,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch113,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch114,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch115,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch116,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch117,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch118,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch119,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch120,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch121,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch122,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch123,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch124,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch125,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch126,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch127,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch128,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch129,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch130,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch131,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch132,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch133,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch134,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch135,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch136,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch137,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch138,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch139,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch140,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch141,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch142,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch143,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch144,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch145,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch146,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch147,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch148,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch149,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch150,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch151,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch152,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch153,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch154,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch155,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch156,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch157,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch158,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch159,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch160,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch161,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch162,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch163,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch164,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch165,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch166,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch167,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch168,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch169,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch170,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch171,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch172,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch173,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch174,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch175,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch176,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch177,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch178,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch179,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch180,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch181,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch182,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch183,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch184,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch185,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch186,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch187,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch188,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch189,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch190,Proofs.RadenkovicGutmanCompactFiniteAllNumericBatch191]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 240
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          persist-credentials: false
+      - name: Install the project toolchain
+        run: |
+          set -o pipefail
+          curl -sSfL https://github.com/leanprover/elan/releases/download/v1.4.2/elan-x86_64-unknown-linux-gnu.tar.gz | tar xz
+          ./elan-init -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Materialize the exact dependency lock
+        run: python3 -B ci/rg_dependencies.py
+      - name: Reproduce the exact source-hashed original statements and proofs
+        run: python3 -B ci/rg_materialize_compact_finite.py --endpoint ${{ matrix.endpoint }} --max-raw-mib 64
+      - name: Fetch the required Mathlib cache
+        run: |
+          python3 - <<'PY'
+          import pathlib, re, subprocess
+          root = pathlib.Path('Proofs/RG_Lean_20261019')
+          seen, external = set(), set()
+          def visit(name):
+              if name in seen:
+                  return
+              seen.add(name)
+              source = (root / (name.replace('.', '/') + '.lean')).read_text()
+              for dep in re.findall(r'^\s*import\s+([\w.]+)', source, re.M):
+                  if dep.startswith('Proofs.'):
+                      visit(dep)
+                  elif not dep.startswith(('Lean.', 'Init.', 'Std.')) and dep not in ('Lean','Init','Std'):
+                      external.add(dep)
+          visit('${{ matrix.endpoint }}')
+          subprocess.run(['lake', 'exe', 'cache', 'get', *sorted(external)], check=True)
+          PY
+      - name: Restore one independently audited complete source-bound base scope
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 -B ci/rg_restore_complete_scope.py --manifest ci/rg_reusable_analytic_kernel_base_complete_scope_capsule.json --build-directory Proofs/RG_Lean_20261019/build/extension
+      - name: Restore independently audited exact control proofs
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 -B ci/rg_restore_plan_parallel.py --plan ci/rg_compact_finite_numeric_helper_restore_plan.json --build-directory Proofs/RG_Lean_20261019/build/extension --workers 2
+      - name: Bound the remaining fresh module frontier
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 -B ci/rg_restore_with_kernel_fallback.py --plan ci/rg_compact_finite_numeric_helper_restore_plan.json --build-directory Proofs/RG_Lean_20261019/build/extension --endpoint ${{ matrix.endpoint }} --max-fresh 21 --preflight-only
+      - name: Check multiplicities and actual graph spectral comparison
+        shell: bash
+        run: |
+          set -o pipefail
+          python3 -B Proofs/RG_Lean_20261019/verify_extension.py --mathlib-project "$GITHUB_WORKSPACE" --endpoint ${{ matrix.endpoint }} --workers 1 --module-timeout 600 --resume | python3 -B ci/rg_compact_ci_output.py
+      - name: Retain completed records and diagnostics
+        if: always()
+        run: |
+          python3 - <<'PY'
+          import json,pathlib,shutil
+          root=pathlib.Path('Proofs/RG_Lean_20261019/build/extension')
+          records=[json.loads(p.read_text()) for p in sorted(root.glob('Proofs.*.json'))]
+          fresh=root.parent/'fresh_exports';fresh.mkdir(parents=True,exist_ok=True)
+          (fresh/'diagnostics_records.json').write_text(json.dumps({'modules':records},separators=(',',':'))+'\n')
+          if (root/'receipt.json').is_file():shutil.copyfile(root/'receipt.json',fresh/'receipt.json')
+          print('RETAINED_RECORD_COUNTS '+json.dumps({'total':len(records),'fresh':sum(r['mode']=='FRESH_KERNEL_EXPORT' for r in records)}))
+          for row in records:
+              if row['mode']=='FRESH_KERNEL_EXPORT':
+                  name=row['module'];rel=name.replace('.','/')+'.olean';dest=fresh/rel
+                  dest.parent.mkdir(parents=True,exist_ok=True)
+                  shutil.copyfile(root/rel,dest);shutil.copyfile(root/(name+'.json'),fresh/(name+'.json'))
+          for log in root.glob('Proofs.*.log'):
+              shutil.copyfile(log,fresh/log.name);print('MODULE_LOG_TAIL '+log.name+' '+log.read_text()[-18000:])
+          PY
+      - name: Retain new exports only
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: rg-compact-finite-all-numerics-0-exports-${{ github.run_id }}-${{ strategy.job-index }}
+          path: Proofs/RG_Lean_20261019/build/fresh_exports
+          retention-days: 90

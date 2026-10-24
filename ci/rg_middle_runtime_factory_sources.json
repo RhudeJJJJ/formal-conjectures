@@ -1,0 +1,51 @@
+{
+  "kind": "EXACT_ORIGINAL_ANCHOR_TARGET_AND_PROOF_FACTORY",
+  "ratio": "1.2",
+  "prefix": "WideAnchor",
+  "sources": [
+    {
+      "file": "ci/rg_anchor_candidate_reference/prepare_rg_symbolic_anchor_sources.py",
+      "sha256": "0fd44c2f43dfcfd8c09be5817f4e844e6493187e74e516b6a10f9a32f685e479",
+      "original_sha256": "e8a0c3c7406c2bf712bc4260a010031fcf8fd6c092fe082b1c072cd50153fceb",
+      "changes": "workspace and output paths only; original statements and proof bodies unchanged"
+    },
+    {
+      "file": "ci/rg_anchor_candidate_reference/prepare_rg_symbolic_original_anchor_assembly.py",
+      "sha256": "26cf1ab99ca6944938bdfa168e0651ca534925834ecf05161509fa63b477c3ff",
+      "original_sha256": "939b5f81a8eca0ec4e5e3c453b09f71667e3ee2858d2a209bb48c0e3c8d09db7",
+      "changes": "workspace and output paths only; original statements and proof bodies unchanged"
+    },
+    {
+      "file": "ci/rg_run_original_anchor_kernel.py",
+      "sha256": "4e3e1e7a4f6d4ae2ccd57c1f887673268c43360a8485fb6def47a24b3424554d"
+    },
+    {
+      "file": "ci/rg_anchor_candidate_reference/prepare_rg_compact_anchor_candidates.py",
+      "sha256": "6180f33a0b5ea84c80215f36e69f863bc7dc90709cbf61fef8ab9e84164d1405"
+    },
+    {
+      "file": "ci/rg_anchor_candidate_reference/rg_integer_affine_arithmetic.py",
+      "sha256": "e3c3403dd4bf7e739583113b97bc8190b50bac95368002bad470e7f983ee1b3d"
+    },
+    {
+      "file": "ci/rg_anchor_candidate_reference/rg_mean_polynomial_arithmetic.py",
+      "sha256": "b1f8f54fe64d1ae6c7261b6e2ce24f5aa3705391e4e62920e1629d8fdab39ead"
+    },
+    {
+      "file": "Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanCompactAnchor000Origin.lean",
+      "sha256": "297fc3297a4a895108b22151224f508e58a258c72439d74a8f5e2769ecbbb52c"
+    },
+    {
+      "file": "Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanCompactAnchor000PositiveTail.lean",
+      "sha256": "3a87e6956464d01a9497b21cb6b290dcc2df971024b0087887ff10276de69a33"
+    },
+    {
+      "file": "Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanCompactAnchor000OriginalAnchor.lean",
+      "sha256": "01375ad36800031707e8c4eb7176233ecc059ed74aabf422c2b06e799f931a01"
+    },
+    {
+      "file": "Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneMiddleAnchorData.lean",
+      "sha256": "da3d2a2ca9b988da2ff5ba3178b880abb63bbf69561a18d6c029e1929c7fc27c"
+    }
+  ]
+}

@@ -23,6 +23,7 @@ def main():
  ap.add_argument('--workers',type=int,default=2)
  ap.add_argument('--module-timeout',type=int,default=7200)
  ap.add_argument('--resume',action='store_true')
+ ap.add_argument('--profile',action='store_true',help='Report compiler timings without changing source or proof checks')
  ap.add_argument('--reuse-binaries',action='store_true')
  ap.add_argument('--print-receipt',action='store_true',help='Emit the completed receipt for CI collection')
  a=ap.parse_args();assert 1<=a.workers<=8
@@ -90,6 +91,7 @@ def main():
     return n,r
   log=build/(n+'.log');tmp=out.with_suffix('.olean.pending');remove_pending_outputs(tmp);start=time.monotonic()
   cmd=[lean,'-j1','-DElab.async=false','-DwarningAsError=true']
+  if a.profile:cmd+=['-Dprofiler=true','-Dprofiler.threshold=100']
   cmd+=['-R',str(ROOT/'ThirdParty/LeanCert')] if n.startswith('LeanCert.') else ['-DautoImplicit=false','-DrelaxedAutoImplicit=false']
   cmd+=['-o',str(tmp),str(p)]
   with log.open('w') as f:

@@ -4,12 +4,12 @@ namespace Gebendorfer.RadenkovicGutman.FixedDegree03Long00StagedU
 set_option maxHeartbeats 0
 set_option maxRecDepth 100000
 set_option backward.isDefEq.respectTransparency false
-noncomputable def e179 : NestedArithmetic.Expr 3 := .scaled -1 e178
+noncomputable def e179 : NestedArithmetic.Expr 3 := .scaled (-1) e178
 noncomputable def p179 : NestedHorner.Poly 3 := [[[-1]],[[0]],[[-14]],[[0]],[[-81]],[[0]],[[-250]],[[0]],[[-444]],[[0]],[[-458]],[[0]],[[-265]],[[0]],[[-78]],[[0]],[[-9]]]
-theorem step179 : p179=NestedHorner.scale -1 p178 := by decide +kernel
+theorem step179 : p179=NestedHorner.scale (-1) p178 := by decide +kernel
 #print axioms step179
 theorem h179 : NestedArithmetic.compile e179=p179 := by
-  change NestedHorner.scale -1 (NestedArithmetic.compile e178)=p179
+  change NestedHorner.scale (-1) (NestedArithmetic.compile e178)=p179
   rw [h178]
   exact step179.symm
 #print axioms h179

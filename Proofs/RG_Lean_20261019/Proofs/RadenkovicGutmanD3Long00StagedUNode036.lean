@@ -4,7 +4,7 @@ namespace Gebendorfer.RadenkovicGutman.FixedDegree03Long00StagedU
 set_option maxHeartbeats 0
 set_option maxRecDepth 100000
 set_option backward.isDefEq.respectTransparency false
-noncomputable def e036 : NestedArithmetic.Expr 3 := .rational -1
+noncomputable def e036 : NestedArithmetic.Expr 3 := .rational (-1)
 noncomputable def p036 : NestedHorner.Poly 3 := [[[-1]]]
 theorem h036 : NestedArithmetic.compile e036=p036 := by decide +kernel
 #print axioms h036

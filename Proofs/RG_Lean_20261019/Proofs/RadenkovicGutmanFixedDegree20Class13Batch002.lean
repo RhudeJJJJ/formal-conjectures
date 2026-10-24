@@ -1,0 +1,15 @@
+/- Copyright 2026 Jonas J. Gebendorfer. Apache 2.0. -/
+import Proofs.RadenkovicGutmanFixedDegree20Class13Cell020
+import Proofs.RadenkovicGutmanFixedDegree20Class13Cell021
+import Proofs.RadenkovicGutmanFixedDegree20Class13Cell022
+import Proofs.RadenkovicGutmanFixedDegree20Class13Cell023
+import Proofs.RadenkovicGutmanFixedDegree20Class13Cell024
+import Proofs.RadenkovicGutmanFixedDegree20Class13Cell025
+import Proofs.RadenkovicGutmanFixedDegree20Class13Cell026
+#print axioms Gebendorfer.RadenkovicGutman.FixedDegree20Class13Cell020.slice_checked
+#print axioms Gebendorfer.RadenkovicGutman.FixedDegree20Class13Cell021.slice_checked
+#print axioms Gebendorfer.RadenkovicGutman.FixedDegree20Class13Cell022.slice_checked
+#print axioms Gebendorfer.RadenkovicGutman.FixedDegree20Class13Cell023.slice_checked
+#print axioms Gebendorfer.RadenkovicGutman.FixedDegree20Class13Cell024.slice_checked
+#print axioms Gebendorfer.RadenkovicGutman.FixedDegree20Class13Cell025.slice_checked
+#print axioms Gebendorfer.RadenkovicGutman.FixedDegree20Class13Cell026.slice_checked

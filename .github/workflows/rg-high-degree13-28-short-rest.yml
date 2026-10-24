@@ -1,0 +1,86 @@
+name: RG high degree13 28 short rest
+
+on:
+  push:
+    branches: [rg-remaining-six-spectral-20261021]
+    paths: ['.github/workflows/rg-high-degree13-28-short-rest.yml']
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  check:
+    strategy:
+      fail-fast: false
+      max-parallel: 8
+      matrix:
+        endpoint: [Proofs.RadenkovicGutmanFixedDegree13Class12,Proofs.RadenkovicGutmanFixedDegree13Class13,Proofs.RadenkovicGutmanFixedDegree13Class14,Proofs.RadenkovicGutmanFixedDegree13Class22,Proofs.RadenkovicGutmanFixedDegree13Class23,Proofs.RadenkovicGutmanFixedDegree13Class24,Proofs.RadenkovicGutmanFixedDegree13Class33,Proofs.RadenkovicGutmanFixedDegree13Class34,Proofs.RadenkovicGutmanFixedDegree13Class44,Proofs.RadenkovicGutmanFixedDegree14Class12,Proofs.RadenkovicGutmanFixedDegree14Class13,Proofs.RadenkovicGutmanFixedDegree14Class14,Proofs.RadenkovicGutmanFixedDegree14Class22,Proofs.RadenkovicGutmanFixedDegree14Class23,Proofs.RadenkovicGutmanFixedDegree14Class24,Proofs.RadenkovicGutmanFixedDegree14Class33,Proofs.RadenkovicGutmanFixedDegree14Class34,Proofs.RadenkovicGutmanFixedDegree14Class44,Proofs.RadenkovicGutmanFixedDegree15Class12,Proofs.RadenkovicGutmanFixedDegree15Class13,Proofs.RadenkovicGutmanFixedDegree15Class14,Proofs.RadenkovicGutmanFixedDegree15Class22,Proofs.RadenkovicGutmanFixedDegree15Class23,Proofs.RadenkovicGutmanFixedDegree15Class24,Proofs.RadenkovicGutmanFixedDegree15Class33,Proofs.RadenkovicGutmanFixedDegree15Class34,Proofs.RadenkovicGutmanFixedDegree15Class44,Proofs.RadenkovicGutmanFixedDegree16Class12,Proofs.RadenkovicGutmanFixedDegree16Class13,Proofs.RadenkovicGutmanFixedDegree16Class14,Proofs.RadenkovicGutmanFixedDegree16Class22,Proofs.RadenkovicGutmanFixedDegree16Class23,Proofs.RadenkovicGutmanFixedDegree16Class24,Proofs.RadenkovicGutmanFixedDegree16Class33,Proofs.RadenkovicGutmanFixedDegree16Class34,Proofs.RadenkovicGutmanFixedDegree16Class44,Proofs.RadenkovicGutmanFixedDegree17Class12,Proofs.RadenkovicGutmanFixedDegree17Class13,Proofs.RadenkovicGutmanFixedDegree17Class14,Proofs.RadenkovicGutmanFixedDegree17Class22,Proofs.RadenkovicGutmanFixedDegree17Class23,Proofs.RadenkovicGutmanFixedDegree17Class24,Proofs.RadenkovicGutmanFixedDegree17Class33,Proofs.RadenkovicGutmanFixedDegree17Class34,Proofs.RadenkovicGutmanFixedDegree17Class44,Proofs.RadenkovicGutmanFixedDegree18Class12,Proofs.RadenkovicGutmanFixedDegree18Class13,Proofs.RadenkovicGutmanFixedDegree18Class14,Proofs.RadenkovicGutmanFixedDegree18Class22,Proofs.RadenkovicGutmanFixedDegree18Class23,Proofs.RadenkovicGutmanFixedDegree18Class24,Proofs.RadenkovicGutmanFixedDegree18Class33,Proofs.RadenkovicGutmanFixedDegree18Class34,Proofs.RadenkovicGutmanFixedDegree18Class44,Proofs.RadenkovicGutmanFixedDegree19Class12,Proofs.RadenkovicGutmanFixedDegree19Class13,Proofs.RadenkovicGutmanFixedDegree19Class14,Proofs.RadenkovicGutmanFixedDegree19Class22,Proofs.RadenkovicGutmanFixedDegree19Class23,Proofs.RadenkovicGutmanFixedDegree19Class24,Proofs.RadenkovicGutmanFixedDegree19Class33,Proofs.RadenkovicGutmanFixedDegree19Class34,Proofs.RadenkovicGutmanFixedDegree19Class44,Proofs.RadenkovicGutmanFixedDegree20Class12,Proofs.RadenkovicGutmanFixedDegree20Class13,Proofs.RadenkovicGutmanFixedDegree20Class14,Proofs.RadenkovicGutmanFixedDegree20Class22,Proofs.RadenkovicGutmanFixedDegree20Class23,Proofs.RadenkovicGutmanFixedDegree20Class24,Proofs.RadenkovicGutmanFixedDegree20Class33,Proofs.RadenkovicGutmanFixedDegree20Class34,Proofs.RadenkovicGutmanFixedDegree20Class44,Proofs.RadenkovicGutmanFixedDegree21Class12,Proofs.RadenkovicGutmanFixedDegree21Class13,Proofs.RadenkovicGutmanFixedDegree21Class14,Proofs.RadenkovicGutmanFixedDegree21Class22,Proofs.RadenkovicGutmanFixedDegree21Class23,Proofs.RadenkovicGutmanFixedDegree21Class24,Proofs.RadenkovicGutmanFixedDegree21Class33,Proofs.RadenkovicGutmanFixedDegree21Class34,Proofs.RadenkovicGutmanFixedDegree21Class44,Proofs.RadenkovicGutmanFixedDegree22Class12,Proofs.RadenkovicGutmanFixedDegree22Class13,Proofs.RadenkovicGutmanFixedDegree22Class14,Proofs.RadenkovicGutmanFixedDegree22Class22,Proofs.RadenkovicGutmanFixedDegree22Class23,Proofs.RadenkovicGutmanFixedDegree22Class24,Proofs.RadenkovicGutmanFixedDegree22Class33,Proofs.RadenkovicGutmanFixedDegree22Class34,Proofs.RadenkovicGutmanFixedDegree22Class44,Proofs.RadenkovicGutmanFixedDegree23Class12,Proofs.RadenkovicGutmanFixedDegree23Class13,Proofs.RadenkovicGutmanFixedDegree23Class14,Proofs.RadenkovicGutmanFixedDegree23Class22,Proofs.RadenkovicGutmanFixedDegree23Class23,Proofs.RadenkovicGutmanFixedDegree23Class24,Proofs.RadenkovicGutmanFixedDegree23Class33,Proofs.RadenkovicGutmanFixedDegree23Class34,Proofs.RadenkovicGutmanFixedDegree23Class44,Proofs.RadenkovicGutmanFixedDegree24Class12,Proofs.RadenkovicGutmanFixedDegree24Class13,Proofs.RadenkovicGutmanFixedDegree24Class14,Proofs.RadenkovicGutmanFixedDegree24Class22,Proofs.RadenkovicGutmanFixedDegree24Class23,Proofs.RadenkovicGutmanFixedDegree24Class24,Proofs.RadenkovicGutmanFixedDegree24Class33,Proofs.RadenkovicGutmanFixedDegree24Class34,Proofs.RadenkovicGutmanFixedDegree24Class44,Proofs.RadenkovicGutmanFixedDegree25Class12,Proofs.RadenkovicGutmanFixedDegree25Class13,Proofs.RadenkovicGutmanFixedDegree25Class14,Proofs.RadenkovicGutmanFixedDegree25Class22,Proofs.RadenkovicGutmanFixedDegree25Class23,Proofs.RadenkovicGutmanFixedDegree25Class24,Proofs.RadenkovicGutmanFixedDegree25Class33,Proofs.RadenkovicGutmanFixedDegree25Class34,Proofs.RadenkovicGutmanFixedDegree25Class44,Proofs.RadenkovicGutmanFixedDegree26Class12,Proofs.RadenkovicGutmanFixedDegree26Class13,Proofs.RadenkovicGutmanFixedDegree26Class14,Proofs.RadenkovicGutmanFixedDegree26Class22,Proofs.RadenkovicGutmanFixedDegree26Class23,Proofs.RadenkovicGutmanFixedDegree26Class24,Proofs.RadenkovicGutmanFixedDegree26Class33,Proofs.RadenkovicGutmanFixedDegree26Class34,Proofs.RadenkovicGutmanFixedDegree26Class44,Proofs.RadenkovicGutmanFixedDegree27Class12,Proofs.RadenkovicGutmanFixedDegree27Class13,Proofs.RadenkovicGutmanFixedDegree27Class14,Proofs.RadenkovicGutmanFixedDegree27Class22,Proofs.RadenkovicGutmanFixedDegree27Class23,Proofs.RadenkovicGutmanFixedDegree27Class24,Proofs.RadenkovicGutmanFixedDegree27Class33,Proofs.RadenkovicGutmanFixedDegree27Class34,Proofs.RadenkovicGutmanFixedDegree27Class44,Proofs.RadenkovicGutmanFixedDegree28Class12,Proofs.RadenkovicGutmanFixedDegree28Class13,Proofs.RadenkovicGutmanFixedDegree28Class14,Proofs.RadenkovicGutmanFixedDegree28Class22,Proofs.RadenkovicGutmanFixedDegree28Class23,Proofs.RadenkovicGutmanFixedDegree28Class24,Proofs.RadenkovicGutmanFixedDegree28Class33,Proofs.RadenkovicGutmanFixedDegree28Class34,Proofs.RadenkovicGutmanFixedDegree28Class44]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 150
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          persist-credentials: false
+      - name: Install the project toolchain
+        run: |
+          set -o pipefail
+          curl -sSfL https://github.com/leanprover/elan/releases/download/v1.4.2/elan-x86_64-unknown-linux-gnu.tar.gz | tar xz
+          ./elan-init -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Materialize the exact dependency lock
+        run: python3 -B ci/rg_dependencies.py
+      - name: Fetch the required Mathlib cache
+        run: |
+          python3 - <<'PY'
+          import pathlib, re, subprocess
+          root = pathlib.Path('Proofs/RG_Lean_20261019')
+          seen, external = set(), set()
+          def visit(name):
+              if name in seen:
+                  return
+              seen.add(name)
+              source = (root / (name.replace('.', '/') + '.lean')).read_text()
+              for dep in re.findall(r'^\s*import\s+([\w.]+)', source, re.M):
+                  if dep.startswith('Proofs.'):
+                      visit(dep)
+                  elif not dep.startswith(('Lean.', 'Init.', 'Std.')) and dep not in ('Lean','Init','Std'):
+                      external.add(dep)
+          visit('${{ matrix.endpoint }}')
+          subprocess.run(['lake', 'exe', 'cache', 'get', *sorted(external)], check=True)
+          PY
+      - name: Restore one independently audited complete source-bound base scope
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 -B ci/rg_restore_complete_scope.py --manifest ci/rg_reusable_analytic_kernel_base_complete_scope_capsule.json --build-directory Proofs/RG_Lean_20261019/build/extension
+      - name: Check multiplicities and actual graph spectral comparison
+        shell: bash
+        run: |
+          set -o pipefail
+          python3 -B Proofs/RG_Lean_20261019/verify_extension.py --mathlib-project "$GITHUB_WORKSPACE" --endpoint ${{ matrix.endpoint }} --workers 1 --module-timeout 600 --resume | python3 -B ci/rg_compact_ci_output.py
+      - name: Retain completed records and diagnostics
+        if: always()
+        run: |
+          python3 - <<'PY'
+          import json,pathlib,shutil
+          root=pathlib.Path('Proofs/RG_Lean_20261019/build/extension')
+          records=[json.loads(p.read_text()) for p in sorted(root.glob('Proofs.*.json'))]
+          fresh=root.parent/'fresh_exports';fresh.mkdir(parents=True,exist_ok=True)
+          (fresh/'diagnostics_records.json').write_text(json.dumps({'modules':records},separators=(',',':'))+'\n')
+          if (root/'receipt.json').is_file():shutil.copyfile(root/'receipt.json',fresh/'receipt.json')
+          print('RETAINED_RECORD_COUNTS '+json.dumps({'total':len(records),'fresh':sum(r['mode']=='FRESH_KERNEL_EXPORT' for r in records)}))
+          for row in records:
+              if row['mode']=='FRESH_KERNEL_EXPORT':
+                  name=row['module'];rel=name.replace('.','/')+'.olean';dest=fresh/rel
+                  dest.parent.mkdir(parents=True,exist_ok=True)
+                  shutil.copyfile(root/rel,dest);shutil.copyfile(root/(name+'.json'),fresh/(name+'.json'))
+          for log in root.glob('Proofs.*.log'):
+              shutil.copyfile(log,fresh/log.name);print('MODULE_LOG_TAIL '+log.name+' '+log.read_text()[-18000:])
+          PY
+      - name: Retain new exports only
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: rg-high-degree13-28-short-rest-exports-${{ github.run_id }}-${{ strategy.job-index }}
+          path: Proofs/RG_Lean_20261019/build/fresh_exports
+          retention-days: 7

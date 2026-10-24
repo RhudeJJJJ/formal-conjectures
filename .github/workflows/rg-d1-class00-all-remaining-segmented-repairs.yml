@@ -1,0 +1,96 @@
+name: RG d1 class00 all remaining segmented repairs
+
+on:
+  push:
+    branches: [rg-remaining-six-spectral-20261021]
+    paths: ['.github/workflows/rg-d1-class00-all-remaining-segmented-repairs.yml']
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  check:
+    strategy:
+      fail-fast: false
+      max-parallel: 8
+      matrix:
+        endpoint: [Proofs.RadenkovicGutmanD1Long00Leaf01258Repair,Proofs.RadenkovicGutmanD1Long00Leaf01259Repair,Proofs.RadenkovicGutmanD1Long00Leaf01261Repair,Proofs.RadenkovicGutmanD1Long00Leaf01262Repair,Proofs.RadenkovicGutmanD1Long00Leaf01263Repair,Proofs.RadenkovicGutmanD1Long00Leaf01264Repair,Proofs.RadenkovicGutmanD1Long00Leaf01265Repair,Proofs.RadenkovicGutmanD1Long00Leaf01266Repair,Proofs.RadenkovicGutmanD1Long00Leaf01267Repair,Proofs.RadenkovicGutmanD1Long00Leaf01268Repair,Proofs.RadenkovicGutmanD1Long00Leaf01269Repair,Proofs.RadenkovicGutmanD1Long00Leaf01270Repair,Proofs.RadenkovicGutmanD1Long00Leaf01271Repair,Proofs.RadenkovicGutmanD1Long00Leaf01272Repair,Proofs.RadenkovicGutmanD1Long00Leaf01273Repair,Proofs.RadenkovicGutmanD1Long00Leaf01274Repair,Proofs.RadenkovicGutmanD1Long00Leaf01275Repair,Proofs.RadenkovicGutmanD1Long00Leaf01276Repair,Proofs.RadenkovicGutmanD1Long00Leaf01277Repair,Proofs.RadenkovicGutmanD1Long00Leaf01278Repair,Proofs.RadenkovicGutmanD1Long00Leaf01279Repair,Proofs.RadenkovicGutmanD1Long00Leaf01292Repair,Proofs.RadenkovicGutmanD1Long00Leaf01293Repair,Proofs.RadenkovicGutmanD1Long00Leaf01294Repair,Proofs.RadenkovicGutmanD1Long00Leaf01295Repair,Proofs.RadenkovicGutmanD1Long00Leaf01296Repair,Proofs.RadenkovicGutmanD1Long00Leaf01297Repair,Proofs.RadenkovicGutmanD1Long00Leaf01298Repair,Proofs.RadenkovicGutmanD1Long00Leaf01299Repair,Proofs.RadenkovicGutmanD1Long00Leaf01300Repair,Proofs.RadenkovicGutmanD1Long00Leaf01301Repair,Proofs.RadenkovicGutmanD1Long00Leaf01302Repair,Proofs.RadenkovicGutmanD1Long00Leaf01303Repair,Proofs.RadenkovicGutmanD1Long00Leaf01304Repair,Proofs.RadenkovicGutmanD1Long00Leaf01305Repair,Proofs.RadenkovicGutmanD1Long00Leaf01306Repair,Proofs.RadenkovicGutmanD1Long00Leaf01307Repair,Proofs.RadenkovicGutmanD1Long00Leaf01308Repair,Proofs.RadenkovicGutmanD1Long00Leaf01309Repair,Proofs.RadenkovicGutmanD1Long00Leaf01326Repair,Proofs.RadenkovicGutmanD1Long00Leaf01327Repair,Proofs.RadenkovicGutmanD1Long00Leaf01328Repair,Proofs.RadenkovicGutmanD1Long00Leaf01329Repair,Proofs.RadenkovicGutmanD1Long00Leaf01330Repair,Proofs.RadenkovicGutmanD1Long00Leaf01331Repair,Proofs.RadenkovicGutmanD1Long00Leaf01332Repair,Proofs.RadenkovicGutmanD1Long00Leaf01333Repair,Proofs.RadenkovicGutmanD1Long00Leaf01334Repair,Proofs.RadenkovicGutmanD1Long00Leaf01335Repair,Proofs.RadenkovicGutmanD1Long00Leaf01336Repair,Proofs.RadenkovicGutmanD1Long00Leaf01337Repair,Proofs.RadenkovicGutmanD1Long00Leaf01338Repair,Proofs.RadenkovicGutmanD1Long00Leaf01339Repair,Proofs.RadenkovicGutmanD1Long00Leaf01340Repair,Proofs.RadenkovicGutmanD1Long00Leaf01341Repair,Proofs.RadenkovicGutmanD1Long00Leaf01342Repair,Proofs.RadenkovicGutmanD1Long00Leaf01343Repair,Proofs.RadenkovicGutmanD1Long00Leaf01344Repair,Proofs.RadenkovicGutmanD1Long00Leaf01345Repair,Proofs.RadenkovicGutmanD1Long00Leaf01346Repair,Proofs.RadenkovicGutmanD1Long00Leaf01347Repair,Proofs.RadenkovicGutmanD1Long00Leaf01348Repair,Proofs.RadenkovicGutmanD1Long00Leaf01349Repair,Proofs.RadenkovicGutmanD1Long00Leaf01400Repair,Proofs.RadenkovicGutmanD1Long00Leaf01401Repair,Proofs.RadenkovicGutmanD1Long00Leaf01402Repair,Proofs.RadenkovicGutmanD1Long00Leaf01403Repair,Proofs.RadenkovicGutmanD1Long00Leaf01404Repair,Proofs.RadenkovicGutmanD1Long00Leaf01405Repair,Proofs.RadenkovicGutmanD1Long00Leaf01406Repair,Proofs.RadenkovicGutmanD1Long00Leaf01407Repair,Proofs.RadenkovicGutmanD1Long00Leaf01408Repair,Proofs.RadenkovicGutmanD1Long00Leaf01409Repair,Proofs.RadenkovicGutmanD1Long00Leaf01428Repair,Proofs.RadenkovicGutmanD1Long00Leaf01429Repair,Proofs.RadenkovicGutmanD1Long00Leaf01430Repair,Proofs.RadenkovicGutmanD1Long00Leaf01431Repair,Proofs.RadenkovicGutmanD1Long00Leaf01432Repair,Proofs.RadenkovicGutmanD1Long00Leaf01433Repair,Proofs.RadenkovicGutmanD1Long00Leaf01434Repair,Proofs.RadenkovicGutmanD1Long00Leaf01435Repair,Proofs.RadenkovicGutmanD1Long00Leaf01436Repair,Proofs.RadenkovicGutmanD1Long00Leaf01437Repair,Proofs.RadenkovicGutmanD1Long00Leaf01438Repair,Proofs.RadenkovicGutmanD1Long00Leaf01439Repair,Proofs.RadenkovicGutmanD1Long00Leaf01440Repair,Proofs.RadenkovicGutmanD1Long00Leaf01441Repair,Proofs.RadenkovicGutmanD1Long00Leaf01442Repair,Proofs.RadenkovicGutmanD1Long00Leaf01443Repair,Proofs.RadenkovicGutmanD1Long00Leaf01444Repair,Proofs.RadenkovicGutmanD1Long00Leaf01445Repair,Proofs.RadenkovicGutmanD1Long00Leaf01446Repair,Proofs.RadenkovicGutmanD1Long00Leaf01447Repair,Proofs.RadenkovicGutmanD1Long00Leaf01448Repair,Proofs.RadenkovicGutmanD1Long00Leaf01449Repair,Proofs.RadenkovicGutmanD1Long00Leaf01496Repair,Proofs.RadenkovicGutmanD1Long00Leaf01497Repair,Proofs.RadenkovicGutmanD1Long00Leaf01498Repair,Proofs.RadenkovicGutmanD1Long00Leaf01499Repair,Proofs.RadenkovicGutmanD1Long00Leaf01500Repair,Proofs.RadenkovicGutmanD1Long00Leaf01501Repair,Proofs.RadenkovicGutmanD1Long00Leaf01502Repair,Proofs.RadenkovicGutmanD1Long00Leaf01503Repair,Proofs.RadenkovicGutmanD1Long00Leaf01504Repair,Proofs.RadenkovicGutmanD1Long00Leaf01505Repair,Proofs.RadenkovicGutmanD1Long00Leaf01506Repair,Proofs.RadenkovicGutmanD1Long00Leaf01507Repair,Proofs.RadenkovicGutmanD1Long00Leaf01508Repair,Proofs.RadenkovicGutmanD1Long00Leaf01509Repair,Proofs.RadenkovicGutmanD1Long00Leaf01510Repair,Proofs.RadenkovicGutmanD1Long00Leaf01511Repair,Proofs.RadenkovicGutmanD1Long00Leaf01512Repair,Proofs.RadenkovicGutmanD1Long00Leaf01513Repair,Proofs.RadenkovicGutmanD1Long00Leaf01514Repair,Proofs.RadenkovicGutmanD1Long00Leaf01515Repair,Proofs.RadenkovicGutmanD1Long00Leaf01516Repair,Proofs.RadenkovicGutmanD1Long00Leaf01517Repair,Proofs.RadenkovicGutmanD1Long00Leaf01518Repair,Proofs.RadenkovicGutmanD1Long00Leaf01519Repair,Proofs.RadenkovicGutmanD1Long00Leaf01598Repair,Proofs.RadenkovicGutmanD1Long00Leaf01599Repair,Proofs.RadenkovicGutmanD1Long00Leaf01600Repair,Proofs.RadenkovicGutmanD1Long00Leaf01601Repair,Proofs.RadenkovicGutmanD1Long00Leaf01602Repair,Proofs.RadenkovicGutmanD1Long00Leaf01603Repair,Proofs.RadenkovicGutmanD1Long00Leaf01604Repair,Proofs.RadenkovicGutmanD1Long00Leaf01605Repair,Proofs.RadenkovicGutmanD1Long00Leaf01606Repair,Proofs.RadenkovicGutmanD1Long00Leaf01607Repair,Proofs.RadenkovicGutmanD1Long00Leaf01608Repair,Proofs.RadenkovicGutmanD1Long00Leaf01609Repair,Proofs.RadenkovicGutmanD1Long00Leaf01610Repair,Proofs.RadenkovicGutmanD1Long00Leaf01611Repair,Proofs.RadenkovicGutmanD1Long00Leaf01612Repair,Proofs.RadenkovicGutmanD1Long00Leaf01613Repair,Proofs.RadenkovicGutmanD1Long00Leaf01614Repair,Proofs.RadenkovicGutmanD1Long00Leaf01615Repair,Proofs.RadenkovicGutmanD1Long00Leaf01616Repair,Proofs.RadenkovicGutmanD1Long00Leaf01617Repair,Proofs.RadenkovicGutmanD1Long00Leaf01618Repair,Proofs.RadenkovicGutmanD1Long00Leaf01619Repair,Proofs.RadenkovicGutmanD1Long00Leaf01670Repair,Proofs.RadenkovicGutmanD1Long00Leaf01671Repair,Proofs.RadenkovicGutmanD1Long00Leaf01672Repair,Proofs.RadenkovicGutmanD1Long00Leaf01673Repair,Proofs.RadenkovicGutmanD1Long00Leaf01674Repair,Proofs.RadenkovicGutmanD1Long00Leaf01675Repair,Proofs.RadenkovicGutmanD1Long00Leaf01676Repair,Proofs.RadenkovicGutmanD1Long00Leaf01677Repair,Proofs.RadenkovicGutmanD1Long00Leaf01678Repair,Proofs.RadenkovicGutmanD1Long00Leaf01679Repair]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 150
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          persist-credentials: false
+      - name: Install the project toolchain
+        run: |
+          set -o pipefail
+          curl -sSfL https://github.com/leanprover/elan/releases/download/v1.4.2/elan-x86_64-unknown-linux-gnu.tar.gz | tar xz
+          ./elan-init -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Materialize the exact dependency lock
+        run: python3 -B ci/rg_dependencies.py
+      - name: Reproduce the pinned original cell and successful segmented proof template
+        run: python3 -B ci/rg_segmented_d1_repair.py --endpoint ${{ matrix.endpoint }}
+      - name: Fetch the required Mathlib cache
+        run: |
+          python3 - <<'PY'
+          import pathlib, re, subprocess
+          root = pathlib.Path('Proofs/RG_Lean_20261019')
+          seen, external = set(), set()
+          def visit(name):
+              if name in seen:
+                  return
+              seen.add(name)
+              source = (root / (name.replace('.', '/') + '.lean')).read_text()
+              for dep in re.findall(r'^\s*import\s+([\w.]+)', source, re.M):
+                  if dep.startswith('Proofs.'):
+                      visit(dep)
+                  elif not dep.startswith(('Lean.', 'Init.', 'Std.')) and dep not in ('Lean','Init','Std'):
+                      external.add(dep)
+          visit('${{ matrix.endpoint }}')
+          subprocess.run(['lake', 'exe', 'cache', 'get', *sorted(external)], check=True)
+          PY
+      - name: Restore one independently audited complete source-bound base scope
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 -B ci/rg_restore_complete_scope.py --manifest ci/rg_reusable_analytic_kernel_base_complete_scope_capsule.json --build-directory Proofs/RG_Lean_20261019/build/extension
+      - name: Restore independently audited exact control proofs
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 -B ci/rg_restore_plan_parallel.py --plan ci/rg_d1_segmented_repair_macro_restore_plan.json --build-directory Proofs/RG_Lean_20261019/build/extension --workers 2
+      - name: Bound the remaining fresh module frontier
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 -B ci/rg_restore_with_kernel_fallback.py --plan ci/rg_d1_segmented_repair_macro_restore_plan.json --build-directory Proofs/RG_Lean_20261019/build/extension --endpoint ${{ matrix.endpoint }} --max-fresh 153 --preflight-only
+      - name: Check multiplicities and actual graph spectral comparison
+        shell: bash
+        run: |
+          set -o pipefail
+          python3 -B Proofs/RG_Lean_20261019/verify_extension.py --mathlib-project "$GITHUB_WORKSPACE" --endpoint ${{ matrix.endpoint }} --workers 1 --module-timeout 600 --resume | python3 -B ci/rg_compact_ci_output.py
+      - name: Retain completed records and diagnostics
+        if: always()
+        run: |
+          python3 - <<'PY'
+          import json,pathlib,shutil
+          root=pathlib.Path('Proofs/RG_Lean_20261019/build/extension')
+          records=[json.loads(p.read_text()) for p in sorted(root.glob('Proofs.*.json'))]
+          fresh=root.parent/'fresh_exports';fresh.mkdir(parents=True,exist_ok=True)
+          (fresh/'diagnostics_records.json').write_text(json.dumps({'modules':records},separators=(',',':'))+'\n')
+          if (root/'receipt.json').is_file():shutil.copyfile(root/'receipt.json',fresh/'receipt.json')
+          print('RETAINED_RECORD_COUNTS '+json.dumps({'total':len(records),'fresh':sum(r['mode']=='FRESH_KERNEL_EXPORT' for r in records)}))
+          for row in records:
+              if row['mode']=='FRESH_KERNEL_EXPORT':
+                  name=row['module'];rel=name.replace('.','/')+'.olean';dest=fresh/rel
+                  dest.parent.mkdir(parents=True,exist_ok=True)
+                  shutil.copyfile(root/rel,dest);shutil.copyfile(root/(name+'.json'),fresh/(name+'.json'))
+          for log in root.glob('Proofs.*.log'):
+              shutil.copyfile(log,fresh/log.name);print('MODULE_LOG_TAIL '+log.name+' '+log.read_text()[-18000:])
+          PY
+      - name: Retain new exports only
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: rg-d1-class00-all-remaining-segmented-repairs-exports-${{ github.run_id }}-${{ strategy.job-index }}
+          path: Proofs/RG_Lean_20261019/build/fresh_exports
+          retention-days: 90

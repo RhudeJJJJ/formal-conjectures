@@ -1,0 +1,16 @@
+/- Copyright 2026 Jonas J. Gebendorfer. Apache 2.0. -/
+import Proofs.RadenkovicGutmanD3Long00StagedUNode006
+namespace Gebendorfer.RadenkovicGutman.FixedDegree03Long00StagedU
+set_option maxHeartbeats 0
+set_option maxRecDepth 100000
+set_option backward.isDefEq.respectTransparency false
+noncomputable def e118 : NestedArithmetic.Expr 3 := .pow e006 2
+noncomputable def p118 : NestedHorner.Poly 3 := [[[1]]]
+theorem step118 : p118=NestedArithmetic.power p006 2 := by decide +kernel
+#print axioms step118
+theorem h118 : NestedArithmetic.compile e118=p118 := by
+  change NestedArithmetic.power (NestedArithmetic.compile e006) 2=p118
+  rw [h006]
+  exact step118.symm
+#print axioms h118
+end Gebendorfer.RadenkovicGutman.FixedDegree03Long00StagedU

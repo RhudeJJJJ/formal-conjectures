@@ -1,0 +1,17 @@
+/- Copyright 2026 Jonas J. Gebendorfer. Apache 2.0. -/
+import Proofs.RadenkovicGutmanD3Long00StagedUNode139
+import Proofs.RadenkovicGutmanD3Long00StagedUNode134
+namespace Gebendorfer.RadenkovicGutman.FixedDegree03Long00StagedU
+set_option maxHeartbeats 0
+set_option maxRecDepth 100000
+set_option backward.isDefEq.respectTransparency false
+noncomputable def e140 : NestedArithmetic.Expr 3 := .times e139 e134
+noncomputable def p140 : NestedHorner.Poly 3 := [[[1]],[[0]],[[6]],[[0]],[[11]],[[0]],[[6]]]
+theorem step140 : p140=NestedArithmetic.mul p139 p134 := by decide +kernel
+#print axioms step140
+theorem h140 : NestedArithmetic.compile e140=p140 := by
+  change NestedArithmetic.mul (NestedArithmetic.compile e139) (NestedArithmetic.compile e134)=p140
+  rw [h139,h134]
+  exact step140.symm
+#print axioms h140
+end Gebendorfer.RadenkovicGutman.FixedDegree03Long00StagedU

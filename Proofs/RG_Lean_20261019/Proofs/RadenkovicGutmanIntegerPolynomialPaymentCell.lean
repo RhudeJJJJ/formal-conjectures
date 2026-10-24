@@ -18,12 +18,19 @@ theorem value_cast (p : IP) (x : Fin 1 → ℝ) :
     NestedHorner.eval (NestedInteger.castPoly 1 p) x=
       HornerCertificates.evaluate (NestedInteger.castPoly 1 p) (x 0) := by
   induction p with
-  | nil => simp [NestedInteger.castPoly]
+  | nil =>
+      change (0 : ℝ)=HornerCertificates.evaluate [] (x 0)
+      exact (HornerCertificates.evaluate_nil (x 0)).symm
   | cons c p ih =>
-      simp only [NestedInteger.castPoly,List.map_cons,NestedHorner.eval_cons,
-        HornerCertificates.evaluate_cons] at *
-      change (c : ℝ)+x 0*_= _
+      change ((c : ℚ) : ℝ)+x 0*NestedHorner.eval (NestedInteger.castPoly 1 p) x=
+        ((c : ℚ) : ℝ)+x 0*HornerCertificates.evaluate (NestedInteger.castPoly 1 p) (x 0)
       rw [ih]
+
+theorem value_cons (c : ℤ) (p : IP) (t : ℝ) :
+    value (c::p) t=(c : ℝ)+t*value p t := by
+  change ((c : ℚ) : ℝ)+t*value p t=_
+  push_cast
+  rfl
 
 theorem value_add (p q : IP) (t : ℝ) :
     value (NestedInteger.add p q) t=value p t+value q t := by
@@ -49,11 +56,7 @@ theorem value_times (p q : IP) (t : ℝ) : value (times p q) t=value p t*value q
   | nil => simp [times,value,NestedInteger.castPoly,NestedHorner.eval]
   | cons c p ih =>
       rw [times,value_add,value_scale]
-      have hc : value (c::p) t=(c : ℝ)+t*value p t := rfl
-      have hz : value (0::times p q) t=t*value (times p q) t := by
-        change (0 : ℝ)+t*value (times p q) t=_
-        ring
-      rw [hz,ih,hc]
+      rw [value_cons,value_cons,Int.cast_zero,zero_add,ih]
       ring
 
 def zeroCheck (p : List ℚ) : Bool := p.all (fun c => decide (c=0))
@@ -116,6 +119,14 @@ structure Geometry where
   transformed : Fin 5 → IP
 
 def floorPoly (p : IP) (c : ℤ) : IP := NestedInteger.add p [-c]
+
+theorem value_floor (p : IP) (c : ℤ) (t : ℝ) :
+    value (floorPoly p c) t=value p t-(c : ℝ) := by
+  rw [floorPoly,value_add]
+  change value p t+value [(-c : ℤ)] t=_
+  rw [value_singleton,Int.cast_neg]
+  ring
+
 def margin (g : Geometry) : IP :=
   NestedInteger.add (NestedInteger.scale (g.localDen^2) (times g.s (g.transformed 2)))
     (NestedInteger.scale (-1) (times g.L (times (NestedInteger.add g.s [g.localDen])
@@ -148,7 +159,7 @@ theorem conditions (d : Data) (s : Source) (w : Witness) (g : Geometry)
   intro t ht
   let DS : ℝ := g.localDen
   let DG : ℝ := (g.den : ℝ)^s.length*(s.den : ℝ)
-  have hDSr : 0<DS := by exact_mod_cast hDS
+  have hDSr : 0<DS := by dsimp [DS]; exact_mod_cast hDS
   have hDGr : 0<DG := mul_pos (pow_pos (by exact_mod_cast hT) _) (by exact_mod_cast hD)
   have hAr : (g.left : ℝ)/(g.den : ℝ)=(w.a : ℝ) := by exact_mod_cast hA
   have hBr : (g.width : ℝ)/(g.den : ℝ)=((w.b-w.a : ℚ) : ℝ) := by exact_mod_cast hB
@@ -165,12 +176,13 @@ theorem conditions (d : Data) (s : Source) (w : Witness) (g : Geometry)
     ring
   have hsv : value g.s t=DS*HornerCertificates.evaluate w.s t := binding_sound _ _ _ hS t
   have hlv : value g.L t=DS*HornerCertificates.evaluate w.L t := binding_sound _ _ _ hL t
-  have hCr : (g.lowerC : ℝ)=DS*(w.c : ℝ) := by exact_mod_cast hC
+  have hCr : (g.lowerC : ℝ)=DS*(w.c : ℝ) := by dsimp [DS]; exact_mod_cast hC
   have hS0 := positive_sound _ hsp t ht
   have hL0 := positive_sound _ hlp t ht
   have hN0 := positive_sound _ hnp t ht
   have hE0 := positive_sound _ hep t ht
-  simp only [floorPoly,value_add,value_singleton,Int.cast_neg,Int.cast_one] at hS0 hL0 hN0 hE0
+  rw [value_floor,Int.cast_one] at hS0 hN0 hE0
+  rw [value_floor] at hL0
   rw [hsv] at hS0
   rw [hlv,hCr] at hL0
   rw [hv 3] at hN0

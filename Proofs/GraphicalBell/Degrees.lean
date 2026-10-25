@@ -1,6 +1,7 @@
 import Proofs.GraphicalBell.Partitions
 import Proofs.GraphicalBell.Deletion
 import Mathlib.Data.Nat.Choose.Basic
+import Mathlib.Algebra.BigOperators.Ring.Finset
 
 namespace GraphicalBellProof
 open Finset SimpleGraph

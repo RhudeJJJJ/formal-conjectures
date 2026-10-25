@@ -64,4 +64,5 @@ noncomputable def leaf03800_w_source28 : NestedInteger.Poly 3 := leaf03800_w_sou
 noncomputable def leaf03800_w_segment28 : NestedInteger.Poly 3 := leaf03800_w_source28.take 3
 noncomputable def leaf03800_w_source29 : NestedInteger.Poly 3 := leaf03800_w_source28.drop 3
 noncomputable def leaf03800_w_segment29 : NestedInteger.Poly 3 := leaf03800_w_source29.take 3
+#print axioms leaf03800_inner
 end Gebendorfer.RadenkovicGutman.FixedDegree03Long00SegmentedIntegerLeaf03800

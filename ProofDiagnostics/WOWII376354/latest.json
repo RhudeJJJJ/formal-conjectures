@@ -1,9 +1,9 @@
 {
   "scope": "Exact original imported modules; actual checkout recorded separately from workflow event SHA",
   "workflow_event_sha": "92a5fb15422acac3b36817ae54e0e06cbbe48e73",
-  "source_sha": "3db57b326524bc1611f188a1ea595601346639ea",
+  "source_sha": "86faa0e2c0322087ceecb4443e1f8ea0b05ad61d",
   "run_id": "40186214150",
-  "cycle": 1,
+  "cycle": 2,
   "status": "failed",
   "protected_hashes": {
     "lean-toolchain": "3aac669c7a910ec2389f4e4f921b605adf6ebf2d1e0c9b9cd0be4d33f3f5db71",
@@ -23,7 +23,7 @@
     "TreeCounting": "f3d2e413ebfca3888649fbf439f9534aa4a62cfb0a4b3dfeebc042e8b270087a",
     "MaximumCount": "b3c59d6edc787c681d8d227e07d4cbc2bf600f1e5b2f46d78a4dee4bb2ed7fdb",
     "HalfArithmetic": "32ee8e5e309e481fd93e53981411c50e577ec2e25bc0ac103b7bced8becf4e42",
-    "WOWII376Full": "4278b0b9203e5e6998dfca95e8fcae8b335a9477cfdf9839894e4b519ff0b47b",
+    "WOWII376Full": "c3b7ec393329fc64340c611c930ac9444cb3cce70f41cffa5602165dad3bd66b",
     "ExactAudit": "879572d487ddfc4e840a4d1ebefa7f539c265782f9b495e7f7398ae07ae6a28e"
   },
   "results": [
@@ -80,7 +80,7 @@
     {
       "name": "WOWII376Full",
       "exit_code": 1,
-      "output": "Proofs/WOWII376354/WOWII376Full.lean:42:29: error: unexpected token ',*'; expected ']'\nProofs/WOWII376354/WOWII376Full.lean:39:22: error: unsolved goals\ncase neg\nV : Type u_1\ninst✝² : Fintype V\ninst✝¹ : DecidableEq V\nT : SimpleGraph V\ninst✝ : DecidableRel T.Adj\nhT : T.IsTree\nho : 2 < Fintype.card V\nD : Finset V\nhD : T.IsTotalDominating ↑D\na b : V\nha : a ∈ medians T\nhb : b ∈ medians T\nhne : a ≠ b\nhab : T.Adj a b\nA : Finset V := side T a b\nB : Finset V := side T b a\nI : Finset V := maximumDegreeIsolates T\nhB : B = Aᶜ\nhsplitD : #(D ∩ A) + #(D ∩ B) = #D\nhsplitI : #(I ∩ A) + #(I ∩ B) = #I\nhbalanced : #A = #B\nhn : Fintype.card V = 2 * #A\nhh : 2 ≤ #A\nhδ : 2 ≤ delta T\nt : ℕ := if a ∈ I then 1 else 0\nu : ℕ := if b ∈ I then 1 else 0\nht : t ≤ 1\nhu : u ≤ 1\nhai : a ∈ I\nhbi : b ∉ I\n⊢ ((if a ∈ I then 1 else 0) + if b ∈ I then 1 else 0) ≤ 1\n\ncase pos\nV : Type u_1\ninst✝² : Fintype V\ninst✝¹ : DecidableEq V\nT : SimpleGraph V\ninst✝ : DecidableRel T.Adj\nhT : T.IsTree\nho : 2 < Fintype.card V\nD : Finset V\nhD : T.IsTotalDominating ↑D\na b : V\nha : a ∈ medians T\nhb : b ∈ medians T\nhne : a ≠ b\nhab : T.Adj a b\nA : Finset V := side T a b\nB : Finset V := side T b a\nI : Finset V := maximumDegreeIsolates T\nhB : B = Aᶜ\nhsplitD : #(D ∩ A) + #(D ∩ B) = #D\nhsplitI : #(I ∩ A) + #(I ∩ B) = #I\nhbalanced : #A = #B\nhn : Fintype.card V = 2 * #A\nhh : 2 ≤ #A\nhδ : 2 ≤ delta T\nt : ℕ := if a ∈ I then 1 else 0\nu : ℕ := if b ∈ I then 1 else 0\nht : t ≤ 1\nhu : u ≤ 1\nhai : a ∉ I\nhbi : b ∈ I\n⊢ ((if a ∈ I then 1 else 0) + if b ∈ I then 1 else 0) ≤ 1\n\ncase neg\nV : Type u_1\ninst✝² : Fintype V\ninst✝¹ : DecidableEq V\nT : SimpleGraph V\ninst✝ : DecidableRel T.Adj\nhT : T.IsTree\nho : 2 < Fintype.card V\nD : Finset V\nhD : T.IsTotalDominating ↑D\na b : V\nha : a ∈ medians T\nhb : b ∈ medians T\nhne : a ≠ b\nhab : T.Adj a b\nA : Finset V := side T a b\nB : Finset V := side T b a\nI : Finset V := maximumDegreeIsolates T\nhB : B = Aᶜ\nhsplitD : #(D ∩ A) + #(D ∩ B) = #D\nhsplitI : #(I ∩ A) + #(I ∩ B) = #I\nhbalanced : #A = #B\nhn : Fintype.card V = 2 * #A\nhh : 2 ≤ #A\nhδ : 2 ≤ delta T\nt : ℕ := if a ∈ I then 1 else 0\nu : ℕ := if b ∈ I then 1 else 0\nht : t ≤ 1\nhu : u ≤ 1\nhai : a ∉ I\nhbi : b ∉ I\n⊢ ((if a ∈ I then 1 else 0) + if b ∈ I then 1 else 0) ≤ 1\nProofs/WOWII376354/WOWII376Full.lean:18:49: error: unsolved goals\nV : Type u_1\ninst✝² : Fintype V\ninst✝¹ : DecidableEq V\nT : SimpleGraph V\ninst✝ : DecidableRel T.Adj\nhT : T.IsTree\nho : 2 < Fintype.card V\nD : Finset V\nhD : T.IsTotalDominating ↑D\na b : V\nha : a ∈ medians T\nhb : b ∈ medians T\nhne : a ≠ b\nhab : T.Adj a b\nA : Finset V := side T a b\nB : Finset V := side T b a\nI : Finset V := maximumDegreeIsolates T\nhB : B = Aᶜ\nhsplitD : #(D ∩ A) + #(D ∩ B) = #D\nhsplitI : #(I ∩ A) + #(I ∩ B) = #I\nhbalanced : #A = #B\nhn : Fintype.card V = 2 * #A\nhh : 2 ≤ #A\nhδ : 2 ≤ delta T\nt : ℕ := if a ∈ I then 1 else 0\nu : ℕ := if b ∈ I then 1 else 0\nht : t ≤ 1\nhu : u ≤ 1\nhtu : t + u ≤ 1\n⊢ #(maximumDegreeIsolates T) + 2 ≤ #D\n"
+      "output": "Proofs/WOWII376354/WOWII376Full.lean:56:64: error: omega could not prove the goal:\na possible counterexample may satisfy the constraints\n  x ≥ 1\n  w ≥ 1\n  v ≥ 0\n  s ≥ 0\n  s - w ≥ -1\n  r ≥ 0\n  r - x ≥ -1\n  q ≥ 0\n  q - w ≥ -1\n  p ≥ 0\n  p - x ≥ -1\n  o ≥ 0\n  n ≥ 0\n  n - o + w ≥ 1\n  m ≥ 0\n  k ≥ 0\n  k - m + x ≥ 1\n  0 ≤ j ≤ 1\n  0 ≤ i ≤ 1\n  i + j ≤ 1\n  h ≥ 2\n  g ≥ 2\n  f ≥ 0\n  e ≥ 0\n  e - f ≤ 0\n  d ≥ 0\n  d - f ≥ 2\n  d - v ≤ 1\n  c ≥ 0\n  c - d ≤ 0\nwhere\n c := ↑(#(D ∩ B))\n d := ↑(#D)\n e := ↑(#(I ∩ B))\n f := ↑(#I)\n g := ↑(#B)\n h := ↑(delta T)\n i := ↑(if a ∈ I then 1 else 0)\n j := ↑(if b ∈ I then 1 else 0)\n k := ↑(if a ∈ maximumDegreeIsolates T then 1 else 0)\n m := ↑(delta T) * ↑(#(maximumDegreeIsolates T ∩ side T a b))\n n := ↑(if b ∈ maximumDegreeIsolates T then 1 else 0)\n o := ↑(delta T) * ↑(#(maximumDegreeIsolates T ∩ side T b a))\n p := ↑(∑ d ∈ D ∩ side T a b, internalDegree T (side T a b) d)\n q := ↑(∑ d ∈ D ∩ side T b a, internalDegree T (side T b a) d)\n r := ↑(delta T) * ↑(#(D ∩ A))\n s := ↑(delta T) * ↑(#(D ∩ B))\n v := ↑(#(maximumDegreeIsolates T))\n w := ↑(#(side T b a))\n x := ↑(#(side T a b))\n"
     },
     {
       "name": "ExactAudit",

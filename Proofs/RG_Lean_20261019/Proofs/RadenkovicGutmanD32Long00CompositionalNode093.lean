@@ -1,0 +1,15 @@
+/- Copyright 2026 Jonas J. Gebendorfer. Apache 2.0. -/
+import Proofs.RadenkovicGutmanD32Long00CompositionalNode033
+import Proofs.RadenkovicGutmanD32Long00CompositionalNode064
+import Proofs.RadenkovicGutmanStagedExprCompile
+namespace Gebendorfer.RadenkovicGutman.FixedDegree32Long00Compositional
+set_option maxHeartbeats 0
+set_option maxRecDepth 100000
+set_option backward.isDefEq.respectTransparency false
+noncomputable def e093 : NestedArithmetic.Expr 3 := .times e033 e064
+noncomputable def p093 : NestedHorner.Poly 3 := [[[0],[0,0],[0,0,1024]],[[0,0],[0,0,0],[0,0,0]],[[0,0,0],[0,0,24576],[0,24576,64]],[[0,0,0],[0,0,0],[0,0]],[[-82944,-55296,138240],[-55296,534528,76928],[138240,76928]],[[0,0,0],[0,0,0],[0,0]],[[-2272320,2101248,834624],[2101248,3178752,80896],[834624,80896]],[[0,0,0],[0,0,0],[0,0]],[[-9739008,20589696,2092032],[20589696,7825408,33536],[2092032,33536]],[[0,0,0],[0,0,0],[0,0]],[[23490240,82250752,2841344],[82250752,10427392,5120],[2841344,5120]],[[0,0,0],[0,0,0],[0,0]],[[335691776,189194496,2286592],[189194496,8237056,128],[2286592,128]],[[0,0,0],[0,0],[0]],[[1390503360,282569728,1119616],[282569728,3966464],[1119616]],[[0,0,0],[0,0],[0]],[[3427092992,289877888,328704],[289877888,1148928],[328704]],[[0,0,0],[0,0],[0]],[[5800105344,209883136,54016],[209883136,187392],[54016]],[[0,0,0],[0,0],[0]],[[7153613056,108279296,4096],[108279296,14336],[4096]],[[0,0,0],[0,0],[0]],[[6626939136,39616512,64],[39616512,256],[64]],[[0,0],[0]],[[4683927808,10072960],[10072960]],[[0,0],[0]],[[2542393344,1704960],[1704960]],[[0,0],[0]],[[1058993664,176384],[176384]],[[0,0],[0]],[[335861184,9216],[9216]],[[0,0],[0]],[[79789056,128],[128]],[[0]],[[13800832]],[[0]],[[1656064]],[[0]],[[126400]],[[0]],[[5120]],[[0]],[[64]]]
+theorem step093 : p093=NestedArithmetic.mul p033 p064 := by decide +kernel
+#print axioms step093
+theorem h093 : NestedArithmetic.compile e093=p093 := StagedExprCompile.compile_times e093 e033 e064 p033 p064 p093 rfl h033 h064 step093
+#print axioms h093
+end Gebendorfer.RadenkovicGutman.FixedDegree32Long00Compositional

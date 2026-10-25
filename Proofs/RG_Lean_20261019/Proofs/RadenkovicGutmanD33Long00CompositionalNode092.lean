@@ -1,0 +1,15 @@
+/- Copyright 2026 Jonas J. Gebendorfer. Apache 2.0. -/
+import Proofs.RadenkovicGutmanD33Long00CompositionalNode089
+import Proofs.RadenkovicGutmanD33Long00CompositionalNode091
+import Proofs.RadenkovicGutmanStagedExprCompile
+namespace Gebendorfer.RadenkovicGutman.FixedDegree33Long00Compositional
+set_option maxHeartbeats 0
+set_option maxRecDepth 100000
+set_option backward.isDefEq.respectTransparency false
+noncomputable def e092 : NestedArithmetic.Expr 3 := .plus e089 e091
+noncomputable def p092 : NestedHorner.Poly 3 := [[[0],[0,0],[0,0]],[[0,0],[0,0,6534],[0,6534,-2046]],[[0,0,0],[0,0,0],[0,0]],[[0,0,78408],[0,264627,-8316],[78408,-8316]],[[0,0,0],[0,0,0],[0,0]],[[253935,2148201,417582],[2148201,1245618,-62502],[417582,-62502]],[[0,0,0],[0,0,0],[0,0]],[[18458847,18670014,842688],[18670014,1927827,-73722],[842688,-73722]],[[0,0,0],[0,0,0],[0,0]],[[200106126,70652439,692010],[70652439,274230,-30096],[692010,-30096]],[[0,0,0],[0,0,0],[0,0]],[[1044817983,151972788,-52998],[151972788,-2629572,-4026],[-52998,-4026]],[[0,0,0],[0,0],[0]],[[3326974761,202710321,-531498],[202710321,-3487242],[-531498]],[[0,0,0],[0,0],[0]],[[7139938278,169298910,-416196],[169298910,-2105829],[-416196]],[[0,0,0],[0,0],[0]],[[10870438392,80345298,-151602],[80345298,-682638],[-151602]],[[0,0,0],[0,0],[0]],[[12056949333,9125688,-27390],[9125688,-115005],[-27390]],[[0,0,0],[0,0],[0]],[[9835410222,-14262633,-1980],[-14262633,-7920],[-1980]],[[0,0],[0]],[[5854505118,-10475718],[-10475718]],[[0,0],[0]],[[2450685864,-3659601],[-3659601]],[[0,0],[0]],[[638447337,-735372],[-735372]],[[0,0],[0]],[[44387277,-81609],[-81609]],[[0,0],[0]],[[-40350090,-3894],[-3894]],[[0]],[[-19543788]],[[0]],[[-4665309]],[[0]],[[-663003]],[[0]],[[-53625]],[[0]],[[-1914]]]
+theorem step092 : p092=NestedHorner.add p089 p091 := by decide +kernel
+#print axioms step092
+theorem h092 : NestedArithmetic.compile e092=p092 := StagedExprCompile.compile_plus e092 e089 e091 p089 p091 p092 rfl h089 h091 step092
+#print axioms h092
+end Gebendorfer.RadenkovicGutman.FixedDegree33Long00Compositional

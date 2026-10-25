@@ -1,0 +1,15 @@
+/- Copyright 2026 Jonas J. Gebendorfer. Apache 2.0. -/
+import Proofs.RadenkovicGutmanD33Long00CompositionalNode043
+import Proofs.RadenkovicGutmanD33Long00CompositionalNode061
+import Proofs.RadenkovicGutmanStagedExprCompile
+namespace Gebendorfer.RadenkovicGutman.FixedDegree33Long00Compositional
+set_option maxHeartbeats 0
+set_option maxRecDepth 100000
+set_option backward.isDefEq.respectTransparency false
+noncomputable def e067 : NestedArithmetic.Expr 3 := .times e043 e061
+noncomputable def p067 : NestedHorner.Poly 3 := [[[0],[0],[0]],[[0,0],[0,0],[0,0]],[[0,0,9801],[0,19602,-12276],[9801,-12276,3844]],[[0,0,0],[0,0,0],[0,0]],[[0,330561,-25542],[330561,-258102,15996],[-25542,15996]],[[0,0,0],[0,0,0],[0,0]],[[2235924,851715,-173439],[851715,-1150026,119040],[-173439,119040]],[[0,0,0],[0,0,0],[0,0]],[[12070728,-4014117,23346],[-4014117,-493390,140492],[23346,140492]],[[0,0,0],[0,0,0],[0,0]],[[-17380494,-20515992,1122240],[-20515992,4231828,57412],[1122240,57412]],[[0,0,0],[0,0,0],[0,0]],[[-334574106,-27969285,2282538],[-27969285,9273852,7688],[2282538,7688]],[[0,0,0],[0,0],[0]],[[-1334095970,17168255,2188645],[17168255,8965662],[2188645]],[[0,0,0],[0,0],[0]],[[-2909284760,110055212,1168198],[110055212,4767850],[1168198]],[[0,0,0],[0,0],[0]],[[-3923456666,175290319,354861],[175290319,1438966],[354861]],[[0,0,0],[0,0],[0]],[[-3136435880,159979865,57412],[159979865,231198],[57412]],[[0,0,0],[0,0],[0]],[[-829574756,94927792,3844],[94927792,15376],[3844]],[[0,0],[0]],[[1307692790,37890105],[37890105]],[[0,0],[0]],[[2032138282,10122941],[10122941]],[[0,0],[0]],[[1560836486,1738787],[1738787]],[[0,0],[0]],[[794643598,173786],[173786]],[[0,0],[0]],[[285958884,7688],[7688]],[[0]],[[73543050]],[[0]],[[13279516]],[[0]],[[1603220]],[[0]],[[116374]],[[0]],[[3844]]]
+theorem step067 : p067=NestedArithmetic.mul p043 p061 := by decide +kernel
+#print axioms step067
+theorem h067 : NestedArithmetic.compile e067=p067 := StagedExprCompile.compile_times e067 e043 e061 p043 p061 p067 rfl h043 h061 step067
+#print axioms h067
+end Gebendorfer.RadenkovicGutman.FixedDegree33Long00Compositional

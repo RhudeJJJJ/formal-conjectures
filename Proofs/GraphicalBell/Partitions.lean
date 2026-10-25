@@ -1,7 +1,8 @@
 import Mathlib.Combinatorics.SimpleGraph.Finite
+import Mathlib.Combinatorics.SimpleGraph.Clique
 import Mathlib.Order.Partition.Finpartition
 import Mathlib.SetTheory.Cardinal.Finite
-import Mathlib.Tactic.Omega
+import Lean.Elab.Tactic.Omega
 
 namespace GraphicalBellProof
 open Finset SimpleGraph
@@ -14,6 +15,20 @@ def StableOn (G : SimpleGraph V) (S : Finset V) (P : Finset (Finset V)) : Prop :
 abbrev Parts (G : SimpleGraph V) (S : Finset V) := {P : Finset (Finset V) // StableOn G S P}
 abbrev Graded (G : SimpleGraph V) (S : Finset V) (k : ℕ) :=
   {P : Parts G S // P.val.card = k}
+
+instance finiteParts (G : SimpleGraph V) (S : Finset V) : Finite (Parts G S) := by
+  classical
+  let f : Parts G S → S.powerset.powerset := fun P =>
+    ⟨P.val, mem_powerset.mpr (by
+      intro B hb
+      exact mem_powerset.mpr (by
+        intro x hx
+        rw [← P.property.2.2]
+        exact mem_biUnion.mpr ⟨B, hb, hx⟩))⟩
+  exact Finite.of_injective f (fun _ _ h => Subtype.ext (congrArg Subtype.val h))
+
+noncomputable instance partsFintype (G : SimpleGraph V) (S : Finset V) :
+    Fintype (Parts G S) := Fintype.ofFinite _
 
 noncomputable def count (G : SimpleGraph V) (S : Finset V) (k : ℕ) : ℕ :=
   Nat.card (Graded G S k)
@@ -82,8 +97,8 @@ lemma remove_extend {G : SimpleGraph V} {S : Finset V} {P : Finset (Finset V)}
   · rintro ⟨hne, h | ⟨D, ⟨hDB, hD⟩, hDC⟩⟩
     · have hBC : B = C := by simpa [erase_insert hbnot] using h
       subst C
-      exact hB.resolve_left hne
-    · have hDC' : D = C := by simpa [erase_eq_of_not_mem (hnot D hD)] using hDC
+      exact hB.resolve_left (by simpa [erase_insert hbnot] using hne)
+    · have hDC' : D = C := by simpa [erase_eq_of_notMem (hnot D hD)] using hDC
       simpa [← hDC'] using hD
   · intro hc
     refine ⟨ne_of_mem_of_not_mem hc (stable_empty_not_mem hP), ?_⟩
@@ -92,7 +107,7 @@ lemma remove_extend {G : SimpleGraph V} {S : Finset V} {P : Finset (Finset V)}
       subst C
       exact erase_insert hbnot
     · right
-      exact ⟨C, ⟨hCB, hc⟩, erase_eq_of_not_mem (hnot C hc)⟩
+      exact ⟨C, ⟨hCB, hc⟩, erase_eq_of_notMem (hnot C hc)⟩
 
 lemma extend_stable {G : SimpleGraph V} {S : Finset V} {P : Finset (Finset V)}
     (hP : StableOn G S P) {v : V} (hv : v ∉ S) {B : Finset V}
@@ -116,7 +131,7 @@ lemma extend_stable {G : SimpleGraph V} {S : Finset V} {P : Finset (Finset V)}
         · exact (hxy rfl).elim
         · exact hfree y hy
       · rcases hy with rfl | hy
-        · exact fun h => hfree x hx (G.symm h)
+        · exact fun h => hfree x hx (G.symm.symm h)
         · exact hBind hx hy hxy
     · exact hP.1 C (mem_of_mem_erase hc)
   · intro C hc D hd hCD
@@ -125,8 +140,8 @@ lemma extend_stable {G : SimpleGraph V} {S : Finset V} {P : Finset (Finset V)}
       obtain ⟨hDB, hd⟩ := mem_erase.mp hd
       refine disjoint_left.mpr ?_
       intro x hx hxd
-      rcases mem_insert.mp hx with rfl | hx
-      · exact hnot D hd hxd
+      rcases mem_insert.mp hx with hx | hx
+      · exact hnot D hd (hx ▸ hxd)
       · rcases hB with rfl | hb
         · simp at hx
         · exact disjoint_left.mp (hP.2.1 B hb D hd (Ne.symm hDB)) hx hxd
@@ -134,14 +149,14 @@ lemma extend_stable {G : SimpleGraph V} {S : Finset V} {P : Finset (Finset V)}
       · obtain ⟨hCB, hc⟩ := mem_erase.mp hc
         refine disjoint_left.mpr ?_
         intro x hxc hx
-        rcases mem_insert.mp hx with rfl | hx
-        · exact hnot C hc hxc
+        rcases mem_insert.mp hx with hx | hx
+        · exact hnot C hc (hx ▸ hxc)
         · rcases hB with rfl | hb
           · simp at hx
           · exact disjoint_left.mp (hP.2.1 C hc B hb hCB) hxc hx
       · exact hP.2.1 C (mem_of_mem_erase hc) D (mem_of_mem_erase hd) hCD
   · ext x
-    simp only [extendVertex, mem_biUnion, mem_insert, mem_erase, ne_eq, exists_eq_or_imp]
+    simp only [extendVertex, mem_biUnion, mem_insert, mem_erase, ne_eq, exists_eq_or_imp, id_eq]
     constructor
     · rintro (hx | ⟨C, ⟨_, hc⟩, hx⟩)
       · rcases hx with rfl | hx
@@ -165,7 +180,7 @@ lemma extend_card {G : SimpleGraph V} {S : Finset V} {P : Finset (Finset V)}
   have hn : insert v B ∉ P.erase B := by
     intro hc
     exact hv (stable_subset hP (mem_of_mem_erase hc) (mem_insert_self _ _))
-  rw [extendVertex, card_insert_of_not_mem hn]
+  rw [extendVertex, card_insert_of_notMem hn]
   rcases hB with rfl | hb
   · simp [stable_empty_not_mem hP]
   · rw [card_erase_of_mem hb, if_neg (ne_of_mem_of_not_mem hb (stable_empty_not_mem hP))]

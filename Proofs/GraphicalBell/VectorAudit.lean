@@ -1,0 +1,4 @@
+import Proofs.GraphicalBell.Vectors
+#print axioms GraphicalBellProof.compare_same_clique
+#print axioms GraphicalBellProof.compare_previous_clique
+#print axioms GraphicalBellProof.candidate_nonnegative

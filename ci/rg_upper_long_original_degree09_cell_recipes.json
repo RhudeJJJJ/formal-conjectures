@@ -1,0 +1,2071 @@
+{
+  "report": {
+    "status": "EXACT_CANDIDATE_CELLS_REQUIRE_LEAN_KERNEL_CHECKS",
+    "degree": 9,
+    "normalized_original_reserve": "2/13",
+    "original_cutoff": 13,
+    "threshold_source_sha256": "588a88b18f10ccbde93e7253862e041b338ced70a8f42a365872fb95375f7d5c",
+    "physical_arms": [
+      0,
+      0
+    ],
+    "class_indices": [
+      4,
+      4
+    ],
+    "start": "1/1000",
+    "end": "1024",
+    "cells": 75,
+    "polynomial_cells": 75,
+    "evaluations": 131,
+    "search_origin_adjustment": "0",
+    "origin_reserve_in_final": "-9/1000",
+    "finite_payment": "234923953577512230282949043/476014541473260237540556800",
+    "finite_search_payment": "234923953577512230282949043/476014541473260237540556800",
+    "target": "287131799/582400000",
+    "source_references_read_only": {
+      "rg_tensor_transfer.py": "b3870866061e3e1fa1cd063ad4bc8d8ea482eb00ab1d3f0bdc102e61e518eecd",
+      "rg_correlated_arm_transfer.py": "51450eb252cc802f63693f3279c1c8f8e07a85df18bbdc21f6df23026eb80216",
+      "rg_small_degree_interval_attack.py": "a3c7f87796aeb36d43863670281d36ff48e4c72c491b08b898589da6381a0407"
+    },
+    "literal_polynomial_bytes": 0,
+    "original_fixed_degree_class": "OPEN",
+    "universal_RG_Lean": "OPEN",
+    "arm_class_labels": [
+      0,
+      0
+    ],
+    "physical_arm_classes": [
+      ">=5",
+      ">=5"
+    ],
+    "legacy_physical_arms_field_rule": "Zero is the long-arm class label, meaning physical length at least five, not length zero"
+  },
+  "cells": [
+    {
+      "left": "1/1000",
+      "right": "1/500",
+      "kind": "polynomial",
+      "payment": "-34137326067766032049189/4722366482869645213696",
+      "square_lower": "2484572593342211/4722366482869645213696",
+      "young": "3547036911/1000000000000",
+      "logarithm_k": 21,
+      "logarithm_n": 32,
+      "reciprocal": false,
+      "degrees": [
+        88,
+        4,
+        4
+      ],
+      "box_left": [
+        "1/1000",
+        "0",
+        "0"
+      ],
+      "box_width": [
+        "1/1000",
+        "1",
+        "1"
+      ],
+      "affine_power_candidate_nonnegative": true
+    },
+    {
+      "left": "1/500",
+      "right": "7/2000",
+      "kind": "polynomial",
+      "payment": "-29447335288742002144553/4722366482869645213696",
+      "square_lower": "565894905924091/147573952589676412928",
+      "young": "1625283597/250000000000",
+      "logarithm_k": 18,
+      "logarithm_n": 32,
+      "reciprocal": false,
+      "degrees": [
+        88,
+        4,
+        4
+      ],
+      "box_left": [
+        "1/500",
+        "0",
+        "0"
+      ],
+      "box_width": [
+        "3/2000",
+        "1",
+        "1"
+      ],
+      "affine_power_candidate_nonnegative": true
+    },
+    {
+      "left": "7/2000",
+      "right": "1/200",
+      "kind": "polynomial",
+      "payment": "-25794561641161083212131/4722366482869645213696",
+      "square_lower": "85063566687970857/4722366482869645213696",
+      "young": "10041817761/1000000000000",
+      "logarithm_k": 16,
+      "logarithm_n": 32,
+      "reciprocal": false,
+      "degrees": [
+        88,
+        4,
+        4
+      ],
+      "box_left": [
+        "7/2000",
+        "0",
+        "0"
+      ],
+      "box_width": [
+        "3/2000",
+        "1",
+        "1"
+      ],
+      "affine_power_candidate_nonnegative": true
+    },
+    {
+      "left": "1/200",
+      "right": "1/160",
+      "kind": "polynomial",
+      "payment": "-23465066935332012328377/4722366482869645213696",
+      "square_lower": "228144272629678569/4722366482869645213696",
+      "young": "3320358113/250000000000",
+      "logarithm_k": 15,
+      "logarithm_n": 32,
+      "reciprocal": false,
+      "degrees": [
+        88,
+        4,
+        4
+      ],
+      "box_left": [
+        "1/200",
+        "0",
+        "0"
+      ],
+      "box_width": [
+        "1/800",
+        "1",
+        "1"
+      ],
+      "affine_power_candidate_nonnegative": true
+    },
+    {
+      "left": "1/160",
+      "right": "3/400",
+      "kind": "polynomial",
+      "payment": "-10976493706040970122501/2361183241434822606848",
+      "square_lower": "432840279768721203/4722366482869645213696",
+      "young": "8109968931/500000000000",
+      "logarithm_k": 14,
+      "logarithm_n": 32,
+      "reciprocal": false,
+      "degrees": [
+        88,
+        4,
+        4
+      ],
+      "box_left": [
+        "1/160",
+        "0",
+        "0"
+      ],
+      "box_width": [
+        "1/800",
+        "1",
+        "1"
+      ],
+      "affine_power_candidate_nonnegative": true
+    },
+    {
+      "left": "3/400",
+      "right": "7/800",
+      "kind": "polynomial",
+      "payment": "-5178340681285650706081/1180591620717411303424",
+      "square_lower": "731699760882630425/4722366482869645213696",
+      "young": "19150734961/1000000000000",
+      "logarithm_k": 13,
+      "logarithm_n": 32,
+      "reciprocal": false,
+      "degrees": [
+        88,
+        4,
+        4
+      ],
+      "box_left": [
+        "3/400",
+        "0",
+        "0"
+      ],
+      "box_width": [
+        "1/800",
+        "1",
+        "1"
+      ],
+      "affine_power_candidate_nonnegative": true
+    },
+    {
+      "left": "7/800",
+      "right": "1/100",
+      "kind": "polynomial",
+      "payment": "-19663630974685755703505/4722366482869645213696",
+      "square_lower": "1141329347470271709/4722366482869645213696",
+      "young": "11036231891/500000000000",
+      "logarithm_k": 13,
+      "logarithm_n": 32,
+      "reciprocal": false,
+      "degrees": [
+        88,
+        4,
+        4
+      ],
+      "box_left": [
+        "7/800",
+        "0",
+        "0"
+      ],
+      "box_width": [
+        "1/800",
+        "1",
+        "1"
+      ],
+      "affine_power_candidate_nonnegative": true
+    },
+    {
+      "left": "1/100",
+      "right": "9/800",
+      "kind": "polynomial",
+      "payment": "-18753925029486861184731/4722366482869645213696",
+      "square_lower": "838888020456760097/2361183241434822606848",
+      "young": "24983784709/1000000000000",
+      "logarithm_k": 12,
+      "logarithm_n": 32,
+      "reciprocal": false,
+      "degrees": [
+        88,
+        4,
+        4
+      ],
+      "box_left": [
+        "1/100",
+        "0",
+        "0"
+      ],
+      "box_width": [
+        "1/800",
+        "1",
+        "1"
+      ],
+      "affine_power_candidate_nonnegative": true
+    },
+    {
+      "left": "9/800",
+      "right": "1/80",
+      "kind": "polynomial",
+      "payment": "-4487948792463226371221/1180591620717411303424",
+      "square_lower": "2356516197290118017/4722366482869645213696",
+      "young": "13941690643/500000000000",
+      "logarithm_k": 11,
+      "logarithm_n": 32,
+      "reciprocal": false,
+      "degrees": [
+        88,
+        4,
+        4
+      ],
+      "box_left": [
+        "9/800",
+        "0",
+        "0"
+      ],
+      "box_width": [
+        "1/800",
+        "1",
+        "1"
+      ],
+      "affine_power_candidate_nonnegative": true
+    },
+    {
+      "left": "1/80",
+      "right": "3/200",
+      "kind": "polynomial",
+      "payment": "-2141714888091168781261/590295810358705651712",
+      "square_lower": "3332267592887384537/4722366482869645213696",
+      "young": "1288319099/40000000000",
+      "logarithm_k": 11,
+      "logarithm_n": 32,
+      "reciprocal": false,
+      "degrees": [
+        88,
+        4,
+        4
+      ],
+      "box_left": [
+        "1/80",
+        "0",
+        "0"
+      ],
+      "box_width": [
+        "1/400",
+        "1",
+        "1"
+      ],
+      "affine_power_candidate_nonnegative": true
+    },
+    {
+      "left": "3/200",
+      "right": "7/400",
+      "kind": "polynomial",
+      "payment": "-15913434316776167239181/4722366482869645213696",
+      "square_lower": "698389855158462895/590295810358705651712",
+      "young": "7584253871/200000000000",
+      "logarithm_k": 10,
+      "logarithm_n": 32,
+      "reciprocal": false,
+      "degrees": [
+        88,
+        4,
+        4
+      ],
+      "box_left": [
+        "3/200",
+        "0",
+        "0"
+      ],
+      "box_width": [
+        "1/400",
+        "1",
+        "1"
+      ],
+      "affine_power_candidate_nonnegative": true
+    },
+    {
+      "left": "7/400",
+      "right": "1/50",
+      "kind": "polynomial",
+      "payment": "-14883872493178610262201/4722366482869645213696",
+      "square_lower": "67506585039343457/36893488147419103232",
+      "young": "10891355949/250000000000",
+      "logarithm_k": 10,
+      "logarithm_n": 32,
+      "reciprocal": false,
+      "degrees": [
+        88,
+        4,
+        4
+      ],
+      "box_left": [
+        "7/400",
+        "0",
+        "0"
+      ],
+      "box_width": [
+        "1/400",
+        "1",
+        "1"
+      ],
+      "affine_power_candidate_nonnegative": true
+    },
+    {
+      "left": "1/50",
+      "right": "7/320",
+      "kind": "polynomial",
+      "payment": "-876588908146442052593/295147905179352825856",
+      "square_lower": "6214719894515478543/2361183241434822606848",
+      "young": "6055031061/125000000000",
+      "logarithm_k": 9,
+      "logarithm_n": 32,
+      "reciprocal": false,
+      "degrees": [
+        88,
+        4,
+        4
+      ],
+      "box_left": [
+        "1/50",
+        "0",
+        "0"
+      ],
+      "box_width": [
+        "3/1600",
+        "1",
+        "1"
+      ],
+      "affine_power_candidate_nonnegative": true
+    },
+    {
+      "left": "7/320",
+      "right": "19/800",
+      "kind": "polynomial",
+      "payment": "-13428392944371989596515/4722366482869645213696",
+      "square_lower": "16005296522920947737/4722366482869645213696",
+      "young": "52566755881/1000000000000",
+      "logarithm_k": 9,
+      "logarithm_n": 32,
+      "reciprocal": false,
+      "degrees": [
+        88,
+        4,
+        4
+      ],
+      "box_left": [
+        "7/320",
+        "0",
+        "0"
+      ],
+      "box_width": [
+        "3/1600",
+        "1",
+        "1"
+      ],
+      "affine_power_candidate_nonnegative": true
+    },
+    {
+      "left": "19/800",
+      "right": "41/1600",
+      "kind": "polynomial",
+      "payment": "-12882787797339234240661/4722366482869645213696",
+      "square_lower": "2520736009967630073/590295810358705651712",
+      "young": "14160455889/250000000000",
+      "logarithm_k": 8,
+      "logarithm_n": 32,
+      "reciprocal": false,
+      "degrees": [
+        88,
+        4,
+        4
+      ],
+      "box_left": [
+        "19/800",
+        "0",
+        "0"
+      ],
+      "box_width": [
+        "3/1600",
+        "1",
+        "1"
+      ],
+      "affine_power_candidate_nonnegative": true
+    },
+    {
+      "left": "41/1600",
+      "right": "11/400",
+      "kind": "polynomial",
+      "payment": "-12380950255303466819127/4722366482869645213696",
+      "square_lower": "24941396526766113733/4722366482869645213696",
+      "young": "60662344691/1000000000000",
+      "logarithm_k": 8,
+      "logarithm_n": 32,
+      "reciprocal": false,
+      "degrees": [
+        88,
+        4,
+        4
+      ],
+      "box_left": [
+        "41/1600",
+        "0",
+        "0"
+      ],
+      "box_width": [
+        "3/1600",
+        "1",
+        "1"
+      ],
+      "affine_power_candidate_nonnegative": true
+    },
+    {
+      "left": "11/400",
+      "right": "1/32",
+      "kind": "polynomial",
+      "payment": "-5927652443188219816415/2361183241434822606848",
+      "square_lower": "15580205441849136045/2361183241434822606848",
+      "young": "13316921511/200000000000",
+      "logarithm_k": 8,
+      "logarithm_n": 32,
+      "reciprocal": false,
+      "degrees": [
+        88,
+        4,
+        4
+      ],
+      "box_left": [
+        "11/400",
+        "0",
+        "0"
+      ],
+      "box_width": [
+        "3/800",
+        "1",
+        "1"
+      ],
+      "affine_power_candidate_nonnegative": true
+    },
+    {
+      "left": "1/32",
+      "right": "7/200",
+      "kind": "polynomial",
+      "payment": "-11030808799969785311753/4722366482869645213696",
+      "square_lower": "44182822494673843859/4722366482869645213696",
+      "young": "74265049581/1000000000000",
+      "logarithm_k": 7,
+      "logarithm_n": 32,
+      "reciprocal": false,
+      "degrees": [
+        88,
+        4,
+        4
+      ],
+      "box_left": [
+        "1/32",
+        "0",
+        "0"
+      ],
+      "box_width": [
+        "3/800",
+        "1",
+        "1"
+      ],
+      "affine_power_candidate_nonnegative": true
+    },
+    {
+      "left": "7/200",
+      "right": "31/800",
+      "kind": "polynomial",
+      "payment": "-10307325051709498791795/4722366482869645213696",
+      "square_lower": "60023933118356614519/4722366482869645213696",
+      "young": "81682824329/1000000000000",
+      "logarithm_k": 7,
+      "logarithm_n": 32,
+      "reciprocal": false,
+      "degrees": [
+        88,
+        4,
+        4
+      ],
+      "box_left": [
+        "7/200",
+        "0",
+        "0"
+      ],
+      "box_width": [
+        "3/800",
+        "1",
+        "1"
+      ],
+      "affine_power_candidate_nonnegative": true
+    },
+    {
+      "left": "31/800",
+      "right": "17/400",
+      "kind": "polynomial",
+      "payment": "-9664860658479026245369/4722366482869645213696",
+      "square_lower": "2462314396999600175/147573952589676412928",
+      "young": "44411963371/500000000000",
+      "logarithm_k": 6,
+      "logarithm_n": 32,
+      "reciprocal": false,
+      "degrees": [
+        88,
+        4,
+        4
+      ],
+      "box_left": [
+        "31/800",
+        "0",
+        "0"
+      ],
+      "box_width": [
+        "3/800",
+        "1",
+        "1"
+      ],
+      "affine_power_candidate_nonnegative": true
+    },
+    {
+      "left": "17/400",
+      "right": "37/800",
+      "kind": "polynomial",
+      "payment": "-9088877019348063117437/4722366482869645213696",
+      "square_lower": "12570271737125889507/590295810358705651712",
+      "young": "95677777267/1000000000000",
+      "logarithm_k": 6,
+      "logarithm_n": 32,
+      "reciprocal": false,
+      "degrees": [
+        88,
+        4,
+        4
+      ],
+      "box_left": [
+        "17/400",
+        "0",
+        "0"
+      ],
+      "box_width": [
+        "3/800",
+        "1",
+        "1"
+      ],
+      "affine_power_candidate_nonnegative": true
+    },
+    {
+      "left": "37/800",
+      "right": "1/20",
+      "kind": "polynomial",
+      "payment": "-4284231877679002396321/2361183241434822606848",
+      "square_lower": "62679384128413197525/2361183241434822606848",
+      "young": "51118494979/500000000000",
+      "logarithm_k": 6,
+      "logarithm_n": 32,
+      "reciprocal": false,
+      "degrees": [
+        88,
+        4,
+        4
+      ],
+      "box_left": [
+        "37/800",
+        "0",
+        "0"
+      ],
+      "box_width": [
+        "3/800",
+        "1",
+        "1"
+      ],
+      "affine_power_candidate_nonnegative": true
+    },
+    {
+      "left": "1/20",
+      "right": "17/320",
+      "kind": "polynomial",
+      "payment": "-4051961858049397376629/2361183241434822606848",
+      "square_lower": "76307631357280623533/2361183241434822606848",
+      "young": "21597380207/200000000000",
+      "logarithm_k": 5,
+      "logarithm_n": 32,
+      "reciprocal": false,
+      "degrees": [
+        88,
+        4,
+        4
+      ],
+      "box_left": [
+        "1/20",
+        "0",
+        "0"
+      ],
+      "box_width": [
+        "1/320",
+        "1",
+        "1"
+      ],
+      "affine_power_candidate_nonnegative": true
+    },
+    {
+      "left": "17/320",
+      "right": "9/160",
+      "kind": "polynomial",
+      "payment": "-967490861268614561095/590295810358705651712",
+      "square_lower": "178052559318286423941/4722366482869645213696",
+      "young": "11299465451/100000000000",
+      "logarithm_k": 5,
+      "logarithm_n": 32,
+      "reciprocal": false,
+      "degrees": [
+        88,
+        4,
+        4
+      ],
+      "box_left": [
+        "17/320",
+        "0",
+        "0"
+      ],
+      "box_width": [
+        "1/320",
+        "1",
+        "1"
+      ],
+      "affine_power_candidate_nonnegative": true
+    },
+    {
+      "left": "9/160",
+      "right": "1/16",
+      "kind": "polynomial",
+      "payment": "-920774165697955317399/590295810358705651712",
+      "square_lower": "104294009445959071337/2361183241434822606848",
+      "young": "30028679379/250000000000",
+      "logarithm_k": 5,
+      "logarithm_n": 32,
+      "reciprocal": false,
+      "degrees": [
+        88,
+        4,
+        4
+      ],
+      "box_left": [
+        "9/160",
+        "0",
+        "0"
+      ],
+      "box_width": [
+        "1/160",
+        "1",
+        "1"
+      ],
+      "affine_power_candidate_nonnegative": true
+    },
+    {
+      "left": "1/16",
+      "right": "11/160",
+      "kind": "polynomial",
+      "payment": "-6759911512736489108587/4722366482869645213696",
+      "square_lower": "269651784747602782349/4722366482869645213696",
+      "young": "12888472159/100000000000",
+      "logarithm_k": 5,
+      "logarithm_n": 32,
+      "reciprocal": false,
+      "degrees": [
+        88,
+        4,
+        4
+      ],
+      "box_left": [
+        "1/16",
+        "0",
+        "0"
+      ],
+      "box_width": [
+        "1/160",
+        "1",
+        "1"
+      ],
+      "affine_power_candidate_nonnegative": true
+    },
+    {
+      "left": "11/160",
+      "right": "3/40",
+      "kind": "polynomial",
+      "payment": "-3113047283525190676943/2361183241434822606848",
+      "square_lower": "338056050263524222855/4722366482869645213696",
+      "young": "8552959329/62500000000",
+      "logarithm_k": 4,
+      "logarithm_n": 32,
+      "reciprocal": false,
+      "degrees": [
+        88,
+        4,
+        4
+      ],
+      "box_left": [
+        "11/160",
+        "0",
+        "0"
+      ],
+      "box_width": [
+        "1/160",
+        "1",
+        "1"
+      ],
+      "affine_power_candidate_nonnegative": true
+    },
+    {
+      "left": "3/40",
+      "right": "13/160",
+      "kind": "polynomial",
+      "payment": "-2876300353334423794445/2361183241434822606848",
+      "square_lower": "413122500743361544827/4722366482869645213696",
+      "young": "144032152643/1000000000000",
+      "logarithm_k": 4,
+      "logarithm_n": 32,
+      "reciprocal": false,
+      "degrees": [
+        88,
+        4,
+        4
+      ],
+      "box_left": [
+        "3/40",
+        "0",
+        "0"
+      ],
+      "box_width": [
+        "1/160",
+        "1",
+        "1"
+      ],
+      "affine_power_candidate_nonnegative": true
+    },
+    {
+      "left": "13/160",
+      "right": "7/80",
+      "kind": "polynomial",
+      "payment": "-2665069928080203457657/2361183241434822606848",
+      "square_lower": "494063124099584821957/4722366482869645213696",
+      "young": "37618709549/250000000000",
+      "logarithm_k": 4,
+      "logarithm_n": 32,
+      "reciprocal": false,
+      "degrees": [
+        88,
+        4,
+        4
+      ],
+      "box_left": [
+        "13/160",
+        "0",
+        "0"
+      ],
+      "box_width": [
+        "1/160",
+        "1",
+        "1"
+      ],
+      "affine_power_candidate_nonnegative": true
+    },
+    {
+      "left": "7/80",
+      "right": "3/32",
+      "kind": "polynomial",
+      "payment": "-2475717475995876149949/2361183241434822606848",
+      "square_lower": "580013312672965825661/4722366482869645213696",
+      "young": "78107445883/500000000000",
+      "logarithm_k": 4,
+      "logarithm_n": 32,
+      "reciprocal": false,
+      "degrees": [
+        88,
+        4,
+        4
+      ],
+      "box_left": [
+        "7/80",
+        "0",
+        "0"
+      ],
+      "box_width": [
+        "1/160",
+        "1",
+        "1"
+      ],
+      "affine_power_candidate_nonnegative": true
+    },
+    {
+      "left": "3/32",
+      "right": "1/10",
+      "kind": "polynomial",
+      "payment": "-2305334016184522308441/2361183241434822606848",
+      "square_lower": "335031407019941030881/2361183241434822606848",
+      "young": "80646884409/500000000000",
+      "logarithm_k": 3,
+      "logarithm_n": 32,
+      "reciprocal": false,
+      "degrees": [
+        88,
+        4,
+        4
+      ],
+      "box_left": [
+        "3/32",
+        "0",
+        "0"
+      ],
+      "box_width": [
+        "1/160",
+        "1",
+        "1"
+      ],
+      "affine_power_candidate_nonnegative": true
+    },
+    {
+      "left": "1/10",
+      "right": "9/80",
+      "kind": "polynomial",
+      "payment": "-133945946323343048215/147573952589676412928",
+      "square_lower": "96093118888118372019/590295810358705651712",
+      "young": "33552879721/200000000000",
+      "logarithm_k": 3,
+      "logarithm_n": 32,
+      "reciprocal": false,
+      "degrees": [
+        88,
+        4,
+        4
+      ],
+      "box_left": [
+        "1/10",
+        "0",
+        "0"
+      ],
+      "box_width": [
+        "1/80",
+        "1",
+        "1"
+      ],
+      "affine_power_candidate_nonnegative": true
+    },
+    {
+      "left": "9/80",
+      "right": "1/8",
+      "kind": "polynomial",
+      "payment": "-3761503323635391698301/4722366482869645213696",
+      "square_lower": "960070484633969195275/4722366482869645213696",
+      "young": "3489327491/20000000000",
+      "logarithm_k": 3,
+      "logarithm_n": 32,
+      "reciprocal": false,
+      "degrees": [
+        88,
+        4,
+        4
+      ],
+      "box_left": [
+        "9/80",
+        "0",
+        "0"
+      ],
+      "box_width": [
+        "1/80",
+        "1",
+        "1"
+      ],
+      "affine_power_candidate_nonnegative": true
+    },
+    {
+      "left": "1/8",
+      "right": "11/80",
+      "kind": "polynomial",
+      "payment": "-1664114551260492626769/2361183241434822606848",
+      "square_lower": "1153441629631967974977/4722366482869645213696",
+      "young": "5601721613/31250000000",
+      "logarithm_k": 3,
+      "logarithm_n": 32,
+      "reciprocal": false,
+      "degrees": [
+        88,
+        4,
+        4
+      ],
+      "box_left": [
+        "1/8",
+        "0",
+        "0"
+      ],
+      "box_width": [
+        "1/80",
+        "1",
+        "1"
+      ],
+      "affine_power_candidate_nonnegative": true
+    },
+    {
+      "left": "11/80",
+      "right": "3/20",
+      "kind": "polynomial",
+      "payment": "-2968730157610591483683/4722366482869645213696",
+      "square_lower": "671565811835191392719/2361183241434822606848",
+      "young": "18241820069/100000000000",
+      "logarithm_k": 2,
+      "logarithm_n": 32,
+      "reciprocal": false,
+      "degrees": [
+        88,
+        4,
+        4
+      ],
+      "box_left": [
+        "11/80",
+        "0",
+        "0"
+      ],
+      "box_width": [
+        "1/80",
+        "1",
+        "1"
+      ],
+      "affine_power_candidate_nonnegative": true
+    },
+    {
+      "left": "3/20",
+      "right": "7/40",
+      "kind": "polynomial",
+      "payment": "-1333455010530163765767/2361183241434822606848",
+      "square_lower": "1526274379593328291575/4722366482869645213696",
+      "young": "92334810883/500000000000",
+      "logarithm_k": 2,
+      "logarithm_n": 32,
+      "reciprocal": false,
+      "degrees": [
+        88,
+        4,
+        4
+      ],
+      "box_left": [
+        "3/20",
+        "0",
+        "0"
+      ],
+      "box_width": [
+        "1/40",
+        "1",
+        "1"
+      ],
+      "affine_power_candidate_nonnegative": true
+    },
+    {
+      "left": "7/40",
+      "right": "1/5",
+      "kind": "polynomial",
+      "payment": "-276461350450013421229/590295810358705651712",
+      "square_lower": "1850808475750752186249/4722366482869645213696",
+      "young": "11508465623/62500000000",
+      "logarithm_k": 2,
+      "logarithm_n": 32,
+      "reciprocal": false,
+      "degrees": [
+        88,
+        4,
+        4
+      ],
+      "box_left": [
+        "7/40",
+        "0",
+        "0"
+      ],
+      "box_width": [
+        "1/40",
+        "1",
+        "1"
+      ],
+      "affine_power_candidate_nonnegative": true
+    },
+    {
+      "left": "1/5",
+      "right": "19/80",
+      "kind": "polynomial",
+      "payment": "-1893017733607916953859/4722366482869645213696",
+      "square_lower": "2118240629504181637299/4722366482869645213696",
+      "young": "179660058783/1000000000000",
+      "logarithm_k": 2,
+      "logarithm_n": 32,
+      "reciprocal": false,
+      "degrees": [
+        88,
+        4,
+        4
+      ],
+      "box_left": [
+        "1/5",
+        "0",
+        "0"
+      ],
+      "box_width": [
+        "3/80",
+        "1",
+        "1"
+      ],
+      "affine_power_candidate_nonnegative": true
+    },
+    {
+      "left": "19/80",
+      "right": "11/40",
+      "kind": "polynomial",
+      "payment": "-1568729434251631687549/4722366482869645213696",
+      "square_lower": "148320773888202681/288230376151711744",
+      "young": "85569523289/500000000000",
+      "logarithm_k": 1,
+      "logarithm_n": 32,
+      "reciprocal": false,
+      "degrees": [
+        88,
+        4,
+        4
+      ],
+      "box_left": [
+        "19/80",
+        "0",
+        "0"
+      ],
+      "box_width": [
+        "3/80",
+        "1",
+        "1"
+      ],
+      "affine_power_candidate_nonnegative": false
+    },
+    {
+      "left": "11/40",
+      "right": "7/20",
+      "kind": "polynomial",
+      "payment": "-686113310896066028621/2361183241434822606848",
+      "square_lower": "2640978434335451635777/4722366482869645213696",
+      "young": "3898295029/25000000000",
+      "logarithm_k": 1,
+      "logarithm_n": 32,
+      "reciprocal": false,
+      "degrees": [
+        88,
+        4,
+        4
+      ],
+      "box_left": [
+        "11/40",
+        "0",
+        "0"
+      ],
+      "box_width": [
+        "3/40",
+        "1",
+        "1"
+      ],
+      "affine_power_candidate_nonnegative": false
+    },
+    {
+      "left": "7/20",
+      "right": "1/2",
+      "kind": "polynomial",
+      "payment": "-1139915502644108616333/4722366482869645213696",
+      "square_lower": "1457015073843500392663/2361183241434822606848",
+      "young": "63481109633/500000000000",
+      "logarithm_k": 1,
+      "logarithm_n": 32,
+      "reciprocal": false,
+      "degrees": [
+        88,
+        4,
+        4
+      ],
+      "box_left": [
+        "7/20",
+        "0",
+        "0"
+      ],
+      "box_width": [
+        "3/20",
+        "1",
+        "1"
+      ],
+      "affine_power_candidate_nonnegative": false
+    },
+    {
+      "left": "1/2",
+      "right": "3/4",
+      "kind": "polynomial",
+      "payment": "-111299756900579432669/590295810358705651712",
+      "square_lower": "809707216197210014433/1180591620717411303424",
+      "young": "22760633661/250000000000",
+      "logarithm_k": 1,
+      "logarithm_n": 32,
+      "reciprocal": false,
+      "degrees": [
+        88,
+        4,
+        4
+      ],
+      "box_left": [
+        "1/2",
+        "0",
+        "0"
+      ],
+      "box_width": [
+        "1/4",
+        "1",
+        "1"
+      ],
+      "affine_power_candidate_nonnegative": false
+    },
+    {
+      "left": "3/4",
+      "right": "1",
+      "kind": "polynomial",
+      "payment": "-612640928851552233597/4722366482869645213696",
+      "square_lower": "455392761623393308029/590295810358705651712",
+      "young": "8190749809/125000000000",
+      "logarithm_k": 1,
+      "logarithm_n": 32,
+      "reciprocal": false,
+      "degrees": [
+        88,
+        4,
+        4
+      ],
+      "box_left": [
+        "3/4",
+        "0",
+        "0"
+      ],
+      "box_width": [
+        "1/4",
+        "1",
+        "1"
+      ],
+      "affine_power_candidate_nonnegative": false
+    },
+    {
+      "left": "1",
+      "right": "4/3",
+      "kind": "polynomial",
+      "payment": "-404170500039539884793/4722366482869645213696",
+      "square_lower": "1989712193629732993973/2361183241434822606848",
+      "young": "49700301283/1000000000000",
+      "logarithm_k": 1,
+      "logarithm_n": 32,
+      "reciprocal": true,
+      "degrees": [
+        88,
+        4,
+        4
+      ],
+      "box_left": [
+        "3/4",
+        "0",
+        "0"
+      ],
+      "box_width": [
+        "1/4",
+        "1",
+        "1"
+      ],
+      "affine_power_candidate_nonnegative": false
+    },
+    {
+      "left": "4/3",
+      "right": "8/5",
+      "kind": "polynomial",
+      "payment": "-100571344272367971561/2361183241434822606848",
+      "square_lower": "4336739529508161130003/4722366482869645213696",
+      "young": "38354415889/1000000000000",
+      "logarithm_k": 1,
+      "logarithm_n": 32,
+      "reciprocal": true,
+      "degrees": [
+        88,
+        4,
+        4
+      ],
+      "box_left": [
+        "5/8",
+        "0",
+        "0"
+      ],
+      "box_width": [
+        "1/8",
+        "1",
+        "1"
+      ],
+      "affine_power_candidate_nonnegative": false
+    },
+    {
+      "left": "8/5",
+      "right": "2",
+      "kind": "polynomial",
+      "payment": "-41521280427710973271/2361183241434822606848",
+      "square_lower": "2279584009500962553183/2361183241434822606848",
+      "young": "15354788981/500000000000",
+      "logarithm_k": 1,
+      "logarithm_n": 32,
+      "reciprocal": true,
+      "degrees": [
+        88,
+        4,
+        4
+      ],
+      "box_left": [
+        "1/2",
+        "0",
+        "0"
+      ],
+      "box_width": [
+        "1/8",
+        "1",
+        "1"
+      ],
+      "affine_power_candidate_nonnegative": false
+    },
+    {
+      "left": "2",
+      "right": "16/7",
+      "kind": "polynomial",
+      "payment": "11457082742194641165/1180591620717411303424",
+      "square_lower": "4814918412033589524591/4722366482869645213696",
+      "young": "6238311691/250000000000",
+      "logarithm_k": 0,
+      "logarithm_n": 32,
+      "reciprocal": true,
+      "degrees": [
+        88,
+        4,
+        4
+      ],
+      "box_left": [
+        "7/16",
+        "0",
+        "0"
+      ],
+      "box_width": [
+        "1/16",
+        "1",
+        "1"
+      ],
+      "affine_power_candidate_nonnegative": false
+    },
+    {
+      "left": "16/7",
+      "right": "8/3",
+      "kind": "polynomial",
+      "payment": "13900387503291502831/590295810358705651712",
+      "square_lower": "618761642286817405007/590295810358705651712",
+      "young": "329845277/15625000000",
+      "logarithm_k": 0,
+      "logarithm_n": 32,
+      "reciprocal": true,
+      "degrees": [
+        88,
+        4,
+        4
+      ],
+      "box_left": [
+        "3/8",
+        "0",
+        "0"
+      ],
+      "box_width": [
+        "1/16",
+        "1",
+        "1"
+      ],
+      "affine_power_candidate_nonnegative": false
+    },
+    {
+      "left": "8/3",
+      "right": "16/5",
+      "kind": "polynomial",
+      "payment": "174580441199175814049/4722366482869645213696",
+      "square_lower": "5084759539907995012895/4722366482869645213696",
+      "young": "4315478627/250000000000",
+      "logarithm_k": 0,
+      "logarithm_n": 32,
+      "reciprocal": true,
+      "degrees": [
+        88,
+        4,
+        4
+      ],
+      "box_left": [
+        "5/16",
+        "0",
+        "0"
+      ],
+      "box_width": [
+        "1/16",
+        "1",
+        "1"
+      ],
+      "affine_power_candidate_nonnegative": false
+    },
+    {
+      "left": "16/5",
+      "right": "4",
+      "kind": "polynomial",
+      "payment": "231716015855907897139/4722366482869645213696",
+      "square_lower": "2604650280329439494241/2361183241434822606848",
+      "young": "2680626029/200000000000",
+      "logarithm_k": 0,
+      "logarithm_n": 32,
+      "reciprocal": true,
+      "degrees": [
+        88,
+        4,
+        4
+      ],
+      "box_left": [
+        "1/4",
+        "0",
+        "0"
+      ],
+      "box_width": [
+        "1/16",
+        "1",
+        "1"
+      ],
+      "affine_power_candidate_nonnegative": false
+    },
+    {
+      "left": "4",
+      "right": "16/3",
+      "kind": "polynomial",
+      "payment": "137502001178903415893/2361183241434822606848",
+      "square_lower": "1326421098196904733649/1180591620717411303424",
+      "young": "4763943607/500000000000",
+      "logarithm_k": 0,
+      "logarithm_n": 32,
+      "reciprocal": true,
+      "degrees": [
+        88,
+        4,
+        4
+      ],
+      "box_left": [
+        "3/16",
+        "0",
+        "0"
+      ],
+      "box_width": [
+        "1/16",
+        "1",
+        "1"
+      ],
+      "affine_power_candidate_nonnegative": false
+    },
+    {
+      "left": "16/3",
+      "right": "32/5",
+      "kind": "polynomial",
+      "payment": "280407422975308419977/4722366482869645213696",
+      "square_lower": "2658920012042104301361/2361183241434822606848",
+      "young": "265063259/40000000000",
+      "logarithm_k": 0,
+      "logarithm_n": 32,
+      "reciprocal": true,
+      "degrees": [
+        88,
+        4,
+        4
+      ],
+      "box_left": [
+        "5/32",
+        "0",
+        "0"
+      ],
+      "box_width": [
+        "1/32",
+        "1",
+        "1"
+      ],
+      "affine_power_candidate_nonnegative": false
+    },
+    {
+      "left": "32/5",
+      "right": "8",
+      "kind": "polynomial",
+      "payment": "250594724809946694705/4722366482869645213696",
+      "square_lower": "5251118185305827598503/4722366482869645213696",
+      "young": "4732555217/1000000000000",
+      "logarithm_k": 0,
+      "logarithm_n": 32,
+      "reciprocal": true,
+      "degrees": [
+        88,
+        4,
+        4
+      ],
+      "box_left": [
+        "1/8",
+        "0",
+        "0"
+      ],
+      "box_width": [
+        "1/32",
+        "1",
+        "1"
+      ],
+      "affine_power_candidate_nonnegative": false
+    },
+    {
+      "left": "8",
+      "right": "64/7",
+      "kind": "polynomial",
+      "payment": "113559431646256989685/2361183241434822606848",
+      "square_lower": "2599584038294313771187/2361183241434822606848",
+      "young": "844216413/250000000000",
+      "logarithm_k": 0,
+      "logarithm_n": 32,
+      "reciprocal": true,
+      "degrees": [
+        88,
+        4,
+        4
+      ],
+      "box_left": [
+        "7/64",
+        "0",
+        "0"
+      ],
+      "box_width": [
+        "1/64",
+        "1",
+        "1"
+      ],
+      "affine_power_candidate_nonnegative": false
+    },
+    {
+      "left": "64/7",
+      "right": "32/3",
+      "kind": "polynomial",
+      "payment": "24599157469836169375/590295810358705651712",
+      "square_lower": "5132820098019177095155/4722366482869645213696",
+      "young": "253316227/100000000000",
+      "logarithm_k": 0,
+      "logarithm_n": 32,
+      "reciprocal": true,
+      "degrees": [
+        88,
+        4,
+        4
+      ],
+      "box_left": [
+        "3/32",
+        "0",
+        "0"
+      ],
+      "box_width": [
+        "1/64",
+        "1",
+        "1"
+      ],
+      "affine_power_candidate_nonnegative": false
+    },
+    {
+      "left": "32/3",
+      "right": "64/5",
+      "kind": "polynomial",
+      "payment": "40048667782745557149/1180591620717411303424",
+      "square_lower": "5053874261512988590973/4722366482869645213696",
+      "young": "353170491/200000000000",
+      "logarithm_k": 0,
+      "logarithm_n": 32,
+      "reciprocal": true,
+      "degrees": [
+        88,
+        4,
+        4
+      ],
+      "box_left": [
+        "5/64",
+        "0",
+        "0"
+      ],
+      "box_width": [
+        "1/64",
+        "1",
+        "1"
+      ],
+      "affine_power_candidate_nonnegative": false
+    },
+    {
+      "left": "64/5",
+      "right": "128/9",
+      "kind": "polynomial",
+      "payment": "35016915986125371439/1180591620717411303424",
+      "square_lower": "5010977523543056248329/4722366482869645213696",
+      "young": "1259275547/1000000000000",
+      "logarithm_k": 0,
+      "logarithm_n": 32,
+      "reciprocal": true,
+      "degrees": [
+        88,
+        4,
+        4
+      ],
+      "box_left": [
+        "9/128",
+        "0",
+        "0"
+      ],
+      "box_width": [
+        "1/128",
+        "1",
+        "1"
+      ],
+      "affine_power_candidate_nonnegative": false
+    },
+    {
+      "left": "128/9",
+      "right": "16",
+      "kind": "polynomial",
+      "payment": "118951390549623590033/4722366482869645213696",
+      "square_lower": "4966363692436214735903/4722366482869645213696",
+      "young": "96240373/100000000000",
+      "logarithm_k": 0,
+      "logarithm_n": 32,
+      "reciprocal": true,
+      "degrees": [
+        88,
+        4,
+        4
+      ],
+      "box_left": [
+        "1/16",
+        "0",
+        "0"
+      ],
+      "box_width": [
+        "1/128",
+        "1",
+        "1"
+      ],
+      "affine_power_candidate_nonnegative": false
+    },
+    {
+      "left": "16",
+      "right": "128/7",
+      "kind": "polynomial",
+      "payment": "12181056444050603673/590295810358705651712",
+      "square_lower": "1230335271729162306673/1180591620717411303424",
+      "young": "703019517/1000000000000",
+      "logarithm_k": 0,
+      "logarithm_n": 32,
+      "reciprocal": true,
+      "degrees": [
+        88,
+        4,
+        4
+      ],
+      "box_left": [
+        "7/128",
+        "0",
+        "0"
+      ],
+      "box_width": [
+        "1/128",
+        "1",
+        "1"
+      ],
+      "affine_power_candidate_nonnegative": false
+    },
+    {
+      "left": "128/7",
+      "right": "64/3",
+      "kind": "polynomial",
+      "payment": "76188380904323788517/4722366482869645213696",
+      "square_lower": "4877228273937503561715/4722366482869645213696",
+      "young": "242266639/500000000000",
+      "logarithm_k": 0,
+      "logarithm_n": 32,
+      "reciprocal": true,
+      "degrees": [
+        88,
+        4,
+        4
+      ],
+      "box_left": [
+        "3/64",
+        "0",
+        "0"
+      ],
+      "box_width": [
+        "1/128",
+        "1",
+        "1"
+      ],
+      "affine_power_candidate_nonnegative": false
+    },
+    {
+      "left": "64/3",
+      "right": "128/5",
+      "kind": "polynomial",
+      "payment": "27967913842006603193/2361183241434822606848",
+      "square_lower": "4835573769772638673975/4722366482869645213696",
+      "young": "154564697/500000000000",
+      "logarithm_k": 0,
+      "logarithm_n": 32,
+      "reciprocal": true,
+      "degrees": [
+        88,
+        4,
+        4
+      ],
+      "box_left": [
+        "5/128",
+        "0",
+        "0"
+      ],
+      "box_width": [
+        "1/128",
+        "1",
+        "1"
+      ],
+      "affine_power_candidate_nonnegative": false
+    },
+    {
+      "left": "128/5",
+      "right": "256/9",
+      "kind": "polynomial",
+      "payment": "5810375264048249275/590295810358705651712",
+      "square_lower": "4816253600731534905115/4722366482869645213696",
+      "young": "206146203/1000000000000",
+      "logarithm_k": 0,
+      "logarithm_n": 32,
+      "reciprocal": true,
+      "degrees": [
+        88,
+        4,
+        4
+      ],
+      "box_left": [
+        "9/256",
+        "0",
+        "0"
+      ],
+      "box_width": [
+        "1/256",
+        "1",
+        "1"
+      ],
+      "affine_power_candidate_nonnegative": false
+    },
+    {
+      "left": "256/9",
+      "right": "32",
+      "kind": "polynomial",
+      "payment": "37584127535859224485/4722366482869645213696",
+      "square_lower": "4798136170045205530831/4722366482869645213696",
+      "young": "15077153/100000000000",
+      "logarithm_k": 0,
+      "logarithm_n": 32,
+      "reciprocal": true,
+      "degrees": [
+        88,
+        4,
+        4
+      ],
+      "box_left": [
+        "1/32",
+        "0",
+        "0"
+      ],
+      "box_width": [
+        "1/256",
+        "1",
+        "1"
+      ],
+      "affine_power_candidate_nonnegative": false
+    },
+    {
+      "left": "32",
+      "right": "256/7",
+      "kind": "polynomial",
+      "payment": "29383222836178619159/4722366482869645213696",
+      "square_lower": "2390750051527887233963/2361183241434822606848",
+      "young": "844409/8000000000",
+      "logarithm_k": 0,
+      "logarithm_n": 32,
+      "reciprocal": true,
+      "degrees": [
+        88,
+        4,
+        4
+      ],
+      "box_left": [
+        "7/256",
+        "0",
+        "0"
+      ],
+      "box_width": [
+        "1/256",
+        "1",
+        "1"
+      ],
+      "affine_power_candidate_nonnegative": false
+    },
+    {
+      "left": "256/7",
+      "right": "128/3",
+      "kind": "polynomial",
+      "payment": "5498391899096705881/1180591620717411303424",
+      "square_lower": "4766559117743255741905/4722366482869645213696",
+      "young": "69878077/1000000000000",
+      "logarithm_k": 0,
+      "logarithm_n": 32,
+      "reciprocal": true,
+      "degrees": [
+        88,
+        4,
+        4
+      ],
+      "box_left": [
+        "3/128",
+        "0",
+        "0"
+      ],
+      "box_width": [
+        "1/256",
+        "1",
+        "1"
+      ],
+      "affine_power_candidate_nonnegative": false
+    },
+    {
+      "left": "128/3",
+      "right": "256/5",
+      "kind": "polynomial",
+      "payment": "15523319047587733909/4722366482869645213696",
+      "square_lower": "4753515401204178541235/4722366482869645213696",
+      "young": "1718409/40000000000",
+      "logarithm_k": 0,
+      "logarithm_n": 32,
+      "reciprocal": true,
+      "degrees": [
+        88,
+        4,
+        4
+      ],
+      "box_left": [
+        "5/256",
+        "0",
+        "0"
+      ],
+      "box_width": [
+        "1/256",
+        "1",
+        "1"
+      ],
+      "affine_power_candidate_nonnegative": false
+    },
+    {
+      "left": "256/5",
+      "right": "64",
+      "kind": "polynomial",
+      "payment": "1259043966036852965/590295810358705651712",
+      "square_lower": "1185638553548672507947/1180591620717411303424",
+      "young": "476469/20000000000",
+      "logarithm_k": 0,
+      "logarithm_n": 32,
+      "reciprocal": true,
+      "degrees": [
+        88,
+        4,
+        4
+      ],
+      "box_left": [
+        "1/64",
+        "0",
+        "0"
+      ],
+      "box_width": [
+        "1/256",
+        "1",
+        "1"
+      ],
+      "affine_power_candidate_nonnegative": false
+    },
+    {
+      "left": "64",
+      "right": "256/3",
+      "kind": "polynomial",
+      "payment": "5729122170355430491/4722366482869645213696",
+      "square_lower": "4733838639474023800805/4722366482869645213696",
+      "young": "5661113/500000000000",
+      "logarithm_k": 0,
+      "logarithm_n": 32,
+      "reciprocal": true,
+      "degrees": [
+        88,
+        4,
+        4
+      ],
+      "box_left": [
+        "3/256",
+        "0",
+        "0"
+      ],
+      "box_width": [
+        "1/256",
+        "1",
+        "1"
+      ],
+      "affine_power_candidate_nonnegative": false
+    },
+    {
+      "left": "256/3",
+      "right": "512/5",
+      "kind": "polynomial",
+      "payment": "1999436104171379085/2361183241434822606848",
+      "square_lower": "2365185501777101644935/2361183241434822606848",
+      "young": "5524611/1000000000000",
+      "logarithm_k": 0,
+      "logarithm_n": 32,
+      "reciprocal": true,
+      "degrees": [
+        88,
+        4,
+        4
+      ],
+      "box_left": [
+        "5/512",
+        "0",
+        "0"
+      ],
+      "box_width": [
+        "1/512",
+        "1",
+        "1"
+      ],
+      "affine_power_candidate_nonnegative": false
+    },
+    {
+      "left": "512/5",
+      "right": "128",
+      "kind": "polynomial",
+      "payment": "1284710472779135477/2361183241434822606848",
+      "square_lower": "4727508121798811030093/4722366482869645213696",
+      "young": "758877/250000000000",
+      "logarithm_k": 0,
+      "logarithm_n": 32,
+      "reciprocal": true,
+      "degrees": [
+        88,
+        4,
+        4
+      ],
+      "box_left": [
+        "1/128",
+        "0",
+        "0"
+      ],
+      "box_width": [
+        "1/512",
+        "1",
+        "1"
+      ],
+      "affine_power_candidate_nonnegative": false
+    },
+    {
+      "left": "128",
+      "right": "512/3",
+      "kind": "polynomial",
+      "payment": "1450021136166261385/4722366482869645213696",
+      "square_lower": "4725267415793632509225/4722366482869645213696",
+      "young": "357969/250000000000",
+      "logarithm_k": 0,
+      "logarithm_n": 32,
+      "reciprocal": true,
+      "degrees": [
+        88,
+        4,
+        4
+      ],
+      "box_left": [
+        "3/512",
+        "0",
+        "0"
+      ],
+      "box_width": [
+        "1/512",
+        "1",
+        "1"
+      ],
+      "affine_power_candidate_nonnegative": false
+    },
+    {
+      "left": "512/3",
+      "right": "256",
+      "kind": "polynomial",
+      "payment": "646085163537131177/4722366482869645213696",
+      "square_lower": "147614338437489031637/147573952589676412928",
+      "young": "522821/1000000000000",
+      "logarithm_k": 0,
+      "logarithm_n": 32,
+      "reciprocal": true,
+      "degrees": [
+        88,
+        4,
+        4
+      ],
+      "box_left": [
+        "1/256",
+        "0",
+        "0"
+      ],
+      "box_width": [
+        "1/512",
+        "1",
+        "1"
+      ],
+      "affine_power_candidate_nonnegative": false
+    },
+    {
+      "left": "256",
+      "right": "1024/3",
+      "kind": "polynomial",
+      "payment": "181961320838845831/2361183241434822606848",
+      "square_lower": "2361547192123136250201/2361183241434822606848",
+      "young": "17951/100000000000",
+      "logarithm_k": 0,
+      "logarithm_n": 32,
+      "reciprocal": true,
+      "degrees": [
+        88,
+        4,
+        4
+      ],
+      "box_left": [
+        "3/1024",
+        "0",
+        "0"
+      ],
+      "box_width": [
+        "1/1024",
+        "1",
+        "1"
+      ],
+      "affine_power_candidate_nonnegative": false
+    },
+    {
+      "left": "1024/3",
+      "right": "512",
+      "kind": "polynomial",
+      "payment": "80939901273872629/2361183241434822606848",
+      "square_lower": "4722690253573273374489/4722366482869645213696",
+      "young": "1309/20000000000",
+      "logarithm_k": 0,
+      "logarithm_n": 32,
+      "reciprocal": true,
+      "degrees": [
+        88,
+        4,
+        4
+      ],
+      "box_left": [
+        "1/512",
+        "0",
+        "0"
+      ],
+      "box_width": [
+        "1/1024",
+        "1",
+        "1"
+      ],
+      "affine_power_candidate_nonnegative": false
+    },
+    {
+      "left": "512",
+      "right": "1024",
+      "kind": "polynomial",
+      "payment": "20246327105326759/2361183241434822606848",
+      "square_lower": "2361223734436245706499/2361183241434822606848",
+      "young": "14141/1000000000000",
+      "logarithm_k": 0,
+      "logarithm_n": 32,
+      "reciprocal": true,
+      "degrees": [
+        88,
+        4,
+        4
+      ],
+      "box_left": [
+        "1/1024",
+        "0",
+        "0"
+      ],
+      "box_width": [
+        "1/1024",
+        "1",
+        "1"
+      ],
+      "affine_power_candidate_nonnegative": false
+    }
+  ]
+}

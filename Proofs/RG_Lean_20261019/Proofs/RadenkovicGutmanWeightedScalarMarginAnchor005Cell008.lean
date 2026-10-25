@@ -6,8 +6,6 @@ namespace Gebendorfer.RadenkovicGutman.WeightedScalarMarginAnchor005Cell008
 open PreparedAffineAnchor005Cell008
 set_option maxHeartbeats 0
 set_option maxRecDepth 100000
-set_option profiler true
-set_option profiler.threshold 100
 theorem length_checked : preparedMargin.length=117 := by decide +kernel
 #print axioms length_checked
 noncomputable def row000 : ℤ := (rg_closed_integer_row% [[IntegerWeightedBernstein.applyWeights (n := 0) IntegerBernsteinWeights117.row000 preparedMargin]]).head!.head!

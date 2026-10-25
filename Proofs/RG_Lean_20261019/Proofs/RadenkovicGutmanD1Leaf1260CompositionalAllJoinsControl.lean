@@ -4,8 +4,6 @@ import Proofs.RadenkovicGutmanIntegerOuterJoinedEvaluation
 namespace Gebendorfer.RadenkovicGutman.DegreeOneLongClass00
 set_option maxHeartbeats 0
 set_option maxRecDepth 100000
-set_option profiler true
-set_option profiler.threshold 100
 theorem leaf01260_rejoined_suffix29_eval (x : Fin 3 → ℝ) :
   NestedHorner.eval (NestedInteger.castPoly 3 leaf01260_w_suffix29) x=
     NestedHorner.eval (NestedInteger.castPoly 3 (IntegerOuterTerms.transform 8 1 16 87 leaf01260_w_source29)) x :=

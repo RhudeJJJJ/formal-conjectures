@@ -1,5 +1,7 @@
 import Proofs.WOWII376354.RootPacking
 
+/-! Full certificates for the three explicitly closed-neighborhood WOWII 354 targets. -/
+
 open Finset SimpleGraph
 namespace WrittenOnTheWallII.GraphConjecture354
 variable {V : Type*} [Fintype V] [DecidableEq V]

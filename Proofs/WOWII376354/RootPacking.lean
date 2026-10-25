@@ -2,12 +2,15 @@ import Proofs.WOWII361362.TreeGeometry
 import Proofs.WOWII361362.GraphCover
 import FormalConjectures.WrittenOnTheWallII.GraphConjecture354
 
+/-! Rooted open packings with two vertices per closed-neighborhood component. -/
+
 open Finset SimpleGraph
 namespace WOWIIRootPacking
 open WrittenOnTheWallII.GraphConjecture354
 variable {V : Type*} [Fintype V] [DecidableEq V]
 variable (T : SimpleGraph V) [DecidableRel T.Adj]
 
+omit [DecidableEq V] in
 lemma child_exists (hT : T.IsTree) (r s : V) (hs : 2 ≤ T.degree s) :
     ∃ a, T.Adj s a ∧ T.dist r a = T.dist r s + 1 := by
   classical
@@ -42,7 +45,8 @@ lemma component_A_representative (A : Finset V)
   have ho := C.out.property
   change C.out.val ∈ A ∪ neighbors T A at ho
   rcases mem_union.mp ho with ho | ho
-  · exact ⟨C.out.val,ho,by simpa using C.out_eq⟩
+  · refine ⟨C.out.val,ho,?_⟩
+    exact C.out_eq
   · obtain ⟨s,hs,hcs⟩ := (mem_filter.mp ho).2
     refine ⟨s,hs,?_⟩
     rw [← C.out_eq]
@@ -68,8 +72,9 @@ lemma packing_two_per_component (hT : T.IsTree) (A : Finset V)
     fun C => closed_mem_of_adj T (hs C) (ha C)
   have ham : ∀ C : H.ConnectedComponent, H.connectedComponentMk ⟨a C,has C⟩=C := by
     intro C
-    rw [← hm C]
-    exact ConnectedComponent.connectedComponentMk_eq_of_adj (ha C).symm
+    exact (ConnectedComponent.connectedComponentMk_eq_of_adj
+      (show H.Adj ⟨a C,has C⟩ ⟨s C,closed_mem_of_mem T (hs C)⟩ from (ha C).symm)).trans
+        (hm C)
   let f : H.ConnectedComponent × Bool → V := fun q => if q.2 then a q.1 else s q.1
   have hfmem : ∀ q, f q ∈ closedNeighbors T A := by
     rintro ⟨C,b⟩
@@ -82,8 +87,8 @@ lemma packing_two_per_component (hT : T.IsTree) (A : Finset V)
   have hinj : Function.Injective f := by
     rintro ⟨C,b⟩ ⟨E,d⟩ he
     have hec : C=E := by
-      rw [← hfm (C,b),← hfm (E,d)]
-      exact congrArg H.connectedComponentMk (Subtype.ext he)
+      exact (hfm (C,b)).symm.trans
+        ((congrArg H.connectedComponentMk (Subtype.ext he)).trans (hfm (E,d)))
     subst E
     have heb : b=d := by
       cases b <;> cases d <;> simp_all [f, (ha C).ne, (ha C).ne.symm]
@@ -94,6 +99,7 @@ lemma packing_two_per_component (hT : T.IsTree) (A : Finset V)
   · rw [show P.card=Fintype.card (H.ConnectedComponent × Bool) by
           simp only [P,card_image_of_injective _ hinj,card_univ]]
     simp only [Fintype.card_prod,Fintype.card_bool]
+    change Fintype.card H.ConnectedComponent*2=2*Nat.card H.ConnectedComponent
     rw [Nat.card_eq_fintype_card]
     exact Nat.mul_comm _ _
   · intro u hu v hv hne
@@ -117,11 +123,11 @@ lemma packing_two_per_component (hT : T.IsTree) (A : Finset V)
     · have hzoutside : z ∉ closedNeighbors T A := by
         intro hz
         apply hec
-        rw [← hfm (C,b),← hfm (E,d)]
-        exact (ConnectedComponent.connectedComponentMk_eq_of_adj
+        have he := (ConnectedComponent.connectedComponentMk_eq_of_adj
           (show H.Adj ⟨f (C,b),hfmem _⟩ ⟨z,hz⟩ from huz)).trans
           (ConnectedComponent.connectedComponentMk_eq_of_adj
             (show H.Adj ⟨z,hz⟩ ⟨f (E,d),hfmem _⟩ from hvz.symm))
+        exact (hfm (C,b)).symm.trans (he.trans (hfm (E,d)))
       have hb : b=true := by
         cases b
         · exact False.elim (hzoutside (closed_mem_of_adj T (hs C) huz))
@@ -143,7 +149,7 @@ lemma packing_two_per_component (hT : T.IsTree) (A : Finset V)
         by_contra hno
         have hzcloser : T.dist r z+1=T.dist r (a Q) := by omega
         have hsame := WOWIIGeometry.closer_unique T hT (ha Q).symm hQ
-          (by simpa only [hd Q] using rfl) hzcloser
+          (hd Q).symm hzcloser
         exact hneq hsame
       exact hne (WOWIIGeometry.closer_unique T hT huz.symm hvz.symm
         (hdz C huz) (hdz E hvz))

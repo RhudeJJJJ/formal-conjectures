@@ -2,11 +2,13 @@ import Proofs.WOWII361362.TreeGeometry
 import Proofs.WOWII361362.GraphCover
 import FormalConjectures.WrittenOnTheWallII.GraphConjecture376
 
+/-! Transmission minimizers and the balanced edge cut in a finite tree. -/
+
 open Finset SimpleGraph
 namespace WOWIIMedian
 open WrittenOnTheWallII.GraphConjecture376
-variable {V : Type*} [Fintype V] [DecidableEq V]
-variable (T : SimpleGraph V) [DecidableRel T.Adj]
+variable {V : Type*} [Fintype V]
+variable (T : SimpleGraph V)
 
 lemma median_iff {v : V} : v ∈ medians T ↔ ∀ w, transmission T v ≤ transmission T w := by
   classical
@@ -83,7 +85,7 @@ noncomputable def side (a b : V) : Finset V := by
 lemma side_mem {a b w : V} : w ∈ side T a b ↔ T.dist a w < T.dist b w := by
   simp only [side,mem_filter,mem_univ,true_and]
 
-lemma side_compl (hT : T.IsTree) {a b : V} (hab : T.Adj a b) :
+lemma side_compl [DecidableEq V] (hT : T.IsTree) {a b : V} (hab : T.Adj a b) :
     side T b a = (side T a b)ᶜ := by
   ext w
   have hn := hT.dist_ne_of_adj w hab
@@ -119,15 +121,19 @@ lemma balanced_sides (hT : T.IsTree) {a b : V} (hab : T.Adj a b)
       simp only [hw,hw',↓reduceIte]
       exact (side_step T hT hab.symm hw').symm
   have hsum := Finset.sum_congr rfl (fun w (_ : w ∈ (univ : Finset V)) => hpoint w)
-  simp only [sum_add_distrib,← transmission,Finset.sum_boole,Finset.filter_mem_eq_inter,
-    Finset.univ_inter] at hsum
+  have hcountA : (∑ w : V, if w ∈ side T a b then (1 : ℕ) else 0)=(side T a b).card := by
+    simp
+  have hcountB : (∑ w : V, if w ∈ side T b a then (1 : ℕ) else 0)=(side T b a).card := by
+    simp
+  rw [sum_add_distrib,sum_add_distrib,hcountA,hcountB] at hsum
+  change transmission T b+(side T b a).card=transmission T a+(side T a b).card at hsum
   omega
 
 lemma closer_exists (hT : T.IsTree) {r x : V} (hne : r≠x) :
     ∃ p, T.Adj x p ∧ T.dist r p+1=T.dist r x := by
   obtain ⟨p,hp,hlen⟩ := hT.connected.exists_path_of_dist r x
   have hpos : 0<p.length := by
-    have hd := hT.connected.dist_pos.mpr hne
+    have hd := hT.connected.pos_dist_of_ne hne
     omega
   refine ⟨p.getVert (p.length-1),?_,?_⟩
   · have he := p.adj_getVert_succ (show p.length-1<p.length by omega)

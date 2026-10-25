@@ -1,6 +1,8 @@
 import Proofs.WOWII376354.MaximumCount
 import Proofs.WOWII376354.HalfArithmetic
 
+/-! Full original WOWII 376 certificate, using distance-sum minimizers. -/
+
 open Finset SimpleGraph
 namespace WOWIIMedian
 open WrittenOnTheWallII.GraphConjecture376
@@ -37,7 +39,7 @@ lemma two_medians_bound (hT : T.IsTree) (ho : 2<Fintype.card V)
   have htu : t+u≤1 := by
     by_cases hai : a ∈ I <;> by_cases hbi : b ∈ I
     · exact False.elim (isolates_independent T a hai b hbi hab)
-    all_goals simp only [t,u,* ,↓reduceIte];omega
+    all_goals (simp only [t,u,*,↓reduceIte] <;> omega)
   have hi := half_isolate_bound T hT hab
   have hj := half_isolate_bound T hT hab.symm
   have hsumA := side_cover_bound T hT hab hD

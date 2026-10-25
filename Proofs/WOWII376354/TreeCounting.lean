@@ -1,13 +1,16 @@
 import Proofs.WOWII376354.MedianGeometry
 import Mathlib.Combinatorics.SimpleGraph.DegreeSum
 
+/-! Rooted incidence injections and total-domination cover counts on tree halves. -/
+
 open Finset SimpleGraph
 namespace WOWIIMedian
-variable {V : Type*} [Fintype V] [DecidableEq V]
+variable {V : Type*} [Fintype V]
 variable (T : SimpleGraph V) [DecidableRel T.Adj]
 
 noncomputable def child (r u v : V) : V := if T.dist r u<T.dist r v then v else u
 
+omit [Fintype V] [DecidableRel T.Adj] in
 lemma child_ne_root (hT : T.IsTree) {r u v : V} (huv : T.Adj u v) :
     child T r u v≠r := by
   have hstep := hT.dist_eq_dist_add_one_of_adj r huv
@@ -16,6 +19,7 @@ lemma child_ne_root (hT : T.IsTree) {r u v : V} (huv : T.Adj u v) :
   · intro he;subst v;simp only [T.dist_self] at *;omega
   · intro he;subst u;simp only [T.dist_self] at *;omega
 
+omit [Fintype V] [DecidableRel T.Adj] in
 lemma child_injective (hT : T.IsTree) (r : V) (I : Finset V)
     (hI : ∀ u ∈ I, ∀ v ∈ I, ¬T.Adj u v) :
     Function.Injective (fun p : (Σ u : I, T.neighborSet u.val) => child T r p.1.val p.2.val) := by
@@ -73,7 +77,7 @@ lemma independent_global_bound (hT : T.IsTree) (I : Finset V)
   simp only [card_univ] at hc
   omega
 
-lemma independent_side_bound (hT : T.IsTree) {a b : V} (hab : T.Adj a b)
+lemma independent_side_bound [DecidableEq V] (hT : T.IsTree) {a b : V} (hab : T.Adj a b)
     (I : Finset V) (hIS : I ⊆ side T a b)
     (hI : ∀ u ∈ I, ∀ v ∈ I, ¬T.Adj u v) :
     ∑ u ∈ I, T.degree u ≤ (side T a b).card-1+(if a ∈ I then 1 else 0) := by
@@ -87,7 +91,9 @@ lemma independent_side_bound (hT : T.IsTree) {a b : V} (hab : T.Adj a b)
       apply mem_erase.mpr
       refine ⟨child_ne_root T hT huv,?_⟩
       unfold child
-      split_ifs <;> assumption
+      split_ifs
+      · exact hv
+      · exact hIS hu
     · have hv' : v ∈ side T b a := by
         rw [side_compl T hT hab]
         simpa only [mem_compl] using hv
@@ -114,6 +120,8 @@ lemma cover_sum_bound (X D : Finset V)
     exact mem_biUnion.mpr ⟨d,hd,by simpa using hvd.symm⟩
   have h := (card_le_card hsub).trans (card_biUnion_le)
   simpa only [T.card_neighborFinset_eq_degree] using h
+
+variable [DecidableEq V]
 
 def internalDegree (S : Finset V) (v : V) : ℕ := (T.neighborFinset v ∩ S).card
 

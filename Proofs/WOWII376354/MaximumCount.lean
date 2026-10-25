@@ -1,5 +1,7 @@
 import Proofs.WOWII376354.TreeCounting
 
+/-! Maximum-degree isolates and the exclusion of saturated tree-half covers. -/
+
 open Finset SimpleGraph
 namespace WOWIIMedian
 open WrittenOnTheWallII.GraphConjecture376
@@ -8,14 +10,16 @@ variable (T : SimpleGraph V) [DecidableRel T.Adj]
 
 def delta : ℕ := univ.sup T.degree
 
+omit [DecidableEq V] in
 lemma degree_le_delta (v : V) : T.degree v ≤ delta T := Finset.le_sup (mem_univ v)
 
+omit [DecidableEq V] in
 lemma maximum_iff {v : V} : v ∈ maximumVertices T ↔ T.degree v=delta T := by
   classical
   simp only [maximumVertices,mem_filter,mem_univ,true_and]
   constructor
   · intro h
-    exact le_antisymm (degree_le_delta T v) (Finset.sup_le h)
+    exact le_antisymm (degree_le_delta T v) (Finset.sup_le (fun w _ => h w))
   · intro h w
     exact (degree_le_delta T w).trans_eq h.symm
 

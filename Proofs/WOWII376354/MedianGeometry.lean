@@ -129,6 +129,7 @@ lemma balanced_sides (hT : T.IsTree) {a b : V} (hab : T.Adj a b)
   change transmission T b+(side T b a).card=transmission T a+(side T a b).card at hsum
   omega
 
+omit [Fintype V] in
 lemma closer_exists (hT : T.IsTree) {r x : V} (hne : r≠x) :
     ∃ p, T.Adj x p ∧ T.dist r p+1=T.dist r x := by
   obtain ⟨p,hp,hlen⟩ := hT.connected.exists_path_of_dist r x

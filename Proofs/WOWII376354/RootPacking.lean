@@ -118,8 +118,6 @@ lemma packing_two_per_component (hT : T.IsTree) (A : Finset V)
         | exact hbd rfl
         | exact hdist (by rw [T.dist_eq_one_iff_adj.mpr huz.symm,
             T.dist_eq_one_iff_adj.mpr hvz.symm])
-        | exact hdist (by rw [T.dist_eq_one_iff_adj.mpr hvz.symm,
-            T.dist_eq_one_iff_adj.mpr huz.symm])
     · have hzoutside : z ∉ closedNeighbors T A := by
         intro hz
         apply hec

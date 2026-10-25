@@ -7,6 +7,7 @@ namespace WrittenOnTheWallII.GraphConjecture354
 variable {V : Type*} [Fintype V] [DecidableEq V]
 variable (T : SimpleGraph V)
 
+omit [DecidableEq V] in
 lemma packing_card_le_total {P D : Finset V}
     (hP : (P : Set V).Pairwise fun u v => Disjoint (T.neighborSet u) (T.neighborSet v))
     (hD : T.IsTotalDominating (D : Set V)) : P.card ≤ D.card := by

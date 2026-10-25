@@ -9,7 +9,7 @@ namespace WOWIIMedian
 theorem poor_half_impossible (δ h i j d e t u : Nat)
     (hδ : 2 ≤ δ) (hh : 2 ≤ h) (ht : t ≤ 1) (hu : u ≤ 1) (htu : t + u ≤ 1)
     (hi : δ * i ≤ h - 1 + t) (hj : δ * j ≤ h - 1 + u)
-    (hd : h - 1 ≤ δ * d) (he : h - 1 ≤ δ * e)
+    (hd : h - 1 ≤ δ * d) (_he : h - 1 ≤ δ * e)
     (hg : d + e ≤ i + j + 1) (hstrict : 2 * h < δ * (d + e))
     (hsat : δ * d=h - 1 → i < d) (hpoor : d ≤ i) : False := by
   have hsub : h - 1 + 1=h := by omega

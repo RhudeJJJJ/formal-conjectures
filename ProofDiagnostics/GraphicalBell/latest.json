@@ -1,10 +1,10 @@
 {
   "scope": "Exact original imported modules; actual checkout recorded separately from workflow event SHA",
   "workflow_event_sha": "6e20145380ae7f8c3a8cf47ceb85a1abab074917",
-  "source_sha": "b2d58d343bda01eca2a74aae012294f7510f020a",
+  "source_sha": "62f9346442c8757cad34bc4c9b295f29260684d2",
   "run_id": "40201620527",
-  "cycle": 1,
-  "status": "failed",
+  "cycle": 2,
+  "status": "passed",
   "protected_hashes": {
     "lean-toolchain": "3aac669c7a910ec2389f4e4f921b605adf6ebf2d1e0c9b9cd0be4d33f3f5db71",
     "lake-manifest.json": "c8ffc0d59f492007162fe54c68396e4b9f2f305fcf69210a7fbaf0b18fcd8cd9",
@@ -12,25 +12,25 @@
     "FormalConjectures/Other/GraphicalBell.lean": "05bab9c948efbf749153c59d6ef457d2b61c5b6734d1093e97cff55de1fe8790"
   },
   "proof_hashes": {
-    "Vectors": "a289aa745e9dd99e49e6274e6a8d6e851cf0fc140b4326ec78819a407c73d085",
-    "Partitions": "c56b802b1f4d8a3b4e7da128a68cb8157af8fe6c89304c34461fb6353d2af18d",
-    "Recovery": "00657d7b6182c4e78698aaffb47488148160478dc7901b33451d59e934fe856f",
-    "Base": "b7ed52a4d5b9f9ba86756bb5420efb159a0de6ffe27111801a953cd6481aeacf",
-    "Insertion": "52ddef85fd69c031f793667813914df79d5781837ecf64c68e02b9be7df25ea1",
-    "Deletion": "c426ff9fc86bb9f2b288cd5a2bca06031e95e4e669ced252e53dee91ae1c9600",
-    "Simplicial": "ce462ba47d443b3e37c23fb04e695e91ad97db604b8d9fea361d789fff72d1a9",
-    "Discrete": "0315e0336be0ee2007b4d5febeb11b52d1df89d6ac8786990046716dc669a56e",
-    "QuasiGraph": "3a766a26d2f2215f0bbd5b3d48ac63b3072838735702e04bd114b7e764bd36b6",
-    "CountVectors": "fe2d8c0c9f7bd1a1b56c8f4312d95edfdef146ffbeb936461c3c5bd76ed993e2",
-    "Transport": "300f4f1cabff91d54e07ce145e18ddb539cc4c366c338e577044792c4cdcbc9e",
-    "Parameters": "f86b30829151bbbfc9ee205a9fae44cbfa910e49c830a43a6cfb678a9658c828",
-    "Model": "1a87741d5134bb26fadb98f1ad13253f07c5d3d7d532cc944fd7db8310161a71",
-    "Degrees": "b4ca0610237ca7cf8bc07daf640d66829c2e7d2f781b576ecdecb4835d519364",
-    "Universal": "40a57193a7f880e7553cf2377cc72c3edcedbb553acd14c792043a9d1f85eb94",
-    "BellBridge": "49bf8180924fc2ec0627aea919f41f519fdf10519f26491b969e8f87b8a50d6d",
-    "OriginalBridge": "72598515716590cd9e1919e1619edb39b025498c5755dab685389043c9546b14",
-    "Full": "eb54745e07e70f72c62fd4a0b36d9a4109784d13ab7e50283c108a031f35e316",
-    "ExactAudit": "99c3d868f35bef56bfb21684f28171ae8a470fdc9c4c81093f2eddfedda2c2d0"
+    "Vectors": "8e9b101454cc070472a5ce3b6cee657b1b5621766a5c611ef4829b0b10a27a8e",
+    "Partitions": "87b69c6919b5abd61635bf59f69930ccb1503ee9f06482e247be59bc6a9bf9ec",
+    "Recovery": "269cb06421185cd90f05014f8ff2825741199fb2e352065e150c49a8f9ffd633",
+    "Base": "d9d34c716b67c2c38cda221c60a92077e9f2e54c4bd908e4fb4baf72739588bb",
+    "Insertion": "d79a35e7af4981f3b7f735bc20d093d7a2a211ac5413fe7a1414d648e6fbf735",
+    "Deletion": "aa184165140a163b4e372c33d4d777301a459fd08f687243c95612160292f58a",
+    "Simplicial": "79802206f82674fd6932d2e8468df74996a54e5ef873873475c2f2ae7d5651f0",
+    "Discrete": "7450d859f3657c6d9bb66ed9a7c0774a982ce1ad78067d824c3c126bf23fc636",
+    "QuasiGraph": "da5c61df5565ad57ab07698135edf79d1f70506cd21bdb0043926b7d9b9c45de",
+    "CountVectors": "4b5b80c02c7a6c5ac9d87582fa17237ea64247ee1fdc3e871b4923ca3372c297",
+    "Transport": "14558c8d7aaf7bb649c7a497d98028a83735b6f6d0e845f7e70bf08ba2c5a5b0",
+    "Parameters": "d496141b4c73a24eef68f444b1e94ad2a8db6ca7393dc6ef03da5c628866abc1",
+    "Model": "836eae8b31669dd75d2efd1845bda06f659f85eeb20116192e56afb52a4211bd",
+    "Degrees": "4f7adeb731d44a38f00e12eefbc8515ea37b0a14fd7f34449e550ed322adaa1b",
+    "Universal": "c135891a6df6ef42cbdb9d3a03db13e74f271cddb04efddee09ce809c4199663",
+    "BellBridge": "f55413e6d9fda47ea9016a46c8ecfc448e690121c44f21e8ee4d5321f6fe4c95",
+    "OriginalBridge": "c45010fd5894e830b7020b2b45dbe951fc4e30b4aea18537a1a6de054f2361e2",
+    "Full": "622e40c8a891ab499d707e391c5aed1ace60f7a979a1855f89c184909b04279d",
+    "ExactAudit": "631d6c6aa8ca42940e30433891b1acdba8b92697b0696dd2c80df730e69b622b"
   },
   "results": [
     {
@@ -95,13 +95,13 @@
     },
     {
       "name": "Parameters",
-      "exit_code": 1,
-      "output": "Proofs/GraphicalBell/Parameters.lean:7:0: error: This file has no module docstring (`/-! ... -/`). Add one after the imports to document the file.\n\nNote: This linter can be disabled with `set_option linter.style.moduleDocstring false`\n"
+      "exit_code": 0,
+      "output": ""
     },
     {
       "name": "Model",
-      "exit_code": 1,
-      "output": "Proofs/GraphicalBell/Model.lean:1:0: error: object file '/home/runner/work/formal-conjectures/formal-conjectures/.lake/build/lib/lean/Proofs/GraphicalBell/Parameters.olean' of module Proofs.GraphicalBell.Parameters does not exist\n"
+      "exit_code": 0,
+      "output": ""
     },
     {
       "name": "Degrees",
@@ -110,28 +110,32 @@
     },
     {
       "name": "Universal",
-      "exit_code": 1,
-      "output": "Proofs/GraphicalBell/Universal.lean:1:0: error: object file '/home/runner/work/formal-conjectures/formal-conjectures/.lake/build/lib/lean/Proofs/GraphicalBell/Model.olean' of module Proofs.GraphicalBell.Model does not exist\n"
+      "exit_code": 0,
+      "output": ""
     },
     {
       "name": "BellBridge",
-      "exit_code": 1,
-      "output": "Proofs/GraphicalBell/BellBridge.lean:5:0: error: This file has no module docstring (`/-! ... -/`). Add one after the imports to document the file.\n\nNote: This linter can be disabled with `set_option linter.style.moduleDocstring false`\n"
+      "exit_code": 0,
+      "output": ""
     },
     {
       "name": "OriginalBridge",
-      "exit_code": 1,
-      "output": "Proofs/GraphicalBell/OriginalBridge.lean:1:0: error: object file '/home/runner/work/formal-conjectures/formal-conjectures/.lake/build/lib/lean/Proofs/GraphicalBell/BellBridge.olean' of module Proofs.GraphicalBell.BellBridge does not exist\n"
+      "exit_code": 0,
+      "output": ""
     },
     {
       "name": "Full",
-      "exit_code": 1,
-      "output": "Proofs/GraphicalBell/Full.lean:1:0: error: object file '/home/runner/work/formal-conjectures/formal-conjectures/.lake/build/lib/lean/Proofs/GraphicalBell/Universal.olean' of module Proofs.GraphicalBell.Universal does not exist\n"
+      "exit_code": 0,
+      "output": ""
     },
     {
       "name": "ExactAudit",
-      "exit_code": 1,
-      "output": "Proofs/GraphicalBell/ExactAudit.lean:1:0: error: object file '/home/runner/work/formal-conjectures/formal-conjectures/.lake/build/lib/lean/Proofs/GraphicalBell/Full.olean' of module Proofs.GraphicalBell.Full does not exist\n"
+      "exit_code": 0,
+      "output": "EXACT TYPE: PHOEG.GraphicalBell.coefficientwise = PHOEG.GraphicalBell.full_coefficientwise\nEXACT TYPE: PHOEG.GraphicalBell.conjecture = PHOEG.GraphicalBell.full_conjecture\n'PHOEG.GraphicalBell.full_coefficientwise' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PHOEG.GraphicalBell.full_conjecture' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PHOEG.GraphicalBell.coefficientwise' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]\n'PHOEG.GraphicalBell.conjecture' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]\n"
     }
-  ]
+  ],
+  "axioms": {
+    "PHOEG.GraphicalBell.full_coefficientwise": "propext, Classical.choice, Quot.sound",
+    "PHOEG.GraphicalBell.full_conjecture": "propext, Classical.choice, Quot.sound"
+  }
 }

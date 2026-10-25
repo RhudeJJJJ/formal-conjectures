@@ -44,5 +44,13 @@ def main():
         if p.exists():assert p.read_bytes()==raw,n
         else:p.write_bytes(raw)
     assert size<16*1024**2
+    bundle=S/'build/fresh_exports/generated_source';bundle.mkdir(parents=True,exist_ok=True)
+    hashes={}
+    for n,text in sources.items():
+        rel='Proofs/RG_Lean_20261019/'+n.replace('.','/')+'.lean';dest=bundle/rel;dest.parent.mkdir(parents=True,exist_ok=True);raw=text.encode()
+        if dest.exists():assert dest.read_bytes()==raw
+        else:dest.write_bytes(raw)
+        hashes[rel]=hashlib.sha256(raw).hexdigest()
+    (bundle/'generated_source_manifest.json').write_bytes((json.dumps(dict(endpoint=a.endpoint,original_leaf_index=index,original_packet_sha256=PACKET_SHA,source_sha256=hashes,kind='CANDIDATES_REQUIRE_SUCCESSFUL_KERNEL_RECEIPT'),indent=2)+'\n').encode())
     print(json.dumps(dict(status='SAME_ORIGINAL_CELL_COMPOSITIONAL_REPAIR_REQUIRES_KERNEL',index=index,modules=153,source_bytes=size,mathematical_coverage_added=0)),flush=True)
 if __name__=='__main__':main()

@@ -1,0 +1,15 @@
+/- Copyright 2026 Jonas J. Gebendorfer. Apache 2.0. -/
+import Proofs.RadenkovicGutmanD36Long00CompositionalNode096
+import Proofs.RadenkovicGutmanD36Long00CompositionalNode098
+import Proofs.RadenkovicGutmanStagedExprCompile
+namespace Gebendorfer.RadenkovicGutman.FixedDegree36Long00Compositional
+set_option maxHeartbeats 0
+set_option maxRecDepth 100000
+set_option backward.isDefEq.respectTransparency false
+noncomputable def e099 : NestedArithmetic.Expr 3 := .plus e096 e098
+noncomputable def p099 : NestedHorner.Poly 3 := [[[0],[0,0],[0,0]],[[0,0],[0,0,7776],[0,7776,-2448]],[[0,0,0],[0,0,0],[0,0]],[[0,0,93312],[0,317520,-10152],[93312,-10152]],[[0,0,0],[0,0,0],[0,0]],[[326592,2579688,495720],[2579688,1499256,-75096],[495720,-75096]],[[0,0,0],[0,0,0],[0,0]],[[22591224,22451256,995976],[22451256,2337408,-88416],[995976,-88416]],[[0,0,0],[0,0,0],[0,0]],[[244032264,85087584,807408],[85087584,374616,-36072],[807408,-36072]],[[0,0,0],[0,0,0],[0,0]],[[1273621104,183292920,-83736],[183292920,-3117168,-4824],[-83736,-4824]],[[0,0,0],[0,0],[0]],[[4056955992,244832400,-648288],[244832400,-4173120],[-648288]],[[0,0,0],[0,0],[0]],[[8711192376,204743592,-502632],[204743592,-2530080],[-502632]],[[0,0,0],[0,0],[0]],[[13268908080,97269264,-182448],[97269264,-822312],[-182448]],[[0,0,0],[0,0],[0]],[[14720768208,11033208,-32904],[11033208,-138816],[-32904]],[[0,0,0],[0,0],[0]],[[12006224856,-17333640,-2376],[-17333640,-9576],[-2376]],[[0,0],[0]],[[7139780928,-12738672],[-12738672]],[[0,0],[0]],[[2980594944,-4454064],[-4454064]],[[0,0],[0]],[[769865328,-895824],[-895824]],[[0,0],[0]],[[48787848,-99504],[-99504]],[[0,0],[0]],[[-51391368,-4752],[-4752]],[[0]],[[-24453360]],[[0]],[[-5810544]],[[0]],[[-824184]],[[0]],[[-66600]],[[0]],[[-2376]]]
+theorem step099 : p099=NestedHorner.add p096 p098 := by decide +kernel
+#print axioms step099
+theorem h099 : NestedArithmetic.compile e099=p099 := StagedExprCompile.compile_plus e099 e096 e098 p096 p098 p099 rfl h096 h098 step099
+#print axioms h099
+end Gebendorfer.RadenkovicGutman.FixedDegree36Long00Compositional

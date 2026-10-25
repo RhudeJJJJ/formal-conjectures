@@ -1,0 +1,15 @@
+/- Copyright 2026 Jonas J. Gebendorfer. Apache 2.0. -/
+import Proofs.RadenkovicGutmanD37Long00CompositionalNode073
+import Proofs.RadenkovicGutmanD37Long00CompositionalNode084
+import Proofs.RadenkovicGutmanStagedExprCompile
+namespace Gebendorfer.RadenkovicGutman.FixedDegree37Long00Compositional
+set_option maxHeartbeats 0
+set_option maxRecDepth 100000
+set_option backward.isDefEq.respectTransparency false
+noncomputable def e085 : NestedArithmetic.Expr 3 := .plus e073 e084
+noncomputable def p085 : NestedHorner.Poly 3 := [[[0],[0,0],[0,0]],[[0,0],[0,0,0],[0,0,0]],[[0,0,0],[0,0,0],[0,0,0]],[[0,0,0],[0,-2664,0],[0,0,0]],[[0,0,0],[0,0,0],[0,0]],[[-23976,-319680,0],[-319680,-73038,0],[0,0]],[[0,0,0],[0,0,0],[0,0]],[[-5516478,-4565430,0],[-4565430,-511340,0],[0,0]],[[0,0,0],[0,0,0],[0,0]],[[-86083830,-27802836,0],[-27802836,-1606318,0],[0,0]],[[0,0,0],[0,0,0],[0,0]],[[-614140800,-95492930,0],[-95492930,-2673324,0],[0,0]],[[0,0,0],[0,0,0],[0,0]],[[-2610650366,-206759108,0],[-206759108,-2538200,0],[0,0]],[[0,0,0],[0,0],[0]],[[-7390033458,-299361746,0],[-299361746,-1411476],[0]],[[0,0,0],[0,0],[0]],[[-14801383060,-299867832,0],[-299867832,-453694],[0]],[[0,0,0],[0,0],[0]],[[-21768964800,-211647252,0],[-211647252,-77996],[0]],[[0,0,0],[0,0],[0]],[[-24074158706,-105870616,0],[-105870616,-5550],[0]],[[0,0,0],[0,0],[0]],[[-20318760308,-37276538,0],[-37276538,0],[0]],[[0,0],[0]],[[-13195805060,-9025780],[-9025780]],[[0,0],[0]],[[-6610335640,-1429754],[-1429754]],[[0,0],[0]],[[-2545696866,-133348],[-133348]],[[0,0],[0]],[[-746128458,-5550],[-5550]],[[0,0],[0]],[[-163292100,0],[0]],[[0]],[[-25821560]],[[0]],[[-2785286]],[[0]],[[-183298]],[[0]],[[-5550]],[[0]],[[0]]]
+theorem step085 : p085=NestedHorner.add p073 p084 := by decide +kernel
+#print axioms step085
+theorem h085 : NestedArithmetic.compile e085=p085 := StagedExprCompile.compile_plus e085 e073 e084 p073 p084 p085 rfl h073 h084 step085
+#print axioms h085
+end Gebendorfer.RadenkovicGutman.FixedDegree37Long00Compositional

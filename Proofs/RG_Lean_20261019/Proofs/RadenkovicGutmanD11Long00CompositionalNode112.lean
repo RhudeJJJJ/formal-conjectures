@@ -1,0 +1,15 @@
+/- Copyright 2026 Jonas J. Gebendorfer. Apache 2.0. -/
+import Proofs.RadenkovicGutmanD11Long00CompositionalNode110
+import Proofs.RadenkovicGutmanD11Long00CompositionalNode111
+import Proofs.RadenkovicGutmanStagedExprCompile
+namespace Gebendorfer.RadenkovicGutman.FixedDegree11Long00Compositional
+set_option maxHeartbeats 0
+set_option maxRecDepth 100000
+set_option backward.isDefEq.respectTransparency false
+noncomputable def e112 : NestedArithmetic.Expr 3 := .plus e110 e111
+noncomputable def p112 : NestedHorner.Poly 3 := [[[0],[0,0],[0,0,121]],[[0,0],[0,0,0],[0,0,0]],[[0,0,1089],[0,0,2442],[1089,2442,368]],[[0,0,0],[0,0,0],[0,0,0]],[[9801,21978,25971],[21978,48996,13840],[25971,13840,4]],[[0,0,0],[0,0,0],[0,0]],[[440262,576990,170905],[576990,406920,25612],[170905,25612]],[[0,0,0],[0,0,0],[0,0]],[[7291431,4831686,523158],[4831686,1367024,20344],[523158,20344]],[[0,0,0],[0,0,0],[0,0]],[[59908242,20713216,892572],[20713216,2485480,7010],[892572,7010]],[[0,0,0],[0,0,0],[0,0]],[[293753641,54098046,920424],[54098046,2718984,888],[920424,888]],[[0,0,0],[0,0,0],[0,0]],[[954725076,93788526,594089],[93788526,1864704,8],[594089,8]],[[0,0,0],[0,0],[0]],[[2191198194,113157788,241054],[113157788,805216],[241054]],[[0,0,0],[0,0],[0]],[[3697659010,97540480,59769],[97540480,212584],[59769]],[[0,0,0],[0,0],[0]],[[4711043296,60818502,8333],[60818502,31540],[8333]],[[0,0,0],[0,0],[0]],[[4610684072,27463970,520],[27463970,2088],[520]],[[0,0,0],[0,0],[0]],[[3503347408,8890462,4],[8890462,16],[4]],[[0,0],[0]],[[2077470670,2011992],[2011992]],[[0,0],[0]],[[961696917,303090],[303090]],[[0,0],[0]],[[345834908,27570],[27570]],[[0,0],[0]],[[95549514,1200],[1200]],[[0,0],[0]],[[19893174,8],[8]],[[0]],[[3022461]],[[0]],[[317410]],[[0]],[[20837]],[[0]],[[680]],[[0]],[[4]]]
+theorem step112 : p112=NestedHorner.add p110 p111 := by decide +kernel
+#print axioms step112
+theorem h112 : NestedArithmetic.compile e112=p112 := StagedExprCompile.compile_plus e112 e110 e111 p110 p111 p112 rfl h110 h111 step112
+#print axioms h112
+end Gebendorfer.RadenkovicGutman.FixedDegree11Long00Compositional

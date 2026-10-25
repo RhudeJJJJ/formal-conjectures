@@ -1,0 +1,567 @@
+# Include the required original inner-check axiom profile in the alias-only module.
+name: RG complete original degree2 refined both long proofs part 5
+
+on:
+  push:
+    branches: [rg-remaining-six-spectral-20261021]
+    paths: ['.github/workflows/rg-d2-complete-original-refined-both-long-part5.yml']
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  check:
+    strategy:
+      fail-fast: false
+      max-parallel: 2
+      matrix:
+        include:
+          - endpoint: Proofs.RadenkovicGutmanD2PowerParameterGroup1125Complete
+            max_fresh: 65
+          - endpoint: Proofs.RadenkovicGutmanD2PowerParameterGroup1126Complete
+            max_fresh: 65
+          - endpoint: Proofs.RadenkovicGutmanD2PowerParameterGroup1127Complete
+            max_fresh: 65
+          - endpoint: Proofs.RadenkovicGutmanD2PowerParameterGroup1128Complete
+            max_fresh: 65
+          - endpoint: Proofs.RadenkovicGutmanD2PowerParameterGroup1129Complete
+            max_fresh: 65
+          - endpoint: Proofs.RadenkovicGutmanD2PowerParameterGroup1130Complete
+            max_fresh: 65
+          - endpoint: Proofs.RadenkovicGutmanD2PowerParameterGroup1131Complete
+            max_fresh: 65
+          - endpoint: Proofs.RadenkovicGutmanD2PowerParameterGroup1132Complete
+            max_fresh: 65
+          - endpoint: Proofs.RadenkovicGutmanD2PowerParameterGroup1133Complete
+            max_fresh: 65
+          - endpoint: Proofs.RadenkovicGutmanD2PowerParameterGroup1134Complete
+            max_fresh: 65
+          - endpoint: Proofs.RadenkovicGutmanD2PowerParameterGroup1135Complete
+            max_fresh: 65
+          - endpoint: Proofs.RadenkovicGutmanD2PowerParameterGroup1136Complete
+            max_fresh: 65
+          - endpoint: Proofs.RadenkovicGutmanD2PowerParameterGroup1137Complete
+            max_fresh: 65
+          - endpoint: Proofs.RadenkovicGutmanD2PowerParameterGroup1138Complete
+            max_fresh: 65
+          - endpoint: Proofs.RadenkovicGutmanD2PowerParameterGroup1139Complete
+            max_fresh: 65
+          - endpoint: Proofs.RadenkovicGutmanD2PowerParameterGroup1140Complete
+            max_fresh: 65
+          - endpoint: Proofs.RadenkovicGutmanD2PowerParameterGroup1141Complete
+            max_fresh: 65
+          - endpoint: Proofs.RadenkovicGutmanD2PowerParameterGroup1142Complete
+            max_fresh: 65
+          - endpoint: Proofs.RadenkovicGutmanD2PowerParameterGroup1143Complete
+            max_fresh: 65
+          - endpoint: Proofs.RadenkovicGutmanD2PowerParameterGroup1144Complete
+            max_fresh: 65
+          - endpoint: Proofs.RadenkovicGutmanD2PowerParameterGroup1145Complete
+            max_fresh: 65
+          - endpoint: Proofs.RadenkovicGutmanD2PowerParameterGroup1146Complete
+            max_fresh: 65
+          - endpoint: Proofs.RadenkovicGutmanD2PowerParameterGroup1147Complete
+            max_fresh: 65
+          - endpoint: Proofs.RadenkovicGutmanD2PowerParameterGroup1148Complete
+            max_fresh: 65
+          - endpoint: Proofs.RadenkovicGutmanD2PowerParameterGroup1149Complete
+            max_fresh: 65
+          - endpoint: Proofs.RadenkovicGutmanD2PowerParameterGroup1150Complete
+            max_fresh: 65
+          - endpoint: Proofs.RadenkovicGutmanD2PowerParameterGroup1151Complete
+            max_fresh: 65
+          - endpoint: Proofs.RadenkovicGutmanD2PowerParameterGroup1152Complete
+            max_fresh: 65
+          - endpoint: Proofs.RadenkovicGutmanD2PowerParameterGroup1153Complete
+            max_fresh: 65
+          - endpoint: Proofs.RadenkovicGutmanD2PowerParameterGroup1154Complete
+            max_fresh: 65
+          - endpoint: Proofs.RadenkovicGutmanD2PowerParameterGroup1155Complete
+            max_fresh: 65
+          - endpoint: Proofs.RadenkovicGutmanD2PowerParameterGroup1156Complete
+            max_fresh: 65
+          - endpoint: Proofs.RadenkovicGutmanD2PowerParameterGroup1157Complete
+            max_fresh: 65
+          - endpoint: Proofs.RadenkovicGutmanD2PowerParameterGroup1158Complete
+            max_fresh: 65
+          - endpoint: Proofs.RadenkovicGutmanD2PowerParameterGroup1159Complete
+            max_fresh: 65
+          - endpoint: Proofs.RadenkovicGutmanD2PowerParameterGroup1160Complete
+            max_fresh: 65
+          - endpoint: Proofs.RadenkovicGutmanD2PowerParameterGroup1161Complete
+            max_fresh: 65
+          - endpoint: Proofs.RadenkovicGutmanD2PowerParameterGroup1162Complete
+            max_fresh: 65
+          - endpoint: Proofs.RadenkovicGutmanD2PowerParameterGroup1163Complete
+            max_fresh: 65
+          - endpoint: Proofs.RadenkovicGutmanD2PowerParameterGroup1164Complete
+            max_fresh: 65
+          - endpoint: Proofs.RadenkovicGutmanD2PowerParameterGroup1165Complete
+            max_fresh: 65
+          - endpoint: Proofs.RadenkovicGutmanD2PowerParameterGroup1166Complete
+            max_fresh: 65
+          - endpoint: Proofs.RadenkovicGutmanD2PowerParameterGroup1167Complete
+            max_fresh: 65
+          - endpoint: Proofs.RadenkovicGutmanD2PowerParameterGroup1168Complete
+            max_fresh: 65
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1169Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1170Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1171Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1172Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1173Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2OriginalFallbackGroup1174Part00
+            max_fresh: 307
+          - endpoint: Proofs.RadenkovicGutmanD2OriginalFallbackGroup1174Part01
+            max_fresh: 307
+          - endpoint: Proofs.RadenkovicGutmanD2OriginalFallbackGroup1174Part02
+            max_fresh: 307
+          - endpoint: Proofs.RadenkovicGutmanD2OriginalFallbackGroup1174Part03
+            max_fresh: 307
+          - endpoint: Proofs.RadenkovicGutmanD2OriginalFallbackGroup1174Part04
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2OriginalFallbackGroup1175Part00
+            max_fresh: 307
+          - endpoint: Proofs.RadenkovicGutmanD2OriginalFallbackGroup1175Part01
+            max_fresh: 307
+          - endpoint: Proofs.RadenkovicGutmanD2OriginalFallbackGroup1175Part02
+            max_fresh: 307
+          - endpoint: Proofs.RadenkovicGutmanD2OriginalFallbackGroup1175Part03
+            max_fresh: 307
+          - endpoint: Proofs.RadenkovicGutmanD2OriginalFallbackGroup1176Part00
+            max_fresh: 307
+          - endpoint: Proofs.RadenkovicGutmanD2OriginalFallbackGroup1176Part01
+            max_fresh: 307
+          - endpoint: Proofs.RadenkovicGutmanD2OriginalFallbackGroup1176Part02
+            max_fresh: 307
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1177Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1178Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1179Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1180Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1181Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1182Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1183Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1184Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1185Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1186Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1187Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1188Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1189Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1190Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1191Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1192Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1193Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1194Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1195Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1196Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1197Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1198Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1199Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1200Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1201Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1202Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1203Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1204Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1205Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1206Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1207Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1208Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1209Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1210Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1211Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1212Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1213Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1214Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1215Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1216Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1217Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1218Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1219Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1220Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1221Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1222Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1223Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1224Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1225Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1226Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1227Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1228Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1229Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1230Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1231Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1232Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1233Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1234Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1235Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1236Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1237Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1238Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1239Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1240Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1241Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1242Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1243Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1244Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1245Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1246Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1247Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1248Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1249Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1250Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1251Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1252Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1253Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1254Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1255Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1256Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1257Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1258Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1259Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1260Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1261Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1262Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1263Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1264Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1265Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1266Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1267Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1268Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1269Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1270Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1271Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1272Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1273Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1274Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1275Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1276Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1277Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1278Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1279Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1280Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1281Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1282Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1283Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1284Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1285Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1286Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1287Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1288Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1289Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1290Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1291Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1292Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1293Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1294Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1295Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1296Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1297Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1298Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1299Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1300Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1301Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1302Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1303Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1304Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1305Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1306Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1307Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1308Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1309Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1310Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1311Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1312Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1313Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1314Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1315Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1316Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1317Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1318Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1319Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1320Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1321Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1322Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1323Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1324Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1325Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1326Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1327Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1328Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1329Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1330Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1331Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1332Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1333Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1334Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1335Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1336Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1337Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1338Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1339Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1340Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1341Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1342Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1343Complete
+            max_fresh: 154
+          - endpoint: Proofs.RadenkovicGutmanD2FullParameterGroup1344Complete
+            max_fresh: 154
+    runs-on: ubuntu-24.04
+    timeout-minutes: 360
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          persist-credentials: false
+      - name: Install the project toolchain
+        run: |
+          set -o pipefail
+          curl -sSfL https://github.com/leanprover/elan/releases/download/v1.4.2/elan-x86_64-unknown-linux-gnu.tar.gz | tar xz
+          ./elan-init -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Materialize the exact dependency lock
+        run: python3 -B ci/rg_dependencies.py
+      - name: Materialize the exact original degree2 interval proofs
+        run: python3 -B ci/rg_d2_refined_original_cell_proofs.py --endpoint ${{ matrix.endpoint }}
+      - name: Fetch the required Mathlib cache
+        run: |
+          python3 - <<'PY'
+          import pathlib, re, subprocess
+          root = pathlib.Path('Proofs/RG_Lean_20261019')
+          seen, external = set(), set()
+          def visit(name):
+              if name in seen:
+                  return
+              seen.add(name)
+              source = (root / (name.replace('.', '/') + '.lean')).read_text()
+              for dep in re.findall(r'^\s*import\s+([\w.]+)', source, re.M):
+                  if dep.startswith('Proofs.'):
+                      visit(dep)
+                  elif not dep.startswith(('Lean.', 'Init.', 'Std.')) and dep not in ('Lean','Init','Std'):
+                      external.add(dep)
+          visit('${{ matrix.endpoint }}')
+          subprocess.run(['lake', 'exe', 'cache', 'get', *sorted(external)], check=True)
+          PY
+      - name: Restore one independently audited complete source-bound base scope
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 -B ci/rg_restore_complete_scope.py --manifest ci/rg_reusable_analytic_kernel_base_complete_scope_capsule.json --build-directory Proofs/RG_Lean_20261019/build/extension
+      - name: Restore independently audited exact control proofs
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 -B ci/rg_restore_plan_parallel.py --plan ci/rg_d1_segmented_repair_macro_restore_plan.json --build-directory Proofs/RG_Lean_20261019/build/extension --workers 2
+      - name: Restore only the 296 independently audited complete degree2 normal-form modules
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_d2_all_six_compositional_norms_original_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+      - name: Restore the independently audited original full segmented control
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_d2_segmented_original_integer_leaf6289_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+      - name: Restore the original checked power to Bernstein theorem
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_power_bernstein_completed_original_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+      - name: Bound the remaining fresh module frontier
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 -B ci/rg_restore_with_kernel_fallback.py --plan ci/rg_d1_segmented_repair_macro_restore_plan.json --build-directory Proofs/RG_Lean_20261019/build/extension --endpoint ${{ matrix.endpoint }} --max-fresh ${{ matrix.max_fresh }} --preflight-only
+      - name: Check multiplicities and actual graph spectral comparison
+        shell: bash
+        run: |
+          set -o pipefail
+          python3 -B ci/rg_observed_kernel_verify.py --memory-reserve-mib 2048 -- --mathlib-project "$GITHUB_WORKSPACE" --endpoint ${{ matrix.endpoint }} --workers 1 --module-timeout 600 --resume | python3 -B ci/rg_compact_ci_output.py
+      - name: Retain completed records and diagnostics
+        if: always()
+        run: |
+          python3 - <<'PY'
+          import json,pathlib,shutil
+          root=pathlib.Path('Proofs/RG_Lean_20261019/build/extension')
+          records=[json.loads(p.read_text()) for p in sorted(root.glob('Proofs.*.json'))]
+          fresh=root.parent/'fresh_exports';fresh.mkdir(parents=True,exist_ok=True)
+          (fresh/'diagnostics_records.json').write_text(json.dumps({'modules':records},separators=(',',':'))+'\n')
+          if (root/'receipt.json').is_file():shutil.copyfile(root/'receipt.json',fresh/'receipt.json')
+          print('RETAINED_RECORD_COUNTS '+json.dumps({'total':len(records),'fresh':sum(r['mode']=='FRESH_KERNEL_EXPORT' for r in records)}))
+          for row in records:
+              if row['mode']=='FRESH_KERNEL_EXPORT':
+                  name=row['module'];rel=name.replace('.','/')+'.olean';dest=fresh/rel
+                  dest.parent.mkdir(parents=True,exist_ok=True)
+                  shutil.copyfile(root/rel,dest);shutil.copyfile(root/(name+'.json'),fresh/(name+'.json'))
+          for log in root.glob('Proofs.*.log'):
+              shutil.copyfile(log,fresh/log.name);print('MODULE_LOG_TAIL '+log.name+' '+log.read_text()[-18000:])
+          PY
+      - name: Retain new exports only
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: rg-d2-complete-original-refined-both-long-part5-exports-${{ github.run_id }}-${{ strategy.job-index }}
+          path: Proofs/RG_Lean_20261019/build/fresh_exports
+          retention-days: 90

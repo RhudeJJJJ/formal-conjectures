@@ -8,7 +8,7 @@ open WrittenOnTheWallII.GraphConjecture376
 variable {V : Type*} [Fintype V] [DecidableEq V]
 variable (T : SimpleGraph V) [DecidableRel T.Adj]
 
-def delta : ℕ := univ.sup T.degree
+def delta : ℕ := univ.sup (fun v => T.degree v)
 
 omit [DecidableEq V] in
 lemma degree_le_delta (v : V) : T.degree v ≤ delta T := Finset.le_sup (mem_univ v)
@@ -40,7 +40,9 @@ lemma isolates_degree_sum (I : Finset V) (hI : I ⊆ maximumDegreeIsolates T) :
   simp only [Finset.sum_congr rfl h,Finset.sum_const,Nat.nsmul_eq_mul]
   exact Nat.mul_comm _ _
 
+omit [DecidableEq V] in
 lemma delta_ge_two (hT : T.IsTree) (ho : 2<Fintype.card V) : 2≤delta T := by
+  classical
   by_contra hn
   have hd : ∀ v, T.degree v≤1 := fun v => (degree_le_delta T v).trans (by omega)
   have hsum : ∑ v : V, T.degree v≤Fintype.card V := by
@@ -51,6 +53,7 @@ lemma delta_ge_two (hT : T.IsTree) (ho : 2<Fintype.card V) : 2≤delta T := by
   have hs := T.sum_degrees_eq_twice_card_edges
   omega
 
+omit [DecidableEq V] in
 lemma total_cover_delta {D : Finset V} (hD : T.IsTotalDominating (D : Set V)) :
     Fintype.card V ≤ ∑ d ∈ D, T.degree d ∧
       (∑ d ∈ D, T.degree d) ≤ delta T*D.card := by

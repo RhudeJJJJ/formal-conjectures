@@ -26,13 +26,15 @@ lemma child_injective (hT : T.IsTree) (r : V) (I : Finset V)
   classical
   rintro ⟨⟨u,hu⟩,⟨v,huv⟩⟩ ⟨⟨x,hx⟩,⟨y,hxy⟩⟩ he
   change child T r u v=child T r x y at he
+  change T.Adj u v at huv
+  change T.Adj x y at hxy
   have hs := hT.dist_eq_dist_add_one_of_adj r huv
   have ht := hT.dist_eq_dist_add_one_of_adj r hxy
   by_cases hlt : T.dist r u<T.dist r v <;>
     by_cases hlt' : T.dist r x<T.dist r y
   · simp only [child,hlt,hlt',↓reduceIte] at he
     subst y
-    have hux : u=x := WOWIIGeometry.closer_unique T hT huv.symm hxy.symm
+    have hux : u=x := WOWIIGeometry.closer_unique T hT (w:=r) huv.symm hxy.symm
       (by omega) (by omega)
     subst x
     rfl
@@ -44,7 +46,7 @@ lemma child_injective (hT : T.IsTree) (r : V) (I : Finset V)
     exact False.elim (hI x hx y hu hxy)
   · simp only [child,hlt,hlt',↓reduceIte] at he
     subst x
-    have hvy : v=y := WOWIIGeometry.closer_unique T hT huv hxy (by omega) (by omega)
+    have hvy : v=y := WOWIIGeometry.closer_unique T hT (w:=r) huv hxy (by omega) (by omega)
     subst y
     rfl
 
@@ -61,7 +63,8 @@ lemma independent_incidence_bound (hT : T.IsTree) (r : V) (I W : Finset V)
   have hc := Fintype.card_le_of_injective f hinj
   have hcard : Fintype.card (Σ u : I, T.neighborSet u.val)=∑ u ∈ I, T.degree u := by
     rw [Fintype.card_sigma]
-    simp only [T.card_neighborSet_eq_degree,← I.attach_eq_univ,Finset.sum_attach]
+    simp only [T.card_neighborSet_eq_degree]
+    exact Finset.sum_coe_sort I (fun u => T.degree u)
   rw [hcard,Fintype.card_coe] at hc
   exact hc
 
@@ -114,7 +117,7 @@ lemma independent_side_bound [DecidableEq V] (hT : T.IsTree) {a b : V} (hab : T.
 lemma cover_sum_bound (X D : Finset V)
     (hcover : ∀ v ∈ X, ∃ d ∈ D, T.Adj v d) : X.card ≤ ∑ d ∈ D, T.degree d := by
   classical
-  have hsub : X ⊆ D.biUnion T.neighborFinset := by
+  have hsub : X ⊆ D.biUnion (fun d => T.neighborFinset d) := by
     intro v hv
     obtain ⟨d,hd,hvd⟩ := hcover v hv
     exact mem_biUnion.mpr ⟨d,hd,by simpa using hvd.symm⟩
@@ -126,7 +129,8 @@ variable [DecidableEq V]
 def internalDegree (S : Finset V) (v : V) : ℕ := (T.neighborFinset v ∩ S).card
 
 lemma internal_le_degree (S : Finset V) (v : V) : internalDegree T S v ≤ T.degree v := by
-  exact (card_inter_le_left).trans_eq (T.card_neighborFinset_eq_degree v)
+  change (T.neighborFinset v ∩ S).card ≤ T.degree v
+  exact (card_le_card inter_subset_left).trans_eq (T.card_neighborFinset_eq_degree v)
 
 lemma internal_lt_at_boundary {S : Finset V} {a b : V}
     (hab : T.Adj a b) (hb : b ∉ S) : internalDegree T S a < T.degree a := by

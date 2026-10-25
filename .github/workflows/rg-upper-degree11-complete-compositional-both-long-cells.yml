@@ -1,0 +1,233 @@
+# Include the required original inner-check axiom profile in the alias-only module.
+name: RG original upper degree11 complete compositional both long cells
+
+on:
+  push:
+    branches: [rg-remaining-six-spectral-20261021]
+    paths: ['.github/workflows/rg-upper-degree11-complete-compositional-both-long-cells.yml']
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  check:
+    strategy:
+      fail-fast: false
+      max-parallel: 4
+      matrix:
+        include:
+          - endpoint: Proofs.RadenkovicGutmanD11UpperFullSquareCell0031Complete
+            max_fresh: 155
+          - endpoint: Proofs.RadenkovicGutmanD11UpperFullSquareCell0061Complete
+            max_fresh: 155
+          - endpoint: Proofs.RadenkovicGutmanD11UpperPowerSquareCell0000Complete
+            max_fresh: 66
+          - endpoint: Proofs.RadenkovicGutmanD11UpperPowerSquareCell0001Complete
+            max_fresh: 66
+          - endpoint: Proofs.RadenkovicGutmanD11UpperPowerSquareCell0002Complete
+            max_fresh: 66
+          - endpoint: Proofs.RadenkovicGutmanD11UpperPowerSquareCell0003Complete
+            max_fresh: 66
+          - endpoint: Proofs.RadenkovicGutmanD11UpperPowerSquareCell0004Complete
+            max_fresh: 66
+          - endpoint: Proofs.RadenkovicGutmanD11UpperPowerSquareCell0005Complete
+            max_fresh: 66
+          - endpoint: Proofs.RadenkovicGutmanD11UpperPowerSquareCell0006Complete
+            max_fresh: 66
+          - endpoint: Proofs.RadenkovicGutmanD11UpperPowerSquareCell0007Complete
+            max_fresh: 66
+          - endpoint: Proofs.RadenkovicGutmanD11UpperPowerSquareCell0008Complete
+            max_fresh: 66
+          - endpoint: Proofs.RadenkovicGutmanD11UpperPowerSquareCell0009Complete
+            max_fresh: 66
+          - endpoint: Proofs.RadenkovicGutmanD11UpperPowerSquareCell0010Complete
+            max_fresh: 66
+          - endpoint: Proofs.RadenkovicGutmanD11UpperPowerSquareCell0011Complete
+            max_fresh: 66
+          - endpoint: Proofs.RadenkovicGutmanD11UpperPowerSquareCell0012Complete
+            max_fresh: 66
+          - endpoint: Proofs.RadenkovicGutmanD11UpperPowerSquareCell0013Complete
+            max_fresh: 66
+          - endpoint: Proofs.RadenkovicGutmanD11UpperPowerSquareCell0014Complete
+            max_fresh: 66
+          - endpoint: Proofs.RadenkovicGutmanD11UpperPowerSquareCell0015Complete
+            max_fresh: 66
+          - endpoint: Proofs.RadenkovicGutmanD11UpperPowerSquareCell0016Complete
+            max_fresh: 66
+          - endpoint: Proofs.RadenkovicGutmanD11UpperPowerSquareCell0017Complete
+            max_fresh: 66
+          - endpoint: Proofs.RadenkovicGutmanD11UpperPowerSquareCell0018Complete
+            max_fresh: 66
+          - endpoint: Proofs.RadenkovicGutmanD11UpperPowerSquareCell0019Complete
+            max_fresh: 66
+          - endpoint: Proofs.RadenkovicGutmanD11UpperPowerSquareCell0020Complete
+            max_fresh: 66
+          - endpoint: Proofs.RadenkovicGutmanD11UpperPowerSquareCell0021Complete
+            max_fresh: 66
+          - endpoint: Proofs.RadenkovicGutmanD11UpperPowerSquareCell0022Complete
+            max_fresh: 66
+          - endpoint: Proofs.RadenkovicGutmanD11UpperPowerSquareCell0023Complete
+            max_fresh: 66
+          - endpoint: Proofs.RadenkovicGutmanD11UpperPowerSquareCell0024Complete
+            max_fresh: 66
+          - endpoint: Proofs.RadenkovicGutmanD11UpperPowerSquareCell0025Complete
+            max_fresh: 66
+          - endpoint: Proofs.RadenkovicGutmanD11UpperPowerSquareCell0026Complete
+            max_fresh: 66
+          - endpoint: Proofs.RadenkovicGutmanD11UpperFullSquareCell0027Complete
+            max_fresh: 155
+          - endpoint: Proofs.RadenkovicGutmanD11UpperFullSquareCell0028Complete
+            max_fresh: 155
+          - endpoint: Proofs.RadenkovicGutmanD11UpperFullSquareCell0029Complete
+            max_fresh: 155
+          - endpoint: Proofs.RadenkovicGutmanD11UpperFullSquareCell0030Complete
+            max_fresh: 155
+          - endpoint: Proofs.RadenkovicGutmanD11UpperFullSquareCell0032Complete
+            max_fresh: 155
+          - endpoint: Proofs.RadenkovicGutmanD11UpperFullSquareCell0033Complete
+            max_fresh: 155
+          - endpoint: Proofs.RadenkovicGutmanD11UpperFullSquareCell0034Complete
+            max_fresh: 155
+          - endpoint: Proofs.RadenkovicGutmanD11UpperFullSquareCell0035Complete
+            max_fresh: 155
+          - endpoint: Proofs.RadenkovicGutmanD11UpperFullSquareCell0036Complete
+            max_fresh: 155
+          - endpoint: Proofs.RadenkovicGutmanD11UpperFullSquareCell0037Complete
+            max_fresh: 155
+          - endpoint: Proofs.RadenkovicGutmanD11UpperFullSquareCell0038Complete
+            max_fresh: 155
+          - endpoint: Proofs.RadenkovicGutmanD11UpperFullSquareCell0039Complete
+            max_fresh: 155
+          - endpoint: Proofs.RadenkovicGutmanD11UpperFullSquareCell0040Complete
+            max_fresh: 155
+          - endpoint: Proofs.RadenkovicGutmanD11UpperFullSquareCell0041Complete
+            max_fresh: 155
+          - endpoint: Proofs.RadenkovicGutmanD11UpperFullSquareCell0042Complete
+            max_fresh: 155
+          - endpoint: Proofs.RadenkovicGutmanD11UpperFullSquareCell0043Complete
+            max_fresh: 155
+          - endpoint: Proofs.RadenkovicGutmanD11UpperFullSquareCell0044Complete
+            max_fresh: 155
+          - endpoint: Proofs.RadenkovicGutmanD11UpperFullSquareCell0045Complete
+            max_fresh: 155
+          - endpoint: Proofs.RadenkovicGutmanD11UpperFullSquareCell0046Complete
+            max_fresh: 155
+          - endpoint: Proofs.RadenkovicGutmanD11UpperFullSquareCell0047Complete
+            max_fresh: 155
+          - endpoint: Proofs.RadenkovicGutmanD11UpperFullSquareCell0048Complete
+            max_fresh: 155
+          - endpoint: Proofs.RadenkovicGutmanD11UpperFullSquareCell0049Complete
+            max_fresh: 155
+          - endpoint: Proofs.RadenkovicGutmanD11UpperFullSquareCell0050Complete
+            max_fresh: 155
+          - endpoint: Proofs.RadenkovicGutmanD11UpperFullSquareCell0051Complete
+            max_fresh: 155
+          - endpoint: Proofs.RadenkovicGutmanD11UpperFullSquareCell0052Complete
+            max_fresh: 155
+          - endpoint: Proofs.RadenkovicGutmanD11UpperFullSquareCell0053Complete
+            max_fresh: 155
+          - endpoint: Proofs.RadenkovicGutmanD11UpperFullSquareCell0054Complete
+            max_fresh: 155
+          - endpoint: Proofs.RadenkovicGutmanD11UpperFullSquareCell0055Complete
+            max_fresh: 155
+          - endpoint: Proofs.RadenkovicGutmanD11UpperFullSquareCell0056Complete
+            max_fresh: 155
+          - endpoint: Proofs.RadenkovicGutmanD11UpperFullSquareCell0057Complete
+            max_fresh: 155
+          - endpoint: Proofs.RadenkovicGutmanD11UpperFullSquareCell0058Complete
+            max_fresh: 155
+          - endpoint: Proofs.RadenkovicGutmanD11UpperFullSquareCell0059Complete
+            max_fresh: 155
+          - endpoint: Proofs.RadenkovicGutmanD11UpperFullSquareCell0060Complete
+            max_fresh: 155
+    runs-on: ubuntu-24.04
+    timeout-minutes: 360
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          persist-credentials: false
+      - name: Install the project toolchain
+        run: |
+          set -o pipefail
+          curl -sSfL https://github.com/leanprover/elan/releases/download/v1.4.2/elan-x86_64-unknown-linux-gnu.tar.gz | tar xz
+          ./elan-init -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Materialize the exact dependency lock
+        run: python3 -B ci/rg_dependencies.py
+      - name: Materialize the original degree11 interval proof candidates
+        run: python3 -B ci/rg_upper_compositional_cells.py --endpoint ${{ matrix.endpoint }}
+      - name: Fetch the required Mathlib cache
+        run: |
+          python3 - <<'PY'
+          import pathlib, re, subprocess
+          root = pathlib.Path('Proofs/RG_Lean_20261019')
+          seen, external = set(), set()
+          def visit(name):
+              if name in seen:
+                  return
+              seen.add(name)
+              source = (root / (name.replace('.', '/') + '.lean')).read_text()
+              for dep in re.findall(r'^\s*import\s+([\w.]+)', source, re.M):
+                  if dep.startswith('Proofs.'):
+                      visit(dep)
+                  elif not dep.startswith(('Lean.', 'Init.', 'Std.')) and dep not in ('Lean','Init','Std'):
+                      external.add(dep)
+          visit('${{ matrix.endpoint }}')
+          subprocess.run(['lake', 'exe', 'cache', 'get', *sorted(external)], check=True)
+          PY
+      - name: Restore one independently audited complete source-bound base scope
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 -B ci/rg_restore_complete_scope.py --manifest ci/rg_reusable_analytic_kernel_base_complete_scope_capsule.json --build-directory Proofs/RG_Lean_20261019/build/extension
+      - name: Restore independently audited exact control proofs
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 -B ci/rg_restore_plan_parallel.py --plan ci/rg_d1_segmented_repair_macro_restore_plan.json --build-directory Proofs/RG_Lean_20261019/build/extension --workers 2
+      - name: Restore only the independently audited complete degree11 normal-form modules
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_d11_all_six_compositional_norms_original_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+      - name: Restore the original checked generic joining theorem
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_integer_outer_joined_original_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+      - name: Restore the original checked power to Bernstein theorem
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_power_bernstein_completed_original_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+      - name: Bound the remaining fresh module frontier
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 -B ci/rg_restore_with_kernel_fallback.py --plan ci/rg_d1_segmented_repair_macro_restore_plan.json --build-directory Proofs/RG_Lean_20261019/build/extension --endpoint ${{ matrix.endpoint }} --max-fresh ${{ matrix.max_fresh }} --preflight-only
+      - name: Check multiplicities and actual graph spectral comparison
+        shell: bash
+        run: |
+          set -o pipefail
+          python3 -B ci/rg_observed_kernel_verify.py --memory-reserve-mib 2048 -- --mathlib-project "$GITHUB_WORKSPACE" --endpoint ${{ matrix.endpoint }} --workers 1 --module-timeout 600 --resume | python3 -B ci/rg_compact_ci_output.py
+      - name: Retain completed records and diagnostics
+        if: always()
+        run: |
+          python3 - <<'PY'
+          import json,pathlib,shutil
+          root=pathlib.Path('Proofs/RG_Lean_20261019/build/extension')
+          records=[json.loads(p.read_text()) for p in sorted(root.glob('Proofs.*.json'))]
+          fresh=root.parent/'fresh_exports';fresh.mkdir(parents=True,exist_ok=True)
+          (fresh/'diagnostics_records.json').write_text(json.dumps({'modules':records},separators=(',',':'))+'\n')
+          if (root/'receipt.json').is_file():shutil.copyfile(root/'receipt.json',fresh/'receipt.json')
+          print('RETAINED_RECORD_COUNTS '+json.dumps({'total':len(records),'fresh':sum(r['mode']=='FRESH_KERNEL_EXPORT' for r in records)}))
+          for row in records:
+              if row['mode']=='FRESH_KERNEL_EXPORT':
+                  name=row['module'];rel=name.replace('.','/')+'.olean';dest=fresh/rel
+                  dest.parent.mkdir(parents=True,exist_ok=True)
+                  shutil.copyfile(root/rel,dest);shutil.copyfile(root/(name+'.json'),fresh/(name+'.json'))
+          for log in root.glob('Proofs.*.log'):
+              shutil.copyfile(log,fresh/log.name);print('MODULE_LOG_TAIL '+log.name+' '+log.read_text()[-18000:])
+          PY
+      - name: Retain new exports only
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: rg-upper-degree11-complete-compositional-both-long-cells-exports-${{ github.run_id }}-${{ strategy.job-index }}
+          path: Proofs/RG_Lean_20261019/build/fresh_exports
+          retention-days: 90

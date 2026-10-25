@@ -1,5 +1,5 @@
 /- Copyright 2026 Jonas J. Gebendorfer. Apache 2.0. -/
-import Proofs.RadenkovicGutmanD1Long00Leaf01309CompositionalRepair
+import Proofs.RadenkovicGutmanD1Long00Leaf01309Repair
 import Proofs.RadenkovicGutmanD1Long00Leaf01310
 import Proofs.RadenkovicGutmanD1Long00Leaf01311
 import Proofs.RadenkovicGutmanD1Long00Leaf01312

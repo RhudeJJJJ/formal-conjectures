@@ -1,0 +1,47 @@
+{
+  "repository": "RhudeJJJJ/formal-conjectures",
+  "run": 40191597596,
+  "job": 121163554252,
+  "source_commit": "ebec5a73c1120cfef43bd496eab7c5e0dc31e3b3",
+  "artifact_id": 12600832648,
+  "artifact_sha256": "c084402232c427daa1c78424712ef62b18c9dab86bf00a79f267a5d419376493",
+  "lean_version": "4.33.1",
+  "mathlib": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "modules": {
+    "Proofs.RadenkovicGutmanDegreeOneMiddleAnchorAssembly": {
+      "module": "Proofs.RadenkovicGutmanDegreeOneMiddleAnchorAssembly",
+      "source_sha256": "4a1900bdbc48f3c3ef82944382a7e4c44cee56a13e5c27f3c3ef4f96614109e7",
+      "source_closure_sha256": "98892ccee79e460b5c89f48fb6c52dacf80caa6a9766e3291ccfd53ecaa57bc2",
+      "output_sha256": "0e06f2fd175c8d658489bae26f1c4a94b54d4a98cf4f3f2738b7afb92d57c01b",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "FRESH_KERNEL_EXPORT",
+      "seconds": 2.17
+    },
+    "Proofs.RadenkovicGutmanMiddleOriginalAnchorPredicate": {
+      "module": "Proofs.RadenkovicGutmanMiddleOriginalAnchorPredicate",
+      "source_sha256": "a086accf6e0e69750d1ddc04c4f751d0f3dcd42c232ec97876edd66fdbcad7f6",
+      "source_closure_sha256": "c9ff78db53795453b8f8d1344f11437a2b37b43613273e2dd436f1bd5dfa69c5",
+      "output_sha256": "0b9f66bd2100c189d13278cee40c91b17182f39fd251200774e49bf523fd2b57",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "FRESH_KERNEL_EXPORT",
+      "seconds": 1.719
+    }
+  }
+}

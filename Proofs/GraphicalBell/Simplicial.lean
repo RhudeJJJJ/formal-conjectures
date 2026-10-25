@@ -54,7 +54,7 @@ lemma choices_exact_of_clique {G : SimpleGraph V} {S : Finset V} {P : Finset (Fi
     simp
   have hsum : free.card + bad.card = P.card := by
     have h := card_filter_add_card_filter_not (s := P) (fun B => ∀ w ∈ B, ¬ G.Adj v w)
-    simpa only [free, bad, not_forall, not_imp, not_not] using h
+    simpa only [free, bad, not_forall, _root_.not_imp, not_not, exists_prop] using h
   rw [hchoices]
   change free.card = P.card - N.card
   omega

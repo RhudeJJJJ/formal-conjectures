@@ -28,6 +28,7 @@ lemma mapFinset_injective {f : V → W} (hf : Function.Injective f) :
     obtain ⟨y, hy, he⟩ := mem_image.mp hfx
     exact hf he ▸ hy
 
+omit [DecidableEq V] in
 lemma mapParts_card {f : V → W} (hf : Function.Injective f) (P : Finset (Finset V)) :
     (mapParts f P).card = P.card := card_image_of_injective P (mapFinset_injective hf)
 

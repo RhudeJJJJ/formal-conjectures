@@ -59,7 +59,11 @@ lemma bell_of_coefficientwise
     PHOEG.GraphicalBell.bell
       (PHOEG.GraphicalBell.quasiComplete (Fintype.card W) G.edgeFinset.card) ≤
       PHOEG.GraphicalBell.bell G := by
+  classical
   rw [original_bell_eq_sum, original_bell_eq_sum]
-  exact Finset.sum_le_sum (fun (k : Fin (Fintype.card W + 1)) _ => hcoeff G hn k.val)
+  simp only [Fintype.card_fin]
+  have h := Finset.sum_le_sum (s := (univ : Finset (Fin (Fintype.card W + 1))))
+    (fun k _ => hcoeff G hn k.val)
+  convert h using 1 <;> apply Finset.sum_congr <;> first | rfl | (ext k; simp)
 
 end GraphicalBellProof

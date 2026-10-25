@@ -1,5 +1,6 @@
 import FormalConjectures.Other.GraphicalBell
 import Proofs.GraphicalBell.Base
+import Mathlib.Algebra.Order.BigOperators.Group.Finset
 
 namespace GraphicalBellProof
 open Finset SimpleGraph
@@ -61,8 +62,13 @@ lemma bell_of_coefficientwise
       PHOEG.GraphicalBell.bell G := by
   classical
   rw [original_bell_eq_sum, original_bell_eq_sum]
+  have hcard : Fintype.card (Fin (Fintype.card W)) = Fintype.card W :=
+    Fintype.card_fin (Fintype.card W)
+  rw [hcard]
   have h := Finset.sum_le_sum (s := (univ : Finset (Fin (Fintype.card W + 1))))
     (fun k _ => hcoeff G hn k.val)
-  convert h using 1 <;> apply Finset.sum_congr <;> first | rfl | (ext k; simp)
+  change Nat.le _ _ at h
+  change Nat.le _ _
+  exact h
 
 end GraphicalBellProof

@@ -1,0 +1,18 @@
+/- Copyright 2026 Jonas J. Gebendorfer. Apache 2.0. -/
+import Proofs.RadenkovicGutmanD2FullParameterGroup0001Sources
+import Proofs.RadenkovicGutmanClosedIntegerRowElaboration
+namespace Gebendorfer.RadenkovicGutman.D2FullParameterGroup0001
+set_option maxHeartbeats 0
+set_option maxRecDepth 100000
+open NestedInteger NestedHorner
+noncomputable def leaf00005_w_weights24 : List (List ℤ) := rg_closed_integer_row%
+  (IntegerWeightedOuter.weights 33 1 32000 72 leaf00005_w_segment24)
+theorem leaf00005_w_weights24_identity : leaf00005_w_weights24=IntegerWeightedOuter.weights 33 1 32000 72 leaf00005_w_segment24 := by decide +kernel
+noncomputable def leaf00005_w_piece24 : NestedInteger.Poly 3 := rg_closed_integer_data% (IntegerWeightedOuter.applyWeights leaf00005_w_weights24 leaf00005_w_segment24)
+theorem leaf00005_w_piece24_weighted : leaf00005_w_piece24=IntegerWeightedOuter.applyWeights leaf00005_w_weights24 leaf00005_w_segment24 := by decide +kernel
+theorem leaf00005_w_piece24_identity : leaf00005_w_piece24=IntegerOuterTerms.transform 33 1 32000 72 leaf00005_w_segment24 :=
+  IntegerWeightedOuter.checked 33 1 32000 72 leaf00005_w_segment24 leaf00005_w_piece24 leaf00005_w_weights24 leaf00005_w_weights24_identity leaf00005_w_piece24_weighted
+#print axioms leaf00005_w_weights24_identity
+#print axioms leaf00005_w_piece24_weighted
+#print axioms leaf00005_w_piece24_identity
+end Gebendorfer.RadenkovicGutman.D2FullParameterGroup0001

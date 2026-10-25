@@ -11,9 +11,10 @@
     },
     {
       "file": "ci/rg_anchor_candidate_reference/prepare_rg_symbolic_original_anchor_assembly.py",
-      "sha256": "26cf1ab99ca6944938bdfa168e0651ca534925834ecf05161509fa63b477c3ff",
+      "sha256": "375173a44dd221cbf6899886d486492f2615952ead21cf8b55a20fac10c2b553",
       "original_sha256": "939b5f81a8eca0ec4e5e3c453b09f71667e3ee2858d2a209bb48c0e3c8d09db7",
-      "changes": "workspace and output paths only; original statements and proof bodies unchanged"
+      "changes": "Workspace paths and original-order template substitution before insertion of mean-shift fractions; prevents corruption of 52/27 for original anchor417. Requires fresh corrected origin and endpoint checks.",
+      "previous_runtime_sha256": "26cf1ab99ca6944938bdfa168e0651ca534925834ecf05161509fa63b477c3ff"
     },
     {
       "file": "ci/rg_run_original_anchor_kernel.py",

@@ -17,7 +17,11 @@ def rat(value):
 def put(text,name,value):
     text,count=re.subn(r'^def '+name+r' : ℚ := [^\n]*',lambda _:f'def {name} : ℚ := {rat(value)}',text,flags=re.M);assert count==1,name
     return text
-def base(name):return (P/('RadenkovicGutmanCompactAnchor000'+name+'.lean')).read_text(encoding='utf-8').replace('CompactAnchor000',prefix).replace('51/26',rat(x)).replace('9 9',f'{p} {q}').replace('+9+9+2',f'+{p}+{q}+2')
+def base(name):
+    template=(P/('RadenkovicGutmanCompactAnchor000'+name+'.lean')).read_text(encoding='utf-8')
+    # Substitute the original order before inserting a mean-shift numerator of 52.
+    template=re.sub(r'\b52\b',str(n),template)
+    return template.replace('CompactAnchor000',prefix).replace('51/26',rat(x)).replace('9 9',f'{p} {q}').replace('+9+9+2',f'+{p}+{q}+2')
 def swapped(text,kind):
     start=text.index('theorem '+kind+' ');end=text.index('\nend\n',start);body=text[start:end].replace('theorem '+kind+' ','theorem '+kind+'_swapped ')
     body=body.replace(f'+{p}+{q}+2',f'+{q}+{p}+2').replace(f'(source G u {p} {q}) (fused G u {p} {q})',f'(source G u {q} {p}) (fused G u {q} {p})')
@@ -27,7 +31,7 @@ def swapped(text,kind):
     else:body=body.replace(f'logReciprocalB {p} {q}',f'logReciprocalB {q} {p}')
     return (text[:end]+'\n'+body+text[end:]).replace('#print axioms '+kind+'\n','#print axioms '+kind+'\n#print axioms '+kind+'_swapped\n')
 sources=[]
-t=base('Origin');t=re.sub(r'\b52\b',str(n),t)
+t=base('Origin')
 for name,value in [('logEpsilon',d['origin_log_epsilon'][0]),('logReciprocalB',d['origin_log_reciprocal_B'][0]),('payment',d['origin_payment'])]:t=put(t,name,value)
 ke,terms=d['origin_log_epsilon'][1:];kb,tb=d['origin_log_reciprocal_B'][1:];assert terms==tb==32
 t=t.replace('28 32=true',f'{ke} 32=true').replace('12 32=true',f'{kb} 32=true').replace(f'{n} 28 12 32',f'{n} {ke} {kb} 32')
@@ -52,8 +56,8 @@ for swap in [False,True]:
     t+=f'    apply RationalIntegralPartition.integral_lower _ (ActualFusionIntegral.logarithm_integrable G u {pp} {qq} (({rat(x)} : ℚ) : ℝ)) (1/268435456) {rat(par["Y"])} (ComputedIntegralAssembly.slices witnesses) (by norm_num) chain_checked\n'
     t+='    intro z hz\n    obtain ⟨w,hm,rfl⟩ := List.mem_map.mp hz\n    exact hw w hm\n  rw [total_checked] at h\n  exact h\n'
 t+='end\n#print axioms chain_checked\n#print axioms total_checked\n#print axioms actual_integral\n#print axioms actual_integral_swapped\n'+f'end Gebendorfer.RadenkovicGutman.{ns}\n';sources.append((ns,t))
-t=base('OriginalAnchor').replace('anchors[0]?',f'anchors[{a.anchor_index}]?').replace(f'⟨52,9,9,target⟩',f'⟨{n},{p},{q},target⟩')
-t=re.sub(r'\b52\b',str(n),t);t=re.sub(r'(?<![\w])128(?![\w])',rat(par['Y']),t);t=put(t,'target',par['original_target'])
+t=base('OriginalAnchor').replace('anchors[0]?',f'anchors[{a.anchor_index}]?').replace(f'⟨{n},9,9,target⟩',f'⟨{n},{p},{q},target⟩')
+t=re.sub(r'(?<![\w])128(?![\w])',rat(par['Y']),t);t=put(t,'target',par['original_target'])
 sources.append((prefix+'OriginalAnchor',swapped(t,'actual_bound')))
 files=[]
 for name,text in sources:

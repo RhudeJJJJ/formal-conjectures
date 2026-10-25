@@ -1,0 +1,137 @@
+{
+  "scope": "Exact original imported modules; actual checkout recorded separately from workflow event SHA",
+  "workflow_event_sha": "6e20145380ae7f8c3a8cf47ceb85a1abab074917",
+  "source_sha": "b2d58d343bda01eca2a74aae012294f7510f020a",
+  "run_id": "40201620527",
+  "cycle": 1,
+  "status": "failed",
+  "protected_hashes": {
+    "lean-toolchain": "3aac669c7a910ec2389f4e4f921b605adf6ebf2d1e0c9b9cd0be4d33f3f5db71",
+    "lake-manifest.json": "c8ffc0d59f492007162fe54c68396e4b9f2f305fcf69210a7fbaf0b18fcd8cd9",
+    "FormalConjecturesUtil.lean": "759ec7a32177bdb64b8320b625b12fa5dbcf9e006142e2a6f187ef9c8b94892a",
+    "FormalConjectures/Other/GraphicalBell.lean": "05bab9c948efbf749153c59d6ef457d2b61c5b6734d1093e97cff55de1fe8790"
+  },
+  "proof_hashes": {
+    "Vectors": "a289aa745e9dd99e49e6274e6a8d6e851cf0fc140b4326ec78819a407c73d085",
+    "Partitions": "c56b802b1f4d8a3b4e7da128a68cb8157af8fe6c89304c34461fb6353d2af18d",
+    "Recovery": "00657d7b6182c4e78698aaffb47488148160478dc7901b33451d59e934fe856f",
+    "Base": "b7ed52a4d5b9f9ba86756bb5420efb159a0de6ffe27111801a953cd6481aeacf",
+    "Insertion": "52ddef85fd69c031f793667813914df79d5781837ecf64c68e02b9be7df25ea1",
+    "Deletion": "c426ff9fc86bb9f2b288cd5a2bca06031e95e4e669ced252e53dee91ae1c9600",
+    "Simplicial": "ce462ba47d443b3e37c23fb04e695e91ad97db604b8d9fea361d789fff72d1a9",
+    "Discrete": "0315e0336be0ee2007b4d5febeb11b52d1df89d6ac8786990046716dc669a56e",
+    "QuasiGraph": "3a766a26d2f2215f0bbd5b3d48ac63b3072838735702e04bd114b7e764bd36b6",
+    "CountVectors": "fe2d8c0c9f7bd1a1b56c8f4312d95edfdef146ffbeb936461c3c5bd76ed993e2",
+    "Transport": "300f4f1cabff91d54e07ce145e18ddb539cc4c366c338e577044792c4cdcbc9e",
+    "Parameters": "f86b30829151bbbfc9ee205a9fae44cbfa910e49c830a43a6cfb678a9658c828",
+    "Model": "1a87741d5134bb26fadb98f1ad13253f07c5d3d7d532cc944fd7db8310161a71",
+    "Degrees": "b4ca0610237ca7cf8bc07daf640d66829c2e7d2f781b576ecdecb4835d519364",
+    "Universal": "40a57193a7f880e7553cf2377cc72c3edcedbb553acd14c792043a9d1f85eb94",
+    "BellBridge": "49bf8180924fc2ec0627aea919f41f519fdf10519f26491b969e8f87b8a50d6d",
+    "OriginalBridge": "72598515716590cd9e1919e1619edb39b025498c5755dab685389043c9546b14",
+    "Full": "eb54745e07e70f72c62fd4a0b36d9a4109784d13ab7e50283c108a031f35e316",
+    "ExactAudit": "99c3d868f35bef56bfb21684f28171ae8a470fdc9c4c81093f2eddfedda2c2d0"
+  },
+  "results": [
+    {
+      "name": "statements",
+      "exit_code": 0,
+      "output": "Build completed successfully (8950 jobs).\n"
+    },
+    {
+      "name": "Vectors",
+      "exit_code": 0,
+      "output": ""
+    },
+    {
+      "name": "Partitions",
+      "exit_code": 0,
+      "output": ""
+    },
+    {
+      "name": "Recovery",
+      "exit_code": 0,
+      "output": ""
+    },
+    {
+      "name": "Base",
+      "exit_code": 0,
+      "output": ""
+    },
+    {
+      "name": "Insertion",
+      "exit_code": 0,
+      "output": ""
+    },
+    {
+      "name": "Deletion",
+      "exit_code": 0,
+      "output": ""
+    },
+    {
+      "name": "Simplicial",
+      "exit_code": 0,
+      "output": ""
+    },
+    {
+      "name": "Discrete",
+      "exit_code": 0,
+      "output": ""
+    },
+    {
+      "name": "QuasiGraph",
+      "exit_code": 0,
+      "output": ""
+    },
+    {
+      "name": "CountVectors",
+      "exit_code": 0,
+      "output": ""
+    },
+    {
+      "name": "Transport",
+      "exit_code": 0,
+      "output": ""
+    },
+    {
+      "name": "Parameters",
+      "exit_code": 1,
+      "output": "Proofs/GraphicalBell/Parameters.lean:7:0: error: This file has no module docstring (`/-! ... -/`). Add one after the imports to document the file.\n\nNote: This linter can be disabled with `set_option linter.style.moduleDocstring false`\n"
+    },
+    {
+      "name": "Model",
+      "exit_code": 1,
+      "output": "Proofs/GraphicalBell/Model.lean:1:0: error: object file '/home/runner/work/formal-conjectures/formal-conjectures/.lake/build/lib/lean/Proofs/GraphicalBell/Parameters.olean' of module Proofs.GraphicalBell.Parameters does not exist\n"
+    },
+    {
+      "name": "Degrees",
+      "exit_code": 0,
+      "output": ""
+    },
+    {
+      "name": "Universal",
+      "exit_code": 1,
+      "output": "Proofs/GraphicalBell/Universal.lean:1:0: error: object file '/home/runner/work/formal-conjectures/formal-conjectures/.lake/build/lib/lean/Proofs/GraphicalBell/Model.olean' of module Proofs.GraphicalBell.Model does not exist\n"
+    },
+    {
+      "name": "BellBridge",
+      "exit_code": 1,
+      "output": "Proofs/GraphicalBell/BellBridge.lean:5:0: error: This file has no module docstring (`/-! ... -/`). Add one after the imports to document the file.\n\nNote: This linter can be disabled with `set_option linter.style.moduleDocstring false`\n"
+    },
+    {
+      "name": "OriginalBridge",
+      "exit_code": 1,
+      "output": "Proofs/GraphicalBell/OriginalBridge.lean:1:0: error: object file '/home/runner/work/formal-conjectures/formal-conjectures/.lake/build/lib/lean/Proofs/GraphicalBell/BellBridge.olean' of module Proofs.GraphicalBell.BellBridge does not exist\n"
+    },
+    {
+      "name": "Full",
+      "exit_code": 1,
+      "output": "Proofs/GraphicalBell/Full.lean:1:0: error: object file '/home/runner/work/formal-conjectures/formal-conjectures/.lake/build/lib/lean/Proofs/GraphicalBell/Universal.olean' of module Proofs.GraphicalBell.Universal does not exist\n"
+    },
+    {
+      "name": "ExactAudit",
+      "exit_code": 1,
+      "output": "Proofs/GraphicalBell/ExactAudit.lean:1:0: error: object file '/home/runner/work/formal-conjectures/formal-conjectures/.lake/build/lib/lean/Proofs/GraphicalBell/Full.olean' of module Proofs.GraphicalBell.Full does not exist\n"
+    }
+  ]
+}

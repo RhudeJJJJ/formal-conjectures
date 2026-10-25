@@ -1,5 +1,7 @@
 import Proofs.GraphicalBell.Partitions
 
+/-! Faithful transport of stable partitions between vertex types. -/
+
 namespace GraphicalBellProof
 open Finset SimpleGraph
 variable {V W : Type*} [DecidableEq V] [DecidableEq W]

@@ -1,5 +1,7 @@
 import Proofs.GraphicalBell.Base
 
+/-! Unique stable partition of a clique and its graded counts. -/
+
 namespace GraphicalBellProof
 open Finset SimpleGraph
 variable {V : Type*} [DecidableEq V]

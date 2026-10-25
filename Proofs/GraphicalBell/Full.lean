@@ -1,6 +1,8 @@
 import Proofs.GraphicalBell.Universal
 import Proofs.GraphicalBell.OriginalBridge
 
+/-! Complete proofs of both unchanged graphical Stirling and Bell target statements. -/
+
 namespace PHOEG.GraphicalBell
 open GraphicalBellProof SimpleGraph
 

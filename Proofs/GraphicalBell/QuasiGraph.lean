@@ -2,6 +2,8 @@ import Proofs.GraphicalBell.Discrete
 import Proofs.GraphicalBell.Simplicial
 import Proofs.GraphicalBell.Vectors
 
+/-! Concrete quasi-complete candidate graphs and their recurrences. -/
+
 namespace GraphicalBellProof
 open Finset SimpleGraph
 

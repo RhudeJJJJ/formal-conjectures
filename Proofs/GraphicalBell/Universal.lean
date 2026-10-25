@@ -3,6 +3,8 @@ import Proofs.GraphicalBell.Degrees
 import Proofs.GraphicalBell.Base
 import Mathlib.Algebra.Order.Ring.Int
 
+/-! Finite-carrier induction for the universal coefficientwise lower bound. -/
+
 namespace GraphicalBellProof
 open Finset SimpleGraph PHOEG.GraphicalBell
 variable {V : Type*} [DecidableEq V]

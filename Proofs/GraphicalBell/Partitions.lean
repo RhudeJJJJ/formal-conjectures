@@ -4,6 +4,8 @@ import Mathlib.Order.Partition.Finpartition
 import Mathlib.SetTheory.Cardinal.Finite
 import Lean.Elab.Tactic.Omega
 
+/-! Stable partitions on finite carriers and their deletion and extension maps. -/
+
 namespace GraphicalBellProof
 open Finset SimpleGraph
 variable {V : Type*} [DecidableEq V]

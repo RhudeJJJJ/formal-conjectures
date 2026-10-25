@@ -1,5 +1,7 @@
 import Lean.Elab.Tactic.Omega
 
+/-! Integer coefficient operators and exact comparison identities for graphical Stirling counts. -/
+
 namespace GraphicalBellProof
 abbrev Vector := Int → Int
 

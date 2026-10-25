@@ -5,6 +5,8 @@ import Proofs.GraphicalBell.Model
 import Proofs.GraphicalBell.Degrees
 import Mathlib.Combinatorics.SimpleGraph.DegreeSum
 
+/-! Identification with the submitted edge count and quasi-complete graph. -/
+
 namespace GraphicalBellProof
 open Finset SimpleGraph PHOEG.GraphicalBell
 

@@ -1,6 +1,8 @@
 import Proofs.GraphicalBell.QuasiGraph
 import Mathlib.Algebra.Order.Ring.Int
 
+/-! Identification of candidate stable-partition counts with integer coefficient vectors. -/
+
 namespace GraphicalBellProof
 open Finset SimpleGraph
 variable {V : Type*} [DecidableEq V]

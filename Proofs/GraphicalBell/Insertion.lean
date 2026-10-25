@@ -1,5 +1,7 @@
 import Proofs.GraphicalBell.Recovery
 
+/-! Exact counting of singleton and existing-block vertex extensions. -/
+
 namespace GraphicalBellProof
 open Finset SimpleGraph
 variable {V : Type*} [DecidableEq V]

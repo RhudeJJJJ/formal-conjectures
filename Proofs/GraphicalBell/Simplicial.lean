@@ -1,5 +1,7 @@
 import Proofs.GraphicalBell.Deletion
 
+/-! Exact vertex-extension recurrence when the neighbor set is a clique. -/
+
 namespace GraphicalBellProof
 open Finset SimpleGraph
 variable {V : Type*} [DecidableEq V]

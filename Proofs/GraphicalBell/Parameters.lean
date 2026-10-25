@@ -3,6 +3,8 @@ import Mathlib.Data.Nat.Find
 import Mathlib.Data.Nat.Choose.Basic
 import Lean.Elab.Tactic.Omega
 
+/-! Clique and remainder parameters under deletion of a minimum-degree vertex. -/
+
 namespace GraphicalBellProof
 open PHOEG.GraphicalBell
 

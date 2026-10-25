@@ -1,6 +1,8 @@
 import Proofs.GraphicalBell.Full
 import Lean.Util.CollectAxioms
 
+/-! Rigid-universe type equality and transitive axiom checks for both full targets. -/
+
 open Lean Meta Elab Command in
 run_elab do
   let pairs : Array (Name × Name) := #[

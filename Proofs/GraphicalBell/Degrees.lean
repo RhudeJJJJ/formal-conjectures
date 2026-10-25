@@ -3,6 +3,8 @@ import Proofs.GraphicalBell.Deletion
 import Mathlib.Data.Nat.Choose.Basic
 import Mathlib.Algebra.BigOperators.Ring.Finset
 
+/-! Finite-carrier degree sums, edge bounds and a small-degree vertex. -/
+
 namespace GraphicalBellProof
 open Finset SimpleGraph
 variable {V : Type*} [DecidableEq V]

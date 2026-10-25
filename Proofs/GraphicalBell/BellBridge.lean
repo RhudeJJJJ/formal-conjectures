@@ -2,6 +2,8 @@ import FormalConjectures.Other.GraphicalBell
 import Proofs.GraphicalBell.Base
 import Mathlib.Algebra.Order.BigOperators.Group.Finset
 
+/-! Summing graded partition inequalities to obtain the graphical Bell bound. -/
+
 namespace GraphicalBellProof
 open Finset SimpleGraph
 variable {V : Type*} [DecidableEq V]

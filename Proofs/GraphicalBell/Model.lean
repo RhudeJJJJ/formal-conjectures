@@ -1,6 +1,8 @@
 import Proofs.GraphicalBell.Parameters
 import Proofs.GraphicalBell.Vectors
 
+/-! Coefficient comparison for the finite-order, finite-size candidate model. -/
+
 namespace GraphicalBellProof
 open PHOEG.GraphicalBell
 

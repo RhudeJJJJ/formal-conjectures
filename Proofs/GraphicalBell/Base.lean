@@ -1,5 +1,7 @@
 import Proofs.GraphicalBell.Partitions
 
+/-! Finite partition bounds and the empty-carrier counting base case. -/
+
 namespace GraphicalBellProof
 open Finset SimpleGraph
 variable {V : Type*} [DecidableEq V]

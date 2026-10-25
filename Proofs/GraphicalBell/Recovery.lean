@@ -1,5 +1,7 @@
 import Proofs.GraphicalBell.Partitions
 
+/-! Reconstruction and injectivity of stable-partition vertex extensions. -/
+
 namespace GraphicalBellProof
 open Finset SimpleGraph
 variable {V : Type*} [DecidableEq V]

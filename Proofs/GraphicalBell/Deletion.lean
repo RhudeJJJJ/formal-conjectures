@@ -1,4 +1,5 @@
 import Proofs.GraphicalBell.Insertion
+import Mathlib.Algebra.Order.BigOperators.Group.Finset
 
 namespace GraphicalBellProof
 open Finset SimpleGraph

@@ -39,7 +39,7 @@ lemma two_medians_bound (hT : T.IsTree) (ho : 2<Fintype.card V)
   have htu : t+u≤1 := by
     by_cases hai : a ∈ I <;> by_cases hbi : b ∈ I
     · exact False.elim (isolates_independent T a hai b hbi hab)
-    all_goals (simp only [t,u,*,↓reduceIte] <;> omega)
+    all_goals simp [t, u, hai, hbi]
   have hi := half_isolate_bound T hT hab
   have hj := half_isolate_bound T hT hab.symm
   have hsumA := side_cover_bound T hT hab hD

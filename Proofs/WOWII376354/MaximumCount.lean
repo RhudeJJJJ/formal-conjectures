@@ -11,7 +11,9 @@ variable (T : SimpleGraph V) [DecidableRel T.Adj]
 def delta : ℕ := univ.sup (fun v => T.degree v)
 
 omit [DecidableEq V] in
-lemma degree_le_delta (v : V) : T.degree v ≤ delta T := Finset.le_sup (mem_univ v)
+lemma degree_le_delta (v : V) : T.degree v ≤ delta T := by
+  change T.degree v ≤ (univ : Finset V).sup (fun w => T.degree w)
+  exact Finset.le_sup (f := fun w => T.degree w) (mem_univ v)
 
 omit [DecidableEq V] in
 lemma maximum_iff {v : V} : v ∈ maximumVertices T ↔ T.degree v=delta T := by

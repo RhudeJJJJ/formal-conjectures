@@ -1,0 +1,15 @@
+/- Copyright 2026 Jonas J. Gebendorfer. Apache 2.0. -/
+import Proofs.RadenkovicGutmanD14Long00CompositionalNode035
+import Proofs.RadenkovicGutmanD14Long00CompositionalNode064
+import Proofs.RadenkovicGutmanStagedExprCompile
+namespace Gebendorfer.RadenkovicGutman.FixedDegree14Long00Compositional
+set_option maxHeartbeats 0
+set_option maxRecDepth 100000
+set_option backward.isDefEq.respectTransparency false
+noncomputable def e090 : NestedArithmetic.Expr 3 := .times e035 e064
+noncomputable def p090 : NestedHorner.Poly 3 := [[[0],[0,0],[0,0]],[[0,0],[0,0,-588],[0,-588]],[[0,0,0],[0,0,0],[0,0]],[[0,-5292,-8820],[-5292,-28224,-2632],[-8820,-2632]],[[0,0,0],[0,0,0],[0,0]],[[-95256,-328860,-68376],[-328860,-212352,-3500],[-68376,-3500]],[[0,0,0],[0,0,0],[0,0]],[[-3315816,-3096072,-211484],[-3096072,-638176,-1820],[-211484,-1820]],[[0,0,0],[0,0,0],[0,0]],[[-34352640,-13452208,-342524],[-13452208,-1011024,-392],[-342524,-392]],[[0,0,0],[0,0,0],[0,0]],[[-184339008,-34145888,-319900],[-34145888,-931504,-28],[-319900,-28]],[[0,0,0],[0,0],[0]],[[-617227464,-56029232,-178332],[-56029232,-517328],[-178332]],[[0,0,0],[0,0],[0]],[[-1412379080,-62617968,-59108],[-62617968,-172928],[-59108]],[[0,0,0],[0,0],[0]],[[-2326513280,-48988044,-11060],[-48988044,-33264],[-11060]],[[0,0,0],[0,0],[0]],[[-2848065864,-27136536,-1008],[-27136536,-3248],[-1008]],[[0,0,0],[0,0],[0]],[[-2642854592,-10625048,-28],[-10625048,-112],[-28]],[[0,0],[0]],[[-1880444272,-2893604],[-2893604]],[[0,0],[0]],[[-1031041368,-528724],[-528724]],[[0,0],[0]],[[-435243088,-60396],[-60396]],[[0,0],[0]],[[-140458472,-3724],[-3724]],[[0,0],[0]],[[-34147400,-84],[-84]],[[0]],[[-6098288]],[[0]],[[-767144]],[[0]],[[-63224]],[[0]],[[-2968]],[[0]],[[-56]]]
+theorem step090 : p090=NestedArithmetic.mul p035 p064 := by decide +kernel
+#print axioms step090
+theorem h090 : NestedArithmetic.compile e090=p090 := StagedExprCompile.compile_times e090 e035 e064 p035 p064 p090 rfl h035 h064 step090
+#print axioms h090
+end Gebendorfer.RadenkovicGutman.FixedDegree14Long00Compositional

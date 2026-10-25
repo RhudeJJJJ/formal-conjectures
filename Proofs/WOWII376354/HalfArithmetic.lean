@@ -1,10 +1,12 @@
-import Mathlib.Tactic.Linarith
 import Lean.Elab.Tactic.Omega
+import Lean.Elab.Tactic.Rewrite
+import Lean.Elab.Tactic.Simpa
+import Lean.Elab.Tactic.RCases
 
 /-! Integer counting for two balanced tree halves. -/
 
 namespace WOWIIMedian
-lemma poor_half_impossible (δ h i j d e t u : ℕ)
+lemma poor_half_impossible (δ h i j d e t u : Nat)
     (hδ : 2 ≤ δ) (hh : 2 ≤ h) (ht : t ≤ 1) (hu : u ≤ 1) (htu : t + u ≤ 1)
     (hi : δ * i ≤ h - 1 + t) (hj : δ * j ≤ h - 1 + u)
     (hd : h - 1 ≤ δ * d) (he : h - 1 ≤ δ * e)
@@ -12,10 +14,12 @@ lemma poor_half_impossible (δ h i j d e t u : ℕ)
     (hsat : δ * d=h - 1 → i < d) (hpoor : d ≤ i) : False := by
   have hsub : h - 1 + 1=h := by omega
   have hdi : d=i := by
-    by_contra hn
+    apply Classical.byContradiction
+    intro hn
     have hid : d + 1 ≤ i := by omega
     have hm := Nat.mul_le_mul_left δ hid
-    nlinarith
+    simp only [Nat.mul_add,Nat.mul_one] at hm
+    omega
   subst i
   have hprod : δ * d=h := by
     have hn : δ * d≠h - 1 := by intro heq;have hbad:=hsat heq;omega
@@ -23,20 +27,24 @@ lemma poor_half_impossible (δ h i j d e t u : ℕ)
   have ht1 : t=1 := by omega
   have hu0 : u=0 := by omega
   have hje : j + 1 ≤ d := by
-    by_contra hn
+    apply Classical.byContradiction
+    intro hn
     have hjd : d ≤ j := by omega
     have hm := Nat.mul_le_mul_left δ hjd
     omega
   have hde : d ≤ e := by
-    by_contra hn
+    apply Classical.byContradiction
+    intro hn
     have hed : e + 1 ≤ d := by omega
     have hm := Nat.mul_le_mul_left δ hed
-    nlinarith
+    simp only [Nat.mul_add,Nat.mul_one] at hm
+    omega
   have heq : d + e=2 * d := by omega
   rw [heq] at hstrict
-  nlinarith
+  rw [Nat.mul_left_comm δ 2 d,hprod] at hstrict
+  omega
 
-lemma balanced_count_impossible (δ h i j d e t u : ℕ)
+lemma balanced_count_impossible (δ h i j d e t u : Nat)
     (hδ : 2 ≤ δ) (hh : 2 ≤ h) (ht : t ≤ 1) (hu : u ≤ 1) (htu : t + u ≤ 1)
     (hi : δ * i ≤ h - 1 + t) (hj : δ * j ≤ h - 1 + u)
     (hd : h - 1 ≤ δ * d) (he : h - 1 ≤ δ * e)

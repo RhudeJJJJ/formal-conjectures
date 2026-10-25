@@ -27,7 +27,8 @@ theorem joined {n : ℕ} (l w D : ℤ) (k next : ℕ)
         eval (castPoly (n+1) (IntegerOuterTerms.transform l w D k p)) x+
         eval (castPoly (n+1) (IntegerOuterTerms.transform l w D (k+p.length) q)) x := by
       rw [hc,cast_add,eval_add,cast_scale,eval_scale,ha,hb,hi]
-      push_cast <;> rfl
+      push_cast
+      rfl
     _ = eval (castPoly (n+1) (IntegerOuterTerms.transform l w D k (p++q))) x :=
       (IntegerOuterPieces.eval_append l w D k p q x).symm
     _ = _ := by rw [ho]

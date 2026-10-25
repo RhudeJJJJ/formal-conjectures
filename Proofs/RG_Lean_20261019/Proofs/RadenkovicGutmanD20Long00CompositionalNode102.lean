@@ -1,0 +1,15 @@
+/- Copyright 2026 Jonas J. Gebendorfer. Apache 2.0. -/
+import Proofs.RadenkovicGutmanD20Long00CompositionalNode100
+import Proofs.RadenkovicGutmanD20Long00CompositionalNode101
+import Proofs.RadenkovicGutmanStagedExprCompile
+namespace Gebendorfer.RadenkovicGutman.FixedDegree20Long00Compositional
+set_option maxHeartbeats 0
+set_option maxRecDepth 100000
+set_option backward.isDefEq.respectTransparency false
+noncomputable def e102 : NestedArithmetic.Expr 3 := .plus e100 e101
+noncomputable def p102 : NestedHorner.Poly 3 := [[[0],[0,0],[0,0,400]],[[0,0],[0,0,0],[0,0,0]],[[0,0,-3600],[0,-7200,11760],[-3600,11760,40]],[[0,0,0],[0,0,0],[0,0]],[[-32400,-120960,42240],[-120960,225600,39680],[42240,39680]],[[0,0,0],[0,0,0],[0,0]],[[-1497960,282960,357320],[282960,1591360,43840],[357320,43840]],[[0,0,0],[0,0,0],[0,0]],[[-8136720,8344800,1016320],[8344800,4262080,18800],[1016320,18800]],[[0,0,0],[0,0,0],[0,0]],[[8640600,41479040,1491920],[41479040,6029760,2960],[1491920,2960]],[[0,0,0],[0,0,0],[0,0]],[[231089840,106927760,1269120],[106927760,4992320,80],[1269120,80]],[[0,0,0],[0,0],[0]],[[1059294520,172264720,647920],[172264720,2496480],[647920]],[[0,0,0],[0,0],[0]],[[2760583520,186760400,196480],[186760400,745280],[196480]],[[0,0,0],[0,0],[0]],[[4848103120,141005760,33120],[141005760,124320],[33120]],[[0,0,0],[0,0],[0]],[[6133921440,75119520,2560],[75119520,9600],[2560]],[[0,0,0],[0,0],[0]],[[5782010560,28163760,40],[28163760,160],[40]],[[0,0],[0]],[[4133095200,7289600],[7289600]],[[0,0],[0]],[[2258033120,1247680],[1247680]],[[0,0],[0]],[[942985200,129360],[129360]],[[0,0],[0]],[[298814840,6640],[6640]],[[0,0],[0]],[[70686240,80],[80]],[[0]],[[12125200]],[[0]],[[1434320]],[[0]],[[106680]],[[0]],[[4080]],[[0]],[[40]]]
+theorem step102 : p102=NestedHorner.add p100 p101 := by decide +kernel
+#print axioms step102
+theorem h102 : NestedArithmetic.compile e102=p102 := StagedExprCompile.compile_plus e102 e100 e101 p100 p101 p102 rfl h100 h101 step102
+#print axioms h102
+end Gebendorfer.RadenkovicGutman.FixedDegree20Long00Compositional

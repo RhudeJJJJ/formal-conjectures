@@ -1,0 +1,15 @@
+/- Copyright 2026 Jonas J. Gebendorfer. Apache 2.0. -/
+import Proofs.RadenkovicGutmanD18Long00CompositionalNode100
+import Proofs.RadenkovicGutmanD18Long00CompositionalNode101
+import Proofs.RadenkovicGutmanStagedExprCompile
+namespace Gebendorfer.RadenkovicGutman.FixedDegree18Long00Compositional
+set_option maxHeartbeats 0
+set_option maxRecDepth 100000
+set_option backward.isDefEq.respectTransparency false
+noncomputable def e102 : NestedArithmetic.Expr 3 := .plus e100 e101
+noncomputable def p102 : NestedHorner.Poly 3 := [[[0],[0,0],[0,0,324]],[[0,0],[0,0,0],[0,0,0]],[[0,0,-2916],[0,-5832,9504],[-2916,9504,36]],[[0,0,0],[0,0,0],[0,0]],[[-26244,-98172,34020],[-98172,182088,32112],[34020,32112]],[[0,0,0],[0,0,0],[0,0]],[[-1215972,222588,288360],[222588,1285848,35568],[288360,35568]],[[0,0,0],[0,0,0],[0,0]],[[-6651396,6712956,821016],[6712956,3447288,15336],[821016,15336]],[[0,0,0],[0,0,0],[0,0]],[[6515316,33447744,1206504],[33447744,4882896,2448],[1206504,2448]],[[0,0,0],[0,0,0],[0,0]],[[185144292,86339412,1027728],[86339412,4049136,72],[1027728,72]],[[0,0,0],[0,0],[0]],[[852727716,139251132,525708],[139251132,2029320],[525708]],[[0,0,0],[0,0],[0]],[[2226992472,151135704,159912],[151135704,607896],[159912]],[[0,0,0],[0,0],[0]],[[3916597680,114246684,27108],[114246684,102024],[27108]],[[0,0,0],[0,0],[0]],[[4961116944,60950196,2124],[60950196,7992],[2124]],[[0,0,0],[0,0],[0]],[[4681454112,22892112,36],[22892112,144],[36]],[[0,0],[0]],[[3349911240,5939460],[5939460]],[[0,0],[0]],[[1832186232,1020276],[1020276]],[[0,0],[0]],[[766095588,106452],[106452]],[[0,0],[0]],[[243119268,5544],[5544]],[[0,0],[0]],[[57618216,72],[72]],[[0]],[[9908640]],[[0]],[[1176588]],[[0]],[[88092]],[[0]],[[3420]],[[0]],[[36]]]
+theorem step102 : p102=NestedHorner.add p100 p101 := by decide +kernel
+#print axioms step102
+theorem h102 : NestedArithmetic.compile e102=p102 := StagedExprCompile.compile_plus e102 e100 e101 p100 p101 p102 rfl h100 h101 step102
+#print axioms h102
+end Gebendorfer.RadenkovicGutman.FixedDegree18Long00Compositional

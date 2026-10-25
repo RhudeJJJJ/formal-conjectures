@@ -1,0 +1,15 @@
+/- Copyright 2026 Jonas J. Gebendorfer. Apache 2.0. -/
+import Proofs.RadenkovicGutmanD41Long00CompositionalNode035
+import Proofs.RadenkovicGutmanD41Long00CompositionalNode061
+import Proofs.RadenkovicGutmanStagedExprCompile
+namespace Gebendorfer.RadenkovicGutman.FixedDegree41Long00Compositional
+set_option maxHeartbeats 0
+set_option maxRecDepth 100000
+set_option backward.isDefEq.respectTransparency false
+noncomputable def e094 : NestedArithmetic.Expr 3 := .times e035 e061
+noncomputable def p094 : NestedHorner.Poly 3 := [[[0],[0],[0]],[[0,0],[0,0],[0,0]],[[0,0,-15129],[0,-30258,9594],[-15129,9594]],[[0,0,0],[0,0,0],[0,0]],[[0,-412911,-44772],[-412911,83148,41574],[-44772,41574]],[[0,0,0],[0,0,0],[0,0]],[[-2530602,-2128761,158957],[-2128761,1526758,51168],[158957,51168]],[[0,0,0],[0,0,0],[0,0]],[[-17488386,2109573,899458],[2109573,5137628,22386],[899458,22386]],[[0,0,0],[0,0,0],[0,0]],[[2309202,41694622,1674522],[41694622,8190816,3198],[1674522,3198]],[[0,0,0],[0,0],[0]],[[432081288,142228385,1613678],[142228385,7295212],[1613678]],[[0,0,0],[0,0],[0]],[[2173077408,261857447,884001],[261857447,3808326],[884001]],[[0,0,0],[0,0],[0]],[[5910841916,306936824,277078],[306936824,1155380],[277078]],[[0,0,0],[0,0],[0]],[[10635437802,243309867,46289],[243309867,188518],[46289]],[[0,0,0],[0,0],[0]],[[13642602974,133541797,3198],[133541797,12792],[3198]],[[0,0],[0]],[[12946201164,50838196],[50838196]],[[0,0],[0]],[[9267254354,13177195],[13177195]],[[0,0],[0]],[[5048242342,2218715],[2218715]],[[0,0],[0]],[[2093748148,218817],[218817]],[[0,0],[0]],[[656143008,9594],[9594]],[[0]],[[152686296]],[[0]],[[25559646]],[[0]],[[2908294]],[[0]],[[201310]],[[0]],[[6396]]]
+theorem step094 : p094=NestedArithmetic.mul p035 p061 := by decide +kernel
+#print axioms step094
+theorem h094 : NestedArithmetic.compile e094=p094 := StagedExprCompile.compile_times e094 e035 e061 p035 p061 p094 rfl h035 h061 step094
+#print axioms h094
+end Gebendorfer.RadenkovicGutman.FixedDegree41Long00Compositional

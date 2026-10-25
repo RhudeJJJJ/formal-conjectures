@@ -52,6 +52,7 @@ lemma two_medians_bound (hT : T.IsTree) (ho : 2<Fintype.card V)
       _ = _ := by simp [Nat.mul_comm]
   have hd := hsumA.trans (hupper A)
   have he := hsumB.trans (hupper B)
+  change I.card + 2 ≤ D.card
   by_contra hbad
   have hg : (D∩A).card+(D∩B).card≤(I∩A).card+(I∩B).card+1 := by omega
   have hIpos : I.Nonempty := by

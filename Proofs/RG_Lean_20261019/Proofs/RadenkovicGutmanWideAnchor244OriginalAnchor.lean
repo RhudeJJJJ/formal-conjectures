@@ -1,0 +1,41 @@
+/- Copyright 2026 Jonas J. Gebendorfer. Apache 2.0. -/
+import Proofs.RadenkovicGutmanWideAnchor244Origin
+import Proofs.RadenkovicGutmanWideAnchor244FinitePayment
+import Proofs.RadenkovicGutmanWideAnchor244PositiveTail
+import Proofs.RadenkovicGutmanDegreeOneMiddleAnchorData
+
+namespace Gebendorfer.RadenkovicGutman.WideAnchor244OriginalAnchor
+open Set MeasureTheory CoreQuotient
+open scoped Classical
+set_option maxHeartbeats 0
+set_option maxRecDepth 100000
+set_option backward.isDefEq.respectTransparency false
+def target : ℚ := (2737543289165084826356366535941449/32624163332060752803334972325527552)
+theorem original_anchor_checked : DegreeOneMiddleAnchors.anchors[244]?=some (⟨52,0,26,target⟩ : DegreeOneMiddleAnchors.Anchor) := by decide +kernel
+theorem budget_checked : target*(3927/1250)≤WideAnchor244Origin.payment+WideAnchor244FinitePayment.payment+WideAnchor244PositiveTail.payment := by decide +kernel
+noncomputable section
+theorem actual_bound {V : Type*} [Fintype V] [DecidableEq V]
+    (G : SimpleGraph V) (u : V) (hd : G.degree u=1) (hN : Fintype.card V+0+26+2≤52) :
+    (target : ℝ)≤ActualFusionIntegral.normalizedIntegral G u 0 26 (((51/26) : ℚ) : ℝ) := by
+  exact ComputedIntegralAssembly.normalized_lower ((51/26)) (1/268435456) 128 target
+    WideAnchor244Origin.payment WideAnchor244FinitePayment.payment WideAnchor244PositiveTail.payment 0 26
+    (by norm_num) (by norm_num) (by norm_num [target]) budget_checked G u
+    (WideAnchor244Origin.actual_integral G u hN)
+    (WideAnchor244FinitePayment.actual_integral G u hd)
+    (WideAnchor244PositiveTail.actual_integral G u hd)
+theorem actual_bound_swapped {V : Type*} [Fintype V] [DecidableEq V]
+    (G : SimpleGraph V) (u : V) (hd : G.degree u=1) (hN : Fintype.card V+26+0+2≤52) :
+    (target : ℝ)≤ActualFusionIntegral.normalizedIntegral G u 26 0 (((51/26) : ℚ) : ℝ) := by
+  exact ComputedIntegralAssembly.normalized_lower ((51/26)) (1/268435456) 128 target
+    WideAnchor244Origin.payment WideAnchor244FinitePayment.payment WideAnchor244PositiveTail.payment 26 0
+    (by norm_num) (by norm_num) (by norm_num [target]) budget_checked G u
+    (WideAnchor244Origin.actual_integral_swapped G u hN)
+    (WideAnchor244FinitePayment.actual_integral_swapped G u hd)
+    (WideAnchor244PositiveTail.actual_integral_swapped G u hd)
+end
+
+#print axioms original_anchor_checked
+#print axioms budget_checked
+#print axioms actual_bound
+#print axioms actual_bound_swapped
+end Gebendorfer.RadenkovicGutman.WideAnchor244OriginalAnchor

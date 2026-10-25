@@ -1,0 +1,97 @@
+# Strict linter correction; mathematical premises and proof goal unchanged.
+name: RG degree1 unique remaining original compositional repairs descending
+
+on:
+  push:
+    branches: [rg-remaining-six-spectral-20261021]
+    paths: ['.github/workflows/rg-d1-unique-remaining-original-compositional-repairs.yml']
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  check:
+    strategy:
+      fail-fast: false
+      max-parallel: 4
+      matrix:
+        endpoint: [Proofs.RadenkovicGutmanD1Long00Leaf01679CompositionalRepair,Proofs.RadenkovicGutmanD1Long00Leaf01678CompositionalRepair,Proofs.RadenkovicGutmanD1Long00Leaf01677CompositionalRepair,Proofs.RadenkovicGutmanD1Long00Leaf01676CompositionalRepair,Proofs.RadenkovicGutmanD1Long00Leaf01675CompositionalRepair,Proofs.RadenkovicGutmanD1Long00Leaf01674CompositionalRepair,Proofs.RadenkovicGutmanD1Long00Leaf01673CompositionalRepair,Proofs.RadenkovicGutmanD1Long00Leaf01672CompositionalRepair,Proofs.RadenkovicGutmanD1Long00Leaf01671CompositionalRepair,Proofs.RadenkovicGutmanD1Long00Leaf01670CompositionalRepair,Proofs.RadenkovicGutmanD1Long00Leaf01619CompositionalRepair,Proofs.RadenkovicGutmanD1Long00Leaf01618CompositionalRepair,Proofs.RadenkovicGutmanD1Long00Leaf01617CompositionalRepair,Proofs.RadenkovicGutmanD1Long00Leaf01616CompositionalRepair,Proofs.RadenkovicGutmanD1Long00Leaf01615CompositionalRepair,Proofs.RadenkovicGutmanD1Long00Leaf01614CompositionalRepair,Proofs.RadenkovicGutmanD1Long00Leaf01613CompositionalRepair,Proofs.RadenkovicGutmanD1Long00Leaf01612CompositionalRepair,Proofs.RadenkovicGutmanD1Long00Leaf01611CompositionalRepair,Proofs.RadenkovicGutmanD1Long00Leaf01610CompositionalRepair,Proofs.RadenkovicGutmanD1Long00Leaf01609CompositionalRepair,Proofs.RadenkovicGutmanD1Long00Leaf01608CompositionalRepair,Proofs.RadenkovicGutmanD1Long00Leaf01607CompositionalRepair,Proofs.RadenkovicGutmanD1Long00Leaf01606CompositionalRepair,Proofs.RadenkovicGutmanD1Long00Leaf01605CompositionalRepair,Proofs.RadenkovicGutmanD1Long00Leaf01604CompositionalRepair,Proofs.RadenkovicGutmanD1Long00Leaf01603CompositionalRepair,Proofs.RadenkovicGutmanD1Long00Leaf01602CompositionalRepair,Proofs.RadenkovicGutmanD1Long00Leaf01601CompositionalRepair,Proofs.RadenkovicGutmanD1Long00Leaf01600CompositionalRepair,Proofs.RadenkovicGutmanD1Long00Leaf01599CompositionalRepair,Proofs.RadenkovicGutmanD1Long00Leaf01598CompositionalRepair,Proofs.RadenkovicGutmanD1Long00Leaf01519CompositionalRepair,Proofs.RadenkovicGutmanD1Long00Leaf01518CompositionalRepair,Proofs.RadenkovicGutmanD1Long00Leaf01517CompositionalRepair,Proofs.RadenkovicGutmanD1Long00Leaf01516CompositionalRepair,Proofs.RadenkovicGutmanD1Long00Leaf01515CompositionalRepair,Proofs.RadenkovicGutmanD1Long00Leaf01514CompositionalRepair,Proofs.RadenkovicGutmanD1Long00Leaf01513CompositionalRepair,Proofs.RadenkovicGutmanD1Long00Leaf01512CompositionalRepair,Proofs.RadenkovicGutmanD1Long00Leaf01511CompositionalRepair,Proofs.RadenkovicGutmanD1Long00Leaf01510CompositionalRepair,Proofs.RadenkovicGutmanD1Long00Leaf01509CompositionalRepair,Proofs.RadenkovicGutmanD1Long00Leaf01508CompositionalRepair,Proofs.RadenkovicGutmanD1Long00Leaf01507CompositionalRepair,Proofs.RadenkovicGutmanD1Long00Leaf01506CompositionalRepair,Proofs.RadenkovicGutmanD1Long00Leaf01505CompositionalRepair,Proofs.RadenkovicGutmanD1Long00Leaf01504CompositionalRepair,Proofs.RadenkovicGutmanD1Long00Leaf01503CompositionalRepair,Proofs.RadenkovicGutmanD1Long00Leaf01502CompositionalRepair,Proofs.RadenkovicGutmanD1Long00Leaf01501CompositionalRepair,Proofs.RadenkovicGutmanD1Long00Leaf01500CompositionalRepair,Proofs.RadenkovicGutmanD1Long00Leaf01499CompositionalRepair,Proofs.RadenkovicGutmanD1Long00Leaf01498CompositionalRepair,Proofs.RadenkovicGutmanD1Long00Leaf01497CompositionalRepair,Proofs.RadenkovicGutmanD1Long00Leaf01496CompositionalRepair,Proofs.RadenkovicGutmanD1Long00Leaf01449CompositionalRepair,Proofs.RadenkovicGutmanD1Long00Leaf01448CompositionalRepair,Proofs.RadenkovicGutmanD1Long00Leaf01447CompositionalRepair,Proofs.RadenkovicGutmanD1Long00Leaf01446CompositionalRepair,Proofs.RadenkovicGutmanD1Long00Leaf01445CompositionalRepair,Proofs.RadenkovicGutmanD1Long00Leaf01444CompositionalRepair,Proofs.RadenkovicGutmanD1Long00Leaf01443CompositionalRepair,Proofs.RadenkovicGutmanD1Long00Leaf01442CompositionalRepair,Proofs.RadenkovicGutmanD1Long00Leaf01441CompositionalRepair,Proofs.RadenkovicGutmanD1Long00Leaf01440CompositionalRepair,Proofs.RadenkovicGutmanD1Long00Leaf01439CompositionalRepair,Proofs.RadenkovicGutmanD1Long00Leaf01438CompositionalRepair,Proofs.RadenkovicGutmanD1Long00Leaf01437CompositionalRepair,Proofs.RadenkovicGutmanD1Long00Leaf01436CompositionalRepair,Proofs.RadenkovicGutmanD1Long00Leaf01435CompositionalRepair,Proofs.RadenkovicGutmanD1Long00Leaf01434CompositionalRepair,Proofs.RadenkovicGutmanD1Long00Leaf01433CompositionalRepair,Proofs.RadenkovicGutmanD1Long00Leaf01432CompositionalRepair,Proofs.RadenkovicGutmanD1Long00Leaf01431CompositionalRepair,Proofs.RadenkovicGutmanD1Long00Leaf01430CompositionalRepair,Proofs.RadenkovicGutmanD1Long00Leaf01429CompositionalRepair,Proofs.RadenkovicGutmanD1Long00Leaf01428CompositionalRepair,Proofs.RadenkovicGutmanD1Long00Leaf01409CompositionalRepair,Proofs.RadenkovicGutmanD1Long00Leaf01408CompositionalRepair,Proofs.RadenkovicGutmanD1Long00Leaf01407CompositionalRepair,Proofs.RadenkovicGutmanD1Long00Leaf01406CompositionalRepair,Proofs.RadenkovicGutmanD1Long00Leaf01405CompositionalRepair,Proofs.RadenkovicGutmanD1Long00Leaf01404CompositionalRepair,Proofs.RadenkovicGutmanD1Long00Leaf01403CompositionalRepair,Proofs.RadenkovicGutmanD1Long00Leaf01402CompositionalRepair,Proofs.RadenkovicGutmanD1Long00Leaf01401CompositionalRepair,Proofs.RadenkovicGutmanD1Long00Leaf01400CompositionalRepair,Proofs.RadenkovicGutmanD1Long00Leaf01349CompositionalRepair,Proofs.RadenkovicGutmanD1Long00Leaf01348CompositionalRepair,Proofs.RadenkovicGutmanD1Long00Leaf01347CompositionalRepair,Proofs.RadenkovicGutmanD1Long00Leaf01346CompositionalRepair,Proofs.RadenkovicGutmanD1Long00Leaf01345CompositionalRepair,Proofs.RadenkovicGutmanD1Long00Leaf01344CompositionalRepair,Proofs.RadenkovicGutmanD1Long00Leaf01343CompositionalRepair,Proofs.RadenkovicGutmanD1Long00Leaf01342CompositionalRepair,Proofs.RadenkovicGutmanD1Long00Leaf01341CompositionalRepair,Proofs.RadenkovicGutmanD1Long00Leaf01340CompositionalRepair,Proofs.RadenkovicGutmanD1Long00Leaf01339CompositionalRepair,Proofs.RadenkovicGutmanD1Long00Leaf01338CompositionalRepair,Proofs.RadenkovicGutmanD1Long00Leaf01337CompositionalRepair,Proofs.RadenkovicGutmanD1Long00Leaf01336CompositionalRepair,Proofs.RadenkovicGutmanD1Long00Leaf01335CompositionalRepair,Proofs.RadenkovicGutmanD1Long00Leaf01334CompositionalRepair]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 360
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          persist-credentials: false
+      - name: Install the project toolchain
+        run: |
+          set -o pipefail
+          curl -sSfL https://github.com/leanprover/elan/releases/download/v1.4.2/elan-x86_64-unknown-linux-gnu.tar.gz | tar xz
+          ./elan-init -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Materialize the exact dependency lock
+        run: python3 -B ci/rg_dependencies.py
+      - name: Materialize the pinned original cell and retain exact Lean sources
+        run: python3 -B ci/rg_compositional_d1_repair.py --endpoint ${{ matrix.endpoint }}
+      - name: Fetch the required Mathlib cache
+        run: |
+          python3 - <<'PY'
+          import pathlib, re, subprocess
+          root = pathlib.Path('Proofs/RG_Lean_20261019')
+          seen, external = set(), set()
+          def visit(name):
+              if name in seen:
+                  return
+              seen.add(name)
+              source = (root / (name.replace('.', '/') + '.lean')).read_text()
+              for dep in re.findall(r'^\s*import\s+([\w.]+)', source, re.M):
+                  if dep.startswith('Proofs.'):
+                      visit(dep)
+                  elif not dep.startswith(('Lean.', 'Init.', 'Std.')) and dep not in ('Lean','Init','Std'):
+                      external.add(dep)
+          visit('${{ matrix.endpoint }}')
+          subprocess.run(['lake', 'exe', 'cache', 'get', *sorted(external)], check=True)
+          PY
+      - name: Restore one independently audited complete source-bound base scope
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 -B ci/rg_restore_complete_scope.py --manifest ci/rg_reusable_analytic_kernel_base_complete_scope_capsule.json --build-directory Proofs/RG_Lean_20261019/build/extension
+      - name: Restore the independently audited original noncomputable153-module proof
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_d1_leaf1260_no_runtime_segmented_original_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+      - name: Bound the remaining fresh module frontier
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 -B ci/rg_restore_with_kernel_fallback.py --plan ci/rg_empty_restore_plan.json --build-directory Proofs/RG_Lean_20261019/build/extension --endpoint ${{ matrix.endpoint }} --max-fresh 154 --preflight-only
+      - name: Check multiplicities and actual graph spectral comparison
+        shell: bash
+        run: |
+          set -o pipefail
+          python3 -B ci/rg_observed_kernel_verify.py --memory-reserve-mib 2048 -- --mathlib-project "$GITHUB_WORKSPACE" --endpoint ${{ matrix.endpoint }} --workers 1 --module-timeout 600 --resume | python3 -B ci/rg_compact_ci_output.py
+      - name: Retain completed records and diagnostics
+        if: always()
+        run: |
+          python3 - <<'PY'
+          import json,pathlib,shutil
+          root=pathlib.Path('Proofs/RG_Lean_20261019/build/extension')
+          records=[json.loads(p.read_text()) for p in sorted(root.glob('Proofs.*.json'))]
+          fresh=root.parent/'fresh_exports';fresh.mkdir(parents=True,exist_ok=True)
+          (fresh/'diagnostics_records.json').write_text(json.dumps({'modules':records},separators=(',',':'))+'\n')
+          if (root/'receipt.json').is_file():shutil.copyfile(root/'receipt.json',fresh/'receipt.json')
+          print('RETAINED_RECORD_COUNTS '+json.dumps({'total':len(records),'fresh':sum(r['mode']=='FRESH_KERNEL_EXPORT' for r in records)}))
+          for row in records:
+              if row['mode']=='FRESH_KERNEL_EXPORT':
+                  name=row['module'];rel=name.replace('.','/')+'.olean';dest=fresh/rel
+                  dest.parent.mkdir(parents=True,exist_ok=True)
+                  shutil.copyfile(root/rel,dest);shutil.copyfile(root/(name+'.json'),fresh/(name+'.json'))
+          for log in root.glob('Proofs.*.log'):
+              shutil.copyfile(log,fresh/log.name);print('MODULE_LOG_TAIL '+log.name+' '+log.read_text()[-18000:])
+          PY
+      - name: Retain new exports only
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: rg-d1-unique-remaining-original-compositional-repairs-exports-${{ github.run_id }}-${{ strategy.job-index }}
+          path: Proofs/RG_Lean_20261019/build/fresh_exports
+          retention-days: 90

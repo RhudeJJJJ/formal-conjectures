@@ -1,0 +1,63 @@
+{
+  "repository": "RhudeJJJJ/formal-conjectures",
+  "run": 40144784820,
+  "job": 121023696072,
+  "source_commit": "f2f2272a6e17a497a309ddd2b4c9ab0a69c63ecc",
+  "artifact_id": 12580367394,
+  "artifact_sha256": "ba72ccb280519fe1c715795ad1fe882e02f62e0adf8a81b3860c60433dea0085",
+  "lean_version": "4.33.1",
+  "mathlib": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "modules": {
+    "Proofs.RadenkovicGutmanExprDecidableEquality": {
+      "module": "Proofs.RadenkovicGutmanExprDecidableEquality",
+      "source_sha256": "165d62a134118268b5cdb4fb7d7ebf33808422cd57d00cf1d36db3b0abf25726",
+      "source_closure_sha256": "f01ac441e6d1ed61c8c98929387f5a6139937cdc9f485312439619c0122ea741",
+      "output_sha256": "b9941984effc5e3d4dd0b53ff703c9a6c847cec0d7942997a3b742227eab83ba",
+      "axiom_profiles": [
+        []
+      ],
+      "mode": "FRESH_KERNEL_EXPORT",
+      "seconds": 2.321
+    },
+    "Proofs.RadenkovicGutmanStagedExprCompile": {
+      "module": "Proofs.RadenkovicGutmanStagedExprCompile",
+      "source_sha256": "59b931e0f450b6519943a6bc308c7bddbaafd60ab9ee6c0abc6043a9171a22e6",
+      "source_closure_sha256": "0772bff4bd29c71a595c345aa87779d96d785055a6df62cd7e6426ae0a7363f7",
+      "output_sha256": "dae6efff22e03ea49775d85ceebd096c8b786614dfab4f522b8e3643cd09f0f3",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "FRESH_KERNEL_EXPORT",
+      "seconds": 2.27
+    }
+  }
+}

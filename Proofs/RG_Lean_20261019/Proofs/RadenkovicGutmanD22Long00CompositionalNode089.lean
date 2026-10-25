@@ -1,0 +1,15 @@
+/- Copyright 2026 Jonas J. Gebendorfer. Apache 2.0. -/
+import Proofs.RadenkovicGutmanD22Long00CompositionalNode033
+import Proofs.RadenkovicGutmanD22Long00CompositionalNode061
+import Proofs.RadenkovicGutmanStagedExprCompile
+namespace Gebendorfer.RadenkovicGutman.FixedDegree22Long00Compositional
+set_option maxHeartbeats 0
+set_option maxRecDepth 100000
+set_option backward.isDefEq.respectTransparency false
+noncomputable def e089 : NestedArithmetic.Expr 3 := .times e033 e061
+noncomputable def p089 : NestedHorner.Poly 3 := [[[0],[0,0],[0,0]],[[0,0],[0,0,1452],[0,1452,-880]],[[0,0,0],[0,0,0],[0,0]],[[0,-13068,13068],[-13068,47916,-9548],[13068,-9548]],[[0,0,0],[0,0,0],[0,0]],[[-124740,143748,20196],[143748,43032,-34496],[20196,-34496]],[[0,0,0],[0,0,0],[0,0]],[[-5940,738144,-127512],[738144,-638308,-35332],[-127512,-35332]],[[0,0,0],[0,0,0],[0,0]],[[4457376,-1117204,-488972],[-1117204,-2177560,-13596],[-488972,-13596]],[[0,0,0],[0,0,0],[0,0]],[[14022492,-14132184,-748176],[-14132184,-3207600,-1760],[-748176,-1760]],[[0,0,0],[0,0],[0]],[[-19102204,-42353476,-625284],[-42353476,-2622136],[-625284]],[[0,0,0],[0,0],[0]],[[-229293240,-70727624,-306504],[-70727624,-1265220],[-306504]],[[0,0,0],[0,0],[0]],[[-728760560,-76536284,-87780],[-76536284,-357896],[-87780]],[[0,0,0],[0,0],[0]],[[-1385701460,-56753972,-13596],[-56753972,-54868],[-13596]],[[0,0,0],[0,0],[0]],[[-1820233360,-29445240,-880],[-29445240,-3520],[-880]],[[0,0],[0]],[[-1747150064,-10685400],[-10685400]],[[0,0],[0]],[[-1258280672,-2657952],[-2657952]],[[0,0],[0]],[[-687925260,-431816],[-431816]],[[0,0],[0]],[[-286012188,-41272],[-41272]],[[0,0],[0]],[[-89794056,-1760],[-1760]],[[0]],[[-20925696]],[[0]],[[-3507196]],[[0]],[[-399476]],[[0]],[[-27676]],[[0]],[[-880]]]
+theorem step089 : p089=NestedArithmetic.mul p033 p061 := by decide +kernel
+#print axioms step089
+theorem h089 : NestedArithmetic.compile e089=p089 := StagedExprCompile.compile_times e089 e033 e061 p033 p061 p089 rfl h033 h061 step089
+#print axioms h089
+end Gebendorfer.RadenkovicGutman.FixedDegree22Long00Compositional

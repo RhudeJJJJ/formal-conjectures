@@ -1,0 +1,15 @@
+/- Copyright 2026 Jonas J. Gebendorfer. Apache 2.0. -/
+import Proofs.RadenkovicGutmanD23Long00CompositionalNode100
+import Proofs.RadenkovicGutmanD23Long00CompositionalNode101
+import Proofs.RadenkovicGutmanStagedExprCompile
+namespace Gebendorfer.RadenkovicGutman.FixedDegree23Long00Compositional
+set_option maxHeartbeats 0
+set_option maxRecDepth 100000
+set_option backward.isDefEq.respectTransparency false
+noncomputable def e102 : NestedArithmetic.Expr 3 := .plus e100 e101
+noncomputable def p102 : NestedHorner.Poly 3 := [[[0],[0,0],[0,0,529]],[[0,0],[0,0,0],[0,0,0]],[[0,0,-4761],[0,-9522,15594],[-4761,15594,46]],[[0,0,0],[0,0,0],[0,0]],[[-42849,-159597,56235],[-159597,299598,52532],[56235,52532]],[[0,0,0],[0,0,0],[0,0]],[[-1976022,386883,474605],[386883,2110618,57868],[474605,57868]],[[0,0,0],[0,0,0],[0,0]],[[-10644561,11124801,1348306],[11124801,5646178,24656],[1348306,24656]],[[0,0,0],[0,0,0],[0,0]],[[12354036,55144064,1976804],[55144064,7976676,3818],[1976804,3818]],[[0,0,0],[0,0,0],[0,0]],[[309523397,141933437,1678908],[141933437,6592076,92],[1678908,92]],[[0,0,0],[0,0],[0]],[[1411076956,228363067,855163],[228363067,3287850],[855163]],[[0,0,0],[0,0],[0]],[[3668275382,247259384,258382],[247259384,977546],[258382]],[[0,0,0],[0,0],[0]],[[6431484250,186418749,43263],[186418749,161874],[43263]],[[0,0,0],[0,0],[0]],[[8126216664,99147411,3289],[99147411,12282],[3289]],[[0,0,0],[0,0],[0]],[[7650493312,37094262,46],[37094262,184],[46]],[[0,0],[0]],[[5461985490,9573635],[9573635]],[[0,0],[0]],[[2980154942,1631551],[1631551]],[[0,0],[0]],[[1242732573,167877],[167877]],[[0,0],[0]],[[393114068,8464],[8464]],[[0,0],[0]],[[92788026,92],[92]],[[0]],[[15868390]],[[0]],[[1868543]],[[0]],[[137862]],[[0]],[[5175]],[[0]],[[46]]]
+theorem step102 : p102=NestedHorner.add p100 p101 := by decide +kernel
+#print axioms step102
+theorem h102 : NestedArithmetic.compile e102=p102 := StagedExprCompile.compile_plus e102 e100 e101 p100 p101 p102 rfl h100 h101 step102
+#print axioms h102
+end Gebendorfer.RadenkovicGutman.FixedDegree23Long00Compositional

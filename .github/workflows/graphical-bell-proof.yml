@@ -1,0 +1,50 @@
+name: Graphical Bell proof development
+on:
+  push:
+    branches: [proof-graphical-bell-20261025]
+    paths: ['Proofs/GraphicalBell/**', '.github/workflows/graphical-bell-proof.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          persist-credentials: false
+      - name: Install pinned Lean
+        run: |
+          curl -sSfL https://github.com/leanprover/elan/releases/download/v1.4.2/elan-x86_64-unknown-linux-gnu.tar.gz | tar xz
+          ./elan-init -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> $GITHUB_PATH
+      - name: Pinned Mathlib cache
+        run: lake exe cache get
+      - uses: actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9
+        with:
+          path: .lake/build
+          key: bell-imports-${{ hashFiles('lean-toolchain', 'lake-manifest.json') }}-${{ github.sha }}
+          restore-keys: |
+            bell-imports-${{ hashFiles('lean-toolchain', 'lake-manifest.json') }}-
+            wowii361362-imports-${{ hashFiles('lean-toolchain', 'lake-manifest.json') }}-
+      - name: Original statement module
+        run: lake --wfail build FormalConjectures.Other.GraphicalBell
+      - uses: actions/cache/save@55cc8345863c7cc4c66a329aec7e433d2d1c52a9
+        with:
+          path: .lake/build
+          key: bell-imports-${{ hashFiles('lean-toolchain', 'lake-manifest.json') }}-${{ github.sha }}
+      - name: Strict development compilation
+        run: |
+          failed=0
+          mkdir -p .lake/build/lib/lean/Proofs/GraphicalBell
+          for name in Vectors Partitions; do
+            echo "CHECKING $name AT $GITHUB_SHA"
+            sha256sum "Proofs/GraphicalBell/$name.lean"
+            if lake env lean -DwarningAsError=true -DautoImplicit=false -DrelaxedAutoImplicit=false -o ".lake/build/lib/lean/Proofs/GraphicalBell/$name.olean" "Proofs/GraphicalBell/$name.lean"; then
+              echo "PASSED $name"
+            else
+              failed=1
+            fi
+          done
+          exit "$failed"

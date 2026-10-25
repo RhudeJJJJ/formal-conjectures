@@ -6,7 +6,7 @@ import Lean.Elab.Tactic.RCases
 /-! Integer counting for two balanced tree halves. -/
 
 namespace WOWIIMedian
-lemma poor_half_impossible (δ h i j d e t u : Nat)
+theorem poor_half_impossible (δ h i j d e t u : Nat)
     (hδ : 2 ≤ δ) (hh : 2 ≤ h) (ht : t ≤ 1) (hu : u ≤ 1) (htu : t + u ≤ 1)
     (hi : δ * i ≤ h - 1 + t) (hj : δ * j ≤ h - 1 + u)
     (hd : h - 1 ≤ δ * d) (he : h - 1 ≤ δ * e)
@@ -44,7 +44,7 @@ lemma poor_half_impossible (δ h i j d e t u : Nat)
   rw [Nat.mul_left_comm δ 2 d,hprod] at hstrict
   omega
 
-lemma balanced_count_impossible (δ h i j d e t u : Nat)
+theorem balanced_count_impossible (δ h i j d e t u : Nat)
     (hδ : 2 ≤ δ) (hh : 2 ≤ h) (ht : t ≤ 1) (hu : u ≤ 1) (htu : t + u ≤ 1)
     (hi : δ * i ≤ h - 1 + t) (hj : δ * j ≤ h - 1 + u)
     (hd : h - 1 ≤ δ * d) (he : h - 1 ≤ δ * e)

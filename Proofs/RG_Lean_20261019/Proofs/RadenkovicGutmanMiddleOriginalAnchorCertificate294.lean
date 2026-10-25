@@ -7,6 +7,7 @@ open scoped Classical
 noncomputable section
 set_option maxHeartbeats 0
 set_option maxRecDepth 100000
+set_option backward.isDefEq.respectTransparency false
 def anchor : Anchor := ⟨52,19,28,(3316707501869785498242313871985313/32624163332060752803334972325527552)⟩
 theorem certificate : MiddleOriginalAnchorPredicate.Proved anchor := by
   intro m C u r s _hT hd hor hN

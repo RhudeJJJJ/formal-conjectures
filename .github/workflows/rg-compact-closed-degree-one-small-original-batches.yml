@@ -1,0 +1,250 @@
+name: RG original small degree1 family with consistent finite imports
+
+on:
+  push:
+    branches: [rg-remaining-six-spectral-20261021]
+    paths: ['.github/workflows/rg-compact-closed-degree-one-small-original-batches.yml']
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  check:
+    strategy:
+      fail-fast: false
+      max-parallel: 4
+      matrix:
+        include:
+          - endpoint: Proofs.RadenkovicGutmanCompactFiniteDegreeOneSmallCertificateBatch00
+            max_fresh: 72
+            restore_plan: ci/rg_compact_closed_d1_small_batch00_restore_plan.json
+          - endpoint: Proofs.RadenkovicGutmanCompactFiniteDegreeOneSmallCertificateBatch01
+            max_fresh: 85
+            restore_plan: ci/rg_compact_closed_d1_small_batch01_restore_plan.json
+          - endpoint: Proofs.RadenkovicGutmanCompactFiniteDegreeOneSmallCertificateBatch02
+            max_fresh: 81
+            restore_plan: ci/rg_compact_closed_d1_small_batch02_restore_plan.json
+          - endpoint: Proofs.RadenkovicGutmanCompactFiniteDegreeOneSmallCertificateBatch03
+            max_fresh: 82
+            restore_plan: ci/rg_compact_closed_d1_small_batch03_restore_plan.json
+          - endpoint: Proofs.RadenkovicGutmanCompactFiniteDegreeOneSmallCertificateBatch04
+            max_fresh: 81
+            restore_plan: ci/rg_compact_closed_d1_small_batch04_restore_plan.json
+          - endpoint: Proofs.RadenkovicGutmanCompactFiniteDegreeOneSmallCertificateBatch05
+            max_fresh: 85
+            restore_plan: ci/rg_compact_closed_d1_small_batch05_restore_plan.json
+          - endpoint: Proofs.RadenkovicGutmanCompactFiniteDegreeOneSmallCertificateBatch06
+            max_fresh: 86
+            restore_plan: ci/rg_compact_closed_d1_small_batch06_restore_plan.json
+          - endpoint: Proofs.RadenkovicGutmanCompactFiniteDegreeOneSmallCertificateBatch07
+            max_fresh: 82
+            restore_plan: ci/rg_compact_closed_d1_small_batch07_restore_plan.json
+          - endpoint: Proofs.RadenkovicGutmanCompactFiniteDegreeOneSmallCertificateBatch08
+            max_fresh: 81
+            restore_plan: ci/rg_compact_closed_d1_small_batch08_restore_plan.json
+          - endpoint: Proofs.RadenkovicGutmanCompactFiniteDegreeOneSmallCertificateBatch09
+            max_fresh: 88
+            restore_plan: ci/rg_compact_closed_d1_small_batch09_restore_plan.json
+          - endpoint: Proofs.RadenkovicGutmanCompactFiniteDegreeOneSmallCertificateBatch10
+            max_fresh: 78
+            restore_plan: ci/rg_compact_closed_d1_small_batch10_restore_plan.json
+          - endpoint: Proofs.RadenkovicGutmanCompactFiniteDegreeOneSmallCertificateBatch11
+            max_fresh: 82
+            restore_plan: ci/rg_compact_closed_d1_small_batch11_restore_plan.json
+          - endpoint: Proofs.RadenkovicGutmanCompactFiniteDegreeOneSmallCertificateBatch12
+            max_fresh: 90
+            restore_plan: ci/rg_compact_closed_d1_small_batch12_restore_plan.json
+          - endpoint: Proofs.RadenkovicGutmanCompactFiniteDegreeOneSmallCertificateBatch13
+            max_fresh: 96
+            restore_plan: ci/rg_compact_closed_d1_small_batch13_restore_plan.json
+          - endpoint: Proofs.RadenkovicGutmanCompactFiniteDegreeOneSmallCertificateBatch14
+            max_fresh: 88
+            restore_plan: ci/rg_compact_closed_d1_small_batch14_restore_plan.json
+          - endpoint: Proofs.RadenkovicGutmanCompactFiniteDegreeOneSmallCertificateBatch15
+            max_fresh: 77
+            restore_plan: ci/rg_compact_closed_d1_small_batch15_restore_plan.json
+          - endpoint: Proofs.RadenkovicGutmanCompactFiniteDegreeOneSmallCertificateBatch16
+            max_fresh: 88
+            restore_plan: ci/rg_compact_closed_d1_small_batch16_restore_plan.json
+          - endpoint: Proofs.RadenkovicGutmanCompactFiniteDegreeOneSmallCertificateBatch17
+            max_fresh: 100
+            restore_plan: ci/rg_compact_closed_d1_small_batch17_restore_plan.json
+          - endpoint: Proofs.RadenkovicGutmanCompactFiniteDegreeOneSmallCertificateBatch18
+            max_fresh: 98
+            restore_plan: ci/rg_compact_closed_d1_small_batch18_restore_plan.json
+          - endpoint: Proofs.RadenkovicGutmanCompactFiniteDegreeOneSmallCertificateBatch19
+            max_fresh: 104
+            restore_plan: ci/rg_compact_closed_d1_small_batch19_restore_plan.json
+          - endpoint: Proofs.RadenkovicGutmanCompactFiniteDegreeOneSmallCertificateBatch20
+            max_fresh: 92
+            restore_plan: ci/rg_compact_closed_d1_small_batch20_restore_plan.json
+          - endpoint: Proofs.RadenkovicGutmanCompactFiniteDegreeOneSmallCertificateBatch21
+            max_fresh: 98
+            restore_plan: ci/rg_compact_closed_d1_small_batch21_restore_plan.json
+          - endpoint: Proofs.RadenkovicGutmanCompactFiniteDegreeOneSmallCertificateBatch22
+            max_fresh: 107
+            restore_plan: ci/rg_compact_closed_d1_small_batch22_restore_plan.json
+          - endpoint: Proofs.RadenkovicGutmanCompactFiniteDegreeOneSmallCertificateBatch23
+            max_fresh: 91
+            restore_plan: ci/rg_compact_closed_d1_small_batch23_restore_plan.json
+          - endpoint: Proofs.RadenkovicGutmanCompactFiniteDegreeOneSmallCertificateBatch24
+            max_fresh: 75
+            restore_plan: ci/rg_compact_closed_d1_small_batch24_restore_plan.json
+          - endpoint: Proofs.RadenkovicGutmanCompactFiniteDegreeOneSmallCertificateBatch25
+            max_fresh: 86
+            restore_plan: ci/rg_compact_closed_d1_small_batch25_restore_plan.json
+          - endpoint: Proofs.RadenkovicGutmanCompactFiniteDegreeOneSmallCertificateBatch26
+            max_fresh: 103
+            restore_plan: ci/rg_compact_closed_d1_small_batch26_restore_plan.json
+          - endpoint: Proofs.RadenkovicGutmanCompactFiniteDegreeOneSmallCertificateBatch27
+            max_fresh: 112
+            restore_plan: ci/rg_compact_closed_d1_small_batch27_restore_plan.json
+          - endpoint: Proofs.RadenkovicGutmanCompactFiniteDegreeOneSmallCertificateBatch28
+            max_fresh: 108
+            restore_plan: ci/rg_compact_closed_d1_small_batch28_restore_plan.json
+          - endpoint: Proofs.RadenkovicGutmanCompactFiniteDegreeOneSmallCertificateBatch29
+            max_fresh: 112
+            restore_plan: ci/rg_compact_closed_d1_small_batch29_restore_plan.json
+          - endpoint: Proofs.RadenkovicGutmanCompactFiniteDegreeOneSmallCertificateBatch30
+            max_fresh: 118
+            restore_plan: ci/rg_compact_closed_d1_small_batch30_restore_plan.json
+          - endpoint: Proofs.RadenkovicGutmanCompactFiniteDegreeOneSmallCertificateBatch31
+            max_fresh: 116
+            restore_plan: ci/rg_compact_closed_d1_small_batch31_restore_plan.json
+          - endpoint: Proofs.RadenkovicGutmanCompactFiniteDegreeOneSmallCertificateBatch32
+            max_fresh: 111
+            restore_plan: ci/rg_compact_closed_d1_small_batch32_restore_plan.json
+          - endpoint: Proofs.RadenkovicGutmanCompactFiniteDegreeOneSmallCertificateBatch33
+            max_fresh: 122
+            restore_plan: ci/rg_compact_closed_d1_small_batch33_restore_plan.json
+          - endpoint: Proofs.RadenkovicGutmanCompactFiniteDegreeOneSmallCertificateBatch34
+            max_fresh: 103
+            restore_plan: ci/rg_compact_closed_d1_small_batch34_restore_plan.json
+          - endpoint: Proofs.RadenkovicGutmanCompactFiniteDegreeOneSmallCertificateBatch35
+            max_fresh: 83
+            restore_plan: ci/rg_compact_closed_d1_small_batch35_restore_plan.json
+          - endpoint: Proofs.RadenkovicGutmanCompactFiniteDegreeOneSmallCertificateBatch36
+            max_fresh: 92
+            restore_plan: ci/rg_compact_closed_d1_small_batch36_restore_plan.json
+          - endpoint: Proofs.RadenkovicGutmanCompactFiniteDegreeOneSmallCertificateBatch37
+            max_fresh: 111
+            restore_plan: ci/rg_compact_closed_d1_small_batch37_restore_plan.json
+          - endpoint: Proofs.RadenkovicGutmanCompactFiniteDegreeOneSmallCertificateBatch38
+            max_fresh: 105
+            restore_plan: ci/rg_compact_closed_d1_small_batch38_restore_plan.json
+          - endpoint: Proofs.RadenkovicGutmanCompactFiniteDegreeOneSmallCertificateBatch39
+            max_fresh: 123
+            restore_plan: ci/rg_compact_closed_d1_small_batch39_restore_plan.json
+          - endpoint: Proofs.RadenkovicGutmanCompactFiniteDegreeOneSmallCertificateBatch40
+            max_fresh: 129
+            restore_plan: ci/rg_compact_closed_d1_small_batch40_restore_plan.json
+          - endpoint: Proofs.RadenkovicGutmanCompactFiniteDegreeOneSmallCertificateBatch41
+            max_fresh: 113
+            restore_plan: ci/rg_compact_closed_d1_small_batch41_restore_plan.json
+          - endpoint: Proofs.RadenkovicGutmanCompactFiniteDegreeOneSmallCertificateBatch42
+            max_fresh: 126
+            restore_plan: ci/rg_compact_closed_d1_small_batch42_restore_plan.json
+          - endpoint: Proofs.RadenkovicGutmanCompactFiniteDegreeOneSmallCertificateBatch43
+            max_fresh: 102
+            restore_plan: ci/rg_compact_closed_d1_small_batch43_restore_plan.json
+          - endpoint: Proofs.RadenkovicGutmanCompactFiniteDegreeOneSmallCertificateBatch44
+            max_fresh: 141
+            restore_plan: ci/rg_compact_closed_d1_small_batch44_restore_plan.json
+          - endpoint: Proofs.RadenkovicGutmanCompactFiniteDegreeOneSmallCertificateBatch45
+            max_fresh: 110
+            restore_plan: ci/rg_compact_closed_d1_small_batch45_restore_plan.json
+          - endpoint: Proofs.RadenkovicGutmanCompactFiniteDegreeOneSmallCertificateBatch46
+            max_fresh: 117
+            restore_plan: ci/rg_compact_closed_d1_small_batch46_restore_plan.json
+          - endpoint: Proofs.RadenkovicGutmanCompactFiniteDegreeOneSmallCertificateBatch47
+            max_fresh: 95
+            restore_plan: ci/rg_compact_closed_d1_small_batch47_restore_plan.json
+          - endpoint: Proofs.RadenkovicGutmanCompactFiniteDegreeOneSmallCertificateBatch48
+            max_fresh: 119
+            restore_plan: ci/rg_compact_closed_d1_small_batch48_restore_plan.json
+          - endpoint: Proofs.RadenkovicGutmanCompactFiniteDegreeOneSmallCertificateBatch49
+            max_fresh: 60
+            restore_plan: ci/rg_compact_closed_d1_small_batch49_restore_plan.json
+    runs-on: ubuntu-24.04
+    timeout-minutes: 360
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          persist-credentials: false
+      - name: Install the project toolchain
+        run: |
+          set -o pipefail
+          curl -sSfL https://github.com/leanprover/elan/releases/download/v1.4.2/elan-x86_64-unknown-linux-gnu.tar.gz | tar xz
+          ./elan-init -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Materialize the exact dependency lock
+        run: python3 -B ci/rg_dependencies.py
+      - name: Reproduce the exact source-hashed original statements and proofs
+        run: python3 -B ci/rg_materialize_compact_closed_families.py --endpoint ${{ matrix.endpoint }} --max-raw-mib 64
+      - name: Fetch the required Mathlib cache
+        run: |
+          python3 - <<'PY'
+          import pathlib, re, subprocess
+          root = pathlib.Path('Proofs/RG_Lean_20261019')
+          seen, external = set(), set()
+          def visit(name):
+              if name in seen:
+                  return
+              seen.add(name)
+              source = (root / (name.replace('.', '/') + '.lean')).read_text()
+              for dep in re.findall(r'^\s*import\s+([\w.]+)', source, re.M):
+                  if dep.startswith('Proofs.'):
+                      visit(dep)
+                  elif not dep.startswith(('Lean.', 'Init.', 'Std.')) and dep not in ('Lean','Init','Std'):
+                      external.add(dep)
+          visit('${{ matrix.endpoint }}')
+          subprocess.run(['lake', 'exe', 'cache', 'get', *sorted(external)], check=True)
+          PY
+      - name: Restore one independently audited complete source-bound base scope
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 -B ci/rg_restore_complete_scope.py --manifest ci/rg_reusable_analytic_kernel_base_complete_scope_capsule.json --build-directory Proofs/RG_Lean_20261019/build/extension
+      - name: Restore the fresh kernel-checked unchanged common base
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_compact_finite_common_fresh_original_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+      - name: Restore only unchanged source-bound catalogue proofs
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 -B ci/rg_restore_plan_parallel.py --plan ${{ matrix.restore_plan }} --build-directory Proofs/RG_Lean_20261019/build/extension --workers 2
+      - name: Bound the remaining fresh module frontier
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 -B ci/rg_restore_with_kernel_fallback.py --plan ${{ matrix.restore_plan }} --build-directory Proofs/RG_Lean_20261019/build/extension --endpoint ${{ matrix.endpoint }} --max-fresh ${{ matrix.max_fresh }} --preflight-only
+      - name: Check multiplicities and actual graph spectral comparison
+        shell: bash
+        run: |
+          set -o pipefail
+          python3 -B Proofs/RG_Lean_20261019/verify_extension.py --mathlib-project "$GITHUB_WORKSPACE" --endpoint ${{ matrix.endpoint }} --workers 1 --module-timeout 600 --resume | python3 -B ci/rg_compact_ci_output.py
+      - name: Retain completed records and diagnostics
+        if: always()
+        run: |
+          python3 - <<'PY'
+          import json,pathlib,shutil
+          root=pathlib.Path('Proofs/RG_Lean_20261019/build/extension')
+          records=[json.loads(p.read_text()) for p in sorted(root.glob('Proofs.*.json'))]
+          fresh=root.parent/'fresh_exports';fresh.mkdir(parents=True,exist_ok=True)
+          (fresh/'diagnostics_records.json').write_text(json.dumps({'modules':records},separators=(',',':'))+'\n')
+          if (root/'receipt.json').is_file():shutil.copyfile(root/'receipt.json',fresh/'receipt.json')
+          print('RETAINED_RECORD_COUNTS '+json.dumps({'total':len(records),'fresh':sum(r['mode']=='FRESH_KERNEL_EXPORT' for r in records)}))
+          for row in records:
+              if row['mode']=='FRESH_KERNEL_EXPORT':
+                  name=row['module'];rel=name.replace('.','/')+'.olean';dest=fresh/rel
+                  dest.parent.mkdir(parents=True,exist_ok=True)
+                  shutil.copyfile(root/rel,dest);shutil.copyfile(root/(name+'.json'),fresh/(name+'.json'))
+          for log in root.glob('Proofs.*.log'):
+              shutil.copyfile(log,fresh/log.name);print('MODULE_LOG_TAIL '+log.name+' '+log.read_text()[-18000:])
+          PY
+      - name: Retain new exports only
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: rg-compact-closed-degree-one-small-original-batches-exports-${{ github.run_id }}-${{ strategy.job-index }}
+          path: Proofs/RG_Lean_20261019/build/fresh_exports
+          retention-days: 90

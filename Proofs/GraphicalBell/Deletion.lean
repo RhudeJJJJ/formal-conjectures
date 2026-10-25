@@ -33,12 +33,14 @@ lemma choices_bound {G : SimpleGraph V} {S : Finset V} {P : Finset (Finset V)}
     have he' := congrArg Subtype.val he
     have hb := Classical.choose_spec (mem_filter.mp B.property).2
     have hc := Classical.choose_spec (mem_filter.mp C.property).2
+    change Classical.choose (mem_filter.mp B.property).2 =
+      Classical.choose (mem_filter.mp C.property).2 at he'
     exact stable_unique hP (mem_filter.mp B.property).1 (mem_filter.mp C.property).1
-      hb.1 (by simpa only [f] using he' ▸ hc.1)
+      hb.1 (he'.symm ▸ hc.1)
   have hbcard : bad.card ≤ N.card := Finset.card_le_card_of_injective hf
   have hsum : free.card + bad.card = P.card := by
     have h := card_filter_add_card_filter_not P (fun B => ∀ w ∈ B, ¬ G.Adj v w)
-    simpa only [free, bad, not_forall, not_not] using h
+    simpa only [free, bad, not_forall, not_imp, not_not] using h
   rw [hcard]
   change P.card - N.card ≤ free.card
   omega

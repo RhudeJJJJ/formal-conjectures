@@ -25,7 +25,10 @@ instance finiteParts (G : SimpleGraph V) (S : Finset V) : Finite (Parts G S) := 
         intro x hx
         rw [← P.property.2.2]
         exact mem_biUnion.mpr ⟨B, hb, hx⟩))⟩
-  exact Finite.of_injective f (fun _ _ h => Subtype.ext (congrArg Subtype.val h))
+  apply Finite.of_injective f
+  intro P Q h
+  apply Subtype.ext
+  exact congrArg (fun t : S.powerset.powerset => t.val) h
 
 noncomputable instance partsFintype (G : SimpleGraph V) (S : Finset V) :
     Fintype (Parts G S) := Fintype.ofFinite _
@@ -97,7 +100,7 @@ lemma remove_extend {G : SimpleGraph V} {S : Finset V} {P : Finset (Finset V)}
   · rintro ⟨hne, h | ⟨D, ⟨hDB, hD⟩, hDC⟩⟩
     · have hBC : B = C := by simpa [erase_insert hbnot] using h
       subst C
-      exact hB.resolve_left (by simpa [erase_insert hbnot] using hne)
+      simpa [erase_insert hbnot] using hB.resolve_left (by simpa [erase_insert hbnot] using hne)
     · have hDC' : D = C := by simpa [erase_eq_of_notMem (hnot D hD)] using hDC
       simpa [← hDC'] using hD
   · intro hc
@@ -131,7 +134,7 @@ lemma extend_stable {G : SimpleGraph V} {S : Finset V} {P : Finset (Finset V)}
         · exact (hxy rfl).elim
         · exact hfree y hy
       · rcases hy with rfl | hy
-        · exact fun h => hfree x hx (G.symm.symm h)
+        · exact fun h => hfree x hx (G.symm.symm _ _ h)
         · exact hBind hx hy hxy
     · exact hP.1 C (mem_of_mem_erase hc)
   · intro C hc D hd hCD

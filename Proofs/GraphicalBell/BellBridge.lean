@@ -1,20 +1,9 @@
 import FormalConjectures.Other.GraphicalBell
-import Proofs.GraphicalBell.Partitions
+import Proofs.GraphicalBell.Base
 
 namespace GraphicalBellProof
 open Finset SimpleGraph
 variable {V : Type*} [DecidableEq V]
-
-lemma stable_card_le {G : SimpleGraph V} {S : Finset V} {P : Finset (Finset V)}
-    (hP : StableOn G S P) : P.card ≤ S.card := by
-  let part : Finpartition S :=
-    { parts := P
-      supIndep := supIndep_iff_pairwiseDisjoint.mpr (by
-        intro B hB C hC hBC
-        exact hP.2.1 B hB C hC hBC)
-      sup_parts := by simpa only [sup_eq_biUnion] using hP.2.2
-      bot_notMem := stable_empty_not_mem hP }
-  exact part.card_parts_le_card
 
 noncomputable def total (G : SimpleGraph V) (S : Finset V) : ℕ := Nat.card (Parts G S)
 

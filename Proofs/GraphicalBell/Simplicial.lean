@@ -15,6 +15,7 @@ lemma choices_exact_of_clique {G : SimpleGraph V} {S : Finset V} {P : Finset (Fi
   have choose_block : ∀ x : N, ∃ B ∈ P, x.val ∈ B := by
     intro x
     apply mem_biUnion.mp
+    change x.val ∈ P.biUnion id
     rw [hP.2.2]
     exact (mem_filter.mp x.property).1
   let f : N → bad := fun x =>
@@ -52,7 +53,7 @@ lemma choices_exact_of_clique {G : SimpleGraph V} {S : Finset V} {P : Finset (Fi
     rw [Nat.card_congr e]
     simp
   have hsum : free.card + bad.card = P.card := by
-    have h := card_filter_add_card_filter_not P (fun B => ∀ w ∈ B, ¬ G.Adj v w)
+    have h := card_filter_add_card_filter_not (fun B => ∀ w ∈ B, ¬ G.Adj v w) P
     simpa only [free, bad, not_forall, not_imp, not_not] using h
   rw [hchoices]
   change free.card = P.card - N.card

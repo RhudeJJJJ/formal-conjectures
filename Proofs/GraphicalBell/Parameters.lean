@@ -9,7 +9,8 @@ open PHOEG.GraphicalBell
 lemma clique_param_le (n m : ℕ) : cliqueOrder n m ≤ n := Nat.findGreatest_le n
 
 lemma clique_param_spec (n m : ℕ) : (cliqueOrder n m).choose 2 ≤ m := by
-  exact Nat.findGreatest_spec (m := 0) (by omega) (by simp)
+  exact Nat.findGreatest_spec (P := fun q => q.choose 2 ≤ m) (m := 0)
+    (show 0 ≤ n by omega) (show (0 : ℕ).choose 2 ≤ m by change 0 ≤ m; omega)
 
 lemma clique_param_pos (n m : ℕ) (hn : 1 ≤ n) : 1 ≤ cliqueOrder n m := by
   exact Nat.le_findGreatest hn (by simp)

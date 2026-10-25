@@ -40,7 +40,11 @@ lemma original_bell_eq_sum [Fintype V] (G : SimpleGraph V) :
     PHOEG.GraphicalBell.bell G =
       ∑ k : Fin (Fintype.card V + 1), PHOEG.GraphicalBell.stirling G k.val := by
   rw [original_bell_eq_total, total_eq_sum]
-  simp only [card_univ, original_stirling_eq_count]
+  rw [card_univ]
+  apply Finset.sum_congr
+  · ext k; simp
+  · intro k _
+    exact (original_stirling_eq_count G k.val).symm
 
 universe u
 open scoped Classical in
@@ -56,7 +60,6 @@ lemma bell_of_coefficientwise
       (PHOEG.GraphicalBell.quasiComplete (Fintype.card W) G.edgeFinset.card) ≤
       PHOEG.GraphicalBell.bell G := by
   rw [original_bell_eq_sum, original_bell_eq_sum]
-  simp only [Fintype.card_fin]
   exact sum_le_sum fun k _ => hcoeff G hn k.val
 
 end GraphicalBellProof

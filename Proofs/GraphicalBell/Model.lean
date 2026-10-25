@@ -49,8 +49,10 @@ lemma model_step {n m d : ℕ} (hn : 1 ≤ n) (hm : m ≤ n.choose 2)
           rw [this] at hm'
           omega
         have hnew : model (n - 1) (m - d) = basis q := by
-          have : n - 1 = q := by omega
-          simp [model, hqnew, this]
+          unfold model
+          rw [hqnew, if_pos (show q = n - 1 by omega)]
+          congr 1
+          omega
         have hold : model n m = step (r : Int) (basis q) := by
           have ht : n - q - 1 = 0 := by omega
           simp [model, show cliqueOrder n m = q from rfl, hfull, ht, candidate, tower, r]
@@ -68,7 +70,6 @@ lemma model_step {n m d : ℕ} (hn : 1 ≤ n) (hm : m ≤ n.choose 2)
     · have hr : r < d := by omega
       have hqnew : cliqueOrder (n - 1) (m - d) = q - 1 :=
         clique_after_large_deletion hn hd hr
-      have hqc : q = (q - 1) + 1 := by omega
       have hchoose : q.choose 2 = (q - 1).choose 2 + (q - 1) := by
         have h := choose_succ_two (q - 1)
         simpa only [Nat.sub_add_cancel hqpos] using h

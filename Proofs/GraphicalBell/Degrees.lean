@@ -11,6 +11,7 @@ noncomputable def degreeSum (G : SimpleGraph V) (S : Finset V) : ℕ :=
 
 noncomputable def sizeOn (G : SimpleGraph V) (S : Finset V) : ℕ := degreeSum G S / 2
 
+open scoped Classical in
 lemma degreeOn_insert {G : SimpleGraph V} {S : Finset V} {v : V} (hv : v ∉ S) (w : V) :
     degreeOn G (insert v S) w = degreeOn G S w + if G.Adj w v then 1 else 0 := by
   classical
@@ -18,6 +19,7 @@ lemma degreeOn_insert {G : SimpleGraph V} {S : Finset V} {v : V} (hv : v ∉ S) 
   · simp [degreeOn, hadj, hv]
   · simp [degreeOn, hadj]
 
+open scoped Classical in
 lemma degreeOn_sum (G : SimpleGraph V) (S : Finset V) (v : V) :
     degreeOn G S v = ∑ w ∈ S, if G.Adj v w then 1 else 0 := by
   classical
@@ -69,6 +71,7 @@ lemma sizeOn_le (G : SimpleGraph V) (S : Finset V) : sizeOn G S ≤ S.card.choos
   rw [Nat.choose_two_right]
   exact Nat.div_le_div_right (degreeSum_le G S)
 
+omit [DecidableEq V] in
 lemma exists_small_degree {G : SimpleGraph V} {S : Finset V} {q : ℕ}
     (hq : q < S.card) (hm : sizeOn G S < (q + 1).choose 2) :
     ∃ v ∈ S, degreeOn G S v < q := by

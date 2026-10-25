@@ -34,7 +34,7 @@ lemma quasi_partial_degree (q r : ℕ) (hr : r ≤ q) :
       · exact h.2
       · omega
     · intro hx
-      exact ⟨by omega, by omega, Or.inr (Or.inl ⟨rfl, hx⟩)⟩
+      exact ⟨by omega, by omega, Or.inr (Or.inl ⟨by trivial, hx⟩)⟩
   rw [h, card_range]
 
 lemma quasi_partial_simplicial (q r : ℕ) :

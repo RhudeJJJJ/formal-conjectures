@@ -15,6 +15,7 @@ noncomputable def pullParts (f : V → W) (S : Finset V) (Q : Finset (Finset W))
 lemma mapFinset_injective {f : V → W} (hf : Function.Injective f) :
     Function.Injective (fun B : Finset V => B.image f) := by
   intro B C h
+  change B.image f = C.image f at h
   ext x
   constructor
   · intro hx
@@ -47,21 +48,25 @@ lemma map_stable {f : V → W} (hf : Function.Injective f) {G : SimpleGraph V}
   · intro B hb C hc hBC
     obtain ⟨D, hd, rfl⟩ := mem_image.mp hb
     obtain ⟨E, he, rfl⟩ := mem_image.mp hc
-    apply disjoint_left.mpr
+    apply Finset.disjoint_left.mpr
     intro x hx hy
     obtain ⟨u, hu, hux⟩ := mem_image.mp hx
     obtain ⟨v, hv, hvx⟩ := mem_image.mp hy
     have huv := hf (hux.trans hvx.symm)
-    exact disjoint_left.mp (hP.2.1 D hd E he (fun h => hBC (congrArg (fun B => B.image f) h)))
+    exact Finset.disjoint_left.mp (hP.2.1 D hd E he (fun h => hBC (congrArg (fun B => B.image f) h)))
       hu (huv.symm ▸ hv)
   · ext x
-    simp only [mem_biUnion, mapParts, mem_image, id_eq]
     constructor
-    · rintro ⟨B, ⟨C, hc, rfl⟩, a, ha, rfl⟩
-      exact ⟨a, stable_subset hP hc ha, rfl⟩
-    · rintro ⟨a, ha, rfl⟩
+    · intro hx
+      obtain ⟨B, hb, hxb⟩ := mem_biUnion.mp hx
+      obtain ⟨C, hc, rfl⟩ := mem_image.mp hb
+      obtain ⟨y, hy, rfl⟩ := mem_image.mp hxb
+      exact mem_image.mpr ⟨y, stable_subset hP hc hy, rfl⟩
+    · intro hx
+      obtain ⟨a, ha, rfl⟩ := mem_image.mp hx
       obtain ⟨B, hb, hab⟩ := mem_biUnion.mp (show a ∈ P.biUnion id by rwa [hP.2.2])
-      exact ⟨B.image f, ⟨B, hb, rfl⟩, a, hab, rfl⟩
+      exact mem_biUnion.mpr ⟨B.image f, mem_image.mpr ⟨B, hb, rfl⟩,
+        mem_image.mpr ⟨a, hab, rfl⟩⟩
 
 lemma pull_stable {f : V → W} (hf : Function.Injective f) {G : SimpleGraph V}
     {H : SimpleGraph W} (hr : ∀ x y, G.Adj x y ↔ H.Adj (f x) (f y))
@@ -80,9 +85,9 @@ lemma pull_stable {f : V → W} (hf : Function.Injective f) {G : SimpleGraph V}
   · intro B hb C hc hBC
     obtain ⟨D, hd, rfl⟩ := mem_image.mp hb
     obtain ⟨E, he, rfl⟩ := mem_image.mp hc
-    apply disjoint_left.mpr
+    apply Finset.disjoint_left.mpr
     intro x hx hy
-    exact disjoint_left.mp (hQ.2.1 D hd E he (fun h => hBC (congrArg
+    exact Finset.disjoint_left.mp (hQ.2.1 D hd E he (fun h => hBC (congrArg
       (fun C => S.filter (fun x => f x ∈ C)) h))) (mem_filter.mp hx).2 (mem_filter.mp hy).2
   · ext x
     simp only [pullParts, mem_biUnion, mem_image, id_eq]
@@ -111,7 +116,8 @@ lemma pull_map {f : V → W} (hf : Function.Injective f) {G : SimpleGraph V}
   rw [image_image]
   have : P.image (fun B => S.filter (fun x => f x ∈ B.image f)) = P.image id :=
     image_congr (fun B hb => h B hb)
-  simpa using this
+  change P.image (fun B => S.filter (fun x => f x ∈ B.image f)) = P
+  simpa only [Finset.image_id] using this
 
 lemma map_pull {f : V → W} {H : SimpleGraph W}
     {S : Finset V} {Q : Finset (Finset W)} (hQ : StableOn H (S.image f) Q) :
@@ -131,7 +137,8 @@ lemma map_pull {f : V → W} {H : SimpleGraph W}
   rw [image_image]
   have : Q.image (fun C => (S.filter (fun x => f x ∈ C)).image f) = Q.image id :=
     image_congr (fun C hc => h C hc)
-  simpa using this
+  change Q.image (fun C => (S.filter (fun x => f x ∈ C)).image f) = Q
+  simpa only [Finset.image_id] using this
 
 lemma count_transport {f : V → W} (hf : Function.Injective f) {G : SimpleGraph V}
     {H : SimpleGraph W} (hr : ∀ x y, G.Adj x y ↔ H.Adj (f x) (f y))

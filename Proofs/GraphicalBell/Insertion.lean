@@ -97,11 +97,13 @@ lemma count_insert {G : SimpleGraph V} {S : Finset V} {v : V}
     count G (insert v S) (k + 1) = count G S k +
       ∑ P : Graded G S (k + 1), Nat.card (Choices G P.val.val v) := by
   classical
-  let : Fintype (Graded G S (k + 1)) := Fintype.ofFinite _
   let : Fintype (Σ P : Graded G S (k + 1), Choices G P.val.val v) := inferInstance
   let e : InsertionData G S v k ≃ Graded G (insert v S) (k + 1) :=
     Equiv.ofBijective (insertData hv) ⟨insertData_injective hv k, insertData_surjective hv k⟩
   rw [count, ← Nat.card_congr e, Nat.card_sum, Nat.card_sigma]
-  rfl
+  congr 1
+  apply Finset.sum_congr
+  · ext P; simp
+  · intro P _; rfl
 
 end GraphicalBellProof

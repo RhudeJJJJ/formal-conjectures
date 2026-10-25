@@ -18,7 +18,7 @@ lemma singletons_stable (G : SimpleGraph V) (S : Finset V) : StableOn G S (singl
   · intro B hb C hc hBC
     obtain ⟨x, hx, rfl⟩ := mem_image.mp hb
     obtain ⟨y, hy, rfl⟩ := mem_image.mp hc
-    apply disjoint_left.mpr
+    apply Finset.disjoint_left.mpr
     intro z hz hz'
     have hxy : x = y := (mem_singleton.mp hz).symm.trans (mem_singleton.mp hz')
     exact hBC (congrArg (fun w : V => ({w} : Finset V)) hxy)
@@ -28,6 +28,7 @@ lemma singletons_stable (G : SimpleGraph V) (S : Finset V) : StableOn G S (singl
 lemma singletons_card (S : Finset V) : (singletons S).card = S.card := by
   apply card_image_of_injective
   intro x y h
+  change ({x} : Finset V) = {y} at h
   have hx : x ∈ ({y} : Finset V) := h ▸ mem_singleton_self x
   exact mem_singleton.mp hx
 

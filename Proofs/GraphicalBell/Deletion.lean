@@ -39,7 +39,7 @@ lemma choices_bound {G : SimpleGraph V} {S : Finset V} {P : Finset (Finset V)}
       hb.1 (he'.symm ▸ hc.1)
   have hbcard : bad.card ≤ N.card := Finset.card_le_card_of_injective hf
   have hsum : free.card + bad.card = P.card := by
-    have h := card_filter_add_card_filter_not P (fun B => ∀ w ∈ B, ¬ G.Adj v w)
+    have h := card_filter_add_card_filter_not (fun B => ∀ w ∈ B, ¬ G.Adj v w) P
     simpa only [free, bad, not_forall, not_imp, not_not] using h
   rw [hcard]
   change P.card - N.card ≤ free.card

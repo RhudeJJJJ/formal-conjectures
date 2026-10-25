@@ -13,9 +13,12 @@ lemma sizeOn_univ {V : Type*} [Fintype V] [DecidableEq V]
   classical
   have hdegree : ∀ v, degreeOn G univ v = G.degree v := by
     intro v
-    simp [degreeOn, SimpleGraph.degree, SimpleGraph.neighborFinset_eq_filter]
+    unfold degreeOn SimpleGraph.degree
+    apply congrArg Finset.card
+    ext w
+    simp only [Finset.mem_filter, Finset.mem_univ, true_and, SimpleGraph.mem_neighborFinset]
   unfold sizeOn degreeSum
-  simp only [hdegree, sum_univ]
+  simp only [hdegree]
   rw [G.sum_degrees_eq_twice_card_edges]
   omega
 
@@ -64,7 +67,9 @@ lemma original_model (n m k : ℕ) :
     have hshape : q + 1 + (n - q - 1) = n := by omega
     have hv := congrFun (countVector_quasi q r (n - q - 1) hr) (k : Int)
     have he : (count (quasiGraph q r) (range n) k : Int) = candidate q r (n - q - 1) (k : Int) := by
-      simpa [countVector, hshape] using hv
+      rw [countVector_nat] at hv
+      rw [hshape] at hv
+      exact hv
     rw [original_stirling_eq_count, candidate_transport]
     simpa [model, show cliqueOrder n m = q from rfl, hfull, r] using he.symm
 

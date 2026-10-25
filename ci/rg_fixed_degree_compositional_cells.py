@@ -55,7 +55,11 @@ def slice_wrapper(degree,index,namespace,left,right,payment):
     text=(R/'ci/rg_d3_original_square_wrapper.lean.txt').read_text()
     line=next(l for l in text.splitlines() if l.startswith('theorem cover_checked :'))
     match=re.fullmatch(r'theorem cover_checked : FastArmCover.accepts 3 4 4 (\S+) (\S+) 0 1 0 1 (\S+) cover=true := by',line);assert match
-    for old,new in zip(match.groups(),[left,right,payment]):text=text.replace(old,rat(new))
+    assert Q(left)<Q(right)
+    replacements=dict(zip(match.groups(),map(rat,[left,right,payment])))
+    assert len(replacements)==3
+    tokens=re.compile('|'.join(re.escape(x) for x in sorted(replacements,key=len,reverse=True)))
+    text=tokens.sub(lambda m:replacements[m[0]],text)
     text=text.replace('D3FullParameterGroup0000',namespace).replace('leaf00000',f'leaf{index:05d}')
     for before,after in [
         ('FastArmCover.accepts 3 4 4',f'FastArmCover.accepts {degree} 4 4'),

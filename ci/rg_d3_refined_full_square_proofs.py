@@ -36,9 +36,11 @@ def cell_sources(index,cell,root,ns):
 def wrapper(group,ns,index):
     text=(R/'ci/rg_d3_original_square_wrapper.lean.txt').read_text()
     report,_=inputs();zero=report['groups'][0];row=report['groups'][group]
-    for before,after in [(rat(zero['interval'][0]),rat(row['interval'][0])),(rat(zero['interval'][1]),rat(row['interval'][1])),(rat(zero['original_slice_payment']),rat(row['original_slice_payment']))]:
-        assert before in text
-        text=text.replace(before,after)
+    assert Q(row['interval'][0])<Q(row['interval'][1])
+    replacements=dict(zip(map(rat,[*zero['interval'],zero['original_slice_payment']]),map(rat,[*row['interval'],row['original_slice_payment']])))
+    assert len(replacements)==3 and all(token in text for token in replacements)
+    tokens=re.compile('|'.join(re.escape(x) for x in sorted(replacements,key=len,reverse=True)))
+    text=tokens.sub(lambda m:replacements[m[0]],text)
     return text.replace('D3FullParameterGroup0000',ns).replace('leaf00000',f'leaf{index:05d}')
 def full(group,report):
     row=report['groups'][group];assert row['group']==group and row['candidate_nonnegative']

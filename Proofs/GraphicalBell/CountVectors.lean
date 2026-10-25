@@ -53,8 +53,9 @@ lemma countVector_partial (q r : ℕ) (hr : r ≤ q) :
           change countVector (quasiGraph q r) (range (q + 1)) ((0 : ℕ) : Int) =
             step (r : Int) (basis q) ((0 : ℕ) : Int)
           rw [countVector_nat (quasiGraph q r) (range (q + 1)) 0, hzero]
+          change (0 : Int) = step (r : Int) (basis q) 0
           unfold step basis
-          simp only [if_neg (show (-1 : Int) ≠ q by omega), Int.zero_add]
+          rw [if_neg (show (0 : Int) - 1 ≠ q by omega), Int.zero_add]
           by_cases hq : (0 : Int) = q
           · rw [if_pos hq]
             have hr0 : r = 0 := by omega
@@ -77,7 +78,7 @@ lemma countVector_partial (q r : ℕ) (hr : r ≤ q) :
             have hrd : r ≤ n + 1 := by omega
             simpa [hn, hnp] using (Int.ofNat_sub hrd)
           · by_cases hp : n = q
-            · simp [hn, hp]
+            · simp [hp]
             · simp [hn, hp]
 
 lemma countVector_quasi (q r t : ℕ) (hr : r ≤ q) :

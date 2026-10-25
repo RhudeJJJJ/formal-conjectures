@@ -7,8 +7,13 @@ run_elab do
     (`PHOEG.GraphicalBell.coefficientwise, `PHOEG.GraphicalBell.full_coefficientwise),
     (`PHOEG.GraphicalBell.conjecture, `PHOEG.GraphicalBell.full_conjecture)]
   for (original, certificate) in pairs do
-    let a ← mkConstWithFreshMVarLevels original
-    let b ← mkConstWithFreshMVarLevels certificate
+    let originalInfo ← getConstInfo original
+    let certificateInfo ← getConstInfo certificate
+    unless originalInfo.levelParams.length == certificateInfo.levelParams.length do
+      throwError "Universe-parameter mismatch: {original} and {certificate}"
+    let levels := originalInfo.levelParams.map Level.param
+    let a := mkConst original levels
+    let b := mkConst certificate levels
     let ta ← inferType a
     let tb ← inferType b
     unless ← isDefEq ta tb do

@@ -15,11 +15,14 @@ open scoped Classical in
 lemma degreeOn_insert {G : SimpleGraph V} {S : Finset V} {v : V} (hv : v ∉ S) (w : V) :
     degreeOn G (insert v S) w = degreeOn G S w + if G.Adj w v then 1 else 0 := by
   classical
+  unfold degreeOn
+  rw [Finset.filter_insert]
   by_cases hadj : G.Adj w v
-  · simp [degreeOn, hadj, hv]
-  · simp [degreeOn, hadj]
+  · rw [if_pos hadj, if_pos hadj, card_insert_of_notMem (by simp only [mem_filter]; exact fun h => hv h.1)]
+  · rw [if_neg hadj, if_neg hadj, Nat.add_zero]
 
 open scoped Classical in
+omit [DecidableEq V] in
 lemma degreeOn_sum (G : SimpleGraph V) (S : Finset V) (v : V) :
     degreeOn G S v = ∑ w ∈ S, if G.Adj v w then 1 else 0 := by
   classical

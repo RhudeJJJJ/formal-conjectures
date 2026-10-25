@@ -60,6 +60,6 @@ lemma bell_of_coefficientwise
       (PHOEG.GraphicalBell.quasiComplete (Fintype.card W) G.edgeFinset.card) ≤
       PHOEG.GraphicalBell.bell G := by
   rw [original_bell_eq_sum, original_bell_eq_sum]
-  exact sum_le_sum fun k _ => hcoeff G hn k.val
+  exact Finset.sum_le_sum (fun (k : Fin (Fintype.card W + 1)) _ => hcoeff G hn k.val)
 
 end GraphicalBellProof

@@ -30,11 +30,11 @@ lemma countVector_isolate_step {G : SimpleGraph V} {S T : Finset V}
   | ofNat n =>
       cases n with
       | zero =>
-          rw [countVector_nat, hzero]
+          rw [countVector_nat G T 0, hzero]
           simp [step, countVector]
       | succ n =>
           have hk : ((n + 1 : ℕ) : Int) - 1 = n := by omega
-          rw [countVector_nat]
+          rw [countVector_nat G T (n + 1)]
           unfold step
           rw [hk, countVector_nat, countVector_nat]
           simpa using congrArg (fun m : ℕ => (m : Int)) (hrec n)
@@ -49,7 +49,7 @@ lemma countVector_partial (q r : ℕ) (hr : r ≤ q) :
   | ofNat n =>
       cases n with
       | zero =>
-          rw [countVector_nat, hzero]
+          rw [countVector_nat (quasiGraph q r) (range (q + 1)) 0, hzero]
           unfold step basis
           simp only [if_neg (show (-1 : Int) ≠ q by omega), Int.zero_add]
           by_cases hq : (0 : Int) = q
@@ -60,7 +60,7 @@ lemma countVector_partial (q r : ℕ) (hr : r ≤ q) :
             simp
       | succ n =>
           have hk : ((n + 1 : ℕ) : Int) - 1 = n := by omega
-          rw [countVector_nat, count_quasi_partial q r n hr]
+          rw [countVector_nat (quasiGraph q r) (range (q + 1)) (n + 1), count_quasi_partial q r n hr]
           unfold step
           rw [hk]
           unfold basis

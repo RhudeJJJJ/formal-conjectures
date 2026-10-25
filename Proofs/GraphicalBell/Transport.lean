@@ -12,6 +12,7 @@ noncomputable def pullParts (f : V → W) (S : Finset V) (Q : Finset (Finset W))
   classical
   exact Q.image (fun C => S.filter (fun x => f x ∈ C))
 
+omit [DecidableEq V] in
 lemma mapFinset_injective {f : V → W} (hf : Function.Injective f) :
     Function.Injective (fun B : Finset V => B.image f) := by
   intro B C h

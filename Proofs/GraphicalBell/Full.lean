@@ -10,7 +10,7 @@ theorem full_coefficientwise {V : Type*} [Fintype V] [DecidableEq V]
     stirling (quasiComplete (Fintype.card V) G.edgeFinset.card) k ≤ stirling G k := by
   have h := model_le_count G (Finset.univ : Finset V) k
   rw [Finset.card_univ, sizeOn_univ, original_model, ← original_stirling_eq_count] at h
-  exact_mod_cast h
+  exact Int.ofNat_le.mp h
 
 /-- The exact submitted Bell statement, obtained by summing the proved coefficientwise bound. -/
 theorem full_conjecture {V : Type*} [Fintype V] [DecidableEq V]

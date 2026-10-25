@@ -101,9 +101,5 @@ lemma count_insert {G : SimpleGraph V} {S : Finset V} {v : V}
   let e : InsertionData G S v k ≃ Graded G (insert v S) (k + 1) :=
     Equiv.ofBijective (insertData hv) ⟨insertData_injective hv k, insertData_surjective hv k⟩
   rw [count, ← Nat.card_congr e, Nat.card_sum, Nat.card_sigma]
-  congr 1
-  apply Finset.sum_congr
-  · ext P; simp
-  · intro P _; rfl
 
 end GraphicalBellProof

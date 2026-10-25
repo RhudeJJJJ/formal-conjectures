@@ -2,7 +2,6 @@ import Proofs.GraphicalBell.Model
 import Proofs.GraphicalBell.Degrees
 import Proofs.GraphicalBell.Base
 import Mathlib.Algebra.Order.Ring.Int
-import Mathlib.Tactic.NormNum
 
 namespace GraphicalBellProof
 open Finset SimpleGraph PHOEG.GraphicalBell
@@ -62,7 +61,7 @@ lemma model_le_count (G : SimpleGraph V) (S : Finset V) :
       rw [hSR] at hdel
       change count G R j + (j + 1 - d) * count G R (j + 1) ≤ count G S (j + 1) at hdel
       have hdelInt : ((count G R j + (j + 1 - d) * count G R (j + 1) : ℕ) : Int) ≤
-          (count G S (j + 1) : Int) := by exact_mod_cast hdel
+          (count G S (j + 1) : Int) := Int.ofNat_le.mpr hdel
       have hj : ((j + 1 : ℕ) : Int) - 1 = (j : Int) := by omega
       change model n m ((j + 1 : ℕ) : Int) ≤ _
       by_cases hdk : d ≤ j + 1
@@ -73,9 +72,9 @@ lemma model_le_count (G : SimpleGraph V) (S : Finset V) :
               (count G R (j + 1) : Int) := by
                 unfold step
                 rw [hj]
-                exact add_le_add (hIH j) (mul_le_mul_of_nonneg_left (hIH (j + 1)) (by omega))
+                exact add_le_add (hIH j) (Int.mul_le_mul_of_nonneg_left (hIH (j + 1)) (by omega))
           _ = ((count G R j + (j + 1 - d) * count G R (j + 1) : ℕ) : Int) := by
-                rw [Int.natCast_add, Int.natCast_mul, Int.ofNat_sub hdk]
+                simp only [Int.natCast_add, Int.natCast_mul, Int.ofNat_sub hdk]
           _ ≤ (count G S (j + 1) : Int) := hdelInt
       · have hqd := clique_after_deletion_ge hn hd
         have hz : model (n - 1) (m - d) ((j + 1 : ℕ) : Int) = 0 :=
@@ -84,7 +83,10 @@ lemma model_le_count (G : SimpleGraph V) (S : Finset V) :
         calc
           model n m ((j + 1 : ℕ) : Int) ≤
               step (d : Int) (model (n - 1) (m - d)) ((j + 1 : ℕ) : Int) := hstep
-          _ = model (n - 1) (m - d) (j : Int) := by simp [step, hz, hj]
+          _ = model (n - 1) (m - d) (j : Int) := by
+              unfold step
+              rw [hz, hj]
+              simp
           _ ≤ (count G R j : Int) := hIH j
           _ ≤ (count G S (j + 1) : Int) := by
               simpa only [hcoef, Nat.zero_mul, Nat.add_zero] using hdelInt

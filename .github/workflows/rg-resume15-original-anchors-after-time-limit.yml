@@ -1,0 +1,140 @@
+# Match the original order-cardinality elaboration setting; keep strict kernel and linter checks.
+name: RG audited remaining original anchor suffixes and actual tree predicates
+
+on:
+  push:
+    branches: [rg-remaining-six-spectral-20261021]
+    paths: ['.github/workflows/rg-resume15-original-anchors-after-time-limit.yml']
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  check:
+    strategy:
+      fail-fast: false
+      max-parallel: 2
+      matrix:
+        include:
+          - endpoint: Proofs.RadenkovicGutmanMiddleOriginalAnchorCertificate027
+            plan: ci/rg_resume15_original_anchors_after_time_limit_anchor027_restore_plan.json
+            max_fresh: 58
+          - endpoint: Proofs.RadenkovicGutmanMiddleOriginalAnchorCertificate023
+            plan: ci/rg_resume15_original_anchors_after_time_limit_anchor023_restore_plan.json
+            max_fresh: 36
+          - endpoint: Proofs.RadenkovicGutmanMiddleOriginalAnchorCertificate025
+            plan: ci/rg_resume15_original_anchors_after_time_limit_anchor025_restore_plan.json
+            max_fresh: 47
+          - endpoint: Proofs.RadenkovicGutmanMiddleOriginalAnchorCertificate024
+            plan: ci/rg_resume15_original_anchors_after_time_limit_anchor024_restore_plan.json
+            max_fresh: 39
+          - endpoint: Proofs.RadenkovicGutmanMiddleOriginalAnchorCertificate026
+            plan: ci/rg_resume15_original_anchors_after_time_limit_anchor026_restore_plan.json
+            max_fresh: 34
+          - endpoint: Proofs.RadenkovicGutmanMiddleOriginalAnchorCertificate263
+            plan: ci/rg_resume15_original_anchors_after_time_limit_anchor263_restore_plan.json
+            max_fresh: 14
+          - endpoint: Proofs.RadenkovicGutmanMiddleOriginalAnchorCertificate264
+            plan: ci/rg_resume15_original_anchors_after_time_limit_anchor264_restore_plan.json
+            max_fresh: 22
+          - endpoint: Proofs.RadenkovicGutmanMiddleOriginalAnchorCertificate265
+            plan: ci/rg_resume15_original_anchors_after_time_limit_anchor265_restore_plan.json
+            max_fresh: 13
+          - endpoint: Proofs.RadenkovicGutmanMiddleOriginalAnchorCertificate266
+            plan: ci/rg_resume15_original_anchors_after_time_limit_anchor266_restore_plan.json
+            max_fresh: 40
+          - endpoint: Proofs.RadenkovicGutmanMiddleOriginalAnchorCertificate267
+            plan: ci/rg_resume15_original_anchors_after_time_limit_anchor267_restore_plan.json
+            max_fresh: 23
+          - endpoint: Proofs.RadenkovicGutmanMiddleOriginalAnchorCertificate268
+            plan: ci/rg_resume15_original_anchors_after_time_limit_anchor268_restore_plan.json
+            max_fresh: 58
+          - endpoint: Proofs.RadenkovicGutmanMiddleOriginalAnchorCertificate269
+            plan: ci/rg_resume15_original_anchors_after_time_limit_anchor269_restore_plan.json
+            max_fresh: 58
+          - endpoint: Proofs.RadenkovicGutmanMiddleOriginalAnchorCertificate509
+            plan: ci/rg_resume15_original_anchors_after_time_limit_anchor509_restore_plan.json
+            max_fresh: 41
+          - endpoint: Proofs.RadenkovicGutmanMiddleOriginalAnchorCertificate508
+            plan: ci/rg_resume15_original_anchors_after_time_limit_anchor508_restore_plan.json
+            max_fresh: 43
+          - endpoint: Proofs.RadenkovicGutmanMiddleOriginalAnchorCertificate510
+            plan: ci/rg_resume15_original_anchors_after_time_limit_anchor510_restore_plan.json
+            max_fresh: 56
+    runs-on: ubuntu-24.04
+    timeout-minutes: 360
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          persist-credentials: false
+      - name: Install the project toolchain
+        run: |
+          set -o pipefail
+          curl -sSfL https://github.com/leanprover/elan/releases/download/v1.4.2/elan-x86_64-unknown-linux-gnu.tar.gz | tar xz
+          ./elan-init -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Materialize the exact dependency lock
+        run: python3 -B ci/rg_dependencies.py
+      - name: Fetch the required Mathlib cache
+        run: |
+          python3 - <<'PY'
+          import pathlib, re, subprocess
+          root = pathlib.Path('Proofs/RG_Lean_20261019')
+          seen, external = set(), set()
+          def visit(name):
+              if name in seen:
+                  return
+              seen.add(name)
+              source = (root / (name.replace('.', '/') + '.lean')).read_text()
+              for dep in re.findall(r'^\s*import\s+([\w.]+)', source, re.M):
+                  if dep.startswith('Proofs.'):
+                      visit(dep)
+                  elif not dep.startswith(('Lean.', 'Init.', 'Std.')) and dep not in ('Lean','Init','Std'):
+                      external.add(dep)
+          visit('${{ matrix.endpoint }}')
+          subprocess.run(['lake', 'exe', 'cache', 'get', *sorted(external)], check=True)
+          PY
+      - name: Restore one independently audited complete source-bound base scope
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 -B ci/rg_restore_complete_scope.py --manifest ci/rg_reusable_analytic_kernel_base_complete_scope_capsule.json --build-directory Proofs/RG_Lean_20261019/build/extension
+      - name: Restore independently audited exact control proofs
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 -B ci/rg_restore_plan_parallel.py --plan ${{ matrix.plan }} --build-directory Proofs/RG_Lean_20261019/build/extension --workers 2
+      - name: Bound the remaining fresh module frontier
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 -B ci/rg_restore_with_kernel_fallback.py --plan ${{ matrix.plan }} --build-directory Proofs/RG_Lean_20261019/build/extension --endpoint ${{ matrix.endpoint }} --max-fresh ${{ matrix.max_fresh }} --preflight-only
+      - name: Check multiplicities and actual graph spectral comparison
+        shell: bash
+        run: |
+          set -o pipefail
+          python3 -B ci/rg_observed_kernel_verify.py --memory-reserve-mib 2048 -- --mathlib-project "$GITHUB_WORKSPACE" --endpoint ${{ matrix.endpoint }} --workers 1 --module-timeout 600 --resume | python3 -B ci/rg_compact_ci_output.py
+      - name: Retain completed records and diagnostics
+        if: always()
+        run: |
+          python3 - <<'PY'
+          import json,pathlib,shutil
+          root=pathlib.Path('Proofs/RG_Lean_20261019/build/extension')
+          records=[json.loads(p.read_text()) for p in sorted(root.glob('Proofs.*.json'))]
+          fresh=root.parent/'fresh_exports';fresh.mkdir(parents=True,exist_ok=True)
+          (fresh/'diagnostics_records.json').write_text(json.dumps({'modules':records},separators=(',',':'))+'\n')
+          if (root/'receipt.json').is_file():shutil.copyfile(root/'receipt.json',fresh/'receipt.json')
+          print('RETAINED_RECORD_COUNTS '+json.dumps({'total':len(records),'fresh':sum(r['mode']=='FRESH_KERNEL_EXPORT' for r in records)}))
+          for row in records:
+              if row['mode']=='FRESH_KERNEL_EXPORT':
+                  name=row['module'];rel=name.replace('.','/')+'.olean';dest=fresh/rel
+                  dest.parent.mkdir(parents=True,exist_ok=True)
+                  shutil.copyfile(root/rel,dest);shutil.copyfile(root/(name+'.json'),fresh/(name+'.json'))
+          for log in root.glob('Proofs.*.log'):
+              shutil.copyfile(log,fresh/log.name);print('MODULE_LOG_TAIL '+log.name+' '+log.read_text()[-18000:])
+          PY
+      - name: Retain new exports only
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: rg-resume15-original-anchors-after-time-limit-exports-${{ github.run_id }}-${{ strategy.job-index }}
+          path: Proofs/RG_Lean_20261019/build/fresh_exports
+          retention-days: 90

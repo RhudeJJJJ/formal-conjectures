@@ -1,7 +1,7 @@
 /- Copyright 2026 Jonas J. Gebendorfer. Apache 2.0. -/
 import Proofs.RadenkovicGutmanD1Long00Leaf01258Repair
 import Proofs.RadenkovicGutmanD1Long00Leaf01259Repair
-import Proofs.RadenkovicGutmanD1Long00Leaf01260
+import Proofs.RadenkovicGutmanD1Long00Leaf01260NoRuntimeSegmented
 import Proofs.RadenkovicGutmanD1Long00Leaf01261Repair
 import Proofs.RadenkovicGutmanD1Long00Leaf01262Repair
 import Proofs.RadenkovicGutmanD1Long00Leaf01263Repair

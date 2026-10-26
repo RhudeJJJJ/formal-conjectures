@@ -22,7 +22,8 @@ theorem full_conjecture6_1 (n : ℕ) (hn : 2 ≤ n) :
   classical
   let g := gap n
   let G := SimpleGraph.hypercube (2^n+1)
-  let e : Fin (2^n+1) ≃ Index n := Fintype.equivOfCardEq (by simp)
+  let e : Fin (2^n+1) ≃ Index n :=
+    Fintype.equivOfCardEq (by rw [Fintype.card_fin, card_index])
   let E : Vertex (Fin (2^n+1)) ≃ Vertex (Index n) := coordinateEquiv e
   have hAdj : ∀ u v, (cube (Index n)).Adj (E u) (E v) ↔ G.Adj u v :=
     fun u v => cube_adj_coordinateEquiv e u v
@@ -55,6 +56,8 @@ theorem full_conjecture6_1 (n : ℕ) (hn : 2 ≤ n) :
       (gap_ge_dimension n hn) (count_identity n) (total_domination_bound n hn)
   change sInf {k : ℕ | HasTotalDominatorColoring G k} = g+2
   apply le_antisymm (Nat.sInf_le hupper)
-  exact hlower _ (Nat.sInf_mem ⟨g+2, hupper⟩)
+  have hmem : sInf {k : ℕ | HasTotalDominatorColoring G k} ∈
+      {k : ℕ | HasTotalDominatorColoring G k} := Nat.sInf_mem ⟨g+2, hupper⟩
+  exact hlower _ hmem
 
 end Kazemi.Hypercube

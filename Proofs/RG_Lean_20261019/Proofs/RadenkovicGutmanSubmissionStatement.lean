@@ -14,6 +14,9 @@ namespace Gebendorfer.RadenkovicGutman.SubmissionStatement
 open SimpleGraph
 open scoped Classical
 noncomputable section
+set_option maxHeartbeats 0
+set_option maxRecDepth 100000
+set_option backward.isDefEq.respectTransparency true
 
 /-- The exact actual-mean-degree energy used by the submission. -/
 noncomputable def laplacianEnergy {V : Type*} [Fintype V] [DecidableEq V]
@@ -27,12 +30,19 @@ theorem energy_agrees {V : Type*} [Fintype V] [DecidableEq V]
     laplacianEnergy G = Gebendorfer.RadenkovicGutman.laplacianEnergy G := by
   rfl
 
+attribute [local irreducible] laplacianEnergy Gebendorfer.RadenkovicGutman.laplacianEnergy
+
+theorem energy_agrees_of_decidable {V : Type*} [Fintype V] [DecidableEq V]
+    (G : SimpleGraph V) (d : DecidableRel G.Adj) :
+    @Gebendorfer.RadenkovicGutman.laplacianEnergy V _ _ G d = laplacianEnergy G := by
+  exact (GlobalAssembly.energy_decidable_irrel G d _).trans (energy_agrees G).symm
+
 theorem conclusion_agrees (n : ℕ) (T : SimpleGraph (Fin n)) :
     GlobalAssembly.Conclusion T ↔
       (laplacianEnergy (pathGraph n) ≤ laplacianEnergy T ∧
         (laplacianEnergy T = laplacianEnergy (pathGraph n) ↔
           Nonempty (T ≃g pathGraph n))) := by
-  rfl
+  simp only [GlobalAssembly.Conclusion,energy_agrees_of_decidable]
 
 theorem path_minimum_of_conclusion (n : ℕ) (T : SimpleGraph (Fin n))
     (h : GlobalAssembly.Conclusion T) :
@@ -46,6 +56,7 @@ theorem path_equality_of_conclusion (n : ℕ) (T : SimpleGraph (Fin n))
   ((conclusion_agrees n T).mp h).2
 
 #print axioms energy_agrees
+#print axioms energy_agrees_of_decidable
 #print axioms conclusion_agrees
 #print axioms path_minimum_of_conclusion
 #print axioms path_equality_of_conclusion

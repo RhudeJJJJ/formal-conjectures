@@ -41,7 +41,8 @@ theorem dimension_ge_five (n : ℕ) (hn : 2 ≤ n) : 5 ≤ Fintype.card (Index n
   omega
 
 theorem card_vertex_index (n : ℕ) : Fintype.card (Vertex (Index n)) = 2^(2^n+1) := by
-  simp [Vertex]
+  change Fintype.card (Index n → Bool) = _
+  rw [Fintype.card_fun, Fintype.card_bool, card_index]
 
 theorem count_identity (n : ℕ) :
     Fintype.card (Vertex (Index n)) + gap n = Fintype.card (Index n) * gap n := by

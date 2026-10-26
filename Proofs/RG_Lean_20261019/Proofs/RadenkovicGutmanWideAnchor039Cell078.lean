@@ -1,0 +1,55 @@
+/- Copyright 2026 Jonas J. Gebendorfer. Apache 2.0. -/
+import Proofs.RadenkovicGutmanWideAnchor039Source
+namespace Gebendorfer.RadenkovicGutman.WideAnchor039Cell078
+open Set MeasureTheory
+open scoped Classical
+set_option maxHeartbeats 0
+set_option maxRecDepth 100000
+set_option backward.isDefEq.respectTransparency false
+def witness : ComputedPolynomialCell.Witness := {
+  a := (750061/134217728)
+  b := (900073/134217728)
+  s := [(2189833662139/2199023255552),(-7305356953/4398046511104),(-352585289/2199023255552)]
+  L := [(387503937728033579916569/309485009821345068724781056),(1127232386203/2251799813685248),(168750144059/3377699720527872),(-2846575/140737488355328),(-244883/211106232532992)]
+  c := (1409731113119/1125899906842624)
+  R := (-33414694628899/10000000000000)
+  total := (-3629977186189/1000000000000000)
+  k := 10
+  n := 32
+  sFloor := (2185828398373/4398046511104)
+  nFloor := (653945302847/562949953421312)
+  eFloor := (1093578081835/562949953421312)
+}
+noncomputable def geometry : IntegerPolynomialPaymentCell.Geometry := {
+ left:=750061,width:=150012,den:=134217728,localDen:=928455029464035206174343168,lowerC:=1162511813183958058795008,s:=[924575068576178346997579776,-1542206383656527909093376,-148865904014692372709376],L:=[1162511813184100739749707,464776918438456955240448,46385686395436396445696,-18779053871018803200,-1077006823778680832],transformed:=fun i => IntegerPolynomialPaymentCell.affine (WideAnchor039Source.source.poly i) 750061 150012 134217728
+}
+theorem checked : IntegerPolynomialPaymentCell.checks WideAnchor039Source.source witness geometry=true := by
+  unfold IntegerPolynomialPaymentCell.checks
+  rw [decide_eq_true_eq]
+  exact ⟨by decide +kernel,by decide +kernel,by decide +kernel,by decide +kernel,by decide +kernel,by decide +kernel,by decide +kernel,by decide +kernel,by decide +kernel,by decide +kernel,by intro i; rfl,by decide +kernel,by decide +kernel,by decide +kernel,by decide +kernel,by decide +kernel⟩
+theorem budget : SemanticPolynomialPaymentCell.Budget witness := by
+  unfold SemanticPolynomialPaymentCell.Budget
+  decide +kernel
+theorem logarithm_checked : RationalLog.accepts witness.c witness.R witness.k witness.n=true := by decide +kernel
+noncomputable section
+theorem actual_integral {V : Type*} [Fintype V] [DecidableEq V]
+    (G : SimpleGraph V) (u : V) (hd : G.degree u=1) :
+    (witness.total : ℝ)≤∫ y : ℝ in (witness.a : ℝ)..(witness.b : ℝ),
+      MixedGraphIntegral.logarithm (CoreQuotient.source G u 10 18) (CoreQuotient.fused G u 10 18) (((51/26) : ℚ) : ℝ) y :=
+  SemanticPolynomialPaymentCell.actual_integral_lower (51/26) 10 18 WideAnchor039Source.data
+    WideAnchor039Source.path_checked WideAnchor039Source.norms_checked witness
+    (IntegerPolynomialPaymentCell.conditions _ _ _ geometry WideAnchor039Source.source_checked checked) budget logarithm_checked G u hd
+theorem actual_integral_swapped {V : Type*} [Fintype V] [DecidableEq V]
+    (G : SimpleGraph V) (u : V) (hd : G.degree u=1) :
+    (witness.total : ℝ)≤∫ y : ℝ in (witness.a : ℝ)..(witness.b : ℝ),
+      MixedGraphIntegral.logarithm (CoreQuotient.source G u 18 10) (CoreQuotient.fused G u 18 10) (((51/26) : ℚ) : ℝ) y :=
+  SemanticPolynomialPaymentCell.actual_integral_lower (51/26) 18 10 WideAnchor039Source.data
+    WideAnchor039Source.path_swapped WideAnchor039Source.norms_checked witness
+    (IntegerPolynomialPaymentCell.conditions _ _ _ geometry WideAnchor039Source.source_checked checked) budget logarithm_checked G u hd
+#print axioms checked
+#print axioms budget
+#print axioms logarithm_checked
+#print axioms actual_integral
+#print axioms actual_integral_swapped
+end
+end Gebendorfer.RadenkovicGutman.WideAnchor039Cell078

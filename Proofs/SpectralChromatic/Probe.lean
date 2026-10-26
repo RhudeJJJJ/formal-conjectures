@@ -1,5 +1,7 @@
 module
 
+public import Lean.Util.CollectAxioms
+
 public import FormalConjectures.Paper.AouchicheHansenStevanovicSpectralChromatic
 public import Mathlib.Tactic.FinCases
 public import Mathlib.Tactic.NormNum
@@ -159,8 +161,6 @@ theorem full_table1_upper : ¬ ∀ (n : ℕ) (G : SimpleGraph (Fin n))
 
 end AouchicheHansenStevanovic.SpectralChromatic
 
-
-import Lean.Util.CollectAxioms
 
 /-! Exact original-type equality and transitive axiom checks. -/
 

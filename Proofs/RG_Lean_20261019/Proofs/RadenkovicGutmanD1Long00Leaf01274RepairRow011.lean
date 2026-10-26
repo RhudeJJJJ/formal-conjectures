@@ -1,0 +1,16 @@
+/- Copyright 2026 Jonas J. Gebendorfer. Apache 2.0. -/
+import Proofs.RadenkovicGutmanD1Long00Leaf01274RepairAffineLength
+import Proofs.RadenkovicGutmanClosedIntegerRowElaboration
+namespace Gebendorfer.RadenkovicGutman.DegreeOneLongClass00
+set_option maxHeartbeats 0
+set_option maxRecDepth 100000
+open NestedInteger NestedHorner
+noncomputable def leaf01274_w_row011 : NestedInteger.Poly 2 := rg_closed_integer_row% (IntegerWeightedBernstein.applyWeights IntegerBernsteinWeights88.row011 leaf01274_w_affine)
+theorem leaf01274_w_row011_weighted : leaf01274_w_row011=IntegerWeightedBernstein.applyWeights IntegerBernsteinWeights88.row011 leaf01274_w_affine := by decide +kernel
+theorem leaf01274_w_row011_identity : leaf01274_w_row011=NestedInteger.coefficientFrom 88 11 0 leaf01274_w_affine :=
+  IntegerWeightedBernstein.checked 88 11 0 leaf01274_w_affine leaf01274_w_row011 IntegerBernsteinWeights88.row011 (IntegerBernsteinTable.checked (n := 2) 88 11 0 89 leaf01274_w_affine IntegerBernsteinWeights88.row011 leaf01274_w_affine_length IntegerBernsteinWeights88.row011_identity) leaf01274_w_row011_weighted
+theorem leaf01274_w_row011_positive : NestedInteger.bernsteinCheck 2 ![4,4] leaf01274_w_row011=true := by decide +kernel
+#print axioms leaf01274_w_row011_weighted
+#print axioms leaf01274_w_row011_identity
+#print axioms leaf01274_w_row011_positive
+end Gebendorfer.RadenkovicGutman.DegreeOneLongClass00

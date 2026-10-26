@@ -1,0 +1,35 @@
+{
+  "target": "Kazemi.Hypercube.conjecture6_1, all n>=2, exact dimension 2^n+1",
+  "local_status": "All eleven proof modules passed strict Lean4.33.1; Full and ExactAudit passed in explicitly reduced-import original-source overlay",
+  "proof_source_commit": "a1a7e2bff19e75f1d2587886ddddc4ed931961cd",
+  "module_sha256": {
+    "Geometry": "cdcdaae614d6b2d6357c8d02382f378a67958430fd881891df9516b4d6f61fe0",
+    "CubeCounting": "f76c4793630f210f9c27699def08e11b1426d644e5c71e9ea1778e2c4cd7fb50",
+    "EvenBound": "d60dc6f31288dc2af5eddfb871fe081e25abeb692500ecaf59c8e187a581fd8d",
+    "Parity": "30260bff2b4e41ca592feb573e94739a065fe4629faa63eb15be22acf8bd938e",
+    "LowerColor": "4421c1d834aeb8d731bd2578a00d1f1147d030e15d8935554156467d18ef4a49",
+    "Prism": "035f70424f9d7a78112a66a53fe4887fc415a6094b24073b0433b6b519f3fa02",
+    "Code": "b89ca88c3026495c72204f28fe5feff59ae185f500275bf742d15b3c3a4631c3",
+    "Parameters": "a342bea2a40749e28b0742321a2a23078a3246d29059005677f1697ff130fcde",
+    "Coordinates": "98c7e8255601e3eaf16469cc536d701e9402071cc3c2c1fbb45cffe561da6988",
+    "Full": "8bd416176d4358a8a1791bb297383e8ac53bf27b05bd9ac719df7ad755d3d472",
+    "ExactAudit": "308c967f53fb99183abb7b10fa25ac23036f87c4fd2e0a9d74f3dee1ad41b0eb"
+  },
+  "strict_options": {
+    "warningAsError": true,
+    "autoImplicit": false,
+    "relaxedAutoImplicit": false
+  },
+  "overlay": {
+    "original_sha256": "74a34f5448c40cc072cb4a51e5f4122d85479983728cdfa33914f722f40db0da",
+    "overlay_sha256": "a0080e202803b33e6d86e7bc452c2d78ac076c063146ed99450fe222f97ef107",
+    "exact_transform_verified": true,
+    "changes": "Replace only umbrella import with the three pinned imports; remove category/AMS attribute. Every mathematical character preserved."
+  },
+  "audit_output": "EXACT TYPE: Kazemi.Hypercube.conjecture6_1 = Kazemi.Hypercube.full_conjecture6_1\nNEGATIVE CONTROL: changed proposition rejected\n'Kazemi.Hypercube.full_conjecture6_1' depends on axioms: [propext, Classical.choice, Quot.sound]\n'Kazemi.Certificate.even_dimension_domination' depends on axioms: [propext, Classical.choice, Quot.sound]\n'Kazemi.Certificate.coloring_lower_bound' depends on axioms: [propext, Classical.choice, Quot.sound]\n'Kazemi.Certificate.code_coloring' depends on axioms: [propext, Classical.choice, Quot.sound]\n'Kazemi.Hypercube.conjecture6_1' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]\n",
+  "canonical_ci": {
+    "run": 40378804061,
+    "status": "queued; not passed at observation"
+  },
+  "upstream_submission": "Not yet updated"
+}

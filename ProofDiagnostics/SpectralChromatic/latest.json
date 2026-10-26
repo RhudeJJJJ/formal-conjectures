@@ -1,0 +1,32 @@
+{
+  "scope": "Exact original imported modules; actual checkout recorded separately from workflow event SHA",
+  "workflow_event_sha": "97f77f6c156d593e964c7efe02bd10e24d703678",
+  "source_sha": "a1e85c9fe2861397931df8e4233209fe93ad6624",
+  "run_id": "40323167258",
+  "cycle": 1,
+  "status": "passed",
+  "protected_hashes": {
+    "lean-toolchain": "3aac669c7a910ec2389f4e4f921b605adf6ebf2d1e0c9b9cd0be4d33f3f5db71",
+    "lake-manifest.json": "c8ffc0d59f492007162fe54c68396e4b9f2f305fcf69210a7fbaf0b18fcd8cd9",
+    "FormalConjecturesUtil.lean": "759ec7a32177bdb64b8320b625b12fa5dbcf9e006142e2a6f187ef9c8b94892a",
+    "FormalConjectures/Paper/AouchicheHansenStevanovicSpectralChromatic.lean": "65530b959a4e8da7caa33d826e64fe07d472c5fd9fcb5c7e0397986a34ecf4fa"
+  },
+  "proof_hashes": {
+    "Probe": "1dcfc3b10058b6a8e0fa1694566ba1002387158188236fb80f497d356884ab69"
+  },
+  "results": [
+    {
+      "name": "statements",
+      "exit_code": 0,
+      "output": "Build completed successfully (8950 jobs).\n"
+    },
+    {
+      "name": "Probe",
+      "exit_code": 0,
+      "output": "EXACT TYPE: AouchicheHansenStevanovic.SpectralChromatic.table1_upper = AouchicheHansenStevanovic.SpectralChromatic.full_table1_upper\nNEGATIVE CONTROL: changed proposition rejected\n'AouchicheHansenStevanovic.SpectralChromatic.full_table1_upper' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'AouchicheHansenStevanovic.SpectralChromatic.table1_upper' depends on axioms: [propext,\n sorryAx,\n Classical.choice,\n Quot.sound]\n"
+    }
+  ],
+  "axioms": {
+    "AouchicheHansenStevanovic.SpectralChromatic.full_table1_upper": "propext,\n Classical.choice,\n Quot.sound"
+  }
+}

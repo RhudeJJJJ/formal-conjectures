@@ -15,7 +15,16 @@ limitations under the License.
 -/
 module
 
-public import FormalConjecturesUtil
+public import Mathlib.Combinatorics.SimpleGraph.Extremal.Turan
+public import Mathlib.Combinatorics.SimpleGraph.Coloring.Vertex
+public import Mathlib.Combinatorics.SimpleGraph.AdjMatrix
+public import Mathlib.Combinatorics.SimpleGraph.Connectivity.Connected
+public import Mathlib.LinearAlgebra.Matrix.Charpoly.Eigs
+public import Mathlib.Analysis.Real.Sqrt
+public import Mathlib.Tactic.NormNum
+public import Mathlib.Tactic.Ring
+public import Mathlib.Tactic.Linarith
+public import Mathlib.Tactic.FinCases
 
 /-!
 # Maximum of adjacency spectral radius minus chromatic number
@@ -49,7 +58,6 @@ noncomputable def kappa (n : ℕ) : ℕ := sInf {k : ℕ | 2 ≤ k ∧ n ≤ k *
 
 /-- The printed balanced $\lceil\sqrt n\rceil$-partite candidate does not
 maximize $\rho-\chi$ at every connected order $n\ge3$. -/
-@[category research solved, AMS 5]
 theorem table1_upper : ¬ ∀ (n : ℕ) (G : SimpleGraph (Fin n))
     [DecidableRel G.Adj], 3 ≤ n → G.Connected →
     objective G ≤ objective (turanGraph n (⌈Real.sqrt n⌉₊)) := by
@@ -57,7 +65,6 @@ theorem table1_upper : ¬ ∀ (n : ℕ) (G : SimpleGraph (Fin n))
 
 /-- The corrected candidate maximizes the objective for every connected graph
 of order $n\ge3$. -/
-@[category research solved, AMS 5]
 theorem corrected_maximum (n : ℕ) (hn : 3 ≤ n) (G : SimpleGraph (Fin n))
     [DecidableRel G.Adj] (hG : G.Connected) :
     objective G ≤ objective (turanGraph n (kappa n)) := by
@@ -66,7 +73,6 @@ theorem corrected_maximum (n : ℕ) (hn : 3 ≤ n) (G : SimpleGraph (Fin n))
 /-- The equality set consists of the corrected Turán graph, with the adjacent
 part-count graph as an additional possibility exactly at $n=\kappa(\kappa+1)$.
 This is an isomorphism statement, not equality of labeled graphs. -/
-@[category research solved, AMS 5]
 theorem equality_cases (n : ℕ) (hn : 3 ≤ n) (G : SimpleGraph (Fin n))
     [DecidableRel G.Adj] (hG : G.Connected) :
     objective G = objective (turanGraph n (kappa n)) ↔

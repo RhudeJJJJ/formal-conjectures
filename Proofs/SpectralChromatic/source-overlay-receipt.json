@@ -1,0 +1,11 @@
+{
+  "status": "exact_source_overlay_verified",
+  "original_sha256": "65530b959a4e8da7caa33d826e64fe07d472c5fd9fcb5c7e0397986a34ecf4fa",
+  "overlay_sha256": "c3ba2507690e524f47ff88cec739891646b8ec5b48d5d7cee8d26122a9143d26",
+  "transformations": [
+    "Replace only the single umbrella import with the listed pinned Mathlib imports",
+    "Remove exactly the three category/AMS attributes"
+  ],
+  "all_other_source_characters_identical": true,
+  "scope": "All mathematical definitions, hypotheses, target types, namespaces and admitted negative-control statements retained verbatim. Does not assert canonical original-import CI completion."
+}

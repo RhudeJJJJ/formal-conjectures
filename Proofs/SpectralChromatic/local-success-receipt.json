@@ -1,0 +1,90 @@
+{
+  "status": "passed_standalone_reduced_import_certificate",
+  "originalPR": 7386,
+  "originalHead": "e85cf5c47e914f4b140c8b029bc9878b62dbae30",
+  "target": "AouchicheHansenStevanovic.SpectralChromatic.table1_upper",
+  "certificate": "AouchicheHansenStevanovic.SpectralChromatic.full_table1_upper",
+  "lean": "4.33.1",
+  "mathlib": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "pins": [
+    {
+      "path": "lean-toolchain",
+      "sha256": "3aac669c7a910ec2389f4e4f921b605adf6ebf2d1e0c9b9cd0be4d33f3f5db71",
+      "identical": true
+    },
+    {
+      "path": "lake-manifest.json",
+      "sha256": "c8ffc0d59f492007162fe54c68396e4b9f2f305fcf69210a7fbaf0b18fcd8cd9",
+      "identical": true
+    }
+  ],
+  "overlay": {
+    "status": "exact_source_overlay_verified",
+    "original_sha256": "65530b959a4e8da7caa33d826e64fe07d472c5fd9fcb5c7e0397986a34ecf4fa",
+    "overlay_sha256": "c3ba2507690e524f47ff88cec739891646b8ec5b48d5d7cee8d26122a9143d26",
+    "transformations": [
+      "Replace only the single umbrella import with the listed pinned Mathlib imports",
+      "Remove exactly the three category/AMS attributes"
+    ],
+    "all_other_source_characters_identical": true,
+    "scope": "All mathematical definitions, hypotheses, target types, namespaces and admitted negative-control statements retained verbatim. Does not assert canonical original-import CI completion."
+  },
+  "results": [
+    {
+      "module": "original statement definitions",
+      "exitCode": 0,
+      "seconds": 482.156,
+      "sourceSHA256": "c3ba2507690e524f47ff88cec739891646b8ec5b48d5d7cee8d26122a9143d26",
+      "warnings": "Three expected admitted original declarations; not proof dependencies"
+    },
+    {
+      "module": "Full",
+      "exitCode": 0,
+      "seconds": 142.844,
+      "sourceSHA256": "181765be9ebde5a7be36698f8066e6e0a8b3610341f75f079d8055173dfbb6ca",
+      "output": "",
+      "options": {
+        "warningAsError": true,
+        "autoImplicit": false,
+        "relaxedAutoImplicit": false
+      }
+    },
+    {
+      "module": "ExactAudit",
+      "exitCode": 0,
+      "seconds": 179.437,
+      "sourceSHA256": "dbf2fb133e69a6652a83d9e7ed519a2c6dfd6c9884f0ad8428aab786370782ed",
+      "output": "EXACT TYPE: AouchicheHansenStevanovic.SpectralChromatic.table1_upper = AouchicheHansenStevanovic.SpectralChromatic.full_table1_upper\nNEGATIVE CONTROL: changed proposition rejected\n'AouchicheHansenStevanovic.SpectralChromatic.full_table1_upper' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'AouchicheHansenStevanovic.SpectralChromatic.table1_upper' depends on axioms: [propext,\n sorryAx,\n Classical.choice,\n Quot.sound]\n",
+      "options": {
+        "warningAsError": true,
+        "autoImplicit": false,
+        "relaxedAutoImplicit": false
+      }
+    }
+  ],
+  "canonicalOriginalImportCI": {
+    "run": 40323167258,
+    "status": "queued",
+    "passed": false
+  },
+  "scope": "Complete exact negative table1_upper only; corrected_maximum, equality_cases and Kazemi7383 remain unproved",
+  "axioms": [
+    {
+      "name": "AouchicheHansenStevanovic.SpectralChromatic.full_table1_upper",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "AouchicheHansenStevanovic.SpectralChromatic.table1_upper",
+      "axioms": [
+        "propext",
+        "sorryAx",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ]
+}

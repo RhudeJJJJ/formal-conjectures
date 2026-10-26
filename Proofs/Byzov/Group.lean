@@ -59,7 +59,12 @@ def targetHom (n : ℕ) (hn : 2 ≤ n) : Target n →* Aut n where
 
 theorem sum_constant (n : ℕ) (c : ZMod 2) : (∑ _t : C n, c) = c := by
   rw [Finset.sum_const,Finset.card_univ,ZMod.card,nsmul_eq_mul]
-  have hm : ((M n : ℕ) : ZMod 2) = 1 := by norm_num [M,Nat.cast_add,Nat.cast_mul]
+  have hm : ((M n : ℕ) : ZMod 2) = 1 := by
+    change ((2*n+3 : ℕ) : ZMod 2) = 1
+    rw [Nat.cast_add,Nat.cast_mul]
+    change (2 : ZMod 2)*(n : ZMod 2)+3 = 1
+    rw [show (2 : ZMod 2) = 0 by decide,show (3 : ZMod 2) = 1 by decide,
+      zero_mul,zero_add]
   rw [hm,one_mul]
 
 theorem decode_sum (n : ℕ) (p : Target n) : (∑ t : C n, decode n p t) = p.1.toAdd := by

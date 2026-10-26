@@ -70,7 +70,9 @@ theorem rho_turan_five_two : rho (turanGraph 5 2) = Real.sqrt 6 := by
       simpa [this] using hp
     · by_contra hn
       have hl : Real.sqrt 6 < x := lt_of_not_ge hn
-      nlinarith [sq_nonneg (x - Real.sqrt 6)]
+      have hprod : 0 < (x - Real.sqrt 6) * (x + Real.sqrt 6) :=
+        mul_pos (sub_pos.mpr hl) (by linarith)
+      nlinarith
   exact le_antisymm (csSup_le ⟨_, hm⟩ hu) (le_csSup ⟨_, hu⟩ hm)
 
 theorem rho_turan_five_three : rho (turanGraph 5 3) = 1 + Real.sqrt 5 := by
@@ -89,7 +91,9 @@ theorem rho_turan_five_three : rho (turanGraph 5 3) = 1 + Real.sqrt 5 := by
       · linarith
     · by_contra hn
       have hl : 1 + Real.sqrt 5 < x := lt_of_not_ge hn
-      nlinarith [sq_nonneg (x - (1 + Real.sqrt 5))]
+      have hprod : 0 < (x - 1 - Real.sqrt 5) * (x - 1 + Real.sqrt 5) :=
+        mul_pos (by linarith) (by linarith)
+      nlinarith
   exact le_antisymm (csSup_le ⟨_, hm⟩ hu) (le_csSup ⟨_, hu⟩ hm)
 
 def residueColoring (n r : ℕ) (hr : 0 < r) : (turanGraph n r).Coloring (Fin r) where

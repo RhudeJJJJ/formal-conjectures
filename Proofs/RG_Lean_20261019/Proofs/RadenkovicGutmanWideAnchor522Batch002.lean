@@ -1,0 +1,21 @@
+/- Copyright 2026 Jonas J. Gebendorfer. Apache 2.0. -/
+import Proofs.RadenkovicGutmanWideAnchor522Cell020
+import Proofs.RadenkovicGutmanWideAnchor522Cell021
+import Proofs.RadenkovicGutmanWideAnchor522Cell022
+import Proofs.RadenkovicGutmanWideAnchor522Cell023
+import Proofs.RadenkovicGutmanWideAnchor522Cell024
+import Proofs.RadenkovicGutmanWideAnchor522Cell025
+import Proofs.RadenkovicGutmanWideAnchor522Cell026
+import Proofs.RadenkovicGutmanWideAnchor522Cell027
+import Proofs.RadenkovicGutmanWideAnchor522Cell028
+import Proofs.RadenkovicGutmanWideAnchor522Cell029
+#print axioms Gebendorfer.RadenkovicGutman.WideAnchor522Cell020.actual_integral
+#print axioms Gebendorfer.RadenkovicGutman.WideAnchor522Cell021.actual_integral
+#print axioms Gebendorfer.RadenkovicGutman.WideAnchor522Cell022.actual_integral
+#print axioms Gebendorfer.RadenkovicGutman.WideAnchor522Cell023.actual_integral
+#print axioms Gebendorfer.RadenkovicGutman.WideAnchor522Cell024.actual_integral
+#print axioms Gebendorfer.RadenkovicGutman.WideAnchor522Cell025.actual_integral
+#print axioms Gebendorfer.RadenkovicGutman.WideAnchor522Cell026.actual_integral
+#print axioms Gebendorfer.RadenkovicGutman.WideAnchor522Cell027.actual_integral
+#print axioms Gebendorfer.RadenkovicGutman.WideAnchor522Cell028.actual_integral
+#print axioms Gebendorfer.RadenkovicGutman.WideAnchor522Cell029.actual_integral

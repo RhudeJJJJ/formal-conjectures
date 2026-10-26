@@ -29,7 +29,7 @@ def materialize(n):
     assert degree==c['degrees'] and npoly.bernstein_nonnegative(aff,degree),n
     t='/- Copyright 2026 Jonas J. Gebendorfer. Apache 2.0. -/\nimport Proofs.RadenkovicGutmanFastArmCoverIntegral\n'
     t+=f'\nnamespace Gebendorfer.RadenkovicGutman.{ns}\nset_option maxHeartbeats 0\nset_option maxRecDepth 100000\nset_option backward.isDefEq.respectTransparency false\n'
-    t+='def cell : FastNestedCellData.Cell := {\n'
+    t+=('noncomputable ' if data.get('no_runtime_data') else '')+'def cell : FastNestedCellData.Cell := {\n'
     fields=[('reciprocal',str(c['reciprocal']).lower()),('young',q(c['young'])),('squareLower',q(c['square_lower'])),('payment',q(c['payment'])),('logarithmK',str(c['logarithm_k'])),('logarithmN',str(c['logarithm_n'])),('poly',npoly.lean(3,p)),('affine',npoly.lean(3,aff)),('degrees','!['+','.join(map(str,c['degrees']))+']'),('left','!['+','.join(map(q,c['box_left']))+']'),('width','!['+','.join(map(q,c['box_width']))+']')]
     for k,v in fields:t+=f'  {k} := {v}\n'
     d=data['degree'];c1,c2=data['class_indices']

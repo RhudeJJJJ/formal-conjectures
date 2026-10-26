@@ -1,0 +1,18 @@
+/- Copyright 2026 Jonas J. Gebendorfer. Apache 2.0. -/
+import Proofs.RadenkovicGutmanD1Long00Leaf01599CompositionalRepairSources
+import Proofs.RadenkovicGutmanClosedIntegerRowElaboration
+namespace Gebendorfer.RadenkovicGutman.DegreeOneLongClass00
+set_option maxHeartbeats 0
+set_option maxRecDepth 100000
+open NestedInteger NestedHorner
+noncomputable def leaf01599_w_weights09 : List (List ℤ) := rg_closed_integer_row%
+  (IntegerWeightedOuter.weights 16 1 128 27 leaf01599_w_segment09)
+theorem leaf01599_w_weights09_identity : leaf01599_w_weights09=IntegerWeightedOuter.weights 16 1 128 27 leaf01599_w_segment09 := by decide +kernel
+noncomputable def leaf01599_w_piece09 : NestedInteger.Poly 3 := rg_closed_integer_data% (IntegerWeightedOuter.applyWeights leaf01599_w_weights09 leaf01599_w_segment09)
+theorem leaf01599_w_piece09_weighted : leaf01599_w_piece09=IntegerWeightedOuter.applyWeights leaf01599_w_weights09 leaf01599_w_segment09 := by decide +kernel
+theorem leaf01599_w_piece09_identity : leaf01599_w_piece09=IntegerOuterTerms.transform 16 1 128 27 leaf01599_w_segment09 :=
+  IntegerWeightedOuter.checked 16 1 128 27 leaf01599_w_segment09 leaf01599_w_piece09 leaf01599_w_weights09 leaf01599_w_weights09_identity leaf01599_w_piece09_weighted
+#print axioms leaf01599_w_weights09_identity
+#print axioms leaf01599_w_piece09_weighted
+#print axioms leaf01599_w_piece09_identity
+end Gebendorfer.RadenkovicGutman.DegreeOneLongClass00

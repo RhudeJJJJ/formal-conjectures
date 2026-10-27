@@ -1,0 +1,96 @@
+{
+  "scope": "Exact original imported modules; actual checkout recorded separately from workflow event SHA",
+  "workflow_event_sha": "e9530b1a717bf7c66c3a64607207b60138cffee8",
+  "source_sha": "30f032befa55e86e7cd8bbf4d7caeb0ad6539797",
+  "run_id": "40378804061",
+  "cycle": 1,
+  "status": "passed",
+  "protected_hashes": {
+    "lean-toolchain": "3aac669c7a910ec2389f4e4f921b605adf6ebf2d1e0c9b9cd0be4d33f3f5db71",
+    "lake-manifest.json": "c8ffc0d59f492007162fe54c68396e4b9f2f305fcf69210a7fbaf0b18fcd8cd9",
+    "FormalConjecturesUtil.lean": "759ec7a32177bdb64b8320b625b12fa5dbcf9e006142e2a6f187ef9c8b94892a",
+    "FormalConjectures/Paper/KazemiHypercube.lean": "74a34f5448c40cc072cb4a51e5f4122d85479983728cdfa33914f722f40db0da",
+    "FormalConjecturesForMathlib/Combinatorics/SimpleGraph/Hypercube.lean": "f5a826b1071d55989fedefbd963ea76bf940eb5183c6fce268523c59a4fa0fb4"
+  },
+  "proof_hashes": {
+    "Geometry": "cdcdaae614d6b2d6357c8d02382f378a67958430fd881891df9516b4d6f61fe0",
+    "CubeCounting": "f76c4793630f210f9c27699def08e11b1426d644e5c71e9ea1778e2c4cd7fb50",
+    "EvenBound": "d60dc6f31288dc2af5eddfb871fe081e25abeb692500ecaf59c8e187a581fd8d",
+    "Parity": "30260bff2b4e41ca592feb573e94739a065fe4629faa63eb15be22acf8bd938e",
+    "LowerColor": "4421c1d834aeb8d731bd2578a00d1f1147d030e15d8935554156467d18ef4a49",
+    "Prism": "035f70424f9d7a78112a66a53fe4887fc415a6094b24073b0433b6b519f3fa02",
+    "Code": "b89ca88c3026495c72204f28fe5feff59ae185f500275bf742d15b3c3a4631c3",
+    "Parameters": "a342bea2a40749e28b0742321a2a23078a3246d29059005677f1697ff130fcde",
+    "Coordinates": "98c7e8255601e3eaf16469cc536d701e9402071cc3c2c1fbb45cffe561da6988",
+    "Full": "8bd416176d4358a8a1791bb297383e8ac53bf27b05bd9ac719df7ad755d3d472",
+    "ExactAudit": "308c967f53fb99183abb7b10fa25ac23036f87c4fd2e0a9d74f3dee1ad41b0eb"
+  },
+  "results": [
+    {
+      "name": "statements",
+      "exit_code": 0,
+      "output": "Build completed successfully (8950 jobs).\n"
+    },
+    {
+      "name": "Geometry",
+      "exit_code": 0,
+      "output": ""
+    },
+    {
+      "name": "CubeCounting",
+      "exit_code": 0,
+      "output": ""
+    },
+    {
+      "name": "EvenBound",
+      "exit_code": 0,
+      "output": ""
+    },
+    {
+      "name": "Parity",
+      "exit_code": 0,
+      "output": ""
+    },
+    {
+      "name": "LowerColor",
+      "exit_code": 0,
+      "output": ""
+    },
+    {
+      "name": "Prism",
+      "exit_code": 0,
+      "output": ""
+    },
+    {
+      "name": "Code",
+      "exit_code": 0,
+      "output": ""
+    },
+    {
+      "name": "Parameters",
+      "exit_code": 0,
+      "output": ""
+    },
+    {
+      "name": "Coordinates",
+      "exit_code": 0,
+      "output": ""
+    },
+    {
+      "name": "Full",
+      "exit_code": 0,
+      "output": ""
+    },
+    {
+      "name": "ExactAudit",
+      "exit_code": 0,
+      "output": "EXACT TYPE: Kazemi.Hypercube.conjecture6_1 = Kazemi.Hypercube.full_conjecture6_1\nNEGATIVE CONTROL: changed proposition rejected\n'Kazemi.Hypercube.full_conjecture6_1' depends on axioms: [propext, Classical.choice, Quot.sound]\n'Kazemi.Certificate.even_dimension_domination' depends on axioms: [propext, Classical.choice, Quot.sound]\n'Kazemi.Certificate.coloring_lower_bound' depends on axioms: [propext, Classical.choice, Quot.sound]\n'Kazemi.Certificate.code_coloring' depends on axioms: [propext, Classical.choice, Quot.sound]\n'Kazemi.Hypercube.conjecture6_1' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]\n"
+    }
+  ],
+  "axioms": {
+    "Kazemi.Hypercube.full_conjecture6_1": "propext, Classical.choice, Quot.sound",
+    "Kazemi.Certificate.even_dimension_domination": "propext, Classical.choice, Quot.sound",
+    "Kazemi.Certificate.coloring_lower_bound": "propext, Classical.choice, Quot.sound",
+    "Kazemi.Certificate.code_coloring": "propext, Classical.choice, Quot.sound"
+  }
+}

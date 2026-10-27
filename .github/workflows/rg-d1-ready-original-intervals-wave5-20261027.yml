@@ -1,0 +1,159 @@
+# Match the original order-cardinality elaboration setting; keep strict kernel and linter checks.
+name: RG unchanged original D1 intervals with fully authenticated parents
+
+on:
+  push:
+    branches: [rg-remaining-six-spectral-20261021]
+    paths: ['.github/workflows/rg-d1-ready-original-intervals-wave5-20261027.yml']
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  check:
+    strategy:
+      fail-fast: false
+      max-parallel: 1
+      matrix:
+        include:
+          - endpoint: Proofs.RadenkovicGutmanD1OriginalSharedSlice0082Complete
+            restore_plan: ci/rg_d1_ready_original_interval0082_restore_plan.json
+          - endpoint: Proofs.RadenkovicGutmanD1OriginalSharedSlice0083Complete
+            restore_plan: ci/rg_d1_ready_original_interval0083_restore_plan.json
+          - endpoint: Proofs.RadenkovicGutmanD1OriginalSharedSlice0085Complete
+            restore_plan: ci/rg_d1_ready_original_interval0085_restore_plan.json
+          - endpoint: Proofs.RadenkovicGutmanD1OriginalSharedSlice0086Complete
+            restore_plan: ci/rg_d1_ready_original_interval0086_restore_plan.json
+          - endpoint: Proofs.RadenkovicGutmanD1OriginalSharedSlice0087Complete
+            restore_plan: ci/rg_d1_ready_original_interval0087_restore_plan.json
+          - endpoint: Proofs.RadenkovicGutmanD1OriginalSharedSlice0090Complete
+            restore_plan: ci/rg_d1_ready_original_interval0090_restore_plan.json
+          - endpoint: Proofs.RadenkovicGutmanD1OriginalSharedSlice0091Complete
+            restore_plan: ci/rg_d1_ready_original_interval0091_restore_plan.json
+          - endpoint: Proofs.RadenkovicGutmanD1OriginalSharedSlice0092Complete
+            restore_plan: ci/rg_d1_ready_original_interval0092_restore_plan.json
+          - endpoint: Proofs.RadenkovicGutmanD1OriginalSharedSlice0093Complete
+            restore_plan: ci/rg_d1_ready_original_interval0093_restore_plan.json
+          - endpoint: Proofs.RadenkovicGutmanD1OriginalSharedSlice0095Complete
+            restore_plan: ci/rg_d1_ready_original_interval0095_restore_plan.json
+          - endpoint: Proofs.RadenkovicGutmanD1OriginalSharedSlice0096Complete
+            restore_plan: ci/rg_d1_ready_original_interval0096_restore_plan.json
+          - endpoint: Proofs.RadenkovicGutmanD1OriginalSharedSlice0097Complete
+            restore_plan: ci/rg_d1_ready_original_interval0097_restore_plan.json
+          - endpoint: Proofs.RadenkovicGutmanD1OriginalSharedSlice0098Complete
+            restore_plan: ci/rg_d1_ready_original_interval0098_restore_plan.json
+          - endpoint: Proofs.RadenkovicGutmanD1OriginalSharedSlice0099Complete
+            restore_plan: ci/rg_d1_ready_original_interval0099_restore_plan.json
+          - endpoint: Proofs.RadenkovicGutmanD1OriginalSharedSlice0100Complete
+            restore_plan: ci/rg_d1_ready_original_interval0100_restore_plan.json
+          - endpoint: Proofs.RadenkovicGutmanD1OriginalSharedSlice0101Complete
+            restore_plan: ci/rg_d1_ready_original_interval0101_restore_plan.json
+          - endpoint: Proofs.RadenkovicGutmanD1OriginalSharedSlice0102Complete
+            restore_plan: ci/rg_d1_ready_original_interval0102_restore_plan.json
+          - endpoint: Proofs.RadenkovicGutmanD1OriginalSharedSlice0103Complete
+            restore_plan: ci/rg_d1_ready_original_interval0103_restore_plan.json
+          - endpoint: Proofs.RadenkovicGutmanD1OriginalSharedSlice0104Complete
+            restore_plan: ci/rg_d1_ready_original_interval0104_restore_plan.json
+          - endpoint: Proofs.RadenkovicGutmanD1OriginalSharedSlice0105Complete
+            restore_plan: ci/rg_d1_ready_original_interval0105_restore_plan.json
+          - endpoint: Proofs.RadenkovicGutmanD1OriginalSharedSlice0106Complete
+            restore_plan: ci/rg_d1_ready_original_interval0106_restore_plan.json
+          - endpoint: Proofs.RadenkovicGutmanD1OriginalSharedSlice0107Complete
+            restore_plan: ci/rg_d1_ready_original_interval0107_restore_plan.json
+          - endpoint: Proofs.RadenkovicGutmanD1OriginalSharedSlice0108Complete
+            restore_plan: ci/rg_d1_ready_original_interval0108_restore_plan.json
+          - endpoint: Proofs.RadenkovicGutmanD1OriginalSharedSlice0109Complete
+            restore_plan: ci/rg_d1_ready_original_interval0109_restore_plan.json
+          - endpoint: Proofs.RadenkovicGutmanD1OriginalSharedSlice0110Complete
+            restore_plan: ci/rg_d1_ready_original_interval0110_restore_plan.json
+          - endpoint: Proofs.RadenkovicGutmanD1OriginalSharedSlice0111Complete
+            restore_plan: ci/rg_d1_ready_original_interval0111_restore_plan.json
+          - endpoint: Proofs.RadenkovicGutmanD1OriginalSharedSlice0112Complete
+            restore_plan: ci/rg_d1_ready_original_interval0112_restore_plan.json
+          - endpoint: Proofs.RadenkovicGutmanD1OriginalSharedSlice0113Complete
+            restore_plan: ci/rg_d1_ready_original_interval0113_restore_plan.json
+          - endpoint: Proofs.RadenkovicGutmanD1OriginalSharedSlice0114Complete
+            restore_plan: ci/rg_d1_ready_original_interval0114_restore_plan.json
+          - endpoint: Proofs.RadenkovicGutmanD1OriginalSharedSlice0115Complete
+            restore_plan: ci/rg_d1_ready_original_interval0115_restore_plan.json
+          - endpoint: Proofs.RadenkovicGutmanD1OriginalSharedSlice0116Complete
+            restore_plan: ci/rg_d1_ready_original_interval0116_restore_plan.json
+          - endpoint: Proofs.RadenkovicGutmanD1OriginalSharedSlice0117Complete
+            restore_plan: ci/rg_d1_ready_original_interval0117_restore_plan.json
+    runs-on: ubuntu-24.04
+    timeout-minutes: 150
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          persist-credentials: false
+      - name: Install the project toolchain
+        run: |
+          set -o pipefail
+          curl -sSfL https://github.com/leanprover/elan/releases/download/v1.4.2/elan-x86_64-unknown-linux-gnu.tar.gz | tar xz
+          ./elan-init -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Materialize the exact dependency lock
+        run: python3 -B ci/rg_dependencies.py
+      - name: Fetch the required Mathlib cache
+        run: |
+          python3 - <<'PY'
+          import pathlib, re, subprocess
+          root = pathlib.Path('Proofs/RG_Lean_20261019')
+          seen, external = set(), set()
+          def visit(name):
+              if name in seen:
+                  return
+              seen.add(name)
+              source = (root / (name.replace('.', '/') + '.lean')).read_text()
+              for dep in re.findall(r'^\s*import\s+([\w.]+)', source, re.M):
+                  if dep.startswith('Proofs.'):
+                      visit(dep)
+                  elif not dep.startswith(('Lean.', 'Init.', 'Std.')) and dep not in ('Lean','Init','Std'):
+                      external.add(dep)
+          visit('${{ matrix.endpoint }}')
+          subprocess.run(['lake', 'exe', 'cache', 'get', *sorted(external)], check=True)
+          PY
+      - name: Restore one independently audited complete source-bound base scope
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 -B ci/rg_restore_complete_scope.py --manifest ci/rg_shared_arm_kernel_base_complete_scope_capsule.json --build-directory Proofs/RG_Lean_20261019/build/extension
+      - name: Restore authenticated original leaf exports
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 -B ci/rg_restore_with_kernel_fallback.py --plan ${{ matrix.restore_plan }} --build-directory Proofs/RG_Lean_20261019/build/extension --endpoint ${{ matrix.endpoint }} --max-fresh 1
+      - name: Bound the remaining fresh module frontier
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 -B ci/rg_restore_with_kernel_fallback.py --plan ci/rg_empty_restore_plan.json --build-directory Proofs/RG_Lean_20261019/build/extension --endpoint ${{ matrix.endpoint }} --max-fresh 1 --preflight-only
+      - name: Check multiplicities and actual graph spectral comparison
+        shell: bash
+        run: |
+          set -o pipefail
+          python3 -B ci/rg_observed_kernel_verify.py --memory-reserve-mib 2048 -- --mathlib-project "$GITHUB_WORKSPACE" --endpoint ${{ matrix.endpoint }} --workers 1 --module-timeout 600 --resume | python3 -B ci/rg_compact_ci_output.py
+      - name: Retain completed records and diagnostics
+        if: always()
+        run: |
+          python3 - <<'PY'
+          import json,pathlib,shutil
+          root=pathlib.Path('Proofs/RG_Lean_20261019/build/extension')
+          records=[json.loads(p.read_text()) for p in sorted(root.glob('Proofs.*.json'))]
+          fresh=root.parent/'fresh_exports';fresh.mkdir(parents=True,exist_ok=True)
+          (fresh/'diagnostics_records.json').write_text(json.dumps({'modules':records},separators=(',',':'))+'\n')
+          if (root/'receipt.json').is_file():shutil.copyfile(root/'receipt.json',fresh/'receipt.json')
+          print('RETAINED_RECORD_COUNTS '+json.dumps({'total':len(records),'fresh':sum(r['mode']=='FRESH_KERNEL_EXPORT' for r in records)}))
+          for row in records:
+              if row['mode']=='FRESH_KERNEL_EXPORT':
+                  name=row['module'];rel=name.replace('.','/')+'.olean';dest=fresh/rel
+                  dest.parent.mkdir(parents=True,exist_ok=True)
+                  shutil.copyfile(root/rel,dest);shutil.copyfile(root/(name+'.json'),fresh/(name+'.json'))
+          for log in root.glob('Proofs.*.log'):
+              shutil.copyfile(log,fresh/log.name);print('MODULE_LOG_TAIL '+log.name+' '+log.read_text()[-18000:])
+          PY
+      - name: Retain new exports only
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: rg-d1-ready-original-intervals-wave5-20261027-exports-${{ github.run_id }}-${{ strategy.job-index }}
+          path: Proofs/RG_Lean_20261019/build/fresh_exports
+          retention-days: 90

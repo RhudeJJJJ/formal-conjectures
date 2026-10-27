@@ -1,0 +1,83 @@
+{
+  "scope": "Exact original imported modules; actual checkout recorded separately from workflow event SHA",
+  "workflow_event_sha": "10bb284c8c81852328d7c118b31d40b64cb1975b",
+  "source_sha": "090d669f090c9d4ad1d879ff3fb0d4f0f7a4effa",
+  "run_id": "40405338433",
+  "cycle": 1,
+  "status": "passed",
+  "protected_hashes": {
+    "lean-toolchain": "3aac669c7a910ec2389f4e4f921b605adf6ebf2d1e0c9b9cd0be4d33f3f5db71",
+    "lake-manifest.json": "c8ffc0d59f492007162fe54c68396e4b9f2f305fcf69210a7fbaf0b18fcd8cd9",
+    "FormalConjecturesUtil.lean": "759ec7a32177bdb64b8320b625b12fa5dbcf9e006142e2a6f187ef9c8b94892a",
+    "FormalConjectures/Arxiv/2603.07707/AutomorphismGroup.lean": "9332851ffc15be0ffa741882a924ac69d4e0fd223064d865b7106f60cc53ec99"
+  },
+  "proof_hashes": {
+    "Cyclic": "dda8fdbf80abd0bc33caa2c55728e5ad2dccbd0bafe09cf50c091615db8f9e2c",
+    "Shape": "ab9369eb8ac4097971f5f4ed80404a50554f79f19f2938e1ee2ed2888195b1d6",
+    "Model": "7d9812367c43dfeea55d4dc684318b8bca6040e37b50df7e8d02b5dca15a2a42",
+    "Source": "191f989b75fcc91e87ba44caf4c6a1256b3d1494252908abe0e75d9c981164ae",
+    "Automorphisms": "69334eb10d0147cf7c01f2276a7801e523b16c0e2f0fd0b4ebb931894c16a4a0",
+    "NormalForm": "04215a7963bf15f754941cadaed1b91d069d1faea5f3099c98a84c12157153e1",
+    "Group": "27fec2369d880538a199685442fc4c9a7ffc505951b5fca693471fe6977eea86",
+    "Full": "5ed4f4a4ba279aaa0aa899955c9265769d3061b5a2e5ab72c451a308455e3e3c",
+    "ExactAudit": "62e44f56d8052048f04386de6aa75bf1b0042e0a0e103ee6a54da2ab5834ec99"
+  },
+  "results": [
+    {
+      "name": "statements",
+      "exit_code": 0,
+      "output": "Build completed successfully (8950 jobs).\n"
+    },
+    {
+      "name": "Cyclic",
+      "exit_code": 0,
+      "output": ""
+    },
+    {
+      "name": "Shape",
+      "exit_code": 0,
+      "output": ""
+    },
+    {
+      "name": "Model",
+      "exit_code": 0,
+      "output": ""
+    },
+    {
+      "name": "Source",
+      "exit_code": 0,
+      "output": ""
+    },
+    {
+      "name": "Automorphisms",
+      "exit_code": 0,
+      "output": ""
+    },
+    {
+      "name": "NormalForm",
+      "exit_code": 0,
+      "output": ""
+    },
+    {
+      "name": "Group",
+      "exit_code": 0,
+      "output": ""
+    },
+    {
+      "name": "Full",
+      "exit_code": 0,
+      "output": ""
+    },
+    {
+      "name": "ExactAudit",
+      "exit_code": 0,
+      "output": "EXACT TYPE: ByzovPushkarev.conjecture8 = ByzovPushkarev.full_conjecture8\nNEGATIVE CONTROL: changed proposition rejected\n'ByzovPushkarev.full_conjecture8' depends on axioms: [propext, Classical.choice, Quot.sound]\n'ByzovPushkarev.Certificate.profiles_determine_canon' depends on axioms: [propext, Classical.choice, Quot.sound]\n'ByzovPushkarev.Certificate.tournament_rotation' depends on axioms: [propext, Classical.choice, Quot.sound]\n'ByzovPushkarev.Certificate.parameterAut_surjective' depends on axioms: [propext, Classical.choice, Quot.sound]\n'ByzovPushkarev.conjecture8' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]\n"
+    }
+  ],
+  "axioms": {
+    "ByzovPushkarev.full_conjecture8": "propext, Classical.choice, Quot.sound",
+    "ByzovPushkarev.Certificate.profiles_determine_canon": "propext, Classical.choice, Quot.sound",
+    "ByzovPushkarev.Certificate.tournament_rotation": "propext, Classical.choice, Quot.sound",
+    "ByzovPushkarev.Certificate.parameterAut_surjective": "propext, Classical.choice, Quot.sound"
+  }
+}

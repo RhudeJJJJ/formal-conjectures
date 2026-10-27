@@ -1,0 +1,27 @@
+/- Copyright 2026 Jonas J. Gebendorfer. Apache 2.0. -/
+import Proofs.RadenkovicGutmanD1Long00Leaf01279RepairPiece23
+import Proofs.RadenkovicGutmanD1Long00Leaf01279RepairJoin24
+import Proofs.RadenkovicGutmanClosedIntegerRowElaboration
+namespace Gebendorfer.RadenkovicGutman.DegreeOneLongClass00
+set_option maxHeartbeats 0
+set_option maxRecDepth 100000
+open NestedInteger NestedHorner
+noncomputable def leaf01279_w_suffix23 : NestedInteger.Poly 3 := rg_closed_integer_data%
+  (NestedInteger.add (NestedInteger.scale (32^leaf01279_w_source24.length) leaf01279_w_piece23) leaf01279_w_suffix24)
+theorem leaf01279_w_suffix23_join : leaf01279_w_suffix23=NestedInteger.add (NestedInteger.scale (32^leaf01279_w_source24.length) leaf01279_w_piece23) leaf01279_w_suffix24 := by decide +kernel
+theorem leaf01279_w_suffix23_eval (x : Fin 3 → ℝ) :
+    eval (castPoly 3 leaf01279_w_suffix23) x=eval (castPoly 3 (IntegerOuterTerms.transform 15 1 32 69 leaf01279_w_source23)) x := by
+  have hlen : leaf01279_w_segment23.length=3 := by decide +kernel
+  calc
+    _ = (32 : ℝ)^leaf01279_w_source24.length *
+        eval (castPoly 3 (IntegerOuterTerms.transform 15 1 32 69 leaf01279_w_segment23)) x+
+        eval (castPoly 3 (IntegerOuterTerms.transform 15 1 32 (69+leaf01279_w_segment23.length) leaf01279_w_source24)) x := by
+      rw [leaf01279_w_suffix23_join,cast_add,eval_add,cast_scale,eval_scale,leaf01279_w_piece23_identity,leaf01279_w_suffix24_eval]
+      push_cast
+      rw [hlen]
+    _ = eval (castPoly 3 (IntegerOuterTerms.transform 15 1 32 69 (leaf01279_w_segment23++leaf01279_w_source24))) x :=
+      (IntegerOuterPieces.eval_append 15 1 32 69 leaf01279_w_segment23 leaf01279_w_source24 x).symm
+    _ = _ := by rw [show leaf01279_w_segment23++leaf01279_w_source24=leaf01279_w_source23 from List.take_append_drop 3 leaf01279_w_source23]
+#print axioms leaf01279_w_suffix23_join
+#print axioms leaf01279_w_suffix23_eval
+end Gebendorfer.RadenkovicGutman.DegreeOneLongClass00

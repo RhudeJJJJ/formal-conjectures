@@ -1,0 +1,25 @@
+/- Copyright 2026 Jonas J. Gebendorfer. Apache 2.0. -/
+import Proofs.RadenkovicGutmanFiniteTreeNative
+import Proofs.RadenkovicGutmanRootedCatalogueData
+import Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteComparisons96
+namespace Gebendorfer.RadenkovicGutman.DegreeTwoThreeFiniteActualCases
+open RootedTreeEnumeration RootedCatalogueData FiniteTreeTransfer CoreQuotient
+set_option maxHeartbeats 0
+set_option maxRecDepth 100000
+def core4818 : Family 10 := level10.get ⟨1176,by decide⟩
+def sourceMap4818 : (Vertices 10 ⊕ Fin 3 ⊕ Fin 3) → Fin 17 :=
+  fun v => ![9,0,1,2,3,4,5,6,7,8,16,10,11,12,13,14,15] (sourceLabel 10 2 2 v)
+def fusedMap4818 : (Vertices 10 ⊕ Fin 6) → Fin 17 :=
+  fun v => ![1,2,3,4,5,6,7,8,9,10,11,0,12,13,14,15,16] (fusedLabel 10 2 2 v)
+theorem sourceMap4818_checked : acceptsGraphIso
+    (source (graph core4818) (root 10) 2 2) DegreeTwoThreeSpectrum7259.graph sourceMap4818=true := by decide +kernel
+theorem fusedMap4818_checked : acceptsGraphIso
+    (fused (graph core4818) (root 10) 2 2) DegreeTwoThreeSpectrum6337.graph fusedMap4818=true := by decide +kernel
+theorem certified4818 : Certified (graph core4818) (root 10) 2 2 :=
+  of_native_maps core4818 DegreeTwoThreeSpectrum7259.graph DegreeTwoThreeSpectrum6337.graph
+    sourceMap4818 fusedMap4818 sourceMap4818_checked fusedMap4818_checked
+    DegreeTwoThreeFiniteComparisons.comparison4818
+#print axioms sourceMap4818_checked
+#print axioms fusedMap4818_checked
+#print axioms certified4818
+end Gebendorfer.RadenkovicGutman.DegreeTwoThreeFiniteActualCases

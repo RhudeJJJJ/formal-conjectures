@@ -1,0 +1,58 @@
+{
+  "scope": "Exact original imported modules; actual checkout recorded separately from workflow event SHA",
+  "workflow_event_sha": "d5768b9bad0bf7d9ffe7f69032196ccd21170648",
+  "source_sha": "be06228aae32d25911bef18a527e934c77d322d9",
+  "run_id": "40712710434",
+  "cycle": 1,
+  "status": "passed",
+  "protected_hashes": {
+    "lean-toolchain": "3aac669c7a910ec2389f4e4f921b605adf6ebf2d1e0c9b9cd0be4d33f3f5db71",
+    "lake-manifest.json": "c8ffc0d59f492007162fe54c68396e4b9f2f305fcf69210a7fbaf0b18fcd8cd9",
+    "FormalConjecturesUtil.lean": "759ec7a32177bdb64b8320b625b12fa5dbcf9e006142e2a6f187ef9c8b94892a",
+    "FormalConjectures/Paper/JiaSongRemoteness.lean": "8253a00d2606df51bb52be905bf7ae784f48cdbb2b328288a8d7feb6230858cd"
+  },
+  "proof_hashes": {
+    "Bounds": "0c6d9c6ae4d5fab24f226a752da2203db5df41fc131e0bc5332e6f56ddd3d2de",
+    "Geometry": "69ca1d933fbb1d834660a66f0c782fee432f63538a9da57acee1197557201690",
+    "Spectrum": "a9ca44247186fcb99e26b0364df0dda628ba73bad85cab457f4477c2030706d9",
+    "Full": "1c50cea4ee9824d041bf934a9a028c355461128db72d98d490df9678712050e8",
+    "ExactAudit": "bce08b1febabd2579ed050df62aa934d2abb7f39ba14518bf43d7c9169761bc0"
+  },
+  "results": [
+    {
+      "name": "statements",
+      "exit_code": 0,
+      "output": "Build completed successfully (8950 jobs).\n"
+    },
+    {
+      "name": "Bounds",
+      "exit_code": 0,
+      "output": ""
+    },
+    {
+      "name": "Geometry",
+      "exit_code": 0,
+      "output": ""
+    },
+    {
+      "name": "Spectrum",
+      "exit_code": 0,
+      "output": ""
+    },
+    {
+      "name": "Full",
+      "exit_code": 0,
+      "output": ""
+    },
+    {
+      "name": "ExactAudit",
+      "exit_code": 0,
+      "output": "EXACT TYPE: JiaSong.conjecture3_8 = JiaSong.full_conjecture3_8\nNEGATIVE CONTROL: changed proposition rejected\n'JiaSong.full_conjecture3_8' depends on axioms: [propext, Classical.choice, Quot.sound]\n'JiaSong.Certificate.remoteness_value' depends on axioms: [propext, Classical.choice, Quot.sound]\n'JiaSong.Certificate.ordered_spectrum' depends on axioms: [propext, Classical.choice, Quot.sound]\n'JiaSong.conjecture3_8' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]\n"
+    }
+  ],
+  "axioms": {
+    "JiaSong.full_conjecture3_8": "propext, Classical.choice, Quot.sound",
+    "JiaSong.Certificate.remoteness_value": "propext, Classical.choice, Quot.sound",
+    "JiaSong.Certificate.ordered_spectrum": "propext, Classical.choice, Quot.sound"
+  }
+}

@@ -1,0 +1,111 @@
+/- Copyright 2026 Jonas J. Gebendorfer. Apache 2.0. -/
+import Proofs.RadenkovicGutmanDegreeTwoThreeFiniteKeysData
+import Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteActualCase4950
+import Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteActualCase4951
+import Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteActualCase4952
+import Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteActualCase4953
+import Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteActualCase4954
+import Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteActualCase4955
+import Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteActualCase4956
+import Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteActualCase4957
+import Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteActualCase4958
+import Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteActualCase4959
+import Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteActualCase4960
+import Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteActualCase4961
+import Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteActualCase4962
+import Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteActualCase4963
+import Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteActualCase4964
+import Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteActualCase4965
+import Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteActualCase4966
+import Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteActualCase4967
+import Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteActualCase4968
+import Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteActualCase4969
+import Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteActualCase4970
+import Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteActualCase4971
+import Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteActualCase4972
+import Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteActualCase4973
+import Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteActualCase4974
+import Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteActualCase4975
+import Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteActualCase4976
+import Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteActualCase4977
+import Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteActualCase4978
+import Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteActualCase4979
+import Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteActualCase4980
+import Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteActualCase4981
+import Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteActualCase4982
+import Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteActualCase4983
+import Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteActualCase4984
+import Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteActualCase4985
+import Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteActualCase4986
+import Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteActualCase4987
+import Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteActualCase4988
+import Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteActualCase4989
+import Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteActualCase4990
+import Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteActualCase4991
+import Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteActualCase4992
+import Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteActualCase4993
+import Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteActualCase4994
+import Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteActualCase4995
+import Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteActualCase4996
+import Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteActualCase4997
+import Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteActualCase4998
+import Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteActualCase4999
+namespace Gebendorfer.RadenkovicGutman.DegreeTwoThreeFiniteKeys
+open SmallGeFourKeys
+set_option maxHeartbeats 0
+set_option maxRecDepth 100000
+open DegreeTwoThreeFiniteActualCases
+theorem certified_keys099 : ∀ k ∈ keys099, Certified k := by
+  apply certified_cons (by exact certified4950)
+  apply certified_cons (by exact certified4951)
+  apply certified_cons (by exact certified4952)
+  apply certified_cons (by exact certified4953)
+  apply certified_cons (by exact certified4954)
+  apply certified_cons (by exact certified4955)
+  apply certified_cons (by exact certified4956)
+  apply certified_cons (by exact certified4957)
+  apply certified_cons (by exact certified4958)
+  apply certified_cons (by exact certified4959)
+  apply certified_cons (by exact certified4960)
+  apply certified_cons (by exact certified4961)
+  apply certified_cons (by exact certified4962)
+  apply certified_cons (by exact certified4963)
+  apply certified_cons (by exact certified4964)
+  apply certified_cons (by exact certified4965)
+  apply certified_cons (by exact certified4966)
+  apply certified_cons (by exact certified4967)
+  apply certified_cons (by exact certified4968)
+  apply certified_cons (by exact certified4969)
+  apply certified_cons (by exact certified4970)
+  apply certified_cons (by exact certified4971)
+  apply certified_cons (by exact certified4972)
+  apply certified_cons (by exact certified4973)
+  apply certified_cons (by exact certified4974)
+  apply certified_cons (by exact certified4975)
+  apply certified_cons (by exact certified4976)
+  apply certified_cons (by exact certified4977)
+  apply certified_cons (by exact certified4978)
+  apply certified_cons (by exact certified4979)
+  apply certified_cons (by exact certified4980)
+  apply certified_cons (by exact certified4981)
+  apply certified_cons (by exact certified4982)
+  apply certified_cons (by exact certified4983)
+  apply certified_cons (by exact certified4984)
+  apply certified_cons (by exact certified4985)
+  apply certified_cons (by exact certified4986)
+  apply certified_cons (by exact certified4987)
+  apply certified_cons (by exact certified4988)
+  apply certified_cons (by exact certified4989)
+  apply certified_cons (by exact certified4990)
+  apply certified_cons (by exact certified4991)
+  apply certified_cons (by exact certified4992)
+  apply certified_cons (by exact certified4993)
+  apply certified_cons (by exact certified4994)
+  apply certified_cons (by exact certified4995)
+  apply certified_cons (by exact certified4996)
+  apply certified_cons (by exact certified4997)
+  apply certified_cons (by exact certified4998)
+  apply certified_cons (by exact certified4999)
+  simp
+#print axioms certified_keys099
+end Gebendorfer.RadenkovicGutman.DegreeTwoThreeFiniteKeys

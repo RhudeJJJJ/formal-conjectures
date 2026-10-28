@@ -2,6 +2,12 @@ import FormalConjectures.WrittenOnTheWallII.GraphConjecture72
 import Proofs.WOWII72.Full
 import Lean.Util.CollectAxioms
 
+/-! # Original WOWII72 source-reading and transitive-axiom audit
+
+The full certificate negates the original assertion at every nontrivial finite order.
+The admitted original is used only to check its type.
+-/
+
 open Lean Meta Elab Command in
 run_elab do
   let certificate := `WOWII72.full_conjecture72

@@ -2,6 +2,12 @@ import FormalConjectures.WrittenOnTheWallII.GraphConjecture96
 import Proofs.WOWII9684.Full96
 import Lean.Util.CollectAxioms
 
+/-! # Exact original WOWII96 type and transitive-axiom audit
+
+The original admitted declaration is a type-only negative control.
+The certificate is checked independently of its proof value.
+-/
+
 open Lean Meta Elab Command in
 run_elab do
   let original := `WrittenOnTheWallII.GraphConjecture96.conjecture96

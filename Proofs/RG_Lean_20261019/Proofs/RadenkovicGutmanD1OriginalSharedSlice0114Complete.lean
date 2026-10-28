@@ -7,7 +7,7 @@ set_option maxRecDepth 100000
 noncomputable def cover : FastArmCover.Cover := .leaf DegreeOneLongClass00.leaf01746
 noncomputable def slice : FastArmCoverIntegral.Slice := ⟨cover,64,(256/3),(585629/4294967296)⟩
 theorem cover_checked : FastArmCover.accepts 1 4 4 64 (256/3) 0 1 0 1 (585629/4294967296) cover=true := by
-  simp only [cover,FastArmCover.accepts,Bool.and_eq_true,decide_eq_true_eq]
+  simp only [cover,FastArmCover.accepts,decide_eq_true_eq]
   exact ⟨DegreeOneLongClass00.leaf01746_checked,by decide +kernel,by decide +kernel⟩
 theorem slice_checked : FastArmCoverIntegral.accepts 1 4 4 slice=true :=
   FastArmCoverIntegral.accepts_of_checks 1 4 4 slice (by decide +kernel) (by decide +kernel) cover_checked

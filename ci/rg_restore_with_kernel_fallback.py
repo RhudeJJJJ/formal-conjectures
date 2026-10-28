@@ -25,12 +25,30 @@ if not a.preflight_only:
         for n,row in m['modules'].items():
             assert n not in g['modules'] or g['modules'][n]==row,n
             g['modules'][n]=row
+    sys.path.insert(0,str(S))
+    from module_outputs import output_members
+    claimed={};projected=[];equivalent=[]
+    for m in sorted(groups.values(),key=lambda x:(-len(x['modules']),x['artifact_id'])):
+        selected={}
+        for n,row in sorted(m['modules'].items()):
+            assert row['module']==n and row['mode']=='FRESH_KERNEL_EXPORT'
+            assert row['axiom_profiles'] and all(set(ax)<={'propext','Classical.choice','Quot.sound'} for ax in row['axiom_profiles']),n
+            identity=(row['source_sha256'],row['source_closure_sha256'],row['output_sha256'],
+                json.dumps(row['axiom_profiles'],separators=(',',':')),tuple(sorted(output_members(n,row))))
+            if n in claimed:
+                previous,origin=claimed[n]
+                assert previous==identity,('Conflicting repeated original export',n,origin,m['artifact_id'])
+                equivalent.append(dict(module=n,retained_artifact=origin,equivalent_artifact=m['artifact_id']))
+            else:
+                claimed[n]=(identity,m['artifact_id']);selected[n]=row
+        if selected:projected.append({**m,'modules':selected})
     directory=R/'ci'/('_generated_restore_'+uuid.uuid4().hex)
     directory.mkdir(parents=True,exist_ok=False);grouped=[]
-    for i,m in enumerate(sorted(groups.values(),key=lambda x:(-len(x['modules']),x['artifact_id']))):
+    (directory/'equivalent_original_exports.json').write_text(json.dumps(equivalent,indent=2)+'\n')
+    for i,m in enumerate(projected):
         p=directory/f'{i:03d}.json';p.write_text(json.dumps(m,indent=2)+'\n');grouped.append(str(p.relative_to(R)))
     grouped_plan=directory/'plan.json';grouped_plan.write_text(json.dumps(grouped,indent=2)+'\n')
-    print(json.dumps(dict(status='GROUPED_ORIGINAL_ARCHIVES_ONCE_PER_RUN',original_manifests=len(original_paths),original_archive_requests=len(grouped),known_unavailable_ids_skipped=sorted(unavailable))),flush=True)
+    print(json.dumps(dict(status='GROUPED_ORIGINAL_ARCHIVES_ONCE_PER_RUN',original_manifests=len(original_paths),original_archive_requests=len(grouped),unique_source_bound_modules=len(claimed),equivalent_original_export_occurrences=len(equivalent),known_unavailable_ids_skipped=sorted(unavailable))),flush=True)
     command=[sys.executable,'-B',str(R/'ci/rg_restore_plan_parallel.py'),'--plan',str(grouped_plan),'--build-directory',str(build),'--workers',str(a.workers)]
     if a.prepare_only:command.append('--validate-only')
     proc=subprocess.run(command,cwd=R,stdout=subprocess.PIPE,stderr=subprocess.STDOUT)

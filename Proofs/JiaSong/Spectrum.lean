@@ -20,7 +20,8 @@ theorem determinant (x : ℝ) :
       (x + 1)^2 * (x + 3) * (x^2 - 5*x - 4) := by
   rw [distance_matrix]
   simp [Matrix.det_succ_row_zero, Fin.sum_univ_succ,
-    Matrix.submatrix_apply, Matrix.scalar, Matrix.diagonal, Fin.succAbove]
+    Matrix.submatrix_apply, Matrix.scalar, Matrix.diagonal,
+    Matrix.vecHead, Matrix.vecTail, Fin.succAbove]
   ring
 
 noncomputable def upperRoot : ℝ := (5 + Real.sqrt 41) / 2
@@ -41,7 +42,8 @@ theorem charpoly_split : (distanceMatrix H).charpoly =
   intro x
   rw [Matrix.eval_charpoly, determinant]
   simp only [spectrumList, List.map_cons, List.map_nil, List.prod_cons, List.prod_nil,
-    Polynomial.eval_mul, Polynomial.eval_sub, Polynomial.eval_X, Polynomial.eval_C]
+    Polynomial.eval_mul, Polynomial.eval_sub, Polynomial.eval_X, Polynomial.eval_C,
+    Polynomial.eval_one]
   calc
     (x + 1)^2 * (x + 3) * (x^2 - 5*x - 4) =
         (x - upperRoot) * (x - lowerRoot) * (x + 1) * (x + 1) * (x + 3) := by
@@ -57,7 +59,8 @@ theorem spectrumList_pairwise : spectrumList.Pairwise (· ≥ ·) := by
   have hs : Real.sqrt 41 ^ 2 = 41 := Real.sq_sqrt (by norm_num)
   have hp := Real.sqrt_nonneg (41 : ℝ)
   have hu : Real.sqrt 41 < 7 := by nlinarith
-  norm_num [spectrumList, upperRoot, lowerRoot, List.pairwise_cons] <;> linarith
+  norm_num [spectrumList, upperRoot, lowerRoot, List.pairwise_cons] <;>
+    (repeat' constructor <;> linarith)
 
 theorem ordered_spectrum (h : (distanceMatrix H).IsHermitian) :
     List.ofFn h.eigenvalues₀ = spectrumList := by
@@ -68,8 +71,12 @@ theorem ordered_spectrum (h : (distanceMatrix H).IsHermitian) :
   simpa only [decide_eq_true_eq] using spectrumList_pairwise
 
 theorem second_eigenvalue : secondDistanceEigenvalue H = lowerRoot := by
-  unfold secondDistanceEigenvalue
-  rw [ordered_spectrum]
+  let h : (distanceMatrix H).IsHermitian := by
+    apply Matrix.ext
+    intro i j
+    simp [Matrix.conjTranspose_apply, distanceMatrix, SimpleGraph.dist_comm]
+  change (List.ofFn h.eigenvalues₀).getD 1 0 = lowerRoot
+  rw [ordered_spectrum h]
   rfl
 
 end JiaSong.Certificate

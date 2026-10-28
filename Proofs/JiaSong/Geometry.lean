@@ -36,7 +36,7 @@ theorem dist_formula (u v : Fin 5) :
   classical
   split_ifs with he ha
   · subst v
-    exact H.dist_self u
+    exact SimpleGraph.dist_self
   · exact SimpleGraph.dist_eq_one_iff_adj.mpr ha
   · have hu : u ≠ 0 := by
       intro h
@@ -66,8 +66,9 @@ theorem distance_matrix : distanceMatrix H =
 
 theorem transmission (v : Fin 5) :
     (∑ w : Fin 5, (H.dist v w : ℝ)) = if v = 0 then 4 else 6 := by
-  simp_rw [dist_formula]
-  fin_cases v <;> norm_num [Fin.sum_univ_succ, H, twoCliqueJoin]
+  change (∑ w : Fin 5, distanceMatrix H v w) = _
+  rw [distance_matrix]
+  fin_cases v <;> norm_num [Fin.sum_univ_succ]
 
 theorem remoteness_value : remoteness H = 3 / 2 := by
   have hm : (3 / 2 : ℝ) ∈ {x : ℝ | ∃ v : Fin 5,

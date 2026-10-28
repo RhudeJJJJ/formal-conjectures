@@ -59,8 +59,8 @@ theorem spectrumList_pairwise : spectrumList.Pairwise (· ≥ ·) := by
   have hs : Real.sqrt 41 ^ 2 = 41 := Real.sq_sqrt (by norm_num)
   have hp := Real.sqrt_nonneg (41 : ℝ)
   have hu : Real.sqrt 41 < 7 := by nlinarith
-  norm_num [spectrumList, upperRoot, lowerRoot, List.pairwise_cons] <;>
-    (repeat' constructor <;> linarith)
+  norm_num [spectrumList, upperRoot, lowerRoot, List.pairwise_cons]
+  refine ⟨⟨?_, ?_, ?_⟩, ?_, ?_⟩ <;> linarith
 
 theorem ordered_spectrum (h : (distanceMatrix H).IsHermitian) :
     List.ofFn h.eigenvalues₀ = spectrumList := by

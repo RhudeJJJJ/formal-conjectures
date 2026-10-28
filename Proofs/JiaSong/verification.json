@@ -1,0 +1,41 @@
+{
+  "target": "JiaSong.conjecture3_8",
+  "all_five_modules_strict_passed": true,
+  "lean": "4.33.1",
+  "mathlib": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "strict_options": {
+    "warningAsError": true,
+    "autoImplicit": false,
+    "relaxedAutoImplicit": false
+  },
+  "module_sha256": {
+    "Bounds": "0c6d9c6ae4d5fab24f226a752da2203db5df41fc131e0bc5332e6f56ddd3d2de",
+    "Geometry": "69ca1d933fbb1d834660a66f0c782fee432f63538a9da57acee1197557201690",
+    "Spectrum": "a9ca44247186fcb99e26b0364df0dda628ba73bad85cab457f4477c2030706d9",
+    "Full": "1c50cea4ee9824d041bf934a9a028c355461128db72d98d490df9678712050e8",
+    "ExactAudit": "bce08b1febabd2579ed050df62aa934d2abb7f39ba14518bf43d7c9169761bc0"
+  },
+  "audit_output": "EXACT TYPE: JiaSong.conjecture3_8 = JiaSong.full_conjecture3_8\nNEGATIVE CONTROL: changed proposition rejected\n'JiaSong.full_conjecture3_8' depends on axioms: [propext, Classical.choice, Quot.sound]\n'JiaSong.Certificate.remoteness_value' depends on axioms: [propext, Classical.choice, Quot.sound]\n'JiaSong.Certificate.ordered_spectrum' depends on axioms: [propext, Classical.choice, Quot.sound]\n'JiaSong.conjecture3_8' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]\n",
+  "original_source_overlay": {
+    "original_head": "da7b03fbc4d5e4866ca739cedce232359137c2ce",
+    "original_sha256": "8253a00d2606df51bb52be905bf7ae784f48cdbb2b328288a8d7feb6230858cd",
+    "overlay_sha256": "fca939431cfc89e0e5c53807a73805471ce843f43db28672933cc800ddbb71ea",
+    "replaced_imports": [
+      "Mathlib.Combinatorics.SimpleGraph.Metric",
+      "Mathlib.Analysis.Matrix.Spectrum",
+      "Mathlib.Analysis.Real.Sqrt",
+      "Mathlib.Data.Fin.VecNotation",
+      "Mathlib.Tactic.FinCases",
+      "Mathlib.Tactic.NormNum",
+      "Mathlib.Tactic.Ring",
+      "Mathlib.Tactic.Linarith"
+    ],
+    "removed_only": "Three category research solved/AMS5 15 attributes",
+    "mathematical_characters_preserved": true
+  },
+  "original_import_ci": {
+    "run": 40712710434,
+    "status": "queued; not passed"
+  },
+  "full_line": 28
+}

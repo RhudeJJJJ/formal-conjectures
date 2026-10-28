@@ -1,0 +1,41 @@
+name: WOWII 72 exact refutation
+on:
+  push:
+    branches: [proof-wowii72-20261028]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  proof:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          persist-credentials: false
+      - name: Install pinned Lean
+        run: |
+          curl -sSfL https://github.com/leanprover/elan/releases/download/v1.4.2/elan-x86_64-unknown-linux-gnu.tar.gz | tar xz
+          ./elan-init -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> $GITHUB_PATH
+      - name: Get pinned Mathlib cache
+        run: lake exe cache get
+      - uses: actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9
+        with:
+          path: .lake/build
+          key: wowii72-imports-${{ hashFiles('lean-toolchain', 'lake-manifest.json') }}-${{ github.sha }}
+          restore-keys: |
+            jia-song-imports-${{ hashFiles('lean-toolchain', 'lake-manifest.json') }}-
+            wowii361362-imports-${{ hashFiles('lean-toolchain', 'lake-manifest.json') }}-
+            bell-imports-${{ hashFiles('lean-toolchain', 'lake-manifest.json') }}-
+      - name: Build untouched original statement
+        run: lake --wfail build FormalConjectures.WrittenOnTheWallII.GraphConjecture72
+      - name: Strict proof modules and exact type / axiom audit
+        run: |
+          mkdir -p .lake/build/lib/lean/Proofs/WOWII9684
+          lake env lean -DwarningAsError=true -DautoImplicit=false -DrelaxedAutoImplicit=false -o .lake/build/lib/lean/Proofs/WOWII9684/BFS.olean Proofs/WOWII9684/BFS.lean
+          mkdir -p .lake/build/lib/lean/Proofs/WOWII72
+          for module in Graph Attachment Tree Eccentricity Full; do
+            lake env lean -DwarningAsError=true -DautoImplicit=false -DrelaxedAutoImplicit=false -o .lake/build/lib/lean/Proofs/WOWII72/$module.olean Proofs/WOWII72/$module.lean
+          done
+          lake env lean -DwarningAsError=true -DautoImplicit=false -DrelaxedAutoImplicit=false Proofs/WOWII72/CanonicalAudit.lean

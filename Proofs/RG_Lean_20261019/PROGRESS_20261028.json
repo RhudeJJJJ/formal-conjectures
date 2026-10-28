@@ -1,0 +1,762 @@
+{
+  "status": "ALL74_ORIGINAL_EXPORTS_AND_CURRENT_RECURSIVE_CLOSURES_AUDITED",
+  "counts": {
+    "original_D1_intervals": 52,
+    "original_finite_batches": 111,
+    "original_middle_bounds": 167,
+    "exact_middle_tree_predicates": 119
+  },
+  "counting_rule": "One fixed original interval, finite batch, analytic anchor, or exact tree predicate; alternate proof routes count once",
+  "original_seven_inputs_closed": 3,
+  "original_seven_inputs_total": 7,
+  "whole_RG": "OPEN",
+  "submission": "NOT_SUBMITTED",
+  "updated_at_utc": "2026-10-28T15:20:24.464339+00:00",
+  "axiom_policy": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "audited_original_scopes": [
+    {
+      "endpoint": "Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteCertificateBatch098",
+      "index": 98,
+      "job": 121000511672,
+      "artifact": 12756548907,
+      "required": 206,
+      "fresh": 151,
+      "receipt_sha256": "951f80778ed935936dccd31b6e7d1a7558baac45f9a036126a1b83636967a89a",
+      "status": "ORIGINAL_OBJECTS_AND_CURRENT_RECURSIVE_CLOSURES_AUDITED"
+    },
+    {
+      "endpoint": "Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteCertificateBatch097",
+      "index": 97,
+      "job": 121000511746,
+      "artifact": 12757940647,
+      "required": 207,
+      "fresh": 152,
+      "receipt_sha256": "70f7f6b524d34c58f6030659d6d27deae09108d08b90a35f551ab239108d975e",
+      "status": "ORIGINAL_OBJECTS_AND_CURRENT_RECURSIVE_CLOSURES_AUDITED"
+    },
+    {
+      "endpoint": "Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteCertificateBatch099",
+      "index": 99,
+      "job": 121000511845,
+      "artifact": 12761831903,
+      "required": 207,
+      "fresh": 152,
+      "receipt_sha256": "7f548f858a2fe2d25f52b097a99e1436e10bdd21a60c5abaa260cf9d57404107",
+      "status": "ORIGINAL_OBJECTS_AND_CURRENT_RECURSIVE_CLOSURES_AUDITED"
+    },
+    {
+      "endpoint": "Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteCertificateBatch100",
+      "index": 100,
+      "job": 121000511832,
+      "artifact": 12760680963,
+      "required": 207,
+      "fresh": 152,
+      "receipt_sha256": "6dbe5f13a59ebbe493e21ffe0d4dd51a3b54085e7878e74a51494094c315554a",
+      "status": "ORIGINAL_OBJECTS_AND_CURRENT_RECURSIVE_CLOSURES_AUDITED"
+    },
+    {
+      "endpoint": "Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteCertificateBatch101",
+      "index": 101,
+      "job": 121000512183,
+      "artifact": 12756110486,
+      "required": 207,
+      "fresh": 152,
+      "receipt_sha256": "6c90109f99f0724ff8e7bd0dc840000876b951f2c09a45f5cf5235a1abd71f2f",
+      "status": "ORIGINAL_OBJECTS_AND_CURRENT_RECURSIVE_CLOSURES_AUDITED"
+    },
+    {
+      "endpoint": "Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteCertificateBatch103",
+      "index": 103,
+      "job": 121000512430,
+      "artifact": 12774753969,
+      "required": 207,
+      "fresh": 152,
+      "receipt_sha256": "148ace2a7b34d924a130fc77f7b08eb4f7a6b1ea2d08f23ad09527450d5be13d",
+      "status": "ORIGINAL_OBJECTS_AND_CURRENT_RECURSIVE_CLOSURES_AUDITED"
+    },
+    {
+      "endpoint": "Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteCertificateBatch104",
+      "index": 104,
+      "job": 121000512466,
+      "artifact": 12775393104,
+      "required": 207,
+      "fresh": 152,
+      "receipt_sha256": "b3eeb7fba48974af7c7c2b0a9e80654e7a81c1e91075927e1a8ab2bb00ab4eae",
+      "status": "ORIGINAL_OBJECTS_AND_CURRENT_RECURSIVE_CLOSURES_AUDITED"
+    },
+    {
+      "endpoint": "Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteCertificateBatch106",
+      "index": 106,
+      "job": 121000512445,
+      "artifact": 12776289983,
+      "required": 207,
+      "fresh": 152,
+      "receipt_sha256": "4d07bf8ef70fcf8717856533d5624fb68995235e3de32cb6a4b86fd1e0d10403",
+      "status": "ORIGINAL_OBJECTS_AND_CURRENT_RECURSIVE_CLOSURES_AUDITED"
+    },
+    {
+      "endpoint": "Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteCertificateBatch105",
+      "index": 105,
+      "job": 121000512550,
+      "artifact": 12779278611,
+      "required": 207,
+      "fresh": 152,
+      "receipt_sha256": "f36bf29642c25176373b738f97bdcdd9171fb26ab3c8e68e4de4b09d11ab6a01",
+      "status": "ORIGINAL_OBJECTS_AND_CURRENT_RECURSIVE_CLOSURES_AUDITED"
+    },
+    {
+      "endpoint": "Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteCertificateBatch107",
+      "index": 107,
+      "job": 121000512620,
+      "artifact": 12779436161,
+      "required": 194,
+      "fresh": 139,
+      "receipt_sha256": "1e30c6336af77f5e94e1a398d9b0632292173059da645ff51fb1076b3267b753",
+      "status": "ORIGINAL_OBJECTS_AND_CURRENT_RECURSIVE_CLOSURES_AUDITED"
+    },
+    {
+      "endpoint": "Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteCertificateBatch102",
+      "index": 102,
+      "job": 121000512558,
+      "artifact": 12769770760,
+      "required": 207,
+      "fresh": 152,
+      "receipt_sha256": "4860502d0248bdb438c81aa937d7b6771d9964078144a625efe78953e749ac32",
+      "status": "ORIGINAL_OBJECTS_AND_CURRENT_RECURSIVE_CLOSURES_AUDITED"
+    },
+    {
+      "endpoint": "Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteCertificateBatch108",
+      "index": 108,
+      "job": 121000512658,
+      "artifact": 12779721053,
+      "required": 198,
+      "fresh": 143,
+      "receipt_sha256": "3bc1168c3df1538efd27307d64edee013a2d58e604733c7067778d60db69ce1e",
+      "status": "ORIGINAL_OBJECTS_AND_CURRENT_RECURSIVE_CLOSURES_AUDITED"
+    },
+    {
+      "endpoint": "Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteCertificateBatch110",
+      "index": 110,
+      "job": 121000512715,
+      "artifact": 12780293429,
+      "required": 80,
+      "fresh": 26,
+      "receipt_sha256": "74b4883dc9d641165f427e725d75e6d0749364f2d5a4d8accd7d558db9cad45d",
+      "status": "ORIGINAL_OBJECTS_AND_CURRENT_RECURSIVE_CLOSURES_AUDITED"
+    },
+    {
+      "endpoint": "Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteCertificateBatch109",
+      "index": 109,
+      "job": 121000512690,
+      "artifact": 12780291722,
+      "required": 189,
+      "fresh": 134,
+      "receipt_sha256": "062bac7990ae572528187bd693f88c09173c105b032bfbba22da1802cd5d8808",
+      "status": "ORIGINAL_OBJECTS_AND_CURRENT_RECURSIVE_CLOSURES_AUDITED"
+    },
+    {
+      "endpoint": "Proofs.RadenkovicGutmanD1OriginalSharedSlice0007Complete",
+      "index": 7,
+      "job": 121894940926,
+      "artifact": 12772391632,
+      "required": 136,
+      "fresh": 1,
+      "receipt_sha256": "85d73607783359c89a914d5157696e272e0caae531a27e4bfc5cd47e8e11d978",
+      "status": "ORIGINAL_OBJECTS_AND_CURRENT_RECURSIVE_CLOSURES_AUDITED"
+    },
+    {
+      "endpoint": "Proofs.RadenkovicGutmanD1OriginalSharedSlice0012Complete",
+      "index": 12,
+      "job": 121894940953,
+      "artifact": 12805769506,
+      "required": 136,
+      "fresh": 1,
+      "receipt_sha256": "75d9be9e38e68911af2698c9085c616f66818e7ad1360cdb7c95ceacb416800b",
+      "status": "ORIGINAL_OBJECTS_AND_CURRENT_RECURSIVE_CLOSURES_AUDITED"
+    },
+    {
+      "endpoint": "Proofs.RadenkovicGutmanD1OriginalSharedSlice0006Complete",
+      "index": 6,
+      "job": 121894940969,
+      "artifact": 12765632708,
+      "required": 136,
+      "fresh": 1,
+      "receipt_sha256": "d16cff1c3689d4a7c46d7b3333574219b84ba82bcde41fb82d4f8667190b1212",
+      "status": "ORIGINAL_OBJECTS_AND_CURRENT_RECURSIVE_CLOSURES_AUDITED"
+    },
+    {
+      "endpoint": "Proofs.RadenkovicGutmanD1OriginalSharedSlice0009Complete",
+      "index": 9,
+      "job": 121894940984,
+      "artifact": 12790078836,
+      "required": 136,
+      "fresh": 1,
+      "receipt_sha256": "9c73ee6d456472166876f6c252c6c7a9167b877089e0e0bd6b48dc36b5e9dcbc",
+      "status": "ORIGINAL_OBJECTS_AND_CURRENT_RECURSIVE_CLOSURES_AUDITED"
+    },
+    {
+      "endpoint": "Proofs.RadenkovicGutmanD1OriginalSharedSlice0010Complete",
+      "index": 10,
+      "job": 121894941113,
+      "artifact": 12795647217,
+      "required": 136,
+      "fresh": 1,
+      "receipt_sha256": "dd370faed4728b388565d1a49000b5786fab01aa87f6ac6d3a9c506db6c0638e",
+      "status": "ORIGINAL_OBJECTS_AND_CURRENT_RECURSIVE_CLOSURES_AUDITED"
+    },
+    {
+      "endpoint": "Proofs.RadenkovicGutmanD1OriginalSharedSlice0011Complete",
+      "index": 11,
+      "job": 121894941170,
+      "artifact": 12798885087,
+      "required": 136,
+      "fresh": 1,
+      "receipt_sha256": "000d086bb7bdd23513e0188927749d51fe7acf6287f01433154fa6a538410dda",
+      "status": "ORIGINAL_OBJECTS_AND_CURRENT_RECURSIVE_CLOSURES_AUDITED"
+    },
+    {
+      "endpoint": "Proofs.RadenkovicGutmanD1OriginalSharedSlice0014Complete",
+      "index": 14,
+      "job": 121894942885,
+      "artifact": 12819800097,
+      "required": 136,
+      "fresh": 1,
+      "receipt_sha256": "3d58960ffddbe164ae73ab57ce26731ddb8271f669c3ee0870eb895332163552",
+      "status": "ORIGINAL_OBJECTS_AND_CURRENT_RECURSIVE_CLOSURES_AUDITED"
+    },
+    {
+      "endpoint": "Proofs.RadenkovicGutmanD1OriginalSharedSlice0013Complete",
+      "index": 13,
+      "job": 121894943051,
+      "artifact": 12815163736,
+      "required": 136,
+      "fresh": 1,
+      "receipt_sha256": "f782faf3f41a0dc105a7b05a5df60ea0bb0b06fad241cd4a3bb237ff2f558b1f",
+      "status": "ORIGINAL_OBJECTS_AND_CURRENT_RECURSIVE_CLOSURES_AUDITED"
+    },
+    {
+      "endpoint": "Proofs.RadenkovicGutmanD1OriginalSharedSlice0016Complete",
+      "index": 16,
+      "job": 121894943100,
+      "artifact": 12822979424,
+      "required": 136,
+      "fresh": 1,
+      "receipt_sha256": "2fd1a99d346b07efa3bbb387539009c2f3b30f2cf2ab9fce075a5000232694ea",
+      "status": "ORIGINAL_OBJECTS_AND_CURRENT_RECURSIVE_CLOSURES_AUDITED"
+    },
+    {
+      "endpoint": "Proofs.RadenkovicGutmanD1OriginalSharedSlice0015Complete",
+      "index": 15,
+      "job": 121894943133,
+      "artifact": 12820999198,
+      "required": 136,
+      "fresh": 1,
+      "receipt_sha256": "140f6b3f60177d223f468387644669172d71735da39eafd84f5c8c8639d51fd8",
+      "status": "ORIGINAL_OBJECTS_AND_CURRENT_RECURSIVE_CLOSURES_AUDITED"
+    },
+    {
+      "endpoint": "Proofs.RadenkovicGutmanD1OriginalSharedSlice0066Complete",
+      "index": 66,
+      "job": 121908717933,
+      "artifact": 12779278481,
+      "required": 136,
+      "fresh": 1,
+      "receipt_sha256": "fe2e9a0b57330bd84114c99b0376dbd1588bb07febeaec70e84928e8e308ce3a",
+      "status": "ORIGINAL_OBJECTS_AND_CURRENT_RECURSIVE_CLOSURES_AUDITED"
+    },
+    {
+      "endpoint": "Proofs.RadenkovicGutmanD1OriginalSharedSlice0069Complete",
+      "index": 69,
+      "job": 121908717952,
+      "artifact": 12800655530,
+      "required": 136,
+      "fresh": 1,
+      "receipt_sha256": "694f82400d51c5fdb2ce8a52faf46ed6e226d08d4fa9cdae0d18e8da4bbbfd2b",
+      "status": "ORIGINAL_OBJECTS_AND_CURRENT_RECURSIVE_CLOSURES_AUDITED"
+    },
+    {
+      "endpoint": "Proofs.RadenkovicGutmanD1OriginalSharedSlice0068Complete",
+      "index": 68,
+      "job": 121908717956,
+      "artifact": 12790618435,
+      "required": 136,
+      "fresh": 1,
+      "receipt_sha256": "bcd6b9ef8a1170386ebfe4c7ec6747f39446ad084bbeda62b72f168e35c59563",
+      "status": "ORIGINAL_OBJECTS_AND_CURRENT_RECURSIVE_CLOSURES_AUDITED"
+    },
+    {
+      "endpoint": "Proofs.RadenkovicGutmanD1OriginalSharedSlice0070Complete",
+      "index": 70,
+      "job": 121908718108,
+      "artifact": 12807825058,
+      "required": 136,
+      "fresh": 1,
+      "receipt_sha256": "d327988d6cffad99175808783b8f438e33ea6a8a1f13812084e07845253a438c",
+      "status": "ORIGINAL_OBJECTS_AND_CURRENT_RECURSIVE_CLOSURES_AUDITED"
+    },
+    {
+      "endpoint": "Proofs.RadenkovicGutmanD1OriginalSharedSlice0067Complete",
+      "index": 67,
+      "job": 121908718122,
+      "artifact": 12787279492,
+      "required": 136,
+      "fresh": 1,
+      "receipt_sha256": "b00d948d80a674f0224239f013df285270ed690e932352dd9d99a074580bf4a8",
+      "status": "ORIGINAL_OBJECTS_AND_CURRENT_RECURSIVE_CLOSURES_AUDITED"
+    },
+    {
+      "endpoint": "Proofs.RadenkovicGutmanD1OriginalSharedSlice0065Complete",
+      "index": 65,
+      "job": 121908718491,
+      "artifact": 12763432324,
+      "required": 136,
+      "fresh": 1,
+      "receipt_sha256": "dbf17eaa991bbc00b2bda7f623da55c7798313e2fd50456c38c34deb6c3e033b",
+      "status": "ORIGINAL_OBJECTS_AND_CURRENT_RECURSIVE_CLOSURES_AUDITED"
+    },
+    {
+      "endpoint": "Proofs.RadenkovicGutmanD1OriginalSharedSlice0081Complete",
+      "index": 81,
+      "job": 121929533383,
+      "artifact": 12792523910,
+      "required": 136,
+      "fresh": 1,
+      "receipt_sha256": "60f1cf5e38558b58e7bbe680f35d6d6b06cf7abc753bb7de6f78d7643bd9fc7c",
+      "status": "ORIGINAL_OBJECTS_AND_CURRENT_RECURSIVE_CLOSURES_AUDITED"
+    },
+    {
+      "endpoint": "Proofs.RadenkovicGutmanD1OriginalSharedSlice0079Complete",
+      "index": 79,
+      "job": 121929533534,
+      "artifact": 12784622719,
+      "required": 1202,
+      "fresh": 1,
+      "receipt_sha256": "40a69f100162fdad238557e2a193fa50279799ec74a7342b0da8436547abcecf",
+      "status": "ORIGINAL_OBJECTS_AND_CURRENT_RECURSIVE_CLOSURES_AUDITED"
+    },
+    {
+      "endpoint": "Proofs.RadenkovicGutmanD1OriginalSharedSlice0075Complete",
+      "index": 75,
+      "job": 121929533613,
+      "artifact": 12762264080,
+      "required": 898,
+      "fresh": 1,
+      "receipt_sha256": "ff32df8dc454e5f5ce3043d601fc81bc33b793ebd1be9ed539b19f4e0e349a23",
+      "status": "ORIGINAL_OBJECTS_AND_CURRENT_RECURSIVE_CLOSURES_AUDITED"
+    },
+    {
+      "endpoint": "Proofs.RadenkovicGutmanD1OriginalSharedSlice0077Complete",
+      "index": 77,
+      "job": 121929533565,
+      "artifact": 12770585608,
+      "required": 290,
+      "fresh": 1,
+      "receipt_sha256": "7a4c7cc863487d5b6cc26e3a5d450ee910a037c7752fda24ff6a30d5cf1c5e83",
+      "status": "ORIGINAL_OBJECTS_AND_CURRENT_RECURSIVE_CLOSURES_AUDITED"
+    },
+    {
+      "endpoint": "Proofs.RadenkovicGutmanD1OriginalSharedSlice0080Complete",
+      "index": 80,
+      "job": 121929533813,
+      "artifact": 12789281293,
+      "required": 136,
+      "fresh": 1,
+      "receipt_sha256": "68e9f4a52379f5da94333555935dd14a53aa2de932d6f83775a367d488c68aed",
+      "status": "ORIGINAL_OBJECTS_AND_CURRENT_RECURSIVE_CLOSURES_AUDITED"
+    },
+    {
+      "endpoint": "Proofs.RadenkovicGutmanD1OriginalSharedSlice0087Complete",
+      "index": 87,
+      "job": 121949714808,
+      "artifact": 12771396005,
+      "required": 136,
+      "fresh": 1,
+      "receipt_sha256": "65309ec1929290821454d7996aef672bf4213caa4fe61e9cc10b58867d2df82f",
+      "status": "ORIGINAL_OBJECTS_AND_CURRENT_RECURSIVE_CLOSURES_AUDITED"
+    },
+    {
+      "endpoint": "Proofs.RadenkovicGutmanD1OriginalSharedSlice0091Complete",
+      "index": 91,
+      "job": 121949715147,
+      "artifact": 12786775705,
+      "required": 136,
+      "fresh": 1,
+      "receipt_sha256": "4196a1bd887d714cbdf5f8e7ea4f28e5cf4b05348867881184415840f58b2922",
+      "status": "ORIGINAL_OBJECTS_AND_CURRENT_RECURSIVE_CLOSURES_AUDITED"
+    },
+    {
+      "endpoint": "Proofs.RadenkovicGutmanD1OriginalSharedSlice0092Complete",
+      "index": 92,
+      "job": 121949715065,
+      "artifact": 12790997935,
+      "required": 136,
+      "fresh": 1,
+      "receipt_sha256": "08ef391f3eff359b3aac26818e8b352a9f7f35c0df66373cd7029612c18377bc",
+      "status": "ORIGINAL_OBJECTS_AND_CURRENT_RECURSIVE_CLOSURES_AUDITED"
+    },
+    {
+      "endpoint": "Proofs.RadenkovicGutmanD1OriginalSharedSlice0093Complete",
+      "index": 93,
+      "job": 121949715157,
+      "artifact": 12798916099,
+      "required": 136,
+      "fresh": 1,
+      "receipt_sha256": "89377d91f6919efc2181689e5f776bb11c61ceef22f1d64f7fc0e9fd5f157f01",
+      "status": "ORIGINAL_OBJECTS_AND_CURRENT_RECURSIVE_CLOSURES_AUDITED"
+    },
+    {
+      "endpoint": "Proofs.RadenkovicGutmanD1OriginalSharedSlice0096Complete",
+      "index": 96,
+      "job": 121949715168,
+      "artifact": 12812562530,
+      "required": 136,
+      "fresh": 1,
+      "receipt_sha256": "57b80d36f5d9123db8a5cb2f988526e6bf1a203f02c1dbb77e8210bf680283d5",
+      "status": "ORIGINAL_OBJECTS_AND_CURRENT_RECURSIVE_CLOSURES_AUDITED"
+    },
+    {
+      "endpoint": "Proofs.RadenkovicGutmanD1OriginalSharedSlice0090Complete",
+      "index": 90,
+      "job": 121949715189,
+      "artifact": 12782229331,
+      "required": 136,
+      "fresh": 1,
+      "receipt_sha256": "ebf3c0fe4e25a7c4fc4d148b930bbbbacd47ab35333ccf2197620e485991f7d2",
+      "status": "ORIGINAL_OBJECTS_AND_CURRENT_RECURSIVE_CLOSURES_AUDITED"
+    },
+    {
+      "endpoint": "Proofs.RadenkovicGutmanD1OriginalSharedSlice0086Complete",
+      "index": 86,
+      "job": 121949715357,
+      "artifact": 12763146020,
+      "required": 136,
+      "fresh": 1,
+      "receipt_sha256": "7288f3d75c54fa8bef29d0273dbd7af766d5b03c6a444799a421b393c5589fe7",
+      "status": "ORIGINAL_OBJECTS_AND_CURRENT_RECURSIVE_CLOSURES_AUDITED"
+    },
+    {
+      "endpoint": "Proofs.RadenkovicGutmanD1OriginalSharedSlice0101Complete",
+      "index": 101,
+      "job": 121949716620,
+      "artifact": 12825865537,
+      "required": 136,
+      "fresh": 1,
+      "receipt_sha256": "d4534db887f718c12f346de3d9eea15e9e5a33f7daff2a162681ae29d64cc7a7",
+      "status": "ORIGINAL_OBJECTS_AND_CURRENT_RECURSIVE_CLOSURES_AUDITED"
+    },
+    {
+      "endpoint": "Proofs.RadenkovicGutmanD1OriginalSharedSlice0097Complete",
+      "index": 97,
+      "job": 121949716561,
+      "artifact": 12818925629,
+      "required": 136,
+      "fresh": 1,
+      "receipt_sha256": "2abd2d1c9851510fabd2bcab2ba79e701ac01807131d97815ce7f57e64bbd9ec",
+      "status": "ORIGINAL_OBJECTS_AND_CURRENT_RECURSIVE_CLOSURES_AUDITED"
+    },
+    {
+      "endpoint": "Proofs.RadenkovicGutmanD1OriginalSharedSlice0100Complete",
+      "index": 100,
+      "job": 121949716633,
+      "artifact": 12825191503,
+      "required": 136,
+      "fresh": 1,
+      "receipt_sha256": "c46bf9b9d71830a4ee6384080223dd66170379300c9c042ae71d46ea5ff54f93",
+      "status": "ORIGINAL_OBJECTS_AND_CURRENT_RECURSIVE_CLOSURES_AUDITED"
+    },
+    {
+      "endpoint": "Proofs.RadenkovicGutmanD1OriginalSharedSlice0099Complete",
+      "index": 99,
+      "job": 121949716644,
+      "artifact": 12821403997,
+      "required": 136,
+      "fresh": 1,
+      "receipt_sha256": "b1b5f3058561108f6b274218dbffd55bc0ce8fc3db672d82ff0fb80b63d55abc",
+      "status": "ORIGINAL_OBJECTS_AND_CURRENT_RECURSIVE_CLOSURES_AUDITED"
+    },
+    {
+      "endpoint": "Proofs.RadenkovicGutmanD1OriginalSharedSlice0088Complete",
+      "index": 88,
+      "job": 122339876817,
+      "artifact": 12768359837,
+      "required": 2722,
+      "fresh": 1,
+      "receipt_sha256": "2c1de1c243be9d0b43f4a904340c26dcbc4c99f2ae87c66ba05346e5fe195aa8",
+      "status": "ORIGINAL_OBJECTS_AND_CURRENT_RECURSIVE_CLOSURES_AUDITED"
+    },
+    {
+      "endpoint": "Proofs.RadenkovicGutmanMiddleOriginalAnchorCertificate041",
+      "index": 41,
+      "job": 121743865747,
+      "artifact": 12756734639,
+      "required": 271,
+      "fresh": 1,
+      "receipt_sha256": "9747db5b0a06fb627c3e64545ad54e0bffc3bc134596190ac50f0975de491e29",
+      "status": "ORIGINAL_OBJECTS_AND_CURRENT_RECURSIVE_CLOSURES_AUDITED"
+    },
+    {
+      "endpoint": "Proofs.RadenkovicGutmanMiddleOriginalAnchorCertificate043",
+      "index": 43,
+      "job": 121743868148,
+      "artifact": 12778921574,
+      "required": 271,
+      "fresh": 1,
+      "receipt_sha256": "7a1fa6f1f49aad17a3e0366a4f57b31b165bbad950559c55c1f00972b07fc600",
+      "status": "ORIGINAL_OBJECTS_AND_CURRENT_RECURSIVE_CLOSURES_AUDITED"
+    },
+    {
+      "endpoint": "Proofs.RadenkovicGutmanMiddleOriginalAnchorCertificate273",
+      "index": 273,
+      "job": 121743868336,
+      "artifact": 12768870844,
+      "required": 271,
+      "fresh": 1,
+      "receipt_sha256": "212745060a8815e0dd6dd637f05b326e279b98804410f389b11f5bc72550d096",
+      "status": "ORIGINAL_OBJECTS_AND_CURRENT_RECURSIVE_CLOSURES_AUDITED"
+    },
+    {
+      "endpoint": "Proofs.RadenkovicGutmanMiddleOriginalAnchorCertificate278",
+      "index": 278,
+      "job": 121743869053,
+      "artifact": 12787891794,
+      "required": 271,
+      "fresh": 1,
+      "receipt_sha256": "485e61ed5d2007c983b4d4e18916c54a77bdace14648f1f225a8888f8bc36632",
+      "status": "ORIGINAL_OBJECTS_AND_CURRENT_RECURSIVE_CLOSURES_AUDITED"
+    },
+    {
+      "endpoint": "Proofs.RadenkovicGutmanMiddleOriginalAnchorCertificate277",
+      "index": 277,
+      "job": 121743868917,
+      "artifact": 12779686110,
+      "required": 271,
+      "fresh": 1,
+      "receipt_sha256": "5fb728e0b8af4a6bfaa9035ddf2a1ad23935526c1e1bebac2bb74585d1959c20",
+      "status": "ORIGINAL_OBJECTS_AND_CURRENT_RECURSIVE_CLOSURES_AUDITED"
+    },
+    {
+      "endpoint": "Proofs.RadenkovicGutmanMiddleOriginalAnchorCertificate282",
+      "index": 282,
+      "job": 121743869058,
+      "artifact": 12795354591,
+      "required": 271,
+      "fresh": 1,
+      "receipt_sha256": "96b8c98ab190686a165439178ab77e526498cb8d2d80f758d3eb196411d25d58",
+      "status": "ORIGINAL_OBJECTS_AND_CURRENT_RECURSIVE_CLOSURES_AUDITED"
+    },
+    {
+      "endpoint": "Proofs.RadenkovicGutmanMiddleOriginalAnchorCertificate281",
+      "index": 281,
+      "job": 121743869056,
+      "artifact": 12788995121,
+      "required": 271,
+      "fresh": 1,
+      "receipt_sha256": "6c73ff7fa2be5a66b3d1ff0f31d98f59abbd4f088505e9038b984b8eeb33516f",
+      "status": "ORIGINAL_OBJECTS_AND_CURRENT_RECURSIVE_CLOSURES_AUDITED"
+    },
+    {
+      "endpoint": "Proofs.RadenkovicGutmanMiddleOriginalAnchorCertificate528",
+      "index": 528,
+      "job": 121743869569,
+      "artifact": 12810658121,
+      "required": 271,
+      "fresh": 1,
+      "receipt_sha256": "8635200a1340dcc8e66e4c7da7eb7162bd2c22a841fa32f5071055508bbc0c3d",
+      "status": "ORIGINAL_OBJECTS_AND_CURRENT_RECURSIVE_CLOSURES_AUDITED"
+    },
+    {
+      "endpoint": "Proofs.RadenkovicGutmanMiddleOriginalAnchorCertificate520",
+      "index": 520,
+      "job": 121743869589,
+      "artifact": 12800208919,
+      "required": 271,
+      "fresh": 1,
+      "receipt_sha256": "e1cf41eb6b13eb482e88d4d2d52831b312ca8a4a22de5a40970d7c2dc71eb2f6",
+      "status": "ORIGINAL_OBJECTS_AND_CURRENT_RECURSIVE_CLOSURES_AUDITED"
+    },
+    {
+      "endpoint": "Proofs.RadenkovicGutmanMiddleOriginalAnchorCertificate527",
+      "index": 527,
+      "job": 121743869671,
+      "artifact": 12806141577,
+      "required": 271,
+      "fresh": 1,
+      "receipt_sha256": "1db30abe330964c425597aa015cc03e9a07820783ccf7b112388aa36165257a9",
+      "status": "ORIGINAL_OBJECTS_AND_CURRENT_RECURSIVE_CLOSURES_AUDITED"
+    },
+    {
+      "endpoint": "Proofs.RadenkovicGutmanMiddleOriginalAnchorCertificate515",
+      "index": 515,
+      "job": 121743869751,
+      "artifact": 12801790908,
+      "required": 271,
+      "fresh": 1,
+      "receipt_sha256": "1c67799aa968df5557019b14f02a7b0b30a81f8c9203b8422fd0adfde5e40035",
+      "status": "ORIGINAL_OBJECTS_AND_CURRENT_RECURSIVE_CLOSURES_AUDITED"
+    },
+    {
+      "endpoint": "Proofs.RadenkovicGutmanMiddleOriginalAnchorCertificate521",
+      "index": 521,
+      "job": 121743871577,
+      "artifact": 12816407175,
+      "required": 271,
+      "fresh": 1,
+      "receipt_sha256": "f46eb411a79983e583dc9be59b3a27fbfdccd3d901cbb147a95a548bb2827a20",
+      "status": "ORIGINAL_OBJECTS_AND_CURRENT_RECURSIVE_CLOSURES_AUDITED"
+    },
+    {
+      "endpoint": "Proofs.RadenkovicGutmanMiddleOriginalAnchorCertificate531",
+      "index": 531,
+      "job": 121743871388,
+      "artifact": 12810518594,
+      "required": 271,
+      "fresh": 1,
+      "receipt_sha256": "90a8382d1291b43c984fcb2c1ecec5f1c1537561ffa4c976edab35be6a4b64cb",
+      "status": "ORIGINAL_OBJECTS_AND_CURRENT_RECURSIVE_CLOSURES_AUDITED"
+    },
+    {
+      "endpoint": "Proofs.RadenkovicGutmanMiddleOriginalAnchorCertificate533",
+      "index": 533,
+      "job": 121743871696,
+      "artifact": 12822855434,
+      "required": 271,
+      "fresh": 1,
+      "receipt_sha256": "e37437694fe035b7531133f19c37af5ed2f0b98d52486c520d37eddc9edf5469",
+      "status": "ORIGINAL_OBJECTS_AND_CURRENT_RECURSIVE_CLOSURES_AUDITED"
+    },
+    {
+      "endpoint": "Proofs.RadenkovicGutmanMiddleOriginalAnchorCertificate535",
+      "index": 535,
+      "job": 121743871682,
+      "artifact": 12822203748,
+      "required": 271,
+      "fresh": 1,
+      "receipt_sha256": "4450b85776acdb219b616c79569343fd14f872a0d1865c6100596b18838d365e",
+      "status": "ORIGINAL_OBJECTS_AND_CURRENT_RECURSIVE_CLOSURES_AUDITED"
+    },
+    {
+      "endpoint": "Proofs.RadenkovicGutmanMiddleOriginalAnchorCertificate536",
+      "index": 536,
+      "job": 121743871774,
+      "artifact": 12821854846,
+      "required": 271,
+      "fresh": 1,
+      "receipt_sha256": "29d3e5b511d8232b99ac6b05a8b47b06de6c635566b759dcf636984b58acd350",
+      "status": "ORIGINAL_OBJECTS_AND_CURRENT_RECURSIVE_CLOSURES_AUDITED"
+    },
+    {
+      "endpoint": "Proofs.RadenkovicGutmanMiddleOriginalAnchorCertificate532",
+      "index": 532,
+      "job": 121743871922,
+      "artifact": 12819129595,
+      "required": 271,
+      "fresh": 1,
+      "receipt_sha256": "ceb39fb7cf7c484d628538d93b6b591a8eb22c0858f063c4446cb57f17cbac97",
+      "status": "ORIGINAL_OBJECTS_AND_CURRENT_RECURSIVE_CLOSURES_AUDITED"
+    },
+    {
+      "endpoint": "Proofs.RadenkovicGutmanMiddleOriginalAnchorCertificate266",
+      "index": 266,
+      "job": 121725369935,
+      "artifact": 12766068039,
+      "required": 271,
+      "fresh": 40,
+      "receipt_sha256": "af9b5914bbfc1db8a56f010855f7377847f0b268dfa74f1d296381ba1e63a3ba",
+      "status": "ORIGINAL_OBJECTS_AND_CURRENT_RECURSIVE_CLOSURES_AUDITED"
+    },
+    {
+      "endpoint": "Proofs.RadenkovicGutmanMiddleOriginalAnchorCertificate268",
+      "index": 268,
+      "job": 121725369794,
+      "artifact": 12788297820,
+      "required": 271,
+      "fresh": 58,
+      "receipt_sha256": "9583bf9ee4cd784dd7b096dc58f77c5b5b9af7c99938a4c1394707ca33da2874",
+      "status": "ORIGINAL_OBJECTS_AND_CURRENT_RECURSIVE_CLOSURES_AUDITED"
+    },
+    {
+      "endpoint": "Proofs.RadenkovicGutmanMiddleOriginalAnchorCertificate265",
+      "index": 265,
+      "job": 121725369993,
+      "artifact": 12753692795,
+      "required": 271,
+      "fresh": 13,
+      "receipt_sha256": "d3785a66712262feaaad434982107799fcc187d07128721fbd3cbfb11aa46f56",
+      "status": "ORIGINAL_OBJECTS_AND_CURRENT_RECURSIVE_CLOSURES_AUDITED"
+    },
+    {
+      "endpoint": "Proofs.RadenkovicGutmanD1OriginalSharedSlice0008Complete",
+      "index": 8,
+      "job": 121894940922,
+      "artifact": 12783043327,
+      "required": 136,
+      "fresh": 1,
+      "receipt_sha256": "eaf77665ab5d7a3a64f1a13f94e13c44896bc635eb81e4f0081c8484f275f872",
+      "status": "ORIGINAL_OBJECTS_AND_CURRENT_RECURSIVE_CLOSURES_AUDITED"
+    },
+    {
+      "endpoint": "Proofs.RadenkovicGutmanMiddleOriginalAnchorCertificate267",
+      "index": 267,
+      "job": 121725369953,
+      "artifact": 12769306745,
+      "required": 271,
+      "fresh": 23,
+      "receipt_sha256": "2345eae58c9412de30fa20e8b6881099b3cfe8ad931957aac16d380c3e987474",
+      "status": "ORIGINAL_OBJECTS_AND_CURRENT_RECURSIVE_CLOSURES_AUDITED"
+    },
+    {
+      "endpoint": "Proofs.RadenkovicGutmanMiddleOriginalAnchorCertificate508",
+      "index": 508,
+      "job": 121725372680,
+      "artifact": 12799963955,
+      "required": 271,
+      "fresh": 43,
+      "receipt_sha256": "bf5cf855deb9f109ce8bc03eecd0b4c1d531c1bf147dbbb3e278fbbd33f59c65",
+      "status": "ORIGINAL_OBJECTS_AND_CURRENT_RECURSIVE_CLOSURES_AUDITED"
+    },
+    {
+      "endpoint": "Proofs.RadenkovicGutmanMiddleOriginalAnchorCertificate269",
+      "index": 269,
+      "job": 121725370191,
+      "artifact": 12791184745,
+      "required": 271,
+      "fresh": 58,
+      "receipt_sha256": "ce622ee0a7faf5cf2d57ac5799ba38e3bb61fc8a1e17bf25fb87953452bed109",
+      "status": "ORIGINAL_OBJECTS_AND_CURRENT_RECURSIVE_CLOSURES_AUDITED"
+    },
+    {
+      "endpoint": "Proofs.RadenkovicGutmanMiddleOriginalAnchorCertificate510",
+      "index": 510,
+      "job": 121725372790,
+      "artifact": 12807327267,
+      "required": 271,
+      "fresh": 56,
+      "receipt_sha256": "2c2c6cc67ff0c2d23be2039d152202166a893305cff3771e9d9d115d73976eda",
+      "status": "ORIGINAL_OBJECTS_AND_CURRENT_RECURSIVE_CLOSURES_AUDITED"
+    },
+    {
+      "endpoint": "Proofs.RadenkovicGutmanMiddleOriginalAnchorCertificate509",
+      "index": 509,
+      "job": 121725372831,
+      "artifact": 12795976272,
+      "required": 271,
+      "fresh": 41,
+      "receipt_sha256": "404f5b0f8b7d36aeab547d32c76db1e22544e1dfd98dbbcf7cda785aceaf7db3",
+      "status": "ORIGINAL_OBJECTS_AND_CURRENT_RECURSIVE_CLOSURES_AUDITED"
+    },
+    {
+      "endpoint": "Proofs.RadenkovicGutmanMiddleOriginalAnchorCertificate028",
+      "index": 28,
+      "job": 122332142283,
+      "artifact": 12780380356,
+      "required": 281,
+      "fresh": 54,
+      "receipt_sha256": "fa1befbe2b2b56a51eac691e2a9ea68fa7c41119c45147acc0ddff8a1889af83",
+      "status": "ORIGINAL_OBJECTS_AND_CURRENT_RECURSIVE_CLOSURES_AUDITED"
+    }
+  ]
+}

@@ -27,6 +27,9 @@ The bounded ci_loop.py does this against the untouched original module, protects
 Original-import CI40712710434 is queued and has not passed at this snapshot:
 https://github.com/RhudeJJJJ/formal-conjectures/actions/runs/40712710434
 
+The complete upstream Build project (including documentation) and Test scripts passed on9c6563ea0bcae3dc4271e88ac9abdcc83ea88613 in run40715503966; all eleven active head checks succeeded and deployment was skipped:
+https://github.com/google-deepmind/formal-conjectures/actions/runs/40715503966
+
 The statement repository's upstream full build is a separate check from this external certificate run.
 
 ## Sources and credit

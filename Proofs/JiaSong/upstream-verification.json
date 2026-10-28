@@ -1,0 +1,91 @@
+{
+  "run": 40715503966,
+  "head": "9c6563ea0bcae3dc4271e88ac9abdcc83ea88613",
+  "jobs": [
+    {
+      "id": 122911944953,
+      "name": "Test scripts",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 122911945078,
+      "name": "Build project",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 122914830836,
+      "name": "deploy",
+      "status": "completed",
+      "conclusion": "skipped"
+    }
+  ],
+  "checks": [
+    {
+      "name": "deploy",
+      "status": "completed",
+      "conclusion": "skipped"
+    },
+    {
+      "name": "zizmor-output",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "name": "zizmor-upload",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "name": "zizmor-scan",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "name": "zizmor-config",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "name": "Build project",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "name": "Test scripts",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "name": "scan-pr",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "name": "check-copyright",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "name": "check-changes",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "name": "labeler",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "name": "cla/google",
+      "status": "completed",
+      "conclusion": "success"
+    }
+  ],
+  "external_certificate_run": {
+    "id": 40712710434,
+    "status": "queued; not passed"
+  },
+  "local_import_boundary": "Original mathematical source byte-preserved; only8imports and3category attributes differ locally. All5 strict module/type/axiom checks pass."
+}

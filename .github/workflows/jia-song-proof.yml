@@ -1,0 +1,44 @@
+name: JiaSong exact proof development
+on:
+  push:
+    branches: [proof-jia-song-20261028]
+    paths: [".github/workflows/jia-song-proof.yml"]
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  development:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          persist-credentials: false
+      - name: Install pinned Lean
+        run: |
+          curl -sSfL https://github.com/leanprover/elan/releases/download/v1.4.2/elan-x86_64-unknown-linux-gnu.tar.gz | tar xz
+          ./elan-init -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> $GITHUB_PATH
+      - name: Get pinned Mathlib cache
+        run: lake exe cache get
+      - uses: actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9
+        with:
+          path: .lake/build
+          key: jia-song-imports-${{ hashFiles('lean-toolchain', 'lake-manifest.json') }}-${{ github.sha }}
+          restore-keys: |
+            spectral-chromatic-imports-${{ hashFiles('lean-toolchain', 'lake-manifest.json') }}-
+            jia-song-imports-${{ hashFiles('lean-toolchain', 'lake-manifest.json') }}-
+            bell-imports-${{ hashFiles('lean-toolchain', 'lake-manifest.json') }}-
+            wowii361362-imports-${{ hashFiles('lean-toolchain', 'lake-manifest.json') }}-
+      - name: Build exact original statement module
+        run: lake --wfail build 'FormalConjectures.Paper.JiaSongRemoteness'
+      - uses: actions/cache/save@55cc8345863c7cc4c66a329aec7e433d2d1c52a9
+        with:
+          path: .lake/build
+          key: jia-song-imports-${{ hashFiles('lean-toolchain', 'lake-manifest.json') }}-${{ github.sha }}
+      - name: Bounded exact-source certificate check
+        env:
+          PROOF_LOG_TOKEN: ${{ github.token }}
+        run: |
+          cp Proofs/JiaSong/ci_loop.py /tmp/jia-song-ci-loop.py
+          python3 /tmp/jia-song-ci-loop.py

@@ -1,0 +1,25 @@
+/- Copyright 2026 Jonas J. Gebendorfer. Apache 2.0. -/
+import Proofs.RadenkovicGutmanFiniteTreeNative
+import Proofs.RadenkovicGutmanRootedCatalogueData
+import Proofs.RadenkovicGutmanCompactFiniteDegreeTwoThreeFiniteComparisons107
+namespace Gebendorfer.RadenkovicGutman.DegreeTwoThreeFiniteActualCases
+open RootedTreeEnumeration RootedCatalogueData FiniteTreeTransfer CoreQuotient
+set_option maxHeartbeats 0
+set_option maxRecDepth 100000
+def core5395 : Family 6 := level6.get ⟨38,by decide⟩
+def sourceMap5395 : (Vertices 6 ⊕ Fin 5 ⊕ Fin 5) → Fin 17 :=
+  fun v => ![0,11,12,13,14,15,16,1,2,3,4,5,6,7,8,9,10] (sourceLabel 6 4 4 v)
+def fusedMap5395 : (Vertices 6 ⊕ Fin 10) → Fin 17 :=
+  fun v => ![4,5,6,7,8,9,10,3,2,1,0,11,12,13,14,15,16] (fusedLabel 6 4 4 v)
+theorem sourceMap5395_checked : acceptsGraphIso
+    (source (graph core5395) (root 6) 4 4) DegreeTwoThreeSpectrum7054.graph sourceMap5395=true := by decide +kernel
+theorem fusedMap5395_checked : acceptsGraphIso
+    (fused (graph core5395) (root 6) 4 4) DegreeTwoThreeSpectrum5144.graph fusedMap5395=true := by decide +kernel
+theorem certified5395 : Certified (graph core5395) (root 6) 4 4 :=
+  of_native_maps core5395 DegreeTwoThreeSpectrum7054.graph DegreeTwoThreeSpectrum5144.graph
+    sourceMap5395 fusedMap5395 sourceMap5395_checked fusedMap5395_checked
+    DegreeTwoThreeFiniteComparisons.comparison5395
+#print axioms sourceMap5395_checked
+#print axioms fusedMap5395_checked
+#print axioms certified5395
+end Gebendorfer.RadenkovicGutman.DegreeTwoThreeFiniteActualCases

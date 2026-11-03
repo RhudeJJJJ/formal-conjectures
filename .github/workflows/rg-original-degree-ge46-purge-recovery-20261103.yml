@@ -1,0 +1,126 @@
+name: RG original degree at least 46 allocator purge recovery
+on:
+  push:
+    branches: [rg-degree-one-large-20261103]
+    paths: ['.github/workflows/rg-original-degree-ge46-purge-recovery-20261103.yml']
+permissions:
+  contents: read
+  actions: read
+jobs:
+  check:
+    name: Restore original degree at least 46 with allocator purge
+    runs-on: ubuntu-24.04
+    timeout-minutes: 150
+    env:
+      MIMALLOC_PURGE_DELAY: "0"
+      MIMALLOC_PURGE_EXTEND_DELAY: "0"
+      MIMALLOC_ARENA_PURGE_MULT: "1"
+      MIMALLOC_PURGE_DECOMMITS: "1"
+      MIMALLOC_ALLOW_LARGE_OS_PAGES: "0"
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          persist-credentials: false
+      - name: Install the project toolchain
+        run: |
+          set -o pipefail
+          curl -sSfL https://github.com/leanprover/elan/releases/download/v1.4.2/elan-x86_64-unknown-linux-gnu.tar.gz | tar xz
+          ./elan-init -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Materialize the exact dependency lock
+        run: python3 -B ci/rg_dependencies.py
+      - name: Fetch the required Mathlib cache
+        run: |
+          python3 - <<'PY'
+          import pathlib,re,subprocess
+          root=pathlib.Path('Proofs/RG_Lean_20261019')
+          seen,external=set(),set()
+          def visit(name):
+              if name in seen:return
+              seen.add(name)
+              source=(root/(name.replace('.','/')+'.lean')).read_text()
+              for dep in re.findall(r'^\s*import\s+([\w.]+)',source,re.M):
+                  if dep.startswith('Proofs.'):visit(dep)
+                  elif not dep.startswith(('Lean.','Init.','Std.')) and dep not in ('Lean','Init','Std'):external.add(dep)
+          visit('Proofs.RadenkovicGutmanOriginalDegreeGeFortysix')
+          subprocess.run(['lake','exe','cache','get',*sorted(external)],check=True)
+          PY
+      - name: Restore the available independently audited base
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          python3 - <<'PY'
+          import hashlib,json,pathlib
+          spec=json.loads(pathlib.Path('ci/rg_original_degree_ge46_purge_20261103_spec.json').read_text())
+          assert spec['base_manifest']=='ci/rg_reusable_analytic_kernel_base_complete_scope_capsule.json'
+          assert hashlib.sha256(pathlib.Path(spec['base_manifest']).read_bytes()).hexdigest()==spec['base_manifest_sha256']
+          PY
+          python3 -B ci/rg_restore_complete_scope.py --manifest ci/rg_reusable_analytic_kernel_base_complete_scope_capsule.json --build-directory Proofs/RG_Lean_20261019/build/extension
+      - name: Record and verify the pinned allocator options and diagnostics
+        run: |
+          python3 - <<'PY_ALLOCATOR'
+          import hashlib,json,os,pathlib,re,subprocess
+          spec=json.loads(pathlib.Path('ci/rg_original_degree_ge46_purge_20261103_spec.json').read_bytes())
+          expected=spec['allocator_environment']
+          actual={key:os.environ[key] for key in expected}
+          assert actual==expected
+          output=pathlib.Path('Proofs/RG_Lean_20261019/build/fresh_exports')
+          output.mkdir(parents=True,exist_ok=True)
+          diagnostic=output/'allocator_diagnostics.log'
+          with diagnostic.open('wb') as stream:
+              subprocess.run(['lake','env','lean','--version'],env={**os.environ,'MIMALLOC_VERBOSE':'1','MIMALLOC_SHOW_STATS':'1'},stdout=stream,stderr=subprocess.STDOUT,check=True)
+          raw=diagnostic.read_bytes();text=raw.decode()
+          assert 'version 4.33.1,' in text
+          for key,value in expected.items():
+              label=key.removeprefix('MIMALLOC_').lower()
+              assert re.search(r"option '"+re.escape(label)+r"':\s*"+re.escape(value)+r"\b",text),(key,'Allocator did not confirm the configured value')
+          report={'kind':'PINNED_ALLOCATOR_PURGE_CONFIGURATION','environment':actual,'upstream_allocator':'microsoft/mimalloc@v2.2.3','diagnostic_sha256':hashlib.sha256(raw).hexdigest(),'diagnostic_scope':'Actual toolchain version process; kernel RSS retained separately','lean_kernel_flags_unchanged':True,'memory_reserve_mib':2048,'proof_sources_unchanged':True}
+          (output/'allocator_options.json').write_text(json.dumps(report,indent=2)+'\n')
+          print(json.dumps(report))
+          PY_ALLOCATOR
+      - name: Restore only the authenticated completed partial modules
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          python3 - <<'PY_PARTIAL'
+          import hashlib,json,pathlib
+          spec=json.loads(pathlib.Path('ci/rg_original_degree_ge46_purge_20261103_spec.json').read_bytes())
+          raw=pathlib.Path(spec['partial_manifest']).read_bytes()
+          assert hashlib.sha256(raw).hexdigest()==spec['partial_manifest_sha256']
+          partial=json.loads(raw)
+          assert len(partial['modules'])==spec['partial_module_count']
+          assert partial['origin_context']['endpoint_complete'] is False
+          assert partial['origin_context']['post_identity_gate_passed'] is False
+          PY_PARTIAL
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_ge46_20261103_partial_original_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+      - name: Bind every fresh module to its original source and closure
+        run: |
+          python3 -B ci/rg_restore_with_kernel_fallback.py --plan ci/rg_empty_restore_plan.json --build-directory Proofs/RG_Lean_20261019/build/extension --endpoint Proofs.RadenkovicGutmanOriginalDegreeGeFortysix --max-fresh 62 --preflight-only
+          python3 - <<'PY'
+          import json,pathlib
+          report=json.loads(pathlib.Path('Proofs/RG_Lean_20261019/build/extension/bounded_kernel_fallback_plan.json').read_bytes())
+          assert report['required_modules']==124
+          PY
+          python3 -B ci/rg_assert_source_bound_fresh_frontier.py --spec ci/rg_original_degree_ge46_purge_20261103_spec.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          mkdir -p Proofs/RG_Lean_20261019/build/fresh_exports
+          cp Proofs/RG_Lean_20261019/build/extension/bounded_kernel_fallback_plan.json Proofs/RG_Lean_20261019/build/fresh_exports/ge46_recovery_frontier.json
+      - name: Reconstruct the original degree at least 46 closure with the strict kernel verifier
+        shell: bash
+        run: |
+          set -o pipefail
+          python3 -B ci/rg_observed_kernel_verify.py --memory-reserve-mib 2048 -- --mathlib-project "$GITHUB_WORKSPACE" --endpoint Proofs.RadenkovicGutmanOriginalDegreeGeFortysix --workers 1 --module-timeout 1200 --resume | python3 -B ci/rg_compact_ci_output.py
+      - name: Require the original object, member and axiom identities
+        shell: bash
+        run: |
+          set -o pipefail
+          python3 -B ci/rg_assert_source_bound_fresh_frontier.py --spec ci/rg_original_degree_ge46_purge_20261103_spec.json --build-directory Proofs/RG_Lean_20261019/build/extension --phase after | tee Proofs/RG_Lean_20261019/build/fresh_exports/ge46_recovery_identity_check.json
+      - name: Retain completed records, complete module outputs and diagnostics
+        if: always()
+        run: python3 -B ci/rg_collect_fresh_exports.py --build-directory Proofs/RG_Lean_20261019/build/extension --output-directory Proofs/RG_Lean_20261019/build/fresh_exports
+      - name: Retain original degree at least 46 reconstruction evidence
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: rg-original-degree-ge46-purge-20261103-${{ github.run_id }}-${{ github.run_attempt }}
+          path: Proofs/RG_Lean_20261019/build/fresh_exports
+          retention-days: 90

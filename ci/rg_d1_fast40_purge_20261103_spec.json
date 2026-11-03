@@ -1,0 +1,57 @@
+{
+  "kind": "EXACT_SOURCE_BOUND_ALLOCATOR_PURGE_RECOVERY",
+  "endpoint": "Proofs.RadenkovicGutmanD1FastFullBox40",
+  "lean_version": "4.33.1",
+  "mathlib": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "leancert": "621a43d7cf21f87872392a01e874f2f1dbddc926",
+  "original_manifest": "ci/rg_d1_20261103_closed_class_historical_reference.json",
+  "original_manifest_sha256": "6b574cf9840b806e7a95dd82da6d61ccf4d1cb08cd972477bb227c7096d62817",
+  "fresh_module_count": 7,
+  "required_module_count": 84,
+  "base_manifest": "ci/rg_reusable_analytic_kernel_base_complete_scope_capsule.json",
+  "base_manifest_sha256": "ecec5dc115eca93fdfadf72072bfb9d13c85c5d36191b31738d4295d9305d6a3",
+  "modules": {
+    "Proofs.RadenkovicGutmanD1FastFullBox40": {
+      "source_sha256": "a30e2c106e2820b653484ca9f251f12f09b7c26a4a12587368d0991f4fdec41b",
+      "source_closure_sha256": "e46634ccb27702499cb687cdf675d3af105d7437c7fd7a39fcd5cc78d1b806fa"
+    },
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cells04": {
+      "source_sha256": "cba0d43c22682644cf503e3248c9350e8cd15d30eb541f561c7b4976243be607",
+      "source_closure_sha256": "6284713131d51a8b0b7a3f83036928c4af91e199d1b5c62d70e7edd544b182d8"
+    },
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cells05": {
+      "source_sha256": "8465d028d5328b54c8c51723f97b2ae9e68e99d2db6947a08f24bdd273fe6f77",
+      "source_closure_sha256": "624bb06556e16c598364b315d0b9225e1c63b0494a231eacdf3e2e9eb973d988"
+    },
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cells06": {
+      "source_sha256": "fb02e35de4f8733a622f0b0f8455a1cef5fb7b10bcaa68fef36929f43ea11a58",
+      "source_closure_sha256": "4e7ef69a800305faf092f7f9733df7e701adc6211391a6e6287fc73a169e92e8"
+    },
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cells07": {
+      "source_sha256": "c967f63c8bc5648a1d42336ddfb2590d4ab68996e896d89098ec28cdf817eb49",
+      "source_closure_sha256": "0037cf79bdf4372134ceca716c597eee3a9f38e9b849299a722133855d9119a7"
+    },
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cells08": {
+      "source_sha256": "caf4c02e7bf0d5d4dd7586b00834418e43e3e0f19ac08da893a0e5d15991d6f5",
+      "source_closure_sha256": "e4d75ed03409a8f38e206f41678ba3d606c208e42d21d9fc85cf4330c030d417"
+    },
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cells09": {
+      "source_sha256": "0fbfc94c6fc31339ddabd4b84423dcd0fa4d023c6edc9db2b17a0e76b39a0119",
+      "source_closure_sha256": "39c80d3085fba01e6c7904c58a9c2210830dc5c39069c09ede11a471bbaaaa70"
+    }
+  },
+  "kernel_status": "REQUIRES_FRESH_STANDARD_KERNEL",
+  "partial_manifest": "ci/rg_d1_fast40_20261103_partial_original_exports.json",
+  "partial_manifest_sha256": "e8060ea3cb70038cc4f902634ac23b92b6f0b1186c3fd2e82d438b6f9933c335",
+  "partial_module_count": 4,
+  "allocator_environment": {
+    "MIMALLOC_PURGE_DELAY": "0",
+    "MIMALLOC_PURGE_EXTEND_DELAY": "0",
+    "MIMALLOC_ARENA_PURGE_MULT": "1",
+    "MIMALLOC_PURGE_DECOMMITS": "1",
+    "MIMALLOC_ALLOW_LARGE_OS_PAGES": "0"
+  },
+  "workers": 1,
+  "module_timeout": 600,
+  "memory_reserve_mib": 2048
+}

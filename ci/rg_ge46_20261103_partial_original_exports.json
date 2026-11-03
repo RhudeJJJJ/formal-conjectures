@@ -1,0 +1,155 @@
+{
+  "repository": "RhudeJJJJ/formal-conjectures",
+  "run": 41686621224,
+  "job": 126093949738,
+  "source_commit": "aaeaec3cec22467d3f0b83b1761bfb40087bb991",
+  "artifact_id": 13256235269,
+  "artifact_sha256": "fd3c23c10283fea75f3668dec5817cdfaad768cd9d926d94729fa4185e5736d8",
+  "lean_version": "4.33.1",
+  "mathlib": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "modules": {
+    "Proofs.RadenkovicGutmanEscapeReducedDirected": {
+      "module": "Proofs.RadenkovicGutmanEscapeReducedDirected",
+      "source_sha256": "7120f0dc25444b1ee41c6261df84a4dc35d625f112b3626fa9d13b2363c8fcb4",
+      "source_closure_sha256": "bc6eace624fe3c370d92948ec2f2fbf3ecb9bd7105ecaa0e223cdcce4fe39e19",
+      "output_sha256": "9025df9d3677f3da26861b7253fe3ee871ba2b85dda7e2d9a985694ffef65384",
+      "axiom_profiles": [
+        [
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "FRESH_KERNEL_EXPORT",
+      "seconds": 11.741
+    },
+    "Proofs.RadenkovicGutmanLowStripIntegral": {
+      "module": "Proofs.RadenkovicGutmanLowStripIntegral",
+      "source_sha256": "2d32fe0b342091ef50c62a53ed022ce52ec215887a0bd0e74dbb8b83cff1e5e4",
+      "source_closure_sha256": "45983e42f9db96a62b731614fb02837fc0a0133ea9e03429a822d8a1930e17fe",
+      "output_sha256": "212e09c4b2357a43e2f1ba19d5515965deae2cf06804fefe92c51cc966aaf8ab",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "FRESH_KERNEL_EXPORT",
+      "seconds": 2.57
+    },
+    "Proofs.RadenkovicGutmanLowStripPrimitive": {
+      "module": "Proofs.RadenkovicGutmanLowStripPrimitive",
+      "source_sha256": "9479d35670352eaefe20e6e12a35f79dd7d87970d6ca13fc90d3f23990058513",
+      "source_closure_sha256": "83871fcbfc8a1ad71ea8eea829eecb5c45c4c7bac49963b72b190117f205ba26",
+      "output_sha256": "16209f12dafc6b037f7d1f28e3c2178a5560fb39dfdb9a0aa7cfb6641ce50fb8",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "FRESH_KERNEL_EXPORT",
+      "seconds": 2.771
+    },
+    "Proofs.RadenkovicGutmanNestedHornerNormalized": {
+      "module": "Proofs.RadenkovicGutmanNestedHornerNormalized",
+      "source_sha256": "1da564ebca3ed35f75d2e72bc2337a3d1fbf0224f3ee510c39f18cb54e3059e4",
+      "source_closure_sha256": "6ad9aa0914bdfd18eef7097c798ea00bc69223b3a5901947bd0c204d8c5fdc2f",
+      "output_sha256": "20745debdf7851da9021fe5e7a0652c1fe399f99b3777246da6585cab5705be5",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "FRESH_KERNEL_EXPORT",
+      "seconds": 2.119
+    },
+    "Proofs.RadenkovicGutmanNestedIntegerHybrid": {
+      "module": "Proofs.RadenkovicGutmanNestedIntegerHybrid",
+      "source_sha256": "f98d56f9cf03b5a8ddbd0ec4106de4a7d8bdd942a06e7607f13c1616d876401e",
+      "source_closure_sha256": "827b7ec63914901ccce44228562c1f8f5b80eeadfcfcb240dbeb051f8e938056",
+      "output_sha256": "cd7c2bb687b00ae6e86946a423e4b8cf910f89a95992f833072f1ce59ba97205",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "FRESH_KERNEL_EXPORT",
+      "seconds": 2.071
+    }
+  },
+  "origin_context": {
+    "kind": "INDEPENDENTLY_AUTHENTICATED_PARTIAL_MODULE_EXPORTS",
+    "job_conclusion": "failure",
+    "stop_reason": "MEMORY_GUARD_STOPPED_OWN_VERIFIER",
+    "endpoint_complete": false,
+    "post_identity_gate_passed": false,
+    "whole_zip_and_declared_member_bytes_authenticated": true,
+    "historical_source_closure_output_member_and_axiom_identities_match": true,
+    "verified_output_bytes": 1289120
+  }
+}

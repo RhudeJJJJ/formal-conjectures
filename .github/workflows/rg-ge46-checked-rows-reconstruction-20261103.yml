@@ -1,0 +1,207 @@
+name: RG original Ge46 with exact checked Bernstein rows
+on:
+  push:
+    branches: [rg-degree-one-large-20261103]
+    paths: ['.github/workflows/rg-ge46-checked-rows-reconstruction-20261103.yml']
+permissions:
+  contents: read
+  actions: read
+jobs:
+  representative:
+    name: ge46-checked-prepare
+    runs-on: ubuntu-24.04
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          persist-credentials: false
+      - name: Bind original declarations and this exact current source scope
+        run: python3 -B ci/rg_ge46_checked_rows_control.py --stage prepare --phase source
+      - name: Install the fixed project toolchain
+        run: |
+          set -o pipefail
+          curl -sSfL https://github.com/leanprover/elan/releases/download/v1.4.2/elan-x86_64-unknown-linux-gnu.tar.gz | tar xz
+          ./elan-init -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Materialize the exact dependency lock
+        run: python3 -B ci/rg_dependencies.py
+      - name: Fetch only this stage's external module cache
+        run: python3 -B ci/rg_ge46_checked_rows_control.py --stage prepare --phase cache
+      - name: Restore authenticated original prerequisites
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          python3 -B ci/rg_restore_complete_scope.py --manifest ci/rg_reusable_analytic_kernel_base_complete_scope_capsule.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_ge46_20261103_partial_original_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+      - name: Require the exact fresh frontier after authenticated restoration
+        run: python3 -B ci/rg_ge46_checked_rows_control.py --stage prepare --phase before
+      - name: Check the exact stage with unchanged kernel flags and resource guards
+        shell: bash
+        run: |
+          set -o pipefail
+          python3 -B ci/rg_ge46_checked_rows_control.py --stage prepare --phase kernel | python3 -B ci/rg_compact_ci_output.py
+      - name: Require exact original declarations and staged kernel exports
+        run: python3 -B ci/rg_ge46_checked_rows_control.py --stage prepare --phase after
+      - name: Retain completed records and every declared output member
+        if: always()
+        run: python3 -B ci/rg_collect_fresh_exports.py --build-directory Proofs/RG_Lean_20261019/build/extension --output-directory Proofs/RG_Lean_20261019/build/fresh_exports
+      - name: Preserve complete staged proof exports and diagnostics
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: rg-ge46-checked-rows-20261103-${{ github.run_id }}-${{ github.run_attempt }}-prepare
+          path: Proofs/RG_Lean_20261019/build/fresh_exports
+          retention-days: 90
+  evaluation:
+    name: ge46-checked-evaluation
+    runs-on: ubuntu-24.04
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          persist-credentials: false
+      - name: Bind original declarations and this exact current source scope
+        run: python3 -B ci/rg_ge46_checked_rows_control.py --stage evaluation --phase source
+      - name: Install the fixed project toolchain
+        run: |
+          set -o pipefail
+          curl -sSfL https://github.com/leanprover/elan/releases/download/v1.4.2/elan-x86_64-unknown-linux-gnu.tar.gz | tar xz
+          ./elan-init -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Materialize the exact dependency lock
+        run: python3 -B ci/rg_dependencies.py
+      - name: Fetch only this stage's external module cache
+        run: python3 -B ci/rg_ge46_checked_rows_control.py --stage evaluation --phase cache
+      - name: Restore authenticated original prerequisites
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          python3 -B ci/rg_restore_complete_scope.py --manifest ci/rg_reusable_analytic_kernel_base_complete_scope_capsule.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_ge46_20261103_partial_original_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+      - name: Require the exact fresh frontier after authenticated restoration
+        run: python3 -B ci/rg_ge46_checked_rows_control.py --stage evaluation --phase before
+      - name: Check the exact stage with unchanged kernel flags and resource guards
+        shell: bash
+        run: |
+          set -o pipefail
+          python3 -B ci/rg_ge46_checked_rows_control.py --stage evaluation --phase kernel | python3 -B ci/rg_compact_ci_output.py
+      - name: Require exact original declarations and staged kernel exports
+        run: python3 -B ci/rg_ge46_checked_rows_control.py --stage evaluation --phase after
+      - name: Retain completed records and every declared output member
+        if: always()
+        run: python3 -B ci/rg_collect_fresh_exports.py --build-directory Proofs/RG_Lean_20261019/build/extension --output-directory Proofs/RG_Lean_20261019/build/fresh_exports
+      - name: Preserve complete staged proof exports and diagnostics
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: rg-ge46-checked-rows-20261103-${{ github.run_id }}-${{ github.run_attempt }}-evaluation
+          path: Proofs/RG_Lean_20261019/build/fresh_exports
+          retention-days: 90
+  rows:
+    name: ge46-checked-${{ matrix.stage }}
+    needs: [representative]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 90
+    strategy:
+      fail-fast: false
+      max-parallel: 4
+      matrix:
+        stage: [row00, row01, row02, row03, row04, row05, row06, row07, row08, row09, row10, row11, row12, row13, row14, row15, row16, row17, row18, row19, row20, row21, row22, row23]
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          persist-credentials: false
+      - name: Bind original declarations and this exact current source scope
+        run: python3 -B ci/rg_ge46_checked_rows_control.py --stage "${{ matrix.stage }}" --phase source
+      - name: Install the fixed project toolchain
+        run: |
+          set -o pipefail
+          curl -sSfL https://github.com/leanprover/elan/releases/download/v1.4.2/elan-x86_64-unknown-linux-gnu.tar.gz | tar xz
+          ./elan-init -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Materialize the exact dependency lock
+        run: python3 -B ci/rg_dependencies.py
+      - name: Fetch only this stage's external module cache
+        run: python3 -B ci/rg_ge46_checked_rows_control.py --stage "${{ matrix.stage }}" --phase cache
+      - name: Restore authenticated original prerequisites
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          python3 -B ci/rg_restore_complete_scope.py --manifest ci/rg_reusable_analytic_kernel_base_complete_scope_capsule.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_ge46_20261103_partial_original_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+      - name: Require the exact fresh frontier after authenticated restoration
+        run: python3 -B ci/rg_ge46_checked_rows_control.py --stage "${{ matrix.stage }}" --phase before
+      - name: Check the exact stage with unchanged kernel flags and resource guards
+        shell: bash
+        run: |
+          set -o pipefail
+          python3 -B ci/rg_ge46_checked_rows_control.py --stage "${{ matrix.stage }}" --phase kernel | python3 -B ci/rg_compact_ci_output.py
+      - name: Require exact original declarations and staged kernel exports
+        run: python3 -B ci/rg_ge46_checked_rows_control.py --stage "${{ matrix.stage }}" --phase after
+      - name: Retain completed records and every declared output member
+        if: always()
+        run: python3 -B ci/rg_collect_fresh_exports.py --build-directory Proofs/RG_Lean_20261019/build/extension --output-directory Proofs/RG_Lean_20261019/build/fresh_exports
+      - name: Preserve complete staged proof exports and diagnostics
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: rg-ge46-checked-rows-20261103-${{ github.run_id }}-${{ github.run_attempt }}-${{ matrix.stage }}
+          path: Proofs/RG_Lean_20261019/build/fresh_exports
+          retention-days: 90
+  final:
+    name: ge46-checked-final
+    needs: [representative, evaluation, rows]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 360
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          persist-credentials: false
+      - name: Bind original declarations and this exact current source scope
+        run: python3 -B ci/rg_ge46_checked_rows_control.py --stage final --phase source
+      - name: Install the fixed project toolchain
+        run: |
+          set -o pipefail
+          curl -sSfL https://github.com/leanprover/elan/releases/download/v1.4.2/elan-x86_64-unknown-linux-gnu.tar.gz | tar xz
+          ./elan-init -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Materialize the exact dependency lock
+        run: python3 -B ci/rg_dependencies.py
+      - name: Fetch only this stage's external module cache
+        run: python3 -B ci/rg_ge46_checked_rows_control.py --stage final --phase cache
+      - name: Restore authenticated original prerequisites
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          python3 -B ci/rg_restore_complete_scope.py --manifest ci/rg_reusable_analytic_kernel_base_complete_scope_capsule.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_ge46_20261103_partial_original_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+      - name: Authenticate all completed row archives and retain their exact origins
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 -B ci/rg_ge46_checked_rows_control.py --stage final --phase restore
+      - name: Require the exact fresh frontier after authenticated restoration
+        run: python3 -B ci/rg_ge46_checked_rows_control.py --stage final --phase before
+      - name: Check the exact stage with unchanged kernel flags and resource guards
+        shell: bash
+        run: |
+          set -o pipefail
+          python3 -B ci/rg_ge46_checked_rows_control.py --stage final --phase kernel | python3 -B ci/rg_compact_ci_output.py
+      - name: Require exact original declarations and staged kernel exports
+        run: python3 -B ci/rg_ge46_checked_rows_control.py --stage final --phase after
+      - name: Retain completed records and every declared output member
+        if: always()
+        run: python3 -B ci/rg_collect_fresh_exports.py --build-directory Proofs/RG_Lean_20261019/build/extension --output-directory Proofs/RG_Lean_20261019/build/fresh_exports
+      - name: Preserve complete staged proof exports and diagnostics
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: rg-ge46-checked-rows-20261103-${{ github.run_id }}-${{ github.run_attempt }}-final
+          path: Proofs/RG_Lean_20261019/build/fresh_exports
+          retention-days: 90
+      - name: Preserve the complete authenticated parent-origin collection
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: rg-ge46-checked-rows-parent-evidence-${{ github.run_id }}-${{ github.run_attempt }}
+          path: Proofs/RG_Lean_20261019/build/ge46_checked_rows_parent_exports
+          retention-days: 90

@@ -1,0 +1,3985 @@
+{
+  "kind": "EXACT_ORIGINAL_GE46_CHECKED_BERNSTEIN_ROWS",
+  "mathlib": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "leancert": "621a43d7cf21f87872392a01e874f2f1dbddc926",
+  "lean_version": "4.33.1",
+  "workers": 1,
+  "module_timeout": 1200,
+  "memory_reserve_mib": 2048,
+  "source_base_commit": "52f26cc754cfd9ed4cb9618fde3f05bb65ea1229",
+  "endpoint": "Proofs.RadenkovicGutmanOriginalDegreeGeFortysix",
+  "base_manifest": "ci/rg_reusable_analytic_kernel_base_complete_scope_capsule.json",
+  "base_manifest_sha256": "ecec5dc115eca93fdfadf72072bfb9d13c85c5d36191b31738d4295d9305d6a3",
+  "partial_manifest": "ci/rg_ge46_20261103_partial_original_exports.json",
+  "partial_manifest_sha256": "2c6636e12b6c6b3419a76754cb7a682614572c7e72498bcf5decf251aced7319",
+  "historical_reference": "ci/rg_original_degree_ge46_20261103_historical_reference.json",
+  "historical_reference_sha256": "e44a2df70f7888c1e608802a5272b3367618e4cc4ebf6df209195bc6d5b418f9",
+  "declarations_manifest": "ci/rg_ge46_checked_rows_declarations_20261103.json",
+  "declarations_manifest_sha256": "a7f23340aaf2a8570ee67b83448f2161c1ced5279528fa69a7220b5670ac4b56",
+  "required_module_count": 178,
+  "new_and_recompiled_module_count": 91,
+  "source_graph": {
+    "Proofs.RadenkovicGutmanActualFusionIntegral": {
+      "source_sha256": "909981a2b0872bdb1701ce68145af1234f25c127b849b6d5c7ad87b8d9eecae3",
+      "source_closure_sha256": "94d192281e7d44facdb32cfe3d0972e830f37b16fb48dd412a33e97cc1642baf"
+    },
+    "Proofs.RadenkovicGutmanArmBridge": {
+      "source_sha256": "dbe29009159ad77cc551e19ad5a02816252cffabe171a6c3a89ed6ab9fb059ba",
+      "source_closure_sha256": "5c5424acf5a7ff6d26b30c4915091e139c5a3f7556b5c2b44c09e21408ed1cfe"
+    },
+    "Proofs.RadenkovicGutmanArmClasses": {
+      "source_sha256": "fbcbd66c3174524e4eca1925101fa8e22db0f641adf45a1076079bcfbc418d70",
+      "source_closure_sha256": "f5eae1c492b58eaa7c812a5d5116acf10815c41ee25f7be9552ee85470c91eb1"
+    },
+    "Proofs.RadenkovicGutmanArmEmbedding": {
+      "source_sha256": "a67925799555e93e2fd9b11efadd721ca12400b2045deac2afebcefe86538538",
+      "source_closure_sha256": "a447e236450e45c1a7af92fb7d74976fa5948748a2b40970336711f55fc06c24"
+    },
+    "Proofs.RadenkovicGutmanArmRationalForm": {
+      "source_sha256": "dbaa3d598747bf4c372f51f0b12876a1bd64b3ea0311134d33434800444024db",
+      "source_closure_sha256": "2c4519d93254442cfe325bd4a0d7b6663865ac881671ce63e11c22943913ee6a"
+    },
+    "Proofs.RadenkovicGutmanBernstein": {
+      "source_sha256": "24c6563f685e7ea5304b5d8563e055c526842c1131beb6c4551a3857f5d081fa",
+      "source_closure_sha256": "67a2c6c66542a152a60a93aaa4e388b808dbdf61b4e29a3c97f08529b5a89bc9"
+    },
+    "Proofs.RadenkovicGutmanCheckedRoots": {
+      "source_sha256": "a34251570fad7db92c412bde79b9c288c7be279efe505d69a8b0ea0b1f914539",
+      "source_closure_sha256": "eadad13857374b0415bf2b9b1f2d4e0ad8e87c19c7ac3aec852c286738458bf7"
+    },
+    "Proofs.RadenkovicGutmanClassCellCertificates": {
+      "source_sha256": "8c6b27efc12c7f2793178bb5ab54cab001118002e58de2939532eecb7ddd43c5",
+      "source_closure_sha256": "c7e9d33c65261296e884b5eeb46261664fba23d449c7433d62b5976aeed9a61a"
+    },
+    "Proofs.RadenkovicGutmanClassEnvelope": {
+      "source_sha256": "83ea92358fa4634ef4823f3ecfd8eb9217a2015e55e962f6e2b3527404bb9b89",
+      "source_closure_sha256": "d4f138f80530b6ca4bc294ad80dbd42840704d23d5c56247f80e168ddc1c7a83"
+    },
+    "Proofs.RadenkovicGutmanClassNormPolynomials": {
+      "source_sha256": "e46a6ae7f4baac9e2a64019785d405d37a156282ec237f788028ac21e75a0bab",
+      "source_closure_sha256": "3c6f72d6538c9ac6a8a464f9ebd311e96900da1460246dccd3698fe122818e3b"
+    },
+    "Proofs.RadenkovicGutmanComputedClassCell": {
+      "source_sha256": "b358f479edb66e979eaa67c3a63ac04c10ea117a6c6585ffeab577476f9028c4",
+      "source_closure_sha256": "56a3526cb2bbc8b7b3c9fb6b178c8fa140317f3f932e89e91d163eb67407fd29"
+    },
+    "Proofs.RadenkovicGutmanConcreteGraphQuotient": {
+      "source_sha256": "ee234356bf07576cf303c00b0762c6e490a8291b1c0a93e5c1b5cc7f7fa2bb6e",
+      "source_closure_sha256": "b7642355a4f742bdb07fc31accc9d5bf911e43b93e17039399a0e60591f84d14"
+    },
+    "Proofs.RadenkovicGutmanCoreQuotient": {
+      "source_sha256": "9a73956ea3e17c97208ee5522dc73d9feb2b5f209e5d707ef19d64bade8d3d82",
+      "source_closure_sha256": "e4ae07f61d2620d98311434d9bbb551f6f036435a6ab8285907d68eab42186d5"
+    },
+    "Proofs.RadenkovicGutmanCorrelatedEscape": {
+      "source_sha256": "fa16ce79eb83ca7786a69674b9c9dc4b4bb3a7ea02c17512e1b1ec70cf4c0edf",
+      "source_closure_sha256": "f35056083b4f4b3b26cf2efb84539f0a348f0dc2f3bb02f1b2e01bf58ba44a84",
+      "require_historical_output_identity": true,
+      "original_axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ]
+    },
+    "Proofs.RadenkovicGutmanCorrelatedEscapeReduction": {
+      "source_sha256": "a9db5dbc4d0ff6de29aabbf26d27db43cd65f42780552bce596e0d50c0332333",
+      "source_closure_sha256": "718066651f2e8b593ef403be168001555e16d0318bf6ad3e92d05ef32cadda7c",
+      "require_historical_output_identity": true,
+      "original_axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ]
+    },
+    "Proofs.RadenkovicGutmanCoulson": {
+      "source_sha256": "4c91db9f8c55b6211a8ad1895eb4a35d6d68afd8e96e43d628f8d56a1b69a0e1",
+      "source_closure_sha256": "a85d2ce7840d0fb0029ef7eeac68d37cdd203bcc0942dfa89c91875d93ff7f36"
+    },
+    "Proofs.RadenkovicGutmanCountGap": {
+      "source_sha256": "17eefcfd9580f0df92eb9c1ce4dded759fd575602c6e53f57263ab4613f84d6e",
+      "source_closure_sha256": "e094d2590497c077143917af18a459f1b8bdc8324157118d3d2871fc65c65262"
+    },
+    "Proofs.RadenkovicGutmanCountTransport": {
+      "source_sha256": "700a56e67a26d218c655c148a04bdfb5820f06dc8f08fd49f6109d42b803bf43",
+      "source_closure_sha256": "4f622b9ce2fd5ffb47ad6145be10f8e6d0d757854b5e3c5974ec55a2ae199997"
+    },
+    "Proofs.RadenkovicGutmanEscapeFactorSigns": {
+      "source_sha256": "e7923b8e72b18e3802fbfc6c2f4c96451662bf799de71d261a3e8efee33084b0",
+      "source_closure_sha256": "994188526cce8f89c5a63e1bb77334ddd6622b27cf58d62878b158a09059db1b",
+      "require_historical_output_identity": true,
+      "original_axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ]
+    },
+    "Proofs.RadenkovicGutmanEscapeReducedDirected": {
+      "source_sha256": "7120f0dc25444b1ee41c6261df84a4dc35d625f112b3626fa9d13b2363c8fcb4",
+      "source_closure_sha256": "bc6eace624fe3c370d92948ec2f2fbf3ecb9bd7105ecaa0e223cdcce4fe39e19",
+      "require_historical_output_identity": true,
+      "original_axiom_profiles": [
+        [
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ]
+    },
+    "Proofs.RadenkovicGutmanEscapeReducedDirectedIdentity": {
+      "source_sha256": "413db818651131e078e2f0526a78d19cab5196f738388c59a3aeddc309d62300",
+      "source_closure_sha256": "ba5c71c8371fa98079f438b62068754556d6493695eaa77c93faac64eec43de6",
+      "require_historical_output_identity": true,
+      "original_axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ]
+    },
+    "Proofs.RadenkovicGutmanEscapeReducedReserve": {
+      "source_sha256": "26135477ffa18dc9b30dea9bcff99ebb8f64027ea1a8736fb5833a11f7fdedbc",
+      "source_closure_sha256": "cf11eaea8ae0aad8af9085f36bbe3e15569481523f893bc6c0a9913e631d58bb",
+      "require_historical_output_identity": false,
+      "original_axiom_profiles": [
+        [
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ]
+    },
+    "Proofs.RadenkovicGutmanEscapeReducedReserveAcceptance": {
+      "source_sha256": "e855c5a92d39e85fdb8145a052bdf441a465ac1f7459aa97f7298b5e435493c8",
+      "source_closure_sha256": "fe65e8ab4333493c24f1da3eaee3807eab229f19c03806b429609b8b6de7989a"
+    },
+    "Proofs.RadenkovicGutmanEscapeReducedReserveData": {
+      "source_sha256": "6b5d9e8a915a69f38dbcab0f7f9d17181293bcc056fee047aaa516aac58c6e6a",
+      "source_closure_sha256": "83412759d01399e4dc15f54b4e02a001460ab179d8be91af9d505c20bb43aa3c"
+    },
+    "Proofs.RadenkovicGutmanEscapeReducedReserveEvaluation": {
+      "source_sha256": "a3fb2ec493807b7f8a0a6b770fb447d8c07d5d02992ce50a90c5fe440c5f7181",
+      "source_closure_sha256": "0bb1feca65036ca01b04ef62c6daa4c285e527f13a6408070e609405df591596"
+    },
+    "Proofs.RadenkovicGutmanEscapeReducedReserveIdentity": {
+      "source_sha256": "0e1e51cca0f846dd91e9a3a1cdbc011d0bd6f1605b553bffb669a9716ebf771e",
+      "source_closure_sha256": "ae3c41d29d7ba141d0fac9d73f918521b8a7513b0f80f742e109e3df56785dd6",
+      "require_historical_output_identity": false,
+      "original_axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ]
+    },
+    "Proofs.RadenkovicGutmanEscapeReducedReserveRow00": {
+      "source_sha256": "f0bc913de0627055cfca09a40affc7e6f8d5b8be6db27ee935b96c9ae47e92a6",
+      "source_closure_sha256": "aa75bc8316d930f5fede44e317e6078f87f40e4a481068ff0fc2e96339bc015b"
+    },
+    "Proofs.RadenkovicGutmanEscapeReducedReserveRow01": {
+      "source_sha256": "ad03b42a96c0504e0a867b5736a4d450334652d5c9846659e78fb9438ba98ef5",
+      "source_closure_sha256": "17d40650d8c2b442d94dca47de1a3e62bab46349e535f86c4714c1e2f341995e"
+    },
+    "Proofs.RadenkovicGutmanEscapeReducedReserveRow02": {
+      "source_sha256": "cbfbbeed5bce3516da430d51d52097d964ce6107026c4291203ca1c982445b66",
+      "source_closure_sha256": "6940e069494d8458724a12cc55eb1a4d53861e70526dc2493e3ce21415ba1ac2"
+    },
+    "Proofs.RadenkovicGutmanEscapeReducedReserveRow03": {
+      "source_sha256": "1b6610c581fd8634cb9a982e0eddfb5f18a092b273aec2ee86e1c73248a85d26",
+      "source_closure_sha256": "2fa6b78b49e63b54a4a566cc6870fdd534d3144cd1ff7e674fa6a85cae81d424"
+    },
+    "Proofs.RadenkovicGutmanEscapeReducedReserveRow04": {
+      "source_sha256": "ef12f6e09e1ec42498d611e33f148add6f12812d2c7197ddef0273266e955c6e",
+      "source_closure_sha256": "0994cdf5b1c5fc7cdb6bbacbe6cbe1ee841a4ca0c580f7f049d8e91dad535af0"
+    },
+    "Proofs.RadenkovicGutmanEscapeReducedReserveRow05": {
+      "source_sha256": "f78f04e12ece9b3e47d6bb6b57aba5834950a09e91fded787800a0b87ee2edf1",
+      "source_closure_sha256": "c08620616abc7714638088ceafce86e7bef12e6fa0329d38d5c126963ce4efe9"
+    },
+    "Proofs.RadenkovicGutmanEscapeReducedReserveRow06": {
+      "source_sha256": "3a473e89d9fefc84f3421b1a2a96b7ca86623e882035d51f0146d4fa05edc0df",
+      "source_closure_sha256": "4d771b398e47cec5437214dfdb2db522d5ccc5396d1393f88201ec58bd85eade"
+    },
+    "Proofs.RadenkovicGutmanEscapeReducedReserveRow07": {
+      "source_sha256": "2251b0b342b41078ce11a4377d5aa7b4448ef9fdb72c639925387a64e0e1c39e",
+      "source_closure_sha256": "80cecdb1c21e9b31e6397dd6a75bf567597eda774733a35840e04e40ce3e4f3b"
+    },
+    "Proofs.RadenkovicGutmanEscapeReducedReserveRow08": {
+      "source_sha256": "c31aac65dfcb6cd936a4d7da57115b5ca9fa66045754e82805e97dc715e8fc88",
+      "source_closure_sha256": "d4aa5021787846f886565b6aa637bffd935b4797a01cf419fbd61c6293241192"
+    },
+    "Proofs.RadenkovicGutmanEscapeReducedReserveRow09": {
+      "source_sha256": "4f8221329a3b76c8e74081b5af1012e09e6d8a2d2cd0e5e1a65d16c4bb70147c",
+      "source_closure_sha256": "dd3fbd875f9194133883389402071ac75a7d37e84ab5893d51bd0b5f7d89b348"
+    },
+    "Proofs.RadenkovicGutmanEscapeReducedReserveRow10": {
+      "source_sha256": "43a54d76b3b9ba5580c311cab93eb9136d1aed8f99207982bfa4261778a64a99",
+      "source_closure_sha256": "df2f3e8b50b9f7d3c130f2fbf9bc00b1e3365607193a096437d9dbbad4b2cbc7"
+    },
+    "Proofs.RadenkovicGutmanEscapeReducedReserveRow11": {
+      "source_sha256": "9e3728f834f435d7ce138702e3ba6b14dddfce7f72b9d39337b9ee8c25a4ca37",
+      "source_closure_sha256": "06c0da085e4228bf9758c5dc49fcb1a9d38ab1978e28dc6c1540924390baf375"
+    },
+    "Proofs.RadenkovicGutmanEscapeReducedReserveRow12": {
+      "source_sha256": "aa1ab821e41a21802c55bfb62341c604cbb77b3849ce9cc1b3632d3fd7380058",
+      "source_closure_sha256": "8de638e5cd66c5503f59b88f8618cba70ed9747d06a0e9a1327dec42bae978b7"
+    },
+    "Proofs.RadenkovicGutmanEscapeReducedReserveRow13": {
+      "source_sha256": "013f8be8f9994cae18c65ce92218dfdf3c73708a0e258b008e1306560a956674",
+      "source_closure_sha256": "fbe3615b1a196ecb0719975dcdd042db2d38b63d26b3a7acda257cc149cea2bf"
+    },
+    "Proofs.RadenkovicGutmanEscapeReducedReserveRow14": {
+      "source_sha256": "983dd5ab6769b42202a1a67e13c6f54a0ad3249ac445e688419297d3ea4992d0",
+      "source_closure_sha256": "d668ef2f291c98f98e3d380bfbfd533b84f6859703553d2810f626586232d110"
+    },
+    "Proofs.RadenkovicGutmanEscapeReducedReserveRow15": {
+      "source_sha256": "5290322206167c8df47258013c2c12b0dc29d6c90e44af1055a356824306bd44",
+      "source_closure_sha256": "439e43b2d3ff0c278aabf02852b7987f4445ad071df98a0e2774ff0a0f2269ce"
+    },
+    "Proofs.RadenkovicGutmanEscapeReducedReserveRow16": {
+      "source_sha256": "f97a2fc22d670ba1c7f82d7497c5c37857c5922be078266f6a0fb618ab862387",
+      "source_closure_sha256": "78f1c782d012fe5478303bc1c8782f68e18d4718df9c777fe2a65c6272818c27"
+    },
+    "Proofs.RadenkovicGutmanEscapeReducedReserveRow17": {
+      "source_sha256": "8c12c79b707322f26d104d4c97cb46a849f58aaa75550007503b58a4927ccec6",
+      "source_closure_sha256": "2586e76a289dd5ada8ace9d96a70bcf724fbcd36c016a3be8677eef81b39a886"
+    },
+    "Proofs.RadenkovicGutmanEscapeReducedReserveRow18": {
+      "source_sha256": "9f5a6e26ab8e23ec3d85fd0ab3c621f5ca3503d811f26e54492de54b26d71a3e",
+      "source_closure_sha256": "78a9c4d6ab983d86307805715e56000a0597e210766eff347a5fea80072d5876"
+    },
+    "Proofs.RadenkovicGutmanEscapeReducedReserveRow19": {
+      "source_sha256": "113b74c405b53c7946427c7d3d943bec3023a13e059f755debf31cb279e7d2f6",
+      "source_closure_sha256": "5d94c9b5d1c8adc7c9858963bc8079b94f59a7d87c229f7091881d4f29717e62"
+    },
+    "Proofs.RadenkovicGutmanEscapeReducedReserveRow20": {
+      "source_sha256": "2e6d7197d601618d88ac08e87e9a1eb2eb0b2329232db632ab905ba398b6020a",
+      "source_closure_sha256": "fbc78ff79ad2c7fbec290e4c8fa6329f3877364dcbf61cdac4c91224b35a0061"
+    },
+    "Proofs.RadenkovicGutmanEscapeReducedReserveRow21": {
+      "source_sha256": "d60a1c5c50c8ea4464c2e6dbd8dfadb3862489b34882ce1b8e9bc00538b1e9db",
+      "source_closure_sha256": "c5cab8ba3eb530a59f94bebee6fcb1c153c305f2a6294bd35bbf2850ff18f52b"
+    },
+    "Proofs.RadenkovicGutmanEscapeReducedReserveRow22": {
+      "source_sha256": "ac9a25b81e5208490a6cf14d83e89c30300b77077d02433979b2e7ebc97c3c6c",
+      "source_closure_sha256": "1503599ee04b5fedef794b83fb2e1dcc4ceccae125c7395cd64203c043c15a5e"
+    },
+    "Proofs.RadenkovicGutmanEscapeReducedReserveRow23": {
+      "source_sha256": "332a50999d82f0287048a04bf159972de9bc97315eb231c565943d8802636821",
+      "source_closure_sha256": "96eb105a85587bb55e3da977d21f491e13917fa14b8efd1e7b9218c6e20861e8"
+    },
+    "Proofs.RadenkovicGutmanEscapeReducedReserveRow24": {
+      "source_sha256": "a269e412c0a33ddb57401e9fe4a472265d09de91725e736e138e7ca24a7be539",
+      "source_closure_sha256": "2a98b0e5274c281434600c44d53d412a57fa3ae62bd2c8d94e09ceda8c1a9199"
+    },
+    "Proofs.RadenkovicGutmanEscapeReserveAffineRow00": {
+      "source_sha256": "a6fb32c750e51356b7336fbbeca740be8d041462e156d748162f19dea214cf57",
+      "source_closure_sha256": "5f61bf6a086de518be8d9cfa0a6b3cf675cf5ceddb9937a646f7d7c052dd3210",
+      "require_historical_output_identity": false,
+      "original_axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ]
+    },
+    "Proofs.RadenkovicGutmanEscapeReserveAffineRow01": {
+      "source_sha256": "c8f84c75b3e1155fa5a24b391d2a53e1e784ee5007bf982e9738420fa19f24e6",
+      "source_closure_sha256": "3eba5763354e8ad4bd59b05f4d0f0822972304e98adaa61098310ab7798985b4",
+      "require_historical_output_identity": false,
+      "original_axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ]
+    },
+    "Proofs.RadenkovicGutmanEscapeReserveAffineRow02": {
+      "source_sha256": "f4d7d030c95e1de2ac85600bbcbeed56ec593889336085409cfdba4f1f2fa9aa",
+      "source_closure_sha256": "1acb31fed6c6a75d0971b5ae04962abc82dc8ade5fd3c861a7ead8a8b8a63548",
+      "require_historical_output_identity": false,
+      "original_axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ]
+    },
+    "Proofs.RadenkovicGutmanEscapeReserveAffineRow03": {
+      "source_sha256": "05dd8a71ce8070d6c814b410fd3184fd6fb0cee4ebd936298af8cb3262eaa821",
+      "source_closure_sha256": "c194d59ac97060a9a4892bec8e8dea4b23d34fa794520abcbf08f85d69b5b936",
+      "require_historical_output_identity": false,
+      "original_axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ]
+    },
+    "Proofs.RadenkovicGutmanEscapeReserveAffineRow04": {
+      "source_sha256": "4b7f58db3bc1b730bda0e9926459347b01e254a7c63e518fa491dd37e2da81ac",
+      "source_closure_sha256": "60c1af2d15986c341ef5c9289b40240a93ad1441c387e0f0f925fefd94aa03d3",
+      "require_historical_output_identity": false,
+      "original_axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ]
+    },
+    "Proofs.RadenkovicGutmanEscapeReserveAffineRow05": {
+      "source_sha256": "64dfe5d7f5c718929d388ed48ec27fc8a5a1404a76c1927259a4a7ce7dcd1d2e",
+      "source_closure_sha256": "f78a310b2838406f97ca2c1274b2fa10fb2f7ddf873a2574405f498b303ae07a",
+      "require_historical_output_identity": false,
+      "original_axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ]
+    },
+    "Proofs.RadenkovicGutmanEscapeReserveAffineRow06": {
+      "source_sha256": "bdb7a6dffabbba8284101063d9bb92074e636060c6f6529357b76e4448792309",
+      "source_closure_sha256": "0f5df7f184be28dea84eff0af175b751e4937d8bfd4d1a9ab0e5dc7bd1c28897",
+      "require_historical_output_identity": false,
+      "original_axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ]
+    },
+    "Proofs.RadenkovicGutmanEscapeReserveAffineRow07": {
+      "source_sha256": "6b3c1043d8f134a62b37c815d87911ac11ea53580ff5d2d6075b7366948d5eda",
+      "source_closure_sha256": "baa8838de0803e7160559a2223fb75f9083a8c2573c7f8439260003a5798f142",
+      "require_historical_output_identity": false,
+      "original_axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ]
+    },
+    "Proofs.RadenkovicGutmanEscapeReserveAffineRow08": {
+      "source_sha256": "233dc7bc26cc93e2a56ea89d18091553f11cc33d3feca1d04dab27825a2bd69c",
+      "source_closure_sha256": "52cc0101d4d6769df8c71d2eeea4814f42efd11fd76d9cd005d9515d58fe8094",
+      "require_historical_output_identity": false,
+      "original_axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ]
+    },
+    "Proofs.RadenkovicGutmanEscapeReserveAffineRow09": {
+      "source_sha256": "0ec7d01378fd90cd55d630e3e1858d9e297f7f496ba829be75dcb62ad49dd048",
+      "source_closure_sha256": "86ccb446460bbff602d85517cdf9919c0e9a38d308940a3626550601561a59b1",
+      "require_historical_output_identity": false,
+      "original_axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ]
+    },
+    "Proofs.RadenkovicGutmanEscapeReserveAffineRow10": {
+      "source_sha256": "7563af7ed27c6b4e848c604f9dc9ae322206a30cd8bea0cd5d89a714eb0099c8",
+      "source_closure_sha256": "e368d2e0fe5aa49ca6dfb138474195264932fc2be25f3b14d1f1ce5993574c19",
+      "require_historical_output_identity": false,
+      "original_axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ]
+    },
+    "Proofs.RadenkovicGutmanEscapeReserveAffineRow11": {
+      "source_sha256": "959b12d3f3b7e2783f0a987af7e912715864b292c2401e49e652205c48b6499e",
+      "source_closure_sha256": "a58f7147a3e5bd82411f841db9385c2f2a6cb4c634b2fcf5386608dc9f10cabb",
+      "require_historical_output_identity": false,
+      "original_axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ]
+    },
+    "Proofs.RadenkovicGutmanEscapeReserveAffineRow12": {
+      "source_sha256": "945f056c1f674da8d53b074bc6454d2bca4cfcf9833fa71a7795684e0b23d82c",
+      "source_closure_sha256": "9c1490cd070c6f09bec2237e9841de765f6a66cc32a41c623d38bac3ace5742c",
+      "require_historical_output_identity": false,
+      "original_axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ]
+    },
+    "Proofs.RadenkovicGutmanEscapeReserveAffineRow13": {
+      "source_sha256": "004fc0befa78ec924c9d580ace577cc6a420d2fe990545a04d1b03257dbf4d75",
+      "source_closure_sha256": "5ea8e9acf428b74c77582bd39303b62498cccbfa986a1b3307f9d1a4612b4ddb",
+      "require_historical_output_identity": false,
+      "original_axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ]
+    },
+    "Proofs.RadenkovicGutmanEscapeReserveAffineRow14": {
+      "source_sha256": "5455c20b146b4a30bf0bc9939cc08190078fc47c3ac19aaff22f209756492dfd",
+      "source_closure_sha256": "faa0460e5c58ab75e5655393e08f80e597899abfd6bc1aeb7f178d0f6a214f26",
+      "require_historical_output_identity": false,
+      "original_axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ]
+    },
+    "Proofs.RadenkovicGutmanEscapeReserveAffineRow15": {
+      "source_sha256": "9ccff6aeecee79591bcad759c2ed26827b078c00702ee969239e36bd9fa3a50b",
+      "source_closure_sha256": "9eabbf344d0574585a35bd28307f694be44f2d38e31ed9c01a0ca0e20ac2300a",
+      "require_historical_output_identity": false,
+      "original_axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ]
+    },
+    "Proofs.RadenkovicGutmanEscapeReserveAffineRow16": {
+      "source_sha256": "df37c7c9850fd047ce484d68e4a8db1174056366799c9960cd53f29318f3f0e2",
+      "source_closure_sha256": "191d4b05968b3f5bdd9d43ad69e5f81cb3d09d0f81a01f6cf96ca593aa78315c",
+      "require_historical_output_identity": false,
+      "original_axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ]
+    },
+    "Proofs.RadenkovicGutmanEscapeReserveAffineRow17": {
+      "source_sha256": "9624572d7f3b2cae4fb6beb277281cc1eebee288656874f6026258baf1f1adde",
+      "source_closure_sha256": "9dc7eddbd67d4f4f16a283eba83ab1063e9aaf0e911e1e8851f875b591d529a8",
+      "require_historical_output_identity": false,
+      "original_axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ]
+    },
+    "Proofs.RadenkovicGutmanEscapeReserveAffineRow18": {
+      "source_sha256": "1edbd92d000f98676b763f595edc0924c89d9c8890f7b369c22a7c17e2c45be9",
+      "source_closure_sha256": "d6196bcf834020164f23440baa772f2d643f963078580378449bd637f0119f1b",
+      "require_historical_output_identity": false,
+      "original_axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ]
+    },
+    "Proofs.RadenkovicGutmanEscapeReserveAffineRow19": {
+      "source_sha256": "9a5fd808f2c4397397177753f8a7a7339e6603e8aa671f24452bc4cda841e5b3",
+      "source_closure_sha256": "ae4bb0677b1766f2a1d6f8fce92e79c237334b8d0822b251ba78bdee2f10e1c3",
+      "require_historical_output_identity": false,
+      "original_axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ]
+    },
+    "Proofs.RadenkovicGutmanEscapeReserveAffineRow20": {
+      "source_sha256": "c8827fd82e715dc1abb38d197919ae8bf1b1e42a95eb3d8c81fe72e8a6b920a7",
+      "source_closure_sha256": "24a46465bc7e0116d5d461227eaccb4c5163bd46297873391f7e750e0266ff33",
+      "require_historical_output_identity": false,
+      "original_axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ]
+    },
+    "Proofs.RadenkovicGutmanEscapeReserveAffineRow21": {
+      "source_sha256": "0524830d7268952ef510acd55e684a81934aab27a4fb6b492471d3bfdcbd02ca",
+      "source_closure_sha256": "2bcdae54d9c4779ea648d01f1369cabd54fda962946196a1fde44dc8b0299752",
+      "require_historical_output_identity": false,
+      "original_axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ]
+    },
+    "Proofs.RadenkovicGutmanEscapeReserveAffineRow22": {
+      "source_sha256": "5938f353d68a29f0629a5ec0312bdec70f8bb8e6faae4527e02175ed8ac7b84b",
+      "source_closure_sha256": "4b68a0f09f6ef24cfa338556b96dd1383ee8114b21214857bc272f3be23e7c94",
+      "require_historical_output_identity": false,
+      "original_axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ]
+    },
+    "Proofs.RadenkovicGutmanEscapeReserveAffineRow23": {
+      "source_sha256": "67289d0920128b734e6d5a6cf420ab9ee087c9a3695ccb97e22757caee4ae1ca",
+      "source_closure_sha256": "4cb4b0294fa4ae13e2b1571e57e85a98a7d5bb5739be3ba4dc4fe5a93e71cd3a",
+      "require_historical_output_identity": false,
+      "original_axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ]
+    },
+    "Proofs.RadenkovicGutmanEscapeReserveAffineRow24": {
+      "source_sha256": "260b85841b62e158c118f645483f6a26ef8e59617be4817ba1b39c2058c8e36d",
+      "source_closure_sha256": "54e4a5a690439f6a1f1f585e877a7c704ff568ec89e280e3241ed600609b98c4",
+      "require_historical_output_identity": false,
+      "original_axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ]
+    },
+    "Proofs.RadenkovicGutmanEscapeReserveBalanced": {
+      "source_sha256": "88ff6c3ad4deb33329e67f90bef527d425287cf15d888bd7dd72887eb7c4fe8f",
+      "source_closure_sha256": "f107a5c77dc11e2d2db9342f54814dcbf73d6e6065493881b4955d959f5d407b",
+      "require_historical_output_identity": true,
+      "original_axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ]
+    },
+    "Proofs.RadenkovicGutmanEscapeReserveRawAffine": {
+      "source_sha256": "b1e3efdb4b5ebb7775ec81b6247cb5183de10644e589d569989d6cddb5f68a58",
+      "source_closure_sha256": "b43a2890efb6f1f738c7ffa0ccb2a92ba6340286d294148e5949db58f2952a3f",
+      "require_historical_output_identity": false,
+      "original_axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ]
+    },
+    "Proofs.RadenkovicGutmanEscapeReserveRawBalancedIdentity": {
+      "source_sha256": "592370d0a0f54d0f5ffe6a964b2618ed1c4b07de61157d7d46a6ca1ab6f9fca1",
+      "source_closure_sha256": "caf07dd4bb02c1e6a05d8337a7d8ce9e040de73b3d7b5ff3342b5b8523d982a8",
+      "require_historical_output_identity": true,
+      "original_axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ]
+    },
+    "Proofs.RadenkovicGutmanEscapeReserveRawData": {
+      "source_sha256": "681841acd5eceede2fc95dc4cb1591b57426792d39a0a82bc52abfaeab42f88a",
+      "source_closure_sha256": "191c4754d6e5832ae9fbf12736e2f0431aabde3ee9aaa01c4168e7871b1f0b8f",
+      "require_historical_output_identity": true,
+      "original_axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ]
+    },
+    "Proofs.RadenkovicGutmanFastNestedCellData": {
+      "source_sha256": "e57b5f4074f43a3975b6a5699432ab9179a5c5fa92464115e465fb1daa8292f4",
+      "source_closure_sha256": "6bf36511fb3ed48c80d88575175c9e9d7175ca22fd510b7b1986f67a957a477c"
+    },
+    "Proofs.RadenkovicGutmanFastNestedClassBoxes": {
+      "source_sha256": "7536bd92d9a4ee14214474e1787c014a03972f10e724dc00b08b7d2a8b8229d2",
+      "source_closure_sha256": "2124bf9d27f8c7459da887b4a8154248c6eb632465264a16d16bdb707df57efc"
+    },
+    "Proofs.RadenkovicGutmanFocus": {
+      "source_sha256": "730091016e9fce76e3f791ef26e4d09cc8c64c0c2bbb42e154788e37f1f874e3",
+      "source_closure_sha256": "3e2c21b6badfbc92f20f9799136d6361e4f62b8fdaa189c9191f1c074b2d905b"
+    },
+    "Proofs.RadenkovicGutmanForkResidual": {
+      "source_sha256": "52b708273156266900ce1b5150ab47fef4661c2c588637ee7ef2a28eeca272d2",
+      "source_closure_sha256": "e69192082ae34ffd965ee83654d024ddf985cb9fe477fe1139c33fbc892adac2"
+    },
+    "Proofs.RadenkovicGutmanFourVertexSpectrum": {
+      "source_sha256": "bc4c525182d0e46627d4e8a8db327272123fce92560f1d950d83c3e6a9a3b51a",
+      "source_closure_sha256": "c96995b7d8ca19b3eb4541593f5e0e049cb4aa9603b2ac933c24b25d4b2948bf"
+    },
+    "Proofs.RadenkovicGutmanFusionDescent": {
+      "source_sha256": "c0ff8556e7e10269102c32f4f9dd473f97c434361ea351b6d45b52f01b6fc4bd",
+      "source_closure_sha256": "2e376ce221284f743ecbbef8e481a795091978fd1a14151fa109121aa6c76451"
+    },
+    "Proofs.RadenkovicGutmanFusionQuotient": {
+      "source_sha256": "af4340091b54039be8601ca21297236fe5983b34e9bc5e311a1709b87e1faaf8",
+      "source_closure_sha256": "318488a4d452c35a048a420595f65f5265337ecd72428c4093dbbd4faf07dc31"
+    },
+    "Proofs.RadenkovicGutmanFusionTerminal": {
+      "source_sha256": "bc16cf9f5bc2b7e2ee4e05d01f10ccff60e5b1a255a4f1000d144001d25def7d",
+      "source_closure_sha256": "5d00ac0a5e15f14b66e49925a54b671d60e5d3131ce180d2e9d7d4d958c07b7f"
+    },
+    "Proofs.RadenkovicGutmanGlobalAssembly": {
+      "source_sha256": "7ecd79f3b58a271c5921481be8b2180675ca840ee62c5d00e8b6ab0024ba95ea",
+      "source_closure_sha256": "68338b2678801246299084c5c72087d51837da385f2927217c26434717ad04b7"
+    },
+    "Proofs.RadenkovicGutmanGraphIntegral": {
+      "source_sha256": "0a9f10cff64ce9c67b8312b014786025e313b58c1f8debad4263675bca8dab35",
+      "source_closure_sha256": "98c1de33fdae0f07fb736f4acbc9b5ef9fc3220c5a9eb0c5b5adf22408df2038"
+    },
+    "Proofs.RadenkovicGutmanGraphJoin": {
+      "source_sha256": "36d8d239d7a45bf63cfd0475180e208c72cf5bbe9f18873a32b966bdcfa7c428",
+      "source_closure_sha256": "c891c0eaf716f1a520e5fa97eb22fb98eae7ce80f235c626f9dad55020a68696"
+    },
+    "Proofs.RadenkovicGutmanHighDegreeInputFromEscape": {
+      "source_sha256": "7d0a358db27ab861fb797d51ad73acb9f3b31efc3f10719b31bd996038bbdcd2",
+      "source_closure_sha256": "ac191550b3fce6836b3260e49e8a6049036bf2bcb49bf61ffd34d1af015323e4",
+      "require_historical_output_identity": true,
+      "original_axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ]
+    },
+    "Proofs.RadenkovicGutmanHighDegreeInputFromReserves": {
+      "source_sha256": "6f623a2a21686fd465cee7fe40b4df41b84b587bc49018874b3cca47223a39a5",
+      "source_closure_sha256": "dba1856b50eacabf7c41ba2974fa1336488f63f7e3b56b9851f97dbc18569b46",
+      "require_historical_output_identity": true,
+      "original_axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ]
+    },
+    "Proofs.RadenkovicGutmanHighDegreeInputFromSigns": {
+      "source_sha256": "7a43c2dc0664addb270ed9e959391eb6b595e68fda3256d81216b1e2608699cd",
+      "source_closure_sha256": "cd12daaaa53d609536604252b3201f234f4a81255f544ba62d0b0207bd72093c",
+      "require_historical_output_identity": true,
+      "original_axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ]
+    },
+    "Proofs.RadenkovicGutmanHighDegreeInputFromTwoSigns": {
+      "source_sha256": "af98e9088403b5f04f447baae8cb363d01a6113e4624a0eff0fa302d2ee829c9",
+      "source_closure_sha256": "834f5c98fb8625585f80f056f14770376f43b74bad0ec593ede585e165e4c9fa",
+      "require_historical_output_identity": true,
+      "original_axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ]
+    },
+    "Proofs.RadenkovicGutmanHighDegreeTail": {
+      "source_sha256": "b3b5435fe24422097a7790715a347344a26cf4c0ab152cd7f871d6d04996698d",
+      "source_closure_sha256": "ca4c28860d781ee5248bf36b924cc7287014867e41a3627d1b7d4125371c691d",
+      "require_historical_output_identity": true,
+      "original_axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ]
+    },
+    "Proofs.RadenkovicGutmanHornerCertificates": {
+      "source_sha256": "e9c5d2471561d8d9fbf960160953787d3a0ac453c466d718838e137a476ee0f5",
+      "source_closure_sha256": "f536ce4d2837e4b5d3653bda8450ef6c8a6590815bc0f1c3d2d66830dbd2dc4f"
+    },
+    "Proofs.RadenkovicGutmanIntegerBernsteinRows": {
+      "source_sha256": "87e9f317b6ff1ae8810779c4bee549f30d2e423733d0315148f5121d549437ca",
+      "source_closure_sha256": "e03b8033754d630670eef94cc56ced260f039b54d76e1be9390b4fc64f1b2545"
+    },
+    "Proofs.RadenkovicGutmanIntegerBernsteinTable": {
+      "source_sha256": "da8a1c456f58b1ea62c9210f82181be5d1e087a3878ffcff62486054898f409d",
+      "source_closure_sha256": "eb9106ee287e668dbbc65bdb7b7f7734bb1a4d9aee3f37845165f3b569ad68c2"
+    },
+    "Proofs.RadenkovicGutmanIntegerComputedClassCell": {
+      "source_sha256": "32b2f687362cb0ae41527ef4714acfce7876bbebcb7a04296ed473770d5ff1e6",
+      "source_closure_sha256": "165e879bfc9a13bc413490f666a7b3f57a814159fb104f2f0659287b83f38cf5"
+    },
+    "Proofs.RadenkovicGutmanIntegerDataElaboration": {
+      "source_sha256": "49f234a0993a258be62c3fa8d9efeb05ed1c6418c9b11ea568c2bdba65da4a3b",
+      "source_closure_sha256": "f5a62b8635d8e1f5d0404d8ad175c21ba277f494f2b082228f3f7938506a33f8"
+    },
+    "Proofs.RadenkovicGutmanIntegerHybridBernsteinRows": {
+      "source_sha256": "f03b904309263a38d67859b4e2451e961f689b0bdec7a578771be4f75ba7e093",
+      "source_closure_sha256": "c0bad5d2a2969a4256ae4a5bd541a67891220fa251dbb725d04d6761673c91c1"
+    },
+    "Proofs.RadenkovicGutmanIntegerLiteral": {
+      "source_sha256": "f7a7b88ce30082079696e80953c801d58ec9f6972e9a4117cbd540e31b4e686c",
+      "source_closure_sha256": "3675a18ab27831aee25338c3525dd6e584ad248b288b05da0040159ded7a8e18"
+    },
+    "Proofs.RadenkovicGutmanIntegerWeightedBernstein": {
+      "source_sha256": "7fa9b26e1a4d1ece6f6932e6af3f0e9e52325204d769a18782adfb5d061a5638",
+      "source_closure_sha256": "1db4733390079f0450649ece308a606f43194dc659fb1e721dedd836d0102642"
+    },
+    "Proofs.RadenkovicGutmanIsoEnergy": {
+      "source_sha256": "b68912b00217f93960b64d30093ec2d5eb0843ea716ea9afc41aa7b62156efd9",
+      "source_closure_sha256": "95f192969345db20f08cf39c8a37f267a7b708300d1698f8293dd3f4001e18c0"
+    },
+    "Proofs.RadenkovicGutmanLargeDegreeReserve": {
+      "source_sha256": "6d76b43cdfdad7a95c1061cdcf8f04fbbb075884b864f80e8e35997f21539812",
+      "source_closure_sha256": "c20f6407334f810f5d750702c656d34c9b3735d928b4be73e1562c01b7960f02"
+    },
+    "Proofs.RadenkovicGutmanLowStripAssembly": {
+      "source_sha256": "70319faa4d60ffd6c00cb6aef96047117e0f35d04f8eabc2018c2e0a92c0b266",
+      "source_closure_sha256": "0abaecd79e9b8c20131568bc05a8d3f2f3cafdd5b91c84acc8091b5b0b13c6f6",
+      "require_historical_output_identity": true,
+      "original_axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ]
+    },
+    "Proofs.RadenkovicGutmanLowStripConstantGeometry": {
+      "source_sha256": "6e43ba769228eb5198ed28fc3fd2423aa8d7ee28ddf936cb4a87dee609a03e7c",
+      "source_closure_sha256": "873aeb8c91576f43d4997cf7b8c79963d6dccad032ea7731f0a7312f7ea6511b",
+      "require_historical_output_identity": true,
+      "original_axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ]
+    },
+    "Proofs.RadenkovicGutmanLowStripCoordinates": {
+      "source_sha256": "2024dfd69b7f3314ad826daffa9d9c6c21c6ced0a4c142d6df93e1d1d3b14e65",
+      "source_closure_sha256": "806a2b66d94c214e1ffac1bb7611c2201c7221d0e619ecc025802e7f0a8031a5",
+      "require_historical_output_identity": true,
+      "original_axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ]
+    },
+    "Proofs.RadenkovicGutmanLowStripDirected": {
+      "source_sha256": "e899a7c92e58cc35d88f19b69afc37387a8b039fb5ff235f98792791289279bb",
+      "source_closure_sha256": "66e14d3b386012517191bcc51bb7218751db8c54ffc54bc8cef73127678baa81",
+      "require_historical_output_identity": true,
+      "original_axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ]
+    },
+    "Proofs.RadenkovicGutmanLowStripGeometry": {
+      "source_sha256": "1a62052caa764156a25dac07f943f7c5654cf9228e81e3c34642d01612e7a172",
+      "source_closure_sha256": "fb4b466ead90776d95b6f5459b179748404c855a22f9b8fcc3552cf8a25fc2f0",
+      "require_historical_output_identity": true,
+      "original_axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ]
+    },
+    "Proofs.RadenkovicGutmanLowStripIntegral": {
+      "source_sha256": "2d32fe0b342091ef50c62a53ed022ce52ec215887a0bd0e74dbb8b83cff1e5e4",
+      "source_closure_sha256": "45983e42f9db96a62b731614fb02837fc0a0133ea9e03429a822d8a1930e17fe",
+      "require_historical_output_identity": true,
+      "original_axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ]
+    },
+    "Proofs.RadenkovicGutmanLowStripOutside": {
+      "source_sha256": "94eb652530b1155c2667b722db67cd664c13eadb0a6498c5d8efefca24b75f35",
+      "source_closure_sha256": "96ce87345ed90c7197f1f4c2fa289f30b2add0c26847d02b0981f8dcf5d65db8",
+      "require_historical_output_identity": true,
+      "original_axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ]
+    },
+    "Proofs.RadenkovicGutmanLowStripPrimitive": {
+      "source_sha256": "9479d35670352eaefe20e6e12a35f79dd7d87970d6ca13fc90d3f23990058513",
+      "source_closure_sha256": "83871fcbfc8a1ad71ea8eea829eecb5c45c4c7bac49963b72b190117f205ba26",
+      "require_historical_output_identity": true,
+      "original_axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ]
+    },
+    "Proofs.RadenkovicGutmanLowStripReserveReduction": {
+      "source_sha256": "fa72138e318fa8bfed25bdee7d6cf5758276da186d6707f07e7004dd912c2c64",
+      "source_closure_sha256": "be11fe5a1dce53463326b85b9d389c293d8d17c5d270fb73989d9bc3a30385c6",
+      "require_historical_output_identity": true,
+      "original_axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ]
+    },
+    "Proofs.RadenkovicGutmanLowStripReserves": {
+      "source_sha256": "7ed94377574f15c29866cbdb9f3d64dfa6f23725b6761060c7370e96d86466b0",
+      "source_closure_sha256": "026fb0b9f274d71ba35882bbcbebe4d3e9162edecc0039b5f86660068330e4f1",
+      "require_historical_output_identity": true,
+      "original_axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ]
+    },
+    "Proofs.RadenkovicGutmanLowStripSignAssembly": {
+      "source_sha256": "d7125cfbce3be74684e984a9c95d0a0b9e152af021c1dc5dd9fe255440574ac6",
+      "source_closure_sha256": "6dd8a2a22edce746db49cab9a30465e07a2f543c0b9b259759e1c64112f61e54",
+      "require_historical_output_identity": true,
+      "original_axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ]
+    },
+    "Proofs.RadenkovicGutmanMinimalFusion": {
+      "source_sha256": "5a49e023bcdd6b9f513d7477f30ea88603317cbc36be6aa043a1a18bb4b65bf3",
+      "source_closure_sha256": "52f8324ac9793123a266a48eda9ba8ffad7097def9c2a466f07e8301bccc8448"
+    },
+    "Proofs.RadenkovicGutmanMixedGraphIntegral": {
+      "source_sha256": "9fc651e7971b3eaf75d4d050d35b5a6f1dee29824cd3fde72ff3af782955ba08",
+      "source_closure_sha256": "71a23c338ff792b0e7d1ec39eaad45800e4ab49a05b689dc23096ec3946c0497"
+    },
+    "Proofs.RadenkovicGutmanMixedStopLoss": {
+      "source_sha256": "98e238802dccd72d1f546692c5f06fbfad93cf916bda5a5d8fe80f21c979469d",
+      "source_closure_sha256": "edbf1215cff94d3a6fdbb060542deaf9d215f57bad1af2558339b2a892dc5106"
+    },
+    "Proofs.RadenkovicGutmanMobiusDisk": {
+      "source_sha256": "7ec1df82295ae76acb46371d5e19213524479a8e1c822b1036420aa2f4695f21",
+      "source_closure_sha256": "5d010eb9b0481030e3dd76c816c354d029a06c2dab87fb883a82da183c6528e3"
+    },
+    "Proofs.RadenkovicGutmanNestedAffine": {
+      "source_sha256": "4018bb7d3eafd55cf19da27066d217d5140ca5906981c27bbf5658606f61ec24",
+      "source_closure_sha256": "3c89906be668ed92e842ae8d444467d36093d0788deb98cf048a72aef50d2c0b"
+    },
+    "Proofs.RadenkovicGutmanNestedAffineComplete": {
+      "source_sha256": "dfd5c99bda99bb3ae077281cdeed4472c510df032f9dca03e216510665c8943e",
+      "source_closure_sha256": "82fe0db0cb7d6c38f9c71ae56b6e64286e360eb854d7be5e2eeef2b31ea9a803"
+    },
+    "Proofs.RadenkovicGutmanNestedArithmetic": {
+      "source_sha256": "1fb2ef9b9785ca08e5ed27980d77404b51202d4f4b507c5db3b0e18d45634a89",
+      "source_closure_sha256": "c8ddb8dba6f3c5b3fbba56ab284a8a5f5c111ae24b01c28214d580dbaf8b9bce"
+    },
+    "Proofs.RadenkovicGutmanNestedClassCell": {
+      "source_sha256": "250c1593c74a880807232b5af06e56f502b0cd3ecc8dc0efe8bebf885d47db37",
+      "source_closure_sha256": "ddad6519081c77695d9b692b0faa32c92f4090ed5af0cbddddb3e0d5dba20811"
+    },
+    "Proofs.RadenkovicGutmanNestedClassNorms": {
+      "source_sha256": "5d3d4c50c5f69be1ef0c046ca4c0c1d6aee468220fb0f624ffb56a7cd0856cd6",
+      "source_closure_sha256": "51b5d94a3f42f053d5ea968830f2324054c8d43fabe4540c9e9db31d2dee2139"
+    },
+    "Proofs.RadenkovicGutmanNestedClassPolynomials": {
+      "source_sha256": "3e9afedee2696c0e0f73a1761f6705010a3b268328cf0e168d673354f7d19132",
+      "source_closure_sha256": "f6cb4e055ab36d2ac722894428b8a131bb6eaa35033b118e4951139042bc7243"
+    },
+    "Proofs.RadenkovicGutmanNestedHorner": {
+      "source_sha256": "4b4a7c934bb02d9d168ec38999726372a2c72e4fcf9fe0d7ba6b3117088e3b6a",
+      "source_closure_sha256": "d51175fd6e6eae4f0e2a9f63c3e8c3176e5124033ee100015bcf1f580c25c2b9"
+    },
+    "Proofs.RadenkovicGutmanNestedHornerCells": {
+      "source_sha256": "e4c8a14de46b3ffd47dfc75f8325aee607e9d6f2e79e10e2a9691cc424ead77d",
+      "source_closure_sha256": "1050c1adccf5cf379738585b79273f36bebf56fee9a8d85701f811ca346c4460"
+    },
+    "Proofs.RadenkovicGutmanNestedHornerNormalized": {
+      "source_sha256": "1da564ebca3ed35f75d2e72bc2337a3d1fbf0224f3ee510c39f18cb54e3059e4",
+      "source_closure_sha256": "6ad9aa0914bdfd18eef7097c798ea00bc69223b3a5901947bd0c204d8c5fdc2f",
+      "require_historical_output_identity": true,
+      "original_axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ]
+    },
+    "Proofs.RadenkovicGutmanNestedHornerTransform": {
+      "source_sha256": "3eacdfb7cab15b90cce0c468203a7830110f531f3b0af1f2c167baae1b6e48e4",
+      "source_closure_sha256": "106f6ec960d0ea6fc8fcb9a088216f84d1809e97451cf5ce30a4dde26ca9d01d"
+    },
+    "Proofs.RadenkovicGutmanNestedInteger": {
+      "source_sha256": "fdae5bf1e8a4ed180cb6b1bad37f1814adbc9f92f5dc6ba7d6239fb3fc957648",
+      "source_closure_sha256": "9924a7039c6794a75fb7bbc71bbb629cd98aeb541c7f4051e1067f52a81dba2e"
+    },
+    "Proofs.RadenkovicGutmanNestedIntegerAffine": {
+      "source_sha256": "40c7a57395fc02009c707ce915b4dde0ca5e2c889cc4ef1b0119e1dc204639b7",
+      "source_closure_sha256": "6fcd929f44d8f9a3278da4f2ab4a649a8d70216557f6562dceacae6439d5ba72"
+    },
+    "Proofs.RadenkovicGutmanNestedIntegerHybrid": {
+      "source_sha256": "f98d56f9cf03b5a8ddbd0ec4106de4a7d8bdd942a06e7607f13c1616d876401e",
+      "source_closure_sha256": "827b7ec63914901ccce44228562c1f8f5b80eeadfcfcb240dbeb051f8e938056",
+      "require_historical_output_identity": true,
+      "original_axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ]
+    },
+    "Proofs.RadenkovicGutmanNestedIntegerMixed": {
+      "source_sha256": "ac27b32738f136c1f804dbce23658ee08f039e6f6b45768792a9887a683117f9",
+      "source_closure_sha256": "cf3f3492ef5e0103ae2189358709a69fcb6d17c927ba476321e30e9d3329979f",
+      "require_historical_output_identity": true,
+      "original_axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ]
+    },
+    "Proofs.RadenkovicGutmanNestedPositiveScale": {
+      "source_sha256": "58ffdcdd35d8ab0e883a205a1f7c4ebc3114b9c9fa7ecf3acb6e053816c8921a",
+      "source_closure_sha256": "fc9474ae6cb7cd6171e814bb79c39f05bb798390bdb0b1c7e017b701e59362a3"
+    },
+    "Proofs.RadenkovicGutmanNestedReciprocal": {
+      "source_sha256": "fce0885b1abecb4308458b9488408aa917c774f0a60720b99fade10f11d1ced7",
+      "source_closure_sha256": "1be4cad2ea0ececd55e89be8a1ad84c6279230f07bcde648d02c916237c373b3"
+    },
+    "Proofs.RadenkovicGutmanNonpathFork": {
+      "source_sha256": "4bb96fc7641b19119b56af9246b7e9b81054264d08096ff3fdedc32eb4d29b34",
+      "source_closure_sha256": "ee4e46afa2e542ca9f2d69698993169de2cc24aac2e1bcc71ba1b30b6f17173a"
+    },
+    "Proofs.RadenkovicGutmanNormProgramPack": {
+      "source_sha256": "599711cd553f4707beccfba4cf67c67dece6252637c7704a1e779964a22fe0ef",
+      "source_closure_sha256": "2719a85c9e93c9c8ab66b95cd7bba47f96dbefe272bbc22ab0aa80ea32025a81"
+    },
+    "Proofs.RadenkovicGutmanOrderFour": {
+      "source_sha256": "c8ce0d4139db81098f867ae809d8a8a5f9c1cfdbdd087e0cb3b6f27b008abdb1",
+      "source_closure_sha256": "00e4bccd853e8fb3f5f182595346f80e9c682fe6829c29e94a369469171e89fa"
+    },
+    "Proofs.RadenkovicGutmanOriginalAssembly": {
+      "source_sha256": "3f3bd6719299090443071576e72d8c13974e878b5621b4a6b90091ce09cdeeae",
+      "source_closure_sha256": "68f20188f7b3613c537c9d0cc732f4d1523545235f5797aec978771b9d920b4b"
+    },
+    "Proofs.RadenkovicGutmanOriginalDegreeGeFortysix": {
+      "source_sha256": "90ff34e998392cc5a435f5cd73417d0d7bfbc2b1b38ff1a9aff7c268ed2c11bd",
+      "source_closure_sha256": "0bb22ddc1f5b9d193e0e3d5d7a82012cd6f63f5c6e6b14613e4f626d3d2f41d2",
+      "require_historical_output_identity": false,
+      "original_axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ]
+    },
+    "Proofs.RadenkovicGutmanPackedIntegerClassCell": {
+      "source_sha256": "d562e23a3f096a66edf8ca271b2904fd7d5e5393d48d5a4f394df62feb0ad5ae",
+      "source_closure_sha256": "0d62ec82931e28c0a53e68e1215263b97041026c92fcb854480da0d802ef5130"
+    },
+    "Proofs.RadenkovicGutmanPackedIntegerSemanticAffine": {
+      "source_sha256": "d1f8dadf6b645ed48faff46bef50940b9a58225f28b14e02030955b7b1b9cd32",
+      "source_closure_sha256": "6b6e7ba168734da39fba47ce413ab2583cf8089eb16c4e32c236a7d0c91af1ef"
+    },
+    "Proofs.RadenkovicGutmanPathDeterminant": {
+      "source_sha256": "d6121b7d9da80dabe42e1a33f87b6d60a7f968da8823fe829b15851be072d031",
+      "source_closure_sha256": "8b98b18afc3d7bea424153f2b268320498e33442b1876d0c31c42b23e8e2704a"
+    },
+    "Proofs.RadenkovicGutmanPathEnclosure": {
+      "source_sha256": "fa908a8e90a316981820ebf47445e0ab206f3cf32e546466d775fc908931cc85",
+      "source_closure_sha256": "ff7df41973217dcdfed0a7af9da22f3a1218526c9f35cd9a816500222bb492da"
+    },
+    "Proofs.RadenkovicGutmanPathRecurrence": {
+      "source_sha256": "4e4eeb10961d7d9834c138cfe317e5f6dd2a153102b2e092662c75661230c4e6",
+      "source_closure_sha256": "b11c8835f40da37fb10e1cae3e5554b0692d07ddbecb2f270d8fc682276ecb8e"
+    },
+    "Proofs.RadenkovicGutmanPathResolvent": {
+      "source_sha256": "72a7442dc6be586455fdec61a674157048718060da11c5d4bf24eb129e78e627",
+      "source_closure_sha256": "3b74e0955f8ec2db84ef63ad50eb68eb697bf454fafd9076e242ef962f4ee5c7"
+    },
+    "Proofs.RadenkovicGutmanPerturbation": {
+      "source_sha256": "166d8a987925c7c517b36f06796e36c78acd947c1bfcc13d13970ba5b527a54c",
+      "source_closure_sha256": "780adf4f60f37fc150d990bcedeb53bcf03b619020a75f16e7ee0984f623db96"
+    },
+    "Proofs.RadenkovicGutmanQuadraticDisk": {
+      "source_sha256": "1beeea312cdd0228c7a5d8d15e3c2d8bc7a1be6177e0c35ad665229b7e421717",
+      "source_closure_sha256": "805f271ad629b1f15dbd2dc17756141d5325607c77f291cafac584ed2267c7a6",
+      "require_historical_output_identity": true,
+      "original_axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ]
+    },
+    "Proofs.RadenkovicGutmanQuadraticDiskConvex": {
+      "source_sha256": "5e5f3047964a583c5b4bf646736edeeec7e6e3de55f0ffa9cfd77579ada617cc",
+      "source_closure_sha256": "4cc924995048290f924cfdce1720e81354372e711fb7f410dee544fdcd5f3bdb",
+      "require_historical_output_identity": true,
+      "original_axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ]
+    },
+    "Proofs.RadenkovicGutmanQuotientBridge": {
+      "source_sha256": "28fb4dea023ae184092ae7a48f8ea0ee8e7ae27b4781eae0eb81526ceac6fbac",
+      "source_closure_sha256": "e522c50e16153d0ec948678bf3c6110ad68dfb6fda4321dbe0d34df320db1257"
+    },
+    "Proofs.RadenkovicGutmanRationalLog": {
+      "source_sha256": "e602083892dfefe7d76d5f9d3c7067db0d76e7cd9be34ee1087f396bd4c1f0eb",
+      "source_closure_sha256": "9264cb2cf24fcaafc2609c78a767b3fd67798889bd348c22af7a8933fc2be8f2"
+    },
+    "Proofs.RadenkovicGutmanRationalTensorFast": {
+      "source_sha256": "14b6414c7ef2a21a7af1d2c51c3a0a84b794a237918608ecdab1dacb9d5481f9",
+      "source_closure_sha256": "a4bb846964b92aa7ba918d92ce53a48e2db2a7b89cd0783fb5d4cbe5bf72adb2"
+    },
+    "Proofs.RadenkovicGutmanRationalTensorPolynomial": {
+      "source_sha256": "a7da791d74887b404c79789bf83fe95af37722635d29043daf67727dd1c8bf27",
+      "source_closure_sha256": "6a149c0d076b116a224a7aef7ad7cfbde9479d7650b19fccef78a9a6cd481b7e"
+    },
+    "Proofs.RadenkovicGutmanReciprocalDisk": {
+      "source_sha256": "f25822e9066676241b9fd4fd9554a38e7687377e4f1750549356d4358599b2b8",
+      "source_closure_sha256": "6a898f4cf5c359bc518e3c792a87997193734919a8724763ba05d0044472b349"
+    },
+    "Proofs.RadenkovicGutmanReducedEscapeForms": {
+      "source_sha256": "e082b6e8b5134aaeeaf3154c480aa13ef7ccee3dd406a6150e18e4224f222014",
+      "source_closure_sha256": "60c4c8ba44dfec1eca160cc71846a16b1c7651402f149fc4cf743821a16752a7",
+      "require_historical_output_identity": false,
+      "original_axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ]
+    },
+    "Proofs.RadenkovicGutmanReducedEscapeSigns": {
+      "source_sha256": "b6f5e8c2336cea0a48011a06364d972a5a84c3496cd145dc35983ebc6a7218de",
+      "source_closure_sha256": "c9d3aec543e8a2e439b3d54c8de56224d944013b2bed7fc404dfeb2b7db2b729",
+      "require_historical_output_identity": false,
+      "original_axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ]
+    },
+    "Proofs.RadenkovicGutmanResolventDisk": {
+      "source_sha256": "f7bd373fd0673afb3031ed0e1c2f1c6fd1d18261671545fb84c3155fd4f819ce",
+      "source_closure_sha256": "d6b9b5e93786605b81510bbf903a917562c24aebf50476ad28674cb7171d9d15"
+    },
+    "Proofs.RadenkovicGutmanRewireIso": {
+      "source_sha256": "300a08814b9356b998083b4393c099ae9ebb5eba9e6a6918f2388666d1b51998",
+      "source_closure_sha256": "07ba06d8d1747a8ee29434f4a2f2f6432ab7563c05a7145f5d824e31d254a753"
+    },
+    "Proofs.RadenkovicGutmanRewireTopology": {
+      "source_sha256": "ca4b40c0c3acf8a84cf38167d7df2b24cda864bdc120da26f6d001ad37e3a619",
+      "source_closure_sha256": "8adb8dc4ec86bf7b326988ca8829d81d48467eb215c6ed5bed03d64fda762a79"
+    },
+    "Proofs.RadenkovicGutmanRootIsolation": {
+      "source_sha256": "252239aacd0149f20c91de7148d308606014aa8cbde3b4619eb82ae02a2c01e8",
+      "source_closure_sha256": "721995e4a5c44ccc7f9e2dc07cb3d8e29945757623cca0824e0cd252b38691da"
+    },
+    "Proofs.RadenkovicGutmanRootSchur": {
+      "source_sha256": "e4d72cf821925d3f886fd118853ea8603e5db6eeece474bd516b26badaccb8e9",
+      "source_closure_sha256": "5489c9132ea8ade8aada94651a08baf004235319d5cbefd549d0c1a00f18c55e"
+    },
+    "Proofs.RadenkovicGutmanScalarIntegral": {
+      "source_sha256": "5c6513466fe92cd9b0d1a16bf9c0589a26b580768bd88565ee06a5f88a4a43c4",
+      "source_closure_sha256": "58f1e13ad5e74c911c4b9c573a591a4bbcb6addae0759840436150cb64b30275"
+    },
+    "Proofs.RadenkovicGutmanScaledQuotient": {
+      "source_sha256": "bb7053a4a3c03ea4367fc5ddcf0c0fe969698f8fd8a714ea4ebb86256e927d1c",
+      "source_closure_sha256": "13514d40cd6ce1fa83e32a9f0a4dde7a15d266e8daba31929f2c5f14830ab6e1"
+    },
+    "Proofs.RadenkovicGutmanSmallOrders": {
+      "source_sha256": "757fc7d654b4e532c0ac3b5b5f8d7c48544c835f1fb09e96975afe82c27b3cb6",
+      "source_closure_sha256": "a215bb3992c94571a67183844c1ece0e8b02be5b074441c1712064a11a2a94fa"
+    },
+    "Proofs.RadenkovicGutmanSourcePresentation": {
+      "source_sha256": "68e35d0e0fd36309175e8ff35a0b20619965689d32c35504cd3f5421cf5bbae7",
+      "source_closure_sha256": "3e11d411fd3ec08744c86181cdec3d7ac65229887ae620c4968ec6942b0bbc2f"
+    },
+    "Proofs.RadenkovicGutmanSpectral": {
+      "source_sha256": "70d7fe9e91a930f1a2e62ea85b5ecea17484877d5150c5eb52cfee1776d98348",
+      "source_closure_sha256": "184b16762c75c2961cd905c2ef7f1d86351d1b7dbfa11da6bc62fb52ea58ecb9"
+    },
+    "Proofs.RadenkovicGutmanSymmetricConstantReserve": {
+      "source_sha256": "40c052ac7436b24282f4ec93a8a5ff89bd8e353e34569b85a6df3c739cc4eaa7",
+      "source_closure_sha256": "754210141a16ce693f6b0299955db171dabda93875ae9b0bea2d5fb5c458e73f",
+      "require_historical_output_identity": true,
+      "original_axiom_profiles": [
+        [
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ]
+    },
+    "Proofs.RadenkovicGutmanSymmetricConstantReserveIdentity": {
+      "source_sha256": "3b1348ace01dda4cd913e95f2b395ac3bf01d3f67918a5110d6524f926125b27",
+      "source_closure_sha256": "4b05dcb16ba793c6decbd0fd49024af0094f3dae800595b0d34a84d039234e11",
+      "require_historical_output_identity": true,
+      "original_axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ]
+    },
+    "Proofs.RadenkovicGutmanSymmetricTangentReserve": {
+      "source_sha256": "64fe9b0a5638e104777c49ed186a51ac9e64c65ad3a972783a4ae2594d8647fd",
+      "source_closure_sha256": "a7398895bc392a854225f5aa7eb8561f7a9fb73a882732cec8e672ee26284e88",
+      "require_historical_output_identity": true,
+      "original_axiom_profiles": [
+        [
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ]
+    },
+    "Proofs.RadenkovicGutmanSymmetricTangentReserveIdentity": {
+      "source_sha256": "f4cb08df68902aac17ab833e65ba1d128d657049df1234ed90a8c93259b5dd37",
+      "source_closure_sha256": "cdd1aae77bd105d1fce333cbc591e4d05ea5d5fa837cd37cabd579ea2a84633d",
+      "require_historical_output_identity": true,
+      "original_axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ]
+    },
+    "Proofs.RadenkovicGutmanTailHalfCertificate": {
+      "source_sha256": "ded1ceaebf944cb643b8e04f59a4935ae2257021b02a56a5e110234aa73be813",
+      "source_closure_sha256": "0e13c3ff6a11ad7bf9f5fae8f264f5d24203fb2ac192fb3776e7892bc58032fc",
+      "require_historical_output_identity": true,
+      "original_axiom_profiles": [
+        [
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ]
+    },
+    "Proofs.RadenkovicGutmanTailHalfGeometry": {
+      "source_sha256": "e00c8394a89fbddd25c271496473003756e2ef8d3172c2b80b973741838ecaa4",
+      "source_closure_sha256": "b7feee7fa1d194e2666e185ebbff311163aca9583ac63468d225934603bc8c96",
+      "require_historical_output_identity": true,
+      "original_axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ]
+    },
+    "Proofs.RadenkovicGutmanTailHalfPolynomial": {
+      "source_sha256": "13886dff831be72970e95ee206027c4892861042cc9f1ceaee54962f1739b87b",
+      "source_closure_sha256": "76bb64946d99cbaced1ef420088394db2e1638ef4fc72afbda6834ea45b9c7d2",
+      "require_historical_output_identity": true,
+      "original_axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ]
+    },
+    "Proofs.RadenkovicGutmanTailIntegral": {
+      "source_sha256": "7b2c0c4b5ace8c4a7424e1627e78f0688838c5735a2b57a5710b57c5f832df8f",
+      "source_closure_sha256": "cd964928d9891da5dfe2c8d415d9c08519bf1e04983ee023e661f15471b8c762"
+    },
+    "Proofs.RadenkovicGutmanTensorPolynomial": {
+      "source_sha256": "8495ec2b589b94150e1bd62bab217280f819a18630c3c8cec621ab37722efdf5",
+      "source_closure_sha256": "6665f37c83ff58ba78d98c27edc34584a8e6f512397f3f2e31a24f1b5de3cb6a"
+    },
+    "Proofs.RadenkovicGutmanTreeTerminal": {
+      "source_sha256": "80c7ad1a75f506b8c06bb36040c8b3b7a521b64bcfa143047317602ab6fbc747",
+      "source_closure_sha256": "99447102a4bd370008aad64215170f13de97152dd52d1b8242c153ccaaf9f65e"
+    }
+  },
+  "stages": {
+    "prepare": {
+      "endpoints": [
+        "Proofs.RadenkovicGutmanEscapeReducedReserveRow24",
+        "Proofs.RadenkovicGutmanIntegerHybridBernsteinRows"
+      ],
+      "required_modules": [
+        "Proofs.RadenkovicGutmanArmBridge",
+        "Proofs.RadenkovicGutmanArmClasses",
+        "Proofs.RadenkovicGutmanArmRationalForm",
+        "Proofs.RadenkovicGutmanBernstein",
+        "Proofs.RadenkovicGutmanCheckedRoots",
+        "Proofs.RadenkovicGutmanClassCellCertificates",
+        "Proofs.RadenkovicGutmanClassNormPolynomials",
+        "Proofs.RadenkovicGutmanComputedClassCell",
+        "Proofs.RadenkovicGutmanCoreQuotient",
+        "Proofs.RadenkovicGutmanEscapeReducedReserveData",
+        "Proofs.RadenkovicGutmanEscapeReducedReserveRow24",
+        "Proofs.RadenkovicGutmanFastNestedCellData",
+        "Proofs.RadenkovicGutmanFastNestedClassBoxes",
+        "Proofs.RadenkovicGutmanFocus",
+        "Proofs.RadenkovicGutmanFusionQuotient",
+        "Proofs.RadenkovicGutmanGraphJoin",
+        "Proofs.RadenkovicGutmanHornerCertificates",
+        "Proofs.RadenkovicGutmanIntegerBernsteinRows",
+        "Proofs.RadenkovicGutmanIntegerBernsteinTable",
+        "Proofs.RadenkovicGutmanIntegerComputedClassCell",
+        "Proofs.RadenkovicGutmanIntegerDataElaboration",
+        "Proofs.RadenkovicGutmanIntegerHybridBernsteinRows",
+        "Proofs.RadenkovicGutmanIntegerLiteral",
+        "Proofs.RadenkovicGutmanIntegerWeightedBernstein",
+        "Proofs.RadenkovicGutmanMobiusDisk",
+        "Proofs.RadenkovicGutmanNestedAffine",
+        "Proofs.RadenkovicGutmanNestedAffineComplete",
+        "Proofs.RadenkovicGutmanNestedArithmetic",
+        "Proofs.RadenkovicGutmanNestedClassCell",
+        "Proofs.RadenkovicGutmanNestedClassNorms",
+        "Proofs.RadenkovicGutmanNestedClassPolynomials",
+        "Proofs.RadenkovicGutmanNestedHorner",
+        "Proofs.RadenkovicGutmanNestedHornerCells",
+        "Proofs.RadenkovicGutmanNestedHornerTransform",
+        "Proofs.RadenkovicGutmanNestedInteger",
+        "Proofs.RadenkovicGutmanNestedIntegerAffine",
+        "Proofs.RadenkovicGutmanNestedIntegerHybrid",
+        "Proofs.RadenkovicGutmanNestedPositiveScale",
+        "Proofs.RadenkovicGutmanNestedReciprocal",
+        "Proofs.RadenkovicGutmanNormProgramPack",
+        "Proofs.RadenkovicGutmanPackedIntegerClassCell",
+        "Proofs.RadenkovicGutmanPackedIntegerSemanticAffine",
+        "Proofs.RadenkovicGutmanPathDeterminant",
+        "Proofs.RadenkovicGutmanPathEnclosure",
+        "Proofs.RadenkovicGutmanPathRecurrence",
+        "Proofs.RadenkovicGutmanPathResolvent",
+        "Proofs.RadenkovicGutmanRationalLog",
+        "Proofs.RadenkovicGutmanRationalTensorFast",
+        "Proofs.RadenkovicGutmanRationalTensorPolynomial",
+        "Proofs.RadenkovicGutmanReciprocalDisk",
+        "Proofs.RadenkovicGutmanResolventDisk",
+        "Proofs.RadenkovicGutmanRootIsolation",
+        "Proofs.RadenkovicGutmanRootSchur",
+        "Proofs.RadenkovicGutmanScaledQuotient",
+        "Proofs.RadenkovicGutmanTensorPolynomial"
+      ],
+      "required_module_count": 55,
+      "fresh_modules": [
+        "Proofs.RadenkovicGutmanEscapeReducedReserveData",
+        "Proofs.RadenkovicGutmanEscapeReducedReserveRow24",
+        "Proofs.RadenkovicGutmanIntegerHybridBernsteinRows"
+      ],
+      "fresh_module_count": 3,
+      "prerequisites": [],
+      "job_name": "ge46-checked-prepare",
+      "artifact_name_template": "rg-ge46-checked-rows-20261103-{run}-{attempt}-prepare",
+      "required_success_step": "Require exact original declarations and staged kernel exports"
+    },
+    "row00": {
+      "endpoints": [
+        "Proofs.RadenkovicGutmanEscapeReducedReserveRow00"
+      ],
+      "required_modules": [
+        "Proofs.RadenkovicGutmanArmBridge",
+        "Proofs.RadenkovicGutmanArmClasses",
+        "Proofs.RadenkovicGutmanArmRationalForm",
+        "Proofs.RadenkovicGutmanBernstein",
+        "Proofs.RadenkovicGutmanCheckedRoots",
+        "Proofs.RadenkovicGutmanClassCellCertificates",
+        "Proofs.RadenkovicGutmanClassNormPolynomials",
+        "Proofs.RadenkovicGutmanComputedClassCell",
+        "Proofs.RadenkovicGutmanCoreQuotient",
+        "Proofs.RadenkovicGutmanEscapeReducedReserveData",
+        "Proofs.RadenkovicGutmanEscapeReducedReserveRow00",
+        "Proofs.RadenkovicGutmanFastNestedCellData",
+        "Proofs.RadenkovicGutmanFastNestedClassBoxes",
+        "Proofs.RadenkovicGutmanFocus",
+        "Proofs.RadenkovicGutmanFusionQuotient",
+        "Proofs.RadenkovicGutmanGraphJoin",
+        "Proofs.RadenkovicGutmanHornerCertificates",
+        "Proofs.RadenkovicGutmanIntegerBernsteinRows",
+        "Proofs.RadenkovicGutmanIntegerBernsteinTable",
+        "Proofs.RadenkovicGutmanIntegerComputedClassCell",
+        "Proofs.RadenkovicGutmanIntegerDataElaboration",
+        "Proofs.RadenkovicGutmanIntegerLiteral",
+        "Proofs.RadenkovicGutmanIntegerWeightedBernstein",
+        "Proofs.RadenkovicGutmanMobiusDisk",
+        "Proofs.RadenkovicGutmanNestedAffine",
+        "Proofs.RadenkovicGutmanNestedAffineComplete",
+        "Proofs.RadenkovicGutmanNestedArithmetic",
+        "Proofs.RadenkovicGutmanNestedClassCell",
+        "Proofs.RadenkovicGutmanNestedClassNorms",
+        "Proofs.RadenkovicGutmanNestedClassPolynomials",
+        "Proofs.RadenkovicGutmanNestedHorner",
+        "Proofs.RadenkovicGutmanNestedHornerCells",
+        "Proofs.RadenkovicGutmanNestedHornerTransform",
+        "Proofs.RadenkovicGutmanNestedInteger",
+        "Proofs.RadenkovicGutmanNestedIntegerAffine",
+        "Proofs.RadenkovicGutmanNestedIntegerHybrid",
+        "Proofs.RadenkovicGutmanNestedPositiveScale",
+        "Proofs.RadenkovicGutmanNestedReciprocal",
+        "Proofs.RadenkovicGutmanNormProgramPack",
+        "Proofs.RadenkovicGutmanPackedIntegerClassCell",
+        "Proofs.RadenkovicGutmanPackedIntegerSemanticAffine",
+        "Proofs.RadenkovicGutmanPathDeterminant",
+        "Proofs.RadenkovicGutmanPathEnclosure",
+        "Proofs.RadenkovicGutmanPathRecurrence",
+        "Proofs.RadenkovicGutmanPathResolvent",
+        "Proofs.RadenkovicGutmanRationalLog",
+        "Proofs.RadenkovicGutmanRationalTensorFast",
+        "Proofs.RadenkovicGutmanRationalTensorPolynomial",
+        "Proofs.RadenkovicGutmanReciprocalDisk",
+        "Proofs.RadenkovicGutmanResolventDisk",
+        "Proofs.RadenkovicGutmanRootIsolation",
+        "Proofs.RadenkovicGutmanRootSchur",
+        "Proofs.RadenkovicGutmanScaledQuotient",
+        "Proofs.RadenkovicGutmanTensorPolynomial"
+      ],
+      "required_module_count": 54,
+      "fresh_modules": [
+        "Proofs.RadenkovicGutmanEscapeReducedReserveData",
+        "Proofs.RadenkovicGutmanEscapeReducedReserveRow00"
+      ],
+      "fresh_module_count": 2,
+      "prerequisites": [],
+      "job_name": "ge46-checked-row00",
+      "artifact_name_template": "rg-ge46-checked-rows-20261103-{run}-{attempt}-row00",
+      "required_success_step": "Require exact original declarations and staged kernel exports"
+    },
+    "row01": {
+      "endpoints": [
+        "Proofs.RadenkovicGutmanEscapeReducedReserveRow01"
+      ],
+      "required_modules": [
+        "Proofs.RadenkovicGutmanArmBridge",
+        "Proofs.RadenkovicGutmanArmClasses",
+        "Proofs.RadenkovicGutmanArmRationalForm",
+        "Proofs.RadenkovicGutmanBernstein",
+        "Proofs.RadenkovicGutmanCheckedRoots",
+        "Proofs.RadenkovicGutmanClassCellCertificates",
+        "Proofs.RadenkovicGutmanClassNormPolynomials",
+        "Proofs.RadenkovicGutmanComputedClassCell",
+        "Proofs.RadenkovicGutmanCoreQuotient",
+        "Proofs.RadenkovicGutmanEscapeReducedReserveData",
+        "Proofs.RadenkovicGutmanEscapeReducedReserveRow01",
+        "Proofs.RadenkovicGutmanFastNestedCellData",
+        "Proofs.RadenkovicGutmanFastNestedClassBoxes",
+        "Proofs.RadenkovicGutmanFocus",
+        "Proofs.RadenkovicGutmanFusionQuotient",
+        "Proofs.RadenkovicGutmanGraphJoin",
+        "Proofs.RadenkovicGutmanHornerCertificates",
+        "Proofs.RadenkovicGutmanIntegerBernsteinRows",
+        "Proofs.RadenkovicGutmanIntegerBernsteinTable",
+        "Proofs.RadenkovicGutmanIntegerComputedClassCell",
+        "Proofs.RadenkovicGutmanIntegerDataElaboration",
+        "Proofs.RadenkovicGutmanIntegerLiteral",
+        "Proofs.RadenkovicGutmanIntegerWeightedBernstein",
+        "Proofs.RadenkovicGutmanMobiusDisk",
+        "Proofs.RadenkovicGutmanNestedAffine",
+        "Proofs.RadenkovicGutmanNestedAffineComplete",
+        "Proofs.RadenkovicGutmanNestedArithmetic",
+        "Proofs.RadenkovicGutmanNestedClassCell",
+        "Proofs.RadenkovicGutmanNestedClassNorms",
+        "Proofs.RadenkovicGutmanNestedClassPolynomials",
+        "Proofs.RadenkovicGutmanNestedHorner",
+        "Proofs.RadenkovicGutmanNestedHornerCells",
+        "Proofs.RadenkovicGutmanNestedHornerTransform",
+        "Proofs.RadenkovicGutmanNestedInteger",
+        "Proofs.RadenkovicGutmanNestedIntegerAffine",
+        "Proofs.RadenkovicGutmanNestedIntegerHybrid",
+        "Proofs.RadenkovicGutmanNestedPositiveScale",
+        "Proofs.RadenkovicGutmanNestedReciprocal",
+        "Proofs.RadenkovicGutmanNormProgramPack",
+        "Proofs.RadenkovicGutmanPackedIntegerClassCell",
+        "Proofs.RadenkovicGutmanPackedIntegerSemanticAffine",
+        "Proofs.RadenkovicGutmanPathDeterminant",
+        "Proofs.RadenkovicGutmanPathEnclosure",
+        "Proofs.RadenkovicGutmanPathRecurrence",
+        "Proofs.RadenkovicGutmanPathResolvent",
+        "Proofs.RadenkovicGutmanRationalLog",
+        "Proofs.RadenkovicGutmanRationalTensorFast",
+        "Proofs.RadenkovicGutmanRationalTensorPolynomial",
+        "Proofs.RadenkovicGutmanReciprocalDisk",
+        "Proofs.RadenkovicGutmanResolventDisk",
+        "Proofs.RadenkovicGutmanRootIsolation",
+        "Proofs.RadenkovicGutmanRootSchur",
+        "Proofs.RadenkovicGutmanScaledQuotient",
+        "Proofs.RadenkovicGutmanTensorPolynomial"
+      ],
+      "required_module_count": 54,
+      "fresh_modules": [
+        "Proofs.RadenkovicGutmanEscapeReducedReserveData",
+        "Proofs.RadenkovicGutmanEscapeReducedReserveRow01"
+      ],
+      "fresh_module_count": 2,
+      "prerequisites": [],
+      "job_name": "ge46-checked-row01",
+      "artifact_name_template": "rg-ge46-checked-rows-20261103-{run}-{attempt}-row01",
+      "required_success_step": "Require exact original declarations and staged kernel exports"
+    },
+    "row02": {
+      "endpoints": [
+        "Proofs.RadenkovicGutmanEscapeReducedReserveRow02"
+      ],
+      "required_modules": [
+        "Proofs.RadenkovicGutmanArmBridge",
+        "Proofs.RadenkovicGutmanArmClasses",
+        "Proofs.RadenkovicGutmanArmRationalForm",
+        "Proofs.RadenkovicGutmanBernstein",
+        "Proofs.RadenkovicGutmanCheckedRoots",
+        "Proofs.RadenkovicGutmanClassCellCertificates",
+        "Proofs.RadenkovicGutmanClassNormPolynomials",
+        "Proofs.RadenkovicGutmanComputedClassCell",
+        "Proofs.RadenkovicGutmanCoreQuotient",
+        "Proofs.RadenkovicGutmanEscapeReducedReserveData",
+        "Proofs.RadenkovicGutmanEscapeReducedReserveRow02",
+        "Proofs.RadenkovicGutmanFastNestedCellData",
+        "Proofs.RadenkovicGutmanFastNestedClassBoxes",
+        "Proofs.RadenkovicGutmanFocus",
+        "Proofs.RadenkovicGutmanFusionQuotient",
+        "Proofs.RadenkovicGutmanGraphJoin",
+        "Proofs.RadenkovicGutmanHornerCertificates",
+        "Proofs.RadenkovicGutmanIntegerBernsteinRows",
+        "Proofs.RadenkovicGutmanIntegerBernsteinTable",
+        "Proofs.RadenkovicGutmanIntegerComputedClassCell",
+        "Proofs.RadenkovicGutmanIntegerDataElaboration",
+        "Proofs.RadenkovicGutmanIntegerLiteral",
+        "Proofs.RadenkovicGutmanIntegerWeightedBernstein",
+        "Proofs.RadenkovicGutmanMobiusDisk",
+        "Proofs.RadenkovicGutmanNestedAffine",
+        "Proofs.RadenkovicGutmanNestedAffineComplete",
+        "Proofs.RadenkovicGutmanNestedArithmetic",
+        "Proofs.RadenkovicGutmanNestedClassCell",
+        "Proofs.RadenkovicGutmanNestedClassNorms",
+        "Proofs.RadenkovicGutmanNestedClassPolynomials",
+        "Proofs.RadenkovicGutmanNestedHorner",
+        "Proofs.RadenkovicGutmanNestedHornerCells",
+        "Proofs.RadenkovicGutmanNestedHornerTransform",
+        "Proofs.RadenkovicGutmanNestedInteger",
+        "Proofs.RadenkovicGutmanNestedIntegerAffine",
+        "Proofs.RadenkovicGutmanNestedIntegerHybrid",
+        "Proofs.RadenkovicGutmanNestedPositiveScale",
+        "Proofs.RadenkovicGutmanNestedReciprocal",
+        "Proofs.RadenkovicGutmanNormProgramPack",
+        "Proofs.RadenkovicGutmanPackedIntegerClassCell",
+        "Proofs.RadenkovicGutmanPackedIntegerSemanticAffine",
+        "Proofs.RadenkovicGutmanPathDeterminant",
+        "Proofs.RadenkovicGutmanPathEnclosure",
+        "Proofs.RadenkovicGutmanPathRecurrence",
+        "Proofs.RadenkovicGutmanPathResolvent",
+        "Proofs.RadenkovicGutmanRationalLog",
+        "Proofs.RadenkovicGutmanRationalTensorFast",
+        "Proofs.RadenkovicGutmanRationalTensorPolynomial",
+        "Proofs.RadenkovicGutmanReciprocalDisk",
+        "Proofs.RadenkovicGutmanResolventDisk",
+        "Proofs.RadenkovicGutmanRootIsolation",
+        "Proofs.RadenkovicGutmanRootSchur",
+        "Proofs.RadenkovicGutmanScaledQuotient",
+        "Proofs.RadenkovicGutmanTensorPolynomial"
+      ],
+      "required_module_count": 54,
+      "fresh_modules": [
+        "Proofs.RadenkovicGutmanEscapeReducedReserveData",
+        "Proofs.RadenkovicGutmanEscapeReducedReserveRow02"
+      ],
+      "fresh_module_count": 2,
+      "prerequisites": [],
+      "job_name": "ge46-checked-row02",
+      "artifact_name_template": "rg-ge46-checked-rows-20261103-{run}-{attempt}-row02",
+      "required_success_step": "Require exact original declarations and staged kernel exports"
+    },
+    "row03": {
+      "endpoints": [
+        "Proofs.RadenkovicGutmanEscapeReducedReserveRow03"
+      ],
+      "required_modules": [
+        "Proofs.RadenkovicGutmanArmBridge",
+        "Proofs.RadenkovicGutmanArmClasses",
+        "Proofs.RadenkovicGutmanArmRationalForm",
+        "Proofs.RadenkovicGutmanBernstein",
+        "Proofs.RadenkovicGutmanCheckedRoots",
+        "Proofs.RadenkovicGutmanClassCellCertificates",
+        "Proofs.RadenkovicGutmanClassNormPolynomials",
+        "Proofs.RadenkovicGutmanComputedClassCell",
+        "Proofs.RadenkovicGutmanCoreQuotient",
+        "Proofs.RadenkovicGutmanEscapeReducedReserveData",
+        "Proofs.RadenkovicGutmanEscapeReducedReserveRow03",
+        "Proofs.RadenkovicGutmanFastNestedCellData",
+        "Proofs.RadenkovicGutmanFastNestedClassBoxes",
+        "Proofs.RadenkovicGutmanFocus",
+        "Proofs.RadenkovicGutmanFusionQuotient",
+        "Proofs.RadenkovicGutmanGraphJoin",
+        "Proofs.RadenkovicGutmanHornerCertificates",
+        "Proofs.RadenkovicGutmanIntegerBernsteinRows",
+        "Proofs.RadenkovicGutmanIntegerBernsteinTable",
+        "Proofs.RadenkovicGutmanIntegerComputedClassCell",
+        "Proofs.RadenkovicGutmanIntegerDataElaboration",
+        "Proofs.RadenkovicGutmanIntegerLiteral",
+        "Proofs.RadenkovicGutmanIntegerWeightedBernstein",
+        "Proofs.RadenkovicGutmanMobiusDisk",
+        "Proofs.RadenkovicGutmanNestedAffine",
+        "Proofs.RadenkovicGutmanNestedAffineComplete",
+        "Proofs.RadenkovicGutmanNestedArithmetic",
+        "Proofs.RadenkovicGutmanNestedClassCell",
+        "Proofs.RadenkovicGutmanNestedClassNorms",
+        "Proofs.RadenkovicGutmanNestedClassPolynomials",
+        "Proofs.RadenkovicGutmanNestedHorner",
+        "Proofs.RadenkovicGutmanNestedHornerCells",
+        "Proofs.RadenkovicGutmanNestedHornerTransform",
+        "Proofs.RadenkovicGutmanNestedInteger",
+        "Proofs.RadenkovicGutmanNestedIntegerAffine",
+        "Proofs.RadenkovicGutmanNestedIntegerHybrid",
+        "Proofs.RadenkovicGutmanNestedPositiveScale",
+        "Proofs.RadenkovicGutmanNestedReciprocal",
+        "Proofs.RadenkovicGutmanNormProgramPack",
+        "Proofs.RadenkovicGutmanPackedIntegerClassCell",
+        "Proofs.RadenkovicGutmanPackedIntegerSemanticAffine",
+        "Proofs.RadenkovicGutmanPathDeterminant",
+        "Proofs.RadenkovicGutmanPathEnclosure",
+        "Proofs.RadenkovicGutmanPathRecurrence",
+        "Proofs.RadenkovicGutmanPathResolvent",
+        "Proofs.RadenkovicGutmanRationalLog",
+        "Proofs.RadenkovicGutmanRationalTensorFast",
+        "Proofs.RadenkovicGutmanRationalTensorPolynomial",
+        "Proofs.RadenkovicGutmanReciprocalDisk",
+        "Proofs.RadenkovicGutmanResolventDisk",
+        "Proofs.RadenkovicGutmanRootIsolation",
+        "Proofs.RadenkovicGutmanRootSchur",
+        "Proofs.RadenkovicGutmanScaledQuotient",
+        "Proofs.RadenkovicGutmanTensorPolynomial"
+      ],
+      "required_module_count": 54,
+      "fresh_modules": [
+        "Proofs.RadenkovicGutmanEscapeReducedReserveData",
+        "Proofs.RadenkovicGutmanEscapeReducedReserveRow03"
+      ],
+      "fresh_module_count": 2,
+      "prerequisites": [],
+      "job_name": "ge46-checked-row03",
+      "artifact_name_template": "rg-ge46-checked-rows-20261103-{run}-{attempt}-row03",
+      "required_success_step": "Require exact original declarations and staged kernel exports"
+    },
+    "row04": {
+      "endpoints": [
+        "Proofs.RadenkovicGutmanEscapeReducedReserveRow04"
+      ],
+      "required_modules": [
+        "Proofs.RadenkovicGutmanArmBridge",
+        "Proofs.RadenkovicGutmanArmClasses",
+        "Proofs.RadenkovicGutmanArmRationalForm",
+        "Proofs.RadenkovicGutmanBernstein",
+        "Proofs.RadenkovicGutmanCheckedRoots",
+        "Proofs.RadenkovicGutmanClassCellCertificates",
+        "Proofs.RadenkovicGutmanClassNormPolynomials",
+        "Proofs.RadenkovicGutmanComputedClassCell",
+        "Proofs.RadenkovicGutmanCoreQuotient",
+        "Proofs.RadenkovicGutmanEscapeReducedReserveData",
+        "Proofs.RadenkovicGutmanEscapeReducedReserveRow04",
+        "Proofs.RadenkovicGutmanFastNestedCellData",
+        "Proofs.RadenkovicGutmanFastNestedClassBoxes",
+        "Proofs.RadenkovicGutmanFocus",
+        "Proofs.RadenkovicGutmanFusionQuotient",
+        "Proofs.RadenkovicGutmanGraphJoin",
+        "Proofs.RadenkovicGutmanHornerCertificates",
+        "Proofs.RadenkovicGutmanIntegerBernsteinRows",
+        "Proofs.RadenkovicGutmanIntegerBernsteinTable",
+        "Proofs.RadenkovicGutmanIntegerComputedClassCell",
+        "Proofs.RadenkovicGutmanIntegerDataElaboration",
+        "Proofs.RadenkovicGutmanIntegerLiteral",
+        "Proofs.RadenkovicGutmanIntegerWeightedBernstein",
+        "Proofs.RadenkovicGutmanMobiusDisk",
+        "Proofs.RadenkovicGutmanNestedAffine",
+        "Proofs.RadenkovicGutmanNestedAffineComplete",
+        "Proofs.RadenkovicGutmanNestedArithmetic",
+        "Proofs.RadenkovicGutmanNestedClassCell",
+        "Proofs.RadenkovicGutmanNestedClassNorms",
+        "Proofs.RadenkovicGutmanNestedClassPolynomials",
+        "Proofs.RadenkovicGutmanNestedHorner",
+        "Proofs.RadenkovicGutmanNestedHornerCells",
+        "Proofs.RadenkovicGutmanNestedHornerTransform",
+        "Proofs.RadenkovicGutmanNestedInteger",
+        "Proofs.RadenkovicGutmanNestedIntegerAffine",
+        "Proofs.RadenkovicGutmanNestedIntegerHybrid",
+        "Proofs.RadenkovicGutmanNestedPositiveScale",
+        "Proofs.RadenkovicGutmanNestedReciprocal",
+        "Proofs.RadenkovicGutmanNormProgramPack",
+        "Proofs.RadenkovicGutmanPackedIntegerClassCell",
+        "Proofs.RadenkovicGutmanPackedIntegerSemanticAffine",
+        "Proofs.RadenkovicGutmanPathDeterminant",
+        "Proofs.RadenkovicGutmanPathEnclosure",
+        "Proofs.RadenkovicGutmanPathRecurrence",
+        "Proofs.RadenkovicGutmanPathResolvent",
+        "Proofs.RadenkovicGutmanRationalLog",
+        "Proofs.RadenkovicGutmanRationalTensorFast",
+        "Proofs.RadenkovicGutmanRationalTensorPolynomial",
+        "Proofs.RadenkovicGutmanReciprocalDisk",
+        "Proofs.RadenkovicGutmanResolventDisk",
+        "Proofs.RadenkovicGutmanRootIsolation",
+        "Proofs.RadenkovicGutmanRootSchur",
+        "Proofs.RadenkovicGutmanScaledQuotient",
+        "Proofs.RadenkovicGutmanTensorPolynomial"
+      ],
+      "required_module_count": 54,
+      "fresh_modules": [
+        "Proofs.RadenkovicGutmanEscapeReducedReserveData",
+        "Proofs.RadenkovicGutmanEscapeReducedReserveRow04"
+      ],
+      "fresh_module_count": 2,
+      "prerequisites": [],
+      "job_name": "ge46-checked-row04",
+      "artifact_name_template": "rg-ge46-checked-rows-20261103-{run}-{attempt}-row04",
+      "required_success_step": "Require exact original declarations and staged kernel exports"
+    },
+    "row05": {
+      "endpoints": [
+        "Proofs.RadenkovicGutmanEscapeReducedReserveRow05"
+      ],
+      "required_modules": [
+        "Proofs.RadenkovicGutmanArmBridge",
+        "Proofs.RadenkovicGutmanArmClasses",
+        "Proofs.RadenkovicGutmanArmRationalForm",
+        "Proofs.RadenkovicGutmanBernstein",
+        "Proofs.RadenkovicGutmanCheckedRoots",
+        "Proofs.RadenkovicGutmanClassCellCertificates",
+        "Proofs.RadenkovicGutmanClassNormPolynomials",
+        "Proofs.RadenkovicGutmanComputedClassCell",
+        "Proofs.RadenkovicGutmanCoreQuotient",
+        "Proofs.RadenkovicGutmanEscapeReducedReserveData",
+        "Proofs.RadenkovicGutmanEscapeReducedReserveRow05",
+        "Proofs.RadenkovicGutmanFastNestedCellData",
+        "Proofs.RadenkovicGutmanFastNestedClassBoxes",
+        "Proofs.RadenkovicGutmanFocus",
+        "Proofs.RadenkovicGutmanFusionQuotient",
+        "Proofs.RadenkovicGutmanGraphJoin",
+        "Proofs.RadenkovicGutmanHornerCertificates",
+        "Proofs.RadenkovicGutmanIntegerBernsteinRows",
+        "Proofs.RadenkovicGutmanIntegerBernsteinTable",
+        "Proofs.RadenkovicGutmanIntegerComputedClassCell",
+        "Proofs.RadenkovicGutmanIntegerDataElaboration",
+        "Proofs.RadenkovicGutmanIntegerLiteral",
+        "Proofs.RadenkovicGutmanIntegerWeightedBernstein",
+        "Proofs.RadenkovicGutmanMobiusDisk",
+        "Proofs.RadenkovicGutmanNestedAffine",
+        "Proofs.RadenkovicGutmanNestedAffineComplete",
+        "Proofs.RadenkovicGutmanNestedArithmetic",
+        "Proofs.RadenkovicGutmanNestedClassCell",
+        "Proofs.RadenkovicGutmanNestedClassNorms",
+        "Proofs.RadenkovicGutmanNestedClassPolynomials",
+        "Proofs.RadenkovicGutmanNestedHorner",
+        "Proofs.RadenkovicGutmanNestedHornerCells",
+        "Proofs.RadenkovicGutmanNestedHornerTransform",
+        "Proofs.RadenkovicGutmanNestedInteger",
+        "Proofs.RadenkovicGutmanNestedIntegerAffine",
+        "Proofs.RadenkovicGutmanNestedIntegerHybrid",
+        "Proofs.RadenkovicGutmanNestedPositiveScale",
+        "Proofs.RadenkovicGutmanNestedReciprocal",
+        "Proofs.RadenkovicGutmanNormProgramPack",
+        "Proofs.RadenkovicGutmanPackedIntegerClassCell",
+        "Proofs.RadenkovicGutmanPackedIntegerSemanticAffine",
+        "Proofs.RadenkovicGutmanPathDeterminant",
+        "Proofs.RadenkovicGutmanPathEnclosure",
+        "Proofs.RadenkovicGutmanPathRecurrence",
+        "Proofs.RadenkovicGutmanPathResolvent",
+        "Proofs.RadenkovicGutmanRationalLog",
+        "Proofs.RadenkovicGutmanRationalTensorFast",
+        "Proofs.RadenkovicGutmanRationalTensorPolynomial",
+        "Proofs.RadenkovicGutmanReciprocalDisk",
+        "Proofs.RadenkovicGutmanResolventDisk",
+        "Proofs.RadenkovicGutmanRootIsolation",
+        "Proofs.RadenkovicGutmanRootSchur",
+        "Proofs.RadenkovicGutmanScaledQuotient",
+        "Proofs.RadenkovicGutmanTensorPolynomial"
+      ],
+      "required_module_count": 54,
+      "fresh_modules": [
+        "Proofs.RadenkovicGutmanEscapeReducedReserveData",
+        "Proofs.RadenkovicGutmanEscapeReducedReserveRow05"
+      ],
+      "fresh_module_count": 2,
+      "prerequisites": [],
+      "job_name": "ge46-checked-row05",
+      "artifact_name_template": "rg-ge46-checked-rows-20261103-{run}-{attempt}-row05",
+      "required_success_step": "Require exact original declarations and staged kernel exports"
+    },
+    "row06": {
+      "endpoints": [
+        "Proofs.RadenkovicGutmanEscapeReducedReserveRow06"
+      ],
+      "required_modules": [
+        "Proofs.RadenkovicGutmanArmBridge",
+        "Proofs.RadenkovicGutmanArmClasses",
+        "Proofs.RadenkovicGutmanArmRationalForm",
+        "Proofs.RadenkovicGutmanBernstein",
+        "Proofs.RadenkovicGutmanCheckedRoots",
+        "Proofs.RadenkovicGutmanClassCellCertificates",
+        "Proofs.RadenkovicGutmanClassNormPolynomials",
+        "Proofs.RadenkovicGutmanComputedClassCell",
+        "Proofs.RadenkovicGutmanCoreQuotient",
+        "Proofs.RadenkovicGutmanEscapeReducedReserveData",
+        "Proofs.RadenkovicGutmanEscapeReducedReserveRow06",
+        "Proofs.RadenkovicGutmanFastNestedCellData",
+        "Proofs.RadenkovicGutmanFastNestedClassBoxes",
+        "Proofs.RadenkovicGutmanFocus",
+        "Proofs.RadenkovicGutmanFusionQuotient",
+        "Proofs.RadenkovicGutmanGraphJoin",
+        "Proofs.RadenkovicGutmanHornerCertificates",
+        "Proofs.RadenkovicGutmanIntegerBernsteinRows",
+        "Proofs.RadenkovicGutmanIntegerBernsteinTable",
+        "Proofs.RadenkovicGutmanIntegerComputedClassCell",
+        "Proofs.RadenkovicGutmanIntegerDataElaboration",
+        "Proofs.RadenkovicGutmanIntegerLiteral",
+        "Proofs.RadenkovicGutmanIntegerWeightedBernstein",
+        "Proofs.RadenkovicGutmanMobiusDisk",
+        "Proofs.RadenkovicGutmanNestedAffine",
+        "Proofs.RadenkovicGutmanNestedAffineComplete",
+        "Proofs.RadenkovicGutmanNestedArithmetic",
+        "Proofs.RadenkovicGutmanNestedClassCell",
+        "Proofs.RadenkovicGutmanNestedClassNorms",
+        "Proofs.RadenkovicGutmanNestedClassPolynomials",
+        "Proofs.RadenkovicGutmanNestedHorner",
+        "Proofs.RadenkovicGutmanNestedHornerCells",
+        "Proofs.RadenkovicGutmanNestedHornerTransform",
+        "Proofs.RadenkovicGutmanNestedInteger",
+        "Proofs.RadenkovicGutmanNestedIntegerAffine",
+        "Proofs.RadenkovicGutmanNestedIntegerHybrid",
+        "Proofs.RadenkovicGutmanNestedPositiveScale",
+        "Proofs.RadenkovicGutmanNestedReciprocal",
+        "Proofs.RadenkovicGutmanNormProgramPack",
+        "Proofs.RadenkovicGutmanPackedIntegerClassCell",
+        "Proofs.RadenkovicGutmanPackedIntegerSemanticAffine",
+        "Proofs.RadenkovicGutmanPathDeterminant",
+        "Proofs.RadenkovicGutmanPathEnclosure",
+        "Proofs.RadenkovicGutmanPathRecurrence",
+        "Proofs.RadenkovicGutmanPathResolvent",
+        "Proofs.RadenkovicGutmanRationalLog",
+        "Proofs.RadenkovicGutmanRationalTensorFast",
+        "Proofs.RadenkovicGutmanRationalTensorPolynomial",
+        "Proofs.RadenkovicGutmanReciprocalDisk",
+        "Proofs.RadenkovicGutmanResolventDisk",
+        "Proofs.RadenkovicGutmanRootIsolation",
+        "Proofs.RadenkovicGutmanRootSchur",
+        "Proofs.RadenkovicGutmanScaledQuotient",
+        "Proofs.RadenkovicGutmanTensorPolynomial"
+      ],
+      "required_module_count": 54,
+      "fresh_modules": [
+        "Proofs.RadenkovicGutmanEscapeReducedReserveData",
+        "Proofs.RadenkovicGutmanEscapeReducedReserveRow06"
+      ],
+      "fresh_module_count": 2,
+      "prerequisites": [],
+      "job_name": "ge46-checked-row06",
+      "artifact_name_template": "rg-ge46-checked-rows-20261103-{run}-{attempt}-row06",
+      "required_success_step": "Require exact original declarations and staged kernel exports"
+    },
+    "row07": {
+      "endpoints": [
+        "Proofs.RadenkovicGutmanEscapeReducedReserveRow07"
+      ],
+      "required_modules": [
+        "Proofs.RadenkovicGutmanArmBridge",
+        "Proofs.RadenkovicGutmanArmClasses",
+        "Proofs.RadenkovicGutmanArmRationalForm",
+        "Proofs.RadenkovicGutmanBernstein",
+        "Proofs.RadenkovicGutmanCheckedRoots",
+        "Proofs.RadenkovicGutmanClassCellCertificates",
+        "Proofs.RadenkovicGutmanClassNormPolynomials",
+        "Proofs.RadenkovicGutmanComputedClassCell",
+        "Proofs.RadenkovicGutmanCoreQuotient",
+        "Proofs.RadenkovicGutmanEscapeReducedReserveData",
+        "Proofs.RadenkovicGutmanEscapeReducedReserveRow07",
+        "Proofs.RadenkovicGutmanFastNestedCellData",
+        "Proofs.RadenkovicGutmanFastNestedClassBoxes",
+        "Proofs.RadenkovicGutmanFocus",
+        "Proofs.RadenkovicGutmanFusionQuotient",
+        "Proofs.RadenkovicGutmanGraphJoin",
+        "Proofs.RadenkovicGutmanHornerCertificates",
+        "Proofs.RadenkovicGutmanIntegerBernsteinRows",
+        "Proofs.RadenkovicGutmanIntegerBernsteinTable",
+        "Proofs.RadenkovicGutmanIntegerComputedClassCell",
+        "Proofs.RadenkovicGutmanIntegerDataElaboration",
+        "Proofs.RadenkovicGutmanIntegerLiteral",
+        "Proofs.RadenkovicGutmanIntegerWeightedBernstein",
+        "Proofs.RadenkovicGutmanMobiusDisk",
+        "Proofs.RadenkovicGutmanNestedAffine",
+        "Proofs.RadenkovicGutmanNestedAffineComplete",
+        "Proofs.RadenkovicGutmanNestedArithmetic",
+        "Proofs.RadenkovicGutmanNestedClassCell",
+        "Proofs.RadenkovicGutmanNestedClassNorms",
+        "Proofs.RadenkovicGutmanNestedClassPolynomials",
+        "Proofs.RadenkovicGutmanNestedHorner",
+        "Proofs.RadenkovicGutmanNestedHornerCells",
+        "Proofs.RadenkovicGutmanNestedHornerTransform",
+        "Proofs.RadenkovicGutmanNestedInteger",
+        "Proofs.RadenkovicGutmanNestedIntegerAffine",
+        "Proofs.RadenkovicGutmanNestedIntegerHybrid",
+        "Proofs.RadenkovicGutmanNestedPositiveScale",
+        "Proofs.RadenkovicGutmanNestedReciprocal",
+        "Proofs.RadenkovicGutmanNormProgramPack",
+        "Proofs.RadenkovicGutmanPackedIntegerClassCell",
+        "Proofs.RadenkovicGutmanPackedIntegerSemanticAffine",
+        "Proofs.RadenkovicGutmanPathDeterminant",
+        "Proofs.RadenkovicGutmanPathEnclosure",
+        "Proofs.RadenkovicGutmanPathRecurrence",
+        "Proofs.RadenkovicGutmanPathResolvent",
+        "Proofs.RadenkovicGutmanRationalLog",
+        "Proofs.RadenkovicGutmanRationalTensorFast",
+        "Proofs.RadenkovicGutmanRationalTensorPolynomial",
+        "Proofs.RadenkovicGutmanReciprocalDisk",
+        "Proofs.RadenkovicGutmanResolventDisk",
+        "Proofs.RadenkovicGutmanRootIsolation",
+        "Proofs.RadenkovicGutmanRootSchur",
+        "Proofs.RadenkovicGutmanScaledQuotient",
+        "Proofs.RadenkovicGutmanTensorPolynomial"
+      ],
+      "required_module_count": 54,
+      "fresh_modules": [
+        "Proofs.RadenkovicGutmanEscapeReducedReserveData",
+        "Proofs.RadenkovicGutmanEscapeReducedReserveRow07"
+      ],
+      "fresh_module_count": 2,
+      "prerequisites": [],
+      "job_name": "ge46-checked-row07",
+      "artifact_name_template": "rg-ge46-checked-rows-20261103-{run}-{attempt}-row07",
+      "required_success_step": "Require exact original declarations and staged kernel exports"
+    },
+    "row08": {
+      "endpoints": [
+        "Proofs.RadenkovicGutmanEscapeReducedReserveRow08"
+      ],
+      "required_modules": [
+        "Proofs.RadenkovicGutmanArmBridge",
+        "Proofs.RadenkovicGutmanArmClasses",
+        "Proofs.RadenkovicGutmanArmRationalForm",
+        "Proofs.RadenkovicGutmanBernstein",
+        "Proofs.RadenkovicGutmanCheckedRoots",
+        "Proofs.RadenkovicGutmanClassCellCertificates",
+        "Proofs.RadenkovicGutmanClassNormPolynomials",
+        "Proofs.RadenkovicGutmanComputedClassCell",
+        "Proofs.RadenkovicGutmanCoreQuotient",
+        "Proofs.RadenkovicGutmanEscapeReducedReserveData",
+        "Proofs.RadenkovicGutmanEscapeReducedReserveRow08",
+        "Proofs.RadenkovicGutmanFastNestedCellData",
+        "Proofs.RadenkovicGutmanFastNestedClassBoxes",
+        "Proofs.RadenkovicGutmanFocus",
+        "Proofs.RadenkovicGutmanFusionQuotient",
+        "Proofs.RadenkovicGutmanGraphJoin",
+        "Proofs.RadenkovicGutmanHornerCertificates",
+        "Proofs.RadenkovicGutmanIntegerBernsteinRows",
+        "Proofs.RadenkovicGutmanIntegerBernsteinTable",
+        "Proofs.RadenkovicGutmanIntegerComputedClassCell",
+        "Proofs.RadenkovicGutmanIntegerDataElaboration",
+        "Proofs.RadenkovicGutmanIntegerLiteral",
+        "Proofs.RadenkovicGutmanIntegerWeightedBernstein",
+        "Proofs.RadenkovicGutmanMobiusDisk",
+        "Proofs.RadenkovicGutmanNestedAffine",
+        "Proofs.RadenkovicGutmanNestedAffineComplete",
+        "Proofs.RadenkovicGutmanNestedArithmetic",
+        "Proofs.RadenkovicGutmanNestedClassCell",
+        "Proofs.RadenkovicGutmanNestedClassNorms",
+        "Proofs.RadenkovicGutmanNestedClassPolynomials",
+        "Proofs.RadenkovicGutmanNestedHorner",
+        "Proofs.RadenkovicGutmanNestedHornerCells",
+        "Proofs.RadenkovicGutmanNestedHornerTransform",
+        "Proofs.RadenkovicGutmanNestedInteger",
+        "Proofs.RadenkovicGutmanNestedIntegerAffine",
+        "Proofs.RadenkovicGutmanNestedIntegerHybrid",
+        "Proofs.RadenkovicGutmanNestedPositiveScale",
+        "Proofs.RadenkovicGutmanNestedReciprocal",
+        "Proofs.RadenkovicGutmanNormProgramPack",
+        "Proofs.RadenkovicGutmanPackedIntegerClassCell",
+        "Proofs.RadenkovicGutmanPackedIntegerSemanticAffine",
+        "Proofs.RadenkovicGutmanPathDeterminant",
+        "Proofs.RadenkovicGutmanPathEnclosure",
+        "Proofs.RadenkovicGutmanPathRecurrence",
+        "Proofs.RadenkovicGutmanPathResolvent",
+        "Proofs.RadenkovicGutmanRationalLog",
+        "Proofs.RadenkovicGutmanRationalTensorFast",
+        "Proofs.RadenkovicGutmanRationalTensorPolynomial",
+        "Proofs.RadenkovicGutmanReciprocalDisk",
+        "Proofs.RadenkovicGutmanResolventDisk",
+        "Proofs.RadenkovicGutmanRootIsolation",
+        "Proofs.RadenkovicGutmanRootSchur",
+        "Proofs.RadenkovicGutmanScaledQuotient",
+        "Proofs.RadenkovicGutmanTensorPolynomial"
+      ],
+      "required_module_count": 54,
+      "fresh_modules": [
+        "Proofs.RadenkovicGutmanEscapeReducedReserveData",
+        "Proofs.RadenkovicGutmanEscapeReducedReserveRow08"
+      ],
+      "fresh_module_count": 2,
+      "prerequisites": [],
+      "job_name": "ge46-checked-row08",
+      "artifact_name_template": "rg-ge46-checked-rows-20261103-{run}-{attempt}-row08",
+      "required_success_step": "Require exact original declarations and staged kernel exports"
+    },
+    "row09": {
+      "endpoints": [
+        "Proofs.RadenkovicGutmanEscapeReducedReserveRow09"
+      ],
+      "required_modules": [
+        "Proofs.RadenkovicGutmanArmBridge",
+        "Proofs.RadenkovicGutmanArmClasses",
+        "Proofs.RadenkovicGutmanArmRationalForm",
+        "Proofs.RadenkovicGutmanBernstein",
+        "Proofs.RadenkovicGutmanCheckedRoots",
+        "Proofs.RadenkovicGutmanClassCellCertificates",
+        "Proofs.RadenkovicGutmanClassNormPolynomials",
+        "Proofs.RadenkovicGutmanComputedClassCell",
+        "Proofs.RadenkovicGutmanCoreQuotient",
+        "Proofs.RadenkovicGutmanEscapeReducedReserveData",
+        "Proofs.RadenkovicGutmanEscapeReducedReserveRow09",
+        "Proofs.RadenkovicGutmanFastNestedCellData",
+        "Proofs.RadenkovicGutmanFastNestedClassBoxes",
+        "Proofs.RadenkovicGutmanFocus",
+        "Proofs.RadenkovicGutmanFusionQuotient",
+        "Proofs.RadenkovicGutmanGraphJoin",
+        "Proofs.RadenkovicGutmanHornerCertificates",
+        "Proofs.RadenkovicGutmanIntegerBernsteinRows",
+        "Proofs.RadenkovicGutmanIntegerBernsteinTable",
+        "Proofs.RadenkovicGutmanIntegerComputedClassCell",
+        "Proofs.RadenkovicGutmanIntegerDataElaboration",
+        "Proofs.RadenkovicGutmanIntegerLiteral",
+        "Proofs.RadenkovicGutmanIntegerWeightedBernstein",
+        "Proofs.RadenkovicGutmanMobiusDisk",
+        "Proofs.RadenkovicGutmanNestedAffine",
+        "Proofs.RadenkovicGutmanNestedAffineComplete",
+        "Proofs.RadenkovicGutmanNestedArithmetic",
+        "Proofs.RadenkovicGutmanNestedClassCell",
+        "Proofs.RadenkovicGutmanNestedClassNorms",
+        "Proofs.RadenkovicGutmanNestedClassPolynomials",
+        "Proofs.RadenkovicGutmanNestedHorner",
+        "Proofs.RadenkovicGutmanNestedHornerCells",
+        "Proofs.RadenkovicGutmanNestedHornerTransform",
+        "Proofs.RadenkovicGutmanNestedInteger",
+        "Proofs.RadenkovicGutmanNestedIntegerAffine",
+        "Proofs.RadenkovicGutmanNestedIntegerHybrid",
+        "Proofs.RadenkovicGutmanNestedPositiveScale",
+        "Proofs.RadenkovicGutmanNestedReciprocal",
+        "Proofs.RadenkovicGutmanNormProgramPack",
+        "Proofs.RadenkovicGutmanPackedIntegerClassCell",
+        "Proofs.RadenkovicGutmanPackedIntegerSemanticAffine",
+        "Proofs.RadenkovicGutmanPathDeterminant",
+        "Proofs.RadenkovicGutmanPathEnclosure",
+        "Proofs.RadenkovicGutmanPathRecurrence",
+        "Proofs.RadenkovicGutmanPathResolvent",
+        "Proofs.RadenkovicGutmanRationalLog",
+        "Proofs.RadenkovicGutmanRationalTensorFast",
+        "Proofs.RadenkovicGutmanRationalTensorPolynomial",
+        "Proofs.RadenkovicGutmanReciprocalDisk",
+        "Proofs.RadenkovicGutmanResolventDisk",
+        "Proofs.RadenkovicGutmanRootIsolation",
+        "Proofs.RadenkovicGutmanRootSchur",
+        "Proofs.RadenkovicGutmanScaledQuotient",
+        "Proofs.RadenkovicGutmanTensorPolynomial"
+      ],
+      "required_module_count": 54,
+      "fresh_modules": [
+        "Proofs.RadenkovicGutmanEscapeReducedReserveData",
+        "Proofs.RadenkovicGutmanEscapeReducedReserveRow09"
+      ],
+      "fresh_module_count": 2,
+      "prerequisites": [],
+      "job_name": "ge46-checked-row09",
+      "artifact_name_template": "rg-ge46-checked-rows-20261103-{run}-{attempt}-row09",
+      "required_success_step": "Require exact original declarations and staged kernel exports"
+    },
+    "row10": {
+      "endpoints": [
+        "Proofs.RadenkovicGutmanEscapeReducedReserveRow10"
+      ],
+      "required_modules": [
+        "Proofs.RadenkovicGutmanArmBridge",
+        "Proofs.RadenkovicGutmanArmClasses",
+        "Proofs.RadenkovicGutmanArmRationalForm",
+        "Proofs.RadenkovicGutmanBernstein",
+        "Proofs.RadenkovicGutmanCheckedRoots",
+        "Proofs.RadenkovicGutmanClassCellCertificates",
+        "Proofs.RadenkovicGutmanClassNormPolynomials",
+        "Proofs.RadenkovicGutmanComputedClassCell",
+        "Proofs.RadenkovicGutmanCoreQuotient",
+        "Proofs.RadenkovicGutmanEscapeReducedReserveData",
+        "Proofs.RadenkovicGutmanEscapeReducedReserveRow10",
+        "Proofs.RadenkovicGutmanFastNestedCellData",
+        "Proofs.RadenkovicGutmanFastNestedClassBoxes",
+        "Proofs.RadenkovicGutmanFocus",
+        "Proofs.RadenkovicGutmanFusionQuotient",
+        "Proofs.RadenkovicGutmanGraphJoin",
+        "Proofs.RadenkovicGutmanHornerCertificates",
+        "Proofs.RadenkovicGutmanIntegerBernsteinRows",
+        "Proofs.RadenkovicGutmanIntegerBernsteinTable",
+        "Proofs.RadenkovicGutmanIntegerComputedClassCell",
+        "Proofs.RadenkovicGutmanIntegerDataElaboration",
+        "Proofs.RadenkovicGutmanIntegerLiteral",
+        "Proofs.RadenkovicGutmanIntegerWeightedBernstein",
+        "Proofs.RadenkovicGutmanMobiusDisk",
+        "Proofs.RadenkovicGutmanNestedAffine",
+        "Proofs.RadenkovicGutmanNestedAffineComplete",
+        "Proofs.RadenkovicGutmanNestedArithmetic",
+        "Proofs.RadenkovicGutmanNestedClassCell",
+        "Proofs.RadenkovicGutmanNestedClassNorms",
+        "Proofs.RadenkovicGutmanNestedClassPolynomials",
+        "Proofs.RadenkovicGutmanNestedHorner",
+        "Proofs.RadenkovicGutmanNestedHornerCells",
+        "Proofs.RadenkovicGutmanNestedHornerTransform",
+        "Proofs.RadenkovicGutmanNestedInteger",
+        "Proofs.RadenkovicGutmanNestedIntegerAffine",
+        "Proofs.RadenkovicGutmanNestedIntegerHybrid",
+        "Proofs.RadenkovicGutmanNestedPositiveScale",
+        "Proofs.RadenkovicGutmanNestedReciprocal",
+        "Proofs.RadenkovicGutmanNormProgramPack",
+        "Proofs.RadenkovicGutmanPackedIntegerClassCell",
+        "Proofs.RadenkovicGutmanPackedIntegerSemanticAffine",
+        "Proofs.RadenkovicGutmanPathDeterminant",
+        "Proofs.RadenkovicGutmanPathEnclosure",
+        "Proofs.RadenkovicGutmanPathRecurrence",
+        "Proofs.RadenkovicGutmanPathResolvent",
+        "Proofs.RadenkovicGutmanRationalLog",
+        "Proofs.RadenkovicGutmanRationalTensorFast",
+        "Proofs.RadenkovicGutmanRationalTensorPolynomial",
+        "Proofs.RadenkovicGutmanReciprocalDisk",
+        "Proofs.RadenkovicGutmanResolventDisk",
+        "Proofs.RadenkovicGutmanRootIsolation",
+        "Proofs.RadenkovicGutmanRootSchur",
+        "Proofs.RadenkovicGutmanScaledQuotient",
+        "Proofs.RadenkovicGutmanTensorPolynomial"
+      ],
+      "required_module_count": 54,
+      "fresh_modules": [
+        "Proofs.RadenkovicGutmanEscapeReducedReserveData",
+        "Proofs.RadenkovicGutmanEscapeReducedReserveRow10"
+      ],
+      "fresh_module_count": 2,
+      "prerequisites": [],
+      "job_name": "ge46-checked-row10",
+      "artifact_name_template": "rg-ge46-checked-rows-20261103-{run}-{attempt}-row10",
+      "required_success_step": "Require exact original declarations and staged kernel exports"
+    },
+    "row11": {
+      "endpoints": [
+        "Proofs.RadenkovicGutmanEscapeReducedReserveRow11"
+      ],
+      "required_modules": [
+        "Proofs.RadenkovicGutmanArmBridge",
+        "Proofs.RadenkovicGutmanArmClasses",
+        "Proofs.RadenkovicGutmanArmRationalForm",
+        "Proofs.RadenkovicGutmanBernstein",
+        "Proofs.RadenkovicGutmanCheckedRoots",
+        "Proofs.RadenkovicGutmanClassCellCertificates",
+        "Proofs.RadenkovicGutmanClassNormPolynomials",
+        "Proofs.RadenkovicGutmanComputedClassCell",
+        "Proofs.RadenkovicGutmanCoreQuotient",
+        "Proofs.RadenkovicGutmanEscapeReducedReserveData",
+        "Proofs.RadenkovicGutmanEscapeReducedReserveRow11",
+        "Proofs.RadenkovicGutmanFastNestedCellData",
+        "Proofs.RadenkovicGutmanFastNestedClassBoxes",
+        "Proofs.RadenkovicGutmanFocus",
+        "Proofs.RadenkovicGutmanFusionQuotient",
+        "Proofs.RadenkovicGutmanGraphJoin",
+        "Proofs.RadenkovicGutmanHornerCertificates",
+        "Proofs.RadenkovicGutmanIntegerBernsteinRows",
+        "Proofs.RadenkovicGutmanIntegerBernsteinTable",
+        "Proofs.RadenkovicGutmanIntegerComputedClassCell",
+        "Proofs.RadenkovicGutmanIntegerDataElaboration",
+        "Proofs.RadenkovicGutmanIntegerLiteral",
+        "Proofs.RadenkovicGutmanIntegerWeightedBernstein",
+        "Proofs.RadenkovicGutmanMobiusDisk",
+        "Proofs.RadenkovicGutmanNestedAffine",
+        "Proofs.RadenkovicGutmanNestedAffineComplete",
+        "Proofs.RadenkovicGutmanNestedArithmetic",
+        "Proofs.RadenkovicGutmanNestedClassCell",
+        "Proofs.RadenkovicGutmanNestedClassNorms",
+        "Proofs.RadenkovicGutmanNestedClassPolynomials",
+        "Proofs.RadenkovicGutmanNestedHorner",
+        "Proofs.RadenkovicGutmanNestedHornerCells",
+        "Proofs.RadenkovicGutmanNestedHornerTransform",
+        "Proofs.RadenkovicGutmanNestedInteger",
+        "Proofs.RadenkovicGutmanNestedIntegerAffine",
+        "Proofs.RadenkovicGutmanNestedIntegerHybrid",
+        "Proofs.RadenkovicGutmanNestedPositiveScale",
+        "Proofs.RadenkovicGutmanNestedReciprocal",
+        "Proofs.RadenkovicGutmanNormProgramPack",
+        "Proofs.RadenkovicGutmanPackedIntegerClassCell",
+        "Proofs.RadenkovicGutmanPackedIntegerSemanticAffine",
+        "Proofs.RadenkovicGutmanPathDeterminant",
+        "Proofs.RadenkovicGutmanPathEnclosure",
+        "Proofs.RadenkovicGutmanPathRecurrence",
+        "Proofs.RadenkovicGutmanPathResolvent",
+        "Proofs.RadenkovicGutmanRationalLog",
+        "Proofs.RadenkovicGutmanRationalTensorFast",
+        "Proofs.RadenkovicGutmanRationalTensorPolynomial",
+        "Proofs.RadenkovicGutmanReciprocalDisk",
+        "Proofs.RadenkovicGutmanResolventDisk",
+        "Proofs.RadenkovicGutmanRootIsolation",
+        "Proofs.RadenkovicGutmanRootSchur",
+        "Proofs.RadenkovicGutmanScaledQuotient",
+        "Proofs.RadenkovicGutmanTensorPolynomial"
+      ],
+      "required_module_count": 54,
+      "fresh_modules": [
+        "Proofs.RadenkovicGutmanEscapeReducedReserveData",
+        "Proofs.RadenkovicGutmanEscapeReducedReserveRow11"
+      ],
+      "fresh_module_count": 2,
+      "prerequisites": [],
+      "job_name": "ge46-checked-row11",
+      "artifact_name_template": "rg-ge46-checked-rows-20261103-{run}-{attempt}-row11",
+      "required_success_step": "Require exact original declarations and staged kernel exports"
+    },
+    "row12": {
+      "endpoints": [
+        "Proofs.RadenkovicGutmanEscapeReducedReserveRow12"
+      ],
+      "required_modules": [
+        "Proofs.RadenkovicGutmanArmBridge",
+        "Proofs.RadenkovicGutmanArmClasses",
+        "Proofs.RadenkovicGutmanArmRationalForm",
+        "Proofs.RadenkovicGutmanBernstein",
+        "Proofs.RadenkovicGutmanCheckedRoots",
+        "Proofs.RadenkovicGutmanClassCellCertificates",
+        "Proofs.RadenkovicGutmanClassNormPolynomials",
+        "Proofs.RadenkovicGutmanComputedClassCell",
+        "Proofs.RadenkovicGutmanCoreQuotient",
+        "Proofs.RadenkovicGutmanEscapeReducedReserveData",
+        "Proofs.RadenkovicGutmanEscapeReducedReserveRow12",
+        "Proofs.RadenkovicGutmanFastNestedCellData",
+        "Proofs.RadenkovicGutmanFastNestedClassBoxes",
+        "Proofs.RadenkovicGutmanFocus",
+        "Proofs.RadenkovicGutmanFusionQuotient",
+        "Proofs.RadenkovicGutmanGraphJoin",
+        "Proofs.RadenkovicGutmanHornerCertificates",
+        "Proofs.RadenkovicGutmanIntegerBernsteinRows",
+        "Proofs.RadenkovicGutmanIntegerBernsteinTable",
+        "Proofs.RadenkovicGutmanIntegerComputedClassCell",
+        "Proofs.RadenkovicGutmanIntegerDataElaboration",
+        "Proofs.RadenkovicGutmanIntegerLiteral",
+        "Proofs.RadenkovicGutmanIntegerWeightedBernstein",
+        "Proofs.RadenkovicGutmanMobiusDisk",
+        "Proofs.RadenkovicGutmanNestedAffine",
+        "Proofs.RadenkovicGutmanNestedAffineComplete",
+        "Proofs.RadenkovicGutmanNestedArithmetic",
+        "Proofs.RadenkovicGutmanNestedClassCell",
+        "Proofs.RadenkovicGutmanNestedClassNorms",
+        "Proofs.RadenkovicGutmanNestedClassPolynomials",
+        "Proofs.RadenkovicGutmanNestedHorner",
+        "Proofs.RadenkovicGutmanNestedHornerCells",
+        "Proofs.RadenkovicGutmanNestedHornerTransform",
+        "Proofs.RadenkovicGutmanNestedInteger",
+        "Proofs.RadenkovicGutmanNestedIntegerAffine",
+        "Proofs.RadenkovicGutmanNestedIntegerHybrid",
+        "Proofs.RadenkovicGutmanNestedPositiveScale",
+        "Proofs.RadenkovicGutmanNestedReciprocal",
+        "Proofs.RadenkovicGutmanNormProgramPack",
+        "Proofs.RadenkovicGutmanPackedIntegerClassCell",
+        "Proofs.RadenkovicGutmanPackedIntegerSemanticAffine",
+        "Proofs.RadenkovicGutmanPathDeterminant",
+        "Proofs.RadenkovicGutmanPathEnclosure",
+        "Proofs.RadenkovicGutmanPathRecurrence",
+        "Proofs.RadenkovicGutmanPathResolvent",
+        "Proofs.RadenkovicGutmanRationalLog",
+        "Proofs.RadenkovicGutmanRationalTensorFast",
+        "Proofs.RadenkovicGutmanRationalTensorPolynomial",
+        "Proofs.RadenkovicGutmanReciprocalDisk",
+        "Proofs.RadenkovicGutmanResolventDisk",
+        "Proofs.RadenkovicGutmanRootIsolation",
+        "Proofs.RadenkovicGutmanRootSchur",
+        "Proofs.RadenkovicGutmanScaledQuotient",
+        "Proofs.RadenkovicGutmanTensorPolynomial"
+      ],
+      "required_module_count": 54,
+      "fresh_modules": [
+        "Proofs.RadenkovicGutmanEscapeReducedReserveData",
+        "Proofs.RadenkovicGutmanEscapeReducedReserveRow12"
+      ],
+      "fresh_module_count": 2,
+      "prerequisites": [],
+      "job_name": "ge46-checked-row12",
+      "artifact_name_template": "rg-ge46-checked-rows-20261103-{run}-{attempt}-row12",
+      "required_success_step": "Require exact original declarations and staged kernel exports"
+    },
+    "row13": {
+      "endpoints": [
+        "Proofs.RadenkovicGutmanEscapeReducedReserveRow13"
+      ],
+      "required_modules": [
+        "Proofs.RadenkovicGutmanArmBridge",
+        "Proofs.RadenkovicGutmanArmClasses",
+        "Proofs.RadenkovicGutmanArmRationalForm",
+        "Proofs.RadenkovicGutmanBernstein",
+        "Proofs.RadenkovicGutmanCheckedRoots",
+        "Proofs.RadenkovicGutmanClassCellCertificates",
+        "Proofs.RadenkovicGutmanClassNormPolynomials",
+        "Proofs.RadenkovicGutmanComputedClassCell",
+        "Proofs.RadenkovicGutmanCoreQuotient",
+        "Proofs.RadenkovicGutmanEscapeReducedReserveData",
+        "Proofs.RadenkovicGutmanEscapeReducedReserveRow13",
+        "Proofs.RadenkovicGutmanFastNestedCellData",
+        "Proofs.RadenkovicGutmanFastNestedClassBoxes",
+        "Proofs.RadenkovicGutmanFocus",
+        "Proofs.RadenkovicGutmanFusionQuotient",
+        "Proofs.RadenkovicGutmanGraphJoin",
+        "Proofs.RadenkovicGutmanHornerCertificates",
+        "Proofs.RadenkovicGutmanIntegerBernsteinRows",
+        "Proofs.RadenkovicGutmanIntegerBernsteinTable",
+        "Proofs.RadenkovicGutmanIntegerComputedClassCell",
+        "Proofs.RadenkovicGutmanIntegerDataElaboration",
+        "Proofs.RadenkovicGutmanIntegerLiteral",
+        "Proofs.RadenkovicGutmanIntegerWeightedBernstein",
+        "Proofs.RadenkovicGutmanMobiusDisk",
+        "Proofs.RadenkovicGutmanNestedAffine",
+        "Proofs.RadenkovicGutmanNestedAffineComplete",
+        "Proofs.RadenkovicGutmanNestedArithmetic",
+        "Proofs.RadenkovicGutmanNestedClassCell",
+        "Proofs.RadenkovicGutmanNestedClassNorms",
+        "Proofs.RadenkovicGutmanNestedClassPolynomials",
+        "Proofs.RadenkovicGutmanNestedHorner",
+        "Proofs.RadenkovicGutmanNestedHornerCells",
+        "Proofs.RadenkovicGutmanNestedHornerTransform",
+        "Proofs.RadenkovicGutmanNestedInteger",
+        "Proofs.RadenkovicGutmanNestedIntegerAffine",
+        "Proofs.RadenkovicGutmanNestedIntegerHybrid",
+        "Proofs.RadenkovicGutmanNestedPositiveScale",
+        "Proofs.RadenkovicGutmanNestedReciprocal",
+        "Proofs.RadenkovicGutmanNormProgramPack",
+        "Proofs.RadenkovicGutmanPackedIntegerClassCell",
+        "Proofs.RadenkovicGutmanPackedIntegerSemanticAffine",
+        "Proofs.RadenkovicGutmanPathDeterminant",
+        "Proofs.RadenkovicGutmanPathEnclosure",
+        "Proofs.RadenkovicGutmanPathRecurrence",
+        "Proofs.RadenkovicGutmanPathResolvent",
+        "Proofs.RadenkovicGutmanRationalLog",
+        "Proofs.RadenkovicGutmanRationalTensorFast",
+        "Proofs.RadenkovicGutmanRationalTensorPolynomial",
+        "Proofs.RadenkovicGutmanReciprocalDisk",
+        "Proofs.RadenkovicGutmanResolventDisk",
+        "Proofs.RadenkovicGutmanRootIsolation",
+        "Proofs.RadenkovicGutmanRootSchur",
+        "Proofs.RadenkovicGutmanScaledQuotient",
+        "Proofs.RadenkovicGutmanTensorPolynomial"
+      ],
+      "required_module_count": 54,
+      "fresh_modules": [
+        "Proofs.RadenkovicGutmanEscapeReducedReserveData",
+        "Proofs.RadenkovicGutmanEscapeReducedReserveRow13"
+      ],
+      "fresh_module_count": 2,
+      "prerequisites": [],
+      "job_name": "ge46-checked-row13",
+      "artifact_name_template": "rg-ge46-checked-rows-20261103-{run}-{attempt}-row13",
+      "required_success_step": "Require exact original declarations and staged kernel exports"
+    },
+    "row14": {
+      "endpoints": [
+        "Proofs.RadenkovicGutmanEscapeReducedReserveRow14"
+      ],
+      "required_modules": [
+        "Proofs.RadenkovicGutmanArmBridge",
+        "Proofs.RadenkovicGutmanArmClasses",
+        "Proofs.RadenkovicGutmanArmRationalForm",
+        "Proofs.RadenkovicGutmanBernstein",
+        "Proofs.RadenkovicGutmanCheckedRoots",
+        "Proofs.RadenkovicGutmanClassCellCertificates",
+        "Proofs.RadenkovicGutmanClassNormPolynomials",
+        "Proofs.RadenkovicGutmanComputedClassCell",
+        "Proofs.RadenkovicGutmanCoreQuotient",
+        "Proofs.RadenkovicGutmanEscapeReducedReserveData",
+        "Proofs.RadenkovicGutmanEscapeReducedReserveRow14",
+        "Proofs.RadenkovicGutmanFastNestedCellData",
+        "Proofs.RadenkovicGutmanFastNestedClassBoxes",
+        "Proofs.RadenkovicGutmanFocus",
+        "Proofs.RadenkovicGutmanFusionQuotient",
+        "Proofs.RadenkovicGutmanGraphJoin",
+        "Proofs.RadenkovicGutmanHornerCertificates",
+        "Proofs.RadenkovicGutmanIntegerBernsteinRows",
+        "Proofs.RadenkovicGutmanIntegerBernsteinTable",
+        "Proofs.RadenkovicGutmanIntegerComputedClassCell",
+        "Proofs.RadenkovicGutmanIntegerDataElaboration",
+        "Proofs.RadenkovicGutmanIntegerLiteral",
+        "Proofs.RadenkovicGutmanIntegerWeightedBernstein",
+        "Proofs.RadenkovicGutmanMobiusDisk",
+        "Proofs.RadenkovicGutmanNestedAffine",
+        "Proofs.RadenkovicGutmanNestedAffineComplete",
+        "Proofs.RadenkovicGutmanNestedArithmetic",
+        "Proofs.RadenkovicGutmanNestedClassCell",
+        "Proofs.RadenkovicGutmanNestedClassNorms",
+        "Proofs.RadenkovicGutmanNestedClassPolynomials",
+        "Proofs.RadenkovicGutmanNestedHorner",
+        "Proofs.RadenkovicGutmanNestedHornerCells",
+        "Proofs.RadenkovicGutmanNestedHornerTransform",
+        "Proofs.RadenkovicGutmanNestedInteger",
+        "Proofs.RadenkovicGutmanNestedIntegerAffine",
+        "Proofs.RadenkovicGutmanNestedIntegerHybrid",
+        "Proofs.RadenkovicGutmanNestedPositiveScale",
+        "Proofs.RadenkovicGutmanNestedReciprocal",
+        "Proofs.RadenkovicGutmanNormProgramPack",
+        "Proofs.RadenkovicGutmanPackedIntegerClassCell",
+        "Proofs.RadenkovicGutmanPackedIntegerSemanticAffine",
+        "Proofs.RadenkovicGutmanPathDeterminant",
+        "Proofs.RadenkovicGutmanPathEnclosure",
+        "Proofs.RadenkovicGutmanPathRecurrence",
+        "Proofs.RadenkovicGutmanPathResolvent",
+        "Proofs.RadenkovicGutmanRationalLog",
+        "Proofs.RadenkovicGutmanRationalTensorFast",
+        "Proofs.RadenkovicGutmanRationalTensorPolynomial",
+        "Proofs.RadenkovicGutmanReciprocalDisk",
+        "Proofs.RadenkovicGutmanResolventDisk",
+        "Proofs.RadenkovicGutmanRootIsolation",
+        "Proofs.RadenkovicGutmanRootSchur",
+        "Proofs.RadenkovicGutmanScaledQuotient",
+        "Proofs.RadenkovicGutmanTensorPolynomial"
+      ],
+      "required_module_count": 54,
+      "fresh_modules": [
+        "Proofs.RadenkovicGutmanEscapeReducedReserveData",
+        "Proofs.RadenkovicGutmanEscapeReducedReserveRow14"
+      ],
+      "fresh_module_count": 2,
+      "prerequisites": [],
+      "job_name": "ge46-checked-row14",
+      "artifact_name_template": "rg-ge46-checked-rows-20261103-{run}-{attempt}-row14",
+      "required_success_step": "Require exact original declarations and staged kernel exports"
+    },
+    "row15": {
+      "endpoints": [
+        "Proofs.RadenkovicGutmanEscapeReducedReserveRow15"
+      ],
+      "required_modules": [
+        "Proofs.RadenkovicGutmanArmBridge",
+        "Proofs.RadenkovicGutmanArmClasses",
+        "Proofs.RadenkovicGutmanArmRationalForm",
+        "Proofs.RadenkovicGutmanBernstein",
+        "Proofs.RadenkovicGutmanCheckedRoots",
+        "Proofs.RadenkovicGutmanClassCellCertificates",
+        "Proofs.RadenkovicGutmanClassNormPolynomials",
+        "Proofs.RadenkovicGutmanComputedClassCell",
+        "Proofs.RadenkovicGutmanCoreQuotient",
+        "Proofs.RadenkovicGutmanEscapeReducedReserveData",
+        "Proofs.RadenkovicGutmanEscapeReducedReserveRow15",
+        "Proofs.RadenkovicGutmanFastNestedCellData",
+        "Proofs.RadenkovicGutmanFastNestedClassBoxes",
+        "Proofs.RadenkovicGutmanFocus",
+        "Proofs.RadenkovicGutmanFusionQuotient",
+        "Proofs.RadenkovicGutmanGraphJoin",
+        "Proofs.RadenkovicGutmanHornerCertificates",
+        "Proofs.RadenkovicGutmanIntegerBernsteinRows",
+        "Proofs.RadenkovicGutmanIntegerBernsteinTable",
+        "Proofs.RadenkovicGutmanIntegerComputedClassCell",
+        "Proofs.RadenkovicGutmanIntegerDataElaboration",
+        "Proofs.RadenkovicGutmanIntegerLiteral",
+        "Proofs.RadenkovicGutmanIntegerWeightedBernstein",
+        "Proofs.RadenkovicGutmanMobiusDisk",
+        "Proofs.RadenkovicGutmanNestedAffine",
+        "Proofs.RadenkovicGutmanNestedAffineComplete",
+        "Proofs.RadenkovicGutmanNestedArithmetic",
+        "Proofs.RadenkovicGutmanNestedClassCell",
+        "Proofs.RadenkovicGutmanNestedClassNorms",
+        "Proofs.RadenkovicGutmanNestedClassPolynomials",
+        "Proofs.RadenkovicGutmanNestedHorner",
+        "Proofs.RadenkovicGutmanNestedHornerCells",
+        "Proofs.RadenkovicGutmanNestedHornerTransform",
+        "Proofs.RadenkovicGutmanNestedInteger",
+        "Proofs.RadenkovicGutmanNestedIntegerAffine",
+        "Proofs.RadenkovicGutmanNestedIntegerHybrid",
+        "Proofs.RadenkovicGutmanNestedPositiveScale",
+        "Proofs.RadenkovicGutmanNestedReciprocal",
+        "Proofs.RadenkovicGutmanNormProgramPack",
+        "Proofs.RadenkovicGutmanPackedIntegerClassCell",
+        "Proofs.RadenkovicGutmanPackedIntegerSemanticAffine",
+        "Proofs.RadenkovicGutmanPathDeterminant",
+        "Proofs.RadenkovicGutmanPathEnclosure",
+        "Proofs.RadenkovicGutmanPathRecurrence",
+        "Proofs.RadenkovicGutmanPathResolvent",
+        "Proofs.RadenkovicGutmanRationalLog",
+        "Proofs.RadenkovicGutmanRationalTensorFast",
+        "Proofs.RadenkovicGutmanRationalTensorPolynomial",
+        "Proofs.RadenkovicGutmanReciprocalDisk",
+        "Proofs.RadenkovicGutmanResolventDisk",
+        "Proofs.RadenkovicGutmanRootIsolation",
+        "Proofs.RadenkovicGutmanRootSchur",
+        "Proofs.RadenkovicGutmanScaledQuotient",
+        "Proofs.RadenkovicGutmanTensorPolynomial"
+      ],
+      "required_module_count": 54,
+      "fresh_modules": [
+        "Proofs.RadenkovicGutmanEscapeReducedReserveData",
+        "Proofs.RadenkovicGutmanEscapeReducedReserveRow15"
+      ],
+      "fresh_module_count": 2,
+      "prerequisites": [],
+      "job_name": "ge46-checked-row15",
+      "artifact_name_template": "rg-ge46-checked-rows-20261103-{run}-{attempt}-row15",
+      "required_success_step": "Require exact original declarations and staged kernel exports"
+    },
+    "row16": {
+      "endpoints": [
+        "Proofs.RadenkovicGutmanEscapeReducedReserveRow16"
+      ],
+      "required_modules": [
+        "Proofs.RadenkovicGutmanArmBridge",
+        "Proofs.RadenkovicGutmanArmClasses",
+        "Proofs.RadenkovicGutmanArmRationalForm",
+        "Proofs.RadenkovicGutmanBernstein",
+        "Proofs.RadenkovicGutmanCheckedRoots",
+        "Proofs.RadenkovicGutmanClassCellCertificates",
+        "Proofs.RadenkovicGutmanClassNormPolynomials",
+        "Proofs.RadenkovicGutmanComputedClassCell",
+        "Proofs.RadenkovicGutmanCoreQuotient",
+        "Proofs.RadenkovicGutmanEscapeReducedReserveData",
+        "Proofs.RadenkovicGutmanEscapeReducedReserveRow16",
+        "Proofs.RadenkovicGutmanFastNestedCellData",
+        "Proofs.RadenkovicGutmanFastNestedClassBoxes",
+        "Proofs.RadenkovicGutmanFocus",
+        "Proofs.RadenkovicGutmanFusionQuotient",
+        "Proofs.RadenkovicGutmanGraphJoin",
+        "Proofs.RadenkovicGutmanHornerCertificates",
+        "Proofs.RadenkovicGutmanIntegerBernsteinRows",
+        "Proofs.RadenkovicGutmanIntegerBernsteinTable",
+        "Proofs.RadenkovicGutmanIntegerComputedClassCell",
+        "Proofs.RadenkovicGutmanIntegerDataElaboration",
+        "Proofs.RadenkovicGutmanIntegerLiteral",
+        "Proofs.RadenkovicGutmanIntegerWeightedBernstein",
+        "Proofs.RadenkovicGutmanMobiusDisk",
+        "Proofs.RadenkovicGutmanNestedAffine",
+        "Proofs.RadenkovicGutmanNestedAffineComplete",
+        "Proofs.RadenkovicGutmanNestedArithmetic",
+        "Proofs.RadenkovicGutmanNestedClassCell",
+        "Proofs.RadenkovicGutmanNestedClassNorms",
+        "Proofs.RadenkovicGutmanNestedClassPolynomials",
+        "Proofs.RadenkovicGutmanNestedHorner",
+        "Proofs.RadenkovicGutmanNestedHornerCells",
+        "Proofs.RadenkovicGutmanNestedHornerTransform",
+        "Proofs.RadenkovicGutmanNestedInteger",
+        "Proofs.RadenkovicGutmanNestedIntegerAffine",
+        "Proofs.RadenkovicGutmanNestedIntegerHybrid",
+        "Proofs.RadenkovicGutmanNestedPositiveScale",
+        "Proofs.RadenkovicGutmanNestedReciprocal",
+        "Proofs.RadenkovicGutmanNormProgramPack",
+        "Proofs.RadenkovicGutmanPackedIntegerClassCell",
+        "Proofs.RadenkovicGutmanPackedIntegerSemanticAffine",
+        "Proofs.RadenkovicGutmanPathDeterminant",
+        "Proofs.RadenkovicGutmanPathEnclosure",
+        "Proofs.RadenkovicGutmanPathRecurrence",
+        "Proofs.RadenkovicGutmanPathResolvent",
+        "Proofs.RadenkovicGutmanRationalLog",
+        "Proofs.RadenkovicGutmanRationalTensorFast",
+        "Proofs.RadenkovicGutmanRationalTensorPolynomial",
+        "Proofs.RadenkovicGutmanReciprocalDisk",
+        "Proofs.RadenkovicGutmanResolventDisk",
+        "Proofs.RadenkovicGutmanRootIsolation",
+        "Proofs.RadenkovicGutmanRootSchur",
+        "Proofs.RadenkovicGutmanScaledQuotient",
+        "Proofs.RadenkovicGutmanTensorPolynomial"
+      ],
+      "required_module_count": 54,
+      "fresh_modules": [
+        "Proofs.RadenkovicGutmanEscapeReducedReserveData",
+        "Proofs.RadenkovicGutmanEscapeReducedReserveRow16"
+      ],
+      "fresh_module_count": 2,
+      "prerequisites": [],
+      "job_name": "ge46-checked-row16",
+      "artifact_name_template": "rg-ge46-checked-rows-20261103-{run}-{attempt}-row16",
+      "required_success_step": "Require exact original declarations and staged kernel exports"
+    },
+    "row17": {
+      "endpoints": [
+        "Proofs.RadenkovicGutmanEscapeReducedReserveRow17"
+      ],
+      "required_modules": [
+        "Proofs.RadenkovicGutmanArmBridge",
+        "Proofs.RadenkovicGutmanArmClasses",
+        "Proofs.RadenkovicGutmanArmRationalForm",
+        "Proofs.RadenkovicGutmanBernstein",
+        "Proofs.RadenkovicGutmanCheckedRoots",
+        "Proofs.RadenkovicGutmanClassCellCertificates",
+        "Proofs.RadenkovicGutmanClassNormPolynomials",
+        "Proofs.RadenkovicGutmanComputedClassCell",
+        "Proofs.RadenkovicGutmanCoreQuotient",
+        "Proofs.RadenkovicGutmanEscapeReducedReserveData",
+        "Proofs.RadenkovicGutmanEscapeReducedReserveRow17",
+        "Proofs.RadenkovicGutmanFastNestedCellData",
+        "Proofs.RadenkovicGutmanFastNestedClassBoxes",
+        "Proofs.RadenkovicGutmanFocus",
+        "Proofs.RadenkovicGutmanFusionQuotient",
+        "Proofs.RadenkovicGutmanGraphJoin",
+        "Proofs.RadenkovicGutmanHornerCertificates",
+        "Proofs.RadenkovicGutmanIntegerBernsteinRows",
+        "Proofs.RadenkovicGutmanIntegerBernsteinTable",
+        "Proofs.RadenkovicGutmanIntegerComputedClassCell",
+        "Proofs.RadenkovicGutmanIntegerDataElaboration",
+        "Proofs.RadenkovicGutmanIntegerLiteral",
+        "Proofs.RadenkovicGutmanIntegerWeightedBernstein",
+        "Proofs.RadenkovicGutmanMobiusDisk",
+        "Proofs.RadenkovicGutmanNestedAffine",
+        "Proofs.RadenkovicGutmanNestedAffineComplete",
+        "Proofs.RadenkovicGutmanNestedArithmetic",
+        "Proofs.RadenkovicGutmanNestedClassCell",
+        "Proofs.RadenkovicGutmanNestedClassNorms",
+        "Proofs.RadenkovicGutmanNestedClassPolynomials",
+        "Proofs.RadenkovicGutmanNestedHorner",
+        "Proofs.RadenkovicGutmanNestedHornerCells",
+        "Proofs.RadenkovicGutmanNestedHornerTransform",
+        "Proofs.RadenkovicGutmanNestedInteger",
+        "Proofs.RadenkovicGutmanNestedIntegerAffine",
+        "Proofs.RadenkovicGutmanNestedIntegerHybrid",
+        "Proofs.RadenkovicGutmanNestedPositiveScale",
+        "Proofs.RadenkovicGutmanNestedReciprocal",
+        "Proofs.RadenkovicGutmanNormProgramPack",
+        "Proofs.RadenkovicGutmanPackedIntegerClassCell",
+        "Proofs.RadenkovicGutmanPackedIntegerSemanticAffine",
+        "Proofs.RadenkovicGutmanPathDeterminant",
+        "Proofs.RadenkovicGutmanPathEnclosure",
+        "Proofs.RadenkovicGutmanPathRecurrence",
+        "Proofs.RadenkovicGutmanPathResolvent",
+        "Proofs.RadenkovicGutmanRationalLog",
+        "Proofs.RadenkovicGutmanRationalTensorFast",
+        "Proofs.RadenkovicGutmanRationalTensorPolynomial",
+        "Proofs.RadenkovicGutmanReciprocalDisk",
+        "Proofs.RadenkovicGutmanResolventDisk",
+        "Proofs.RadenkovicGutmanRootIsolation",
+        "Proofs.RadenkovicGutmanRootSchur",
+        "Proofs.RadenkovicGutmanScaledQuotient",
+        "Proofs.RadenkovicGutmanTensorPolynomial"
+      ],
+      "required_module_count": 54,
+      "fresh_modules": [
+        "Proofs.RadenkovicGutmanEscapeReducedReserveData",
+        "Proofs.RadenkovicGutmanEscapeReducedReserveRow17"
+      ],
+      "fresh_module_count": 2,
+      "prerequisites": [],
+      "job_name": "ge46-checked-row17",
+      "artifact_name_template": "rg-ge46-checked-rows-20261103-{run}-{attempt}-row17",
+      "required_success_step": "Require exact original declarations and staged kernel exports"
+    },
+    "row18": {
+      "endpoints": [
+        "Proofs.RadenkovicGutmanEscapeReducedReserveRow18"
+      ],
+      "required_modules": [
+        "Proofs.RadenkovicGutmanArmBridge",
+        "Proofs.RadenkovicGutmanArmClasses",
+        "Proofs.RadenkovicGutmanArmRationalForm",
+        "Proofs.RadenkovicGutmanBernstein",
+        "Proofs.RadenkovicGutmanCheckedRoots",
+        "Proofs.RadenkovicGutmanClassCellCertificates",
+        "Proofs.RadenkovicGutmanClassNormPolynomials",
+        "Proofs.RadenkovicGutmanComputedClassCell",
+        "Proofs.RadenkovicGutmanCoreQuotient",
+        "Proofs.RadenkovicGutmanEscapeReducedReserveData",
+        "Proofs.RadenkovicGutmanEscapeReducedReserveRow18",
+        "Proofs.RadenkovicGutmanFastNestedCellData",
+        "Proofs.RadenkovicGutmanFastNestedClassBoxes",
+        "Proofs.RadenkovicGutmanFocus",
+        "Proofs.RadenkovicGutmanFusionQuotient",
+        "Proofs.RadenkovicGutmanGraphJoin",
+        "Proofs.RadenkovicGutmanHornerCertificates",
+        "Proofs.RadenkovicGutmanIntegerBernsteinRows",
+        "Proofs.RadenkovicGutmanIntegerBernsteinTable",
+        "Proofs.RadenkovicGutmanIntegerComputedClassCell",
+        "Proofs.RadenkovicGutmanIntegerDataElaboration",
+        "Proofs.RadenkovicGutmanIntegerLiteral",
+        "Proofs.RadenkovicGutmanIntegerWeightedBernstein",
+        "Proofs.RadenkovicGutmanMobiusDisk",
+        "Proofs.RadenkovicGutmanNestedAffine",
+        "Proofs.RadenkovicGutmanNestedAffineComplete",
+        "Proofs.RadenkovicGutmanNestedArithmetic",
+        "Proofs.RadenkovicGutmanNestedClassCell",
+        "Proofs.RadenkovicGutmanNestedClassNorms",
+        "Proofs.RadenkovicGutmanNestedClassPolynomials",
+        "Proofs.RadenkovicGutmanNestedHorner",
+        "Proofs.RadenkovicGutmanNestedHornerCells",
+        "Proofs.RadenkovicGutmanNestedHornerTransform",
+        "Proofs.RadenkovicGutmanNestedInteger",
+        "Proofs.RadenkovicGutmanNestedIntegerAffine",
+        "Proofs.RadenkovicGutmanNestedIntegerHybrid",
+        "Proofs.RadenkovicGutmanNestedPositiveScale",
+        "Proofs.RadenkovicGutmanNestedReciprocal",
+        "Proofs.RadenkovicGutmanNormProgramPack",
+        "Proofs.RadenkovicGutmanPackedIntegerClassCell",
+        "Proofs.RadenkovicGutmanPackedIntegerSemanticAffine",
+        "Proofs.RadenkovicGutmanPathDeterminant",
+        "Proofs.RadenkovicGutmanPathEnclosure",
+        "Proofs.RadenkovicGutmanPathRecurrence",
+        "Proofs.RadenkovicGutmanPathResolvent",
+        "Proofs.RadenkovicGutmanRationalLog",
+        "Proofs.RadenkovicGutmanRationalTensorFast",
+        "Proofs.RadenkovicGutmanRationalTensorPolynomial",
+        "Proofs.RadenkovicGutmanReciprocalDisk",
+        "Proofs.RadenkovicGutmanResolventDisk",
+        "Proofs.RadenkovicGutmanRootIsolation",
+        "Proofs.RadenkovicGutmanRootSchur",
+        "Proofs.RadenkovicGutmanScaledQuotient",
+        "Proofs.RadenkovicGutmanTensorPolynomial"
+      ],
+      "required_module_count": 54,
+      "fresh_modules": [
+        "Proofs.RadenkovicGutmanEscapeReducedReserveData",
+        "Proofs.RadenkovicGutmanEscapeReducedReserveRow18"
+      ],
+      "fresh_module_count": 2,
+      "prerequisites": [],
+      "job_name": "ge46-checked-row18",
+      "artifact_name_template": "rg-ge46-checked-rows-20261103-{run}-{attempt}-row18",
+      "required_success_step": "Require exact original declarations and staged kernel exports"
+    },
+    "row19": {
+      "endpoints": [
+        "Proofs.RadenkovicGutmanEscapeReducedReserveRow19"
+      ],
+      "required_modules": [
+        "Proofs.RadenkovicGutmanArmBridge",
+        "Proofs.RadenkovicGutmanArmClasses",
+        "Proofs.RadenkovicGutmanArmRationalForm",
+        "Proofs.RadenkovicGutmanBernstein",
+        "Proofs.RadenkovicGutmanCheckedRoots",
+        "Proofs.RadenkovicGutmanClassCellCertificates",
+        "Proofs.RadenkovicGutmanClassNormPolynomials",
+        "Proofs.RadenkovicGutmanComputedClassCell",
+        "Proofs.RadenkovicGutmanCoreQuotient",
+        "Proofs.RadenkovicGutmanEscapeReducedReserveData",
+        "Proofs.RadenkovicGutmanEscapeReducedReserveRow19",
+        "Proofs.RadenkovicGutmanFastNestedCellData",
+        "Proofs.RadenkovicGutmanFastNestedClassBoxes",
+        "Proofs.RadenkovicGutmanFocus",
+        "Proofs.RadenkovicGutmanFusionQuotient",
+        "Proofs.RadenkovicGutmanGraphJoin",
+        "Proofs.RadenkovicGutmanHornerCertificates",
+        "Proofs.RadenkovicGutmanIntegerBernsteinRows",
+        "Proofs.RadenkovicGutmanIntegerBernsteinTable",
+        "Proofs.RadenkovicGutmanIntegerComputedClassCell",
+        "Proofs.RadenkovicGutmanIntegerDataElaboration",
+        "Proofs.RadenkovicGutmanIntegerLiteral",
+        "Proofs.RadenkovicGutmanIntegerWeightedBernstein",
+        "Proofs.RadenkovicGutmanMobiusDisk",
+        "Proofs.RadenkovicGutmanNestedAffine",
+        "Proofs.RadenkovicGutmanNestedAffineComplete",
+        "Proofs.RadenkovicGutmanNestedArithmetic",
+        "Proofs.RadenkovicGutmanNestedClassCell",
+        "Proofs.RadenkovicGutmanNestedClassNorms",
+        "Proofs.RadenkovicGutmanNestedClassPolynomials",
+        "Proofs.RadenkovicGutmanNestedHorner",
+        "Proofs.RadenkovicGutmanNestedHornerCells",
+        "Proofs.RadenkovicGutmanNestedHornerTransform",
+        "Proofs.RadenkovicGutmanNestedInteger",
+        "Proofs.RadenkovicGutmanNestedIntegerAffine",
+        "Proofs.RadenkovicGutmanNestedIntegerHybrid",
+        "Proofs.RadenkovicGutmanNestedPositiveScale",
+        "Proofs.RadenkovicGutmanNestedReciprocal",
+        "Proofs.RadenkovicGutmanNormProgramPack",
+        "Proofs.RadenkovicGutmanPackedIntegerClassCell",
+        "Proofs.RadenkovicGutmanPackedIntegerSemanticAffine",
+        "Proofs.RadenkovicGutmanPathDeterminant",
+        "Proofs.RadenkovicGutmanPathEnclosure",
+        "Proofs.RadenkovicGutmanPathRecurrence",
+        "Proofs.RadenkovicGutmanPathResolvent",
+        "Proofs.RadenkovicGutmanRationalLog",
+        "Proofs.RadenkovicGutmanRationalTensorFast",
+        "Proofs.RadenkovicGutmanRationalTensorPolynomial",
+        "Proofs.RadenkovicGutmanReciprocalDisk",
+        "Proofs.RadenkovicGutmanResolventDisk",
+        "Proofs.RadenkovicGutmanRootIsolation",
+        "Proofs.RadenkovicGutmanRootSchur",
+        "Proofs.RadenkovicGutmanScaledQuotient",
+        "Proofs.RadenkovicGutmanTensorPolynomial"
+      ],
+      "required_module_count": 54,
+      "fresh_modules": [
+        "Proofs.RadenkovicGutmanEscapeReducedReserveData",
+        "Proofs.RadenkovicGutmanEscapeReducedReserveRow19"
+      ],
+      "fresh_module_count": 2,
+      "prerequisites": [],
+      "job_name": "ge46-checked-row19",
+      "artifact_name_template": "rg-ge46-checked-rows-20261103-{run}-{attempt}-row19",
+      "required_success_step": "Require exact original declarations and staged kernel exports"
+    },
+    "row20": {
+      "endpoints": [
+        "Proofs.RadenkovicGutmanEscapeReducedReserveRow20"
+      ],
+      "required_modules": [
+        "Proofs.RadenkovicGutmanArmBridge",
+        "Proofs.RadenkovicGutmanArmClasses",
+        "Proofs.RadenkovicGutmanArmRationalForm",
+        "Proofs.RadenkovicGutmanBernstein",
+        "Proofs.RadenkovicGutmanCheckedRoots",
+        "Proofs.RadenkovicGutmanClassCellCertificates",
+        "Proofs.RadenkovicGutmanClassNormPolynomials",
+        "Proofs.RadenkovicGutmanComputedClassCell",
+        "Proofs.RadenkovicGutmanCoreQuotient",
+        "Proofs.RadenkovicGutmanEscapeReducedReserveData",
+        "Proofs.RadenkovicGutmanEscapeReducedReserveRow20",
+        "Proofs.RadenkovicGutmanFastNestedCellData",
+        "Proofs.RadenkovicGutmanFastNestedClassBoxes",
+        "Proofs.RadenkovicGutmanFocus",
+        "Proofs.RadenkovicGutmanFusionQuotient",
+        "Proofs.RadenkovicGutmanGraphJoin",
+        "Proofs.RadenkovicGutmanHornerCertificates",
+        "Proofs.RadenkovicGutmanIntegerBernsteinRows",
+        "Proofs.RadenkovicGutmanIntegerBernsteinTable",
+        "Proofs.RadenkovicGutmanIntegerComputedClassCell",
+        "Proofs.RadenkovicGutmanIntegerDataElaboration",
+        "Proofs.RadenkovicGutmanIntegerLiteral",
+        "Proofs.RadenkovicGutmanIntegerWeightedBernstein",
+        "Proofs.RadenkovicGutmanMobiusDisk",
+        "Proofs.RadenkovicGutmanNestedAffine",
+        "Proofs.RadenkovicGutmanNestedAffineComplete",
+        "Proofs.RadenkovicGutmanNestedArithmetic",
+        "Proofs.RadenkovicGutmanNestedClassCell",
+        "Proofs.RadenkovicGutmanNestedClassNorms",
+        "Proofs.RadenkovicGutmanNestedClassPolynomials",
+        "Proofs.RadenkovicGutmanNestedHorner",
+        "Proofs.RadenkovicGutmanNestedHornerCells",
+        "Proofs.RadenkovicGutmanNestedHornerTransform",
+        "Proofs.RadenkovicGutmanNestedInteger",
+        "Proofs.RadenkovicGutmanNestedIntegerAffine",
+        "Proofs.RadenkovicGutmanNestedIntegerHybrid",
+        "Proofs.RadenkovicGutmanNestedPositiveScale",
+        "Proofs.RadenkovicGutmanNestedReciprocal",
+        "Proofs.RadenkovicGutmanNormProgramPack",
+        "Proofs.RadenkovicGutmanPackedIntegerClassCell",
+        "Proofs.RadenkovicGutmanPackedIntegerSemanticAffine",
+        "Proofs.RadenkovicGutmanPathDeterminant",
+        "Proofs.RadenkovicGutmanPathEnclosure",
+        "Proofs.RadenkovicGutmanPathRecurrence",
+        "Proofs.RadenkovicGutmanPathResolvent",
+        "Proofs.RadenkovicGutmanRationalLog",
+        "Proofs.RadenkovicGutmanRationalTensorFast",
+        "Proofs.RadenkovicGutmanRationalTensorPolynomial",
+        "Proofs.RadenkovicGutmanReciprocalDisk",
+        "Proofs.RadenkovicGutmanResolventDisk",
+        "Proofs.RadenkovicGutmanRootIsolation",
+        "Proofs.RadenkovicGutmanRootSchur",
+        "Proofs.RadenkovicGutmanScaledQuotient",
+        "Proofs.RadenkovicGutmanTensorPolynomial"
+      ],
+      "required_module_count": 54,
+      "fresh_modules": [
+        "Proofs.RadenkovicGutmanEscapeReducedReserveData",
+        "Proofs.RadenkovicGutmanEscapeReducedReserveRow20"
+      ],
+      "fresh_module_count": 2,
+      "prerequisites": [],
+      "job_name": "ge46-checked-row20",
+      "artifact_name_template": "rg-ge46-checked-rows-20261103-{run}-{attempt}-row20",
+      "required_success_step": "Require exact original declarations and staged kernel exports"
+    },
+    "row21": {
+      "endpoints": [
+        "Proofs.RadenkovicGutmanEscapeReducedReserveRow21"
+      ],
+      "required_modules": [
+        "Proofs.RadenkovicGutmanArmBridge",
+        "Proofs.RadenkovicGutmanArmClasses",
+        "Proofs.RadenkovicGutmanArmRationalForm",
+        "Proofs.RadenkovicGutmanBernstein",
+        "Proofs.RadenkovicGutmanCheckedRoots",
+        "Proofs.RadenkovicGutmanClassCellCertificates",
+        "Proofs.RadenkovicGutmanClassNormPolynomials",
+        "Proofs.RadenkovicGutmanComputedClassCell",
+        "Proofs.RadenkovicGutmanCoreQuotient",
+        "Proofs.RadenkovicGutmanEscapeReducedReserveData",
+        "Proofs.RadenkovicGutmanEscapeReducedReserveRow21",
+        "Proofs.RadenkovicGutmanFastNestedCellData",
+        "Proofs.RadenkovicGutmanFastNestedClassBoxes",
+        "Proofs.RadenkovicGutmanFocus",
+        "Proofs.RadenkovicGutmanFusionQuotient",
+        "Proofs.RadenkovicGutmanGraphJoin",
+        "Proofs.RadenkovicGutmanHornerCertificates",
+        "Proofs.RadenkovicGutmanIntegerBernsteinRows",
+        "Proofs.RadenkovicGutmanIntegerBernsteinTable",
+        "Proofs.RadenkovicGutmanIntegerComputedClassCell",
+        "Proofs.RadenkovicGutmanIntegerDataElaboration",
+        "Proofs.RadenkovicGutmanIntegerLiteral",
+        "Proofs.RadenkovicGutmanIntegerWeightedBernstein",
+        "Proofs.RadenkovicGutmanMobiusDisk",
+        "Proofs.RadenkovicGutmanNestedAffine",
+        "Proofs.RadenkovicGutmanNestedAffineComplete",
+        "Proofs.RadenkovicGutmanNestedArithmetic",
+        "Proofs.RadenkovicGutmanNestedClassCell",
+        "Proofs.RadenkovicGutmanNestedClassNorms",
+        "Proofs.RadenkovicGutmanNestedClassPolynomials",
+        "Proofs.RadenkovicGutmanNestedHorner",
+        "Proofs.RadenkovicGutmanNestedHornerCells",
+        "Proofs.RadenkovicGutmanNestedHornerTransform",
+        "Proofs.RadenkovicGutmanNestedInteger",
+        "Proofs.RadenkovicGutmanNestedIntegerAffine",
+        "Proofs.RadenkovicGutmanNestedIntegerHybrid",
+        "Proofs.RadenkovicGutmanNestedPositiveScale",
+        "Proofs.RadenkovicGutmanNestedReciprocal",
+        "Proofs.RadenkovicGutmanNormProgramPack",
+        "Proofs.RadenkovicGutmanPackedIntegerClassCell",
+        "Proofs.RadenkovicGutmanPackedIntegerSemanticAffine",
+        "Proofs.RadenkovicGutmanPathDeterminant",
+        "Proofs.RadenkovicGutmanPathEnclosure",
+        "Proofs.RadenkovicGutmanPathRecurrence",
+        "Proofs.RadenkovicGutmanPathResolvent",
+        "Proofs.RadenkovicGutmanRationalLog",
+        "Proofs.RadenkovicGutmanRationalTensorFast",
+        "Proofs.RadenkovicGutmanRationalTensorPolynomial",
+        "Proofs.RadenkovicGutmanReciprocalDisk",
+        "Proofs.RadenkovicGutmanResolventDisk",
+        "Proofs.RadenkovicGutmanRootIsolation",
+        "Proofs.RadenkovicGutmanRootSchur",
+        "Proofs.RadenkovicGutmanScaledQuotient",
+        "Proofs.RadenkovicGutmanTensorPolynomial"
+      ],
+      "required_module_count": 54,
+      "fresh_modules": [
+        "Proofs.RadenkovicGutmanEscapeReducedReserveData",
+        "Proofs.RadenkovicGutmanEscapeReducedReserveRow21"
+      ],
+      "fresh_module_count": 2,
+      "prerequisites": [],
+      "job_name": "ge46-checked-row21",
+      "artifact_name_template": "rg-ge46-checked-rows-20261103-{run}-{attempt}-row21",
+      "required_success_step": "Require exact original declarations and staged kernel exports"
+    },
+    "row22": {
+      "endpoints": [
+        "Proofs.RadenkovicGutmanEscapeReducedReserveRow22"
+      ],
+      "required_modules": [
+        "Proofs.RadenkovicGutmanArmBridge",
+        "Proofs.RadenkovicGutmanArmClasses",
+        "Proofs.RadenkovicGutmanArmRationalForm",
+        "Proofs.RadenkovicGutmanBernstein",
+        "Proofs.RadenkovicGutmanCheckedRoots",
+        "Proofs.RadenkovicGutmanClassCellCertificates",
+        "Proofs.RadenkovicGutmanClassNormPolynomials",
+        "Proofs.RadenkovicGutmanComputedClassCell",
+        "Proofs.RadenkovicGutmanCoreQuotient",
+        "Proofs.RadenkovicGutmanEscapeReducedReserveData",
+        "Proofs.RadenkovicGutmanEscapeReducedReserveRow22",
+        "Proofs.RadenkovicGutmanFastNestedCellData",
+        "Proofs.RadenkovicGutmanFastNestedClassBoxes",
+        "Proofs.RadenkovicGutmanFocus",
+        "Proofs.RadenkovicGutmanFusionQuotient",
+        "Proofs.RadenkovicGutmanGraphJoin",
+        "Proofs.RadenkovicGutmanHornerCertificates",
+        "Proofs.RadenkovicGutmanIntegerBernsteinRows",
+        "Proofs.RadenkovicGutmanIntegerBernsteinTable",
+        "Proofs.RadenkovicGutmanIntegerComputedClassCell",
+        "Proofs.RadenkovicGutmanIntegerDataElaboration",
+        "Proofs.RadenkovicGutmanIntegerLiteral",
+        "Proofs.RadenkovicGutmanIntegerWeightedBernstein",
+        "Proofs.RadenkovicGutmanMobiusDisk",
+        "Proofs.RadenkovicGutmanNestedAffine",
+        "Proofs.RadenkovicGutmanNestedAffineComplete",
+        "Proofs.RadenkovicGutmanNestedArithmetic",
+        "Proofs.RadenkovicGutmanNestedClassCell",
+        "Proofs.RadenkovicGutmanNestedClassNorms",
+        "Proofs.RadenkovicGutmanNestedClassPolynomials",
+        "Proofs.RadenkovicGutmanNestedHorner",
+        "Proofs.RadenkovicGutmanNestedHornerCells",
+        "Proofs.RadenkovicGutmanNestedHornerTransform",
+        "Proofs.RadenkovicGutmanNestedInteger",
+        "Proofs.RadenkovicGutmanNestedIntegerAffine",
+        "Proofs.RadenkovicGutmanNestedIntegerHybrid",
+        "Proofs.RadenkovicGutmanNestedPositiveScale",
+        "Proofs.RadenkovicGutmanNestedReciprocal",
+        "Proofs.RadenkovicGutmanNormProgramPack",
+        "Proofs.RadenkovicGutmanPackedIntegerClassCell",
+        "Proofs.RadenkovicGutmanPackedIntegerSemanticAffine",
+        "Proofs.RadenkovicGutmanPathDeterminant",
+        "Proofs.RadenkovicGutmanPathEnclosure",
+        "Proofs.RadenkovicGutmanPathRecurrence",
+        "Proofs.RadenkovicGutmanPathResolvent",
+        "Proofs.RadenkovicGutmanRationalLog",
+        "Proofs.RadenkovicGutmanRationalTensorFast",
+        "Proofs.RadenkovicGutmanRationalTensorPolynomial",
+        "Proofs.RadenkovicGutmanReciprocalDisk",
+        "Proofs.RadenkovicGutmanResolventDisk",
+        "Proofs.RadenkovicGutmanRootIsolation",
+        "Proofs.RadenkovicGutmanRootSchur",
+        "Proofs.RadenkovicGutmanScaledQuotient",
+        "Proofs.RadenkovicGutmanTensorPolynomial"
+      ],
+      "required_module_count": 54,
+      "fresh_modules": [
+        "Proofs.RadenkovicGutmanEscapeReducedReserveData",
+        "Proofs.RadenkovicGutmanEscapeReducedReserveRow22"
+      ],
+      "fresh_module_count": 2,
+      "prerequisites": [],
+      "job_name": "ge46-checked-row22",
+      "artifact_name_template": "rg-ge46-checked-rows-20261103-{run}-{attempt}-row22",
+      "required_success_step": "Require exact original declarations and staged kernel exports"
+    },
+    "row23": {
+      "endpoints": [
+        "Proofs.RadenkovicGutmanEscapeReducedReserveRow23"
+      ],
+      "required_modules": [
+        "Proofs.RadenkovicGutmanArmBridge",
+        "Proofs.RadenkovicGutmanArmClasses",
+        "Proofs.RadenkovicGutmanArmRationalForm",
+        "Proofs.RadenkovicGutmanBernstein",
+        "Proofs.RadenkovicGutmanCheckedRoots",
+        "Proofs.RadenkovicGutmanClassCellCertificates",
+        "Proofs.RadenkovicGutmanClassNormPolynomials",
+        "Proofs.RadenkovicGutmanComputedClassCell",
+        "Proofs.RadenkovicGutmanCoreQuotient",
+        "Proofs.RadenkovicGutmanEscapeReducedReserveData",
+        "Proofs.RadenkovicGutmanEscapeReducedReserveRow23",
+        "Proofs.RadenkovicGutmanFastNestedCellData",
+        "Proofs.RadenkovicGutmanFastNestedClassBoxes",
+        "Proofs.RadenkovicGutmanFocus",
+        "Proofs.RadenkovicGutmanFusionQuotient",
+        "Proofs.RadenkovicGutmanGraphJoin",
+        "Proofs.RadenkovicGutmanHornerCertificates",
+        "Proofs.RadenkovicGutmanIntegerBernsteinRows",
+        "Proofs.RadenkovicGutmanIntegerBernsteinTable",
+        "Proofs.RadenkovicGutmanIntegerComputedClassCell",
+        "Proofs.RadenkovicGutmanIntegerDataElaboration",
+        "Proofs.RadenkovicGutmanIntegerLiteral",
+        "Proofs.RadenkovicGutmanIntegerWeightedBernstein",
+        "Proofs.RadenkovicGutmanMobiusDisk",
+        "Proofs.RadenkovicGutmanNestedAffine",
+        "Proofs.RadenkovicGutmanNestedAffineComplete",
+        "Proofs.RadenkovicGutmanNestedArithmetic",
+        "Proofs.RadenkovicGutmanNestedClassCell",
+        "Proofs.RadenkovicGutmanNestedClassNorms",
+        "Proofs.RadenkovicGutmanNestedClassPolynomials",
+        "Proofs.RadenkovicGutmanNestedHorner",
+        "Proofs.RadenkovicGutmanNestedHornerCells",
+        "Proofs.RadenkovicGutmanNestedHornerTransform",
+        "Proofs.RadenkovicGutmanNestedInteger",
+        "Proofs.RadenkovicGutmanNestedIntegerAffine",
+        "Proofs.RadenkovicGutmanNestedIntegerHybrid",
+        "Proofs.RadenkovicGutmanNestedPositiveScale",
+        "Proofs.RadenkovicGutmanNestedReciprocal",
+        "Proofs.RadenkovicGutmanNormProgramPack",
+        "Proofs.RadenkovicGutmanPackedIntegerClassCell",
+        "Proofs.RadenkovicGutmanPackedIntegerSemanticAffine",
+        "Proofs.RadenkovicGutmanPathDeterminant",
+        "Proofs.RadenkovicGutmanPathEnclosure",
+        "Proofs.RadenkovicGutmanPathRecurrence",
+        "Proofs.RadenkovicGutmanPathResolvent",
+        "Proofs.RadenkovicGutmanRationalLog",
+        "Proofs.RadenkovicGutmanRationalTensorFast",
+        "Proofs.RadenkovicGutmanRationalTensorPolynomial",
+        "Proofs.RadenkovicGutmanReciprocalDisk",
+        "Proofs.RadenkovicGutmanResolventDisk",
+        "Proofs.RadenkovicGutmanRootIsolation",
+        "Proofs.RadenkovicGutmanRootSchur",
+        "Proofs.RadenkovicGutmanScaledQuotient",
+        "Proofs.RadenkovicGutmanTensorPolynomial"
+      ],
+      "required_module_count": 54,
+      "fresh_modules": [
+        "Proofs.RadenkovicGutmanEscapeReducedReserveData",
+        "Proofs.RadenkovicGutmanEscapeReducedReserveRow23"
+      ],
+      "fresh_module_count": 2,
+      "prerequisites": [],
+      "job_name": "ge46-checked-row23",
+      "artifact_name_template": "rg-ge46-checked-rows-20261103-{run}-{attempt}-row23",
+      "required_success_step": "Require exact original declarations and staged kernel exports"
+    },
+    "evaluation": {
+      "endpoints": [
+        "Proofs.RadenkovicGutmanEscapeReducedReserveEvaluation"
+      ],
+      "required_modules": [
+        "Proofs.RadenkovicGutmanCheckedRoots",
+        "Proofs.RadenkovicGutmanEscapeReducedReserveData",
+        "Proofs.RadenkovicGutmanEscapeReducedReserveEvaluation",
+        "Proofs.RadenkovicGutmanHornerCertificates",
+        "Proofs.RadenkovicGutmanNestedHorner",
+        "Proofs.RadenkovicGutmanNestedHornerCells",
+        "Proofs.RadenkovicGutmanNestedHornerTransform",
+        "Proofs.RadenkovicGutmanNestedInteger",
+        "Proofs.RadenkovicGutmanNestedIntegerHybrid",
+        "Proofs.RadenkovicGutmanRationalTensorFast",
+        "Proofs.RadenkovicGutmanRationalTensorPolynomial",
+        "Proofs.RadenkovicGutmanRootIsolation",
+        "Proofs.RadenkovicGutmanTensorPolynomial"
+      ],
+      "required_module_count": 13,
+      "fresh_modules": [
+        "Proofs.RadenkovicGutmanEscapeReducedReserveData",
+        "Proofs.RadenkovicGutmanEscapeReducedReserveEvaluation"
+      ],
+      "fresh_module_count": 2,
+      "prerequisites": [],
+      "job_name": "ge46-checked-evaluation",
+      "artifact_name_template": "rg-ge46-checked-rows-20261103-{run}-{attempt}-evaluation",
+      "required_success_step": "Require exact original declarations and staged kernel exports"
+    },
+    "final": {
+      "endpoints": [
+        "Proofs.RadenkovicGutmanOriginalDegreeGeFortysix"
+      ],
+      "required_modules": [
+        "Proofs.RadenkovicGutmanActualFusionIntegral",
+        "Proofs.RadenkovicGutmanArmBridge",
+        "Proofs.RadenkovicGutmanArmClasses",
+        "Proofs.RadenkovicGutmanArmEmbedding",
+        "Proofs.RadenkovicGutmanArmRationalForm",
+        "Proofs.RadenkovicGutmanBernstein",
+        "Proofs.RadenkovicGutmanCheckedRoots",
+        "Proofs.RadenkovicGutmanClassCellCertificates",
+        "Proofs.RadenkovicGutmanClassEnvelope",
+        "Proofs.RadenkovicGutmanClassNormPolynomials",
+        "Proofs.RadenkovicGutmanComputedClassCell",
+        "Proofs.RadenkovicGutmanConcreteGraphQuotient",
+        "Proofs.RadenkovicGutmanCoreQuotient",
+        "Proofs.RadenkovicGutmanCorrelatedEscape",
+        "Proofs.RadenkovicGutmanCorrelatedEscapeReduction",
+        "Proofs.RadenkovicGutmanCoulson",
+        "Proofs.RadenkovicGutmanCountGap",
+        "Proofs.RadenkovicGutmanCountTransport",
+        "Proofs.RadenkovicGutmanEscapeFactorSigns",
+        "Proofs.RadenkovicGutmanEscapeReducedDirected",
+        "Proofs.RadenkovicGutmanEscapeReducedDirectedIdentity",
+        "Proofs.RadenkovicGutmanEscapeReducedReserve",
+        "Proofs.RadenkovicGutmanEscapeReducedReserveAcceptance",
+        "Proofs.RadenkovicGutmanEscapeReducedReserveData",
+        "Proofs.RadenkovicGutmanEscapeReducedReserveEvaluation",
+        "Proofs.RadenkovicGutmanEscapeReducedReserveIdentity",
+        "Proofs.RadenkovicGutmanEscapeReducedReserveRow00",
+        "Proofs.RadenkovicGutmanEscapeReducedReserveRow01",
+        "Proofs.RadenkovicGutmanEscapeReducedReserveRow02",
+        "Proofs.RadenkovicGutmanEscapeReducedReserveRow03",
+        "Proofs.RadenkovicGutmanEscapeReducedReserveRow04",
+        "Proofs.RadenkovicGutmanEscapeReducedReserveRow05",
+        "Proofs.RadenkovicGutmanEscapeReducedReserveRow06",
+        "Proofs.RadenkovicGutmanEscapeReducedReserveRow07",
+        "Proofs.RadenkovicGutmanEscapeReducedReserveRow08",
+        "Proofs.RadenkovicGutmanEscapeReducedReserveRow09",
+        "Proofs.RadenkovicGutmanEscapeReducedReserveRow10",
+        "Proofs.RadenkovicGutmanEscapeReducedReserveRow11",
+        "Proofs.RadenkovicGutmanEscapeReducedReserveRow12",
+        "Proofs.RadenkovicGutmanEscapeReducedReserveRow13",
+        "Proofs.RadenkovicGutmanEscapeReducedReserveRow14",
+        "Proofs.RadenkovicGutmanEscapeReducedReserveRow15",
+        "Proofs.RadenkovicGutmanEscapeReducedReserveRow16",
+        "Proofs.RadenkovicGutmanEscapeReducedReserveRow17",
+        "Proofs.RadenkovicGutmanEscapeReducedReserveRow18",
+        "Proofs.RadenkovicGutmanEscapeReducedReserveRow19",
+        "Proofs.RadenkovicGutmanEscapeReducedReserveRow20",
+        "Proofs.RadenkovicGutmanEscapeReducedReserveRow21",
+        "Proofs.RadenkovicGutmanEscapeReducedReserveRow22",
+        "Proofs.RadenkovicGutmanEscapeReducedReserveRow23",
+        "Proofs.RadenkovicGutmanEscapeReducedReserveRow24",
+        "Proofs.RadenkovicGutmanEscapeReserveAffineRow00",
+        "Proofs.RadenkovicGutmanEscapeReserveAffineRow01",
+        "Proofs.RadenkovicGutmanEscapeReserveAffineRow02",
+        "Proofs.RadenkovicGutmanEscapeReserveAffineRow03",
+        "Proofs.RadenkovicGutmanEscapeReserveAffineRow04",
+        "Proofs.RadenkovicGutmanEscapeReserveAffineRow05",
+        "Proofs.RadenkovicGutmanEscapeReserveAffineRow06",
+        "Proofs.RadenkovicGutmanEscapeReserveAffineRow07",
+        "Proofs.RadenkovicGutmanEscapeReserveAffineRow08",
+        "Proofs.RadenkovicGutmanEscapeReserveAffineRow09",
+        "Proofs.RadenkovicGutmanEscapeReserveAffineRow10",
+        "Proofs.RadenkovicGutmanEscapeReserveAffineRow11",
+        "Proofs.RadenkovicGutmanEscapeReserveAffineRow12",
+        "Proofs.RadenkovicGutmanEscapeReserveAffineRow13",
+        "Proofs.RadenkovicGutmanEscapeReserveAffineRow14",
+        "Proofs.RadenkovicGutmanEscapeReserveAffineRow15",
+        "Proofs.RadenkovicGutmanEscapeReserveAffineRow16",
+        "Proofs.RadenkovicGutmanEscapeReserveAffineRow17",
+        "Proofs.RadenkovicGutmanEscapeReserveAffineRow18",
+        "Proofs.RadenkovicGutmanEscapeReserveAffineRow19",
+        "Proofs.RadenkovicGutmanEscapeReserveAffineRow20",
+        "Proofs.RadenkovicGutmanEscapeReserveAffineRow21",
+        "Proofs.RadenkovicGutmanEscapeReserveAffineRow22",
+        "Proofs.RadenkovicGutmanEscapeReserveAffineRow23",
+        "Proofs.RadenkovicGutmanEscapeReserveAffineRow24",
+        "Proofs.RadenkovicGutmanEscapeReserveBalanced",
+        "Proofs.RadenkovicGutmanEscapeReserveRawAffine",
+        "Proofs.RadenkovicGutmanEscapeReserveRawBalancedIdentity",
+        "Proofs.RadenkovicGutmanEscapeReserveRawData",
+        "Proofs.RadenkovicGutmanFastNestedCellData",
+        "Proofs.RadenkovicGutmanFastNestedClassBoxes",
+        "Proofs.RadenkovicGutmanFocus",
+        "Proofs.RadenkovicGutmanForkResidual",
+        "Proofs.RadenkovicGutmanFourVertexSpectrum",
+        "Proofs.RadenkovicGutmanFusionDescent",
+        "Proofs.RadenkovicGutmanFusionQuotient",
+        "Proofs.RadenkovicGutmanFusionTerminal",
+        "Proofs.RadenkovicGutmanGlobalAssembly",
+        "Proofs.RadenkovicGutmanGraphIntegral",
+        "Proofs.RadenkovicGutmanGraphJoin",
+        "Proofs.RadenkovicGutmanHighDegreeInputFromEscape",
+        "Proofs.RadenkovicGutmanHighDegreeInputFromReserves",
+        "Proofs.RadenkovicGutmanHighDegreeInputFromSigns",
+        "Proofs.RadenkovicGutmanHighDegreeInputFromTwoSigns",
+        "Proofs.RadenkovicGutmanHighDegreeTail",
+        "Proofs.RadenkovicGutmanHornerCertificates",
+        "Proofs.RadenkovicGutmanIntegerBernsteinRows",
+        "Proofs.RadenkovicGutmanIntegerBernsteinTable",
+        "Proofs.RadenkovicGutmanIntegerComputedClassCell",
+        "Proofs.RadenkovicGutmanIntegerDataElaboration",
+        "Proofs.RadenkovicGutmanIntegerHybridBernsteinRows",
+        "Proofs.RadenkovicGutmanIntegerLiteral",
+        "Proofs.RadenkovicGutmanIntegerWeightedBernstein",
+        "Proofs.RadenkovicGutmanIsoEnergy",
+        "Proofs.RadenkovicGutmanLargeDegreeReserve",
+        "Proofs.RadenkovicGutmanLowStripAssembly",
+        "Proofs.RadenkovicGutmanLowStripConstantGeometry",
+        "Proofs.RadenkovicGutmanLowStripCoordinates",
+        "Proofs.RadenkovicGutmanLowStripDirected",
+        "Proofs.RadenkovicGutmanLowStripGeometry",
+        "Proofs.RadenkovicGutmanLowStripIntegral",
+        "Proofs.RadenkovicGutmanLowStripOutside",
+        "Proofs.RadenkovicGutmanLowStripPrimitive",
+        "Proofs.RadenkovicGutmanLowStripReserveReduction",
+        "Proofs.RadenkovicGutmanLowStripReserves",
+        "Proofs.RadenkovicGutmanLowStripSignAssembly",
+        "Proofs.RadenkovicGutmanMinimalFusion",
+        "Proofs.RadenkovicGutmanMixedGraphIntegral",
+        "Proofs.RadenkovicGutmanMixedStopLoss",
+        "Proofs.RadenkovicGutmanMobiusDisk",
+        "Proofs.RadenkovicGutmanNestedAffine",
+        "Proofs.RadenkovicGutmanNestedAffineComplete",
+        "Proofs.RadenkovicGutmanNestedArithmetic",
+        "Proofs.RadenkovicGutmanNestedClassCell",
+        "Proofs.RadenkovicGutmanNestedClassNorms",
+        "Proofs.RadenkovicGutmanNestedClassPolynomials",
+        "Proofs.RadenkovicGutmanNestedHorner",
+        "Proofs.RadenkovicGutmanNestedHornerCells",
+        "Proofs.RadenkovicGutmanNestedHornerNormalized",
+        "Proofs.RadenkovicGutmanNestedHornerTransform",
+        "Proofs.RadenkovicGutmanNestedInteger",
+        "Proofs.RadenkovicGutmanNestedIntegerAffine",
+        "Proofs.RadenkovicGutmanNestedIntegerHybrid",
+        "Proofs.RadenkovicGutmanNestedIntegerMixed",
+        "Proofs.RadenkovicGutmanNestedPositiveScale",
+        "Proofs.RadenkovicGutmanNestedReciprocal",
+        "Proofs.RadenkovicGutmanNonpathFork",
+        "Proofs.RadenkovicGutmanNormProgramPack",
+        "Proofs.RadenkovicGutmanOrderFour",
+        "Proofs.RadenkovicGutmanOriginalAssembly",
+        "Proofs.RadenkovicGutmanOriginalDegreeGeFortysix",
+        "Proofs.RadenkovicGutmanPackedIntegerClassCell",
+        "Proofs.RadenkovicGutmanPackedIntegerSemanticAffine",
+        "Proofs.RadenkovicGutmanPathDeterminant",
+        "Proofs.RadenkovicGutmanPathEnclosure",
+        "Proofs.RadenkovicGutmanPathRecurrence",
+        "Proofs.RadenkovicGutmanPathResolvent",
+        "Proofs.RadenkovicGutmanPerturbation",
+        "Proofs.RadenkovicGutmanQuadraticDisk",
+        "Proofs.RadenkovicGutmanQuadraticDiskConvex",
+        "Proofs.RadenkovicGutmanQuotientBridge",
+        "Proofs.RadenkovicGutmanRationalLog",
+        "Proofs.RadenkovicGutmanRationalTensorFast",
+        "Proofs.RadenkovicGutmanRationalTensorPolynomial",
+        "Proofs.RadenkovicGutmanReciprocalDisk",
+        "Proofs.RadenkovicGutmanReducedEscapeForms",
+        "Proofs.RadenkovicGutmanReducedEscapeSigns",
+        "Proofs.RadenkovicGutmanResolventDisk",
+        "Proofs.RadenkovicGutmanRewireIso",
+        "Proofs.RadenkovicGutmanRewireTopology",
+        "Proofs.RadenkovicGutmanRootIsolation",
+        "Proofs.RadenkovicGutmanRootSchur",
+        "Proofs.RadenkovicGutmanScalarIntegral",
+        "Proofs.RadenkovicGutmanScaledQuotient",
+        "Proofs.RadenkovicGutmanSmallOrders",
+        "Proofs.RadenkovicGutmanSourcePresentation",
+        "Proofs.RadenkovicGutmanSpectral",
+        "Proofs.RadenkovicGutmanSymmetricConstantReserve",
+        "Proofs.RadenkovicGutmanSymmetricConstantReserveIdentity",
+        "Proofs.RadenkovicGutmanSymmetricTangentReserve",
+        "Proofs.RadenkovicGutmanSymmetricTangentReserveIdentity",
+        "Proofs.RadenkovicGutmanTailHalfCertificate",
+        "Proofs.RadenkovicGutmanTailHalfGeometry",
+        "Proofs.RadenkovicGutmanTailHalfPolynomial",
+        "Proofs.RadenkovicGutmanTailIntegral",
+        "Proofs.RadenkovicGutmanTensorPolynomial",
+        "Proofs.RadenkovicGutmanTreeTerminal"
+      ],
+      "required_module_count": 178,
+      "fresh_modules": [
+        "Proofs.RadenkovicGutmanCorrelatedEscape",
+        "Proofs.RadenkovicGutmanCorrelatedEscapeReduction",
+        "Proofs.RadenkovicGutmanEscapeFactorSigns",
+        "Proofs.RadenkovicGutmanEscapeReducedDirectedIdentity",
+        "Proofs.RadenkovicGutmanEscapeReducedReserve",
+        "Proofs.RadenkovicGutmanEscapeReducedReserveAcceptance",
+        "Proofs.RadenkovicGutmanEscapeReducedReserveIdentity",
+        "Proofs.RadenkovicGutmanEscapeReserveAffineRow00",
+        "Proofs.RadenkovicGutmanEscapeReserveAffineRow01",
+        "Proofs.RadenkovicGutmanEscapeReserveAffineRow02",
+        "Proofs.RadenkovicGutmanEscapeReserveAffineRow03",
+        "Proofs.RadenkovicGutmanEscapeReserveAffineRow04",
+        "Proofs.RadenkovicGutmanEscapeReserveAffineRow05",
+        "Proofs.RadenkovicGutmanEscapeReserveAffineRow06",
+        "Proofs.RadenkovicGutmanEscapeReserveAffineRow07",
+        "Proofs.RadenkovicGutmanEscapeReserveAffineRow08",
+        "Proofs.RadenkovicGutmanEscapeReserveAffineRow09",
+        "Proofs.RadenkovicGutmanEscapeReserveAffineRow10",
+        "Proofs.RadenkovicGutmanEscapeReserveAffineRow11",
+        "Proofs.RadenkovicGutmanEscapeReserveAffineRow12",
+        "Proofs.RadenkovicGutmanEscapeReserveAffineRow13",
+        "Proofs.RadenkovicGutmanEscapeReserveAffineRow14",
+        "Proofs.RadenkovicGutmanEscapeReserveAffineRow15",
+        "Proofs.RadenkovicGutmanEscapeReserveAffineRow16",
+        "Proofs.RadenkovicGutmanEscapeReserveAffineRow17",
+        "Proofs.RadenkovicGutmanEscapeReserveAffineRow18",
+        "Proofs.RadenkovicGutmanEscapeReserveAffineRow19",
+        "Proofs.RadenkovicGutmanEscapeReserveAffineRow20",
+        "Proofs.RadenkovicGutmanEscapeReserveAffineRow21",
+        "Proofs.RadenkovicGutmanEscapeReserveAffineRow22",
+        "Proofs.RadenkovicGutmanEscapeReserveAffineRow23",
+        "Proofs.RadenkovicGutmanEscapeReserveAffineRow24",
+        "Proofs.RadenkovicGutmanEscapeReserveBalanced",
+        "Proofs.RadenkovicGutmanEscapeReserveRawAffine",
+        "Proofs.RadenkovicGutmanEscapeReserveRawBalancedIdentity",
+        "Proofs.RadenkovicGutmanEscapeReserveRawData",
+        "Proofs.RadenkovicGutmanHighDegreeInputFromEscape",
+        "Proofs.RadenkovicGutmanHighDegreeInputFromReserves",
+        "Proofs.RadenkovicGutmanHighDegreeInputFromSigns",
+        "Proofs.RadenkovicGutmanHighDegreeInputFromTwoSigns",
+        "Proofs.RadenkovicGutmanHighDegreeTail",
+        "Proofs.RadenkovicGutmanLowStripAssembly",
+        "Proofs.RadenkovicGutmanLowStripConstantGeometry",
+        "Proofs.RadenkovicGutmanLowStripCoordinates",
+        "Proofs.RadenkovicGutmanLowStripDirected",
+        "Proofs.RadenkovicGutmanLowStripGeometry",
+        "Proofs.RadenkovicGutmanLowStripOutside",
+        "Proofs.RadenkovicGutmanLowStripReserveReduction",
+        "Proofs.RadenkovicGutmanLowStripReserves",
+        "Proofs.RadenkovicGutmanLowStripSignAssembly",
+        "Proofs.RadenkovicGutmanNestedIntegerMixed",
+        "Proofs.RadenkovicGutmanOriginalDegreeGeFortysix",
+        "Proofs.RadenkovicGutmanQuadraticDisk",
+        "Proofs.RadenkovicGutmanQuadraticDiskConvex",
+        "Proofs.RadenkovicGutmanReducedEscapeForms",
+        "Proofs.RadenkovicGutmanReducedEscapeSigns",
+        "Proofs.RadenkovicGutmanSymmetricConstantReserve",
+        "Proofs.RadenkovicGutmanSymmetricConstantReserveIdentity",
+        "Proofs.RadenkovicGutmanSymmetricTangentReserve",
+        "Proofs.RadenkovicGutmanSymmetricTangentReserveIdentity",
+        "Proofs.RadenkovicGutmanTailHalfCertificate",
+        "Proofs.RadenkovicGutmanTailHalfGeometry",
+        "Proofs.RadenkovicGutmanTailHalfPolynomial"
+      ],
+      "fresh_module_count": 63,
+      "prerequisites": [
+        "prepare",
+        "row00",
+        "row01",
+        "row02",
+        "row03",
+        "row04",
+        "row05",
+        "row06",
+        "row07",
+        "row08",
+        "row09",
+        "row10",
+        "row11",
+        "row12",
+        "row13",
+        "row14",
+        "row15",
+        "row16",
+        "row17",
+        "row18",
+        "row19",
+        "row20",
+        "row21",
+        "row22",
+        "row23",
+        "evaluation"
+      ],
+      "job_name": "ge46-checked-final",
+      "artifact_name_template": "rg-ge46-checked-rows-20261103-{run}-{attempt}-final",
+      "required_success_step": "Require exact original declarations and staged kernel exports"
+    }
+  },
+  "original_public_family_source_sha256": "90ff34e998392cc5a435f5cd73417d0d7bfbc2b1b38ff1a9aff7c268ed2c11bd",
+  "original_public_family_statement_source_preserved": true,
+  "status": "SOURCE_BOUND_CANDIDATE_REQUIRES_ALL_STAGED_KERNEL_CHECKS"
+}

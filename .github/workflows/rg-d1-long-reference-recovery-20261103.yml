@@ -1,0 +1,80 @@
+name: RG exact original long batches with sealed reference bytes
+# These are new original-source reconstruction jobs. The old run is unchanged.
+on:
+  push:
+    branches: [rg-degree-one-large-20261103]
+    paths: ['.github/workflows/rg-d1-long-reference-recovery-20261103.yml']
+permissions:
+  contents: read
+  actions: read
+jobs:
+  plan:
+    name: Bind all 186 exact original long batch plans
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    outputs:
+      matrix: ${{ steps.matrix.outputs.matrix }}
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          persist-credentials: false
+      - name: Bind canonical reference bytes and unchanged original master plans
+        id: matrix
+        run: python3 -B ci/rg_d1_long_reference_recovery.py --phase matrix
+      - name: Preserve the exact source-only scheduling record
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: rg-d1-long-reference-recovery-plan-20261103-${{ github.run_id }}-${{ github.run_attempt }}
+          path: Proofs/RG_Lean_20261019/build/long_reference_recovery_plan
+          retention-days: 90
+  reproduce:
+    name: reproduce-original-long-${{ matrix.batch }}
+    needs: [plan]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 180
+    strategy:
+      fail-fast: false
+      max-parallel: 4
+      matrix: ${{ fromJSON(needs.plan.outputs.matrix) }}
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          persist-credentials: false
+      - name: Bind exact raw references and the selected complete original batch
+        run: python3 -B ci/rg_d1_long_reference_recovery.py --phase check-batch --batch "${{ matrix.batch }}"
+      - name: Materialize and bind the exact original numeric sources
+        run: python3 -B ci/rg_run_original_d1_numeric.py --plan "${{ matrix.plan }}" --phase materialize
+      - name: Install the project toolchain
+        run: |
+          set -o pipefail
+          curl -sSfL https://github.com/leanprover/elan/releases/download/v1.4.2/elan-x86_64-unknown-linux-gnu.tar.gz | tar xz
+          ./elan-init -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Materialize the exact dependency lock
+        run: python3 -B ci/rg_dependencies.py
+      - name: Fetch the exact external cache scope
+        run: python3 -B ci/rg_run_original_d1_numeric.py --plan "${{ matrix.plan }}" --phase cache
+      - name: Restore the retained complete audited analytic base
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 -B ci/rg_restore_complete_scope.py --manifest ci/rg_reusable_analytic_kernel_base_complete_scope_capsule.json --build-directory Proofs/RG_Lean_20261019/build/extension
+      - name: Enforce the exact bounded original fresh frontier
+        run: python3 -B ci/rg_original_d1_numeric_reproduction.py --plan "${{ matrix.plan }}" --phase preflight
+      - name: Reproduce the unchanged original certificates in the kernel
+        shell: bash
+        run: |
+          set -o pipefail
+          python3 -B ci/rg_run_original_d1_numeric.py --plan "${{ matrix.plan }}" --phase kernel | python3 -B ci/rg_compact_ci_output.py
+      - name: Require exact historical output identities
+        run: python3 -B ci/rg_original_d1_numeric_reproduction.py --plan "${{ matrix.plan }}" --phase compare
+      - name: Retain completed records and every declared output member
+        if: always()
+        run: python3 -B ci/rg_collect_fresh_exports.py --build-directory Proofs/RG_Lean_20261019/build/extension --output-directory Proofs/RG_Lean_20261019/build/fresh_exports
+      - name: Retain complete original numeric proof exports
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: rg-d1-long-reference-recovery-20261103-${{ github.run_id }}-${{ github.run_attempt }}-${{ matrix.batch }}
+          path: Proofs/RG_Lean_20261019/build/fresh_exports
+          retention-days: 90

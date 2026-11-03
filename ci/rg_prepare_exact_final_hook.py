@@ -79,7 +79,9 @@ def main():
         assert item['batch'] in batches and item['batch'] not in seen
         seen.add(item['batch'])
         assert item['original_plan_sha256'] == batches[item['batch']]['plan_sha256']
-        assert item['run'] != RUN and item['original_job'] > 0
+        # sealed_numeric_replacements has checked the concrete original ID or
+        # the narrow late wave-two lookup; successful replacement IDs are real.
+        assert item['run'] != RUN
     descriptor = dict(kind='SEALED_EXACT_NUMERIC_RUN_FINAL_CALLBACK', repository=REPOSITORY,
         numeric_run=RUN, numeric_source_commit=NUMERIC_SHA, numeric_workflow_path=PATH,
         numeric_branch=BRANCH, proof_source_commit=a.proof_source_commit,

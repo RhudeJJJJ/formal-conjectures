@@ -1,0 +1,139 @@
+{
+  "status": "LATE_ORIGINAL_JOB_LOOKUP_BOUNDARIES_VALIDATED_NO_NEW_PROOF_OR_CONTRACT",
+  "actual_original_job_absence_rejected": true,
+  "positive_future_job_fixtures_synthetic_and_memory_only": true,
+  "negative_controls": [
+    {
+      "case": "actual original wave-two job is still absent",
+      "result": "REJECTED"
+    },
+    {
+      "case": "ambiguous duplicate original job",
+      "result": "REJECTED"
+    },
+    {
+      "case": "wrong actual original job run_id=41708676694",
+      "result": "REJECTED"
+    },
+    {
+      "case": "wrong actual original job head_sha=c2e2f145a77c2c2c65349085283f5ca2db7aa814",
+      "result": "REJECTED"
+    },
+    {
+      "case": "wrong actual original job run_attempt=2",
+      "result": "REJECTED"
+    },
+    {
+      "case": "wrong actual original job run_attempt=True",
+      "result": "REJECTED"
+    },
+    {
+      "case": "wrong actual original job id=True",
+      "result": "REJECTED"
+    },
+    {
+      "case": "wrong actual original job id=0",
+      "result": "REJECTED"
+    },
+    {
+      "case": "wrong actual original job name=original-numeric-30_098",
+      "result": "REJECTED"
+    },
+    {
+      "case": "wrong actual original job status=in_progress",
+      "result": "REJECTED"
+    },
+    {
+      "case": "wrong actual original job conclusion=success",
+      "result": "REJECTED"
+    },
+    {
+      "case": "wrong actual original job conclusion=skipped",
+      "result": "REJECTED"
+    },
+    {
+      "case": "wrong actual original job conclusion=cancelled",
+      "result": "REJECTED"
+    },
+    {
+      "case": "changed or extra lookup binding run=41708676694",
+      "result": "REJECTED"
+    },
+    {
+      "case": "changed or extra lookup binding source_commit=c2e2f145a77c2c2c65349085283f5ca2db7aa814",
+      "result": "REJECTED"
+    },
+    {
+      "case": "changed or extra lookup binding run_attempt=2",
+      "result": "REJECTED"
+    },
+    {
+      "case": "changed or extra lookup binding run_attempt=True",
+      "result": "REJECTED"
+    },
+    {
+      "case": "changed or extra lookup binding job_name=original-numeric-30_098",
+      "result": "REJECTED"
+    },
+    {
+      "case": "changed or extra lookup binding conclusion=failure",
+      "result": "REJECTED"
+    },
+    {
+      "case": "lookup may not override batch",
+      "result": "REJECTED"
+    },
+    {
+      "case": "lookup may not override run",
+      "result": "REJECTED"
+    },
+    {
+      "case": "lookup may not override source_commit",
+      "result": "REJECTED"
+    },
+    {
+      "case": "lookup may not override workflow_path",
+      "result": "REJECTED"
+    },
+    {
+      "case": "lookup may not override original_job",
+      "result": "REJECTED"
+    },
+    {
+      "case": "lookup may not override completion_kind",
+      "result": "REJECTED"
+    },
+    {
+      "case": "changed original plan bytes",
+      "result": "REJECTED"
+    },
+    {
+      "case": "wrong bound original run",
+      "result": "REJECTED"
+    },
+    {
+      "case": "changed reference registry bytes",
+      "result": "REJECTED"
+    },
+    {
+      "case": "missing concrete replacement field run",
+      "result": "REJECTED"
+    },
+    {
+      "case": "missing concrete replacement field job",
+      "result": "REJECTED"
+    },
+    {
+      "case": "missing concrete replacement field artifact_id",
+      "result": "REJECTED"
+    },
+    {
+      "case": "missing concrete replacement field artifact_sha256",
+      "result": "REJECTED"
+    }
+  ],
+  "files": {
+    "rg_prepare_exact_final_hook.py": "44a3d5f6a9f5a38fec15af19ed6f15ccf60ca910a1f87bb153536928dc3a9eb0",
+    "rg_collect_exact_d1_reproductions.py": "ee63770a720f1ca3e08835ead0a1e95158ddc9b7ab76dea96ae57c8c25fcc6e0"
+  }
+}

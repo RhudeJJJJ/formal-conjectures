@@ -150,6 +150,53 @@ def latest_named_job(jobs, name):
     return matches[0]
 
 
+def original_job_binding(item, spec_raw, origin):
+    """Only late original wave-two identities may be resolved from actual jobs.
+
+    Every successful replacement still has a concrete run, job and archive.
+    This narrow lookup never supplies an original conclusion or proof object.
+    """
+    if 'original_job_lookup' not in item:
+        assert type(item['original_job']) is int and item['original_job'] > 0
+        return None
+    assert 'original_job' not in item and 'completion_kind' not in item
+    assert origin['run'] == 41686621300
+    assert origin['source_commit'] == 'aaeaec3cec22467d3f0b83b1761bfb40087bb991'
+    assert sha(spec_raw) == 'f47334108b563ae5e20f15fc07b2e4589f6d6e7f49e308bfdb8b4301e689e18e'
+    spec = json.loads(spec_raw)
+    wave_two = {b['batch'] for b in spec['jobs'] if b['wave'] == 2}
+    assert len(wave_two) == 93 and item['batch'] in wave_two
+    registry = bound_file('ci/rg_d1_original_reference_bytes_20261103.json',
+        'a04e5e612ce5e927a9f121a03b2786224b84736e64cee1974eaaa8c603693dc9')
+    assert item['batch'] in registry['affected_numeric_batches']
+    assert item['run'] == 41708676694
+    assert item['source_commit'] == 'c2e2f145a77c2c2c65349085283f5ca2db7aa814'
+    assert item['workflow_path'] == '.github/workflows/rg-d1-long-reference-recovery-20261103.yml'
+    lookup = item['original_job_lookup']
+    assert lookup == {
+        'kind': 'EXACT_ORIGINAL_WAVE_TWO_JOB_IN_PINNED_RUN',
+        'run': 41686621300,
+        'source_commit': 'aaeaec3cec22467d3f0b83b1761bfb40087bb991',
+        'run_attempt': 1,
+        'job_name': 'original-numeric-' + item['batch'],
+    }
+    assert type(lookup['run']) is int and type(lookup['run_attempt']) is int
+    return lookup
+
+
+def resolve_original_job(item, spec_raw, origin, jobs):
+    lookup = original_job_binding(item, spec_raw, origin)
+    assert lookup is not None
+    matches = [j for j in jobs if j['name'] == lookup['job_name']]
+    assert len(matches) == 1, ('Original wave-two job absent or ambiguous', item['batch'])
+    job = matches[0]
+    assert type(job['id']) is int and job['id'] > 0
+    assert job['run_id'] == lookup['run'] and job['head_sha'] == lookup['source_commit']
+    assert type(job['run_attempt']) is int and job['run_attempt'] == lookup['run_attempt']
+    assert job['status'] == 'completed' and job['conclusion'] in ('failure', 'timed_out')
+    return job
+
+
 def sealed_numeric_replacements(path, spec_raw, origin, repository):
     """A recovery may replace a whole failed batch, never its expected scope."""
     if path is None:
@@ -172,9 +219,11 @@ def sealed_numeric_replacements(path, spec_raw, origin, repository):
         }
         if 'completion_kind' in item:
             required |= {'completion_kind', 'completion_spec'}
+        if 'original_job_lookup' in item:
+            required = (required - {'original_job'}) | {'original_job_lookup'}
         assert set(item) == required, 'A replacement may bind origins, never override the original proof scope'
         assert item['batch'] not in replacements
-        assert isinstance(item['original_job'], int) and item['original_job'] > 0
+        original_job_binding(item, spec_raw, origin)
         assert re.fullmatch(r'[0-9a-f]{64}', item['original_plan_sha256'])
         assert all(isinstance(item[k], int) and item[k] > 0 for k in ('run', 'job', 'artifact_id'))
         assert item['run'] != origin['run']
@@ -282,7 +331,12 @@ def main():
         if batch['batch'] in replacements:
             item = dict(replacements[batch['batch']])
             assert item['original_plan_sha256'] == batch['plan_sha256']
-            old = api.get('/actions/jobs/' + str(item['original_job']))
+            if 'original_job_lookup' in item:
+                old = resolve_original_job(item, spec_raw, origin, jobs_for(run))
+                del item['original_job_lookup']
+                item['original_job'] = old['id']
+            else:
+                old = api.get('/actions/jobs/' + str(item['original_job']))
             assert old['run_id'] == run and old['head_sha'] == commit
             assert old['name'] == 'original-numeric-' + batch['batch']
             assert old['status'] == 'completed' and old['conclusion'] in ('failure', 'timed_out')

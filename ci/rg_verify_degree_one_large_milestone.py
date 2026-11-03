@@ -1,5 +1,5 @@
 """Require the completed exact kernel receipt before reporting four to three."""
-import hashlib, json, os, pathlib, sys
+import hashlib, json, os, pathlib, re, subprocess, sys
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 SOURCES = ROOT / 'Proofs/RG_Lean_20261019'
@@ -35,9 +35,23 @@ for name, row in fresh.items():
         assert p.resolve().is_relative_to(build.resolve())
         assert p.is_file() and (size is None or size == p.stat().st_size)
         with p.open('rb') as stream: assert hashlib.file_digest(stream, 'sha256').hexdigest() == digest
+proof_commit = subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=ROOT, text=True).strip()
+workflow_commit = os.environ['GITHUB_SHA']
+assert re.fullmatch(r'[0-9a-f]{40}', proof_commit)
+assert re.fullmatch(r'[0-9a-f]{40}', workflow_commit)
+context = None
+if os.environ.get('GITHUB_EVENT_NAME') == 'workflow_run':
+    from rg_final_continuation_context import validate_context
+    context = validate_context()
+    assert proof_commit == context['proof_source_commit']
+else:
+    assert proof_commit == workflow_commit, 'Ordinary workflow checkout differs from its declared source'
 report = {
     'status': 'KERNEL_VERIFIED_DEGREE_ONE_LARGE_AND_THREE_REMAINING_ORIGINAL_FAMILIES',
-    'repository': os.environ['GITHUB_REPOSITORY'], 'source_commit': os.environ['GITHUB_SHA'],
+    'repository': os.environ['GITHUB_REPOSITORY'], 'source_commit': proof_commit,
+    'proof_source_commit': proof_commit, 'workflow_head_commit': workflow_commit,
+    'workflow_event': os.environ.get('GITHUB_EVENT_NAME'),
+    'artifact_origin_rule': 'Reusable artifact origin uses the actual workflow head commit; proof_source_commit identifies the fixed reviewed checkout. Per-module source and closure hashes remain mandatory.',
     'run': int(os.environ['GITHUB_RUN_ID']), 'run_attempt': int(os.environ['GITHUB_RUN_ATTEMPT']),
     'endpoint': ENDPOINT, 'required_modules': len(receipt['modules']),
     'source_endpoint_sha256': plan['source_sha256'][ENDPOINT],
@@ -51,5 +65,28 @@ report = {
     'global_rg': 'THREE_EXPLICIT_ORIGINAL_FORMAL_INPUT_OBLIGATIONS_REMAIN',
     'fresh_axiom_profiles': {n: r['axiom_profiles'] for n, r in fresh.items()},
 }
-(SOURCES / 'build/degree_one_large_verified_milestone.json').write_text(json.dumps(report, indent=2) + '\n')
+if context:
+    report['exact_callback_context'] = context
+encoded_report = json.dumps(report, indent=2) + '\n'
+(SOURCES / 'build/degree_one_large_verified_milestone.json').write_text(encoded_report)
+# Retain the explicit proof-source/workflow-head distinction inside the same
+# authenticated archive as the fresh module records and objects.
+exports = SOURCES / 'build/fresh_exports'
+exports.mkdir(parents=True, exist_ok=True)
+(exports / 'verified_proof_origin_and_milestone.json').write_text(encoded_report)
 print(json.dumps(report), flush=True)
+if os.environ.get('GITHUB_STEP_SUMMARY'):
+    repository = os.environ['GITHUB_REPOSITORY']
+    lines = [
+        '## Verified original degreeOneLarge milestone', '',
+        'The full original family and the assembly with three explicit remaining original fields passed the exact kernel and axiom audit.', '',
+        f'- Fixed proof source: [{proof_commit}](https://github.com/{repository}/commit/{proof_commit})',
+        f'- Actual workflow head: [{workflow_commit}](https://github.com/{repository}/commit/{workflow_commit})',
+        f"- Exact receipt SHA-256: `{report['receipt_sha256']}`",
+        f"- Checked local modules: {report['required_modules']}",
+        '- Remaining original fields: `degreeOneMiddle`, `degreeTwoThree`, `degreeFourToFortyfive`.',
+        '',
+        'Three original formal input obligations remain in the global RG assembly.', '',
+    ]
+    with open(os.environ['GITHUB_STEP_SUMMARY'], 'a', encoding='utf-8') as stream:
+        stream.write('\n'.join(lines))

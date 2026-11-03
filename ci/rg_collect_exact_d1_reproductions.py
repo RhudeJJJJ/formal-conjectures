@@ -150,15 +150,53 @@ def latest_named_job(jobs, name):
     return matches[0]
 
 
+def sealed_numeric_replacements(path, spec_raw, origin, repository):
+    """A recovery may replace a whole failed batch, never its expected scope."""
+    if path is None:
+        return {}, None
+    raw = path.read_bytes()
+    sealed = json.loads(raw)
+    assert sealed['kind'] == 'SEALED_SUCCESSFUL_ORIGINAL_NUMERIC_BATCH_REPLACEMENTS'
+    assert sealed['repository'] == repository
+    assert sealed['numeric_run'] == origin['run']
+    assert sealed['numeric_source_commit'] == origin['source_commit']
+    assert sealed['numeric_spec_sha256'] == sha(spec_raw)
+    replacements = {}
+    for item in sealed['replacements']:
+        assert set(item) == {
+            'batch', 'original_job', 'original_plan_sha256', 'run', 'job',
+            'source_commit', 'artifact_id', 'artifact_sha256', 'artifact_name',
+            'job_name', 'workflow_path', 'required_success_step',
+        }, 'A replacement may bind origins, never override the original proof scope'
+        assert item['batch'] not in replacements
+        assert isinstance(item['original_job'], int) and item['original_job'] > 0
+        assert re.fullmatch(r'[0-9a-f]{64}', item['original_plan_sha256'])
+        assert all(isinstance(item[k], int) and item[k] > 0 for k in ('run', 'job', 'artifact_id'))
+        assert item['run'] != origin['run']
+        assert re.fullmatch(r'[0-9a-f]{40}', item['source_commit'])
+        assert re.fullmatch(r'[0-9a-f]{64}', item['artifact_sha256'])
+        assert isinstance(item['artifact_name'], str) and item['artifact_name']
+        assert isinstance(item['job_name'], str) and item['job_name']
+        workflow = pathlib.PurePosixPath(item['workflow_path'])
+        assert workflow.parent == pathlib.PurePosixPath('.github/workflows') and workflow.suffix == '.yml'
+        assert item['required_success_step'] == 'Require exact historical output identities'
+        replacements[item['batch']] = item
+    assert replacements, 'A sealed replacement file must identify actual successful replacement jobs'
+    return replacements, sha(raw)
+
+
 def main():
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument('--spec', type=pathlib.Path, required=True)
     p.add_argument('--external-contract', type=pathlib.Path, required=True)
     p.add_argument('--output', type=pathlib.Path, required=True)
+    p.add_argument('--numeric-origin', type=pathlib.Path)
+    p.add_argument('--numeric-replacements', type=pathlib.Path)
     p.add_argument('--external-wait-seconds', type=int, default=7200)
     a = p.parse_args()
     assert 0 <= a.external_wait_seconds <= 10800
-    spec = json.loads(a.spec.read_bytes())
+    spec_raw = a.spec.read_bytes()
+    spec = json.loads(spec_raw)
     assert spec['kind'] == 'EXACT_MISSING_D1_ORIGINAL_NUMERIC_BATCHES'
     assert spec['mathlib'] == PIN and spec['leancert'] == LC
     contract = json.loads(a.external_contract.read_bytes())
@@ -168,8 +206,40 @@ def main():
     hashes, _, closures = source_closure(spec['endpoint'])
     assert hashes[spec['endpoint']] == spec['source_endpoint_sha256']
     assert closures[spec['endpoint']] == spec['source_endpoint_closure_sha256']
-    repository, run, commit = os.environ['GITHUB_REPOSITORY'], int(os.environ['GITHUB_RUN_ID']), os.environ['GITHUB_SHA']
+    repository = os.environ['GITHUB_REPOSITORY']
+    publishing_commit = os.environ['GITHUB_SHA']
+    run, commit = int(os.environ['GITHUB_RUN_ID']), publishing_commit
     api = GitHub(repository)
+    replacements, replacement_digest = {}, None
+    assert a.numeric_origin or not a.numeric_replacements
+    if a.numeric_origin:
+        origin = json.loads(a.numeric_origin.read_bytes())
+        assert origin['kind'] == 'PINNED_ORIGINAL_NUMERIC_RUN_FOR_FINAL_ONLY_CONTINUATION'
+        assert origin['repository'] == repository
+        assert origin['numeric_spec_sha256'] == sha(a.spec.read_bytes())
+        assert origin['source_endpoint_sha256'] == spec['source_endpoint_sha256']
+        assert origin['source_endpoint_closure_sha256'] == spec['source_endpoint_closure_sha256']
+        assert origin['numeric_jobs'] == len(spec['jobs'])
+        assert isinstance(origin['run'], int) and origin['run'] > 0
+        assert re.fullmatch(r'[0-9a-f]{40}', origin['source_commit'])
+        run, commit = origin['run'], origin['source_commit']
+        actual = api.get('/actions/runs/' + str(run))
+        assert actual['id'] == run and actual['head_sha'] == commit
+        assert actual['path'] == origin['workflow_path']
+        assert actual['head_branch'] == origin['branch'] == 'rg-degree-one-large-20261103'
+        # Recovery contracts are sealed only after concrete successful evidence
+        # exists; an unresolved same-push placeholder cannot enter a continuation.
+        assert contract['kind'] == 'SEALED_D1_COMPLETION_PREREQUISITES'
+        for item in contract['jobs']:
+            assert 'workflow_path' not in item and isinstance(item['run'], int)
+            assert isinstance(item['job'], int) and item['job'] > 0
+            assert re.fullmatch(r'[0-9a-f]{40}', item['source_commit'])
+            assert isinstance(item['artifact_id'], int) and item['artifact_id'] > 0
+            assert re.fullmatch(r'[0-9a-f]{64}', item['artifact_sha256'])
+        replacements, replacement_digest = sealed_numeric_replacements(
+            a.numeric_replacements, spec_raw, origin, repository)
+        assert set(replacements) <= {b['batch'] for b in spec['jobs']}
+
     catalogs, job_catalogs, observed_jobs = {}, {}, {}
     def jobs_for(r):
         if r not in job_catalogs:
@@ -179,20 +249,41 @@ def main():
     items = []
     for batch in spec['jobs']:
         plan = bound_file(batch['plan'], batch['plan_sha256'])
-        job = latest_named_job(jobs_for(run), 'original-numeric-' + batch['batch'])
-        items.append(dict(key='batch' + batch['batch'], run=run, job=job['id'], source_commit=commit,
-            artifact_name=f"rg-d1-original-numeric-{run}-{job['run_attempt']}-{batch['batch']}",
-            original_manifests=plan['original_manifests'], fresh_module_origins=plan['fresh_module_origins'],
-            required_success_step='Require exact historical output identities'))
+        if batch['batch'] in replacements:
+            item = dict(replacements[batch['batch']])
+            assert item['original_plan_sha256'] == batch['plan_sha256']
+            old = api.get('/actions/jobs/' + str(item['original_job']))
+            assert old['run_id'] == run and old['head_sha'] == commit
+            assert old['name'] == 'original-numeric-' + batch['batch']
+            assert old['status'] == 'completed' and old['conclusion'] in ('failure', 'timed_out')
+            recovered = api.get('/actions/runs/' + str(item['run']))
+            assert recovered['id'] == item['run'] and recovered['head_sha'] == item['source_commit']
+            assert recovered['path'] == item['workflow_path']
+            assert recovered['head_branch'] == 'rg-degree-one-large-20261103'
+            del item['workflow_path']
+            item['numeric_replacement'] = dict(
+                sealed_replacement_sha256=replacement_digest, original_run=run,
+                original_job=old['id'], original_source_commit=commit,
+                original_batch=batch['batch'], original_plan_sha256=batch['plan_sha256'])
+        else:
+            job = latest_named_job(jobs_for(run), 'original-numeric-' + batch['batch'])
+            item = dict(run=run, job=job['id'], source_commit=commit,
+                artifact_name=f"rg-d1-original-numeric-{run}-{job['run_attempt']}-{batch['batch']}",
+                required_success_step='Require exact historical output identities')
+        # A replacement cannot supply a weaker or partial set: both expected
+        # historical maps always come from the original sealed batch plan.
+        item.update(key='batch' + batch['batch'], original_manifests=plan['original_manifests'],
+                    fresh_module_origins=plan['fresh_module_origins'])
+        items.append(item)
     for original in contract['jobs']:
         item = dict(original)
         if 'workflow_path' in item:
             assert item['source_commit'] == 'CURRENT_PUBLISHING_COMMIT'
-            item['source_commit'] = commit
+            item['source_commit'] = publishing_commit
             workflow = pathlib.PurePosixPath(item['workflow_path'])
             assert workflow.parent == pathlib.PurePosixPath('.github/workflows') and workflow.suffix == '.yml'
-            runs = api.listing('/actions/workflows/' + urllib.parse.quote(workflow.name, safe='') + '/runs?head_sha=' + commit, 'workflow_runs')
-            matches = [r for r in runs if r['head_sha'] == commit and r['path'] == str(workflow)
+            runs = api.listing('/actions/workflows/' + urllib.parse.quote(workflow.name, safe='') + '/runs?head_sha=' + publishing_commit, 'workflow_runs')
+            matches = [r for r in runs if r['head_sha'] == publishing_commit and r['path'] == str(workflow)
                        and r['head_branch'] == 'rg-degree-one-large-20261103']
             assert len(matches) == 1, ('Missing or ambiguous same-commit auxiliary run', str(workflow))
             item['run'] = matches[0]['id']
@@ -213,6 +304,7 @@ def main():
             job = observed_jobs.pop(item['job'], None)
             if job is None: job = api.get('/actions/jobs/' + str(item['job']))
             assert job['run_id'] == item['run'] and job['head_sha'] == item['source_commit']
+            if 'job_name' in item: assert job['name'] == item['job_name']
             if job['status'] == 'completed':
                 assert job['conclusion'] == 'success', ('Named prerequisite failed', item['key'], item['job'], job['conclusion'])
                 break
@@ -238,6 +330,8 @@ def main():
         assert not artifact['expired'] and artifact['workflow_run']['id'] == item['run']
         assert artifact['workflow_run']['head_sha'] == item['source_commit']
         assert re.fullmatch(r'sha256:[0-9a-f]{64}', artifact['digest'])
+        if 'artifact_id' in item: assert artifact['id'] == item['artifact_id']
+        if 'artifact_sha256' in item: assert artifact['digest'] == 'sha256:' + item['artifact_sha256']
         raw = api.logs(item['job'])
         fresh = records_from_log(raw)
         # Compare the complete job first. Shared ancestors are retained only
@@ -253,6 +347,8 @@ def main():
             origin_context=dict(kind='SOURCE_BOUND_SUCCESSFUL_KERNEL_JOB',
                 successful_job_log_sha256=sha(raw), expected_contract_key=item['key'],
                 archive_member_verification='MANDATORY_IN_FINAL_BOUNDED_RESTORE'))
+        if 'numeric_replacement' in item:
+            manifest['origin_context']['numeric_replacement'] = item['numeric_replacement']
         (out / (item['key'] + '_prior_exports.json')).write_text(json.dumps(manifest, indent=2) + '\n')
         report = dict(key=item['key'], run=item['run'], job=item['job'], artifact_id=artifact['id'],
                       modules=len(fresh), status='SUCCESSFUL_EXACT_JOB_RECORDS_REQUIRE_AUTHENTICATED_ARCHIVE_RESTORE')

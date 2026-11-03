@@ -1,0 +1,45 @@
+{
+  "status": "INDEPENDENT_NAMED_PROFILE_CORRECTION_REVIEW_APPROVED_FOR_PUBLICATION",
+  "files": {
+    "ci/rg_check_current_final_source_binding.py": "10487b26f816f280407fda795c34523f390e42587359b206085d743df4dfaa16",
+    "ci/rg_current_final_source_binding_20261103.json": "24a14e2fe0c1f5e9914c268f0eec9d5a2499af0cc1fa47bce563a550f207c98e",
+    "ci/rg_numeric137_decomposed_recovery.py": "1bd82cb2fc03f00d45851b32b189247da64c9bf4295a437b4dda6fe0a3d1422e",
+    "ci/rg_d1_numeric137_decomposed_20261103_spec.json": "215ae3b2b69a4d7f9f00d694228a45333df0b73e588a6b2f0f61c97b45db4302",
+    ".github/workflows/rg-d1-numeric137-decomposed-recovery-20261103.yml": "b91a7438e47026926f27b7036caa55c179d1a2f7ae85090d5704a6252724db3b",
+    ".github/workflows/rg-current-final-source-binding-20261103.yml": "d3656a0db1dd5d9aeef4f30b5f437dcc51ab1865e97131f183c0aeffebb709ab"
+  },
+  "new_spec_sha256": "215ae3b2b69a4d7f9f00d694228a45333df0b73e588a6b2f0f61c97b45db4302",
+  "source_identity_check": {
+    "required_original_batch_scope": 95,
+    "actual_graph_modules": 33583,
+    "all_95_source_and_closure_identities_unchanged": true,
+    "all_446_original_definitions_and_theorems_byte_preserved": true,
+    "new_module_profiles": "12 exact count declarations; actual named logs required after kernel",
+    "unchanged_historical_modules": 9
+  },
+  "independent_actual_parser_control": {
+    "module": "Proofs.RadenkovicGutmanD1Long00Leaf01644",
+    "archive_sha256": "45cc7a292bab0958bc264895d97b62d9b192c46b29718f29e80fb178bf640a03",
+    "log_sha256": "e27fff0e769c3ee34dd165ac2d6dd7cb801858b7742612370ecc738648a1d549",
+    "actual_printed_names": 313,
+    "empty_profiles_interspersed": 98,
+    "actual_verifier_array_normalization_matches": true,
+    "negative_cases_rejected": [
+      "Changed name order",
+      "Extra printed name",
+      "Nonstandard axiom",
+      "Noncanonical empty-profile syntax"
+    ],
+    "renamed_to_1370_in_this_review": false
+  },
+  "shared_validator_review": {
+    "exact_per_part_names_and_order": true,
+    "all_313_names_unique_and_complete": true,
+    "each_current_record_matches_its_actual_log": true,
+    "global_original_print_order_reassembled": true,
+    "complete_historical_grouped_array_equality_required": true,
+    "historical_named_mapping_inferred": false
+  },
+  "scope_limit": "This approval fixes audit metadata only; no actual successful 1370 kernel receipt or salvage origin is claimed. Final collector still requires the updated shared validator and sealed pins.",
+  "expensive_recompile_trigger": "Existing 1370 workflow changed to workflow_dispatch only; source-binding preflight remains push-triggered."
+}

@@ -1,0 +1,63 @@
+{
+  "repository": "RhudeJJJJ/formal-conjectures",
+  "run": 41706475942,
+  "job": 126165954368,
+  "source_commit": "1ec3794cd015edc12bfda7aa45389af73cc9ab3b",
+  "artifact_id": 13267237563,
+  "artifact_sha256": "70f9bb3b58c67c11fd059bd2d8614e7949de0c563c1a720de08f07d6a2885ad4",
+  "lean_version": "4.33.1",
+  "mathlib": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "modules": {
+    "Proofs.RadenkovicGutmanEscapeReducedReserveData": {
+      "module": "Proofs.RadenkovicGutmanEscapeReducedReserveData",
+      "source_sha256": "6b5d9e8a915a69f38dbcab0f7f9d17181293bcc056fee047aaa516aac58c6e6a",
+      "source_closure_sha256": "83412759d01399e4dc15f54b4e02a001460ab179d8be91af9d505c20bb43aa3c",
+      "output_sha256": "7614fcbd4fe76431512da706f004da3984d7118d5ba8943e7862af17300f5e84",
+      "axiom_profiles": [
+        [
+          "propext"
+        ],
+        []
+      ],
+      "mode": "FRESH_KERNEL_EXPORT",
+      "seconds": 6.682
+    },
+    "Proofs.RadenkovicGutmanEscapeReducedReserveRow16": {
+      "module": "Proofs.RadenkovicGutmanEscapeReducedReserveRow16",
+      "source_sha256": "f97a2fc22d670ba1c7f82d7497c5c37857c5922be078266f6a0fb618ab862387",
+      "source_closure_sha256": "78f1c782d012fe5478303bc1c8782f68e18d4718df9c777fe2a65c6272818c27",
+      "output_sha256": "d0cbe2c98c34ef4932e7b1a343bfd21bb257e9fadb5c8880d7a2b908f9217d4c",
+      "axiom_profiles": [
+        [
+          "propext"
+        ],
+        [
+          "propext"
+        ],
+        []
+      ],
+      "mode": "FRESH_KERNEL_EXPORT",
+      "seconds": 7.033
+    }
+  },
+  "origin_context": {
+    "kind": "AUTHENTICATED_COMPLETE_CURRENT_SOURCE_GE46_STAGE",
+    "stage": "row16",
+    "job_name": "ge46-checked-row16",
+    "artifact_name": "rg-ge46-checked-rows-20261103-41706475942-1-row16",
+    "workflow_path": ".github/workflows/rg-ge46-checked-rows-reconstruction-20261103.yml",
+    "required_success_step": "Require exact original declarations and staged kernel exports",
+    "spec_sha256": "c01c35c64eadfe96bcb3bfee07886b0860b6b2ad758ebc2d20e13a8ab23a4dc7",
+    "full_stage_receipt_sha256": "1aa16684daa7aef1367d8f03befcf61e6f4bb6559495adcb4f42ed1b2d8ce3fd",
+    "actual_job_log_sha256": "b7fc4be756e6d0e14e6f8d68f7e2212fd579a5e91d414bb398567669830fb61e",
+    "required_modules": 54,
+    "complete_fresh_module_set": [
+      "Proofs.RadenkovicGutmanEscapeReducedReserveData",
+      "Proofs.RadenkovicGutmanEscapeReducedReserveRow16"
+    ],
+    "every_declared_output_member_and_actual_module_log_authenticated": true,
+    "duplicates_preserved_for_full_job_comparison": true,
+    "original_degree_ge46_endpoint_complete": false,
+    "whole_degree_one_large_complete": false
+  }
+}

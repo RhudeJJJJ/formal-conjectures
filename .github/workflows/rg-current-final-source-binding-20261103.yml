@@ -1,0 +1,36 @@
+name: RG current final source closure and unchanged numeric origins
+on:
+  push:
+    branches: [rg-degree-one-large-20261103]
+    paths: ['.github/workflows/rg-current-final-source-binding-20261103.yml']
+permissions:
+  contents: read
+jobs:
+  bind:
+    name: Bind the full current graph without claiming a kernel proof
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          persist-credentials: false
+      - name: Materialize the pinned closed-family and long-class sources
+        run: |
+          python3 -B ci/rg_materialize_compact_closed_families.py --endpoint Proofs.RadenkovicGutmanCompactFiniteOriginalSmallGeFour --max-raw-mib 512
+          python3 -B ci/rg_materialize_compact_closed_families.py --endpoint Proofs.RadenkovicGutmanCompactFiniteOriginalDegreeOneSmall --max-raw-mib 512
+          python3 - <<'PY'
+          import json, subprocess, sys
+          plan = json.load(open('ci/rg_shared_arm_materialization_plan.json'))
+          for index in plan['classes']['30']['open_chunk_indices']:
+              subprocess.run([sys.executable, '-B', 'ci/rg_materialize_shared_arm.py',
+                              '--tag', '30', '--chunk', str(index)], check=True)
+          PY
+      - name: Check current full source closure and every original numeric source identity
+        run: python3 -B ci/rg_check_current_final_source_binding.py
+      - name: Retain the actual source graph without proof objects
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: rg-current-final-source-binding-${{ github.run_id }}-${{ github.run_attempt }}
+          path: Proofs/RG_Lean_20261019/build/current_final_source_binding
+          retention-days: 90

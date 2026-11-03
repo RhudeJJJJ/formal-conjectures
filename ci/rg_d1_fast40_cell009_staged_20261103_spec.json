@@ -1,0 +1,142 @@
+{
+  "kind": "EXACT_FAST40_COMPONENT_RECONSTRUCTION",
+  "endpoint": "Proofs.RadenkovicGutmanD1FastFullBox40",
+  "lean_version": "4.33.1",
+  "mathlib": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "leancert": "621a43d7cf21f87872392a01e874f2f1dbddc926",
+  "source_parent_commit": "52f26cc754cfd9ed4cb9618fde3f05bb65ea1229",
+  "source_scope_plan_sha256": "e20daee3e9569a0b1120afead5edfebdd6abb95ce7610692b20cd21fdadb62fa",
+  "original_manifest": "ci/rg_d1_20261103_closed_class_historical_reference.json",
+  "original_manifest_sha256": "6b574cf9840b806e7a95dd82da6d61ccf4d1cb08cd972477bb227c7096d62817",
+  "original_source_snapshot": "ci/rg_d1_fast40_cells04_original_blocks_20261103.json",
+  "original_source_snapshot_sha256": "5784d0653fb7f6d1be9baef807b1115695953e563462498986a087eaee47f9fd",
+  "previous_split_spec": "ci/rg_d1_fast40_split_20261103_spec.json",
+  "previous_split_spec_sha256": "b147f494833e5d1f1d531c80740c0f5cb55787224aa89349a79516391f653e2d",
+  "source_graph_helper_sha256": "82e13beeafb07a9c4d9b577c55e5bd7e1fb117c0e115f0eb0e74dc64484323f3",
+  "base_manifest": "ci/rg_reusable_analytic_kernel_base_complete_scope_capsule.json",
+  "base_manifest_sha256": "ecec5dc115eca93fdfadf72072bfb9d13c85c5d36191b31738d4295d9305d6a3",
+  "partial_manifests": [
+    {
+      "path": "ci/rg_d1_fast40_20261103_partial_original_exports.json",
+      "sha256": "e8060ea3cb70038cc4f902634ac23b92b6f0b1186c3fd2e82d438b6f9933c335",
+      "modules": [
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cells00",
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cells01",
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cells02",
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cells03"
+      ],
+      "module_count": 4
+    },
+    {
+      "path": "ci/rg_d1_fast40_cell008_20261103_partial_split_exports.json",
+      "sha256": "57abaf526d6ffd48444d5cabbb757fc6e48e2420760e5c63b338c947a0ec4999",
+      "modules": [
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell008"
+      ],
+      "module_count": 1
+    }
+  ],
+  "partial_module_count": 5,
+  "fresh_module_count": 14,
+  "required_module_count": 92,
+  "historical_unchanged_modules": [
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cells05",
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cells06",
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cells07",
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cells08",
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cells09"
+  ],
+  "new_or_changed_source_exports": [
+    "Proofs.RadenkovicGutmanD1FastFullBox40",
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell009",
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell009Affine",
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell009Arithmetic",
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell009Data",
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell009Log",
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell009Parameters",
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell009Positive",
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cells04"
+  ],
+  "modules": {
+    "Proofs.RadenkovicGutmanD1FastFullBox40": {
+      "source_sha256": "a30e2c106e2820b653484ca9f251f12f09b7c26a4a12587368d0991f4fdec41b",
+      "source_closure_sha256": "0bd45b037cc8474958a9f1f5b3a3e95bc1a306832c715ecd21d5269c6e09fe20"
+    },
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell009": {
+      "source_sha256": "804a4087469312a5fe25e6ff932add30e1085686ae48e40061ae07db391c5936",
+      "source_closure_sha256": "24d37c824b66a14c54724b8fb1c1400e67c2bc3aaa6de52d35ab4491aba67cef"
+    },
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell009Affine": {
+      "source_sha256": "9093f0b7eaad8bba706e96c431843404a92a1e23751817581864e12344e3467c",
+      "source_closure_sha256": "6365ce0e27db556b4cc41aef41b10b2bf9e094528f2854b8685fb4b1d8412306"
+    },
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell009Arithmetic": {
+      "source_sha256": "6159709257ffe0fa1c6fc85db35b3d56d2d13064d71e4ca1cc7d21ce5c5b4ae3",
+      "source_closure_sha256": "17e4a2402cf95c98d312ec735a5e9048e9cad0665c9a2b1fca38562157e49d66"
+    },
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell009Data": {
+      "source_sha256": "8cf9b14dca90670fe0b1f6228561f53d043300fd1d8a65f9683f466b0103b55f",
+      "source_closure_sha256": "a8d8cb56e46921f39b40bdb1e5775079654bc004b8024b985cd2e6d1467c7fe4"
+    },
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell009Log": {
+      "source_sha256": "14673932c2250daff439682d21bb9469dcf086b22faac477d330af827a3b28e2",
+      "source_closure_sha256": "7a8bae8f1ecc4cbf12bd6a59593662bc5f722f4865be1085abc879a8674ed279"
+    },
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell009Parameters": {
+      "source_sha256": "8366e1ceccee13d7c15214df3674a64a3ba2c6498c741d9a11cb84619551b519",
+      "source_closure_sha256": "70a14cfa29122fc153989009bb089a20207164453ab4fc279dbf89bf28251f43"
+    },
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell009Positive": {
+      "source_sha256": "a4faa6d1ab24dc6d40de22ca0f68e6b5f0e5514f4b809d267d0160ce402f3606",
+      "source_closure_sha256": "6632652b0cb581a4aebe003f331d93e861bf7fb817a2235f6af6d4e70e705aaa"
+    },
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cells04": {
+      "source_sha256": "1666a92be1b45150234660dc0b39cf8ba0826517555c6612416d38d7c0b4ae28",
+      "source_closure_sha256": "c6dde96dd6841ab7111a492037e88c978c0a7f0a5d74ab21d49eb813513b7449"
+    },
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cells05": {
+      "source_sha256": "8465d028d5328b54c8c51723f97b2ae9e68e99d2db6947a08f24bdd273fe6f77",
+      "source_closure_sha256": "624bb06556e16c598364b315d0b9225e1c63b0494a231eacdf3e2e9eb973d988"
+    },
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cells06": {
+      "source_sha256": "fb02e35de4f8733a622f0b0f8455a1cef5fb7b10bcaa68fef36929f43ea11a58",
+      "source_closure_sha256": "4e7ef69a800305faf092f7f9733df7e701adc6211391a6e6287fc73a169e92e8"
+    },
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cells07": {
+      "source_sha256": "c967f63c8bc5648a1d42336ddfb2590d4ab68996e896d89098ec28cdf817eb49",
+      "source_closure_sha256": "0037cf79bdf4372134ceca716c597eee3a9f38e9b849299a722133855d9119a7"
+    },
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cells08": {
+      "source_sha256": "caf4c02e7bf0d5d4dd7586b00834418e43e3e0f19ac08da893a0e5d15991d6f5",
+      "source_closure_sha256": "e4d75ed03409a8f38e206f41678ba3d606c208e42d21d9fc85cf4330c030d417"
+    },
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cells09": {
+      "source_sha256": "0fbfc94c6fc31339ddabd4b84423dcd0fa4d023c6edc9db2b17a0e76b39a0119",
+      "source_closure_sha256": "39c80d3085fba01e6c7904c58a9c2210830dc5c39069c09ede11a471bbaaaa70"
+    }
+  },
+  "axiom_profile_counts": {
+    "Proofs.RadenkovicGutmanD1FastFullBox40": 3,
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell009": 1,
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell009Affine": 1,
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell009Arithmetic": 1,
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell009Data": 1,
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell009Log": 1,
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell009Parameters": 1,
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell009Positive": 1,
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cells04": 2,
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cells05": 2,
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cells06": 2,
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cells07": 2,
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cells08": 2,
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cells09": 1
+  },
+  "preserved_completed_module": "Proofs.RadenkovicGutmanD1FastFullBox40Cell008",
+  "original_data_block_sha256": "040cc1b38b43bec6dae3a9e2197eeab651b310d209096a8ccbb03e16a95d0da7",
+  "original_public_acceptance_signature": "theorem cell009_checked : accepts 1 3 4 cell009=true",
+  "acceptance_proof_body_changed": true,
+  "workers": 1,
+  "module_timeout": 600,
+  "memory_reserve_mib": 2048,
+  "kernel_status": "REQUIRES_NEW_STANDARD_KERNEL_RECEIPT"
+}

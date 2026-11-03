@@ -1,0 +1,100 @@
+name: RG original FastFullBox40 staged Cell009 recovery
+on:
+  push:
+    branches: [rg-degree-one-large-20261103]
+    paths: ['.github/workflows/rg-d1-fast40-cell009-staged-recovery-20261103.yml']
+permissions:
+  contents: read
+  actions: read
+jobs:
+  check:
+    name: Check original FastFullBox40 with staged Cell009
+    runs-on: ubuntu-24.04
+    timeout-minutes: 150
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          persist-credentials: false
+      - name: Install the project toolchain
+        run: |
+          set -o pipefail
+          curl -sSfL https://github.com/leanprover/elan/releases/download/v1.4.2/elan-x86_64-unknown-linux-gnu.tar.gz | tar xz
+          ./elan-init -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Materialize the exact dependency lock
+        run: python3 -B ci/rg_dependencies.py
+      - name: Fetch the required Mathlib cache
+        run: |
+          python3 - <<'PY'
+          import pathlib,re,subprocess
+          root=pathlib.Path('Proofs/RG_Lean_20261019')
+          seen,external=set(),set()
+          def visit(name):
+              if name in seen:return
+              seen.add(name)
+              source=(root/(name.replace('.','/')+'.lean')).read_text()
+              for dep in re.findall(r'^\s*import\s+([\w.]+)',source,re.M):
+                  if dep.startswith('Proofs.'):visit(dep)
+                  elif not dep.startswith(('Lean.','Init.','Std.')) and dep not in ('Lean','Init','Std'):external.add(dep)
+          visit('Proofs.RadenkovicGutmanD1FastFullBox40')
+          subprocess.run(['lake','exe','cache','get',*sorted(external)],check=True)
+          PY
+      - name: Restore the available independently audited base
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          python3 - <<'PY'
+          import hashlib,json,pathlib
+          spec=json.loads(pathlib.Path('ci/rg_d1_fast40_cell009_staged_20261103_spec.json').read_text())
+          assert spec['base_manifest']=='ci/rg_reusable_analytic_kernel_base_complete_scope_capsule.json'
+          assert hashlib.sha256(pathlib.Path(spec['base_manifest']).read_bytes()).hexdigest()==spec['base_manifest_sha256']
+          PY
+          python3 -B ci/rg_restore_complete_scope.py --manifest ci/rg_reusable_analytic_kernel_base_complete_scope_capsule.json --build-directory Proofs/RG_Lean_20261019/build/extension
+      - name: Restore only individually authenticated completed modules
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          python3 - <<'PY_PARTIAL'
+          import hashlib,json,pathlib,subprocess
+          spec=json.loads(pathlib.Path('ci/rg_d1_fast40_cell009_staged_20261103_spec.json').read_bytes())
+          for entry in spec['partial_manifests']:
+              raw=pathlib.Path(entry['path']).read_bytes()
+              assert hashlib.sha256(raw).hexdigest()==entry['sha256']
+              partial=json.loads(raw)
+              assert len(partial['modules'])==entry['module_count']
+              assert set(partial['modules'])==set(entry['modules'])
+              assert partial['origin_context']['endpoint_complete'] is False
+              assert partial['origin_context']['post_identity_gate_passed'] is False
+              subprocess.run(['python3','-B','ci/rg_restore_job_exports.py','--manifest',entry['path'],'--build-directory','Proofs/RG_Lean_20261019/build/extension'],check=True)
+          PY_PARTIAL
+      - name: Bind unchanged data and exact staged source closures
+        run: |
+          python3 -B ci/rg_restore_with_kernel_fallback.py --plan ci/rg_empty_restore_plan.json --build-directory Proofs/RG_Lean_20261019/build/extension --endpoint Proofs.RadenkovicGutmanD1FastFullBox40 --max-fresh 14 --preflight-only
+          python3 - <<'PY'
+          import json,pathlib
+          report=json.loads(pathlib.Path('Proofs/RG_Lean_20261019/build/extension/bounded_kernel_fallback_plan.json').read_bytes())
+          assert report['required_modules']==92
+          PY
+          python3 -B ci/rg_assert_fast40_cell009_staged.py --spec ci/rg_d1_fast40_cell009_staged_20261103_spec.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          mkdir -p Proofs/RG_Lean_20261019/build/fresh_exports
+          cp Proofs/RG_Lean_20261019/build/extension/bounded_kernel_fallback_plan.json Proofs/RG_Lean_20261019/build/fresh_exports/fast40_staged_frontier.json
+      - name: Check staged Cell009 and the original FastFullBox40 endpoint
+        shell: bash
+        run: |
+          set -o pipefail
+          python3 -B ci/rg_observed_kernel_verify.py --memory-reserve-mib 2048 -- --mathlib-project "$GITHUB_WORKSPACE" --endpoint Proofs.RadenkovicGutmanD1FastFullBox40 --workers 1 --module-timeout 600 --resume | python3 -B ci/rg_compact_ci_output.py
+      - name: Require unchanged data and strict staged source exports
+        shell: bash
+        run: |
+          set -o pipefail
+          python3 -B ci/rg_assert_fast40_cell009_staged.py --spec ci/rg_d1_fast40_cell009_staged_20261103_spec.json --build-directory Proofs/RG_Lean_20261019/build/extension --phase after | tee Proofs/RG_Lean_20261019/build/fresh_exports/fast40_staged_identity_check.json
+      - name: Retain completed records, complete module outputs and diagnostics
+        if: always()
+        run: python3 -B ci/rg_collect_fresh_exports.py --build-directory Proofs/RG_Lean_20261019/build/extension --output-directory Proofs/RG_Lean_20261019/build/fresh_exports
+      - name: Retain original FastFullBox40 staged proof evidence
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: rg-d1-fast40-cell009-staged-20261103-${{ github.run_id }}-${{ github.run_attempt }}
+          path: Proofs/RG_Lean_20261019/build/fresh_exports
+          retention-days: 90

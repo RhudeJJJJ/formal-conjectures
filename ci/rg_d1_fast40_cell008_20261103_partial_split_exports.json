@@ -1,0 +1,36 @@
+{
+  "repository": "RhudeJJJJ/formal-conjectures",
+  "run": 41699317082,
+  "job": 126138105559,
+  "source_commit": "52f26cc754cfd9ed4cb9618fde3f05bb65ea1229",
+  "artifact_id": 13262907954,
+  "artifact_sha256": "04fbf96cd1b19e11e4f63cda29634b683e21bdc229f445b9909881b2936d9c0a",
+  "lean_version": "4.33.1",
+  "mathlib": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "origin_context": {
+    "job_conclusion": "failure",
+    "endpoint_complete": false,
+    "post_identity_gate_passed": false,
+    "completed_modules_independently_authenticated": true,
+    "completed_fresh_modules": 1,
+    "failed_next_module": "Proofs.RadenkovicGutmanD1FastFullBox40Cell009",
+    "failure": "Unchanged 2048-MiB physical-memory reserve stopped the next compiler; no completed endpoint receipt."
+  },
+  "modules": {
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell008": {
+      "module": "Proofs.RadenkovicGutmanD1FastFullBox40Cell008",
+      "source_sha256": "d7d45ab9700d2c27acd08de1ea9df11b255752d9f74a33a7afe04b8225f689ef",
+      "source_closure_sha256": "19ab43167c2c771a2447d02cfab50d76e139221afe0904ef7c8739bac7936506",
+      "output_sha256": "c12dd3f0ec8290e6647ae03146547e21cdf02290d803a849cfbeb7eeeac170b9",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "FRESH_KERNEL_EXPORT",
+      "seconds": 70.585
+    }
+  }
+}

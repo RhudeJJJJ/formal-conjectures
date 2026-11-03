@@ -100,11 +100,18 @@ lake exe cache get
 lake --wfail build WOWII161 Solution
 lake build Challenge
 lake env lean -DwarningAsError=true Audit.lean
-lake comparator comparator.json
+lake comparator --config comparator.json
 ```
 
 The workflow also invokes Palomar's complete mechanical preflight at pipeline
 **14aa8d6b3c2f14a8540605e37144560b9a00e7e7** with `mode: full`.
+The full preflight passed for source commit
+`12f37d66e18b1878e157e86e20d7a99792b2dfb9` in
+[run 41640010781](https://github.com/RhudeJJJJ/formal-conjectures/actions/runs/41640010781).
+It includes the independent kernels and the challenge provenance audit. The
+plain local Comparator command above runs the default Comparator configuration;
+the pinned full workflow is the reproduction path for the registry checks.
+The result applies to the recorded source; later commits have their own CI.
 A successful preflight is a mechanical check, not registry submission,
 editorial review, or registration. No Palomar identifier is claimed here.
 

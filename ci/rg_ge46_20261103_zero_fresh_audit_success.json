@@ -1,0 +1,259 @@
+{
+  "kind": "VERIFIED_GE46_KERNEL_OBJECTS_WITH_SEPARATE_ZERO_FRESH_AUDIT",
+  "status": "ACTUAL_COMPLETE_GE46_ENDPOINT_AUTHENTICATED",
+  "original_failed_kernel_origin": {
+    "repository": "RhudeJJJJ/formal-conjectures",
+    "run": 41706475942,
+    "job": 126182927540,
+    "source_commit": "1ec3794cd015edc12bfda7aa45389af73cc9ab3b",
+    "artifact_id": 13270535981,
+    "artifact_sha256": "f9df291a80a27e7244893aac72a4afcec323c6818f5ba4e8ca6ac5ff98dd4d54"
+  },
+  "original_failed_job_conclusion": "failure",
+  "successful_audit_origin": {
+    "run": 41721038352,
+    "job": 126213541269,
+    "source_commit": "abe61c49efe9e4b6207901820da8785c17418f69",
+    "artifact_id": 13273081628,
+    "artifact_sha256": "5890e2f65b7d00a3c5cb51744b8f91100d9dab9acf13ea41b7ec332a28647bd7",
+    "repository": "RhudeJJJJ/formal-conjectures"
+  },
+  "audit_workflow_path": ".github/workflows/rg-ge46-zero-fresh-metadata-audit-20261103.yml",
+  "audit_job_name": "Audit original Ge46 with zero fresh kernel exports",
+  "required_success_step": "Require all178 original identities and zero fresh kernel exports",
+  "audit_artifact_name": "rg-ge46-zero-fresh-audit-20261103-41721038352-1",
+  "audit_artifact_bytes": 111671,
+  "audit_job_log_sha256": "0787101352f17473aa15df72e414a599101a999d0d01b0a3109df1bec653ebfd",
+  "original_compiled_objects": 63,
+  "original_kernel_output_bytes": 1305687696,
+  "audited_original_module_count": 178,
+  "new_audit_fresh_kernel_exports": 0,
+  "old_objects_reexported_as_fresh": false,
+  "actual_composite_verification": {
+    "kind": "GE46_COMPILED_OBJECTS_WITH_SEPARATE_ZERO_FRESH_METADATA_AUDIT",
+    "required_modules": 178,
+    "original_compiled_objects": 63,
+    "audit_fresh_exports": 0,
+    "original_failed_kernel_origin": {
+      "repository": "RhudeJJJJ/formal-conjectures",
+      "run": 41706475942,
+      "job": 126182927540,
+      "source_commit": "1ec3794cd015edc12bfda7aa45389af73cc9ab3b",
+      "artifact_id": 13270535981,
+      "artifact_sha256": "f9df291a80a27e7244893aac72a4afcec323c6818f5ba4e8ca6ac5ff98dd4d54"
+    },
+    "successful_audit_origin": {
+      "run": 41721038352,
+      "job": 126213541269,
+      "source_commit": "abe61c49efe9e4b6207901820da8785c17418f69",
+      "artifact_id": 13273081628,
+      "artifact_sha256": "5890e2f65b7d00a3c5cb51744b8f91100d9dab9acf13ea41b7ec332a28647bd7",
+      "repository": "RhudeJJJJ/formal-conjectures"
+    },
+    "original_receipt_sha256": "c5cae5a72fde40e52122839555e6dba100063a4f4efed67e1e7dd069e6f815cb",
+    "audit_receipt_sha256": "feaf2b8dabeb7d5b2f99e0a8ae22a7335bfc810075f3f3ca270ca31fbb81f7ca",
+    "audit_spec_sha256": "8df0d7923386cd3845d93ca8f05affcbb33d13a80c58ff071ef26f2458bb0c0b",
+    "original_failed_job_conclusion": "failure",
+    "old_objects_reexported_as_fresh": false,
+    "actual_all178_output_bytes_verified": 1348296408
+  },
+  "actual_audit_report": {
+    "status": "ALL178_GE46_IDENTITIES_REVALIDATED_WITH_ZERO_FRESH_KERNEL_EXPORTS",
+    "kind": "GE46_COMPILED_OBJECTS_WITH_SEPARATE_ZERO_FRESH_METADATA_AUDIT",
+    "source_commit": "abe61c49efe9e4b6207901820da8785c17418f69",
+    "workflow_run": 41721038352,
+    "workflow_attempt": 1,
+    "workflow_path": ".github/workflows/rg-ge46-zero-fresh-metadata-audit-20261103.yml",
+    "job_name": "Audit original Ge46 with zero fresh kernel exports",
+    "required_modules": 178,
+    "fresh_kernel_exports": 0,
+    "original_compiled_modules": 63,
+    "failed_kernel_origin": {
+      "repository": "RhudeJJJJ/formal-conjectures",
+      "run": 41706475942,
+      "job": 126182927540,
+      "source_commit": "1ec3794cd015edc12bfda7aa45389af73cc9ab3b",
+      "artifact_id": 13270535981,
+      "artifact_sha256": "f9df291a80a27e7244893aac72a4afcec323c6818f5ba4e8ca6ac5ff98dd4d54"
+    },
+    "original_failed_job_conclusion": "failure",
+    "original_receipt_sha256": "c5cae5a72fde40e52122839555e6dba100063a4f4efed67e1e7dd069e6f815cb",
+    "receipt_sha256": "feaf2b8dabeb7d5b2f99e0a8ae22a7335bfc810075f3f3ca270ca31fbb81f7ca",
+    "audit_spec_sha256": "8df0d7923386cd3845d93ca8f05affcbb33d13a80c58ff071ef26f2458bb0c0b",
+    "corrected_metadata_spec_sha256": "afa0b434a933522b82f5a4603bfaddee4a4cc41f8e18329127049f30d0a69377",
+    "source_endpoint_sha256": "90ff34e998392cc5a435f5cd73417d0d7bfbc2b1b38ff1a9aff7c268ed2c11bd",
+    "source_endpoint_closure_sha256": "c8fef9e0160c4ac95f5776186bb0854fa8f915af46a057b402a103eb38145957",
+    "actual_all178_output_bytes_verified": 1348296408,
+    "all178_identity_tuples_unchanged": true,
+    "all178_prior_origin_anchors_preserved": true,
+    "prior_records_match_sealed_manifests": true,
+    "old_objects_reexported_as_fresh": false,
+    "original_degree_ge46_endpoint_complete": true,
+    "whole_degree_one_large_complete": false
+  },
+  "actual_audit_report_sha256": "ee1b8b2bc77ca4cf6e3e1f2fdcfbe0ee432e1c007c02cb6b8fcc4f58fdf6e28c",
+  "actual_audit_resource_observer": {
+    "status": "VERIFIER_COMPLETED",
+    "exit_code": 0,
+    "maximum_aggregate_lean_rss": 0,
+    "seconds": 3.0,
+    "mathlib_and_lean_flags_unchanged": true
+  },
+  "current_full_source_graph_sha256": "c2b50b3145d7c9b5f745b80ab2e9858a7ab6a88381e4f021dfed06529f0bbd48",
+  "original_proof_manifest": {
+    "path": "ci/rg_ge46_20261103_final_kernel_exports_before_metadata_audit.json",
+    "sha256": "f8adc4f3e090a10575c8786dc6c8b95db320e1b10098d32ab1991d600266b7e6"
+  },
+  "prerequisite": "ci/rg_ge46_20261103_zero_fresh_audit_prerequisite.json",
+  "prerequisite_sha256": "7f1454ac5af8c4f44dbad312a022fbf185b7a0561abad0f843e7a88496bfc023",
+  "full_prior_receipt": "ci/rg_ge46_20261103_zero_fresh_receipt.json",
+  "full_prior_receipt_sha256": "feaf2b8dabeb7d5b2f99e0a8ae22a7335bfc810075f3f3ca270ca31fbb81f7ca",
+  "actual_audit_archive_members": {
+    "Proofs.RadenkovicGutmanEscapeReducedReserve.log": {
+      "sha256": "aae6b0cd756c0311ea02bde8d4f05defebb3230937b5fa6eb9e6f5e9847ee665",
+      "bytes": 370
+    },
+    "current_accepted_named_profiles.json": {
+      "sha256": "05615d467eea04fccd32142c5af4a2e1ed838f2182c2d12c0f799d22a3a0d83d",
+      "bytes": 1693
+    },
+    "Proofs.RadenkovicGutmanEscapeReducedReserveAcceptance.log": {
+      "sha256": "7200b0ce427ff065cd5f6fef3422e8e2dc114a026af87b9dd776536b8c632fe8",
+      "bytes": 120
+    },
+    "evaluation_prior_exports.json": {
+      "sha256": "db17bb6ffdc0c12f7d998d53e4b8f5541974a493590bc6b3f89c0330a3136666",
+      "bytes": 2129
+    },
+    "ge46_zero_fresh_audit.json": {
+      "sha256": "ee1b8b2bc77ca4cf6e3e1f2fdcfbe0ee432e1c007c02cb6b8fcc4f58fdf6e28c",
+      "bytes": 1802
+    },
+    "original_completed_kernel_receipt.json": {
+      "sha256": "c5cae5a72fde40e52122839555e6dba100063a4f4efed67e1e7dd069e6f815cb",
+      "bytes": 227976
+    },
+    "original_failed_final_prior_exports.json": {
+      "sha256": "f8adc4f3e090a10575c8786dc6c8b95db320e1b10098d32ab1991d600266b7e6",
+      "bytes": 49856
+    },
+    "original_proof_origin.json": {
+      "sha256": "e772a8c23c211dc950f38c5c27dd0a804f807ed466c8647e0a84dfd6b4f1b917",
+      "bytes": 595
+    },
+    "prepare_prior_exports.json": {
+      "sha256": "82b62f412264d01bfa7433a828a094bc86389d428a574af5a44d02aef3200173",
+      "bytes": 3272
+    },
+    "receipt.json": {
+      "sha256": "feaf2b8dabeb7d5b2f99e0a8ae22a7335bfc810075f3f3ca270ca31fbb81f7ca",
+      "bytes": 351462
+    },
+    "resource_observer.json": {
+      "sha256": "c1beec00f622f8212def490bf50a07c24805e4d89e31f0d13d4571c9d9a19843",
+      "bytes": 457
+    },
+    "row00_prior_exports.json": {
+      "sha256": "9c25a4b1ed44075156c2b41fffad3b21ca814e5ee4fe7f00c3352c191d011e43",
+      "bytes": 2097
+    },
+    "row01_prior_exports.json": {
+      "sha256": "ddae249c7d8daf9d9de2d744f96aac13759a33dfcbef5c92da7a81e211b5bffd",
+      "bytes": 2097
+    },
+    "row02_prior_exports.json": {
+      "sha256": "8ada238e2d9fdcb52a283b27061de41ab69a72939049a7024101f86f1705e177",
+      "bytes": 2097
+    },
+    "row03_prior_exports.json": {
+      "sha256": "42635e95503fa0a6d61f23e49aa6e9f8f2d5f636b8085ff5dd1ca47de4c5ddee",
+      "bytes": 2097
+    },
+    "row04_prior_exports.json": {
+      "sha256": "fc80dc13bf67ae1767041a7f12f3ed474bcf589b0aabb436dbe97d92b2effc12",
+      "bytes": 2097
+    },
+    "row05_prior_exports.json": {
+      "sha256": "07455b4f6677bd1804b0571072353d3ad3e7f8b16a3e9239ca16cfc49475bf42",
+      "bytes": 2097
+    },
+    "row06_prior_exports.json": {
+      "sha256": "c96266708c4b7bccd54e7f18abaedcfd161b9ec55bb5393e56ac5146597c9fae",
+      "bytes": 2097
+    },
+    "row07_prior_exports.json": {
+      "sha256": "8565e378db3bf1cc4fb66e852da53573af5933869f83f64dd6997f5e0be148dd",
+      "bytes": 2097
+    },
+    "row08_prior_exports.json": {
+      "sha256": "a0d539af6f4140a3b963c667d89d5e72f84a6566206353e4002cd128a57387d9",
+      "bytes": 2097
+    },
+    "row09_prior_exports.json": {
+      "sha256": "c0b3da753400af4d91c217bd1a10d82c9f9a43ef5c03644ea3193e67f51a8dcb",
+      "bytes": 2096
+    },
+    "row10_prior_exports.json": {
+      "sha256": "25b7c5edcf5735e400fc7effd1fbe101b267bcca563e88dad74a8f642c68c15b",
+      "bytes": 2097
+    },
+    "row11_prior_exports.json": {
+      "sha256": "3e9a3e4a2ac22b23b58cca6f5244c4381ca550d229b069278d45c035c248fb28",
+      "bytes": 2097
+    },
+    "row12_prior_exports.json": {
+      "sha256": "98dc0be3ad9e0bbf2106cc798f353f671fa3c9e41fc5b4ccd3c255cad5c6680b",
+      "bytes": 2097
+    },
+    "row13_prior_exports.json": {
+      "sha256": "3dd3f1cc0c409bcdaead4f76f27e237c2880fdab3caf87715f013d79e42b4998",
+      "bytes": 2097
+    },
+    "row14_prior_exports.json": {
+      "sha256": "a706a3de5ed38409fa2d39637d54b22cf6382ec254ed418da2558bb8472d31fa",
+      "bytes": 2097
+    },
+    "row15_prior_exports.json": {
+      "sha256": "f4b00ab647fb9564220e7b1ce2337295e6da8f40ba5d96ff1c9a53192fd4def2",
+      "bytes": 2096
+    },
+    "row16_prior_exports.json": {
+      "sha256": "7f35b4452ffb60086a9cd01ac12d5d2a48062d1607e780b74544d1077929c3e4",
+      "bytes": 2097
+    },
+    "row17_prior_exports.json": {
+      "sha256": "444666df4149d7689bc8b039ec96a67feeec0832a0ef7001e55bcecf500f56e3",
+      "bytes": 2097
+    },
+    "row18_prior_exports.json": {
+      "sha256": "5841a577d7a9473d3d29971db93e4ddf5b742df5d81d1bff38ef3a0cbf4b54bc",
+      "bytes": 2097
+    },
+    "row19_prior_exports.json": {
+      "sha256": "5f7c815619a1055c3126db0702ca8452fa898f768f51f83e0a3aecafae5ff4bc",
+      "bytes": 2097
+    },
+    "row20_prior_exports.json": {
+      "sha256": "7ab4b159df699defd321f924c575c0e195a66bdabfa663edf0a912473e002b05",
+      "bytes": 2097
+    },
+    "row21_prior_exports.json": {
+      "sha256": "66b3876463c5fbc59853d72b2beaf922cb66777e1cd5b22cc062f8274a494e72",
+      "bytes": 2097
+    },
+    "row22_prior_exports.json": {
+      "sha256": "8c3fa8619c7f3e196f40b17844553133a0b64229c7a15f8e8e418008d34ab855",
+      "bytes": 2097
+    },
+    "row23_prior_exports.json": {
+      "sha256": "db1bb0c55ae094e3c02eaf35be2488471c9ee0eef80e9cba740cfc67d371c7e3",
+      "bytes": 2097
+    },
+    "zero_fresh_frontier.json": {
+      "sha256": "c8bd4396b1d9c67ac329502ece7987d4fc34e0273da3aefe0599efd268757eb6",
+      "bytes": 348
+    }
+  },
+  "original_degree_ge46_endpoint_complete": true,
+  "whole_degree_one_large_complete": false
+}

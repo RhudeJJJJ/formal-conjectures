@@ -13,6 +13,7 @@ SOURCES = ROOT / "Proofs/RG_Lean_20261019"
 PIN = "0df444a360eaa60ab8c11dca51a86af692955474"
 LC = "621a43d7cf21f87872392a01e874f2f1dbddc926"
 ALLOWED = {"propext", "Classical.choice", "Quot.sound"}
+RUN_ARTIFACTS = {}
 FRESH = {
     "Proofs.RadenkovicGutmanD1OriginalSharedBothLong",
     "Proofs.RadenkovicGutmanOriginalDegreeOneLarge",
@@ -148,20 +149,50 @@ def matching_archives(hashes, closures):
 
 
 def artifact_metadata(descriptor):
-    url = ("https://api.github.com/repos/" + descriptor["repository"] +
-           "/actions/artifacts/" + str(descriptor["artifact_id"]))
-    request = urllib.request.Request(url, headers={
-        "Authorization": "Bearer " + os.environ["GITHUB_TOKEN"],
-        "Accept": "application/vnd.github+json",
-        "X-GitHub-Api-Version": "2022-11-28",
-    })
-    try:
-        with urllib.request.urlopen(request, timeout=120) as response:
-            meta = json.load(response)
-    except urllib.error.HTTPError as error:
-        if error.code in (404, 410):
-            return {"available": False, "http_status": error.code}
-        raise
+    repository, run = descriptor["repository"], descriptor["run"]
+    assert re.fullmatch(r"[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+", repository)
+    key = (repository, run)
+    if key not in RUN_ARTIFACTS:
+        artifacts = {}
+        page = 1
+        while True:
+            url = ("https://api.github.com/repos/" + repository +
+                   "/actions/runs/" + str(run) +
+                   "/artifacts?per_page=100&page=" + str(page))
+            request = urllib.request.Request(url, headers={
+                "Authorization": "Bearer " + os.environ["GITHUB_TOKEN"],
+                "Accept": "application/vnd.github+json",
+                "X-GitHub-Api-Version": "2022-11-28",
+            })
+            try:
+                with urllib.request.urlopen(request, timeout=120) as response:
+                    listing = json.load(response)
+            except urllib.error.HTTPError as error:
+                if error.code in (404, 410):
+                    RUN_ARTIFACTS[key] = {"unavailable": error.code}
+                    break
+                raise
+            rows = listing["artifacts"]
+            for row in rows:
+                assert row["id"] not in artifacts, (repository, run, row["id"])
+                artifacts[row["id"]] = row
+            if len(artifacts) == listing["total_count"]:
+                RUN_ARTIFACTS[key] = artifacts
+                print(json.dumps({
+                    "status": "ORIGINAL_RUN_ARTIFACT_CATALOG_CHECKED",
+                    "repository": repository, "run": run,
+                    "artifacts": len(artifacts), "pages": page,
+                }), flush=True)
+                break
+            assert len(rows) == 100 and len(artifacts) < listing["total_count"]
+            page += 1
+            assert page <= 100, "Original run exceeds bounded artifact pagination"
+    artifacts = RUN_ARTIFACTS[key]
+    if "unavailable" in artifacts:
+        return {"available": False, "http_status": artifacts["unavailable"]}
+    meta = artifacts.get(descriptor["artifact_id"])
+    if meta is None:
+        return {"available": False, "missing_from_complete_run_catalog": True}
     assert meta["id"] == descriptor["artifact_id"]
     assert meta["digest"] == "sha256:" + descriptor["artifact_sha256"]
     assert meta["workflow_run"]["id"] == descriptor["run"]

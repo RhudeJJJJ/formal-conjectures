@@ -12,9 +12,9 @@ import Proofs.RadenkovicGutmanD1Short33
 import Proofs.RadenkovicGutmanD1Short34
 import Proofs.RadenkovicGutmanD1Short44
 import Proofs.RadenkovicGutmanD1Long10
-import Proofs.RadenkovicGutmanD1Long20
+import Proofs.RadenkovicGutmanD1FastFullBox20
 import Proofs.RadenkovicGutmanD1Long30
-import Proofs.RadenkovicGutmanD1Long40
+import Proofs.RadenkovicGutmanD1FastFullBox40
 import Proofs.RadenkovicGutmanD1OriginalSharedBothLong
 
 /-! The concrete fifteen-class assembly, including the complete shared-tree
@@ -46,12 +46,12 @@ theorem certificates : DegreeOneClassDispatch.Certificates where
   class11 := fun _ C u p q hd hp hq => DegreeOneShortClass22.normalized_target C u p q hd hp hq
   class12 := fun _ C u p q hd hp hq => DegreeOneShortClass23.normalized_target C u p q hd hp hq
   class13 := fun _ C u p q hd hp hq => DegreeOneShortClass24.normalized_target C u p q hd hp hq
-  class14 := fun _ C u p q hd hp hq => DegreeOneLongClass20.normalized_target C u p q hd hp hq
+  class14 := fun _ C u p q hd hp hq => DegreeOneFastFullBoxClass20.normalized_target C u p q hd hp hq
   class22 := fun _ C u p q hd hp hq => DegreeOneShortClass33.normalized_target C u p q hd hp hq
   class23 := fun _ C u p q hd hp hq => DegreeOneShortClass34.normalized_target C u p q hd hp hq
   class24 := fun _ C u p q hd hp hq => DegreeOneLongClass30.normalized_target C u p q hd hp hq
   class33 := fun _ C u p q hd hp hq => DegreeOneShortClass44.normalized_target C u p q hd hp hq
-  class34 := fun _ C u p q hd hp hq => DegreeOneLongClass40.normalized_target C u p q hd hp hq
+  class34 := fun _ C u p q hd hp hq => DegreeOneFastFullBoxClass40.normalized_target C u p q hd hp hq
   class44 := by
     intro m C u p q hd hp hq
     simpa only [D1OriginalSharedBothLong.reserve,Rat.cast_div,Rat.cast_ofNat] using

@@ -1,0 +1,80 @@
+name: RG original D1 chunk 003 leaf reproduction pilot
+on:
+  push:
+    branches: [rg-degree-one-large-20261103]
+    paths: ['.github/workflows/rg-d1-original-chunk003-regeneration-pilot-20261103.yml']
+permissions:
+  contents: read
+  actions: read
+jobs:
+  check:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          persist-credentials: false
+      - name: Materialize the ten unchanged original leaf sources
+        run: |
+          python3 -B ci/rg_materialize_shared_arm.py --tag 00 --chunk 3
+          python3 -B ci/rg_original_leaf_reproduction_control.py --plan ci/rg_d1_original_chunk003_regeneration_pilot_20261103.json --phase source-plan
+      - name: Install the project toolchain
+        run: |
+          set -o pipefail
+          curl -sSfL https://github.com/leanprover/elan/releases/download/v1.4.2/elan-x86_64-unknown-linux-gnu.tar.gz | tar xz
+          ./elan-init -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Materialize the exact dependency lock
+        run: python3 -B ci/rg_dependencies.py
+      - name: Fetch the required Mathlib cache
+        run: |
+          python3 - <<'PY'
+          import json,pathlib,re,subprocess
+          root=pathlib.Path('Proofs/RG_Lean_20261019')
+          plan=json.loads(pathlib.Path('ci/rg_d1_original_chunk003_regeneration_pilot_20261103.json').read_text())
+          seen,external=set(),set()
+          def visit(name):
+              if name in seen:return
+              seen.add(name)
+              source=(root/(name.replace('.','/')+'.lean')).read_text()
+              for dep in re.findall(r'^\s*import\s+([\w.]+)',source,re.M):
+                  if dep.startswith('Proofs.'):visit(dep)
+                  elif not dep.startswith(('Lean.','Init.','Std.')) and dep not in ('Lean','Init','Std'):external.add(dep)
+          for endpoint in plan['endpoints']:visit(endpoint)
+          subprocess.run(['lake','exe','cache','get',*sorted(external)],check=True)
+          PY
+      - name: Restore the available audited base with original identities
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 -B ci/rg_restore_complete_scope.py --manifest ci/rg_reusable_analytic_kernel_base_complete_scope_capsule.json --build-directory Proofs/RG_Lean_20261019/build/extension
+      - name: Require exactly the ten original leaves as the fresh frontier
+        run: python3 -B ci/rg_original_leaf_reproduction_control.py --plan ci/rg_d1_original_chunk003_regeneration_pilot_20261103.json --phase preflight
+      - name: Recheck the ten original leaf certificates in the kernel
+        shell: bash
+        run: |
+          set -o pipefail
+          python3 -B ci/rg_observed_kernel_verify.py --memory-reserve-mib 2048 -- \
+            --mathlib-project "$GITHUB_WORKSPACE" \
+            --endpoint Proofs.RadenkovicGutmanD1Long00Leaf00030 \
+            --endpoint Proofs.RadenkovicGutmanD1Long00Leaf00031 \
+            --endpoint Proofs.RadenkovicGutmanD1Long00Leaf00032 \
+            --endpoint Proofs.RadenkovicGutmanD1Long00Leaf00033 \
+            --endpoint Proofs.RadenkovicGutmanD1Long00Leaf00034 \
+            --endpoint Proofs.RadenkovicGutmanD1Long00Leaf00035 \
+            --endpoint Proofs.RadenkovicGutmanD1Long00Leaf00036 \
+            --endpoint Proofs.RadenkovicGutmanD1Long00Leaf00037 \
+            --endpoint Proofs.RadenkovicGutmanD1Long00Leaf00038 \
+            --endpoint Proofs.RadenkovicGutmanD1Long00Leaf00039 \
+            --workers 2 --module-timeout 1200 --resume | python3 -B ci/rg_compact_ci_output.py
+      - name: Require the original source, closure, object and axiom identities
+        run: python3 -B ci/rg_original_leaf_reproduction_control.py --plan ci/rg_d1_original_chunk003_regeneration_pilot_20261103.json --phase compare
+      - name: Retain completed records, complete module outputs and diagnostics
+        if: always()
+        run: python3 -B ci/rg_collect_fresh_exports.py --build-directory Proofs/RG_Lean_20261019/build/extension --output-directory Proofs/RG_Lean_20261019/build/fresh_exports
+      - name: Retain original leaf reproduction evidence
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: rg-d1-original-chunk003-regeneration-pilot-20261103-${{ github.run_id }}
+          path: Proofs/RG_Lean_20261019/build/fresh_exports
+          retention-days: 90

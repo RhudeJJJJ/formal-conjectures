@@ -1,0 +1,68 @@
+{
+  "repository": "RhudeJJJJ/formal-conjectures",
+  "run": 41706475942,
+  "job": 126163012849,
+  "source_commit": "1ec3794cd015edc12bfda7aa45389af73cc9ab3b",
+  "artifact_id": 13265833883,
+  "artifact_sha256": "db0ba6a3ddb7964184af7ff6731c7b2089d5689aeb1eac89ca79bc1b5af5a34a",
+  "lean_version": "4.33.1",
+  "mathlib": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "modules": {
+    "Proofs.RadenkovicGutmanEscapeReducedReserveData": {
+      "module": "Proofs.RadenkovicGutmanEscapeReducedReserveData",
+      "source_sha256": "6b5d9e8a915a69f38dbcab0f7f9d17181293bcc056fee047aaa516aac58c6e6a",
+      "source_closure_sha256": "83412759d01399e4dc15f54b4e02a001460ab179d8be91af9d505c20bb43aa3c",
+      "output_sha256": "7614fcbd4fe76431512da706f004da3984d7118d5ba8943e7862af17300f5e84",
+      "axiom_profiles": [
+        [
+          "propext"
+        ],
+        []
+      ],
+      "mode": "FRESH_KERNEL_EXPORT",
+      "seconds": 7.087
+    },
+    "Proofs.RadenkovicGutmanIntegerHybridBernsteinRows": {
+      "module": "Proofs.RadenkovicGutmanIntegerHybridBernsteinRows",
+      "source_sha256": "d290eb8de032a685bdc8b713458e730ec94224a2b8f5f49335007535c641ee16",
+      "source_closure_sha256": "c2ca50835bc45bec57b5e95977bf3070fb12559b52b5b581116217c026490ba5",
+      "output_sha256": "587bd2eda8b685f5a378b9159ff3b627241530b7e7310b00f9a6a32e80b9c659",
+      "axiom_profiles": [
+        [
+          "propext"
+        ]
+      ],
+      "mode": "FRESH_KERNEL_EXPORT",
+      "seconds": 2.271
+    },
+    "Proofs.RadenkovicGutmanEscapeReducedReserveRow24": {
+      "module": "Proofs.RadenkovicGutmanEscapeReducedReserveRow24",
+      "source_sha256": "a269e412c0a33ddb57401e9fe4a472265d09de91725e736e138e7ca24a7be539",
+      "source_closure_sha256": "2a98b0e5274c281434600c44d53d412a57fa3ae62bd2c8d94e09ceda8c1a9199",
+      "output_sha256": "ab270677eb046d211d86100ad5f2fba46f75af3836334999c451edd57b81ddf0",
+      "axiom_profiles": [
+        [
+          "propext"
+        ],
+        [
+          "propext"
+        ],
+        []
+      ],
+      "mode": "FRESH_KERNEL_EXPORT",
+      "seconds": 8.488
+    }
+  },
+  "origin_context": {
+    "kind": "AUTHENTICATED_SUCCESSFUL_GE46_ROW24_AND_ASSEMBLY_LEMMA_STAGE",
+    "workflow_path": ".github/workflows/rg-ge46-checked-rows-reconstruction-20261103.yml",
+    "job_name": "ge46-checked-prepare",
+    "required_success_step": "Require exact original declarations and staged kernel exports",
+    "archived_receipt_sha256": "55c4a046b0f2c53e165b359b5bdfb142338a85dce92bf8dea1ef9ee028821a02",
+    "artifact_name": "rg-ge46-checked-rows-20261103-41706475942-1-prepare",
+    "original_public_declarations_preserved": true,
+    "stage_complete": true,
+    "ge46_family_complete": false,
+    "whole_degree_one_large": "NOT_ESTABLISHED_BY_THIS_STAGE"
+  }
+}

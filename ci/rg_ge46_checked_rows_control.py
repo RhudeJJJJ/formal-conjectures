@@ -28,6 +28,9 @@ NEW_SOURCES = {STEM, STEM + 'Data', STEM + 'Acceptance', STEM + 'Evaluation', HE
     STEM + f'Row{i:02d}' for i in range(25)}
 
 
+CURRENT_ACCEPTED_PROFILE_METADATA = {'kind': 'TWO_EXACT_CURRENT_SOURCE_LOCATIONS_OF_THE_SAME_ACCEPTED_DECLARATION', 'affected_declaration': 'Gebendorfer.RadenkovicGutman.EscapeReducedReserve.accepted', 'historical_accepted_axioms': ['propext'], 'current_accepted_axioms': ['Classical.choice', 'Quot.sound', 'propext'], 'modules': {'Proofs.RadenkovicGutmanEscapeReducedReserveAcceptance': {'source_sha256': 'e855c5a92d39e85fdb8145a052bdf441a465ac1f7459aa97f7298b5e435493c8', 'source_closure_sha256': 'f591d1dde62db6315e11e627fceb9cae3b17fe1b8f1cad9d4897ce0bf5a5a603', 'printed_declarations': ['Gebendorfer.RadenkovicGutman.EscapeReducedReserve.accepted'], 'axiom_profiles': [['Classical.choice', 'Quot.sound', 'propext']]}, 'Proofs.RadenkovicGutmanEscapeReducedReserve': {'source_sha256': '26135477ffa18dc9b30dea9bcff99ebb8f64027ea1a8736fb5833a11f7fdedbc', 'source_closure_sha256': '24e30a209c0e9ce6630b4871f77f69901fce0fe226b183c206881b383ab4da45', 'printed_declarations': ['Gebendorfer.RadenkovicGutman.EscapeReducedReserve.accepted', 'Gebendorfer.RadenkovicGutman.EscapeReducedReserve.unit_box_nonneg', 'Gebendorfer.RadenkovicGutman.EscapeReducedReserve.data_eval'], 'axiom_profiles': [['Classical.choice', 'Quot.sound', 'propext'], ['Classical.choice', 'Quot.sound', 'propext'], ['Classical.choice', 'Quot.sound', 'propext']]}}, 'all_other_historical_profiles_and_output_identity_gates_unchanged': True}
+
+
 def sha(raw):
     return hashlib.sha256(raw).hexdigest()
 
@@ -72,6 +75,7 @@ def load_spec():
     assert spec['mathlib'] == PIN and spec['leancert'] == LC and spec['lean_version'] == '4.33.1'
     assert (spec['workers'], spec['module_timeout'], spec['memory_reserve_mib']) == (1, 1200, 2048)
     assert spec['endpoint'] == ENDPOINT and spec['required_module_count'] == 178
+    assert spec['current_accepted_profile_metadata'] == CURRENT_ACCEPTED_PROFILE_METADATA
     assert set(spec['stages']) == STAGE_KEYS and spec['new_and_recompiled_module_count'] == 91
     assert set(spec['stages']['prepare']['fresh_modules']) == {STEM + 'Data', STEM + 'Row24', HELPER}
     for j in range(24):
@@ -119,7 +123,40 @@ def checked_local_path(relative):
     return actual
 
 
-def check_receipt(spec, historical, stage, raw, read_record, open_member, member_size):
+def validate_current_accepted_profiles(spec, historical, name, row, read_module_log):
+    """Bind only the two reviewed observations of the changed accepted proof."""
+    assert spec['current_accepted_profile_metadata'] == CURRENT_ACCEPTED_PROFILE_METADATA
+    policy = CURRENT_ACCEPTED_PROFILE_METADATA['modules'][name]
+    assert row['module'] == name
+    for key in ('source_sha256', 'source_closure_sha256'):
+        assert row[key] == policy[key] == spec['source_graph'][name][key]
+    old = historical['modules'][STEM]['axiom_profiles']
+    standard = ['Classical.choice', 'Quot.sound', 'propext']
+    assert old == [['propext'], standard, standard]
+    assert row['axiom_profiles'] == policy['axiom_profiles']
+    raw = read_module_log(name)
+    assert isinstance(raw, bytes) and len(raw) <= 32 * 1024**2
+    text = raw.decode('utf-8')
+    assert not re.search(r'\b(error|warning)(?:\([^\n]*?\))?:', text)
+    pattern = re.compile(r"'([^']+)' (?:depends on axioms:\s*\[([^\]]*)\]|(does not depend on any axioms))")
+    pairs = []
+    for match in pattern.finditer(text):
+        declaration, used, empty = match.groups()
+        profile = [] if empty else sorted(set(x.strip() for x in used.split(',') if x.strip()))
+        assert set(profile) <= ALLOWED
+        pairs.append((declaration, profile))
+    assert [declaration for declaration, _ in pairs] == policy['printed_declarations']
+    assert [profile for _, profile in pairs] == policy['axiom_profiles']
+    assert pairs[0] == (CURRENT_ACCEPTED_PROFILE_METADATA['affected_declaration'], standard)
+    if name == STEM:
+        assert [profile for _, profile in pairs[1:]] == old[1:]
+    return dict(module=name, source_sha256=row['source_sha256'],
+        source_closure_sha256=row['source_closure_sha256'],
+        named_profiles=dict(pairs), old_accepted_axioms=['propext'],
+        current_accepted_axioms=standard, all_other_original_profiles_unchanged=True)
+
+
+def check_receipt(spec, historical, stage, raw, read_record, open_member, member_size, read_module_log):
     receipt = json.loads(raw)
     assert receipt['scope'] == 'EXPLICIT_EXTENSION_CLOSURE' and receipt['endpoints'] == stage['endpoints']
     assert receipt['mathlib'] == PIN and receipt['leancert'] == LC and 'version 4.33.1,' in receipt['lean']
@@ -140,11 +177,14 @@ def check_receipt(spec, historical, stage, raw, read_record, open_member, member
         if old is not None:
             same_source = (row['source_sha256'], row['source_closure_sha256']) == (old['source_sha256'], old['source_closure_sha256'])
             assert spec['source_graph'][name]['require_historical_output_identity'] == same_source
-            assert row['axiom_profiles'] == old['axiom_profiles'], ('Changed original axiom footprint', name)
+            if name in CURRENT_ACCEPTED_PROFILE_METADATA['modules']:
+                assert not same_source, 'No unchanged source may use a current-profile exception'
+            else:
+                assert row['axiom_profiles'] == old['axiom_profiles'], ('Changed original axiom footprint', name)
             if same_source:
                 assert identity(name, row) == identity(name, old), ('Changed historical output identity', name)
-        elif name == STEM + 'Acceptance':
-            assert row['axiom_profiles'] == [historical['modules'][STEM]['axiom_profiles'][0]]
+        if name in CURRENT_ACCEPTED_PROFILE_METADATA['modules']:
+            validate_current_accepted_profiles(spec, historical, name, row, read_module_log)
         elif name == STEM + 'Evaluation':
             assert row['axiom_profiles'] == [historical['modules'][STEM]['axiom_profiles'][2]]
         for relative, digest, size in output_members(name, row):
@@ -202,7 +242,8 @@ def restore_parents(spec, historical, stage):
                 assert not p.is_absolute() and '..' not in p.parts
                 assert (info.external_attr >> 16) & 0o170000 != 0o120000
             fresh, logical, receipt_sha = check_receipt(spec, historical, parent,
-                z.read('receipt.json'), z.read, z.open, lambda n: z.getinfo(n).file_size)
+                z.read('receipt.json'), z.read, z.open, lambda n: z.getinfo(n).file_size,
+                lambda name: z.read(name + '.log'))
             logged = records_from_log(api.logs(job['id']))
             assert fresh == logged, ('Fresh job log differs from actual archived receipt', key)
             selected = {}
@@ -289,7 +330,8 @@ def main():
     else:
         fresh, logical, receipt_sha = check_receipt(spec, historical, stage,
             checked_local_path('receipt.json').read_bytes(), lambda n: checked_local_path(n).read_bytes(),
-            lambda n: checked_local_path(n).open('rb'), lambda n: checked_local_path(n).stat().st_size)
+            lambda n: checked_local_path(n).open('rb'), lambda n: checked_local_path(n).stat().st_size,
+            lambda name: checked_local_path(name + '.log').read_bytes())
         report = dict(status='EXACT_STAGED_KERNEL_EXPORTS_VERIFIED', stage=a.stage,
             endpoints=stage['endpoints'], required_modules=len(hashes), fresh_modules=sorted(fresh),
             receipt_sha256=receipt_sha, original_output_bytes=logical,

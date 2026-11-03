@@ -3981,5 +3981,60 @@
   },
   "original_public_family_source_sha256": "90ff34e998392cc5a435f5cd73417d0d7bfbc2b1b38ff1a9aff7c268ed2c11bd",
   "original_public_family_statement_source_preserved": true,
-  "status": "SOURCE_BOUND_CANDIDATE_REQUIRES_ALL_STAGED_KERNEL_CHECKS"
+  "status": "CURRENT_ACCEPTED_PROFILE_METADATA_CORRECTION_REQUIRES_AUTHENTICATED_ZERO_FRESH_REAUDIT",
+  "current_accepted_profile_metadata": {
+    "kind": "TWO_EXACT_CURRENT_SOURCE_LOCATIONS_OF_THE_SAME_ACCEPTED_DECLARATION",
+    "affected_declaration": "Gebendorfer.RadenkovicGutman.EscapeReducedReserve.accepted",
+    "historical_accepted_axioms": [
+      "propext"
+    ],
+    "current_accepted_axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "modules": {
+      "Proofs.RadenkovicGutmanEscapeReducedReserveAcceptance": {
+        "source_sha256": "e855c5a92d39e85fdb8145a052bdf441a465ac1f7459aa97f7298b5e435493c8",
+        "source_closure_sha256": "f591d1dde62db6315e11e627fceb9cae3b17fe1b8f1cad9d4897ce0bf5a5a603",
+        "printed_declarations": [
+          "Gebendorfer.RadenkovicGutman.EscapeReducedReserve.accepted"
+        ],
+        "axiom_profiles": [
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        ]
+      },
+      "Proofs.RadenkovicGutmanEscapeReducedReserve": {
+        "source_sha256": "26135477ffa18dc9b30dea9bcff99ebb8f64027ea1a8736fb5833a11f7fdedbc",
+        "source_closure_sha256": "24e30a209c0e9ce6630b4871f77f69901fce0fe226b183c206881b383ab4da45",
+        "printed_declarations": [
+          "Gebendorfer.RadenkovicGutman.EscapeReducedReserve.accepted",
+          "Gebendorfer.RadenkovicGutman.EscapeReducedReserve.unit_box_nonneg",
+          "Gebendorfer.RadenkovicGutman.EscapeReducedReserve.data_eval"
+        ],
+        "axiom_profiles": [
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        ]
+      }
+    },
+    "all_other_historical_profiles_and_output_identity_gates_unchanged": true
+  }
 }

@@ -1,10 +1,9 @@
 name: RG original Ge46 with exact checked Bernstein rows
 # Recheck the explicitly parenthesized Boolean equality in the checked row assembly lemma.
 # Use the pinned Bool.or_eq_true propositional equality as a rewrite rule.
+# Completed source-bound exports are reused by the separate zero-fresh audit.
 on:
-  push:
-    branches: [rg-degree-one-large-20261103]
-    paths: ['.github/workflows/rg-ge46-checked-rows-reconstruction-20261103.yml']
+  workflow_dispatch:
 permissions:
   contents: read
   actions: read

@@ -1,0 +1,2735 @@
+{
+  "status": "ACTUAL_KERNEL_OBJECTS_AUTHENTICATED_FAILED_JOB_STATUS_PRESERVED",
+  "run": 41706475942,
+  "job": 126182927540,
+  "source_commit": "1ec3794cd015edc12bfda7aa45389af73cc9ab3b",
+  "artifact_id": 13270535981,
+  "archive_sha256": "f9df291a80a27e7244893aac72a4afcec323c6818f5ba4e8ca6ac5ff98dd4d54",
+  "archive_bytes": 424691532,
+  "raw_output_bytes": 1305687696,
+  "receipt_sha256": "c5cae5a72fde40e52122839555e6dba100063a4f4efed67e1e7dd069e6f815cb",
+  "receipt_modules": 178,
+  "fresh_compiled_original_job": 63,
+  "fresh_new_audit": 0,
+  "current_source_graph_sha256": "c2b50b3145d7c9b5f745b80ab2e9858a7ab6a88381e4f021dfed06529f0bbd48",
+  "manifest": "ci/rg_ge46_20261103_final_kernel_exports_before_metadata_audit.json",
+  "manifest_sha256": "f8adc4f3e090a10575c8786dc6c8b95db320e1b10098d32ab1991d600266b7e6",
+  "named_profile_audit": {
+    "Proofs.RadenkovicGutmanEscapeReducedReserveAcceptance": {
+      "module": "Proofs.RadenkovicGutmanEscapeReducedReserveAcceptance",
+      "source_sha256": "e855c5a92d39e85fdb8145a052bdf441a465ac1f7459aa97f7298b5e435493c8",
+      "source_closure_sha256": "f591d1dde62db6315e11e627fceb9cae3b17fe1b8f1cad9d4897ce0bf5a5a603",
+      "named_profiles": {
+        "Gebendorfer.RadenkovicGutman.EscapeReducedReserve.accepted": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      },
+      "old_accepted_axioms": [
+        "propext"
+      ],
+      "current_accepted_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "all_other_original_profiles_unchanged": true
+    },
+    "Proofs.RadenkovicGutmanEscapeReducedReserve": {
+      "module": "Proofs.RadenkovicGutmanEscapeReducedReserve",
+      "source_sha256": "26135477ffa18dc9b30dea9bcff99ebb8f64027ea1a8736fb5833a11f7fdedbc",
+      "source_closure_sha256": "24e30a209c0e9ce6630b4871f77f69901fce0fe226b183c206881b383ab4da45",
+      "named_profiles": {
+        "Gebendorfer.RadenkovicGutman.EscapeReducedReserve.accepted": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "Gebendorfer.RadenkovicGutman.EscapeReducedReserve.unit_box_nonneg": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "Gebendorfer.RadenkovicGutman.EscapeReducedReserve.data_eval": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      },
+      "old_accepted_axioms": [
+        "propext"
+      ],
+      "current_accepted_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "all_other_original_profiles_unchanged": true
+    }
+  },
+  "resource_observer": {
+    "status": "VERIFIER_COMPLETED",
+    "exit_code": 0,
+    "maximum_aggregate_lean_rss": 15130259456,
+    "seconds": 1479.52,
+    "samples": [
+      {
+        "seconds": 0.0,
+        "memory": {
+          "MemTotal": 16760340480,
+          "MemAvailable": 15638880256,
+          "SwapFree": 3221221376
+        },
+        "cgroup_limits": [],
+        "available_bytes": 15638880256,
+        "lean_processes": [],
+        "aggregate_lean_rss": 0
+      },
+      {
+        "seconds": 10.02,
+        "memory": {
+          "MemTotal": 16760340480,
+          "MemAvailable": 15178567680,
+          "SwapFree": 3221221376
+        },
+        "cgroup_limits": [],
+        "available_bytes": 15178567680,
+        "lean_processes": [
+          {
+            "pid": 2967,
+            "rss": 3631267840,
+            "module": "RadenkovicGutmanEscapeReserveRawData.lean"
+          }
+        ],
+        "aggregate_lean_rss": 3631267840
+      },
+      {
+        "seconds": 20.04,
+        "memory": {
+          "MemTotal": 16760340480,
+          "MemAvailable": 15085584384,
+          "SwapFree": 3221221376
+        },
+        "cgroup_limits": [],
+        "available_bytes": 15085584384,
+        "lean_processes": [
+          {
+            "pid": 2967,
+            "rss": 3720175616,
+            "module": "RadenkovicGutmanEscapeReserveRawData.lean"
+          }
+        ],
+        "aggregate_lean_rss": 3720175616
+      },
+      {
+        "seconds": 30.05,
+        "memory": {
+          "MemTotal": 16760340480,
+          "MemAvailable": 15504809984,
+          "SwapFree": 3221221376
+        },
+        "cgroup_limits": [],
+        "available_bytes": 15504809984,
+        "lean_processes": [
+          {
+            "pid": 2988,
+            "rss": 729743360,
+            "module": "RadenkovicGutmanEscapeReducedReserve.lean"
+          }
+        ],
+        "aggregate_lean_rss": 729743360
+      },
+      {
+        "seconds": 40.07,
+        "memory": {
+          "MemTotal": 16760340480,
+          "MemAvailable": 15144337408,
+          "SwapFree": 3221221376
+        },
+        "cgroup_limits": [],
+        "available_bytes": 15144337408,
+        "lean_processes": [
+          {
+            "pid": 3005,
+            "rss": 3857031168,
+            "module": "RadenkovicGutmanEscapeReserveAffineRow02.lean"
+          }
+        ],
+        "aggregate_lean_rss": 3857031168
+      },
+      {
+        "seconds": 50.09,
+        "memory": {
+          "MemTotal": 16760340480,
+          "MemAvailable": 14864052224,
+          "SwapFree": 3221221376
+        },
+        "cgroup_limits": [],
+        "available_bytes": 14864052224,
+        "lean_processes": [
+          {
+            "pid": 3018,
+            "rss": 4194668544,
+            "module": "RadenkovicGutmanEscapeReserveAffineRow04.lean"
+          }
+        ],
+        "aggregate_lean_rss": 4194668544
+      },
+      {
+        "seconds": 60.11,
+        "memory": {
+          "MemTotal": 16760340480,
+          "MemAvailable": 14729031680,
+          "SwapFree": 3221221376
+        },
+        "cgroup_limits": [],
+        "available_bytes": 14729031680,
+        "lean_processes": [
+          {
+            "pid": 3032,
+            "rss": 4328378368,
+            "module": "RadenkovicGutmanEscapeReserveAffineRow06.lean"
+          }
+        ],
+        "aggregate_lean_rss": 4328378368
+      },
+      {
+        "seconds": 70.13,
+        "memory": {
+          "MemTotal": 16760340480,
+          "MemAvailable": 14720778240,
+          "SwapFree": 3221221376
+        },
+        "cgroup_limits": [],
+        "available_bytes": 14720778240,
+        "lean_processes": [
+          {
+            "pid": 3044,
+            "rss": 4353921024,
+            "module": "RadenkovicGutmanEscapeReserveAffineRow08.lean"
+          }
+        ],
+        "aggregate_lean_rss": 4353921024
+      },
+      {
+        "seconds": 80.15,
+        "memory": {
+          "MemTotal": 16760340480,
+          "MemAvailable": 15130697728,
+          "SwapFree": 3221221376
+        },
+        "cgroup_limits": [],
+        "available_bytes": 15130697728,
+        "lean_processes": [
+          {
+            "pid": 3060,
+            "rss": 3913175040,
+            "module": "RadenkovicGutmanEscapeReserveAffineRow10.lean"
+          }
+        ],
+        "aggregate_lean_rss": 3913175040
+      },
+      {
+        "seconds": 90.17,
+        "memory": {
+          "MemTotal": 16760340480,
+          "MemAvailable": 14746779648,
+          "SwapFree": 3221221376
+        },
+        "cgroup_limits": [],
+        "available_bytes": 14746779648,
+        "lean_processes": [
+          {
+            "pid": 3066,
+            "rss": 4345475072,
+            "module": "RadenkovicGutmanEscapeReserveAffineRow11.lean"
+          }
+        ],
+        "aggregate_lean_rss": 4345475072
+      },
+      {
+        "seconds": 100.18,
+        "memory": {
+          "MemTotal": 16760340480,
+          "MemAvailable": 15375097856,
+          "SwapFree": 3221221376
+        },
+        "cgroup_limits": [],
+        "available_bytes": 15375097856,
+        "lean_processes": [
+          {
+            "pid": 3079,
+            "rss": 3508838400,
+            "module": "RadenkovicGutmanEscapeReserveAffineRow13.lean"
+          }
+        ],
+        "aggregate_lean_rss": 3508838400
+      },
+      {
+        "seconds": 110.2,
+        "memory": {
+          "MemTotal": 16760340480,
+          "MemAvailable": 15088091136,
+          "SwapFree": 3221221376
+        },
+        "cgroup_limits": [],
+        "available_bytes": 15088091136,
+        "lean_processes": [
+          {
+            "pid": 3086,
+            "rss": 3970048000,
+            "module": "RadenkovicGutmanEscapeReserveAffineRow14.lean"
+          }
+        ],
+        "aggregate_lean_rss": 3970048000
+      },
+      {
+        "seconds": 120.22,
+        "memory": {
+          "MemTotal": 16760340480,
+          "MemAvailable": 15478132736,
+          "SwapFree": 3221221376
+        },
+        "cgroup_limits": [],
+        "available_bytes": 15478132736,
+        "lean_processes": [
+          {
+            "pid": 3101,
+            "rss": 1774321664,
+            "module": "RadenkovicGutmanEscapeReserveAffineRow16.lean"
+          }
+        ],
+        "aggregate_lean_rss": 1774321664
+      },
+      {
+        "seconds": 130.23,
+        "memory": {
+          "MemTotal": 16760340480,
+          "MemAvailable": 15064723456,
+          "SwapFree": 3221221376
+        },
+        "cgroup_limits": [],
+        "available_bytes": 15064723456,
+        "lean_processes": [
+          {
+            "pid": 3110,
+            "rss": 4022587392,
+            "module": "RadenkovicGutmanEscapeReserveAffineRow17.lean"
+          }
+        ],
+        "aggregate_lean_rss": 4022587392
+      },
+      {
+        "seconds": 140.25,
+        "memory": {
+          "MemTotal": 16760340480,
+          "MemAvailable": 15158636544,
+          "SwapFree": 3221221376
+        },
+        "cgroup_limits": [],
+        "available_bytes": 15158636544,
+        "lean_processes": [
+          {
+            "pid": 3145,
+            "rss": 3915620352,
+            "module": "RadenkovicGutmanEscapeReserveAffineRow19.lean"
+          }
+        ],
+        "aggregate_lean_rss": 3915620352
+      },
+      {
+        "seconds": 150.26,
+        "memory": {
+          "MemTotal": 16760340480,
+          "MemAvailable": 15477149696,
+          "SwapFree": 3221221376
+        },
+        "cgroup_limits": [],
+        "available_bytes": 15477149696,
+        "lean_processes": [
+          {
+            "pid": 3170,
+            "rss": 1122029568,
+            "module": "RadenkovicGutmanEscapeReserveAffineRow22.lean"
+          }
+        ],
+        "aggregate_lean_rss": 1122029568
+      },
+      {
+        "seconds": 160.28,
+        "memory": {
+          "MemTotal": 16760340480,
+          "MemAvailable": 15151443968,
+          "SwapFree": 3221221376
+        },
+        "cgroup_limits": [],
+        "available_bytes": 15151443968,
+        "lean_processes": [
+          {
+            "pid": 3192,
+            "rss": 3859726336,
+            "module": "RadenkovicGutmanEscapeReserveRawAffine.lean"
+          }
+        ],
+        "aggregate_lean_rss": 3859726336
+      },
+      {
+        "seconds": 170.3,
+        "memory": {
+          "MemTotal": 16760340480,
+          "MemAvailable": 15304310784,
+          "SwapFree": 3221221376
+        },
+        "cgroup_limits": [],
+        "available_bytes": 15304310784,
+        "lean_processes": [
+          {
+            "pid": 3202,
+            "rss": 3410767872,
+            "module": "RadenkovicGutmanSymmetricTangentReserve.lean"
+          }
+        ],
+        "aggregate_lean_rss": 3410767872
+      },
+      {
+        "seconds": 180.32,
+        "memory": {
+          "MemTotal": 16760340480,
+          "MemAvailable": 13783113728,
+          "SwapFree": 3221221376
+        },
+        "cgroup_limits": [],
+        "available_bytes": 13783113728,
+        "lean_processes": [
+          {
+            "pid": 3202,
+            "rss": 5009854464,
+            "module": "RadenkovicGutmanSymmetricTangentReserve.lean"
+          }
+        ],
+        "aggregate_lean_rss": 5009854464
+      },
+      {
+        "seconds": 190.33,
+        "memory": {
+          "MemTotal": 16760340480,
+          "MemAvailable": 11807633408,
+          "SwapFree": 3221221376
+        },
+        "cgroup_limits": [],
+        "available_bytes": 11807633408,
+        "lean_processes": [
+          {
+            "pid": 3202,
+            "rss": 6981988352,
+            "module": "RadenkovicGutmanSymmetricTangentReserve.lean"
+          }
+        ],
+        "aggregate_lean_rss": 6981988352
+      },
+      {
+        "seconds": 200.35,
+        "memory": {
+          "MemTotal": 16760340480,
+          "MemAvailable": 9904742400,
+          "SwapFree": 3221221376
+        },
+        "cgroup_limits": [],
+        "available_bytes": 9904742400,
+        "lean_processes": [
+          {
+            "pid": 3202,
+            "rss": 8938057728,
+            "module": "RadenkovicGutmanSymmetricTangentReserve.lean"
+          }
+        ],
+        "aggregate_lean_rss": 8938057728
+      },
+      {
+        "seconds": 210.36,
+        "memory": {
+          "MemTotal": 16760340480,
+          "MemAvailable": 8223428608,
+          "SwapFree": 3221221376
+        },
+        "cgroup_limits": [],
+        "available_bytes": 8223428608,
+        "lean_processes": [
+          {
+            "pid": 3202,
+            "rss": 10610978816,
+            "module": "RadenkovicGutmanSymmetricTangentReserve.lean"
+          }
+        ],
+        "aggregate_lean_rss": 10610978816
+      },
+      {
+        "seconds": 220.38,
+        "memory": {
+          "MemTotal": 16760340480,
+          "MemAvailable": 6925234176,
+          "SwapFree": 3221221376
+        },
+        "cgroup_limits": [],
+        "available_bytes": 6925234176,
+        "lean_processes": [
+          {
+            "pid": 3202,
+            "rss": 11894927360,
+            "module": "RadenkovicGutmanSymmetricTangentReserve.lean"
+          }
+        ],
+        "aggregate_lean_rss": 11894927360
+      },
+      {
+        "seconds": 230.4,
+        "memory": {
+          "MemTotal": 16760340480,
+          "MemAvailable": 8020828160,
+          "SwapFree": 3221221376
+        },
+        "cgroup_limits": [],
+        "available_bytes": 8020828160,
+        "lean_processes": [
+          {
+            "pid": 3202,
+            "rss": 8387805184,
+            "module": "RadenkovicGutmanSymmetricTangentReserve.lean"
+          }
+        ],
+        "aggregate_lean_rss": 8387805184
+      },
+      {
+        "seconds": 240.41,
+        "memory": {
+          "MemTotal": 16760340480,
+          "MemAvailable": 8010694656,
+          "SwapFree": 3221221376
+        },
+        "cgroup_limits": [],
+        "available_bytes": 8010694656,
+        "lean_processes": [
+          {
+            "pid": 3202,
+            "rss": 8404115456,
+            "module": "RadenkovicGutmanSymmetricTangentReserve.lean"
+          }
+        ],
+        "aggregate_lean_rss": 8404115456
+      },
+      {
+        "seconds": 250.43,
+        "memory": {
+          "MemTotal": 16760340480,
+          "MemAvailable": 8020230144,
+          "SwapFree": 3221221376
+        },
+        "cgroup_limits": [],
+        "available_bytes": 8020230144,
+        "lean_processes": [
+          {
+            "pid": 3202,
+            "rss": 8374710272,
+            "module": "RadenkovicGutmanSymmetricTangentReserve.lean"
+          }
+        ],
+        "aggregate_lean_rss": 8374710272
+      },
+      {
+        "seconds": 260.45,
+        "memory": {
+          "MemTotal": 16760340480,
+          "MemAvailable": 14986797056,
+          "SwapFree": 3221221376
+        },
+        "cgroup_limits": [],
+        "available_bytes": 14986797056,
+        "lean_processes": [
+          {
+            "pid": 3234,
+            "rss": 4187381760,
+            "module": "RadenkovicGutmanTailHalfCertificate.lean"
+          }
+        ],
+        "aggregate_lean_rss": 4187381760
+      },
+      {
+        "seconds": 270.46,
+        "memory": {
+          "MemTotal": 16760340480,
+          "MemAvailable": 13567807488,
+          "SwapFree": 3221221376
+        },
+        "cgroup_limits": [],
+        "available_bytes": 13567807488,
+        "lean_processes": [
+          {
+            "pid": 3234,
+            "rss": 5701726208,
+            "module": "RadenkovicGutmanTailHalfCertificate.lean"
+          }
+        ],
+        "aggregate_lean_rss": 5701726208
+      },
+      {
+        "seconds": 280.48,
+        "memory": {
+          "MemTotal": 16760340480,
+          "MemAvailable": 13201350656,
+          "SwapFree": 3221221376
+        },
+        "cgroup_limits": [],
+        "available_bytes": 13201350656,
+        "lean_processes": [
+          {
+            "pid": 3234,
+            "rss": 5980700672,
+            "module": "RadenkovicGutmanTailHalfCertificate.lean"
+          }
+        ],
+        "aggregate_lean_rss": 5980700672
+      },
+      {
+        "seconds": 290.49,
+        "memory": {
+          "MemTotal": 16760340480,
+          "MemAvailable": 13019148288,
+          "SwapFree": 3221221376
+        },
+        "cgroup_limits": [],
+        "available_bytes": 13019148288,
+        "lean_processes": [
+          {
+            "pid": 3234,
+            "rss": 6136807424,
+            "module": "RadenkovicGutmanTailHalfCertificate.lean"
+          }
+        ],
+        "aggregate_lean_rss": 6136807424
+      },
+      {
+        "seconds": 300.51,
+        "memory": {
+          "MemTotal": 16760340480,
+          "MemAvailable": 13007106048,
+          "SwapFree": 3221221376
+        },
+        "cgroup_limits": [],
+        "available_bytes": 13007106048,
+        "lean_processes": [
+          {
+            "pid": 3234,
+            "rss": 6068158464,
+            "module": "RadenkovicGutmanTailHalfCertificate.lean"
+          }
+        ],
+        "aggregate_lean_rss": 6068158464
+      },
+      {
+        "seconds": 310.53,
+        "memory": {
+          "MemTotal": 16760340480,
+          "MemAvailable": 12627968000,
+          "SwapFree": 3221221376
+        },
+        "cgroup_limits": [],
+        "available_bytes": 12627968000,
+        "lean_processes": [
+          {
+            "pid": 3234,
+            "rss": 6438477824,
+            "module": "RadenkovicGutmanTailHalfCertificate.lean"
+          }
+        ],
+        "aggregate_lean_rss": 6438477824
+      },
+      {
+        "seconds": 320.55,
+        "memory": {
+          "MemTotal": 16760340480,
+          "MemAvailable": 12686168064,
+          "SwapFree": 3221221376
+        },
+        "cgroup_limits": [],
+        "available_bytes": 12686168064,
+        "lean_processes": [
+          {
+            "pid": 3234,
+            "rss": 6349336576,
+            "module": "RadenkovicGutmanTailHalfCertificate.lean"
+          }
+        ],
+        "aggregate_lean_rss": 6349336576
+      },
+      {
+        "seconds": 330.57,
+        "memory": {
+          "MemTotal": 16760340480,
+          "MemAvailable": 12648099840,
+          "SwapFree": 3221221376
+        },
+        "cgroup_limits": [],
+        "available_bytes": 12648099840,
+        "lean_processes": [
+          {
+            "pid": 3234,
+            "rss": 6380916736,
+            "module": "RadenkovicGutmanTailHalfCertificate.lean"
+          }
+        ],
+        "aggregate_lean_rss": 6380916736
+      },
+      {
+        "seconds": 340.59,
+        "memory": {
+          "MemTotal": 16760340480,
+          "MemAvailable": 15109640192,
+          "SwapFree": 3221221376
+        },
+        "cgroup_limits": [],
+        "available_bytes": 15109640192,
+        "lean_processes": [
+          {
+            "pid": 3248,
+            "rss": 4063805440,
+            "module": "RadenkovicGutmanTailHalfGeometry.lean"
+          }
+        ],
+        "aggregate_lean_rss": 4063805440
+      },
+      {
+        "seconds": 350.61,
+        "memory": {
+          "MemTotal": 16760340480,
+          "MemAvailable": 15491829760,
+          "SwapFree": 3221221376
+        },
+        "cgroup_limits": [],
+        "available_bytes": 15491829760,
+        "lean_processes": [],
+        "aggregate_lean_rss": 0
+      },
+      {
+        "seconds": 360.63,
+        "memory": {
+          "MemTotal": 16760340480,
+          "MemAvailable": 15184769024,
+          "SwapFree": 3221221376
+        },
+        "cgroup_limits": [],
+        "available_bytes": 15184769024,
+        "lean_processes": [
+          {
+            "pid": 3267,
+            "rss": 4067557376,
+            "module": "RadenkovicGutmanCorrelatedEscape.lean"
+          }
+        ],
+        "aggregate_lean_rss": 4067557376
+      },
+      {
+        "seconds": 370.65,
+        "memory": {
+          "MemTotal": 16760340480,
+          "MemAvailable": 15056596992,
+          "SwapFree": 3221221376
+        },
+        "cgroup_limits": [],
+        "available_bytes": 15056596992,
+        "lean_processes": [
+          {
+            "pid": 3284,
+            "rss": 4053901312,
+            "module": "RadenkovicGutmanEscapeReducedDirectedIdentity.lean"
+          }
+        ],
+        "aggregate_lean_rss": 4053901312
+      },
+      {
+        "seconds": 380.67,
+        "memory": {
+          "MemTotal": 16760340480,
+          "MemAvailable": 14614417408,
+          "SwapFree": 3221221376
+        },
+        "cgroup_limits": [],
+        "available_bytes": 14614417408,
+        "lean_processes": [
+          {
+            "pid": 3284,
+            "rss": 4649287680,
+            "module": "RadenkovicGutmanEscapeReducedDirectedIdentity.lean"
+          }
+        ],
+        "aggregate_lean_rss": 4649287680
+      },
+      {
+        "seconds": 390.69,
+        "memory": {
+          "MemTotal": 16760340480,
+          "MemAvailable": 14276136960,
+          "SwapFree": 3221221376
+        },
+        "cgroup_limits": [],
+        "available_bytes": 14276136960,
+        "lean_processes": [
+          {
+            "pid": 3284,
+            "rss": 4918513664,
+            "module": "RadenkovicGutmanEscapeReducedDirectedIdentity.lean"
+          }
+        ],
+        "aggregate_lean_rss": 4918513664
+      },
+      {
+        "seconds": 400.71,
+        "memory": {
+          "MemTotal": 16760340480,
+          "MemAvailable": 15321206784,
+          "SwapFree": 3221221376
+        },
+        "cgroup_limits": [],
+        "available_bytes": 15321206784,
+        "lean_processes": [
+          {
+            "pid": 3292,
+            "rss": 3210067968,
+            "module": "RadenkovicGutmanEscapeReserveBalanced.lean"
+          }
+        ],
+        "aggregate_lean_rss": 3210067968
+      },
+      {
+        "seconds": 410.72,
+        "memory": {
+          "MemTotal": 16760340480,
+          "MemAvailable": 15190077440,
+          "SwapFree": 3221221376
+        },
+        "cgroup_limits": [],
+        "available_bytes": 15190077440,
+        "lean_processes": [
+          {
+            "pid": 3297,
+            "rss": 4052705280,
+            "module": "RadenkovicGutmanEscapeReserveRawBalancedIdentity.lean"
+          }
+        ],
+        "aggregate_lean_rss": 4052705280
+      },
+      {
+        "seconds": 420.74,
+        "memory": {
+          "MemTotal": 16760340480,
+          "MemAvailable": 14480211968,
+          "SwapFree": 3221221376
+        },
+        "cgroup_limits": [],
+        "available_bytes": 14480211968,
+        "lean_processes": [
+          {
+            "pid": 3297,
+            "rss": 4781580288,
+            "module": "RadenkovicGutmanEscapeReserveRawBalancedIdentity.lean"
+          }
+        ],
+        "aggregate_lean_rss": 4781580288
+      },
+      {
+        "seconds": 430.75,
+        "memory": {
+          "MemTotal": 16760340480,
+          "MemAvailable": 12963553280,
+          "SwapFree": 3221221376
+        },
+        "cgroup_limits": [],
+        "available_bytes": 12963553280,
+        "lean_processes": [
+          {
+            "pid": 3297,
+            "rss": 6295724032,
+            "module": "RadenkovicGutmanEscapeReserveRawBalancedIdentity.lean"
+          }
+        ],
+        "aggregate_lean_rss": 6295724032
+      },
+      {
+        "seconds": 440.77,
+        "memory": {
+          "MemTotal": 16760340480,
+          "MemAvailable": 11424448512,
+          "SwapFree": 3221221376
+        },
+        "cgroup_limits": [],
+        "available_bytes": 11424448512,
+        "lean_processes": [
+          {
+            "pid": 3297,
+            "rss": 7830839296,
+            "module": "RadenkovicGutmanEscapeReserveRawBalancedIdentity.lean"
+          }
+        ],
+        "aggregate_lean_rss": 7830839296
+      },
+      {
+        "seconds": 450.79,
+        "memory": {
+          "MemTotal": 16760340480,
+          "MemAvailable": 10291867648,
+          "SwapFree": 3221221376
+        },
+        "cgroup_limits": [],
+        "available_bytes": 10291867648,
+        "lean_processes": [
+          {
+            "pid": 3297,
+            "rss": 8969699328,
+            "module": "RadenkovicGutmanEscapeReserveRawBalancedIdentity.lean"
+          }
+        ],
+        "aggregate_lean_rss": 8969699328
+      },
+      {
+        "seconds": 460.8,
+        "memory": {
+          "MemTotal": 16760340480,
+          "MemAvailable": 10158297088,
+          "SwapFree": 3221221376
+        },
+        "cgroup_limits": [],
+        "available_bytes": 10158297088,
+        "lean_processes": [
+          {
+            "pid": 3297,
+            "rss": 9089376256,
+            "module": "RadenkovicGutmanEscapeReserveRawBalancedIdentity.lean"
+          }
+        ],
+        "aggregate_lean_rss": 9089376256
+      },
+      {
+        "seconds": 470.82,
+        "memory": {
+          "MemTotal": 16760340480,
+          "MemAvailable": 9532256256,
+          "SwapFree": 3221221376
+        },
+        "cgroup_limits": [],
+        "available_bytes": 9532256256,
+        "lean_processes": [
+          {
+            "pid": 3297,
+            "rss": 9700589568,
+            "module": "RadenkovicGutmanEscapeReserveRawBalancedIdentity.lean"
+          }
+        ],
+        "aggregate_lean_rss": 9700589568
+      },
+      {
+        "seconds": 480.83,
+        "memory": {
+          "MemTotal": 16760340480,
+          "MemAvailable": 8851562496,
+          "SwapFree": 3221221376
+        },
+        "cgroup_limits": [],
+        "available_bytes": 8851562496,
+        "lean_processes": [
+          {
+            "pid": 3297,
+            "rss": 10381803520,
+            "module": "RadenkovicGutmanEscapeReserveRawBalancedIdentity.lean"
+          }
+        ],
+        "aggregate_lean_rss": 10381803520
+      },
+      {
+        "seconds": 490.85,
+        "memory": {
+          "MemTotal": 16760340480,
+          "MemAvailable": 8975638528,
+          "SwapFree": 3221221376
+        },
+        "cgroup_limits": [],
+        "available_bytes": 8975638528,
+        "lean_processes": [
+          {
+            "pid": 3297,
+            "rss": 10143117312,
+            "module": "RadenkovicGutmanEscapeReserveRawBalancedIdentity.lean"
+          }
+        ],
+        "aggregate_lean_rss": 10143117312
+      },
+      {
+        "seconds": 500.86,
+        "memory": {
+          "MemTotal": 16760340480,
+          "MemAvailable": 8931180544,
+          "SwapFree": 3221221376
+        },
+        "cgroup_limits": [],
+        "available_bytes": 8931180544,
+        "lean_processes": [
+          {
+            "pid": 3297,
+            "rss": 10163621888,
+            "module": "RadenkovicGutmanEscapeReserveRawBalancedIdentity.lean"
+          }
+        ],
+        "aggregate_lean_rss": 10163621888
+      },
+      {
+        "seconds": 510.88,
+        "memory": {
+          "MemTotal": 16760340480,
+          "MemAvailable": 8827064320,
+          "SwapFree": 3221221376
+        },
+        "cgroup_limits": [],
+        "available_bytes": 8827064320,
+        "lean_processes": [
+          {
+            "pid": 3297,
+            "rss": 10264285184,
+            "module": "RadenkovicGutmanEscapeReserveRawBalancedIdentity.lean"
+          }
+        ],
+        "aggregate_lean_rss": 10264285184
+      },
+      {
+        "seconds": 520.9,
+        "memory": {
+          "MemTotal": 16760340480,
+          "MemAvailable": 8561811456,
+          "SwapFree": 3221221376
+        },
+        "cgroup_limits": [],
+        "available_bytes": 8561811456,
+        "lean_processes": [
+          {
+            "pid": 3297,
+            "rss": 10534817792,
+            "module": "RadenkovicGutmanEscapeReserveRawBalancedIdentity.lean"
+          }
+        ],
+        "aggregate_lean_rss": 10534817792
+      },
+      {
+        "seconds": 530.91,
+        "memory": {
+          "MemTotal": 16760340480,
+          "MemAvailable": 9007747072,
+          "SwapFree": 3221221376
+        },
+        "cgroup_limits": [],
+        "available_bytes": 9007747072,
+        "lean_processes": [
+          {
+            "pid": 3297,
+            "rss": 10057633792,
+            "module": "RadenkovicGutmanEscapeReserveRawBalancedIdentity.lean"
+          }
+        ],
+        "aggregate_lean_rss": 10057633792
+      },
+      {
+        "seconds": 540.93,
+        "memory": {
+          "MemTotal": 16760340480,
+          "MemAvailable": 8689733632,
+          "SwapFree": 3221221376
+        },
+        "cgroup_limits": [],
+        "available_bytes": 8689733632,
+        "lean_processes": [
+          {
+            "pid": 3297,
+            "rss": 10368823296,
+            "module": "RadenkovicGutmanEscapeReserveRawBalancedIdentity.lean"
+          }
+        ],
+        "aggregate_lean_rss": 10368823296
+      },
+      {
+        "seconds": 550.94,
+        "memory": {
+          "MemTotal": 16760340480,
+          "MemAvailable": 8157356032,
+          "SwapFree": 3221221376
+        },
+        "cgroup_limits": [],
+        "available_bytes": 8157356032,
+        "lean_processes": [
+          {
+            "pid": 3297,
+            "rss": 10887680000,
+            "module": "RadenkovicGutmanEscapeReserveRawBalancedIdentity.lean"
+          }
+        ],
+        "aggregate_lean_rss": 10887680000
+      },
+      {
+        "seconds": 560.96,
+        "memory": {
+          "MemTotal": 16760340480,
+          "MemAvailable": 8107577344,
+          "SwapFree": 3221221376
+        },
+        "cgroup_limits": [],
+        "available_bytes": 8107577344,
+        "lean_processes": [
+          {
+            "pid": 3297,
+            "rss": 10945929216,
+            "module": "RadenkovicGutmanEscapeReserveRawBalancedIdentity.lean"
+          }
+        ],
+        "aggregate_lean_rss": 10945929216
+      },
+      {
+        "seconds": 570.98,
+        "memory": {
+          "MemTotal": 16760340480,
+          "MemAvailable": 7976812544,
+          "SwapFree": 3221221376
+        },
+        "cgroup_limits": [],
+        "available_bytes": 7976812544,
+        "lean_processes": [
+          {
+            "pid": 3297,
+            "rss": 11078103040,
+            "module": "RadenkovicGutmanEscapeReserveRawBalancedIdentity.lean"
+          }
+        ],
+        "aggregate_lean_rss": 11078103040
+      },
+      {
+        "seconds": 581.0,
+        "memory": {
+          "MemTotal": 16760340480,
+          "MemAvailable": 7842959360,
+          "SwapFree": 3221221376
+        },
+        "cgroup_limits": [],
+        "available_bytes": 7842959360,
+        "lean_processes": [
+          {
+            "pid": 3297,
+            "rss": 11212320768,
+            "module": "RadenkovicGutmanEscapeReserveRawBalancedIdentity.lean"
+          }
+        ],
+        "aggregate_lean_rss": 11212320768
+      },
+      {
+        "seconds": 591.02,
+        "memory": {
+          "MemTotal": 16760340480,
+          "MemAvailable": 6740627456,
+          "SwapFree": 3221221376
+        },
+        "cgroup_limits": [],
+        "available_bytes": 6740627456,
+        "lean_processes": [
+          {
+            "pid": 3297,
+            "rss": 12354678784,
+            "module": "RadenkovicGutmanEscapeReserveRawBalancedIdentity.lean"
+          }
+        ],
+        "aggregate_lean_rss": 12354678784
+      },
+      {
+        "seconds": 601.04,
+        "memory": {
+          "MemTotal": 16760340480,
+          "MemAvailable": 5541838848,
+          "SwapFree": 3221135360
+        },
+        "cgroup_limits": [],
+        "available_bytes": 5541838848,
+        "lean_processes": [
+          {
+            "pid": 3297,
+            "rss": 13526589440,
+            "module": "RadenkovicGutmanEscapeReserveRawBalancedIdentity.lean"
+          }
+        ],
+        "aggregate_lean_rss": 13526589440
+      },
+      {
+        "seconds": 611.06,
+        "memory": {
+          "MemTotal": 16760340480,
+          "MemAvailable": 5248315392,
+          "SwapFree": 3221061632
+        },
+        "cgroup_limits": [],
+        "available_bytes": 5248315392,
+        "lean_processes": [
+          {
+            "pid": 3297,
+            "rss": 13832482816,
+            "module": "RadenkovicGutmanEscapeReserveRawBalancedIdentity.lean"
+          }
+        ],
+        "aggregate_lean_rss": 13832482816
+      },
+      {
+        "seconds": 621.08,
+        "memory": {
+          "MemTotal": 16760340480,
+          "MemAvailable": 6227021824,
+          "SwapFree": 3221061632
+        },
+        "cgroup_limits": [],
+        "available_bytes": 6227021824,
+        "lean_processes": [
+          {
+            "pid": 3297,
+            "rss": 12289912832,
+            "module": "RadenkovicGutmanEscapeReserveRawBalancedIdentity.lean"
+          }
+        ],
+        "aggregate_lean_rss": 12289912832
+      },
+      {
+        "seconds": 631.09,
+        "memory": {
+          "MemTotal": 16760340480,
+          "MemAvailable": 6232817664,
+          "SwapFree": 3221061632
+        },
+        "cgroup_limits": [],
+        "available_bytes": 6232817664,
+        "lean_processes": [
+          {
+            "pid": 3297,
+            "rss": 12291092480,
+            "module": "RadenkovicGutmanEscapeReserveRawBalancedIdentity.lean"
+          }
+        ],
+        "aggregate_lean_rss": 12291092480
+      },
+      {
+        "seconds": 641.11,
+        "memory": {
+          "MemTotal": 16760340480,
+          "MemAvailable": 6153744384,
+          "SwapFree": 3221061632
+        },
+        "cgroup_limits": [],
+        "available_bytes": 6153744384,
+        "lean_processes": [
+          {
+            "pid": 3297,
+            "rss": 12379037696,
+            "module": "RadenkovicGutmanEscapeReserveRawBalancedIdentity.lean"
+          }
+        ],
+        "aggregate_lean_rss": 12379037696
+      },
+      {
+        "seconds": 651.13,
+        "memory": {
+          "MemTotal": 16760340480,
+          "MemAvailable": 5884596224,
+          "SwapFree": 3221061632
+        },
+        "cgroup_limits": [],
+        "available_bytes": 5884596224,
+        "lean_processes": [
+          {
+            "pid": 3297,
+            "rss": 12649570304,
+            "module": "RadenkovicGutmanEscapeReserveRawBalancedIdentity.lean"
+          }
+        ],
+        "aggregate_lean_rss": 12649570304
+      },
+      {
+        "seconds": 661.15,
+        "memory": {
+          "MemTotal": 16760340480,
+          "MemAvailable": 5838049280,
+          "SwapFree": 3221069824
+        },
+        "cgroup_limits": [],
+        "available_bytes": 5838049280,
+        "lean_processes": [
+          {
+            "pid": 3297,
+            "rss": 12688121856,
+            "module": "RadenkovicGutmanEscapeReserveRawBalancedIdentity.lean"
+          }
+        ],
+        "aggregate_lean_rss": 12688121856
+      },
+      {
+        "seconds": 671.16,
+        "memory": {
+          "MemTotal": 16760340480,
+          "MemAvailable": 5822152704,
+          "SwapFree": 3221069824
+        },
+        "cgroup_limits": [],
+        "available_bytes": 5822152704,
+        "lean_processes": [
+          {
+            "pid": 3297,
+            "rss": 12698017792,
+            "module": "RadenkovicGutmanEscapeReserveRawBalancedIdentity.lean"
+          }
+        ],
+        "aggregate_lean_rss": 12698017792
+      },
+      {
+        "seconds": 681.18,
+        "memory": {
+          "MemTotal": 16760340480,
+          "MemAvailable": 5814235136,
+          "SwapFree": 3221069824
+        },
+        "cgroup_limits": [],
+        "available_bytes": 5814235136,
+        "lean_processes": [
+          {
+            "pid": 3297,
+            "rss": 12705095680,
+            "module": "RadenkovicGutmanEscapeReserveRawBalancedIdentity.lean"
+          }
+        ],
+        "aggregate_lean_rss": 12705095680
+      },
+      {
+        "seconds": 691.19,
+        "memory": {
+          "MemTotal": 16760340480,
+          "MemAvailable": 5651955712,
+          "SwapFree": 3221069824
+        },
+        "cgroup_limits": [],
+        "available_bytes": 5651955712,
+        "lean_processes": [
+          {
+            "pid": 3297,
+            "rss": 12857008128,
+            "module": "RadenkovicGutmanEscapeReserveRawBalancedIdentity.lean"
+          }
+        ],
+        "aggregate_lean_rss": 12857008128
+      },
+      {
+        "seconds": 701.21,
+        "memory": {
+          "MemTotal": 16760340480,
+          "MemAvailable": 5193375744,
+          "SwapFree": 3221069824
+        },
+        "cgroup_limits": [],
+        "available_bytes": 5193375744,
+        "lean_processes": [
+          {
+            "pid": 3297,
+            "rss": 13239693312,
+            "module": "RadenkovicGutmanEscapeReserveRawBalancedIdentity.lean"
+          }
+        ],
+        "aggregate_lean_rss": 13239693312
+      },
+      {
+        "seconds": 711.23,
+        "memory": {
+          "MemTotal": 16760340480,
+          "MemAvailable": 15186382848,
+          "SwapFree": 3218923520
+        },
+        "cgroup_limits": [],
+        "available_bytes": 15186382848,
+        "lean_processes": [
+          {
+            "pid": 3364,
+            "rss": 1063886848,
+            "module": "RadenkovicGutmanQuadraticDiskConvex.lean"
+          }
+        ],
+        "aggregate_lean_rss": 1063886848
+      },
+      {
+        "seconds": 721.25,
+        "memory": {
+          "MemTotal": 16760340480,
+          "MemAvailable": 15009697792,
+          "SwapFree": 3218927616
+        },
+        "cgroup_limits": [],
+        "available_bytes": 15009697792,
+        "lean_processes": [
+          {
+            "pid": 3439,
+            "rss": 3981172736,
+            "module": "RadenkovicGutmanLowStripConstantGeometry.lean"
+          }
+        ],
+        "aggregate_lean_rss": 3981172736
+      },
+      {
+        "seconds": 731.27,
+        "memory": {
+          "MemTotal": 16760340480,
+          "MemAvailable": 15071731712,
+          "SwapFree": 3218927616
+        },
+        "cgroup_limits": [],
+        "available_bytes": 15071731712,
+        "lean_processes": [
+          {
+            "pid": 3458,
+            "rss": 4043051008,
+            "module": "RadenkovicGutmanLowStripDirected.lean"
+          }
+        ],
+        "aggregate_lean_rss": 4043051008
+      },
+      {
+        "seconds": 741.29,
+        "memory": {
+          "MemTotal": 16760340480,
+          "MemAvailable": 15426670592,
+          "SwapFree": 3218927616
+        },
+        "cgroup_limits": [],
+        "available_bytes": 15426670592,
+        "lean_processes": [
+          {
+            "pid": 3483,
+            "rss": 229289984,
+            "module": "RadenkovicGutmanHighDegreeInputFromTwoSigns.lean"
+          }
+        ],
+        "aggregate_lean_rss": 229289984
+      },
+      {
+        "seconds": 751.31,
+        "memory": {
+          "MemTotal": 16760340480,
+          "MemAvailable": 15119704064,
+          "SwapFree": 3218927616
+        },
+        "cgroup_limits": [],
+        "available_bytes": 15119704064,
+        "lean_processes": [
+          {
+            "pid": 3499,
+            "rss": 4049145856,
+            "module": "RadenkovicGutmanReducedEscapeSigns.lean"
+          }
+        ],
+        "aggregate_lean_rss": 4049145856
+      },
+      {
+        "seconds": 761.33,
+        "memory": {
+          "MemTotal": 16760340480,
+          "MemAvailable": 15140237312,
+          "SwapFree": 3218927616
+        },
+        "cgroup_limits": [],
+        "available_bytes": 15140237312,
+        "lean_processes": [
+          {
+            "pid": 3504,
+            "rss": 4053032960,
+            "module": "RadenkovicGutmanSymmetricConstantReserveIdentity.lean"
+          }
+        ],
+        "aggregate_lean_rss": 4053032960
+      },
+      {
+        "seconds": 771.36,
+        "memory": {
+          "MemTotal": 16760340480,
+          "MemAvailable": 15169421312,
+          "SwapFree": 3218927616
+        },
+        "cgroup_limits": [],
+        "available_bytes": 15169421312,
+        "lean_processes": [
+          {
+            "pid": 3504,
+            "rss": 4061421568,
+            "module": "RadenkovicGutmanSymmetricConstantReserveIdentity.lean"
+          }
+        ],
+        "aggregate_lean_rss": 4061421568
+      },
+      {
+        "seconds": 781.38,
+        "memory": {
+          "MemTotal": 16760340480,
+          "MemAvailable": 15162392576,
+          "SwapFree": 3218927616
+        },
+        "cgroup_limits": [],
+        "available_bytes": 15162392576,
+        "lean_processes": [
+          {
+            "pid": 3504,
+            "rss": 4069810176,
+            "module": "RadenkovicGutmanSymmetricConstantReserveIdentity.lean"
+          }
+        ],
+        "aggregate_lean_rss": 4069810176
+      },
+      {
+        "seconds": 791.4,
+        "memory": {
+          "MemTotal": 16760340480,
+          "MemAvailable": 15155617792,
+          "SwapFree": 3218927616
+        },
+        "cgroup_limits": [],
+        "available_bytes": 15155617792,
+        "lean_processes": [
+          {
+            "pid": 3504,
+            "rss": 4076101632,
+            "module": "RadenkovicGutmanSymmetricConstantReserveIdentity.lean"
+          }
+        ],
+        "aggregate_lean_rss": 4076101632
+      },
+      {
+        "seconds": 801.42,
+        "memory": {
+          "MemTotal": 16760340480,
+          "MemAvailable": 15150788608,
+          "SwapFree": 3218927616
+        },
+        "cgroup_limits": [],
+        "available_bytes": 15150788608,
+        "lean_processes": [
+          {
+            "pid": 3504,
+            "rss": 4082429952,
+            "module": "RadenkovicGutmanSymmetricConstantReserveIdentity.lean"
+          }
+        ],
+        "aggregate_lean_rss": 4082429952
+      },
+      {
+        "seconds": 811.43,
+        "memory": {
+          "MemTotal": 16760340480,
+          "MemAvailable": 15164411904,
+          "SwapFree": 3218927616
+        },
+        "cgroup_limits": [],
+        "available_bytes": 15164411904,
+        "lean_processes": [
+          {
+            "pid": 3504,
+            "rss": 4086624256,
+            "module": "RadenkovicGutmanSymmetricConstantReserveIdentity.lean"
+          }
+        ],
+        "aggregate_lean_rss": 4086624256
+      },
+      {
+        "seconds": 821.45,
+        "memory": {
+          "MemTotal": 16760340480,
+          "MemAvailable": 15160250368,
+          "SwapFree": 3218927616
+        },
+        "cgroup_limits": [],
+        "available_bytes": 15160250368,
+        "lean_processes": [
+          {
+            "pid": 3504,
+            "rss": 4090818560,
+            "module": "RadenkovicGutmanSymmetricConstantReserveIdentity.lean"
+          }
+        ],
+        "aggregate_lean_rss": 4090818560
+      },
+      {
+        "seconds": 831.46,
+        "memory": {
+          "MemTotal": 16760340480,
+          "MemAvailable": 15151632384,
+          "SwapFree": 3218927616
+        },
+        "cgroup_limits": [],
+        "available_bytes": 15151632384,
+        "lean_processes": [
+          {
+            "pid": 3504,
+            "rss": 4097110016,
+            "module": "RadenkovicGutmanSymmetricConstantReserveIdentity.lean"
+          }
+        ],
+        "aggregate_lean_rss": 4097110016
+      },
+      {
+        "seconds": 841.48,
+        "memory": {
+          "MemTotal": 16760340480,
+          "MemAvailable": 15155429376,
+          "SwapFree": 3218927616
+        },
+        "cgroup_limits": [],
+        "available_bytes": 15155429376,
+        "lean_processes": [
+          {
+            "pid": 3504,
+            "rss": 4101304320,
+            "module": "RadenkovicGutmanSymmetricConstantReserveIdentity.lean"
+          }
+        ],
+        "aggregate_lean_rss": 4101304320
+      },
+      {
+        "seconds": 851.49,
+        "memory": {
+          "MemTotal": 16760340480,
+          "MemAvailable": 15146790912,
+          "SwapFree": 3218927616
+        },
+        "cgroup_limits": [],
+        "available_bytes": 15146790912,
+        "lean_processes": [
+          {
+            "pid": 3504,
+            "rss": 4105498624,
+            "module": "RadenkovicGutmanSymmetricConstantReserveIdentity.lean"
+          }
+        ],
+        "aggregate_lean_rss": 4105498624
+      },
+      {
+        "seconds": 861.51,
+        "memory": {
+          "MemTotal": 16760340480,
+          "MemAvailable": 15142596608,
+          "SwapFree": 3218927616
+        },
+        "cgroup_limits": [],
+        "available_bytes": 15142596608,
+        "lean_processes": [
+          {
+            "pid": 3504,
+            "rss": 4109692928,
+            "module": "RadenkovicGutmanSymmetricConstantReserveIdentity.lean"
+          }
+        ],
+        "aggregate_lean_rss": 4109692928
+      },
+      {
+        "seconds": 871.52,
+        "memory": {
+          "MemTotal": 16760340480,
+          "MemAvailable": 15138824192,
+          "SwapFree": 3218927616
+        },
+        "cgroup_limits": [],
+        "available_bytes": 15138824192,
+        "lean_processes": [
+          {
+            "pid": 3504,
+            "rss": 4114599936,
+            "module": "RadenkovicGutmanSymmetricConstantReserveIdentity.lean"
+          }
+        ],
+        "aggregate_lean_rss": 4114599936
+      },
+      {
+        "seconds": 881.54,
+        "memory": {
+          "MemTotal": 16760340480,
+          "MemAvailable": 15140245504,
+          "SwapFree": 3218927616
+        },
+        "cgroup_limits": [],
+        "available_bytes": 15140245504,
+        "lean_processes": [
+          {
+            "pid": 3504,
+            "rss": 4118794240,
+            "module": "RadenkovicGutmanSymmetricConstantReserveIdentity.lean"
+          }
+        ],
+        "aggregate_lean_rss": 4118794240
+      },
+      {
+        "seconds": 891.55,
+        "memory": {
+          "MemTotal": 16760340480,
+          "MemAvailable": 14310256640,
+          "SwapFree": 3218927616
+        },
+        "cgroup_limits": [],
+        "available_bytes": 14310256640,
+        "lean_processes": [
+          {
+            "pid": 3504,
+            "rss": 4956938240,
+            "module": "RadenkovicGutmanSymmetricConstantReserveIdentity.lean"
+          }
+        ],
+        "aggregate_lean_rss": 4956938240
+      },
+      {
+        "seconds": 901.57,
+        "memory": {
+          "MemTotal": 16760340480,
+          "MemAvailable": 14079500288,
+          "SwapFree": 3218927616
+        },
+        "cgroup_limits": [],
+        "available_bytes": 14079500288,
+        "lean_processes": [
+          {
+            "pid": 3504,
+            "rss": 5159030784,
+            "module": "RadenkovicGutmanSymmetricConstantReserveIdentity.lean"
+          }
+        ],
+        "aggregate_lean_rss": 5159030784
+      },
+      {
+        "seconds": 911.59,
+        "memory": {
+          "MemTotal": 16760340480,
+          "MemAvailable": 13541978112,
+          "SwapFree": 3218927616
+        },
+        "cgroup_limits": [],
+        "available_bytes": 13541978112,
+        "lean_processes": [
+          {
+            "pid": 3504,
+            "rss": 5623590912,
+            "module": "RadenkovicGutmanSymmetricConstantReserveIdentity.lean"
+          }
+        ],
+        "aggregate_lean_rss": 5623590912
+      },
+      {
+        "seconds": 921.6,
+        "memory": {
+          "MemTotal": 16760340480,
+          "MemAvailable": 15405490176,
+          "SwapFree": 3218927616
+        },
+        "cgroup_limits": [],
+        "available_bytes": 15405490176,
+        "lean_processes": [
+          {
+            "pid": 3524,
+            "rss": 26234880,
+            "module": "RadenkovicGutmanSymmetricTangentReserveIdentity.lean"
+          }
+        ],
+        "aggregate_lean_rss": 26234880
+      },
+      {
+        "seconds": 931.62,
+        "memory": {
+          "MemTotal": 16760340480,
+          "MemAvailable": 14620672000,
+          "SwapFree": 3218927616
+        },
+        "cgroup_limits": [],
+        "available_bytes": 14620672000,
+        "lean_processes": [
+          {
+            "pid": 3524,
+            "rss": 4572938240,
+            "module": "RadenkovicGutmanSymmetricTangentReserveIdentity.lean"
+          }
+        ],
+        "aggregate_lean_rss": 4572938240
+      },
+      {
+        "seconds": 941.63,
+        "memory": {
+          "MemTotal": 16760340480,
+          "MemAvailable": 13283950592,
+          "SwapFree": 3218927616
+        },
+        "cgroup_limits": [],
+        "available_bytes": 13283950592,
+        "lean_processes": [
+          {
+            "pid": 3524,
+            "rss": 5977128960,
+            "module": "RadenkovicGutmanSymmetricTangentReserveIdentity.lean"
+          }
+        ],
+        "aggregate_lean_rss": 5977128960
+      },
+      {
+        "seconds": 951.65,
+        "memory": {
+          "MemTotal": 16760340480,
+          "MemAvailable": 11557871616,
+          "SwapFree": 3218927616
+        },
+        "cgroup_limits": [],
+        "available_bytes": 11557871616,
+        "lean_processes": [
+          {
+            "pid": 3524,
+            "rss": 7696793600,
+            "module": "RadenkovicGutmanSymmetricTangentReserveIdentity.lean"
+          }
+        ],
+        "aggregate_lean_rss": 7696793600
+      },
+      {
+        "seconds": 961.66,
+        "memory": {
+          "MemTotal": 16760340480,
+          "MemAvailable": 10241409024,
+          "SwapFree": 3218927616
+        },
+        "cgroup_limits": [],
+        "available_bytes": 10241409024,
+        "lean_processes": [
+          {
+            "pid": 3524,
+            "rss": 8997027840,
+            "module": "RadenkovicGutmanSymmetricTangentReserveIdentity.lean"
+          }
+        ],
+        "aggregate_lean_rss": 8997027840
+      },
+      {
+        "seconds": 971.68,
+        "memory": {
+          "MemTotal": 16760340480,
+          "MemAvailable": 8270094336,
+          "SwapFree": 3218927616
+        },
+        "cgroup_limits": [],
+        "available_bytes": 8270094336,
+        "lean_processes": [
+          {
+            "pid": 3524,
+            "rss": 10954543104,
+            "module": "RadenkovicGutmanSymmetricTangentReserveIdentity.lean"
+          }
+        ],
+        "aggregate_lean_rss": 10954543104
+      },
+      {
+        "seconds": 981.7,
+        "memory": {
+          "MemTotal": 16760340480,
+          "MemAvailable": 8085389312,
+          "SwapFree": 3218927616
+        },
+        "cgroup_limits": [],
+        "available_bytes": 8085389312,
+        "lean_processes": [
+          {
+            "pid": 3524,
+            "rss": 11139096576,
+            "module": "RadenkovicGutmanSymmetricTangentReserveIdentity.lean"
+          }
+        ],
+        "aggregate_lean_rss": 11139096576
+      },
+      {
+        "seconds": 991.71,
+        "memory": {
+          "MemTotal": 16760340480,
+          "MemAvailable": 7985242112,
+          "SwapFree": 3218927616
+        },
+        "cgroup_limits": [],
+        "available_bytes": 7985242112,
+        "lean_processes": [
+          {
+            "pid": 3524,
+            "rss": 11227594752,
+            "module": "RadenkovicGutmanSymmetricTangentReserveIdentity.lean"
+          }
+        ],
+        "aggregate_lean_rss": 11227594752
+      },
+      {
+        "seconds": 1001.73,
+        "memory": {
+          "MemTotal": 16760340480,
+          "MemAvailable": 8139722752,
+          "SwapFree": 3218927616
+        },
+        "cgroup_limits": [],
+        "available_bytes": 8139722752,
+        "lean_processes": [
+          {
+            "pid": 3524,
+            "rss": 11077099520,
+            "module": "RadenkovicGutmanSymmetricTangentReserveIdentity.lean"
+          }
+        ],
+        "aggregate_lean_rss": 11077099520
+      },
+      {
+        "seconds": 1011.74,
+        "memory": {
+          "MemTotal": 16760340480,
+          "MemAvailable": 7801626624,
+          "SwapFree": 3218927616
+        },
+        "cgroup_limits": [],
+        "available_bytes": 7801626624,
+        "lean_processes": [
+          {
+            "pid": 3524,
+            "rss": 11405565952,
+            "module": "RadenkovicGutmanSymmetricTangentReserveIdentity.lean"
+          }
+        ],
+        "aggregate_lean_rss": 11405565952
+      },
+      {
+        "seconds": 1021.76,
+        "memory": {
+          "MemTotal": 16760340480,
+          "MemAvailable": 7258591232,
+          "SwapFree": 3218927616
+        },
+        "cgroup_limits": [],
+        "available_bytes": 7258591232,
+        "lean_processes": [
+          {
+            "pid": 3524,
+            "rss": 11915354112,
+            "module": "RadenkovicGutmanSymmetricTangentReserveIdentity.lean"
+          }
+        ],
+        "aggregate_lean_rss": 11915354112
+      },
+      {
+        "seconds": 1031.77,
+        "memory": {
+          "MemTotal": 16760340480,
+          "MemAvailable": 6536675328,
+          "SwapFree": 3218927616
+        },
+        "cgroup_limits": [],
+        "available_bytes": 6536675328,
+        "lean_processes": [
+          {
+            "pid": 3524,
+            "rss": 12624101376,
+            "module": "RadenkovicGutmanSymmetricTangentReserveIdentity.lean"
+          }
+        ],
+        "aggregate_lean_rss": 12624101376
+      },
+      {
+        "seconds": 1041.79,
+        "memory": {
+          "MemTotal": 16760340480,
+          "MemAvailable": 6088933376,
+          "SwapFree": 3218927616
+        },
+        "cgroup_limits": [],
+        "available_bytes": 6088933376,
+        "lean_processes": [
+          {
+            "pid": 3524,
+            "rss": 13074989056,
+            "module": "RadenkovicGutmanSymmetricTangentReserveIdentity.lean"
+          }
+        ],
+        "aggregate_lean_rss": 13074989056
+      },
+      {
+        "seconds": 1051.81,
+        "memory": {
+          "MemTotal": 16760340480,
+          "MemAvailable": 6519562240,
+          "SwapFree": 3218927616
+        },
+        "cgroup_limits": [],
+        "available_bytes": 6519562240,
+        "lean_processes": [
+          {
+            "pid": 3524,
+            "rss": 12560650240,
+            "module": "RadenkovicGutmanSymmetricTangentReserveIdentity.lean"
+          }
+        ],
+        "aggregate_lean_rss": 12560650240
+      },
+      {
+        "seconds": 1061.82,
+        "memory": {
+          "MemTotal": 16760340480,
+          "MemAvailable": 6472921088,
+          "SwapFree": 3218927616
+        },
+        "cgroup_limits": [],
+        "available_bytes": 6472921088,
+        "lean_processes": [
+          {
+            "pid": 3524,
+            "rss": 12561334272,
+            "module": "RadenkovicGutmanSymmetricTangentReserveIdentity.lean"
+          }
+        ],
+        "aggregate_lean_rss": 12561334272
+      },
+      {
+        "seconds": 1071.84,
+        "memory": {
+          "MemTotal": 16760340480,
+          "MemAvailable": 6465224704,
+          "SwapFree": 3218927616
+        },
+        "cgroup_limits": [],
+        "available_bytes": 6465224704,
+        "lean_processes": [
+          {
+            "pid": 3524,
+            "rss": 12563431424,
+            "module": "RadenkovicGutmanSymmetricTangentReserveIdentity.lean"
+          }
+        ],
+        "aggregate_lean_rss": 12563431424
+      },
+      {
+        "seconds": 1081.85,
+        "memory": {
+          "MemTotal": 16760340480,
+          "MemAvailable": 6205300736,
+          "SwapFree": 3218927616
+        },
+        "cgroup_limits": [],
+        "available_bytes": 6205300736,
+        "lean_processes": [
+          {
+            "pid": 3524,
+            "rss": 12833865728,
+            "module": "RadenkovicGutmanSymmetricTangentReserveIdentity.lean"
+          }
+        ],
+        "aggregate_lean_rss": 12833865728
+      },
+      {
+        "seconds": 1091.87,
+        "memory": {
+          "MemTotal": 16760340480,
+          "MemAvailable": 6205128704,
+          "SwapFree": 3218927616
+        },
+        "cgroup_limits": [],
+        "available_bytes": 6205128704,
+        "lean_processes": [
+          {
+            "pid": 3524,
+            "rss": 12833865728,
+            "module": "RadenkovicGutmanSymmetricTangentReserveIdentity.lean"
+          }
+        ],
+        "aggregate_lean_rss": 12833865728
+      },
+      {
+        "seconds": 1101.88,
+        "memory": {
+          "MemTotal": 16760340480,
+          "MemAvailable": 6166646784,
+          "SwapFree": 3218927616
+        },
+        "cgroup_limits": [],
+        "available_bytes": 6166646784,
+        "lean_processes": [
+          {
+            "pid": 3524,
+            "rss": 12870344704,
+            "module": "RadenkovicGutmanSymmetricTangentReserveIdentity.lean"
+          }
+        ],
+        "aggregate_lean_rss": 12870344704
+      },
+      {
+        "seconds": 1111.9,
+        "memory": {
+          "MemTotal": 16760340480,
+          "MemAvailable": 6614896640,
+          "SwapFree": 3218927616
+        },
+        "cgroup_limits": [],
+        "available_bytes": 6614896640,
+        "lean_processes": [
+          {
+            "pid": 3524,
+            "rss": 12425662464,
+            "module": "RadenkovicGutmanSymmetricTangentReserveIdentity.lean"
+          }
+        ],
+        "aggregate_lean_rss": 12425662464
+      },
+      {
+        "seconds": 1121.91,
+        "memory": {
+          "MemTotal": 16760340480,
+          "MemAvailable": 6631743488,
+          "SwapFree": 3218927616
+        },
+        "cgroup_limits": [],
+        "available_bytes": 6631743488,
+        "lean_processes": [
+          {
+            "pid": 3524,
+            "rss": 12404092928,
+            "module": "RadenkovicGutmanSymmetricTangentReserveIdentity.lean"
+          }
+        ],
+        "aggregate_lean_rss": 12404092928
+      },
+      {
+        "seconds": 1131.93,
+        "memory": {
+          "MemTotal": 16760340480,
+          "MemAvailable": 6367756288,
+          "SwapFree": 3218927616
+        },
+        "cgroup_limits": [],
+        "available_bytes": 6367756288,
+        "lean_processes": [
+          {
+            "pid": 3524,
+            "rss": 12666630144,
+            "module": "RadenkovicGutmanSymmetricTangentReserveIdentity.lean"
+          }
+        ],
+        "aggregate_lean_rss": 12666630144
+      },
+      {
+        "seconds": 1141.95,
+        "memory": {
+          "MemTotal": 16760340480,
+          "MemAvailable": 6082768896,
+          "SwapFree": 3218927616
+        },
+        "cgroup_limits": [],
+        "available_bytes": 6082768896,
+        "lean_processes": [
+          {
+            "pid": 3524,
+            "rss": 12960673792,
+            "module": "RadenkovicGutmanSymmetricTangentReserveIdentity.lean"
+          }
+        ],
+        "aggregate_lean_rss": 12960673792
+      },
+      {
+        "seconds": 1151.96,
+        "memory": {
+          "MemTotal": 16760340480,
+          "MemAvailable": 5175115776,
+          "SwapFree": 3109613568
+        },
+        "cgroup_limits": [],
+        "available_bytes": 5175115776,
+        "lean_processes": [
+          {
+            "pid": 3524,
+            "rss": 13985538048,
+            "module": "RadenkovicGutmanSymmetricTangentReserveIdentity.lean"
+          }
+        ],
+        "aggregate_lean_rss": 13985538048
+      },
+      {
+        "seconds": 1161.98,
+        "memory": {
+          "MemTotal": 16760340480,
+          "MemAvailable": 5095026688,
+          "SwapFree": 2113490944
+        },
+        "cgroup_limits": [],
+        "available_bytes": 5095026688,
+        "lean_processes": [
+          {
+            "pid": 3524,
+            "rss": 14104559616,
+            "module": "RadenkovicGutmanSymmetricTangentReserveIdentity.lean"
+          }
+        ],
+        "aggregate_lean_rss": 14104559616
+      },
+      {
+        "seconds": 1172.0,
+        "memory": {
+          "MemTotal": 16760340480,
+          "MemAvailable": 5156257792,
+          "SwapFree": 1033519104
+        },
+        "cgroup_limits": [],
+        "available_bytes": 5156257792,
+        "lean_processes": [
+          {
+            "pid": 3524,
+            "rss": 14030049280,
+            "module": "RadenkovicGutmanSymmetricTangentReserveIdentity.lean"
+          }
+        ],
+        "aggregate_lean_rss": 14030049280
+      },
+      {
+        "seconds": 1182.02,
+        "memory": {
+          "MemTotal": 16760340480,
+          "MemAvailable": 5088563200,
+          "SwapFree": 219058176
+        },
+        "cgroup_limits": [],
+        "available_bytes": 5088563200,
+        "lean_processes": [
+          {
+            "pid": 3524,
+            "rss": 14111838208,
+            "module": "RadenkovicGutmanSymmetricTangentReserveIdentity.lean"
+          }
+        ],
+        "aggregate_lean_rss": 14111838208
+      },
+      {
+        "seconds": 1192.03,
+        "memory": {
+          "MemTotal": 16760340480,
+          "MemAvailable": 4484403200,
+          "SwapFree": 28672
+        },
+        "cgroup_limits": [],
+        "available_bytes": 4484403200,
+        "lean_processes": [
+          {
+            "pid": 3524,
+            "rss": 14855507968,
+            "module": "RadenkovicGutmanSymmetricTangentReserveIdentity.lean"
+          }
+        ],
+        "aggregate_lean_rss": 14855507968
+      },
+      {
+        "seconds": 1202.06,
+        "memory": {
+          "MemTotal": 16760340480,
+          "MemAvailable": 3766632448,
+          "SwapFree": 7553024
+        },
+        "cgroup_limits": [],
+        "available_bytes": 3766632448,
+        "lean_processes": [
+          {
+            "pid": 3524,
+            "rss": 15130259456,
+            "module": "RadenkovicGutmanSymmetricTangentReserveIdentity.lean"
+          }
+        ],
+        "aggregate_lean_rss": 15130259456
+      },
+      {
+        "seconds": 1212.07,
+        "memory": {
+          "MemTotal": 16760340480,
+          "MemAvailable": 4236853248,
+          "SwapFree": 4751360
+        },
+        "cgroup_limits": [],
+        "available_bytes": 4236853248,
+        "lean_processes": [
+          {
+            "pid": 3524,
+            "rss": 14612832256,
+            "module": "RadenkovicGutmanSymmetricTangentReserveIdentity.lean"
+          }
+        ],
+        "aggregate_lean_rss": 14612832256
+      },
+      {
+        "seconds": 1222.09,
+        "memory": {
+          "MemTotal": 16760340480,
+          "MemAvailable": 9178689536,
+          "SwapFree": 180670464
+        },
+        "cgroup_limits": [],
+        "available_bytes": 9178689536,
+        "lean_processes": [
+          {
+            "pid": 3524,
+            "rss": 8925954048,
+            "module": "RadenkovicGutmanSymmetricTangentReserveIdentity.lean"
+          }
+        ],
+        "aggregate_lean_rss": 8925954048
+      },
+      {
+        "seconds": 1232.11,
+        "memory": {
+          "MemTotal": 16760340480,
+          "MemAvailable": 8587227136,
+          "SwapFree": 711323648
+        },
+        "cgroup_limits": [],
+        "available_bytes": 8587227136,
+        "lean_processes": [
+          {
+            "pid": 3524,
+            "rss": 9515118592,
+            "module": "RadenkovicGutmanSymmetricTangentReserveIdentity.lean"
+          }
+        ],
+        "aggregate_lean_rss": 9515118592
+      },
+      {
+        "seconds": 1242.12,
+        "memory": {
+          "MemTotal": 16760340480,
+          "MemAvailable": 7870922752,
+          "SwapFree": 1305604096
+        },
+        "cgroup_limits": [],
+        "available_bytes": 7870922752,
+        "lean_processes": [
+          {
+            "pid": 3524,
+            "rss": 10243174400,
+            "module": "RadenkovicGutmanSymmetricTangentReserveIdentity.lean"
+          }
+        ],
+        "aggregate_lean_rss": 10243174400
+      },
+      {
+        "seconds": 1252.14,
+        "memory": {
+          "MemTotal": 16760340480,
+          "MemAvailable": 7191732224,
+          "SwapFree": 1610612736
+        },
+        "cgroup_limits": [],
+        "available_bytes": 7191732224,
+        "lean_processes": [
+          {
+            "pid": 3524,
+            "rss": 10914652160,
+            "module": "RadenkovicGutmanSymmetricTangentReserveIdentity.lean"
+          }
+        ],
+        "aggregate_lean_rss": 10914652160
+      },
+      {
+        "seconds": 1262.16,
+        "memory": {
+          "MemTotal": 16760340480,
+          "MemAvailable": 6584479744,
+          "SwapFree": 1610616832
+        },
+        "cgroup_limits": [],
+        "available_bytes": 6584479744,
+        "lean_processes": [
+          {
+            "pid": 3524,
+            "rss": 11559972864,
+            "module": "RadenkovicGutmanSymmetricTangentReserveIdentity.lean"
+          }
+        ],
+        "aggregate_lean_rss": 11559972864
+      },
+      {
+        "seconds": 1272.17,
+        "memory": {
+          "MemTotal": 16760340480,
+          "MemAvailable": 6128930816,
+          "SwapFree": 1610616832
+        },
+        "cgroup_limits": [],
+        "available_bytes": 6128930816,
+        "lean_processes": [
+          {
+            "pid": 3524,
+            "rss": 12015403008,
+            "module": "RadenkovicGutmanSymmetricTangentReserveIdentity.lean"
+          }
+        ],
+        "aggregate_lean_rss": 12015403008
+      },
+      {
+        "seconds": 1282.19,
+        "memory": {
+          "MemTotal": 16760340480,
+          "MemAvailable": 6053969920,
+          "SwapFree": 1610616832
+        },
+        "cgroup_limits": [],
+        "available_bytes": 6053969920,
+        "lean_processes": [
+          {
+            "pid": 3524,
+            "rss": 12089032704,
+            "module": "RadenkovicGutmanSymmetricTangentReserveIdentity.lean"
+          }
+        ],
+        "aggregate_lean_rss": 12089032704
+      },
+      {
+        "seconds": 1292.2,
+        "memory": {
+          "MemTotal": 16760340480,
+          "MemAvailable": 6027251712,
+          "SwapFree": 1610616832
+        },
+        "cgroup_limits": [],
+        "available_bytes": 6027251712,
+        "lean_processes": [
+          {
+            "pid": 3524,
+            "rss": 12142735360,
+            "module": "RadenkovicGutmanSymmetricTangentReserveIdentity.lean"
+          }
+        ],
+        "aggregate_lean_rss": 12142735360
+      },
+      {
+        "seconds": 1302.22,
+        "memory": {
+          "MemTotal": 16760340480,
+          "MemAvailable": 6024105984,
+          "SwapFree": 1610616832
+        },
+        "cgroup_limits": [],
+        "available_bytes": 6024105984,
+        "lean_processes": [
+          {
+            "pid": 3524,
+            "rss": 12142735360,
+            "module": "RadenkovicGutmanSymmetricTangentReserveIdentity.lean"
+          }
+        ],
+        "aggregate_lean_rss": 12142735360
+      },
+      {
+        "seconds": 1312.24,
+        "memory": {
+          "MemTotal": 16760340480,
+          "MemAvailable": 6025281536,
+          "SwapFree": 1610616832
+        },
+        "cgroup_limits": [],
+        "available_bytes": 6025281536,
+        "lean_processes": [
+          {
+            "pid": 3524,
+            "rss": 12142735360,
+            "module": "RadenkovicGutmanSymmetricTangentReserveIdentity.lean"
+          }
+        ],
+        "aggregate_lean_rss": 12142735360
+      },
+      {
+        "seconds": 1322.25,
+        "memory": {
+          "MemTotal": 16760340480,
+          "MemAvailable": 6025285632,
+          "SwapFree": 1610616832
+        },
+        "cgroup_limits": [],
+        "available_bytes": 6025285632,
+        "lean_processes": [
+          {
+            "pid": 3524,
+            "rss": 12142735360,
+            "module": "RadenkovicGutmanSymmetricTangentReserveIdentity.lean"
+          }
+        ],
+        "aggregate_lean_rss": 12142735360
+      },
+      {
+        "seconds": 1332.27,
+        "memory": {
+          "MemTotal": 16760340480,
+          "MemAvailable": 6025138176,
+          "SwapFree": 1610620928
+        },
+        "cgroup_limits": [],
+        "available_bytes": 6025138176,
+        "lean_processes": [
+          {
+            "pid": 3524,
+            "rss": 12142735360,
+            "module": "RadenkovicGutmanSymmetricTangentReserveIdentity.lean"
+          }
+        ],
+        "aggregate_lean_rss": 12142735360
+      },
+      {
+        "seconds": 1342.28,
+        "memory": {
+          "MemTotal": 16760340480,
+          "MemAvailable": 6016720896,
+          "SwapFree": 1610620928
+        },
+        "cgroup_limits": [],
+        "available_bytes": 6016720896,
+        "lean_processes": [
+          {
+            "pid": 3524,
+            "rss": 12147609600,
+            "module": "RadenkovicGutmanSymmetricTangentReserveIdentity.lean"
+          }
+        ],
+        "aggregate_lean_rss": 12147609600
+      },
+      {
+        "seconds": 1352.3,
+        "memory": {
+          "MemTotal": 16760340480,
+          "MemAvailable": 6014935040,
+          "SwapFree": 1610620928
+        },
+        "cgroup_limits": [],
+        "available_bytes": 6014935040,
+        "lean_processes": [
+          {
+            "pid": 3524,
+            "rss": 12147609600,
+            "module": "RadenkovicGutmanSymmetricTangentReserveIdentity.lean"
+          }
+        ],
+        "aggregate_lean_rss": 12147609600
+      },
+      {
+        "seconds": 1362.32,
+        "memory": {
+          "MemTotal": 16760340480,
+          "MemAvailable": 6013984768,
+          "SwapFree": 1610661888
+        },
+        "cgroup_limits": [],
+        "available_bytes": 6013984768,
+        "lean_processes": [
+          {
+            "pid": 3524,
+            "rss": 12147609600,
+            "module": "RadenkovicGutmanSymmetricTangentReserveIdentity.lean"
+          }
+        ],
+        "aggregate_lean_rss": 12147609600
+      },
+      {
+        "seconds": 1372.34,
+        "memory": {
+          "MemTotal": 16760340480,
+          "MemAvailable": 6014189568,
+          "SwapFree": 1610661888
+        },
+        "cgroup_limits": [],
+        "available_bytes": 6014189568,
+        "lean_processes": [
+          {
+            "pid": 3524,
+            "rss": 12147609600,
+            "module": "RadenkovicGutmanSymmetricTangentReserveIdentity.lean"
+          }
+        ],
+        "aggregate_lean_rss": 12147609600
+      },
+      {
+        "seconds": 1382.36,
+        "memory": {
+          "MemTotal": 16760340480,
+          "MemAvailable": 6013853696,
+          "SwapFree": 1610661888
+        },
+        "cgroup_limits": [],
+        "available_bytes": 6013853696,
+        "lean_processes": [
+          {
+            "pid": 3524,
+            "rss": 12147609600,
+            "module": "RadenkovicGutmanSymmetricTangentReserveIdentity.lean"
+          }
+        ],
+        "aggregate_lean_rss": 12147609600
+      },
+      {
+        "seconds": 1392.37,
+        "memory": {
+          "MemTotal": 16760340480,
+          "MemAvailable": 5979205632,
+          "SwapFree": 1610661888
+        },
+        "cgroup_limits": [],
+        "available_bytes": 5979205632,
+        "lean_processes": [
+          {
+            "pid": 3524,
+            "rss": 12191010816,
+            "module": "RadenkovicGutmanSymmetricTangentReserveIdentity.lean"
+          }
+        ],
+        "aggregate_lean_rss": 12191010816
+      },
+      {
+        "seconds": 1402.39,
+        "memory": {
+          "MemTotal": 16760340480,
+          "MemAvailable": 5859786752,
+          "SwapFree": 1610661888
+        },
+        "cgroup_limits": [],
+        "available_bytes": 5859786752,
+        "lean_processes": [
+          {
+            "pid": 3524,
+            "rss": 12309635072,
+            "module": "RadenkovicGutmanSymmetricTangentReserveIdentity.lean"
+          }
+        ],
+        "aggregate_lean_rss": 12309635072
+      },
+      {
+        "seconds": 1412.41,
+        "memory": {
+          "MemTotal": 16760340480,
+          "MemAvailable": 5836075008,
+          "SwapFree": 1610674176
+        },
+        "cgroup_limits": [],
+        "available_bytes": 5836075008,
+        "lean_processes": [
+          {
+            "pid": 3524,
+            "rss": 12333613056,
+            "module": "RadenkovicGutmanSymmetricTangentReserveIdentity.lean"
+          }
+        ],
+        "aggregate_lean_rss": 12333613056
+      },
+      {
+        "seconds": 1422.42,
+        "memory": {
+          "MemTotal": 16760340480,
+          "MemAvailable": 5812559872,
+          "SwapFree": 1610731520
+        },
+        "cgroup_limits": [],
+        "available_bytes": 5812559872,
+        "lean_processes": [
+          {
+            "pid": 3524,
+            "rss": 12359704576,
+            "module": "RadenkovicGutmanSymmetricTangentReserveIdentity.lean"
+          }
+        ],
+        "aggregate_lean_rss": 12359704576
+      },
+      {
+        "seconds": 1432.44,
+        "memory": {
+          "MemTotal": 16760340480,
+          "MemAvailable": 5775601664,
+          "SwapFree": 1610731520
+        },
+        "cgroup_limits": [],
+        "available_bytes": 5775601664,
+        "lean_processes": [
+          {
+            "pid": 3524,
+            "rss": 12388790272,
+            "module": "RadenkovicGutmanSymmetricTangentReserveIdentity.lean"
+          }
+        ],
+        "aggregate_lean_rss": 12388790272
+      },
+      {
+        "seconds": 1442.45,
+        "memory": {
+          "MemTotal": 16760340480,
+          "MemAvailable": 5449043968,
+          "SwapFree": 1610731520
+        },
+        "cgroup_limits": [],
+        "available_bytes": 5449043968,
+        "lean_processes": [
+          {
+            "pid": 3524,
+            "rss": 12667609088,
+            "module": "RadenkovicGutmanSymmetricTangentReserveIdentity.lean"
+          }
+        ],
+        "aggregate_lean_rss": 12667609088
+      },
+      {
+        "seconds": 1452.47,
+        "memory": {
+          "MemTotal": 16760340480,
+          "MemAvailable": 4869206016,
+          "SwapFree": 1610731520
+        },
+        "cgroup_limits": [],
+        "available_bytes": 4869206016,
+        "lean_processes": [
+          {
+            "pid": 3524,
+            "rss": 13349568512,
+            "module": "RadenkovicGutmanSymmetricTangentReserveIdentity.lean"
+          }
+        ],
+        "aggregate_lean_rss": 13349568512
+      },
+      {
+        "seconds": 1462.49,
+        "memory": {
+          "MemTotal": 16760340480,
+          "MemAvailable": 4940836864,
+          "SwapFree": 1610731520
+        },
+        "cgroup_limits": [],
+        "available_bytes": 4940836864,
+        "lean_processes": [
+          {
+            "pid": 3524,
+            "rss": 12269285376,
+            "module": "RadenkovicGutmanSymmetricTangentReserveIdentity.lean"
+          }
+        ],
+        "aggregate_lean_rss": 12269285376
+      },
+      {
+        "seconds": 1472.5,
+        "memory": {
+          "MemTotal": 16760340480,
+          "MemAvailable": 15506243584,
+          "SwapFree": 3080761344
+        },
+        "cgroup_limits": [],
+        "available_bytes": 15506243584,
+        "lean_processes": [
+          {
+            "pid": 3585,
+            "rss": 3549638656,
+            "module": "RadenkovicGutmanLowStripReserves.lean"
+          }
+        ],
+        "aggregate_lean_rss": 3549638656
+      }
+    ],
+    "mathlib_and_lean_flags_unchanged": true
+  },
+  "metadata_audit_complete": false,
+  "original_degree_ge46_endpoint_complete": false,
+  "degree_one_large_complete": false
+}

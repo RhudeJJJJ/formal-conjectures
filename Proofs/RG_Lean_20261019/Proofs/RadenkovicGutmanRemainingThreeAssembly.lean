@@ -1,7 +1,7 @@
 /- Copyright 2026 Jonas J. Gebendorfer. Apache 2.0. -/
 import Proofs.RadenkovicGutmanOriginalDegreeGeFortysix
-import Proofs.RadenkovicGutmanOriginalSmallGeFour
-import Proofs.RadenkovicGutmanOriginalDegreeOneSmall
+import Proofs.RadenkovicGutmanCompactFiniteOriginalSmallGeFour
+import Proofs.RadenkovicGutmanCompactFiniteOriginalDegreeOneSmall
 import Proofs.RadenkovicGutmanOriginalDegreeOneLarge
 
 /-! Assembly supplying four original Input families.

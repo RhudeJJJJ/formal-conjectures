@@ -1,0 +1,109 @@
+name: RG exact original degree-one class dispatcher
+
+on:
+  push:
+    branches: [rg-degree-one-large-20261103]
+    paths: ['.github/workflows/rg-d1-class-dispatch-20261103.yml']
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  check:
+    if: github.repository == 'RhudeJJJJ/formal-conjectures'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          persist-credentials: false
+      - name: Bind the unchanged dispatcher source
+        run: |
+          python3 - <<'PY'
+          import hashlib, pathlib
+          source = pathlib.Path('Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneClassDispatch.lean')
+          assert hashlib.sha256(source.read_bytes()).hexdigest() == '28ee73e3d42f6a0a71c22b98874ca0028dace7b6461f225c89a3e5a0006f5bdb'
+          base = pathlib.Path('ci/rg_reusable_analytic_kernel_base_complete_scope_capsule.json')
+          assert hashlib.sha256(base.read_bytes()).hexdigest() == 'ecec5dc115eca93fdfadf72072bfb9d13c85c5d36191b31738d4295d9305d6a3'
+          PY
+      - name: Install the project toolchain
+        run: |
+          set -o pipefail
+          curl -sSfL https://github.com/leanprover/elan/releases/download/v1.4.2/elan-x86_64-unknown-linux-gnu.tar.gz | tar xz
+          ./elan-init -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Materialize the exact dependency lock
+        run: python3 -B ci/rg_dependencies.py
+      - name: Fetch the required Mathlib cache
+        run: |
+          python3 - <<'PY'
+          import pathlib, re, subprocess
+          root = pathlib.Path('Proofs/RG_Lean_20261019')
+          seen, external = set(), set()
+          def visit(name):
+              if name in seen:
+                  return
+              seen.add(name)
+              source = (root / (name.replace('.', '/') + '.lean')).read_text()
+              for dep in re.findall(r'^\s*(?:public\s+)?import\s+([\w.]+)', source, re.M):
+                  if dep.startswith('Proofs.'):
+                      visit(dep)
+                  elif not dep.startswith(('Lean.', 'Init.', 'Std.')) and dep not in ('Lean', 'Init', 'Std'):
+                      external.add(dep)
+          visit('Proofs.RadenkovicGutmanDegreeOneClassDispatch')
+          subprocess.run(['lake', 'exe', 'cache', 'get', *sorted(external)], check=True)
+          PY
+      - name: Restore the available audited analytic base
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 -B ci/rg_restore_complete_scope.py --manifest ci/rg_reusable_analytic_kernel_base_complete_scope_capsule.json --build-directory Proofs/RG_Lean_20261019/build/extension
+      - name: Require exactly one fresh module in the original 58-module scope
+        run: |
+          python3 -B ci/rg_restore_with_kernel_fallback.py \
+            --plan ci/rg_empty_restore_plan.json \
+            --build-directory Proofs/RG_Lean_20261019/build/extension \
+            --endpoint Proofs.RadenkovicGutmanDegreeOneClassDispatch \
+            --max-fresh 1 --preflight-only
+          python3 - <<'PY'
+          import json, pathlib
+          p = pathlib.Path('Proofs/RG_Lean_20261019/build/extension/bounded_kernel_fallback_plan.json')
+          report = json.loads(p.read_bytes())
+          assert report['required_modules'] == 58
+          assert report['fresh_modules'] == ['Proofs.RadenkovicGutmanDegreeOneClassDispatch']
+          PY
+      - name: Check the existing class-dispatch proof in the kernel
+        shell: bash
+        run: |
+          set -o pipefail
+          python3 -B ci/rg_observed_kernel_verify.py --memory-reserve-mib 2048 -- \
+            --mathlib-project "$GITHUB_WORKSPACE" \
+            --endpoint Proofs.RadenkovicGutmanDegreeOneClassDispatch \
+            --workers 1 --module-timeout 600 --resume | python3 -B ci/rg_compact_ci_output.py
+      - name: Bind the fresh original dispatcher receipt
+        run: |
+          python3 - <<'PY'
+          import json, pathlib
+          root = pathlib.Path('Proofs/RG_Lean_20261019/build/extension')
+          receipt = json.loads((root / 'receipt.json').read_bytes())
+          name = 'Proofs.RadenkovicGutmanDegreeOneClassDispatch'
+          assert receipt['endpoints'] == [name] and len(receipt['modules']) == 58
+          fresh = {n: r for n, r in receipt['modules'].items() if r['mode'] == 'FRESH_KERNEL_EXPORT'}
+          assert set(fresh) == {name}
+          row = fresh[name]
+          assert row['source_sha256'] == '28ee73e3d42f6a0a71c22b98874ca0028dace7b6461f225c89a3e5a0006f5bdb'
+          assert row['source_closure_sha256'] == 'd34d948da9750efafb4d5828f96e24c8684038e527656bed37c636dfcef4113b'
+          assert row['axiom_profiles'] and all(set(p) <= {'propext', 'Classical.choice', 'Quot.sound'} for p in row['axiom_profiles'])
+          print('EXACT_DISPATCHER_KERNEL_RECEIPT', json.dumps(row, separators=(',', ':')))
+          PY
+      - name: Retain complete fresh exports and diagnostics
+        if: always()
+        run: python3 -B ci/rg_collect_fresh_exports.py --build-directory Proofs/RG_Lean_20261019/build/extension --output-directory Proofs/RG_Lean_20261019/build/fresh_exports
+      - name: Retain original dispatcher evidence
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: rg-d1-class-dispatch-20261103-${{ github.run_id }}
+          path: Proofs/RG_Lean_20261019/build/fresh_exports
+          retention-days: 90
+

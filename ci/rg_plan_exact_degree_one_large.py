@@ -203,8 +203,12 @@ def artifact_metadata(descriptor):
     }
 
 
-def plan(endpoint, hashes, dependencies, closures, groups, metadata=artifact_metadata):
-    remaining = set(hashes) - FRESH
+def plan(endpoint, hashes, dependencies, closures, groups, metadata=artifact_metadata,
+         fresh_allowlist=None):
+    allowed_fresh = FRESH if fresh_allowlist is None else set(fresh_allowlist)
+    assert all(re.fullmatch(r"Proofs(?:\.[A-Za-z0-9_]+)+", name)
+               for name in allowed_fresh)
+    remaining = set(hashes) - allowed_fresh
     selected, unavailable = [], []
     candidates = dict(groups)
     while remaining and candidates:
@@ -235,13 +239,13 @@ def plan(endpoint, hashes, dependencies, closures, groups, metadata=artifact_met
             "manifests": {p: group["manifests"][p] for p in sorted(paths)},
         })
         remaining.difference_update(names)
-    fresh = sorted(set(hashes) & FRESH)
+    fresh = sorted(set(hashes) & allowed_fresh)
     report = {
         "kind": "EXACT_SOURCE_BOUND_COMPRESSED_RESTORE_PLAN",
         "endpoint": endpoint, "mathlib": PIN, "leancert": LC, "lean_version": "4.33.1",
         "required_modules": len(hashes), "source_sha256": hashes,
         "source_closure_sha256": closures, "source_dependencies": dependencies,
-        "fresh_allowlist": sorted(FRESH), "fresh_modules": fresh,
+        "fresh_allowlist": sorted(allowed_fresh), "fresh_modules": fresh,
         "missing_original_modules": sorted(remaining),
         "selected_archives": selected, "unavailable_candidates": unavailable,
         "complete_original_object_coverage": not remaining,

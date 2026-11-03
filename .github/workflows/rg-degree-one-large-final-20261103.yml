@@ -24,6 +24,8 @@ jobs:
         run: python3 -B ci/rg_prepare_finite_runner_storage.py --required-free-gib 45
       - name: Reproduce the already checked shared class sources
         run: |
+          python3 -B ci/rg_materialize_compact_closed_families.py --endpoint Proofs.RadenkovicGutmanCompactFiniteOriginalSmallGeFour --max-raw-mib 512
+          python3 -B ci/rg_materialize_compact_closed_families.py --endpoint Proofs.RadenkovicGutmanCompactFiniteOriginalDegreeOneSmall --max-raw-mib 512
           python3 - <<'PY'
           import json, subprocess, sys
           plan = json.load(open('ci/rg_shared_arm_materialization_plan.json'))
@@ -107,13 +109,19 @@ jobs:
           python3 -B ci/rg_collect_fresh_exports.py \
             --build-directory Proofs/RG_Lean_20261019/build/extension \
             --output-directory Proofs/RG_Lean_20261019/build/fresh_exports
-      - name: Preserve original evidence and measured resource results
+      - name: Preserve complete fresh proof exports in the standard archive layout
         if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:
           name: rg-degree-one-large-final-${{ github.run_id }}
+          path: Proofs/RG_Lean_20261019/build/fresh_exports
+          retention-days: 90
+      - name: Preserve original evidence and measured resource results separately
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: rg-degree-one-large-final-evidence-${{ github.run_id }}
           path: |
-            Proofs/RG_Lean_20261019/build/fresh_exports
             Proofs/RG_Lean_20261019/build/exact_degree_one_plan.json
             Proofs/RG_Lean_20261019/build/extension/bounded_kernel_fallback_plan.json
             rg-proofstore-setup.json

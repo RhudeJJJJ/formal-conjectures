@@ -50,7 +50,9 @@ def main():
     assert origin["numeric_spec_sha256"] == NUMERIC_SPEC_SHA
     assert origin["source_endpoint_closure_sha256"] == numeric["source_endpoint_closure_sha256"] == OLD_CLOSURE
     assert numeric["required_modules"] == 33472
-    assert numeric["scheduled_numeric_modules"] == 4567
+    scheduled = numeric["scheduled_numeric_modules"]
+    assert isinstance(scheduled, list)
+    assert len(scheduled) == len(set(scheduled)) == 4567
     assert origin["numeric_jobs"] == len(numeric["jobs"]) == 349
     assert spec["current_required_modules"] == 33509
     assert spec["current_endpoint_source_sha256"] == numeric["source_endpoint_sha256"]
@@ -75,7 +77,7 @@ def main():
         for name, row in expected.items():
             assert hashes[name] == row["source_sha256"], ("Changed numeric source", name)
             assert closures[name] == row["source_closure_sha256"], ("Changed numeric closure", name)
-    assert len(expected_names) == 4567
+    assert expected_names == set(scheduled) and len(expected_names) == 4567
     sealed_json(numeric["head_plan"], numeric["head_plan_sha256"])
     head_plan, heads = load_plan(ROOT / numeric["head_plan"])
     assert head_plan["scope"] == "original_long_heads"

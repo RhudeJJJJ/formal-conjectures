@@ -1,0 +1,240 @@
+{
+  "kind": "REAL_WORKFLOW_INTEGRATION_PROBE_NOT_COMPARATIVE_MODEL_EXPERIMENT",
+  "created_at": "2026-11-03T13:16:37.036588+00:00",
+  "action": "Update the existing WOWII161 PR body to report complete mechanical preflight for the exact final package commit",
+  "destination": "https://github.com/google-deepmind/formal-conjectures/pull/7787",
+  "target": {
+    "assertion_id": "WOWII161-full-mechanical-preflight-passed",
+    "version": "b87343905d7254437adeb5692380b1691f84d2e5",
+    "execution_context": {
+      "kind": "GitHub-Actions-Palomar-full-preflight",
+      "pipeline_commit": "14aa8d6b3c2f14a8540605e37144560b9a00e7e7"
+    },
+    "scope": {
+      "repository": "RhudeJJJJ/formal-conjectures",
+      "project_path": "repository-root",
+      "comparator_config_path": "comparator.json"
+    }
+  },
+  "checks": {
+    "old_commit_cannot_release_new_commit_status": {
+      "action": "report_verified",
+      "allowed": false,
+      "effect": "blocked",
+      "support": {
+        "target": {
+          "assertion_id": "WOWII161-full-mechanical-preflight-passed",
+          "version": "b87343905d7254437adeb5692380b1691f84d2e5",
+          "execution_context": {
+            "kind": "GitHub-Actions-Palomar-full-preflight",
+            "pipeline_commit": "14aa8d6b3c2f14a8540605e37144560b9a00e7e7"
+          },
+          "scope": {
+            "repository": "RhudeJJJJ/formal-conjectures",
+            "project_path": "repository-root",
+            "comparator_config_path": "comparator.json"
+          }
+        },
+        "as_of": "2026-11-03T13:16:37.036588+00:00",
+        "status": "not_verified",
+        "reason": "no_delivered_registered_exact_target_receipt",
+        "supporting_receipts": [],
+        "matching_history": [],
+        "excluded": [
+          {
+            "source_id": "github-run-41640010781",
+            "source_version": "12f37d66e18b1878e157e86e20d7a99792b2dfb9",
+            "reason": "target_mismatch",
+            "fields": [
+              "version"
+            ]
+          }
+        ],
+        "missing_registered_sources": [],
+        "source_semantic_truth_checked": false,
+        "source_contract_completeness_independently_checked": false
+      },
+      "executed": false,
+      "authorization_granted": false,
+      "scope_note": "identity/chronology/integrity precondition, not scientific verification"
+    },
+    "matching_report_releases_exact_preflight_status": {
+      "action": "report_verified",
+      "allowed": true,
+      "effect": "eligible",
+      "support": {
+        "target": {
+          "assertion_id": "WOWII161-full-mechanical-preflight-passed",
+          "version": "b87343905d7254437adeb5692380b1691f84d2e5",
+          "execution_context": {
+            "kind": "GitHub-Actions-Palomar-full-preflight",
+            "pipeline_commit": "14aa8d6b3c2f14a8540605e37144560b9a00e7e7"
+          },
+          "scope": {
+            "repository": "RhudeJJJJ/formal-conjectures",
+            "project_path": "repository-root",
+            "comparator_config_path": "comparator.json"
+          }
+        },
+        "as_of": "2026-11-03T13:16:37.036588+00:00",
+        "status": "verified",
+        "reason": "latest_exact_target_receipt_verified",
+        "supporting_receipts": [
+          {
+            "source_id": "github-run-41641782932",
+            "source_version": "b87343905d7254437adeb5692380b1691f84d2e5",
+            "evidence_id": "github-run-41641782932",
+            "state": "verified",
+            "observed_at": "2026-11-03T13:16:00Z",
+            "source_sha256": "67afa0a5c0be19115a7237ed3452a4354c5be42de8d7f904096cc1b15c8a714b"
+          }
+        ],
+        "matching_history": [
+          {
+            "source_id": "github-run-41641782932",
+            "source_version": "b87343905d7254437adeb5692380b1691f84d2e5",
+            "evidence_id": "github-run-41641782932",
+            "state": "verified",
+            "observed_at": "2026-11-03T13:16:00Z",
+            "source_sha256": "67afa0a5c0be19115a7237ed3452a4354c5be42de8d7f904096cc1b15c8a714b"
+          }
+        ],
+        "excluded": [
+          {
+            "source_id": "github-run-41640010781",
+            "source_version": "12f37d66e18b1878e157e86e20d7a99792b2dfb9",
+            "reason": "target_mismatch",
+            "fields": [
+              "version"
+            ]
+          }
+        ],
+        "missing_registered_sources": [],
+        "source_semantic_truth_checked": false,
+        "source_contract_completeness_independently_checked": false
+      },
+      "executed": false,
+      "authorization_granted": false,
+      "scope_note": "identity/chronology/integrity precondition, not scientific verification"
+    },
+    "missing_registered_update_blocks_release": {
+      "action": "report_verified",
+      "allowed": false,
+      "effect": "blocked",
+      "support": {
+        "target": {
+          "assertion_id": "WOWII161-full-mechanical-preflight-passed",
+          "version": "b87343905d7254437adeb5692380b1691f84d2e5",
+          "execution_context": {
+            "kind": "GitHub-Actions-Palomar-full-preflight",
+            "pipeline_commit": "14aa8d6b3c2f14a8540605e37144560b9a00e7e7"
+          },
+          "scope": {
+            "repository": "RhudeJJJJ/formal-conjectures",
+            "project_path": "repository-root",
+            "comparator_config_path": "comparator.json"
+          }
+        },
+        "as_of": "2026-11-03T13:16:37.036588+00:00",
+        "status": "incomplete",
+        "reason": "registered_source_not_delivered",
+        "supporting_receipts": [],
+        "matching_history": [],
+        "excluded": [
+          {
+            "source_id": "github-run-41640010781",
+            "source_version": "12f37d66e18b1878e157e86e20d7a99792b2dfb9",
+            "reason": "target_mismatch",
+            "fields": [
+              "version"
+            ]
+          }
+        ],
+        "missing_registered_sources": [
+          "[\"github-run-41641782932\",\"b87343905d7254437adeb5692380b1691f84d2e5\"]"
+        ],
+        "source_semantic_truth_checked": false,
+        "source_contract_completeness_independently_checked": false
+      },
+      "executed": false,
+      "authorization_granted": false,
+      "scope_note": "identity/chronology/integrity precondition, not scientific verification"
+    },
+    "preflight_is_not_registry_registration": {
+      "action": "report_verified",
+      "allowed": false,
+      "effect": "blocked",
+      "support": {
+        "target": {
+          "assertion_id": "WOWII161-Palomar-registry-registration-completed",
+          "version": "b87343905d7254437adeb5692380b1691f84d2e5",
+          "execution_context": {
+            "kind": "GitHub-Actions-Palomar-full-preflight",
+            "pipeline_commit": "14aa8d6b3c2f14a8540605e37144560b9a00e7e7"
+          },
+          "scope": {
+            "repository": "RhudeJJJJ/formal-conjectures",
+            "project_path": "repository-root",
+            "comparator_config_path": "comparator.json"
+          }
+        },
+        "as_of": "2026-11-03T13:16:37.036588+00:00",
+        "status": "not_verified",
+        "reason": "no_delivered_registered_exact_target_receipt",
+        "supporting_receipts": [],
+        "matching_history": [],
+        "excluded": [
+          {
+            "source_id": "github-run-41640010781",
+            "source_version": "12f37d66e18b1878e157e86e20d7a99792b2dfb9",
+            "reason": "target_mismatch",
+            "fields": [
+              "assertion_id",
+              "version"
+            ]
+          },
+          {
+            "source_id": "github-run-41641782932",
+            "source_version": "b87343905d7254437adeb5692380b1691f84d2e5",
+            "reason": "target_mismatch",
+            "fields": [
+              "assertion_id"
+            ]
+          }
+        ],
+        "missing_registered_sources": [],
+        "source_semantic_truth_checked": false,
+        "source_contract_completeness_independently_checked": false
+      },
+      "executed": false,
+      "authorization_granted": false,
+      "scope_note": "identity/chronology/integrity precondition, not scientific verification"
+    }
+  },
+  "artifacts": [
+    {
+      "source_id": "github-run-41640010781",
+      "source_version": "12f37d66e18b1878e157e86e20d7a99792b2dfb9",
+      "content": "{\"evidence_id\":\"github-run-41640010781\",\"observed_at\":\"2026-11-03T13:02:01Z\",\"provenance\":{\"kind\":\"host_annotation_of_retained_public_mechanical_report\",\"report_sha256\":\"1347490bbcaab9bc417964b2a6e5c14d4c103184e8de5ff177a03175180597c8\",\"semantic_limits\":\"Mechanical preflight only; no registry submission, registration or editorial acceptance\",\"workflow_url\":\"https://github.com/RhudeJJJJ/formal-conjectures/actions/runs/41640010781\"},\"schema\":\"action-evidence/v1\",\"state\":\"verified\",\"target\":{\"assertion_id\":\"WOWII161-full-mechanical-preflight-passed\",\"execution_context\":{\"kind\":\"GitHub-Actions-Palomar-full-preflight\",\"pipeline_commit\":\"14aa8d6b3c2f14a8540605e37144560b9a00e7e7\"},\"scope\":{\"comparator_config_path\":\"comparator.json\",\"project_path\":\"repository-root\",\"repository\":\"RhudeJJJJ/formal-conjectures\"},\"version\":\"12f37d66e18b1878e157e86e20d7a99792b2dfb9\"}}"
+    },
+    {
+      "source_id": "github-run-41641782932",
+      "source_version": "b87343905d7254437adeb5692380b1691f84d2e5",
+      "content": "{\"evidence_id\":\"github-run-41641782932\",\"observed_at\":\"2026-11-03T13:16:00Z\",\"provenance\":{\"kind\":\"host_annotation_of_retained_public_mechanical_report\",\"report_sha256\":\"e99e9c9947db5deffd8ec2a718d12eb3dbfe3d99917a361300ffee7ce6b85955\",\"semantic_limits\":\"Mechanical preflight only; no registry submission, registration or editorial acceptance\",\"workflow_url\":\"https://github.com/RhudeJJJJ/formal-conjectures/actions/runs/41641782932\"},\"schema\":\"action-evidence/v1\",\"state\":\"verified\",\"target\":{\"assertion_id\":\"WOWII161-full-mechanical-preflight-passed\",\"execution_context\":{\"kind\":\"GitHub-Actions-Palomar-full-preflight\",\"pipeline_commit\":\"14aa8d6b3c2f14a8540605e37144560b9a00e7e7\"},\"scope\":{\"comparator_config_path\":\"comparator.json\",\"project_path\":\"repository-root\",\"repository\":\"RhudeJJJJ/formal-conjectures\"},\"version\":\"b87343905d7254437adeb5692380b1691f84d2e5\"}}"
+    }
+  ],
+  "checker_source_commit": "1cc533ce0021babacc3e23a1192b490009197941",
+  "checker_sha256": "c451314317b9b69ff334e51c616494d4f0ffabb22ba599a5f52228ee81a97055",
+  "scope": "Identity/chronology/integrity precondition only; host parses the public mechanical report. This is not an independent truth oracle, source-completeness proof, model comparison, or tool authorization.",
+  "actual_external_edit_completed": true,
+  "action_readback": {
+    "destination": "https://github.com/google-deepmind/formal-conjectures/pull/7787",
+    "updated_at": "2026-11-03T13:18:22Z",
+    "body_sha256": "aa048e41d2630231abc52a15691be2dc51a12f882da2ea54261e32c834f930fb",
+    "publication_state": "open",
+    "draft": true,
+    "normalized_body_matches_planned_text": true,
+    "normalization": "CRLF to LF, strip outer whitespace only",
+    "receipt_note": "The precondition itself did not execute or authorize the action. The already user-authorized PR body edit was separately performed through GitHub and read back through its API."
+  }
+}

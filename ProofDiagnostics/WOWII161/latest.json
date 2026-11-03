@@ -1,10 +1,10 @@
 {
   "scope": "Exact original imported modules; actual checkout recorded separately from workflow event SHA",
   "workflow_event_sha": "04b71bf61edb113a4fcfe1d5c46d0396cc8592c1",
-  "source_sha": "c41a2422100e30b972230c975f74304e2b611029",
+  "source_sha": "9c8f5667ab2c64a348b86abf6870a35dd471c6e3",
   "run_id": "41638457934",
-  "cycle": 2,
-  "status": "failed",
+  "cycle": 3,
+  "status": "passed",
   "protected_hashes": {
     "lean-toolchain": "3aac669c7a910ec2389f4e4f921b605adf6ebf2d1e0c9b9cd0be4d33f3f5db71",
     "lake-manifest.json": "c8ffc0d59f492007162fe54c68396e4b9f2f305fcf69210a7fbaf0b18fcd8cd9",
@@ -12,7 +12,7 @@
     "FormalConjectures/WrittenOnTheWallII/GraphConjecture161.lean": "b63e4707f838fcaa66d902477bd5a4b16431dc3a2eb24776d06ae0153c6d32cd"
   },
   "proof_hashes": {
-    "Proof": "00872d1c07f0f325d221011344ad80dc324d39a08583e28371db0d6df7d0da65",
+    "Proof": "3bf8ad2ed54d8cb88cf4869adb26374db979ae30d43d88c7751a44d87d2b366b",
     "Audit": "f988f2b78595e53325c48fff9c871fb02edc5565e4ad20242c3549c59c51b08c"
   },
   "results": [
@@ -23,13 +23,16 @@
     },
     {
       "name": "Proof",
-      "exit_code": 1,
-      "output": "Proofs/WOWII161/Proof.lean:61:0: error: automatically included section variable(s) unused in theorem `WOWII161.leaf_card_le_Ls`:\n  [DecidableEq V]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [DecidableEq V] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\nProofs/WOWII161/Proof.lean:107:0: error: automatically included section variable(s) unused in theorem `WOWII161.crossing_edge`:\n  [Fintype V]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [Fintype V] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\n"
+      "exit_code": 0,
+      "output": ""
     },
     {
       "name": "Audit",
-      "exit_code": 1,
-      "output": "Proofs/WOWII161/Audit.lean:1:0: error: object file '/home/runner/work/formal-conjectures/formal-conjectures/.lake/build/lib/lean/Proofs/WOWII161/Proof.olean' of module Proofs.WOWII161.Proof does not exist\n"
+      "exit_code": 0,
+      "output": "EXACT TYPE: certificate matches conjecture161, including all hypotheses\n'WrittenOnTheWallII.GraphConjecture161.conjecture161_proved' depends on axioms: [propext, Classical.choice, Quot.sound]\n'WOWII161.tree_degree_le_leaves' depends on axioms: [propext, Classical.choice, Quot.sound]\n'WOWII161.degree_le_Ls' depends on axioms: [propext, Classical.choice, Quot.sound]\n'WOWII161.proper_clique_card_le_Ls' depends on axioms: [propext, Classical.choice, Quot.sound]\n'WrittenOnTheWallII.GraphConjecture161.conjecture161' depends on axioms: [propext,\n sorryAx,\n Classical.choice,\n Quot.sound]\n"
     }
-  ]
+  ],
+  "axioms": {
+    "WrittenOnTheWallII.GraphConjecture161.conjecture161_proved": "propext, Classical.choice, Quot.sound"
+  }
 }

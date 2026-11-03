@@ -56,6 +56,7 @@ lemma tree_degree_le_leaves (T : SimpleGraph V) [DecidableRel T.Adj]
     have hv : T.degree v ≤ f v := Nat.le_add_right _ _
     omega
 
+omit [DecidableEq V] in
 open scoped Classical in
 /-- A concrete spanning tree contributes its leaf count to the defining supremum. -/
 lemma leaf_card_le_Ls (G : SimpleGraph V) [DecidableRel G.Adj]
@@ -103,6 +104,7 @@ lemma degree_le_Ls (G : SimpleGraph V) [DecidableRel G.Adj]
       exact_mod_cast hd.trans (tree_degree_le_leaves T hT v)
     _ ≤ Ls G := hb
 
+omit [Fintype V] in
 /-- A walk from a set to its complement contains an edge crossing its boundary. -/
 lemma crossing_edge (G : SimpleGraph V) (s : Finset V) {a b : V}
     (p : G.Walk a b) (ha : a ∈ s) (hb : b ∉ s) :

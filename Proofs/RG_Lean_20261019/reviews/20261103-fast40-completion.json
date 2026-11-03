@@ -1,0 +1,158 @@
+{
+  "status": "COMPLETE_FAST40_SOURCE_BOUND_KERNEL_EXPORTS_AUTHENTICATED",
+  "repository": "RhudeJJJJ/formal-conjectures",
+  "run": 41710641345,
+  "source_commit": "012040882965e2c367563f5c251c83cfaefc725f",
+  "workflow_conclusion": "success",
+  "archives": 10,
+  "fresh_current_exports": 69,
+  "verified_output_bytes": 26179944,
+  "full_fast40_scope": 155,
+  "join_prior_identities": 149,
+  "join_fresh_exports": 6,
+  "max_single_module_seconds": 105.006,
+  "max_single_module_name": "Proofs.RadenkovicGutmanD1FastFullBox40Cell010Data",
+  "min_periodic_available_bytes": 5880139776,
+  "guard_mib": 2048,
+  "worker_count": 1,
+  "module_timeout_seconds": 600,
+  "fast40_endpoint_identity": {
+    "module": "Proofs.RadenkovicGutmanD1FastFullBox40",
+    "source_sha256": "a30e2c106e2820b653484ca9f251f12f09b7c26a4a12587368d0991f4fdec41b",
+    "source_closure_sha256": "4f73cb8ff0d1c07c5d64b891509207dc9343a133aac2b802bf66562324c82a15",
+    "output_sha256": "d03387a167d98503ab6313d1a0de10a17da2f0104ab51ccc5869fa16ea4dc96d",
+    "axiom_profiles": [
+      [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    ],
+    "mode": "FRESH_KERNEL_EXPORT",
+    "seconds": 2.822
+  },
+  "exports": [
+    {
+      "key": "cell010",
+      "job": 126177477384,
+      "artifact_id": 13267288898,
+      "artifact_sha256": "3bd35c6287e5f78f2c1386d1d780c93f7ab761f0084489df87272c9ce6dbf2fe",
+      "manifest": "ci/rg_fast40_remaining_staged_exports/41710641345/cell010.json",
+      "manifest_sha256": "307878f0fe61f814c8b6ef752f7320def97df359f919bb427e4b15695eaa2f9e",
+      "fresh_modules": 7,
+      "verified_output_bytes": 2909488,
+      "kernel_seconds": 212.34
+    },
+    {
+      "key": "cell011",
+      "job": 126177477349,
+      "artifact_id": 13267834952,
+      "artifact_sha256": "27c4e49b331a4115da5c894a0c313daedeb37024951834cba0080ac178c4e0c2",
+      "manifest": "ci/rg_fast40_remaining_staged_exports/41710641345/cell011.json",
+      "manifest_sha256": "d92b84583e6b12af43f234a4bc90b826989657500dc08b36100f1c98fbf7df86",
+      "fresh_modules": 7,
+      "verified_output_bytes": 2848512,
+      "kernel_seconds": 202.34
+    },
+    {
+      "key": "cell012",
+      "job": 126177476657,
+      "artifact_id": 13268267132,
+      "artifact_sha256": "ff7d44ca01ce3ab4ccd47e75cfbbca200402eb3d524a9b0e898fcbe6eb4048df",
+      "manifest": "ci/rg_fast40_remaining_staged_exports/41710641345/cell012.json",
+      "manifest_sha256": "df1beaff93ba5ee38f7729788dd94dc44d6df4f1607d399bc15435603df0dbb2",
+      "fresh_modules": 7,
+      "verified_output_bytes": 2846632,
+      "kernel_seconds": 151.2
+    },
+    {
+      "key": "cell013",
+      "job": 126177477786,
+      "artifact_id": 13268601185,
+      "artifact_sha256": "0ea61bdbc9cb55ce40cc62daf9b794d54424758e0f957f2f18b8be938262b03e",
+      "manifest": "ci/rg_fast40_remaining_staged_exports/41710641345/cell013.json",
+      "manifest_sha256": "8f5a34332ea36e6992473cdc9b5d8c73a44614078217bb9f0db372571478b5ee",
+      "fresh_modules": 7,
+      "verified_output_bytes": 2894776,
+      "kernel_seconds": 203.34
+    },
+    {
+      "key": "cell014",
+      "job": 126177477322,
+      "artifact_id": 13268427833,
+      "artifact_sha256": "47adc2d0142f97a51d2db41c0c57f0cee781751c8557df1bb4492cf1fb5bcb7e",
+      "manifest": "ci/rg_fast40_remaining_staged_exports/41710641345/cell014.json",
+      "manifest_sha256": "fa45dda1201f94616759dd8e0095cf425f6fc6ea68caeea5ca907eca21e22a57",
+      "fresh_modules": 7,
+      "verified_output_bytes": 2872472,
+      "kernel_seconds": 153.19
+    },
+    {
+      "key": "cell015",
+      "job": 126177477255,
+      "artifact_id": 13268997074,
+      "artifact_sha256": "c6198764292ec3d5425696be6b245fd438a1d1163e994b85421e8510b3601086",
+      "manifest": "ci/rg_fast40_remaining_staged_exports/41710641345/cell015.json",
+      "manifest_sha256": "211a7f3e94b176f588d7d326cdd4698ce72170742e0e985a4c3541d0b31265c0",
+      "fresh_modules": 7,
+      "verified_output_bytes": 2888616,
+      "kernel_seconds": 145.18
+    },
+    {
+      "key": "cell016",
+      "job": 126177477359,
+      "artifact_id": 13269367077,
+      "artifact_sha256": "2bcde9364825cba7fb3f62ef0f0c94b51a29c0af7bb646e9046ede09a3452af8",
+      "manifest": "ci/rg_fast40_remaining_staged_exports/41710641345/cell016.json",
+      "manifest_sha256": "b2b50ed36ed14216f398ad052692568d06f41e11420b26714f8da7075b944388",
+      "fresh_modules": 7,
+      "verified_output_bytes": 2980280,
+      "kernel_seconds": 182.25
+    },
+    {
+      "key": "cell017",
+      "job": 126177477288,
+      "artifact_id": 13269003950,
+      "artifact_sha256": "73317994976c4532e3791ee7b2dc17d65d322324b701b4fb2e8ef2d8eacdcb3e",
+      "manifest": "ci/rg_fast40_remaining_staged_exports/41710641345/cell017.json",
+      "manifest_sha256": "92fe3fb778eb15d3a11f2697e8bdadd5a90457490b122112fe847cf1353f615e",
+      "fresh_modules": 7,
+      "verified_output_bytes": 2885152,
+      "kernel_seconds": 180.28
+    },
+    {
+      "key": "cell018",
+      "job": 126177477068,
+      "artifact_id": 13270725120,
+      "artifact_sha256": "615b8f238f8484205198e6ad1e13e2bc498c1ca6c15aedba0fd79ff85e6145c6",
+      "manifest": "ci/rg_fast40_remaining_staged_exports/41710641345/cell018.json",
+      "manifest_sha256": "99a6f60a91927c614cf5d24e9537335c4d3f787df313ffaf4cc3c560040e192c",
+      "fresh_modules": 7,
+      "verified_output_bytes": 2874240,
+      "kernel_seconds": 209.44
+    },
+    {
+      "key": "join",
+      "job": 126196510274,
+      "artifact_id": 13271190618,
+      "artifact_sha256": "d0ee440f5927d4749beca46305341fadf1431c34a591d1ac7f1deef0d578952b",
+      "manifest": "ci/rg_fast40_remaining_staged_exports/41710641345/join.json",
+      "manifest_sha256": "3f012fde76e92c1d64cf676d8793db5ef7d6c2e19868ec09d093c760f99288db",
+      "fresh_modules": 6,
+      "verified_output_bytes": 179776,
+      "kernel_seconds": 16.03
+    }
+  ],
+  "degree_one_large_completion_claimed": false,
+  "remaining_main_families_changed_by_this_report": false
+}

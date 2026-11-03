@@ -1,5 +1,7 @@
-import Proofs.WOWII161.Proof
-import FormalConjectures.WrittenOnTheWallII.GraphConjecture161
+module
+
+public import Proofs.WOWII161.Proof
+public import FormalConjectures.WrittenOnTheWallII.GraphConjecture161
 
 open Lean Meta Elab Command in
 run_elab do

@@ -3,10 +3,12 @@ Copyright (c) 2026 Jonas J. Gebendorfer. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Jonas J. Gebendorfer
 -/
-import Mathlib.Combinatorics.SimpleGraph.Star
-import Mathlib.Tactic
-import FormalConjecturesForMathlib.Combinatorics.SimpleGraph.Independence
-import FormalConjecturesForMathlib.Combinatorics.SimpleGraph.SpanningTree
+module
+
+public import Mathlib.Combinatorics.SimpleGraph.Star
+public import Mathlib.Tactic
+public import FormalConjecturesForMathlib.Combinatorics.SimpleGraph.Independence
+public import FormalConjecturesForMathlib.Combinatorics.SimpleGraph.SpanningTree
 
 /-!
 # A complete proof of Written on the Wall II, Conjecture 161
@@ -17,6 +19,8 @@ The spanning-subgraph conversion and supremum bound follow the corresponding
 helpers in MiskinAleksandr23/WOWII-1, commit
 eda16f6e96b313bd112351ae9859133b77d537c9, under the Apache 2.0 license.
 -/
+
+@[expose] public section
 
 namespace WOWII161
 
@@ -60,7 +64,7 @@ lemma leaf_card_le_Ls (G : SimpleGraph V) [DecidableRel G.Adj]
   unfold Ls
   apply le_csSup
   · refine ⟨(Fintype.card V : ℝ), ?_⟩
-    rintro x ⟨S, hS, rfl⟩
+    rintro x ⟨S, _hS, rfl⟩
     change ((S.verts.toFinset.filter fun v => S.degree v = 1).card : ℝ) ≤ _
     exact_mod_cast (le_trans (Finset.card_filter_le _ _) S.verts.toFinset.card_le_univ)
   · exact ⟨T, ⟨hTsp, hTtree⟩, rfl⟩
@@ -93,7 +97,10 @@ lemma degree_le_Ls (G : SimpleGraph V) [DecidableRel G.Adj]
     simp [S]
   have hb := leaf_card_le_Ls G S hSsp hStree
   rw [hleaves] at hb
-  exact (by exact_mod_cast hd.trans (tree_degree_le_leaves T hT v)).trans hb
+  calc
+    (G.degree v : ℝ) ≤ ((univ.filter fun w => T.degree w = 1).card : ℝ) := by
+      exact_mod_cast hd.trans (tree_degree_le_leaves T hT v)
+    _ ≤ Ls G := hb
 
 /-- A walk from a set to its complement contains an edge crossing its boundary. -/
 lemma crossing_edge (G : SimpleGraph V) (s : Finset V) {a b : V}
@@ -127,7 +134,9 @@ lemma proper_clique_card_le_Ls (G : SimpleGraph V) [DecidableRel G.Adj]
       exact card_erase_add_one hx
     have hdeg : s.card ≤ G.degree x := by
       simpa only [hcard, card_neighborFinset_eq_degree] using card_le_card hsub
-    exact (by exact_mod_cast hdeg).trans (degree_le_Ls G hG x)
+    calc
+      (s.card : ℝ) ≤ (G.degree x : ℝ) := by exact_mod_cast hdeg
+      _ ≤ Ls G := degree_le_Ls G hG x
   · have hzero : s = ∅ := not_nonempty_iff_eq_empty.mp hn
     subst s
     have := degree_le_Ls G hG b

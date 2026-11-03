@@ -1,0 +1,95 @@
+{
+  "status": "NARROW166_FINAL_COMPLETION_EXTENSION_VALIDATED_NO_SUCCESS_ORIGIN_CREATED",
+  "changed_file": "ci/rg_exact_numeric_completion.py",
+  "changed_file_sha256": "bb020e9fb76982260a7ce8872f4a58fef94358862b8aac905d53d19001acb530",
+  "exact_allowed_remainders": [
+    "00_139",
+    "00_156",
+    "00_164",
+    "00_166"
+  ],
+  "new166_spec_sha256": "d8aeaa83a3ff9496203b2b2c442a66589a3f907b154643a677a8281f871c60a5",
+  "original166_job": 126095241107,
+  "original166_partial_objects": 6,
+  "required166_fresh_objects": 4,
+  "original166_scope": 84,
+  "original166_endpoints": 10,
+  "negative_cases": 13,
+  "other_authentication_function_bodies_byte_identical": true,
+  "lean_sources_changed": false,
+  "successful166_recovery_origin_claimed": false,
+  "cases": [
+    {
+      "case": "all archive, full84-receipt and historical-object functions remain byte-identical; completion_context changes only the fixed166 workflow;137 composite delegation unchanged",
+      "result": "PASS"
+    },
+    {
+      "case": "00_139 exact fixed current context with all10 original endpoints",
+      "result": "PASS_METADATA_ONLY"
+    },
+    {
+      "case": "00_156 exact fixed current context with all10 original endpoints",
+      "result": "PASS_METADATA_ONLY"
+    },
+    {
+      "case": "00_164 exact fixed current context with all10 original endpoints",
+      "result": "PASS_METADATA_ONLY"
+    },
+    {
+      "case": "00_166 exact fixed current context with all10 original endpoints",
+      "result": "PASS_METADATA_ONLY"
+    },
+    {
+      "case": "unregistered140 remainder",
+      "result": "REJECTED"
+    },
+    {
+      "case": "166 cannot use old generic workflow",
+      "result": "REJECTED"
+    },
+    {
+      "case": "166 cannot use another spec hash",
+      "result": "REJECTED"
+    },
+    {
+      "case": "166 cannot use another original job",
+      "result": "REJECTED"
+    },
+    {
+      "case": "166 cannot replace another plan",
+      "result": "REJECTED"
+    },
+    {
+      "case": "166 cannot weaken success gate",
+      "result": "REJECTED"
+    },
+    {
+      "case": "166 cannot rename its job",
+      "result": "REJECTED"
+    },
+    {
+      "case": "missing one of four required original fresh objects",
+      "result": "REJECTED"
+    },
+    {
+      "case": "old prior cannot be claimed fresh",
+      "result": "REJECTED"
+    },
+    {
+      "case": "no changed historical output",
+      "result": "REJECTED"
+    },
+    {
+      "case": "no changed historical profile",
+      "result": "REJECTED"
+    },
+    {
+      "case": "no changed source closure",
+      "result": "REJECTED"
+    },
+    {
+      "case": "fresh remainder cannot be relabelled prior",
+      "result": "REJECTED"
+    }
+  ]
+}

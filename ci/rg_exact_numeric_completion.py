@@ -23,6 +23,7 @@ REMAINDERS = {
     '00_139': '18a46b10ebaff7640f068ae35001eafdba401c90265cbf1634fa0221a9fed922',
     '00_156': '23cd16f29c7ed1501e973a64ae9696f48c8eede0d26b638fadb3d080e175707c',
     '00_164': '0be737163dbafd7901cc7096e45e2113ddc2eb4caf5245e880e75f98577140e2',
+    '00_166': 'd8aeaa83a3ff9496203b2b2c442a66589a3f907b154643a677a8281f871c60a5',
 }
 
 
@@ -55,7 +56,8 @@ def completion_context(item):
         assert item['required_success_step'] == 'Require exact historical output identities'
         if 'workflow_path' in item:
             expected_workflow = ('.github/workflows/rg-d1-numeric139-partial-remainder-20261103.yml'
-                if batch == '00_139' else '.github/workflows/rg-d1-numeric-partial-remainders-20261103.yml')
+                if batch == '00_139' else '.github/workflows/rg-d1-numeric166-partial-remainder-20261104.yml'
+                if batch == '00_166' else '.github/workflows/rg-d1-numeric-partial-remainders-20261103.yml')
             assert item['workflow_path'] == expected_workflow
         return dict(kind=kind, spec=spec, plan=plan, original=expected,
                     expected={n: expected[n] for n in spec['fresh_modules']},

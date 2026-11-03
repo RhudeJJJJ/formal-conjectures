@@ -1,0 +1,126 @@
+{
+  "status": "CURRENT_FINAL_INTEGRATION_REVIEW_PASSED_PENDING_ACTUAL_NUMERIC_COMPLETION_RESTORE_AND_KERNEL",
+  "reviewed_repository": "RhudeJJJJ/formal-conjectures",
+  "reviewed_source_commit": "bfd309911bbda6b7c69fe82782fb2c73627ac019",
+  "actual_source_graph_run": 41715110544,
+  "actual_source_graph_job": 126192953862,
+  "actual_source_graph_sha256": "c2b50b3145d7c9b5f745b80ab2e9858a7ab6a88381e4f021dfed06529f0bbd48",
+  "current_required_modules": 33583,
+  "current_endpoint_closure_sha256": "850f62c679daec7255289aeb545be9360373800ef6924fa2ebfb0ab75f5d467d",
+  "entire_actual_graph_closures_independently_recomputed": true,
+  "all_original_required_module_names_retained": 33472,
+  "new_source_support_modules": 111,
+  "original_numeric_batch_plans_validated": 349,
+  "unchanged_original_numeric_source_and_closure_identities": 4566,
+  "single_original_numeric_reorganization": "Proofs.RadenkovicGutmanD1Long00Leaf01370",
+  "preserved_original_definitions": 133,
+  "preserved_original_theorems": 313,
+  "frontier_sources": {
+    "Proofs.RadenkovicGutmanD1OriginalSharedBothLong": {
+      "source_sha256": "7f6a5608b39a42f834ad1ea48a1ff2bd207a3bf76711ccfd629d2953c70018f0",
+      "source_closure_sha256": "5b318cd4ae3033e5af76cc02b6e4b3c5306d5c0a67ae798cc009b1b556c1c34d",
+      "bytes": 20158
+    },
+    "Proofs.RadenkovicGutmanOriginalDegreeOneLarge": {
+      "source_sha256": "5bf13e2a759e57986dafbdb1937008207169962fc3432303c6e93b485e70ec5f",
+      "source_closure_sha256": "b58071f47169d39ada5f7eeb5378f8ba2351e535cce60c4147c237f367b3729a",
+      "bytes": 3378
+    },
+    "Proofs.RadenkovicGutmanD1Long10": {
+      "source_sha256": "2457d27ca8ad7e8cc40fa2c387ecac50bb2bc46d75be3cd790ae5c760f8c76bd",
+      "source_closure_sha256": "47338ee17a09c773efd828f75d11e5b2e2d9c8cdfee9a498d004776f6589e142",
+      "bytes": 176889
+    },
+    "Proofs.RadenkovicGutmanRemainingThreeAssembly": {
+      "source_sha256": "a234c56688628d48232033006c64896a36e3d405a3e8d0a1f559b8bdf9555e65",
+      "source_closure_sha256": "850f62c679daec7255289aeb545be9360373800ef6924fa2ebfb0ab75f5d467d",
+      "bytes": 2623
+    },
+    "Proofs.RadenkovicGutmanD1Long30": {
+      "source_sha256": "1a8494b342d4eb8fefb65f3092940c2440690c98c9502bb599d430d9045e248a",
+      "source_closure_sha256": "7474d9bf287f37261a793a565991370b9e067a9e7675f678357ea0ae515ffd1c",
+      "bytes": 425158
+    },
+    "Proofs.RadenkovicGutmanD1OriginalSharedSlice0080Complete": {
+      "source_sha256": "1dc215a05ec7f6254265a80401a658154e6931df1a390d756ba302725b5b0012",
+      "source_closure_sha256": "02001c1bb608c1358ba648d05899af555b552a9500e15e76a9e713836dfe52d1",
+      "bytes": 4773
+    }
+  },
+  "historical_heads_bound_to_exact_original_source_closure_object_member_and_axiom_profiles": true,
+  "four_current_final_modules_exactly_mandatory_after_heads": [
+    "Proofs.RadenkovicGutmanD1OriginalSharedBothLong",
+    "Proofs.RadenkovicGutmanD1OriginalSharedSlice0080Complete",
+    "Proofs.RadenkovicGutmanOriginalDegreeOneLarge",
+    "Proofs.RadenkovicGutmanRemainingThreeAssembly"
+  ],
+  "remaining_three_original_input_types_equal_ignoring_whitespace": [
+    "degreeFourToFortyfive",
+    "degreeOneMiddle",
+    "degreeTwoThree"
+  ],
+  "current_collector_and_generator_match_published_four_file_inventory": "db355dc3f582675c9d798609af04cf36cd2ddb39954fea3f720c90823188e41b",
+  "auxiliary_actual_origin_jobs": 69,
+  "auxiliary_actual_unique_module_identities": 1104,
+  "required_final_collection_union": 5682,
+  "strict_toolchain": {
+    "lean": "4.33.1",
+    "mathlib": "0df444a360eaa60ab8c11dca51a86af692955474",
+    "leancert": "621a43d7cf21f87872392a01e874f2f1dbddc926"
+  },
+  "strict_kernel_flags": [
+    "-j1",
+    "-DElab.async=false",
+    "-DwarningAsError=true",
+    "-DautoImplicit=false",
+    "-DrelaxedAutoImplicit=false"
+  ],
+  "unchanged_final_limits": {
+    "historical_heads_seconds_per_module": 1200,
+    "current_final_seconds_per_module": 900,
+    "workers": 1,
+    "memory_reserve_mib": 2048,
+    "workflow_timeout_minutes": 360
+  },
+  "manual_code_review": {
+    "resume_returns_existing_record_without_changing_fresh_mode": true,
+    "final_receipt_requires_exact_six_fresh_records": true,
+    "source_bound_restore_checks_actual_zip_all_selected_members_and_readback": true,
+    "two_historical_heads_compared_to_original_object_and_profile_identities_before_final_modules": true,
+    "old_failed137_and_ge46_object_origins_remain_separate_from_successful_zero_fresh_audits": true,
+    "callback_generator_checks_fixed_upstream_run_branch_workflow_and_immutable_proof_checkout": true,
+    "proof_source_commit_and_callback_workflow_head_remain_distinct": true,
+    "host_capacity_and_memory_guards_remain_active": true
+  },
+  "new_integration_defects_found": [],
+  "actual_outstanding_gates": [
+    "Every one of 349 original numeric batches has actual successful complete evidence and any replacement retains its exact failed original origin.",
+    "The final planner finds available authenticated archives for every required source-bound prior module.",
+    "The final runner restores and reads back every selected member while retaining its actual disk and memory reserves.",
+    "Both historical heads and the four current final modules pass the unchanged Lean kernel checks and yield the complete current 33583-module receipt."
+  ],
+  "callback_installed": false,
+  "remote_mutations_performed": false,
+  "proof_sources_modified": false,
+  "local_kernel_run_performed": false,
+  "reusable_kernel_receipt_emitted": false,
+  "whole_degree_one_large_complete": false,
+  "open_original_family_count": 4,
+  "reviewed_published_files": {
+    ".github/workflows/rg-degree-one-large-continuation-20261103.yml": "2881316675fb701c298ac11b9987f5bcfdda212c2d6a2306499490d41b3857a3",
+    "Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneClassDispatch.lean": "28ee73e3d42f6a0a71c22b98874ca0028dace7b6461f225c89a3e5a0006f5bdb",
+    "Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanOriginalAssembly.lean": "3f3bd6719299090443071576e72d8c13974e878b5621b4a6b90091ce09cdeeae",
+    "Proofs/RG_Lean_20261019/verify_extension.py": "e04b969f85a707677eb6c20986993b32ebf2605e99f2cfdc9efa34ea0bd82f0d",
+    "ci/rg_collect_exact_d1_reproductions.py": "df05e4fb2b51c0c49e6631f87afe4efb981b0491ea0f0b564af7bc33017a6e88",
+    "ci/rg_d1_numeric_remainder.py": "ea1d4e4f53169e8a58266e7f66692448bc4cb3f712c883be7591f9ee3eeeedfe",
+    "ci/rg_exact_final_source_binding.py": "cd8a9ee09c3ed0c3d30085dfcc1e09c5cc01ca6d1aa5d045fa2e43f952b24824",
+    "ci/rg_exact_numeric_completion.py": "b8afb50f8ccc5b99770a741acacd84864ad9a69ac2bf89de0ab0e0baa4b936fb",
+    "ci/rg_final_continuation_context.py": "ba49be1247502f3325e965873961a8c2235487bdd5b01bcbff4f98e76a62d850",
+    "ci/rg_ge46_zero_fresh_completion.py": "51027dfaa945ed9017d22e72f1674e8daf6446958b2708cdb2906d5b397cd4a3",
+    "ci/rg_numeric137_zero_fresh_completion.py": "2afe984ed68b35429ac495eb6ae03ee01ee7d2374280176c0a2dab49630eff53",
+    "ci/rg_plan_final_numeric_join.py": "8559c2c1f248c7d8091a02586cfb940ede2dde817cc24800b039922ab2102803",
+    "ci/rg_prepare_exact_final_hook.py": "3b3de46f68d929dc5e23d227b14cf302b5e45de404565bcb4d17542a945f47e4",
+    "ci/rg_verify_degree_one_large_milestone.py": "55c53b947d7d95c334b5d798b7a4f410038dfc71a0207b84ee5b8749d369dd91"
+  },
+  "review_script_sha256": "9e9ed78d2330d417ff9ea45c87875d9fef2e1f3ba8eb871d49439879295ad519"
+}

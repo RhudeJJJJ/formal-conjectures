@@ -1,4 +1,4 @@
-"""Complete three exact original batches while preserving authenticated priors.
+"""Complete four exact original batches while preserving authenticated priors.
 
 Every batch retains all ten original endpoints. Already checked modules keep
 their failed-job archive origins; only the sealed remainder is fresh. A full
@@ -32,6 +32,9 @@ PARTIALS = {
     '00_164': dict(job=126095228779, artifact_id=13266625964,
         artifact_sha256='45cc7a292bab0958bc264895d97b62d9b192c46b29718f29e80fb178bf640a03',
         indices=[1640,1641,1642,1644]),
+    '00_166': dict(job=126095241107, artifact_id=13277904393,
+        artifact_sha256='80966ae46ac88089f1532793e4bbd2d5114387419575596c5ede5bc950acedd3',
+        indices=[1660,1661,1662,1663,1664,1665]),
 }
 
 
@@ -94,7 +97,7 @@ def load_remainder(batch):
     assert len(spec['prior_original_modules']) == len(prior)
     fresh = set(expected) - prior
     assert sorted(fresh) == spec['fresh_modules']
-    assert len(fresh) == spec['fresh_module_count'] == (4 if batch=='00_156' else 6)
+    assert len(fresh) == spec['fresh_module_count'] == (4 if batch in ('00_156', '00_166') else 6)
     assert prior | fresh == set(expected) and not prior & fresh
     for name,row in partial['modules'].items():
         assert row['module'] == name and row['mode'] == 'FRESH_KERNEL_EXPORT'

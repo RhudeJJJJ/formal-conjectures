@@ -1,0 +1,25 @@
+{
+  "status": "NUMERIC166_FINAL_INTEGRATION_APPROVED_FOR_FIXED_PATCH",
+  "patch_inventory_sha256": "eb272343e5f0b31567eba45d4a7157b396a819b08a528d7c1f7095855ac6fb58",
+  "patch_files": {
+    ".github/workflows/rg-d1-numeric166-partial-remainder-20261104.yml": "3518c9fbfee1d26cf075e914719c9dc86034a4f0414483a1577b366a7d741cb5",
+    "ci/rg_d1_20261103_numeric_partial_exports/chunk166_prior_exports.json": "e41465c3c571989ad7ca8448d3c1dccb64ff2c28e742b0878fbdfbe224b45dad",
+    "ci/rg_d1_numeric_remainder.py": "fa486bf7b3580f1a61c85535828a62e991bed7e28b5a8492a945173e722b6ec4",
+    "ci/rg_d1_numeric_remainder_20261103/batch00_166.json": "d8aeaa83a3ff9496203b2b2c442a66589a3f907b154643a677a8281f871c60a5",
+    "ci/rg_exact_numeric_completion.py": "bb020e9fb76982260a7ce8872f4a58fef94358862b8aac905d53d19001acb530"
+  },
+  "exact_helper_changes": [
+    "Add only fixed batch00_166 spec hash",
+    "Route only batch00_166 to its own reviewed workflow"
+  ],
+  "all_other_helper_code_ast_identical": true,
+  "no_hidden_remainder_batch_lists_in_final_consumers": [
+    "ci/rg_collect_exact_d1_reproductions.py",
+    "ci/rg_prepare_exact_final_hook.py",
+    "ci/rg_plan_final_numeric_join.py",
+    "ci/rg_verify_degree_one_large_milestone.py"
+  ],
+  "new_166_success_claimed": false,
+  "actual_complete_84_module_receipt_still_required": true,
+  "remote_mutations_performed": false
+}

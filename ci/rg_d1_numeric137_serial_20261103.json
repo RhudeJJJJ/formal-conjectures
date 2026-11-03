@@ -1,0 +1,26 @@
+{
+  "kind": "EXACT_ORIGINAL_NUMERIC137_SERIAL_RECOVERY",
+  "repository": "RhudeJJJJ/formal-conjectures",
+  "original_run": 41686621300,
+  "original_job": 126095228986,
+  "original_source_commit": "aaeaec3cec22467d3f0b83b1761bfb40087bb991",
+  "original_batch": "00_137",
+  "original_plan": "ci/rg_d1_required_numeric_batches_20261103/batch00_137.json",
+  "original_plan_sha256": "87a9e926ba76df68fbf0d66c6c3d32273b4db143c0c24730f3f8aa652876e74a",
+  "observed_original_failure": "Leaf01370 exceeded 1200 seconds under two workers; zero fresh exports; no memory-reserve stop",
+  "workers": 1,
+  "module_timeout": 1200,
+  "memory_reserve_mib": 2048,
+  "expected_fresh_modules": [
+    "Proofs.RadenkovicGutmanD1Long00Leaf01370",
+    "Proofs.RadenkovicGutmanD1Long00Leaf01371",
+    "Proofs.RadenkovicGutmanD1Long00Leaf01372",
+    "Proofs.RadenkovicGutmanD1Long00Leaf01373",
+    "Proofs.RadenkovicGutmanD1Long00Leaf01374",
+    "Proofs.RadenkovicGutmanD1Long00Leaf01375",
+    "Proofs.RadenkovicGutmanD1Long00Leaf01376",
+    "Proofs.RadenkovicGutmanD1Long00Leaf01377",
+    "Proofs.RadenkovicGutmanD1Long00Leaf01378",
+    "Proofs.RadenkovicGutmanD1Long00Leaf01379"
+  ]
+}

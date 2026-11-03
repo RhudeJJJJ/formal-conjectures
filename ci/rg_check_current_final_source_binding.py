@@ -22,7 +22,7 @@ OLD_CLOSURE = "9b816edb67214c8c25a0c17e7390be126b53a03cb41bd8165c567755b5c302ac"
 ENDPOINT = "Proofs.RadenkovicGutmanRemainingThreeAssembly"
 REORGANIZED = "Proofs.RadenkovicGutmanD1Long00Leaf01370"
 REORGANIZED_SPEC = "ci/rg_d1_numeric137_decomposed_20261103_spec.json"
-REORGANIZED_SHA = "ed3bdec60b9d500095c41e726b46c03cab092d34db01b2ba3beec04c307e7746"
+REORGANIZED_SHA = "215ae3b2b69a4d7f9f00d694228a45333df0b73e588a6b2f0f61c97b45db4302"
 
 
 def sha(raw):

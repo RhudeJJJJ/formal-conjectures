@@ -1,13 +1,13 @@
 name: RG numeric137 declaration-preserving full batch recovery
+# The earlier fixed-source reconstruction is already running. Updating only
+# audit metadata must not repeat its expensive kernel work automatically.
 on:
-  push:
-    branches: [rg-degree-one-large-20261103]
-    paths: ['.github/workflows/rg-d1-numeric137-decomposed-recovery-20261103.yml']
+  workflow_dispatch:
 permissions:
   contents: read
   actions: read
 env:
-  RG_NUMERIC137_SPEC_SHA256: ed3bdec60b9d500095c41e726b46c03cab092d34db01b2ba3beec04c307e7746
+  RG_NUMERIC137_SPEC_SHA256: 215ae3b2b69a4d7f9f00d694228a45333df0b73e588a6b2f0f61c97b45db4302
 jobs:
   recover:
     name: Check complete numeric00_137 with original declarations in bounded modules

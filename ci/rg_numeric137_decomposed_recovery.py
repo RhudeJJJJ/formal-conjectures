@@ -31,6 +31,13 @@ ALLOWED = {'propext', 'Classical.choice', 'Quot.sound'}
 NEW = {NAME, NAME + 'Base', NAME + 'Affine'} | {NAME + f'Rows{i:02d}' for i in range(9)}
 ENDPOINTS = [f'Proofs.RadenkovicGutmanD1Long00Leaf{i:05d}' for i in range(1370, 1380)]
 SPEC = 'ci/rg_d1_numeric137_decomposed_20261103_spec.json'
+AXIOM_VALIDATION = {
+    'kind': 'NAMED_CURRENT_LOGS_REASSEMBLED_IN_ORIGINAL_VERIFIER_ORDER',
+    'current_module_names': 'EXACT_ORIGINAL_SNAPSHOT_PRINT_NAMES_IN_SOURCE_ORDER',
+    'record_normalization': 'NONEMPTY_PROFILES_IN_PRINT_ORDER_THEN_EMPTY_PROFILES',
+    'complete_original_profile_array_match_required': True,
+    'historical_name_to_profile_mapping_inferred': False,
+}
 
 
 def sha(raw):
@@ -72,6 +79,7 @@ def context(spec_sha):
     assert (spec['original_definitions'], spec['original_theorems'], spec['original_axiom_prints']) == (133, 313, 313)
     assert (spec['required_module_count'], spec['prior_module_count'], spec['fresh_module_count']) == (95, 74, 21)
     assert spec['original_numeric_module_count'] == 10
+    assert spec['axiom_profile_validation'] == AXIOM_VALIDATION
     assert len(spec['required_modules']) == len(set(spec['required_modules'])) == 95
     assert set(spec['modules']) == NEW | set(ENDPOINTS)
     assert set(spec['required_source_sha256']) == set(spec['required_source_closure_sha256']) == set(spec['required_modules'])
@@ -94,7 +102,7 @@ def preserve_declarations(spec, expected, snapshot):
     assert [p['label'] for p in parts] == ['Base', 'Affine'] + [f'Rows{i:02d}' for i in range(9)] + ['']
     old_profiles = expected[NAME]['axiom_profiles']
     assert len(old_profiles) == 313
-    offset = profile_offset = 0
+    offset = profile_count = 0
     declarations = []
     for part in parts:
         name = part['module']
@@ -116,14 +124,83 @@ def preserve_declarations(spec, expected, snapshot):
         assert sha(actual) == spec['modules'][name]['source_sha256']
         assert not re.search(r'\b(sorry|admit|native_decide)\b|^\s*axiom\s', without_comments(actual.decode()), re.M)
         count = len(prints)
-        assert spec['modules'][name]['axiom_profiles'] == old_profiles[profile_offset:profile_offset + count]
-        profile_offset += count
-    assert offset == len(snapshot['body']) and profile_offset == 313
+        # Historical records group all empty profiles at the end. They cannot
+        # be partitioned by source offsets. Actual named logs are checked after
+        # compilation and globally reassembled by validate_named_split_axioms.
+        assert 'axiom_profiles' not in spec['modules'][name]
+        assert spec['modules'][name]['axiom_profile_count'] == count
+        profile_count += count
+    assert offset == len(snapshot['body']) and profile_count == 313
     assert declarations == re.findall(r'^#print axioms (.+)$', snapshot['body'], re.M)
     assert len(declarations) == len(set(declarations)) == 313
     assert sum(p['definitions'] for p in parts) == 133
     assert sum(p['theorems'] for p in parts) == 313
     assert '#print axioms leaf01370_checked\n' in snapshot['body'][parts[-1]['start']:]
+
+
+def verifier_profile_order(profiles):
+    """Reproduce the unchanged verifier's nonempty-then-empty serialization."""
+    return [p for p in profiles if p] + [[] for p in profiles if not p]
+
+
+def named_log_profiles(raw, expected_names):
+    """Read exact declaration names in actual Lean output, including empties."""
+    assert isinstance(raw, bytes) and len(raw) <= 32 * 1024**2
+    text = raw.decode('utf-8')
+    assert not re.search(r'\b(error|warning)(?:\([^\n]*?\))?:', text)
+    pattern = re.compile(r"'([^']+)' (?:depends on axioms:\s*\[([^\]]*)\]|(does not depend on any axioms))")
+    parsed = []
+    for match in pattern.finditer(text):
+        name, used, empty = match.groups()
+        profile = [] if empty else sorted(set(x.strip() for x in used.split(',') if x.strip()))
+        assert empty or profile, 'An empty profile must use the pinned Lean empty-profile form'
+        assert set(profile) <= ALLOWED, ('Unexpected axiom', name, profile)
+        parsed.append((name, profile))
+    assert [name for name, _ in parsed] == expected_names, 'Printed declaration names or order changed'
+    assert len(expected_names) == len(set(expected_names))
+    return parsed
+
+
+def validate_named_split_axioms(spec, original_rows, snapshot, rows, read_module_log):
+    """Authenticate current named profiles and retain the full historical array.
+
+    read_module_log receives a fully qualified module name and returns its actual
+    Lean log bytes. It may read the current build or an explicitly bound archive.
+    This does not invent a historical name-to-profile mapping from an unlabelled
+    array; only the complete original normalization is compared historically.
+    """
+    assert spec['axiom_profile_validation'] == AXIOM_VALIDATION
+    assert NEW <= set(rows)
+    all_pairs = []
+    counts = {}
+    for part in snapshot['parts']:
+        name = part['module']
+        row = rows[name]
+        assert row['module'] == name
+        for key in ('source_sha256', 'source_closure_sha256'):
+            assert row[key] == spec['modules'][name][key]
+        expected_names = [snapshot['namespace'] + '.' + n for n in part['axiom_declarations']]
+        pairs = named_log_profiles(read_module_log(name), expected_names)
+        assert len(pairs) == spec['modules'][name]['axiom_profile_count']
+        assert row['axiom_profiles'] == verifier_profile_order([p for _, p in pairs]), (
+            'Current module record differs from its named kernel log', name)
+        all_pairs.extend(pairs)
+        counts[name] = len(pairs)
+    assert len(all_pairs) == len({n for n, _ in all_pairs}) == 313
+    printed = [snapshot['namespace'] + '.' + n for n in re.findall(r'^#print axioms (.+)$', snapshot['body'], re.M)]
+    assert [name for name, _ in all_pairs] == printed
+    historical = original_rows[NAME]['axiom_profiles']
+    normalized = verifier_profile_order([p for _, p in all_pairs])
+    assert normalized == historical, 'The complete historical leaf axiom profile array changed'
+    return {
+        'status': 'CURRENT_NAMED_PROFILES_AND_COMPLETE_ORIGINAL_PROFILE_ARRAY_MATCH',
+        'original_declarations': 313, 'current_modules': 12,
+        'normalization': AXIOM_VALIDATION['record_normalization'],
+        'historical_name_to_profile_mapping_inferred': False,
+        'per_module_profile_counts': counts,
+        'current_named_profiles': dict(all_pairs),
+        'historical_normalized_profile_sha256': sha(json.dumps(historical, separators=(',', ':')).encode()),
+    }
 
 
 def materialize_unchanged(spec, expected, snapshot):
@@ -181,7 +258,10 @@ def source_scope(spec, expected, base):
     assert closures == spec['required_source_closure_sha256']
     for name, row in spec['modules'].items():
         assert hashes[name] == row['source_sha256'] and closures[name] == row['source_closure_sha256']
-        assert row['axiom_profiles'] and all(set(p) <= ALLOWED for p in row['axiom_profiles'])
+        if name in NEW:
+            assert 'axiom_profiles' not in row and row['axiom_profile_count'] > 0
+        else:
+            assert row['axiom_profiles'] and all(set(p) <= ALLOWED for p in row['axiom_profiles'])
     for name in set(ENDPOINTS) - {NAME}:
         old = expected[name]
         for key in ('source_sha256', 'source_closure_sha256', 'axiom_profiles'):
@@ -264,7 +344,10 @@ def main():
                 assert row['mode'] == 'PRIOR_VERIFIED_JOB_EXPORT'
                 old = base['modules'][name]
             else:
-                assert row['axiom_profiles'] == spec['modules'][name]['axiom_profiles']
+                if name in NEW:
+                    assert len(row['axiom_profiles']) == spec['modules'][name]['axiom_profile_count']
+                else:
+                    assert row['axiom_profiles'] == spec['modules'][name]['axiom_profiles']
                 assert row == json.loads((build / (name + '.json')).read_bytes())
                 old = expected[name] if name in set(ENDPOINTS) - {NAME} else None
             if old is not None:
@@ -279,6 +362,10 @@ def main():
                     with path.open('rb') as stream:
                         assert hashlib.file_digest(stream, 'sha256').hexdigest() == digest
                     logical += path.stat().st_size
+        named_axiom_audit = validate_named_split_axioms(
+            spec, expected, snapshot, receipt['modules'],
+            lambda name: (build / (name + '.log')).read_bytes())
+        report('named_axioms', named_axiom_audit)
         report('verified', {
             'status': 'COMPLETE_ORIGINAL_BATCH_WITH_DECLARATION_PRESERVING_SPLIT_KERNEL_VERIFIED',
             'original_plan_sha256': ORIGINAL_PLAN_SHA, 'current_spec_sha256': args.spec_sha256,
@@ -287,6 +374,9 @@ def main():
             'source_reorganized_original_numeric_modules': [NAME], 'added_support_modules': 11,
             'original_declarations_preserved_verbatim': True, 'proof_bodies_changed': False,
             'standard_axioms_only': True, 'verified_fresh_output_bytes': logical,
+            'named_axiom_profiles_verified': True,
+            'complete_original_axiom_profile_array_preserved': True,
+            'historical_normalized_profile_sha256': named_axiom_audit['historical_normalized_profile_sha256'],
             'full_degree_one_large_closure': 'PENDING_SEPARATE_FINAL_ASSEMBLY',
         })
 

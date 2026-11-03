@@ -1,0 +1,59 @@
+{
+  "kind": "EXACT_NUMERIC137_ZERO_FRESH_METADATA_AUDIT",
+  "failed_kernel_origin": {
+    "repository": "RhudeJJJJ/formal-conjectures",
+    "run": 41709596489,
+    "job": 126173873595,
+    "source_commit": "ff7f8e64450cba947197417865221d624f5365c8",
+    "artifact_id": 13274071154,
+    "artifact_sha256": "6014d03a98cea6b8285d80ec27f2ec6da4ce930eb76a882deaacf1585a1877c6"
+  },
+  "failed_workflow_path": ".github/workflows/rg-d1-numeric137-decomposed-recovery-20261103.yml",
+  "failed_job_name": "Check complete numeric00_137 with original declarations in bounded modules",
+  "successful_kernel_step": "Check all original endpoints and their current support with one worker",
+  "failed_metadata_step": "Authenticate current exports and the nine unchanged historical objects",
+  "failed_archive_name": "rg-d1-numeric-decomposed-00_137-41709596489-1",
+  "failed_archive_bytes": 190329547,
+  "original_receipt_sha256": "7d1851b9f9df8b71ce3ee95626e818732178195d37fd30c5e226ff590267b574",
+  "original_kernel_raw_output_bytes": 820081056,
+  "corrected_spec": {
+    "path": "ci/rg_d1_numeric137_decomposed_20261103_spec.json",
+    "sha256": "215ae3b2b69a4d7f9f00d694228a45333df0b73e588a6b2f0f61c97b45db4302"
+  },
+  "proof_manifest": {
+    "path": "ci/rg_d1_numeric137_20261103_kernel_exports_before_metadata_audit.json",
+    "sha256": "45aee4a8b55e45c8d4b0d6fd62a567cc1a5fa0626687102401bfadac82e2b744"
+  },
+  "batch": "00_137",
+  "original_endpoints": [
+    "Proofs.RadenkovicGutmanD1Long00Leaf01370",
+    "Proofs.RadenkovicGutmanD1Long00Leaf01371",
+    "Proofs.RadenkovicGutmanD1Long00Leaf01372",
+    "Proofs.RadenkovicGutmanD1Long00Leaf01373",
+    "Proofs.RadenkovicGutmanD1Long00Leaf01374",
+    "Proofs.RadenkovicGutmanD1Long00Leaf01375",
+    "Proofs.RadenkovicGutmanD1Long00Leaf01376",
+    "Proofs.RadenkovicGutmanD1Long00Leaf01377",
+    "Proofs.RadenkovicGutmanD1Long00Leaf01378",
+    "Proofs.RadenkovicGutmanD1Long00Leaf01379"
+  ],
+  "required_module_count": 95,
+  "fresh_module_count": 0,
+  "original_compiled_module_count": 21,
+  "unchanged_historical_numeric_objects": 9,
+  "reorganized_current_source_modules": 12,
+  "added_support_module_count": 11,
+  "original_axiom_print_count": 313,
+  "workers": 1,
+  "module_timeout": 1200,
+  "memory_reserve_mib": 2048,
+  "audit_workflow_path": ".github/workflows/rg-d1-numeric137-zero-fresh-metadata-audit-20261103.yml",
+  "audit_job_name": "Audit complete original numeric00_137 with zero fresh kernel exports",
+  "audit_required_success_step": "Require all95 original identities and zero fresh kernel exports",
+  "audit_archive_name_template": "rg-d1-numeric137-zero-fresh-audit-20261103-{run}-{attempt}",
+  "original_failed_job_status_must_remain_failure": true,
+  "compiled_exports_must_keep_original_failed_job_origin": true,
+  "all_required_output_members_must_be_revalidated": true,
+  "audit_must_not_reexport_old_objects_as_fresh": true,
+  "full_degree_one_large_closure": "PENDING_SEPARATE_FINAL_ASSEMBLY"
+}

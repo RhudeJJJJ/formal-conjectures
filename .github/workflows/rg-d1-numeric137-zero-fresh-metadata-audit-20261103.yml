@@ -1,0 +1,55 @@
+name: RG original numeric137 exact zero-fresh metadata audit
+on:
+  push:
+    branches: [rg-degree-one-large-20261103]
+    paths: ['.github/workflows/rg-d1-numeric137-zero-fresh-metadata-audit-20261103.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  audit:
+    name: Audit complete original numeric00_137 with zero fresh kernel exports
+    if: github.repository == 'RhudeJJJJ/formal-conjectures'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          persist-credentials: false
+      - name: Bind exact current declarations and the actual failed kernel origin
+        run: python3 -B ci/rg_numeric137_zero_fresh_audit.py --phase source
+      - name: Install the fixed project toolchain
+        run: |
+          set -o pipefail
+          curl -sSfL https://github.com/leanprover/elan/releases/download/v1.4.2/elan-x86_64-unknown-linux-gnu.tar.gz | tar xz
+          ./elan-init -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Materialize the exact dependency lock
+        run: python3 -B ci/rg_dependencies.py
+      - name: Fetch the exact ten-endpoint external module cache
+        run: python3 -B ci/rg_run_original_d1_numeric.py --plan ci/rg_d1_required_numeric_batches_20261103/batch00_137.json --phase cache
+      - name: Restore the retained complete audited analytic base
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 -B ci/rg_restore_complete_scope.py --manifest ci/rg_reusable_analytic_kernel_base_complete_scope_capsule.json --build-directory Proofs/RG_Lean_20261019/build/extension
+      - name: Authenticate and restore the actual21 compiled objects from their failed origin
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 -B ci/rg_numeric137_zero_fresh_audit.py --phase restore
+      - name: Require exactly95 verified prior objects and no fresh frontier
+        run: python3 -B ci/rg_numeric137_zero_fresh_audit.py --phase before
+      - name: Revalidate all ten original endpoints with zero fresh compilations
+        shell: bash
+        run: |
+          set -o pipefail
+          python3 -B ci/rg_numeric137_zero_fresh_audit.py --phase verify | python3 -B ci/rg_compact_ci_output.py
+      - name: Require all95 original identities and zero fresh kernel exports
+        run: python3 -B ci/rg_numeric137_zero_fresh_audit.py --phase after
+      - name: Preserve the separate audit and actual failed proof provenance
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: rg-d1-numeric137-zero-fresh-audit-20261103-${{ github.run_id }}-${{ github.run_attempt }}
+          path: Proofs/RG_Lean_20261019/build/numeric137_zero_fresh_audit
+          retention-days: 90

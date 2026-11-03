@@ -1,0 +1,165 @@
+{
+  "actual_successful_batch_origins": 180,
+  "builder_sha256": "d8cc228a863a2af3704bcab1214f0a3aca6a4a36545b525b95b10c7da868ea8f",
+  "evidence_sha256": "39c2cceb645117e98f530e2c68ef9cdec9005d1074379de0cbf350e43d17bc6e",
+  "reason": "Complete actual 349-batch coverage does not yet exist; no synthetic successful contract was made.",
+  "remote_mutations": false,
+  "results": [
+    {
+      "details": null,
+      "name": "actual_349_plan_capture_has_exact_180_distinct_origins_and_no_166_success",
+      "status": "passed"
+    },
+    {
+      "details": null,
+      "name": "master_plan_only_allowed",
+      "status": "passed"
+    },
+    {
+      "details": null,
+      "name": "master_plan_and_optional_final_allowed",
+      "status": "passed"
+    },
+    {
+      "details": null,
+      "name": "duplicate_master_final_rejected",
+      "status": "passed"
+    },
+    {
+      "details": null,
+      "name": "unknown_master_side_job_rejected",
+      "status": "passed"
+    },
+    {
+      "details": null,
+      "name": "missing_master_plan_rejected",
+      "status": "passed"
+    },
+    {
+      "details": null,
+      "name": "reference_extra_final_rejected",
+      "status": "passed"
+    },
+    {
+      "details": "Incomplete pagination",
+      "name": "missing_master_page_rejected",
+      "status": "passed"
+    },
+    {
+      "details": "Live pagination totals changed; capture all pages again",
+      "name": "changed_pagination_total_rejected",
+      "status": "passed"
+    },
+    {
+      "details": "Duplicate or invalid IDs",
+      "name": "duplicate_actual_job_id_rejected",
+      "status": "passed"
+    },
+    {
+      "details": "Wrong actual run/head",
+      "name": "wrong_reference_head_rejected",
+      "status": "passed"
+    },
+    {
+      "details": "Changed job attempt",
+      "name": "wrong_reference_attempt_rejected",
+      "status": "passed"
+    },
+    {
+      "details": "Missing exact successful identity step",
+      "name": "successful_job_without_exact_identity_step_rejected",
+      "status": "passed"
+    },
+    {
+      "details": "Unregistered repair origin",
+      "name": "wrong_repair_job_id_rejected",
+      "status": "passed"
+    },
+    {
+      "details": "Repair is not actually successful",
+      "name": "wrong_repair_job_conclusion_rejected",
+      "status": "passed"
+    },
+    {
+      "details": "Unregistered repair origin",
+      "name": "wrong_repair_archive_digest_rejected",
+      "status": "passed"
+    },
+    {
+      "details": "Unregistered future repair origin",
+      "name": "future_166_origin_registration_rejected",
+      "status": "passed"
+    },
+    {
+      "details": "Wrong pending repair job",
+      "name": "wrong_pending_166_job_rejected",
+      "status": "passed"
+    },
+    {
+      "details": "Changed authenticated repair report",
+      "name": "changed_authentication_report_rejected",
+      "status": "passed"
+    },
+    {
+      "details": "('Ambiguous actual artifact', 'rg-d1-long-reference-recovery-20261103-41708676694-1-30_074')",
+      "name": "ambiguous_successful_artifact_name_rejected",
+      "status": "passed"
+    },
+    {
+      "details": "Mixed artifact pagination",
+      "name": "wrong_artifact_origin_rejected",
+      "status": "passed"
+    },
+    {
+      "details": "('Changed input', 'ci/rg_d1_required_numeric_batches_20261103/batch00_139.json')",
+      "name": "changed_original_plan_rejected",
+      "status": "passed"
+    },
+    {
+      "details": "('Changed input', 'ci/rg_d1_required_numeric_batches_20261103.json')",
+      "name": "changed_master_spec_rejected",
+      "status": "passed"
+    },
+    {
+      "details": "('Changed input', 'ci/rg_numeric137_20261103_zero_fresh_prerequisite.json')",
+      "name": "changed_zero_fresh_composite_origin_rejected",
+      "status": "passed"
+    },
+    {
+      "details": "('Changed input', 'ci/rg_d1_numeric_remainder_20261103/batch00_166.json')",
+      "name": "changed_pending_166_scope_rejected",
+      "status": "passed"
+    },
+    {
+      "details": null,
+      "name": "unknown_original_job_outside_90_registered_wave_two_cases_rejected",
+      "status": "passed"
+    },
+    {
+      "details": null,
+      "name": "allowed_late_lookup_preserves_name_without_inventing_job_id",
+      "status": "passed"
+    },
+    {
+      "details": "{\"status\": \"PENDING_NO_CONTRACT_WRITTEN\", \"complete_batches\": 180, \"missing_batches\": 169, \"pending_existing_original_bindings\": 96, \"permitted_original_lookups_pending\": 27}",
+      "name": "requested_seal_hard_blocked_with_exit_2_and_no_partial_contract",
+      "status": "passed"
+    },
+    {
+      "details": null,
+      "name": "wrong_frozen_evidence_sha_rejected_before_output",
+      "status": "passed"
+    },
+    {
+      "details": null,
+      "name": "exclusive_atomic_output_preserves_existing_file",
+      "status": "passed"
+    }
+  ],
+  "source_spec_sha256": "f47334108b563ae5e20f15fc07b2e4589f6d6e7f49e308bfdb8b4301e689e18e",
+  "status": "ACTUAL_PENDING_PATH_AND_REJECTION_CONTROLS_PASSED",
+  "successful_full_contract_positive_path_tested": false,
+  "tests": 30,
+  "total_original_batches": 349,
+  "whole_degree_one_large_complete": false
+}

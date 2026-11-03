@@ -1,0 +1,47 @@
+{
+  "artifact_observation_end": "2026-11-03T23:37:19Z",
+  "distinct_successful_complete_batches": 180,
+  "master": {
+    "actual_jobs": 257,
+    "artifacts": 58,
+    "counts": {
+      "failure": 6,
+      "in_progress": 8,
+      "queued": 190,
+      "success": 52
+    },
+    "numeric_jobs": 256,
+    "run": 41686621300,
+    "run_attempt": 1,
+    "source_commit": "aaeaec3cec22467d3f0b83b1761bfb40087bb991"
+  },
+  "observed_at": "2026-11-03T23:37:07Z",
+  "planned_batches": 349,
+  "raw_snapshot_inventory_sha256": "1e1e90f14a53f38e620effe80ee8c50a0d9b28c5a430411a1c859bb56def2977",
+  "reference": {
+    "actual_jobs": 187,
+    "artifacts": 124,
+    "counts": {
+      "in_progress": 3,
+      "queued": 60,
+      "success": 123
+    },
+    "numeric_jobs": 186,
+    "run": 41708676694,
+    "run_attempt": 1,
+    "source_commit": "c2e2f145a77c2c2c65349085283f5ca2db7aa814"
+  },
+  "remaining_open_original_families": 4,
+  "remaining_without_success": 169,
+  "separate_authenticated_repairs": [
+    "00_137",
+    "00_139",
+    "00_147",
+    "00_156",
+    "00_164"
+  ],
+  "unrecovered_observed_failures": [
+    "00_166"
+  ],
+  "whole_degree_one_large_complete": false
+}

@@ -16,6 +16,7 @@ LC = '621a43d7cf21f87872392a01e874f2f1dbddc926'
 ALLOWED = {'propext', 'Classical.choice', 'Quot.sound'}
 PARTIAL = 'ORIGINAL_PARTIAL_PRIORS_WITH_FRESH_REMAINDER'
 REORGANIZED = 'DECLARATION_PRESERVING_ORIGINAL137_FULL_BATCH'
+ZERO_AUDIT = 'NUMERIC137_COMPILED_OBJECTS_WITH_SEPARATE_ZERO_FRESH_METADATA_AUDIT'
 SPEC137 = 'ci/rg_d1_numeric137_decomposed_20261103_spec.json'
 SHA137 = '215ae3b2b69a4d7f9f00d694228a45333df0b73e588a6b2f0f61c97b45db4302'
 REMAINDERS = {
@@ -37,6 +38,9 @@ def identity(name, row):
 def completion_context(item):
     """Only reviewed fixed specs may describe a non-flat whole-batch recovery."""
     kind = item['completion_kind']
+    if kind == ZERO_AUDIT:
+        from rg_numeric137_zero_fresh_completion import completion_context as zero_context
+        return zero_context(item)
     if kind == PARTIAL:
         from rg_d1_numeric_remainder import load_remainder, PARTIALS
         batch = item['batch']
@@ -128,8 +132,12 @@ def archived_fresh(archive, fresh):
         module_log(archive, name, row)
 
 
-def authenticate_completion(item, artifact, context, fresh, hashes, closures, repository):
+def authenticate_completion(item, artifact, context, fresh, hashes, closures, repository, api=None):
     """Read both actual archives before accepting a two-origin full batch."""
+    if context['kind'] == ZERO_AUDIT:
+        from rg_numeric137_zero_fresh_completion import authenticate_completion as zero_audit
+        assert api is not None and repository == 'RhudeJJJJ/formal-conjectures'
+        return zero_audit(item, artifact, context, fresh, hashes, closures, api)
     manifest = dict(repository=repository, run=item['run'], job=item['job'],
         source_commit=item['source_commit'], artifact_id=artifact['id'],
         artifact_sha256=artifact['digest'].removeprefix('sha256:'))

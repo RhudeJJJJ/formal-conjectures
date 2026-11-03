@@ -67,9 +67,9 @@ def main():
         if item.get('expected_kind') == 'GE46_COMPILED_OBJECTS_WITH_SEPARATE_ZERO_FRESH_METADATA_AUDIT':
             from rg_ge46_zero_fresh_completion import completion_context
             completion_context(item)
-    from rg_collect_exact_d1_reproductions import sealed_numeric_replacements
+    from rg_collect_exact_d1_reproductions import sealed_numeric_replacements, NUMERIC137_COMPLETIONS
     checked_replacements, _ = sealed_numeric_replacements(a.numeric_replacements, spec_raw, origin, REPOSITORY)
-    assert checked_replacements['00_137']['completion_kind'] == 'DECLARATION_PRESERVING_ORIGINAL137_FULL_BATCH'
+    assert checked_replacements['00_137']['completion_kind'] in NUMERIC137_COMPLETIONS
     assert replacements['kind'] == 'SEALED_SUCCESSFUL_NUMERIC_BATCH_COMPLETIONS_WITH_EXPLICIT_SOURCE_REORGANIZATION'
     assert replacements['repository'] == REPOSITORY and replacements['numeric_run'] == RUN
     assert replacements['numeric_source_commit'] == NUMERIC_SHA

@@ -18,6 +18,8 @@ from rg_plan_exact_degree_one_large import source_closure
 PIN = '0df444a360eaa60ab8c11dca51a86af692955474'
 LC = '621a43d7cf21f87872392a01e874f2f1dbddc926'
 ALLOWED = {'propext', 'Classical.choice', 'Quot.sound'}
+NUMERIC137_ZERO_AUDIT = 'NUMERIC137_COMPILED_OBJECTS_WITH_SEPARATE_ZERO_FRESH_METADATA_AUDIT'
+NUMERIC137_COMPLETIONS = {'DECLARATION_PRESERVING_ORIGINAL137_FULL_BATCH', NUMERIC137_ZERO_AUDIT}
 NEW_WRAPPERS = {
     'Proofs.RadenkovicGutmanCompactFiniteDegreeOneSmallCertificatesComplete',
     'Proofs.RadenkovicGutmanCompactFiniteOriginalDegreeOneSmall',
@@ -222,6 +224,8 @@ def sealed_numeric_replacements(path, spec_raw, origin, repository):
         }
         if 'completion_kind' in item:
             required |= {'completion_kind', 'completion_spec'}
+            if item['completion_kind'] == NUMERIC137_ZERO_AUDIT:
+                required.add('compiled_proof_origin')
         if 'original_job_lookup' in item:
             required = (required - {'original_job'}) | {'original_job_lookup'}
         assert set(item) == required, 'A replacement may bind origins, never override the original proof scope'
@@ -244,7 +248,7 @@ def sealed_numeric_replacements(path, spec_raw, origin, repository):
         replacements[item['batch']] = item
     assert replacements, 'A sealed replacement file must identify actual successful replacement jobs'
     reorganized = [i for i in replacements.values()
-                   if i.get('completion_kind') == 'DECLARATION_PRESERVING_ORIGINAL137_FULL_BATCH']
+                   if i.get('completion_kind') in NUMERIC137_COMPLETIONS]
     assert bool(reorganized) == (sealed['kind'] ==
         'SEALED_SUCCESSFUL_NUMERIC_BATCH_COMPLETIONS_WITH_EXPLICIT_SOURCE_REORGANIZATION')
     assert len(reorganized) <= 1
@@ -320,7 +324,7 @@ def main():
             a.numeric_replacements, spec_raw, origin, repository)
         assert set(replacements) <= {b['batch'] for b in spec['jobs']}
         if current_binding:
-            assert replacements['00_137']['completion_kind'] == 'DECLARATION_PRESERVING_ORIGINAL137_FULL_BATCH'
+            assert replacements['00_137']['completion_kind'] in NUMERIC137_COMPLETIONS
 
     catalogs, job_catalogs, observed_jobs = {}, {}, {}
     def jobs_for(r):
@@ -357,9 +361,9 @@ def main():
             item = dict(run=run, job=job['id'], source_commit=commit,
                 artifact_name=f"rg-d1-original-numeric-{run}-{job['run_attempt']}-{batch['batch']}",
                 required_success_step='Require exact historical output identities')
-        # All original endpoints remain mandatory. Only the two fixed completion
-        # kinds may additionally bind preserved partial origins or the explicit
-        # declaration-preserving split; their specs cannot override this plan.
+        # All original endpoints remain mandatory. The fixed completion kinds
+        # may bind preserved partial origins or the explicit declaration split,
+        # including its separate zero-fresh audit; none may override this plan.
         item.update(key='batch' + batch['batch'], original_manifests=plan['original_manifests'],
                     fresh_module_origins=plan['fresh_module_origins'])
         items.append(item)
@@ -424,6 +428,9 @@ def main():
             if completion['kind'] == 'ORIGINAL_PARTIAL_PRIORS_WITH_FRESH_REMAINDER':
                 assert item['artifact_name'] == (
                     f"rg-d1-original-numeric-remainder-20261103-{item['run']}-{item['actual_run_attempt']}-{item['batch']}")
+            elif completion['kind'] == NUMERIC137_ZERO_AUDIT:
+                assert item['artifact_name'] == completion['audit']['audit_archive_name_template'].format(
+                    run=item['run'], attempt=item['actual_run_attempt'])
             else:
                 assert item['artifact_name'] == (
                     f"rg-d1-numeric-decomposed-00_137-{item['run']}-{item['actual_run_attempt']}")
@@ -458,10 +465,16 @@ def main():
         elif completion:
             compare_completion_records(completion, fresh, hashes, closures)
             preserved, completion_report = authenticate_completion(
-                item, artifact, completion, fresh, hashes, closures, repository)
+                item, artifact, completion, fresh, hashes, closures, repository, api)
             assert not set(preserved).intersection(fresh)
             assert set(expected) <= set(preserved) | set(fresh)
-            current_numeric_support.update(set(fresh) - set(expected))
+            current_numeric_support.update((set(preserved) | set(fresh)) - set(expected))
+            if completion['kind'] == NUMERIC137_ZERO_AUDIT:
+                assert not fresh and preserved == completion['proof']['modules']
+                proof_path = completion['audit']['proof_manifest']['path']
+                proof_raw = (ROOT / proof_path).read_bytes()
+                assert sha(proof_raw) == completion['audit']['proof_manifest']['sha256']
+                (out / (item['key'] + '_original_kernel_prior_exports.json')).write_bytes(proof_raw)
         else:
             compare_records(fresh, expected, hashes, closures, item.get('expected_kind') == 'new_compact_wrappers')
         for n, row in (preserved | fresh).items():
@@ -478,6 +491,8 @@ def main():
             manifest['origin_context']['numeric_replacement'] = item['numeric_replacement']
         if completion_report:
             manifest['origin_context']['authenticated_full_batch_completion'] = completion_report
+            if completion['kind'] == NUMERIC137_ZERO_AUDIT:
+                manifest['origin_context']['kind'] = 'SOURCE_BOUND_SUCCESSFUL_ZERO_FRESH_METADATA_AUDIT'
         if endpoint_audit_report:
             manifest['origin_context']['kind'] = 'SOURCE_BOUND_SUCCESSFUL_ZERO_FRESH_METADATA_AUDIT'
             manifest['origin_context']['authenticated_composite_endpoint_completion'] = endpoint_audit_report
@@ -486,6 +501,8 @@ def main():
                       modules=len(fresh), status='SUCCESSFUL_EXACT_JOB_RECORDS_REQUIRE_AUTHENTICATED_ARCHIVE_RESTORE')
         if completion_report:
             report['authenticated_full_batch_completion'] = completion_report
+            if completion['kind'] == NUMERIC137_ZERO_AUDIT:
+                report['status'] = 'ACTUAL_FAILED_PROOF_OBJECTS_WITH_SEPARATE_SUCCESSFUL_ZERO_FRESH_AUDIT'
         if endpoint_audit_report:
             report['status'] = 'ACTUAL_FAILED_PROOF_OBJECTS_WITH_SEPARATE_SUCCESSFUL_ZERO_FRESH_AUDIT'
             report['authenticated_composite_endpoint_completion'] = endpoint_audit_report

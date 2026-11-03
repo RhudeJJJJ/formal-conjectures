@@ -1,0 +1,42 @@
+{
+  "repository": "RhudeJJJJ/formal-conjectures",
+  "run": 41686621576,
+  "job": 126168719296,
+  "source_commit": "aaeaec3cec22467d3f0b83b1761bfb40087bb991",
+  "artifact_id": 13267632691,
+  "artifact_sha256": "c72908398c048d95ae1e6d66b44b9afeb202d45dc5824eb5447b201ee7898379",
+  "lean_version": "4.33.1",
+  "mathlib": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "modules": {
+    "Proofs.RadenkovicGutmanCompactFiniteDegreeOneSmallCertificatesComplete": {
+      "module": "Proofs.RadenkovicGutmanCompactFiniteDegreeOneSmallCertificatesComplete",
+      "source_sha256": "196cd2cf8dd360425e1270067bad3016c76f43a3bc320fa9048ea8aee7dd8afd",
+      "source_closure_sha256": "e3be2cf1b781627288713001bfd9d6369b9215ee36bf8a030c132ca46710db8d",
+      "output_sha256": "4670457d7de8c1f6835869efe23e15cddcb7b37b2ebc3df5ff0f002b5150e926",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "FRESH_KERNEL_EXPORT",
+      "seconds": 12.498
+    },
+    "Proofs.RadenkovicGutmanCompactFiniteOriginalDegreeOneSmall": {
+      "module": "Proofs.RadenkovicGutmanCompactFiniteOriginalDegreeOneSmall",
+      "source_sha256": "5c0836982b637f13813fac505d99e89ab566358623ff5af3afec1835e8ed26ed",
+      "source_closure_sha256": "a101da1472cbb6c3b2b1e72bf13315af80eac7aeb4f07cc1834b2739bef4869d",
+      "output_sha256": "e94bff1363992b2338a925a95f3dccba0778b39ce2e2c91f9b5d1ea3c3c71121",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "FRESH_KERNEL_EXPORT",
+      "seconds": 3.423
+    }
+  }
+}

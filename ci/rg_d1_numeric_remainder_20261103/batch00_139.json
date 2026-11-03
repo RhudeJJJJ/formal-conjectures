@@ -1,0 +1,43 @@
+{
+  "kind": "EXACT_ORIGINAL_NUMERIC_REMAINDER_WITH_AUTHENTICATED_PARTIAL_PRIORS",
+  "batch": "00_139",
+  "original_numeric_spec": "ci/rg_d1_required_numeric_batches_20261103.json",
+  "original_numeric_spec_sha256": "f47334108b563ae5e20f15fc07b2e4589f6d6e7f49e308bfdb8b4301e689e18e",
+  "original_plan": "ci/rg_d1_required_numeric_batches_20261103/batch00_139.json",
+  "original_plan_sha256": "1d440b5719a7f0a463717f451d563030db2579bb60286ad51533cbdffce1fe4f",
+  "partial_manifest": "ci/rg_d1_20261103_numeric_partial_exports/chunk139_prior_exports.json",
+  "partial_manifest_sha256": "ddefb113cbd2a5d0283ccf90b92de4da6af59a03aca4316ea6ce0b24c365f290",
+  "endpoints": [
+    "Proofs.RadenkovicGutmanD1Long00Leaf01390",
+    "Proofs.RadenkovicGutmanD1Long00Leaf01391",
+    "Proofs.RadenkovicGutmanD1Long00Leaf01392",
+    "Proofs.RadenkovicGutmanD1Long00Leaf01393",
+    "Proofs.RadenkovicGutmanD1Long00Leaf01394",
+    "Proofs.RadenkovicGutmanD1Long00Leaf01395",
+    "Proofs.RadenkovicGutmanD1Long00Leaf01396",
+    "Proofs.RadenkovicGutmanD1Long00Leaf01397",
+    "Proofs.RadenkovicGutmanD1Long00Leaf01398",
+    "Proofs.RadenkovicGutmanD1Long00Leaf01399"
+  ],
+  "required_module_count": 84,
+  "prior_original_modules": [
+    "Proofs.RadenkovicGutmanD1Long00Leaf01390",
+    "Proofs.RadenkovicGutmanD1Long00Leaf01391",
+    "Proofs.RadenkovicGutmanD1Long00Leaf01392",
+    "Proofs.RadenkovicGutmanD1Long00Leaf01393"
+  ],
+  "fresh_modules": [
+    "Proofs.RadenkovicGutmanD1Long00Leaf01394",
+    "Proofs.RadenkovicGutmanD1Long00Leaf01395",
+    "Proofs.RadenkovicGutmanD1Long00Leaf01396",
+    "Proofs.RadenkovicGutmanD1Long00Leaf01397",
+    "Proofs.RadenkovicGutmanD1Long00Leaf01398",
+    "Proofs.RadenkovicGutmanD1Long00Leaf01399"
+  ],
+  "fresh_module_count": 6,
+  "workers": 1,
+  "module_timeout": 1200,
+  "memory_reserve_mib": 2048,
+  "status": "SOURCE_IDENTICAL_FULL_ORIGINAL_BATCH_WITH_PARTIAL_PRIORS_REQUIRES_COMPLETE_KERNEL_RECEIPT",
+  "original_failed_job_status_preserved": true
+}

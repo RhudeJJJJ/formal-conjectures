@@ -1,0 +1,54 @@
+name: RG exact original numeric139 with authenticated partial priors
+on:
+  push:
+    branches: [rg-degree-one-large-20261103]
+    paths: ['.github/workflows/rg-d1-numeric139-partial-remainder-20261103.yml']
+permissions:
+  contents: read
+  actions: read
+jobs:
+  reproduce:
+    name: Complete original numeric remainder 00_139
+    runs-on: ubuntu-24.04
+    timeout-minutes: 240
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          persist-credentials: false
+      - name: Materialize and bind all ten unchanged original endpoints
+        run: |
+          python3 -B ci/rg_run_original_d1_numeric.py --plan "ci/rg_d1_required_numeric_batches_20261103/batch00_139.json" --phase materialize
+          python3 -B ci/rg_d1_numeric_remainder.py --batch "00_139" --phase source
+      - name: Install the fixed project toolchain
+        run: |
+          set -o pipefail
+          curl -sSfL https://github.com/leanprover/elan/releases/download/v1.4.2/elan-x86_64-unknown-linux-gnu.tar.gz | tar xz
+          ./elan-init -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Materialize the exact dependency lock
+        run: python3 -B ci/rg_dependencies.py
+      - name: Fetch the exact original external module cache
+        run: python3 -B ci/rg_run_original_d1_numeric.py --plan "ci/rg_d1_required_numeric_batches_20261103/batch00_139.json" --phase cache
+      - name: Authenticate the original base and completed partial objects
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 -B ci/rg_d1_numeric_remainder.py --batch "00_139" --phase restore
+      - name: Require exact partial origins and the remaining fresh frontier
+        run: python3 -B ci/rg_d1_numeric_remainder.py --batch "00_139" --phase before
+      - name: Complete the original batch with one worker and unchanged guards
+        shell: bash
+        run: |
+          set -o pipefail
+          python3 -B ci/rg_d1_numeric_remainder.py --batch "00_139" --phase kernel | python3 -B ci/rg_compact_ci_output.py
+      - name: Require exact historical output identities
+        run: python3 -B ci/rg_d1_numeric_remainder.py --batch "00_139" --phase after
+      - name: Retain fresh outputs and complete provenance without relabelling priors
+        if: always()
+        run: python3 -B ci/rg_collect_fresh_exports.py --build-directory Proofs/RG_Lean_20261019/build/extension --output-directory Proofs/RG_Lean_20261019/build/fresh_exports
+      - name: Preserve exact remainder proof exports and full original batch receipt
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: rg-d1-original-numeric-remainder-20261103-${{ github.run_id }}-${{ github.run_attempt }}-00_139
+          path: Proofs/RG_Lean_20261019/build/fresh_exports
+          retention-days: 90

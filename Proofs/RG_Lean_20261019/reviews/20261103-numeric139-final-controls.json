@@ -1,0 +1,90 @@
+{
+  "status": "NARROW139_FINAL_COMPLETION_EXTENSION_VALIDATED_NO_SUCCESS_ORIGIN_CREATED",
+  "changed_file": "ci/rg_exact_numeric_completion.py",
+  "changed_file_sha256": "a319c2f98a61b3341f1c1e00b083ce1bcc751c18e2abf482e438cc155e6f0cbe",
+  "exact_allowed_remainders": [
+    "00_139",
+    "00_156",
+    "00_164"
+  ],
+  "new139_spec_sha256": "18a46b10ebaff7640f068ae35001eafdba401c90265cbf1634fa0221a9fed922",
+  "original139_job": 126095234749,
+  "original139_partial_objects": 4,
+  "required139_fresh_objects": 6,
+  "original139_scope": 84,
+  "original139_endpoints": 10,
+  "negative_cases": 13,
+  "other_authentication_function_bodies_byte_identical": true,
+  "lean_sources_changed": false,
+  "successful139_recovery_origin_claimed": false,
+  "cases": [
+    {
+      "case": "all archive, full84-receipt, historical-object and1370 functions remain byte-identical",
+      "result": "PASS"
+    },
+    {
+      "case": "00_139 exact fixed current context with all10 original endpoints",
+      "result": "PASS_METADATA_ONLY"
+    },
+    {
+      "case": "00_156 exact fixed current context with all10 original endpoints",
+      "result": "PASS_METADATA_ONLY"
+    },
+    {
+      "case": "00_164 exact fixed current context with all10 original endpoints",
+      "result": "PASS_METADATA_ONLY"
+    },
+    {
+      "case": "unregistered140 remainder",
+      "result": "REJECTED"
+    },
+    {
+      "case": "139 cannot use old generic workflow",
+      "result": "REJECTED"
+    },
+    {
+      "case": "139 cannot use another spec hash",
+      "result": "REJECTED"
+    },
+    {
+      "case": "139 cannot use another original job",
+      "result": "REJECTED"
+    },
+    {
+      "case": "139 cannot replace another plan",
+      "result": "REJECTED"
+    },
+    {
+      "case": "139 cannot weaken success gate",
+      "result": "REJECTED"
+    },
+    {
+      "case": "139 cannot rename its job",
+      "result": "REJECTED"
+    },
+    {
+      "case": "missing one of six required original fresh objects",
+      "result": "REJECTED"
+    },
+    {
+      "case": "old prior cannot be claimed fresh",
+      "result": "REJECTED"
+    },
+    {
+      "case": "no changed historical output",
+      "result": "REJECTED"
+    },
+    {
+      "case": "no changed historical profile",
+      "result": "REJECTED"
+    },
+    {
+      "case": "no changed source closure",
+      "result": "REJECTED"
+    },
+    {
+      "case": "fresh remainder cannot be relabelled prior",
+      "result": "REJECTED"
+    }
+  ]
+}

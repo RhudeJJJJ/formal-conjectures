@@ -1,4 +1,4 @@
-"""Complete two exact original batches while preserving authenticated priors.
+"""Complete three exact original batches while preserving authenticated priors.
 
 Every batch retains all ten original endpoints. Already checked modules keep
 their failed-job archive origins; only the sealed remainder is fresh. A full
@@ -23,6 +23,9 @@ NUMERIC_SHA = 'f47334108b563ae5e20f15fc07b2e4589f6d6e7f49e308bfdb8b4301e689e18e'
 ORIGINAL_RUN = 41686621300
 ORIGINAL_COMMIT = 'aaeaec3cec22467d3f0b83b1761bfb40087bb991'
 PARTIALS = {
+    '00_139': dict(job=126095234749, artifact_id=13271197315,
+        artifact_sha256='0082ee00e4b104ff4e392f65fcb0462fb17d1325071b07fa028fdb680248a38f',
+        indices=[1390,1391,1392,1393]),
     '00_156': dict(job=126095228744, artifact_id=13265702201,
         artifact_sha256='2d3fe3a3cad629c02a85b735460e4e4f6fb49ad60e9664b4fd4e4001daf6254d',
         indices=[1560,1561,1562,1563,1564,1565]),

@@ -1,0 +1,69 @@
+{
+  "status": "NARROW139_REMAINDER_SOURCE_ORIGIN_AND_CONFIGURATION_VALIDATED_NO_NEW_KERNEL_RECEIPT",
+  "cases": [
+    {
+      "case": "every existing function body including complete-receipt and physical-memory guards remains byte-identical",
+      "result": "PASS"
+    },
+    {
+      "case": "00_139 exact fixed origins and original84-module source scope",
+      "result": "PASS_SOURCE_METADATA_ONLY"
+    },
+    {
+      "case": "00_156 exact fixed origins and original84-module source scope",
+      "result": "PASS_SOURCE_METADATA_ONLY"
+    },
+    {
+      "case": "00_164 exact fixed origins and original84-module source scope",
+      "result": "PASS_SOURCE_METADATA_ONLY"
+    },
+    {
+      "case": "unregistered batch is forbidden",
+      "result": "REJECTED_AS_REQUIRED"
+    },
+    {
+      "case": "changed memory_reserve_mib",
+      "result": "REJECTED_AS_REQUIRED"
+    },
+    {
+      "case": "changed module_timeout",
+      "result": "REJECTED_AS_REQUIRED"
+    },
+    {
+      "case": "changed workers",
+      "result": "REJECTED_AS_REQUIRED"
+    },
+    {
+      "case": "changed fresh_module_count",
+      "result": "REJECTED_AS_REQUIRED"
+    },
+    {
+      "case": "missing original fresh module",
+      "result": "REJECTED_AS_REQUIRED"
+    },
+    {
+      "case": "different failed-job origin even with recomputed manifest hash",
+      "result": "REJECTED_AS_REQUIRED"
+    },
+    {
+      "case": "own139-only push trigger, unchanged strict after-gate, attempt-safe archive,90-day retention",
+      "result": "PASS_CONFIGURATION_ONLY"
+    }
+  ],
+  "new_kernel_proof": false,
+  "successful_replacement_contract_emitted": false,
+  "actual_old_partial_archive_authenticated": true,
+  "full_original_source_scope": 84,
+  "old_original_modules": 4,
+  "fresh_original_modules_required": 6,
+  "original_endpoints": 10,
+  "workers": 1,
+  "module_timeout": 1200,
+  "memory_reserve_mib": 2048,
+  "files": {
+    ".github/workflows/rg-d1-numeric139-partial-remainder-20261103.yml": "5abb94358ce385f123f9b9a6c010571fbe3217d140d45ec3b934a121100a5322",
+    "ci/rg_d1_20261103_numeric_partial_exports/chunk139_prior_exports.json": "ddefb113cbd2a5d0283ccf90b92de4da6af59a03aca4316ea6ce0b24c365f290",
+    "ci/rg_d1_numeric_remainder.py": "ea1d4e4f53169e8a58266e7f66692448bc4cb3f712c883be7591f9ee3eeeedfe",
+    "ci/rg_d1_numeric_remainder_20261103/batch00_139.json": "18a46b10ebaff7640f068ae35001eafdba401c90265cbf1634fa0221a9fed922"
+  }
+}

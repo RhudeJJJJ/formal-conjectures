@@ -28,7 +28,7 @@ theorem checked {n : ℕ} (d : Fin (n+1) → ℕ) (p : NestedInteger.Poly (n+1))
   change (NestedInteger.powerCheck (n+1) p || decide (p.length ≤ d 0+1 ∧
     ∀ j : Fin (d 0+1), NestedIntegerHybrid.accepts n (fun i => d i.succ)
       (NestedInteger.coefficientFrom (d 0) j.val 0 p) = true)) = true
-  apply Bool.or_eq_true.mpr
+  rw [Bool.or_eq_true]
   right
   apply decide_eq_true
   refine ⟨hp, ?_⟩

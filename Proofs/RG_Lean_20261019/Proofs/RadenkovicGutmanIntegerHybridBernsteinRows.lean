@@ -25,9 +25,9 @@ theorem checked {n : ℕ} (d : Fin (n+1) → ℕ) (p : NestedInteger.Poly (n+1))
     (hr : ∀ j, rows j = NestedInteger.coefficientFrom (d 0) j.val 0 p)
     (hs : ∀ j, NestedIntegerHybrid.accepts n (fun i => d i.succ) (rows j) = true) :
     NestedIntegerHybrid.accepts (n+1) d p = true := by
-  change NestedInteger.powerCheck (n+1) p || decide (p.length ≤ d 0+1 ∧
+  change (NestedInteger.powerCheck (n+1) p || decide (p.length ≤ d 0+1 ∧
     ∀ j : Fin (d 0+1), NestedIntegerHybrid.accepts n (fun i => d i.succ)
-      (NestedInteger.coefficientFrom (d 0) j.val 0 p) = true) = true
+      (NestedInteger.coefficientFrom (d 0) j.val 0 p) = true)) = true
   apply Bool.or_eq_true.mpr
   right
   apply decide_eq_true

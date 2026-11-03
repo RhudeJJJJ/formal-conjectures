@@ -1,0 +1,53 @@
+{
+  "repository": "RhudeJJJJ/formal-conjectures",
+  "run": 41702095951,
+  "job": 126147719772,
+  "source_commit": "a42c2bfe373d2579e44ff799d6e871cf5acab1f2",
+  "artifact_id": 13264246735,
+  "artifact_sha256": "eb56f92781039934ffd605a158af32eaf01faf4db365543d60b430bf68e2f72a",
+  "lean_version": "4.33.1",
+  "mathlib": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "modules": {
+    "Proofs.RadenkovicGutmanEscapeReducedReserveData": {
+      "module": "Proofs.RadenkovicGutmanEscapeReducedReserveData",
+      "source_sha256": "6b5d9e8a915a69f38dbcab0f7f9d17181293bcc056fee047aaa516aac58c6e6a",
+      "source_closure_sha256": "83412759d01399e4dc15f54b4e02a001460ab179d8be91af9d505c20bb43aa3c",
+      "output_sha256": "7614fcbd4fe76431512da706f004da3984d7118d5ba8943e7862af17300f5e84",
+      "axiom_profiles": [
+        [
+          "propext"
+        ],
+        []
+      ],
+      "mode": "FRESH_KERNEL_EXPORT",
+      "seconds": 6.935
+    },
+    "Proofs.RadenkovicGutmanEscapeReducedReserveEvaluation": {
+      "module": "Proofs.RadenkovicGutmanEscapeReducedReserveEvaluation",
+      "source_sha256": "a3fb2ec493807b7f8a0a6b770fb447d8c07d5d02992ce50a90c5fe440c5f7181",
+      "source_closure_sha256": "0bb1feca65036ca01b04ef62c6daa4c285e527f13a6408070e609405df591596",
+      "output_sha256": "2e3d85a33abb171a16158a985b425449231bfa0962199b220be6912c440abbaa",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "FRESH_KERNEL_EXPORT",
+      "seconds": 28.195
+    }
+  },
+  "origin_context": {
+    "kind": "AUTHENTICATED_SUCCESSFUL_ORIGINAL_DATA_EVALUATION_STAGE",
+    "workflow_path": ".github/workflows/rg-ge46-checked-rows-reconstruction-20261103.yml",
+    "job_name": "ge46-checked-evaluation",
+    "required_success_step": "Require exact original declarations and staged kernel exports",
+    "archived_receipt_sha256": "2b54b61741875734dafaf5ebe88a8306456c31f1d685eee4c91dd4a6518542e8",
+    "artifact_name": "rg-ge46-checked-rows-20261103-41702095951-1-evaluation",
+    "original_data_eval_declaration_and_proof_preserved": true,
+    "stage_complete": true,
+    "ge46_family_complete": false,
+    "whole_degree_one_large": "NOT_ESTABLISHED_BY_THIS_STAGE"
+  }
+}

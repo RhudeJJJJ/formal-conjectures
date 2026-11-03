@@ -37,6 +37,9 @@ def bound_file(relative, digest):
 
 
 def original_rows(item):
+    if item.get('expected_kind') == 'GE46_COMPILED_OBJECTS_WITH_SEPARATE_ZERO_FRESH_METADATA_AUDIT':
+        from rg_ge46_zero_fresh_completion import completion_context
+        return completion_context(item)['proof']['modules']
     if item.get('expected_kind') == 'existing_compact_small_ge_four_scope':
         assert item['endpoint'] == 'Proofs.RadenkovicGutmanCompactFiniteOriginalSmallGeFour'
         assert set(item['audit_source']) == {'source_sha256', 'source_closure_sha256'}
@@ -408,6 +411,11 @@ def main():
     for item in items:
         expected = original_rows(item)
         completion = None
+        ge46_audit = None
+        if item.get('expected_kind') == 'GE46_COMPILED_OBJECTS_WITH_SEPARATE_ZERO_FRESH_METADATA_AUDIT':
+            from rg_ge46_zero_fresh_completion import completion_context as ge46_context
+            ge46_audit = ge46_context(item)
+            assert 'completion_kind' not in item
         if 'completion_kind' in item:
             from rg_exact_numeric_completion import (completion_context,
                 compare_completion_records, authenticate_completion)
@@ -434,8 +442,20 @@ def main():
         fresh = records_from_log(raw)
         # Compare the complete job first. Shared ancestors are retained only
         # after identical source, closure, object, member and axiom checks.
-        preserved, completion_report = {}, None
-        if completion:
+        preserved, completion_report, endpoint_audit_report = {}, None, None
+        if ge46_audit:
+            from rg_ge46_zero_fresh_completion import authenticate_completion as authenticate_ge46_audit
+            preserved, endpoint_audit_report = authenticate_ge46_audit(
+                item, artifact, ge46_audit, fresh, hashes, closures, api)
+            assert not fresh and preserved == expected
+            # These are the exact old FRESH records, still attached solely to
+            # the failed original proof archive. The successful audit exports
+            # no objects and receives its own empty manifest below.
+            proof_path = ge46_audit['audit']['proof_manifest']['path']
+            proof_raw = (ROOT / proof_path).read_bytes()
+            assert sha(proof_raw) == ge46_audit['audit']['proof_manifest']['sha256']
+            (out / (item['key'] + '_original_kernel_prior_exports.json')).write_bytes(proof_raw)
+        elif completion:
             compare_completion_records(completion, fresh, hashes, closures)
             preserved, completion_report = authenticate_completion(
                 item, artifact, completion, fresh, hashes, closures, repository)
@@ -458,11 +478,17 @@ def main():
             manifest['origin_context']['numeric_replacement'] = item['numeric_replacement']
         if completion_report:
             manifest['origin_context']['authenticated_full_batch_completion'] = completion_report
+        if endpoint_audit_report:
+            manifest['origin_context']['kind'] = 'SOURCE_BOUND_SUCCESSFUL_ZERO_FRESH_METADATA_AUDIT'
+            manifest['origin_context']['authenticated_composite_endpoint_completion'] = endpoint_audit_report
         (out / (item['key'] + '_prior_exports.json')).write_text(json.dumps(manifest, indent=2) + '\n')
         report = dict(key=item['key'], run=item['run'], job=item['job'], artifact_id=artifact['id'],
                       modules=len(fresh), status='SUCCESSFUL_EXACT_JOB_RECORDS_REQUIRE_AUTHENTICATED_ARCHIVE_RESTORE')
         if completion_report:
             report['authenticated_full_batch_completion'] = completion_report
+        if endpoint_audit_report:
+            report['status'] = 'ACTUAL_FAILED_PROOF_OBJECTS_WITH_SEPARATE_SUCCESSFUL_ZERO_FRESH_AUDIT'
+            report['authenticated_composite_endpoint_completion'] = endpoint_audit_report
         reports.append(report)
         print(json.dumps(report), flush=True)
     assert set(spec['scheduled_numeric_modules']) <= covered.keys()

@@ -64,6 +64,9 @@ def main():
     for item in contract['jobs']:
         assert 'workflow_path' not in item, 'All auxiliary jobs must have actual pinned origins'
         sealed_job(item)
+        if item.get('expected_kind') == 'GE46_COMPILED_OBJECTS_WITH_SEPARATE_ZERO_FRESH_METADATA_AUDIT':
+            from rg_ge46_zero_fresh_completion import completion_context
+            completion_context(item)
     from rg_collect_exact_d1_reproductions import sealed_numeric_replacements
     checked_replacements, _ = sealed_numeric_replacements(a.numeric_replacements, spec_raw, origin, REPOSITORY)
     assert checked_replacements['00_137']['completion_kind'] == 'DECLARATION_PRESERVING_ORIGINAL137_FULL_BATCH'

@@ -1,0 +1,77 @@
+{
+  "status": "INDEPENDENT_GE46_COMPOSITE_COLLECTOR_REVIEW_PASSED",
+  "frozen_inventory_sha256": "923f5c7c75173ef14fd452dacd8b7f66fc732645af1d576cc1e283ff8ed4d033",
+  "files": {
+    "ci/rg_collect_exact_d1_reproductions.py": "b0d48f862e5be392ba999976ccadb3ce87c8b9d2dc6bc9c48e9b9f3f123d2706",
+    "ci/rg_ge46_zero_fresh_completion.py": "51027dfaa945ed9017d22e72f1674e8daf6446958b2708cdb2906d5b397cd4a3",
+    "ci/rg_prepare_exact_final_hook.py": "d0bbef655c28a405bcf21acfce8f176c0cc6433718207d10bd5874f0b45ddb75"
+  },
+  "actual_old_run": 41706475942,
+  "actual_old_job": 126182927540,
+  "actual_old_conclusion": "failure",
+  "actual_original_archive_sha256": "f9df291a80a27e7244893aac72a4afcec323c6818f5ba4e8ca6ac5ff98dd4d54",
+  "actual_original_outputs_authenticated": 63,
+  "actual_original_output_bytes": 1305687696,
+  "actual_original_receipt_modules": 178,
+  "new_audit_fixture": "IN_MEMORY_ONLY_NOT_AN_ACTUAL_CI_RECEIPT_OR_SEALED_ORIGIN",
+  "original_proof_manifest_copied_byte_for_byte": true,
+  "new_audit_manifest_modules": 0,
+  "two_distinct_origins_required": true,
+  "unchanged_baseline_functions": {
+    "rg_collect_exact_d1_reproductions.py": {
+      "baseline_sha256": "ee63770a720f1ca3e08835ead0a1e95158ddc9b7ab76dea96ae57c8c25fcc6e0",
+      "changed_functions": [
+        "main",
+        "original_rows"
+      ],
+      "all_other_functions_ast_identical": true
+    },
+    "rg_prepare_exact_final_hook.py": {
+      "baseline_sha256": "44a3d5f6a9f5a38fec15af19ed6f15ccf60ca910a1f87bb153536928dc3a9eb0",
+      "changed_functions": [
+        "main"
+      ],
+      "all_other_functions_ast_identical": true
+    }
+  },
+  "full_scope_and_binding_integration": {
+    "current_binding_sha256": "24a14e2fe0c1f5e9914c268f0eec9d5a2499af0cc1fa47bce563a550f207c98e",
+    "binding_validator_sha256": "cd8a9ee09c3ed0c3d30085dfcc1e09c5cc01ca6d1aa5d045fa2e43f952b24824",
+    "new_exact_kind_passes_unchanged_contract_binding": true,
+    "binding_and_origin_contract_test_is_shape_fixture_only": true,
+    "actual_original_rows_branch_returns_exact_old63": true,
+    "zero_fresh_log_parser_returns_empty": true,
+    "ge46_parent_modules": 28,
+    "ge46_original_final_modules": 63,
+    "ge46_union": 91,
+    "auxiliary_modules": 1104,
+    "original_numeric_names": 4567,
+    "additional_numeric_support": 11,
+    "total_collected_identities": 5682,
+    "expected_scope_sha256": "b8e094fa1696529c7e38b5b6171b84d9aa54d98ce950910581662a4dbc2c5a49",
+    "narrow_wave2_lookup_functions_ast_unchanged": true
+  },
+  "negative_controls": [
+    "contract rejects expected_kind",
+    "contract rejects modules",
+    "contract rejects job",
+    "contract rejects source_commit",
+    "actual audit job rejects conclusion",
+    "actual audit job rejects run_id",
+    "actual audit job rejects run_attempt",
+    "actual old job remains failed",
+    "audit cannot log any fresh object",
+    "audit ZIP cannot contain proof objects",
+    "audit ZIP cannot contain fresh module rows",
+    "audit receipt cannot take ownership of old proof",
+    "audit archive must retain exact original receipt",
+    "contract binding rejects changed current_source_binding",
+    "contract binding rejects changed source_endpoint_sha256",
+    "contract binding rejects changed source_endpoint_closure_sha256"
+  ],
+  "negative_control_count": 16,
+  "new_actual_audit_success_claimed": false,
+  "local_kernel_compilations": 0,
+  "downloaded_archives": 0,
+  "degree_one_large_complete": false
+}

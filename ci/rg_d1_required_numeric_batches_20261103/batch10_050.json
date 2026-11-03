@@ -1,0 +1,22 @@
+{
+  "kind": "EXACT_ORIGINAL_D1_NUMERIC_REPRODUCTION",
+  "scope": "original_long_chunk",
+  "tag": "10",
+  "chunk": 50,
+  "endpoints": [
+    "Proofs.RadenkovicGutmanD1Long10Chunk050"
+  ],
+  "workers": 2,
+  "memory_reserve_mib": 2048,
+  "module_timeout": 1200,
+  "base_manifest": "ci/rg_reusable_analytic_kernel_base_complete_scope_capsule.json",
+  "base_manifest_sha256": "ecec5dc115eca93fdfadf72072bfb9d13c85c5d36191b31738d4295d9305d6a3",
+  "original_manifests": {
+    "ci/rg_d1_long10_final_class_scope049_prior_exports.json": "b267b25e789fc7d99cd0d67fcba1beb71ca115abd058e5de8a7ab657c6bd6847"
+  },
+  "fresh_module_origins": {
+    "Proofs.RadenkovicGutmanD1Long10Cells0250": "ci/rg_d1_long10_final_class_scope049_prior_exports.json",
+    "Proofs.RadenkovicGutmanD1Long10Chunk050": "ci/rg_d1_long10_final_class_scope049_prior_exports.json",
+    "Proofs.RadenkovicGutmanD1Long10Leaf00500": "ci/rg_d1_long10_final_class_scope049_prior_exports.json"
+  }
+}

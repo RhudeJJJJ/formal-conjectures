@@ -1,0 +1,30 @@
+{
+  "kind": "EXACT_ORIGINAL_D1_NUMERIC_REPRODUCTION",
+  "scope": "original00_leaves",
+  "tag": "00",
+  "chunk": 132,
+  "endpoints": [
+    "Proofs.RadenkovicGutmanD1Long00Leaf01320",
+    "Proofs.RadenkovicGutmanD1Long00Leaf01321",
+    "Proofs.RadenkovicGutmanD1Long00Leaf01322",
+    "Proofs.RadenkovicGutmanD1Long00Leaf01323",
+    "Proofs.RadenkovicGutmanD1Long00Leaf01324",
+    "Proofs.RadenkovicGutmanD1Long00Leaf01325"
+  ],
+  "workers": 2,
+  "memory_reserve_mib": 2048,
+  "module_timeout": 1200,
+  "base_manifest": "ci/rg_reusable_analytic_kernel_base_complete_scope_capsule.json",
+  "base_manifest_sha256": "ecec5dc115eca93fdfadf72072bfb9d13c85c5d36191b31738d4295d9305d6a3",
+  "original_manifests": {
+    "ci/rg_d1_shared00_partial_original_chunk132_prior_exports.json": "80edff7d7b6ecd6f3d93a6133cc119628f92efc5954160868b4df744a9a76afa"
+  },
+  "fresh_module_origins": {
+    "Proofs.RadenkovicGutmanD1Long00Leaf01320": "ci/rg_d1_shared00_partial_original_chunk132_prior_exports.json",
+    "Proofs.RadenkovicGutmanD1Long00Leaf01321": "ci/rg_d1_shared00_partial_original_chunk132_prior_exports.json",
+    "Proofs.RadenkovicGutmanD1Long00Leaf01322": "ci/rg_d1_shared00_partial_original_chunk132_prior_exports.json",
+    "Proofs.RadenkovicGutmanD1Long00Leaf01323": "ci/rg_d1_shared00_partial_original_chunk132_prior_exports.json",
+    "Proofs.RadenkovicGutmanD1Long00Leaf01324": "ci/rg_d1_shared00_partial_original_chunk132_prior_exports.json",
+    "Proofs.RadenkovicGutmanD1Long00Leaf01325": "ci/rg_d1_shared00_partial_original_chunk132_prior_exports.json"
+  }
+}

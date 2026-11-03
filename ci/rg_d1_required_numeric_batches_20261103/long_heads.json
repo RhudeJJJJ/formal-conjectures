@@ -1,0 +1,23 @@
+{
+  "kind": "EXACT_ORIGINAL_D1_NUMERIC_REPRODUCTION",
+  "scope": "original_long_heads",
+  "tag": "10_30",
+  "chunk": null,
+  "endpoints": [
+    "Proofs.RadenkovicGutmanD1Long10",
+    "Proofs.RadenkovicGutmanD1Long30"
+  ],
+  "workers": 1,
+  "memory_reserve_mib": 2048,
+  "module_timeout": 1200,
+  "base_manifest": "ci/rg_reusable_analytic_kernel_base_complete_scope_capsule.json",
+  "base_manifest_sha256": "ecec5dc115eca93fdfadf72072bfb9d13c85c5d36191b31738d4295d9305d6a3",
+  "original_manifests": {
+    "ci/rg_d1_20261103_historical_class_exports/job120325580662_prior_exports.json": "1bd0e423e899d4d3defd907f356fb28a5b0e35ee2c3cd7e2df9851c266a7930c",
+    "ci/rg_d1_20261103_historical_class_exports/job120444134384_prior_exports.json": "1882c944260b5c7f1236f99527b256b2414e96d8fa713b9e78551719a09f8d36"
+  },
+  "fresh_module_origins": {
+    "Proofs.RadenkovicGutmanD1Long10": "ci/rg_d1_20261103_historical_class_exports/job120325580662_prior_exports.json",
+    "Proofs.RadenkovicGutmanD1Long30": "ci/rg_d1_20261103_historical_class_exports/job120444134384_prior_exports.json"
+  }
+}

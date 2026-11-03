@@ -1,0 +1,306 @@
+name: RG exact compact original prerequisites and closed-family joins
+'on':
+  push:
+    branches:
+    - rg-degree-one-large-20261103
+    paths:
+    - .github/workflows/rg-compact-closed-support-reconstruction-20261103.yml
+  workflow_dispatch: {}
+permissions:
+  contents: read
+  actions: read
+jobs:
+  roots:
+    name: compact-roots-${{ matrix.batch }}
+    if: github.repository == 'RhudeJJJJ/formal-conjectures'
+    strategy:
+      fail-fast: false
+      max-parallel: 4
+      matrix:
+        batch:
+        - root00
+        - root01
+        - root02
+        - root03
+        - root04
+        - root05
+        - root06
+        - root07
+        - root08
+        - root09
+        - root10
+        - root11
+        - root12
+        - root13
+        - root14
+        - root15
+        - root16
+    runs-on: ubuntu-24.04
+    timeout-minutes: 120
+    steps:
+    - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+      with:
+        persist-credentials: false
+    - name: Reserve bounded host storage
+      run: python3 -B ci/rg_prepare_finite_runner_storage.py --required-free-gib 45
+    - name: Bind the exact original source and closure identities
+      run: python3 -B ci/rg_compact_support_reproduction_control.py --stage roots --batch ${{ matrix.batch }} --phase source-plan
+    - name: Install the fixed project toolchain
+      run: |
+        set -o pipefail
+        curl -sSfL https://github.com/leanprover/elan/releases/download/v1.4.2/elan-x86_64-unknown-linux-gnu.tar.gz | tar xz
+        ./elan-init -y --default-toolchain none
+        echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+    - name: Materialize the exact dependency lock
+      run: python3 -B ci/rg_dependencies.py
+    - name: Fetch external modules for the exact original source scopes
+      env:
+        RG_COMPACT_STAGE: roots
+        RG_COMPACT_BATCH: ${{ matrix.batch }}
+      run: |
+        python3 - <<'PYCACHE'
+        import os,pathlib,re,subprocess,sys
+        sys.path.insert(0,'ci')
+        from rg_compact_support_reproduction_control import load_spec,scope,SOURCE
+        from verify import without_comments
+        stage=os.environ['RG_COMPACT_STAGE'];batch=os.environ.get('RG_COMPACT_BATCH') or None
+        _,_,hashes,_=scope(load_spec(),stage,batch)
+        external=set()
+        for name in hashes:
+            base=SOURCE/'ThirdParty/LeanCert' if name.startswith('LeanCert.') else SOURCE
+            code=without_comments((base/(name.replace('.','/')+'.lean')).read_text())
+            for dep in re.findall(r'^\s*(?:public\s+)?import\s+([\w.]+)\s*$',code,re.M):
+                if not dep.startswith(('Proofs.','LeanCert.','Lean.','Init.','Std.')) and dep not in ('Lean','Init','Std'):
+                    external.add(dep)
+        subprocess.run(['lake','exe','cache','get',*sorted(external)],check=True)
+        PYCACHE
+    - name: Restore the available audited analytic base
+      env:
+        GITHUB_TOKEN: ${{ github.token }}
+      run: python3 -B ci/rg_restore_complete_scope.py --manifest ci/rg_reusable_analytic_kernel_base_complete_scope_capsule.json
+        --build-directory Proofs/RG_Lean_20261019/build/extension
+    - name: Restore unchanged common finite and catalogue originals
+      env:
+        GITHUB_TOKEN: ${{ github.token }}
+      run: python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_compact_finite_common_fresh_original_prior_exports.json
+        --build-directory Proofs/RG_Lean_20261019/build/extension
+    - name: Require the exact original fresh frontier
+      run: python3 -B ci/rg_compact_support_reproduction_control.py --stage roots --batch ${{ matrix.batch }} --phase preflight
+    - name: Reconstruct the unchanged original proofs in the kernel
+      shell: bash
+      run: |
+        set -o pipefail
+        python3 -B ci/rg_compact_support_reproduction_control.py --stage roots --batch ${{ matrix.batch }} --phase run | python3 -B ci/rg_compact_ci_output.py
+    - name: Require exact historical original identities
+      run: python3 -B ci/rg_compact_support_reproduction_control.py --stage roots --batch ${{ matrix.batch }} --phase compare
+    - name: Retain complete fresh outputs and diagnostics
+      if: always()
+      run: python3 -B ci/rg_collect_fresh_exports.py --build-directory Proofs/RG_Lean_20261019/build/extension --output-directory
+        Proofs/RG_Lean_20261019/build/fresh_exports
+    - name: Retain authenticated original proof exports
+      if: always()
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: rg-compact-roots-${{ matrix.batch }}-${{ github.run_id }}-${{ github.run_attempt }}
+        path: Proofs/RG_Lean_20261019/build/fresh_exports
+        retention-days: 90
+  support:
+    name: compact-support-closures
+    needs: roots
+    runs-on: ubuntu-24.04
+    timeout-minutes: 150
+    steps:
+    - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+      with:
+        persist-credentials: false
+    - name: Reserve bounded host storage
+      run: python3 -B ci/rg_prepare_finite_runner_storage.py --required-free-gib 45
+    - name: Bind the exact original source and closure identities
+      run: python3 -B ci/rg_compact_support_reproduction_control.py --stage support --phase source-plan
+    - name: Install the fixed project toolchain
+      run: |
+        set -o pipefail
+        curl -sSfL https://github.com/leanprover/elan/releases/download/v1.4.2/elan-x86_64-unknown-linux-gnu.tar.gz | tar xz
+        ./elan-init -y --default-toolchain none
+        echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+    - name: Materialize the exact dependency lock
+      run: python3 -B ci/rg_dependencies.py
+    - name: Fetch external modules for the exact original source scopes
+      env:
+        RG_COMPACT_STAGE: support
+      run: |
+        python3 - <<'PYCACHE'
+        import os,pathlib,re,subprocess,sys
+        sys.path.insert(0,'ci')
+        from rg_compact_support_reproduction_control import load_spec,scope,SOURCE
+        from verify import without_comments
+        stage=os.environ['RG_COMPACT_STAGE'];batch=os.environ.get('RG_COMPACT_BATCH') or None
+        _,_,hashes,_=scope(load_spec(),stage,batch)
+        external=set()
+        for name in hashes:
+            base=SOURCE/'ThirdParty/LeanCert' if name.startswith('LeanCert.') else SOURCE
+            code=without_comments((base/(name.replace('.','/')+'.lean')).read_text())
+            for dep in re.findall(r'^\s*(?:public\s+)?import\s+([\w.]+)\s*$',code,re.M):
+                if not dep.startswith(('Proofs.','LeanCert.','Lean.','Init.','Std.')) and dep not in ('Lean','Init','Std'):
+                    external.add(dep)
+        subprocess.run(['lake','exe','cache','get',*sorted(external)],check=True)
+        PYCACHE
+    - name: Restore the available audited analytic base
+      env:
+        GITHUB_TOKEN: ${{ github.token }}
+      run: python3 -B ci/rg_restore_complete_scope.py --manifest ci/rg_reusable_analytic_kernel_base_complete_scope_capsule.json
+        --build-directory Proofs/RG_Lean_20261019/build/extension
+    - name: Restore unchanged common finite and catalogue originals
+      env:
+        GITHUB_TOKEN: ${{ github.token }}
+      run: python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_compact_finite_common_fresh_original_prior_exports.json
+        --build-directory Proofs/RG_Lean_20261019/build/extension
+    - name: Authenticate and restore current-run original roots
+      env:
+        GITHUB_TOKEN: ${{ github.token }}
+      run: python3 -B ci/rg_collect_compact_support_exports.py --through roots --restore --build-directory Proofs/RG_Lean_20261019/build/extension
+    - name: Require the exact original fresh frontier
+      run: python3 -B ci/rg_compact_support_reproduction_control.py --stage support --phase preflight
+    - name: Reconstruct the unchanged original proofs in the kernel
+      shell: bash
+      run: |
+        set -o pipefail
+        python3 -B ci/rg_compact_support_reproduction_control.py --stage support --phase run | python3 -B ci/rg_compact_ci_output.py
+    - name: Require exact historical original identities
+      run: python3 -B ci/rg_compact_support_reproduction_control.py --stage support --phase compare
+    - name: Retain complete fresh outputs and diagnostics
+      if: always()
+      run: python3 -B ci/rg_collect_fresh_exports.py --build-directory Proofs/RG_Lean_20261019/build/extension --output-directory
+        Proofs/RG_Lean_20261019/build/fresh_exports
+    - name: Retain authenticated original proof exports
+      if: always()
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: rg-compact-support-closures-${{ github.run_id }}-${{ github.run_attempt }}
+        path: Proofs/RG_Lean_20261019/build/fresh_exports
+        retention-days: 90
+  join:
+    if: github.repository == 'RhudeJJJJ/formal-conjectures'
+    strategy:
+      fail-fast: false
+      max-parallel: 1
+      matrix:
+        include:
+        - family: degree_one_small
+          endpoint: Proofs.RadenkovicGutmanCompactFiniteOriginalDegreeOneSmall
+          fresh_bound: 2
+        - family: small_ge_four
+          endpoint: Proofs.RadenkovicGutmanCompactFiniteOriginalSmallGeFour
+          fresh_bound: 1
+    runs-on: ubuntu-24.04
+    timeout-minutes: 150
+    steps:
+    - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+      with:
+        persist-credentials: false
+    - name: Reserve actual host space without touching proof inputs
+      run: python3 -B ci/rg_prepare_finite_runner_storage.py --required-free-gib 45
+    - name: Authenticate current-run prerequisite exports for the source-bound planner
+      env:
+        GITHUB_TOKEN: ${{ github.token }}
+      run: python3 -B ci/rg_collect_compact_support_exports.py --through support --build-directory Proofs/RG_Lean_20261019/build/extension
+    - name: Establish exact current closure and available original object coverage
+      env:
+        GITHUB_TOKEN: ${{ github.token }}
+      run: |
+        python3 -B ci/rg_plan_compact_closed_family.py \
+          --family ${{ matrix.family }} \
+          --output Proofs/RG_Lean_20261019/build/compact_closed_family_plan.json
+    - name: Install the fixed project toolchain
+      run: |
+        set -o pipefail
+        curl -sSfL https://github.com/leanprover/elan/releases/download/v1.4.2/elan-x86_64-unknown-linux-gnu.tar.gz | tar xz
+        ./elan-init -y --default-toolchain none
+        echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+    - name: Materialize the fixed dependency lock
+      run: python3 -B ci/rg_dependencies.py
+    - name: Fetch only the external modules of this exact source closure
+      run: |
+        python3 - <<'PY'
+        import json, pathlib, re, subprocess, sys
+        root = pathlib.Path('Proofs/RG_Lean_20261019')
+        sys.path.insert(0, str(root))
+        from verify import without_comments
+        plan = json.loads((root / 'build/compact_closed_family_plan.json').read_bytes())
+        external = set()
+        for name in plan['source_sha256']:
+            base = root / 'ThirdParty/LeanCert' if name.startswith('LeanCert.') else root
+            text = without_comments((base / (name.replace('.', '/') + '.lean')).read_text())
+            for dep in re.findall(r'^\s*(?:public\s+)?import\s+([\w.]+)\s*$', text, re.M):
+                if not dep.startswith(('Proofs.', 'LeanCert.', 'Lean.', 'Init.', 'Std.')) and dep not in ('Lean', 'Init', 'Std'):
+                    external.add(dep)
+        subprocess.run(['lake', 'exe', 'cache', 'get', *sorted(external)], check=True)
+        PY
+    - name: Install the transparent filesystem utility
+      run: |
+        sudo apt-get update -qq
+        sudo apt-get install -y btrfs-progs
+    - name: Create a new bounded logical proofstore without formatting an existing disk
+      run: python3 -B ci/rg_ephemeral_compressed_proofstore.py --logical-gib 128
+    - name: Authenticate and read back every selected original object and sidecar
+      env:
+        GITHUB_TOKEN: ${{ github.token }}
+      run: |
+        python3 -B ci/rg_restore_exact_compressed_plan.py \
+          --plan Proofs/RG_Lean_20261019/build/compact_closed_family_plan.json \
+          --build-directory Proofs/RG_Lean_20261019/build/extension
+    - name: Recompute and enforce the sealed family fresh frontier
+      run: |
+        python3 -B ci/rg_restore_with_kernel_fallback.py \
+          --plan ci/rg_empty_restore_plan.json \
+          --build-directory Proofs/RG_Lean_20261019/build/extension \
+          --endpoint ${{ matrix.endpoint }} \
+          --max-fresh ${{ matrix.fresh_bound }} --preflight-only
+        python3 - <<'PY'
+        import json, pathlib
+        root = pathlib.Path('Proofs/RG_Lean_20261019/build')
+        planned = json.loads((root / 'compact_closed_family_plan.json').read_bytes())
+        actual = json.loads((root / 'extension/bounded_kernel_fallback_plan.json').read_bytes())
+        assert set(actual['fresh_modules']) == set(planned['fresh_modules'])
+        assert actual['required_modules'] == planned['required_modules']
+        assert set(actual['fresh_modules']) == set(planned['fresh_allowlist'])
+        PY
+    - name: Check the complete unchanged original closed family
+      shell: bash
+      run: |
+        set -o pipefail
+        python3 -B ci/rg_run_with_host_reserve.py -- \
+          python3 -B ci/rg_observed_kernel_verify.py --memory-reserve-mib 2048 -- \
+          --mathlib-project "$GITHUB_WORKSPACE" \
+          --endpoint ${{ matrix.endpoint }} \
+          --workers 1 --module-timeout 900 --resume | python3 -B ci/rg_compact_ci_output.py
+    - name: Verify the exact closed-family scope and fresh module set
+      run: python3 -B ci/rg_plan_compact_closed_family.py --family ${{ matrix.family }} --phase check --output Proofs/RG_Lean_20261019/build/compact_closed_family_plan.json
+        --build-directory Proofs/RG_Lean_20261019/build/extension
+    - name: Retain complete fresh outputs, axiom profiles, and diagnostics
+      if: always()
+      run: |
+        python3 -B ci/rg_collect_fresh_exports.py \
+          --build-directory Proofs/RG_Lean_20261019/build/extension \
+          --output-directory Proofs/RG_Lean_20261019/build/fresh_exports
+    - name: Preserve complete fresh proof exports in the standard archive layout
+      if: always()
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: rg-compact-closed-${{ matrix.family }}-${{ github.run_id }}-${{ github.run_attempt }}
+        path: Proofs/RG_Lean_20261019/build/fresh_exports
+        retention-days: 90
+    - name: Preserve original evidence and measured resource results separately
+      if: always()
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: rg-compact-closed-evidence-${{ matrix.family }}-${{ github.run_id }}-${{ github.run_attempt }}
+        path: |
+          Proofs/RG_Lean_20261019/build/compact_closed_family_plan.json
+          Proofs/RG_Lean_20261019/build/extension/bounded_kernel_fallback_plan.json
+          rg-proofstore-setup.json
+          rg-proofstore-roundtrip-reports
+          rg-proofstore-kernel-reserve.json
+        retention-days: 90
+    name: compact-closed-${{ matrix.family }}
+    needs: support

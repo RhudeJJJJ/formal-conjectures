@@ -20,6 +20,7 @@ FRESH = {
     "Proofs.RadenkovicGutmanRemainingThreeAssembly",
 }
 sys.path.insert(0, str(SOURCES))
+from rg_github_rate_limit import api_open
 from module_outputs import output_members
 from verify import without_comments
 
@@ -165,7 +166,7 @@ def artifact_metadata(descriptor):
                 "X-GitHub-Api-Version": "2022-11-28",
             })
             try:
-                with urllib.request.urlopen(request, timeout=120) as response:
+                with api_open(request) as response:
                     listing = json.load(response)
             except urllib.error.HTTPError as error:
                 if error.code in (404, 410):

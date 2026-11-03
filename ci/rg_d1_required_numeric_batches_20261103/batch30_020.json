@@ -1,0 +1,35 @@
+{
+  "kind": "EXACT_ORIGINAL_D1_NUMERIC_REPRODUCTION",
+  "scope": "original_long_chunk",
+  "tag": "30",
+  "chunk": 20,
+  "endpoints": [
+    "Proofs.RadenkovicGutmanD1Long30Chunk020"
+  ],
+  "workers": 2,
+  "memory_reserve_mib": 2048,
+  "module_timeout": 1200,
+  "base_manifest": "ci/rg_reusable_analytic_kernel_base_complete_scope_capsule.json",
+  "base_manifest_sha256": "ecec5dc115eca93fdfadf72072bfb9d13c85c5d36191b31738d4295d9305d6a3",
+  "original_manifests": {
+    "ci/rg_shared30_final_scope032_prior_exports.json": "5f76a898125373861989ca48e3bb1699e83329c6229f270cbdd52ddd94f2485a"
+  },
+  "fresh_module_origins": {
+    "Proofs.RadenkovicGutmanD1Long30Cells0100": "ci/rg_shared30_final_scope032_prior_exports.json",
+    "Proofs.RadenkovicGutmanD1Long30Cells0101": "ci/rg_shared30_final_scope032_prior_exports.json",
+    "Proofs.RadenkovicGutmanD1Long30Cells0102": "ci/rg_shared30_final_scope032_prior_exports.json",
+    "Proofs.RadenkovicGutmanD1Long30Cells0103": "ci/rg_shared30_final_scope032_prior_exports.json",
+    "Proofs.RadenkovicGutmanD1Long30Cells0104": "ci/rg_shared30_final_scope032_prior_exports.json",
+    "Proofs.RadenkovicGutmanD1Long30Chunk020": "ci/rg_shared30_final_scope032_prior_exports.json",
+    "Proofs.RadenkovicGutmanD1Long30Leaf00200": "ci/rg_shared30_final_scope032_prior_exports.json",
+    "Proofs.RadenkovicGutmanD1Long30Leaf00201": "ci/rg_shared30_final_scope032_prior_exports.json",
+    "Proofs.RadenkovicGutmanD1Long30Leaf00202": "ci/rg_shared30_final_scope032_prior_exports.json",
+    "Proofs.RadenkovicGutmanD1Long30Leaf00203": "ci/rg_shared30_final_scope032_prior_exports.json",
+    "Proofs.RadenkovicGutmanD1Long30Leaf00204": "ci/rg_shared30_final_scope032_prior_exports.json",
+    "Proofs.RadenkovicGutmanD1Long30Leaf00205": "ci/rg_shared30_final_scope032_prior_exports.json",
+    "Proofs.RadenkovicGutmanD1Long30Leaf00206": "ci/rg_shared30_final_scope032_prior_exports.json",
+    "Proofs.RadenkovicGutmanD1Long30Leaf00207": "ci/rg_shared30_final_scope032_prior_exports.json",
+    "Proofs.RadenkovicGutmanD1Long30Leaf00208": "ci/rg_shared30_final_scope032_prior_exports.json",
+    "Proofs.RadenkovicGutmanD1Long30Leaf00209": "ci/rg_shared30_final_scope032_prior_exports.json"
+  }
+}

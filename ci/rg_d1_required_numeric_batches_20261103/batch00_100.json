@@ -1,0 +1,38 @@
+{
+  "kind": "EXACT_ORIGINAL_D1_NUMERIC_REPRODUCTION",
+  "scope": "original00_leaves",
+  "tag": "00",
+  "chunk": 100,
+  "endpoints": [
+    "Proofs.RadenkovicGutmanD1Long00Leaf01000",
+    "Proofs.RadenkovicGutmanD1Long00Leaf01001",
+    "Proofs.RadenkovicGutmanD1Long00Leaf01002",
+    "Proofs.RadenkovicGutmanD1Long00Leaf01003",
+    "Proofs.RadenkovicGutmanD1Long00Leaf01004",
+    "Proofs.RadenkovicGutmanD1Long00Leaf01005",
+    "Proofs.RadenkovicGutmanD1Long00Leaf01006",
+    "Proofs.RadenkovicGutmanD1Long00Leaf01007",
+    "Proofs.RadenkovicGutmanD1Long00Leaf01008",
+    "Proofs.RadenkovicGutmanD1Long00Leaf01009"
+  ],
+  "workers": 2,
+  "memory_reserve_mib": 2048,
+  "module_timeout": 1200,
+  "base_manifest": "ci/rg_reusable_analytic_kernel_base_complete_scope_capsule.json",
+  "base_manifest_sha256": "ecec5dc115eca93fdfadf72072bfb9d13c85c5d36191b31738d4295d9305d6a3",
+  "original_manifests": {
+    "ci/rg_d1_shared00_original_chunk100_completed_prior_exports.json": "1543bdea2edadfd18649dfd730125a71f9cfe5ece01f4563386d538b4faeaf25"
+  },
+  "fresh_module_origins": {
+    "Proofs.RadenkovicGutmanD1Long00Leaf01000": "ci/rg_d1_shared00_original_chunk100_completed_prior_exports.json",
+    "Proofs.RadenkovicGutmanD1Long00Leaf01001": "ci/rg_d1_shared00_original_chunk100_completed_prior_exports.json",
+    "Proofs.RadenkovicGutmanD1Long00Leaf01002": "ci/rg_d1_shared00_original_chunk100_completed_prior_exports.json",
+    "Proofs.RadenkovicGutmanD1Long00Leaf01003": "ci/rg_d1_shared00_original_chunk100_completed_prior_exports.json",
+    "Proofs.RadenkovicGutmanD1Long00Leaf01004": "ci/rg_d1_shared00_original_chunk100_completed_prior_exports.json",
+    "Proofs.RadenkovicGutmanD1Long00Leaf01005": "ci/rg_d1_shared00_original_chunk100_completed_prior_exports.json",
+    "Proofs.RadenkovicGutmanD1Long00Leaf01006": "ci/rg_d1_shared00_original_chunk100_completed_prior_exports.json",
+    "Proofs.RadenkovicGutmanD1Long00Leaf01007": "ci/rg_d1_shared00_original_chunk100_completed_prior_exports.json",
+    "Proofs.RadenkovicGutmanD1Long00Leaf01008": "ci/rg_d1_shared00_original_chunk100_completed_prior_exports.json",
+    "Proofs.RadenkovicGutmanD1Long00Leaf01009": "ci/rg_d1_shared00_original_chunk100_completed_prior_exports.json"
+  }
+}

@@ -1,0 +1,132 @@
+version: "v0.4"
+
+project:
+  name: "Written on the Wall II, Conjecture 161"
+  description: >-
+    For every finite connected simple graph, the maximum number of degree-one
+    vertices in a spanning tree is at least the maximum independence number of
+    an open vertex neighbourhood in the complement graph. The proof bounds
+    proper clique size by maximum degree, extends a vertex star to a spanning
+    tree, and uses the tree degree sum to bound degree by the number of leaves.
+    The one-vertex graph is included.
+  authors:
+    - name: "Jonas J. Gebendorfer"
+      github: "RhudeJJJJ"
+  license: "Apache-2.0"
+  responsible_maintainers:
+    - name: "Jonas J. Gebendorfer"
+      github: "RhudeJJJJ"
+
+classification:
+  arxiv: ["math.CO"]
+  msc2020: ["05C05", "05C69"]
+
+sources:
+  - title: "Proper cliques and spanning-tree leaves: An elementary proof of Graffiti.pc Conjecture 161"
+    authors: ["Jonas J. Gebendorfer"]
+    id: "10.13140/RG.2.2.31746.44485"
+    type: "preprint"
+    location: "https://www.researchgate.net/publication/417064781_Proper_cliques_and_spanning-tree_leaves_An_elementary_proof_of_Graffitipc_Conjecture_161"
+    relationship: "formalizes"
+    note: >-
+      Theorem 1 of the manuscript dated 28 October 2026. The formal proof uses
+      the tree degree-sum identity after star extension, in place of the
+      manuscript's stepwise leaf-preserving extension argument. The optional
+      sharpness family and clique-number strengthening are not formalized.
+  - title: "Some Conjectures of Graffiti.pc (2004-07)"
+    authors: ["Douglas B. West"]
+    contributors:
+      - name: "Ermelinda DeLaViña"
+        role: "Graffiti.pc developer and problem-list compiler"
+    type: "problem list"
+    location: "https://dwest.web.illinois.edu/regs/graffiti.html"
+    relationship: "background"
+    note: "REGS 2009 presentation, Conjecture 161 and definitions of L(G) and s(G)."
+  - title: "Written on the Wall II, Conjecture 161"
+    authors: ["Ermelinda DeLaViña"]
+    type: "problem list"
+    location: "http://cms.uhd.edu/faculty/delavinae/research/wowII/open.html"
+    relationship: "background"
+    note: >-
+      Entry dated 8 August 2005, with linked definitions 1, 4 and 31.
+      The archived HTML explicitly encodes the complement by an overline.
+      Hashes of the independently recovered archived source bytes are recorded
+      in source_record.json. Its historical O marker is not a current-status
+      or priority claim.
+
+related_formalizations:
+  - id: "https://github.com/MiskinAleksandr23/WOWII-1/blob/eda16f6e96b313bd112351ae9859133b77d537c9/WOWII1/GraphConjecture1.lean"
+    relationship: "adapts"
+    note: >-
+      The leaf-count supremum helper and conversion from a graph below G to a
+      spanning Subgraph G follow helpers in this Apache-2.0 development.
+      That repository proves WOWII1, not WOWII161.
+  - id: "https://github.com/google-deepmind/formal-conjectures/tree/fd57f5d489321515f695ea205913d0ac3289f41c"
+    relationship: "builds-on"
+    note: >-
+      The definitions SimpleGraph.Ls and SimpleGraph.maxLocalIndependence are
+      copied from SpanningTree.lean and Independence.lean without semantic
+      change. A separate Lean 4.33.1 run checks the complete proof against the
+      original imported definitions and the exact proposed statement.
+
+status:
+  scope: >-
+    The full finite connected-graph inequality in WOWII161 is proved, including
+    the one-vertex case. Spanning trees need not be induced. The manuscript's
+    separate sharpness construction is outside this formalization.
+  sorry_count: 0
+  sorry_in_definitions: 0
+  axioms: ["propext", "Classical.choice", "Quot.sound"]
+
+automation:
+  methods:
+    - method: "agent"
+      models: ["OpenAI GPT-6 Astra Pro"]
+      framework: "ChatGPT"
+      tool_setup: >-
+        AI-assisted Lean proof construction, exact original-statement audit,
+        GitHub Actions compilation and axiom inspection.
+      cost:
+        wall_time: "One development session on 3 November 2026; exact wall time not tracked"
+        spend_usd: "not tracked"
+        hardware: "GitHub-hosted Ubuntu runners"
+      prompting_notes: >-
+        Complete WOWII161 as a full Lean package while preserving the original
+        conjecture, the complement, and the smallest graph cases.
+  spend_usd: "not tracked"
+  notes: >-
+    The user authorized the formalization of their published manuscript.
+    The proof code and source audit were produced with AI assistance. No
+    independent human review of the Lean development is claimed.
+
+fidelity:
+  divergences: >-
+    No known divergence in the conjecture's domain or conclusion. The natural
+    maximum local independence number is cast to real to compare with Ls.
+    DecidableEq and DecidableRel are representation instances. Connectedness
+    includes nonemptiness. The original proper-clique argument is retained;
+    the spanning-tree step is reorganized using an existing Mathlib extension
+    theorem and the handshaking identity.
+
+review:
+  status: "self-assessed"
+  reviewers: []
+  notes: >-
+    Original archived row and definitions checked directly, with exact hashes
+    matching the 28 October manuscript. West's public statement independently
+    cross-checked. Lean checks and automated audits are recorded in CI.
+    No curator acceptance, journal review, or worldwide priority is claimed.
+
+alignment:
+  namespace: "WrittenOnTheWallII.GraphConjecture161"
+  statements:
+    - source: "WOWII161; Gebendorfer (2026), Theorem 1"
+      lean: "WrittenOnTheWallII.GraphConjecture161.conjecture161"
+      module: "Solution"
+      status: "proved"
+      note: "Exact original inequality, with both graph invariants explicitly stated in Challenge."
+
+acknowledgements: >-
+  Lean, Mathlib, the Formal Conjectures authors, the WOWII1 formalization
+  author, and OpenAI's Codex assistance.
+

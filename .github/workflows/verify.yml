@@ -1,0 +1,43 @@
+name: WOWII161 standalone certificate
+on:
+  push:
+    branches: [certificate-wowii161-20261103]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  lean:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          persist-credentials: false
+      - name: Install pinned Lean
+        run: |
+          set -o pipefail
+          curl -sSfL https://github.com/leanprover/elan/releases/download/v1.4.2/elan-x86_64-unknown-linux-gnu.tar.gz | tar xz
+          ./elan-init -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> $GITHUB_PATH
+      - name: Fetch pinned Mathlib cache
+        run: lake exe cache get
+      - name: Build the proof with warnings as errors
+        run: lake --wfail build WOWII161 Solution
+      - name: Build the independent statement
+        run: lake build Challenge
+      - name: Audit proof axioms
+        run: |
+          set -o pipefail
+          lake env lean -DwarningAsError=true Audit.lean | tee proof-axioms.txt
+          python3 scripts/check_axioms.py proof-axioms.txt
+  palomar-preflight:
+    uses: PalomarRegistry/PalomarSubmission/.github/workflows/submission.yml@14aa8d6b3c2f14a8540605e37144560b9a00e7e7
+    with:
+      repository: ${{ github.repository }}
+      commit: ${{ github.sha }}
+      pipeline_commit: 14aa8d6b3c2f14a8540605e37144560b9a00e7e7
+      request_id: wowii1611103
+      mode: full
+      execution_profile: palomar-standard-v1
+      options: '{"comparator_config_path":"comparator.json","authorization_relationship":"I am a responsible author or maintainer"}'
+

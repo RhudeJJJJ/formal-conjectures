@@ -1,0 +1,38 @@
+{
+  "scope": "Exact original imported modules; actual checkout recorded separately from workflow event SHA",
+  "workflow_event_sha": "04b71bf61edb113a4fcfe1d5c46d0396cc8592c1",
+  "source_sha": "9c8f5667ab2c64a348b86abf6870a35dd471c6e3",
+  "run_id": "41638457934",
+  "cycle": 3,
+  "status": "passed",
+  "protected_hashes": {
+    "lean-toolchain": "3aac669c7a910ec2389f4e4f921b605adf6ebf2d1e0c9b9cd0be4d33f3f5db71",
+    "lake-manifest.json": "c8ffc0d59f492007162fe54c68396e4b9f2f305fcf69210a7fbaf0b18fcd8cd9",
+    "FormalConjecturesUtil.lean": "3a73749a2b247a1ad08820de102f0d32353bf6e519eb954de53e08553cdbc663",
+    "FormalConjectures/WrittenOnTheWallII/GraphConjecture161.lean": "b63e4707f838fcaa66d902477bd5a4b16431dc3a2eb24776d06ae0153c6d32cd"
+  },
+  "proof_hashes": {
+    "Proof": "3bf8ad2ed54d8cb88cf4869adb26374db979ae30d43d88c7751a44d87d2b366b",
+    "Audit": "f988f2b78595e53325c48fff9c871fb02edc5565e4ad20242c3549c59c51b08c"
+  },
+  "results": [
+    {
+      "name": "statements",
+      "exit_code": 0,
+      "output": "Build completed successfully (8972 jobs).\n"
+    },
+    {
+      "name": "Proof",
+      "exit_code": 0,
+      "output": ""
+    },
+    {
+      "name": "Audit",
+      "exit_code": 0,
+      "output": "EXACT TYPE: certificate matches conjecture161, including all hypotheses\n'WrittenOnTheWallII.GraphConjecture161.conjecture161_proved' depends on axioms: [propext, Classical.choice, Quot.sound]\n'WOWII161.tree_degree_le_leaves' depends on axioms: [propext, Classical.choice, Quot.sound]\n'WOWII161.degree_le_Ls' depends on axioms: [propext, Classical.choice, Quot.sound]\n'WOWII161.proper_clique_card_le_Ls' depends on axioms: [propext, Classical.choice, Quot.sound]\n'WrittenOnTheWallII.GraphConjecture161.conjecture161' depends on axioms: [propext,\n sorryAx,\n Classical.choice,\n Quot.sound]\n"
+    }
+  ],
+  "axioms": {
+    "WrittenOnTheWallII.GraphConjecture161.conjecture161_proved": "propext, Classical.choice, Quot.sound"
+  }
+}

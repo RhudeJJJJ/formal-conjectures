@@ -19,8 +19,20 @@ assert receipt['mathlib'] == PIN and receipt['leancert'] == LC and 'version 4.33
 assert plan['complete_original_object_coverage'] and not plan['missing_original_modules']
 assert set(receipt['modules']) == set(plan['source_sha256'])
 assert len(receipt['modules']) == plan['required_modules']
+current_binding = None
+interval_rechecks = set()
+if 'current_source_binding' in plan:
+    from rg_exact_final_source_binding import (BINDING, NUMERIC_SPEC, NUMERIC_ORIGIN,
+        binding_metadata, INTERVAL_RECHECK)
+    _, current_binding = binding_metadata((ROOT / BINDING).read_bytes(),
+        (ROOT / NUMERIC_SPEC).read_bytes(), (ROOT / NUMERIC_ORIGIN).read_bytes())
+    assert plan['current_source_binding'] == current_binding
+    assert plan['required_modules'] == current_binding['required_modules']
+    assert plan['source_sha256'][ENDPOINT] == current_binding['source_endpoint_sha256']
+    assert plan['source_closure_sha256'][ENDPOINT] == current_binding['source_endpoint_closure_sha256']
+    interval_rechecks = {INTERVAL_RECHECK}
 fresh = {n: r for n, r in receipt['modules'].items() if r['mode'] == 'FRESH_KERNEL_EXPORT'}
-assert set(fresh) == set(FRESH) | HEADS == set(plan['fresh_modules'])
+assert set(fresh) == set(FRESH) | HEADS | interval_rechecks == set(plan['fresh_modules'])
 for name, row in receipt['modules'].items():
     assert row['module'] == name
     assert row['source_sha256'] == plan['source_sha256'][name]
@@ -59,11 +71,13 @@ report = {
     'receipt_sha256': hashlib.sha256(raw).hexdigest(),
     'authenticated_restore_plan_sha256': hashlib.sha256(plan_raw).hexdigest(),
     'new_final_modules': sorted(FRESH), 'reconstructed_historical_heads': sorted(HEADS),
+    'rechecked_current_original_intervals': sorted(interval_rechecks),
     'original_degree_one_large_scope': 'Every original tree input of degree one and order at least 53; normalized integral reserve 189/5000',
     'remaining_main_family_count': 3,
     'remaining_original_main_families': ['degreeOneMiddle', 'degreeTwoThree', 'degreeFourToFortyfive'],
     'global_rg': 'THREE_EXPLICIT_ORIGINAL_FORMAL_INPUT_OBLIGATIONS_REMAIN',
     'fresh_axiom_profiles': {n: r['axiom_profiles'] for n, r in fresh.items()},
+    'current_source_binding': current_binding,
 }
 if context:
     report['exact_callback_context'] = context

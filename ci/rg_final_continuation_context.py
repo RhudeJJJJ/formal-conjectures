@@ -49,6 +49,7 @@ def validate_context():
         'ci/rg_d1_numeric_run41686621300_20261103.json',
         'ci/rg_d1_20261103_verified_continuation_contract.json',
         'ci/rg_d1_20261103_verified_numeric_replacements.json',
+        'ci/rg_current_final_source_binding_20261103.json',
     }
     for relative, digest in files.items():
         assert re.fullmatch(r'[0-9a-f]{64}', digest)

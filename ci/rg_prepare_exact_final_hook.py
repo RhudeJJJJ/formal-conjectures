@@ -32,6 +32,7 @@ def main():
     p.add_argument('--numeric-origin', type=pathlib.Path, required=True)
     p.add_argument('--auxiliary-contract', type=pathlib.Path, required=True)
     p.add_argument('--numeric-replacements', type=pathlib.Path, required=True)
+    p.add_argument('--current-source-binding', type=pathlib.Path, required=True)
     p.add_argument('--continuation-workflow', type=pathlib.Path, required=True)
     p.add_argument('--output-root', type=pathlib.Path, required=True)
     a = p.parse_args()
@@ -41,10 +42,11 @@ def main():
         'ci/rg_d1_numeric_run41686621300_20261103.json': a.numeric_origin,
         'ci/rg_d1_20261103_verified_continuation_contract.json': a.auxiliary_contract,
         'ci/rg_d1_20261103_verified_numeric_replacements.json': a.numeric_replacements,
+        'ci/rg_current_final_source_binding_20261103.json': a.current_source_binding,
     }
     loaded = {relative: (path.read_bytes(), json.loads(path.read_bytes())) for relative, path in paths.items()}
     spec_raw, spec = loaded['ci/rg_d1_required_numeric_batches_20261103.json']
-    _, origin = loaded['ci/rg_d1_numeric_run41686621300_20261103.json']
+    origin_raw, origin = loaded['ci/rg_d1_numeric_run41686621300_20261103.json']
     _, contract = loaded['ci/rg_d1_20261103_verified_continuation_contract.json']
     _, replacements = loaded['ci/rg_d1_20261103_verified_numeric_replacements.json']
     assert spec['kind'] == 'EXACT_MISSING_D1_ORIGINAL_NUMERIC_BATCHES' and len(spec['jobs']) == 349
@@ -54,11 +56,18 @@ def main():
     assert origin['numeric_spec_sha256'] == sha(spec_raw)
     assert contract['kind'] == 'SEALED_D1_COMPLETION_PREREQUISITES'
     for key in ('source_endpoint_sha256', 'source_endpoint_closure_sha256'):
-        assert origin[key] == contract[key] == spec[key]
+        assert origin[key] == spec[key]
+    from rg_exact_final_source_binding import binding_metadata, validate_contract_binding
+    binding_raw, _ = loaded['ci/rg_current_final_source_binding_20261103.json']
+    _, current_binding = binding_metadata(binding_raw, spec_raw, origin_raw)
+    validate_contract_binding(contract, current_binding)
     for item in contract['jobs']:
         assert 'workflow_path' not in item, 'All auxiliary jobs must have actual pinned origins'
         sealed_job(item)
-    assert replacements['kind'] == 'SEALED_SUCCESSFUL_ORIGINAL_NUMERIC_BATCH_REPLACEMENTS'
+    from rg_collect_exact_d1_reproductions import sealed_numeric_replacements
+    checked_replacements, _ = sealed_numeric_replacements(a.numeric_replacements, spec_raw, origin, REPOSITORY)
+    assert checked_replacements['00_137']['completion_kind'] == 'DECLARATION_PRESERVING_ORIGINAL137_FULL_BATCH'
+    assert replacements['kind'] == 'SEALED_SUCCESSFUL_NUMERIC_BATCH_COMPLETIONS_WITH_EXPLICIT_SOURCE_REORGANIZATION'
     assert replacements['repository'] == REPOSITORY and replacements['numeric_run'] == RUN
     assert replacements['numeric_source_commit'] == NUMERIC_SHA
     assert replacements['numeric_spec_sha256'] == sha(spec_raw)

@@ -22,6 +22,7 @@ jobs:
         run: python3 -B ci/rg_prepare_finite_runner_storage.py --required-free-gib 45
       - name: Reproduce the already checked shared class sources
         run: |
+          python3 -B ci/rg_numeric137_decomposed_recovery.py --spec-sha256 215ae3b2b69a4d7f9f00d694228a45333df0b73e588a6b2f0f61c97b45db4302 --phase materialize
           python3 -B ci/rg_materialize_compact_closed_families.py --endpoint Proofs.RadenkovicGutmanCompactFiniteOriginalSmallGeFour --max-raw-mib 512
           python3 -B ci/rg_materialize_compact_closed_families.py --endpoint Proofs.RadenkovicGutmanCompactFiniteOriginalDegreeOneSmall --max-raw-mib 512
           python3 - <<'PY'
@@ -34,12 +35,13 @@ jobs:
       - name: Collect exact successful numeric and named prerequisite exports
         env:
           GITHUB_TOKEN: ${{ github.token }}
-        run: python3 -B ci/rg_collect_exact_d1_reproductions.py --spec ci/rg_d1_required_numeric_batches_20261103.json --external-contract ci/rg_d1_20261103_verified_continuation_contract.json --numeric-origin ci/rg_d1_numeric_run41686621300_20261103.json --numeric-replacements ci/rg_d1_20261103_verified_numeric_replacements.json --output ci/rg_d1_20261103_runtime_reconstructed_exports --external-wait-seconds 0
+        run: python3 -B ci/rg_collect_exact_d1_reproductions.py --spec ci/rg_d1_required_numeric_batches_20261103.json --external-contract ci/rg_d1_20261103_verified_continuation_contract.json --numeric-origin ci/rg_d1_numeric_run41686621300_20261103.json --numeric-replacements ci/rg_d1_20261103_verified_numeric_replacements.json --current-source-binding ci/rg_current_final_source_binding_20261103.json --output ci/rg_d1_20261103_runtime_reconstructed_exports --external-wait-seconds 0
       - name: Establish exact current closure and available original object coverage
         env:
           GITHUB_TOKEN: ${{ github.token }}
         run: |
           python3 -B ci/rg_plan_final_numeric_join.py \
+            --current-source-binding ci/rg_current_final_source_binding_20261103.json \
             --output Proofs/RG_Lean_20261019/build/exact_degree_one_plan.json
       - name: Install the fixed project toolchain
         run: |
@@ -93,13 +95,13 @@ jobs:
         run: |
           cp Proofs/RG_Lean_20261019/build/extension/receipt.json Proofs/RG_Lean_20261019/build/original_long_heads_receipt.json
           cp Proofs/RG_Lean_20261019/build/fresh_exports/resource_observer.json Proofs/RG_Lean_20261019/build/original_long_heads_resource_observer.json
-      - name: Recompute and enforce the exact three-module fresh frontier
+      - name: Recompute and enforce the interval and three-module final frontier
         run: |
           python3 -B ci/rg_restore_with_kernel_fallback.py \
             --plan ci/rg_empty_restore_plan.json \
             --build-directory Proofs/RG_Lean_20261019/build/extension \
             --endpoint Proofs.RadenkovicGutmanRemainingThreeAssembly \
-            --max-fresh 3 --preflight-only
+            --max-fresh 4 --preflight-only
           python3 - <<'PY'
           import json, pathlib
           root = pathlib.Path('Proofs/RG_Lean_20261019/build')
@@ -109,9 +111,9 @@ jobs:
           assert set(actual['fresh_modules']) == set(planned['fresh_modules']) - heads
           assert actual['required_modules'] == planned['required_modules']
           assert set(actual['fresh_modules']) == set(planned['fresh_allowlist']) - heads
-          assert set(actual['fresh_modules']) == {'Proofs.RadenkovicGutmanD1OriginalSharedBothLong', 'Proofs.RadenkovicGutmanOriginalDegreeOneLarge', 'Proofs.RadenkovicGutmanRemainingThreeAssembly'}
+          assert set(actual['fresh_modules']) == {'Proofs.RadenkovicGutmanD1OriginalSharedSlice0080Complete', 'Proofs.RadenkovicGutmanD1OriginalSharedBothLong', 'Proofs.RadenkovicGutmanOriginalDegreeOneLarge', 'Proofs.RadenkovicGutmanRemainingThreeAssembly'}
           PY
-      - name: Check the final class, full original family, and three-field assembly
+      - name: Check the affected interval, final class, full family, and three-field assembly
         shell: bash
         run: |
           set -o pipefail

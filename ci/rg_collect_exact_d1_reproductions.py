@@ -156,18 +156,23 @@ def sealed_numeric_replacements(path, spec_raw, origin, repository):
         return {}, None
     raw = path.read_bytes()
     sealed = json.loads(raw)
-    assert sealed['kind'] == 'SEALED_SUCCESSFUL_ORIGINAL_NUMERIC_BATCH_REPLACEMENTS'
+    assert sealed['kind'] in (
+        'SEALED_SUCCESSFUL_ORIGINAL_NUMERIC_BATCH_REPLACEMENTS',
+        'SEALED_SUCCESSFUL_NUMERIC_BATCH_COMPLETIONS_WITH_EXPLICIT_SOURCE_REORGANIZATION')
     assert sealed['repository'] == repository
     assert sealed['numeric_run'] == origin['run']
     assert sealed['numeric_source_commit'] == origin['source_commit']
     assert sealed['numeric_spec_sha256'] == sha(spec_raw)
     replacements = {}
     for item in sealed['replacements']:
-        assert set(item) == {
+        required = {
             'batch', 'original_job', 'original_plan_sha256', 'run', 'job',
             'source_commit', 'artifact_id', 'artifact_sha256', 'artifact_name',
             'job_name', 'workflow_path', 'required_success_step',
-        }, 'A replacement may bind origins, never override the original proof scope'
+        }
+        if 'completion_kind' in item:
+            required |= {'completion_kind', 'completion_spec'}
+        assert set(item) == required, 'A replacement may bind origins, never override the original proof scope'
         assert item['batch'] not in replacements
         assert isinstance(item['original_job'], int) and item['original_job'] > 0
         assert re.fullmatch(r'[0-9a-f]{64}', item['original_plan_sha256'])
@@ -179,9 +184,18 @@ def sealed_numeric_replacements(path, spec_raw, origin, repository):
         assert isinstance(item['job_name'], str) and item['job_name']
         workflow = pathlib.PurePosixPath(item['workflow_path'])
         assert workflow.parent == pathlib.PurePosixPath('.github/workflows') and workflow.suffix == '.yml'
-        assert item['required_success_step'] == 'Require exact historical output identities'
+        if 'completion_kind' in item:
+            from rg_exact_numeric_completion import completion_context
+            completion_context(item)
+        else:
+            assert item['required_success_step'] == 'Require exact historical output identities'
         replacements[item['batch']] = item
     assert replacements, 'A sealed replacement file must identify actual successful replacement jobs'
+    reorganized = [i for i in replacements.values()
+                   if i.get('completion_kind') == 'DECLARATION_PRESERVING_ORIGINAL137_FULL_BATCH']
+    assert bool(reorganized) == (sealed['kind'] ==
+        'SEALED_SUCCESSFUL_NUMERIC_BATCH_COMPLETIONS_WITH_EXPLICIT_SOURCE_REORGANIZATION')
+    assert len(reorganized) <= 1
     return replacements, sha(raw)
 
 
@@ -192,6 +206,7 @@ def main():
     p.add_argument('--output', type=pathlib.Path, required=True)
     p.add_argument('--numeric-origin', type=pathlib.Path)
     p.add_argument('--numeric-replacements', type=pathlib.Path)
+    p.add_argument('--current-source-binding', type=pathlib.Path)
     p.add_argument('--external-wait-seconds', type=int, default=7200)
     a = p.parse_args()
     assert 0 <= a.external_wait_seconds <= 10800
@@ -201,11 +216,24 @@ def main():
     assert spec['mathlib'] == PIN and spec['leancert'] == LC
     contract = json.loads(a.external_contract.read_bytes())
     assert contract['kind'] == 'SEALED_D1_COMPLETION_PREREQUISITES'
-    assert contract['source_endpoint_sha256'] == spec['source_endpoint_sha256']
-    assert contract['source_endpoint_closure_sha256'] == spec['source_endpoint_closure_sha256']
+    current_binding = None
+    if a.current_source_binding:
+        assert a.numeric_origin, 'Revised sources require the immutable original numeric origin'
+        from rg_exact_final_source_binding import (read_binding, prepare_current_sources,
+            validate_current_graph, validate_contract_binding)
+        binding, current_binding = read_binding(a.current_source_binding, spec_raw)
+        assert sha(a.numeric_origin.read_bytes()) == binding['original_numeric_origin_sha256']
+        prepare_current_sources(binding)
     hashes, _, closures = source_closure(spec['endpoint'])
-    assert hashes[spec['endpoint']] == spec['source_endpoint_sha256']
-    assert closures[spec['endpoint']] == spec['source_endpoint_closure_sha256']
+    if current_binding:
+        validate_current_graph(binding, spec, hashes, closures)
+        validate_contract_binding(contract, current_binding)
+    else:
+        assert 'current_source_binding' not in contract
+        assert contract['source_endpoint_sha256'] == spec['source_endpoint_sha256']
+        assert contract['source_endpoint_closure_sha256'] == spec['source_endpoint_closure_sha256']
+        assert hashes[spec['endpoint']] == spec['source_endpoint_sha256']
+        assert closures[spec['endpoint']] == spec['source_endpoint_closure_sha256']
     repository = os.environ['GITHUB_REPOSITORY']
     publishing_commit = os.environ['GITHUB_SHA']
     run, commit = int(os.environ['GITHUB_RUN_ID']), publishing_commit
@@ -239,6 +267,8 @@ def main():
         replacements, replacement_digest = sealed_numeric_replacements(
             a.numeric_replacements, spec_raw, origin, repository)
         assert set(replacements) <= {b['batch'] for b in spec['jobs']}
+        if current_binding:
+            assert replacements['00_137']['completion_kind'] == 'DECLARATION_PRESERVING_ORIGINAL137_FULL_BATCH'
 
     catalogs, job_catalogs, observed_jobs = {}, {}, {}
     def jobs_for(r):
@@ -270,8 +300,9 @@ def main():
             item = dict(run=run, job=job['id'], source_commit=commit,
                 artifact_name=f"rg-d1-original-numeric-{run}-{job['run_attempt']}-{batch['batch']}",
                 required_success_step='Require exact historical output identities')
-        # A replacement cannot supply a weaker or partial set: both expected
-        # historical maps always come from the original sealed batch plan.
+        # All original endpoints remain mandatory. Only the two fixed completion
+        # kinds may additionally bind preserved partial origins or the explicit
+        # declaration-preserving split; their specs cannot override this plan.
         item.update(key='batch' + batch['batch'], original_manifests=plan['original_manifests'],
                     fresh_module_origins=plan['fresh_module_origins'])
         items.append(item)
@@ -307,6 +338,7 @@ def main():
             if 'job_name' in item: assert job['name'] == item['job_name']
             if job['status'] == 'completed':
                 assert job['conclusion'] == 'success', ('Named prerequisite failed', item['key'], item['job'], job['conclusion'])
+                item['actual_run_attempt'] = job['run_attempt']
                 break
             assert item['run'] != run and time.monotonic() < deadline, ('Bounded prerequisite wait expired', item['key'])
             print(json.dumps({'status': 'WAITING_FOR_NAMED_PREREQUISITE', 'key': item['key'], 'job': item['job']}), flush=True)
@@ -318,9 +350,21 @@ def main():
     out = a.output.resolve()
     assert out.is_relative_to(ROOT / 'ci')
     out.mkdir(parents=True, exist_ok=True)
-    covered, reports = {}, []
+    covered, reports, current_numeric_support = {}, [], set()
     for item in items:
         expected = original_rows(item)
+        completion = None
+        if 'completion_kind' in item:
+            from rg_exact_numeric_completion import (completion_context,
+                compare_completion_records, authenticate_completion)
+            completion = completion_context(item)
+            assert completion['original'] == expected
+            if completion['kind'] == 'ORIGINAL_PARTIAL_PRIORS_WITH_FRESH_REMAINDER':
+                assert item['artifact_name'] == (
+                    f"rg-d1-original-numeric-remainder-20261103-{item['run']}-{item['actual_run_attempt']}-{item['batch']}")
+            else:
+                assert item['artifact_name'] == (
+                    f"rg-d1-numeric-decomposed-00_137-{item['run']}-{item['actual_run_attempt']}")
         if item.get('expected_kind') == 'existing_compact_small_ge_four_scope':
             assert hashes[item['endpoint']] == item['audit_source']['source_sha256']
             assert closures[item['endpoint']] == item['audit_source']['source_closure_sha256']
@@ -336,8 +380,17 @@ def main():
         fresh = records_from_log(raw)
         # Compare the complete job first. Shared ancestors are retained only
         # after identical source, closure, object, member and axiom checks.
-        compare_records(fresh, expected, hashes, closures, item.get('expected_kind') == 'new_compact_wrappers')
-        for n, row in fresh.items():
+        preserved, completion_report = {}, None
+        if completion:
+            compare_completion_records(completion, fresh, hashes, closures)
+            preserved, completion_report = authenticate_completion(
+                item, artifact, completion, fresh, hashes, closures, repository)
+            assert not set(preserved).intersection(fresh)
+            assert set(expected) <= set(preserved) | set(fresh)
+            current_numeric_support.update(set(fresh) - set(expected))
+        else:
+            compare_records(fresh, expected, hashes, closures, item.get('expected_kind') == 'new_compact_wrappers')
+        for n, row in (preserved | fresh).items():
             if n in covered: assert identity(n, covered[n]) == identity(n, row), ('Conflicting cross-job identities', n)
             else: covered[n] = row
         manifest = dict(repository=repository, run=item['run'], job=item['job'],
@@ -349,16 +402,27 @@ def main():
                 archive_member_verification='MANDATORY_IN_FINAL_BOUNDED_RESTORE'))
         if 'numeric_replacement' in item:
             manifest['origin_context']['numeric_replacement'] = item['numeric_replacement']
+        if completion_report:
+            manifest['origin_context']['authenticated_full_batch_completion'] = completion_report
         (out / (item['key'] + '_prior_exports.json')).write_text(json.dumps(manifest, indent=2) + '\n')
         report = dict(key=item['key'], run=item['run'], job=item['job'], artifact_id=artifact['id'],
                       modules=len(fresh), status='SUCCESSFUL_EXACT_JOB_RECORDS_REQUIRE_AUTHENTICATED_ARCHIVE_RESTORE')
+        if completion_report:
+            report['authenticated_full_batch_completion'] = completion_report
         reports.append(report)
         print(json.dumps(report), flush=True)
     assert set(spec['scheduled_numeric_modules']) <= covered.keys()
-    required = set(contract['required_collected_modules']) | set(spec['scheduled_numeric_modules'])
+    if current_binding:
+        from rg_numeric137_decomposed_recovery import NEW, NAME
+        assert current_numeric_support == NEW - {NAME}
+    else:
+        assert not current_numeric_support
+    required = set(contract['required_collected_modules']) | set(spec['scheduled_numeric_modules']) | current_numeric_support
     assert set(covered) == required, ('Collected prerequisite scope differs', sorted(set(covered) ^ required))
     (out / 'collection.json').write_text(json.dumps(dict(kind='EXACT_RECONSTRUCTION_MANIFEST_COLLECTION',
         modules=len(covered), reports=reports, kernel_proof='NO_NEW_KERNEL_RUN_IN_COLLECTOR',
+        current_source_binding=current_binding,
+        additional_current_numeric_support_modules=sorted(current_numeric_support),
         final_archive_and_source_closure_checks='MANDATORY'), indent=2) + '\n')
 
 

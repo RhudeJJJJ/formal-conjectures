@@ -17,8 +17,8 @@ import Proofs.RadenkovicGutmanD1Long30
 import Proofs.RadenkovicGutmanD1Long40
 import Proofs.RadenkovicGutmanD1OriginalSharedBothLong
 
-/-! The concrete fifteen-class assembly. Its complete kernel check still requires
-all original long-long leaf proofs and the new shared-tree class endpoint. -/
+/-! The concrete fifteen-class assembly, including the complete shared-tree
+both-long class, supplies the original reserve 189/5000. -/
 namespace Gebendorfer.RadenkovicGutman.OriginalDegreeOneLarge
 open SimpleGraph CoreQuotient ActualFusionIntegral OriginalAssembly
 open scoped Classical
@@ -66,3 +66,4 @@ theorem input_family (m : ℕ) (C : SimpleGraph (Fin m)) (u : Fin m) (p q : ℕ)
 #print axioms input_family
 end
 end Gebendorfer.RadenkovicGutman.OriginalDegreeOneLarge
+

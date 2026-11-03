@@ -1,0 +1,56 @@
+{
+  "kind": "EXACT_SOURCE_BOUND_CLOSED_CLASS_RECONSTRUCTION",
+  "endpoint": "Proofs.RadenkovicGutmanD1Short12",
+  "lean_version": "4.33.1",
+  "mathlib": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "leancert": "621a43d7cf21f87872392a01e874f2f1dbddc926",
+  "original_manifest": "ci/rg_d1_20261103_closed_class_historical_reference.json",
+  "original_manifest_sha256": "6b574cf9840b806e7a95dd82da6d61ccf4d1cb08cd972477bb227c7096d62817",
+  "fresh_module_count": 10,
+  "required_module_count": 76,
+  "base_manifest": "ci/rg_reusable_analytic_kernel_base_complete_scope_capsule.json",
+  "base_manifest_sha256": "ecec5dc115eca93fdfadf72072bfb9d13c85c5d36191b31738d4295d9305d6a3",
+  "modules": {
+    "Proofs.RadenkovicGutmanCellGraphIntegral": {
+      "source_sha256": "193fa93d5e17fc34348187a7349f8d67f5e5e44d98bc050c1f188041d2089745",
+      "source_closure_sha256": "947c00a81a29fecfa1447dd099b8410d969f16bfb7d2a343d887edf6cd95e8bb"
+    },
+    "Proofs.RadenkovicGutmanCellPartition": {
+      "source_sha256": "34c53dc04496925cf339fe8bfa79a97ba9454b1db4817b233020ad7e444f02e8",
+      "source_closure_sha256": "20c937067d7a6358608ef63488f657f9353f5bee13e6837283432791976eee1a"
+    },
+    "Proofs.RadenkovicGutmanD1Short12": {
+      "source_sha256": "75bc3dd69b29bda2baaf33134b535f9f5de23ba872d615dfcdf434c005e3ea36",
+      "source_closure_sha256": "f90ca2b2460eb7e5ef2d7591cc15ee32dc109941ec08f780d095e0dc2a6b7d07"
+    },
+    "Proofs.RadenkovicGutmanD1Short12Cells00": {
+      "source_sha256": "7851ec2c682fbabad515b8d1f5a2b4fa11bd91605e743d3edeaee91fe624f8e3",
+      "source_closure_sha256": "d80cdf0696ad5bb2ca257605d28b19b496f4f696cabd9a6cfdd2eb10dc543f04"
+    },
+    "Proofs.RadenkovicGutmanD1Short12Cells01": {
+      "source_sha256": "155e7b92c7471266d537e6c3ba1777ee8c3bb50040a2da19315034a085706060",
+      "source_closure_sha256": "61ce5b940984f13d82cbf0d0678bd2559912c954d371e401ec8bf45762b03b9e"
+    },
+    "Proofs.RadenkovicGutmanD1Short12Cells02": {
+      "source_sha256": "3486e432efe2fe904af7117c3ef4346f686544e411efad8cc08b3f149d69e784",
+      "source_closure_sha256": "2a4accf30b2cdeb658e5a50297fad956d45bee0070bd5a8653290ebb07829663"
+    },
+    "Proofs.RadenkovicGutmanNestedCellData": {
+      "source_sha256": "0fad289a66a4281ec51fc25f94294816a2837fc93d7d810b87b9abf31c3c2622",
+      "source_closure_sha256": "32730a64b25b74f671952a42088e94556cfd36c34a46b698a22a89d36a93437e"
+    },
+    "Proofs.RadenkovicGutmanNestedClassBoxes": {
+      "source_sha256": "a44c24b3b6c24708283824f4ae2e4fc8e4d07cbd034fbba285a0bde1f51b6b0a",
+      "source_closure_sha256": "d3ea10232e5ff6cbb9d3cf8ba11b9f50fa564ebdc87ec79b0eb6902a34b643ab"
+    },
+    "Proofs.RadenkovicGutmanPaidDegreeOneClass": {
+      "source_sha256": "a1ec3c8427e2e78597ec1dbd1b3c70dea43fb8ab160efde7602997a0a4524d4f",
+      "source_closure_sha256": "5fb151e0f7f5f82141d8201b9a641eb4d3dac6b1bc19a990aaacc2a97a94066e"
+    },
+    "Proofs.RadenkovicGutmanPhysicalCell": {
+      "source_sha256": "39b66d5c3938bcecc079391f80fec6b6072926026abb8e22c186f9f80ec9ba2b",
+      "source_closure_sha256": "eb92358e226858cfb5218a2ca38f8288b43bf0b07b581fa97c2cf74ca19fc425"
+    }
+  },
+  "kernel_status": "REQUIRES_FRESH_STANDARD_KERNEL"
+}

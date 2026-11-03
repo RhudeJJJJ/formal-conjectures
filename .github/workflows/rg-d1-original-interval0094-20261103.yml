@@ -18,7 +18,7 @@ jobs:
       matrix:
         include:
           - endpoint: Proofs.RadenkovicGutmanD1OriginalSharedSlice0094Complete
-            restore_plan: ci/rg_d1_ready_original_interval0094_restore_plan.json
+            restore_plan: ci/rg_d1_original_interval0094_20261103_restore_plan.json
     runs-on: ubuntu-24.04
     timeout-minutes: 150
     steps:
@@ -55,15 +55,27 @@ jobs:
       - name: Restore one independently audited complete source-bound base scope
         env:
           GITHUB_TOKEN: ${{ github.token }}
-        run: python3 -B ci/rg_restore_complete_scope.py --manifest ci/rg_shared_arm_kernel_base_complete_scope_capsule.json --build-directory Proofs/RG_Lean_20261019/build/extension
+        run: python3 -B ci/rg_restore_complete_scope.py --manifest ci/rg_reusable_analytic_kernel_base_complete_scope_capsule.json --build-directory Proofs/RG_Lean_20261019/build/extension
       - name: Restore authenticated original leaf exports
         env:
           GITHUB_TOKEN: ${{ github.token }}
-        run: python3 -B ci/rg_restore_with_kernel_fallback.py --plan ${{ matrix.restore_plan }} --build-directory Proofs/RG_Lean_20261019/build/extension --endpoint ${{ matrix.endpoint }} --max-fresh 1
-      - name: Bound the remaining fresh module frontier
+        run: python3 -B ci/rg_restore_with_kernel_fallback.py --plan ${{ matrix.restore_plan }} --build-directory Proofs/RG_Lean_20261019/build/extension --endpoint ${{ matrix.endpoint }} --max-fresh 3
+      - name: Bound and identify the exact three fresh modules
         env:
           GITHUB_TOKEN: ${{ github.token }}
-        run: python3 -B ci/rg_restore_with_kernel_fallback.py --plan ci/rg_empty_restore_plan.json --build-directory Proofs/RG_Lean_20261019/build/extension --endpoint ${{ matrix.endpoint }} --max-fresh 1 --preflight-only
+        run: |
+          python3 -B ci/rg_restore_with_kernel_fallback.py --plan ci/rg_empty_restore_plan.json --build-directory Proofs/RG_Lean_20261019/build/extension --endpoint ${{ matrix.endpoint }} --max-fresh 3 --preflight-only
+          python3 - <<'PYCONTROL'
+          import json,pathlib
+          report=json.loads(pathlib.Path('Proofs/RG_Lean_20261019/build/extension/bounded_kernel_fallback_plan.json').read_text())
+          expected={
+              'Proofs.RadenkovicGutmanClosedIntegerDataElaboration',
+              'Proofs.RadenkovicGutmanClosedIntegerRowElaboration',
+              'Proofs.RadenkovicGutmanD1OriginalSharedSlice0094Complete',
+          }
+          assert set(report['fresh_modules'])==expected,report['fresh_modules']
+          print('EXACT_FRESH_FRONTIER '+json.dumps(sorted(expected)))
+          PYCONTROL
       - name: Check multiplicities and actual graph spectral comparison
         shell: bash
         run: |

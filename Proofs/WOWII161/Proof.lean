@@ -34,9 +34,9 @@ lemma tree_degree_le_leaves (T : SimpleGraph V) [DecidableRel T.Adj]
     T.degree v ≤ (univ.filter fun w => T.degree w = 1).card := by
   classical
   rcases subsingleton_or_nontrivial V with h | h
-  · letI := h
-    simp [degree_eq_zero_of_subsingleton]
-  · letI := h
+  · let _ := h
+    simp
+  · let _ := h
     let f : V → ℕ := fun w => T.degree w + if T.degree w = 1 then 1 else 0
     have hf (w : V) : 2 ≤ f w := by
       have hp := hT.connected.preconnected.degree_pos_of_nontrivial w
@@ -53,9 +53,10 @@ lemma tree_degree_le_leaves (T : SimpleGraph V) [DecidableRel T.Adj]
       simp
     have he := hT.card_edgeFinset
     simp only [sum_const, smul_eq_mul] at hs
-    dsimp [f] at hsum
-    split_ifs at hsum <;> omega
+    have hv : T.degree v ≤ f v := Nat.le_add_right _ _
+    omega
 
+open scoped Classical in
 /-- A concrete spanning tree contributes its leaf count to the defining supremum. -/
 lemma leaf_card_le_Ls (G : SimpleGraph V) [DecidableRel G.Adj]
     (T : Subgraph G) (hTsp : T.IsSpanning) (hTtree : IsTree T.coe) :
@@ -81,7 +82,7 @@ lemma degree_le_Ls (G : SimpleGraph V) [DecidableRel G.Adj]
   have hn : H.neighborFinset v = G.neighborFinset v := by
     ext w
     simp only [mem_neighborFinset, H, inf_adj, starGraph_adj]
-    exact ⟨fun h => h.1, fun h => ⟨h, h.ne, Or.inl rfl⟩⟩
+    exact ⟨fun h => h.1, fun h => ⟨h, h.ne, Or.inl trivial⟩⟩
   have hd : G.degree v ≤ T.degree v := by
     have hh : H.degree v = G.degree v := by
       simpa only [card_neighborFinset_eq_degree] using congrArg Finset.card hn
@@ -90,7 +91,7 @@ lemma degree_le_Ls (G : SimpleGraph V) [DecidableRel G.Adj]
   have hSsp : S.IsSpanning := SimpleGraph.toSubgraph.isSpanning T hTG
   have hStree : IsTree S.coe := by
     apply (S.spanningCoeEquivCoeOfSpanning hSsp).isTree_iff.mp
-    simpa [S] using hT
+    exact hT
   have hleaves : S.verts.toFinset.filter (fun w => S.degree w = 1) =
       univ.filter (fun w => T.degree w = 1) := by
     ext w
@@ -110,7 +111,7 @@ lemma crossing_edge (G : SimpleGraph V) (s : Finset V) {a b : V}
   | nil => exact (hb ha).elim
   | @cons a c b hac p ih =>
     by_cases hc : c ∈ s
-    · exact ih hc
+    · exact ih hc hb
     · exact ⟨a, ha, c, hc, hac⟩
 
 /-- Every proper clique is bounded by the leaf number of a connected graph. -/
@@ -125,8 +126,8 @@ lemma proper_clique_card_le_Ls (G : SimpleGraph V) [DecidableRel G.Adj]
     have hsub : insert y (s.erase x) ⊆ G.neighborFinset x := by
       intro z hz
       rcases mem_insert.mp hz with rfl | hz
-      · exact mem_neighborFinset.mpr hxy
-      · exact mem_neighborFinset.mpr (hs hx (mem_of_mem_erase hz)
+      · exact (G.mem_neighborFinset x z).mpr hxy
+      · exact (G.mem_neighborFinset x z).mpr (hs hx (mem_of_mem_erase hz)
           (ne_of_mem_erase hz).symm)
     have hy' : y ∉ s.erase x := fun h => hy (mem_of_mem_erase h)
     have hcard : (insert y (s.erase x)).card = s.card := by
@@ -140,7 +141,7 @@ lemma proper_clique_card_le_Ls (G : SimpleGraph V) [DecidableRel G.Adj]
   · have hzero : s = ∅ := not_nonempty_iff_eq_empty.mp hn
     subst s
     have := degree_le_Ls G hG b
-    exact (by positivity : (0 : ℝ) ≤ (G.degree b : ℝ)).trans this
+    simpa using (by positivity : (0 : ℝ) ≤ (G.degree b : ℝ)).trans this
 
 /-- An independent set in a complement neighbourhood is a proper clique. -/
 lemma local_complement_le_Ls (G : SimpleGraph V) [DecidableRel G.Adj]
@@ -180,7 +181,7 @@ theorem conjecture161_proved {α : Type*} [Fintype α] [DecidableEq α]
     (G : SimpleGraph α) [DecidableRel G.Adj] (h_conn : G.Connected) :
     (maxLocalIndependence Gᶜ : ℝ) ≤ Ls G := by
   classical
-  letI : Nonempty α := h_conn.nonempty
+  let _ : Nonempty α := h_conn.nonempty
   let f : α → ℕ := fun v => (Gᶜ.induce (Gᶜ.neighborSet v)).indepNum
   obtain ⟨n, hn, hmax⟩ := mem_image.mp
     (max_mem_image_coe (univ_nonempty.image f))

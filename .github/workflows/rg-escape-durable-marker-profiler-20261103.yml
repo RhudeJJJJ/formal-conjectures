@@ -1,0 +1,72 @@
+name: RG EscapeReducedReserve durable-boundary diagnostic
+# Diagnostic only. Publish only if runtime recovery needs stage localization.
+# Runner-only durable boundary files localize an interrupted declaration; no proof
+# objects or reusable proof receipt are exported from this diagnostic run.
+on:
+  push:
+    branches: [rg-degree-one-large-20261103]
+    paths: ['.github/workflows/rg-escape-durable-marker-profiler-20261103.yml']
+permissions:
+  contents: read
+  actions: read
+jobs:
+  diagnose:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    env:
+      MIMALLOC_PURGE_DELAY: "0"
+      MIMALLOC_PURGE_EXTEND_DELAY: "0"
+      MIMALLOC_ARENA_PURGE_MULT: "1"
+      MIMALLOC_PURGE_DECOMMITS: "1"
+      MIMALLOC_ALLOW_LARGE_OS_PAGES: "0"
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          persist-credentials: false
+      - name: Install the fixed project toolchain
+        run: |
+          set -o pipefail
+          curl -sSfL https://github.com/leanprover/elan/releases/download/v1.4.2/elan-x86_64-unknown-linux-gnu.tar.gz | tar xz
+          ./elan-init -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Materialize the fixed dependency lock
+        run: python3 -B ci/rg_dependencies.py
+      - name: Fetch the external cache for the original twelve-module scope
+        run: |
+          python3 - <<'PY'
+          import pathlib,re,subprocess,sys
+          sys.path.insert(0,'ci')
+          from rg_plan_exact_degree_one_large import source_closure,SOURCES,without_comments
+          hashes,_,_=source_closure('Proofs.RadenkovicGutmanEscapeReducedReserve')
+          assert len(hashes)==12
+          external=set()
+          for n in hashes:
+              base=SOURCES/'ThirdParty/LeanCert' if n.startswith('LeanCert.') else SOURCES
+              code=without_comments((base/(n.replace('.','/')+'.lean')).read_text())
+              for d in re.findall(r'^\s*(?:public\s+)?import\s+([\w.]+)\s*$',code,re.M):
+                  if not d.startswith(('Proofs.','LeanCert.','Lean.','Init.','Std.')) and d not in ('Lean','Init','Std'):external.add(d)
+          subprocess.run(['lake','exe','cache','get',*sorted(external)],check=True)
+          PY
+      - name: Restore authenticated original prerequisites
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          python3 -B ci/rg_restore_complete_scope.py --manifest ci/rg_reusable_analytic_kernel_base_complete_scope_capsule.json --build-directory Proofs/RG_Lean_20261019/build/extension
+          python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_ge46_20261103_partial_original_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+      - name: Require exactly the original diagnostic endpoint as fresh
+        run: python3 -B ci/rg_escape_reduced_diagnostic.py --phase preflight
+      - name: Profile explicitly instrumented source with all existing kernel and memory guards
+        shell: bash
+        run: |
+          set -o pipefail
+          python3 -B ci/rg_escape_reduced_diagnostic.py --phase run --instrument-runner-copy | python3 -B ci/rg_compact_ci_output.py
+      - name: Retain the source-bound diagnostic summary
+        if: always()
+        run: python3 -B ci/rg_escape_reduced_diagnostic.py --phase collect
+      - name: Preserve diagnostic evidence only
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: rg-escape-durable-marker-diagnostic-${{ github.run_id }}-${{ github.run_attempt }}
+          path: Proofs/RG_Lean_20261019/build/escape_diagnostics
+          retention-days: 90

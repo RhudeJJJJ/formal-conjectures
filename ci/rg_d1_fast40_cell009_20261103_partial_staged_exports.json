@@ -1,0 +1,149 @@
+{
+  "repository": "RhudeJJJJ/formal-conjectures",
+  "run": 41703037022,
+  "job": 126151000073,
+  "source_commit": "baa32870c9ef560f075a2dd4b5b71766d973d07d",
+  "artifact_id": 13264103115,
+  "artifact_sha256": "d1eefb4ecf837daf42b1de35b11b89fdddd3f17ba9177f2de458ffa33f6012a1",
+  "lean_version": "4.33.1",
+  "mathlib": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "origin_context": {
+    "job_conclusion": "failure",
+    "endpoint_complete": false,
+    "post_identity_gate_passed": false,
+    "completed_modules_independently_authenticated": true,
+    "completed_fresh_modules": 8,
+    "completed_original_acceptance_declarations": [
+      "Gebendorfer.RadenkovicGutman.DegreeOneFastFullBoxClass40.cell009_checked"
+    ],
+    "failed_next_module": "Proofs.RadenkovicGutmanD1FastFullBox40Cells05",
+    "failure": "The unchanged 2048-MiB physical-memory reserve stopped the next compiler; no Fast40 endpoint receipt."
+  },
+  "modules": {
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell009": {
+      "module": "Proofs.RadenkovicGutmanD1FastFullBox40Cell009",
+      "source_sha256": "804a4087469312a5fe25e6ff932add30e1085686ae48e40061ae07db391c5936",
+      "source_closure_sha256": "24d37c824b66a14c54724b8fb1c1400e67c2bc3aaa6de52d35ab4491aba67cef",
+      "output_sha256": "ce561ead685c3020b7711628181f26c673994a06e86f5cc3f63718f002f94e71",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "FRESH_KERNEL_EXPORT",
+      "seconds": 2.12
+    },
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell009Affine": {
+      "module": "Proofs.RadenkovicGutmanD1FastFullBox40Cell009Affine",
+      "source_sha256": "9093f0b7eaad8bba706e96c431843404a92a1e23751817581864e12344e3467c",
+      "source_closure_sha256": "6365ce0e27db556b4cc41aef41b10b2bf9e094528f2854b8685fb4b1d8412306",
+      "output_sha256": "03c2c71e4c34471f773660a7f7b449b7b385f0e0c1807bbab991d63049766cf1",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "FRESH_KERNEL_EXPORT",
+      "seconds": 22.775
+    },
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell009Arithmetic": {
+      "module": "Proofs.RadenkovicGutmanD1FastFullBox40Cell009Arithmetic",
+      "source_sha256": "6159709257ffe0fa1c6fc85db35b3d56d2d13064d71e4ca1cc7d21ce5c5b4ae3",
+      "source_closure_sha256": "17e4a2402cf95c98d312ec735a5e9048e9cad0665c9a2b1fca38562157e49d66",
+      "output_sha256": "e3abd37b6856fc88df6f0ad696e9db899a6e93718aa4773951f088ce6de9dd35",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "FRESH_KERNEL_EXPORT",
+      "seconds": 65.446
+    },
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell009Data": {
+      "module": "Proofs.RadenkovicGutmanD1FastFullBox40Cell009Data",
+      "source_sha256": "8cf9b14dca90670fe0b1f6228561f53d043300fd1d8a65f9683f466b0103b55f",
+      "source_closure_sha256": "a8d8cb56e46921f39b40bdb1e5775079654bc004b8024b985cd2e6d1467c7fe4",
+      "output_sha256": "39cfdba16f258a3780a2a9cb6bfbf9f312e0889ec086e31c3c80c7b8d9974147",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "FRESH_KERNEL_EXPORT",
+      "seconds": 82.842
+    },
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell009Log": {
+      "module": "Proofs.RadenkovicGutmanD1FastFullBox40Cell009Log",
+      "source_sha256": "14673932c2250daff439682d21bb9469dcf086b22faac477d330af827a3b28e2",
+      "source_closure_sha256": "7a8bae8f1ecc4cbf12bd6a59593662bc5f722f4865be1085abc879a8674ed279",
+      "output_sha256": "f61760d67960d5c738b0a61f8fca1023f53fd489b06e6938dc5c9aa4d06fefc2",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "FRESH_KERNEL_EXPORT",
+      "seconds": 4.076
+    },
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell009Parameters": {
+      "module": "Proofs.RadenkovicGutmanD1FastFullBox40Cell009Parameters",
+      "source_sha256": "8366e1ceccee13d7c15214df3674a64a3ba2c6498c741d9a11cb84619551b519",
+      "source_closure_sha256": "70a14cfa29122fc153989009bb089a20207164453ab4fc279dbf89bf28251f43",
+      "output_sha256": "8c8fafa25ade43d17888de0fa4d186e7bbb29a33d6904a72d660b76d26e9c412",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "FRESH_KERNEL_EXPORT",
+      "seconds": 2.17
+    },
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell009Positive": {
+      "module": "Proofs.RadenkovicGutmanD1FastFullBox40Cell009Positive",
+      "source_sha256": "a4faa6d1ab24dc6d40de22ca0f68e6b5f0e5514f4b809d267d0160ce402f3606",
+      "source_closure_sha256": "6632652b0cb581a4aebe003f331d93e861bf7fb817a2235f6af6d4e70e705aaa",
+      "output_sha256": "fb754f8b1d73b49e4da6a4fe7bd3154dc9b7de04c96b1f2d858fd54bdf316cb0",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "FRESH_KERNEL_EXPORT",
+      "seconds": 12.296
+    },
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cells04": {
+      "module": "Proofs.RadenkovicGutmanD1FastFullBox40Cells04",
+      "source_sha256": "1666a92be1b45150234660dc0b39cf8ba0826517555c6612416d38d7c0b4ae28",
+      "source_closure_sha256": "c6dde96dd6841ab7111a492037e88c978c0a7f0a5d74ab21d49eb813513b7449",
+      "output_sha256": "4ec4736e4aa52b410c54fc459d084c71a16fdb7a095848ecde8be21909cff98b",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "FRESH_KERNEL_EXPORT",
+      "seconds": 2.12
+    }
+  }
+}

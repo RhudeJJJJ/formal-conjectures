@@ -1,5 +1,5 @@
-name: RG current final source closure and unchanged numeric origins
-# Rebind the complete current graph after the Hybrid lemma parenthesis correction.
+name: RG complete current source closure with explicit numeric decomposition
+# Bind all original numeric endpoints and the sole declaration-preserving split.
 on:
   push:
     branches: [rg-degree-one-large-20261103]
@@ -26,7 +26,7 @@ jobs:
               subprocess.run([sys.executable, '-B', 'ci/rg_materialize_shared_arm.py',
                               '--tag', '30', '--chunk', str(index)], check=True)
           PY
-      - name: Check current full source closure and every original numeric source identity
+      - name: Check full source closure and all original numeric endpoints with the explicit declaration split
         run: python3 -B ci/rg_check_current_final_source_binding.py
       - name: Retain the actual source graph without proof objects
         if: always()

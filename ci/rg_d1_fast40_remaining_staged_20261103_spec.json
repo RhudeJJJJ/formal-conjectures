@@ -1,0 +1,814 @@
+{
+  "kind": "EXACT_FAST40_REMAINING_COMPONENT_RECONSTRUCTION",
+  "lean_version": "4.33.1",
+  "mathlib": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "leancert": "621a43d7cf21f87872392a01e874f2f1dbddc926",
+  "source_parent_commit": "baa32870c9ef560f075a2dd4b5b71766d973d07d",
+  "source_scope_plan_sha256": "e20daee3e9569a0b1120afead5edfebdd6abb95ce7610692b20cd21fdadb62fa",
+  "source_graph_helper": "ci/rg_assert_fast40_split.py",
+  "source_graph_helper_sha256": "82e13beeafb07a9c4d9b577c55e5bd7e1fb117c0e115f0eb0e74dc64484323f3",
+  "original_manifest": "ci/rg_d1_20261103_closed_class_historical_reference.json",
+  "original_manifest_sha256": "6b574cf9840b806e7a95dd82da6d61ccf4d1cb08cd972477bb227c7096d62817",
+  "original_source_snapshot": "ci/rg_d1_fast40_remaining_original_cells_20261103.json",
+  "original_source_snapshot_sha256": "ca4b710407afe31675d1bd3085e3cf4ea308998616a361ef8539a49353e91b1a",
+  "base_manifest": "ci/rg_reusable_analytic_kernel_base_complete_scope_capsule.json",
+  "base_manifest_sha256": "ecec5dc115eca93fdfadf72072bfb9d13c85c5d36191b31738d4295d9305d6a3",
+  "partial_manifests": [
+    {
+      "path": "ci/rg_d1_fast40_20261103_partial_original_exports.json",
+      "sha256": "e8060ea3cb70038cc4f902634ac23b92b6f0b1186c3fd2e82d438b6f9933c335",
+      "module_count": 4,
+      "modules": [
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cells00",
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cells01",
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cells02",
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cells03"
+      ]
+    },
+    {
+      "path": "ci/rg_d1_fast40_cell008_20261103_partial_split_exports.json",
+      "sha256": "57abaf526d6ffd48444d5cabbb757fc6e48e2420760e5c63b338c947a0ec4999",
+      "module_count": 1,
+      "modules": [
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell008"
+      ]
+    },
+    {
+      "path": "ci/rg_d1_fast40_cell009_20261103_partial_staged_exports.json",
+      "sha256": "eba0b0c289f52fe4e22b7c329e4336f36ac8f9aba7385013a57ab9945bd133a7",
+      "module_count": 8,
+      "modules": [
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell009",
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell009Affine",
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell009Arithmetic",
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell009Data",
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell009Log",
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell009Parameters",
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell009Positive",
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cells04"
+      ]
+    }
+  ],
+  "preserved_partial_modules": [
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell008",
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell009",
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell009Affine",
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell009Arithmetic",
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell009Data",
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell009Log",
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell009Parameters",
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell009Positive",
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cells00",
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cells01",
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cells02",
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cells03",
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cells04"
+  ],
+  "cell_jobs": {
+    "010": {
+      "key": "010",
+      "endpoint": "Proofs.RadenkovicGutmanD1FastFullBox40Cell010",
+      "required_module_count": 37,
+      "fresh_module_count": 7,
+      "modules": {
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell010": {
+          "source_sha256": "c784de2b8b7c9543592687df8fd42ca459fc0816adf9da6ed30f8442ee598f7b",
+          "source_closure_sha256": "bc76785cd30aa6567ffd3838f73082522303c3dada4fe9dffba1120d4986b052"
+        },
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell010Affine": {
+          "source_sha256": "3f22070760bf2cfc8c060efa943eff21bbcdad94cceccf169fe2e03778756643",
+          "source_closure_sha256": "d42db1105b63ef7eef9b7ac7719e46bf64c8edc625ac5d4f42af8971dd97843b"
+        },
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell010Arithmetic": {
+          "source_sha256": "bc12564ca126edaa51f988d48bf2987730c99b87d141b6529217ed302a5696fb",
+          "source_closure_sha256": "562d64b5a76470b2f9053684ab8baf185eb58255b17bf8577b1c695aa302a92b"
+        },
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell010Data": {
+          "source_sha256": "ac91ade3539c5a6df6e5afa7c86ba991b1668ac85cc2daf54695fc615dceb2f7",
+          "source_closure_sha256": "f767f055da45f8e5f8b44ad1c412b263083c01891696a3574d128a024f2ff3e0"
+        },
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell010Log": {
+          "source_sha256": "a17d45dd418b3130b6fe0cb6b06d64f5c1b62562d284a6c1e6dc24b8ca2ef318",
+          "source_closure_sha256": "e2765b1b9313b83c5408d5b3ea84bf44b7755cfade03b22f11b656e11397b77e"
+        },
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell010Parameters": {
+          "source_sha256": "ef9fc0bedad23aa644c5923d67f817aff6adf86c00313c2fe7f21e1c9c32947b",
+          "source_closure_sha256": "b5ebf8ab344ab0356fc62cf8100f20b169d2fb8aa14963c7536e52114a89bb52"
+        },
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell010Positive": {
+          "source_sha256": "55135d83c1d81fb2c1e88e7cd53f54bcc0e98b21c0a1338186f7357a132609bd",
+          "source_closure_sha256": "0614272e4efb5c7bab0cdc4ab26f3cf40aded82ca1bdef9a060d9821d835d09f"
+        }
+      },
+      "axiom_profile_counts": {
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell010": 1,
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell010Affine": 1,
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell010Arithmetic": 1,
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell010Data": 1,
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell010Log": 1,
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell010Parameters": 1,
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell010Positive": 1
+      },
+      "job_name": "cell-010",
+      "artifact_name_template": "rg-d1-fast40-cell-010-{run}-{attempt}",
+      "required_success_step": "Require exact staged cell source exports"
+    },
+    "011": {
+      "key": "011",
+      "endpoint": "Proofs.RadenkovicGutmanD1FastFullBox40Cell011",
+      "required_module_count": 37,
+      "fresh_module_count": 7,
+      "modules": {
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell011": {
+          "source_sha256": "cdf7b6c9041b1812ff1051c204d81639b4f9cf77cb569b80e649e45bc8c3f653",
+          "source_closure_sha256": "75d84f892dad0000b4f670d0a5dcb2f97021dbad911a2cc892e203c8e10db5c1"
+        },
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell011Affine": {
+          "source_sha256": "256dd5970629ed506f7f8c6260933068266e084cbf7f206c702ecb9d2432c571",
+          "source_closure_sha256": "acc05b23b986ef90b89fe1300d59cbc996d307ad842986371a2a187d023d1eb0"
+        },
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell011Arithmetic": {
+          "source_sha256": "66d4b9cbd544839e0b3ace91e862b98ad918780bcb240a307356320b56b3d168",
+          "source_closure_sha256": "a626614a19757ff1188d7deb3149dba0da79caf0e3571089ebe73841df8ecca4"
+        },
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell011Data": {
+          "source_sha256": "0e00c91f0402ff22ef66813ea1de5b8a7ddd86ec07e2592bcab09f9fac52afd3",
+          "source_closure_sha256": "91c8e5dda737aeb8f527d17f71a62d12e762dba730003378cb735c7d42be4cfb"
+        },
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell011Log": {
+          "source_sha256": "229031c3b012495e1233f1a42c6544760aa2a9fc3ebbb11ea465d8520cee2306",
+          "source_closure_sha256": "faa990293b7cdbf83760426db4de8ba5e954182dd606d4e9a330829c22782ebf"
+        },
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell011Parameters": {
+          "source_sha256": "11c10af119c20641392825999bcc138c650e25097c0e46743856bbdd26f8ddb8",
+          "source_closure_sha256": "8e1f4ba4d9d97235db119032cb7493e60c0512c5793caed75c72c3d778fbd7d1"
+        },
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell011Positive": {
+          "source_sha256": "1dfde6710732cda1095e42c03e0fd597aeeaf2dce98963288df46794f973b3a1",
+          "source_closure_sha256": "166c9e86bbaa71b079e41a87862c4ba0aab606004bee975b72308bb7f49f66f1"
+        }
+      },
+      "axiom_profile_counts": {
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell011": 1,
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell011Affine": 1,
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell011Arithmetic": 1,
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell011Data": 1,
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell011Log": 1,
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell011Parameters": 1,
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell011Positive": 1
+      },
+      "job_name": "cell-011",
+      "artifact_name_template": "rg-d1-fast40-cell-011-{run}-{attempt}",
+      "required_success_step": "Require exact staged cell source exports"
+    },
+    "012": {
+      "key": "012",
+      "endpoint": "Proofs.RadenkovicGutmanD1FastFullBox40Cell012",
+      "required_module_count": 37,
+      "fresh_module_count": 7,
+      "modules": {
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell012": {
+          "source_sha256": "6339b12d12d1459f73d60d741529987316b50bb555baf1ff62bb17e9540ed246",
+          "source_closure_sha256": "51480d1963660939761e110a35a5480af05dac962d216dc5cd76a11ff31bcdaf"
+        },
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell012Affine": {
+          "source_sha256": "92b66d84bff31e14ef4108bd97ff2b31fbd751d1c33c5dce022ec8e430520dfa",
+          "source_closure_sha256": "9358436d61b523aa32abc1d76ecf12cac95122cbdee0ec55b507f01b890b9426"
+        },
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell012Arithmetic": {
+          "source_sha256": "a13c1de90eb070abc74c83599699a08e2a119a23a12eb235a834e4cbc05afc31",
+          "source_closure_sha256": "f1ad9f8a93a147fe40bb91b4a94ca8ee8fa91da113aa42dfa06fd04697f249b3"
+        },
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell012Data": {
+          "source_sha256": "5da0146036f2d27f6537772b0a275f1e4fd30e6d77d4fb0d9e9217e6c304311b",
+          "source_closure_sha256": "e99f00bd1826230907f70321bec774a0cd8363d6658c63ffe8cacb34e28a0427"
+        },
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell012Log": {
+          "source_sha256": "4df0d86a41c1c0ad0dac57a0e19e0558a01a260eb9bc740ac292bc75bcd52c66",
+          "source_closure_sha256": "55b6407b2671f5444d12a4337b1af173c2d23b9997fdadc3dcdca6699403c1af"
+        },
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell012Parameters": {
+          "source_sha256": "0f9f655e018706af56c5aca2533771f31aef1bfe589fbea9e6fb4187de3c0f70",
+          "source_closure_sha256": "90ab161c713fcf44ac9d85dadeb2559994c6bf4d3c05a0fe941b647238f21ddb"
+        },
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell012Positive": {
+          "source_sha256": "27350450476f4c21c2e33c0ef96090c6ecdbe6958412e5e3daeaa4d481b650ce",
+          "source_closure_sha256": "d321657ef6dd6d7577a2eb588b13e3bb0cdec146c5a5ffe052915fbba279bcb5"
+        }
+      },
+      "axiom_profile_counts": {
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell012": 1,
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell012Affine": 1,
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell012Arithmetic": 1,
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell012Data": 1,
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell012Log": 1,
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell012Parameters": 1,
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell012Positive": 1
+      },
+      "job_name": "cell-012",
+      "artifact_name_template": "rg-d1-fast40-cell-012-{run}-{attempt}",
+      "required_success_step": "Require exact staged cell source exports"
+    },
+    "013": {
+      "key": "013",
+      "endpoint": "Proofs.RadenkovicGutmanD1FastFullBox40Cell013",
+      "required_module_count": 37,
+      "fresh_module_count": 7,
+      "modules": {
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell013": {
+          "source_sha256": "ba3c68ea3da0de594d658587b9b974149a8b3426281018aca6e0b73f1470817d",
+          "source_closure_sha256": "84b9ce2f647858277f978c659798c49593680346cdcea136744b89de3125b22f"
+        },
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell013Affine": {
+          "source_sha256": "85bc57634e701fda986b3592ec57d31400b04180f815ff940482cf47077a3e8c",
+          "source_closure_sha256": "c7008f9f2f24ed7db89e9119be2dd05fcb78e236832979bafb6448bd3344d6ab"
+        },
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell013Arithmetic": {
+          "source_sha256": "8405362e5cf19dec9cb57de3e68d79314c4e931e6dd35ed575b0b274fb953db8",
+          "source_closure_sha256": "ffbfdf905157926c8c451c3df87b227df33fef805ee4f0c20b947a72d73bf3e7"
+        },
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell013Data": {
+          "source_sha256": "9e5ddd82f92aa56c131a6ad18780dcb743a9d247c118f01d3cc1473d09cb48b0",
+          "source_closure_sha256": "559dd2763906d1713ef43145858f87ba035f0da53689e1d6d49eee389308a371"
+        },
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell013Log": {
+          "source_sha256": "38843be0786a3149c9b16e956e15bbe31771f63224ec64de7da744063a37f9b1",
+          "source_closure_sha256": "1229d6f2edc005966244c6c74bf3018f852b7170e9e9fd745f0a54c85cb18d50"
+        },
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell013Parameters": {
+          "source_sha256": "2d5ea0b671e574a1a44bbfd204028e91eabbac165b584225da6e58084aedc9a5",
+          "source_closure_sha256": "b0f888d962480716991d2d5b26101a7c7e0494df3437f41e952d9117d3bb08e7"
+        },
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell013Positive": {
+          "source_sha256": "a1161265ea2c5de649b185b9b6fbd1dba3e330c6cff4443163ec2e1aeb0671fc",
+          "source_closure_sha256": "a117a8900b28c60c98baf59b287f9f7d4f195c5f93dc9d5d77317c6b0cf72535"
+        }
+      },
+      "axiom_profile_counts": {
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell013": 1,
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell013Affine": 1,
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell013Arithmetic": 1,
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell013Data": 1,
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell013Log": 1,
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell013Parameters": 1,
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell013Positive": 1
+      },
+      "job_name": "cell-013",
+      "artifact_name_template": "rg-d1-fast40-cell-013-{run}-{attempt}",
+      "required_success_step": "Require exact staged cell source exports"
+    },
+    "014": {
+      "key": "014",
+      "endpoint": "Proofs.RadenkovicGutmanD1FastFullBox40Cell014",
+      "required_module_count": 37,
+      "fresh_module_count": 7,
+      "modules": {
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell014": {
+          "source_sha256": "3e5302433c9a7db6e7b57c1c2127a4dc712027a3c42f971bc58ea3300f34aabf",
+          "source_closure_sha256": "6f315ff2ad55b8af79c63019db9cca3839fef256a1a84b0887ecf8fede3992d0"
+        },
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell014Affine": {
+          "source_sha256": "29a7084cc44d43ab7d0b5b5b825229d5a7527992ec65d275de2198db2f821046",
+          "source_closure_sha256": "ff51b6a31598160c596fac180ef71d401dc90e50a4cfa74e27d297336f4d2300"
+        },
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell014Arithmetic": {
+          "source_sha256": "c8a35520c8caedd4b68bdadef2cf2f7ffe01b9572bc4da1c821c0d7877788469",
+          "source_closure_sha256": "a1c7596c870cace6ff0525267fffecbc84b230d94644132d8501a1c272a3efae"
+        },
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell014Data": {
+          "source_sha256": "c36ca86c210a78db7d8f75182e275952bdd00018da32a05d6c8d6fca047cbd81",
+          "source_closure_sha256": "715f05daecb1b885a7297b606f721528a303b4cc26d7aef832137be880b78de4"
+        },
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell014Log": {
+          "source_sha256": "8e955f1f1d2ca2dfc0d920843d9114510cae4164e8649a60fa54cf699586e51f",
+          "source_closure_sha256": "3aea384f7df506a2268c4e1d36e0fbded4fa480c9da005202f892e7e230db124"
+        },
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell014Parameters": {
+          "source_sha256": "04902f06783aeff803fd56c39bee8e6c305145384866106e261d05f1b35f168f",
+          "source_closure_sha256": "77f83f9b69da7fc3a64eb8a90d56d44e6b4aef3d7e0f08e8e819ec9899901b18"
+        },
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell014Positive": {
+          "source_sha256": "1cfab8f4eb7ffc8fd639b03320e7dd6b598a04d770f4a5fe47ad63f767ebc404",
+          "source_closure_sha256": "951622f790202033b2d639d9ea4e70ff728c1bd56a659fa5635d1026c087125e"
+        }
+      },
+      "axiom_profile_counts": {
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell014": 1,
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell014Affine": 1,
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell014Arithmetic": 1,
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell014Data": 1,
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell014Log": 1,
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell014Parameters": 1,
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell014Positive": 1
+      },
+      "job_name": "cell-014",
+      "artifact_name_template": "rg-d1-fast40-cell-014-{run}-{attempt}",
+      "required_success_step": "Require exact staged cell source exports"
+    },
+    "015": {
+      "key": "015",
+      "endpoint": "Proofs.RadenkovicGutmanD1FastFullBox40Cell015",
+      "required_module_count": 37,
+      "fresh_module_count": 7,
+      "modules": {
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell015": {
+          "source_sha256": "f8a364910173cc599c87cf4116e1f15561194baefdfdc3447b3b42d4aed4c7e4",
+          "source_closure_sha256": "9c67adce0ece07f2a8409170f94879de0e9ac3f517e618e52e8ddf66bd3a7ee3"
+        },
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell015Affine": {
+          "source_sha256": "3db1882036f349ef4999e8bb50945a8167343b9798e745605e049729603300e5",
+          "source_closure_sha256": "e6787e5fa6ba20d2c5b845f810762be122a3401ea33eab2340eb6f39b0f50ca9"
+        },
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell015Arithmetic": {
+          "source_sha256": "07e12db58a835a5bfb3eaa813c2f0a3ed7324f2f49c5e1a40310a77aca1404c2",
+          "source_closure_sha256": "be227a34c7ecde9d8b19dbbee9fa9afe3eabbb408a22bf87fb3a4de8d3b569ee"
+        },
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell015Data": {
+          "source_sha256": "5ad0f9ad528428d3a0c64200e275c17e550e991a9b79b80c12743081fe743cac",
+          "source_closure_sha256": "c766e956fae64b851e66ec2c9ea170fbfa1eeb523dc1a7c4a9e899c854e0d21a"
+        },
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell015Log": {
+          "source_sha256": "7f13a0ec2234853fcfb7ce433245e37b1126d39817410fa2c1f49b8b832d3ba7",
+          "source_closure_sha256": "1ae6f1c3c1955759107e2537553eee18429df256544f970eae9bb43af065c014"
+        },
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell015Parameters": {
+          "source_sha256": "ab1065668560dcd874b3fc3d07cab72e15384387941439a335647a534563a65f",
+          "source_closure_sha256": "2741e2d0b621a50c6da89f80a84e2f0b6f2bd28e35fe304165547169bc5c5927"
+        },
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell015Positive": {
+          "source_sha256": "b6fd4ac2390b1648fc234e46d3873e10b7f5ff8a08f79a3409a8d36457cf77ca",
+          "source_closure_sha256": "4c01f46ab47f445140995fbbfb6705372cdac92955451a3aec6de42737979d59"
+        }
+      },
+      "axiom_profile_counts": {
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell015": 1,
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell015Affine": 1,
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell015Arithmetic": 1,
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell015Data": 1,
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell015Log": 1,
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell015Parameters": 1,
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell015Positive": 1
+      },
+      "job_name": "cell-015",
+      "artifact_name_template": "rg-d1-fast40-cell-015-{run}-{attempt}",
+      "required_success_step": "Require exact staged cell source exports"
+    },
+    "016": {
+      "key": "016",
+      "endpoint": "Proofs.RadenkovicGutmanD1FastFullBox40Cell016",
+      "required_module_count": 37,
+      "fresh_module_count": 7,
+      "modules": {
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell016": {
+          "source_sha256": "d67f82a59b8c1e502ca80a40a2ba2653607a6a39250334d1f51a3d979f5e7709",
+          "source_closure_sha256": "5a412e973ed2afcedc67a8aa138a97d3dc357c4a2a39cda90e64ae4d1807ae90"
+        },
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell016Affine": {
+          "source_sha256": "37ed1bb5c58adce31debbcd3cc7e623c680694abdb617288c77c7b950a34aea7",
+          "source_closure_sha256": "a0da00edf0213d747e473514a68588b5e5d0dcd3ae8dab19946c42d4ca20accf"
+        },
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell016Arithmetic": {
+          "source_sha256": "c2c7d287b338615d8e2faca3a0b806f3022e040df007aafe5980243a5ccaa8c0",
+          "source_closure_sha256": "aa173d79cb2f9336b4056754c356a40c385e5528957aa72afcc21bbc7e07eced"
+        },
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell016Data": {
+          "source_sha256": "154662a629582f280914d69c431da46eb0f56fd023b185d64b833303e752ed0e",
+          "source_closure_sha256": "fa0fe1e97ca98f72fcfffa0b2fb4af2c2f5b1343a9e2039d1090c57fb78ec3ac"
+        },
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell016Log": {
+          "source_sha256": "bd7e8cf72dd6a2ee05071bd224551c40364a2193cd27de13f6fd89c1bc517253",
+          "source_closure_sha256": "d9567066aa5630479fd8f775a8aa8c0d678fadedd281c85870257203f881a8af"
+        },
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell016Parameters": {
+          "source_sha256": "9f073c87da3473535fe453814daee741c598cd27fe75359a774110d6fd28cb1c",
+          "source_closure_sha256": "14068fa60aad966d2dda7c599d0942c9d74a9994ff43e2a54c4af0a4b8d4127b"
+        },
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell016Positive": {
+          "source_sha256": "f38bdf74e4baf948063fd0c60316abefc9366355ee80c6348a70ceaf890bf627",
+          "source_closure_sha256": "053c2b5633ca3a25bd6aa8eb7d9aeabb7449d12fd8d0aa85b62b337f388853cd"
+        }
+      },
+      "axiom_profile_counts": {
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell016": 1,
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell016Affine": 1,
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell016Arithmetic": 1,
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell016Data": 1,
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell016Log": 1,
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell016Parameters": 1,
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell016Positive": 1
+      },
+      "job_name": "cell-016",
+      "artifact_name_template": "rg-d1-fast40-cell-016-{run}-{attempt}",
+      "required_success_step": "Require exact staged cell source exports"
+    },
+    "017": {
+      "key": "017",
+      "endpoint": "Proofs.RadenkovicGutmanD1FastFullBox40Cell017",
+      "required_module_count": 37,
+      "fresh_module_count": 7,
+      "modules": {
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell017": {
+          "source_sha256": "8641c62a5d76555339aab1d347f4a34b4c797c17fcdd005ad7d6c086aed70633",
+          "source_closure_sha256": "786c9da59484c29aa31f479773a7b6e544260a7ff361da7257c559d8a41e505f"
+        },
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell017Affine": {
+          "source_sha256": "e27bd046c161e91ec96ded7870d7c4c6d5ec1379295279de21ea0fa326754aaa",
+          "source_closure_sha256": "b84f30acd82c76c9d6f09640ef84e5189d40b0c1c158c2922795d4e074b31ea9"
+        },
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell017Arithmetic": {
+          "source_sha256": "c1128b94671fa8a6617d87346a4a67c36d590d151f790c6bc66f8439947640ec",
+          "source_closure_sha256": "07f99817843700770a0b9ce9e895a4ee193c1f34ed53c548acee6e7406c68162"
+        },
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell017Data": {
+          "source_sha256": "630d02fc65c4f0f1e3d79326c4712b5ecc8cac5879600c87884f9cf47260783b",
+          "source_closure_sha256": "5fc64ba119f2946dc35fe72fc91d0332bde4e035bf8be1de16d27cc0b062e7e2"
+        },
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell017Log": {
+          "source_sha256": "44e5ec47473a0b958e42bf9c1e7d6a593b5199bc3462fd79e3ff15f5a046ddb0",
+          "source_closure_sha256": "cee783637f753efe53fbc4167a0808f1805de8cb88446968b5b001efd13ca5bc"
+        },
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell017Parameters": {
+          "source_sha256": "7d4c291cbafa84f9b14529d7309a91dd22df5e37f649b73bc38af1261fe3a239",
+          "source_closure_sha256": "19642c215b57a183928d43ee61c70c461a1f94b886a5ad3da26f4b430a279beb"
+        },
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell017Positive": {
+          "source_sha256": "0c25421e8fa316307e3fd4be6d62fa9e8240f69cd623acd6bdeef940ee790843",
+          "source_closure_sha256": "738ca7d793de209e46f2d1e37c086cc46baca109c96bce3cee2c5521f3b4d832"
+        }
+      },
+      "axiom_profile_counts": {
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell017": 1,
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell017Affine": 1,
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell017Arithmetic": 1,
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell017Data": 1,
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell017Log": 1,
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell017Parameters": 1,
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell017Positive": 1
+      },
+      "job_name": "cell-017",
+      "artifact_name_template": "rg-d1-fast40-cell-017-{run}-{attempt}",
+      "required_success_step": "Require exact staged cell source exports"
+    },
+    "018": {
+      "key": "018",
+      "endpoint": "Proofs.RadenkovicGutmanD1FastFullBox40Cell018",
+      "required_module_count": 37,
+      "fresh_module_count": 7,
+      "modules": {
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell018": {
+          "source_sha256": "1c5deb11b506488152002be415b0489db2798833864301804d3c1002b246421c",
+          "source_closure_sha256": "27a32a92acd2b38660a8155dd47af31c447d99462206aa9e739d85dedf296ff2"
+        },
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell018Affine": {
+          "source_sha256": "ac4789190fd1a9f691cd2d1833ca5a362b268c834b6061962b8544eeadf2ea3e",
+          "source_closure_sha256": "b292f21f3a4485a12485aa571de03f9274eb36e2cd669d545c02e9a8679ffbe4"
+        },
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell018Arithmetic": {
+          "source_sha256": "868216fdf8ed53348537e7384beba0d197b1e81223e3bf19bd75da3278e796ea",
+          "source_closure_sha256": "b9bdf450a72f1b2b2aa6c3646b07649132e7309e46a8e74cb8094d6f4b265939"
+        },
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell018Data": {
+          "source_sha256": "5e03402389e2e5f446bdbb924b5049e34e6e39e393138b168edae8b717a26b98",
+          "source_closure_sha256": "739980f8d02c46cdd9b409b88ee20d8b3ca1a6e82ee7676ba3a70de9d5f7c74f"
+        },
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell018Log": {
+          "source_sha256": "e570a2550de7be394cf491f086ba193e47a5bfc308f04c25c2ffabd3f00b1cea",
+          "source_closure_sha256": "0669d2db4bec358c225e35639c0c49c6dc7622f1f545dbb075f0dd30fd1511c3"
+        },
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell018Parameters": {
+          "source_sha256": "a47320192c5ce9004eff429064df46af59325ad2434e0a54413e12426dcdda16",
+          "source_closure_sha256": "26143159fd5dca35632f9b202c75eeb47e046982654e5462a389f0937ea7c78a"
+        },
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell018Positive": {
+          "source_sha256": "e1984ffc762538cfe2af013f9ee35730f480044333d3c50a18e3c9b6397f3446",
+          "source_closure_sha256": "fd609571900eebb492bf3a439ac43203a76d378754ed9c3f76158b6b49101cd4"
+        }
+      },
+      "axiom_profile_counts": {
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell018": 1,
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell018Affine": 1,
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell018Arithmetic": 1,
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell018Data": 1,
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell018Log": 1,
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell018Parameters": 1,
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell018Positive": 1
+      },
+      "job_name": "cell-018",
+      "artifact_name_template": "rg-d1-fast40-cell-018-{run}-{attempt}",
+      "required_success_step": "Require exact staged cell source exports"
+    }
+  },
+  "join": {
+    "key": "join",
+    "endpoint": "Proofs.RadenkovicGutmanD1FastFullBox40",
+    "required_module_count": 155,
+    "fresh_module_count": 6,
+    "modules": {
+      "Proofs.RadenkovicGutmanD1FastFullBox40": {
+        "source_sha256": "a30e2c106e2820b653484ca9f251f12f09b7c26a4a12587368d0991f4fdec41b",
+        "source_closure_sha256": "4f73cb8ff0d1c07c5d64b891509207dc9343a133aac2b802bf66562324c82a15"
+      },
+      "Proofs.RadenkovicGutmanD1FastFullBox40Cells05": {
+        "source_sha256": "ef13820ed143f7fb954db95c70693e0aea85fbe9b832f030d443324403be2114",
+        "source_closure_sha256": "1d82e556c887db90dc6419485a8817e7dc4ff052e20a4fdd6fd602cc412f2b03"
+      },
+      "Proofs.RadenkovicGutmanD1FastFullBox40Cells06": {
+        "source_sha256": "88d477512f59f5604a6dff80433bd5809d874f9d9ced32f8f414065280d715dd",
+        "source_closure_sha256": "9619ec2b62a7dd87b041474bf929576f98518a7f0ad771e8720e0331720d3c2e"
+      },
+      "Proofs.RadenkovicGutmanD1FastFullBox40Cells07": {
+        "source_sha256": "263409762ef3b5e42b5bd4d3d5aa81cf0d3fc2b340743ed7c9d06ef4d2800d3c",
+        "source_closure_sha256": "656324337fdea055a359e27ea6d6dc0884d9cd0f1307d44bb543374f7616332b"
+      },
+      "Proofs.RadenkovicGutmanD1FastFullBox40Cells08": {
+        "source_sha256": "2c147cad6f18015ae00ec74ab29a5f1d77b90643ee222b942d5768816382f8d1",
+        "source_closure_sha256": "8a23bf6161f410ec596885f9233e8cc4c3fd41e5068645e300516532af03c350"
+      },
+      "Proofs.RadenkovicGutmanD1FastFullBox40Cells09": {
+        "source_sha256": "763cd76c4fccc9b7e7901e768f425e1a1e267fee720c320f08732e7c832e8e77",
+        "source_closure_sha256": "ece00fa669ae01e46a5139b740f468b8722bd8730d26935273ae94d1feed4d06"
+      }
+    },
+    "axiom_profile_counts": {
+      "Proofs.RadenkovicGutmanD1FastFullBox40": 3,
+      "Proofs.RadenkovicGutmanD1FastFullBox40Cells05": 2,
+      "Proofs.RadenkovicGutmanD1FastFullBox40Cells06": 2,
+      "Proofs.RadenkovicGutmanD1FastFullBox40Cells07": 2,
+      "Proofs.RadenkovicGutmanD1FastFullBox40Cells08": 2,
+      "Proofs.RadenkovicGutmanD1FastFullBox40Cells09": 1
+    },
+    "job_name": "join-original-fast40",
+    "artifact_name_template": "rg-d1-fast40-remaining-join-{run}-{attempt}",
+    "required_success_step": "Require exact Fast40 source exports"
+  },
+  "cell_data": {
+    "010": {
+      "cell": "cell010",
+      "original_module": "Proofs.RadenkovicGutmanD1FastFullBox40Cells05",
+      "data_sha256": "f868a89cc0f3a3e206de0de5b946a90db1bba6b314ce35da996b6e743ad8bcd8",
+      "data_bytes": 51005,
+      "public_signature": "theorem cell010_checked : accepts 1 3 4 cell010=true",
+      "component_modules": [
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell010Parameters",
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell010Arithmetic",
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell010Affine",
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell010Positive",
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell010Log"
+      ]
+    },
+    "011": {
+      "cell": "cell011",
+      "original_module": "Proofs.RadenkovicGutmanD1FastFullBox40Cells05",
+      "data_sha256": "eb506d4ef961af87ddcfa401b3a4dc8b48aaf02c3480979ee83c3c44caa8d448",
+      "data_bytes": 56985,
+      "public_signature": "theorem cell011_checked : accepts 1 3 4 cell011=true",
+      "component_modules": [
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell011Parameters",
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell011Arithmetic",
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell011Affine",
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell011Positive",
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell011Log"
+      ]
+    },
+    "012": {
+      "cell": "cell012",
+      "original_module": "Proofs.RadenkovicGutmanD1FastFullBox40Cells06",
+      "data_sha256": "b089e89635f2667ba309c2cee4b713350203810086f8a9e2a84b6f202ae441c6",
+      "data_bytes": 64458,
+      "public_signature": "theorem cell012_checked : accepts 1 3 4 cell012=true",
+      "component_modules": [
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell012Parameters",
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell012Arithmetic",
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell012Affine",
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell012Positive",
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell012Log"
+      ]
+    },
+    "013": {
+      "cell": "cell013",
+      "original_module": "Proofs.RadenkovicGutmanD1FastFullBox40Cells06",
+      "data_sha256": "006323ed4392677d0bf48c2035701a9b1edf74b31fac1c3d172e241be328c0c9",
+      "data_bytes": 70137,
+      "public_signature": "theorem cell013_checked : accepts 1 3 4 cell013=true",
+      "component_modules": [
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell013Parameters",
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell013Arithmetic",
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell013Affine",
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell013Positive",
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell013Log"
+      ]
+    },
+    "014": {
+      "cell": "cell014",
+      "original_module": "Proofs.RadenkovicGutmanD1FastFullBox40Cells07",
+      "data_sha256": "7ab0131f803f82dc58b2aa70d1bb8271ae6f63cfa4464158621d6c507d610523",
+      "data_bytes": 78272,
+      "public_signature": "theorem cell014_checked : accepts 1 3 4 cell014=true",
+      "component_modules": [
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell014Parameters",
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell014Arithmetic",
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell014Affine",
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell014Positive",
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell014Log"
+      ]
+    },
+    "015": {
+      "cell": "cell015",
+      "original_module": "Proofs.RadenkovicGutmanD1FastFullBox40Cells07",
+      "data_sha256": "a012fa79d7d72126a1771ecdc9cd4838e7da3cacb720afab70d199a09eb70c8e",
+      "data_bytes": 84468,
+      "public_signature": "theorem cell015_checked : accepts 1 3 4 cell015=true",
+      "component_modules": [
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell015Parameters",
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell015Arithmetic",
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell015Affine",
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell015Positive",
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell015Log"
+      ]
+    },
+    "016": {
+      "cell": "cell016",
+      "original_module": "Proofs.RadenkovicGutmanD1FastFullBox40Cells08",
+      "data_sha256": "00119556329c1a5a6397df6d4cfd95e2698ad7c94255f41e9bd13ee6ee6bc864",
+      "data_bytes": 93333,
+      "public_signature": "theorem cell016_checked : accepts 1 3 4 cell016=true",
+      "component_modules": [
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell016Parameters",
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell016Arithmetic",
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell016Affine",
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell016Positive",
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell016Log"
+      ]
+    },
+    "017": {
+      "cell": "cell017",
+      "original_module": "Proofs.RadenkovicGutmanD1FastFullBox40Cells08",
+      "data_sha256": "5c1a423120d65646720b35a13286032a596311a3faa5f2b51f501a91a935f942",
+      "data_bytes": 99896,
+      "public_signature": "theorem cell017_checked : accepts 1 3 4 cell017=true",
+      "component_modules": [
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell017Parameters",
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell017Arithmetic",
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell017Affine",
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell017Positive",
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell017Log"
+      ]
+    },
+    "018": {
+      "cell": "cell018",
+      "original_module": "Proofs.RadenkovicGutmanD1FastFullBox40Cells09",
+      "data_sha256": "85b26c2093076b5e9f9533743a9da57f9e3720aa4a54df6221dfefc28e81149f",
+      "data_bytes": 108192,
+      "public_signature": "theorem cell018_checked : accepts 1 3 4 cell018=true",
+      "component_modules": [
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell018Parameters",
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell018Arithmetic",
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell018Affine",
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell018Positive",
+        "Proofs.RadenkovicGutmanD1FastFullBox40Cell018Log"
+      ]
+    }
+  },
+  "all_new_cell_modules": [
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell010",
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell010Affine",
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell010Arithmetic",
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell010Data",
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell010Log",
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell010Parameters",
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell010Positive",
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell011",
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell011Affine",
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell011Arithmetic",
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell011Data",
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell011Log",
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell011Parameters",
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell011Positive",
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell012",
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell012Affine",
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell012Arithmetic",
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell012Data",
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell012Log",
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell012Parameters",
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell012Positive",
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell013",
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell013Affine",
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell013Arithmetic",
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell013Data",
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell013Log",
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell013Parameters",
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell013Positive",
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell014",
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell014Affine",
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell014Arithmetic",
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell014Data",
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell014Log",
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell014Parameters",
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell014Positive",
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell015",
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell015Affine",
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell015Arithmetic",
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell015Data",
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell015Log",
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell015Parameters",
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell015Positive",
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell016",
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell016Affine",
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell016Arithmetic",
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell016Data",
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell016Log",
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell016Parameters",
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell016Positive",
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell017",
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell017Affine",
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell017Arithmetic",
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell017Data",
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell017Log",
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell017Parameters",
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell017Positive",
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell018",
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell018Affine",
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell018Arithmetic",
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell018Data",
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell018Log",
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell018Parameters",
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell018Positive"
+  ],
+  "all_new_source_modules": [
+    "Proofs.RadenkovicGutmanD1FastFullBox40",
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell010",
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell010Affine",
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell010Arithmetic",
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell010Data",
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell010Log",
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell010Parameters",
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell010Positive",
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell011",
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell011Affine",
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell011Arithmetic",
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell011Data",
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell011Log",
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell011Parameters",
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell011Positive",
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell012",
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell012Affine",
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell012Arithmetic",
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell012Data",
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell012Log",
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell012Parameters",
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell012Positive",
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell013",
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell013Affine",
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell013Arithmetic",
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell013Data",
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell013Log",
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell013Parameters",
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell013Positive",
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell014",
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell014Affine",
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell014Arithmetic",
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell014Data",
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell014Log",
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell014Parameters",
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell014Positive",
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell015",
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell015Affine",
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell015Arithmetic",
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell015Data",
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell015Log",
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell015Parameters",
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell015Positive",
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell016",
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell016Affine",
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell016Arithmetic",
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell016Data",
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell016Log",
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell016Parameters",
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell016Positive",
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell017",
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell017Affine",
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell017Arithmetic",
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell017Data",
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell017Log",
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell017Parameters",
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell017Positive",
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell018",
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell018Affine",
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell018Arithmetic",
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell018Data",
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell018Log",
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell018Parameters",
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cell018Positive",
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cells05",
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cells06",
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cells07",
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cells08",
+    "Proofs.RadenkovicGutmanD1FastFullBox40Cells09"
+  ],
+  "workers": 1,
+  "module_timeout": 600,
+  "memory_reserve_mib": 2048,
+  "max_parallel_cell_jobs": 2,
+  "acceptance_proof_bodies_changed": true,
+  "kernel_status": "REQUIRES_NEW_STANDARD_KERNEL_RECEIPTS"
+}

@@ -2,7 +2,8 @@
 
 This check compiles no Lean modules and authenticates no proof objects. It
 materializes the full actual source graph, checks the reviewed current closure,
-and proves only that all original numeric source identities remain unchanged.
+and checks 4,566 unchanged numeric sources plus one explicitly reorganized leaf.
+That leaf retains all original declaration bodies and all original endpoints.
 """
 import hashlib
 import json
@@ -19,6 +20,9 @@ NUMERIC_SPEC = "ci/rg_d1_required_numeric_batches_20261103.json"
 NUMERIC_SPEC_SHA = "f47334108b563ae5e20f15fc07b2e4589f6d6e7f49e308bfdb8b4301e689e18e"
 OLD_CLOSURE = "9b816edb67214c8c25a0c17e7390be126b53a03cb41bd8165c567755b5c302ac"
 ENDPOINT = "Proofs.RadenkovicGutmanRemainingThreeAssembly"
+REORGANIZED = "Proofs.RadenkovicGutmanD1Long00Leaf01370"
+REORGANIZED_SPEC = "ci/rg_d1_numeric137_decomposed_20261103_spec.json"
+REORGANIZED_SHA = "ed3bdec60b9d500095c41e726b46c03cab092d34db01b2ba3beec04c307e7746"
 
 
 def sha(raw):
@@ -54,9 +58,27 @@ def main():
     assert isinstance(scheduled, list)
     assert len(scheduled) == len(set(scheduled)) == 4567
     assert origin["numeric_jobs"] == len(numeric["jobs"]) == 349
-    assert spec["current_required_modules"] == 33509
+    assert spec["current_required_modules"] == 33583
     assert spec["current_endpoint_source_sha256"] == numeric["source_endpoint_sha256"]
     assert spec["current_endpoint_closure_sha256"] != OLD_CLOSURE
+    assert spec["numeric_source_reorganization"] == {
+        "original_module": REORGANIZED, "original_batch": "00_137",
+        "spec": REORGANIZED_SPEC, "spec_sha256": REORGANIZED_SHA,
+        "original_declarations_preserved_verbatim": True,
+        "unchanged_original_numeric_modules": 4566,
+        "source_reorganized_original_numeric_modules": 1,
+        "added_support_modules": 11,
+        "additional_final_current_source_recheck": "Proofs.RadenkovicGutmanD1OriginalSharedSlice0080Complete",
+    }
+    import rg_numeric137_decomposed_recovery as decomposition
+    current, original_plan, original_rows, base, snapshot = decomposition.context(REORGANIZED_SHA)
+    decomposition.preserve_declarations(current, original_rows, snapshot)
+    # The pinned producer checks all original data in memory. It materializes
+    # only the other nine original leaves, so a missing sibling cannot cause
+    # a later generic materializer to overwrite the reorganized leaf.
+    decomposition.materialize_unchanged(current, original_rows, snapshot)
+    decomposition.preserve_declarations(current, original_rows, snapshot)
+    decomposition.source_scope(current, original_rows, base)
     hashes, dependencies, closures = source_closure(ENDPOINT)
     assert len(hashes) == spec["current_required_modules"]
     assert hashes[ENDPOINT] == spec["current_endpoint_source_sha256"]
@@ -65,6 +87,8 @@ def main():
         assert hashes[name] == digest, ("Changed reviewed source", name)
 
     expected_names = set()
+    unchanged = set()
+    reorganized = set()
     plan_digests = {}
     for job in numeric["jobs"]:
         relative = job["plan"]
@@ -75,9 +99,22 @@ def main():
         expected_names.update(expected)
         plan_digests[relative] = job["plan_sha256"]
         for name, row in expected.items():
+            if name == REORGANIZED:
+                assert job["batch"] == "00_137" and plan == original_plan
+                assert row == original_rows[name]
+                assert hashes[name] == current["modules"][name]["source_sha256"] != row["source_sha256"]
+                assert closures[name] == current["modules"][name]["source_closure_sha256"] != row["source_closure_sha256"]
+                reorganized.add(name)
+                continue
             assert hashes[name] == row["source_sha256"], ("Changed numeric source", name)
             assert closures[name] == row["source_closure_sha256"], ("Changed numeric closure", name)
+            unchanged.add(name)
     assert expected_names == set(scheduled) and len(expected_names) == 4567
+    assert reorganized == {REORGANIZED} and len(unchanged) == 4566
+    assert unchanged | reorganized == expected_names and not unchanged & reorganized
+    for name in current["new_source_exports"]:
+        assert hashes[name] == current["modules"][name]["source_sha256"]
+        assert closures[name] == current["modules"][name]["source_closure_sha256"]
     sealed_json(numeric["head_plan"], numeric["head_plan_sha256"])
     head_plan, heads = load_plan(ROOT / numeric["head_plan"])
     assert head_plan["scope"] == "original_long_heads"
@@ -94,7 +131,7 @@ def main():
     assert os.environ["GITHUB_REPOSITORY"] == spec["repository"]
     assert os.environ["GITHUB_REF"] == "refs/heads/rg-degree-one-large-20261103"
     report = {
-        "status": "CURRENT_SOURCE_CLOSURE_BOUND_ORIGINAL_NUMERIC_SOURCES_UNCHANGED",
+        "status": "CURRENT_SOURCE_CLOSURE_BOUND_WITH_EXPLICIT_DECLARATION_PRESERVING_REORGANIZATION",
         "kernel_proof": "NOT_CHECKED_BY_THIS_SOURCE_PREFLIGHT",
         "compiled_object_coverage": "NOT_CHECKED_BY_THIS_SOURCE_PREFLIGHT",
         "remaining_original_main_families": 4,
@@ -106,8 +143,12 @@ def main():
         "current_endpoint_closure_sha256": closures[ENDPOINT],
         "binding_spec_sha256": sha(spec_raw),
         "original_numeric_origin": origin,
-        "unchanged_original_numeric_modules": len(expected_names),
-        "unchanged_original_numeric_batches": len(numeric["jobs"]),
+        "original_numeric_modules_accounted_for": len(expected_names),
+        "unchanged_original_numeric_modules": len(unchanged),
+        "source_reorganized_original_numeric_modules": sorted(reorganized),
+        "original_numeric_batch_plans_unchanged": len(numeric["jobs"]),
+        "fully_unchanged_original_numeric_batches": len(numeric["jobs"]) - 1,
+        "numeric_source_reorganization": spec["numeric_source_reorganization"],
         "unchanged_original_long_heads": sorted(heads),
         "original_numeric_plan_sha256": plan_digests,
     }

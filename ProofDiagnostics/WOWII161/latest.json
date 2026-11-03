@@ -1,0 +1,35 @@
+{
+  "scope": "Exact original imported modules; actual checkout recorded separately from workflow event SHA",
+  "workflow_event_sha": "04b71bf61edb113a4fcfe1d5c46d0396cc8592c1",
+  "source_sha": "e887adf80557d65403e01785a48705f09b1f3f8f",
+  "run_id": "41638457934",
+  "cycle": 1,
+  "status": "failed",
+  "protected_hashes": {
+    "lean-toolchain": "3aac669c7a910ec2389f4e4f921b605adf6ebf2d1e0c9b9cd0be4d33f3f5db71",
+    "lake-manifest.json": "c8ffc0d59f492007162fe54c68396e4b9f2f305fcf69210a7fbaf0b18fcd8cd9",
+    "FormalConjecturesUtil.lean": "3a73749a2b247a1ad08820de102f0d32353bf6e519eb954de53e08553cdbc663",
+    "FormalConjectures/WrittenOnTheWallII/GraphConjecture161.lean": "b63e4707f838fcaa66d902477bd5a4b16431dc3a2eb24776d06ae0153c6d32cd"
+  },
+  "proof_hashes": {
+    "Proof": "7d3ccffd04573cb1694d4170dab8a112225ec6b6187989b1ba59c05168330028",
+    "Audit": "f988f2b78595e53325c48fff9c871fb02edc5565e4ad20242c3549c59c51b08c"
+  },
+  "results": [
+    {
+      "name": "statements",
+      "exit_code": 0,
+      "output": "Build completed successfully (8972 jobs).\n"
+    },
+    {
+      "name": "Proof",
+      "exit_code": 1,
+      "output": "Proofs/WOWII161/Proof.lean:37:4: error: Try this: \n  letI̵\n\nThe goal is a proposition, so `let` is preferred over `letI`.\nThe difference between `let` and `letI` is that `letI` inlines the value.\nBut this is not relevant for proofs because of proof irrelevance.\n\nNote: This linter can be disabled with `set_option linter.style.haveILetI false`\nProofs/WOWII161/Proof.lean:39:4: error: Try this: \n  letI̵\n\nThe goal is a proposition, so `let` is preferred over `letI`.\nThe difference between `let` and `letI` is that `letI` inlines the value.\nBut this is not relevant for proofs because of proof irrelevance.\n\nNote: This linter can be disabled with `set_option linter.style.haveILetI false`\nProofs/WOWII161/Proof.lean:57:26: error: omega could not prove the goal:\na possible counterexample may satisfy the constraints\n  b ≥ 0\n  a ≥ 0\n  a ≥ 1\n  2*a - b ≤ 0\nwhere\n a := ↑(#T.edgeFinset)\n b := ↑(∑ i ∈ univ.erase v, f i)\nProofs/WOWII161/Proof.lean:57:26: error: omega could not prove the goal:\na possible counterexample may satisfy the constraints\n  d ≥ 0\n  c ≥ 2\n  c - d ≥ 1\n  b ≥ 0\n  a ≥ 0\n  2*a - b ≤ 0\n  2*a - c + d ≥ 0\nwhere\n a := ↑(#T.edgeFinset)\n b := ↑(∑ i ∈ univ.erase v, f i)\n c := ↑(T.degree v)\n d := ↑(#{w | T.degree w = 1})\nProofs/WOWII161/Proof.lean:38:10: error: This simp argument is unused:\n  degree_eq_zero_of_subsingleton\n\nHint: Omit it from the simp argument list.\n  [apply] simp\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\nProofs/WOWII161/Proof.lean:62:6: error(lean.synthInstanceFailed): failed to synthesize instance of type class\n  Fintype ↑T.verts\n\nHint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.\nProofs/WOWII161/Proof.lean:84:51: error: Application type mismatch: The argument\n  rfl\nhas type\n  ?m.97 = ?m.97\nbut is expected to have type\n  True\nin the application\n  Or.inl rfl\nProofs/WOWII161/Proof.lean:93:4: error: Type mismatch: After simplification, term\n  hT\n has type\n  @IsTree V T\nbut is expected to have type\n  @IsTree V (toSubgraph T hTG).spanningCoe\nProofs/WOWII161/Proof.lean:113:6: error: Type mismatch\n  ih hc\nhas type\n  b ∉ s → ∃ x ∈ s, ∃ y ∉ s, G.Adj x y\nbut is expected to have type\n  ∃ x ∈ s, ∃ y ∉ s, G.Adj x y\nProofs/WOWII161/Proof.lean:128:14: error(lean.unknownIdentifier): Unknown constant `SimpleGraph.mem_neighborFinset.mpr`\nProofs/WOWII161/Proof.lean:129:14: error(lean.unknownIdentifier): Unknown constant `SimpleGraph.mem_neighborFinset.mpr`\nProofs/WOWII161/Proof.lean:143:4: error: Type mismatch\n  LE.le.trans (Nat.cast_nonneg' (G.degree b)) this\nhas type\n  0 ≤ G.Ls\nbut is expected to have type\n  ↑(#∅) ≤ G.Ls\nProofs/WOWII161/Proof.lean:183:2: error: Try this: \n  letI̵\n\nThe goal is a proposition, so `let` is preferred over `letI`.\nThe difference between `let` and `letI` is that `letI` inlines the value.\nBut this is not relevant for proofs because of proof irrelevance.\n\nNote: This linter can be disabled with `set_option linter.style.haveILetI false`\n"
+    },
+    {
+      "name": "Audit",
+      "exit_code": 1,
+      "output": "Proofs/WOWII161/Audit.lean:1:0: error: object file '/home/runner/work/formal-conjectures/formal-conjectures/.lake/build/lib/lean/Proofs/WOWII161/Proof.olean' of module Proofs.WOWII161.Proof does not exist\n"
+    }
+  ]
+}

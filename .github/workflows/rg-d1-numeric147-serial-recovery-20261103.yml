@@ -1,0 +1,53 @@
+name: RG original numeric147 bounded serial recovery
+on:
+  push:
+    branches: [rg-degree-one-large-20261103]
+    paths: ['.github/workflows/rg-d1-numeric147-serial-recovery-20261103.yml']
+permissions:
+  contents: read
+  actions: read
+jobs:
+  recover:
+    name: Restore original numeric00_147 with one worker
+    runs-on: ubuntu-24.04
+    # Ten unchanged 1200-second module caps, with bounded setup/export time.
+    timeout-minutes: 240
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          persist-credentials: false
+      - name: Materialize and bind the same ten original numeric sources
+        run: python3 -B ci/rg_numeric147_serial_recovery.py --phase materialize
+      - name: Install the fixed project toolchain
+        run: |
+          set -o pipefail
+          curl -sSfL https://github.com/leanprover/elan/releases/download/v1.4.2/elan-x86_64-unknown-linux-gnu.tar.gz | tar xz
+          ./elan-init -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Materialize the exact dependency lock
+        run: python3 -B ci/rg_dependencies.py
+      - name: Fetch the exact external cache scope
+        run: python3 -B ci/rg_numeric147_serial_recovery.py --phase cache
+      - name: Restore the retained complete audited analytic base
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 -B ci/rg_restore_complete_scope.py --manifest ci/rg_reusable_analytic_kernel_base_complete_scope_capsule.json --build-directory Proofs/RG_Lean_20261019/build/extension
+      - name: Enforce the unchanged full ten-module fresh frontier
+        run: python3 -B ci/rg_numeric147_serial_recovery.py --phase preflight
+      - name: Reproduce the unchanged originals with one worker and the same guards
+        shell: bash
+        run: |
+          set -o pipefail
+          python3 -B ci/rg_numeric147_serial_recovery.py --phase kernel | python3 -B ci/rg_compact_ci_output.py
+      - name: Require exact historical output identities
+        run: python3 -B ci/rg_numeric147_serial_recovery.py --phase compare
+      - name: Retain completed records and every declared output member
+        if: always()
+        run: python3 -B ci/rg_collect_fresh_exports.py --build-directory Proofs/RG_Lean_20261019/build/extension --output-directory Proofs/RG_Lean_20261019/build/fresh_exports
+      - name: Retain complete original numeric proof exports
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: rg-d1-original-numeric-serial-00_147-${{ github.run_id }}-${{ github.run_attempt }}
+          path: Proofs/RG_Lean_20261019/build/fresh_exports
+          retention-days: 90

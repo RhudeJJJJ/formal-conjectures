@@ -1,0 +1,417 @@
+{
+  "available_base_manifest": {
+    "artifact_size_in_bytes": 36119215,
+    "complete_capsule_modules": 193,
+    "kind": "INDEPENDENTLY_AUDITED_COMPLETE_SCOPE_CAPSULE",
+    "origin": {
+      "artifact_id": 12540313213,
+      "artifact_sha256": "15b735bfcca048d8547139fe68160b6c7bb9fb8975755e93d5dc12a287b832ce",
+      "job": 120719353775,
+      "repository": "RhudeJJJJ/formal-conjectures",
+      "run": 40043374288,
+      "source_commit": "c2db3f31827123facf22671e0f33564e58eb7498"
+    },
+    "path": "ci/rg_reusable_analytic_kernel_base_complete_scope_capsule.json",
+    "selected_current_modules": 46,
+    "sha256": "ecec5dc115eca93fdfadf72072bfb9d13c85c5d36191b31738d4295d9305d6a3"
+  },
+  "branch": "rg-middle-generic-recovery-20261104",
+  "current_source_graph": {
+    "source_closure_sha256": {
+      "Proofs.RadenkovicGutmanActualFusionIntegral": "94d192281e7d44facdb32cfe3d0972e830f37b16fb48dd412a33e97cc1642baf",
+      "Proofs.RadenkovicGutmanArmBridge": "5c5424acf5a7ff6d26b30c4915091e139c5a3f7556b5c2b44c09e21408ed1cfe",
+      "Proofs.RadenkovicGutmanArmClasses": "f5eae1c492b58eaa7c812a5d5116acf10815c41ee25f7be9552ee85470c91eb1",
+      "Proofs.RadenkovicGutmanArmEmbedding": "a447e236450e45c1a7af92fb7d74976fa5948748a2b40970336711f55fc06c24",
+      "Proofs.RadenkovicGutmanBernstein": "67a2c6c66542a152a60a93aaa4e388b808dbdf61b4e29a3c97f08529b5a89bc9",
+      "Proofs.RadenkovicGutmanClassEnvelope": "d4f138f80530b6ca4bc294ad80dbd42840704d23d5c56247f80e168ddc1c7a83",
+      "Proofs.RadenkovicGutmanConcreteGraphQuotient": "b7642355a4f742bdb07fc31accc9d5bf911e43b93e17039399a0e60591f84d14",
+      "Proofs.RadenkovicGutmanCoreQuotient": "e4ae07f61d2620d98311434d9bbb551f6f036435a6ab8285907d68eab42186d5",
+      "Proofs.RadenkovicGutmanCoulson": "a85d2ce7840d0fb0029ef7eeac68d37cdd203bcc0942dfa89c91875d93ff7f36",
+      "Proofs.RadenkovicGutmanCountGap": "e094d2590497c077143917af18a459f1b8bdc8324157118d3d2871fc65c65262",
+      "Proofs.RadenkovicGutmanCountTransport": "4f622b9ce2fd5ffb47ad6145be10f8e6d0d757854b5e3c5974ec55a2ae199997",
+      "Proofs.RadenkovicGutmanDegreeOneMiddleAnchorAssembly": "98892ccee79e460b5c89f48fb6c52dacf80caa6a9766e3291ccfd53ecaa57bc2",
+      "Proofs.RadenkovicGutmanDegreeOneMiddleAnchorData": "4ee623dec0368986fae0d12c48b9227e28566a8e49dfb7727d83c2dd10da1cb4",
+      "Proofs.RadenkovicGutmanFocus": "3e2c21b6badfbc92f20f9799136d6361e4f62b8fdaa189c9191f1c074b2d905b",
+      "Proofs.RadenkovicGutmanForkResidual": "e69192082ae34ffd965ee83654d024ddf985cb9fe477fe1139c33fbc892adac2",
+      "Proofs.RadenkovicGutmanFourVertexSpectrum": "c96995b7d8ca19b3eb4541593f5e0e049cb4aa9603b2ac933c24b25d4b2948bf",
+      "Proofs.RadenkovicGutmanFusionDescent": "2e376ce221284f743ecbbef8e481a795091978fd1a14151fa109121aa6c76451",
+      "Proofs.RadenkovicGutmanFusionQuotient": "318488a4d452c35a048a420595f65f5265337ecd72428c4093dbbd4faf07dc31",
+      "Proofs.RadenkovicGutmanFusionTerminal": "5d00ac0a5e15f14b66e49925a54b671d60e5d3131ce180d2e9d7d4d958c07b7f",
+      "Proofs.RadenkovicGutmanGlobalAssembly": "68338b2678801246299084c5c72087d51837da385f2927217c26434717ad04b7",
+      "Proofs.RadenkovicGutmanGraphIntegral": "98c1de33fdae0f07fb736f4acbc9b5ef9fc3220c5a9eb0c5b5adf22408df2038",
+      "Proofs.RadenkovicGutmanGraphJoin": "c891c0eaf716f1a520e5fa97eb22fb98eae7ce80f235c626f9dad55020a68696",
+      "Proofs.RadenkovicGutmanIsoEnergy": "95f192969345db20f08cf39c8a37f267a7b708300d1698f8293dd3f4001e18c0",
+      "Proofs.RadenkovicGutmanMiddleOriginalAnchorPredicate": "c9ff78db53795453b8f8d1344f11437a2b37b43613273e2dd436f1bd5dfa69c5",
+      "Proofs.RadenkovicGutmanMinimalFusion": "52f8324ac9793123a266a48eda9ba8ffad7097def9c2a466f07e8301bccc8448",
+      "Proofs.RadenkovicGutmanMixedGraphIntegral": "71a23c338ff792b0e7d1ec39eaad45800e4ab49a05b689dc23096ec3946c0497",
+      "Proofs.RadenkovicGutmanMixedStopLoss": "edbf1215cff94d3a6fdbb060542deaf9d215f57bad1af2558339b2a892dc5106",
+      "Proofs.RadenkovicGutmanMobiusDisk": "5d010eb9b0481030e3dd76c816c354d029a06c2dab87fb883a82da183c6528e3",
+      "Proofs.RadenkovicGutmanNonpathFork": "ee4e46afa2e542ca9f2d69698993169de2cc24aac2e1bcc71ba1b30b6f17173a",
+      "Proofs.RadenkovicGutmanOrderFour": "00e4bccd853e8fb3f5f182595346f80e9c682fe6829c29e94a369469171e89fa",
+      "Proofs.RadenkovicGutmanOriginalAssembly": "68f20188f7b3613c537c9d0cc732f4d1523545235f5797aec978771b9d920b4b",
+      "Proofs.RadenkovicGutmanPathDeterminant": "8b98b18afc3d7bea424153f2b268320498e33442b1876d0c31c42b23e8e2704a",
+      "Proofs.RadenkovicGutmanPathEnclosure": "ff7df41973217dcdfed0a7af9da22f3a1218526c9f35cd9a816500222bb492da",
+      "Proofs.RadenkovicGutmanPathRecurrence": "b11c8835f40da37fb10e1cae3e5554b0692d07ddbecb2f270d8fc682276ecb8e",
+      "Proofs.RadenkovicGutmanPathResolvent": "3b74e0955f8ec2db84ef63ad50eb68eb697bf454fafd9076e242ef962f4ee5c7",
+      "Proofs.RadenkovicGutmanPerturbation": "780adf4f60f37fc150d990bcedeb53bcf03b619020a75f16e7ee0984f623db96",
+      "Proofs.RadenkovicGutmanQuotientBridge": "e522c50e16153d0ec948678bf3c6110ad68dfb6fda4321dbe0d34df320db1257",
+      "Proofs.RadenkovicGutmanReciprocalDisk": "6a898f4cf5c359bc518e3c792a87997193734919a8724763ba05d0044472b349",
+      "Proofs.RadenkovicGutmanResolventDisk": "d6b9b5e93786605b81510bbf903a917562c24aebf50476ad28674cb7171d9d15",
+      "Proofs.RadenkovicGutmanRewireIso": "07ba06d8d1747a8ee29434f4a2f2f6432ab7563c05a7145f5d824e31d254a753",
+      "Proofs.RadenkovicGutmanRewireTopology": "8adb8dc4ec86bf7b326988ca8829d81d48467eb215c6ed5bed03d64fda762a79",
+      "Proofs.RadenkovicGutmanRootSchur": "5489c9132ea8ade8aada94651a08baf004235319d5cbefd549d0c1a00f18c55e",
+      "Proofs.RadenkovicGutmanScalarIntegral": "58f1e13ad5e74c911c4b9c573a591a4bbcb6addae0759840436150cb64b30275",
+      "Proofs.RadenkovicGutmanScaledQuotient": "13514d40cd6ce1fa83e32a9f0a4dde7a15d266e8daba31929f2c5f14830ab6e1",
+      "Proofs.RadenkovicGutmanSmallOrders": "a215bb3992c94571a67183844c1ece0e8b02be5b074441c1712064a11a2a94fa",
+      "Proofs.RadenkovicGutmanSourcePresentation": "3e11d411fd3ec08744c86181cdec3d7ac65229887ae620c4968ec6942b0bbc2f",
+      "Proofs.RadenkovicGutmanSpectral": "184b16762c75c2961cd905c2ef7f1d86351d1b7dbfa11da6bc62fb52ea58ecb9",
+      "Proofs.RadenkovicGutmanTreeTerminal": "99447102a4bd370008aad64215170f13de97152dd52d1b8242c153ccaaf9f65e"
+    },
+    "source_dependencies": {
+      "Proofs.RadenkovicGutmanActualFusionIntegral": [
+        "Proofs.RadenkovicGutmanMinimalFusion",
+        "Proofs.RadenkovicGutmanMixedStopLoss"
+      ],
+      "Proofs.RadenkovicGutmanArmBridge": [
+        "Proofs.RadenkovicGutmanPathEnclosure",
+        "Proofs.RadenkovicGutmanPathResolvent"
+      ],
+      "Proofs.RadenkovicGutmanArmClasses": [
+        "Proofs.RadenkovicGutmanArmBridge",
+        "Proofs.RadenkovicGutmanFocus"
+      ],
+      "Proofs.RadenkovicGutmanArmEmbedding": [
+        "Proofs.RadenkovicGutmanForkResidual"
+      ],
+      "Proofs.RadenkovicGutmanBernstein": [
+        "Proofs.RadenkovicGutmanMobiusDisk"
+      ],
+      "Proofs.RadenkovicGutmanClassEnvelope": [
+        "Proofs.RadenkovicGutmanActualFusionIntegral",
+        "Proofs.RadenkovicGutmanArmClasses",
+        "Proofs.RadenkovicGutmanConcreteGraphQuotient"
+      ],
+      "Proofs.RadenkovicGutmanConcreteGraphQuotient": [
+        "Proofs.RadenkovicGutmanQuotientBridge"
+      ],
+      "Proofs.RadenkovicGutmanCoreQuotient": [
+        "Proofs.RadenkovicGutmanPathResolvent"
+      ],
+      "Proofs.RadenkovicGutmanCoulson": [
+        "Proofs.RadenkovicGutmanScalarIntegral",
+        "Proofs.RadenkovicGutmanSpectral"
+      ],
+      "Proofs.RadenkovicGutmanCountGap": [],
+      "Proofs.RadenkovicGutmanCountTransport": [
+        "Proofs.RadenkovicGutmanCountGap",
+        "Proofs.RadenkovicGutmanPerturbation"
+      ],
+      "Proofs.RadenkovicGutmanDegreeOneMiddleAnchorAssembly": [
+        "Proofs.RadenkovicGutmanDegreeOneMiddleAnchorData",
+        "Proofs.RadenkovicGutmanOriginalAssembly"
+      ],
+      "Proofs.RadenkovicGutmanDegreeOneMiddleAnchorData": [],
+      "Proofs.RadenkovicGutmanFocus": [
+        "Proofs.RadenkovicGutmanBernstein",
+        "Proofs.RadenkovicGutmanRootSchur"
+      ],
+      "Proofs.RadenkovicGutmanForkResidual": [
+        "Proofs.RadenkovicGutmanNonpathFork"
+      ],
+      "Proofs.RadenkovicGutmanFourVertexSpectrum": [
+        "Proofs.RadenkovicGutmanSmallOrders"
+      ],
+      "Proofs.RadenkovicGutmanFusionDescent": [
+        "Proofs.RadenkovicGutmanRewireIso",
+        "Proofs.RadenkovicGutmanRewireTopology"
+      ],
+      "Proofs.RadenkovicGutmanFusionQuotient": [
+        "Proofs.RadenkovicGutmanGraphJoin"
+      ],
+      "Proofs.RadenkovicGutmanFusionTerminal": [
+        "Proofs.RadenkovicGutmanFusionDescent",
+        "Proofs.RadenkovicGutmanTreeTerminal"
+      ],
+      "Proofs.RadenkovicGutmanGlobalAssembly": [
+        "Proofs.RadenkovicGutmanFusionTerminal",
+        "Proofs.RadenkovicGutmanIsoEnergy"
+      ],
+      "Proofs.RadenkovicGutmanGraphIntegral": [
+        "Proofs.RadenkovicGutmanCoulson",
+        "Proofs.RadenkovicGutmanCountTransport",
+        "Proofs.RadenkovicGutmanFusionQuotient"
+      ],
+      "Proofs.RadenkovicGutmanGraphJoin": [
+        "Proofs.RadenkovicGutmanCoreQuotient"
+      ],
+      "Proofs.RadenkovicGutmanIsoEnergy": [
+        "Proofs.RadenkovicGutmanRewireIso",
+        "Proofs.RadenkovicGutmanSpectral"
+      ],
+      "Proofs.RadenkovicGutmanMiddleOriginalAnchorPredicate": [
+        "Proofs.RadenkovicGutmanDegreeOneMiddleAnchorAssembly"
+      ],
+      "Proofs.RadenkovicGutmanMinimalFusion": [
+        "Proofs.RadenkovicGutmanOrderFour"
+      ],
+      "Proofs.RadenkovicGutmanMixedGraphIntegral": [
+        "Proofs.RadenkovicGutmanGraphIntegral",
+        "Proofs.RadenkovicGutmanIsoEnergy"
+      ],
+      "Proofs.RadenkovicGutmanMixedStopLoss": [
+        "Proofs.RadenkovicGutmanMixedGraphIntegral"
+      ],
+      "Proofs.RadenkovicGutmanMobiusDisk": [
+        "Proofs.RadenkovicGutmanReciprocalDisk"
+      ],
+      "Proofs.RadenkovicGutmanNonpathFork": [
+        "Proofs.RadenkovicGutmanTreeTerminal"
+      ],
+      "Proofs.RadenkovicGutmanOrderFour": [
+        "Proofs.RadenkovicGutmanFourVertexSpectrum"
+      ],
+      "Proofs.RadenkovicGutmanOriginalAssembly": [
+        "Proofs.RadenkovicGutmanClassEnvelope"
+      ],
+      "Proofs.RadenkovicGutmanPathDeterminant": [
+        "Proofs.RadenkovicGutmanPathRecurrence"
+      ],
+      "Proofs.RadenkovicGutmanPathEnclosure": [],
+      "Proofs.RadenkovicGutmanPathRecurrence": [],
+      "Proofs.RadenkovicGutmanPathResolvent": [
+        "Proofs.RadenkovicGutmanPathDeterminant"
+      ],
+      "Proofs.RadenkovicGutmanPerturbation": [
+        "Proofs.RadenkovicGutmanSpectral"
+      ],
+      "Proofs.RadenkovicGutmanQuotientBridge": [
+        "Proofs.RadenkovicGutmanArmBridge",
+        "Proofs.RadenkovicGutmanScaledQuotient"
+      ],
+      "Proofs.RadenkovicGutmanReciprocalDisk": [
+        "Proofs.RadenkovicGutmanResolventDisk"
+      ],
+      "Proofs.RadenkovicGutmanResolventDisk": [
+        "Proofs.RadenkovicGutmanPathResolvent"
+      ],
+      "Proofs.RadenkovicGutmanRewireIso": [
+        "Proofs.RadenkovicGutmanCountTransport",
+        "Proofs.RadenkovicGutmanFusionQuotient"
+      ],
+      "Proofs.RadenkovicGutmanRewireTopology": [],
+      "Proofs.RadenkovicGutmanRootSchur": [
+        "Proofs.RadenkovicGutmanFusionQuotient",
+        "Proofs.RadenkovicGutmanReciprocalDisk"
+      ],
+      "Proofs.RadenkovicGutmanScalarIntegral": [],
+      "Proofs.RadenkovicGutmanScaledQuotient": [
+        "Proofs.RadenkovicGutmanFocus"
+      ],
+      "Proofs.RadenkovicGutmanSmallOrders": [
+        "Proofs.RadenkovicGutmanSourcePresentation"
+      ],
+      "Proofs.RadenkovicGutmanSourcePresentation": [
+        "Proofs.RadenkovicGutmanArmEmbedding",
+        "Proofs.RadenkovicGutmanGlobalAssembly"
+      ],
+      "Proofs.RadenkovicGutmanSpectral": [],
+      "Proofs.RadenkovicGutmanTreeTerminal": [
+        "Proofs.RadenkovicGutmanRewireTopology"
+      ]
+    },
+    "source_sha256": {
+      "Proofs.RadenkovicGutmanActualFusionIntegral": "909981a2b0872bdb1701ce68145af1234f25c127b849b6d5c7ad87b8d9eecae3",
+      "Proofs.RadenkovicGutmanArmBridge": "dbe29009159ad77cc551e19ad5a02816252cffabe171a6c3a89ed6ab9fb059ba",
+      "Proofs.RadenkovicGutmanArmClasses": "fbcbd66c3174524e4eca1925101fa8e22db0f641adf45a1076079bcfbc418d70",
+      "Proofs.RadenkovicGutmanArmEmbedding": "a67925799555e93e2fd9b11efadd721ca12400b2045deac2afebcefe86538538",
+      "Proofs.RadenkovicGutmanBernstein": "24c6563f685e7ea5304b5d8563e055c526842c1131beb6c4551a3857f5d081fa",
+      "Proofs.RadenkovicGutmanClassEnvelope": "83ea92358fa4634ef4823f3ecfd8eb9217a2015e55e962f6e2b3527404bb9b89",
+      "Proofs.RadenkovicGutmanConcreteGraphQuotient": "ee234356bf07576cf303c00b0762c6e490a8291b1c0a93e5c1b5cc7f7fa2bb6e",
+      "Proofs.RadenkovicGutmanCoreQuotient": "9a73956ea3e17c97208ee5522dc73d9feb2b5f209e5d707ef19d64bade8d3d82",
+      "Proofs.RadenkovicGutmanCoulson": "4c91db9f8c55b6211a8ad1895eb4a35d6d68afd8e96e43d628f8d56a1b69a0e1",
+      "Proofs.RadenkovicGutmanCountGap": "17eefcfd9580f0df92eb9c1ce4dded759fd575602c6e53f57263ab4613f84d6e",
+      "Proofs.RadenkovicGutmanCountTransport": "700a56e67a26d218c655c148a04bdfb5820f06dc8f08fd49f6109d42b803bf43",
+      "Proofs.RadenkovicGutmanDegreeOneMiddleAnchorAssembly": "4a1900bdbc48f3c3ef82944382a7e4c44cee56a13e5c27f3c3ef4f96614109e7",
+      "Proofs.RadenkovicGutmanDegreeOneMiddleAnchorData": "da3d2a2ca9b988da2ff5ba3178b880abb63bbf69561a18d6c029e1929c7fc27c",
+      "Proofs.RadenkovicGutmanFocus": "730091016e9fce76e3f791ef26e4d09cc8c64c0c2bbb42e154788e37f1f874e3",
+      "Proofs.RadenkovicGutmanForkResidual": "52b708273156266900ce1b5150ab47fef4661c2c588637ee7ef2a28eeca272d2",
+      "Proofs.RadenkovicGutmanFourVertexSpectrum": "bc4c525182d0e46627d4e8a8db327272123fce92560f1d950d83c3e6a9a3b51a",
+      "Proofs.RadenkovicGutmanFusionDescent": "c0ff8556e7e10269102c32f4f9dd473f97c434361ea351b6d45b52f01b6fc4bd",
+      "Proofs.RadenkovicGutmanFusionQuotient": "af4340091b54039be8601ca21297236fe5983b34e9bc5e311a1709b87e1faaf8",
+      "Proofs.RadenkovicGutmanFusionTerminal": "bc16cf9f5bc2b7e2ee4e05d01f10ccff60e5b1a255a4f1000d144001d25def7d",
+      "Proofs.RadenkovicGutmanGlobalAssembly": "7ecd79f3b58a271c5921481be8b2180675ca840ee62c5d00e8b6ab0024ba95ea",
+      "Proofs.RadenkovicGutmanGraphIntegral": "0a9f10cff64ce9c67b8312b014786025e313b58c1f8debad4263675bca8dab35",
+      "Proofs.RadenkovicGutmanGraphJoin": "36d8d239d7a45bf63cfd0475180e208c72cf5bbe9f18873a32b966bdcfa7c428",
+      "Proofs.RadenkovicGutmanIsoEnergy": "b68912b00217f93960b64d30093ec2d5eb0843ea716ea9afc41aa7b62156efd9",
+      "Proofs.RadenkovicGutmanMiddleOriginalAnchorPredicate": "a086accf6e0e69750d1ddc04c4f751d0f3dcd42c232ec97876edd66fdbcad7f6",
+      "Proofs.RadenkovicGutmanMinimalFusion": "5a49e023bcdd6b9f513d7477f30ea88603317cbc36be6aa043a1a18bb4b65bf3",
+      "Proofs.RadenkovicGutmanMixedGraphIntegral": "9fc651e7971b3eaf75d4d050d35b5a6f1dee29824cd3fde72ff3af782955ba08",
+      "Proofs.RadenkovicGutmanMixedStopLoss": "98e238802dccd72d1f546692c5f06fbfad93cf916bda5a5d8fe80f21c979469d",
+      "Proofs.RadenkovicGutmanMobiusDisk": "7ec1df82295ae76acb46371d5e19213524479a8e1c822b1036420aa2f4695f21",
+      "Proofs.RadenkovicGutmanNonpathFork": "4bb96fc7641b19119b56af9246b7e9b81054264d08096ff3fdedc32eb4d29b34",
+      "Proofs.RadenkovicGutmanOrderFour": "c8ce0d4139db81098f867ae809d8a8a5f9c1cfdbdd087e0cb3b6f27b008abdb1",
+      "Proofs.RadenkovicGutmanOriginalAssembly": "3f3bd6719299090443071576e72d8c13974e878b5621b4a6b90091ce09cdeeae",
+      "Proofs.RadenkovicGutmanPathDeterminant": "d6121b7d9da80dabe42e1a33f87b6d60a7f968da8823fe829b15851be072d031",
+      "Proofs.RadenkovicGutmanPathEnclosure": "fa908a8e90a316981820ebf47445e0ab206f3cf32e546466d775fc908931cc85",
+      "Proofs.RadenkovicGutmanPathRecurrence": "4e4eeb10961d7d9834c138cfe317e5f6dd2a153102b2e092662c75661230c4e6",
+      "Proofs.RadenkovicGutmanPathResolvent": "72a7442dc6be586455fdec61a674157048718060da11c5d4bf24eb129e78e627",
+      "Proofs.RadenkovicGutmanPerturbation": "166d8a987925c7c517b36f06796e36c78acd947c1bfcc13d13970ba5b527a54c",
+      "Proofs.RadenkovicGutmanQuotientBridge": "28fb4dea023ae184092ae7a48f8ea0ee8e7ae27b4781eae0eb81526ceac6fbac",
+      "Proofs.RadenkovicGutmanReciprocalDisk": "f25822e9066676241b9fd4fd9554a38e7687377e4f1750549356d4358599b2b8",
+      "Proofs.RadenkovicGutmanResolventDisk": "f7bd373fd0673afb3031ed0e1c2f1c6fd1d18261671545fb84c3155fd4f819ce",
+      "Proofs.RadenkovicGutmanRewireIso": "300a08814b9356b998083b4393c099ae9ebb5eba9e6a6918f2388666d1b51998",
+      "Proofs.RadenkovicGutmanRewireTopology": "ca4b40c0c3acf8a84cf38167d7df2b24cda864bdc120da26f6d001ad37e3a619",
+      "Proofs.RadenkovicGutmanRootSchur": "e4d72cf821925d3f886fd118853ea8603e5db6eeece474bd516b26badaccb8e9",
+      "Proofs.RadenkovicGutmanScalarIntegral": "5c6513466fe92cd9b0d1a16bf9c0589a26b580768bd88565ee06a5f88a4a43c4",
+      "Proofs.RadenkovicGutmanScaledQuotient": "bb7053a4a3c03ea4367fc5ddcf0c0fe969698f8fd8a714ea4ebb86256e927d1c",
+      "Proofs.RadenkovicGutmanSmallOrders": "757fc7d654b4e532c0ac3b5b5f8d7c48544c835f1fb09e96975afe82c27b3cb6",
+      "Proofs.RadenkovicGutmanSourcePresentation": "68e35d0e0fd36309175e8ff35a0b20619965689d32c35504cd3f5421cf5bbae7",
+      "Proofs.RadenkovicGutmanSpectral": "70d7fe9e91a930f1a2e62ea85b5ecea17484877d5150c5eb52cfee1776d98348",
+      "Proofs.RadenkovicGutmanTreeTerminal": "80c7ad1a75f506b8c06bb36040c8b3b7a521b64bcfa143047317602ab6fbc747"
+    }
+  },
+  "current_source_graph_sha256": "26f0a372094ce1e870c06630626d3a0e5450345f680b9745caea7971f14c1297",
+  "endpoint": "Proofs.RadenkovicGutmanMiddleOriginalAnchorPredicate",
+  "expected_named_axiom_declarations": {
+    "Proofs.RadenkovicGutmanDegreeOneMiddleAnchorAssembly": [
+      "Gebendorfer.RadenkovicGutman.DegreeOneMiddleAnchors.covered_sound",
+      "Gebendorfer.RadenkovicGutman.DegreeOneMiddleAnchors.input_family_of_certificates"
+    ],
+    "Proofs.RadenkovicGutmanMiddleOriginalAnchorPredicate": [
+      "Gebendorfer.RadenkovicGutman.MiddleOriginalAnchorPredicate.Proved"
+    ]
+  },
+  "full_degree_one_middle_family_claim": false,
+  "global_rg_claim": false,
+  "kind": "EXACT_TWO_UNCHANGED_MIDDLE_GENERIC_MODULE_REBUILD",
+  "lean_version": "4.33.1",
+  "leancert": "621a43d7cf21f87872392a01e874f2f1dbddc926",
+  "limits": {
+    "max_fresh": 2,
+    "memory_reserve_mib": 2048,
+    "module_timeout_seconds": 600,
+    "workers": 1
+  },
+  "mathlib": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "old_and_new_output_sha256_must_match": true,
+  "original_manifest": {
+    "artifact_currently_available": false,
+    "module_rows": {
+      "Proofs.RadenkovicGutmanDegreeOneMiddleAnchorAssembly": {
+        "axiom_profiles": [
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        ],
+        "mode": "FRESH_KERNEL_EXPORT",
+        "module": "Proofs.RadenkovicGutmanDegreeOneMiddleAnchorAssembly",
+        "output_sha256": "0e06f2fd175c8d658489bae26f1c4a94b54d4a98cf4f3f2738b7afb92d57c01b",
+        "seconds": 2.17,
+        "source_closure_sha256": "98892ccee79e460b5c89f48fb6c52dacf80caa6a9766e3291ccfd53ecaa57bc2",
+        "source_sha256": "4a1900bdbc48f3c3ef82944382a7e4c44cee56a13e5c27f3c3ef4f96614109e7"
+      },
+      "Proofs.RadenkovicGutmanMiddleOriginalAnchorPredicate": {
+        "axiom_profiles": [
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        ],
+        "mode": "FRESH_KERNEL_EXPORT",
+        "module": "Proofs.RadenkovicGutmanMiddleOriginalAnchorPredicate",
+        "output_sha256": "0b9f66bd2100c189d13278cee40c91b17182f39fd251200774e49bf523fd2b57",
+        "seconds": 1.719,
+        "source_closure_sha256": "c9ff78db53795453b8f8d1344f11437a2b37b43613273e2dd436f1bd5dfa69c5",
+        "source_sha256": "a086accf6e0e69750d1ddc04c4f751d0f3dcd42c232ec97876edd66fdbcad7f6"
+      }
+    },
+    "origin": {
+      "artifact_id": 12600832648,
+      "artifact_sha256": "c084402232c427daa1c78424712ef62b18c9dab86bf00a79f267a5d419376493",
+      "job": 121163554252,
+      "repository": "RhudeJJJJ/formal-conjectures",
+      "run": 40191597596,
+      "source_commit": "ebec5a73c1120cfef43bd496eab7c5e0dc31e3b3"
+    },
+    "path": "ci/rg_middle_original_predicate_generic_prior_exports.json",
+    "sha256": "a8d0357a45508a6854196430252234e2553de50416b59ef0724e19aecd21b5ee"
+  },
+  "repository": "RhudeJJJJ/formal-conjectures",
+  "required_fresh_modules": [
+    "Proofs.RadenkovicGutmanDegreeOneMiddleAnchorAssembly",
+    "Proofs.RadenkovicGutmanMiddleOriginalAnchorPredicate"
+  ],
+  "required_modules": 48,
+  "required_prior_modules": [
+    "Proofs.RadenkovicGutmanActualFusionIntegral",
+    "Proofs.RadenkovicGutmanArmBridge",
+    "Proofs.RadenkovicGutmanArmClasses",
+    "Proofs.RadenkovicGutmanArmEmbedding",
+    "Proofs.RadenkovicGutmanBernstein",
+    "Proofs.RadenkovicGutmanClassEnvelope",
+    "Proofs.RadenkovicGutmanConcreteGraphQuotient",
+    "Proofs.RadenkovicGutmanCoreQuotient",
+    "Proofs.RadenkovicGutmanCoulson",
+    "Proofs.RadenkovicGutmanCountGap",
+    "Proofs.RadenkovicGutmanCountTransport",
+    "Proofs.RadenkovicGutmanDegreeOneMiddleAnchorData",
+    "Proofs.RadenkovicGutmanFocus",
+    "Proofs.RadenkovicGutmanForkResidual",
+    "Proofs.RadenkovicGutmanFourVertexSpectrum",
+    "Proofs.RadenkovicGutmanFusionDescent",
+    "Proofs.RadenkovicGutmanFusionQuotient",
+    "Proofs.RadenkovicGutmanFusionTerminal",
+    "Proofs.RadenkovicGutmanGlobalAssembly",
+    "Proofs.RadenkovicGutmanGraphIntegral",
+    "Proofs.RadenkovicGutmanGraphJoin",
+    "Proofs.RadenkovicGutmanIsoEnergy",
+    "Proofs.RadenkovicGutmanMinimalFusion",
+    "Proofs.RadenkovicGutmanMixedGraphIntegral",
+    "Proofs.RadenkovicGutmanMixedStopLoss",
+    "Proofs.RadenkovicGutmanMobiusDisk",
+    "Proofs.RadenkovicGutmanNonpathFork",
+    "Proofs.RadenkovicGutmanOrderFour",
+    "Proofs.RadenkovicGutmanOriginalAssembly",
+    "Proofs.RadenkovicGutmanPathDeterminant",
+    "Proofs.RadenkovicGutmanPathEnclosure",
+    "Proofs.RadenkovicGutmanPathRecurrence",
+    "Proofs.RadenkovicGutmanPathResolvent",
+    "Proofs.RadenkovicGutmanPerturbation",
+    "Proofs.RadenkovicGutmanQuotientBridge",
+    "Proofs.RadenkovicGutmanReciprocalDisk",
+    "Proofs.RadenkovicGutmanResolventDisk",
+    "Proofs.RadenkovicGutmanRewireIso",
+    "Proofs.RadenkovicGutmanRewireTopology",
+    "Proofs.RadenkovicGutmanRootSchur",
+    "Proofs.RadenkovicGutmanScalarIntegral",
+    "Proofs.RadenkovicGutmanScaledQuotient",
+    "Proofs.RadenkovicGutmanSmallOrders",
+    "Proofs.RadenkovicGutmanSourcePresentation",
+    "Proofs.RadenkovicGutmanSpectral",
+    "Proofs.RadenkovicGutmanTreeTerminal"
+  ],
+  "reviewed_source_commit": "10aa67f5f16e8ad00b30ac21332791b008b69cfe",
+  "unchanged_helper_sha256": {
+    "Proofs/RG_Lean_20261019/module_outputs.py": "394954aaa39ccb0be1bf124a35091f4cad9b04e5f35e1a34ac84052b8bf779cd",
+    "Proofs/RG_Lean_20261019/verify.py": "c24840a2fea54afd48f324544fd44d7688980d7d59c2e988ddb83c96a2ea9b67",
+    "Proofs/RG_Lean_20261019/verify_extension.py": "e04b969f85a707677eb6c20986993b32ebf2605e99f2cfdc9efa34ea0bd82f0d",
+    "ci/rg_collect_fresh_exports.py": "8a0758baf522604f408f550bb339776623f587d3184a46eb18782cfbe091fa4c",
+    "ci/rg_compact_ci_output.py": "4a97bef63bb6056e1fbc0146727ebc90a6b6ab887ca143cb39cc1707f309c1e4",
+    "ci/rg_dependencies.py": "426486f1f76b61f08499fc38ddc98a67b06bae5860f9e97e9a059b41896339d4",
+    "ci/rg_github_artifacts.py": "a31f2f8efbbcc03ff353b02e2cc91f4067afa8115c976c4b8d5fd8ea480990c5",
+    "ci/rg_github_rate_limit.py": "fd9d88d0062cd6b911f85da394c1543ef5aeae47bde357322ab222ccc462379d",
+    "ci/rg_observed_kernel_verify.py": "8cad11d7166d5e0f04287714f3e252e02a04613d3757d9cad06f5bc0f17c7a62",
+    "ci/rg_plan_exact_degree_one_large.py": "9fc72a8644fd66e5045e7d1b3f45c6e8cb71f1bba70d8dc9c17f6173294bf874",
+    "ci/rg_restore_complete_scope.py": "464fd10d3786b10a2971f421a88b79d7d54cb1fbfeb605f3d62264ff5eca03b5",
+    "ci/rg_restore_with_kernel_fallback.py": "3fffcffe982297686e1b8a0fc162795cb2aa16491ca9c5527a8575a5d6052e6f"
+  },
+  "workflow": ".github/workflows/rg-middle-generic-recovery-20261104.yml"
+}

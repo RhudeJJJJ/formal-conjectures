@@ -1,0 +1,83 @@
+name: RG exact two Middle generic proof exports
+on:
+  push:
+    branches: [rg-middle-generic-recovery-20261104]
+    paths:
+      - '.github/workflows/rg-middle-generic-recovery-20261104.yml'
+      - 'ci/rg_middle_generic_recovery_20261104.py'
+      - 'ci/rg_middle_generic_recovery_20261104_spec.json'
+permissions:
+  contents: read
+  actions: read
+concurrency:
+  group: rg-middle-generic-recovery-20261104
+  cancel-in-progress: false
+jobs:
+  check:
+    if: github.repository == 'RhudeJJJJ/formal-conjectures' && github.ref == 'refs/heads/rg-middle-generic-recovery-20261104'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          persist-credentials: false
+      - name: Bind the unchanged full source scope and the only permitted available base
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 -B ci/rg_middle_generic_recovery_20261104.py --phase prepare
+      - name: Install the fixed project toolchain
+        run: |
+          set -o pipefail
+          curl -sSfL https://github.com/leanprover/elan/releases/download/v1.4.2/elan-x86_64-unknown-linux-gnu.tar.gz | tar xz
+          ./elan-init -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Materialize the exact dependency lock
+        run: python3 -B ci/rg_dependencies.py
+      - name: Fetch external modules of only this exact closure
+        run: |
+          python3 - <<'PY'
+          import pathlib, re, subprocess, sys
+          sys.path.insert(0, 'ci')
+          from rg_middle_generic_recovery_20261104 import SOURCES, context
+          from verify import without_comments
+          spec, _, _ = context()
+          external = set()
+          for name in spec['current_source_graph']['source_sha256']:
+              text = without_comments((SOURCES / (name.replace('.', '/') + '.lean')).read_text())
+              for dep in re.findall(r'^\s*(?:public\s+)?import\s+([\w.]+)\s*$', text, re.M):
+                  if not dep.startswith(('Proofs.', 'LeanCert.', 'Lean.', 'Init.', 'Std.')) and dep not in ('Lean', 'Init', 'Std'):
+                      external.add(dep)
+          subprocess.run(['lake', 'exe', 'cache', 'get', *sorted(external)], check=True)
+          PY
+      - name: Restore the existing complete source-bound base capsule
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 -B ci/rg_restore_complete_scope.py --manifest ci/rg_reusable_analytic_kernel_base_complete_scope_capsule.json --build-directory Proofs/RG_Lean_20261019/build/extension
+      - name: Require exactly forty-six prior modules and the two missing originals
+        run: |
+          python3 -B ci/rg_restore_with_kernel_fallback.py \
+            --plan ci/rg_empty_restore_plan.json \
+            --build-directory Proofs/RG_Lean_20261019/build/extension \
+            --endpoint Proofs.RadenkovicGutmanMiddleOriginalAnchorPredicate \
+            --max-fresh 2 --workers 1 --preflight-only
+          python3 -B ci/rg_middle_generic_recovery_20261104.py --phase preflight
+      - name: Rebuild only the two unchanged original proof modules
+        shell: bash
+        run: |
+          set -o pipefail
+          python3 -B ci/rg_observed_kernel_verify.py --memory-reserve-mib 2048 -- \
+            --mathlib-project "$GITHUB_WORKSPACE" \
+            --endpoint Proofs.RadenkovicGutmanMiddleOriginalAnchorPredicate \
+            --workers 1 --module-timeout 600 --resume | python3 -B ci/rg_compact_ci_output.py
+      - name: Require the actual complete receipt and identical original proof objects
+        run: python3 -B ci/rg_middle_generic_recovery_20261104.py --phase verify
+      - name: Retain complete fresh objects, sidecars, logs, and diagnostics
+        if: always()
+        run: python3 -B ci/rg_collect_fresh_exports.py --build-directory Proofs/RG_Lean_20261019/build/extension --output-directory Proofs/RG_Lean_20261019/build/fresh_exports
+      - name: Preserve actual proof outputs and their exact provenance comparisons
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: rg-middle-generic-recovery-20261104-${{ github.run_id }}-${{ github.run_attempt }}
+          path: Proofs/RG_Lean_20261019/build/fresh_exports
+          retention-days: 90

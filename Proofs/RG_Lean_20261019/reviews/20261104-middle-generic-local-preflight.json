@@ -1,0 +1,115 @@
+{
+  "actual_verified_prior_objects": 46,
+  "base_commit": "10aa67f5f16e8ad00b30ac21332791b008b69cfe",
+  "branch": "rg-middle-generic-recovery-20261104",
+  "checked_at_utc": "2026-11-04T09:07:33.799056+00:00",
+  "checks": [
+    {
+      "name": "all48_actual_source_bytes_and_current_recursive_closures",
+      "status": "PASS"
+    },
+    {
+      "name": "old_two_original_source_and_closure_identities",
+      "status": "PASS"
+    },
+    {
+      "name": "existing_actual_base_capsule_restore_preserves193_origins_selects46",
+      "status": "PASS"
+    },
+    {
+      "name": "unchanged_production_preflight_with_exact_real_prior_objects",
+      "status": "PASS"
+    },
+    {
+      "name": "withhold_one_real_base_object_requires_three_fresh_and_is_rejected_at_max2",
+      "status": "REJECTED_AS_REQUIRED",
+      "withheld_module": "Proofs.RadenkovicGutmanDegreeOneMiddleAnchorData"
+    },
+    {
+      "name": "restored_actual_base_returns_to_exact2frontier",
+      "status": "PASS"
+    },
+    {
+      "name": "python_compile_and_workflow_yaml_parse_and_boundaries",
+      "status": "PASS"
+    }
+  ],
+  "ci_started": 0,
+  "endpoint": "Proofs.RadenkovicGutmanMiddleOriginalAnchorPredicate",
+  "exact_required_fresh_modules": [
+    "Proofs.RadenkovicGutmanDegreeOneMiddleAnchorAssembly",
+    "Proofs.RadenkovicGutmanMiddleOriginalAnchorPredicate"
+  ],
+  "fresh_kernel_runs": 0,
+  "new_success_receipts_created": 0,
+  "original_identity_expectations": {
+    "Proofs.RadenkovicGutmanDegreeOneMiddleAnchorAssembly": {
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "FRESH_KERNEL_EXPORT",
+      "module": "Proofs.RadenkovicGutmanDegreeOneMiddleAnchorAssembly",
+      "output_sha256": "0e06f2fd175c8d658489bae26f1c4a94b54d4a98cf4f3f2738b7afb92d57c01b",
+      "seconds": 2.17,
+      "source_closure_sha256": "98892ccee79e460b5c89f48fb6c52dacf80caa6a9766e3291ccfd53ecaa57bc2",
+      "source_sha256": "4a1900bdbc48f3c3ef82944382a7e4c44cee56a13e5c27f3c3ef4f96614109e7"
+    },
+    "Proofs.RadenkovicGutmanMiddleOriginalAnchorPredicate": {
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "FRESH_KERNEL_EXPORT",
+      "module": "Proofs.RadenkovicGutmanMiddleOriginalAnchorPredicate",
+      "output_sha256": "0b9f66bd2100c189d13278cee40c91b17182f39fd251200774e49bf523fd2b57",
+      "seconds": 1.719,
+      "source_closure_sha256": "c9ff78db53795453b8f8d1344f11437a2b37b43613273e2dd436f1bd5dfa69c5",
+      "source_sha256": "a086accf6e0e69750d1ddc04c4f751d0f3dcd42c232ec97876edd66fdbcad7f6"
+    }
+  },
+  "prior_base_archive": {
+    "already_authenticated_before_this_proposal": true,
+    "artifact_id": 12540313213,
+    "path": "/workspace/scratch/406169dbc070/rg_numeric_recovery/actual_analytic_base_verified.zip",
+    "redownloaded": false,
+    "sha256": "15b735bfcca048d8547139fe68160b6c7bb9fb8975755e93d5dc12a287b832ce"
+  },
+  "production_lean_changes": 0,
+  "publication_start_conditions": [
+    "Independent review of the frozen3files has no unresolved concrete finding.",
+    "Root publishes only the3candidate files on the dedicated new branch based on reviewed commit10aa67f5.",
+    "At real run start the fixed base archive must still be present, unexpired, and have its registered source/run/digest/size.",
+    "The real unchanged verifier must compile exactly the two modules, produce a complete48-module receipt and3named axiom profiles, and reproduce both old output hashes; no local kernel success has been asserted."
+  ],
+  "real_production_preflight": {
+    "complete_submission": "NOT_SUBMITTED",
+    "endpoint": "Proofs.RadenkovicGutmanMiddleOriginalAnchorPredicate",
+    "fresh_modules": [
+      "Proofs.RadenkovicGutmanDegreeOneMiddleAnchorAssembly",
+      "Proofs.RadenkovicGutmanMiddleOriginalAnchorPredicate"
+    ],
+    "max_fresh": 2,
+    "proof_status": "NOT_PROVEN_BY_RESTORE",
+    "required_modules": 48,
+    "status": "EXACT_FRONTIER_REQUIRES_MANDATORY_FRESH_KERNEL_EXPORTS",
+    "verified_prior_objects": 46,
+    "within_bound": true
+  },
+  "remote_mutations": 0,
+  "repository": "RhudeJJJJ/formal-conjectures",
+  "required_modules": 48,
+  "source_graph_sha256": "26f0a372094ce1e870c06630626d3a0e5450345f680b9745caea7971f14c1297",
+  "status": "FROZEN_LOCAL_TWO_MODULE_PROPOSAL_REAL_SOURCE_AND_PREFLIGHT_CHECKED_NO_KERNEL_RUN"
+}

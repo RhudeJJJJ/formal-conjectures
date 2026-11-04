@@ -1,0 +1,57 @@
+{
+  "kind": "INDEPENDENT_READ_ONLY_INTEGRATION_REVIEW",
+  "review_status": "NO_CONCRETE_FINDINGS",
+  "reviewer": "/root/rg_lean_join",
+  "base_commit": "10aa67f5f16e8ad00b30ac21332791b008b69cfe",
+  "publication_branch": "rg-middle-generic-recovery-20261104",
+  "inventory_sha256": "7fa24a0120c86bad522841fc4fc57e967ca2a150a19a91abede6e8f417c39857",
+  "production_files": {
+    ".github/workflows/rg-middle-generic-recovery-20261104.yml": "984977b61f6109deba5a6871a5fca214b68df134f1127c2479c839ad31742ec8",
+    "ci/rg_middle_generic_recovery_20261104.py": "f9d9206fe2787460c35b9cae34642eb5198b779e1cc1655d3a7804ad09d75c07",
+    "ci/rg_middle_generic_recovery_20261104_spec.json": "137191ab660e927667aca036c1a5ae49651f5793da26470a4ecc19cc6ea440d7"
+  },
+  "endpoint": "Proofs.RadenkovicGutmanMiddleOriginalAnchorPredicate",
+  "required_modules": 48,
+  "verified_required_prior_modules": 46,
+  "complete_base_record_identities_verified": 193,
+  "required_fresh_modules": [
+    "Proofs.RadenkovicGutmanDegreeOneMiddleAnchorAssembly",
+    "Proofs.RadenkovicGutmanMiddleOriginalAnchorPredicate"
+  ],
+  "independent_checks_completed": {
+    "inventory_and_all_production_file_bytes_sha256_git_blobs": true,
+    "validation_checkout_matches_frozen_candidate": true,
+    "_read_only_context_validates_helpers_manifests_and_full_current_source_closure": true,
+    "required_prior_output_bytes_verified": true,
+    "all_base_diagnostic_rows_preserve_original_and_transport_origins": true,
+    "existing_actual_preflight_report_has_exact_48_46_2_scope": true,
+    "both_required_fresh_outputs_and_success_rows_absent_at_review": true,
+    "kernel_receipt_absent_at_review": true,
+    "workflow_branch_path_filters_and_read_only_permissions_match": true,
+    "postkernel_requires_complete_actual_receipt_and_exactly_two_fresh_exports": true,
+    "postkernel_requires_identical_historical_primary_and_additional_outputs": true,
+    "postkernel_requires_exact_named_standard_axiom_profiles": true,
+    "postkernel_requires_successful_actual_resource_observer": true
+  },
+  "expected_named_axiom_declarations": [
+    "Gebendorfer.RadenkovicGutman.DegreeOneMiddleAnchors.covered_sound",
+    "Gebendorfer.RadenkovicGutman.DegreeOneMiddleAnchors.input_family_of_certificates",
+    "Gebendorfer.RadenkovicGutman.MiddleOriginalAnchorPredicate.Proved"
+  ],
+  "limits": {
+    "workers": 1,
+    "module_timeout_seconds": 600,
+    "memory_reserve_mib": 2048,
+    "max_fresh": 2,
+    "retention_days": 90
+  },
+  "findings": [],
+  "scope_qualification": "Proved remains the historical predicate definition; the assembly theorem retains its certificate hypotheses.",
+  "full_degree_one_middle_family_claim": false,
+  "global_rg_claim": false,
+  "new_kernel_success_established": false,
+  "kernel_execution_by_reviewer": false,
+  "production_preflight_execution_by_reviewer": false,
+  "production_changes_by_reviewer": 0,
+  "remote_mutations_by_reviewer": 0
+}

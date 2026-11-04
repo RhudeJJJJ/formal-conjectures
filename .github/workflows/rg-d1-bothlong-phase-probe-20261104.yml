@@ -82,6 +82,8 @@ jobs:
           sudo apt-get install -y btrfs-progs
       - name: Create the unchanged bounded logical proofstore
         run: python3 -B ci/rg_ephemeral_compressed_proofstore.py --logical-gib 256
+      - name: Require direct I/O only for the new owned proofstore loop
+        run: python3 -B ci/rg_enable_owned_proofstore_direct_io_20261104.py
       - name: Authenticate all 444 original archives and read back 25191 projected objects
         env:
           GITHUB_TOKEN: ${{ github.token }}
@@ -113,6 +115,7 @@ jobs:
             Proofs/RG_Lean_20261019/build/bothlong_phase_probe/*.tsv
             Proofs/RG_Lean_20261019/build/bothlong_phase_probe/*.log
             rg-proofstore-setup.json
+            rg-proofstore-direct-io.json
             rg-proofstore-kernel-reserve.json
             rg-proofstore-roundtrip-reports
           if-no-files-found: error

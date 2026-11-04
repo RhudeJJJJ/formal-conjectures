@@ -1,0 +1,115 @@
+name: RG numeric166 preserved declarations and complete original batch
+on:
+  push:
+    branches: [rg-degree-one-large-20261103]
+    paths: ['.github/workflows/rg-d1-numeric166-decomposed-recovery-20261104.yml']
+permissions:
+  contents: read
+  actions: read
+env:
+  RG_NUMERIC166_SPEC_SHA256: 0ddb0d67758c7627ddc7fae947a7100bcb94c9ea6b26ab3f9c13fef33f7d8f8c
+jobs:
+  leaf:
+    name: numeric166-leaf-${{ matrix.leaf }}
+    runs-on: ubuntu-24.04
+    timeout-minutes: 150
+    strategy:
+      fail-fast: false
+      max-parallel: 2
+      matrix:
+        leaf: ['01666', '01667', '01668', '01669']
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          persist-credentials: false
+      - name: Bind every original declaration and all ten original endpoints
+        run: python3 -B ci/rg_numeric166_decomposed_recovery.py --spec-sha256 "$RG_NUMERIC166_SPEC_SHA256" --phase materialize
+      - name: Install the fixed project toolchain
+        run: |
+          set -o pipefail
+          curl -sSfL https://github.com/leanprover/elan/releases/download/v1.4.2/elan-x86_64-unknown-linux-gnu.tar.gz | tar xz
+          ./elan-init -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Materialize the exact dependency lock
+        run: python3 -B ci/rg_dependencies.py
+      - name: Fetch the exact external module cache
+        run: python3 -B ci/rg_numeric166_decomposed_recovery.py --spec-sha256 "$RG_NUMERIC166_SPEC_SHA256" --phase cache
+      - name: Restore the retained complete audited analytic base
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 -B ci/rg_restore_complete_scope.py --manifest ci/rg_reusable_analytic_kernel_base_complete_scope_capsule.json --build-directory Proofs/RG_Lean_20261019/build/extension
+      - name: Require the exact twenty-module fresh leaf frontier
+        env:
+          RG_NUMERIC166_LEAF: ${{ matrix.leaf }}
+        run: python3 -B ci/rg_numeric166_decomposed_recovery.py --spec-sha256 "$RG_NUMERIC166_SPEC_SHA256" --leaf "$RG_NUMERIC166_LEAF" --phase preflight
+      - name: Check every original leaf declaration with one kernel worker
+        env:
+          RG_NUMERIC166_LEAF: ${{ matrix.leaf }}
+        run: |
+          set -o pipefail
+          python3 -B ci/rg_numeric166_decomposed_recovery.py --spec-sha256 "$RG_NUMERIC166_SPEC_SHA256" --leaf "$RG_NUMERIC166_LEAF" --phase kernel | python3 -B ci/rg_compact_ci_output.py
+      - name: Authenticate the complete original leaf and all current output bytes
+        env:
+          RG_NUMERIC166_LEAF: ${{ matrix.leaf }}
+        run: python3 -B ci/rg_numeric166_decomposed_recovery.py --spec-sha256 "$RG_NUMERIC166_SPEC_SHA256" --leaf "$RG_NUMERIC166_LEAF" --phase compare
+      - name: Retain all completed leaf objects and diagnostics
+        if: always()
+        run: python3 -B ci/rg_collect_fresh_exports.py --build-directory Proofs/RG_Lean_20261019/build/extension --output-directory Proofs/RG_Lean_20261019/build/fresh_exports
+      - name: Preserve the exact leaf exports and full leaf receipt
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: rg-d1-numeric166-leaf-${{ matrix.leaf }}-${{ github.run_id }}-${{ github.run_attempt }}
+          path: Proofs/RG_Lean_20261019/build/fresh_exports
+          retention-days: 90
+  join:
+    name: Join complete original numeric166 batch
+    needs: [leaf]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          persist-credentials: false
+      - name: Bind every original declaration and all ten original endpoints
+        run: python3 -B ci/rg_numeric166_decomposed_recovery.py --spec-sha256 "$RG_NUMERIC166_SPEC_SHA256" --phase materialize
+      - name: Install the fixed project toolchain
+        run: |
+          set -o pipefail
+          curl -sSfL https://github.com/leanprover/elan/releases/download/v1.4.2/elan-x86_64-unknown-linux-gnu.tar.gz | tar xz
+          ./elan-init -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Materialize the exact dependency lock
+        run: python3 -B ci/rg_dependencies.py
+      - name: Fetch the exact external module cache
+        run: python3 -B ci/rg_numeric166_decomposed_recovery.py --spec-sha256 "$RG_NUMERIC166_SPEC_SHA256" --phase cache
+      - name: Restore the retained complete audited analytic base
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 -B ci/rg_restore_complete_scope.py --manifest ci/rg_reusable_analytic_kernel_base_complete_scope_capsule.json --build-directory Proofs/RG_Lean_20261019/build/extension
+      - name: Restore six unchanged objects with their exact original origin
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 -B ci/rg_restore_job_exports.py --manifest ci/rg_d1_20261103_numeric_partial_exports/chunk166_prior_exports.json --build-directory Proofs/RG_Lean_20261019/build/extension
+      - name: Authenticate and restore all four actual leaf-job origins
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 -B ci/rg_numeric166_decomposed_recovery.py --spec-sha256 "$RG_NUMERIC166_SPEC_SHA256" --phase collect
+      - name: Require the complete zero-fresh original-batch frontier
+        run: python3 -B ci/rg_numeric166_decomposed_recovery.py --spec-sha256 "$RG_NUMERIC166_SPEC_SHA256" --phase join-preflight
+      - name: Recheck every source and object in the full current batch
+        run: |
+          set -o pipefail
+          python3 -B ci/rg_numeric166_decomposed_recovery.py --spec-sha256 "$RG_NUMERIC166_SPEC_SHA256" --phase join-kernel | python3 -B ci/rg_compact_ci_output.py
+      - name: Require full original batch and all preserved origins
+        run: python3 -B ci/rg_numeric166_decomposed_recovery.py --spec-sha256 "$RG_NUMERIC166_SPEC_SHA256" --phase join-compare
+      - name: Retain complete batch receipt and original origin descriptors
+        if: always()
+        run: python3 -B ci/rg_collect_fresh_exports.py --build-directory Proofs/RG_Lean_20261019/build/extension --output-directory Proofs/RG_Lean_20261019/build/fresh_exports
+      - name: Preserve complete batch evidence
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: rg-d1-numeric166-complete-${{ github.run_id }}-${{ github.run_attempt }}
+          path: Proofs/RG_Lean_20261019/build/fresh_exports
+          retention-days: 90

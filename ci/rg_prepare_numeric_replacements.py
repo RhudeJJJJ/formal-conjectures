@@ -30,6 +30,7 @@ ORIGIN_SHA = '9e4fbdfaf1f57b59453b5501e270e4d15b87a06bddcafd719ac882bd026980c7'
 REGISTRY = 'ci/rg_d1_original_reference_bytes_20261103.json'
 REGISTRY_SHA = 'a04e5e612ce5e927a9f121a03b2786224b84736e64cee1974eaaa8c603693dc9'
 STEP = 'Require exact historical output identities'
+REFERENCE_COMPLETION = 'EXACT_REGISTERED_REFERENCE_BATCH_COMPLETION'
 PARTIAL = 'ORIGINAL_PARTIAL_PRIORS_WITH_FRESH_REMAINDER'
 ZERO = 'NUMERIC137_COMPILED_OBJECTS_WITH_SEPARATE_ZERO_FRESH_METADATA_AUDIT'
 ZERO_ITEM = 'ci/rg_numeric137_20261103_zero_fresh_prerequisite.json'
@@ -79,6 +80,23 @@ PENDING_REPAIRS = {
         'actual_run': 41740037248,
         'actual_job': 126278963245,
         'source_commit': 'e916d412087b10298ffe03e0e488ca43790be17d',
+        'successful_origin_registered': False,
+    },
+}
+
+# This source-preserving repair is prepared, but has no registered successful
+# origin. The four actual kernel archives and their zero-fresh join must pass
+# authentication before a later reviewed entry can join REPAIRS.
+PREPARED_DECLARATION_SPLITS = {
+    '00_166': {
+        'completion_kind': 'NUMERIC166_COMPILED_OBJECTS_WITH_SEPARATE_ZERO_FRESH_BATCH_JOIN',
+        'completion_spec': {
+            'path': 'ci/rg_d1_numeric166_decomposed_20261104_spec.json',
+            'sha256': '0ddb0d67758c7627ddc7fae947a7100bcb94c9ea6b26ab3f9c13fef33f7d8f8c'},
+        'original_job': 126095241107,
+        'workflow_path': '.github/workflows/rg-d1-numeric166-decomposed-recovery-20261104.yml',
+        'job_name': 'Join complete original numeric166 batch',
+        'required_success_step': 'Require full original batch and all preserved origins',
         'successful_origin_registered': False,
     },
 }
@@ -224,15 +242,16 @@ def matrix(root, bundle, key, allowed):
                 non_numeric_jobs=[{k:j[k] for k in ('id','name','status','conclusion')} for j in plans])
 
 
-def old_binding(batch, plans, old_jobs, late):
-    if batch in old_jobs:
-        return {'original_job': old_jobs[batch]['id']}
-    check(batch in late, ('No actual original job outside allowed late wave two', batch))
-    check(plans[batch]['wave'] == 2, 'Invalid late original batch')
-    return {'original_job_lookup': {
-        'kind': 'EXACT_ORIGINAL_WAVE_TWO_JOB_IN_PINNED_RUN', 'run': MASTER_RUN,
-        'source_commit': MASTER_HEAD, 'run_attempt': 1,
-        'job_name': 'original-numeric-' + batch}}
+def reference_binding(batch, plans, old_jobs, late):
+    old = old_jobs.get(batch)
+    if old is None:
+        check(batch in late, ('No actual original job outside allowed late wave two', batch))
+        check(plans[batch]['wave'] == 2, 'Invalid late original batch')
+    return {'provenance_kind': REFERENCE_COMPLETION, 'original_job_observation': {
+        'run': MASTER_RUN, 'source_commit': MASTER_HEAD, 'run_attempt': 1,
+        'job_name': 'original-numeric-' + batch, 'job': old['id'] if old else None,
+        'status': old['status'] if old else 'not_created',
+        'conclusion': old['conclusion'] if old else None}}
 
 
 def make_item(batch, plan, job, artifact, workflow, binding, step=STEP):
@@ -315,6 +334,23 @@ def prepare(checkout, evidence_root, bundle, evidence_sha):
         check((plan['workers'], plan['module_timeout'], plan['memory_reserve_mib']) == (2, 1200, 2048),
               ('Changed original guards', batch))
     bound(checkout, spec['head_plan'], spec['head_plan_sha256'])
+    for batch, pending in PREPARED_DECLARATION_SPLITS.items():
+        fixed = pending['completion_spec']
+        split = bound(checkout, fixed['path'], fixed['sha256'])[0]
+        check(split['kind'] == 'SOURCE_PRESERVING_NUMERIC166_FULL_BATCH_WITH_PRESERVED_PARTIAL_ORIGINS',
+              'Changed prepared declaration split')
+        check(split['batch_id'] == batch and split['original_plan_sha256'] == plans[batch]['plan_sha256'],
+              'Changed prepared split scope')
+        check((split['workers'], split['module_timeout'], split['memory_reserve_mib'],
+               split['max_parallel_leaf_jobs']) == (1, 1200, 2048, 2), 'Changed prepared split guards')
+        check(split['original_numeric_module_count'] == 10
+              and split['required_module_count'] == 160 and split['fresh_module_count'] == 80,
+              'Changed prepared split module counts')
+        check(split['source_reorganized_original_modules'] ==
+              [f'Proofs.RadenkovicGutmanD1Long00Leaf{i:05d}' for i in range(1666, 1670)],
+              'Changed prepared split endpoint names')
+        check(split['original_declarations_preserved_verbatim'] is True
+              and split['proof_bodies_changed'] is False, 'Changed prepared split proof scope')
     for batch, pending in PENDING_REPAIRS.items():
         fixed = pending['completion_spec']
         remainder = bound(checkout, fixed['path'], fixed['sha256'])[0]
@@ -366,7 +402,7 @@ def prepare(checkout, evidence_root, bundle, evidence_sha):
             selected[batch] = 'reference'
             job, artifact = reference['success'][batch]
             candidates[batch] = make_item(batch, plan, job, artifact, MATRICES['reference'][2],
-                                          old_binding(batch, plans, master['jobs'], late))
+                                          reference_binding(batch, plans, master['jobs'], late))
         if batch in selected:
             row['selected_successful_origin'] = selected[batch]
         if batch in candidates:
@@ -374,11 +410,18 @@ def prepare(checkout, evidence_root, bundle, evidence_sha):
             row['replacement_job'] = item['job']
             row['replacement_artifact_id'] = item['artifact_id']
             row['uses_registered_late_original_lookup'] = 'original_job_lookup' in item
-            if old and not (old['status'] == 'completed' and old['conclusion'] in ('failure', 'timed_out')):
+            if item.get('provenance_kind') == REFERENCE_COMPLETION:
+                row['provenance_kind'] = REFERENCE_COMPLETION
+                row['original_job_observation'] = item['original_job_observation']
+            elif old and not (old['status'] == 'completed' and old['conclusion'] in ('failure', 'timed_out')):
                 binding_wait.append(batch)
         batch_status.append(row)
     missing = sorted(set(plans) - set(selected))
     late_lookups = sorted(b for b,item in candidates.items() if 'original_job_lookup' in item)
+    reference_completions = sorted(b for b,item in candidates.items()
+        if item.get('provenance_kind') == REFERENCE_COMPLETION)
+    reference_originals_not_created = sorted(b for b in reference_completions
+        if candidates[b]['original_job_observation']['status'] == 'not_created')
     ready = not missing and not binding_wait
     failures = sorted(b for b,j in master['jobs'].items()
         if j['status'] == 'completed' and j['conclusion'] in ('failure', 'timed_out')
@@ -404,14 +447,18 @@ def prepare(checkout, evidence_root, bundle, evidence_sha):
             if j['status']=='completed' and j['conclusion'] in ('failure','timed_out')]
             for key,value in [('master',master),('reference',reference)]},
         permitted_original_job_lookups_requiring_runtime_resolution=late_lookups,
-        all_selected_original_job_ids_are_concrete=not late_lookups,
-        collector_must_resolve_and_validate_all_original_jobs_before_acceptance=True,
+        all_selected_original_job_ids_are_concrete=not late_lookups and not reference_originals_not_created,
+        exact_registered_reference_completions=reference_completions,
+        reference_completion_original_jobs_not_created=reference_originals_not_created,
+        collector_must_validate_failed_original_jobs_for_repairs=True,
+        collector_must_reobserve_reference_original_jobs_without_failure_requirement=True,
         known_repairs_awaiting_actual_success=pending_observations,
+        prepared_declaration_splits_not_counted_as_success=PREPARED_DECLARATION_SPLITS,
         pending_repairs_missing_actual_metadata=sorted(set(PENDING_REPAIRS)-set(pending_observations)),
         registered_repairs_missing_evidence=sorted(set(REPAIRS)-set(bundle['repairs'])),
         successful_replacement_candidate_count=len(candidates),
         contract_ready=ready, sealed_contract_written=False,
-        contract_readiness_allows_only_registered_wave_two_lookups=True,
+        contract_readiness_accepts_only_fixed_registered_reference_completions=True,
         complete_numeric_metadata_coverage=len(selected)==349,
         archive_authentication_still_required=True, whole_degree_one_large_complete=False,
         remaining_open_original_families=4, batch_states=batch_status)

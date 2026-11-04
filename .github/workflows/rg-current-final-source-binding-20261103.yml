@@ -1,5 +1,5 @@
 name: RG complete current source closure with explicit numeric decomposition
-# Recheck the same complete source graph with corrected named-axiom metadata.
+# Bind all original sources and both exact declaration-preserving numeric splits.
 on:
   push:
     branches: [rg-degree-one-large-20261103]
@@ -26,7 +26,7 @@ jobs:
               subprocess.run([sys.executable, '-B', 'ci/rg_materialize_shared_arm.py',
                               '--tag', '30', '--chunk', str(index)], check=True)
           PY
-      - name: Check full source closure and all original numeric endpoints with the explicit declaration split
+      - name: Check full source closure and all original numeric endpoints with both explicit declaration splits
         run: python3 -B ci/rg_check_current_final_source_binding.py
       - name: Retain the actual source graph without proof objects
         if: always()

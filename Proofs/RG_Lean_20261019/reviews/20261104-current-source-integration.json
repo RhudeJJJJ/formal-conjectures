@@ -1,0 +1,42 @@
+{
+  "status": "ACTUAL_SOURCE_INTEGRATION_AND_METADATA_BOUNDARIES_PASSED_NO_KERNEL_PROOF",
+  "required_modules": 33659,
+  "source_endpoint_closure_sha256": "4c573f944556add1e4f68d5b265d9c8b3438ccdd4edf222c4f15b56953a1eb70",
+  "original_numeric_plans_validated": 349,
+  "unchanged_original_numeric_modules": 4562,
+  "reorganized_original_numeric_modules": [
+    "Proofs.RadenkovicGutmanD1Long00Leaf01370",
+    "Proofs.RadenkovicGutmanD1Long00Leaf01666",
+    "Proofs.RadenkovicGutmanD1Long00Leaf01667",
+    "Proofs.RadenkovicGutmanD1Long00Leaf01668",
+    "Proofs.RadenkovicGutmanD1Long00Leaf01669"
+  ],
+  "added_numeric_support_modules": 87,
+  "decomposition_contexts_checked_from_actual_source_bytes": [
+    "00_137",
+    "00_166"
+  ],
+  "final_interval_rechecks": [
+    "Proofs.RadenkovicGutmanD1OriginalSharedSlice0080Complete",
+    "Proofs.RadenkovicGutmanD1OriginalSharedSlice0098Complete"
+  ],
+  "final_fresh_modules": 7,
+  "negative_controls": [
+    "old module total",
+    "omitted166 split",
+    "weakened declaration preservation",
+    "wrong166 spec digest",
+    "omitted0098 recheck",
+    "old closure with new metadata",
+    "stale binding hash",
+    "omitted original endpoint frontier",
+    "fresh module concealed in join",
+    "wrong join scope size",
+    "unverified prior object",
+    "out-of-bound join"
+  ],
+  "negative_control_count": 12,
+  "kernel_proof_claimed": false,
+  "synthetic_parser_inputs_only": true,
+  "no_synthetic_proof_records_written": true
+}

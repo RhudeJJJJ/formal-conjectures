@@ -1,6 +1,6 @@
-"""Plan two historical heads, the changed interval, and three final modules.
+"""Plan two historical heads, two changed intervals, and three final modules.
 
-Only these six named sources may need fresh kernel exports. Historical heads
+Only these seven named sources may need fresh kernel exports. Historical heads
 must later match their original binary identities. The interval and final
 three-module frontier is independently checked after reconstructing both heads.
 """
@@ -19,7 +19,7 @@ spec = json.loads(spec_raw)
 current_binding = None
 if a.current_source_binding:
     from rg_exact_final_source_binding import (read_binding, prepare_current_sources,
-        validate_current_graph, INTERVAL_RECHECK)
+        validate_current_graph, INTERVAL_RECHECKS)
     binding, current_binding = read_binding(a.current_source_binding, spec_raw)
     prepare_current_sources(binding)
 hashes, dependencies, closures = source_closure(ENDPOINT)
@@ -29,7 +29,7 @@ else:
     assert hashes[ENDPOINT] == spec['source_endpoint_sha256']
     assert closures[ENDPOINT] == spec['source_endpoint_closure_sha256']
     assert len(hashes) == spec['required_modules']
-allowed = set(FRESH) | HEADS | ({INTERVAL_RECHECK} if current_binding else set())
+allowed = set(FRESH) | HEADS | (INTERVAL_RECHECKS if current_binding else set())
 report = plan(ENDPOINT, hashes, dependencies, closures, matching_archives(hashes, closures),
               fresh_allowlist=allowed)
 if current_binding:

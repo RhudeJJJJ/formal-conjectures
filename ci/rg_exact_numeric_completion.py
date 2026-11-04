@@ -1,9 +1,9 @@
 """Authenticate the narrowly sealed numeric completions with mixed origins.
 
 The old batch plans retain all ten original endpoint names. A remainder keeps
-its already checked objects in their original failed-job archive. The single
-declaration-preserving split has twelve explicitly current source exports and
-nine unchanged historical objects. Neither case can supply an arbitrary scope.
+its checked objects in their original failed-job archive. The two fixed
+declaration-preserving decompositions retain every original declaration and
+their separate compiled-object origins. None may supply an arbitrary scope.
 """
 import hashlib, io, json, pathlib, re, zipfile
 
@@ -17,6 +17,7 @@ ALLOWED = {'propext', 'Classical.choice', 'Quot.sound'}
 PARTIAL = 'ORIGINAL_PARTIAL_PRIORS_WITH_FRESH_REMAINDER'
 REORGANIZED = 'DECLARATION_PRESERVING_ORIGINAL137_FULL_BATCH'
 ZERO_AUDIT = 'NUMERIC137_COMPILED_OBJECTS_WITH_SEPARATE_ZERO_FRESH_METADATA_AUDIT'
+ZERO_JOIN166 = 'NUMERIC166_COMPILED_OBJECTS_WITH_SEPARATE_ZERO_FRESH_BATCH_JOIN'
 SPEC137 = 'ci/rg_d1_numeric137_decomposed_20261103_spec.json'
 SHA137 = '215ae3b2b69a4d7f9f00d694228a45333df0b73e588a6b2f0f61c97b45db4302'
 REMAINDERS = {
@@ -39,6 +40,9 @@ def identity(name, row):
 def completion_context(item):
     """Only reviewed fixed specs may describe a non-flat whole-batch recovery."""
     kind = item['completion_kind']
+    if kind == ZERO_JOIN166:
+        from rg_numeric166_completion import completion_context as join_context
+        return join_context(item)
     if kind == ZERO_AUDIT:
         from rg_numeric137_zero_fresh_completion import completion_context as zero_context
         return zero_context(item)
@@ -136,6 +140,10 @@ def archived_fresh(archive, fresh):
 
 def authenticate_completion(item, artifact, context, fresh, hashes, closures, repository, api=None):
     """Read both actual archives before accepting a two-origin full batch."""
+    if context['kind'] == ZERO_JOIN166:
+        from rg_numeric166_completion import authenticate_completion as join_authenticate
+        assert api is not None and repository == 'RhudeJJJJ/formal-conjectures'
+        return join_authenticate(item, artifact, context, fresh, hashes, closures, api)
     if context['kind'] == ZERO_AUDIT:
         from rg_numeric137_zero_fresh_completion import authenticate_completion as zero_audit
         assert api is not None and repository == 'RhudeJJJJ/formal-conjectures'

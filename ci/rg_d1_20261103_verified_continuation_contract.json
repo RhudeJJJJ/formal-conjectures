@@ -1,16 +1,11 @@
 {
   "kind": "SEALED_D1_COMPLETION_PREREQUISITES",
   "source_endpoint_sha256": "a234c56688628d48232033006c64896a36e3d405a3e8d0a1f559b8bdf9555e65",
-  "source_endpoint_closure_sha256": "850f62c679daec7255289aeb545be9360373800ef6924fa2ebfb0ab75f5d467d",
+  "source_endpoint_closure_sha256": "4c573f944556add1e4f68d5b265d9c8b3438ccdd4edf222c4f15b56953a1eb70",
   "current_source_binding": {
     "path": "ci/rg_current_final_source_binding_20261103.json",
-    "sha256": "24a14e2fe0c1f5e9914c268f0eec9d5a2499af0cc1fa47bce563a550f207c98e"
+    "sha256": "60e4aa538e6b6755fb2057f7a772fdb336d3054b9f5d5243a03317177d90797c"
   },
-  "current_verified_source_receipt": {
-    "path": "ci/rg_current_final_source_binding_20261103_verified_source.json",
-    "sha256": "f807742f752cedf975c3aa0b87a81a6dbd5a2dcb5dbeadba49a580798e2267f6"
-  },
-  "actual_current_source_graph_sha256": "c2b50b3145d7c9b5f745b80ab2e9858a7ab6a88381e4f021dfed06529f0bbd48",
   "audited_reference_commit": "39aa6ada86dcfd053c73271cbeb2b9ad0a3c92e4",
   "jobs": [
     {
@@ -3362,5 +3357,19 @@
   "proof_scope": "ACTUAL_SUCCESSFUL_AUXILIARY_PREREQUISITES_ONLY",
   "numeric_completion_contract": "SEPARATE_NOT_ASSERTED_BY_THIS_FILE",
   "final_degree_one_large_kernel_receipt": "STILL_REQUIRED",
-  "open_main_family_count_change_claimed": 0
+  "open_main_family_count_change_claimed": 0,
+  "previous_verified_source_receipt": {
+    "path": "ci/rg_current_final_source_binding_20261103_verified_source.json",
+    "sha256": "f807742f752cedf975c3aa0b87a81a6dbd5a2dcb5dbeadba49a580798e2267f6"
+  },
+  "previous_actual_source_graph_sha256": "c2b50b3145d7c9b5f745b80ab2e9858a7ab6a88381e4f021dfed06529f0bbd48",
+  "current_source_graph_status": "DECLARATION_PRESERVING_NUMERIC166_PROJECTION_REQUIRES_FRESH_SOURCE_GRAPH_READBACK",
+  "current_source_reorganized_original_numeric_modules": [
+    "Proofs.RadenkovicGutmanD1Long00Leaf01370",
+    "Proofs.RadenkovicGutmanD1Long00Leaf01666",
+    "Proofs.RadenkovicGutmanD1Long00Leaf01667",
+    "Proofs.RadenkovicGutmanD1Long00Leaf01668",
+    "Proofs.RadenkovicGutmanD1Long00Leaf01669"
+  ],
+  "current_required_modules": 33659
 }

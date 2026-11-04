@@ -1,0 +1,27 @@
+{
+  "status": "PURE_JOIN_METADATA_BOUNDARIES_VALIDATED_NO_KERNEL_OR_ARCHIVE_CLAIM",
+  "negative_controls": [
+    "missing one of ten original endpoints",
+    "omitted old endpoint module",
+    "omitted one new support module",
+    "one prior relabelled fresh",
+    "changed current source hash",
+    "changed current dependency closure",
+    "changed old endpoint object hash",
+    "changed old endpoint origin",
+    "changed new leaf origin",
+    "changed analytic base origin",
+    "changed analytic base object hash",
+    "custom axiom",
+    "missing one leaf manifest",
+    "omitted one current origin member",
+    "wrong endpoint order",
+    "changed dependency pin"
+  ],
+  "negative_control_count": 16,
+  "fixture_scope": 160,
+  "fixtures_in_memory_only": true,
+  "synthetic_proof_records_written": false,
+  "source_spec_sha256": "0ddb0d67758c7627ddc7fae947a7100bcb94c9ea6b26ab3f9c13fef33f7d8f8c",
+  "control_sha256": "45b783d210badce44772f13cd3bec5f7b424dd6b5548660b140b9e559d6e3071"
+}

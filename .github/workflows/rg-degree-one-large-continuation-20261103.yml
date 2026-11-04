@@ -23,6 +23,7 @@ jobs:
       - name: Reproduce the already checked shared class sources
         run: |
           python3 -B ci/rg_numeric137_decomposed_recovery.py --spec-sha256 215ae3b2b69a4d7f9f00d694228a45333df0b73e588a6b2f0f61c97b45db4302 --phase materialize
+          python3 -B ci/rg_numeric166_decomposed_recovery.py --spec-sha256 0ddb0d67758c7627ddc7fae947a7100bcb94c9ea6b26ab3f9c13fef33f7d8f8c --phase materialize
           python3 -B ci/rg_materialize_compact_closed_families.py --endpoint Proofs.RadenkovicGutmanCompactFiniteOriginalSmallGeFour --max-raw-mib 512
           python3 -B ci/rg_materialize_compact_closed_families.py --endpoint Proofs.RadenkovicGutmanCompactFiniteOriginalDegreeOneSmall --max-raw-mib 512
           python3 - <<'PY'
@@ -95,13 +96,13 @@ jobs:
         run: |
           cp Proofs/RG_Lean_20261019/build/extension/receipt.json Proofs/RG_Lean_20261019/build/original_long_heads_receipt.json
           cp Proofs/RG_Lean_20261019/build/fresh_exports/resource_observer.json Proofs/RG_Lean_20261019/build/original_long_heads_resource_observer.json
-      - name: Recompute and enforce the interval and three-module final frontier
+      - name: Recompute and enforce both intervals and the three-module final frontier
         run: |
           python3 -B ci/rg_restore_with_kernel_fallback.py \
             --plan ci/rg_empty_restore_plan.json \
             --build-directory Proofs/RG_Lean_20261019/build/extension \
             --endpoint Proofs.RadenkovicGutmanRemainingThreeAssembly \
-            --max-fresh 4 --preflight-only
+            --max-fresh 5 --preflight-only
           python3 - <<'PY'
           import json, pathlib
           root = pathlib.Path('Proofs/RG_Lean_20261019/build')
@@ -111,9 +112,9 @@ jobs:
           assert set(actual['fresh_modules']) == set(planned['fresh_modules']) - heads
           assert actual['required_modules'] == planned['required_modules']
           assert set(actual['fresh_modules']) == set(planned['fresh_allowlist']) - heads
-          assert set(actual['fresh_modules']) == {'Proofs.RadenkovicGutmanD1OriginalSharedSlice0080Complete', 'Proofs.RadenkovicGutmanD1OriginalSharedBothLong', 'Proofs.RadenkovicGutmanOriginalDegreeOneLarge', 'Proofs.RadenkovicGutmanRemainingThreeAssembly'}
+          assert set(actual['fresh_modules']) == {'Proofs.RadenkovicGutmanD1OriginalSharedSlice0080Complete', 'Proofs.RadenkovicGutmanD1OriginalSharedSlice0098Complete', 'Proofs.RadenkovicGutmanD1OriginalSharedBothLong', 'Proofs.RadenkovicGutmanOriginalDegreeOneLarge', 'Proofs.RadenkovicGutmanRemainingThreeAssembly'}
           PY
-      - name: Check the affected interval, final class, full family, and three-field assembly
+      - name: Check both affected intervals, final class, full family, and three-field assembly
         shell: bash
         run: |
           set -o pipefail

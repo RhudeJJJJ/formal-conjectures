@@ -23,14 +23,14 @@ current_binding = None
 interval_rechecks = set()
 if 'current_source_binding' in plan:
     from rg_exact_final_source_binding import (BINDING, NUMERIC_SPEC, NUMERIC_ORIGIN,
-        binding_metadata, INTERVAL_RECHECK)
+        binding_metadata, INTERVAL_RECHECKS)
     _, current_binding = binding_metadata((ROOT / BINDING).read_bytes(),
         (ROOT / NUMERIC_SPEC).read_bytes(), (ROOT / NUMERIC_ORIGIN).read_bytes())
     assert plan['current_source_binding'] == current_binding
     assert plan['required_modules'] == current_binding['required_modules']
     assert plan['source_sha256'][ENDPOINT] == current_binding['source_endpoint_sha256']
     assert plan['source_closure_sha256'][ENDPOINT] == current_binding['source_endpoint_closure_sha256']
-    interval_rechecks = {INTERVAL_RECHECK}
+    interval_rechecks = INTERVAL_RECHECKS
 fresh = {n: r for n, r in receipt['modules'].items() if r['mode'] == 'FRESH_KERNEL_EXPORT'}
 assert set(fresh) == set(FRESH) | HEADS | interval_rechecks == set(plan['fresh_modules'])
 for name, row in receipt['modules'].items():

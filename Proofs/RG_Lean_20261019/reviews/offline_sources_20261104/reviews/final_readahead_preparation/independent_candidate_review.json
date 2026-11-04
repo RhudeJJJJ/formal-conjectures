@@ -1,0 +1,95 @@
+{
+  "actual_base_workflow": {
+    "bytes": 8800,
+    "git_blob_sha1": "5eb453a1b8b33c95dbb603cdf11ec3eaedc7dd02",
+    "path": "/workspace/scratch/406169dbc070/rg_resume_20261104/final_readahead_preparation/base/.github/workflows/rg-degree-one-large-join-repair-20261104.yml",
+    "sha256": "91e89a6dbb4f53906521571fb8672004c613ec5ea3c5f7787549b3adab6bb626"
+  },
+  "actual_ra_diff_matches_frozen_diff": true,
+  "actual_workflow_diff_matches_frozen_diff": true,
+  "base_capture": {
+    "bytes": 704,
+    "git_blob_sha1": "1029165471d22b0df3ad51cf9e84fbd839eee839",
+    "path": "/workspace/scratch/406169dbc070/rg_resume_20261104/final_readahead_preparation/base_capture.json",
+    "sha256": "5561873d2adb41ce25a1e761a4ad240205262892170b617458e0e69254fcc99d"
+  },
+  "base_commit": "7149c178164997c897449327ec311c69bfc449f0",
+  "base_tree": "a10a1d1eb04c5369817f9a820515efbf60a274bb",
+  "branch": "rg-degree-one-large-20261103",
+  "dio_reverse_three_text_bindings_equals_reviewed_diagnostic_bytes": true,
+  "family_closure_claim": false,
+  "findings": [],
+  "inventory": {
+    "bytes": 3087,
+    "git_blob_sha1": "2d245bc75a028a61d8c0fb104da8e57570f3b6fe",
+    "path": "/workspace/scratch/406169dbc070/rg_resume_20261104/final_readahead_preparation/candidate_inventory.json",
+    "sha256": "b6bf70168ab2244afa10bc96312d269d8662deb829ea8f42fac7279fd740a85c"
+  },
+  "native_diagnostic_success_claim": false,
+  "native_operations_executed": [],
+  "new_ci_runs_started": 0,
+  "original_kernel_export_claim": false,
+  "production_files_modified": 0,
+  "ra_functions_changed_only_for_fixed_binding": [
+    "main",
+    "native_context"
+  ],
+  "ra_identical_functions": [
+    "observe",
+    "parse_blkid",
+    "read_json",
+    "read_readahead",
+    "select_owned_loop",
+    "sha256",
+    "sysfs_identity",
+    "unsigned_value",
+    "validate_enable_report",
+    "validate_inputs",
+    "validate_sysfs_binding",
+    "validate_transition"
+  ],
+  "ra_reverse_fixed_bindings_equals_reviewed_diagnostic_bytes": true,
+  "remote_mutations": 0,
+  "reviewed_functional_files": [
+    {
+      "bytes": 9605,
+      "git_blob_sha1": "6496e2230b6878d881d0b094414dc010f91d125d",
+      "path": "/workspace/scratch/406169dbc070/rg_resume_20261104/final_readahead_preparation/patch/.github/workflows/rg-degree-one-large-join-repair-20261104.yml",
+      "sha256": "7147154b7091f5459bb35b78c5a837be2bc5505f88927a035c19e489aaf2ff56"
+    },
+    {
+      "bytes": 13324,
+      "git_blob_sha1": "059b5fd863fcc14285d9f3791c3b5341064e387f",
+      "path": "/workspace/scratch/406169dbc070/rg_resume_20261104/final_readahead_preparation/patch/ci/rg_enable_final_owned_proofstore_direct_io_20261104.py",
+      "sha256": "f37830c0db07c77e865907b5f0d67d272c6963f46aeff81487a7438f33d33b1a"
+    },
+    {
+      "bytes": 20183,
+      "git_blob_sha1": "ed715804b09f2812898be0d6acb93a4eb434462a",
+      "path": "/workspace/scratch/406169dbc070/rg_resume_20261104/final_readahead_preparation/patch/ci/rg_final_owned_proofstore_readahead_20261104.py",
+      "sha256": "be321bc881d77668d5e00731b7c1ba11a24154426ae98bcecdd5abf867f903f2"
+    },
+    {
+      "bytes": 8940,
+      "git_blob_sha1": "0d6b0ca19ca8b1717621559b426a0a7b0b9d9520",
+      "path": "/workspace/scratch/406169dbc070/rg_resume_20261104/final_readahead_preparation/patch/ci/rg_github_artifacts.py",
+      "sha256": "db9221ee4aa24f77082c98f33588b987531fc77f9f93c49111d31ad12363b0ef"
+    }
+  ],
+  "reviewed_invariants": [
+    "Exactly four functional files are listed and byte-bound: workflow, separately named production DIO and RA helpers, and already tested exact transport helper.",
+    "Production RA differs solely in imported DIO module name, exact DIO SHA/path and fixed native branch/error wording. All 12 other functions including observe, ownership, transition and check validators are AST-identical to the separately reviewed diagnostic helper.",
+    "Production DIO differs solely in fixed branch and corresponding descriptive/error text. No device parameter, GH_REF environment imitation, remount, swap policy, global cache operation or resource-limit mutation is introduced.",
+    "The actual full workflow was read: successful collection of all349 numeric and69 named selections, exact planner, fixed4 callback priors, exact3 fresh modules and33659 full scope retain their original commands.",
+    "Fresh256GiB setup is followed by DIO and positive-to-zero enable before restoration. Read-only zero check follows strict full33659/3-fresh preflight and immediately precedes the original protected compiler.",
+    "The original restore command still consumes the entire exact_degree_one_plan.json; no archive/subscope substitution or diagnostic export reuse occurs. The declared767-archive/33656-prior scope belongs to the unchanged full plan, not to the diagnostic25191-prior projection.",
+    "The original900-second/1-worker/2048MiB invocation, hostguard, resource observer, fixed4-origin validation, final milestone gate and original three-module export/profile collection are byte-preserved by the exact workflow delta. The existing11 named profiles and final receipt are not replaced by diagnostic markers.",
+    "Always-upload retains the new DIO and both RA JSON reports alongside original evidence. Separate full fresh exports, original runtime manifests, roundtrip reports, final receipt/milestone and retention90 remain.",
+    "Read-only GitHub permissions and persist-credentials:false remain. The bounded503 transport helper is byte-identical to db9221ee and preserves same-artifact metadata/digest/source checks."
+  ],
+  "start_condition_assessment": "The inventory explicitly blocks publication/launch pending full authentication of actual diagnostic run41872614352 with full original projection, complete restore/preflight, both actual RA gates, completed diagnostic proof, all26 markers and named axiom checks. This local review supplies no such actual-success evidence and does not satisfy or bypass that condition. Early controls, restore, header markers or lower read_bytes alone are explicitly insufficient.",
+  "start_condition_exact": "First authenticate actual readahead run 41872614352 with successful original source projection, full restore/preflight, both native RA gates and completed diagnostic proof/26-marker/named-axiom checks. Then independently review this exact production delta and refresh branch lease before publishing. Early controls, restore alone, header-only progress or lower read_bytes are insufficient.",
+  "status": "INDEPENDENT_NARROW_CODE_REVIEW_NO_CONCRETE_FINDING_LAUNCH_CONDITION_NOT_SATISFIED_BY_THIS_REVIEW",
+  "tests_executed": [],
+  "transport_byte_identical_to_actual_tested_retry_helper": true
+}

@@ -1,0 +1,165 @@
+name: RG final degree-one-large join repair
+# Keep the complete349 numeric collection and the strict full-source verifier.
+# Reuse only the fixed four actually compiled callback modules; check the final3.
+on:
+  workflow_dispatch: {}
+  push:
+    branches: [rg-degree-one-large-20261103]
+    paths:
+      - '.github/workflows/rg-degree-one-large-join-repair-20261104.yml'
+      - 'ci/rg_enable_final_owned_proofstore_direct_io_20261104.py'
+      - 'ci/rg_final_owned_proofstore_readahead_20261104.py'
+      - 'ci/rg_github_artifacts.py'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanD1OriginalSharedBothLong.lean'
+      - 'ci/rg_plan_final_join_repair_20261104.py'
+      - 'ci/rg_callback_partial_completion.py'
+      - 'ci/rg_d1_callback41771586873_partial_prior_exports_20261104.json'
+      - 'ci/rg_current_final_source_binding_20261103.json'
+      - 'ci/rg_d1_20261103_verified_continuation_contract.json'
+      - 'ci/rg_verify_degree_one_large_milestone.py'
+permissions:
+  contents: read
+  actions: read
+concurrency:
+  group: rg-degree-one-large-join-repair-20261104
+  cancel-in-progress: false
+jobs:
+  check:
+    if: github.repository == 'RhudeJJJJ/formal-conjectures'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 360
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          persist-credentials: false
+      - name: Reserve actual host space without touching proof inputs
+        run: python3 -B ci/rg_prepare_finite_runner_storage.py --required-free-gib 45
+      - name: Reproduce the already checked shared class sources
+        run: |
+          python3 -B ci/rg_numeric137_decomposed_recovery.py --spec-sha256 215ae3b2b69a4d7f9f00d694228a45333df0b73e588a6b2f0f61c97b45db4302 --phase materialize
+          python3 -B ci/rg_numeric166_decomposed_recovery.py --spec-sha256 0ddb0d67758c7627ddc7fae947a7100bcb94c9ea6b26ab3f9c13fef33f7d8f8c --phase materialize
+          python3 -B ci/rg_materialize_compact_closed_families.py --endpoint Proofs.RadenkovicGutmanCompactFiniteOriginalSmallGeFour --max-raw-mib 512
+          python3 -B ci/rg_materialize_compact_closed_families.py --endpoint Proofs.RadenkovicGutmanCompactFiniteOriginalDegreeOneSmall --max-raw-mib 512
+          python3 - <<'PY'
+          import json, subprocess, sys
+          plan = json.load(open('ci/rg_shared_arm_materialization_plan.json'))
+          for index in plan['classes']['30']['open_chunk_indices']:
+              subprocess.run([sys.executable, '-B', 'ci/rg_materialize_shared_arm.py',
+                              '--tag', '30', '--chunk', str(index)], check=True)
+          PY
+      - name: Collect exact successful numeric and named prerequisite exports
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 -B ci/rg_collect_exact_d1_reproductions.py --spec ci/rg_d1_required_numeric_batches_20261103.json --external-contract ci/rg_d1_20261103_verified_continuation_contract.json --numeric-origin ci/rg_d1_numeric_run41686621300_20261103.json --numeric-replacements ci/rg_d1_20261103_verified_numeric_replacements.json --current-source-binding ci/rg_current_final_source_binding_20261103.json --output ci/rg_d1_20261103_runtime_reconstructed_exports --external-wait-seconds 0
+      - name: Establish exact current closure and available original object coverage
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          python3 -B ci/rg_plan_final_join_repair_20261104.py \
+            --output Proofs/RG_Lean_20261019/build/exact_degree_one_plan.json
+      - name: Install the fixed project toolchain
+        run: |
+          set -o pipefail
+          curl -sSfL https://github.com/leanprover/elan/releases/download/v1.4.2/elan-x86_64-unknown-linux-gnu.tar.gz | tar xz
+          ./elan-init -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Materialize the fixed dependency lock
+        run: python3 -B ci/rg_dependencies.py
+      - name: Fetch only the external modules of this exact source closure
+        run: |
+          python3 - <<'PY'
+          import json, pathlib, re, subprocess, sys
+          root = pathlib.Path('Proofs/RG_Lean_20261019')
+          sys.path.insert(0, str(root))
+          from verify import without_comments
+          plan = json.loads((root / 'build/exact_degree_one_plan.json').read_bytes())
+          external = set()
+          for name in plan['source_sha256']:
+              base = root / 'ThirdParty/LeanCert' if name.startswith('LeanCert.') else root
+              text = without_comments((base / (name.replace('.', '/') + '.lean')).read_text())
+              for dep in re.findall(r'^\s*(?:public\s+)?import\s+([\w.]+)\s*$', text, re.M):
+                  if not dep.startswith(('Proofs.', 'LeanCert.', 'Lean.', 'Init.', 'Std.')) and dep not in ('Lean', 'Init', 'Std'):
+                      external.add(dep)
+          subprocess.run(['lake', 'exe', 'cache', 'get', *sorted(external)], check=True)
+          PY
+      - name: Install the transparent filesystem utility
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y btrfs-progs
+      - name: Create a new bounded logical proofstore without formatting an existing disk
+        run: python3 -B ci/rg_ephemeral_compressed_proofstore.py --logical-gib 256
+      - name: Require direct I/O only for the new owned final proofstore loop
+        run: python3 -B ci/rg_enable_final_owned_proofstore_direct_io_20261104.py
+      - name: Set only the new owned final Btrfs filesystem readahead to zero
+        run: python3 -B ci/rg_final_owned_proofstore_readahead_20261104.py --phase enable
+      - name: Authenticate and read back every selected original object and sidecar
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          python3 -B ci/rg_restore_exact_compressed_plan.py \
+            --plan Proofs/RG_Lean_20261019/build/exact_degree_one_plan.json \
+            --build-directory Proofs/RG_Lean_20261019/build/extension
+      - name: Require exactly the three remaining fresh final modules
+        run: |
+          python3 -B ci/rg_restore_with_kernel_fallback.py \
+            --plan ci/rg_empty_restore_plan.json \
+            --build-directory Proofs/RG_Lean_20261019/build/extension \
+            --endpoint Proofs.RadenkovicGutmanRemainingThreeAssembly \
+            --max-fresh 3 --preflight-only
+          python3 - <<'PY_CHECK'
+          import json, pathlib
+          import sys
+          sys.path.insert(0, 'ci')
+          from rg_callback_partial_completion import FINAL, validate_selected_origins
+          root = pathlib.Path('Proofs/RG_Lean_20261019/build')
+          planned = json.loads((root / 'exact_degree_one_plan.json').read_bytes())
+          actual = json.loads((root / 'extension/bounded_kernel_fallback_plan.json').read_bytes())
+          validate_selected_origins(planned)
+          assert set(actual['fresh_modules']) == set(planned['fresh_modules']) == FINAL
+          assert actual['required_modules'] == planned['required_modules'] == 33659
+          PY_CHECK
+      - name: Confirm the owned final filesystem readahead stayed zero after preflight
+        run: python3 -B ci/rg_final_owned_proofstore_readahead_20261104.py --phase check
+      - name: Check final class, full family, and three-field assembly
+        shell: bash
+        run: |
+          set -o pipefail
+          python3 -B ci/rg_run_with_host_reserve.py -- \
+            python3 -B ci/rg_observed_kernel_verify.py --memory-reserve-mib 2048 -- \
+            --mathlib-project "$GITHUB_WORKSPACE" \
+            --endpoint Proofs.RadenkovicGutmanRemainingThreeAssembly \
+            --workers 1 --module-timeout 900 --profile --resume | python3 -B ci/rg_compact_ci_output.py
+      - name: Require the exact completed kernel milestone and remaining three scopes
+        run: python3 -B ci/rg_verify_degree_one_large_milestone.py
+      - name: Retain complete fresh outputs, axiom profiles, and diagnostics
+        if: always()
+        run: |
+          python3 -B ci/rg_collect_fresh_exports.py \
+            --build-directory Proofs/RG_Lean_20261019/build/extension \
+            --output-directory Proofs/RG_Lean_20261019/build/fresh_exports
+      - name: Preserve complete fresh proof exports in the standard archive layout
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: rg-degree-one-large-join-repair-20261104-${{ github.run_id }}-${{ github.run_attempt }}
+          path: Proofs/RG_Lean_20261019/build/fresh_exports
+          retention-days: 90
+      - name: Preserve original evidence and measured resource results separately
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: rg-degree-one-large-join-repair-20261104-evidence-${{ github.run_id }}-${{ github.run_attempt }}
+          path: |
+            Proofs/RG_Lean_20261019/build/exact_degree_one_plan.json
+            Proofs/RG_Lean_20261019/build/final_partial_authentication.json
+            Proofs/RG_Lean_20261019/build/degree_one_large_verified_milestone.json
+            Proofs/RG_Lean_20261019/build/extension/bounded_kernel_fallback_plan.json
+            ci/rg_d1_20261103_runtime_reconstructed_exports
+            rg-proofstore-setup.json
+            rg-proofstore-direct-io.json
+            rg-proofstore-readahead-enable.json
+            rg-proofstore-readahead-check.json
+            rg-proofstore-roundtrip-reports
+            rg-proofstore-kernel-reserve.json
+          retention-days: 90
+

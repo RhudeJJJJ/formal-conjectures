@@ -1,0 +1,51 @@
+{
+  "actual_archives_read": 0,
+  "additional_assertions": 96,
+  "execution_count": 0,
+  "findings": [],
+  "inputs": {
+    "authenticate_original_readahead.py": {
+      "bytes": 61393,
+      "sha256": "163b9be7f1c985153f9921f507d3a45dcf4a4d2c6b5c8c3b9a5c567a1733fae7"
+    },
+    "authenticator.diff": {
+      "bytes": 29853,
+      "sha256": "f098497b4afe3ebc1640343e0f05b2061129d9ae25f0b59f2b47b430586ee007"
+    },
+    "authenticator_inventory.json": {
+      "bytes": 8810,
+      "sha256": "f42d9fcd75865c506ab1bf7d2b242e8ae4de08a280af92fa618168ca71b20f92"
+    },
+    "independent_authenticator_review.json": {
+      "bytes": 3751,
+      "sha256": "01d3f106e7be2f2391204a51db47e92a91858d9de977bdff0111ab33d12d9af9"
+    },
+    "workflow.diff": {
+      "bytes": 2250,
+      "sha256": "a29488ce0ce99d078811ab175df5c94ee179361d91d1707a63ca598bed737814"
+    }
+  },
+  "launch_gate": "Full actual RA diagnostic proof success authenticated, including all 26 markers and five named profiles, then fresh primary branch lease and reviewed publication.",
+  "native_bindings": {
+    "COMMIT": null,
+    "JOB": null,
+    "RUN": null
+  },
+  "native_controls_executed": 0,
+  "new_tests_run": [],
+  "original_family_closed": false,
+  "remaining_open_families": 4,
+  "remote_writes": 0,
+  "retained_original_assertions": 199,
+  "reviewed_at_utc": "2026-11-04T17:14:26.709567+00:00",
+  "reviewed_points": [
+    "Read the full 29853-byte additive delta from the unchanged original production authenticator; all inherited source, native metadata, archive, receipt, fresh output, named profile, milestone and resource assertions remain.",
+    "Native RUN, JOB and COMMIT remain unbound; earliest guards require actual positive IDs and a real fixed commit. No hypothetical production run was supplied.",
+    "All four runtime files are bound by SHA256 and Git blob; current production workflow names and build paths match the prepared candidates.",
+    "Readahead validation checks the actual owned filesystem identity and exact one positive-to-zero mutation; post-preflight read-only check and ordered native steps remain mandatory.",
+    "Pure RA definitions are selected from the hash-bound source; no native context, sysfs materialization, observation or helper main is executed locally.",
+    "The native metadata gate requires full original successful completion before the final success report; internal RA step allowance for a failed last step cannot bypass that gate.",
+    "Transport log records remain observations, not successful archive downloads or restore substitutes."
+  ],
+  "status": "ROOT_FULL_PRODUCTION_AUTHENTICATOR_DELTA_REVIEW_COMPLETE"
+}

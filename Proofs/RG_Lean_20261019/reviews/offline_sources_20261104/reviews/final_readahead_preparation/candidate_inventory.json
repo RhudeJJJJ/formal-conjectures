@@ -1,0 +1,74 @@
+{
+  "base_commit": "7149c178164997c897449327ec311c69bfc449f0",
+  "base_tree": "a10a1d1eb04c5369817f9a820515efbf60a274bb",
+  "branch": "rg-degree-one-large-20261103",
+  "changed_functions_with_only_fixed_import_or_branch_binding_deltas": [
+    "native_context",
+    "main"
+  ],
+  "diagnostic_outputs_reused_as_original_exports": false,
+  "functional_files": [
+    {
+      "bytes": 9605,
+      "git_blob": "6496e2230b6878d881d0b094414dc010f91d125d",
+      "path": "rg_resume_20261104/final_readahead_preparation/patch/.github/workflows/rg-degree-one-large-join-repair-20261104.yml",
+      "sha256": "7147154b7091f5459bb35b78c5a837be2bc5505f88927a035c19e489aaf2ff56"
+    },
+    {
+      "bytes": 13324,
+      "git_blob": "059b5fd863fcc14285d9f3791c3b5341064e387f",
+      "path": "rg_resume_20261104/final_readahead_preparation/patch/ci/rg_enable_final_owned_proofstore_direct_io_20261104.py",
+      "sha256": "f37830c0db07c77e865907b5f0d67d272c6963f46aeff81487a7438f33d33b1a"
+    },
+    {
+      "bytes": 20183,
+      "git_blob": "ed715804b09f2812898be0d6acb93a4eb434462a",
+      "path": "rg_resume_20261104/final_readahead_preparation/patch/ci/rg_final_owned_proofstore_readahead_20261104.py",
+      "sha256": "be321bc881d77668d5e00731b7c1ba11a24154426ae98bcecdd5abf867f903f2"
+    },
+    {
+      "bytes": 8940,
+      "git_blob": "0d6b0ca19ca8b1717621559b426a0a7b0b9d9520",
+      "path": "rg_resume_20261104/final_readahead_preparation/patch/ci/rg_github_artifacts.py",
+      "sha256": "db9221ee4aa24f77082c98f33588b987531fc77f9f93c49111d31ad12363b0ef"
+    }
+  ],
+  "guards": {
+    "host_guard_unchanged": true,
+    "memory_reserve_mib": 2048,
+    "milestone_gate_unchanged": true,
+    "seconds_per_module": 900,
+    "workers": 1
+  },
+  "original_scope": {
+    "all_historical_origins_preserved": true,
+    "archives": 767,
+    "fixed_partial_callback_exports": 4,
+    "fresh_modules": 3,
+    "named_supporting_selections": 69,
+    "numeric_original_or_fixed_selections": 349,
+    "prior_objects": 33656,
+    "required_modules": 33659
+  },
+  "prepared_at_utc": "2026-11-04T17:00:29.490538+00:00",
+  "production_runs_started": 0,
+  "readahead_pure_functions_ast_identical": [
+    "sha256",
+    "read_json",
+    "sysfs_identity",
+    "unsigned_value",
+    "read_readahead",
+    "parse_blkid",
+    "select_owned_loop",
+    "validate_sysfs_binding",
+    "validate_inputs",
+    "validate_transition",
+    "validate_enable_report",
+    "observe"
+  ],
+  "remaining_families": 4,
+  "runtime_proof_sources_changed": false,
+  "start_condition": "First authenticate actual readahead run 41872614352 with successful original source projection, full restore/preflight, both native RA gates and completed diagnostic proof/26-marker/named-axiom checks. Then independently review this exact production delta and refresh branch lease before publishing. Early controls, restore alone, header-only progress or lower read_bytes are insufficient.",
+  "status": "LOCAL_PREPARED_CANDIDATE_BLOCKED_PENDING_ACTUAL_DIAGNOSTIC_SUCCESS_AND_INDEPENDENT_REVIEW",
+  "workflow_reverse_additions_equals_current_base": true
+}

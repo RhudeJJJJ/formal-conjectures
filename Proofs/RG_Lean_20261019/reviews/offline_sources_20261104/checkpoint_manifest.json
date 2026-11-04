@@ -1,0 +1,322 @@
+{
+  "active_workflow_or_runtime_code_changes": false,
+  "actual_large_family_completed": false,
+  "already_authenticated_mmap_negative_result_sha256": "474af1c5d3bc1a43be695a53d59640c906a72a71a8cbeab5fc126a6d0f39aebc",
+  "base_commit": "7149c178164997c897449327ec311c69bfc449f0",
+  "base_tree": "a10a1d1eb04c5369817f9a820515efbf60a274bb",
+  "branch": "rg-degree-one-large-20261103",
+  "code_files": 14,
+  "created_at_utc": "2026-11-04T17:27:47.866730+00:00",
+  "files": [
+    {
+      "byte_identical_copy": true,
+      "bytes": 48665,
+      "git_blob_sha1": "2d8ab1ab910ab702b29b24edddd72c6b61a7d152",
+      "id": "auth_mmap",
+      "repository_path": "Proofs/RG_Lean_20261019/reviews/offline_sources_20261104/source/rg_resume_20261104/bothlong_phase_probe/authenticate_mmap_run.py",
+      "role": "PRIMARY_OFFLINE_PROGRAM",
+      "sha256": "2f586040f635d049b1c1002cf45cc6a77b892e013e5f8e968561a4585a4d97a3",
+      "source_local_path": "/workspace/scratch/406169dbc070/rg_resume_20261104/bothlong_phase_probe/authenticate_mmap_run.py"
+    },
+    {
+      "byte_identical_copy": true,
+      "bytes": 55081,
+      "git_blob_sha1": "b74bde86c54ecd11ac8188b7d8f1837c92d3e699",
+      "id": "auth_mmap_retry",
+      "repository_path": "Proofs/RG_Lean_20261019/reviews/offline_sources_20261104/source/rg_resume_20261104/bothlong_phase_probe/authenticate_mmap_transport_retry_run.py",
+      "role": "PRIMARY_OFFLINE_PROGRAM",
+      "sha256": "47b9b7affcac54c4c68745ae5f3c5c3d30ad456b5d333beebd767626fddddf1f",
+      "source_local_path": "/workspace/scratch/406169dbc070/rg_resume_20261104/bothlong_phase_probe/authenticate_mmap_transport_retry_run.py"
+    },
+    {
+      "byte_identical_copy": true,
+      "bytes": 71243,
+      "git_blob_sha1": "c266a781b2605d4185c6ca44e275ecbd2df900f6",
+      "id": "auth_readahead",
+      "repository_path": "Proofs/RG_Lean_20261019/reviews/offline_sources_20261104/source/rg_resume_20261104/bothlong_phase_probe/authenticate_readahead_run.py",
+      "role": "PRIMARY_OFFLINE_PROGRAM",
+      "sha256": "bcdf299c53d1d3fe8ec5be20fc4fa9b2e9d4bc52db001e5627de45d6edc5ef11",
+      "source_local_path": "/workspace/scratch/406169dbc070/rg_resume_20261104/bothlong_phase_probe/authenticate_readahead_run.py"
+    },
+    {
+      "byte_identical_copy": true,
+      "bytes": 19172,
+      "git_blob_sha1": "34c18074be97954d396a05d60869e8796717602f",
+      "id": "analyze_mmap",
+      "repository_path": "Proofs/RG_Lean_20261019/reviews/offline_sources_20261104/source/rg_resume_20261104/bothlong_phase_probe/analyze_mmap_probe.py",
+      "role": "PRIMARY_OFFLINE_PROGRAM",
+      "sha256": "cf8873128eec23509acddcc31d05f312ea5998dc32611bad9bf1efa59ae6d7e8",
+      "source_local_path": "/workspace/scratch/406169dbc070/rg_resume_20261104/bothlong_phase_probe/analyze_mmap_probe.py"
+    },
+    {
+      "byte_identical_copy": true,
+      "bytes": 20422,
+      "git_blob_sha1": "6d4fd58372415f85e8399e265021b2b10f517a70",
+      "id": "analyze_mmap_retry",
+      "repository_path": "Proofs/RG_Lean_20261019/reviews/offline_sources_20261104/source/rg_resume_20261104/bothlong_phase_probe/analyze_mmap_transport_retry_probe.py",
+      "role": "PRIMARY_OFFLINE_PROGRAM",
+      "sha256": "1d1afc60a60663d0c8d92460683763101622134d71912a26ee4947dbdac9302a",
+      "source_local_path": "/workspace/scratch/406169dbc070/rg_resume_20261104/bothlong_phase_probe/analyze_mmap_transport_retry_probe.py"
+    },
+    {
+      "byte_identical_copy": true,
+      "bytes": 22739,
+      "git_blob_sha1": "996140ee80f75dcc4f74c0273e114e4591de5076",
+      "id": "analyze_readahead",
+      "repository_path": "Proofs/RG_Lean_20261019/reviews/offline_sources_20261104/source/rg_resume_20261104/bothlong_phase_probe/analyze_readahead_probe.py",
+      "role": "PRIMARY_OFFLINE_PROGRAM",
+      "sha256": "d2bcb65516e848797c27ff4370dfcd4ba5096f54b24514365d42a732e9116dd9",
+      "source_local_path": "/workspace/scratch/406169dbc070/rg_resume_20261104/bothlong_phase_probe/analyze_readahead_probe.py"
+    },
+    {
+      "byte_identical_copy": true,
+      "bytes": 61393,
+      "git_blob_sha1": "cb6504bc3f4602bc95e55c0523b5094b2b457e1f",
+      "id": "auth_original_readahead",
+      "repository_path": "Proofs/RG_Lean_20261019/reviews/offline_sources_20261104/source/rg_resume_20261104/final_readahead_preparation/authenticate_original_readahead.py",
+      "role": "PRIMARY_OFFLINE_PROGRAM",
+      "sha256": "163b9be7f1c985153f9921f507d3a45dcf4a4d2c6b5c8c3b9a5c567a1733fae7",
+      "source_local_path": "/workspace/scratch/406169dbc070/rg_resume_20261104/final_readahead_preparation/authenticate_original_readahead.py"
+    },
+    {
+      "byte_identical_copy": true,
+      "bytes": 20125,
+      "git_blob_sha1": "ef622525606e50dc4c424047c2a5f9cf2430dd8a",
+      "id": "parent_auth_direct_io",
+      "repository_path": "Proofs/RG_Lean_20261019/reviews/offline_sources_20261104/source/rg_resume_20261104/bothlong_phase_probe/authenticate_direct_io_run.py",
+      "role": "REQUIRED_SMALL_CODE_PARENT",
+      "sha256": "3bc7134af27d46d0a5b904a0f5932152529149cc245be801cd793d2a4c0f31a8",
+      "source_local_path": "/workspace/scratch/406169dbc070/rg_resume_20261104/bothlong_phase_probe/authenticate_direct_io_run.py"
+    },
+    {
+      "byte_identical_copy": true,
+      "bytes": 36849,
+      "git_blob_sha1": "b1316668adb57542f5452e6118b9b47d913de631",
+      "id": "parent_auth_original_direct_io",
+      "repository_path": "Proofs/RG_Lean_20261019/reviews/offline_sources_20261104/source/rg_resume_20261104/final_direct_io_candidate/authenticate_original_direct_io.py",
+      "role": "REQUIRED_SMALL_CODE_PARENT",
+      "sha256": "0c01acb3884573c3e8e571d1bd6cd02936e47f072786a8379093732ca0189023",
+      "source_local_path": "/workspace/scratch/406169dbc070/rg_resume_20261104/final_direct_io_candidate/authenticate_original_direct_io.py"
+    },
+    {
+      "byte_identical_copy": true,
+      "bytes": 13324,
+      "git_blob_sha1": "059b5fd863fcc14285d9f3791c3b5341064e387f",
+      "id": "production_dio_candidate",
+      "repository_path": "Proofs/RG_Lean_20261019/reviews/offline_sources_20261104/source/rg_resume_20261104/final_readahead_preparation/patch/ci/rg_enable_final_owned_proofstore_direct_io_20261104.py",
+      "role": "UNPUBLISHED_FIXED_PRODUCTION_INPUT",
+      "sha256": "f37830c0db07c77e865907b5f0d67d272c6963f46aeff81487a7438f33d33b1a",
+      "source_local_path": "/workspace/scratch/406169dbc070/rg_resume_20261104/final_readahead_preparation/patch/ci/rg_enable_final_owned_proofstore_direct_io_20261104.py"
+    },
+    {
+      "byte_identical_copy": true,
+      "bytes": 20183,
+      "git_blob_sha1": "ed715804b09f2812898be0d6acb93a4eb434462a",
+      "id": "production_ra_candidate",
+      "repository_path": "Proofs/RG_Lean_20261019/reviews/offline_sources_20261104/source/rg_resume_20261104/final_readahead_preparation/patch/ci/rg_final_owned_proofstore_readahead_20261104.py",
+      "role": "UNPUBLISHED_FIXED_PRODUCTION_INPUT",
+      "sha256": "be321bc881d77668d5e00731b7c1ba11a24154426ae98bcecdd5abf867f903f2",
+      "source_local_path": "/workspace/scratch/406169dbc070/rg_resume_20261104/final_readahead_preparation/patch/ci/rg_final_owned_proofstore_readahead_20261104.py"
+    },
+    {
+      "byte_identical_copy": true,
+      "bytes": 9605,
+      "git_blob_sha1": "6496e2230b6878d881d0b094414dc010f91d125d",
+      "id": "production_workflow_candidate",
+      "repository_path": "Proofs/RG_Lean_20261019/reviews/offline_sources_20261104/source/rg_resume_20261104/final_readahead_preparation/patch/.github/workflows/rg-degree-one-large-join-repair-20261104.yml",
+      "role": "UNPUBLISHED_FIXED_PRODUCTION_INPUT",
+      "sha256": "7147154b7091f5459bb35b78c5a837be2bc5505f88927a035c19e489aaf2ff56",
+      "source_local_path": "/workspace/scratch/406169dbc070/rg_resume_20261104/final_readahead_preparation/patch/.github/workflows/rg-degree-one-large-join-repair-20261104.yml"
+    },
+    {
+      "byte_identical_copy": true,
+      "bytes": 3115,
+      "git_blob_sha1": "c2ad2398f99e0a502b07386939d816cfe436e60d",
+      "id": "production_import_rg_github_artifacts",
+      "repository_path": "Proofs/RG_Lean_20261019/reviews/offline_sources_20261104/source/rg_resume_20261104/integration_validation/ci/rg_github_artifacts.py",
+      "role": "LOCAL_FINAL_NEWLINE_VARIANT_OF_REPOSITORY_SOURCE",
+      "sha256": "1a2070ed6f121e99cb55c40cd571e5c01ab8af006b9cd6896b1a86eeb66d8c53",
+      "source_local_path": "/workspace/scratch/406169dbc070/rg_resume_20261104/integration_validation/ci/rg_github_artifacts.py"
+    },
+    {
+      "byte_identical_copy": true,
+      "bytes": 36136,
+      "git_blob_sha1": "7a4abe4fad62902b0e1e28f579008031d63a7ebe",
+      "id": "anchor029_authenticator",
+      "repository_path": "Proofs/RG_Lean_20261019/reviews/offline_sources_20261104/source/rg_resume_20261104/anchor029_preparation/original_anchor029_candidate/authenticate_original_anchor029.py",
+      "role": "ANCHOR029_PREPARED_OFFLINE_AUTHENTICATOR",
+      "sha256": "42443d8649ed3cd5ca7fc73b80f35a6d73c73fed3f80ebef430f677132ca548c",
+      "source_local_path": "/workspace/scratch/406169dbc070/rg_resume_20261104/anchor029_preparation/original_anchor029_candidate/authenticate_original_anchor029.py"
+    },
+    {
+      "byte_identical_copy": true,
+      "bytes": 8810,
+      "git_blob_sha1": "99b9002994ad9839854bd237b4dda5753ca4a1d0",
+      "repository_path": "Proofs/RG_Lean_20261019/reviews/offline_sources_20261104/reviews/final_readahead_preparation/authenticator_inventory.json",
+      "role": "EXISTING_REVIEW_SNAPSHOT",
+      "sha256": "f42d9fcd75865c506ab1bf7d2b242e8ae4de08a280af92fa618168ca71b20f92",
+      "source_local_path": "/workspace/scratch/406169dbc070/rg_resume_20261104/final_readahead_preparation/authenticator_inventory.json"
+    },
+    {
+      "byte_identical_copy": true,
+      "bytes": 2639,
+      "git_blob_sha1": "7a8fd5a52cec38a65989a61d9a42066029d98ce5",
+      "repository_path": "Proofs/RG_Lean_20261019/reviews/offline_sources_20261104/reviews/final_readahead_preparation/root_authenticator_review.json",
+      "role": "EXISTING_REVIEW_SNAPSHOT",
+      "sha256": "9ceef2232bcef62929bf16cdcbdd86748fc3858d8b80adedfa9ea330baa53706",
+      "source_local_path": "/workspace/scratch/406169dbc070/rg_resume_20261104/final_readahead_preparation/root_authenticator_review.json"
+    },
+    {
+      "byte_identical_copy": true,
+      "bytes": 3751,
+      "git_blob_sha1": "dd79145dc6b43fbcf0812a7795507838610c5f22",
+      "repository_path": "Proofs/RG_Lean_20261019/reviews/offline_sources_20261104/reviews/final_readahead_preparation/independent_authenticator_review.json",
+      "role": "EXISTING_REVIEW_SNAPSHOT",
+      "sha256": "01d3f106e7be2f2391204a51db47e92a91858d9de977bdff0111ab33d12d9af9",
+      "source_local_path": "/workspace/scratch/406169dbc070/rg_resume_20261104/final_readahead_preparation/independent_authenticator_review.json"
+    },
+    {
+      "byte_identical_copy": true,
+      "bytes": 3087,
+      "git_blob_sha1": "2d245bc75a028a61d8c0fb104da8e57570f3b6fe",
+      "repository_path": "Proofs/RG_Lean_20261019/reviews/offline_sources_20261104/reviews/final_readahead_preparation/candidate_inventory.json",
+      "role": "EXISTING_REVIEW_SNAPSHOT",
+      "sha256": "b6bf70168ab2244afa10bc96312d269d8662deb829ea8f42fac7279fd740a85c",
+      "source_local_path": "/workspace/scratch/406169dbc070/rg_resume_20261104/final_readahead_preparation/candidate_inventory.json"
+    },
+    {
+      "byte_identical_copy": true,
+      "bytes": 6679,
+      "git_blob_sha1": "0b83feb35dd0dbb3cd2d1601b1b89c632e3b6827",
+      "repository_path": "Proofs/RG_Lean_20261019/reviews/offline_sources_20261104/reviews/final_readahead_preparation/independent_candidate_review.json",
+      "role": "EXISTING_REVIEW_SNAPSHOT",
+      "sha256": "03e0a1906ab9057c83a21e46de0482a99ffdb86c6875419286a5eaf7e1b3f5eb",
+      "source_local_path": "/workspace/scratch/406169dbc070/rg_resume_20261104/final_readahead_preparation/independent_candidate_review.json"
+    },
+    {
+      "byte_identical_copy": true,
+      "bytes": 3852,
+      "git_blob_sha1": "5af71d231daffac21c252a28caebe46e9795fc2c",
+      "repository_path": "Proofs/RG_Lean_20261019/reviews/offline_sources_20261104/reviews/anchor029_preparation/original_anchor029_candidate/authenticator_inventory.json",
+      "role": "EXISTING_REVIEW_SNAPSHOT",
+      "sha256": "beaa4db6c49ddfdc6f4672e100a6654ea5b001770987a3390684e125ab3d0b8b",
+      "source_local_path": "/workspace/scratch/406169dbc070/rg_resume_20261104/anchor029_preparation/original_anchor029_candidate/authenticator_inventory.json"
+    },
+    {
+      "byte_identical_copy": true,
+      "bytes": 4764,
+      "git_blob_sha1": "25455ec73db5ce814bd600d3e86a2a82957eea3a",
+      "repository_path": "Proofs/RG_Lean_20261019/reviews/offline_sources_20261104/reviews/anchor029_preparation/original_anchor029_candidate/deadline_retention_review.json",
+      "role": "EXISTING_REVIEW_SNAPSHOT",
+      "sha256": "a0cd3db1caf6f8e30b155e5badd20473cf25256023d69722c27088baee321444",
+      "source_local_path": "/workspace/scratch/406169dbc070/rg_resume_20261104/anchor029_preparation/original_anchor029_candidate/deadline_retention_review.json"
+    },
+    {
+      "byte_identical_copy": true,
+      "bytes": 7511,
+      "git_blob_sha1": "c6d8da38e7ff853b1cc30b124dcdb3b53397ee02",
+      "repository_path": "Proofs/RG_Lean_20261019/reviews/offline_sources_20261104/reviews/anchor029_preparation/original_anchor029_candidate/runner_deadline_review.json",
+      "role": "EXISTING_REVIEW_SNAPSHOT",
+      "sha256": "358e3b4bc5760cae4536d26a94602b64d89bbdf5f3b042917c700823a247bb02",
+      "source_local_path": "/workspace/scratch/406169dbc070/rg_resume_20261104/anchor029_preparation/original_anchor029_candidate/runner_deadline_review.json"
+    },
+    {
+      "byte_identical_copy": true,
+      "bytes": 95198,
+      "git_blob_sha1": "c07b0c314563e1fdd366054799381ed48e450c36",
+      "repository_path": "Proofs/RG_Lean_20261019/reviews/offline_sources_20261104/dependency_inventory.json",
+      "role": "FROZEN_DEPENDENCY_INVENTORY",
+      "sha256": "71f68ec42845e0437ae3a587db88ca9677bfa2a5edaac7f6296fa6ec4985644f",
+      "source_local_path": "/workspace/scratch/406169dbc070/rg_resume_20261104/offline_source_checkpoint/inventory.json"
+    },
+    {
+      "byte_identical_copy": true,
+      "bytes": 15122,
+      "git_blob_sha1": "a1aa0058f2c7086cb63cb3edf904b7886f46b03d",
+      "repository_path": "Proofs/RG_Lean_20261019/reviews/offline_sources_20261104/local_input_provenance_review.json",
+      "role": "EXACT_LOCAL_BYTE_VARIANT_REVIEW",
+      "sha256": "3af6cfc4825be4c0dd04e9768400ccf0c41b0238b9050d126e71ae03ebdb602c",
+      "source_local_path": "/workspace/scratch/406169dbc070/rg_resume_20261104/offline_source_checkpoint/local_input_provenance_review.json"
+    },
+    {
+      "byte_identical_copy": true,
+      "bytes": 4984,
+      "git_blob_sha1": "4b1cb2a848870fd0812723a4b29b85a669faac1a",
+      "repository_path": "Proofs/RG_Lean_20261019/reviews/offline_sources_20261104/native_status/readahead/jobs_20261104T172738Z.json",
+      "role": "ACTUAL_NATIVE_IN_PROGRESS_CAPTURE",
+      "sha256": "bee9aeb75209c9d42df21c164dd3e46ae816eb1248fdd1f62ed8791ec4d146c6",
+      "source_local_path": "/workspace/scratch/406169dbc070/rg_resume_20261104/bothlong_phase_probe/readahead_actual/jobs_20261104T172738Z.json"
+    },
+    {
+      "byte_identical_copy": true,
+      "bytes": 3359,
+      "git_blob_sha1": "79f2d8882223fd4e51c0c2201a4a3def737dc812",
+      "repository_path": "Proofs/RG_Lean_20261019/reviews/offline_sources_20261104/native_status/anchor029/jobs_20261104T172703Z.json",
+      "role": "ACTUAL_NATIVE_IN_PROGRESS_CAPTURE",
+      "sha256": "1af3e5e860cce65bece3b9f5c5f136679d480cd1308921e8a2c824d68653b100",
+      "source_local_path": "/workspace/scratch/406169dbc070/rg_resume_20261104/anchor029_preparation/original_anchor029_candidate/actual/jobs_20261104T172703Z.json"
+    },
+    {
+      "base_sha256": "d268e189b3ad1b3673342c3d4a455b801b76f11d9f418a12a4fa360398adcb69",
+      "byte_identical_copy": false,
+      "bytes": 71218,
+      "git_blob_sha1": "fece1ee185ae6d06385efb97687d0feb422a3249",
+      "repository_path": "Proofs/RG_Lean_20261019/README.md",
+      "role": "CURRENT_STATUS_DOCUMENTATION",
+      "sha256": "e9655b6f785fbd427dd2b55b2b447dcb47cd717dd8a23ab0f1facfc10088a439",
+      "source_local_path": "/workspace/scratch/406169dbc070/rg_resume_20261104/mmap_complete_checkpoint_patch/Proofs/RG_Lean_20261019/README.md"
+    }
+  ],
+  "interpretation_limits": [
+    "Exact source snapshots preserve reviewed logic; they are not new native executions or proof receipts.",
+    "Original native ZIPs, plans, graphs, manifests, captured API metadata and pinned repository helper inputs remain necessary for replay and are not all embedded here.",
+    "Prepared production helpers and workflow are stored only as inactive review material. The original production run is not activated by this checkpoint.",
+    "Native in-progress observations may be superseded; no terminal success is inferred from them."
+  ],
+  "native_status_observations": [
+    {
+      "capture": {
+        "bytes": 4984,
+        "git_blob_sha1": "4b1cb2a848870fd0812723a4b29b85a669faac1a",
+        "repository_path": "Proofs/RG_Lean_20261019/reviews/offline_sources_20261104/native_status/readahead/jobs_20261104T172738Z.json",
+        "sha256": "bee9aeb75209c9d42df21c164dd3e46ae816eb1248fdd1f62ed8791ec4d146c6"
+      },
+      "conclusion": null,
+      "head_sha": "532d92118808c8ee38f38c2d143e2e236824ee5c",
+      "job": 126723495686,
+      "label": "readahead",
+      "run": 41872614352,
+      "running_steps": [
+        "Require exactly the original BothLong endpoint to remain uncompiled"
+      ],
+      "status": "in_progress"
+    },
+    {
+      "capture": {
+        "bytes": 3359,
+        "git_blob_sha1": "79f2d8882223fd4e51c0c2201a4a3def737dc812",
+        "repository_path": "Proofs/RG_Lean_20261019/reviews/offline_sources_20261104/native_status/anchor029/jobs_20261104T172703Z.json",
+        "sha256": "1af3e5e860cce65bece3b9f5c5f136679d480cd1308921e8a2c824d68653b100"
+      },
+      "conclusion": null,
+      "head_sha": "5b7bd43a9f3ca170b19450dd4f34fe9d12bbba90",
+      "job": 126562666235,
+      "label": "anchor029",
+      "run": 41826563525,
+      "running_steps": [
+        "Check multiplicities and actual graph spectral comparison"
+      ],
+      "status": "in_progress"
+    }
+  ],
+  "no_new_tests_or_authenticator_execution_for_snapshot": true,
+  "original_production_launch_gate": "Complete authenticated actual diagnostic success with 26 exact phase markers, five named axiom profiles, full source/restore/preflight/device gates; refresh original branch lease before publishing any active production workflow.",
+  "prepared_production_native_identifiers": {
+    "COMMIT": null,
+    "JOB": null,
+    "RUN": null
+  },
+  "remaining_original_input_families": 4,
+  "repository": "RhudeJJJJ/formal-conjectures",
+  "status": "EXACT_OFFLINE_SOURCE_LINEAGE_CHECKPOINT_PREPARED_FOR_REPOSITORY"
+}

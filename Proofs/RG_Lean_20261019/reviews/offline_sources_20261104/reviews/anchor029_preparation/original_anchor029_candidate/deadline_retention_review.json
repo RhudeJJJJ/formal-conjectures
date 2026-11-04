@@ -1,0 +1,99 @@
+{
+  "kind": "SOURCE_ONLY_DEADLINE_AND_RETENTION_REVIEW",
+  "repository": "RhudeJJJJ/formal-conjectures",
+  "actual_run_id": 41826563525,
+  "actual_job_id": 126562666235,
+  "actual_source_commit": "5b7bd43a9f3ca170b19450dd4f34fe9d12bbba90",
+  "guards": {
+    "job_timeout_minutes": 360,
+    "module_timeout_seconds": 600,
+    "lean_workers": 1,
+    "memory_reserve_mib": 2048,
+    "artifact_retention_days": 90,
+    "earlier_own_total_deadline_present": false
+  },
+  "findings": [
+    {
+      "claim": "The workflow has a 360-minute job timeout. The invoked verifier applies 600 seconds to each Lean subprocess. Neither the verifier nor its resource observer implements an earlier overall wall-clock deadline.",
+      "evidence": [
+        "workflow timeout-minutes and Check multiplicities step",
+        "verify_extension.py:98",
+        "rg_observed_kernel_verify.py:55-67"
+      ],
+      "qualification": "Observer proc.wait(timeout=30) follows the monitoring loop and is a shutdown grace period, not a total runtime budget."
+    },
+    {
+      "claim": "After each successful compilation and profile/source validation, finalize_outputs promotes the output and the verifier writes a FRESH_KERNEL_EXPORT JSON record immediately. It then flushes PASS and COMPLETED_MODULE_JSON lines.",
+      "evidence": [
+        "verify_extension.py:100-110",
+        "verify_extension.py:119-121"
+      ],
+      "qualification": "These are local per-module completed checkpoints. There is no periodic remote artifact upload while the Lean step is running."
+    },
+    {
+      "claim": "On a normal module timeout or compiler failure, the current pending outputs are removed and the verifier raises. Already completed object/record files are not removed by this path.",
+      "evidence": [
+        "verify_extension.py:97-101",
+        "workflow --resume invocation"
+      ]
+    },
+    {
+      "claim": "The next retention step and upload step both use if: always(). The retention step reads existing records, writes diagnostics_records.json, copies available FRESH_KERNEL_EXPORT objects and records, copies module logs, and copies receipt.json only if it exists.",
+      "evidence": [
+        "workflow Retain completed records and diagnostics",
+        "workflow Retain new exports only"
+      ]
+    },
+    {
+      "claim": "The verifier writes the scope receipt only after every required source module has completed. Per-module progress is not a complete-scope receipt.",
+      "evidence": [
+        "verify_extension.py:112-125"
+      ]
+    },
+    {
+      "claim": "The resource observer flushes measurements to stderr approximately every 10 seconds and writes resource_observer.json after its process-monitoring loop ends.",
+      "evidence": [
+        "rg_observed_kernel_verify.py:55-70"
+      ]
+    },
+    {
+      "claim": "The local sources do not guarantee execution or completion of post-job retention/upload after a hard platform job-timeout termination.",
+      "evidence": [
+        "workflow always steps and job timeout",
+        "rg_observed_kernel_verify.py:49-71"
+      ],
+      "qualification": "An eventual terminal status, logs, artifact catalog and actual archive bytes must determine what was preserved. Wall-clock passage alone establishes neither a successful nor a failed kernel result."
+    }
+  ],
+  "limits": {
+    "live_job_logs_read": false,
+    "artifact_downloads": false,
+    "ci_or_remote_mutations": false,
+    "run_cancelled_or_restarted": false,
+    "guards_changed": false,
+    "kernel_success_claimed": false,
+    "full_scope_or_family_success_claimed": false
+  },
+  "reviewer": "rg_lean_join",
+  "reviewed_at_utc": "2026-11-04T17:15:44.985844+00:00",
+  "source_evidence": [
+    {
+      "path": "/workspace/scratch/406169dbc070/rg_resume_20261104/anchor029_preparation/original_anchor029_candidate/patch/.github/workflows/rg-middle-anchor029-original-recovery-20261104.yml",
+      "git_blob_sha": "843835cf26361fb4abe6c97c2d099eac9d23dc5d",
+      "sha256": "6676ba35ed497f7479d0021a75714af3ab1c1e98086dab171ff2bc5cfd8c1fe2",
+      "bytes": 6445
+    },
+    {
+      "path": "/workspace/scratch/406169dbc070/rg_resume_20261104/anchor029_preparation/availability_and_ci_review/pinned_ci_source_capture_complete.json :: ci/rg_observed_kernel_verify.py",
+      "git_blob_sha": "ec7797e820661c32be940205edcceb77bf867dbd",
+      "sha256": "8cad11d7166d5e0f04287714f3e252e02a04613d3757d9cad06f5bc0f17c7a62",
+      "bytes": 4694
+    },
+    {
+      "path": "/workspace/scratch/406169dbc070/rg_resume_20261104/source_base/Proofs/RG_Lean_20261019/verify_extension.py",
+      "git_blob_sha": "318fc5f64dbe1078041bb371b328109539577ee0",
+      "sha256": "e04b969f85a707677eb6c20986993b32ebf2605e99f2cfdc9efa34ea0bd82f0d",
+      "bytes": 9168
+    }
+  ]
+}

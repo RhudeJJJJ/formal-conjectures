@@ -1,0 +1,167 @@
+{
+  "actual_archive_reads": 0,
+  "actual_executions": 0,
+  "added_assertions": 96,
+  "already_completed_original_family_claim": false,
+  "candidate": {
+    "bytes": 61393,
+    "git_blob_sha1": "cb6504bc3f4602bc95e55c0523b5094b2b457e1f",
+    "path": "/workspace/scratch/406169dbc070/rg_resume_20261104/final_readahead_preparation/authenticate_original_readahead.py",
+    "sha256": "163b9be7f1c985153f9921f507d3a45dcf4a4d2c6b5c8c3b9a5c567a1733fae7"
+  },
+  "candidate_assertions": 295,
+  "changed_original_functions": [
+    "authenticate",
+    "authenticate_direct_io",
+    "main",
+    "native_metadata"
+  ],
+  "copied_checked_number_ast_identical": true,
+  "copied_ra_gate_ast_checks": [
+    {
+      "ast_identical_before_adapters_reversed": false,
+      "candidate_ast_sha256": "3b288c20f48df6e8918390d4f1152a9884d849e165b4e8733448af51d7309a9f",
+      "function": "pure_readahead_validators",
+      "original_ast_sha256": "06a122f2ce3c92c8250f7b11e1da62fb4545eb092de4bf038a2f9e05336f755c",
+      "reviewed_gates_ast_identical_after_only_explicit_production_adapters": true
+    },
+    {
+      "ast_identical_before_adapters_reversed": true,
+      "candidate_ast_sha256": "da2efe3d190669bd2728efad8ac0152e5d485bff24ea14663cf25e1884af0721",
+      "function": "native_recorded_path",
+      "original_ast_sha256": "da2efe3d190669bd2728efad8ac0152e5d485bff24ea14663cf25e1884af0721",
+      "reviewed_gates_ast_identical_after_only_explicit_production_adapters": true
+    },
+    {
+      "ast_identical_before_adapters_reversed": true,
+      "candidate_ast_sha256": "caf66a4fef2283024b5d69f96a2792393eb06260e527304a5179188aff7a4ba9",
+      "function": "recorded_sysfs_identity",
+      "original_ast_sha256": "caf66a4fef2283024b5d69f96a2792393eb06260e527304a5179188aff7a4ba9",
+      "reviewed_gates_ast_identical_after_only_explicit_production_adapters": true
+    },
+    {
+      "ast_identical_before_adapters_reversed": true,
+      "candidate_ast_sha256": "1479b9f5be460e4974ba54c0065153802d87e72f8deb3512efddaaca421c2343",
+      "function": "recorded_readahead_attribute",
+      "original_ast_sha256": "1479b9f5be460e4974ba54c0065153802d87e72f8deb3512efddaaca421c2343",
+      "reviewed_gates_ast_identical_after_only_explicit_production_adapters": true
+    },
+    {
+      "ast_identical_before_adapters_reversed": false,
+      "candidate_ast_sha256": "63426dd3d3a7fce04459c8f0efca9183fd9db41be0b04fc550bbbc6beb2227af",
+      "function": "authenticate_readahead_observation",
+      "original_ast_sha256": "bc52184d961e64d559c5080a7257687d5f700eb42206a0463a72461ba035a9ce",
+      "reviewed_gates_ast_identical_after_only_explicit_production_adapters": true
+    },
+    {
+      "ast_identical_before_adapters_reversed": false,
+      "candidate_ast_sha256": "275a58d69d9b2aba184f0322d820f8628970b66fef7bd3cc7f0db15d89d5f5e6",
+      "function": "authenticate_readahead_step_order",
+      "original_ast_sha256": "6474c2babd8bdf9120f16c2363108e3f3914c7cfe207baba1cfd0429bb03c65d",
+      "reviewed_gates_ast_identical_after_only_explicit_production_adapters": true
+    },
+    {
+      "ast_identical_before_adapters_reversed": false,
+      "candidate_ast_sha256": "4b5bead74a899cceaa2ae60db8c5113972e850afebd1681f1a9c85e09a79d4a7",
+      "function": "authenticate_readahead",
+      "original_ast_sha256": "1ac6dda4277b75836c8ea9bd35c1be2ed901561bcf0555c4ecc0424dd00914db",
+      "reviewed_gates_ast_identical_after_only_explicit_production_adapters": true
+    }
+  ],
+  "copied_transport_parser_ast_identical": true,
+  "diff": {
+    "bytes": 29853,
+    "git_blob_sha1": "55f62e87dfe7f5468302c98db18fe6ccd48f1f3c",
+    "path": "/workspace/scratch/406169dbc070/rg_resume_20261104/final_readahead_preparation/authenticator.diff",
+    "sha256": "f098497b4afe3ebc1640343e0f05b2061129d9ae25f0b59f2b47b430586ee007"
+  },
+  "github_environment_spoofs": 0,
+  "hard_unbound_identity_guards": "bind_prepared_gate_sources rejects before production imports or native captures; inherited native_metadata guards remain unchanged. main additionally rejects Python assertion-disabled execution.",
+  "launch_condition": "This is preparation only. The candidate remains blocked pending full actual diagnostic success and root publication decision; no native production run exists or is fabricated.",
+  "native_bindings": {
+    "COMMIT": null,
+    "JOB": null,
+    "RUN": null
+  },
+  "native_path_materializations": 0,
+  "new_functions": [
+    "authenticate_readahead",
+    "authenticate_readahead_observation",
+    "authenticate_readahead_step_order",
+    "bind_prepared_gate_sources",
+    "checked_number",
+    "native_recorded_path",
+    "pure_readahead_validators",
+    "recorded_readahead_attribute",
+    "recorded_sysfs_identity",
+    "transport_retry_observations"
+  ],
+  "new_gates": [
+    "Source and Gitblob bindings for exact current candidate workflow7147154b, production DIOf37830c0, production RAbe321bc8 and original tested transportdb9221ee.",
+    "Actual positive->0 native RA reports, same setup/DIO/native run/job/head and helper identities, actual UUID/one-loop/BDI chain, exact one recorded tee write and exact9/5 read-only command sequences.",
+    "After-preflight check is read-only, zero persists, other device RA and DIO unchanged, and exact native step order precedes original full kernel invocation.",
+    "Exact767 selected original archives in addition to inherited complete row/source/origin/roundtrip checks.",
+    "Structured transport records are separately observed; no successful-GET/independent response counts or artifact attribution is inferred."
+  ],
+  "new_proof_claim": false,
+  "original_assertions_preserved": 199,
+  "original_success_report_created": false,
+  "parent_whole_ast_equals_candidate_after_removing_only_enumerated_additions_and_two_path_workflow_rebindings": true,
+  "pure_function_adapters": [
+    "Local parent paths changed to fixed production helper copies; no diagnostic module globals are assigned.",
+    "Native production build path is explicit PurePosixPath data.",
+    "Actual production setup/DIO/restore/preflight/kernel step names replace diagnostic names.",
+    "Capture directory is passed explicitly for the two copied raw RA reports.",
+    "Output observation is explicitly named observed_before_kernel."
+  ],
+  "remote_mutations": 0,
+  "removed_or_weakened_original_assertions": 0,
+  "result_source_binding": "new_gate_sources records both immutable parent program hashes, exact reviewed gate-source hashes, all four runtime code hashes/Gitblobs and actual self hash; original result fields remain unchanged.",
+  "retained_original_gates": [
+    "All native successful production steps, exact two actual archives and hashes.",
+    "Current full source graph33659, original three source bodies/declarations and historical source provenance.",
+    "Full349 numeric+69 named collection and fixed4 callback priors, with original failed callback identity unchanged.",
+    "Full33656 prior rows and every original archive roundtrip/sidecar/source/closure/output/origin match.",
+    "Exactly3 real fresh outputs, complete33659 receipt,11 exact named profiles and actual output byte hashes.",
+    "Original milestone and remaining three formal fields only after every original kernel gate passes.",
+    "Unchanged900seconds/1worker/2048MiB, observed guard completion and actual resource records."
+  ],
+  "reviewed_ra_gate_source": {
+    "bytes": 71243,
+    "git_blob_sha1": "c266a781b2605d4185c6ca44e275ecbd2df900f6",
+    "path": "/workspace/scratch/406169dbc070/rg_resume_20261104/bothlong_phase_probe/authenticate_readahead_run.py",
+    "sha256": "bcdf299c53d1d3fe8ec5be20fc4fa9b2e9d4bc52db001e5627de45d6edc5ef11"
+  },
+  "reviewed_transport_parser_source": {
+    "bytes": 55081,
+    "git_blob_sha1": "b74bde86c54ecd11ac8188b7d8f1837c92d3e699",
+    "path": "/workspace/scratch/406169dbc070/rg_resume_20261104/bothlong_phase_probe/authenticate_mmap_transport_retry_run.py",
+    "sha256": "47b9b7affcac54c4c68745ae5f3c5c3d30ad456b5d333beebd767626fddddf1f"
+  },
+  "status": "FROZEN_PREPARED_ORIGINAL_PRODUCTION_AUTHENTICATOR_LOCKED_WITHOUT_NATIVE_RUN",
+  "syntax": "AST_PARSED_AND_COMPILED_WITHOUT_EXECUTION",
+  "tests_run": [],
+  "unchanged_original_functions": [
+    "bound_json",
+    "collection_evidence",
+    "decode",
+    "expected_declarations",
+    "file_sha",
+    "fresh_outputs",
+    "member_json",
+    "named_profiles",
+    "open_zip",
+    "production",
+    "resource_evidence",
+    "restored_rows",
+    "row_table",
+    "sha",
+    "unique_object"
+  ],
+  "unchanged_parent": {
+    "bytes": 36849,
+    "git_blob_sha1": "b1316668adb57542f5452e6118b9b47d913de631",
+    "path": "/workspace/scratch/406169dbc070/rg_resume_20261104/final_direct_io_candidate/authenticate_original_direct_io.py",
+    "sha256": "0c01acb3884573c3e8e571d1bd6cd02936e47f072786a8379093732ca0189023"
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "ci_started": false,
+  "existing_candidate_files_modified": false,
+  "exit_codes": {
+    "0": "Complete actual original Anchor029 endpoint success authenticated",
+    "2": "Incomplete, inconsistent or rejected evidence; no success claim",
+    "3": "Bound actual terminal failure/cancellation captured without endpoint/family success claim"
+  },
+  "failure_handling": [
+    "terminal native failure is preserved; no invented receipt or endpoint success",
+    "available ZIP and completed rows are checked only if actually captured; absent artifacts remain explicitly absent",
+    "malformed or incomplete evidence yields exit2 and a rejected/incomplete report",
+    "individual observed prior rows retain their historical origins; historical cancelled whole jobs are never relabelled successful"
+  ],
+  "files": [
+    {
+      "bytes": 36136,
+      "git_blob_sha": "7a4abe4fad62902b0e1e28f579008031d63a7ebe",
+      "path": "authenticate_original_anchor029.py",
+      "sha256": "42443d8649ed3cd5ca7fc73b80f35a6d73c73fed3f80ebef430f677132ca548c"
+    }
+  ],
+  "fixed_actual_origin": {
+    "job": 126562666235,
+    "repository": "RhudeJJJJ/formal-conjectures",
+    "run": 41826563525,
+    "run_attempt": 1,
+    "source_commit": "5b7bd43a9f3ca170b19450dd4f34fe9d12bbba90"
+  },
+  "full_success_requirements": [
+    "exact successful native run/job/steps and original workflow invocation",
+    "native archive digest/size/origin and exact774file full-success layout",
+    "281 exact original source files and recursive closure recomputation",
+    "281 actual receipt rows, exactly118 fixed old priors plus163 actual fresh exports",
+    "all361 diagnostic prior rows, including243 outside the actual endpoint receipt, retain actual previous origins",
+    "163 actual primary object byte hashes and corresponding native/JSON/log records",
+    "838 exact source-derived named axiom checks restricted to standard axioms",
+    "600-second Lean subprocess timeout and one worker remain bound by exact original workflow/verifier; resource reserve2048MiB and real observer success are checked"
+  ],
+  "invocation": "python3 -B rg_resume_20261104/anchor029_preparation/original_anchor029_candidate/authenticate_original_anchor029.py",
+  "limits": [
+    "The fresh-only archive does not contain the118 prior object bytes; their real checks remain native original restorer/verifier gates, with exact receipt identities checked offline.",
+    "The module elapsed field includes output hashing/bookkeeping; it is not incorrectly substituted for the subprocess600second timeout.",
+    "Anchor029 alone never changes the remaining-family count; Middle/Large/global claims remain false.",
+    "No actual final archive or final kernel result was fabricated, downloaded, executed or claimed during preparation."
+  ],
+  "original_plan_sha256": "fe37ffe775fcc06a969c72349249df46c3fbc051316ffdd699ba30472391177b",
+  "original_workflow_sha256": "6676ba35ed497f7479d0021a75714af3ab1c1e98086dab171ff2bc5cfd8c1fe2",
+  "pure_real_metadata_check": {
+    "actual_result_report_written": false,
+    "archive_read_or_downloaded": false,
+    "command": "python3 -B rg_resume_20261104/anchor029_preparation/original_anchor029_candidate/authenticate_original_anchor029.py --check-fixed-inputs-only",
+    "diagnostic_prior_rows": 361,
+    "expected_fresh_modules": 163,
+    "expected_named_axiom_profiles": 838,
+    "kernel_executed": false,
+    "required_priors": 118,
+    "required_sources": 281,
+    "result": "PASS"
+  },
+  "remote_mutations": false,
+  "result_report": "actual/original_anchor029_authentication.json",
+  "root_downloads_only": true,
+  "status": "OFFLINE_AUTHENTICATOR_PREPARED_NO_TERMINAL_EVIDENCE_EXECUTION",
+  "terminal_capture_inputs": [
+    "actual/run.json",
+    "actual/jobs.json",
+    "actual/artifacts.json",
+    "actual/job.log",
+    "actual/artifact.zip"
+  ]
+}

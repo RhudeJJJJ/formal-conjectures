@@ -1,0 +1,308 @@
+{
+  "additional_concrete_mismatches": [],
+  "archive_reads": 0,
+  "corrected_dependency": "production_import_rg_github_artifacts",
+  "exact_delta": {
+    "all_repository_prefix_bytes_identical": true,
+    "appended_hex": "0a",
+    "appended_text": "\n",
+    "local_bytes": 3115,
+    "local_equals_repository_plus_one_LF": true,
+    "offset": 3114,
+    "operation": "APPEND_ONE_BYTE",
+    "repository_bytes": 3114
+  },
+  "exact_repository_parent": {
+    "bytes": 3114,
+    "git_blob_sha1": "a6b8154f2d837130791b7d0660811f14a1c3a1e3",
+    "local_path": "/workspace/scratch/406169dbc070/rg_resume_20261104/offline_source_checkpoint/remote_input_reads/ci/rg_github_artifacts.py",
+    "sha256": "a31f2f8efbbcc03ff353b02e2cc91f4067afa8115c976c4b8d5fd8ea480990c5"
+  },
+  "existing_capture_checks": [
+    {
+      "capture": "/workspace/scratch/406169dbc070/rg_resume_20261104/middle_generic_rebuild/remaining_helper_remote_capture.json",
+      "capture_text_required_one_terminal_LF_reconstruction": false,
+      "captured_git_blob_sha1": "fe6956c7f047e44722b80dc2f447a0bcf693f987",
+      "exact_bytes_match": true,
+      "kind": "EXACT_EXISTING_NATIVE_GITBLOB_CAPTURE",
+      "local_git_blob_sha1": "fe6956c7f047e44722b80dc2f447a0bcf693f987",
+      "path": "ci/rg_plan_exact_degree_one_large.py"
+    },
+    {
+      "capture": "/workspace/scratch/406169dbc070/rg_resume_20261104/middle_generic_rebuild/remaining_helper_remote_capture.json",
+      "capture_text_required_one_terminal_LF_reconstruction": false,
+      "captured_git_blob_sha1": "75c97c76584b0d8fc2b3871763dea77d0f61524f",
+      "exact_bytes_match": true,
+      "kind": "EXACT_EXISTING_NATIVE_GITBLOB_CAPTURE",
+      "local_git_blob_sha1": "75c97c76584b0d8fc2b3871763dea77d0f61524f",
+      "path": "ci/rg_github_rate_limit.py"
+    },
+    {
+      "capture": "/workspace/scratch/406169dbc070/rg_resume_20261104/middle_generic_rebuild/remaining_helper_remote_capture.json",
+      "capture_text_required_one_terminal_LF_reconstruction": false,
+      "captured_git_blob_sha1": "3d7900da674306763a473a93a7e5618d0faa809c",
+      "exact_bytes_match": true,
+      "kind": "EXACT_EXISTING_NATIVE_GITBLOB_CAPTURE",
+      "local_git_blob_sha1": "3d7900da674306763a473a93a7e5618d0faa809c",
+      "path": "Proofs/RG_Lean_20261019/verify.py"
+    },
+    {
+      "capture": "/workspace/scratch/406169dbc070/rg_resume_20261104/middle_generic_rebuild/remaining_helper_remote_capture.json",
+      "capture_text_required_one_terminal_LF_reconstruction": false,
+      "captured_git_blob_sha1": "1dd7d9c4768de5e1a8d6b1b8d2a15dc72aa19d2f",
+      "exact_bytes_match": true,
+      "kind": "EXACT_EXISTING_NATIVE_GITBLOB_CAPTURE",
+      "local_git_blob_sha1": "1dd7d9c4768de5e1a8d6b1b8d2a15dc72aa19d2f",
+      "path": "Proofs/RG_Lean_20261019/module_outputs.py"
+    },
+    {
+      "capture": "/workspace/scratch/406169dbc070/rg_resume_20261104/publication_inventory_draft.json",
+      "captured_sha256": "8872cd2515892ab1acf963e48e19162a98225582ba2b6e2579fc732576821b2b",
+      "direct_new_native_query": false,
+      "exact_bytes_identity_by_sha256": true,
+      "kind": "EXACT_EXISTING_PUBLICATION_INVENTORY",
+      "local_sha256": "8872cd2515892ab1acf963e48e19162a98225582ba2b6e2579fc732576821b2b",
+      "path": "ci/rg_callback_partial_completion.py"
+    },
+    {
+      "capture": "/workspace/scratch/406169dbc070/rg_integration/publication_inventory.json",
+      "captured_sha256": "1d459d526e2c2f2832111fb021d99e9f9ad45f5bc629c1fdcfb33cb694b867a8",
+      "direct_new_native_query": false,
+      "exact_bytes_identity_by_sha256": true,
+      "kind": "EXACT_EXISTING_PUBLICATION_INVENTORY",
+      "local_sha256": "1d459d526e2c2f2832111fb021d99e9f9ad45f5bc629c1fdcfb33cb694b867a8",
+      "path": "ci/rg_exact_final_source_binding.py"
+    },
+    {
+      "capture": "/workspace/scratch/406169dbc070/rg_integration/publication_inventory.json",
+      "captured_sha256": "52c9bf602ede0e8913d444fdf03ba1f5bf2bdd9f8f0e17f270bd8407ca0fe539",
+      "direct_new_native_query": false,
+      "exact_bytes_identity_by_sha256": true,
+      "kind": "EXACT_EXISTING_PUBLICATION_INVENTORY",
+      "local_sha256": "52c9bf602ede0e8913d444fdf03ba1f5bf2bdd9f8f0e17f270bd8407ca0fe539",
+      "path": "ci/rg_exact_numeric_completion.py"
+    },
+    {
+      "capture": "/workspace/scratch/406169dbc070/rg_auto_final/final_publication_inventory.json",
+      "captured_sha256": "90938b2c9aba656c89287f724f78932fe9e625abb27543abd0d5a906bfc9c761",
+      "direct_new_native_query": false,
+      "exact_bytes_identity_by_sha256": true,
+      "kind": "EXACT_EXISTING_PUBLICATION_INVENTORY",
+      "local_sha256": "90938b2c9aba656c89287f724f78932fe9e625abb27543abd0d5a906bfc9c761",
+      "path": "ci/rg_collect_exact_d1_reproductions.py"
+    },
+    {
+      "id": "dio_diagnostic",
+      "kind": "EXISTING_EXACT_SOURCE_PUBLICATION_AND_READBACK_RECORD",
+      "local_sha256": "96211dac3452504564d33b7e2d90bdbc59597fa07eb953fc26fc6e4a56add5af",
+      "matches": [
+        {
+          "capture": "/workspace/scratch/406169dbc070/rg_resume_20261104/bothlong_phase_probe/direct_io_candidate/published_state.json",
+          "matched_gitblob": true,
+          "matched_sha256": true
+        },
+        {
+          "capture": "/workspace/scratch/406169dbc070/rg_resume_20261104/bothlong_phase_probe/direct_io_candidate/published_state.json",
+          "matched_gitblob": true,
+          "matched_sha256": false
+        }
+      ],
+      "path": "ci/rg_enable_owned_proofstore_direct_io_20261104.py"
+    },
+    {
+      "id": "trace_helper",
+      "kind": "EXISTING_EXACT_SOURCE_PUBLICATION_AND_READBACK_RECORD",
+      "local_sha256": "a8799847517d58f12e25f1a6aa67a7a525328baf84b19fddd6c9558a7fdb55ed",
+      "matches": [
+        {
+          "capture": "/workspace/scratch/406169dbc070/rg_resume_20261104/bothlong_phase_probe/mmap_trace_candidate/published_state.json",
+          "matched_gitblob": true,
+          "matched_sha256": true
+        },
+        {
+          "capture": "/workspace/scratch/406169dbc070/rg_resume_20261104/bothlong_phase_probe/mmap_trace_candidate/published_state.json",
+          "matched_gitblob": true,
+          "matched_sha256": false
+        }
+      ],
+      "path": "ci/rg_bothlong_mmap_trace_20261104.py"
+    },
+    {
+      "id": "mmap_controller",
+      "kind": "EXISTING_EXACT_SOURCE_PUBLICATION_AND_READBACK_RECORD",
+      "local_sha256": "4ab98348b61d6570fe4a807daef51a7d8fb292af20697aeadaff219fd10f6f43",
+      "matches": [
+        {
+          "capture": "/workspace/scratch/406169dbc070/rg_resume_20261104/bothlong_phase_probe/mmap_trace_candidate/published_state.json",
+          "matched_gitblob": true,
+          "matched_sha256": true
+        },
+        {
+          "capture": "/workspace/scratch/406169dbc070/rg_resume_20261104/bothlong_phase_probe/mmap_trace_candidate/published_state.json",
+          "matched_gitblob": true,
+          "matched_sha256": false
+        }
+      ],
+      "path": "ci/rg_bothlong_phase_probe_20261104.py"
+    },
+    {
+      "id": "mmap_workflow",
+      "kind": "EXISTING_EXACT_SOURCE_PUBLICATION_AND_READBACK_RECORD",
+      "local_sha256": "d5a5d75da49789113df36075ca55cfb83adf35a7ba0edd7c9a0aff9073e3d077",
+      "matches": [
+        {
+          "capture": "/workspace/scratch/406169dbc070/rg_resume_20261104/bothlong_phase_probe/mmap_trace_candidate/published_state.json",
+          "matched_gitblob": true,
+          "matched_sha256": true
+        },
+        {
+          "capture": "/workspace/scratch/406169dbc070/rg_resume_20261104/bothlong_phase_probe/mmap_trace_candidate/published_state.json",
+          "matched_gitblob": true,
+          "matched_sha256": false
+        }
+      ],
+      "path": ".github/workflows/rg-d1-bothlong-phase-probe-20261104.yml"
+    },
+    {
+      "id": "retry_workflow",
+      "kind": "EXISTING_EXACT_SOURCE_PUBLICATION_AND_READBACK_RECORD",
+      "local_sha256": "7acc6c499fbda379bd7a0404637a4221fd1fe1f6b2e97a9cb393d314021f4a2f",
+      "matches": [
+        {
+          "capture": "/workspace/scratch/406169dbc070/rg_resume_20261104/bothlong_phase_probe/transport_retry_candidate/published_state.json",
+          "matched_gitblob": true,
+          "matched_sha256": true
+        }
+      ],
+      "path": ".github/workflows/rg-d1-bothlong-phase-probe-20261104.yml"
+    },
+    {
+      "id": "readahead_workflow",
+      "kind": "EXISTING_EXACT_SOURCE_PUBLICATION_AND_READBACK_RECORD",
+      "local_sha256": "c47e86c5b332a761751567c555b9111ea8972a2246fe729916c21855ac991b6a",
+      "matches": [
+        {
+          "capture": "/workspace/scratch/406169dbc070/rg_resume_20261104/bothlong_phase_probe/readahead_candidate/published_state.json",
+          "matched_gitblob": true,
+          "matched_sha256": false
+        },
+        {
+          "capture": "/workspace/scratch/406169dbc070/rg_resume_20261104/bothlong_phase_probe/readahead_candidate/published_state.json",
+          "matched_gitblob": true,
+          "matched_sha256": true
+        }
+      ],
+      "path": ".github/workflows/rg-d1-bothlong-phase-probe-20261104.yml"
+    },
+    {
+      "id": "transport_helper",
+      "kind": "EXISTING_EXACT_SOURCE_PUBLICATION_AND_READBACK_RECORD",
+      "local_sha256": "db9221ee4aa24f77082c98f33588b987531fc77f9f93c49111d31ad12363b0ef",
+      "matches": [
+        {
+          "capture": "/workspace/scratch/406169dbc070/rg_resume_20261104/bothlong_phase_probe/transport_retry_candidate/published_state.json",
+          "matched_gitblob": true,
+          "matched_sha256": true
+        }
+      ],
+      "path": "ci/rg_github_artifacts.py"
+    },
+    {
+      "id": "readahead_diagnostic",
+      "kind": "EXISTING_EXACT_SOURCE_PUBLICATION_AND_READBACK_RECORD",
+      "local_sha256": "153e27cb9d4fc7827986cfcf68a730006c4a587443c632630a5681e6b67c2222",
+      "matches": [
+        {
+          "capture": "/workspace/scratch/406169dbc070/rg_resume_20261104/bothlong_phase_probe/readahead_candidate/published_state.json",
+          "matched_gitblob": true,
+          "matched_sha256": false
+        },
+        {
+          "capture": "/workspace/scratch/406169dbc070/rg_resume_20261104/bothlong_phase_probe/readahead_candidate/published_state.json",
+          "matched_gitblob": true,
+          "matched_sha256": true
+        }
+      ],
+      "path": "ci/rg_owned_proofstore_readahead_20261104.py"
+    },
+    {
+      "capture": "/workspace/scratch/406169dbc070/rg_resume_20261104/bothlong_phase_probe/namespace_repair_root_inventory.json",
+      "exact_identity_match": true,
+      "kind": "EXACT_EXISTING_LEAN_OR_SPEC_CAPTURE",
+      "local_git_blob_sha1": "2857974b18e3c3fd312a9bf607f1f63764bbd22f",
+      "local_sha256": "d789066587ab434e4e11455d5ac5dc7ebebf4ced1f52fd9a6c9bda7d77c718b0",
+      "path": "ci/rg_bothlong_phase_probe_20261104_spec.json"
+    },
+    {
+      "capture": "/workspace/scratch/406169dbc070/rg_resume_20261104/bothlong_phase_probe/namespace_repair_root_inventory.json",
+      "exact_identity_match": true,
+      "kind": "EXACT_EXISTING_LEAN_OR_SPEC_CAPTURE",
+      "local_git_blob_sha1": "2e362500bf0d72f722068d6d5b8e6d58f92c8a70",
+      "local_sha256": "c9fdf87b04ffe6aba30d18028fc01ba84a71ce3251476733e8de1e9393c21b9a",
+      "path": "ci/rg_bothlong_phase_probe_20261104/RGDiagnostic/PhaseMarker.lean"
+    },
+    {
+      "capture": "/workspace/scratch/406169dbc070/rg_resume_20261104/bothlong_phase_probe/namespace_repair_root_inventory.json",
+      "exact_identity_match": true,
+      "kind": "EXACT_EXISTING_LEAN_OR_SPEC_CAPTURE",
+      "local_git_blob_sha1": "c241ef7d2996f113720225972de3d39d0265efb5",
+      "local_sha256": "e1f4204e90c5db6da9eec180725c70739a15ecae4775ce8fd7b75291af452a1e",
+      "path": "ci/rg_bothlong_phase_probe_20261104/control_imports/Proofs/RGDiagnosticImportFixture.lean"
+    },
+    {
+      "capture": "/workspace/scratch/406169dbc070/rg_resume_20261104/bothlong_phase_probe/namespace_repair_root_inventory.json",
+      "exact_identity_match": true,
+      "kind": "EXACT_EXISTING_LEAN_OR_SPEC_CAPTURE",
+      "local_git_blob_sha1": "53a42b0dbfc5529a4e5acd427fb2de2320a33f8a",
+      "local_sha256": "ae28ec600e92d895fffcf929698ab3733d4d72bd7fa324f520da679fb41e2d73",
+      "path": "ci/rg_bothlong_phase_probe_20261104/Proofs/RGDiagnosticMarkerControl.lean"
+    },
+    {
+      "capture": "/workspace/scratch/406169dbc070/rg_resume_20261104/bothlong_phase_probe/namespace_repair_root_inventory.json",
+      "exact_identity_match": true,
+      "kind": "EXACT_EXISTING_LEAN_OR_SPEC_CAPTURE",
+      "local_git_blob_sha1": "0fe39dde8564c2ccc784b1eb9c142affbb0998c9",
+      "local_sha256": "d2a014182a5a8a0cbb4f9cb4f8d7f934f42da361ba53b52cb5a5604800074f02",
+      "path": "ci/rg_bothlong_phase_probe_20261104/Proofs/RadenkovicGutmanD1OriginalSharedBothLongPhaseProbe.lean"
+    },
+    {
+      "capture": "/workspace/scratch/406169dbc070/rg_resume_20261104/final_scope_review/exact_capture_metadata.json",
+      "exact_identity_match": true,
+      "kind": "EXACT_EXISTING_LEAN_OR_SPEC_CAPTURE",
+      "local_git_blob_sha1": "cbed725435836fb449baffb7a9c0bdfab5d4dc91",
+      "local_sha256": "01d60858da8d95431e0240e6c7dbf2c657111fe34dbf3a3e5a115f90797edc06",
+      "path": "Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanD1OriginalSharedBothLong.lean"
+    },
+    {
+      "capture": "/workspace/scratch/406169dbc070/rg_resume_20261104/final_scope_review/exact_capture_metadata.json",
+      "exact_identity_match": true,
+      "kind": "EXACT_EXISTING_LEAN_OR_SPEC_CAPTURE",
+      "local_git_blob_sha1": "807208702fa14b2c3788820b18900b48402a9c40",
+      "local_sha256": "5bf13e2a759e57986dafbdb1937008207169962fc3432303c6e93b485e70ec5f",
+      "path": "Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanOriginalDegreeOneLarge.lean"
+    },
+    {
+      "capture": "/workspace/scratch/406169dbc070/rg_resume_20261104/final_scope_review/exact_capture_metadata.json",
+      "exact_identity_match": true,
+      "kind": "EXACT_EXISTING_LEAN_OR_SPEC_CAPTURE",
+      "local_git_blob_sha1": "96ab5c75cf9b211b7488b54cb9afbe38b1d36418",
+      "local_sha256": "a234c56688628d48232033006c64896a36e3d405a3e8d0a1f559b8bdf9555e65",
+      "path": "Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanRemainingThreeAssembly.lean"
+    }
+  ],
+  "existing_import_copy_changed": false,
+  "frozen_authenticators_changed": false,
+  "local_variant": {
+    "bytes": 3115,
+    "git_blob_sha1": "c2ad2398f99e0a502b07386939d816cfe436e60d",
+    "local_path": "/workspace/scratch/406169dbc070/rg_resume_20261104/integration_validation/ci/rg_github_artifacts.py",
+    "sha256": "1a2070ed6f121e99cb55c40cd571e5c01ab8af006b9cd6896b1a86eeb66d8c53"
+  },
+  "remote_queries": 0,
+  "repository_parent_commit": "10aa67f5f16e8ad00b30ac21332791b008b69cfe",
+  "root_staged_bytes": 479145,
+  "root_staged_files_checked": 22,
+  "scope_limit": "Existing selected exact code publication records, four native helper captures and eight Lean/spec metadata rows were read. This is no new complete remote tree audit. Other fixed schema/manifest entries retain their already-declared pinned digests; no new remote identity is invented.",
+  "status": "EXACT_LOCAL_NEWLINE_VARIANT_CORRECTED_NO_ADDITIONAL_CONCRETE_BYTE_MISMATCH_FOUND",
+  "tests_run": []
+}

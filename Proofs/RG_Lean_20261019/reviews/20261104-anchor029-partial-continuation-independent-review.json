@@ -1,0 +1,101 @@
+{
+  "schema": "rg-anchor029-partial-continuation-independent-review-v1",
+  "status": "NO_CONCRETE_FINDING_IN_STATIC_REPORT_AND_CANDIDATE_REVIEW",
+  "reviewer": "/root/rg_proof_audit",
+  "authenticated_partial_report": {
+    "path": "/workspace/scratch/406169dbc070/rg_resume_20261104/anchor029_preparation/original_anchor029_candidate/actual/original_anchor029_authentication.json",
+    "bytes": 288072,
+    "sha256": "d5189d1fb0493e394d65054c29f1a4ac3a934e84d2e8873172bb758207312783",
+    "status": "ACTUAL_TERMINAL_FAILURE_PARTIAL_ARCHIVE_EVIDENCE_AUTHENTICATED",
+    "native_run_conclusion": "cancelled",
+    "native_job_conclusion": "cancelled",
+    "full_original_receipt_validated": false,
+    "actual_resource_end_report_present": false,
+    "partial_output_bytes_authenticated_by_existing_report": 15631024
+  },
+  "candidate_inventory": {
+    "path": "/workspace/scratch/406169dbc070/rg_resume_20261104/anchor029_preparation/continuation_candidate/publication_inventory.json",
+    "sha256": "1097bda2ba1f03523c479c7d5022c87fe3b767dedf2427a002a019e48039c0a8"
+  },
+  "reviewed_runtime_files": [
+    {
+      "bytes": 6508,
+      "git_blob_sha": "ce4e1f8e0da1fe9cae0d7eded8901371634dc1b8",
+      "path": ".github/workflows/rg-middle-anchor029-partial-resume-20261104.yml",
+      "sha256": "a6d2e2c84ff5d191a06c94f3fbf057cc4b0555e4cb57cd8190992aff311f3145"
+    },
+    {
+      "bytes": 359,
+      "git_blob_sha": "496b57564fc142583001f4cc95aa113d5faeb4c6",
+      "path": "ci/rg_middle_anchor029_partial_resume_restore_plan_20261104.json",
+      "sha256": "5937c30e2f16a6ee9c95cfbc3eb4bfe14e455cc9995a804fbf1446bdbab378ab"
+    },
+    {
+      "bytes": 106724,
+      "git_blob_sha": "3cad3bdf880910dc7c0f8ebbb043f4b261099e9e",
+      "path": "ci/rg_middle_anchor029_run41826563525_partial_prior_exports.json",
+      "sha256": "59b460a03405b69f4889c4e6954f6bf1abc53be3cbf96ed38799fe44abbdbf4f"
+    }
+  ],
+  "continuation_scope_sha256": "b2c7c2b3483d845fa84ff71f7e906cd9dc657a8e73cfc7e09c9d4d09e529a06f",
+  "original_source_graph_sha256": "f48e155c412d5e75a8a2980851506c48e69985a4b4c2c6ba3ea985af27d93540",
+  "confirmed": {
+    "all_108_manifest_rows_exact_JSON_values_from_authenticated_report": true,
+    "actual_native_run_job_head_artifact_and_digest_preserved": true,
+    "cancelled_origin_and_no_completed_endpoint_receipt_preserved": true,
+    "plan_exact_original_four_references_in_original_order_plus_new_manifest": true,
+    "old_361_offered_rows_unchanged": true,
+    "required_original_prior_rows_source_and_closure_match": 118,
+    "new_prior_rows_disjoint_and_dependencies_already_covered": 108,
+    "required_prior_modules": 226,
+    "remaining_fresh_modules": 55,
+    "total_original_endpoint_modules": 281,
+    "extra_diagnostic_priors_outside_endpoint": 243,
+    "predicted_total_diagnostic_prior_rows": 469,
+    "predicted_complete_diagnostic_records": 524,
+    "ordered_inherited_named_profile_occurrences": 545,
+    "ordered_remaining_named_profile_occurrences": 293,
+    "ordered_total_original_named_profile_occurrences": 838,
+    "profile_identity": "Exact ordered declaration occurrences per original module; the same declaration printed in multiple modules remains multiple checks.",
+    "source_and_closure_identity_of_all_163_original_fresh_module_bindings_matches_original_graph": true,
+    "six_declared_workflow_line_changes_reverse_to_exact_original_bytes": true,
+    "limits": {
+      "module_timeout_seconds": 600,
+      "workers": 1,
+      "memory_reserve_mib": 2048,
+      "job_timeout_minutes": 360,
+      "max_fresh": 55,
+      "artifact_retention_days": 90
+    },
+    "all_other_workflow_commands_flags_restore_helpers_source_bundle_and_export_behavior_unchanged": true
+  },
+  "endpoint": {
+    "module": "Proofs.RadenkovicGutmanMiddleOriginalAnchorCertificate029",
+    "source_sha256": "e58c770e5bc70bcf7a5ad5529af7a3586dd704ea953d5b320dfb0513f79a83dc",
+    "source_closure_sha256": "31ca493f64f395a899702cb7b8297628f69d30119a97f5769fb179acd16cf0b5"
+  },
+  "remaining_module_categories": {
+    "batches": 6,
+    "cells": 46,
+    "final_heads": 3
+  },
+  "limitations": [
+    "This is a review of the fixed authenticated partial report and static candidate, not a second ZIP authentication.",
+    "The 226+55 frontier remains a static prediction until the unchanged native preflight and kernel receipt validate it.",
+    "The original cancelled run supplies completed individual objects, not a successful full endpoint receipt.",
+    "A continuation success requires separately authenticated native success, exact 281 receipt, all 55 new object bytes and 293 named profile occurrences, plus preservation of the 118+108 original origins.",
+    "The unchanged 360-minute cap does not guarantee that all 55 modules will complete.",
+    "Anchor029 alone does not close degreeOneMiddle or the global RG theorem; four original families remain without a separate complete Large result.",
+    "Root still owns publication-base selection, source-byte confirmation and actual launch."
+  ],
+  "performed": {
+    "report_and_static_candidate_reads": true,
+    "ZIP_reads_or_downloads": false,
+    "authenticator_or_preparer_rerun": false,
+    "Lean_or_native_preflight_execution": false,
+    "optional_test_suite": false,
+    "remote_mutations": false
+  },
+  "production_sources_or_candidate_files_modified": false,
+  "new_proof_or_family_success_claim": false
+}

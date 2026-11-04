@@ -1,0 +1,83 @@
+{
+  "actual_authenticator_executed": false,
+  "actual_functions_guarded_at_entry": [
+    "native_metadata",
+    "validate_archive",
+    "authenticate"
+  ],
+  "actual_guard_before_actual_file_access": true,
+  "added_functions": [
+    "expected_complete_archive_members",
+    "producer_evidence",
+    "require_actual_binding"
+  ],
+  "artifact_zip_read": false,
+  "authenticator_bytes": 50872,
+  "authenticator_path": "/workspace/scratch/406169dbc070/rg_resume_20261104/anchor029_preparation/continuation_candidate/authenticate_anchor029_continuation.py",
+  "authenticator_sha256": "c6daf0e8b0efd773438de888d1fd6952930c0810b8f74dd87cead16793501007",
+  "base_authenticator_path": "/workspace/scratch/406169dbc070/rg_resume_20261104/anchor029_preparation/original_anchor029_candidate/authenticate_original_anchor029.py",
+  "base_authenticator_sha256": "42443d8649ed3cd5ca7fc73b80f35a6d73c73fed3f80ebef430f677132ca548c",
+  "base_authenticator_unchanged": true,
+  "complete_scope_contract": {
+    "complete_diagnostic_rows": 524,
+    "diagnostic_prior_rows": 469,
+    "full_success_zip_scope": "Derived from exact281 original source members, exact55 triples and4 exact metadata members by expected_complete_archive_members",
+    "inherited_ordered_named_checks": 545,
+    "job_timeout_minutes": 360,
+    "memory_reserve_mib": 2048,
+    "module_timeout_seconds": 600,
+    "new_fresh_modules": 55,
+    "new_ordered_named_checks": 293,
+    "original_ordered_named_checks": 838,
+    "prior_modules": 226,
+    "required_modules": 281,
+    "worker_count": 1
+  },
+  "continuation_scope_sha256": "b2c7c2b3483d845fa84ff71f7e906cd9dc657a8e73cfc7e09c9d4d09e529a06f",
+  "delta_path": "/workspace/scratch/406169dbc070/rg_resume_20261104/anchor029_preparation/continuation_candidate/authenticator_changes.diff",
+  "delta_sha256": "d104ddda5d032670c5ab11d2d71856b42c6414b50ce2ba1fd0c75206e2751113",
+  "endpoint_success_claimed": false,
+  "fixed_context_executed": false,
+  "global_rg_success_claimed": false,
+  "imports_unchanged": true,
+  "kind": "UNBOUND_STANDALONE_CONTINUATION_AUTHENTICATOR_STATIC_REVIEW",
+  "middle_family_success_claimed": false,
+  "modified_functions": [
+    "authenticate",
+    "fixed_context",
+    "main",
+    "native_metadata",
+    "validate_archive"
+  ],
+  "native_bindings": {
+    "ATTEMPT": 1,
+    "COMMIT": null,
+    "JOB": null,
+    "JOB_NAME": null,
+    "RUN": null
+  },
+  "producer_authentication_report_sha256": "d5189d1fb0493e394d65054c29f1a4ac3a934e84d2e8873172bb758207312783",
+  "production_candidate_unchanged": true,
+  "publication_inventory_sha256": "1097bda2ba1f03523c479c7d5022c87fe3b767dedf2427a002a019e48039c0a8",
+  "root_confirmed_publication_base_commit": "5b7bd43a9f3ca170b19450dd4f34fe9d12bbba90",
+  "root_confirmed_publication_base_tree": "d3ca0b20c0713221373d19b0d430ef744f42bfa5",
+  "standalone_no_original_authenticator_import": true,
+  "syntax_compiled_without_execution": true,
+  "unchanged_original_functions": [
+    "bound",
+    "decode",
+    "expected_named_declarations",
+    "file_sha",
+    "git_blob",
+    "log_payloads",
+    "origin",
+    "profiles_from_log",
+    "require",
+    "sha",
+    "source_graph",
+    "table",
+    "unique",
+    "validate_resource",
+    "validate_source_bundle"
+  ]
+}

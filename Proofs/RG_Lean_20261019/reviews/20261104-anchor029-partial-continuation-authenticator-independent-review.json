@@ -1,0 +1,135 @@
+{
+  "schema": "rg-anchor029-continuation-independent-authenticator-review-v1",
+  "status": "NO_CONCRETE_FINDING_IN_READ_ONLY_CODE_REVIEW",
+  "reviewer": "/root/rg_proof_audit",
+  "reviewed_program": {
+    "path": "/workspace/scratch/406169dbc070/rg_resume_20261104/anchor029_preparation/continuation_candidate/authenticate_anchor029_continuation.py",
+    "bytes": 50872,
+    "sha256": "c6daf0e8b0efd773438de888d1fd6952930c0810b8f74dd87cead16793501007"
+  },
+  "preserved_parent": {
+    "path": "/workspace/scratch/406169dbc070/rg_resume_20261104/anchor029_preparation/original_anchor029_candidate/authenticate_original_anchor029.py",
+    "bytes": 36136,
+    "sha256": "42443d8649ed3cd5ca7fc73b80f35a6d73c73fed3f80ebef430f677132ca548c"
+  },
+  "bound_review_inputs": {
+    "continuation_authenticator_inventory.json": {
+      "bytes": 3233,
+      "sha256": "eb9f48c0e520d2b34a1117427f4ee21b1c593d53b26180a65a852f60e2803469"
+    },
+    "authenticator_changes.diff": {
+      "bytes": 31328,
+      "sha256": "d104ddda5d032670c5ab11d2d71856b42c6414b50ce2ba1fd0c75206e2751113"
+    },
+    "publication_inventory.json": {
+      "bytes": 2004,
+      "sha256": "1097bda2ba1f03523c479c7d5022c87fe3b767dedf2427a002a019e48039c0a8"
+    },
+    "continuation_scope.json": {
+      "bytes": 300305,
+      "sha256": "b2c7c2b3483d845fa84ff71f7e906cd9dc657a8e73cfc7e09c9d4d09e529a06f"
+    },
+    "independent_candidate_review.json": {
+      "bytes": 5386,
+      "sha256": "b1ad1af5277858406c103271be2bfee689de7979f701d850e68a52d70c9c2d63"
+    }
+  },
+  "reviewed_paths": [
+    "All new producer_evidence and require_actual_binding code",
+    "Entire modified fixed_context, native_metadata, validate_archive, authenticate and main",
+    "Derived complete ZIP scope and original unchanged source/profile/resource validation calls"
+  ],
+  "confirmed": {
+    "native_RUN_JOB_COMMIT_JOB_NAME_unbound": true,
+    "main_rejects_unbound_before_new_actual_paths_are_read_or_created": true,
+    "direct_actual_entrypoints_guarded": [
+      "native_metadata",
+      "validate_archive",
+      "authenticate"
+    ],
+    "fixed_context_mode_is_separate_and_not_a_kernel_or_archive_success": true,
+    "standalone_copy_without_old_authenticator_import_or_global_override": true,
+    "producer_report_digest": "d5189d1fb0493e394d65054c29f1a4ac3a934e84d2e8873172bb758207312783",
+    "producer_origin": {
+      "run": 41826563525,
+      "job": 126562666235,
+      "source_commit": "5b7bd43a9f3ca170b19450dd4f34fe9d12bbba90",
+      "artifact_id": 13351145439,
+      "artifact_sha256": "11c263c3f06adca05f4810ed1d410221f6e2d4b1a479dcf8b731f435d5b98fd5",
+      "whole_job_conclusion": "cancelled",
+      "completed_endpoint_receipt": false
+    },
+    "all_108_authenticated_original_rows_and_545_ordered_profiles_preserved": true,
+    "old_118_required_prior_origins_unchanged": true,
+    "full_original_source_and_recursive_closure": 281,
+    "receipt_prior": 226,
+    "receipt_fresh": 55,
+    "diagnostic_prior": 469,
+    "diagnostic_fresh": 55,
+    "complete_diagnostic_rows": 524,
+    "fresh_named_profile_occurrences": 293,
+    "inherited_named_profile_occurrences": 545,
+    "original_ordered_module_bound_profile_occurrences": 838,
+    "complete_success_member_set_derived_from_exact_sources_and_fresh_modules": 450,
+    "complete_success_requires_native_success_full_receipt_new_output_bytes_logs_source_bundle_and_resource_success": true,
+    "gates": {
+      "workers": 1,
+      "module_timeout_seconds": 600,
+      "memory_reserve_mib": 2048,
+      "job_timeout_minutes": 360
+    },
+    "failed_or_incomplete_evidence_cannot_set_success_claim": true,
+    "middle_and_global_family_claims_always_false": true
+  },
+  "static_code_comparison": {
+    "unchanged_original_functions": [
+      "bound",
+      "decode",
+      "expected_named_declarations",
+      "file_sha",
+      "git_blob",
+      "log_payloads",
+      "origin",
+      "profiles_from_log",
+      "require",
+      "sha",
+      "source_graph",
+      "table",
+      "unique",
+      "validate_resource",
+      "validate_source_bundle"
+    ],
+    "modified_original_functions": [
+      "authenticate",
+      "fixed_context",
+      "main",
+      "native_metadata",
+      "validate_archive"
+    ],
+    "added_functions": [
+      "expected_complete_archive_members",
+      "producer_evidence",
+      "require_actual_binding"
+    ],
+    "imports_identical": true,
+    "syntax_read_via_ast_only": true
+  },
+  "limitations": [
+    "This review is not a new execution of fixed_context, either authenticator or any kernel check.",
+    "The new run/job/commit/exact matrix job name must be bound to real native captures before actual evidence can be authenticated.",
+    "The original 108 producer objects are reused through the hash-bound actual partial authentication, not rehashed by this review or relabelled as new exports.",
+    "The 450-member full-success archive shape is a source-derived expectation, not an observation of a new archive.",
+    "A complete Anchor029 endpoint remains distinct from a degreeOneMiddle or global RG proof."
+  ],
+  "performed": {
+    "read_only_source_and_delta_review": true,
+    "AST_definition_comparison": true,
+    "new_fixed_context_execution": false,
+    "full_authenticator_execution": false,
+    "ZIP_read": false,
+    "native_call": false,
+    "test_execution": false,
+    "remote_mutation": false,
+    "production_code_or_candidate_edit": false
+  }
+}

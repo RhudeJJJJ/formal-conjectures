@@ -1,0 +1,2614 @@
+{
+  "all_olean_part_address_observations": {
+    "attempts": 42748,
+    "failed": 20,
+    "successful": 42728,
+    "successful_exact_address_matches": 42728,
+    "successful_unequal_address_records": []
+  },
+  "archive": {
+    "bytes": 8366998,
+    "path": "/workspace/scratch/406169dbc070/rg_resume_20261104/bothlong_phase_probe/mmap_retry_actual/diagnostic.zip",
+    "sha256": "08a7b217c4b19acd3e5bf332f5d3e7331a566ef51c75361d47ac9b83f7b221fa"
+  },
+  "cases": [
+    {
+      "bound_original_export": {
+        "module": "Proofs.RadenkovicGutmanD1Long00Leaf00462",
+        "output_sha256": "00d7dca922351c0e738403add3e42d3d71afc0fa387e9991138b213f3ce78840",
+        "selected_transport_artifact_id": 13292968015,
+        "selected_transport_artifact_sha256": "980e09e057a7c56fdeb190dd89f93e2f3915297d6a39d9a7bebaabae7af60d6c",
+        "source_closure_sha256": "8fbae458d568ab82a00bdb951064520fb71c839d7eb08523d9b39f6c9e8369e3",
+        "source_sha256": "7e4d1ecece4518c1303909fcbc4f3ccd5ec14a847454cc0cbbef1757e6af5366"
+      },
+      "error_relative_to_first_printed_trace_timestamp_seconds": "22.236694",
+      "failed_mapping": {
+        "exact_file_path": "/home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf00462.olean",
+        "fd": 11,
+        "file_offset": "0",
+        "flags": "MAP_PRIVATE|MAP_FIXED_NOREPLACE",
+        "length_bytes": 47476648,
+        "printed_syscall_duration_seconds": "0.000026",
+        "printed_unix_timestamp": "1793808766.103729",
+        "protections": "PROT_READ|PROT_WRITE",
+        "raw_line": "4490  1793808766.103729 mmap(0x77c8a6250000, 47476648, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf00462.olean>, 0) = -1 EEXIST (File exists) <0.000026>",
+        "raw_line_number": 29936,
+        "requested_address": "0x77c8a6250000",
+        "result": "-1 EEXIST (File exists)",
+        "trace_pid_or_tid": 4490
+      },
+      "intervening_anonymous_mmap_observations": [
+        {
+          "exact_file_path": null,
+          "fd": -1,
+          "file_offset": "0",
+          "flags": "MAP_PRIVATE|MAP_ANONYMOUS",
+          "length_bytes": 47476736,
+          "printed_syscall_duration_seconds": "0.000022",
+          "printed_unix_timestamp": "1793808766.103806",
+          "protections": "PROT_READ|PROT_WRITE",
+          "raw_line": "4490  1793808766.103806 mmap(NULL, 47476736, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f31b12b8000 <0.000022>",
+          "raw_line_number": 29937,
+          "requested_address": "NULL",
+          "result": "0x7f31b12b8000",
+          "trace_pid_or_tid": 4490
+        }
+      ],
+      "nearby_raw_lines": [
+        {
+          "line": 29935,
+          "text": "4490  1793808766.100795 mmap(0x263cdc000000, 49096504, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf00461.olean>, 0) = 0x263cdc000000 <0.000020>"
+        },
+        {
+          "line": 29936,
+          "text": "4490  1793808766.103729 mmap(0x77c8a6250000, 47476648, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf00462.olean>, 0) = -1 EEXIST (File exists) <0.000026>"
+        },
+        {
+          "line": 29937,
+          "text": "4490  1793808766.103806 mmap(NULL, 47476736, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f31b12b8000 <0.000022>"
+        },
+        {
+          "line": 29938,
+          "text": "4490  1793808766.154655 mmap(0x7b0f4f3e0000, 49092424, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf00463.olean>, 0) = 0x7b0f4f3e0000 <0.000035>"
+        },
+        {
+          "line": 29939,
+          "text": "4490  1793808766.158196 mmap(0x387cd02b0000, 47413392, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf00464.olean>, 0) = 0x387cd02b0000 <0.000024>"
+        }
+      ],
+      "next_file_mapping": {
+        "exact_file_path": "/home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf00463.olean",
+        "fd": 11,
+        "file_offset": "0",
+        "flags": "MAP_PRIVATE|MAP_FIXED_NOREPLACE",
+        "length_bytes": 49092424,
+        "printed_syscall_duration_seconds": "0.000035",
+        "printed_unix_timestamp": "1793808766.154655",
+        "protections": "PROT_READ|PROT_WRITE",
+        "raw_line": "4490  1793808766.154655 mmap(0x7b0f4f3e0000, 49092424, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf00463.olean>, 0) = 0x7b0f4f3e0000 <0.000035>",
+        "raw_line_number": 29938,
+        "requested_address": "0x7b0f4f3e0000",
+        "result": "0x7b0f4f3e0000",
+        "trace_pid_or_tid": 4490
+      },
+      "previous_byte_overlapping_successful_file_mappings": [
+        {
+          "intervening_overlapping_successful_munmaps": [],
+          "intervening_overwriting_map_fixed_calls": [],
+          "mapping": {
+            "exact_file_path": "/home/runner/work/formal-conjectures/formal-conjectures/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Tactic/StacksAttribute.ir.sig",
+            "fd": 11,
+            "file_offset": "0",
+            "flags": "MAP_PRIVATE|MAP_FIXED_NOREPLACE",
+            "length_bytes": 176,
+            "printed_syscall_duration_seconds": "0.000023",
+            "printed_unix_timestamp": "1793808762.669820",
+            "protections": "PROT_READ|PROT_WRITE",
+            "raw_line": "4490  1793808762.669820 mmap(0x77c8a74b0000, 176, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Tactic/StacksAttribute.ir.sig>, 0) = 0x77c8a74b0000 <0.000023>",
+            "raw_line_number": 26599,
+            "requested_address": "0x77c8a74b0000",
+            "result": "0x77c8a74b0000",
+            "trace_pid_or_tid": 4490
+          },
+          "unrounded_requested_byte_overlap": 176
+        },
+        {
+          "intervening_overlapping_successful_munmaps": [],
+          "intervening_overwriting_map_fixed_calls": [],
+          "mapping": {
+            "exact_file_path": "/home/runner/work/formal-conjectures/formal-conjectures/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Tactic/StacksAttribute.ir",
+            "fd": 11,
+            "file_offset": "0",
+            "flags": "MAP_PRIVATE|MAP_FIXED_NOREPLACE",
+            "length_bytes": 1504,
+            "printed_syscall_duration_seconds": "0.000017",
+            "printed_unix_timestamp": "1793808762.670114",
+            "protections": "PROT_READ|PROT_WRITE",
+            "raw_line": "4490  1793808762.670114 mmap(0x77c8a74c0000, 1504, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Tactic/StacksAttribute.ir>, 0) = 0x77c8a74c0000 <0.000017>",
+            "raw_line_number": 26600,
+            "requested_address": "0x77c8a74c0000",
+            "result": "0x77c8a74c0000",
+            "trace_pid_or_tid": 4490
+          },
+          "unrounded_requested_byte_overlap": 1504
+        }
+      ],
+      "previous_file_mapping": {
+        "exact_file_path": "/home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf00461.olean",
+        "fd": 11,
+        "file_offset": "0",
+        "flags": "MAP_PRIVATE|MAP_FIXED_NOREPLACE",
+        "length_bytes": 49096504,
+        "printed_syscall_duration_seconds": "0.000020",
+        "printed_unix_timestamp": "1793808766.100795",
+        "protections": "PROT_READ|PROT_WRITE",
+        "raw_line": "4490  1793808766.100795 mmap(0x263cdc000000, 49096504, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf00461.olean>, 0) = 0x263cdc000000 <0.000020>",
+        "raw_line_number": 29935,
+        "requested_address": "0x263cdc000000",
+        "result": "0x263cdc000000",
+        "trace_pid_or_tid": 4490
+      },
+      "printed_time_gap_to_next_file_mmap_seconds": "0.050926"
+    },
+    {
+      "bound_original_export": {
+        "module": "Proofs.RadenkovicGutmanD1Long00Leaf00772",
+        "output_sha256": "0747e0e639c0f86da8297237dd81b30a5293e152c909b998406f7ce18756ae8f",
+        "selected_transport_artifact_id": 13267780550,
+        "selected_transport_artifact_sha256": "448cc44adb1ad24990def52fb327eb9f10790f21b8d99d9fac635659e53b1df1",
+        "source_closure_sha256": "9a861d21eb34828d329d116163157fadf80ca505338288ec11aaa9dc889e3878",
+        "source_sha256": "e50cc8548bcd75576b945d8149d26bd9ce807803962c3d1e9be564bb16e0cdde"
+      },
+      "error_relative_to_first_printed_trace_timestamp_seconds": "23.247335",
+      "failed_mapping": {
+        "exact_file_path": "/home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf00772.olean",
+        "fd": 11,
+        "file_offset": "0",
+        "flags": "MAP_PRIVATE|MAP_FIXED_NOREPLACE",
+        "length_bytes": 47099408,
+        "printed_syscall_duration_seconds": "0.000016",
+        "printed_unix_timestamp": "1793808767.114370",
+        "protections": "PROT_READ|PROT_WRITE",
+        "raw_line": "4490  1793808767.114370 mmap(0x632e02c80000, 47099408, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf00772.olean>, 0) = -1 EEXIST (File exists) <0.000016>",
+        "raw_line_number": 30265,
+        "requested_address": "0x632e02c80000",
+        "result": "-1 EEXIST (File exists)",
+        "trace_pid_or_tid": 4490
+      },
+      "intervening_anonymous_mmap_observations": [
+        {
+          "exact_file_path": null,
+          "fd": -1,
+          "file_offset": "0",
+          "flags": "MAP_PRIVATE|MAP_ANONYMOUS",
+          "length_bytes": 47099904,
+          "printed_syscall_duration_seconds": "0.000021",
+          "printed_unix_timestamp": "1793808767.114429",
+          "protections": "PROT_READ|PROT_WRITE",
+          "raw_line": "4490  1793808767.114429 mmap(NULL, 47099904, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f3169314000 <0.000021>",
+          "raw_line_number": 30266,
+          "requested_address": "NULL",
+          "result": "0x7f3169314000",
+          "trace_pid_or_tid": 4490
+        }
+      ],
+      "nearby_raw_lines": [
+        {
+          "line": 30264,
+          "text": "4490  1793808767.111534 mmap(0x6a57f85a0000, 48755912, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf00771.olean>, 0) = 0x6a57f85a0000 <0.000020>"
+        },
+        {
+          "line": 30265,
+          "text": "4490  1793808767.114370 mmap(0x632e02c80000, 47099408, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf00772.olean>, 0) = -1 EEXIST (File exists) <0.000016>"
+        },
+        {
+          "line": 30266,
+          "text": "4490  1793808767.114429 mmap(NULL, 47099904, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f3169314000 <0.000021>"
+        },
+        {
+          "line": 30267,
+          "text": "4490  1793808767.162473 mmap(0x55d7a04c0000, 48739336, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf00773.olean>, 0) = 0x55d7a04c0000 <0.000031>"
+        },
+        {
+          "line": 30268,
+          "text": "4490  1793808767.165594 mmap(0x79e802cb0000, 47083056, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf00774.olean>, 0) = 0x79e802cb0000 <0.000027>"
+        }
+      ],
+      "next_file_mapping": {
+        "exact_file_path": "/home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf00773.olean",
+        "fd": 11,
+        "file_offset": "0",
+        "flags": "MAP_PRIVATE|MAP_FIXED_NOREPLACE",
+        "length_bytes": 48739336,
+        "printed_syscall_duration_seconds": "0.000031",
+        "printed_unix_timestamp": "1793808767.162473",
+        "protections": "PROT_READ|PROT_WRITE",
+        "raw_line": "4490  1793808767.162473 mmap(0x55d7a04c0000, 48739336, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf00773.olean>, 0) = 0x55d7a04c0000 <0.000031>",
+        "raw_line_number": 30267,
+        "requested_address": "0x55d7a04c0000",
+        "result": "0x55d7a04c0000",
+        "trace_pid_or_tid": 4490
+      },
+      "previous_byte_overlapping_successful_file_mappings": [
+        {
+          "intervening_overlapping_successful_munmaps": [],
+          "intervening_overwriting_map_fixed_calls": [],
+          "mapping": {
+            "exact_file_path": "/home/runner/work/formal-conjectures/formal-conjectures/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/Convex/SpecificFunctions/Basic.olean",
+            "fd": 11,
+            "file_offset": "0",
+            "flags": "MAP_PRIVATE|MAP_FIXED_NOREPLACE",
+            "length_bytes": 21968,
+            "printed_syscall_duration_seconds": "0.000018",
+            "printed_unix_timestamp": "1793808762.919266",
+            "protections": "PROT_READ|PROT_WRITE",
+            "raw_line": "4490  1793808762.919266 mmap(0x632e04750000, 21968, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/Convex/SpecificFunctions/Basic.olean>, 0) = 0x632e04750000 <0.000018>",
+            "raw_line_number": 26945,
+            "requested_address": "0x632e04750000",
+            "result": "0x632e04750000",
+            "trace_pid_or_tid": 4490
+          },
+          "unrounded_requested_byte_overlap": 21968
+        },
+        {
+          "intervening_overlapping_successful_munmaps": [],
+          "intervening_overwriting_map_fixed_calls": [],
+          "mapping": {
+            "exact_file_path": "/home/runner/work/formal-conjectures/formal-conjectures/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/Convex/SpecificFunctions/Basic.olean.server",
+            "fd": 11,
+            "file_offset": "0",
+            "flags": "MAP_PRIVATE|MAP_FIXED_NOREPLACE",
+            "length_bytes": 6120,
+            "printed_syscall_duration_seconds": "0.000018",
+            "printed_unix_timestamp": "1793808762.919712",
+            "protections": "PROT_READ|PROT_WRITE",
+            "raw_line": "4490  1793808762.919712 mmap(0x632e04760000, 6120, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/Convex/SpecificFunctions/Basic.olean.server>, 0) = 0x632e04760000 <0.000018>",
+            "raw_line_number": 26946,
+            "requested_address": "0x632e04760000",
+            "result": "0x632e04760000",
+            "trace_pid_or_tid": 4490
+          },
+          "unrounded_requested_byte_overlap": 6120
+        },
+        {
+          "intervening_overlapping_successful_munmaps": [],
+          "intervening_overwriting_map_fixed_calls": [],
+          "mapping": {
+            "exact_file_path": "/home/runner/work/formal-conjectures/formal-conjectures/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/Convex/SpecificFunctions/Basic.olean.private",
+            "fd": 11,
+            "file_offset": "0",
+            "flags": "MAP_PRIVATE|MAP_FIXED_NOREPLACE",
+            "length_bytes": 513696,
+            "printed_syscall_duration_seconds": "0.000016",
+            "printed_unix_timestamp": "1793808762.920052",
+            "protections": "PROT_READ|PROT_WRITE",
+            "raw_line": "4490  1793808762.920052 mmap(0x632e04770000, 513696, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/Convex/SpecificFunctions/Basic.olean.private>, 0) = 0x632e04770000 <0.000016>",
+            "raw_line_number": 26947,
+            "requested_address": "0x632e04770000",
+            "result": "0x632e04770000",
+            "trace_pid_or_tid": 4490
+          },
+          "unrounded_requested_byte_overlap": 513696
+        }
+      ],
+      "previous_file_mapping": {
+        "exact_file_path": "/home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf00771.olean",
+        "fd": 11,
+        "file_offset": "0",
+        "flags": "MAP_PRIVATE|MAP_FIXED_NOREPLACE",
+        "length_bytes": 48755912,
+        "printed_syscall_duration_seconds": "0.000020",
+        "printed_unix_timestamp": "1793808767.111534",
+        "protections": "PROT_READ|PROT_WRITE",
+        "raw_line": "4490  1793808767.111534 mmap(0x6a57f85a0000, 48755912, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf00771.olean>, 0) = 0x6a57f85a0000 <0.000020>",
+        "raw_line_number": 30264,
+        "requested_address": "0x6a57f85a0000",
+        "result": "0x6a57f85a0000",
+        "trace_pid_or_tid": 4490
+      },
+      "printed_time_gap_to_next_file_mmap_seconds": "0.048103"
+    },
+    {
+      "bound_original_export": {
+        "module": "Proofs.RadenkovicGutmanD1Long00Leaf00856",
+        "output_sha256": "85867c0f8db1844e07bdd61d85e20abdec43684a9826a17fccafa41b5e4e1091",
+        "selected_transport_artifact_id": 13290022064,
+        "selected_transport_artifact_sha256": "8d79cb9fd48c520080878cf64dd5d6ca6b98787265badd8369f24aa519f2fae1",
+        "source_closure_sha256": "507cd8def0f7b228e55682d269bd3be418acdc06f3c578d1c9d89bbf95c5f14a",
+        "source_sha256": "408503910fd9e941e4cb9859e38ca32a2e8e6c29a7aaba00da046f408608c3b7"
+      },
+      "error_relative_to_first_printed_trace_timestamp_seconds": "23.543914",
+      "failed_mapping": {
+        "exact_file_path": "/home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf00856.olean",
+        "fd": 11,
+        "file_offset": "0",
+        "flags": "MAP_PRIVATE|MAP_FIXED_NOREPLACE",
+        "length_bytes": 48814208,
+        "printed_syscall_duration_seconds": "0.000019",
+        "printed_unix_timestamp": "1793808767.410949",
+        "protections": "PROT_READ|PROT_WRITE",
+        "raw_line": "4490  1793808767.410949 mmap(0x63f219260000, 48814208, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf00856.olean>, 0) = -1 EEXIST (File exists) <0.000019>",
+        "raw_line_number": 30355,
+        "requested_address": "0x63f219260000",
+        "result": "-1 EEXIST (File exists)",
+        "trace_pid_or_tid": 4490
+      },
+      "intervening_anonymous_mmap_observations": [
+        {
+          "exact_file_path": null,
+          "fd": -1,
+          "file_offset": "0",
+          "flags": "MAP_PRIVATE|MAP_ANONYMOUS",
+          "length_bytes": 48816128,
+          "printed_syscall_duration_seconds": "0.000023",
+          "printed_unix_timestamp": "1793808767.411015",
+          "protections": "PROT_READ|PROT_WRITE",
+          "raw_line": "4490  1793808767.411015 mmap(NULL, 48816128, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f3161172000 <0.000023>",
+          "raw_line_number": 30356,
+          "requested_address": "NULL",
+          "result": "0x7f3161172000",
+          "trace_pid_or_tid": 4490
+        }
+      ],
+      "nearby_raw_lines": [
+        {
+          "line": 30354,
+          "text": "4490  1793808767.408021 mmap(0x17e2e4cf0000, 47155216, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf00855.olean>, 0) = 0x17e2e4cf0000 <0.000023>"
+        },
+        {
+          "line": 30355,
+          "text": "4490  1793808767.410949 mmap(0x63f219260000, 48814208, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf00856.olean>, 0) = -1 EEXIST (File exists) <0.000019>"
+        },
+        {
+          "line": 30356,
+          "text": "4490  1793808767.411015 mmap(NULL, 48816128, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f3161172000 <0.000023>"
+        },
+        {
+          "line": 30357,
+          "text": "4490  1793808767.460634 mmap(0x520b353e0000, 47136248, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf00857.olean>, 0) = 0x520b353e0000 <0.000032>"
+        },
+        {
+          "line": 30358,
+          "text": "4490  1793808767.463565 mmap(0x1960598d0000, 48802200, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf00858.olean>, 0) = 0x1960598d0000 <0.000038>"
+        }
+      ],
+      "next_file_mapping": {
+        "exact_file_path": "/home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf00857.olean",
+        "fd": 11,
+        "file_offset": "0",
+        "flags": "MAP_PRIVATE|MAP_FIXED_NOREPLACE",
+        "length_bytes": 47136248,
+        "printed_syscall_duration_seconds": "0.000032",
+        "printed_unix_timestamp": "1793808767.460634",
+        "protections": "PROT_READ|PROT_WRITE",
+        "raw_line": "4490  1793808767.460634 mmap(0x520b353e0000, 47136248, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf00857.olean>, 0) = 0x520b353e0000 <0.000032>",
+        "raw_line_number": 30357,
+        "requested_address": "0x520b353e0000",
+        "result": "0x520b353e0000",
+        "trace_pid_or_tid": 4490
+      },
+      "previous_byte_overlapping_successful_file_mappings": [
+        {
+          "intervening_overlapping_successful_munmaps": [],
+          "intervening_overwriting_map_fixed_calls": [],
+          "mapping": {
+            "exact_file_path": "/home/runner/.elan/toolchains/leanprover--lean4---v4.33.1/lib/lean/Lean/Elab/ConfigEval/Instances.ir.sig",
+            "fd": 11,
+            "file_offset": "0",
+            "flags": "MAP_PRIVATE|MAP_FIXED_NOREPLACE",
+            "length_bytes": 176,
+            "printed_syscall_duration_seconds": "0.000024",
+            "printed_unix_timestamp": "1793808747.589280",
+            "protections": "PROT_READ|PROT_WRITE",
+            "raw_line": "4490  1793808747.589280 mmap(0x63f21bdb0000, 176, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/.elan/toolchains/leanprover--lean4---v4.33.1/lib/lean/Lean/Elab/ConfigEval/Instances.ir.sig>, 0) = 0x63f21bdb0000 <0.000024>",
+            "raw_line_number": 6403,
+            "requested_address": "0x63f21bdb0000",
+            "result": "0x63f21bdb0000",
+            "trace_pid_or_tid": 4490
+          },
+          "unrounded_requested_byte_overlap": 176
+        },
+        {
+          "intervening_overlapping_successful_munmaps": [],
+          "intervening_overwriting_map_fixed_calls": [],
+          "mapping": {
+            "exact_file_path": "/home/runner/.elan/toolchains/leanprover--lean4---v4.33.1/lib/lean/Lean/Elab/ConfigEval/Instances.ir",
+            "fd": 11,
+            "file_offset": "0",
+            "flags": "MAP_PRIVATE|MAP_FIXED_NOREPLACE",
+            "length_bytes": 396232,
+            "printed_syscall_duration_seconds": "0.000020",
+            "printed_unix_timestamp": "1793808747.589661",
+            "protections": "PROT_READ|PROT_WRITE",
+            "raw_line": "4490  1793808747.589661 mmap(0x63f21bdc0000, 396232, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/.elan/toolchains/leanprover--lean4---v4.33.1/lib/lean/Lean/Elab/ConfigEval/Instances.ir>, 0) = 0x63f21bdc0000 <0.000020>",
+            "raw_line_number": 6404,
+            "requested_address": "0x63f21bdc0000",
+            "result": "0x63f21bdc0000",
+            "trace_pid_or_tid": 4490
+          },
+          "unrounded_requested_byte_overlap": 396232
+        }
+      ],
+      "previous_file_mapping": {
+        "exact_file_path": "/home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf00855.olean",
+        "fd": 11,
+        "file_offset": "0",
+        "flags": "MAP_PRIVATE|MAP_FIXED_NOREPLACE",
+        "length_bytes": 47155216,
+        "printed_syscall_duration_seconds": "0.000023",
+        "printed_unix_timestamp": "1793808767.408021",
+        "protections": "PROT_READ|PROT_WRITE",
+        "raw_line": "4490  1793808767.408021 mmap(0x17e2e4cf0000, 47155216, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf00855.olean>, 0) = 0x17e2e4cf0000 <0.000023>",
+        "raw_line_number": 30354,
+        "requested_address": "0x17e2e4cf0000",
+        "result": "0x17e2e4cf0000",
+        "trace_pid_or_tid": 4490
+      },
+      "printed_time_gap_to_next_file_mmap_seconds": "0.049685"
+    },
+    {
+      "bound_original_export": {
+        "module": "Proofs.RadenkovicGutmanD1Long00Leaf01096",
+        "output_sha256": "dd7b91be470ae2a4c6d5e3cd598b2eae00fcbcbd4a737dea469fb351b3593e25",
+        "selected_transport_artifact_id": 13276404389,
+        "selected_transport_artifact_sha256": "c1b3dbb6e42a83d9b098d432b6fe70e593457f5eb76cf00ff8d1099fb3ad0459",
+        "source_closure_sha256": "55449ba7a1713d79e335e83c7821f712adc1ab329485beb45e44f547fa844152",
+        "source_sha256": "45a7fc612f4b49db8fb9c38870919fe36996b73d61660ee14ce7b19b8b3c5eac"
+      },
+      "error_relative_to_first_printed_trace_timestamp_seconds": "24.338932",
+      "failed_mapping": {
+        "exact_file_path": "/home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01096.olean",
+        "fd": 11,
+        "file_offset": "0",
+        "flags": "MAP_PRIVATE|MAP_FIXED_NOREPLACE",
+        "length_bytes": 56617688,
+        "printed_syscall_duration_seconds": "0.000019",
+        "printed_unix_timestamp": "1793808768.205967",
+        "protections": "PROT_READ|PROT_WRITE",
+        "raw_line": "4490  1793808768.205967 mmap(0x59b6f8fa0000, 56617688, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01096.olean>, 0) = -1 EEXIST (File exists) <0.000019>",
+        "raw_line_number": 30610,
+        "requested_address": "0x59b6f8fa0000",
+        "result": "-1 EEXIST (File exists)",
+        "trace_pid_or_tid": 4490
+      },
+      "intervening_anonymous_mmap_observations": [
+        {
+          "exact_file_path": null,
+          "fd": -1,
+          "file_offset": "0",
+          "flags": "MAP_PRIVATE|MAP_ANONYMOUS",
+          "length_bytes": 56619008,
+          "printed_syscall_duration_seconds": "0.000023",
+          "printed_unix_timestamp": "1793808768.206037",
+          "protections": "PROT_READ|PROT_WRITE",
+          "raw_line": "4490  1793808768.206037 mmap(NULL, 56619008, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f315db73000 <0.000023>",
+          "raw_line_number": 30611,
+          "requested_address": "NULL",
+          "result": "0x7f315db73000",
+          "trace_pid_or_tid": 4490
+        }
+      ],
+      "nearby_raw_lines": [
+        {
+          "line": 30609,
+          "text": "4490  1793808768.202807 mmap(0x4232c4300000, 54291632, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01095.olean>, 0) = 0x4232c4300000 <0.000021>"
+        },
+        {
+          "line": 30610,
+          "text": "4490  1793808768.205967 mmap(0x59b6f8fa0000, 56617688, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01096.olean>, 0) = -1 EEXIST (File exists) <0.000019>"
+        },
+        {
+          "line": 30611,
+          "text": "4490  1793808768.206037 mmap(NULL, 56619008, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f315db73000 <0.000023>"
+        },
+        {
+          "line": 30612,
+          "text": "4490  1793808768.263640 mmap(0x3cc5fd1f0000, 54304728, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01097.olean>, 0) = 0x3cc5fd1f0000 <0.000030>"
+        },
+        {
+          "line": 30613,
+          "text": "4490  1793808768.266521 mmap(0x5d91df050000, 56640672, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01098.olean>, 0) = 0x5d91df050000 <0.000022>"
+        }
+      ],
+      "next_file_mapping": {
+        "exact_file_path": "/home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01097.olean",
+        "fd": 11,
+        "file_offset": "0",
+        "flags": "MAP_PRIVATE|MAP_FIXED_NOREPLACE",
+        "length_bytes": 54304728,
+        "printed_syscall_duration_seconds": "0.000030",
+        "printed_unix_timestamp": "1793808768.263640",
+        "protections": "PROT_READ|PROT_WRITE",
+        "raw_line": "4490  1793808768.263640 mmap(0x3cc5fd1f0000, 54304728, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01097.olean>, 0) = 0x3cc5fd1f0000 <0.000030>",
+        "raw_line_number": 30612,
+        "requested_address": "0x3cc5fd1f0000",
+        "result": "0x3cc5fd1f0000",
+        "trace_pid_or_tid": 4490
+      },
+      "previous_byte_overlapping_successful_file_mappings": [
+        {
+          "intervening_overlapping_successful_munmaps": [],
+          "intervening_overwriting_map_fixed_calls": [],
+          "mapping": {
+            "exact_file_path": "/home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf00594.olean",
+            "fd": 11,
+            "file_offset": "0",
+            "flags": "MAP_PRIVATE|MAP_FIXED_NOREPLACE",
+            "length_bytes": 49506784,
+            "printed_syscall_duration_seconds": "0.000023",
+            "printed_unix_timestamp": "1793808766.551724",
+            "protections": "PROT_READ|PROT_WRITE",
+            "raw_line": "4490  1793808766.551724 mmap(0x59b6f9cf0000, 49506784, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf00594.olean>, 0) = 0x59b6f9cf0000 <0.000023>",
+            "raw_line_number": 30076,
+            "requested_address": "0x59b6f9cf0000",
+            "result": "0x59b6f9cf0000",
+            "trace_pid_or_tid": 4490
+          },
+          "unrounded_requested_byte_overlap": 42658520
+        }
+      ],
+      "previous_file_mapping": {
+        "exact_file_path": "/home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01095.olean",
+        "fd": 11,
+        "file_offset": "0",
+        "flags": "MAP_PRIVATE|MAP_FIXED_NOREPLACE",
+        "length_bytes": 54291632,
+        "printed_syscall_duration_seconds": "0.000021",
+        "printed_unix_timestamp": "1793808768.202807",
+        "protections": "PROT_READ|PROT_WRITE",
+        "raw_line": "4490  1793808768.202807 mmap(0x4232c4300000, 54291632, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01095.olean>, 0) = 0x4232c4300000 <0.000021>",
+        "raw_line_number": 30609,
+        "requested_address": "0x4232c4300000",
+        "result": "0x4232c4300000",
+        "trace_pid_or_tid": 4490
+      },
+      "printed_time_gap_to_next_file_mmap_seconds": "0.057673"
+    },
+    {
+      "bound_original_export": {
+        "module": "Proofs.RadenkovicGutmanD1Long00Leaf01294RepairPiece27",
+        "output_sha256": "1d8fb438cf658d4a255afbd1da31dff354284345fe339f8cbecadff2e0481e6f",
+        "selected_transport_artifact_id": 12580920806,
+        "selected_transport_artifact_sha256": "63bd071c3855dd0bdd537d3d69812fb6a8622c1a214329e8e26d5ec6c33ccdfc",
+        "source_closure_sha256": "2fed16b1c179fab09f84d5d3f9fccf2d4908877e28443eeb5e6588b4ad9cad9d",
+        "source_sha256": "732bd407fc6df16e129761d5b24f2d4fd28c13223cf3e8f6fc83acbf0a969403"
+      },
+      "error_relative_to_first_printed_trace_timestamp_seconds": "29.303095",
+      "failed_mapping": {
+        "exact_file_path": "/home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01294RepairPiece27.olean",
+        "fd": 11,
+        "file_offset": "0",
+        "flags": "MAP_PRIVATE|MAP_FIXED_NOREPLACE",
+        "length_bytes": 737024,
+        "printed_syscall_duration_seconds": "0.000016",
+        "printed_unix_timestamp": "1793808773.170130",
+        "protections": "PROT_READ|PROT_WRITE",
+        "raw_line": "4490  1793808773.170130 mmap(0x721632e80000, 737024, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01294RepairPiece27.olean>, 0) = -1 EEXIST (File exists) <0.000016>",
+        "raw_line_number": 34531,
+        "requested_address": "0x721632e80000",
+        "result": "-1 EEXIST (File exists)",
+        "trace_pid_or_tid": 4490
+      },
+      "intervening_anonymous_mmap_observations": [
+        {
+          "exact_file_path": null,
+          "fd": -1,
+          "file_offset": "0",
+          "flags": "MAP_PRIVATE|MAP_ANONYMOUS",
+          "length_bytes": 737280,
+          "printed_syscall_duration_seconds": "0.000022",
+          "printed_unix_timestamp": "1793808773.170187",
+          "protections": "PROT_READ|PROT_WRITE",
+          "raw_line": "4490  1793808773.170187 mmap(NULL, 737280, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f3238d4c000 <0.000022>",
+          "raw_line_number": 34532,
+          "requested_address": "NULL",
+          "result": "0x7f3238d4c000",
+          "trace_pid_or_tid": 4490
+        }
+      ],
+      "nearby_raw_lines": [
+        {
+          "line": 34530,
+          "text": "4490  1793808773.168544 mmap(0x2676bffd0000, 727304, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01294RepairJoin27.olean>, 0) = 0x2676bffd0000 <0.000021>"
+        },
+        {
+          "line": 34531,
+          "text": "4490  1793808773.170130 mmap(0x721632e80000, 737024, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01294RepairPiece27.olean>, 0) = -1 EEXIST (File exists) <0.000016>"
+        },
+        {
+          "line": 34532,
+          "text": "4490  1793808773.170187 mmap(NULL, 737280, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f3238d4c000 <0.000022>"
+        },
+        {
+          "line": 34533,
+          "text": "4490  1793808773.172122 mmap(0x2682c8620000, 724552, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01294RepairJoin28.olean>, 0) = 0x2682c8620000 <0.000020>"
+        },
+        {
+          "line": 34534,
+          "text": "4490  1793808773.173442 mmap(0x6cea08970000, 755856, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01294RepairPiece28.olean>, 0) = 0x6cea08970000 <0.000022>"
+        }
+      ],
+      "next_file_mapping": {
+        "exact_file_path": "/home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01294RepairJoin28.olean",
+        "fd": 11,
+        "file_offset": "0",
+        "flags": "MAP_PRIVATE|MAP_FIXED_NOREPLACE",
+        "length_bytes": 724552,
+        "printed_syscall_duration_seconds": "0.000020",
+        "printed_unix_timestamp": "1793808773.172122",
+        "protections": "PROT_READ|PROT_WRITE",
+        "raw_line": "4490  1793808773.172122 mmap(0x2682c8620000, 724552, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01294RepairJoin28.olean>, 0) = 0x2682c8620000 <0.000020>",
+        "raw_line_number": 34533,
+        "requested_address": "0x2682c8620000",
+        "result": "0x2682c8620000",
+        "trace_pid_or_tid": 4490
+      },
+      "previous_byte_overlapping_successful_file_mappings": [
+        {
+          "intervening_overlapping_successful_munmaps": [],
+          "intervening_overwriting_map_fixed_calls": [],
+          "mapping": {
+            "exact_file_path": "/home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf00324.olean",
+            "fd": 11,
+            "file_offset": "0",
+            "flags": "MAP_PRIVATE|MAP_FIXED_NOREPLACE",
+            "length_bytes": 47493896,
+            "printed_syscall_duration_seconds": "0.000025",
+            "printed_unix_timestamp": "1793808765.693444",
+            "protections": "PROT_READ|PROT_WRITE",
+            "raw_line": "4490  1793808765.693444 mmap(0x7216314d0000, 47493896, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf00324.olean>, 0) = 0x7216314d0000 <0.000025>",
+            "raw_line_number": 29790,
+            "requested_address": "0x7216314d0000",
+            "result": "0x7216314d0000",
+            "trace_pid_or_tid": 4490
+          },
+          "unrounded_requested_byte_overlap": 737024
+        }
+      ],
+      "previous_file_mapping": {
+        "exact_file_path": "/home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01294RepairJoin27.olean",
+        "fd": 11,
+        "file_offset": "0",
+        "flags": "MAP_PRIVATE|MAP_FIXED_NOREPLACE",
+        "length_bytes": 727304,
+        "printed_syscall_duration_seconds": "0.000021",
+        "printed_unix_timestamp": "1793808773.168544",
+        "protections": "PROT_READ|PROT_WRITE",
+        "raw_line": "4490  1793808773.168544 mmap(0x2676bffd0000, 727304, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01294RepairJoin27.olean>, 0) = 0x2676bffd0000 <0.000021>",
+        "raw_line_number": 34530,
+        "requested_address": "0x2676bffd0000",
+        "result": "0x2676bffd0000",
+        "trace_pid_or_tid": 4490
+      },
+      "printed_time_gap_to_next_file_mmap_seconds": "0.001992"
+    },
+    {
+      "bound_original_export": {
+        "module": "Proofs.RadenkovicGutmanD1Long00Leaf01304RepairRow009",
+        "output_sha256": "87512bbc09b02f5e9e39de78c6f501eea0dcaf63ec559319012f19744d77f8ea",
+        "selected_transport_artifact_id": 12587075413,
+        "selected_transport_artifact_sha256": "e189fca0e30440b0b8b3e83554a79a60a51d69209b82dd4f9ec67c9278fbae8f",
+        "source_closure_sha256": "7a63ca110489187de11ea48acb0cff4f0b9c634f403375930f9a7c85e7b0621a",
+        "source_sha256": "b1a70abc60b06fc70560f8161dc9038f57c7a6a05caf565044132755136b045b"
+      },
+      "error_relative_to_first_printed_trace_timestamp_seconds": "31.068601",
+      "failed_mapping": {
+        "exact_file_path": "/home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01304RepairRow009.olean",
+        "fd": 11,
+        "file_offset": "0",
+        "flags": "MAP_PRIVATE|MAP_FIXED_NOREPLACE",
+        "length_bytes": 24520,
+        "printed_syscall_duration_seconds": "0.000016",
+        "printed_unix_timestamp": "1793808774.935636",
+        "protections": "PROT_READ|PROT_WRITE",
+        "raw_line": "4490  1793808774.935636 mmap(0x1cfb6ca60000, 24520, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01304RepairRow009.olean>, 0) = -1 EEXIST (File exists) <0.000016>",
+        "raw_line_number": 36075,
+        "requested_address": "0x1cfb6ca60000",
+        "result": "-1 EEXIST (File exists)",
+        "trace_pid_or_tid": 4490
+      },
+      "intervening_anonymous_mmap_observations": [],
+      "nearby_raw_lines": [
+        {
+          "line": 36074,
+          "text": "4490  1793808774.934689 mmap(0x58ededf0000, 24488, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01304RepairRow008.olean>, 0) = 0x58ededf0000 <0.000022>"
+        },
+        {
+          "line": 36075,
+          "text": "4490  1793808774.935636 mmap(0x1cfb6ca60000, 24520, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01304RepairRow009.olean>, 0) = -1 EEXIST (File exists) <0.000016>"
+        },
+        {
+          "line": 36076,
+          "text": "4490  1793808774.936589 mmap(0x53490c90000, 24536, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01304RepairRow010.olean>, 0) = 0x53490c90000 <0.000033>"
+        },
+        {
+          "line": 36077,
+          "text": "4490  1793808774.937504 mmap(0xa7a5d030000, 24536, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01304RepairRow011.olean>, 0) = 0xa7a5d030000 <0.000018>"
+        }
+      ],
+      "next_file_mapping": {
+        "exact_file_path": "/home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01304RepairRow010.olean",
+        "fd": 11,
+        "file_offset": "0",
+        "flags": "MAP_PRIVATE|MAP_FIXED_NOREPLACE",
+        "length_bytes": 24536,
+        "printed_syscall_duration_seconds": "0.000033",
+        "printed_unix_timestamp": "1793808774.936589",
+        "protections": "PROT_READ|PROT_WRITE",
+        "raw_line": "4490  1793808774.936589 mmap(0x53490c90000, 24536, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01304RepairRow010.olean>, 0) = 0x53490c90000 <0.000033>",
+        "raw_line_number": 36076,
+        "requested_address": "0x53490c90000",
+        "result": "0x53490c90000",
+        "trace_pid_or_tid": 4490
+      },
+      "previous_byte_overlapping_successful_file_mappings": [
+        {
+          "intervening_overlapping_successful_munmaps": [],
+          "intervening_overwriting_map_fixed_calls": [],
+          "mapping": {
+            "exact_file_path": "/home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01255.olean",
+            "fd": 11,
+            "file_offset": "0",
+            "flags": "MAP_PRIVATE|MAP_FIXED_NOREPLACE",
+            "length_bytes": 84832616,
+            "printed_syscall_duration_seconds": "0.000025",
+            "printed_unix_timestamp": "1793808768.734821",
+            "protections": "PROT_READ|PROT_WRITE",
+            "raw_line": "4490  1793808768.734821 mmap(0x1cfb6ade0000, 84832616, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01255.olean>, 0) = 0x1cfb6ade0000 <0.000025>",
+            "raw_line_number": 30779,
+            "requested_address": "0x1cfb6ade0000",
+            "result": "0x1cfb6ade0000",
+            "trace_pid_or_tid": 4490
+          },
+          "unrounded_requested_byte_overlap": 24520
+        }
+      ],
+      "previous_file_mapping": {
+        "exact_file_path": "/home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01304RepairRow008.olean",
+        "fd": 11,
+        "file_offset": "0",
+        "flags": "MAP_PRIVATE|MAP_FIXED_NOREPLACE",
+        "length_bytes": 24488,
+        "printed_syscall_duration_seconds": "0.000022",
+        "printed_unix_timestamp": "1793808774.934689",
+        "protections": "PROT_READ|PROT_WRITE",
+        "raw_line": "4490  1793808774.934689 mmap(0x58ededf0000, 24488, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01304RepairRow008.olean>, 0) = 0x58ededf0000 <0.000022>",
+        "raw_line_number": 36074,
+        "requested_address": "0x58ededf0000",
+        "result": "0x58ededf0000",
+        "trace_pid_or_tid": 4490
+      },
+      "printed_time_gap_to_next_file_mmap_seconds": "0.000953"
+    },
+    {
+      "bound_original_export": {
+        "module": "Proofs.RadenkovicGutmanD1Long00Leaf01339RepairJoin02",
+        "output_sha256": "2780f4ceccb401c608ede7352a5ffb968b457de8eb3efc4382ad2eb5ab1afa2b",
+        "selected_transport_artifact_id": 12606468366,
+        "selected_transport_artifact_sha256": "7e1132f94f67d6ac6893945e2f6b9204f61226da6b2f3d7993900f1e3923352e",
+        "source_closure_sha256": "a95600d672c6ab329b38b938a1f91f99af22a8319c711834aed7a759bcf47916",
+        "source_sha256": "0e04363d9af4651fad3e07326e20f6c5fe8a190084016dece92b0e4e53a2fee0"
+      },
+      "error_relative_to_first_printed_trace_timestamp_seconds": "33.512268",
+      "failed_mapping": {
+        "exact_file_path": "/home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01339RepairJoin02.olean",
+        "fd": 11,
+        "file_offset": "0",
+        "flags": "MAP_PRIVATE|MAP_FIXED_NOREPLACE",
+        "length_bytes": 736176,
+        "printed_syscall_duration_seconds": "0.000015",
+        "printed_unix_timestamp": "1793808777.379303",
+        "protections": "PROT_READ|PROT_WRITE",
+        "raw_line": "4490  1793808777.379303 mmap(0x767e81150000, 736176, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01339RepairJoin02.olean>, 0) = -1 EEXIST (File exists) <0.000015>",
+        "raw_line_number": 38936,
+        "requested_address": "0x767e81150000",
+        "result": "-1 EEXIST (File exists)",
+        "trace_pid_or_tid": 4490
+      },
+      "intervening_anonymous_mmap_observations": [
+        {
+          "exact_file_path": null,
+          "fd": -1,
+          "file_offset": "0",
+          "flags": "MAP_PRIVATE|MAP_ANONYMOUS",
+          "length_bytes": 737280,
+          "printed_syscall_duration_seconds": "0.000020",
+          "printed_unix_timestamp": "1793808777.379354",
+          "protections": "PROT_READ|PROT_WRITE",
+          "raw_line": "4490  1793808777.379354 mmap(NULL, 737280, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f3238c98000 <0.000020>",
+          "raw_line_number": 38937,
+          "requested_address": "NULL",
+          "result": "0x7f3238c98000",
+          "trace_pid_or_tid": 4490
+        }
+      ],
+      "nearby_raw_lines": [
+        {
+          "line": 38935,
+          "text": "4490  1793808777.378597 mmap(0x12fe7130000, 21248, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01339RepairPiece01.olean>, 0) = 0x12fe7130000 <0.000023>"
+        },
+        {
+          "line": 38936,
+          "text": "4490  1793808777.379303 mmap(0x767e81150000, 736176, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01339RepairJoin02.olean>, 0) = -1 EEXIST (File exists) <0.000015>"
+        },
+        {
+          "line": 38937,
+          "text": "4490  1793808777.379354 mmap(NULL, 737280, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f3238c98000 <0.000020>"
+        },
+        {
+          "line": 38938,
+          "text": "4490  1793808777.380346 mmap(0x71e16cfc0000, 24624, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01339RepairPiece02.olean>, 0) = 0x71e16cfc0000 <0.000018>"
+        },
+        {
+          "line": 38939,
+          "text": "4490  1793808777.381030 mmap(0x49fc4f170000, 736136, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01339RepairJoin03.olean>, 0) = 0x49fc4f170000 <0.000017>"
+        }
+      ],
+      "next_file_mapping": {
+        "exact_file_path": "/home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01339RepairPiece02.olean",
+        "fd": 11,
+        "file_offset": "0",
+        "flags": "MAP_PRIVATE|MAP_FIXED_NOREPLACE",
+        "length_bytes": 24624,
+        "printed_syscall_duration_seconds": "0.000018",
+        "printed_unix_timestamp": "1793808777.380346",
+        "protections": "PROT_READ|PROT_WRITE",
+        "raw_line": "4490  1793808777.380346 mmap(0x71e16cfc0000, 24624, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01339RepairPiece02.olean>, 0) = 0x71e16cfc0000 <0.000018>",
+        "raw_line_number": 38938,
+        "requested_address": "0x71e16cfc0000",
+        "result": "0x71e16cfc0000",
+        "trace_pid_or_tid": 4490
+      },
+      "previous_byte_overlapping_successful_file_mappings": [
+        {
+          "intervening_overlapping_successful_munmaps": [],
+          "intervening_overwriting_map_fixed_calls": [],
+          "mapping": {
+            "exact_file_path": "/home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf00110.olean",
+            "fd": 11,
+            "file_offset": "0",
+            "flags": "MAP_PRIVATE|MAP_FIXED_NOREPLACE",
+            "length_bytes": 49956640,
+            "printed_syscall_duration_seconds": "0.000025",
+            "printed_unix_timestamp": "1793808765.057873",
+            "protections": "PROT_READ|PROT_WRITE",
+            "raw_line": "4490  1793808765.057873 mmap(0x767e7e880000, 49956640, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf00110.olean>, 0) = 0x767e7e880000 <0.000025>",
+            "raw_line_number": 29563,
+            "requested_address": "0x767e7e880000",
+            "result": "0x767e7e880000",
+            "trace_pid_or_tid": 4490
+          },
+          "unrounded_requested_byte_overlap": 736176
+        }
+      ],
+      "previous_file_mapping": {
+        "exact_file_path": "/home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01339RepairPiece01.olean",
+        "fd": 11,
+        "file_offset": "0",
+        "flags": "MAP_PRIVATE|MAP_FIXED_NOREPLACE",
+        "length_bytes": 21248,
+        "printed_syscall_duration_seconds": "0.000023",
+        "printed_unix_timestamp": "1793808777.378597",
+        "protections": "PROT_READ|PROT_WRITE",
+        "raw_line": "4490  1793808777.378597 mmap(0x12fe7130000, 21248, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01339RepairPiece01.olean>, 0) = 0x12fe7130000 <0.000023>",
+        "raw_line_number": 38935,
+        "requested_address": "0x12fe7130000",
+        "result": "0x12fe7130000",
+        "trace_pid_or_tid": 4490
+      },
+      "printed_time_gap_to_next_file_mmap_seconds": "0.001043"
+    },
+    {
+      "bound_original_export": {
+        "module": "Proofs.RadenkovicGutmanD1Long00Leaf01349RepairAffineLength",
+        "output_sha256": "6d55da469a3ff0740aa8055c919ea7a3f2af72fb7cc920ee676398116836287d",
+        "selected_transport_artifact_id": 12617294053,
+        "selected_transport_artifact_sha256": "b3550c372bab393d46b4e31445868ac3064ed17bddf74858f3cbc0a42d384a51",
+        "source_closure_sha256": "52e6b0abba3b6e393b7011402872d444240ecd436d9ee744e338806d56ebe9e9",
+        "source_sha256": "80326164113118d795d30fbe0242dfeec3566636f06f0d72c2178fc76de4c656"
+      },
+      "error_relative_to_first_printed_trace_timestamp_seconds": "35.087150",
+      "failed_mapping": {
+        "exact_file_path": "/home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01349RepairAffineLength.olean",
+        "fd": 11,
+        "file_offset": "0",
+        "flags": "MAP_PRIVATE|MAP_FIXED_NOREPLACE",
+        "length_bytes": 7112,
+        "printed_syscall_duration_seconds": "0.000020",
+        "printed_unix_timestamp": "1793808778.954185",
+        "protections": "PROT_READ|PROT_WRITE",
+        "raw_line": "4490  1793808778.954185 mmap(0x3ed11d120000, 7112, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01349RepairAffineLength.olean>, 0) = -1 EEXIST (File exists) <0.000020>",
+        "raw_line_number": 40461,
+        "requested_address": "0x3ed11d120000",
+        "result": "-1 EEXIST (File exists)",
+        "trace_pid_or_tid": 4490
+      },
+      "intervening_anonymous_mmap_observations": [],
+      "nearby_raw_lines": [
+        {
+          "line": 40460,
+          "text": "4490  1793808778.953449 mmap(0x65074f820000, 24144, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01349RepairRow000.olean>, 0) = 0x65074f820000 <0.000026>"
+        },
+        {
+          "line": 40461,
+          "text": "4490  1793808778.954185 mmap(0x3ed11d120000, 7112, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01349RepairAffineLength.olean>, 0) = -1 EEXIST (File exists) <0.000020>"
+        },
+        {
+          "line": 40462,
+          "text": "4490  1793808778.955124 mmap(0x43af1ce80000, 732032, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01349RepairJoin00.olean>, 0) = 0x43af1ce80000 <0.000024>"
+        },
+        {
+          "line": 40463,
+          "text": "4490  1793808778.956571 mmap(0x638cfb8a0000, 18632, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01349RepairPiece00.olean>, 0) = 0x638cfb8a0000 <0.000041>"
+        }
+      ],
+      "next_file_mapping": {
+        "exact_file_path": "/home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01349RepairJoin00.olean",
+        "fd": 11,
+        "file_offset": "0",
+        "flags": "MAP_PRIVATE|MAP_FIXED_NOREPLACE",
+        "length_bytes": 732032,
+        "printed_syscall_duration_seconds": "0.000024",
+        "printed_unix_timestamp": "1793808778.955124",
+        "protections": "PROT_READ|PROT_WRITE",
+        "raw_line": "4490  1793808778.955124 mmap(0x43af1ce80000, 732032, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01349RepairJoin00.olean>, 0) = 0x43af1ce80000 <0.000024>",
+        "raw_line_number": 40462,
+        "requested_address": "0x43af1ce80000",
+        "result": "0x43af1ce80000",
+        "trace_pid_or_tid": 4490
+      },
+      "previous_byte_overlapping_successful_file_mappings": [
+        {
+          "intervening_overlapping_successful_munmaps": [],
+          "intervening_overwriting_map_fixed_calls": [],
+          "mapping": {
+            "exact_file_path": "/home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf00714.olean",
+            "fd": 11,
+            "file_offset": "0",
+            "flags": "MAP_PRIVATE|MAP_FIXED_NOREPLACE",
+            "length_bytes": 41507944,
+            "printed_syscall_duration_seconds": "0.000022",
+            "printed_unix_timestamp": "1793808766.932962",
+            "protections": "PROT_READ|PROT_WRITE",
+            "raw_line": "4490  1793808766.932962 mmap(0x3ed11b670000, 41507944, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf00714.olean>, 0) = 0x3ed11b670000 <0.000022>",
+            "raw_line_number": 30204,
+            "requested_address": "0x3ed11b670000",
+            "result": "0x3ed11b670000",
+            "trace_pid_or_tid": 4490
+          },
+          "unrounded_requested_byte_overlap": 7112
+        }
+      ],
+      "previous_file_mapping": {
+        "exact_file_path": "/home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01349RepairRow000.olean",
+        "fd": 11,
+        "file_offset": "0",
+        "flags": "MAP_PRIVATE|MAP_FIXED_NOREPLACE",
+        "length_bytes": 24144,
+        "printed_syscall_duration_seconds": "0.000026",
+        "printed_unix_timestamp": "1793808778.953449",
+        "protections": "PROT_READ|PROT_WRITE",
+        "raw_line": "4490  1793808778.953449 mmap(0x65074f820000, 24144, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01349RepairRow000.olean>, 0) = 0x65074f820000 <0.000026>",
+        "raw_line_number": 40460,
+        "requested_address": "0x65074f820000",
+        "result": "0x65074f820000",
+        "trace_pid_or_tid": 4490
+      },
+      "printed_time_gap_to_next_file_mmap_seconds": "0.000939"
+    },
+    {
+      "bound_original_export": {
+        "module": "Proofs.RadenkovicGutmanD1Long00Leaf01431RepairRow003",
+        "output_sha256": "ce91f97dfc76d9900d35f8949a9db46a5778200257dc6050f4793f049ab805d7",
+        "selected_transport_artifact_id": 12635313385,
+        "selected_transport_artifact_sha256": "1842d19088d61dfe2561f91e1d1bb145226a175f38c57aaf817ac146946c9abb",
+        "source_closure_sha256": "efabfce62b08f91e661f5704e49ca6a84561474b24bb1a36676462ef3005963a",
+        "source_sha256": "c23d7e9f2022b18b5ad2e5dc8c176f945037c36e04f2d9bd8c718782c251efbc"
+      },
+      "error_relative_to_first_printed_trace_timestamp_seconds": "37.900374",
+      "failed_mapping": {
+        "exact_file_path": "/home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01431RepairRow003.olean",
+        "fd": 11,
+        "file_offset": "0",
+        "flags": "MAP_PRIVATE|MAP_FIXED_NOREPLACE",
+        "length_bytes": 24528,
+        "printed_syscall_duration_seconds": "0.000015",
+        "printed_unix_timestamp": "1793808781.767409",
+        "protections": "PROT_READ|PROT_WRITE",
+        "raw_line": "4490  1793808781.767409 mmap(0x270ac100000, 24528, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01431RepairRow003.olean>, 0) = -1 EEXIST (File exists) <0.000015>",
+        "raw_line_number": 42752,
+        "requested_address": "0x270ac100000",
+        "result": "-1 EEXIST (File exists)",
+        "trace_pid_or_tid": 4490
+      },
+      "intervening_anonymous_mmap_observations": [],
+      "nearby_raw_lines": [
+        {
+          "line": 42751,
+          "text": "4490  1793808781.766504 mmap(0x520290f40000, 24352, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01431RepairRow002.olean>, 0) = 0x520290f40000 <0.000021>"
+        },
+        {
+          "line": 42752,
+          "text": "4490  1793808781.767409 mmap(0x270ac100000, 24528, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01431RepairRow003.olean>, 0) = -1 EEXIST (File exists) <0.000015>"
+        },
+        {
+          "line": 42753,
+          "text": "4490  1793808781.768401 mmap(0x2383f7d30000, 24424, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01431RepairRow004.olean>, 0) = 0x2383f7d30000 <0.000019>"
+        },
+        {
+          "line": 42754,
+          "text": "4490  1793808781.769325 mmap(0x520dc9470000, 24560, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01431RepairRow005.olean>, 0) = 0x520dc9470000 <0.000018>"
+        }
+      ],
+      "next_file_mapping": {
+        "exact_file_path": "/home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01431RepairRow004.olean",
+        "fd": 11,
+        "file_offset": "0",
+        "flags": "MAP_PRIVATE|MAP_FIXED_NOREPLACE",
+        "length_bytes": 24424,
+        "printed_syscall_duration_seconds": "0.000019",
+        "printed_unix_timestamp": "1793808781.768401",
+        "protections": "PROT_READ|PROT_WRITE",
+        "raw_line": "4490  1793808781.768401 mmap(0x2383f7d30000, 24424, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01431RepairRow004.olean>, 0) = 0x2383f7d30000 <0.000019>",
+        "raw_line_number": 42753,
+        "requested_address": "0x2383f7d30000",
+        "result": "0x2383f7d30000",
+        "trace_pid_or_tid": 4490
+      },
+      "previous_byte_overlapping_successful_file_mappings": [
+        {
+          "intervening_overlapping_successful_munmaps": [],
+          "intervening_overwriting_map_fixed_calls": [],
+          "mapping": {
+            "exact_file_path": "/home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf00588.olean",
+            "fd": 11,
+            "file_offset": "0",
+            "flags": "MAP_PRIVATE|MAP_FIXED_NOREPLACE",
+            "length_bytes": 49454720,
+            "printed_syscall_duration_seconds": "0.000023",
+            "printed_unix_timestamp": "1793808766.534227",
+            "protections": "PROT_READ|PROT_WRITE",
+            "raw_line": "4490  1793808766.534227 mmap(0x270a9a30000, 49454720, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf00588.olean>, 0) = 0x270a9a30000 <0.000023>",
+            "raw_line_number": 30070,
+            "requested_address": "0x270a9a30000",
+            "result": "0x270a9a30000",
+            "trace_pid_or_tid": 4490
+          },
+          "unrounded_requested_byte_overlap": 24528
+        }
+      ],
+      "previous_file_mapping": {
+        "exact_file_path": "/home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01431RepairRow002.olean",
+        "fd": 11,
+        "file_offset": "0",
+        "flags": "MAP_PRIVATE|MAP_FIXED_NOREPLACE",
+        "length_bytes": 24352,
+        "printed_syscall_duration_seconds": "0.000021",
+        "printed_unix_timestamp": "1793808781.766504",
+        "protections": "PROT_READ|PROT_WRITE",
+        "raw_line": "4490  1793808781.766504 mmap(0x520290f40000, 24352, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01431RepairRow002.olean>, 0) = 0x520290f40000 <0.000021>",
+        "raw_line_number": 42751,
+        "requested_address": "0x520290f40000",
+        "result": "0x520290f40000",
+        "trace_pid_or_tid": 4490
+      },
+      "printed_time_gap_to_next_file_mmap_seconds": "0.000992"
+    },
+    {
+      "bound_original_export": {
+        "module": "Proofs.RadenkovicGutmanD1Long00Leaf01497RepairJoin03",
+        "output_sha256": "08b2d6a2ead96b1d6cc61bc0dc8c345c3348760951f74a9b4954ef25e3284ddd",
+        "selected_transport_artifact_id": 12693370975,
+        "selected_transport_artifact_sha256": "5011626da03893df493f653dd08b8de380e9a7c42fbd04983bae5ded523f939b",
+        "source_closure_sha256": "cb478f0ec52673d86c66202cb5208c140b5f6c2f2bc28bc0a473b396c115360b",
+        "source_sha256": "0b9efe5ebf174e18fbacd80a08d3bf05d9d7dae8e1003ec6178256f1b79187c8"
+      },
+      "error_relative_to_first_printed_trace_timestamp_seconds": "41.535629",
+      "failed_mapping": {
+        "exact_file_path": "/home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01497RepairJoin03.olean",
+        "fd": 11,
+        "file_offset": "0",
+        "flags": "MAP_PRIVATE|MAP_FIXED_NOREPLACE",
+        "length_bytes": 719056,
+        "printed_syscall_duration_seconds": "0.000019",
+        "printed_unix_timestamp": "1793808785.402664",
+        "protections": "PROT_READ|PROT_WRITE",
+        "raw_line": "4490  1793808785.402664 mmap(0x72cfb76b0000, 719056, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01497RepairJoin03.olean>, 0) = -1 EEXIST (File exists) <0.000019>",
+        "raw_line_number": 45806,
+        "requested_address": "0x72cfb76b0000",
+        "result": "-1 EEXIST (File exists)",
+        "trace_pid_or_tid": 4490
+      },
+      "intervening_anonymous_mmap_observations": [
+        {
+          "exact_file_path": null,
+          "fd": -1,
+          "file_offset": "0",
+          "flags": "MAP_PRIVATE|MAP_ANONYMOUS",
+          "length_bytes": 720896,
+          "printed_syscall_duration_seconds": "0.000022",
+          "printed_unix_timestamp": "1793808785.402727",
+          "protections": "PROT_READ|PROT_WRITE",
+          "raw_line": "4490  1793808785.402727 mmap(NULL, 720896, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f31f894f000 <0.000022>",
+          "raw_line_number": 45807,
+          "requested_address": "NULL",
+          "result": "0x7f31f894f000",
+          "trace_pid_or_tid": 4490
+        }
+      ],
+      "nearby_raw_lines": [
+        {
+          "line": 45805,
+          "text": "4490  1793808785.401546 mmap(0x4d9571a60000, 24056, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01497RepairPiece02.olean>, 0) = 0x4d9571a60000 <0.000021>"
+        },
+        {
+          "line": 45806,
+          "text": "4490  1793808785.402664 mmap(0x72cfb76b0000, 719056, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01497RepairJoin03.olean>, 0) = -1 EEXIST (File exists) <0.000019>"
+        },
+        {
+          "line": 45807,
+          "text": "4490  1793808785.402727 mmap(NULL, 720896, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f31f894f000 <0.000022>"
+        },
+        {
+          "line": 45808,
+          "text": "4490  1793808785.404309 mmap(0x5827bfb20000, 31192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01497RepairPiece03.olean>, 0) = 0x5827bfb20000 <0.000022>"
+        },
+        {
+          "line": 45809,
+          "text": "4490  1793808785.405416 mmap(0x252f8b200000, 719056, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01497RepairJoin04.olean>, 0) = 0x252f8b200000 <0.000026>"
+        }
+      ],
+      "next_file_mapping": {
+        "exact_file_path": "/home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01497RepairPiece03.olean",
+        "fd": 11,
+        "file_offset": "0",
+        "flags": "MAP_PRIVATE|MAP_FIXED_NOREPLACE",
+        "length_bytes": 31192,
+        "printed_syscall_duration_seconds": "0.000022",
+        "printed_unix_timestamp": "1793808785.404309",
+        "protections": "PROT_READ|PROT_WRITE",
+        "raw_line": "4490  1793808785.404309 mmap(0x5827bfb20000, 31192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01497RepairPiece03.olean>, 0) = 0x5827bfb20000 <0.000022>",
+        "raw_line_number": 45808,
+        "requested_address": "0x5827bfb20000",
+        "result": "0x5827bfb20000",
+        "trace_pid_or_tid": 4490
+      },
+      "previous_byte_overlapping_successful_file_mappings": [
+        {
+          "intervening_overlapping_successful_munmaps": [],
+          "intervening_overwriting_map_fixed_calls": [],
+          "mapping": {
+            "exact_file_path": "/home/runner/work/formal-conjectures/formal-conjectures/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/CategoryTheory/FinCategory/Basic.ir",
+            "fd": 11,
+            "file_offset": "0",
+            "flags": "MAP_PRIVATE|MAP_FIXED_NOREPLACE",
+            "length_bytes": 18904,
+            "printed_syscall_duration_seconds": "0.000020",
+            "printed_unix_timestamp": "1793808761.775208",
+            "protections": "PROT_READ|PROT_WRITE",
+            "raw_line": "4490  1793808761.775208 mmap(0x72cfb76b0000, 18904, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/CategoryTheory/FinCategory/Basic.ir>, 0) = 0x72cfb76b0000 <0.000020>",
+            "raw_line_number": 25405,
+            "requested_address": "0x72cfb76b0000",
+            "result": "0x72cfb76b0000",
+            "trace_pid_or_tid": 4490
+          },
+          "unrounded_requested_byte_overlap": 18904
+        }
+      ],
+      "previous_file_mapping": {
+        "exact_file_path": "/home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01497RepairPiece02.olean",
+        "fd": 11,
+        "file_offset": "0",
+        "flags": "MAP_PRIVATE|MAP_FIXED_NOREPLACE",
+        "length_bytes": 24056,
+        "printed_syscall_duration_seconds": "0.000021",
+        "printed_unix_timestamp": "1793808785.401546",
+        "protections": "PROT_READ|PROT_WRITE",
+        "raw_line": "4490  1793808785.401546 mmap(0x4d9571a60000, 24056, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01497RepairPiece02.olean>, 0) = 0x4d9571a60000 <0.000021>",
+        "raw_line_number": 45805,
+        "requested_address": "0x4d9571a60000",
+        "result": "0x4d9571a60000",
+        "trace_pid_or_tid": 4490
+      },
+      "printed_time_gap_to_next_file_mmap_seconds": "0.001645"
+    },
+    {
+      "bound_original_export": {
+        "module": "Proofs.RadenkovicGutmanD1Long00Leaf01498RepairRow036",
+        "output_sha256": "833e5b18b2db6f51fe7733dacf94cc8f3fe4acb1569e0d9d4bc01da67e64732d",
+        "selected_transport_artifact_id": 12714503242,
+        "selected_transport_artifact_sha256": "40152bfb79fae83cef17469d9412116df51697d0f83947e23b20ac150f8045b7",
+        "source_closure_sha256": "1681fe4655fd6de37813ae0a206cb407e76e57228b2831dd24e979f1383b334b",
+        "source_sha256": "0125f52e1253018f3561e2f54930ddd62a83d545bb94b1123098fdcc45b95596"
+      },
+      "error_relative_to_first_printed_trace_timestamp_seconds": "41.819550",
+      "failed_mapping": {
+        "exact_file_path": "/home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01498RepairRow036.olean",
+        "fd": 11,
+        "file_offset": "0",
+        "flags": "MAP_PRIVATE|MAP_FIXED_NOREPLACE",
+        "length_bytes": 24664,
+        "printed_syscall_duration_seconds": "0.000030",
+        "printed_unix_timestamp": "1793808785.686585",
+        "protections": "PROT_READ|PROT_WRITE",
+        "raw_line": "4490  1793808785.686585 mmap(0x91370530000, 24664, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01498RepairRow036.olean>, 0) = -1 EEXIST (File exists) <0.000030>",
+        "raw_line_number": 46049,
+        "requested_address": "0x91370530000",
+        "result": "-1 EEXIST (File exists)",
+        "trace_pid_or_tid": 4490
+      },
+      "intervening_anonymous_mmap_observations": [],
+      "nearby_raw_lines": [
+        {
+          "line": 46048,
+          "text": "4490  1793808785.685665 mmap(0x783a685f0000, 24664, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01498RepairRow035.olean>, 0) = 0x783a685f0000 <0.000023>"
+        },
+        {
+          "line": 46049,
+          "text": "4490  1793808785.686585 mmap(0x91370530000, 24664, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01498RepairRow036.olean>, 0) = -1 EEXIST (File exists) <0.000030>"
+        },
+        {
+          "line": 46050,
+          "text": "4490  1793808785.687715 mmap(0x5ee16d2b0000, 24664, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01498RepairRow037.olean>, 0) = 0x5ee16d2b0000 <0.000021>"
+        },
+        {
+          "line": 46051,
+          "text": "4490  1793808785.688699 mmap(0x5c7b2f5c0000, 24664, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01498RepairRow038.olean>, 0) = 0x5c7b2f5c0000 <0.000021>"
+        }
+      ],
+      "next_file_mapping": {
+        "exact_file_path": "/home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01498RepairRow037.olean",
+        "fd": 11,
+        "file_offset": "0",
+        "flags": "MAP_PRIVATE|MAP_FIXED_NOREPLACE",
+        "length_bytes": 24664,
+        "printed_syscall_duration_seconds": "0.000021",
+        "printed_unix_timestamp": "1793808785.687715",
+        "protections": "PROT_READ|PROT_WRITE",
+        "raw_line": "4490  1793808785.687715 mmap(0x5ee16d2b0000, 24664, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01498RepairRow037.olean>, 0) = 0x5ee16d2b0000 <0.000021>",
+        "raw_line_number": 46050,
+        "requested_address": "0x5ee16d2b0000",
+        "result": "0x5ee16d2b0000",
+        "trace_pid_or_tid": 4490
+      },
+      "previous_byte_overlapping_successful_file_mappings": [
+        {
+          "intervening_overlapping_successful_munmaps": [],
+          "intervening_overwriting_map_fixed_calls": [],
+          "mapping": {
+            "exact_file_path": "/home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf00547.olean",
+            "fd": 11,
+            "file_offset": "0",
+            "flags": "MAP_PRIVATE|MAP_FIXED_NOREPLACE",
+            "length_bytes": 47916480,
+            "printed_syscall_duration_seconds": "0.000026",
+            "printed_unix_timestamp": "1793808766.410792",
+            "protections": "PROT_READ|PROT_WRITE",
+            "raw_line": "4490  1793808766.410792 mmap(0x9136e490000, 47916480, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf00547.olean>, 0) = 0x9136e490000 <0.000026>",
+            "raw_line_number": 30027,
+            "requested_address": "0x9136e490000",
+            "result": "0x9136e490000",
+            "trace_pid_or_tid": 4490
+          },
+          "unrounded_requested_byte_overlap": 24664
+        }
+      ],
+      "previous_file_mapping": {
+        "exact_file_path": "/home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01498RepairRow035.olean",
+        "fd": 11,
+        "file_offset": "0",
+        "flags": "MAP_PRIVATE|MAP_FIXED_NOREPLACE",
+        "length_bytes": 24664,
+        "printed_syscall_duration_seconds": "0.000023",
+        "printed_unix_timestamp": "1793808785.685665",
+        "protections": "PROT_READ|PROT_WRITE",
+        "raw_line": "4490  1793808785.685665 mmap(0x783a685f0000, 24664, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01498RepairRow035.olean>, 0) = 0x783a685f0000 <0.000023>",
+        "raw_line_number": 46048,
+        "requested_address": "0x783a685f0000",
+        "result": "0x783a685f0000",
+        "trace_pid_or_tid": 4490
+      },
+      "printed_time_gap_to_next_file_mmap_seconds": "0.001130"
+    },
+    {
+      "bound_original_export": {
+        "module": "Proofs.RadenkovicGutmanD1Long00Leaf01515RepairRow019",
+        "output_sha256": "49dd1f136e94273612868e0300bdccbc2413090358dee820be9db46ba93026e7",
+        "selected_transport_artifact_id": 12723742006,
+        "selected_transport_artifact_sha256": "259352c5ce1b3266c58cdda562b279dabfd92c270a0b94d7a2a79071a1a4d6c7",
+        "source_closure_sha256": "3cbbfda02c087bf41fa632f5f8acf53105e1df20d5fc1181cba5c5ae6c9ef9ec",
+        "source_sha256": "d714d6cb9e4dec26fb7ec52ca51fbc1c96593ede589cfb809c58ea33158eac29"
+      },
+      "error_relative_to_first_printed_trace_timestamp_seconds": "44.814010",
+      "failed_mapping": {
+        "exact_file_path": "/home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01515RepairRow019.olean",
+        "fd": 11,
+        "file_offset": "0",
+        "flags": "MAP_PRIVATE|MAP_FIXED_NOREPLACE",
+        "length_bytes": 24584,
+        "printed_syscall_duration_seconds": "0.000015",
+        "printed_unix_timestamp": "1793808788.681045",
+        "protections": "PROT_READ|PROT_WRITE",
+        "raw_line": "4490  1793808788.681045 mmap(0x906b9c40000, 24584, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01515RepairRow019.olean>, 0) = -1 EEXIST (File exists) <0.000015>",
+        "raw_line_number": 48634,
+        "requested_address": "0x906b9c40000",
+        "result": "-1 EEXIST (File exists)",
+        "trace_pid_or_tid": 4490
+      },
+      "intervening_anonymous_mmap_observations": [],
+      "nearby_raw_lines": [
+        {
+          "line": 48633,
+          "text": "4490  1793808788.680137 mmap(0x2002a470000, 24584, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01515RepairRow018.olean>, 0) = 0x2002a470000 <0.000019>"
+        },
+        {
+          "line": 48634,
+          "text": "4490  1793808788.681045 mmap(0x906b9c40000, 24584, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01515RepairRow019.olean>, 0) = -1 EEXIST (File exists) <0.000015>"
+        },
+        {
+          "line": 48635,
+          "text": "4490  1793808788.682040 mmap(0x723aafc60000, 24592, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01515RepairRow020.olean>, 0) = 0x723aafc60000 <0.000019>"
+        },
+        {
+          "line": 48636,
+          "text": "4490  1793808788.682940 mmap(0x469c4ba20000, 24608, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01515RepairRow021.olean>, 0) = 0x469c4ba20000 <0.000019>"
+        }
+      ],
+      "next_file_mapping": {
+        "exact_file_path": "/home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01515RepairRow020.olean",
+        "fd": 11,
+        "file_offset": "0",
+        "flags": "MAP_PRIVATE|MAP_FIXED_NOREPLACE",
+        "length_bytes": 24592,
+        "printed_syscall_duration_seconds": "0.000019",
+        "printed_unix_timestamp": "1793808788.682040",
+        "protections": "PROT_READ|PROT_WRITE",
+        "raw_line": "4490  1793808788.682040 mmap(0x723aafc60000, 24592, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01515RepairRow020.olean>, 0) = 0x723aafc60000 <0.000019>",
+        "raw_line_number": 48635,
+        "requested_address": "0x723aafc60000",
+        "result": "0x723aafc60000",
+        "trace_pid_or_tid": 4490
+      },
+      "previous_byte_overlapping_successful_file_mappings": [
+        {
+          "intervening_overlapping_successful_munmaps": [],
+          "intervening_overwriting_map_fixed_calls": [],
+          "mapping": {
+            "exact_file_path": "/home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01087.olean",
+            "fd": 11,
+            "file_offset": "0",
+            "flags": "MAP_PRIVATE|MAP_FIXED_NOREPLACE",
+            "length_bytes": 45806808,
+            "printed_syscall_duration_seconds": "0.000034",
+            "printed_unix_timestamp": "1793808768.179575",
+            "protections": "PROT_READ|PROT_WRITE",
+            "raw_line": "4490  1793808768.179575 mmap(0x906b7c40000, 45806808, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01087.olean>, 0) = 0x906b7c40000 <0.000034>",
+            "raw_line_number": 30600,
+            "requested_address": "0x906b7c40000",
+            "result": "0x906b7c40000",
+            "trace_pid_or_tid": 4490
+          },
+          "unrounded_requested_byte_overlap": 24584
+        }
+      ],
+      "previous_file_mapping": {
+        "exact_file_path": "/home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01515RepairRow018.olean",
+        "fd": 11,
+        "file_offset": "0",
+        "flags": "MAP_PRIVATE|MAP_FIXED_NOREPLACE",
+        "length_bytes": 24584,
+        "printed_syscall_duration_seconds": "0.000019",
+        "printed_unix_timestamp": "1793808788.680137",
+        "protections": "PROT_READ|PROT_WRITE",
+        "raw_line": "4490  1793808788.680137 mmap(0x2002a470000, 24584, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01515RepairRow018.olean>, 0) = 0x2002a470000 <0.000019>",
+        "raw_line_number": 48633,
+        "requested_address": "0x2002a470000",
+        "result": "0x2002a470000",
+        "trace_pid_or_tid": 4490
+      },
+      "printed_time_gap_to_next_file_mmap_seconds": "0.000995"
+    },
+    {
+      "bound_original_export": {
+        "module": "Proofs.RadenkovicGutmanD1Long00Leaf01516CompositionalRepairJoin04",
+        "output_sha256": "fef5d1d36b8be114d94295a63005c082ad1825be52ec3c39928cd2b7f0720c05",
+        "selected_transport_artifact_id": 12699413351,
+        "selected_transport_artifact_sha256": "8bce52ab3f8adcf2ab6f36830afc66c4f1e001684f8d3e3458ae044d7beff6b7",
+        "source_closure_sha256": "e1882ba0b0153e1a1164217e73d69b23f576789e9174f2ef8c13d7b2e0282176",
+        "source_sha256": "5faf6503783b6f324cfac2a108e3b343a9bb8e2ae04c708c2c949800f0b86731"
+      },
+      "error_relative_to_first_printed_trace_timestamp_seconds": "44.895965",
+      "failed_mapping": {
+        "exact_file_path": "/home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01516CompositionalRepairJoin04.olean",
+        "fd": 11,
+        "file_offset": "0",
+        "flags": "MAP_PRIVATE|MAP_FIXED_NOREPLACE",
+        "length_bytes": 700672,
+        "printed_syscall_duration_seconds": "0.000015",
+        "printed_unix_timestamp": "1793808788.763000",
+        "protections": "PROT_READ|PROT_WRITE",
+        "raw_line": "4490  1793808788.763000 mmap(0xafc32670000, 700672, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01516CompositionalRepairJoin04.olean>, 0) = -1 EEXIST (File exists) <0.000015>",
+        "raw_line_number": 48717,
+        "requested_address": "0xafc32670000",
+        "result": "-1 EEXIST (File exists)",
+        "trace_pid_or_tid": 4490
+      },
+      "intervening_anonymous_mmap_observations": [
+        {
+          "exact_file_path": null,
+          "fd": -1,
+          "file_offset": "0",
+          "flags": "MAP_PRIVATE|MAP_ANONYMOUS",
+          "length_bytes": 704512,
+          "printed_syscall_duration_seconds": "0.000021",
+          "printed_unix_timestamp": "1793808788.763056",
+          "protections": "PROT_READ|PROT_WRITE",
+          "raw_line": "4490  1793808788.763056 mmap(NULL, 704512, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f31f88a3000 <0.000021>",
+          "raw_line_number": 48718,
+          "requested_address": "NULL",
+          "result": "0x7f31f88a3000",
+          "trace_pid_or_tid": 4490
+        }
+      ],
+      "nearby_raw_lines": [
+        {
+          "line": 48716,
+          "text": "4490  1793808788.761948 mmap(0x6123eb320000, 31048, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01516CompositionalRepairPiece03.olean>, 0) = 0x6123eb320000 <0.000019>"
+        },
+        {
+          "line": 48717,
+          "text": "4490  1793808788.763000 mmap(0xafc32670000, 700672, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01516CompositionalRepairJoin04.olean>, 0) = -1 EEXIST (File exists) <0.000015>"
+        },
+        {
+          "line": 48718,
+          "text": "4490  1793808788.763056 mmap(NULL, 704512, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f31f88a3000 <0.000021>"
+        },
+        {
+          "line": 48719,
+          "text": "4490  1793808788.764659 mmap(0x1293de720000, 35944, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01516CompositionalRepairPiece04.olean>, 0) = 0x1293de720000 <0.000019>"
+        },
+        {
+          "line": 48720,
+          "text": "4490  1793808788.765695 mmap(0x671383430000, 700576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01516CompositionalRepairJoin05.olean>, 0) = 0x671383430000 <0.000019>"
+        }
+      ],
+      "next_file_mapping": {
+        "exact_file_path": "/home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01516CompositionalRepairPiece04.olean",
+        "fd": 11,
+        "file_offset": "0",
+        "flags": "MAP_PRIVATE|MAP_FIXED_NOREPLACE",
+        "length_bytes": 35944,
+        "printed_syscall_duration_seconds": "0.000019",
+        "printed_unix_timestamp": "1793808788.764659",
+        "protections": "PROT_READ|PROT_WRITE",
+        "raw_line": "4490  1793808788.764659 mmap(0x1293de720000, 35944, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01516CompositionalRepairPiece04.olean>, 0) = 0x1293de720000 <0.000019>",
+        "raw_line_number": 48719,
+        "requested_address": "0x1293de720000",
+        "result": "0x1293de720000",
+        "trace_pid_or_tid": 4490
+      },
+      "previous_byte_overlapping_successful_file_mappings": [
+        {
+          "intervening_overlapping_successful_munmaps": [],
+          "intervening_overwriting_map_fixed_calls": [],
+          "mapping": {
+            "exact_file_path": "/home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01364.olean",
+            "fd": 11,
+            "file_offset": "0",
+            "flags": "MAP_PRIVATE|MAP_FIXED_NOREPLACE",
+            "length_bytes": 85305224,
+            "printed_syscall_duration_seconds": "0.000033",
+            "printed_unix_timestamp": "1793808779.177591",
+            "protections": "PROT_READ|PROT_WRITE",
+            "raw_line": "4490  1793808779.177591 mmap(0xafc30280000, 85305224, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01364.olean>, 0) = 0xafc30280000 <0.000033>",
+            "raw_line_number": 40627,
+            "requested_address": "0xafc30280000",
+            "result": "0xafc30280000",
+            "trace_pid_or_tid": 4490
+          },
+          "unrounded_requested_byte_overlap": 700672
+        }
+      ],
+      "previous_file_mapping": {
+        "exact_file_path": "/home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01516CompositionalRepairPiece03.olean",
+        "fd": 11,
+        "file_offset": "0",
+        "flags": "MAP_PRIVATE|MAP_FIXED_NOREPLACE",
+        "length_bytes": 31048,
+        "printed_syscall_duration_seconds": "0.000019",
+        "printed_unix_timestamp": "1793808788.761948",
+        "protections": "PROT_READ|PROT_WRITE",
+        "raw_line": "4490  1793808788.761948 mmap(0x6123eb320000, 31048, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01516CompositionalRepairPiece03.olean>, 0) = 0x6123eb320000 <0.000019>",
+        "raw_line_number": 48716,
+        "requested_address": "0x6123eb320000",
+        "result": "0x6123eb320000",
+        "trace_pid_or_tid": 4490
+      },
+      "printed_time_gap_to_next_file_mmap_seconds": "0.001659"
+    },
+    {
+      "bound_original_export": {
+        "module": "Proofs.RadenkovicGutmanD1Long00Leaf01570",
+        "output_sha256": "9d96a3a5c15225073e1645080c31f87ac39845d68a1005bfd60796200f8a163c",
+        "selected_transport_artifact_id": 13261976108,
+        "selected_transport_artifact_sha256": "2ac3c397487864dacc521dc7a6ff9e8ddc400ee54ee1d820b8b3e1ffbdcbd67a",
+        "source_closure_sha256": "6f21805c78b321d0ea0aabe976a8a76d8b074435aa0ca2a0cd6c0c137354c42d",
+        "source_sha256": "7fc69d7dc616f18f9dcac9b786ec4b17e3fc15f2a5cb7f21652d5adfe2c0f13d"
+      },
+      "error_relative_to_first_printed_trace_timestamp_seconds": "45.748138",
+      "failed_mapping": {
+        "exact_file_path": "/home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01570.olean",
+        "fd": 11,
+        "file_offset": "0",
+        "flags": "MAP_PRIVATE|MAP_FIXED_NOREPLACE",
+        "length_bytes": 85578072,
+        "printed_syscall_duration_seconds": "0.000018",
+        "printed_unix_timestamp": "1793808789.615173",
+        "protections": "PROT_READ|PROT_WRITE",
+        "raw_line": "4490  1793808789.615173 mmap(0x6ac687a50000, 85578072, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01570.olean>, 0) = -1 EEXIST (File exists) <0.000018>",
+        "raw_line_number": 49371,
+        "requested_address": "0x6ac687a50000",
+        "result": "-1 EEXIST (File exists)",
+        "trace_pid_or_tid": 4490
+      },
+      "intervening_anonymous_mmap_observations": [
+        {
+          "exact_file_path": null,
+          "fd": -1,
+          "file_offset": "0",
+          "flags": "MAP_PRIVATE|MAP_ANONYMOUS",
+          "length_bytes": 85581824,
+          "printed_syscall_duration_seconds": "0.000023",
+          "printed_unix_timestamp": "1793808789.615250",
+          "protections": "PROT_READ|PROT_WRITE",
+          "raw_line": "4490  1793808789.615250 mmap(NULL, 85581824, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f31589d5000 <0.000023>",
+          "raw_line_number": 49372,
+          "requested_address": "NULL",
+          "result": "0x7f31589d5000",
+          "trace_pid_or_tid": 4490
+        }
+      ],
+      "nearby_raw_lines": [
+        {
+          "line": 49370,
+          "text": "4490  1793808789.611871 mmap(0x17a522b80000, 84590664, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01569.olean>, 0) = 0x17a522b80000 <0.000026>"
+        },
+        {
+          "line": 49371,
+          "text": "4490  1793808789.615173 mmap(0x6ac687a50000, 85578072, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01570.olean>, 0) = -1 EEXIST (File exists) <0.000018>"
+        },
+        {
+          "line": 49372,
+          "text": "4490  1793808789.615250 mmap(NULL, 85581824, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f31589d5000 <0.000023>"
+        },
+        {
+          "line": 49373,
+          "text": "4490  1793808789.702721 mmap(0x6463e5bd0000, 84554904, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01571.olean>, 0) = 0x6463e5bd0000 <0.000032>"
+        },
+        {
+          "line": 49374,
+          "text": "4490  1793808789.705522 mmap(0x49b981580000, 85525400, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01572.olean>, 0) = 0x49b981580000 <0.000022>"
+        }
+      ],
+      "next_file_mapping": {
+        "exact_file_path": "/home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01571.olean",
+        "fd": 11,
+        "file_offset": "0",
+        "flags": "MAP_PRIVATE|MAP_FIXED_NOREPLACE",
+        "length_bytes": 84554904,
+        "printed_syscall_duration_seconds": "0.000032",
+        "printed_unix_timestamp": "1793808789.702721",
+        "protections": "PROT_READ|PROT_WRITE",
+        "raw_line": "4490  1793808789.702721 mmap(0x6463e5bd0000, 84554904, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01571.olean>, 0) = 0x6463e5bd0000 <0.000032>",
+        "raw_line_number": 49373,
+        "requested_address": "0x6463e5bd0000",
+        "result": "0x6463e5bd0000",
+        "trace_pid_or_tid": 4490
+      },
+      "previous_byte_overlapping_successful_file_mappings": [
+        {
+          "intervening_overlapping_successful_munmaps": [],
+          "intervening_overwriting_map_fixed_calls": [],
+          "mapping": {
+            "exact_file_path": "/home/runner/work/formal-conjectures/formal-conjectures/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/RingTheory/NonUnitalSubring/Basic.olean",
+            "fd": 11,
+            "file_offset": "0",
+            "flags": "MAP_PRIVATE|MAP_FIXED_NOREPLACE",
+            "length_bytes": 728312,
+            "printed_syscall_duration_seconds": "0.000024",
+            "printed_unix_timestamp": "1793808755.346819",
+            "protections": "PROT_READ|PROT_WRITE",
+            "raw_line": "4490  1793808755.346819 mmap(0x6ac6892c0000, 728312, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/RingTheory/NonUnitalSubring/Basic.olean>, 0) = 0x6ac6892c0000 <0.000024>",
+            "raw_line_number": 16606,
+            "requested_address": "0x6ac6892c0000",
+            "result": "0x6ac6892c0000",
+            "trace_pid_or_tid": 4490
+          },
+          "unrounded_requested_byte_overlap": 728312
+        },
+        {
+          "intervening_overlapping_successful_munmaps": [],
+          "intervening_overwriting_map_fixed_calls": [],
+          "mapping": {
+            "exact_file_path": "/home/runner/work/formal-conjectures/formal-conjectures/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/RingTheory/NonUnitalSubring/Basic.olean.server",
+            "fd": 11,
+            "file_offset": "0",
+            "flags": "MAP_PRIVATE|MAP_FIXED_NOREPLACE",
+            "length_bytes": 42336,
+            "printed_syscall_duration_seconds": "0.000022",
+            "printed_unix_timestamp": "1793808755.347402",
+            "protections": "PROT_READ|PROT_WRITE",
+            "raw_line": "4490  1793808755.347402 mmap(0x6ac689380000, 42336, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/RingTheory/NonUnitalSubring/Basic.olean.server>, 0) = 0x6ac689380000 <0.000022>",
+            "raw_line_number": 16607,
+            "requested_address": "0x6ac689380000",
+            "result": "0x6ac689380000",
+            "trace_pid_or_tid": 4490
+          },
+          "unrounded_requested_byte_overlap": 42336
+        },
+        {
+          "intervening_overlapping_successful_munmaps": [],
+          "intervening_overwriting_map_fixed_calls": [],
+          "mapping": {
+            "exact_file_path": "/home/runner/work/formal-conjectures/formal-conjectures/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/RingTheory/NonUnitalSubring/Basic.olean.private",
+            "fd": 11,
+            "file_offset": "0",
+            "flags": "MAP_PRIVATE|MAP_FIXED_NOREPLACE",
+            "length_bytes": 407496,
+            "printed_syscall_duration_seconds": "0.000021",
+            "printed_unix_timestamp": "1793808755.347815",
+            "protections": "PROT_READ|PROT_WRITE",
+            "raw_line": "4490  1793808755.347815 mmap(0x6ac689390000, 407496, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/RingTheory/NonUnitalSubring/Basic.olean.private>, 0) = 0x6ac689390000 <0.000021>",
+            "raw_line_number": 16608,
+            "requested_address": "0x6ac689390000",
+            "result": "0x6ac689390000",
+            "trace_pid_or_tid": 4490
+          },
+          "unrounded_requested_byte_overlap": 407496
+        }
+      ],
+      "previous_file_mapping": {
+        "exact_file_path": "/home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01569.olean",
+        "fd": 11,
+        "file_offset": "0",
+        "flags": "MAP_PRIVATE|MAP_FIXED_NOREPLACE",
+        "length_bytes": 84590664,
+        "printed_syscall_duration_seconds": "0.000026",
+        "printed_unix_timestamp": "1793808789.611871",
+        "protections": "PROT_READ|PROT_WRITE",
+        "raw_line": "4490  1793808789.611871 mmap(0x17a522b80000, 84590664, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01569.olean>, 0) = 0x17a522b80000 <0.000026>",
+        "raw_line_number": 49370,
+        "requested_address": "0x17a522b80000",
+        "result": "0x17a522b80000",
+        "trace_pid_or_tid": 4490
+      },
+      "printed_time_gap_to_next_file_mmap_seconds": "0.087548"
+    },
+    {
+      "bound_original_export": {
+        "module": "Proofs.RadenkovicGutmanD1Long00Leaf01581",
+        "output_sha256": "0f64feb28ecf5e6cdef031aabdeb58f3227ccd82747549db6ce277ef2da374f0",
+        "selected_transport_artifact_id": 13292926502,
+        "selected_transport_artifact_sha256": "a7daa4b84f91cefd2aa8d242f484bf79ba6b2c7be16f93114845d5f8813d1f62",
+        "source_closure_sha256": "aa70cc871d633d1f953ab43e5faed8cce5f415c0073ca1a971975a59b966711f",
+        "source_sha256": "1ee88ffbad63e4f91f28a59b53dee40a339d3407d29cc88bb28c3ffba49a78d7"
+      },
+      "error_relative_to_first_printed_trace_timestamp_seconds": "45.865728",
+      "failed_mapping": {
+        "exact_file_path": "/home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01581.olean",
+        "fd": 11,
+        "file_offset": "0",
+        "flags": "MAP_PRIVATE|MAP_FIXED_NOREPLACE",
+        "length_bytes": 79147392,
+        "printed_syscall_duration_seconds": "0.000019",
+        "printed_unix_timestamp": "1793808789.732763",
+        "protections": "PROT_READ|PROT_WRITE",
+        "raw_line": "4490  1793808789.732763 mmap(0x52028dff0000, 79147392, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01581.olean>, 0) = -1 EEXIST (File exists) <0.000019>",
+        "raw_line_number": 49384,
+        "requested_address": "0x52028dff0000",
+        "result": "-1 EEXIST (File exists)",
+        "trace_pid_or_tid": 4490
+      },
+      "intervening_anonymous_mmap_observations": [
+        {
+          "exact_file_path": null,
+          "fd": -1,
+          "file_offset": "0",
+          "flags": "MAP_PRIVATE|MAP_ANONYMOUS",
+          "length_bytes": 79151104,
+          "printed_syscall_duration_seconds": "0.000023",
+          "printed_unix_timestamp": "1793808789.732828",
+          "protections": "PROT_READ|PROT_WRITE",
+          "raw_line": "4490  1793808789.732828 mmap(NULL, 79151104, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f3153e59000 <0.000023>",
+          "raw_line_number": 49385,
+          "requested_address": "NULL",
+          "result": "0x7f3153e59000",
+          "trace_pid_or_tid": 4490
+        }
+      ],
+      "nearby_raw_lines": [
+        {
+          "line": 49383,
+          "text": "4490  1793808789.731765 mmap(0x66d397230000, 109024, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1OriginalSharedSlice0093Complete.olean>, 0) = 0x66d397230000 <0.000027>"
+        },
+        {
+          "line": 49384,
+          "text": "4490  1793808789.732763 mmap(0x52028dff0000, 79147392, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01581.olean>, 0) = -1 EEXIST (File exists) <0.000019>"
+        },
+        {
+          "line": 49385,
+          "text": "4490  1793808789.732828 mmap(NULL, 79151104, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f3153e59000 <0.000023>"
+        },
+        {
+          "line": 49386,
+          "text": "4490  1793808789.812164 mmap(0x6a9803a40000, 81294056, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01582.olean>, 0) = 0x6a9803a40000 <0.000033>"
+        },
+        {
+          "line": 49387,
+          "text": "4490  1793808789.815053 mmap(0x53ef19c80000, 84944744, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01583.olean>, 0) = 0x53ef19c80000 <0.000021>"
+        }
+      ],
+      "next_file_mapping": {
+        "exact_file_path": "/home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01582.olean",
+        "fd": 11,
+        "file_offset": "0",
+        "flags": "MAP_PRIVATE|MAP_FIXED_NOREPLACE",
+        "length_bytes": 81294056,
+        "printed_syscall_duration_seconds": "0.000033",
+        "printed_unix_timestamp": "1793808789.812164",
+        "protections": "PROT_READ|PROT_WRITE",
+        "raw_line": "4490  1793808789.812164 mmap(0x6a9803a40000, 81294056, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01582.olean>, 0) = 0x6a9803a40000 <0.000033>",
+        "raw_line_number": 49386,
+        "requested_address": "0x6a9803a40000",
+        "result": "0x6a9803a40000",
+        "trace_pid_or_tid": 4490
+      },
+      "previous_byte_overlapping_successful_file_mappings": [
+        {
+          "intervening_overlapping_successful_munmaps": [],
+          "intervening_overwriting_map_fixed_calls": [],
+          "mapping": {
+            "exact_file_path": "/home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01431RepairRow002.olean",
+            "fd": 11,
+            "file_offset": "0",
+            "flags": "MAP_PRIVATE|MAP_FIXED_NOREPLACE",
+            "length_bytes": 24352,
+            "printed_syscall_duration_seconds": "0.000021",
+            "printed_unix_timestamp": "1793808781.766504",
+            "protections": "PROT_READ|PROT_WRITE",
+            "raw_line": "4490  1793808781.766504 mmap(0x520290f40000, 24352, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01431RepairRow002.olean>, 0) = 0x520290f40000 <0.000021>",
+            "raw_line_number": 42751,
+            "requested_address": "0x520290f40000",
+            "result": "0x520290f40000",
+            "trace_pid_or_tid": 4490
+          },
+          "unrounded_requested_byte_overlap": 24352
+        }
+      ],
+      "previous_file_mapping": {
+        "exact_file_path": "/home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1OriginalSharedSlice0093Complete.olean",
+        "fd": 11,
+        "file_offset": "0",
+        "flags": "MAP_PRIVATE|MAP_FIXED_NOREPLACE",
+        "length_bytes": 109024,
+        "printed_syscall_duration_seconds": "0.000027",
+        "printed_unix_timestamp": "1793808789.731765",
+        "protections": "PROT_READ|PROT_WRITE",
+        "raw_line": "4490  1793808789.731765 mmap(0x66d397230000, 109024, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1OriginalSharedSlice0093Complete.olean>, 0) = 0x66d397230000 <0.000027>",
+        "raw_line_number": 49383,
+        "requested_address": "0x66d397230000",
+        "result": "0x66d397230000",
+        "trace_pid_or_tid": 4490
+      },
+      "printed_time_gap_to_next_file_mmap_seconds": "0.079401"
+    },
+    {
+      "bound_original_export": {
+        "module": "Proofs.RadenkovicGutmanD1Long00Leaf01594",
+        "output_sha256": "93c088f303ca4cdc83351183b6ffe73fd21c949b8961dcb5903ce04deb40bbd4",
+        "selected_transport_artifact_id": 13294231867,
+        "selected_transport_artifact_sha256": "9457d137d38b0b17f3a6783e99f17e331cfbd7200f078a64ad015c1be0c2468e",
+        "source_closure_sha256": "0fc864036db46646c7691987d76378e5bfc96869ea049dba8dedeba3387b8065",
+        "source_sha256": "64fc5b325902c596b73df152f2681ab320bed771cdc2a1c5ae0001ab618b9756"
+      },
+      "error_relative_to_first_printed_trace_timestamp_seconds": "45.980497",
+      "failed_mapping": {
+        "exact_file_path": "/home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01594.olean",
+        "fd": 11,
+        "file_offset": "0",
+        "flags": "MAP_PRIVATE|MAP_FIXED_NOREPLACE",
+        "length_bytes": 84185688,
+        "printed_syscall_duration_seconds": "0.000018",
+        "printed_unix_timestamp": "1793808789.847532",
+        "protections": "PROT_READ|PROT_WRITE",
+        "raw_line": "4490  1793808789.847532 mmap(0x311014820000, 84185688, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01594.olean>, 0) = -1 EEXIST (File exists) <0.000018>",
+        "raw_line_number": 49398,
+        "requested_address": "0x311014820000",
+        "result": "-1 EEXIST (File exists)",
+        "trace_pid_or_tid": 4490
+      },
+      "intervening_anonymous_mmap_observations": [
+        {
+          "exact_file_path": null,
+          "fd": -1,
+          "file_offset": "0",
+          "flags": "MAP_PRIVATE|MAP_ANONYMOUS",
+          "length_bytes": 84189184,
+          "printed_syscall_duration_seconds": "0.000031",
+          "printed_unix_timestamp": "1793808789.847597",
+          "protections": "PROT_READ|PROT_WRITE",
+          "raw_line": "4490  1793808789.847597 mmap(NULL, 84189184, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f314ee0f000 <0.000031>",
+          "raw_line_number": 49399,
+          "requested_address": "NULL",
+          "result": "0x7f314ee0f000",
+          "trace_pid_or_tid": 4490
+        }
+      ],
+      "nearby_raw_lines": [
+        {
+          "line": 49397,
+          "text": "4490  1793808789.844749 mmap(0x7b58b220000, 85143296, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01593.olean>, 0) = 0x7b58b220000 <0.000027>"
+        },
+        {
+          "line": 49398,
+          "text": "4490  1793808789.847532 mmap(0x311014820000, 84185688, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01594.olean>, 0) = -1 EEXIST (File exists) <0.000018>"
+        },
+        {
+          "line": 49399,
+          "text": "4490  1793808789.847597 mmap(NULL, 84189184, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f314ee0f000 <0.000031>"
+        },
+        {
+          "line": 49400,
+          "text": "4490  1793808789.932481 mmap(0x7c78af490000, 85157304, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01595.olean>, 0) = 0x7c78af490000 <0.000031>"
+        },
+        {
+          "line": 49401,
+          "text": "4490  1793808789.935388 mmap(0xf3129a10000, 84203392, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01596.olean>, 0) = 0xf3129a10000 <0.000020>"
+        }
+      ],
+      "next_file_mapping": {
+        "exact_file_path": "/home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01595.olean",
+        "fd": 11,
+        "file_offset": "0",
+        "flags": "MAP_PRIVATE|MAP_FIXED_NOREPLACE",
+        "length_bytes": 85157304,
+        "printed_syscall_duration_seconds": "0.000031",
+        "printed_unix_timestamp": "1793808789.932481",
+        "protections": "PROT_READ|PROT_WRITE",
+        "raw_line": "4490  1793808789.932481 mmap(0x7c78af490000, 85157304, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01595.olean>, 0) = 0x7c78af490000 <0.000031>",
+        "raw_line_number": 49400,
+        "requested_address": "0x7c78af490000",
+        "result": "0x7c78af490000",
+        "trace_pid_or_tid": 4490
+      },
+      "previous_byte_overlapping_successful_file_mappings": [
+        {
+          "intervening_overlapping_successful_munmaps": [],
+          "intervening_overwriting_map_fixed_calls": [],
+          "mapping": {
+            "exact_file_path": "/home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf00126.olean",
+            "fd": 11,
+            "file_offset": "0",
+            "flags": "MAP_PRIVATE|MAP_FIXED_NOREPLACE",
+            "length_bytes": 48231216,
+            "printed_syscall_duration_seconds": "0.000025",
+            "printed_unix_timestamp": "1793808765.104687",
+            "protections": "PROT_READ|PROT_WRITE",
+            "raw_line": "4490  1793808765.104687 mmap(0x311017d30000, 48231216, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf00126.olean>, 0) = 0x311017d30000 <0.000025>",
+            "raw_line_number": 29580,
+            "requested_address": "0x311017d30000",
+            "result": "0x311017d30000",
+            "trace_pid_or_tid": 4490
+          },
+          "unrounded_requested_byte_overlap": 28545624
+        }
+      ],
+      "previous_file_mapping": {
+        "exact_file_path": "/home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01593.olean",
+        "fd": 11,
+        "file_offset": "0",
+        "flags": "MAP_PRIVATE|MAP_FIXED_NOREPLACE",
+        "length_bytes": 85143296,
+        "printed_syscall_duration_seconds": "0.000027",
+        "printed_unix_timestamp": "1793808789.844749",
+        "protections": "PROT_READ|PROT_WRITE",
+        "raw_line": "4490  1793808789.844749 mmap(0x7b58b220000, 85143296, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01593.olean>, 0) = 0x7b58b220000 <0.000027>",
+        "raw_line_number": 49397,
+        "requested_address": "0x7b58b220000",
+        "result": "0x7b58b220000",
+        "trace_pid_or_tid": 4490
+      },
+      "printed_time_gap_to_next_file_mmap_seconds": "0.084949"
+    },
+    {
+      "bound_original_export": {
+        "module": "Proofs.RadenkovicGutmanD1Long00Leaf01654",
+        "output_sha256": "83ad6d6f178eca8924d58516fd4799df313e7cff0b7681c97f3a6904f903fa15",
+        "selected_transport_artifact_id": 13293519685,
+        "selected_transport_artifact_sha256": "0de5995751ae04270e0b0d55fe952b8919df4cc1bf7e4ee7a90747835d9a9e6b",
+        "source_closure_sha256": "9b3b77f91a9c2c94747cfac001b085f09ce61206ed9fe5827059ec2efa6830f8",
+        "source_sha256": "afa5455f75409c17bab0dd6fe9a4d5be2e462e2ab59c6509c758f9ff4bde4895"
+      },
+      "error_relative_to_first_printed_trace_timestamp_seconds": "50.167731",
+      "failed_mapping": {
+        "exact_file_path": "/home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01654.olean",
+        "fd": 11,
+        "file_offset": "0",
+        "flags": "MAP_PRIVATE|MAP_FIXED_NOREPLACE",
+        "length_bytes": 84104216,
+        "printed_syscall_duration_seconds": "0.000017",
+        "printed_unix_timestamp": "1793808794.034766",
+        "protections": "PROT_READ|PROT_WRITE",
+        "raw_line": "4490  1793808794.034766 mmap(0x49fbe4bd0000, 84104216, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01654.olean>, 0) = -1 EEXIST (File exists) <0.000017>",
+        "raw_line_number": 52807,
+        "requested_address": "0x49fbe4bd0000",
+        "result": "-1 EEXIST (File exists)",
+        "trace_pid_or_tid": 4490
+      },
+      "intervening_anonymous_mmap_observations": [
+        {
+          "exact_file_path": null,
+          "fd": -1,
+          "file_offset": "0",
+          "flags": "MAP_PRIVATE|MAP_ANONYMOUS",
+          "length_bytes": 84107264,
+          "printed_syscall_duration_seconds": "0.000021",
+          "printed_unix_timestamp": "1793808794.034826",
+          "protections": "PROT_READ|PROT_WRITE",
+          "raw_line": "4490  1793808794.034826 mmap(NULL, 84107264, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f3149dd9000 <0.000021>",
+          "raw_line_number": 52808,
+          "requested_address": "NULL",
+          "result": "0x7f3149dd9000",
+          "trace_pid_or_tid": 4490
+        }
+      ],
+      "nearby_raw_lines": [
+        {
+          "line": 52806,
+          "text": "4490  1793808794.031946 mmap(0x409cc01e0000, 85042984, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01653.olean>, 0) = 0x409cc01e0000 <0.000020>"
+        },
+        {
+          "line": 52807,
+          "text": "4490  1793808794.034766 mmap(0x49fbe4bd0000, 84104216, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01654.olean>, 0) = -1 EEXIST (File exists) <0.000017>"
+        },
+        {
+          "line": 52808,
+          "text": "4490  1793808794.034826 mmap(NULL, 84107264, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f3149dd9000 <0.000021>"
+        },
+        {
+          "line": 52809,
+          "text": "4490  1793808794.144637 mmap(0x52751c310000, 85064912, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01655.olean>, 0) = 0x52751c310000 <0.000031>"
+        },
+        {
+          "line": 52810,
+          "text": "4490  1793808794.147582 mmap(0x38d3e30d0000, 84100160, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01656.olean>, 0) = 0x38d3e30d0000 <0.000034>"
+        }
+      ],
+      "next_file_mapping": {
+        "exact_file_path": "/home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01655.olean",
+        "fd": 11,
+        "file_offset": "0",
+        "flags": "MAP_PRIVATE|MAP_FIXED_NOREPLACE",
+        "length_bytes": 85064912,
+        "printed_syscall_duration_seconds": "0.000031",
+        "printed_unix_timestamp": "1793808794.144637",
+        "protections": "PROT_READ|PROT_WRITE",
+        "raw_line": "4490  1793808794.144637 mmap(0x52751c310000, 85064912, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01655.olean>, 0) = 0x52751c310000 <0.000031>",
+        "raw_line_number": 52809,
+        "requested_address": "0x52751c310000",
+        "result": "0x52751c310000",
+        "trace_pid_or_tid": 4490
+      },
+      "previous_byte_overlapping_successful_file_mappings": [
+        {
+          "intervening_overlapping_successful_munmaps": [],
+          "intervening_overwriting_map_fixed_calls": [],
+          "mapping": {
+            "exact_file_path": "/home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01302RepairRow007.olean",
+            "fd": 11,
+            "file_offset": "0",
+            "flags": "MAP_PRIVATE|MAP_FIXED_NOREPLACE",
+            "length_bytes": 24448,
+            "printed_syscall_duration_seconds": "0.000017",
+            "printed_unix_timestamp": "1793808774.605310",
+            "protections": "PROT_READ|PROT_WRITE",
+            "raw_line": "4490  1793808774.605310 mmap(0x49fbe8ad0000, 24448, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01302RepairRow007.olean>, 0) = 0x49fbe8ad0000 <0.000017>",
+            "raw_line_number": 35767,
+            "requested_address": "0x49fbe8ad0000",
+            "result": "0x49fbe8ad0000",
+            "trace_pid_or_tid": 4490
+          },
+          "unrounded_requested_byte_overlap": 24448
+        }
+      ],
+      "previous_file_mapping": {
+        "exact_file_path": "/home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01653.olean",
+        "fd": 11,
+        "file_offset": "0",
+        "flags": "MAP_PRIVATE|MAP_FIXED_NOREPLACE",
+        "length_bytes": 85042984,
+        "printed_syscall_duration_seconds": "0.000020",
+        "printed_unix_timestamp": "1793808794.031946",
+        "protections": "PROT_READ|PROT_WRITE",
+        "raw_line": "4490  1793808794.031946 mmap(0x409cc01e0000, 85042984, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01653.olean>, 0) = 0x409cc01e0000 <0.000020>",
+        "raw_line_number": 52806,
+        "requested_address": "0x409cc01e0000",
+        "result": "0x409cc01e0000",
+        "trace_pid_or_tid": 4490
+      },
+      "printed_time_gap_to_next_file_mmap_seconds": "0.109871"
+    },
+    {
+      "bound_original_export": {
+        "module": "Proofs.RadenkovicGutmanD1Long00Leaf01665",
+        "output_sha256": "8be0e88d892fe30ad9440c81e2a1a78020a4e14a254d55ccb04a1bcb280ce6dc",
+        "selected_transport_artifact_id": 13277904393,
+        "selected_transport_artifact_sha256": "80966ae46ac88089f1532793e4bbd2d5114387419575596c5ede5bc950acedd3",
+        "source_closure_sha256": "663a3327fbdef3704353a770af314548f428865ce351ef149296d05eb21a3d01",
+        "source_sha256": "cf3a429db1e49c18befd7c937c9c4441aa08b67ca94d0e478dac3ddd42084446"
+      },
+      "error_relative_to_first_printed_trace_timestamp_seconds": "50.307065",
+      "failed_mapping": {
+        "exact_file_path": "/home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01665.olean",
+        "fd": 11,
+        "file_offset": "0",
+        "flags": "MAP_PRIVATE|MAP_FIXED_NOREPLACE",
+        "length_bytes": 66530896,
+        "printed_syscall_duration_seconds": "0.000019",
+        "printed_unix_timestamp": "1793808794.174100",
+        "protections": "PROT_READ|PROT_WRITE",
+        "raw_line": "4490  1793808794.174100 mmap(0x236ab76a0000, 66530896, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01665.olean>, 0) = -1 EEXIST (File exists) <0.000019>",
+        "raw_line_number": 52819,
+        "requested_address": "0x236ab76a0000",
+        "result": "-1 EEXIST (File exists)",
+        "trace_pid_or_tid": 4490
+      },
+      "intervening_anonymous_mmap_observations": [
+        {
+          "exact_file_path": null,
+          "fd": -1,
+          "file_offset": "0",
+          "flags": "MAP_PRIVATE|MAP_ANONYMOUS",
+          "length_bytes": 66531328,
+          "printed_syscall_duration_seconds": "0.000024",
+          "printed_unix_timestamp": "1793808794.174167",
+          "protections": "PROT_READ|PROT_WRITE",
+          "raw_line": "4490  1793808794.174167 mmap(NULL, 66531328, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f3145e66000 <0.000024>",
+          "raw_line_number": 52820,
+          "requested_address": "NULL",
+          "result": "0x7f3145e66000",
+          "trace_pid_or_tid": 4490
+        }
+      ],
+      "nearby_raw_lines": [
+        {
+          "line": 52818,
+          "text": "4490  1793808794.170891 mmap(0x5e042e2d0000, 84178384, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01664.olean>, 0) = 0x5e042e2d0000 <0.000024>"
+        },
+        {
+          "line": 52819,
+          "text": "4490  1793808794.174100 mmap(0x236ab76a0000, 66530896, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01665.olean>, 0) = -1 EEXIST (File exists) <0.000019>"
+        },
+        {
+          "line": 52820,
+          "text": "4490  1793808794.174167 mmap(NULL, 66531328, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f3145e66000 <0.000024>"
+        },
+        {
+          "line": 52821,
+          "text": "4490  1793808794.240986 mmap(0x1899b63b0000, 109048, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1OriginalSharedSlice0098Complete.olean>, 0) = 0x1899b63b0000 <0.000033>"
+        },
+        {
+          "line": 52822,
+          "text": "4490  1793808794.242057 mmap(0x4dc113aa0000, 1471376, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01666.olean>, 0) = 0x4dc113aa0000 <0.000027>"
+        }
+      ],
+      "next_file_mapping": {
+        "exact_file_path": "/home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1OriginalSharedSlice0098Complete.olean",
+        "fd": 11,
+        "file_offset": "0",
+        "flags": "MAP_PRIVATE|MAP_FIXED_NOREPLACE",
+        "length_bytes": 109048,
+        "printed_syscall_duration_seconds": "0.000033",
+        "printed_unix_timestamp": "1793808794.240986",
+        "protections": "PROT_READ|PROT_WRITE",
+        "raw_line": "4490  1793808794.240986 mmap(0x1899b63b0000, 109048, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1OriginalSharedSlice0098Complete.olean>, 0) = 0x1899b63b0000 <0.000033>",
+        "raw_line_number": 52821,
+        "requested_address": "0x1899b63b0000",
+        "result": "0x1899b63b0000",
+        "trace_pid_or_tid": 4490
+      },
+      "previous_byte_overlapping_successful_file_mappings": [
+        {
+          "intervening_overlapping_successful_munmaps": [],
+          "intervening_overwriting_map_fixed_calls": [],
+          "mapping": {
+            "exact_file_path": "/home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01298RepairPiece04.olean",
+            "fd": 11,
+            "file_offset": "0",
+            "flags": "MAP_PRIVATE|MAP_FIXED_NOREPLACE",
+            "length_bytes": 40088,
+            "printed_syscall_duration_seconds": "0.000021",
+            "printed_unix_timestamp": "1793808773.818459",
+            "protections": "PROT_READ|PROT_WRITE",
+            "raw_line": "4490  1793808773.818459 mmap(0x236aba220000, 40088, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01298RepairPiece04.olean>, 0) = 0x236aba220000 <0.000021>",
+            "raw_line_number": 35098,
+            "requested_address": "0x236aba220000",
+            "result": "0x236aba220000",
+            "trace_pid_or_tid": 4490
+          },
+          "unrounded_requested_byte_overlap": 40088
+        },
+        {
+          "intervening_overlapping_successful_munmaps": [],
+          "intervening_overwriting_map_fixed_calls": [],
+          "mapping": {
+            "exact_file_path": "/home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01302RepairJoin03.olean",
+            "fd": 11,
+            "file_offset": "0",
+            "flags": "MAP_PRIVATE|MAP_FIXED_NOREPLACE",
+            "length_bytes": 734160,
+            "printed_syscall_duration_seconds": "0.000022",
+            "printed_unix_timestamp": "1793808774.520186",
+            "protections": "PROT_READ|PROT_WRITE",
+            "raw_line": "4490  1793808774.520186 mmap(0x236ab9980000, 734160, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01302RepairJoin03.olean>, 0) = 0x236ab9980000 <0.000022>",
+            "raw_line_number": 35707,
+            "requested_address": "0x236ab9980000",
+            "result": "0x236ab9980000",
+            "trace_pid_or_tid": 4490
+          },
+          "unrounded_requested_byte_overlap": 734160
+        }
+      ],
+      "previous_file_mapping": {
+        "exact_file_path": "/home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01664.olean",
+        "fd": 11,
+        "file_offset": "0",
+        "flags": "MAP_PRIVATE|MAP_FIXED_NOREPLACE",
+        "length_bytes": 84178384,
+        "printed_syscall_duration_seconds": "0.000024",
+        "printed_unix_timestamp": "1793808794.170891",
+        "protections": "PROT_READ|PROT_WRITE",
+        "raw_line": "4490  1793808794.170891 mmap(0x5e042e2d0000, 84178384, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01664.olean>, 0) = 0x5e042e2d0000 <0.000024>",
+        "raw_line_number": 52818,
+        "requested_address": "0x5e042e2d0000",
+        "result": "0x5e042e2d0000",
+        "trace_pid_or_tid": 4490
+      },
+      "printed_time_gap_to_next_file_mmap_seconds": "0.066886"
+    },
+    {
+      "bound_original_export": {
+        "module": "Proofs.RadenkovicGutmanD1Long00Leaf01674CompositionalRepairRow052",
+        "output_sha256": "8ec96dd24ea98bfcd631a7361297882c32d35f9c3807d57c031d2e21dc2097db",
+        "selected_transport_artifact_id": 12612855593,
+        "selected_transport_artifact_sha256": "11ac102ae60a31c7c2b78ca2bc7278fb4de699c5fbfbbabc93480275eeca976a",
+        "source_closure_sha256": "cab392c888fd0065dac36d28bd5298ea9e7c5b077b3e1ba9f961a1d45db5bcae",
+        "source_sha256": "b17ee3e5fb8d0822dd4ad6af17cd5361274a8e635510368aaba7169c1c26d9de"
+      },
+      "error_relative_to_first_printed_trace_timestamp_seconds": "51.493780",
+      "failed_mapping": {
+        "exact_file_path": "/home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01674CompositionalRepairRow052.olean",
+        "fd": 11,
+        "file_offset": "0",
+        "flags": "MAP_PRIVATE|MAP_FIXED_NOREPLACE",
+        "length_bytes": 24840,
+        "printed_syscall_duration_seconds": "0.000018",
+        "printed_unix_timestamp": "1793808795.360815",
+        "protections": "PROT_READ|PROT_WRITE",
+        "raw_line": "4490  1793808795.360815 mmap(0x69f13fde0000, 24840, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01674CompositionalRepairRow052.olean>, 0) = -1 EEXIST (File exists) <0.000018>",
+        "raw_line_number": 53630,
+        "requested_address": "0x69f13fde0000",
+        "result": "-1 EEXIST (File exists)",
+        "trace_pid_or_tid": 4490
+      },
+      "intervening_anonymous_mmap_observations": [],
+      "nearby_raw_lines": [
+        {
+          "line": 53629,
+          "text": "4490  1793808795.359718 mmap(0x26d533630000, 24848, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01674CompositionalRepairRow051.olean>, 0) = 0x26d533630000 <0.000021>"
+        },
+        {
+          "line": 53630,
+          "text": "4490  1793808795.360815 mmap(0x69f13fde0000, 24840, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01674CompositionalRepairRow052.olean>, 0) = -1 EEXIST (File exists) <0.000018>"
+        },
+        {
+          "line": 53631,
+          "text": "4490  1793808795.361985 mmap(0x4ae6f09c0000, 24840, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01674CompositionalRepairRow053.olean>, 0) = 0x4ae6f09c0000 <0.000022>"
+        },
+        {
+          "line": 53632,
+          "text": "4490  1793808795.363039 mmap(0x514482680000, 24840, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01674CompositionalRepairRow054.olean>, 0) = 0x514482680000 <0.000028>"
+        }
+      ],
+      "next_file_mapping": {
+        "exact_file_path": "/home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01674CompositionalRepairRow053.olean",
+        "fd": 11,
+        "file_offset": "0",
+        "flags": "MAP_PRIVATE|MAP_FIXED_NOREPLACE",
+        "length_bytes": 24840,
+        "printed_syscall_duration_seconds": "0.000022",
+        "printed_unix_timestamp": "1793808795.361985",
+        "protections": "PROT_READ|PROT_WRITE",
+        "raw_line": "4490  1793808795.361985 mmap(0x4ae6f09c0000, 24840, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01674CompositionalRepairRow053.olean>, 0) = 0x4ae6f09c0000 <0.000022>",
+        "raw_line_number": 53631,
+        "requested_address": "0x4ae6f09c0000",
+        "result": "0x4ae6f09c0000",
+        "trace_pid_or_tid": 4490
+      },
+      "previous_byte_overlapping_successful_file_mappings": [
+        {
+          "intervening_overlapping_successful_munmaps": [],
+          "intervening_overwriting_map_fixed_calls": [],
+          "mapping": {
+            "exact_file_path": "/home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf00636.olean",
+            "fd": 11,
+            "file_offset": "0",
+            "flags": "MAP_PRIVATE|MAP_FIXED_NOREPLACE",
+            "length_bytes": 47837512,
+            "printed_syscall_duration_seconds": "0.000025",
+            "printed_unix_timestamp": "1793808766.677964",
+            "protections": "PROT_READ|PROT_WRITE",
+            "raw_line": "4490  1793808766.677964 mmap(0x69f13d160000, 47837512, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf00636.olean>, 0) = 0x69f13d160000 <0.000025>",
+            "raw_line_number": 30121,
+            "requested_address": "0x69f13d160000",
+            "result": "0x69f13d160000",
+            "trace_pid_or_tid": 4490
+          },
+          "unrounded_requested_byte_overlap": 24840
+        }
+      ],
+      "previous_file_mapping": {
+        "exact_file_path": "/home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01674CompositionalRepairRow051.olean",
+        "fd": 11,
+        "file_offset": "0",
+        "flags": "MAP_PRIVATE|MAP_FIXED_NOREPLACE",
+        "length_bytes": 24848,
+        "printed_syscall_duration_seconds": "0.000021",
+        "printed_unix_timestamp": "1793808795.359718",
+        "protections": "PROT_READ|PROT_WRITE",
+        "raw_line": "4490  1793808795.359718 mmap(0x26d533630000, 24848, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01674CompositionalRepairRow051.olean>, 0) = 0x26d533630000 <0.000021>",
+        "raw_line_number": 53629,
+        "requested_address": "0x26d533630000",
+        "result": "0x26d533630000",
+        "trace_pid_or_tid": 4490
+      },
+      "printed_time_gap_to_next_file_mmap_seconds": "0.001170"
+    },
+    {
+      "bound_original_export": {
+        "module": "Proofs.RadenkovicGutmanD1Long00Leaf01687",
+        "output_sha256": "0bf1239d4b0d45fbafa1f7215a28e9afe1e80cdecf9e3001da27a624632b70c0",
+        "selected_transport_artifact_id": 13282222316,
+        "selected_transport_artifact_sha256": "888f57eab1e88ce08346511a102e7ce7fbf27028b6fd2c1457667e96155b0b59",
+        "source_closure_sha256": "2578c220fc5607ddffb3935fe28633529d0dabd8a9c0254a0442de177b686809",
+        "source_sha256": "708d5d7eb2a5b2cde0033e6380b89db3977ae8a12d7286601a747cb04f12cc9c"
+      },
+      "error_relative_to_first_printed_trace_timestamp_seconds": "52.130935",
+      "failed_mapping": {
+        "exact_file_path": "/home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01687.olean",
+        "fd": 11,
+        "file_offset": "0",
+        "flags": "MAP_PRIVATE|MAP_FIXED_NOREPLACE",
+        "length_bytes": 85072848,
+        "printed_syscall_duration_seconds": "0.000019",
+        "printed_unix_timestamp": "1793808795.997970",
+        "protections": "PROT_READ|PROT_WRITE",
+        "raw_line": "4490  1793808795.997970 mmap(0x224857be0000, 85072848, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01687.olean>, 0) = -1 EEXIST (File exists) <0.000019>",
+        "raw_line_number": 54440,
+        "requested_address": "0x224857be0000",
+        "result": "-1 EEXIST (File exists)",
+        "trace_pid_or_tid": 4490
+      },
+      "intervening_anonymous_mmap_observations": [
+        {
+          "exact_file_path": null,
+          "fd": -1,
+          "file_offset": "0",
+          "flags": "MAP_PRIVATE|MAP_ANONYMOUS",
+          "length_bytes": 85073920,
+          "printed_syscall_duration_seconds": "0.000025",
+          "printed_unix_timestamp": "1793808795.998035",
+          "protections": "PROT_READ|PROT_WRITE",
+          "raw_line": "4490  1793808795.998035 mmap(NULL, 85073920, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f3140d44000 <0.000025>",
+          "raw_line_number": 54441,
+          "requested_address": "NULL",
+          "result": "0x7f3140d44000",
+          "trace_pid_or_tid": 4490
+        }
+      ],
+      "nearby_raw_lines": [
+        {
+          "line": 54439,
+          "text": "4490  1793808795.994780 mmap(0x8404dbe0000, 84133256, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01686.olean>, 0) = 0x8404dbe0000 <0.000027>"
+        },
+        {
+          "line": 54440,
+          "text": "4490  1793808795.997970 mmap(0x224857be0000, 85072848, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01687.olean>, 0) = -1 EEXIST (File exists) <0.000019>"
+        },
+        {
+          "line": 54441,
+          "text": "4490  1793808795.998035 mmap(NULL, 85073920, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f3140d44000 <0.000025>"
+        },
+        {
+          "line": 54442,
+          "text": "4490  1793808796.082467 mmap(0x16f0472b0000, 84168464, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01688.olean>, 0) = 0x16f0472b0000 <0.000034>"
+        },
+        {
+          "line": 54443,
+          "text": "4490  1793808796.085480 mmap(0xc13a72f0000, 85095872, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01689.olean>, 0) = 0xc13a72f0000 <0.000021>"
+        }
+      ],
+      "next_file_mapping": {
+        "exact_file_path": "/home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01688.olean",
+        "fd": 11,
+        "file_offset": "0",
+        "flags": "MAP_PRIVATE|MAP_FIXED_NOREPLACE",
+        "length_bytes": 84168464,
+        "printed_syscall_duration_seconds": "0.000034",
+        "printed_unix_timestamp": "1793808796.082467",
+        "protections": "PROT_READ|PROT_WRITE",
+        "raw_line": "4490  1793808796.082467 mmap(0x16f0472b0000, 84168464, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01688.olean>, 0) = 0x16f0472b0000 <0.000034>",
+        "raw_line_number": 54442,
+        "requested_address": "0x16f0472b0000",
+        "result": "0x16f0472b0000",
+        "trace_pid_or_tid": 4490
+      },
+      "previous_byte_overlapping_successful_file_mappings": [
+        {
+          "intervening_overlapping_successful_munmaps": [],
+          "intervening_overwriting_map_fixed_calls": [],
+          "mapping": {
+            "exact_file_path": "/home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01297RepairRow081.olean",
+            "fd": 11,
+            "file_offset": "0",
+            "flags": "MAP_PRIVATE|MAP_FIXED_NOREPLACE",
+            "length_bytes": 24448,
+            "printed_syscall_duration_seconds": "0.000027",
+            "printed_unix_timestamp": "1793808773.794576",
+            "protections": "PROT_READ|PROT_WRITE",
+            "raw_line": "4490  1793808773.794576 mmap(0x224858930000, 24448, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01297RepairRow081.olean>, 0) = 0x224858930000 <0.000027>",
+            "raw_line_number": 35076,
+            "requested_address": "0x224858930000",
+            "result": "0x224858930000",
+            "trace_pid_or_tid": 4490
+          },
+          "unrounded_requested_byte_overlap": 24448
+        }
+      ],
+      "previous_file_mapping": {
+        "exact_file_path": "/home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01686.olean",
+        "fd": 11,
+        "file_offset": "0",
+        "flags": "MAP_PRIVATE|MAP_FIXED_NOREPLACE",
+        "length_bytes": 84133256,
+        "printed_syscall_duration_seconds": "0.000027",
+        "printed_unix_timestamp": "1793808795.994780",
+        "protections": "PROT_READ|PROT_WRITE",
+        "raw_line": "4490  1793808795.994780 mmap(0x8404dbe0000, 84133256, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01686.olean>, 0) = 0x8404dbe0000 <0.000027>",
+        "raw_line_number": 54439,
+        "requested_address": "0x8404dbe0000",
+        "result": "0x8404dbe0000",
+        "trace_pid_or_tid": 4490
+      },
+      "printed_time_gap_to_next_file_mmap_seconds": "0.084497"
+    }
+  ],
+  "complete_analyzer_executed_by_this_review": false,
+  "complete_authenticator_executed_by_this_review": false,
+  "complete_tail_after_last_main_olean_mapping": [
+    {
+      "line": 54530,
+      "text": "4490  1793808809.263365 mmap(NULL, 1082130432, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_NORESERVE, -1, 0) = 0x7f3100400000 <0.000057>"
+    },
+    {
+      "line": 54531,
+      "text": "4490  1793808809.264895 munmap(0x7f3100400000, 1082130432) = 0 <0.000023>"
+    },
+    {
+      "line": 54532,
+      "text": "4490  1793808809.264954 mmap(NULL, 1115684864, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_NORESERVE, -1, 0) = 0x7f30fe400000 <0.000018>"
+    },
+    {
+      "line": 54533,
+      "text": "4490  1793808809.264999 munmap(0x7f30fe400000, 29360128) = 0 <0.000022>"
+    },
+    {
+      "line": 54534,
+      "text": "4490  1793808809.265046 munmap(0x7f3140800000, 4194304) = 0 <0.000017>"
+    },
+    {
+      "line": 54535,
+      "text": "4490  1793808839.012826 mmap(0x37f30000000, 1073741824, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_NORESERVE, -1, 0) = 0x37f30000000 <0.000058>"
+    },
+    {
+      "line": 54536,
+      "text": "4490  1793808854.770668 mmap(0x37f70000000, 1073741824, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_NORESERVE, -1, 0) = 0x7f30c0000000 <0.000072>"
+    },
+    {
+      "line": 54537,
+      "text": "4490  1793809269.472929 mmap(0x37fb0000000, 1073741824, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_NORESERVE, -1, 0) = 0x37fb0000000 <0.000058>"
+    },
+    {
+      "line": 54538,
+      "text": "4490  1793809580.466739 mmap(NULL, 135168, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f3238c77000 <0.000031>"
+    },
+    {
+      "line": 54539,
+      "text": "4490  1793809580.469788 mmap(NULL, 266240, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f3238c36000 <0.000016>"
+    },
+    {
+      "line": 54540,
+      "text": "4490  1793809580.469884 munmap(0x7f3238c77000, 135168) = 0 <0.000043>"
+    },
+    {
+      "line": 54541,
+      "text": "4490  1793809582.444563 mmap(NULL, 528384, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f31f8822000 <0.000037>"
+    },
+    {
+      "line": 54542,
+      "text": "4490  1793809582.444797 munmap(0x7f3238c36000, 266240) = 0 <0.000326>"
+    },
+    {
+      "line": 54543,
+      "text": "4490  1793809582.446027 mmap(NULL, 1052672, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f31f8721000 <0.000022>"
+    },
+    {
+      "line": 54544,
+      "text": "4490  1793809582.446286 munmap(0x7f31f8822000, 528384) = 0 <0.000068>"
+    }
+  ],
+  "downloads": 0,
+  "error_summary": {
+    "all_have_earlier_byte_overlapping_successful_file_mappings": true,
+    "all_overlap_predecessors_have_same_trace_pid_or_tid": true,
+    "cases_followed_by_anonymous_mmap_before_next_file_mapping": 14,
+    "cases_without_such_new_anonymous_mmap": 6,
+    "distinct_failed_original_files": 20,
+    "enomem_records": 0,
+    "errno_counts": {
+      "EEXIST": 20
+    },
+    "fraction_of_selected_original_length_sum": "0.007057636705326349073718312715",
+    "gap_is_not_an_instrumented_loader_function_duration": true,
+    "maximum_such_gap_seconds": "0.109871",
+    "sum_failed_file_lengths_bytes": 687650240,
+    "sum_failure_to_next_file_printed_timestamp_gaps_seconds": "0.732057"
+  },
+  "family_closure_claim": false,
+  "interpretation_limits": [
+    "The20 EEXIST returns are directly observed. Predecessor overlap uses exact recorded byte intervals, without assuming page-rounding rules; absence of intervening munmap/mremap/overwriting MAP_FIXED is checked in the captured syscall classes.",
+    "Trace PID/TID4490 is not promoted to a main-process identity. The overlapped prior mappings and errors have the same printed trace identity.",
+    "Printed Unix timestamp differences are not monotonic module timings or measured malloc/relocation function durations.",
+    "All25191 original file mapping attempts occur early, but successful mmap does not mean every mapped page has been read, every import has completed or the frontend header has completed.",
+    "The last15 memory-system-call records contain anonymous mappings and unmaps only. Their contents, allocation owner and relationship to constant maps are not measured.",
+    "The687650240-byte failed-file total is not measured Private_Dirty, RSS or the complete allocator footprint. Indirect subsequent memory effects are not ruled out.",
+    "The immediate collision fallback intervals provide no evidence of a minutes-long direct fallback stall; rebuilding/reordering those20 files is not established as a repair of the900-second timeout.",
+    "The plan dependency arrays are used only for exact module identity, never as a presumed import order. The raw trace supplies observed order."
+  ],
+  "main_olean_address_observations": {
+    "attempts": 31044,
+    "failed": 20,
+    "successful": 31024,
+    "successful_exact_address_matches": 31024,
+    "successful_unequal_address_records": []
+  },
+  "method": "Independent strict complete-line regex over original ZIP mmap/munmap records; no production parser, authenticator or analyzer executed. Every raw line matched; no unfinished/resumed/mremap line is present.",
+  "new_ci_runs": 0,
+  "next_narrow_action_assessment": {
+    "implementation_prepared_or_executed_by_this_review": false,
+    "not_recommended_from_current_evidence": "Rebuild20 colliding exports or alter BothLong proof bodies as if they were demonstrated timeout causes.",
+    "production_repair_established": false,
+    "target": "Distinguish completion of importModulesCore from the subsequent finalizeImport constant-map/extension work, retaining the original imports, kernel and resource limits."
+  },
+  "origin": {
+    "artifact": 13342717214,
+    "commit": "f5fa2bc163667ecd2d36ab6133abcffca4f83a0c",
+    "job": 126671224306,
+    "native_conclusion": "failure",
+    "run": 41857856028
+  },
+  "original_kernel_export_claim": false,
+  "production_source_changes": 0,
+  "projected_plan_sha256": "11ff7db7f88e1e3aa1722796a5002cc9bb29263cb7343df851a12e699b94cd44",
+  "raw_call_counts": {
+    "mmap": 54531,
+    "mremap": 0,
+    "munmap": 13,
+    "resumed_lines": 0,
+    "unfinished_lines": 0,
+    "unparsed_lines": 0
+  },
+  "raw_trace": {
+    "bytes": 15503063,
+    "lines": 54544,
+    "member": "Proofs/RG_Lean_20261019/build/bothlong_phase_probe/Proofs.RadenkovicGutmanD1OriginalSharedBothLongPhaseProbe.mmap.log",
+    "sha256": "92d7641305a4f80d482df5a5a9b806c9458911a15a33706243905e6c77124d51"
+  },
+  "remote_mutations": 0,
+  "root_complete_authentication": {
+    "bytes": 231210,
+    "path": "/workspace/scratch/406169dbc070/rg_resume_20261104/bothlong_phase_probe/mmap_retry_actual/actual_archive_authentication.json",
+    "sha256": "474af1c5d3bc1a43be695a53d59640c906a72a71a8cbeab5fc126a6d0f39aebc"
+  },
+  "schema": "RG_ACTUAL_MMAP_FAILURE_COMPONENT_REVIEW_V1",
+  "selected_original_address_observations": {
+    "attempts": 25191,
+    "failed": 20,
+    "successful": 25171,
+    "successful_exact_address_matches": 25171,
+    "successful_unequal_address_records": []
+  },
+  "selected_original_coverage": {
+    "attempted_length_sum_bytes": 97433499160,
+    "exact_distinct_original_paths_attempted": 25191,
+    "first_attempt": {
+      "exact_file_path": "/home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanFixedClassKernelBase.olean",
+      "fd": 11,
+      "file_offset": "0",
+      "flags": "MAP_PRIVATE|MAP_FIXED_NOREPLACE",
+      "length_bytes": 1624,
+      "printed_syscall_duration_seconds": "0.000020",
+      "printed_unix_timestamp": "1793808751.848559",
+      "protections": "PROT_READ|PROT_WRITE",
+      "raw_line": "4490  1793808751.848559 mmap(0x4a2cc6a00000, 1624, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanFixedClassKernelBase.olean>, 0) = 0x4a2cc6a00000 <0.000020>",
+      "raw_line_number": 11675,
+      "requested_address": "0x4a2cc6a00000",
+      "result": "0x4a2cc6a00000",
+      "trace_pid_or_tid": 4490
+    },
+    "first_to_last_selected_attempt_timestamp_span_seconds": "44.445234",
+    "last_attempt": {
+      "exact_file_path": "/home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01753.olean",
+      "fd": 11,
+      "file_offset": "0",
+      "flags": "MAP_PRIVATE|MAP_FIXED_NOREPLACE",
+      "length_bytes": 57631008,
+      "printed_syscall_duration_seconds": "0.000023",
+      "printed_unix_timestamp": "1793808796.293793",
+      "protections": "PROT_READ|PROT_WRITE",
+      "raw_line": "4490  1793808796.293793 mmap(0x5e805f20000, 57631008, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01753.olean>, 0) = 0x5e805f20000 <0.000023>",
+      "raw_line_number": 54529,
+      "requested_address": "0x5e805f20000",
+      "result": "0x5e805f20000",
+      "trace_pid_or_tid": 4490
+    },
+    "last_attempt_relative_to_first_printed_trace_timestamp_seconds": "52.426758",
+    "one_attempt_per_exact_original_path": true,
+    "required_prior_paths": 25191
+  },
+  "source_based_inferences": [
+    {
+      "anchor": "module.cpp lean_compacted_region_read, lines528\u2013564",
+      "claim": "The Linux path accepts only a mapping at the saved base address. A failed MAP_FIXED_NOREPLACE leaves buffer null and takes malloc(size), seek-to-start and readn(size). The14 observed nearby anonymous mappings are consistent with this fallback; the6 small cases need not create a new mmap. No read/lseek syscall was recorded by this trace."
+    },
+    {
+      "anchor": "compact.cpp region_reader::read, lines642\u2013660; Environment.lean readModuleDataPartsOfMod, lines2078ff",
+      "claim": "For legacy main .olean reads, dep_regions is empty. A relocated earlier unrelated import does not disable the later main-region fast path. All successful main-.olean file mappings in this trace landed at their requested addresses. No global dep_regions relocation cascade is inferred."
+    },
+    {
+      "anchor": "Environment.lean importModules, lines2438\u20132449; finalizeImport, lines2307\u20132418",
+      "claim": "Source identifies separate later work after importModulesCore: constant maps, imported extension entries, persistence marking and persistent extension finalization. The observed anonymous mappings do not identify which of these operations was active."
+    }
+  ],
+  "source_bindings": {
+    "src/Lean/Environment.lean": {
+      "bytes": 137725,
+      "git_blob_sha1": "33928512dadcfa2e42a307499e9228596da0341a",
+      "path": "/workspace/scratch/406169dbc070/rg_resume_20261104/bothlong_phase_probe/lean_loader_primary/src/Lean/Environment.lean",
+      "sha256": "ee364e4788ce0560c87f621eeb3c4c3dfec62e8db4e15e099fd80e6adc533b86"
+    },
+    "src/library/module.cpp": {
+      "bytes": 29583,
+      "git_blob_sha1": "be31567876a7965f01e6ff17f19709298b70caa8",
+      "path": "/workspace/scratch/406169dbc070/rg_resume_20261104/bothlong_phase_probe/lean_loader_primary/src/library/module.cpp",
+      "sha256": "a78bb4583a9746dea78570c1885500356da9bd1ecebdcb199645cf42709d890d"
+    },
+    "src/runtime/compact.cpp": {
+      "bytes": 28431,
+      "git_blob_sha1": "73c9a4e18798496bc764cdb7e9899021eed3e4b3",
+      "path": "/workspace/scratch/406169dbc070/rg_resume_20261104/bothlong_phase_probe/lean_loader_primary/src/runtime/compact.cpp",
+      "sha256": "d2243af4a8d6d774d47cdf781cb15de56e257111b9c84dcd028110c601e75bae"
+    }
+  },
+  "status": "INDEPENDENT_RAW_COMPONENTS_REVIEW_OF_ROOT_AUTHENTICATED_DIAGNOSTIC"
+}

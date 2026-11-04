@@ -1,0 +1,479 @@
+{
+  "actual_diagnostic_compiler_result": {
+    "compiler_returncode": null,
+    "compiler_returncode_source": "NOT_OBSERVED_DIRECTLY",
+    "diagnostic_output_sha256": null,
+    "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "module": "Proofs.RadenkovicGutmanD1OriginalSharedBothLongPhaseProbe",
+    "seconds": 901.556,
+    "success": false,
+    "timeout": true,
+    "trace_log": "Proofs.RadenkovicGutmanD1OriginalSharedBothLongPhaseProbe.mmap.log",
+    "trace_report": "Proofs.RadenkovicGutmanD1OriginalSharedBothLongPhaseProbe.mmap.json",
+    "trace_report_sha256": "b9dfee140102a20377239aaf54acafbfdf3742ab642e87c45633f5ec6d521d95",
+    "trace_sha256": "92d7641305a4f80d482df5a5a9b806c9458911a15a33706243905e6c77124d51",
+    "traced_process_seconds": 900.026,
+    "tracer_pid": 4482,
+    "tracer_returncode": -9
+  },
+  "all_calls_analysis": {
+    "bytes": 6929099,
+    "path": "rg_resume_20261104/bothlong_phase_probe/mmap_retry_actual/mmap_full_analysis_474af1c5d3bc1a43/analysis.json",
+    "sha256": "f4fb7a2733dde634a4386a01b93971bfb38ac1c7ab8317927efbed96ee4e3ebf"
+  },
+  "all_calls_analysis_status": "COMPLETE_AUTHENTICATED_RAW_TRACE_OBSERVATIONS_EXPORTED",
+  "all_calls_analyzer": {
+    "bytes": 20422,
+    "path": "rg_resume_20261104/bothlong_phase_probe/analyze_mmap_transport_retry_probe.py",
+    "sha256": "1d1afc60a60663d0c8d92460683763101622134d71912a26ee4947dbdac9302a"
+  },
+  "all_calls_exports": {
+    "all_complete_calls": {
+      "bytes": 53222109,
+      "path": "/workspace/scratch/406169dbc070/rg_resume_20261104/bothlong_phase_probe/mmap_retry_actual/mmap_full_analysis_474af1c5d3bc1a43/complete_memory_syscalls.jsonl",
+      "sha256": "ebecbb8f1e19c4b0371a9343b98aa468b6305e8fbd7b896a7ae58346f31e4f50"
+    },
+    "all_exact_file_paths": {
+      "bytes": 54886111,
+      "path": "/workspace/scratch/406169dbc070/rg_resume_20261104/bothlong_phase_probe/mmap_retry_actual/mmap_full_analysis_474af1c5d3bc1a43/exact_file_path_counts.jsonl",
+      "sha256": "1d0dc8e9e2951136d52df3a41f06799e4e0e4bbae0a3fdb5b0b759b3f2c9dc67"
+    },
+    "all_selected_modules": {
+      "bytes": 40024294,
+      "path": "/workspace/scratch/406169dbc070/rg_resume_20261104/bothlong_phase_probe/mmap_retry_actual/mmap_full_analysis_474af1c5d3bc1a43/selected_original_module_observations.jsonl",
+      "sha256": "82344bc374dc0bfa9e38534cc0a261dcdfc7b8df64d6f67fad44a884c8a15575"
+    },
+    "residual_raw_lines": {
+      "bytes": 0,
+      "path": "/workspace/scratch/406169dbc070/rg_resume_20261104/bothlong_phase_probe/mmap_retry_actual/mmap_full_analysis_474af1c5d3bc1a43/unpaired_or_unparsed_trace_lines.jsonl",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "all_olean_part_address_observations": {
+    "attempts": 42748,
+    "failed": 20,
+    "successful": 42728,
+    "successful_exact_address_matches": 42728,
+    "successful_unequal_address_records": []
+  },
+  "artifact": {
+    "artifact": 13342717214,
+    "artifact_bytes": 8366998,
+    "artifact_members": 481,
+    "artifact_sha256": "08a7b217c4b19acd3e5bf332f5d3e7331a566ef51c75361d47ac9b83f7b221fa"
+  },
+  "authenticator": {
+    "bytes": 55081,
+    "path": "rg_resume_20261104/bothlong_phase_probe/authenticate_mmap_transport_retry_run.py",
+    "sha256": "47b9b7affcac54c4c68745ae5f3c5c3d30ad456b5d333beebd767626fddddf1f"
+  },
+  "authenticator_exit_code": 0,
+  "dated_checkpoint_utc": "2026-11-04T16:48:00Z",
+  "error_summary": {
+    "all_have_earlier_byte_overlapping_successful_file_mappings": true,
+    "all_overlap_predecessors_have_same_trace_pid_or_tid": true,
+    "cases_followed_by_anonymous_mmap_before_next_file_mapping": 14,
+    "cases_without_such_new_anonymous_mmap": 6,
+    "distinct_failed_original_files": 20,
+    "enomem_records": 0,
+    "errno_counts": {
+      "EEXIST": 20
+    },
+    "fraction_of_selected_original_length_sum": "0.007057636705326349073718312715",
+    "gap_is_not_an_instrumented_loader_function_duration": true,
+    "maximum_such_gap_seconds": "0.109871",
+    "sum_failed_file_lengths_bytes": 687650240,
+    "sum_failure_to_next_file_printed_timestamp_gaps_seconds": "0.732057"
+  },
+  "full_authentication": {
+    "bytes": 231210,
+    "path": "rg_resume_20261104/bothlong_phase_probe/mmap_retry_actual/actual_archive_authentication.json",
+    "sha256": "474af1c5d3bc1a43be695a53d59640c906a72a71a8cbeab5fc126a6d0f39aebc"
+  },
+  "global_rg_proof_claim": false,
+  "import_finalization_source_review": {
+    "bytes": 21385,
+    "path": "rg_resume_20261104/bothlong_phase_probe/import_finalization_review_20261104.json",
+    "sha256": "48483d1433a356b052dcadf7bb42bc1a4e16859241365fdc4d791329ae40a974"
+  },
+  "independent_raw_collision_review": {
+    "bytes": 162289,
+    "path": "rg_resume_20261104/bothlong_phase_probe/mmap_retry_actual/independent_mapping_failures_review.json",
+    "sha256": "9152cec6c560bc25b8af736f71e648ce7d8b922d501f564b7c6fe98fe467ae29"
+  },
+  "interpretation_limits": [
+    "The20 EEXIST returns are directly observed. Predecessor overlap uses exact recorded byte intervals, without assuming page-rounding rules; absence of intervening munmap/mremap/overwriting MAP_FIXED is checked in the captured syscall classes.",
+    "Trace PID/TID4490 is not promoted to a main-process identity. The overlapped prior mappings and errors have the same printed trace identity.",
+    "Printed Unix timestamp differences are not monotonic module timings or measured malloc/relocation function durations.",
+    "All25191 original file mapping attempts occur early, but successful mmap does not mean every mapped page has been read, every import has completed or the frontend header has completed.",
+    "The last15 memory-system-call records contain anonymous mappings and unmaps only. Their contents, allocation owner and relationship to constant maps are not measured.",
+    "The687650240-byte failed-file total is not measured Private_Dirty, RSS or the complete allocator footprint. Indirect subsequent memory effects are not ruled out.",
+    "The immediate collision fallback intervals provide no evidence of a minutes-long direct fallback stall; rebuilding/reordering those20 files is not established as a repair of the900-second timeout.",
+    "The plan dependency arrays are used only for exact module identity, never as a presumed import order. The raw trace supplies observed order.",
+    "Every complete mmap, munmap and mremap call is exported; unresolved or unparsed lines are retained separately in full, and the original raw trace remains the reference.",
+    "An absent exact-path mmap observation is not evidence of a missing import: unresolved calls, alternate native path spelling, inherited mappings or non-mmap reads are not ruled out.",
+    "Requested-length sums count repeated attempts, including failures. They are not distinct file bytes, resident memory, read_bytes or successful import totals.",
+    "A returned address unequal to a nonzero request is recorded separately from the ordinary null/zero-address request case; no collision or allocation failure is inferred from inequality.",
+    "EEXIST and ENOMEM are the errno strings actually printed for complete calls. Their occurrence alone does not prove the cause of a timeout.",
+    "The final observed mapping does not identify the cause of a subsequent stall, an unobserved import, or a performance improvement.",
+    "Tracing adds overhead; native trace-line timestamps, syscall durations and Lean markers remain separate observations."
+  ],
+  "loader_dependency_review": {
+    "bytes": 2157,
+    "path": "rg_resume_20261104/bothlong_phase_probe/lean_loader_primary/loader_dependency_and_order_review.json",
+    "sha256": "ac47efbe7bb2aa20d42a4a2533164e38b4d99cdc188275dc465ee70d2d480669"
+  },
+  "main_olean_address_observations": {
+    "attempts": 31044,
+    "failed": 20,
+    "successful": 31024,
+    "successful_exact_address_matches": 31024,
+    "successful_unequal_address_records": []
+  },
+  "native_execution_command": [
+    "/usr/bin/strace",
+    "--kill-on-exit",
+    "-f",
+    "-I",
+    "1",
+    "-yy",
+    "-ttt",
+    "-T",
+    "-e",
+    "trace=mmap,munmap,mremap",
+    "-o",
+    "/home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/bothlong_phase_probe/Proofs.RadenkovicGutmanD1OriginalSharedBothLongPhaseProbe.mmap.log",
+    "--",
+    "/home/runner/.elan/toolchains/leanprover--lean4---v4.33.1/bin/lean",
+    "-j1",
+    "-DElab.async=false",
+    "-DwarningAsError=true",
+    "-DautoImplicit=false",
+    "-DrelaxedAutoImplicit=false",
+    "-Dprofiler=true",
+    "-Dprofiler.threshold=100",
+    "-R",
+    "/home/runner/work/formal-conjectures/formal-conjectures/ci/rg_bothlong_phase_probe_20261104",
+    "-o",
+    "/home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/bothlong_phase_probe/probe_objects/Proofs/RadenkovicGutmanD1OriginalSharedBothLongPhaseProbe.olean.pending",
+    "/home/runner/work/formal-conjectures/formal-conjectures/ci/rg_bothlong_phase_probe_20261104/Proofs/RadenkovicGutmanD1OriginalSharedBothLongPhaseProbe.lean"
+  ],
+  "native_inputs": {
+    "native_artifact_catalog_sha256": "a2a2c915ef5da4b45763481affda6fcbaa85270e439ccb26ee5a5822405ea62f",
+    "native_job_log_sha256": "347f5a23c75b96460ff9976a3255a533f59c0713d86b48a798ab2ae8e622b400",
+    "native_jobs_sha256": "1c32fc46ea46b324d340add93f67031cf9e6308b618e5631764463d81e5dae71",
+    "native_run_sha256": "b9a4bde641b10b44547154a7f38ec1e03541eb2d25c7238c12b919b20404d10b"
+  },
+  "native_lean_command": [
+    "/home/runner/.elan/toolchains/leanprover--lean4---v4.33.1/bin/lean",
+    "-j1",
+    "-DElab.async=false",
+    "-DwarningAsError=true",
+    "-DautoImplicit=false",
+    "-DrelaxedAutoImplicit=false",
+    "-Dprofiler=true",
+    "-Dprofiler.threshold=100",
+    "-R",
+    "/home/runner/work/formal-conjectures/formal-conjectures/ci/rg_bothlong_phase_probe_20261104",
+    "-o",
+    "/home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/bothlong_phase_probe/probe_objects/Proofs/RadenkovicGutmanD1OriginalSharedBothLongPhaseProbe.olean.pending",
+    "/home/runner/work/formal-conjectures/formal-conjectures/ci/rg_bothlong_phase_probe_20261104/Proofs/RadenkovicGutmanD1OriginalSharedBothLongPhaseProbe.lean"
+  ],
+  "native_origin": {
+    "artifact": 13342717214,
+    "commit": "f5fa2bc163667ecd2d36ab6133abcffca4f83a0c",
+    "job": 126671224306,
+    "native_conclusion": "failure",
+    "run": 41857856028
+  },
+  "native_status_capture_note": "The ordinary jobs URL initially lagged. Unmodified native run and documented jobs?filter=all responses independently reported completed/failure for the same job, commit and attempt. No terminal status was synthesized.",
+  "next_bounded_hypothesis": {
+    "candidate_scope": "Only the verified newly owned Btrfs filesystem read_ahead_kb, with actual before/after and pre-probe identity/value readbacks. No compiler, theorem, object, timeout, worker or reserve change.",
+    "important_limit": "The actual runner is a downstream Azure kernel. Upstream defaults are not a measured previous setting or a timeout cause. Hugepage policy and compressed-extent reads are separate; changing loop queue read-ahead is not the Btrfs policy change.",
+    "mapping_failures_alone_are_not_a_justified_production_repair": true,
+    "new_candidate_launched": false,
+    "original_read_ahead_value_measured": false,
+    "primary_source_inventory": {
+      "bytes": 3090,
+      "path": "rg_resume_20261104/bothlong_phase_probe/readahead_primary/inventory.json",
+      "sha256": "65b73132c7ee617d69e07b2fdeeea687be1f369217ea21d70a883f50939d308c"
+    },
+    "question": "Does read-ahead on the owned Btrfs filesystem aggravate paging during the pre-command import work?",
+    "scope_limit": "Enabling before restore is an end-to-end storage-policy comparison, including restore/cache effects, not an isolated measurement of Lean mmap faults. No runtime stack attribution follows.",
+    "status": "LOCAL_PREPARATION_ONLY_NO_NEW_NATIVE_RESULT",
+    "upstream_v7_0_source_findings": [
+      "Btrfs creates a separate superblock backing_dev_info and initializes its read-ahead to at least 4 MiB.",
+      "The filesystem UUID bdi symlink points to that superblock BDI.",
+      "Regular-file open initializes file_ra_state from inode_to_bdi; ordinary mmap read-ahead exits when ra_pages is zero."
+    ]
+  },
+  "original_kernel_export_claim": false,
+  "original_large_family_completed": false,
+  "original_projected_plan_sha256": "11ff7db7f88e1e3aa1722796a5002cc9bb29263cb7343df851a12e699b94cd44",
+  "original_proof_source_commit": "10aa67f5f16e8ad00b30ac21332791b008b69cfe",
+  "parallel_anchor029": {
+    "actual_terminal_authentication_pending": true,
+    "commit": "5b7bd43a9f3ca170b19450dd4f34fe9d12bbba90",
+    "family_closure_claim": false,
+    "job": 126562666235,
+    "last_native_observation_utc": "2026-11-04T16:43:58Z",
+    "run": 41826563525,
+    "status": "in_progress"
+  },
+  "phase_markers_written": 0,
+  "primary_parent_commit": "e11255539431a131e4e5f8434fe9d77c83aa6776",
+  "probe_guards": {
+    "exit_code": 1,
+    "foreign_processes_signalled": 0,
+    "host_reserve_stop": false,
+    "host_status": "OWNED_KERNEL_GROUP_ENDED",
+    "maximum_aggregate_lean_rss": 8375074816,
+    "memory_reserve_mib": 2048,
+    "status": "VERIFIER_COMPLETED",
+    "unknown_or_unreadable_cgroup_limits_are_not_claimed_absent": true
+  },
+  "probe_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "production_kernel_receipt_created": false,
+  "remaining_original_input_families": 4,
+  "repository": "RhudeJJJJ/formal-conjectures",
+  "resource_bounds": {
+    "large_seconds_per_module": 900,
+    "lean_workers": 1,
+    "memory_reserve_mib": 2048,
+    "original_host_space_guard_unchanged": true
+  },
+  "resource_observations": {
+    "claims_about_unobserved_process_intervals": false,
+    "first_sample": {
+      "io": {
+        "cancelled_write_bytes": 0,
+        "rchar": 884465,
+        "read_bytes": 132325376,
+        "syscr": 9524,
+        "syscw": 1,
+        "wchar": 1,
+        "write_bytes": 0
+      },
+      "memory": {
+        "RssAnon": 21393408,
+        "RssFile": 354684928,
+        "RssShmem": 0,
+        "VmRSS": 376078336,
+        "VmSize": 6276603904,
+        "VmSwap": 0
+      },
+      "pid": 4486,
+      "seconds": 10.02,
+      "start_time_ticks": 287017,
+      "stat": {
+        "cpu_system_ticks": 199,
+        "cpu_user_ticks": 22,
+        "major_faults": 1431,
+        "minor_faults": 13711,
+        "parent_pid": 4482,
+        "process_group": 4423,
+        "start_time_ticks": 287017,
+        "state": "S",
+        "threads": 5
+      },
+      "ticks_per_second": 100
+    },
+    "last_sample": {
+      "io": {
+        "cancelled_write_bytes": 0,
+        "rchar": 692490393,
+        "read_bytes": 191353864192,
+        "syscr": 54495,
+        "syscw": 1,
+        "wchar": 1,
+        "write_bytes": 0
+      },
+      "memory": {
+        "RssAnon": 2137952256,
+        "RssFile": 1012432896,
+        "RssShmem": 0,
+        "VmRSS": 3150385152,
+        "VmSize": 111293771776,
+        "VmSwap": 2941153280
+      },
+      "pid": 4486,
+      "seconds": 894.16,
+      "start_time_ticks": 287017,
+      "stat": {
+        "cpu_system_ticks": 20839,
+        "cpu_user_ticks": 2532,
+        "major_faults": 2511947,
+        "minor_faults": 1963414,
+        "parent_pid": 4482,
+        "process_group": 4423,
+        "start_time_ticks": 287017,
+        "state": "S",
+        "threads": 5
+      },
+      "ticks_per_second": 100
+    },
+    "maximum_observed_anon_bytes": 3960852480,
+    "maximum_observed_file_rss_bytes": 6015127552,
+    "maximum_observed_swap_bytes": 2941837312,
+    "one_second_maximum_aggregate_lean_rss": 8375074816,
+    "skipped_partial_or_unbound_process_samples": 0,
+    "valid_identity_consistent_lean_samples": 89
+  },
+  "restore": {
+    "actual_original_endpoint_preflight_passed": true,
+    "actual_three_module_control_passed": true,
+    "selected_logical_object_bytes": 97433499160,
+    "source_projection_byte_identical_to_reviewed_plan": true,
+    "successful_archive_restores": 444,
+    "successful_prior_object_readbacks": 25191
+  },
+  "schema": "RG_BOTHLONG_COMPLETE_MMAP_OBSERVATIONS_CHECKPOINT_V1",
+  "selected_original_address_observations": {
+    "attempts": 25191,
+    "failed": 20,
+    "successful": 25171,
+    "successful_exact_address_matches": 25171,
+    "successful_unequal_address_records": []
+  },
+  "selected_original_mapping_coverage": {
+    "attempted_length_sum_bytes": 97433499160,
+    "exact_distinct_original_paths_attempted": 25191,
+    "first_attempt": {
+      "exact_file_path": "/home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanFixedClassKernelBase.olean",
+      "fd": 11,
+      "file_offset": "0",
+      "flags": "MAP_PRIVATE|MAP_FIXED_NOREPLACE",
+      "length_bytes": 1624,
+      "printed_syscall_duration_seconds": "0.000020",
+      "printed_unix_timestamp": "1793808751.848559",
+      "protections": "PROT_READ|PROT_WRITE",
+      "raw_line": "4490  1793808751.848559 mmap(0x4a2cc6a00000, 1624, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanFixedClassKernelBase.olean>, 0) = 0x4a2cc6a00000 <0.000020>",
+      "raw_line_number": 11675,
+      "requested_address": "0x4a2cc6a00000",
+      "result": "0x4a2cc6a00000",
+      "trace_pid_or_tid": 4490
+    },
+    "first_to_last_selected_attempt_timestamp_span_seconds": "44.445234",
+    "last_attempt": {
+      "exact_file_path": "/home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01753.olean",
+      "fd": 11,
+      "file_offset": "0",
+      "flags": "MAP_PRIVATE|MAP_FIXED_NOREPLACE",
+      "length_bytes": 57631008,
+      "printed_syscall_duration_seconds": "0.000023",
+      "printed_unix_timestamp": "1793808796.293793",
+      "protections": "PROT_READ|PROT_WRITE",
+      "raw_line": "4490  1793808796.293793 mmap(0x5e805f20000, 57631008, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED_NOREPLACE, 11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1Long00Leaf01753.olean>, 0) = 0x5e805f20000 <0.000023>",
+      "raw_line_number": 54529,
+      "requested_address": "0x5e805f20000",
+      "result": "0x5e805f20000",
+      "trace_pid_or_tid": 4490
+    },
+    "last_attempt_relative_to_first_printed_trace_timestamp_seconds": "52.426758",
+    "one_attempt_per_exact_original_path": true,
+    "required_prior_paths": 25191
+  },
+  "status": "ACTUAL_DIAGNOSTIC_FULLY_AUTHENTICATED_ORIGINAL_KERNEL_MILESTONE_STILL_OPEN",
+  "trace": {
+    "counts": {
+      "complete_calls": 54544,
+      "matched_resumptions": 0,
+      "mmap_errors": 20,
+      "mmap_file": 54493,
+      "mmap_total": 54531,
+      "mremap_errors": 0,
+      "mremap_total": 0,
+      "munmap_errors": 0,
+      "munmap_total": 13,
+      "raw_lines": 54544,
+      "resumed_lines": 0,
+      "signal_lines": 0,
+      "unfinished_lines": 0,
+      "unknown_outcomes": 0,
+      "unmatched_resumed": 0,
+      "unparsed_lines": 0,
+      "unresolved_unfinished": 0
+    },
+    "first_timestamp": {
+      "line": 1,
+      "pid": 4486,
+      "printed_wallclock_unix_seconds": "1793808743.867035"
+    },
+    "last_timestamp": {
+      "line": 54544,
+      "pid": 4490,
+      "printed_wallclock_unix_seconds": "1793809582.446286"
+    },
+    "observed_lean_identity": {
+      "no_unobserved_exit_status_or_timeout_signal_inferred": true,
+      "observed_sample_count": 89,
+      "parent_tracer_pid": 4482,
+      "pid": 4486,
+      "pid_inferred_from_first_trace_line": false,
+      "process_group": 4423,
+      "start_time_ticks": 287017,
+      "status": "LEAN_PID_BOUND_BY_OBSERVER_START_IDENTITY_AND_PARENT_TRACER",
+      "trace_terminal_observation": null
+    },
+    "raw": {
+      "bytes": 15503063,
+      "path": "/workspace/scratch/406169dbc070/rg_resume_20261104/bothlong_phase_probe/mmap_retry_actual/offline_raw_traces/Proofs.RadenkovicGutmanD1OriginalSharedBothLongPhaseProbe.mmap.log",
+      "sha256": "92d7641305a4f80d482df5a5a9b806c9458911a15a33706243905e6c77124d51"
+    }
+  },
+  "transport_retry_log_observations": {
+    "decision_record_counts": {
+      "RETRY_SAME_ARTIFACT_WITH_FRESH_REDIRECT_AFTER_WAIT": 1
+    },
+    "distinct_http_503_responses": null,
+    "event_record_count": 2,
+    "event_records": [
+      {
+        "event": {
+          "attempt": 1,
+          "decision": "RETRY_SAME_ARTIFACT_WITH_FRESH_REDIRECT_AFTER_WAIT",
+          "documented_service_wait_seconds": 0.0,
+          "has_retry_after": false,
+          "has_retry_after_ms": false,
+          "has_retry_after_ms_generic": false,
+          "maximum_attempts": 4,
+          "retry_start_window_seconds": 600,
+          "service_error_code": "ServerBusy",
+          "status": "SIGNED_ARCHIVE_HTTP_503",
+          "wait_seconds": 30.0
+        },
+        "job_log_line": 1706,
+        "printed_github_log_timestamp_utc": "2026-11-04T15:34:16.2438046Z",
+        "raw_log_line_sha256": "4aed5aa10c83ff6ad19c55d56b7831b6fd481bae825571e5c1c277d560d5641d"
+      },
+      {
+        "event": {
+          "no_request_during_wait": true,
+          "remaining_seconds": 30.0,
+          "status": "WAITING_FOR_SIGNED_ARCHIVE_SERVICE"
+        },
+        "job_log_line": 1707,
+        "printed_github_log_timestamp_utc": "2026-11-04T15:34:16.2439250Z",
+        "raw_log_line_sha256": "643a8fc6ba8a74e370d6cc9c28fe93ceb3f9cbb3b8b656076797c50907e6fea0"
+      }
+    ],
+    "events_are_actual_log_records_not_independent_network_observations": true,
+    "interpretation_limit": "No transport records means none of these structured records was observed. The helper emits no successful-GET record or artifact ID; retry decisions and wait records do not count successful retries. Full original archive/source/receipt/trace checks remain separate and mandatory.",
+    "job_log_sha256": "347f5a23c75b96460ff9976a3255a533f59c0713d86b48a798ab2ae8e622b400",
+    "per_artifact_retry_attribution_possible": false,
+    "printed_log_timestamps_are_not_measured_retry_durations": true,
+    "request_urls_tokens_and_error_bodies_reproduced": false,
+    "retry_decision_records": 1,
+    "retry_success_inferred_from_restore_success": false,
+    "service_error_code_record_counts": {
+      "ServerBusy": 1
+    },
+    "status": "ACTUAL_STRUCTURED_TRANSPORT_LOG_RECORDS_PARSED",
+    "status_record_counts": {
+      "SIGNED_ARCHIVE_HTTP_503": 1,
+      "WAITING_FOR_SIGNED_ARCHIVE_SERVICE": 1
+    },
+    "successful_retry_requests": null,
+    "transport_helper_sha256": "db9221ee4aa24f77082c98f33588b987531fc77f9f93c49111d31ad12363b0ef"
+  }
+}

@@ -1,0 +1,170 @@
+{
+  "artifact_native_metadata": {
+    "digest": "sha256:52429f4260b3f5787d911bdf94ad45bb424bce14fe096cb366d516dd70c09a97",
+    "id": 13328473100,
+    "name": "rg-bothlong-phase-diagnostic-20261104-41833843857-1",
+    "size_in_bytes": 6559687
+  },
+  "branch": "rg-d1-bothlong-phase-probe-20261104",
+  "captured_at_utc": "2026-11-04 13:54:48 UTC",
+  "job": 126587565934,
+  "job_completed_at": "2026-11-04T13:49:54Z",
+  "key_steps": [
+    {
+      "completed_at": "2026-11-04T12:59:04Z",
+      "conclusion": "success",
+      "name": "Require the isolated flushed-marker control before any proof restoration",
+      "native_step_seconds": 4.0,
+      "started_at": "2026-11-04T12:59:00Z",
+      "status": "completed"
+    },
+    {
+      "completed_at": "2026-11-04T13:00:34Z",
+      "conclusion": "success",
+      "name": "Authenticate the actual failed run and project only original BothLong imports",
+      "native_step_seconds": 90.0,
+      "started_at": "2026-11-04T12:59:04Z",
+      "status": "completed"
+    },
+    {
+      "completed_at": "2026-11-04T13:02:30Z",
+      "conclusion": "success",
+      "name": "Create the unchanged bounded logical proofstore",
+      "native_step_seconds": 1.0,
+      "started_at": "2026-11-04T13:02:29Z",
+      "status": "completed"
+    },
+    {
+      "completed_at": "2026-11-04T13:02:30Z",
+      "conclusion": "success",
+      "name": "Require direct I/O only for the new owned proofstore loop",
+      "native_step_seconds": 0.0,
+      "started_at": "2026-11-04T13:02:30Z",
+      "status": "completed"
+    },
+    {
+      "completed_at": "2026-11-04T13:31:06Z",
+      "conclusion": "success",
+      "name": "Authenticate all 444 original archives and read back 25191 projected objects",
+      "native_step_seconds": 1716.0,
+      "started_at": "2026-11-04T13:02:30Z",
+      "status": "completed"
+    },
+    {
+      "completed_at": "2026-11-04T13:34:43Z",
+      "conclusion": "success",
+      "name": "Require exactly the original BothLong endpoint to remain uncompiled",
+      "native_step_seconds": 217.0,
+      "started_at": "2026-11-04T13:31:06Z",
+      "status": "completed"
+    },
+    {
+      "completed_at": "2026-11-04T13:49:49Z",
+      "conclusion": "failure",
+      "name": "Observe the isolated diagnostic copy with unchanged strict kernel limits",
+      "native_step_seconds": 906.0,
+      "started_at": "2026-11-04T13:34:43Z",
+      "status": "completed"
+    },
+    {
+      "completed_at": "2026-11-04T13:49:52Z",
+      "conclusion": "success",
+      "name": "Retain diagnostic logs and phase observations without proof exports",
+      "native_step_seconds": 3.0,
+      "started_at": "2026-11-04T13:49:49Z",
+      "status": "completed"
+    }
+  ],
+  "monitoring_complete": true,
+  "native_captures": [
+    {
+      "bytes": 13523,
+      "path": "run.json",
+      "sha256": "685cf755900c6735c951f96db9327b70566a4e0bcb8f2cb4229ad4759a7a4346"
+    },
+    {
+      "bytes": 4526,
+      "path": "jobs.json",
+      "sha256": "6383ddda3c60984bd18f6e3e879caccb45a4ebda241abc0870d0efedbc6f3964"
+    },
+    {
+      "bytes": 799,
+      "path": "artifacts.json",
+      "sha256": "0dad8bb35b3431b6d6f47a145fefb48d0aa02f8e2c8dca2bf383e5d360764bb4"
+    },
+    {
+      "bytes": 2516897,
+      "path": "job.log",
+      "sha256": "7492a5371b7348796b9f47fcdf137ecc6a3f6f20b4a932d8b69ce17cc83fbe58"
+    }
+  ],
+  "native_error_lines": [
+    "2026-11-04T13:49:49.5256643Z ##[error]Process completed with exit code 1."
+  ],
+  "native_job_conclusion": "failure",
+  "native_job_log_direct_io_observations": {
+    "after": {
+      "loop": {
+        "autoclear": true,
+        "back-file": "/home/runner/work/formal-conjectures/formal-conjectures/rg-ephemeral-proofstore.btrfs",
+        "back-ino": 9298709,
+        "back-maj:min": "8:1",
+        "dio": true,
+        "log-sec": 512,
+        "maj:min": "7:0",
+        "name": "/dev/loop0",
+        "offset": 0,
+        "ro": false,
+        "sizelimit": 0
+      },
+      "phase": "after",
+      "sysfs_dio": 1
+    },
+    "before": {
+      "backing_block": {
+        "image_device": "8:1",
+        "logical_sector_bytes": 512,
+        "logical_sector_source": "/sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/MSFT1000:00/f8b3781a-1e82-4818-a1c3-63d806ec15bb/host0/target0:0:0/0:0:0:0/block/sda/queue/logical_block_size",
+        "resolved_sysfs": "/sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/MSFT1000:00/f8b3781a-1e82-4818-a1c3-63d806ec15bb/host0/target0:0:0/0:0:0:0/block/sda/sda1",
+        "status": "READ_FROM_SYSFS",
+        "sysfs": "/sys/dev/block/8:1"
+      },
+      "loop": {
+        "autoclear": true,
+        "back-file": "/home/runner/work/formal-conjectures/formal-conjectures/rg-ephemeral-proofstore.btrfs",
+        "back-ino": 9298709,
+        "back-maj:min": "8:1",
+        "dio": false,
+        "log-sec": 512,
+        "maj:min": "7:0",
+        "name": "/dev/loop0",
+        "offset": 0,
+        "ro": false,
+        "sizelimit": 0
+      },
+      "phase": "before",
+      "sysfs_dio": 0
+    }
+  },
+  "native_job_log_probe_observer": {
+    "additional_proc_fields_are_diagnostic_only": true,
+    "exit_code": 1,
+    "mathlib_and_lean_flags_unchanged": true,
+    "maximum_aggregate_lean_rss": 8337588224,
+    "observer_created_kernel_receipt": false,
+    "phase": "probe",
+    "resource_reserve_mib": 2048,
+    "scope": "FIXED_BOTHLONG_PHASE_WORKER_ONLY",
+    "seconds": 904.16,
+    "status": "VERIFIER_COMPLETED"
+  },
+  "native_run_conclusion": "failure",
+  "new_ci_started": false,
+  "original_proof_export_claim": false,
+  "remote_mutations_performed": false,
+  "run": 41833843857,
+  "run_updated_at": "2026-11-04T13:49:54Z",
+  "scope": "Native terminal API and completed job log only; full ZIP/member/phase/resource authentication is owned by root. No ZIP downloaded or modified here.",
+  "source_commit": "3d33148521b26f541335b3f7c764632dfa415a80",
+  "status": "ACTUAL_DIRECT_IO_DIAGNOSTIC_TERMINAL_FAILURE_NATIVE_CAPTURES_COMPLETE"
+}

@@ -1,0 +1,3093 @@
+{
+  "additional_comparison_caveats": {
+    "max_rss_read_timing": {
+      "dio_one_second_aggregate_peak": 8337588224,
+      "dio_saved_proc_status_peak": 8337887232,
+      "meaning": "Aggregate and detailed /proc reads occur at different instants. Their maxima are not asserted equal."
+    },
+    "service_parent_device_discard_bytes": {
+      "dio": {
+        "/sys/fs/cgroup/system.slice": 58261731328,
+        "/sys/fs/cgroup/system.slice/hosted-compute-agent.service": 4100096
+      },
+      "meaning": "The parent group records substantial additional discard traffic not charged to the observed service group; no specific process or cause is identified.",
+      "previous": {
+        "/sys/fs/cgroup/system.slice": 4050944,
+        "/sys/fs/cgroup/system.slice/hosted-compute-agent.service": 4050944
+      }
+    },
+    "service_socket_throttling_events": {
+      "dio_local_counter_changes": [
+        {
+          "high": 0,
+          "low": 0,
+          "max": 0,
+          "observer_seconds": 10.02,
+          "oom": 0,
+          "oom_group_kill": 0,
+          "oom_kill": 0,
+          "sock_throttled": 0
+        },
+        {
+          "high": 0,
+          "low": 0,
+          "max": 0,
+          "observer_seconds": 30.12,
+          "oom": 0,
+          "oom_group_kill": 0,
+          "oom_kill": 0,
+          "sock_throttled": 1
+        },
+        {
+          "high": 0,
+          "low": 0,
+          "max": 0,
+          "observer_seconds": 512.21,
+          "oom": 0,
+          "oom_group_kill": 0,
+          "oom_kill": 0,
+          "sock_throttled": 6
+        },
+        {
+          "high": 0,
+          "low": 0,
+          "max": 0,
+          "observer_seconds": 562.33,
+          "oom": 0,
+          "oom_group_kill": 0,
+          "oom_kill": 0,
+          "sock_throttled": 10
+        },
+        {
+          "high": 0,
+          "low": 0,
+          "max": 0,
+          "observer_seconds": 592.39,
+          "oom": 0,
+          "oom_group_kill": 0,
+          "oom_kill": 0,
+          "sock_throttled": 11
+        },
+        {
+          "high": 0,
+          "low": 0,
+          "max": 0,
+          "observer_seconds": 652.51,
+          "oom": 0,
+          "oom_group_kill": 0,
+          "oom_kill": 0,
+          "sock_throttled": 12
+        },
+        {
+          "high": 0,
+          "low": 0,
+          "max": 0,
+          "observer_seconds": 752.76,
+          "oom": 0,
+          "oom_group_kill": 0,
+          "oom_kill": 0,
+          "sock_throttled": 13
+        },
+        {
+          "high": 0,
+          "low": 0,
+          "max": 0,
+          "observer_seconds": 802.87,
+          "oom": 0,
+          "oom_group_kill": 0,
+          "oom_kill": 0,
+          "sock_throttled": 14
+        },
+        {
+          "high": 0,
+          "low": 0,
+          "max": 0,
+          "observer_seconds": 812.89,
+          "oom": 0,
+          "oom_group_kill": 0,
+          "oom_kill": 0,
+          "sock_throttled": 19
+        },
+        {
+          "high": 0,
+          "low": 0,
+          "max": 0,
+          "observer_seconds": 863.04,
+          "oom": 0,
+          "oom_group_kill": 0,
+          "oom_kill": 0,
+          "sock_throttled": 151
+        }
+      ],
+      "dio_total_delta": 151,
+      "interpretation": "This is the recorded sock_throttled counter of the service cgroup, not an identified Lean-PID event. No socket or process responsible is identified by these snapshots.",
+      "parent_system_slice_hierarchical_delta": 151,
+      "parent_system_slice_local_delta": 0,
+      "previous_total_delta": 0
+    }
+  },
+  "analysis_scope": {
+    "complete_native_run_job_archive_authentication_owned_by_root": true,
+    "independent_local_zip_digest_and_selected_member_checks": true,
+    "native_terminal_captures_authenticated_by_this_analysis": false,
+    "new_ci_or_kernel_runs": 0,
+    "new_zip_downloads": 0,
+    "source_or_guard_changes": false
+  },
+  "common_probe_report_fields": {
+    "diagnostic_endpoint": "Proofs.RadenkovicGutmanD1OriginalSharedBothLongPhaseProbe",
+    "import_search_paths": [
+      "/home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/bothlong_phase_probe/helper_objects",
+      "/home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension",
+      "/home/runner/work/formal-conjectures/formal-conjectures/.lake/packages/Cli/.lake/build/lib/lean",
+      "/home/runner/work/formal-conjectures/formal-conjectures/.lake/packages/batteries/.lake/build/lib/lean",
+      "/home/runner/work/formal-conjectures/formal-conjectures/.lake/packages/Qq/.lake/build/lib/lean",
+      "/home/runner/work/formal-conjectures/formal-conjectures/.lake/packages/aesop/.lake/build/lib/lean",
+      "/home/runner/work/formal-conjectures/formal-conjectures/.lake/packages/proofwidgets/.lake/build/lib/lean",
+      "/home/runner/work/formal-conjectures/formal-conjectures/.lake/packages/importGraph/.lake/build/lib/lean",
+      "/home/runner/work/formal-conjectures/formal-conjectures/.lake/packages/LeanSearchClient/.lake/build/lib/lean",
+      "/home/runner/work/formal-conjectures/formal-conjectures/.lake/packages/plausible/.lake/build/lib/lean",
+      "/home/runner/work/formal-conjectures/formal-conjectures/.lake/packages/mathlib/.lake/build/lib/lean",
+      "/home/runner/work/formal-conjectures/formal-conjectures/.lake/build/lib/lean",
+      "/home/runner/.elan/toolchains/leanprover--lean4---v4.33.1/lib/lean"
+    ],
+    "lean": "Lean (version 4.33.1, x86_64-unknown-linux-gnu, commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6, Release)",
+    "memory_reserve_mib": 2048,
+    "module_timeout_seconds": 900,
+    "original_endpoint": "Proofs.RadenkovicGutmanD1OriginalSharedBothLong",
+    "original_source_sha256": "01d60858da8d95431e0240e6c7dbf2c657111fe34dbf3a3e5a115f90797edc06",
+    "source_spec_sha256": "d789066587ab434e4e11455d5ac5dc7ebebf4ced1f52fd9a6c9bda7d77c718b0",
+    "strict_flags": [
+      "-j1",
+      "-DElab.async=false",
+      "-DwarningAsError=true",
+      "-DautoImplicit=false",
+      "-DrelaxedAutoImplicit=false",
+      "-Dprofiler=true",
+      "-Dprofiler.threshold=100"
+    ],
+    "workers": 1
+  },
+  "differences": {
+    "per_observed_second_major_fault_delta": {
+      "dio": 3040.68643,
+      "percent_change": 2.965033,
+      "previous": 2953.125283,
+      "unit": "events_per_second"
+    },
+    "per_observed_second_minor_fault_delta": {
+      "dio": 3233.138192,
+      "percent_change": 53.770534,
+      "previous": 2102.573297,
+      "unit": "events_per_second"
+    },
+    "per_observed_second_read_bytes_delta": {
+      "dio": 244636851.308995,
+      "percent_change": 46.094245,
+      "previous": 167451395.312641,
+      "unit": "bytes_per_second"
+    },
+    "process_cpu_percent_of_one_cpu": {
+      "difference": 2.529386,
+      "dio": 29.353882,
+      "percent_change": 9.429389,
+      "previous": 26.824496,
+      "unit": "percent_of_one_cpu"
+    },
+    "process_elapsed_seconds": {
+      "difference": -0.96,
+      "dio": 883.12,
+      "percent_change": -0.108587,
+      "previous": 884.08,
+      "unit": "seconds"
+    },
+    "process_major_fault_delta": {
+      "difference": 74492,
+      "dio": 2685291,
+      "percent_change": 2.853226,
+      "previous": 2610799,
+      "unit": "count"
+    },
+    "process_minor_fault_delta": {
+      "difference": 996406,
+      "dio": 2855249,
+      "percent_change": 53.603559,
+      "previous": 1858843,
+      "unit": "count"
+    },
+    "process_peak_RssAnon": {
+      "difference": 371101696,
+      "dio": 4071628800,
+      "percent_change": 10.028347,
+      "previous": 3700527104,
+      "unit": "bytes"
+    },
+    "process_peak_RssFile": {
+      "difference": 39890944,
+      "dio": 4948455424,
+      "percent_change": 0.81268,
+      "previous": 4908564480,
+      "unit": "bytes"
+    },
+    "process_peak_VmRSS": {
+      "difference": 424075264,
+      "dio": 8337887232,
+      "percent_change": 5.358672,
+      "previous": 7913811968,
+      "unit": "bytes"
+    },
+    "process_peak_VmSize": {
+      "difference": 3221204992,
+      "dio": 113440182272,
+      "percent_change": 2.92255,
+      "previous": 110218977280,
+      "unit": "bytes"
+    },
+    "process_peak_VmSwap": {
+      "difference": 56274944,
+      "dio": 2963464192,
+      "percent_change": 1.935717,
+      "previous": 2907189248,
+      "unit": "bytes"
+    },
+    "process_rchar_delta": {
+      "difference": -95393608,
+      "dio": 595224872,
+      "percent_change": -13.81278,
+      "previous": 690618480,
+      "unit": "bytes"
+    },
+    "process_read_bytes_delta": {
+      "difference": 68003266560,
+      "dio": 216043696128,
+      "percent_change": 45.935605,
+      "previous": 148040429568,
+      "unit": "bytes"
+    },
+    "process_system_cpu_seconds": {
+      "difference": 20.76,
+      "dio": 229.65,
+      "percent_change": 9.938245,
+      "previous": 208.89,
+      "unit": "seconds"
+    },
+    "process_total_cpu_seconds": {
+      "difference": 22.08,
+      "dio": 259.23,
+      "percent_change": 9.310563,
+      "previous": 237.15,
+      "unit": "seconds"
+    },
+    "process_user_cpu_seconds": {
+      "difference": 1.32,
+      "dio": 29.58,
+      "percent_change": 4.670913,
+      "previous": 28.26,
+      "unit": "seconds"
+    },
+    "service_io_7:0_dbytes": {
+      "difference": 0,
+      "dio": 0,
+      "percent_change": null,
+      "previous": 0,
+      "unit": "bytes"
+    },
+    "service_io_7:0_rbytes": {
+      "difference": 62841053184,
+      "dio": 193020788736,
+      "percent_change": 48.272531,
+      "previous": 130179735552,
+      "unit": "bytes"
+    },
+    "service_io_7:0_wbytes": {
+      "difference": 0,
+      "dio": 0,
+      "percent_change": null,
+      "previous": 0,
+      "unit": "bytes"
+    },
+    "service_io_8:0_dbytes": {
+      "difference": 49152,
+      "dio": 4100096,
+      "percent_change": 1.213347,
+      "previous": 4050944,
+      "unit": "bytes"
+    },
+    "service_io_8:0_rbytes": {
+      "difference": 81527070720,
+      "dio": 216966541312,
+      "percent_change": 60.194469,
+      "previous": 135439470592,
+      "unit": "bytes"
+    },
+    "service_io_8:0_wbytes": {
+      "difference": -610103296,
+      "dio": 12195368960,
+      "percent_change": -4.764395,
+      "previous": 12805472256,
+      "unit": "bytes"
+    },
+    "service_memory_psi_full": {
+      "difference": -26.600395,
+      "dio": 40.157927,
+      "percent_change": -39.845811,
+      "previous": 66.758322,
+      "unit": "seconds"
+    },
+    "service_memory_psi_some": {
+      "difference": -26.604828,
+      "dio": 40.345093,
+      "percent_change": -39.738401,
+      "previous": 66.949921,
+      "unit": "seconds"
+    },
+    "service_pgscan_delta": {
+      "difference": 26979649,
+      "dio": 136318659,
+      "percent_change": 24.675227,
+      "previous": 109339010,
+      "unit": "counter_units"
+    },
+    "service_pgscan_direct_delta": {
+      "difference": -1340829,
+      "dio": 1116323,
+      "percent_change": -54.568419,
+      "previous": 2457152,
+      "unit": "counter_units"
+    },
+    "service_pgscan_kswapd_delta": {
+      "difference": 28317937,
+      "dio": 135196128,
+      "percent_change": 26.495524,
+      "previous": 106878191,
+      "unit": "counter_units"
+    },
+    "service_pgscan_proactive_delta": {
+      "difference": 0,
+      "dio": 0,
+      "percent_change": null,
+      "previous": 0,
+      "unit": "counter_units"
+    },
+    "service_pgsteal_delta": {
+      "difference": 17787829,
+      "dio": 118887567,
+      "percent_change": 17.594337,
+      "previous": 101099738,
+      "unit": "counter_units"
+    },
+    "service_pswpin_delta": {
+      "difference": -303119,
+      "dio": 2286205,
+      "percent_change": -11.706492,
+      "previous": 2589324,
+      "unit": "counter_units"
+    },
+    "service_pswpout_delta": {
+      "difference": -148844,
+      "dio": 2975277,
+      "percent_change": -4.764348,
+      "previous": 3124121,
+      "unit": "counter_units"
+    },
+    "service_workingset_refault_anon_delta": {
+      "difference": -302532,
+      "dio": 2287835,
+      "percent_change": -11.679117,
+      "previous": 2590367,
+      "unit": "counter_units"
+    },
+    "service_workingset_refault_file_delta": {
+      "difference": 17878711,
+      "dio": 115377413,
+      "percent_change": 18.337384,
+      "previous": 97498702,
+      "unit": "counter_units"
+    }
+  },
+  "dio": {
+    "cgroup_mapping_variants": [
+      {
+        "candidate_leaf": "/sys/fs/cgroup/system.slice/hosted-compute-agent.service",
+        "mapping_labels": [
+          "HIERARCHY_RELATIVE_CANDIDATE",
+          "NAMESPACE_RELATIVE_CANDIDATE"
+        ],
+        "mapping_status": "CANDIDATES_RECORDED",
+        "membership_lines": [
+          "0::/system.slice/hosted-compute-agent.service"
+        ],
+        "mount": {
+          "mount_point": "/sys/fs/cgroup",
+          "root": "/"
+        },
+        "mountinfo_parse_errors": [],
+        "mountinfo_status": "READ",
+        "reached_visible_mount_root": true
+      }
+    ],
+    "cgroups": {
+      "/sys/fs/cgroup": {
+        "cpu_stat_delta": {
+          "burst_usec": 0,
+          "core_sched.force_idle_usec": 0,
+          "nice_usec": 0,
+          "nr_bursts": 0,
+          "nr_periods": 0,
+          "nr_throttled": 0,
+          "system_usec": 1375719000,
+          "throttled_usec": 0,
+          "usage_usec": 1411392000,
+          "user_usec": 35673000
+        },
+        "cpu_throttling_counters_zero_in_all_samples": true,
+        "events": {},
+        "gauges": {},
+        "io_stat_delta": {
+          "7:0": {
+            "dbytes": 0,
+            "dios": 0,
+            "rbytes": 193020887040,
+            "rios": 3317057,
+            "wbytes": 5816320,
+            "wios": 360
+          },
+          "8:0": {
+            "dbytes": 58270791680,
+            "dios": 800,
+            "rbytes": 217223638016,
+            "rios": 5784298,
+            "wbytes": 12368409088,
+            "wios": 1236501
+          }
+        },
+        "limits": {
+          "cpu.max": [],
+          "memory.high": [],
+          "memory.max": [],
+          "memory.swap.max": []
+        },
+        "memory_pressure": {
+          "full": {
+            "delta_total_seconds": 77.570397,
+            "maximum_avg10": 23.96,
+            "maximum_avg10_at_observer_seconds": 291.41
+          },
+          "some": {
+            "delta_total_seconds": 85.265356,
+            "maximum_avg10": 26.0,
+            "maximum_avg10_at_observer_seconds": 291.41
+          }
+        },
+        "memory_stat_delta": {
+          "pgscan": 137041242,
+          "pgscan_direct": 1139630,
+          "pgscan_khugepaged": 6212,
+          "pgscan_kswapd": 135895400,
+          "pgscan_proactive": 0,
+          "pgsteal": 119537665,
+          "pgsteal_direct": 1013516,
+          "pgsteal_khugepaged": 4310,
+          "pgsteal_kswapd": 118519839,
+          "pgsteal_proactive": 0,
+          "pswpin": 2295623,
+          "pswpout": 3007015,
+          "workingset_activate_anon": 785300,
+          "workingset_activate_file": 38989567,
+          "workingset_refault_anon": 2297492,
+          "workingset_refault_file": 115709740,
+          "workingset_restore_anon": 555659,
+          "workingset_restore_file": 2214340
+        },
+        "memory_stat_gauges": {
+          "anon": {
+            "first": 545095680,
+            "last": 3406598144,
+            "maximum": 4186259456,
+            "maximum_at_observer_seconds": 712.63,
+            "minimum": 190550016,
+            "minimum_at_observer_seconds": 30.12
+          },
+          "anon_plus_file": {
+            "first": 15328354304,
+            "last": 15229952000,
+            "maximum": 15328354304,
+            "maximum_at_observer_seconds": 10.02,
+            "minimum": 15092981760,
+            "minimum_at_observer_seconds": 682.57
+          },
+          "file": {
+            "first": 14783258624,
+            "last": 11823353856,
+            "maximum": 14987075584,
+            "maximum_at_observer_seconds": 30.12,
+            "minimum": 10996957184,
+            "minimum_at_observer_seconds": 712.63
+          },
+          "file_dirty": {
+            "first": 1970176,
+            "last": 229376,
+            "maximum": 1970176,
+            "maximum_at_observer_seconds": 10.02,
+            "minimum": 0,
+            "minimum_at_observer_seconds": 90.35
+          },
+          "file_mapped": {
+            "first": 1187901440,
+            "last": 2961182720,
+            "maximum": 5072990208,
+            "maximum_at_observer_seconds": 80.33,
+            "minimum": 1154809856,
+            "minimum_at_observer_seconds": 622.46
+          },
+          "file_writeback": {
+            "first": 0,
+            "last": 0,
+            "maximum": 1134592,
+            "maximum_at_observer_seconds": 852.98,
+            "minimum": 0,
+            "minimum_at_observer_seconds": 10.02
+          },
+          "kernel": {
+            "first": 722579456,
+            "last": 923746304,
+            "maximum": 924217344,
+            "maximum_at_observer_seconds": 742.74,
+            "minimum": 722579456,
+            "minimum_at_observer_seconds": 10.02
+          },
+          "pagetables": {
+            "first": 122560512,
+            "last": 385511424,
+            "maximum": 385511424,
+            "maximum_at_observer_seconds": 742.74,
+            "minimum": 122560512,
+            "minimum_at_observer_seconds": 10.02
+          },
+          "shmem": {
+            "first": 54616064,
+            "last": 22343680,
+            "maximum": 54620160,
+            "maximum_at_observer_seconds": 20.04,
+            "minimum": 6627328,
+            "minimum_at_observer_seconds": 100.37
+          }
+        },
+        "proactive_scan_and_steal_zero_in_all_samples": true,
+        "read_status": {
+          "cpu.max": {
+            "counts": {
+              "READ_ERROR": 89
+            },
+            "error_variants": [
+              {
+                "errno": 2,
+                "error_type": "FileNotFoundError"
+              }
+            ]
+          },
+          "cpu.stat": {
+            "counts": {
+              "READ": 89
+            }
+          },
+          "io.stat": {
+            "counts": {
+              "READ": 89
+            }
+          },
+          "memory.current": {
+            "counts": {
+              "READ_ERROR": 89
+            },
+            "error_variants": [
+              {
+                "errno": 2,
+                "error_type": "FileNotFoundError"
+              }
+            ]
+          },
+          "memory.events": {
+            "counts": {
+              "READ_ERROR": 89
+            },
+            "error_variants": [
+              {
+                "errno": 2,
+                "error_type": "FileNotFoundError"
+              }
+            ]
+          },
+          "memory.events.local": {
+            "counts": {
+              "READ_ERROR": 89
+            },
+            "error_variants": [
+              {
+                "errno": 2,
+                "error_type": "FileNotFoundError"
+              }
+            ]
+          },
+          "memory.high": {
+            "counts": {
+              "READ_ERROR": 89
+            },
+            "error_variants": [
+              {
+                "errno": 2,
+                "error_type": "FileNotFoundError"
+              }
+            ]
+          },
+          "memory.max": {
+            "counts": {
+              "READ_ERROR": 89
+            },
+            "error_variants": [
+              {
+                "errno": 2,
+                "error_type": "FileNotFoundError"
+              }
+            ]
+          },
+          "memory.pressure": {
+            "counts": {
+              "READ": 89
+            }
+          },
+          "memory.stat": {
+            "counts": {
+              "READ": 89
+            }
+          },
+          "memory.swap.current": {
+            "counts": {
+              "READ_ERROR": 89
+            },
+            "error_variants": [
+              {
+                "errno": 2,
+                "error_type": "FileNotFoundError"
+              }
+            ]
+          },
+          "memory.swap.max": {
+            "counts": {
+              "READ_ERROR": 89
+            },
+            "error_variants": [
+              {
+                "errno": 2,
+                "error_type": "FileNotFoundError"
+              }
+            ]
+          }
+        }
+      },
+      "/sys/fs/cgroup/system.slice": {
+        "cpu_stat_delta": {
+          "burst_usec": 0,
+          "core_sched.force_idle_usec": 0,
+          "nice_usec": 0,
+          "nr_bursts": 0,
+          "nr_periods": 0,
+          "nr_throttled": 0,
+          "system_usec": 231673656,
+          "throttled_usec": 0,
+          "usage_usec": 270923383,
+          "user_usec": 39249726
+        },
+        "cpu_throttling_counters_zero_in_all_samples": true,
+        "events": {
+          "memory.events": {
+            "all_values_zero": false,
+            "delta": {
+              "high": 0,
+              "low": 0,
+              "max": 0,
+              "oom": 0,
+              "oom_group_kill": 0,
+              "oom_kill": 0,
+              "sock_throttled": 151
+            },
+            "first": {
+              "high": 0,
+              "low": 0,
+              "max": 0,
+              "oom": 0,
+              "oom_group_kill": 0,
+              "oom_kill": 0,
+              "sock_throttled": 0
+            },
+            "last": {
+              "high": 0,
+              "low": 0,
+              "max": 0,
+              "oom": 0,
+              "oom_group_kill": 0,
+              "oom_kill": 0,
+              "sock_throttled": 151
+            }
+          },
+          "memory.events.local": {
+            "all_values_zero": true,
+            "delta": {
+              "high": 0,
+              "low": 0,
+              "max": 0,
+              "oom": 0,
+              "oom_group_kill": 0,
+              "oom_kill": 0,
+              "sock_throttled": 0
+            },
+            "first": {
+              "high": 0,
+              "low": 0,
+              "max": 0,
+              "oom": 0,
+              "oom_group_kill": 0,
+              "oom_kill": 0,
+              "sock_throttled": 0
+            },
+            "last": {
+              "high": 0,
+              "low": 0,
+              "max": 0,
+              "oom": 0,
+              "oom_group_kill": 0,
+              "oom_kill": 0,
+              "sock_throttled": 0
+            }
+          }
+        },
+        "gauges": {
+          "memory.current": {
+            "first": 15118716928,
+            "last": 16041807872,
+            "maximum": 16124624896,
+            "maximum_at_observer_seconds": 492.16,
+            "minimum": 15090872320,
+            "minimum_at_observer_seconds": 20.04
+          },
+          "memory.swap.current": {
+            "first": 86016,
+            "last": 3103240192,
+            "maximum": 3187544064,
+            "maximum_at_observer_seconds": 812.89,
+            "minimum": 86016,
+            "minimum_at_observer_seconds": 10.02
+          }
+        },
+        "io_stat_delta": {
+          "7:0": {
+            "dbytes": 0,
+            "dios": 0,
+            "rbytes": 193020788736,
+            "rios": 6231577,
+            "wbytes": 0,
+            "wios": 0
+          },
+          "8:0": {
+            "dbytes": 58261731328,
+            "dios": 1262,
+            "rbytes": 217169542144,
+            "rios": 5892819,
+            "wbytes": 12279775744,
+            "wios": 2995293
+          }
+        },
+        "limits": {
+          "cpu.max": [
+            "max 100000"
+          ],
+          "memory.high": [
+            "max"
+          ],
+          "memory.max": [
+            "max"
+          ],
+          "memory.swap.max": [
+            "max"
+          ]
+        },
+        "memory_pressure": {
+          "full": {
+            "delta_total_seconds": 39.713093,
+            "maximum_avg10": 18.37,
+            "maximum_avg10_at_observer_seconds": 291.41
+          },
+          "some": {
+            "delta_total_seconds": 39.955661,
+            "maximum_avg10": 18.37,
+            "maximum_avg10_at_observer_seconds": 291.41
+          }
+        },
+        "memory_stat_delta": {
+          "pgscan": 136502444,
+          "pgscan_direct": 1130885,
+          "pgscan_khugepaged": 6208,
+          "pgscan_kswapd": 135365351,
+          "pgscan_proactive": 0,
+          "pgsteal": 119022703,
+          "pgsteal_direct": 1005227,
+          "pgsteal_khugepaged": 4306,
+          "pgsteal_kswapd": 118013170,
+          "pgsteal_proactive": 0,
+          "pswpin": 2291311,
+          "pswpout": 2995033,
+          "workingset_activate_anon": 785112,
+          "workingset_activate_file": 38935305,
+          "workingset_refault_anon": 2293171,
+          "workingset_refault_file": 115403807,
+          "workingset_restore_anon": 555622,
+          "workingset_restore_file": 2176862
+        },
+        "memory_stat_gauges": {
+          "anon": {
+            "first": 492228608,
+            "last": 3387764736,
+            "maximum": 4176957440,
+            "maximum_at_observer_seconds": 712.63,
+            "minimum": 138227712,
+            "minimum_at_observer_seconds": 30.12
+          },
+          "anon_plus_file": {
+            "first": 14390341632,
+            "last": 15115882496,
+            "maximum": 15221235712,
+            "maximum_at_observer_seconds": 471.87,
+            "minimum": 14187745280,
+            "minimum_at_observer_seconds": 20.04
+          },
+          "file": {
+            "first": 13898113024,
+            "last": 11728117760,
+            "maximum": 14302011392,
+            "maximum_at_observer_seconds": 30.12,
+            "minimum": 10912874496,
+            "minimum_at_observer_seconds": 712.63
+          },
+          "file_dirty": {
+            "first": 159744,
+            "last": 229376,
+            "maximum": 1744896,
+            "maximum_at_observer_seconds": 30.12,
+            "minimum": 0,
+            "minimum_at_observer_seconds": 90.35
+          },
+          "file_mapped": {
+            "first": 1165107200,
+            "last": 2952335360,
+            "maximum": 5051392000,
+            "maximum_at_observer_seconds": 80.33,
+            "minimum": 1145950208,
+            "minimum_at_observer_seconds": 622.46
+          },
+          "file_writeback": {
+            "first": 0,
+            "last": 0,
+            "maximum": 1216512,
+            "maximum_at_observer_seconds": 722.64,
+            "minimum": 0,
+            "minimum_at_observer_seconds": 10.02
+          },
+          "kernel": {
+            "first": 717717504,
+            "last": 920907776,
+            "maximum": 921407488,
+            "maximum_at_observer_seconds": 742.74,
+            "minimum": 717717504,
+            "minimum_at_observer_seconds": 10.02
+          },
+          "pagetables": {
+            "first": 122081280,
+            "last": 385036288,
+            "maximum": 385036288,
+            "maximum_at_observer_seconds": 742.74,
+            "minimum": 122081280,
+            "minimum_at_observer_seconds": 10.02
+          },
+          "shmem": {
+            "first": 51376128,
+            "last": 19193856,
+            "maximum": 51380224,
+            "maximum_at_observer_seconds": 20.04,
+            "minimum": 3461120,
+            "minimum_at_observer_seconds": 100.37
+          }
+        },
+        "proactive_scan_and_steal_zero_in_all_samples": true,
+        "read_status": {
+          "cpu.max": {
+            "counts": {
+              "READ": 89
+            }
+          },
+          "cpu.stat": {
+            "counts": {
+              "READ": 89
+            }
+          },
+          "io.stat": {
+            "counts": {
+              "READ": 89
+            }
+          },
+          "memory.current": {
+            "counts": {
+              "READ": 89
+            }
+          },
+          "memory.events": {
+            "counts": {
+              "READ": 89
+            }
+          },
+          "memory.events.local": {
+            "counts": {
+              "READ": 89
+            }
+          },
+          "memory.high": {
+            "counts": {
+              "READ": 89
+            }
+          },
+          "memory.max": {
+            "counts": {
+              "READ": 89
+            }
+          },
+          "memory.pressure": {
+            "counts": {
+              "READ": 89
+            }
+          },
+          "memory.stat": {
+            "counts": {
+              "READ": 89
+            }
+          },
+          "memory.swap.current": {
+            "counts": {
+              "READ": 89
+            }
+          },
+          "memory.swap.max": {
+            "counts": {
+              "READ": 89
+            }
+          }
+        }
+      },
+      "/sys/fs/cgroup/system.slice/hosted-compute-agent.service": {
+        "cpu_stat_delta": {
+          "burst_usec": 0,
+          "core_sched.force_idle_usec": 0,
+          "nice_usec": 0,
+          "nr_bursts": 0,
+          "nr_periods": 0,
+          "nr_throttled": 0,
+          "system_usec": 230371853,
+          "throttled_usec": 0,
+          "usage_usec": 269186527,
+          "user_usec": 38814673
+        },
+        "cpu_throttling_counters_zero_in_all_samples": true,
+        "events": {
+          "memory.events": {
+            "all_values_zero": false,
+            "delta": {
+              "high": 0,
+              "low": 0,
+              "max": 0,
+              "oom": 0,
+              "oom_group_kill": 0,
+              "oom_kill": 0,
+              "sock_throttled": 151
+            },
+            "first": {
+              "high": 0,
+              "low": 0,
+              "max": 0,
+              "oom": 0,
+              "oom_group_kill": 0,
+              "oom_kill": 0,
+              "sock_throttled": 0
+            },
+            "last": {
+              "high": 0,
+              "low": 0,
+              "max": 0,
+              "oom": 0,
+              "oom_group_kill": 0,
+              "oom_kill": 0,
+              "sock_throttled": 151
+            }
+          },
+          "memory.events.local": {
+            "all_values_zero": false,
+            "delta": {
+              "high": 0,
+              "low": 0,
+              "max": 0,
+              "oom": 0,
+              "oom_group_kill": 0,
+              "oom_kill": 0,
+              "sock_throttled": 151
+            },
+            "first": {
+              "high": 0,
+              "low": 0,
+              "max": 0,
+              "oom": 0,
+              "oom_group_kill": 0,
+              "oom_kill": 0,
+              "sock_throttled": 0
+            },
+            "last": {
+              "high": 0,
+              "low": 0,
+              "max": 0,
+              "oom": 0,
+              "oom_group_kill": 0,
+              "oom_kill": 0,
+              "sock_throttled": 151
+            }
+          }
+        },
+        "gauges": {
+          "memory.current": {
+            "first": 14678994944,
+            "last": 15960547328,
+            "maximum": 16037040128,
+            "maximum_at_observer_seconds": 471.87,
+            "minimum": 14652149760,
+            "minimum_at_observer_seconds": 20.04
+          },
+          "memory.swap.current": {
+            "first": 0,
+            "last": 3038986240,
+            "maximum": 3126292480,
+            "maximum_at_observer_seconds": 812.89,
+            "minimum": 0,
+            "minimum_at_observer_seconds": 10.02
+          }
+        },
+        "io_stat_delta": {
+          "7:0": {
+            "dbytes": 0,
+            "dios": 0,
+            "rbytes": 193020788736,
+            "rios": 6231577,
+            "wbytes": 0,
+            "wios": 0
+          },
+          "8:0": {
+            "dbytes": 4100096,
+            "dios": 10,
+            "rbytes": 216966541312,
+            "rios": 5879687,
+            "wbytes": 12195368960,
+            "wios": 2975457
+          }
+        },
+        "limits": {
+          "cpu.max": [
+            "max 100000"
+          ],
+          "memory.high": [
+            "max"
+          ],
+          "memory.max": [
+            "max"
+          ],
+          "memory.swap.max": [
+            "max"
+          ]
+        },
+        "memory_pressure": {
+          "full": {
+            "delta_total_seconds": 40.157927,
+            "maximum_avg10": 19.75,
+            "maximum_avg10_at_observer_seconds": 291.41
+          },
+          "some": {
+            "delta_total_seconds": 40.345093,
+            "maximum_avg10": 19.8,
+            "maximum_avg10_at_observer_seconds": 291.41
+          }
+        },
+        "memory_stat_delta": {
+          "pgscan": 136318659,
+          "pgscan_direct": 1116323,
+          "pgscan_khugepaged": 6208,
+          "pgscan_kswapd": 135196128,
+          "pgscan_proactive": 0,
+          "pgsteal": 118887567,
+          "pgsteal_direct": 996807,
+          "pgsteal_khugepaged": 4306,
+          "pgsteal_kswapd": 117886454,
+          "pgsteal_proactive": 0,
+          "pswpin": 2286205,
+          "pswpout": 2975277,
+          "workingset_activate_anon": 782928,
+          "workingset_activate_file": 38931971,
+          "workingset_refault_anon": 2287835,
+          "workingset_refault_file": 115377413,
+          "workingset_restore_anon": 553575,
+          "workingset_restore_file": 2175251
+        },
+        "memory_stat_gauges": {
+          "anon": {
+            "first": 377184256,
+            "last": 3333591040,
+            "maximum": 4121145344,
+            "maximum_at_observer_seconds": 712.63,
+            "minimum": 23920640,
+            "minimum_at_observer_seconds": 30.12
+          },
+          "anon_plus_file": {
+            "first": 13984727040,
+            "last": 15051661312,
+            "maximum": 15153557504,
+            "maximum_at_observer_seconds": 471.87,
+            "minimum": 13782736896,
+            "minimum_at_observer_seconds": 20.04
+          },
+          "file": {
+            "first": 13607542784,
+            "last": 11718070272,
+            "maximum": 14073958400,
+            "maximum_at_observer_seconds": 30.12,
+            "minimum": 10890186752,
+            "minimum_at_observer_seconds": 712.63
+          },
+          "file_dirty": {
+            "first": 143360,
+            "last": 229376,
+            "maximum": 315392,
+            "maximum_at_observer_seconds": 220.92,
+            "minimum": 0,
+            "minimum_at_observer_seconds": 90.35
+          },
+          "file_mapped": {
+            "first": 989339648,
+            "last": 2944888832,
+            "maximum": 5016219648,
+            "maximum_at_observer_seconds": 80.33,
+            "minimum": 989339648,
+            "minimum_at_observer_seconds": 10.02
+          },
+          "file_writeback": {
+            "first": 0,
+            "last": 0,
+            "maximum": 1134592,
+            "maximum_at_observer_seconds": 852.98,
+            "minimum": 0,
+            "minimum_at_observer_seconds": 10.02
+          },
+          "kernel": {
+            "first": 687108096,
+            "last": 907943936,
+            "maximum": 908423168,
+            "maximum_at_observer_seconds": 742.74,
+            "minimum": 687108096,
+            "minimum_at_observer_seconds": 10.02
+          },
+          "pagetables": {
+            "first": 118878208,
+            "last": 381833216,
+            "maximum": 381833216,
+            "maximum_at_observer_seconds": 742.74,
+            "minimum": 118878208,
+            "minimum_at_observer_seconds": 10.02
+          },
+          "shmem": {
+            "first": 47484928,
+            "last": 19181568,
+            "maximum": 47489024,
+            "maximum_at_observer_seconds": 20.04,
+            "minimum": 1015808,
+            "minimum_at_observer_seconds": 100.37
+          }
+        },
+        "proactive_scan_and_steal_zero_in_all_samples": true,
+        "read_status": {
+          "cpu.max": {
+            "counts": {
+              "READ": 89
+            }
+          },
+          "cpu.stat": {
+            "counts": {
+              "READ": 89
+            }
+          },
+          "io.stat": {
+            "counts": {
+              "READ": 89
+            }
+          },
+          "memory.current": {
+            "counts": {
+              "READ": 89
+            }
+          },
+          "memory.events": {
+            "counts": {
+              "READ": 89
+            }
+          },
+          "memory.events.local": {
+            "counts": {
+              "READ": 89
+            }
+          },
+          "memory.high": {
+            "counts": {
+              "READ": 89
+            }
+          },
+          "memory.max": {
+            "counts": {
+              "READ": 89
+            }
+          },
+          "memory.pressure": {
+            "counts": {
+              "READ": 89
+            }
+          },
+          "memory.stat": {
+            "counts": {
+              "READ": 89
+            }
+          },
+          "memory.swap.current": {
+            "counts": {
+              "READ": 89
+            }
+          },
+          "memory.swap.max": {
+            "counts": {
+              "READ": 89
+            }
+          }
+        }
+      }
+    },
+    "checkpoints": [
+      {
+        "RssAnon": 169938944,
+        "RssFile": 858619904,
+        "VmRSS": 1028558848,
+        "VmSize": 50875097088,
+        "VmSwap": 0,
+        "actual_observer_seconds": 10.02,
+        "anon_plus_swap": 169938944,
+        "global_MemAvailable": 15319142400,
+        "global_SwapFree": 3221135360,
+        "major_faults": 9584,
+        "minor_faults": 70561,
+        "rchar": 97289953,
+        "read_bytes": 1058902016,
+        "requested_near_observer_seconds": 10,
+        "system_cpu_seconds": 1.8,
+        "user_cpu_seconds": 0.41
+      },
+      {
+        "RssAnon": 12771328,
+        "RssFile": 2275880960,
+        "VmRSS": 2288652288,
+        "VmSize": 106989338624,
+        "VmSwap": 713580544,
+        "actual_observer_seconds": 30.12,
+        "anon_plus_swap": 726351872,
+        "global_MemAvailable": 15483465728,
+        "global_SwapFree": 2272079872,
+        "major_faults": 22832,
+        "minor_faults": 234350,
+        "rchar": 692514825,
+        "read_bytes": 4790943744,
+        "requested_near_observer_seconds": 30,
+        "system_cpu_seconds": 6.9,
+        "user_cpu_seconds": 1.49
+      },
+      {
+        "RssAnon": 2932154368,
+        "RssFile": 4616302592,
+        "VmRSS": 7548456960,
+        "VmSize": 110218952704,
+        "VmSwap": 1483567104,
+        "actual_observer_seconds": 100.37,
+        "anon_plus_swap": 4415721472,
+        "global_MemAvailable": 12635500544,
+        "global_SwapFree": 1410703360,
+        "major_faults": 168424,
+        "minor_faults": 967734,
+        "rchar": 692514825,
+        "read_bytes": 20001202176,
+        "requested_near_observer_seconds": 100,
+        "system_cpu_seconds": 25.37,
+        "user_cpu_seconds": 17.65
+      },
+      {
+        "RssAnon": 3950456832,
+        "RssFile": 3236896768,
+        "VmRSS": 7187353600,
+        "VmSize": 110218952704,
+        "VmSwap": 830533632,
+        "actual_observer_seconds": 180.62,
+        "anon_plus_swap": 4780990464,
+        "global_MemAvailable": 11598557184,
+        "global_SwapFree": 1610612736,
+        "major_faults": 450784,
+        "minor_faults": 1163983,
+        "rchar": 692514825,
+        "read_bytes": 39846748160,
+        "requested_near_observer_seconds": 180,
+        "system_cpu_seconds": 45.46,
+        "user_cpu_seconds": 22.49
+      },
+      {
+        "RssAnon": 2786013184,
+        "RssFile": 2896977920,
+        "VmRSS": 5682991104,
+        "VmSize": 110218952704,
+        "VmSwap": 2078187520,
+        "actual_observer_seconds": 301.43,
+        "anon_plus_swap": 4864200704,
+        "global_MemAvailable": 12779266048,
+        "global_SwapFree": 840765440,
+        "major_faults": 928119,
+        "minor_faults": 1354754,
+        "rchar": 692514825,
+        "read_bytes": 67082575872,
+        "requested_near_observer_seconds": 300,
+        "system_cpu_seconds": 70.17,
+        "user_cpu_seconds": 24.67
+      },
+      {
+        "RssAnon": 3184865280,
+        "RssFile": 2057089024,
+        "VmRSS": 5241954304,
+        "VmSize": 111292694528,
+        "VmSwap": 1741705216,
+        "actual_observer_seconds": 451.82,
+        "anon_plus_swap": 4926570496,
+        "global_MemAvailable": 12366495744,
+        "global_SwapFree": 1184448512,
+        "major_faults": 1565881,
+        "minor_faults": 1579933,
+        "rchar": 692514825,
+        "read_bytes": 105737797632,
+        "requested_near_observer_seconds": 450,
+        "system_cpu_seconds": 102.9,
+        "user_cpu_seconds": 26.6
+      },
+      {
+        "RssAnon": 2146017280,
+        "RssFile": 1880956928,
+        "VmRSS": 4026974208,
+        "VmSize": 111293747200,
+        "VmSwap": 2935435264,
+        "actual_observer_seconds": 602.41,
+        "anon_plus_swap": 5081452544,
+        "global_MemAvailable": 13365436416,
+        "global_SwapFree": 151552,
+        "major_faults": 1829489,
+        "minor_faults": 1692108,
+        "rchar": 692514825,
+        "read_bytes": 141668585472,
+        "requested_near_observer_seconds": 600,
+        "system_cpu_seconds": 150.17,
+        "user_cpu_seconds": 27.38
+      },
+      {
+        "RssAnon": 3926159360,
+        "RssFile": 2027843584,
+        "VmRSS": 5954002944,
+        "VmSize": 113440182272,
+        "VmSwap": 2228006912,
+        "actual_observer_seconds": 702.6,
+        "anon_plus_swap": 6154166272,
+        "global_MemAvailable": 11529605120,
+        "global_SwapFree": 708820992,
+        "major_faults": 2135507,
+        "minor_faults": 2505999,
+        "rchar": 692514825,
+        "read_bytes": 160719085568,
+        "requested_near_observer_seconds": 700,
+        "system_cpu_seconds": 177.76,
+        "user_cpu_seconds": 28.09
+      },
+      {
+        "RssAnon": 3274829824,
+        "RssFile": 2880630784,
+        "VmRSS": 6155460608,
+        "VmSize": 113440182272,
+        "VmSwap": 2877624320,
+        "actual_observer_seconds": 893.14,
+        "anon_plus_swap": 6152454144,
+        "global_MemAvailable": 12236713984,
+        "global_SwapFree": 84250624,
+        "major_faults": 2694875,
+        "minor_faults": 2925810,
+        "rchar": 692514825,
+        "read_bytes": 217102598144,
+        "requested_near_observer_seconds": 894,
+        "system_cpu_seconds": 231.45,
+        "user_cpu_seconds": 29.99
+      }
+    ],
+    "constant_suffixes": {
+      "VmSize": {
+        "first_observer_seconds_of_constant_suffix": 702.6,
+        "last_observer_seconds": 893.14,
+        "sample_count": 20,
+        "value": 113440182272
+      },
+      "rchar": {
+        "first_observer_seconds_of_constant_suffix": 30.12,
+        "last_observer_seconds": 893.14,
+        "sample_count": 87,
+        "value": 692514825
+      },
+      "syscr": {
+        "first_observer_seconds_of_constant_suffix": 30.12,
+        "last_observer_seconds": 893.14,
+        "sample_count": 87,
+        "value": 54496
+      }
+    },
+    "diagnostic_read_cost_seconds": {
+      "maximum": 0.270093,
+      "sum": 1.071419
+    },
+    "excluded_partial_samples": [],
+    "global_memory_during_valid_lean_samples": {
+      "MemAvailable": {
+        "first": 15319142400,
+        "last": 12236713984,
+        "maximum": 15483465728,
+        "maximum_at_observer_seconds": 30.12,
+        "minimum": 11453587456,
+        "minimum_at_observer_seconds": 712.63
+      },
+      "MemTotal": {
+        "first": 16759308288,
+        "last": 16759308288,
+        "maximum": 16759308288,
+        "maximum_at_observer_seconds": 10.02,
+        "minimum": 16759308288,
+        "minimum_at_observer_seconds": 10.02
+      },
+      "SwapFree": {
+        "first": 3221135360,
+        "last": 84250624,
+        "maximum": 3221135360,
+        "maximum_at_observer_seconds": 10.02,
+        "minimum": 0,
+        "minimum_at_observer_seconds": 572.35
+      }
+    },
+    "guard_reserve_mib": 2048,
+    "io_delta": {
+      "cancelled_write_bytes": 0,
+      "rchar": 595224872,
+      "read_bytes": 216043696128,
+      "syscr": 24181,
+      "syscw": 0,
+      "wchar": 0,
+      "write_bytes": 0
+    },
+    "io_first": {
+      "cancelled_write_bytes": 0,
+      "rchar": 97289953,
+      "read_bytes": 1058902016,
+      "syscr": 30315,
+      "syscw": 1,
+      "wchar": 1,
+      "write_bytes": 0
+    },
+    "io_last": {
+      "cancelled_write_bytes": 0,
+      "rchar": 692514825,
+      "read_bytes": 217102598144,
+      "syscr": 54496,
+      "syscw": 1,
+      "wchar": 1,
+      "write_bytes": 0
+    },
+    "maximum_persisted_aggregate_lean_rss": 8337588224,
+    "memory_bytes": {
+      "RssAnon": {
+        "first": 169938944,
+        "last": 3274829824,
+        "maximum": 4071628800,
+        "maximum_at_observer_seconds": 712.63,
+        "minimum": 12771328,
+        "minimum_at_observer_seconds": 30.12
+      },
+      "RssFile": {
+        "first": 858619904,
+        "last": 2880630784,
+        "maximum": 4948455424,
+        "maximum_at_observer_seconds": 80.33,
+        "minimum": 858619904,
+        "minimum_at_observer_seconds": 10.02
+      },
+      "RssShmem": {
+        "first": 0,
+        "last": 0,
+        "maximum": 0,
+        "maximum_at_observer_seconds": 10.02,
+        "minimum": 0,
+        "minimum_at_observer_seconds": 10.02
+      },
+      "VmRSS": {
+        "first": 1028558848,
+        "last": 6155460608,
+        "maximum": 8337887232,
+        "maximum_at_observer_seconds": 80.33,
+        "minimum": 1028558848,
+        "minimum_at_observer_seconds": 10.02
+      },
+      "VmSize": {
+        "first": 50875097088,
+        "last": 113440182272,
+        "maximum": 113440182272,
+        "maximum_at_observer_seconds": 702.6,
+        "minimum": 50875097088,
+        "minimum_at_observer_seconds": 10.02
+      },
+      "VmSwap": {
+        "first": 0,
+        "last": 2877624320,
+        "maximum": 2963464192,
+        "maximum_at_observer_seconds": 812.89,
+        "minimum": 0,
+        "minimum_at_observer_seconds": 10.02
+      }
+    },
+    "observer_exit_code": 1,
+    "observer_status": "VERIFIER_COMPLETED",
+    "observer_total_seconds": 904.16,
+    "one_second_observer_maximum_aggregate_lean_rss": 8337588224,
+    "process_counter_monotonicity": {
+      "cpu_system_ticks": true,
+      "cpu_user_ticks": true,
+      "major_faults": true,
+      "minor_faults": true,
+      "read_bytes": true
+    },
+    "process_identity": {
+      "clock_ticks_per_second": 100,
+      "parent_pids": [
+        4096
+      ],
+      "pid": 4152,
+      "process_groups": [
+        4096
+      ],
+      "scope_caution": "The state is the leader state, not every thread state.",
+      "start_time_ticks": 222409,
+      "states_after": {
+        "S": 89
+      },
+      "states_before": {
+        "S": 89
+      },
+      "thread_counts": [
+        5
+      ]
+    },
+    "process_limits": [
+      {
+        "Max address space": {
+          "hard": "unlimited",
+          "soft": "unlimited",
+          "units": "bytes"
+        },
+        "Max data size": {
+          "hard": "unlimited",
+          "soft": "unlimited",
+          "units": "bytes"
+        },
+        "Max stack size": {
+          "hard": "unlimited",
+          "soft": "16777216",
+          "units": "bytes"
+        }
+      }
+    ],
+    "total_observer_samples": 91,
+    "valid_lean_samples": 89,
+    "window": {
+      "cpu_percent_of_one_cpu": 29.353882,
+      "elapsed_seconds": 883.12,
+      "first_observer_seconds": 10.02,
+      "last_observer_seconds": 893.14,
+      "major_fault_delta": 2685291,
+      "minor_fault_delta": 2855249,
+      "rchar_delta": 595224872,
+      "read_bytes_delta": 216043696128,
+      "read_bytes_per_observed_second": 244636851.309,
+      "system_cpu_seconds": 229.65,
+      "total_cpu_seconds": 259.23,
+      "user_cpu_seconds": 29.58
+    }
+  },
+  "dio_activation": {
+    "all_nine_command_returncodes_zero": true,
+    "all_recorded_non_dio_device_and_mount_fields_unchanged": true,
+    "backing_filesystem": {
+      "fstype": "ext4",
+      "maj:min": "8:1",
+      "options": "rw,relatime,discard,journal_async_commit,nobarrier,errors=remount-ro,commit=30,data=writeback",
+      "source": "/dev/sda1",
+      "target": "/"
+    },
+    "before_after_command_json_matches_report": true,
+    "btrfs_mountinfo_identity": "0:50",
+    "btrfs_stat_identity": "0:51",
+    "image_identity": {
+      "device": "8:1",
+      "inode": 9298709,
+      "size": 274877906944
+    },
+    "kernel_release": "7.0.0-1017-azure",
+    "logical_image_bytes": 274877906944,
+    "logical_sector_bytes": 512,
+    "loop_block_identity": "7:0",
+    "loop_device": "/dev/loop0",
+    "observed_after_loop_dio": true,
+    "observed_after_sysfs_dio": 1,
+    "observed_before_loop_dio": false,
+    "observed_before_sysfs_dio": 0,
+    "previous_run_effective_dio_flag_readback_available": false,
+    "time_of_dio_readback": "Immediately after enabling DIO before restoration; no later DIO readback is present.",
+    "util_linux_version": "losetup from util-linux 2.39.3"
+  },
+  "input_evidence_sha256": {
+    "dio_archive_members": {
+      "control_result.json": {
+        "bytes": 2852,
+        "sha256": "92b8b898502b919c1a7d087d333864c5e9f6f8186e85d81218a2738fe5deaec7"
+      },
+      "direct_io.json": {
+        "bytes": 8914,
+        "sha256": "81a8e1c59a32b8c6fb8c8fd1fd5548816eadcc56768a7038a1fba8c7ba9838f0"
+      },
+      "host_guard.json": {
+        "bytes": 198,
+        "sha256": "32f8f7e8f6aa7ac2bea1d675834baa2f49288b1459286190cf64e7d2fe24d166"
+      },
+      "probe.log": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "probe_host_events.jsonl": {
+        "bytes": 1189,
+        "sha256": "deb4c54e9fb194895aece67ffc4b9612dbe244404ef245a2d0fff954af65c969"
+      },
+      "probe_phases.tsv": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "probe_resource_observer.json": {
+        "bytes": 3558062,
+        "sha256": "ab5f2b35e0a1d550f66bfe8d0526c34f2f7cb8905c1961fa9d1b6f57e6f260d8"
+      },
+      "probe_result.json": {
+        "bytes": 3015,
+        "sha256": "e9504b04ce6deacc9bb522fa5176cebae0467b0cd31e9984814775e1c28a33ef"
+      },
+      "setup.json": {
+        "bytes": 866,
+        "sha256": "5ab7e4ec0d86d7100ade0b9268ef39cae453842d692da180b093b6e5b9f3fcd2"
+      }
+    },
+    "previous_analysis": {
+      "bytes": 52445,
+      "sha256": "04f32db3a34591e530c5e08a34a5b37bd30ad53d45d675e791c914b97eaeef7a"
+    },
+    "previous_archive_members": {
+      "control_result.json": {
+        "bytes": 2852,
+        "sha256": "c88fe130b6ff0402d922054d27f19f4786f5a17b4ca5d047bb1ccbf44bda5b3f"
+      },
+      "host_guard.json": {
+        "bytes": 198,
+        "sha256": "e55a32eff4b5743d23e8edd1291f35c1bb4641e89c6d0d6ebdb66c0e41f7dd0f"
+      },
+      "probe.log": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "probe_host_events.jsonl": {
+        "bytes": 1189,
+        "sha256": "837bc6b8998b9d3eab00a258a2749e5fa4c6deb9964db01391321d31e358e5b5"
+      },
+      "probe_phases.tsv": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "probe_resource_observer.json": {
+        "bytes": 3558470,
+        "sha256": "78b325036246d1c5b8209749b76877ca125f6318d26b75edd6e424bae0c50303"
+      },
+      "probe_result.json": {
+        "bytes": 3015,
+        "sha256": "e6ead80d08ea7d2e95f3a68d90798e2d545381a8128688c2b4580992feabcd0a"
+      },
+      "setup.json": {
+        "bytes": 866,
+        "sha256": "c21f4ff50355057eb83abe3291c85a49fbf23f05889bf279e13bee16c0a78a58"
+      }
+    }
+  },
+  "limits": [
+    "Different GitHub runners and unobserved background/cache/storage conditions prevent treating these two runs as a controlled same-host causal estimate.",
+    "The previous run did not include an effective-DIO flag readback; its unchanged setup did not explicitly request DIO.",
+    "Current runtime reports Linux 7.0.0-1017-azure. Earlier Linux 6.8 source reasoning is not a byte-bound description of this actual running kernel.",
+    "Process read_bytes and cgroup block-device counters are reported in their actual accounting scopes. Nested groups and stacked loop/backing devices must not be added as unique physical I/O.",
+    "Cgroup counters include other charged work; PSI cannot be added to CPU time as disjoint waiting time.",
+    "The visible cgroup mount root is not proof that no ancestor or external limit exists outside the cgroup namespace; root ENOENT interfaces remain unobservable.",
+    "Leader state S does not determine all worker-thread states; no per-thread wait channel, stack, syscall trace, mapped-file index or fault address was recorded.",
+    "Large VmSize or its growth does not prove a particular module was loaded or a deterministic mmap address collided.",
+    "No import, proof-body phase, mmap failure, supervisor policy or specific source file is identified as the cause.",
+    "This comparison neither creates nor authenticates an original kernel receipt or any family closure."
+  ],
+  "origins": {
+    "dio": {
+      "bytes": 6559687,
+      "job": 126587565934,
+      "path": "rg_resume_20261104/bothlong_phase_probe/direct_io_actual/diagnostic.zip",
+      "run": 41833843857,
+      "sha256": "52429f4260b3f5787d911bdf94ad45bb424bce14fe096cb366d516dd70c09a97",
+      "source_commit": "3d33148521b26f541335b3f7c764632dfa415a80"
+    },
+    "previous": {
+      "bytes": 6559913,
+      "job": 126547586924,
+      "path": "rg_resume_20261104/bothlong_phase_probe/namespace_actual/diagnostic.zip",
+      "run": 41822127230,
+      "sha256": "bb8418d4f196959ef2a2c391d6ad4c65b3159ebb82635dcac4215c072341ec87",
+      "source_commit": "176987f56d837e36c86d75bb52078b41a3062df4"
+    }
+  },
+  "outcomes": {
+    "dio": {
+      "compiler": {
+        "compiler_returncode": -9,
+        "diagnostic_output_sha256": null,
+        "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "module": "Proofs.RadenkovicGutmanD1OriginalSharedBothLongPhaseProbe",
+        "seconds": 900.669,
+        "success": false,
+        "timeout": true
+      },
+      "control_modules": [
+        "RGDiagnostic.PhaseMarker",
+        "Proofs.RGDiagnosticImportFixture",
+        "Proofs.RGDiagnosticMarkerControl"
+      ],
+      "control_status": "DIAGNOSTIC_MARKER_CONTROL_PASSED",
+      "host_guard": {
+        "exit_code": 1,
+        "foreign_processes_signalled": 0,
+        "host_reserve_stop": false,
+        "lowest_observed_host_free_bytes": 58509807616,
+        "owned_pid": 4095,
+        "status": "OWNED_KERNEL_GROUP_ENDED"
+      },
+      "last_observed_phase": null,
+      "original_kernel_success_claim": false,
+      "phase_marker_bytes": 0,
+      "probe_log_bytes": 0,
+      "resource_exit_code": 1,
+      "resource_status": "VERIFIER_COMPLETED"
+    },
+    "previous": {
+      "compiler": {
+        "compiler_returncode": -9,
+        "diagnostic_output_sha256": null,
+        "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "module": "Proofs.RadenkovicGutmanD1OriginalSharedBothLongPhaseProbe",
+        "seconds": 900.699,
+        "success": false,
+        "timeout": true
+      },
+      "control_modules": [
+        "RGDiagnostic.PhaseMarker",
+        "Proofs.RGDiagnosticImportFixture",
+        "Proofs.RGDiagnosticMarkerControl"
+      ],
+      "control_status": "DIAGNOSTIC_MARKER_CONTROL_PASSED",
+      "host_guard": {
+        "exit_code": 1,
+        "foreign_processes_signalled": 0,
+        "host_reserve_stop": false,
+        "lowest_observed_host_free_bytes": 58276937728,
+        "owned_pid": 4137,
+        "status": "OWNED_KERNEL_GROUP_ENDED"
+      },
+      "last_observed_phase": null,
+      "original_kernel_success_claim": false,
+      "phase_marker_bytes": 0,
+      "probe_log_bytes": 0,
+      "resource_exit_code": 1,
+      "resource_status": "VERIFIER_COMPLETED"
+    }
+  },
+  "previous": {
+    "cgroup_mapping_variants": [
+      {
+        "candidate_leaf": "/sys/fs/cgroup/system.slice/hosted-compute-agent.service",
+        "mapping_labels": [
+          "HIERARCHY_RELATIVE_CANDIDATE",
+          "NAMESPACE_RELATIVE_CANDIDATE"
+        ],
+        "mapping_status": "CANDIDATES_RECORDED",
+        "membership_lines": [
+          "0::/system.slice/hosted-compute-agent.service"
+        ],
+        "mount": {
+          "mount_point": "/sys/fs/cgroup",
+          "root": "/"
+        },
+        "mountinfo_parse_errors": [],
+        "mountinfo_status": "READ",
+        "reached_visible_mount_root": true
+      }
+    ],
+    "cgroups": {
+      "/sys/fs/cgroup": {
+        "cpu_stat_delta": {
+          "burst_usec": 0,
+          "core_sched.force_idle_usec": 0,
+          "nice_usec": 0,
+          "nr_bursts": 0,
+          "nr_periods": 0,
+          "nr_throttled": 0,
+          "system_usec": 1047682000,
+          "throttled_usec": 0,
+          "usage_usec": 1081408000,
+          "user_usec": 33726000
+        },
+        "cpu_throttling_counters_zero_in_all_samples": true,
+        "events": {},
+        "gauges": {},
+        "io_stat_delta": {
+          "7:0": {
+            "dbytes": 0,
+            "dios": 0,
+            "rbytes": 130179833856,
+            "rios": 2287470,
+            "wbytes": 499712,
+            "wios": 33
+          },
+          "8:0": {
+            "dbytes": 4743168,
+            "dios": 177,
+            "rbytes": 135482007552,
+            "rios": 3621321,
+            "wbytes": 12948336640,
+            "wios": 832497
+          }
+        },
+        "limits": {
+          "cpu.max": [],
+          "memory.high": [],
+          "memory.max": [],
+          "memory.swap.max": []
+        },
+        "memory_pressure": {
+          "full": {
+            "delta_total_seconds": 102.24315,
+            "maximum_avg10": 21.95,
+            "maximum_avg10_at_observer_seconds": 241.59
+          },
+          "some": {
+            "delta_total_seconds": 111.728069,
+            "maximum_avg10": 23.58,
+            "maximum_avg10_at_observer_seconds": 241.59
+          }
+        },
+        "memory_stat_delta": {
+          "pgscan": 109948355,
+          "pgscan_direct": 2504871,
+          "pgscan_khugepaged": 3809,
+          "pgscan_kswapd": 107439675,
+          "pgscan_proactive": 0,
+          "pgsteal": 101652260,
+          "pgsteal_direct": 2239870,
+          "pgsteal_khugepaged": 3550,
+          "pgsteal_kswapd": 99408840,
+          "pgsteal_proactive": 0,
+          "pswpin": 2592887,
+          "pswpout": 3150169,
+          "workingset_activate_anon": 1171036,
+          "workingset_activate_file": 43572641,
+          "workingset_refault_anon": 2593978,
+          "workingset_refault_file": 97646296,
+          "workingset_restore_anon": 840025,
+          "workingset_restore_file": 2944029
+        },
+        "memory_stat_gauges": {
+          "anon": {
+            "first": 382705664,
+            "last": 2608812032,
+            "maximum": 3842203648,
+            "maximum_at_observer_seconds": 191.13,
+            "minimum": 173621248,
+            "minimum_at_observer_seconds": 40.51
+          },
+          "anon_plus_file": {
+            "first": 15499591680,
+            "last": 15403212800,
+            "maximum": 15499591680,
+            "maximum_at_observer_seconds": 10.02,
+            "minimum": 11194687488,
+            "minimum_at_observer_seconds": 201.18
+          },
+          "file": {
+            "first": 15116886016,
+            "last": 12794400768,
+            "maximum": 15116886016,
+            "maximum_at_observer_seconds": 10.02,
+            "minimum": 7460880384,
+            "minimum_at_observer_seconds": 201.18
+          },
+          "file_dirty": {
+            "first": 151552,
+            "last": 290816,
+            "maximum": 14856192,
+            "maximum_at_observer_seconds": 60.61,
+            "minimum": 0,
+            "minimum_at_observer_seconds": 221.53
+          },
+          "file_mapped": {
+            "first": 910741504,
+            "last": 2694574080,
+            "maximum": 5035585536,
+            "maximum_at_observer_seconds": 90.73,
+            "minimum": 910741504,
+            "minimum_at_observer_seconds": 10.02
+          },
+          "file_writeback": {
+            "first": 0,
+            "last": 0,
+            "maximum": 1642496,
+            "maximum_at_observer_seconds": 321.92,
+            "minimum": 0,
+            "minimum_at_observer_seconds": 10.02
+          },
+          "kernel": {
+            "first": 634789888,
+            "last": 753922048,
+            "maximum": 885665792,
+            "maximum_at_observer_seconds": 30.06,
+            "minimum": 634789888,
+            "minimum_at_observer_seconds": 10.02
+          },
+          "pagetables": {
+            "first": 80359424,
+            "last": 356925440,
+            "maximum": 356925440,
+            "maximum_at_observer_seconds": 894.1,
+            "minimum": 80359424,
+            "minimum_at_observer_seconds": 10.02
+          },
+          "shmem": {
+            "first": 53735424,
+            "last": 8888320,
+            "maximum": 53747712,
+            "maximum_at_observer_seconds": 30.06,
+            "minimum": 5668864,
+            "minimum_at_observer_seconds": 231.56
+          }
+        },
+        "proactive_scan_and_steal_zero_in_all_samples": true,
+        "read_status": {
+          "cpu.max": {
+            "counts": {
+              "READ_ERROR": 89
+            },
+            "error_variants": [
+              {
+                "errno": 2,
+                "error_type": "FileNotFoundError"
+              }
+            ]
+          },
+          "cpu.stat": {
+            "counts": {
+              "READ": 89
+            }
+          },
+          "io.stat": {
+            "counts": {
+              "READ": 89
+            }
+          },
+          "memory.current": {
+            "counts": {
+              "READ_ERROR": 89
+            },
+            "error_variants": [
+              {
+                "errno": 2,
+                "error_type": "FileNotFoundError"
+              }
+            ]
+          },
+          "memory.events": {
+            "counts": {
+              "READ_ERROR": 89
+            },
+            "error_variants": [
+              {
+                "errno": 2,
+                "error_type": "FileNotFoundError"
+              }
+            ]
+          },
+          "memory.events.local": {
+            "counts": {
+              "READ_ERROR": 89
+            },
+            "error_variants": [
+              {
+                "errno": 2,
+                "error_type": "FileNotFoundError"
+              }
+            ]
+          },
+          "memory.high": {
+            "counts": {
+              "READ_ERROR": 89
+            },
+            "error_variants": [
+              {
+                "errno": 2,
+                "error_type": "FileNotFoundError"
+              }
+            ]
+          },
+          "memory.max": {
+            "counts": {
+              "READ_ERROR": 89
+            },
+            "error_variants": [
+              {
+                "errno": 2,
+                "error_type": "FileNotFoundError"
+              }
+            ]
+          },
+          "memory.pressure": {
+            "counts": {
+              "READ": 89
+            }
+          },
+          "memory.stat": {
+            "counts": {
+              "READ": 89
+            }
+          },
+          "memory.swap.current": {
+            "counts": {
+              "READ_ERROR": 89
+            },
+            "error_variants": [
+              {
+                "errno": 2,
+                "error_type": "FileNotFoundError"
+              }
+            ]
+          },
+          "memory.swap.max": {
+            "counts": {
+              "READ_ERROR": 89
+            },
+            "error_variants": [
+              {
+                "errno": 2,
+                "error_type": "FileNotFoundError"
+              }
+            ]
+          }
+        }
+      },
+      "/sys/fs/cgroup/system.slice": {
+        "cpu_stat_delta": {
+          "burst_usec": 0,
+          "core_sched.force_idle_usec": 0,
+          "nice_usec": 0,
+          "nr_bursts": 0,
+          "nr_periods": 0,
+          "nr_throttled": 0,
+          "system_usec": 211505430,
+          "throttled_usec": 0,
+          "usage_usec": 252938386,
+          "user_usec": 41432957
+        },
+        "cpu_throttling_counters_zero_in_all_samples": true,
+        "events": {
+          "memory.events": {
+            "all_values_zero": true,
+            "delta": {
+              "high": 0,
+              "low": 0,
+              "max": 0,
+              "oom": 0,
+              "oom_group_kill": 0,
+              "oom_kill": 0,
+              "sock_throttled": 0
+            },
+            "first": {
+              "high": 0,
+              "low": 0,
+              "max": 0,
+              "oom": 0,
+              "oom_group_kill": 0,
+              "oom_kill": 0,
+              "sock_throttled": 0
+            },
+            "last": {
+              "high": 0,
+              "low": 0,
+              "max": 0,
+              "oom": 0,
+              "oom_group_kill": 0,
+              "oom_kill": 0,
+              "sock_throttled": 0
+            }
+          },
+          "memory.events.local": {
+            "all_values_zero": true,
+            "delta": {
+              "high": 0,
+              "low": 0,
+              "max": 0,
+              "oom": 0,
+              "oom_group_kill": 0,
+              "oom_kill": 0,
+              "sock_throttled": 0
+            },
+            "first": {
+              "high": 0,
+              "low": 0,
+              "max": 0,
+              "oom": 0,
+              "oom_group_kill": 0,
+              "oom_kill": 0,
+              "sock_throttled": 0
+            },
+            "last": {
+              "high": 0,
+              "low": 0,
+              "max": 0,
+              "oom": 0,
+              "oom_group_kill": 0,
+              "oom_kill": 0,
+              "sock_throttled": 0
+            }
+          }
+        },
+        "gauges": {
+          "memory.current": {
+            "first": 14742495232,
+            "last": 16066490368,
+            "maximum": 16111730688,
+            "maximum_at_observer_seconds": 80.7,
+            "minimum": 11891875840,
+            "minimum_at_observer_seconds": 201.18
+          },
+          "memory.swap.current": {
+            "first": 86016,
+            "last": 2549039104,
+            "maximum": 3141255168,
+            "maximum_at_observer_seconds": 332.01,
+            "minimum": 86016,
+            "minimum_at_observer_seconds": 10.02
+          }
+        },
+        "io_stat_delta": {
+          "7:0": {
+            "dbytes": 0,
+            "dios": 0,
+            "rbytes": 130179735552,
+            "rios": 3954056,
+            "wbytes": 0,
+            "wios": 0
+          },
+          "8:0": {
+            "dbytes": 4050944,
+            "dios": 15,
+            "rbytes": 135459409920,
+            "rios": 3733225,
+            "wbytes": 12864299008,
+            "wios": 3138066
+          }
+        },
+        "limits": {
+          "cpu.max": [
+            "max 100000"
+          ],
+          "memory.high": [
+            "max"
+          ],
+          "memory.max": [
+            "max"
+          ],
+          "memory.swap.max": [
+            "max"
+          ]
+        },
+        "memory_pressure": {
+          "full": {
+            "delta_total_seconds": 66.797072,
+            "maximum_avg10": 22.72,
+            "maximum_avg10_at_observer_seconds": 382.13
+          },
+          "some": {
+            "delta_total_seconds": 67.023406,
+            "maximum_avg10": 22.72,
+            "maximum_avg10_at_observer_seconds": 382.13
+          }
+        },
+        "memory_stat_delta": {
+          "pgscan": 109462099,
+          "pgscan_direct": 2483031,
+          "pgscan_khugepaged": 3807,
+          "pgscan_kswapd": 106975261,
+          "pgscan_proactive": 0,
+          "pgsteal": 101185121,
+          "pgsteal_direct": 2218538,
+          "pgsteal_khugepaged": 3549,
+          "pgsteal_kswapd": 98963034,
+          "pgsteal_proactive": 0,
+          "pswpin": 2589733,
+          "pswpout": 3137707,
+          "workingset_activate_anon": 1170825,
+          "workingset_activate_file": 43540512,
+          "workingset_refault_anon": 2590811,
+          "workingset_refault_file": 97500803,
+          "workingset_restore_anon": 839895,
+          "workingset_restore_file": 2922974
+        },
+        "memory_stat_gauges": {
+          "anon": {
+            "first": 329490432,
+            "last": 2596605952,
+            "maximum": 3824173056,
+            "maximum_at_observer_seconds": 191.13,
+            "minimum": 120401920,
+            "minimum_at_observer_seconds": 40.51
+          },
+          "anon_plus_file": {
+            "first": 14101807104,
+            "last": 15301140480,
+            "maximum": 15309299712,
+            "maximum_at_observer_seconds": 332.01,
+            "minimum": 11080888320,
+            "minimum_at_observer_seconds": 201.18
+          },
+          "file": {
+            "first": 13772316672,
+            "last": 12704534528,
+            "maximum": 14574866432,
+            "maximum_at_observer_seconds": 40.51,
+            "minimum": 7364616192,
+            "minimum_at_observer_seconds": 201.18
+          },
+          "file_dirty": {
+            "first": 122880,
+            "last": 249856,
+            "maximum": 14786560,
+            "maximum_at_observer_seconds": 60.61,
+            "minimum": 0,
+            "minimum_at_observer_seconds": 221.53
+          },
+          "file_mapped": {
+            "first": 888520704,
+            "last": 2685087744,
+            "maximum": 5013716992,
+            "maximum_at_observer_seconds": 90.73,
+            "minimum": 888520704,
+            "minimum_at_observer_seconds": 10.02
+          },
+          "file_writeback": {
+            "first": 0,
+            "last": 0,
+            "maximum": 1339392,
+            "maximum_at_observer_seconds": 321.92,
+            "minimum": 0,
+            "minimum_at_observer_seconds": 10.02
+          },
+          "kernel": {
+            "first": 630001664,
+            "last": 751177728,
+            "maximum": 880881664,
+            "maximum_at_observer_seconds": 30.06,
+            "minimum": 630001664,
+            "minimum_at_observer_seconds": 10.02
+          },
+          "pagetables": {
+            "first": 79917056,
+            "last": 356483072,
+            "maximum": 356483072,
+            "maximum_at_observer_seconds": 894.1,
+            "minimum": 79917056,
+            "minimum_at_observer_seconds": 10.02
+          },
+          "shmem": {
+            "first": 50495488,
+            "last": 5738496,
+            "maximum": 50507776,
+            "maximum_at_observer_seconds": 30.06,
+            "minimum": 2506752,
+            "minimum_at_observer_seconds": 231.56
+          }
+        },
+        "proactive_scan_and_steal_zero_in_all_samples": true,
+        "read_status": {
+          "cpu.max": {
+            "counts": {
+              "READ": 89
+            }
+          },
+          "cpu.stat": {
+            "counts": {
+              "READ": 89
+            }
+          },
+          "io.stat": {
+            "counts": {
+              "READ": 89
+            }
+          },
+          "memory.current": {
+            "counts": {
+              "READ": 89
+            }
+          },
+          "memory.events": {
+            "counts": {
+              "READ": 89
+            }
+          },
+          "memory.events.local": {
+            "counts": {
+              "READ": 89
+            }
+          },
+          "memory.high": {
+            "counts": {
+              "READ": 89
+            }
+          },
+          "memory.max": {
+            "counts": {
+              "READ": 89
+            }
+          },
+          "memory.pressure": {
+            "counts": {
+              "READ": 89
+            }
+          },
+          "memory.stat": {
+            "counts": {
+              "READ": 89
+            }
+          },
+          "memory.swap.current": {
+            "counts": {
+              "READ": 89
+            }
+          },
+          "memory.swap.max": {
+            "counts": {
+              "READ": 89
+            }
+          }
+        }
+      },
+      "/sys/fs/cgroup/system.slice/hosted-compute-agent.service": {
+        "cpu_stat_delta": {
+          "burst_usec": 0,
+          "core_sched.force_idle_usec": 0,
+          "nice_usec": 0,
+          "nr_bursts": 0,
+          "nr_periods": 0,
+          "nr_throttled": 0,
+          "system_usec": 209773919,
+          "throttled_usec": 0,
+          "usage_usec": 250961689,
+          "user_usec": 41187769
+        },
+        "cpu_throttling_counters_zero_in_all_samples": true,
+        "events": {
+          "memory.events": {
+            "all_values_zero": true,
+            "delta": {
+              "high": 0,
+              "low": 0,
+              "max": 0,
+              "oom": 0,
+              "oom_group_kill": 0,
+              "oom_kill": 0,
+              "sock_throttled": 0
+            },
+            "first": {
+              "high": 0,
+              "low": 0,
+              "max": 0,
+              "oom": 0,
+              "oom_group_kill": 0,
+              "oom_kill": 0,
+              "sock_throttled": 0
+            },
+            "last": {
+              "high": 0,
+              "low": 0,
+              "max": 0,
+              "oom": 0,
+              "oom_group_kill": 0,
+              "oom_kill": 0,
+              "sock_throttled": 0
+            }
+          },
+          "memory.events.local": {
+            "all_values_zero": true,
+            "delta": {
+              "high": 0,
+              "low": 0,
+              "max": 0,
+              "oom": 0,
+              "oom_group_kill": 0,
+              "oom_kill": 0,
+              "sock_throttled": 0
+            },
+            "first": {
+              "high": 0,
+              "low": 0,
+              "max": 0,
+              "oom": 0,
+              "oom_group_kill": 0,
+              "oom_kill": 0,
+              "sock_throttled": 0
+            },
+            "last": {
+              "high": 0,
+              "low": 0,
+              "max": 0,
+              "oom": 0,
+              "oom_group_kill": 0,
+              "oom_kill": 0,
+              "sock_throttled": 0
+            }
+          }
+        },
+        "gauges": {
+          "memory.current": {
+            "first": 14294683648,
+            "last": 15964487680,
+            "maximum": 15964487680,
+            "maximum_at_observer_seconds": 894.1,
+            "minimum": 11731677184,
+            "minimum_at_observer_seconds": 201.18
+          },
+          "memory.swap.current": {
+            "first": 0,
+            "last": 2492047360,
+            "maximum": 3102584832,
+            "maximum_at_observer_seconds": 332.01,
+            "minimum": 0,
+            "minimum_at_observer_seconds": 10.02
+          }
+        },
+        "io_stat_delta": {
+          "7:0": {
+            "dbytes": 0,
+            "dios": 0,
+            "rbytes": 130179735552,
+            "rios": 3954056,
+            "wbytes": 0,
+            "wios": 0
+          },
+          "8:0": {
+            "dbytes": 4050944,
+            "dios": 15,
+            "rbytes": 135439470592,
+            "rios": 3732128,
+            "wbytes": 12805472256,
+            "wios": 3124408
+          }
+        },
+        "limits": {
+          "cpu.max": [
+            "max 100000"
+          ],
+          "memory.high": [
+            "max"
+          ],
+          "memory.max": [
+            "max"
+          ],
+          "memory.swap.max": [
+            "max"
+          ]
+        },
+        "memory_pressure": {
+          "full": {
+            "delta_total_seconds": 66.758322,
+            "maximum_avg10": 23.54,
+            "maximum_avg10_at_observer_seconds": 372.11
+          },
+          "some": {
+            "delta_total_seconds": 66.949921,
+            "maximum_avg10": 23.55,
+            "maximum_avg10_at_observer_seconds": 372.11
+          }
+        },
+        "memory_stat_delta": {
+          "pgscan": 109339010,
+          "pgscan_direct": 2457152,
+          "pgscan_khugepaged": 3667,
+          "pgscan_kswapd": 106878191,
+          "pgscan_proactive": 0,
+          "pgsteal": 101099738,
+          "pgsteal_direct": 2203851,
+          "pgsteal_khugepaged": 3530,
+          "pgsteal_kswapd": 98892357,
+          "pgsteal_proactive": 0,
+          "pswpin": 2589324,
+          "pswpout": 3124121,
+          "workingset_activate_anon": 1170585,
+          "workingset_activate_file": 43539652,
+          "workingset_refault_anon": 2590367,
+          "workingset_refault_file": 97498702,
+          "workingset_restore_anon": 839864,
+          "workingset_restore_file": 2922633
+        },
+        "memory_stat_gauges": {
+          "anon": {
+            "first": 215437312,
+            "last": 2536079360,
+            "maximum": 3740897280,
+            "maximum_at_observer_seconds": 191.13,
+            "minimum": 6352896,
+            "minimum_at_observer_seconds": 40.51
+          },
+          "anon_plus_file": {
+            "first": 13688811520,
+            "last": 15221137408,
+            "maximum": 15221137408,
+            "maximum_at_observer_seconds": 894.1,
+            "minimum": 10950864896,
+            "minimum_at_observer_seconds": 201.18
+          },
+          "file": {
+            "first": 13473374208,
+            "last": 12685058048,
+            "maximum": 14386675712,
+            "maximum_at_observer_seconds": 40.51,
+            "minimum": 7317889024,
+            "minimum_at_observer_seconds": 201.18
+          },
+          "file_dirty": {
+            "first": 114688,
+            "last": 245760,
+            "maximum": 14782464,
+            "maximum_at_observer_seconds": 60.61,
+            "minimum": 0,
+            "minimum_at_observer_seconds": 221.53
+          },
+          "file_mapped": {
+            "first": 710684672,
+            "last": 2668621824,
+            "maximum": 4972072960,
+            "maximum_at_observer_seconds": 90.73,
+            "minimum": 710684672,
+            "minimum_at_observer_seconds": 10.02
+          },
+          "file_writeback": {
+            "first": 0,
+            "last": 0,
+            "maximum": 999424,
+            "maximum_at_observer_seconds": 181.07,
+            "minimum": 0,
+            "minimum_at_observer_seconds": 10.02
+          },
+          "kernel": {
+            "first": 598962176,
+            "last": 738025472,
+            "maximum": 849879040,
+            "maximum_at_observer_seconds": 30.06,
+            "minimum": 598962176,
+            "minimum_at_observer_seconds": 10.02
+          },
+          "pagetables": {
+            "first": 76808192,
+            "last": 353394688,
+            "maximum": 353394688,
+            "maximum_at_observer_seconds": 894.1,
+            "minimum": 76808192,
+            "minimum_at_observer_seconds": 10.02
+          },
+          "shmem": {
+            "first": 46600192,
+            "last": 5238784,
+            "maximum": 46612480,
+            "maximum_at_observer_seconds": 30.06,
+            "minimum": 1638400,
+            "minimum_at_observer_seconds": 231.56
+          }
+        },
+        "proactive_scan_and_steal_zero_in_all_samples": true,
+        "read_status": {
+          "cpu.max": {
+            "counts": {
+              "READ": 89
+            }
+          },
+          "cpu.stat": {
+            "counts": {
+              "READ": 89
+            }
+          },
+          "io.stat": {
+            "counts": {
+              "READ": 89
+            }
+          },
+          "memory.current": {
+            "counts": {
+              "READ": 89
+            }
+          },
+          "memory.events": {
+            "counts": {
+              "READ": 89
+            }
+          },
+          "memory.events.local": {
+            "counts": {
+              "READ": 89
+            }
+          },
+          "memory.high": {
+            "counts": {
+              "READ": 89
+            }
+          },
+          "memory.max": {
+            "counts": {
+              "READ": 89
+            }
+          },
+          "memory.pressure": {
+            "counts": {
+              "READ": 89
+            }
+          },
+          "memory.stat": {
+            "counts": {
+              "READ": 89
+            }
+          },
+          "memory.swap.current": {
+            "counts": {
+              "READ": 89
+            }
+          },
+          "memory.swap.max": {
+            "counts": {
+              "READ": 89
+            }
+          }
+        }
+      }
+    },
+    "checkpoints": [
+      {
+        "RssAnon": 26570752,
+        "RssFile": 581529600,
+        "VmRSS": 608100352,
+        "VmSize": 8088698880,
+        "VmSwap": 0,
+        "actual_observer_seconds": 10.02,
+        "anon_plus_swap": 26570752,
+        "global_MemAvailable": 15514587136,
+        "global_SwapFree": 3221135360,
+        "major_faults": 5491,
+        "minor_faults": 25916,
+        "rchar": 1871913,
+        "read_bytes": 502673408,
+        "requested_near_observer_seconds": 10,
+        "system_cpu_seconds": 1.3,
+        "user_cpu_seconds": 0.33
+      },
+      {
+        "RssAnon": 732356608,
+        "RssFile": 1996992512,
+        "VmRSS": 2729349120,
+        "VmSize": 106989363200,
+        "VmSwap": 0,
+        "actual_observer_seconds": 30.06,
+        "anon_plus_swap": 732356608,
+        "global_MemAvailable": 14535860224,
+        "global_SwapFree": 3221135360,
+        "major_faults": 17407,
+        "minor_faults": 233654,
+        "rchar": 692490393,
+        "read_bytes": 2718560256,
+        "requested_near_observer_seconds": 30,
+        "system_cpu_seconds": 8.2,
+        "user_cpu_seconds": 1.63
+      },
+      {
+        "RssAnon": 3165368320,
+        "RssFile": 4425703424,
+        "VmRSS": 7591071744,
+        "VmSize": 110218977280,
+        "VmSwap": 708734976,
+        "actual_observer_seconds": 100.75,
+        "anon_plus_swap": 3874103296,
+        "global_MemAvailable": 12245827584,
+        "global_SwapFree": 1922416640,
+        "major_faults": 114624,
+        "minor_faults": 868659,
+        "rchar": 692490393,
+        "read_bytes": 15419699200,
+        "requested_near_observer_seconds": 100,
+        "system_cpu_seconds": 26.7,
+        "user_cpu_seconds": 15.0
+      },
+      {
+        "RssAnon": 3688062976,
+        "RssFile": 3173363712,
+        "VmRSS": 6861426688,
+        "VmSize": 110218977280,
+        "VmSwap": 819204096,
+        "actual_observer_seconds": 181.07,
+        "anon_plus_swap": 4507267072,
+        "global_MemAvailable": 11741761536,
+        "global_SwapFree": 1609347072,
+        "major_faults": 278480,
+        "minor_faults": 1080605,
+        "rchar": 692490393,
+        "read_bytes": 31076700160,
+        "requested_near_observer_seconds": 180,
+        "system_cpu_seconds": 50.02,
+        "user_cpu_seconds": 21.55
+      },
+      {
+        "RssAnon": 3367759872,
+        "RssFile": 1285550080,
+        "VmRSS": 4653309952,
+        "VmSize": 110218977280,
+        "VmSwap": 1234591744,
+        "actual_observer_seconds": 301.85,
+        "anon_plus_swap": 4602351616,
+        "global_MemAvailable": 12144283648,
+        "global_SwapFree": 1516154880,
+        "major_faults": 586874,
+        "minor_faults": 1235051,
+        "rchar": 692490393,
+        "read_bytes": 52815507456,
+        "requested_near_observer_seconds": 300,
+        "system_cpu_seconds": 79.22,
+        "user_cpu_seconds": 23.36
+      },
+      {
+        "RssAnon": 3304644608,
+        "RssFile": 2927284224,
+        "VmRSS": 6231928832,
+        "VmSize": 110218977280,
+        "VmSwap": 1352224768,
+        "actual_observer_seconds": 452.29,
+        "anon_plus_swap": 4656869376,
+        "global_MemAvailable": 12204851200,
+        "global_SwapFree": 1596538880,
+        "major_faults": 1121038,
+        "minor_faults": 1409088,
+        "rchar": 692490393,
+        "read_bytes": 74153697280,
+        "requested_near_observer_seconds": 450,
+        "system_cpu_seconds": 110.32,
+        "user_cpu_seconds": 24.76
+      },
+      {
+        "RssAnon": 2669834240,
+        "RssFile": 3256180736,
+        "VmRSS": 5926014976,
+        "VmSize": 110218977280,
+        "VmSwap": 2041532416,
+        "actual_observer_seconds": 602.83,
+        "anon_plus_swap": 4711366656,
+        "global_MemAvailable": 12880064512,
+        "global_SwapFree": 901300224,
+        "major_faults": 1613592,
+        "minor_faults": 1585212,
+        "rchar": 692490393,
+        "read_bytes": 100144807936,
+        "requested_near_observer_seconds": 600,
+        "system_cpu_seconds": 144.34,
+        "user_cpu_seconds": 26.2
+      },
+      {
+        "RssAnon": 3210010624,
+        "RssFile": 2763034624,
+        "VmRSS": 5973045248,
+        "VmSize": 110218977280,
+        "VmSwap": 1534902272,
+        "actual_observer_seconds": 703.16,
+        "anon_plus_swap": 4744912896,
+        "global_MemAvailable": 12248702976,
+        "global_SwapFree": 1385754624,
+        "major_faults": 1934484,
+        "minor_faults": 1702196,
+        "rchar": 692490393,
+        "read_bytes": 118706843648,
+        "requested_near_observer_seconds": 700,
+        "system_cpu_seconds": 168.11,
+        "user_cpu_seconds": 27.14
+      },
+      {
+        "RssAnon": 2502414336,
+        "RssFile": 2599620608,
+        "VmRSS": 5102034944,
+        "VmSize": 110218977280,
+        "VmSwap": 2296573952,
+        "actual_observer_seconds": 894.1,
+        "anon_plus_swap": 4798988288,
+        "global_MemAvailable": 13060919296,
+        "global_SwapFree": 631009280,
+        "major_faults": 2616290,
+        "minor_faults": 1884759,
+        "rchar": 692490393,
+        "read_bytes": 148543102976,
+        "requested_near_observer_seconds": 894,
+        "system_cpu_seconds": 210.19,
+        "user_cpu_seconds": 28.59
+      }
+    ],
+    "constant_suffixes": {
+      "VmSize": {
+        "first_observer_seconds_of_constant_suffix": 100.75,
+        "last_observer_seconds": 894.1,
+        "sample_count": 80,
+        "value": 110218977280
+      },
+      "rchar": {
+        "first_observer_seconds_of_constant_suffix": 30.06,
+        "last_observer_seconds": 894.1,
+        "sample_count": 87,
+        "value": 692490393
+      },
+      "syscr": {
+        "first_observer_seconds_of_constant_suffix": 30.06,
+        "last_observer_seconds": 894.1,
+        "sample_count": 87,
+        "value": 54495
+      }
+    },
+    "diagnostic_read_cost_seconds": {
+      "maximum": 0.0971,
+      "sum": 0.648116
+    },
+    "excluded_partial_samples": [],
+    "global_memory_during_valid_lean_samples": {
+      "MemAvailable": {
+        "first": 15514587136,
+        "last": 13060919296,
+        "maximum": 15524483072,
+        "maximum_at_observer_seconds": 40.51,
+        "minimum": 11700183040,
+        "minimum_at_observer_seconds": 171.05
+      },
+      "MemTotal": {
+        "first": 16760344576,
+        "last": 16760344576,
+        "maximum": 16760344576,
+        "maximum_at_observer_seconds": 10.02,
+        "minimum": 16760344576,
+        "minimum_at_observer_seconds": 10.02
+      },
+      "SwapFree": {
+        "first": 3221135360,
+        "last": 631009280,
+        "maximum": 3221135360,
+        "maximum_at_observer_seconds": 10.02,
+        "minimum": 40955904,
+        "minimum_at_observer_seconds": 332.01
+      }
+    },
+    "guard_reserve_mib": 2048,
+    "io_delta": {
+      "cancelled_write_bytes": 0,
+      "rchar": 690618480,
+      "read_bytes": 148040429568,
+      "syscr": 33750,
+      "syscw": 0,
+      "wchar": 0,
+      "write_bytes": 0
+    },
+    "io_first": {
+      "cancelled_write_bytes": 0,
+      "rchar": 1871913,
+      "read_bytes": 502673408,
+      "syscr": 20745,
+      "syscw": 1,
+      "wchar": 1,
+      "write_bytes": 0
+    },
+    "io_last": {
+      "cancelled_write_bytes": 0,
+      "rchar": 692490393,
+      "read_bytes": 148543102976,
+      "syscr": 54495,
+      "syscw": 1,
+      "wchar": 1,
+      "write_bytes": 0
+    },
+    "maximum_persisted_aggregate_lean_rss": 7913328640,
+    "memory_bytes": {
+      "RssAnon": {
+        "first": 26570752,
+        "last": 2502414336,
+        "maximum": 3700527104,
+        "maximum_at_observer_seconds": 171.05,
+        "minimum": 987136,
+        "minimum_at_observer_seconds": 40.51
+      },
+      "RssFile": {
+        "first": 581529600,
+        "last": 2599620608,
+        "maximum": 4908564480,
+        "maximum_at_observer_seconds": 90.73,
+        "minimum": 581529600,
+        "minimum_at_observer_seconds": 10.02
+      },
+      "RssShmem": {
+        "first": 0,
+        "last": 0,
+        "maximum": 0,
+        "maximum_at_observer_seconds": 10.02,
+        "minimum": 0,
+        "minimum_at_observer_seconds": 10.02
+      },
+      "VmRSS": {
+        "first": 608100352,
+        "last": 5102034944,
+        "maximum": 7913811968,
+        "maximum_at_observer_seconds": 120.81,
+        "minimum": 608100352,
+        "minimum_at_observer_seconds": 10.02
+      },
+      "VmSize": {
+        "first": 8088698880,
+        "last": 110218977280,
+        "maximum": 110218977280,
+        "maximum_at_observer_seconds": 100.75,
+        "minimum": 8088698880,
+        "minimum_at_observer_seconds": 10.02
+      },
+      "VmSwap": {
+        "first": 0,
+        "last": 2296573952,
+        "maximum": 2907189248,
+        "maximum_at_observer_seconds": 332.01,
+        "minimum": 0,
+        "minimum_at_observer_seconds": 10.02
+      }
+    },
+    "observer_exit_code": 1,
+    "observer_status": "VERIFIER_COMPLETED",
+    "observer_total_seconds": 905.12,
+    "one_second_observer_maximum_aggregate_lean_rss": 8253575168,
+    "process_counter_monotonicity": {
+      "cpu_system_ticks": true,
+      "cpu_user_ticks": true,
+      "major_faults": true,
+      "minor_faults": true,
+      "read_bytes": true
+    },
+    "process_identity": {
+      "clock_ticks_per_second": 100,
+      "parent_pids": [
+        4138
+      ],
+      "pid": 4193,
+      "process_groups": [
+        4138
+      ],
+      "scope_caution": "The state is the leader state, not every thread state.",
+      "start_time_ticks": 225690,
+      "states_after": {
+        "S": 89
+      },
+      "states_before": {
+        "S": 89
+      },
+      "thread_counts": [
+        5
+      ]
+    },
+    "process_limits": [
+      {
+        "Max address space": {
+          "hard": "unlimited",
+          "soft": "unlimited",
+          "units": "bytes"
+        },
+        "Max data size": {
+          "hard": "unlimited",
+          "soft": "unlimited",
+          "units": "bytes"
+        },
+        "Max stack size": {
+          "hard": "unlimited",
+          "soft": "16777216",
+          "units": "bytes"
+        }
+      }
+    ],
+    "total_observer_samples": 91,
+    "valid_lean_samples": 89,
+    "window": {
+      "cpu_percent_of_one_cpu": 26.824496,
+      "elapsed_seconds": 884.08,
+      "first_observer_seconds": 10.02,
+      "last_observer_seconds": 894.1,
+      "major_fault_delta": 2610799,
+      "minor_fault_delta": 1858843,
+      "rchar_delta": 690618480,
+      "read_bytes_delta": 148040429568,
+      "read_bytes_per_observed_second": 167451395.313,
+      "system_cpu_seconds": 208.89,
+      "total_cpu_seconds": 237.15,
+      "user_cpu_seconds": 28.26
+    }
+  },
+  "schema": "rg_bothlong_actual_dio_resource_comparison_v1",
+  "status": "ACTUAL_RESOURCE_COMPARISON_NO_CAUSAL_OR_PROOF_SUCCESS_CLAIM",
+  "supported_observations": [
+    "DIO was actually changed false/0 to true/1 on the same owned loop before restoration, with both native readbacks agreeing.",
+    "Both diagnostic copies timed out at 900 seconds without any persisted phase marker or Lean log bytes; there is no observed header-complete improvement.",
+    "The DIO run has lower service memory-PSI totals, fewer direct-reclaim scans and fewer service swap-in/swap-out counter increments.",
+    "The DIO run has higher process-attributed read_bytes, minor and major faults, file refaults, kswapd scans and system CPU; global SwapFree reaches zero.",
+    "At both readable non-root levels memory.max/high/swap.max remain 'max', cpu.max remains 'max 100000', and CPU throttle counters plus low/high/max/oom/oom_kill/oom_group_kill events remain zero. The DIO service has 151 sock_throttled events; all three visible levels retain zero proactive scan/steal counters.",
+    "In both runs rchar/syscr become constant around observer30s while page faults and read_bytes keep increasing. This is consistent with continuing paging activity but identifies no exact import or instruction.",
+    "VmSize in the DIO process ultimately reaches 113440182272 bytes at observer 702.60 s, versus 110218977280 bytes from observer 100.75 s in the previous process. This is virtual address-space growth, not a proved count of imported modules."
+  ],
+  "timing_method": "All times are observer-relative. Counter deltas cover only the first through last valid identity-consistent Lean sample in each run; no startup/final interval extrapolation. Windows differ by 0.96 seconds."
+}

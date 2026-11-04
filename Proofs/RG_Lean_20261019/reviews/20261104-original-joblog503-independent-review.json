@@ -1,0 +1,94 @@
+{
+  "schema": "rg-independent-signed-joblog-503-delta-review-v1",
+  "created_at": "2026-11-04T18:42:17.118977+00:00",
+  "reviewer": "/root/rg_ci_status",
+  "status": "REVIEW_COMPLETE_NO_CONCRETE_FINDINGS",
+  "findings": [],
+  "base_commit": "fb7be0772514fb2bc800d646cbe29f1d373db4ba",
+  "inputs": {
+    "patch/ci/rg_collect_exact_d1_reproductions.py": {
+      "bytes": 44842,
+      "sha256": "3b882d57a26546dc0caaa8e702d57c8b4dffff6172449d108d42f8ade2cf6527"
+    },
+    "patch/.github/workflows/rg-degree-one-large-join-repair-20261104.yml": {
+      "bytes": 9692,
+      "sha256": "0279c31549914f494e73ac72e50cf040e3e1c63a1ed380b5c9713a351bb5e2b9"
+    },
+    "base/ci/rg_collect_exact_d1_reproductions.py": {
+      "bytes": 41286,
+      "sha256": "90938b2c9aba656c89287f724f78932fe9e625abb27543abd0d5a906bfc9c761"
+    },
+    "base/.github/workflows/rg-degree-one-large-join-repair-20261104.yml": {
+      "bytes": 9642,
+      "sha256": "f556fa1ab222406638850177c1a98d2274bbe305b71797afc2f1cc1308a30267"
+    },
+    "unchanged_dependencies/ci/rg_github_artifacts.py": {
+      "bytes": 8940,
+      "sha256": "db9221ee4aa24f77082c98f33588b987531fc77f9f93c49111d31ad12363b0ef"
+    },
+    "unchanged_dependencies/ci/rg_github_rate_limit.py": {
+      "bytes": 7427,
+      "sha256": "0c5a379458beafada219603bd7b8c1ad3cb8eb276335fa7abd86f04e1132461f"
+    },
+    "publication_inventory.json": {
+      "bytes": 6136,
+      "sha256": "99bd5f4b3108f972a781b10a844239e7e8a46c72b8b1cee49b5f0cc8d8692bb5"
+    },
+    "focused_mock_validation.json": {
+      "bytes": 3997,
+      "sha256": "8770157055fcab3706f1d73a63e9ed5dc98fda9f2d77da73dff3a7fa1b5d8dda"
+    },
+    "check_signed_joblog_503.py": {
+      "bytes": 14406,
+      "sha256": "d6ddcca81047105039e90cf535d4c33aeb7ed6238f6d1468a9827292ab205d59"
+    },
+    "collector.diff": {
+      "bytes": 5396,
+      "sha256": "6ea2b838d52d08d31c7a9102db3bcc0cdd70ae6cada3da411df335388500c83c"
+    },
+    "workflow.diff": {
+      "bytes": 532,
+      "sha256": "f84f26f10fa5e7d40220119f006f9bda7efdf7a125e7717916e9242f2303855e"
+    }
+  },
+  "independent_static_comparisons": {
+    "all_collector_bytes_outside_GitHub_logs_identical": true,
+    "replacing_only_logs_restores_parent_AST": true,
+    "workflow_exactly_one_added_push_path": true,
+    "collector_existing_time_import_present": true
+  },
+  "reviewed_behavior": [
+    "The change is confined to GitHub.logs and requires a positive integer selected job. One authenticated API Request continues to address that same job throughout the call.",
+    "Every new signed attempt obtains a fresh redirect. The unchanged NoRedirect/API helper handles API responses separately; an API HTTP503 never enters the signed-download retry handler.",
+    "The signed request remains urllib.request.urlopen(target_string, timeout=120). API headers and credentials are not forwarded to that target. Existing HTTPS/hostname/no-userinfo redirect checks remain mandatory.",
+    "Only HTTP503 from the signed GET/read receives the new bounded policy. Other HTTP codes, timeout and transport failures continue to propagate. Complete bytes are returned only after a successful response.read(); no partial result is concatenated or promoted.",
+    "At most four signed requests are attempted, with 30/60/120-second minimum waits. The reviewed unchanged pure service-delay parser respects explicit Retry-After and existing millisecond headers; invalid or over-window waits stop.",
+    "The monotonic 600-second window is checked before a renewed redirect lookup, after redirect resolution, before waiting and after waiting. Existing API rate-limit waits do not reset this window; no subsequent signed GET starts after a long API wait exhausts it. The existing inline API200 return and in-flight timeout behavior are retained.",
+    "The new structured log rows bind the selected job ID and expose only fixed decisions/numeric waits/header-presence booleans, without URL, token, response body or raw header values.",
+    "The unchanged artifact helper is imported only for its pure wait parser. Its ZIP retry/restore behavior and the reviewed API 403/429/502 helper are not modified.",
+    "All selection, identity, origin, source, closure, output, axiom, receipt, restore and milestone code lies outside the changed method and is byte identical. Workflow steps/resources remain byte identical; only the collector push filter is added."
+  ],
+  "focused_mock_review": {
+    "reported_cases": 35,
+    "reported_status": "PASS",
+    "test_source_and_report_read": true,
+    "reviewer_executed_tests": false,
+    "assessment": "The mocks cover same-job fresh redirects, token confinement, attempt and wait bounds, service waits, long API rate waits, inline API200, unchanged redirect/status/transport handling and existing API helper integration. No additional runtime execution was needed."
+  },
+  "actual_failure_basis": {
+    "run": 41885793988,
+    "job": 126769775864,
+    "native_job_log_sha256": "b13e9a5cbec0c326eb30cf0b52fa1f956526ab2b305263c6f2eecb51e45f3de6",
+    "native_terminal_report_sha256": "fe92f0ced611351ec8a284ebb6dc5962349fe3896d66cc93043f61c5ffe9d8b4",
+    "surface": "signed job log GET after GitHub API302",
+    "HTTP_status": 503
+  },
+  "execution_limits": {
+    "native_or_production_code_execution": false,
+    "tests_executed": false,
+    "network_reads": 0,
+    "ZIP_reads_or_downloads": 0,
+    "remote_writes": 0
+  },
+  "conclusion": "No concrete blocker remains in the exact two-file runtime delta. This review does not claim an actual retry outcome, complete collection, restored objects, kernel exports or family completion; the next publication and native run remain root-owned."
+}

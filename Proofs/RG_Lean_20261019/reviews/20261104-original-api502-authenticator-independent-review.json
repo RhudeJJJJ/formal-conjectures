@@ -1,0 +1,121 @@
+{
+  "schema": "rg-independent-original-api-authenticator-review-v1",
+  "created_at": "2026-11-04T18:18:06.238759+00:00",
+  "reviewer": "/root/rg_ci_status",
+  "status": "REVIEW_COMPLETE_NO_CONCRETE_FINDINGS",
+  "findings": [],
+  "inputs": {
+    "authenticate_original_api_retry.py": {
+      "bytes": 61558,
+      "sha256": "6ed706fe7e6d5246e543f128c001ebabc8bbabc989e90cc649b8dcae67f5009c"
+    },
+    "authenticator.diff": {
+      "bytes": 4471,
+      "sha256": "c67f22e6d54925da310504546761e00ec912c6f12963843e1fa0f3f223b85cf8"
+    },
+    "authenticator_inventory.json": {
+      "bytes": 7351,
+      "sha256": "8bb4d466cb8e0ffc731c517e793e9ca875a42729a0ee5e1f25310f68705b16ea"
+    },
+    "publication_inventory.json": {
+      "bytes": 4096,
+      "sha256": "93617d93883ab4df6e2080ece29c01adcee027ddbc68842e1ad3b875b305f584"
+    },
+    "independent_code_review.json": {
+      "bytes": 4956,
+      "sha256": "bfa9f1d01f20a92442087af9f134a8ce5495f560226e26d249b1cdc9e15c4f11"
+    }
+  },
+  "parent_template_sha256": "163b9be7f1c985153f9921f507d3a45dcf4a4d2c6b5c8c3b9a5c567a1733fae7",
+  "source_bindings": [
+    {
+      "path": ".github/workflows/rg-degree-one-large-join-repair-20261104.yml",
+      "bytes": 9642,
+      "sha256": "f556fa1ab222406638850177c1a98d2274bbe305b71797afc2f1cc1308a30267",
+      "git_blob_sha1": "d18745fb6c833ae36e2f5ea3fd8cd0a97c9ce10a",
+      "runtime_publication_changed": true
+    },
+    {
+      "path": "ci/rg_enable_final_owned_proofstore_direct_io_20261104.py",
+      "bytes": 13324,
+      "sha256": "f37830c0db07c77e865907b5f0d67d272c6963f46aeff81487a7438f33d33b1a",
+      "git_blob_sha1": "059b5fd863fcc14285d9f3791c3b5341064e387f",
+      "runtime_publication_changed": false
+    },
+    {
+      "path": "ci/rg_final_owned_proofstore_readahead_20261104.py",
+      "bytes": 20183,
+      "sha256": "be321bc881d77668d5e00731b7c1ba11a24154426ae98bcecdd5abf867f903f2",
+      "git_blob_sha1": "ed715804b09f2812898be0d6acb93a4eb434462a",
+      "runtime_publication_changed": false
+    },
+    {
+      "path": "ci/rg_github_artifacts.py",
+      "bytes": 8940,
+      "sha256": "db9221ee4aa24f77082c98f33588b987531fc77f9f93c49111d31ad12363b0ef",
+      "git_blob_sha1": "0d6b0ca19ca8b1717621559b426a0a7b0b9d9520",
+      "runtime_publication_changed": false
+    },
+    {
+      "path": "ci/rg_github_rate_limit.py",
+      "bytes": 7427,
+      "sha256": "0c5a379458beafada219603bd7b8c1ad3cb8eb276335fa7abd86f04e1132461f",
+      "git_blob_sha1": "02c3db7cbce68d671d9a414e7d8d44575094c3c6",
+      "runtime_publication_changed": true
+    }
+  ],
+  "independent_static_review": {
+    "literal_reversal_recovers_exact_parent_bytes": true,
+    "changes_reversed": [
+      "New workflow SHA-256",
+      "New workflow Git blob SHA-1",
+      "Five fixed local patch-root literals",
+      "Single new CODE_FILES entry for rg_github_rate_limit.py"
+    ],
+    "old_assertions": 295,
+    "new_assertions": 295,
+    "all_assertion_AST_sequences_identical": true,
+    "immediate_parent_functions": 29,
+    "immediately_identical_functions": 25,
+    "path_only_changed_functions": [
+      "bind_prepared_gate_sources",
+      "native_metadata",
+      "authenticate_direct_io",
+      "pure_readahead_validators"
+    ],
+    "new_functions": [],
+    "three_existing_runtime_helper_copies_byte_identical": true,
+    "runtime_publication_inventory_remains_exactly_two_changed_files": true
+  },
+  "reviewed_integration": [
+    "RUN/JOB/COMMIT remain None in this frozen preparation. authenticate() calls the hard native-ID guard before importing production helpers or reading native/ZIP proof evidence.",
+    "The new API helper is bound by both its already-reviewed SHA-256 and Git blob SHA-1 in the same runtime source-binding loop. It is not imported or executed by the offline authenticator.",
+    "The new workflow source binding refers to the exact reviewed single-trigger-path delta; deriving required native step names from this byte-bound workflow preserves every existing required step.",
+    "Local DIO, readahead and signed-artifact helpers retain their previous bytes and identities. Their copies serve offline source binding only and are explicitly excluded from the two-file publication inventory.",
+    "The existing complete authenticate(), native metadata, archive-member, source graph, closure, origin, receipt, resource, named-axiom and milestone checks are preserved. No success report is written until the original complete evidence path returns successfully.",
+    "The historical proof source remains 10aa67f5f16e8ad00b30ac21332791b008b69cfe; eventual native workflow head/run/job bindings remain separate and require actual evidence. No diagnostic success is promoted to an original proof receipt."
+  ],
+  "preserved_scope": {
+    "archives": 767,
+    "required_modules": 33659,
+    "prior_modules": 33656,
+    "fresh_modules": 3,
+    "fixed_callback_priors": 4,
+    "numeric_origins": 349,
+    "named_auxiliary_origins": 69,
+    "named_axiom_profiles": 11,
+    "timeout_seconds": 900,
+    "workers": 1,
+    "memory_reserve_mib": 2048
+  },
+  "review_execution": {
+    "read_only_file_hash_and_static_AST_comparison": true,
+    "authenticator_execution": false,
+    "production_helper_execution": false,
+    "tests": false,
+    "ZIP_reads": false,
+    "native_API_reads": false,
+    "remote_mutations": false
+  },
+  "conclusion": "No concrete integration blocker in the exact unbound preparatory authenticator. The root agent owns publication, actual run identity binding, complete authentication and any subsequent original completion claim."
+}

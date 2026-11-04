@@ -1,0 +1,188 @@
+{
+  "schema": "rg-full-original-api-502-authenticator-preparation-v1",
+  "status": "PREPARED_UNBOUND_NO_FULL_AUTHENTICATION_OR_NATIVE_EXECUTION",
+  "parent_template": {
+    "path": "/workspace/scratch/406169dbc070/rg_resume_20261104/final_readahead_preparation/authenticate_original_readahead.py",
+    "bytes": 61393,
+    "sha256": "163b9be7f1c985153f9921f507d3a45dcf4a4d2c6b5c8c3b9a5c567a1733fae7",
+    "git_blob_sha1": "cb6504bc3f4602bc95e55c0523b5094b2b457e1f",
+    "unchanged": true
+  },
+  "authenticator": {
+    "path": "/workspace/scratch/406169dbc070/rg_resume_20261104/final_api_retry_preparation/authenticate_original_api_retry.py",
+    "bytes": 61558,
+    "sha256": "6ed706fe7e6d5246e543f128c001ebabc8bbabc989e90cc649b8dcae67f5009c",
+    "git_blob_sha1": "43a9ea822e527b96b94a02c5e0fc89b83b038625",
+    "RUN": null,
+    "JOB": null,
+    "COMMIT": null
+  },
+  "exact_changes": [
+    "Workflow SHA-256 and Gitblob binding",
+    "Five fixed local patch-root path literals",
+    "One new CODE_FILES binding for the reviewed API 502 helper"
+  ],
+  "code_bindings": [
+    {
+      "path": ".github/workflows/rg-degree-one-large-join-repair-20261104.yml",
+      "bytes": 9642,
+      "sha256": "f556fa1ab222406638850177c1a98d2274bbe305b71797afc2f1cc1308a30267",
+      "git_blob_sha1": "d18745fb6c833ae36e2f5ea3fd8cd0a97c9ce10a",
+      "runtime_publication_changed": true
+    },
+    {
+      "path": "ci/rg_enable_final_owned_proofstore_direct_io_20261104.py",
+      "bytes": 13324,
+      "sha256": "f37830c0db07c77e865907b5f0d67d272c6963f46aeff81487a7438f33d33b1a",
+      "git_blob_sha1": "059b5fd863fcc14285d9f3791c3b5341064e387f",
+      "runtime_publication_changed": false
+    },
+    {
+      "path": "ci/rg_final_owned_proofstore_readahead_20261104.py",
+      "bytes": 20183,
+      "sha256": "be321bc881d77668d5e00731b7c1ba11a24154426ae98bcecdd5abf867f903f2",
+      "git_blob_sha1": "ed715804b09f2812898be0d6acb93a4eb434462a",
+      "runtime_publication_changed": false
+    },
+    {
+      "path": "ci/rg_github_artifacts.py",
+      "bytes": 8940,
+      "sha256": "db9221ee4aa24f77082c98f33588b987531fc77f9f93c49111d31ad12363b0ef",
+      "git_blob_sha1": "0d6b0ca19ca8b1717621559b426a0a7b0b9d9520",
+      "runtime_publication_changed": false
+    },
+    {
+      "path": "ci/rg_github_rate_limit.py",
+      "bytes": 7427,
+      "sha256": "0c5a379458beafada219603bd7b8c1ad3cb8eb276335fa7abd86f04e1132461f",
+      "git_blob_sha1": "02c3db7cbce68d671d9a414e7d8d44575094c3c6",
+      "runtime_publication_changed": true
+    }
+  ],
+  "source_binding_only_copies": [
+    {
+      "path": "ci/rg_enable_final_owned_proofstore_direct_io_20261104.py",
+      "copied_from": "/workspace/scratch/406169dbc070/rg_resume_20261104/final_readahead_preparation/patch/ci/rg_enable_final_owned_proofstore_direct_io_20261104.py",
+      "bytes": 13324,
+      "sha256": "f37830c0db07c77e865907b5f0d67d272c6963f46aeff81487a7438f33d33b1a",
+      "git_blob_sha1": "059b5fd863fcc14285d9f3791c3b5341064e387f",
+      "byte_identical_to_previous_runtime_source": true,
+      "purpose": "LOCAL_SOURCE_BINDING_ONLY",
+      "runtime_changed": false,
+      "included_in_runtime_publication": false
+    },
+    {
+      "path": "ci/rg_final_owned_proofstore_readahead_20261104.py",
+      "copied_from": "/workspace/scratch/406169dbc070/rg_resume_20261104/final_readahead_preparation/patch/ci/rg_final_owned_proofstore_readahead_20261104.py",
+      "bytes": 20183,
+      "sha256": "be321bc881d77668d5e00731b7c1ba11a24154426ae98bcecdd5abf867f903f2",
+      "git_blob_sha1": "ed715804b09f2812898be0d6acb93a4eb434462a",
+      "byte_identical_to_previous_runtime_source": true,
+      "purpose": "LOCAL_SOURCE_BINDING_ONLY",
+      "runtime_changed": false,
+      "included_in_runtime_publication": false
+    },
+    {
+      "path": "ci/rg_github_artifacts.py",
+      "copied_from": "/workspace/scratch/406169dbc070/rg_resume_20261104/final_readahead_preparation/patch/ci/rg_github_artifacts.py",
+      "bytes": 8940,
+      "sha256": "db9221ee4aa24f77082c98f33588b987531fc77f9f93c49111d31ad12363b0ef",
+      "git_blob_sha1": "0d6b0ca19ca8b1717621559b426a0a7b0b9d9520",
+      "byte_identical_to_previous_runtime_source": true,
+      "purpose": "LOCAL_SOURCE_BINDING_ONLY",
+      "runtime_changed": false,
+      "included_in_runtime_publication": false
+    }
+  ],
+  "runtime_publication_manifest": "publication_inventory.json remains the original two-file runtime publication inventory; the three copies are not runtime changes.",
+  "static_review": {
+    "syntax": "ast.parse only; neither authenticator nor native helpers imported or executed",
+    "all_295_original_assertion_ASTs_identical": true,
+    "literal_reversal_yields_exact_parent_bytes": true,
+    "AST_after_reverting_only_listed_changes_equals_parent": true,
+    "immediate_parent_functions_total": 29,
+    "immediate_parent_functions_AST_identical": [
+      "sha",
+      "file_sha",
+      "unique_object",
+      "decode",
+      "bound_json",
+      "production",
+      "expected_declarations",
+      "open_zip",
+      "member_json",
+      "row_table",
+      "collection_evidence",
+      "restored_rows",
+      "named_profiles",
+      "fresh_outputs",
+      "resource_evidence",
+      "native_recorded_path",
+      "recorded_sysfs_identity",
+      "recorded_readahead_attribute",
+      "authenticate_readahead_observation",
+      "authenticate_readahead_step_order",
+      "authenticate_readahead",
+      "checked_number",
+      "transport_retry_observations",
+      "authenticate",
+      "main"
+    ],
+    "functions_with_only_local_patch_root_path_changes": [
+      "bind_prepared_gate_sources",
+      "native_metadata",
+      "authenticate_direct_io",
+      "pure_readahead_validators"
+    ],
+    "unchanged_original_core_function_count": 15,
+    "unchanged_original_core_functions": [
+      "sha",
+      "file_sha",
+      "unique_object",
+      "decode",
+      "bound_json",
+      "production",
+      "expected_declarations",
+      "open_zip",
+      "member_json",
+      "row_table",
+      "collection_evidence",
+      "restored_rows",
+      "named_profiles",
+      "fresh_outputs",
+      "resource_evidence"
+    ],
+    "original_core_parent_sha256": "0c01acb3884573c3e8e571d1bd6cd02936e47f072786a8379093732ca0189023",
+    "hard_None_ID_guards_preserved": true
+  },
+  "proof_gates_preserved": {
+    "archives": 767,
+    "modules": 33659,
+    "prior_modules": 33656,
+    "fresh_modules": 3,
+    "numeric_origins": 349,
+    "named_auxiliary_origins": 69,
+    "fixed_callback_prior_origins": 4,
+    "named_axiom_profiles": 11,
+    "kernel_timeout_seconds": 900,
+    "workers": 1,
+    "memory_reserve_mib": 2048,
+    "original_source_commit": "10aa67f5f16e8ad00b30ac21332791b008b69cfe",
+    "source_object_closure_axiom_receipt_milestone_and_all_ownership_gates": "unchanged"
+  },
+  "diff": {
+    "path": "/workspace/scratch/406169dbc070/rg_resume_20261104/final_api_retry_preparation/authenticator.diff",
+    "bytes": 4471,
+    "sha256": "c67f22e6d54925da310504546761e00ec912c6f12963843e1fa0f3f223b85cf8"
+  },
+  "additional_assertions_or_new_proof_gates": 0,
+  "executed": {
+    "full_authentication": false,
+    "native_code_or_GHA_simulation": false,
+    "tests": false,
+    "ZIP_reads": false,
+    "network": false,
+    "remote_mutations": false
+  },
+  "remaining_original_input_families_before_completed_production_evidence": 4
+}

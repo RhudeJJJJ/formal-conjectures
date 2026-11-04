@@ -1,0 +1,159 @@
+{
+  "status": "PASS",
+  "cases": [
+    {
+      "name": "signed_503_success_same_job_new_redirect_and_token_confinement",
+      "status": "PASS"
+    },
+    {
+      "name": "four_signed_GET_limit_backoffs_30_60_120",
+      "status": "PASS"
+    },
+    {
+      "name": "standard_retry_seconds",
+      "status": "PASS"
+    },
+    {
+      "name": "standard_retry_HTTP_date",
+      "status": "PASS"
+    },
+    {
+      "name": "documented_service_milliseconds_and_maximum",
+      "status": "PASS"
+    },
+    {
+      "name": "shorter_service_wait_does_not_reduce_backoff",
+      "status": "PASS"
+    },
+    {
+      "name": "invalid_explicit_header_empty",
+      "status": "PASS"
+    },
+    {
+      "name": "invalid_explicit_header_invalid_date",
+      "status": "PASS"
+    },
+    {
+      "name": "invalid_explicit_header_timezone_missing",
+      "status": "PASS"
+    },
+    {
+      "name": "invalid_explicit_header_invalid_ms",
+      "status": "PASS"
+    },
+    {
+      "name": "too_long_explicit_wait_fails_closed",
+      "status": "PASS"
+    },
+    {
+      "name": "initial_elapsed_window_includes_API_and_download",
+      "status": "PASS"
+    },
+    {
+      "name": "oversleep_stops_before_new_API_request",
+      "status": "PASS"
+    },
+    {
+      "name": "API_rate_wait_during_fresh_redirect_stops_new_signed_GET",
+      "status": "PASS"
+    },
+    {
+      "name": "existing_inline_API_200_path",
+      "status": "PASS"
+    },
+    {
+      "name": "fresh_same_job_API_200_after_signed_503",
+      "status": "PASS"
+    },
+    {
+      "name": "existing_redirect_301",
+      "status": "PASS"
+    },
+    {
+      "name": "existing_redirect_302",
+      "status": "PASS"
+    },
+    {
+      "name": "existing_redirect_303",
+      "status": "PASS"
+    },
+    {
+      "name": "existing_redirect_307",
+      "status": "PASS"
+    },
+    {
+      "name": "existing_redirect_308",
+      "status": "PASS"
+    },
+    {
+      "name": "signed_HTTP_401_not_retried",
+      "status": "PASS"
+    },
+    {
+      "name": "signed_HTTP_403_not_retried",
+      "status": "PASS"
+    },
+    {
+      "name": "signed_HTTP_429_not_retried",
+      "status": "PASS"
+    },
+    {
+      "name": "signed_HTTP_500_not_retried",
+      "status": "PASS"
+    },
+    {
+      "name": "signed_HTTP_502_not_retried",
+      "status": "PASS"
+    },
+    {
+      "name": "signed_HTTP_504_not_retried",
+      "status": "PASS"
+    },
+    {
+      "name": "transport_not_retried",
+      "status": "PASS"
+    },
+    {
+      "name": "timeout_not_retried",
+      "status": "PASS"
+    },
+    {
+      "name": "API_503_keeps_existing_nonredirect_failure",
+      "status": "PASS"
+    },
+    {
+      "name": "existing_API_403_handling_unchanged",
+      "status": "PASS"
+    },
+    {
+      "name": "existing_API_429_handling_unchanged",
+      "status": "PASS"
+    },
+    {
+      "name": "existing_API_502_handling_unchanged",
+      "status": "PASS"
+    },
+    {
+      "name": "existing_redirect_safety_http",
+      "status": "PASS"
+    },
+    {
+      "name": "existing_redirect_safety_userinfo",
+      "status": "PASS"
+    }
+  ],
+  "case_count": 35,
+  "collector_sha256": "3b882d57a26546dc0caaa8e702d57c8b4dffff6172449d108d42f8ade2cf6527",
+  "unchanged_API_helper_sha256": "0c5a379458beafada219603bd7b8c1ad3cb8eb276335fa7abd86f04e1132461f",
+  "reused_pure_service_parser_source_sha256": "db9221ee4aa24f77082c98f33588b987531fc77f9f93c49111d31ad12363b0ef",
+  "workflow_sha256": "0279c31549914f494e73ac72e50cf040e3e1c63a1ed380b5c9713a351bb5e2b9",
+  "exact_collector_bytes_outside_GitHub_logs_unchanged": true,
+  "AST_reverts_to_exact_base_by_replacing_only_GitHub_logs": true,
+  "workflow_only_adds_collector_push_path": true,
+  "network_requests": 0,
+  "real_sleeps": 0,
+  "native_or_GHA_environment_simulated": false,
+  "ZIP_reads": false,
+  "proof_or_full_authenticator_executed": false,
+  "executed_scope": "Only isolated GitHub class, existing API helper and frozen pure service-wait parser with injected opener/clock stubs; no collector main or constructor."
+}

@@ -1,0 +1,212 @@
+{
+  "schema": "rg-full-original-signed-joblog-503-authenticator-preparation-v1",
+  "status": "FROZEN_UNBOUND_NO_FULL_AUTHENTICATION_OR_NATIVE_EXECUTION",
+  "parent": {
+    "path": "/workspace/scratch/406169dbc070/rg_resume_20261104/final_api_retry_preparation/authenticate_original_api_retry.py",
+    "bytes": 61558,
+    "sha256": "6ed706fe7e6d5246e543f128c001ebabc8bbabc989e90cc649b8dcae67f5009c",
+    "git_blob_sha1": "43a9ea822e527b96b94a02c5e0fc89b83b038625",
+    "unchanged": true
+  },
+  "authenticator": {
+    "path": "/workspace/scratch/406169dbc070/rg_resume_20261104/final_joblog_retry_preparation/authenticate_original_joblog_retry.py",
+    "bytes": 62027,
+    "sha256": "ec770eeb344d5b37dae61aeeaee6331424d9278c464e1b67410050f28a4259d4",
+    "git_blob_sha1": "370634042f1eea3c8aab88802c95d20b6461efdb",
+    "RUN": null,
+    "JOB": null,
+    "COMMIT": null
+  },
+  "exact_changes": [
+    "Workflow SHA-256 and Gitblob",
+    "Five local patch-root path literals",
+    "Additional actual runtime collector CODE_FILES entry (six total)",
+    "Comment documenting separate unchanged historical offline proof-parser role"
+  ],
+  "code_bindings": [
+    {
+      "path": ".github/workflows/rg-degree-one-large-join-repair-20261104.yml",
+      "bytes": 9692,
+      "sha256": "0279c31549914f494e73ac72e50cf040e3e1c63a1ed380b5c9713a351bb5e2b9",
+      "git_blob_sha1": "957870c6fad05a6e848e547c37325ebd79d8dedf",
+      "changed_runtime_publication": true
+    },
+    {
+      "path": "ci/rg_enable_final_owned_proofstore_direct_io_20261104.py",
+      "bytes": 13324,
+      "sha256": "f37830c0db07c77e865907b5f0d67d272c6963f46aeff81487a7438f33d33b1a",
+      "git_blob_sha1": "059b5fd863fcc14285d9f3791c3b5341064e387f",
+      "changed_runtime_publication": false
+    },
+    {
+      "path": "ci/rg_final_owned_proofstore_readahead_20261104.py",
+      "bytes": 20183,
+      "sha256": "be321bc881d77668d5e00731b7c1ba11a24154426ae98bcecdd5abf867f903f2",
+      "git_blob_sha1": "ed715804b09f2812898be0d6acb93a4eb434462a",
+      "changed_runtime_publication": false
+    },
+    {
+      "path": "ci/rg_github_artifacts.py",
+      "bytes": 8940,
+      "sha256": "db9221ee4aa24f77082c98f33588b987531fc77f9f93c49111d31ad12363b0ef",
+      "git_blob_sha1": "0d6b0ca19ca8b1717621559b426a0a7b0b9d9520",
+      "changed_runtime_publication": false
+    },
+    {
+      "path": "ci/rg_github_rate_limit.py",
+      "bytes": 7427,
+      "sha256": "0c5a379458beafada219603bd7b8c1ad3cb8eb276335fa7abd86f04e1132461f",
+      "git_blob_sha1": "02c3db7cbce68d671d9a414e7d8d44575094c3c6",
+      "changed_runtime_publication": false
+    },
+    {
+      "path": "ci/rg_collect_exact_d1_reproductions.py",
+      "bytes": 44842,
+      "sha256": "3b882d57a26546dc0caaa8e702d57c8b4dffff6172449d108d42f8ade2cf6527",
+      "git_blob_sha1": "e693564fa1ff13653c2664f71fc604c4979c1d0b",
+      "changed_runtime_publication": true
+    }
+  ],
+  "local_source_binding_only_copies": [
+    {
+      "path": "ci/rg_enable_final_owned_proofstore_direct_io_20261104.py",
+      "copied_from": "/workspace/scratch/406169dbc070/rg_resume_20261104/final_api_retry_preparation/patch/ci/rg_enable_final_owned_proofstore_direct_io_20261104.py",
+      "bytes": 13324,
+      "sha256": "f37830c0db07c77e865907b5f0d67d272c6963f46aeff81487a7438f33d33b1a",
+      "git_blob_sha1": "059b5fd863fcc14285d9f3791c3b5341064e387f",
+      "role": "LOCAL_SOURCE_BINDING_ONLY",
+      "runtime_changed": false,
+      "included_in_runtime_publication": false
+    },
+    {
+      "path": "ci/rg_final_owned_proofstore_readahead_20261104.py",
+      "copied_from": "/workspace/scratch/406169dbc070/rg_resume_20261104/final_api_retry_preparation/patch/ci/rg_final_owned_proofstore_readahead_20261104.py",
+      "bytes": 20183,
+      "sha256": "be321bc881d77668d5e00731b7c1ba11a24154426ae98bcecdd5abf867f903f2",
+      "git_blob_sha1": "ed715804b09f2812898be0d6acb93a4eb434462a",
+      "role": "LOCAL_SOURCE_BINDING_ONLY",
+      "runtime_changed": false,
+      "included_in_runtime_publication": false
+    },
+    {
+      "path": "ci/rg_github_artifacts.py",
+      "copied_from": "/workspace/scratch/406169dbc070/rg_resume_20261104/final_api_retry_preparation/patch/ci/rg_github_artifacts.py",
+      "bytes": 8940,
+      "sha256": "db9221ee4aa24f77082c98f33588b987531fc77f9f93c49111d31ad12363b0ef",
+      "git_blob_sha1": "0d6b0ca19ca8b1717621559b426a0a7b0b9d9520",
+      "role": "LOCAL_SOURCE_BINDING_ONLY",
+      "runtime_changed": false,
+      "included_in_runtime_publication": false
+    },
+    {
+      "path": "ci/rg_github_rate_limit.py",
+      "copied_from": "/workspace/scratch/406169dbc070/rg_resume_20261104/final_api_retry_preparation/patch/ci/rg_github_rate_limit.py",
+      "bytes": 7427,
+      "sha256": "0c5a379458beafada219603bd7b8c1ad3cb8eb276335fa7abd86f04e1132461f",
+      "git_blob_sha1": "02c3db7cbce68d671d9a414e7d8d44575094c3c6",
+      "role": "LOCAL_SOURCE_BINDING_ONLY",
+      "runtime_changed": false,
+      "included_in_runtime_publication": false
+    }
+  ],
+  "runtime_publication_scope": "publication_inventory.json remains the original two-file runtime publication inventory; four copied helpers are unchanged binding inputs only.",
+  "historical_offline_parser_role": {
+    "path": "/workspace/scratch/406169dbc070/rg_resume_20261104/integration_validation/ci/rg_collect_exact_d1_reproductions.py",
+    "sha256": "90938b2c9aba656c89287f724f78932fe9e625abb27543abd0d5a906bfc9c761",
+    "BASE_SHA_entry_unchanged": true,
+    "imported_function": "records_from_log",
+    "actual_runtime_collector_sha256": "3b882d57a26546dc0caaa8e702d57c8b4dffff6172449d108d42f8ade2cf6527",
+    "actual_runtime_code_separately_bound_in_CODE_FILES": true,
+    "all_bytes_outside_GitHub_logs_identical": true,
+    "AST_identical_after_reverting_only_GitHub_logs": true,
+    "offline_HTTP_methods_not_executed": true
+  },
+  "static_review": {
+    "syntax": "ast.parse only; no authenticator or native module import/execution",
+    "all_295_original_assertion_ASTs_identical": true,
+    "byte_reversal_to_exact_parent": true,
+    "normalized_AST_equals_parent": true,
+    "immediate_parent_functions_AST_identical": [
+      "sha",
+      "file_sha",
+      "unique_object",
+      "decode",
+      "bound_json",
+      "production",
+      "expected_declarations",
+      "open_zip",
+      "member_json",
+      "row_table",
+      "collection_evidence",
+      "restored_rows",
+      "named_profiles",
+      "fresh_outputs",
+      "resource_evidence",
+      "native_recorded_path",
+      "recorded_sysfs_identity",
+      "recorded_readahead_attribute",
+      "authenticate_readahead_observation",
+      "authenticate_readahead_step_order",
+      "authenticate_readahead",
+      "checked_number",
+      "transport_retry_observations",
+      "authenticate",
+      "main"
+    ],
+    "modified_functions_have_only_local_path_literal_changes": [
+      "bind_prepared_gate_sources",
+      "native_metadata",
+      "authenticate_direct_io",
+      "pure_readahead_validators"
+    ],
+    "original_core_functions_AST_identical": [
+      "sha",
+      "file_sha",
+      "unique_object",
+      "decode",
+      "bound_json",
+      "production",
+      "expected_declarations",
+      "open_zip",
+      "member_json",
+      "row_table",
+      "collection_evidence",
+      "restored_rows",
+      "named_profiles",
+      "fresh_outputs",
+      "resource_evidence"
+    ],
+    "original_core_function_count": 15,
+    "hard_None_guards_preserved": true
+  },
+  "proof_gates_unchanged": {
+    "archives": 767,
+    "modules": 33659,
+    "prior": 33656,
+    "fresh": 3,
+    "numeric_origins": 349,
+    "named_auxiliary_origins": 69,
+    "fixed_callback_prior_origins": 4,
+    "named_profiles": 11,
+    "module_timeout_seconds": 900,
+    "workers": 1,
+    "memory_reserve_mib": 2048,
+    "original_source_commit": "10aa67f5f16e8ad00b30ac21332791b008b69cfe",
+    "selection_origin_source_closure_object_axiom_receipt_milestone_and_device_gates": "preserved"
+  },
+  "diff": {
+    "path": "/workspace/scratch/406169dbc070/rg_resume_20261104/final_joblog_retry_preparation/authenticator.diff",
+    "bytes": 5487,
+    "sha256": "1c4398fdf45d2ac53f67caaa9469e2e15b5503a60c70baf402a53660891c403d"
+  },
+  "additional_assertions_or_new_proof_gates": 0,
+  "executed": {
+    "full_authentication": false,
+    "native_context_or_GHA_simulation": false,
+    "tests_for_this_authenticator": false,
+    "ZIP_reads": false,
+    "network": false,
+    "remote_mutations": false
+  },
+  "remaining_original_input_families_before_actual_production_completion": 4
+}

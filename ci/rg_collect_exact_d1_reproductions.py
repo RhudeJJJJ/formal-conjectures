@@ -101,19 +101,73 @@ class GitHub:
         raise AssertionError('Bounded GitHub pagination limit exceeded')
 
     def logs(self, job):
+        # Reuse the reviewed service-wait parser; do not change artifact retries.
+        from rg_github_artifacts import _service_retry_delay
+        assert type(job) is int and job > 0
         class NoRedirect(urllib.request.HTTPRedirectHandler):
             def redirect_request(self, *args, **kwargs): return None
+        # This one authenticated Request always names the same selected job.
         request = urllib.request.Request(self.base + '/actions/jobs/' + str(job) + '/logs', headers=self.headers)
-        try:
-            with api_open(request, urllib.request.build_opener(NoRedirect).open) as response:
-                return response.read()
-        except urllib.error.HTTPError as error:
-            assert error.code in (301, 302, 303, 307, 308)
-            target = error.headers['Location']
-            parsed = urllib.parse.urlparse(target)
-            assert parsed.scheme == 'https' and parsed.hostname and not parsed.username and not parsed.password
-            # GitHub credentials never follow the signed storage redirect.
-            with urllib.request.urlopen(target, timeout=120) as response: return response.read()
+        started = time.monotonic()
+        last_service_error = None
+        for attempt in range(1, 5):
+            if last_service_error is not None and time.monotonic() - started >= 600:
+                print(json.dumps(dict(status='SIGNED_JOBLOG_HTTP_503', job=job,
+                    attempt=attempt, decision='STOP_RETRY_WINDOW_BEFORE_REDIRECT')), flush=True)
+                raise last_service_error
+            # API errors keep the existing api_open 403/429/502 handling.
+            # They are outside the signed-download-only HTTP-503 handler.
+            try:
+                with api_open(request, urllib.request.build_opener(NoRedirect).open) as response:
+                    return response.read()
+            except urllib.error.HTTPError as error:
+                assert error.code in (301, 302, 303, 307, 308)
+                target = error.headers['Location']
+                error.close()
+                parsed = urllib.parse.urlparse(target)
+                assert parsed.scheme == 'https' and parsed.hostname and not parsed.username and not parsed.password
+            if last_service_error is not None and time.monotonic() - started >= 600:
+                print(json.dumps(dict(status='SIGNED_JOBLOG_HTTP_503', job=job,
+                    attempt=attempt, decision='STOP_RETRY_WINDOW_DURING_REDIRECT')), flush=True)
+                raise last_service_error
+            try:
+                # GitHub credentials never follow the signed storage redirect.
+                with urllib.request.urlopen(target, timeout=120) as response: return response.read()
+            except urllib.error.HTTPError as error:
+                if error.code != 503: raise
+                last_service_error = error
+                event = dict(status='SIGNED_JOBLOG_HTTP_503', job=job, http_status=503,
+                    attempt=attempt, maximum_attempts=4, retry_start_window_seconds=600,
+                    has_retry_after=error.headers.get('Retry-After') is not None,
+                    has_retry_after_ms_generic=error.headers.get('retry-after-ms') is not None,
+                    has_retry_after_ms=error.headers.get('x-ms-retry-after-ms') is not None)
+                error.close()
+                if attempt == 4:
+                    print(json.dumps(dict(event, decision='STOP_ATTEMPTS_EXHAUSTED')), flush=True)
+                    raise
+                try:
+                    service_delay = _service_retry_delay(error.headers)
+                except (ValueError, TypeError, OverflowError, OSError):
+                    print(json.dumps(dict(event, decision='STOP_INVALID_SERVICE_RETRY_HEADER')), flush=True)
+                    raise error
+                delay = max(float((30, 60, 120)[attempt - 1]), service_delay)
+                if time.monotonic() - started + delay >= 600:
+                    print(json.dumps(dict(event, decision='STOP_SERVICE_WAIT_EXCEEDS_RETRY_WINDOW',
+                        requested_wait_seconds=delay)), flush=True)
+                    raise
+                print(json.dumps(dict(event, decision='RETRY_SAME_JOB_WITH_FRESH_REDIRECT_AFTER_WAIT',
+                    wait_seconds=delay, documented_service_wait_seconds=service_delay)), flush=True)
+                deadline = time.monotonic() + delay
+                while time.monotonic() < deadline:
+                    remaining = deadline - time.monotonic()
+                    if remaining > 0:
+                        print(json.dumps(dict(status='WAITING_FOR_SIGNED_JOBLOG_SERVICE', job=job,
+                            remaining_seconds=round(remaining, 3), no_request_during_wait=True)), flush=True)
+                        time.sleep(min(30.0, remaining))
+                if time.monotonic() - started >= 600:
+                    print(json.dumps(dict(event, decision='STOP_RETRY_START_WINDOW_AFTER_WAIT')), flush=True)
+                    raise
+        raise AssertionError('Unreachable signed joblog retry state')
 
 
 def records_from_log(raw):

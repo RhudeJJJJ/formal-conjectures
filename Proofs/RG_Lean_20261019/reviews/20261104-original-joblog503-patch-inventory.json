@@ -1,0 +1,135 @@
+{
+  "schema": "rg-final-signed-joblog-503-runtime-publication-v1",
+  "status": "FROZEN_FOR_INDEPENDENT_REVIEW_NO_REMOTE_WRITE",
+  "base_commit": "fb7be0772514fb2bc800d646cbe29f1d373db4ba",
+  "files": [
+    {
+      "path": "ci/rg_collect_exact_d1_reproductions.py",
+      "bytes": 44842,
+      "sha256": "3b882d57a26546dc0caaa8e702d57c8b4dffff6172449d108d42f8ade2cf6527",
+      "git_blob_sha1": "e693564fa1ff13653c2664f71fc604c4979c1d0b",
+      "base_bytes": 41286,
+      "base_sha256": "90938b2c9aba656c89287f724f78932fe9e625abb27543abd0d5a906bfc9c761",
+      "base_git_blob_sha1": "35e79f6cc7c6d2dc69aa8850077a1a1cd7dbfdf9",
+      "diff_path": "collector.diff",
+      "diff_sha256": "6ea2b838d52d08d31c7a9102db3bcc0cdd70ae6cada3da411df335388500c83c"
+    },
+    {
+      "path": ".github/workflows/rg-degree-one-large-join-repair-20261104.yml",
+      "bytes": 9692,
+      "sha256": "0279c31549914f494e73ac72e50cf040e3e1c63a1ed380b5c9713a351bb5e2b9",
+      "git_blob_sha1": "957870c6fad05a6e848e547c37325ebd79d8dedf",
+      "base_bytes": 9642,
+      "base_sha256": "f556fa1ab222406638850177c1a98d2274bbe305b71797afc2f1cc1308a30267",
+      "base_git_blob_sha1": "d18745fb6c833ae36e2f5ea3fd8cd0a97c9ce10a",
+      "diff_path": "workflow.diff",
+      "diff_sha256": "f84f26f10fa5e7d40220119f006f9bda7efdf7a125e7717916e9242f2303855e"
+    }
+  ],
+  "changed_runtime_file_count": 2,
+  "changed_runtime_bytes": 54534,
+  "new_runtime_helper_files": 0,
+  "actual_failure_basis": {
+    "run": 41885793988,
+    "job": 126769775864,
+    "head_commit": "fb7be0772514fb2bc800d646cbe29f1d373db4ba",
+    "job_log_sha256": "b13e9a5cbec0c326eb30cf0b52fa1f956526ab2b305263c6f2eecb51e45f3de6",
+    "root_negative_observation_sha256": "0e2432c9de600ed0e37f77e657dad4ea716071451ae056150c6eda63fb2999fb",
+    "failing_surface": "GitHub.logs: token-free signed target GET after the expected GitHub API redirect",
+    "signed_HTTP_status": 503,
+    "no_failed_individual_source_job_ID_inferred_from_last_completed_collection_record": true,
+    "no_complete_collection_restore_or_kernel_claim": true
+  },
+  "exact_runtime_delta": {
+    "collector": "Only GitHub.logs method changed; same selected positive integer job ID and one immutable API Request per logs call.",
+    "workflow": "Only add ci/rg_collect_exact_d1_reproductions.py to existing push path filters.",
+    "all_other_collector_source_bytes_unchanged": true,
+    "AST_reconstructs_base_after_restoring_only_GitHub_logs": true
+  },
+  "retry_policy": {
+    "scope": "Only HTTP503 from the token-free signed-joblog GET/read; no API error enters this handler.",
+    "maximum_signed_download_attempts": 4,
+    "backoff_seconds": [
+      30,
+      60,
+      120
+    ],
+    "service_wait_parser": "Unchanged reviewed rg_github_artifacts._service_retry_delay; standard Retry-After and existing service millisecond headers.",
+    "invalid_explicit_service_wait_fails_closed": true,
+    "retry_start_window_seconds": 600,
+    "window_checks": [
+      "before every new API redirect lookup after503",
+      "after a fresh redirect before a new signed GET",
+      "before a service wait",
+      "after the wait"
+    ],
+    "fresh_redirect_for_same_fixed_job_before_each_signed_attempt": true,
+    "API_Request_object_and_headers_unchanged_across_attempts": true,
+    "API_authentication_never_passed_to_signed_GET": true,
+    "external_request_form": "urllib.request.urlopen(target_string, timeout=120)",
+    "unchanged_socket_timeout_seconds": 120,
+    "not_a_hard_deadline_for_in_flight_requests_or_existing_API_rate_waits": true,
+    "no_retry_added_for_other_HTTP_codes_transport_or_hash_failures": true,
+    "API_301_302_303_307_308_and_403_429_502_behavior_preserved": true,
+    "new_log_statuses": [
+      "SIGNED_JOBLOG_HTTP_503",
+      "WAITING_FOR_SIGNED_JOBLOG_SERVICE"
+    ],
+    "new_logs_exclude_URLs_response_bodies_tokens_and_raw_header_values": true
+  },
+  "unchanged_dependency_bindings": [
+    {
+      "path": "ci/rg_github_artifacts.py",
+      "bytes": 8940,
+      "sha256": "db9221ee4aa24f77082c98f33588b987531fc77f9f93c49111d31ad12363b0ef",
+      "git_blob_sha1": "0d6b0ca19ca8b1717621559b426a0a7b0b9d9520",
+      "runtime_changed": false,
+      "included_in_runtime_publication": false
+    },
+    {
+      "path": "ci/rg_github_rate_limit.py",
+      "bytes": 7427,
+      "sha256": "0c5a379458beafada219603bd7b8c1ad3cb8eb276335fa7abd86f04e1132461f",
+      "git_blob_sha1": "02c3db7cbce68d671d9a414e7d8d44575094c3c6",
+      "runtime_changed": false,
+      "included_in_runtime_publication": false
+    }
+  ],
+  "proof_scope_unchanged": {
+    "selected_numeric_origins": 349,
+    "named_auxiliary_origins": 69,
+    "original_archives": 767,
+    "modules": 33659,
+    "prior_modules": 33656,
+    "fresh_modules": 3,
+    "fixed_callback_priors": 4,
+    "named_axiom_profiles": 11,
+    "module_timeout_seconds": 900,
+    "workers": 1,
+    "memory_reserve_mib": 2048,
+    "selection_origin_record_source_closure_output_axiom_receipt_and_milestone_gates": "byte-identical outside the transport method"
+  },
+  "focused_validation": {
+    "script": "check_signed_joblog_503.py",
+    "script_bytes": 14406,
+    "script_sha256": "d6ddcca81047105039e90cf535d4c33aeb7ed6238f6d1468a9827292ab205d59",
+    "report": "focused_mock_validation.json",
+    "report_bytes": 3997,
+    "report_sha256": "8770157055fcab3706f1d73a63e9ed5dc98fda9f2d77da73dff3a7fa1b5d8dda",
+    "status": "PASS",
+    "cases": 35,
+    "real_HTTPError_and_Request_objects": true,
+    "actual_current_API_helper_used_with_fake_opener_and_clock": true,
+    "existing_pure_service_wait_parser_reused": true,
+    "network_requests": 0,
+    "real_sleeps": 0,
+    "native_or_GHA_environment_simulated": false,
+    "ZIP_reads": false,
+    "full_collector_or_proof_authenticator_executed": false
+  },
+  "limitations": [
+    "A mock pass is not an actual GitHub retry success.",
+    "Only the exactly selected joblog transport is retried; every subsequent record/origin/complete archive/source/output check remains mandatory.",
+    "No complete collection, restored object, fresh kernel export or family completion is asserted by this patch."
+  ]
+}

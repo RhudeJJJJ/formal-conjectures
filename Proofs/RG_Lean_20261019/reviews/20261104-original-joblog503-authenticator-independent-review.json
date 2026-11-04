@@ -1,0 +1,129 @@
+{
+  "schema": "rg-independent-original-signed-joblog-authenticator-review-v1",
+  "created_at": "2026-11-04T18:43:30.614958+00:00",
+  "reviewer": "/root/rg_ci_status",
+  "status": "REVIEW_COMPLETE_NO_CONCRETE_FINDINGS",
+  "findings": [],
+  "inputs": {
+    "authenticate_original_joblog_retry.py": {
+      "bytes": 62027,
+      "sha256": "ec770eeb344d5b37dae61aeeaee6331424d9278c464e1b67410050f28a4259d4"
+    },
+    "authenticator.diff": {
+      "bytes": 5487,
+      "sha256": "1c4398fdf45d2ac53f67caaa9469e2e15b5503a60c70baf402a53660891c403d"
+    },
+    "authenticator_inventory.json": {
+      "bytes": 8524,
+      "sha256": "fa6a49f1d511d5aa5d8c340a266e7e4d7871992836fcdd20414dc5b1b69959e5"
+    },
+    "publication_inventory.json": {
+      "bytes": 6136,
+      "sha256": "99bd5f4b3108f972a781b10a844239e7e8a46c72b8b1cee49b5f0cc8d8692bb5"
+    },
+    "independent_code_review.json": {
+      "bytes": 5668,
+      "sha256": "5a960de422191bec195f3378de9283d6f8bff6cba4adc91d30c8588b39b68522"
+    }
+  },
+  "parent_template_sha256": "6ed706fe7e6d5246e543f128c001ebabc8bbabc989e90cc649b8dcae67f5009c",
+  "independent_static_comparison": {
+    "literal_reversal_recovers_exact_parent_bytes": true,
+    "parent_assertion_count": 295,
+    "candidate_assertion_count": 295,
+    "all_assertion_AST_sequences_identical": true,
+    "functions_total": 29,
+    "immediately_identical_functions": 25,
+    "changed_functions": [
+      "bind_prepared_gate_sources",
+      "native_metadata",
+      "authenticate_direct_io",
+      "pure_readahead_validators"
+    ],
+    "new_function_names": [],
+    "local_patch_root_literal_occurrences": 5
+  },
+  "runtime_code_bindings": [
+    {
+      "path": ".github/workflows/rg-degree-one-large-join-repair-20261104.yml",
+      "bytes": 9692,
+      "sha256": "0279c31549914f494e73ac72e50cf040e3e1c63a1ed380b5c9713a351bb5e2b9",
+      "git_blob_sha1": "957870c6fad05a6e848e547c37325ebd79d8dedf",
+      "matches_frozen_binding": true,
+      "runtime_changed": true
+    },
+    {
+      "path": "ci/rg_enable_final_owned_proofstore_direct_io_20261104.py",
+      "bytes": 13324,
+      "sha256": "f37830c0db07c77e865907b5f0d67d272c6963f46aeff81487a7438f33d33b1a",
+      "git_blob_sha1": "059b5fd863fcc14285d9f3791c3b5341064e387f",
+      "matches_frozen_binding": true,
+      "runtime_changed": false,
+      "copy_byte_identical_to_parent_patch": true
+    },
+    {
+      "path": "ci/rg_final_owned_proofstore_readahead_20261104.py",
+      "bytes": 20183,
+      "sha256": "be321bc881d77668d5e00731b7c1ba11a24154426ae98bcecdd5abf867f903f2",
+      "git_blob_sha1": "ed715804b09f2812898be0d6acb93a4eb434462a",
+      "matches_frozen_binding": true,
+      "runtime_changed": false,
+      "copy_byte_identical_to_parent_patch": true
+    },
+    {
+      "path": "ci/rg_github_artifacts.py",
+      "bytes": 8940,
+      "sha256": "db9221ee4aa24f77082c98f33588b987531fc77f9f93c49111d31ad12363b0ef",
+      "git_blob_sha1": "0d6b0ca19ca8b1717621559b426a0a7b0b9d9520",
+      "matches_frozen_binding": true,
+      "runtime_changed": false,
+      "copy_byte_identical_to_parent_patch": true
+    },
+    {
+      "path": "ci/rg_github_rate_limit.py",
+      "bytes": 7427,
+      "sha256": "0c5a379458beafada219603bd7b8c1ad3cb8eb276335fa7abd86f04e1132461f",
+      "git_blob_sha1": "02c3db7cbce68d671d9a414e7d8d44575094c3c6",
+      "matches_frozen_binding": true,
+      "runtime_changed": false,
+      "copy_byte_identical_to_parent_patch": true
+    },
+    {
+      "path": "ci/rg_collect_exact_d1_reproductions.py",
+      "bytes": 44842,
+      "sha256": "3b882d57a26546dc0caaa8e702d57c8b4dffff6172449d108d42f8ade2cf6527",
+      "git_blob_sha1": "e693564fa1ff13653c2664f71fc604c4979c1d0b",
+      "matches_frozen_binding": true,
+      "runtime_changed": true
+    }
+  ],
+  "reviewed_integration": [
+    "Only workflow hash/blob, five local patch roots, the new runtime collector binding and an explanatory comment change relative to the already reviewed complete parent authenticator.",
+    "The historical BASE_SHA collector remains 90938b2c\u2026 for the pure offline records_from_log function. The separately bound actual runtime collector is 3b882d57\u2026; all its bytes outside GitHub.logs were independently shown identical in the runtime review. No HTTP logs method executes during offline authentication.",
+    "CODE_FILES now binds six exact runtime files using SHA-256 and Git blob SHA-1. Four helper copies remain byte identical to their parent and are local binding inputs, not extra runtime changes.",
+    "The entry guard still rejects unbound RUN/JOB/COMMIT before proceeding. The eventual actual workflow head is separate from the original proof source 10aa67f5f16e8ad00b30ac21332791b008b69cfe.",
+    "The existing complete authentication and report-writing sequence is unchanged: actual successful native metadata, full ZIP/source/closure/object/origin/axiom/receipt/resource/readahead/milestone gates remain mandatory. No synthetic receipt or diagnostic-to-original promotion is introduced."
+  ],
+  "preserved_scope": {
+    "archives": 767,
+    "modules": 33659,
+    "prior": 33656,
+    "fresh": 3,
+    "numeric_origins": 349,
+    "named_auxiliary_origins": 69,
+    "fixed_callback_priors": 4,
+    "named_profiles": 11,
+    "timeout_seconds": 900,
+    "workers": 1,
+    "memory_reserve_mib": 2048
+  },
+  "review_execution": {
+    "static_read_hash_AST_and_byte_comparison_only": true,
+    "authenticator_or_native_helper_execution": false,
+    "tests": false,
+    "ZIP_reads": false,
+    "native_API_reads": false,
+    "remote_mutations": false
+  },
+  "conclusion": "No concrete integration finding in this exact unbound preparatory authenticator. Root retains ownership of actual run binding, complete archive authentication and any production completion claim."
+}

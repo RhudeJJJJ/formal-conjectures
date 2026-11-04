@@ -9,6 +9,7 @@ on:
       - 'ci/rg_bothlong_phase_probe_20261104.py'
       - 'ci/rg_bothlong_mmap_trace_20261104.py'
       - 'ci/rg_github_artifacts.py'
+      - 'ci/rg_owned_proofstore_readahead_20261104.py'
       - 'ci/rg_bothlong_phase_probe_20261104_spec.json'
       - 'ci/rg_bothlong_phase_probe_20261104/**'
       - 'ci/rg_observed_bothlong_phase_probe_20261104.py'
@@ -92,6 +93,8 @@ jobs:
         run: python3 -B ci/rg_ephemeral_compressed_proofstore.py --logical-gib 256
       - name: Require direct I/O only for the new owned proofstore loop
         run: python3 -B ci/rg_enable_owned_proofstore_direct_io_20261104.py
+      - name: Set only the new owned Btrfs filesystem readahead to zero
+        run: python3 -B ci/rg_owned_proofstore_readahead_20261104.py --phase enable
       - name: Authenticate all 444 original archives and read back 25191 projected objects
         env:
           GITHUB_TOKEN: ${{ github.token }}
@@ -107,6 +110,8 @@ jobs:
             --endpoint Proofs.RadenkovicGutmanD1OriginalSharedBothLong \
             --max-fresh 1 --preflight-only
           python3 -B ci/rg_bothlong_phase_probe_20261104.py --phase require-frontier
+      - name: Confirm the owned filesystem readahead stayed zero after preflight
+        run: python3 -B ci/rg_owned_proofstore_readahead_20261104.py --phase check
       - name: Observe the isolated diagnostic copy with unchanged strict kernel limits
         run: |
           python3 -B ci/rg_run_with_host_reserve.py -- \
@@ -125,6 +130,8 @@ jobs:
             Proofs/RG_Lean_20261019/build/bothlong_phase_probe/mmap_trace_fixture
             rg-proofstore-setup.json
             rg-proofstore-direct-io.json
+            rg-proofstore-readahead-enable.json
+            rg-proofstore-readahead-check.json
             rg-proofstore-kernel-reserve.json
             rg-proofstore-roundtrip-reports
           if-no-files-found: error

@@ -1,0 +1,45 @@
+{
+  "status": "PINNED_SOURCE_FINDING_ONLY",
+  "lean_ref": "v4.33.1",
+  "path": "src/Lean/Util/CollectAxioms.lean",
+  "git_blob_sha": "dc9897059a4463dfd143a2b3f8fbb4f4a3c3f154",
+  "source_url": "https://github.com/leanprover/lean4/blob/v4.33.1/src/Lean/Util/CollectAxioms.lean",
+  "findings": [
+    {
+      "lines": [
+        23,
+        24,
+        149,
+        154
+      ],
+      "finding": "Each public collectAxioms call initializes a fresh local State; separate print calls do not share that local seen map."
+    },
+    {
+      "lines": [
+        37,
+        49,
+        120,
+        145
+      ],
+      "finding": "Imported declarations already share persistent precomputed axiom summaries, looked up before local memoization."
+    },
+    {
+      "lines": [
+        133,
+        143
+      ],
+      "finding": "Lean's module exporter already computes summaries for all exported current-module declarations with one shared collector state."
+    }
+  ],
+  "memoization_feasibility": "A cache of complete exact axiom-dependency sets can be shared across declarations in the same checked environment without omitting dependencies. This is a semantic possibility, already reflected by the pinned export implementation, not a claim that it is the observed timeout cause.",
+  "requirements_for_any_future_change": [
+    "Bind cached summaries to the checked environment and declaration identities.",
+    "Reuse complete dependency sets, including all dependencies already traversed by the standard collector.",
+    "Do not treat an in-progress cycle sentinel as a completed summary.",
+    "Retain the exact named output profiles, allowed-axiom validation and all kernel checks."
+  ],
+  "phase_evidence_required_before_action": true,
+  "implementation_prepared": false,
+  "production_changes": 0,
+  "new_kernel_success_claim": false
+}

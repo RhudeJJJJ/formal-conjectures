@@ -1,0 +1,99 @@
+{
+  "schema": "rg_lean_olean_mmap_address_review_v1",
+  "status": "bounded_primary_source_review_complete_no_implementation_or_ci",
+  "lean_ref": "v4.33.1",
+  "questions": [
+    "How is the v2 saved mmap base chosen?",
+    "What triggers the loader fallback?",
+    "Is there an existing per-module mmap outcome trace/runtime environment switch?"
+  ],
+  "sources": [
+    {
+      "path": "src/library/module.cpp",
+      "git_blob": "be31567876a7965f01e6ff17f19709298b70caa8",
+      "ranges": [
+        "268-300",
+        "316-340",
+        "482-542",
+        "559-577"
+      ]
+    },
+    {
+      "path": "src/Lean/CompactedRegion.lean",
+      "git_blob": "4fc00fa480154e5e1b2dbcf83dd2a2255fb64487",
+      "ranges": [
+        "27-49",
+        "71-96"
+      ]
+    },
+    {
+      "path": "src/Lean/Environment.lean",
+      "git_blob": "33928512dadcfa2e42a307499e9228596da0341a",
+      "ranges": [
+        "1766-1796",
+        "2230-2246",
+        "2497-2505"
+      ]
+    },
+    {
+      "path": "src/CMakeLists.txt",
+      "git_blob": "0f05832d6384aea3be15ba2ec3262bfb1039b9c0",
+      "ranges": [
+        "104-108",
+        "158-160"
+      ]
+    },
+    {
+      "path": "src/Lean/Shell.lean",
+      "git_blob": "3f73f6fe35d11cbccd9b6effe1bafad030fdbdce",
+      "ranges": [
+        "177-180",
+        "390-391",
+        "552-554"
+      ]
+    },
+    {
+      "path": "src/Lean/Elab/Frontend.lean",
+      "git_blob": "965a761b628ebc7b7c780c7a6d12fde6e2e9b339",
+      "ranges": [
+        "335-345",
+        "374-376"
+      ]
+    }
+  ],
+  "address_selection": {
+    "fresh_compactor_formula": "(name(mod, true).hash() % 0x7f0000000000) & ~((1 << 16) - 1)",
+    "alignment_bytes": 65536,
+    "hash_input": "Lean module Name; CompactedRegion.save calls this argument key",
+    "deterministic": true,
+    "filename_used_for_address": false,
+    "random_runtime_address_used": false,
+    "continuation": "With prev, reuse the prior Compactor. The v2 header records compactor.base_addr() plus current aligned file_offset, supporting multiple parts without re-serializing shared objects.",
+    "ordinary_module_export": "saveModuleData starts with prev = none; saveModuleDataParts starts none and chains it across module parts.",
+    "evidence": "module.cpp 268-300,316-340; CompactedRegion.lean 78-81; Environment.lean 1772-1796"
+  },
+  "fallback": {
+    "linux": "When LEAN_MMAP is compiled in, mmap requests the saved address with MAP_PRIVATE and MAP_FIXED_NOREPLACE when available. A failed mapping, or a returned address unequal to the saved address, leaves buffer null; any wrong-address mapping is unmapped. The null-buffer path mallocs and readn's the full file.",
+    "possible_source_supported_causes": [
+      "Requested virtual address range already occupied.",
+      "Requested address/range incompatible with the process/platform mapping constraints.",
+      "Other OS mapping failure, treated identically by this code."
+    ],
+    "aslr": "ASLR does not choose the saved module address. Inference: ASLR can affect whether other existing process mappings occupy that deterministic requested range; the branch itself does not report the failure cause.",
+    "build_switch": "MMAP is a CMake build option, default ON, defining LEAN_MMAP. A build without it takes the full-file fallback; it is not a runtime environment variable.",
+    "not_claimed": [
+      "No actual mapping outcomes for the failed BothLong process were measured.",
+      "No timeout cause or successful kernel completion follows."
+    ],
+    "evidence": "module.cpp 281-294,504-542,559-577; CMakeLists.txt 104-108,158-160"
+  },
+  "observability": {
+    "per_module_builtin_trace": "No per-module mmap success/fallback trace or runtime environment-variable hook exists in the fully inspected pinned loader and immediate import call sites. Loader code contains no getenv/log/printf/fprintf/cout/cerr trace branch for these outcomes.",
+    "existing_cli": "--stats invokes Environment.displayStats and prints aggregate number of imported modules, number of memory-mapped modules, and logical imported byte total.",
+    "cli_timing": "The frontend calls displayStats only after runAndReport and waitForFinalCmdState?, so it is not a flushed per-module progress diagnostic for an import-phase timeout.",
+    "existing_data": "Each loaded CompactedRegion already records filePath, size and isMemoryMapped, collected in env.header.regions. These fields can describe outcome after loading, but there is no current per-module streaming logger in this path.",
+    "evidence": "CompactedRegion.lean 27-49; Environment.lean 2497-2505; Shell.lean 177-180,390-391; Frontend.lean 335-345,374-376"
+  },
+  "scope": "Review files only; no .olean rewriting, Lean/controller/workflow edits, runtime changes, CI runs or proof bypass.",
+  "previous_report": "olean_import_format_review.json"
+}

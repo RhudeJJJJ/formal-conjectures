@@ -1,0 +1,94 @@
+{
+  "schema": "rg_lean_olean_import_format_review_v1",
+  "status": "primary_source_review_only_no_ci_or_implementation",
+  "lean_ref": "v4.33.1",
+  "question": "Is there a fixed small metadata region in legacy .olean files whose pure pre-read is a justified whole-import I/O-cache test?",
+  "sources": [
+    {
+      "repository": "leanprover/lean4",
+      "path": "src/library/module.cpp",
+      "git_blob": "be31567876a7965f01e6ff17f19709298b70caa8",
+      "ranges": [
+        "107-144",
+        "316-343",
+        "476-505",
+        "525-542",
+        "559-577",
+        "605-614"
+      ]
+    },
+    {
+      "repository": "leanprover/lean4",
+      "path": "src/runtime/compact.cpp",
+      "git_blob": "73c9a4e18798496bc764cdb7e9899021eed3e4b3",
+      "ranges": [
+        "297-328",
+        "461-469",
+        "615-685"
+      ]
+    },
+    {
+      "repository": "leanprover/lean4",
+      "path": "src/Lean/Environment.lean",
+      "git_blob": "33928512dadcfa2e42a307499e9228596da0341a",
+      "ranges": [
+        "107-136",
+        "2308-2347",
+        "2378-2406"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "fixed_prefix",
+      "fact": "Normal .olean serialization is v2 [header][compacted data], with no v3 extension/trailer. The fixed packed header is 88 bytes on a 64-bit target; compacted data begins with a saved root-address slot.",
+      "evidence": [
+        "src/library/module.cpp:107-144,316-343",
+        "src/runtime/compact.cpp:461-469"
+      ]
+    },
+    {
+      "id": "metadata_not_one_region",
+      "fact": "ModuleData includes imports, constNames, constants and environment-extension entries. The file stores its compacted object graph, not a separately bounded import-metadata block. Constructors and arrays recursively serialize their child objects before their own record/table.",
+      "evidence": [
+        "src/Lean/Environment.lean:107-136",
+        "src/runtime/compact.cpp:297-328"
+      ],
+      "limit": "This does not exclude locating specific small records or arrays with format-aware pointer decoding; it excludes treating a fixed small file prefix as all import metadata without further evidence."
+    },
+    {
+      "id": "lazy_mapping_fast_path",
+      "fact": "On Linux the loader attempts a whole-file MAP_PRIVATE COW mapping at the saved base address, with MAP_FIXED_NOREPLACE when available, and without MAP_POPULATE. If own and dependency regions are at their saved addresses, region_reader returns the saved root without the full structural walk.",
+      "evidence": [
+        "src/library/module.cpp:525-542",
+        "src/runtime/compact.cpp:643-655"
+      ],
+      "inference": "On this path, mapping the logical file does not itself require reading every expression page. The measured 97.4 GB logical .olean total is not a measurement of actual bytes faulted/read."
+    },
+    {
+      "id": "fallback_is_eager",
+      "fact": "If the requested-address mapping fails, the loader allocates a buffer and reads the entire file. If pointer relocation is required, region_reader walks the region and fixes pointers.",
+      "evidence": [
+        "src/library/module.cpp:559-577",
+        "src/runtime/compact.cpp:659-685"
+      ]
+    },
+    {
+      "id": "import_traversal",
+      "fact": "finalizeImport traverses each module's constant-name and ConstantInfo arrays to build maps, then initializes imported extension entries and persistent extensions; it does not simply inspect the file header.",
+      "evidence": [
+        "src/Lean/Environment.lean:2308-2347,2378-2406"
+      ],
+      "limit": "Which expression bodies or extension-dependent pages are touched in the actual failed run is not established by this source review."
+    }
+  ],
+  "conclusion": {
+    "fixed_small_prefix_covers_all_import_io": false,
+    "header_only_preread_supported_as_complete_import_cache_test": false,
+    "conditional_statement": "Pure pre-reading of specific, correctly identified import-touched pages could test cache sensitivity of those pages without changing Lean/kernel work. The reviewed format alone does not supply a fixed small complete page set or establish that the actual run used the lazy fast path.",
+    "next_step": "Await the already-running flushed phase probe. No cache implementation, CI change, broad architecture work or causal timeout claim follows from this review."
+  },
+  "local_changes": "This review artifact and primary-source excerpts only; no Lean source, controller, workflow or production change.",
+  "data_comparison_report": "callback_audit/runtime_second/predecessor_import_comparison.json",
+  "data_comparison_report_sha256": "12c4e6f4551c40d7d80c08df9be03075e0cf33b1650712293764b729cb07a321"
+}

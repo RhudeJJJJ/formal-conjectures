@@ -1,0 +1,99 @@
+{
+  "status": "READ_ONLY_COMPARISON_OF_ACTUAL_CALLBACK_EXPORTS",
+  "callback": {
+    "run": 41771586873,
+    "job": 126382274319,
+    "artifact_id": 13298606637,
+    "fresh_zip_sha256": "678c858661743a1ed63b41119eb56d4fee63a12fa830f1ebd1b7b06f3e83b97a",
+    "time_evidence": "Individual successful module JSON seconds, corroborated by native PASS lines. These are not whole workflow-step elapsed times.",
+    "receipt_scope": "The retained receipt covers the two long heads (3109-module joint closure); there is no completed final degreeOneLarge receipt."
+  },
+  "current_plan_sha256": "cf00d37d3bd4a5b77893ceb47bcab4f09c6defae7e02afe1a656449d2b94b100",
+  "measurement": "Count and logical file lengths of transitive local primary .olean imports only, excluding the module being compiled and external Mathlib/Lean runtime modules. Not RSS or measured bytes physically read.",
+  "method": "Complete selected archive groups use actual authenticated restore/readback totals. Partial base-capsule membership uses existing actual_analytic_base_verified.zip directory lengths with matching output SHA256. Other partial groups retain known byte subtotals and whole-group upper bounds.",
+  "successful_modules": [
+    {
+      "module": "Proofs.RadenkovicGutmanD1Long10",
+      "imports": 912,
+      "compiler_seconds": 21.508,
+      "exact_import_olean_bytes": 778142824,
+      "lower_bound_import_olean_bytes": 778142824,
+      "upper_bound_import_olean_bytes": 778142824,
+      "unknown_member_sizes": 0,
+      "source_and_closure_match_current_plan": true,
+      "all_import_source_closure_output_identities_match_callback": true,
+      "gib_interval": [
+        0.7247019782662392,
+        0.7247019782662392
+      ]
+    },
+    {
+      "module": "Proofs.RadenkovicGutmanD1Long30",
+      "imports": 2299,
+      "compiler_seconds": 70.171,
+      "exact_import_olean_bytes": 14407685672,
+      "lower_bound_import_olean_bytes": 14407685672,
+      "upper_bound_import_olean_bytes": 14407685672,
+      "unknown_member_sizes": 0,
+      "source_and_closure_match_current_plan": true,
+      "all_import_source_closure_output_identities_match_callback": true,
+      "gib_interval": [
+        13.41820291429758,
+        13.41820291429758
+      ]
+    },
+    {
+      "module": "Proofs.RadenkovicGutmanD1OriginalSharedSlice0080Complete",
+      "imports": 146,
+      "compiler_seconds": 4.226,
+      "exact_import_olean_bytes": null,
+      "lower_bound_import_olean_bytes": 906028712,
+      "upper_bound_import_olean_bytes": 1726109768,
+      "unknown_member_sizes": 18,
+      "unresolved_partial_archives": [
+        13274071154
+      ],
+      "source_and_closure_match_current_plan": true,
+      "all_import_source_closure_output_identities_match_callback": true,
+      "gib_interval": [
+        0.8438049927353859,
+        1.6075649932026863
+      ]
+    },
+    {
+      "module": "Proofs.RadenkovicGutmanD1OriginalSharedSlice0098Complete",
+      "imports": 1734,
+      "compiler_seconds": 3.776,
+      "exact_import_olean_bytes": null,
+      "lower_bound_import_olean_bytes": 771388824,
+      "upper_bound_import_olean_bytes": 1624224368,
+      "unknown_member_sizes": 6,
+      "unresolved_partial_archives": [
+        12699413351,
+        13282222316,
+        13251081434
+      ],
+      "source_and_closure_match_current_plan": true,
+      "all_import_source_closure_output_identities_match_callback": true,
+      "gib_interval": [
+        0.7184118255972862,
+        1.5126768201589584
+      ]
+    }
+  ],
+  "bothlong": {
+    "module": "Proofs.RadenkovicGutmanD1OriginalSharedBothLong",
+    "current_source_commit": "10aa67f5f16e8ad00b30ac21332791b008b69cfe",
+    "imports": 25191,
+    "exact_import_olean_bytes": 97433499160,
+    "gib": 90.74201729148626,
+    "completed_compiler_seconds": null,
+    "status": "TIMED_OUT",
+    "module_timeout_seconds": 900,
+    "timeout_is_not_successful_compilation_time": true
+  },
+  "conclusion": "None of the four successful predecessors had a comparable total import count or logical object volume. The largest successful case is D1Long30 with 2299 imports and about 13.418 GiB, versus BothLong with 25191 imports and about 90.742 GiB. This comparison does not identify the timeout phase or prove an I/O cause.",
+  "new_archive_downloads": 0,
+  "new_lean_runs": 0,
+  "production_changes": 0
+}

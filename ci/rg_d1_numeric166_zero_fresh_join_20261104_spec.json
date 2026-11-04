@@ -1,0 +1,68 @@
+{
+  "actual_compiled_leaf_modules": 80,
+  "compiled_leaf_origins": {
+    "01666": {
+      "artifact_id": 13284132866,
+      "artifact_name": "rg-d1-numeric166-leaf-01666-41745244804-1",
+      "artifact_sha256": "2465ce4ffcaf2b4077095612e13ffa01cc160d30534db83c7d6a8d636772db14",
+      "job": 126296481344,
+      "repository": "RhudeJJJJ/formal-conjectures",
+      "run": 41745244804,
+      "source_commit": "dbb82a7d98eb27b70dc4462dbed8683842b61f6b"
+    },
+    "01667": {
+      "artifact_id": 13284023500,
+      "artifact_name": "rg-d1-numeric166-leaf-01667-41745244804-1",
+      "artifact_sha256": "391405e7e0cb4426ab62f84041e3d8de5014cc97618f653c598a6e975e61cc49",
+      "job": 126296481773,
+      "repository": "RhudeJJJJ/formal-conjectures",
+      "run": 41745244804,
+      "source_commit": "dbb82a7d98eb27b70dc4462dbed8683842b61f6b"
+    },
+    "01668": {
+      "artifact_id": 13285309516,
+      "artifact_name": "rg-d1-numeric166-leaf-01668-41745244804-1",
+      "artifact_sha256": "8bb55fd484503a6f1f43e443c7ccdce23595a69935eaccfad8eb25007d754137",
+      "job": 126296481863,
+      "repository": "RhudeJJJJ/formal-conjectures",
+      "run": 41745244804,
+      "source_commit": "dbb82a7d98eb27b70dc4462dbed8683842b61f6b"
+    },
+    "01669": {
+      "artifact_id": 13284779222,
+      "artifact_name": "rg-d1-numeric166-leaf-01669-41745244804-1",
+      "artifact_sha256": "27612060ef4b8ea348bfdb3e26b081625e026149dffe884ed6b03ca90c0c0ee1",
+      "job": 126296481710,
+      "repository": "RhudeJJJJ/formal-conjectures",
+      "run": 41745244804,
+      "source_commit": "dbb82a7d98eb27b70dc4462dbed8683842b61f6b"
+    }
+  },
+  "compiled_run": 41745244804,
+  "compiled_source_commit": "dbb82a7d98eb27b70dc4462dbed8683842b61f6b",
+  "decomposition_controller": {
+    "path": "ci/rg_numeric166_decomposed_recovery.py",
+    "sha256": "45b783d210badce44772f13cd3bec5f7b424dd6b5548660b140b9e559d6e3071"
+  },
+  "decomposition_spec": {
+    "path": "ci/rg_d1_numeric166_decomposed_20261104_spec.json",
+    "sha256": "0ddb0d67758c7627ddc7fae947a7100bcb94c9ea6b26ab3f9c13fef33f7d8f8c"
+  },
+  "failed_join": {
+    "artifact_id": 13285803871,
+    "artifact_sha256": "ef9868e8706bb7edb9ec83ac3686684a8167a4f05c3d47002fdcb7c93e51230c",
+    "failure": "PREFLIGHT_CLI_REQUIRES_POSITIVE_CAP_ZERO_FRONTIER_NOT_YET_CHECKED",
+    "job": 126315670675,
+    "run": 41745244804,
+    "source_commit": "dbb82a7d98eb27b70dc4462dbed8683842b61f6b"
+  },
+  "generic_preflight_cli_bound": 1,
+  "join_fresh_modules": 0,
+  "kind": "EXACT_ACTUAL_NUMERIC166_LEAF_ORIGINS_FOR_SEPARATE_ZERO_FRESH_JOIN",
+  "memory_reserve_mib": 2048,
+  "module_timeout_seconds": 1200,
+  "original_endpoints": 10,
+  "preserved_original_endpoint_objects": 6,
+  "required_actual_frontier": [],
+  "required_modules": 160
+}

@@ -1,0 +1,24 @@
+name: Scoped temporary Palomar access proof for PR7385
+on:
+  push:
+    branches: ["palomar/access-proof-7385-20261104"]
+    paths:
+      - palomar-access.json
+      - .github/scripts/palomar_access_proof.py
+      - .github/workflows/palomar-access-proof.yml
+permissions:
+  contents: read
+jobs:
+  exact-temporary-tag:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - name: Validate payload and perform exact temporary ref operation
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python3 .github/scripts/palomar_access_proof.py

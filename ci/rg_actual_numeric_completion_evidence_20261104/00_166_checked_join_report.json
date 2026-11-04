@@ -1,0 +1,103 @@
+{
+  "status": "COMPLETE_ORIGINAL_NUMERIC166_BATCH_WITH_DECLARATION_PRESERVING_SPLITS",
+  "required_modules": 160,
+  "fresh_modules": 0,
+  "restored_prior_modules": 160,
+  "original_endpoints": [
+    "Proofs.RadenkovicGutmanD1Long00Leaf01660",
+    "Proofs.RadenkovicGutmanD1Long00Leaf01661",
+    "Proofs.RadenkovicGutmanD1Long00Leaf01662",
+    "Proofs.RadenkovicGutmanD1Long00Leaf01663",
+    "Proofs.RadenkovicGutmanD1Long00Leaf01664",
+    "Proofs.RadenkovicGutmanD1Long00Leaf01665",
+    "Proofs.RadenkovicGutmanD1Long00Leaf01666",
+    "Proofs.RadenkovicGutmanD1Long00Leaf01667",
+    "Proofs.RadenkovicGutmanD1Long00Leaf01668",
+    "Proofs.RadenkovicGutmanD1Long00Leaf01669"
+  ],
+  "preserved_original_endpoint_objects": 6,
+  "source_reorganized_original_endpoint_modules": [
+    "Proofs.RadenkovicGutmanD1Long00Leaf01666",
+    "Proofs.RadenkovicGutmanD1Long00Leaf01667",
+    "Proofs.RadenkovicGutmanD1Long00Leaf01668",
+    "Proofs.RadenkovicGutmanD1Long00Leaf01669"
+  ],
+  "added_support_modules": 76,
+  "actual_compiled_leaf_modules": 80,
+  "compiled_leaf_origins": {
+    "01666": {
+      "repository": "RhudeJJJJ/formal-conjectures",
+      "run": 41745244804,
+      "job": 126296481344,
+      "source_commit": "dbb82a7d98eb27b70dc4462dbed8683842b61f6b",
+      "artifact_id": 13284132866,
+      "artifact_sha256": "2465ce4ffcaf2b4077095612e13ffa01cc160d30534db83c7d6a8d636772db14",
+      "artifact_name": "rg-d1-numeric166-leaf-01666-41745244804-1"
+    },
+    "01667": {
+      "repository": "RhudeJJJJ/formal-conjectures",
+      "run": 41745244804,
+      "job": 126296481773,
+      "source_commit": "dbb82a7d98eb27b70dc4462dbed8683842b61f6b",
+      "artifact_id": 13284023500,
+      "artifact_sha256": "391405e7e0cb4426ab62f84041e3d8de5014cc97618f653c598a6e975e61cc49",
+      "artifact_name": "rg-d1-numeric166-leaf-01667-41745244804-1"
+    },
+    "01668": {
+      "repository": "RhudeJJJJ/formal-conjectures",
+      "run": 41745244804,
+      "job": 126296481863,
+      "source_commit": "dbb82a7d98eb27b70dc4462dbed8683842b61f6b",
+      "artifact_id": 13285309516,
+      "artifact_sha256": "8bb55fd484503a6f1f43e443c7ccdce23595a69935eaccfad8eb25007d754137",
+      "artifact_name": "rg-d1-numeric166-leaf-01668-41745244804-1"
+    },
+    "01669": {
+      "repository": "RhudeJJJJ/formal-conjectures",
+      "run": 41745244804,
+      "job": 126296481710,
+      "source_commit": "dbb82a7d98eb27b70dc4462dbed8683842b61f6b",
+      "artifact_id": 13284779222,
+      "artifact_sha256": "27612060ef4b8ea348bfdb3e26b081625e026149dffe884ed6b03ca90c0c0ee1",
+      "artifact_name": "rg-d1-numeric166-leaf-01669-41745244804-1"
+    }
+  },
+  "original_partial_origin": {
+    "repository": "RhudeJJJJ/formal-conjectures",
+    "run": 41686621300,
+    "job": 126095241107,
+    "source_commit": "aaeaec3cec22467d3f0b83b1761bfb40087bb991",
+    "artifact_id": 13277904393,
+    "artifact_sha256": "80966ae46ac88089f1532793e4bbd2d5114387419575596c5ede5bc950acedd3",
+    "context": {
+      "kind": "AUTHENTICATED_ORIGINAL_NUMERIC_PARTIAL_EXPORTS_FROM_FAILED_JOB",
+      "original_batch": "00_166",
+      "original_plan": "ci/rg_d1_required_numeric_batches_20261103/batch00_166.json",
+      "original_plan_sha256": "4fda6b685750ffa1ade7b33188ffd8b28ac9ee8faaf6225782f79653225a391b",
+      "workflow_path": ".github/workflows/rg-d1-numeric-and-final-20261103.yml",
+      "job_name": "original-numeric-00_166",
+      "artifact_name": "rg-d1-original-numeric-41686621300-1-00_166",
+      "workflow_job_conclusion": "failure",
+      "endpoint_complete": false,
+      "original_failure": {
+        "kind": "MODULE_TIMEOUT",
+        "module": "Proofs.RadenkovicGutmanD1Long00Leaf01666",
+        "limit_seconds": 1200
+      },
+      "archived_full_scope_receipt_available": false,
+      "actual_module_logs_and_original_object_identities_verified": true,
+      "completed_worker_records_not_printed_by_failed_coordinator": [],
+      "proof_status": "ONLY_THE_LISTED_INDIVIDUAL_ORIGINAL_MODULES_ARE_REUSABLE"
+    }
+  },
+  "old_failed_job_status": "UNCHANGED_FAILURE",
+  "prior_records_relabelled_as_fresh": false,
+  "receipt_sha256": "ed2b469c2cc285f25504af7476e1011ddb19fe2d5bb35f28092ca91f736f0caf",
+  "original_declarations_preserved_verbatim": true,
+  "proof_bodies_changed": false,
+  "standard_axioms_only": true,
+  "original_definitions": 532,
+  "original_theorems": 1252,
+  "full_degree_one_large_closure": "PENDING_SEPARATE_FINAL_ASSEMBLY",
+  "verified_original_and_current_output_bytes": 864565936
+}

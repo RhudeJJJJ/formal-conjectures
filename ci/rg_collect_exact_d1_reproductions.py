@@ -23,6 +23,7 @@ NUMERIC137_COMPLETIONS = {'DECLARATION_PRESERVING_ORIGINAL137_FULL_BATCH', NUMER
 NUMERIC166_JOIN = 'NUMERIC166_COMPILED_OBJECTS_WITH_SEPARATE_ZERO_FRESH_BATCH_JOIN'
 NUMERIC_REORGANIZED_COMPLETIONS = NUMERIC137_COMPLETIONS | {NUMERIC166_JOIN}
 REFERENCE_COMPLETION = 'EXACT_REGISTERED_REFERENCE_BATCH_COMPLETION'
+THREE_WAVE_TWO_COMPLETION = 'EXACT_REGISTERED_THREE_WAVE_TWO_BATCH_COMPLETION'
 NEW_WRAPPERS = {
     'Proofs.RadenkovicGutmanCompactFiniteDegreeOneSmallCertificatesComplete',
     'Proofs.RadenkovicGutmanCompactFiniteOriginalDegreeOneSmall',
@@ -234,7 +235,12 @@ def original_job_binding(item, spec_raw, origin):
     This narrow lookup never supplies an original conclusion or proof object.
     """
     if 'provenance_kind' in item:
-        reference_completion_binding(item, spec_raw, origin)
+        if item['provenance_kind'] == REFERENCE_COMPLETION:
+            reference_completion_binding(item, spec_raw, origin)
+        else:
+            assert item['provenance_kind'] == THREE_WAVE_TWO_COMPLETION
+            from rg_actual_numeric_completions import three_binding
+            three_binding(item, spec_raw, origin, ROOT)
         return None
     if 'original_job_lookup' not in item:
         assert type(item['original_job']) is int and item['original_job'] > 0
@@ -302,7 +308,7 @@ def sealed_numeric_replacements(path, spec_raw, origin, repository):
             if item['completion_kind'] == NUMERIC137_ZERO_AUDIT:
                 required.add('compiled_proof_origin')
             if item['completion_kind'] == NUMERIC166_JOIN:
-                required.add('compiled_leaf_origins')
+                required |= {'compiled_leaf_origins', 'completion_join_spec'}
         if 'original_job_lookup' in item:
             required = (required - {'original_job'}) | {'original_job_lookup'}
         if 'provenance_kind' in item:
@@ -332,6 +338,10 @@ def sealed_numeric_replacements(path, spec_raw, origin, repository):
         'SEALED_SUCCESSFUL_NUMERIC_BATCH_COMPLETIONS_WITH_EXPLICIT_SOURCE_REORGANIZATION')
     assert {i['batch'] for i in reorganized} <= {'00_137', '00_166'}
     assert len(reorganized) <= 2
+    if 'coverage_at_sealing' in sealed:
+        from rg_numeric_alternative_coverage import REGISTRY, validate
+        validate(sealed['coverage_at_sealing'], spec_raw,
+                 (ROOT / REGISTRY).read_bytes(), replacements)
     return replacements, sha(raw)
 
 
@@ -375,6 +385,7 @@ def main():
     run, commit = int(os.environ['GITHUB_RUN_ID']), publishing_commit
     api = GitHub(repository)
     replacements, replacement_digest = {}, None
+    original_observations = {}
     assert a.numeric_origin or not a.numeric_replacements
     if a.numeric_origin:
         origin = json.loads(a.numeric_origin.read_bytes())
@@ -403,6 +414,15 @@ def main():
         replacements, replacement_digest = sealed_numeric_replacements(
             a.numeric_replacements, spec_raw, origin, repository)
         assert set(replacements) <= {b['batch'] for b in spec['jobs']}
+        if a.numeric_replacements:
+            replacement_raw = a.numeric_replacements.read_bytes()
+            assert sha(replacement_raw) == replacement_digest
+            annotation = json.loads(replacement_raw).get('coverage_at_sealing')
+            if annotation is not None:
+                from rg_numeric_alternative_coverage import REGISTRY, validate
+                original_observations = validate(annotation, spec_raw,
+                    (ROOT / REGISTRY).read_bytes(), replacements)
+                assert actual['status'] == 'completed' and actual['run_attempt'] == 1
         if current_binding:
             assert replacements['00_137']['completion_kind'] in NUMERIC137_COMPLETIONS
             assert replacements['00_166']['completion_kind'] == NUMERIC166_JOIN
@@ -426,6 +446,14 @@ def main():
                     original_batch=batch['batch'], original_plan_sha256=batch['plan_sha256'],
                     original_job_observation_at_seal=item['original_job_observation'],
                     original_job_observation_at_collection=observed)
+            elif item.get('provenance_kind') == THREE_WAVE_TWO_COMPLETION:
+                from rg_actual_numeric_completions import observe_three_original_job
+                observed = observe_three_original_job(item, spec_raw, origin, jobs_for(run), ROOT)
+                item['numeric_three_wave_two_completion'] = dict(kind=THREE_WAVE_TWO_COMPLETION,
+                    sealed_replacement_sha256=replacement_digest,
+                    original_batch=batch['batch'], original_plan_sha256=batch['plan_sha256'],
+                    original_job_observation_at_seal=item['original_job_observation'],
+                    original_job_observation_at_collection=observed)
             else:
                 if 'original_job_lookup' in item:
                     old = resolve_original_job(item, spec_raw, origin, jobs_for(run))
@@ -444,12 +472,15 @@ def main():
             assert recovered['id'] == item['run'] and recovered['head_sha'] == item['source_commit']
             assert recovered['path'] == item['workflow_path']
             assert recovered['head_branch'] == 'rg-degree-one-large-20261103'
-            if item.get('provenance_kind') == REFERENCE_COMPLETION:
+            if item.get('provenance_kind') in {REFERENCE_COMPLETION, THREE_WAVE_TWO_COMPLETION}:
                 assert type(recovered['run_attempt']) is int and recovered['run_attempt'] == 1
                 assert recovered['repository']['full_name'] == repository == 'RhudeJJJJ/formal-conjectures'
             del item['workflow_path']
         else:
             job = latest_named_job(jobs_for(run), 'original-numeric-' + batch['batch'])
+            if original_observations:
+                from rg_numeric_alternative_coverage import require_observed_original_success
+                require_observed_original_success(original_observations[batch['batch']], job)
             item = dict(run=run, job=job['id'], source_commit=commit,
                 artifact_name=f"rg-d1-original-numeric-{run}-{job['run_attempt']}-{batch['batch']}",
                 required_success_step='Require exact historical output identities')
@@ -489,7 +520,7 @@ def main():
             if job is None: job = api.get('/actions/jobs/' + str(item['job']))
             assert job['run_id'] == item['run'] and job['head_sha'] == item['source_commit']
             if 'job_name' in item: assert job['name'] == item['job_name']
-            if item.get('provenance_kind') == REFERENCE_COMPLETION:
+            if item.get('provenance_kind') in {REFERENCE_COMPLETION, THREE_WAVE_TWO_COMPLETION}:
                 assert job['id'] == item['job']
                 assert type(job['run_attempt']) is int and job['run_attempt'] == 1
                 assert job['head_branch'] == 'rg-degree-one-large-20261103'
@@ -502,7 +533,7 @@ def main():
             time.sleep(min(30, max(0, deadline - time.monotonic())))
         steps = [s for s in job['steps'] if s['name'] == item['required_success_step']]
         assert len(steps) == 1 and steps[0]['conclusion'] == 'success', item['key']
-        if item.get('provenance_kind') == REFERENCE_COMPLETION:
+        if item.get('provenance_kind') in {REFERENCE_COMPLETION, THREE_WAVE_TWO_COMPLETION}:
             assert steps[0]['status'] == 'completed'
     for r in sorted({i['run'] for i in items}):
         catalogs[r] = api.listing('/actions/runs/' + str(r) + '/artifacts', 'artifacts')
@@ -543,7 +574,7 @@ def main():
         artifact = artifacts[0]
         assert not artifact['expired'] and artifact['workflow_run']['id'] == item['run']
         assert artifact['workflow_run']['head_sha'] == item['source_commit']
-        if item.get('provenance_kind') == REFERENCE_COMPLETION:
+        if item.get('provenance_kind') in {REFERENCE_COMPLETION, THREE_WAVE_TWO_COMPLETION}:
             assert artifact['workflow_run']['head_branch'] == 'rg-degree-one-large-20261103'
         assert re.fullmatch(r'sha256:[0-9a-f]{64}', artifact['digest'])
         if 'artifact_id' in item: assert artifact['id'] == item['artifact_id']
@@ -604,6 +635,8 @@ def main():
             manifest['origin_context']['numeric_replacement'] = item['numeric_replacement']
         if 'numeric_reference_completion' in item:
             manifest['origin_context']['numeric_reference_completion'] = item['numeric_reference_completion']
+        if 'numeric_three_wave_two_completion' in item:
+            manifest['origin_context']['numeric_three_wave_two_completion'] = item['numeric_three_wave_two_completion']
         if completion_report:
             manifest['origin_context']['authenticated_full_batch_completion'] = completion_report
             if completion['kind'] == NUMERIC137_ZERO_AUDIT:
@@ -618,6 +651,8 @@ def main():
                       modules=len(fresh), status='SUCCESSFUL_EXACT_JOB_RECORDS_REQUIRE_AUTHENTICATED_ARCHIVE_RESTORE')
         if 'numeric_reference_completion' in item:
             report['numeric_reference_completion'] = item['numeric_reference_completion']
+        if 'numeric_three_wave_two_completion' in item:
+            report['numeric_three_wave_two_completion'] = item['numeric_three_wave_two_completion']
         if completion_report:
             report['authenticated_full_batch_completion'] = completion_report
             if completion['kind'] == NUMERIC137_ZERO_AUDIT:

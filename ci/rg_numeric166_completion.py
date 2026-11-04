@@ -13,12 +13,14 @@ import tempfile
 import zipfile
 
 import rg_numeric166_decomposed_recovery as decomposition
+import rg_numeric166_zero_fresh_join as joining
 from rg_github_artifacts import fetch_archive
 from module_outputs import output_members
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 KIND = 'NUMERIC166_COMPILED_OBJECTS_WITH_SEPARATE_ZERO_FRESH_BATCH_JOIN'
 SPEC_SHA = '0ddb0d67758c7627ddc7fae947a7100bcb94c9ea6b26ab3f9c13fef33f7d8f8c'
+JOIN_SPEC_SHA = '631b58238e9196ec58f80380cbec84d3a8507b8b1a21a92d0cb31569d899179c'
 JOB_NAME = 'Join complete original numeric166 batch'
 SUCCESS_STEP = 'Require full original batch and all preserved origins'
 DESCRIPTOR_KEYS = {'repository', 'run', 'job', 'source_commit', 'artifact_id',
@@ -32,19 +34,22 @@ def sha(raw):
 def completion_context(item):
     required = {'batch', 'original_job', 'original_plan_sha256', 'run', 'job',
         'source_commit', 'artifact_id', 'artifact_sha256', 'artifact_name', 'job_name',
-        'required_success_step', 'completion_kind', 'completion_spec', 'compiled_leaf_origins'}
+        'required_success_step', 'completion_kind', 'completion_spec', 'compiled_leaf_origins',
+        'completion_join_spec'}
     optional = {'workflow_path', 'key', 'actual_run_attempt', 'numeric_replacement',
                 'original_manifests', 'fresh_module_origins'}
     assert required <= set(item) <= required | optional
     assert item['completion_kind'] == KIND and item['batch'] == '00_166'
     assert item['original_job'] == 126095241107
     assert item['completion_spec'] == {'path': decomposition.SPEC, 'sha256': SPEC_SHA}
+    assert item['completion_join_spec'] == {'path': joining.SPEC, 'sha256': JOIN_SPEC_SHA}
+    join_spec = joining.load_join_spec(JOIN_SPEC_SHA)
     spec, plan, original, base, partial, snapshots = decomposition.context(SPEC_SHA)
     decomposition.preserve_declarations(spec, original, snapshots)
     assert item['original_plan_sha256'] == spec['original_plan_sha256']
     assert item['job_name'] == JOB_NAME and item['required_success_step'] == SUCCESS_STEP
     if 'workflow_path' in item:
-        assert item['workflow_path'] == decomposition.WORKFLOW
+        assert item['workflow_path'] == joining.WORKFLOW
     if 'key' in item:
         assert item['key'] == 'batch00_166'
     for name in ('original_manifests', 'fresh_module_origins'):
@@ -53,27 +58,30 @@ def completion_context(item):
     for name in ('run', 'job', 'artifact_id'):
         assert type(item[name]) is int and item[name] > 0
     assert item['run'] != 41686621300 and item['job'] != item['original_job']
+    assert item['run'] != join_spec['compiled_run']
     assert re.fullmatch(r'[0-9a-f]{40}', item['source_commit'])
     assert item['source_commit'] != spec['original_master_source_commit']
+    assert item['source_commit'] != join_spec['compiled_source_commit']
     assert re.fullmatch(r'[0-9a-f]{64}', item['artifact_sha256'])
     assert re.fullmatch(r'rg-d1-numeric166-complete-' + str(item['run']) + r'-[1-9][0-9]*',
                         item['artifact_name'])
     origins = item['compiled_leaf_origins']
     assert set(origins) == set(decomposition.KEYS)
+    assert origins == join_spec['compiled_leaf_origins']
     jobs, artifacts = {item['job']}, {item['artifact_id']}
     for key, origin in origins.items():
         assert set(origin) == DESCRIPTOR_KEYS
         assert origin['repository'] == decomposition.REPOSITORY
-        assert origin['run'] == item['run'] and origin['source_commit'] == item['source_commit']
+        assert origin['run'] == join_spec['compiled_run']
+        assert origin['source_commit'] == join_spec['compiled_source_commit']
         for name, used in (('job', jobs), ('artifact_id', artifacts)):
             assert type(origin[name]) is int and origin[name] > 0 and origin[name] not in used
             used.add(origin[name])
         assert re.fullmatch(r'[0-9a-f]{64}', origin['artifact_sha256'])
-        assert re.fullmatch(r'rg-d1-numeric166-leaf-' + key + '-' + str(item['run']) +
-                            r'-[1-9][0-9]*', origin['artifact_name'])
+        assert origin['artifact_name'] == f"rg-d1-numeric166-leaf-{key}-{origin['run']}-1"
     return dict(kind=KIND, spec=spec, plan=plan, original=original, base=base,
         partial=partial, snapshots=snapshots, expected={}, prior=partial,
-        new_sources=set(decomposition.NEW))
+        new_sources=set(decomposition.NEW), join_spec=join_spec)
 
 
 def checked_job(api, origin, name, step, attempt=None):
@@ -152,6 +160,7 @@ def check_frontiers(frontiers, spec):
     for endpoint, row in zip(decomposition.ENDPOINTS, rows):
         assert row['endpoint'] == endpoint and row['within_bound'] is True
         assert row['fresh_modules'] == []
+        assert row['max_fresh'] == 1
         count = 94 if endpoint in decomposition.ENDPOINTS[6:] else 75
         assert row['required_modules'] == row['verified_prior_objects'] == count
 
@@ -161,13 +170,20 @@ def authenticate_completion(item, artifact, context, fresh, hashes, closures, ap
     assert fresh == {}, 'The complete batch join must not introduce fresh objects'
     spec, original, base, partial, snapshots = (context[k] for k in
         ('spec', 'original', 'base', 'partial', 'snapshots'))
+    join_spec = context['join_spec']
     for name in spec['required_modules']:
         assert hashes[name] == spec['required_source_sha256'][name]
         assert closures[name] == spec['required_source_closure_sha256'][name]
     run = api.get('/actions/runs/' + str(item['run']))
     assert run['id'] == item['run'] and run['head_sha'] == item['source_commit']
-    assert run['path'] == decomposition.WORKFLOW and run['head_branch'] == 'rg-degree-one-large-20261103'
+    assert run['path'] == joining.WORKFLOW and run['head_branch'] == 'rg-degree-one-large-20261103'
     assert run['repository']['full_name'] == decomposition.REPOSITORY
+    compiled = api.get('/actions/runs/' + str(join_spec['compiled_run']))
+    assert compiled['id'] == join_spec['compiled_run']
+    assert compiled['head_sha'] == join_spec['compiled_source_commit']
+    assert compiled['path'] == decomposition.WORKFLOW
+    assert compiled['head_branch'] == 'rg-degree-one-large-20261103'
+    assert compiled['repository']['full_name'] == decomposition.REPOSITORY
     join_job = checked_job(api, item, JOB_NAME, SUCCESS_STEP, item['actual_run_attempt'])
     assert item['artifact_name'] == f"rg-d1-numeric166-complete-{item['run']}-{join_job['run_attempt']}"
     checked_artifact(artifact, item, 32 * 1024**2)
@@ -193,7 +209,7 @@ def authenticate_completion(item, artifact, context, fresh, hashes, closures, ap
             assert (manifest['mathlib'], manifest['leancert'], manifest['lean_version']) == (
                 decomposition.PIN, decomposition.LC, '4.33.1')
             leaf = spec['leaf_jobs'][key]
-            job = checked_job(api, origin, leaf['job_name'], leaf['required_success_step'])
+            job = checked_job(api, origin, leaf['job_name'], leaf['required_success_step'], 1)
             assert origin['artifact_name'] == leaf['artifact_name_template'].format(
                 run=origin['run'], attempt=job['run_attempt'])
             meta = api.get('/actions/artifacts/' + str(origin['artifact_id']))
@@ -247,6 +263,9 @@ def authenticate_completion(item, artifact, context, fresh, hashes, closures, ap
                 assert report[key] == value, ('Changed complete batch report', key)
         assert report['status'] == 'COMPLETE_ORIGINAL_NUMERIC166_BATCH_WITH_DECLARATION_PRESERVING_SPLITS'
         assert report['spec_sha256'] == SPEC_SHA and report['source_commit'] == item['source_commit']
+        assert report['join_spec_sha256'] == JOIN_SPEC_SHA
+        assert report['failed_original_join_status'] == 'UNCHANGED_FAILURE'
+        assert report['compiled_objects_reexported_as_fresh'] is False
         assert report['workflow_run'] == item['run'] and report['workflow_attempt'] == item['actual_run_attempt']
         assert report['named_profile_audits_sha256'] == sha(named_raw)
         assert report['leaf_manifests_sha256'] == sha(manifests_raw)
@@ -260,6 +279,9 @@ def authenticate_completion(item, artifact, context, fresh, hashes, closures, ap
         compiled_leaf_origins=item['compiled_leaf_origins'],
         successful_join_origin=join_origin, original_partial_origin=decomposition.partial_origin(partial),
         join_receipt_sha256=sha(receipt_raw), completion_spec_sha256=SPEC_SHA,
+        completion_join_spec_sha256=JOIN_SPEC_SHA,
+        compiled_proof_run=join_spec['compiled_run'],
+        compiled_proof_source_commit=join_spec['compiled_source_commit'],
         old_failed_job_status='UNCHANGED_FAILURE', prior_records_relabelled_as_fresh=False,
         named_original_declarations_verified=1252,
         complete_original_axiom_profile_arrays_preserved=True,

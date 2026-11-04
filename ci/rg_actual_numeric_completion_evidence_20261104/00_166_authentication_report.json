@@ -1,0 +1,144 @@
+{
+  "status": "ACTUAL_NUMERIC166_FULL_ZERO_FRESH_JOIN_AND_ALL_COMPILED_ORIGINS_AUTHENTICATED",
+  "run": 41752314904,
+  "job": 126320112053,
+  "source_commit": "228fa2025b3d02670554946916cc7fd4605eddb4",
+  "artifact_id": 13286252008,
+  "artifact_sha256": "439b0b112a04f70c508131762fa01dab95bcaa41ed8865fb78f8e65b12e23e20",
+  "artifact_name": "rg-d1-numeric166-complete-41752314904-1",
+  "original_plan_sha256": "4fda6b685750ffa1ade7b33188ffd8b28ac9ee8faaf6225782f79653225a391b",
+  "compiled_leaf_origins": {
+    "01666": {
+      "repository": "RhudeJJJJ/formal-conjectures",
+      "run": 41745244804,
+      "job": 126296481344,
+      "source_commit": "dbb82a7d98eb27b70dc4462dbed8683842b61f6b",
+      "artifact_id": 13284132866,
+      "artifact_sha256": "2465ce4ffcaf2b4077095612e13ffa01cc160d30534db83c7d6a8d636772db14",
+      "artifact_name": "rg-d1-numeric166-leaf-01666-41745244804-1"
+    },
+    "01667": {
+      "repository": "RhudeJJJJ/formal-conjectures",
+      "run": 41745244804,
+      "job": 126296481773,
+      "source_commit": "dbb82a7d98eb27b70dc4462dbed8683842b61f6b",
+      "artifact_id": 13284023500,
+      "artifact_sha256": "391405e7e0cb4426ab62f84041e3d8de5014cc97618f653c598a6e975e61cc49",
+      "artifact_name": "rg-d1-numeric166-leaf-01667-41745244804-1"
+    },
+    "01668": {
+      "repository": "RhudeJJJJ/formal-conjectures",
+      "run": 41745244804,
+      "job": 126296481863,
+      "source_commit": "dbb82a7d98eb27b70dc4462dbed8683842b61f6b",
+      "artifact_id": 13285309516,
+      "artifact_sha256": "8bb55fd484503a6f1f43e443c7ccdce23595a69935eaccfad8eb25007d754137",
+      "artifact_name": "rg-d1-numeric166-leaf-01668-41745244804-1"
+    },
+    "01669": {
+      "repository": "RhudeJJJJ/formal-conjectures",
+      "run": 41745244804,
+      "job": 126296481710,
+      "source_commit": "dbb82a7d98eb27b70dc4462dbed8683842b61f6b",
+      "artifact_id": 13284779222,
+      "artifact_sha256": "27612060ef4b8ea348bfdb3e26b081625e026149dffe884ed6b03ca90c0c0ee1",
+      "artifact_name": "rg-d1-numeric166-leaf-01669-41745244804-1"
+    }
+  },
+  "join_receipt_sha256": "ed2b469c2cc285f25504af7476e1011ddb19fe2d5bb35f28092ca91f736f0caf",
+  "source_spec_sha256": "0ddb0d67758c7627ddc7fae947a7100bcb94c9ea6b26ab3f9c13fef33f7d8f8c",
+  "join_spec_sha256": "631b58238e9196ec58f80380cbec84d3a8507b8b1a21a92d0cb31569d899179c",
+  "published_join_controller_sha256": "9fc7764e81fc131ff70ecf942c6aa425c016795593212ea7adb0570b054f914e",
+  "compiled_run": 41745244804,
+  "compiled_source_commit": "dbb82a7d98eb27b70dc4462dbed8683842b61f6b",
+  "published_controller_sha256": "45b783d210badce44772f13cd3bec5f7b424dd6b5548660b140b9e559d6e3071",
+  "current_source_modules": 160,
+  "original_endpoints": 10,
+  "fresh_join_modules": 0,
+  "actual_compiled_leaf_modules": 80,
+  "unchanged_old_endpoints": 6,
+  "original_definitions_preserved": 532,
+  "original_theorems_preserved": 1252,
+  "original_named_axiom_profiles_preserved": 1252,
+  "actual_original_and_current_output_bytes_verified": 864565936,
+  "original_partial_origin": {
+    "repository": "RhudeJJJJ/formal-conjectures",
+    "run": 41686621300,
+    "job": 126095241107,
+    "source_commit": "aaeaec3cec22467d3f0b83b1761bfb40087bb991",
+    "artifact_id": 13277904393,
+    "artifact_sha256": "80966ae46ac88089f1532793e4bbd2d5114387419575596c5ede5bc950acedd3",
+    "context": {
+      "kind": "AUTHENTICATED_ORIGINAL_NUMERIC_PARTIAL_EXPORTS_FROM_FAILED_JOB",
+      "original_batch": "00_166",
+      "original_plan": "ci/rg_d1_required_numeric_batches_20261103/batch00_166.json",
+      "original_plan_sha256": "4fda6b685750ffa1ade7b33188ffd8b28ac9ee8faaf6225782f79653225a391b",
+      "workflow_path": ".github/workflows/rg-d1-numeric-and-final-20261103.yml",
+      "job_name": "original-numeric-00_166",
+      "artifact_name": "rg-d1-original-numeric-41686621300-1-00_166",
+      "workflow_job_conclusion": "failure",
+      "endpoint_complete": false,
+      "original_failure": {
+        "kind": "MODULE_TIMEOUT",
+        "module": "Proofs.RadenkovicGutmanD1Long00Leaf01666",
+        "limit_seconds": 1200
+      },
+      "archived_full_scope_receipt_available": false,
+      "actual_module_logs_and_original_object_identities_verified": true,
+      "completed_worker_records_not_printed_by_failed_coordinator": [],
+      "proof_status": "ONLY_THE_LISTED_INDIVIDUAL_ORIGINAL_MODULES_ARE_REUSABLE"
+    }
+  },
+  "old_failed_job_status": "UNCHANGED_FAILURE",
+  "prior_records_relabelled_as_fresh": false,
+  "failed_original_join_status": "UNCHANGED_FAILURE",
+  "compiled_objects_reexported_as_fresh": false,
+  "resource_guards_unchanged": true,
+  "standard_axioms_only": true,
+  "whole_numeric166_batch_claimed": true,
+  "whole_degree_one_large_claimed": false,
+  "full_degree_one_large_closure": "PENDING_SEPARATE_FINAL_ASSEMBLY",
+  "recorded_api_evidence_sha256": {
+    "run_metadata.json": "7d9bb5094bdbd24a1554505a674b3626275903f257803747683b93689d125f25",
+    "job_metadata.json": "0ca58723e8395903559212e03217be49cc14c2fd3aa6e9824a0a8b3927cac1bd",
+    "artifact_metadata.json": "68dbeb76b2a05b59c7a30179eb15f742bc338ff26654c6a4e3eb5af4a1b87bfd",
+    "artifact_catalog.json": "d4add42d0ca6f996f4212b4232b390533806d11f3183aa11e63d24d717cfad1c",
+    "job.log": "cab2bcaccaefd60f0811f6d5a4747ea8d044cc1fcc38e565a9b50f1ff087745c"
+  },
+  "leaf_api_evidence_sha256": {
+    "01666": {
+      "run_metadata.json": "86442d31d2694a56ead9e01a858dc7b2f972a08064b60ccd135ac900b4e8a9b4",
+      "job_metadata.json": "9b294703b4721032b19f3279576ff7c0e99dd2a557462a8b46b2f029e5ee6486",
+      "artifact_metadata.json": "8a9d02d136b0171106fb3cdb70170fcdbbce46be4e784b3c034ff0b6e07f73b6",
+      "artifact_catalog.json": "9d8dbee3d2eee9bb21e3d25d26e663870e391ef86eecc2f61917af91ee2254a7",
+      "job.log": "bf7fc097adcf367c0552be8d0b8101e8c6841372446c9424fb641f12609271b5"
+    },
+    "01667": {
+      "run_metadata.json": "3b091157534f498817dedae5f80c8c151b6df3b8c6f1bdd18458bf69ffb0ef79",
+      "job_metadata.json": "5372322eb004785320c53e29130dc71eaaf42e2836440b7fef63cf4e1b46943d",
+      "artifact_metadata.json": "ef5d71572dfec6ee6ddac1d2357461e381a3f371eb60650c9c22bb96ee4de33e",
+      "artifact_catalog.json": "e4da854de71075a3c963174d902c5cc809d94e69aa832682871bef68b757ea01",
+      "job.log": "3604f9c88da8ca183b276bb0cf3a2fb084c30a10c082e2f22a970a528531c338"
+    },
+    "01668": {
+      "run_metadata.json": "3b091157534f498817dedae5f80c8c151b6df3b8c6f1bdd18458bf69ffb0ef79",
+      "job_metadata.json": "97bf07edf9bfdc5cf017dc1604aed45098a97939b3d9ddc064fd8340298efcdd",
+      "artifact_metadata.json": "c53dae275ae2e5ed9a7cc4acf29c21f81ab045b131379cfc51bc4d4407ab0c6d",
+      "artifact_catalog.json": "d6643b4d5fea08a4eab93e44f4c6a1ddb1c94ce3ae40b7eed9814cae8fdc2642",
+      "job.log": "4ea84f57dd141bb078f56f432cf350c1c75fe35d18ad3b228d3317e807971fc2"
+    },
+    "01669": {
+      "run_metadata.json": "3b091157534f498817dedae5f80c8c151b6df3b8c6f1bdd18458bf69ffb0ef79",
+      "job_metadata.json": "59b4a158eecb4dce9ce17b71d633a5b22001cf016e712765e62ccf276df54e4b",
+      "artifact_metadata.json": "3f7620ecbb306df367f5c102d1dba4ab17c3aecdf17605a06549b0adb90fff84",
+      "artifact_catalog.json": "6a04d3538b756578cc838119f120add0cf62e0739859bcbba5fd2e05e67fc6d2",
+      "job.log": "2d0512289c66c8c0d74db9dbaf5cbdf885a2ed1735181d7cd34b9fc437327a66"
+    }
+  },
+  "original_partial_api_evidence_sha256": {
+    "run_metadata.json": "123e1d8586badc8fb41bc626b5ca3f3aa2ba563fb5400c193c8707f76b3a308c",
+    "job_metadata.json": "948e199b32061e0bfd275585268ea7039d02b50b958e792e2a1cdbd1e8b1e695",
+    "artifact_metadata.json": "269ee21c26f80daae8fd03b464c1e3adeb553670c7e4cfd571630eb41a3cb9cf",
+    "job.log": "5ace2fc8a403ae004ee5f152a6066e6e9c326e8e9394c0d86b0d2f87c67e670a"
+  }
+}

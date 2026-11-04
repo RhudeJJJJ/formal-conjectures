@@ -1,0 +1,89 @@
+{
+  "actual_archives_checked": 6,
+  "actual_fresh_join_modules": 0,
+  "actual_object_bytes_rehashed": 864565936,
+  "actual_source_graph_sha256": "4236d699b74431840be49d90bb375b9949d8a6964bb726439f0e45bd9639a107",
+  "compiled_leaf_origins": {
+    "01666": {
+      "artifact_id": 13284132866,
+      "artifact_name": "rg-d1-numeric166-leaf-01666-41745244804-1",
+      "artifact_sha256": "2465ce4ffcaf2b4077095612e13ffa01cc160d30534db83c7d6a8d636772db14",
+      "job": 126296481344,
+      "repository": "RhudeJJJJ/formal-conjectures",
+      "run": 41745244804,
+      "source_commit": "dbb82a7d98eb27b70dc4462dbed8683842b61f6b"
+    },
+    "01667": {
+      "artifact_id": 13284023500,
+      "artifact_name": "rg-d1-numeric166-leaf-01667-41745244804-1",
+      "artifact_sha256": "391405e7e0cb4426ab62f84041e3d8de5014cc97618f653c598a6e975e61cc49",
+      "job": 126296481773,
+      "repository": "RhudeJJJJ/formal-conjectures",
+      "run": 41745244804,
+      "source_commit": "dbb82a7d98eb27b70dc4462dbed8683842b61f6b"
+    },
+    "01668": {
+      "artifact_id": 13285309516,
+      "artifact_name": "rg-d1-numeric166-leaf-01668-41745244804-1",
+      "artifact_sha256": "8bb55fd484503a6f1f43e443c7ccdce23595a69935eaccfad8eb25007d754137",
+      "job": 126296481863,
+      "repository": "RhudeJJJJ/formal-conjectures",
+      "run": 41745244804,
+      "source_commit": "dbb82a7d98eb27b70dc4462dbed8683842b61f6b"
+    },
+    "01669": {
+      "artifact_id": 13284779222,
+      "artifact_name": "rg-d1-numeric166-leaf-01669-41745244804-1",
+      "artifact_sha256": "27612060ef4b8ea348bfdb3e26b081625e026149dffe884ed6b03ca90c0c0ee1",
+      "job": 126296481710,
+      "repository": "RhudeJJJJ/formal-conjectures",
+      "run": 41745244804,
+      "source_commit": "dbb82a7d98eb27b70dc4462dbed8683842b61f6b"
+    }
+  },
+  "completion_join_spec_sha256": "631b58238e9196ec58f80380cbec84d3a8507b8b1a21a92d0cb31569d899179c",
+  "full_original_batch_modules": 160,
+  "original_partial_origin": {
+    "artifact_id": 13277904393,
+    "artifact_sha256": "80966ae46ac88089f1532793e4bbd2d5114387419575596c5ede5bc950acedd3",
+    "context": {
+      "actual_module_logs_and_original_object_identities_verified": true,
+      "archived_full_scope_receipt_available": false,
+      "artifact_name": "rg-d1-original-numeric-41686621300-1-00_166",
+      "completed_worker_records_not_printed_by_failed_coordinator": [],
+      "endpoint_complete": false,
+      "job_name": "original-numeric-00_166",
+      "kind": "AUTHENTICATED_ORIGINAL_NUMERIC_PARTIAL_EXPORTS_FROM_FAILED_JOB",
+      "original_batch": "00_166",
+      "original_failure": {
+        "kind": "MODULE_TIMEOUT",
+        "limit_seconds": 1200,
+        "module": "Proofs.RadenkovicGutmanD1Long00Leaf01666"
+      },
+      "original_plan": "ci/rg_d1_required_numeric_batches_20261103/batch00_166.json",
+      "original_plan_sha256": "4fda6b685750ffa1ade7b33188ffd8b28ac9ee8faaf6225782f79653225a391b",
+      "proof_status": "ONLY_THE_LISTED_INDIVIDUAL_ORIGINAL_MODULES_ARE_REUSABLE",
+      "workflow_job_conclusion": "failure",
+      "workflow_path": ".github/workflows/rg-d1-numeric-and-final-20261103.yml"
+    },
+    "job": 126095241107,
+    "repository": "RhudeJJJJ/formal-conjectures",
+    "run": 41686621300,
+    "source_commit": "aaeaec3cec22467d3f0b83b1761bfb40087bb991"
+  },
+  "production_helper_sha256": "dd8ca2d70b86f943048d59125f8c5b7761497db29e6d36f06a1c59be6e111823",
+  "recorded_api_calls": 13,
+  "registry_sha256": "9cd264e3327d0497cc34418b8d6b3b9f8dfab3dad7bf207c8d82964eaa302663",
+  "restorable_original_and_new_modules": 86,
+  "status": "PRODUCTION_CROSS_RUN_NUMERIC166_AUTHENTICATOR_PASSED_WITH_ACTUAL_ARCHIVES",
+  "successful_join_origin": {
+    "artifact_id": 13286252008,
+    "artifact_name": "rg-d1-numeric166-complete-41752314904-1",
+    "artifact_sha256": "439b0b112a04f70c508131762fa01dab95bcaa41ed8865fb78f8e65b12e23e20",
+    "job": 126320112053,
+    "repository": "RhudeJJJJ/formal-conjectures",
+    "run": 41752314904,
+    "source_commit": "228fa2025b3d02670554946916cc7fd4605eddb4"
+  },
+  "whole_degree_one_large_complete": false
+}

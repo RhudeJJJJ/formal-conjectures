@@ -1,0 +1,23 @@
+{
+  "actual_alternative_origins": 195,
+  "actual_successful_complete_batch_origins": 280,
+  "capture_window": {
+    "finished_at": "2026-11-04T01:27:54.978Z",
+    "started_at": "2026-11-04T01:27:48.136Z"
+  },
+  "evidence_index": "ci/rg_numeric_alternative_seal_evidence_20261104/index.json",
+  "evidence_root": "ci/rg_numeric_alternative_seal_evidence_20261104",
+  "evidence_sha256": "af200d06c5904610e0222dff45b5eba72d7fcfa7c030cbcebfb2dd3259bcae41",
+  "kind": "ACTUAL_NUMERIC_ALTERNATIVE_SEAL_REPLAY_RECORD_NOT_KERNEL_PROOF",
+  "observed_remaining_original_jobs": 154,
+  "original_jobs_still_pending": 69,
+  "production_collector_schema_validation_passed": true,
+  "production_preparer_exit_code": 0,
+  "remaining_open_original_families": 4,
+  "replay_command": "python3 ci/rg_prepare_numeric_replacements.py --checkout . --evidence-root ci/rg_numeric_alternative_seal_evidence_20261104 --evidence ci/rg_numeric_alternative_seal_evidence_20261104/index.json --evidence-sha256 af200d06c5904610e0222dff45b5eba72d7fcfa7c030cbcebfb2dd3259bcae41 --report /tmp/rg_actual_195_replay_report.json --seal-alternatives /tmp/rg_actual_195_replayed_contract.json",
+  "report": "ci/rg_numeric_alternative_seal_report_20261104.json",
+  "report_sha256": "00cafe135b80cfed5a959ea24dc618d8824b57839bc32fa804317e2482e380bd",
+  "sealed_contract": "ci/rg_d1_20261103_verified_numeric_replacements.json",
+  "sealed_contract_sha256": "72c52956c9c6f77228317ba623851953ca3151a3ae7ded9d929ac1251899049d",
+  "whole_degree_one_large_complete": false
+}

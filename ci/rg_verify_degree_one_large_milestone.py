@@ -52,7 +52,8 @@ workflow_commit = os.environ['GITHUB_SHA']
 assert re.fullmatch(r'[0-9a-f]{40}', proof_commit)
 assert re.fullmatch(r'[0-9a-f]{40}', workflow_commit)
 context = None
-if os.environ.get('GITHUB_EVENT_NAME') == 'workflow_run':
+if (os.environ.get('GITHUB_EVENT_NAME') == 'workflow_run'
+        or 'RG_FINAL_CONTINUATION_DESCRIPTOR' in os.environ):
     from rg_final_continuation_context import validate_context
     context = validate_context()
     assert proof_commit == context['proof_source_commit']

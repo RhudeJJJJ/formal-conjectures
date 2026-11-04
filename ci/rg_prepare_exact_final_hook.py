@@ -90,7 +90,8 @@ def main():
         assert item['run'] != RUN
     descriptor = dict(kind='SEALED_EXACT_NUMERIC_RUN_FINAL_CALLBACK', repository=REPOSITORY,
         numeric_run=RUN, numeric_source_commit=NUMERIC_SHA, numeric_workflow_path=PATH,
-        numeric_branch=BRANCH, proof_source_commit=a.proof_source_commit,
+        numeric_branch=BRANCH, numeric_run_attempt=1, callback_default_branch='main',
+        proof_source_commit=a.proof_source_commit,
         bound_files={relative: sha(raw) for relative, (raw, _) in loaded.items()})
     original = a.continuation_workflow.read_text()
     assert original.count('\njobs:\n') == 1
@@ -99,10 +100,15 @@ def main():
     condition = (
         "    if: >-\n"
         "      github.repository == 'RhudeJJJJ/formal-conjectures' &&\n"
+        "      github.ref == 'refs/heads/main' &&\n"
+        "      ((github.event_name == 'workflow_run' &&\n"
+        "      github.event.action == 'completed' &&\n"
         "      github.event.workflow_run.id == 41686621300 &&\n"
+        "      github.event.workflow_run.run_attempt == 1 &&\n"
         "      github.event.workflow_run.head_sha == 'aaeaec3cec22467d3f0b83b1761bfb40087bb991' &&\n"
         "      github.event.workflow_run.head_branch == 'rg-degree-one-large-20261103' &&\n"
-        "      github.event.workflow_run.path == '.github/workflows/rg-d1-numeric-and-final-20261103.yml'\n")
+        "      github.event.workflow_run.path == '.github/workflows/rg-d1-numeric-and-final-20261103.yml') ||\n"
+        "      github.event_name == 'workflow_dispatch')\n")
     assert body.count(old_if) == 1
     body = body.replace(old_if, condition, 1)
     timeout = '    timeout-minutes: 360\n'
@@ -117,7 +123,17 @@ def main():
     assert body.count(reserve) == 1
     body = body.replace(reserve,
         '      - name: Require the exact callback event, reviewed checkout and sealed input hashes\n'
+        '        env:\n'
+        '          GITHUB_TOKEN: ${{ github.token }}\n'
         '        run: python3 -B ci/rg_final_continuation_context.py\n' + reserve, 1)
+    milestone = ('      - name: Require the exact completed kernel milestone and remaining three scopes\n'
+        '        run: python3 -B ci/rg_verify_degree_one_large_milestone.py\n')
+    assert body.count(milestone) == 1
+    body = body.replace(milestone,
+        '      - name: Require the exact completed kernel milestone and remaining three scopes\n'
+        '        env:\n'
+        '          GITHUB_TOKEN: ${{ github.token }}\n'
+        '        run: python3 -B ci/rg_verify_degree_one_large_milestone.py\n', 1)
     evidence = '            Proofs/RG_Lean_20261019/build/exact_degree_one_plan.json\n'
     assert body.count(evidence) == 1
     body = body.replace(evidence, '            Proofs/RG_Lean_20261019/build/final_continuation_context.json\n' + evidence, 1)
@@ -126,7 +142,8 @@ def main():
         'name: RG exact run41686621300 final family callback\n'
         '# Install only on default main after publishing the fixed reviewed task commit.\n'
         '# No numeric certificates are recompiled; all successful origins stay sealed.\n'
-        'on:\n  workflow_run:\n    workflows: ["' + NAME + '"]\n'
+        '# Manual replay accepts no inputs and requires the same completed master.\n'
+        'on:\n  workflow_dispatch: {}\n  workflow_run:\n    workflows: ["' + NAME + '"]\n'
         '    types: [completed]\n    branches: [' + BRANCH + ']\n'
         'permissions:\n  contents: read\n  actions: read\n'
         'concurrency:\n  group: rg-degree-one-large-final-41686621300\n  cancel-in-progress: false\n'

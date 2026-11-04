@@ -1,0 +1,140 @@
+{
+  "jobs": {
+    "00_129": {
+      "authentication_report": {
+        "bytes": 3462,
+        "path": "ci/rg_actual_numeric_completion_evidence_20261104/00_129_authentication_report.json",
+        "sha256": "879b8c81140209a1e87009b03130a804169bd0e068f151265cf93be171edda8c"
+      },
+      "item": {
+        "artifact_id": 13283969345,
+        "artifact_name": "rg-d1-wave-two-three-original-20261104-41747378579-1-00_129",
+        "artifact_sha256": "209d33a7c8c6ed8e53d0a28df4d33f91471c2657293776d182e91aaa50fb2874",
+        "batch": "00_129",
+        "job": 126303971178,
+        "job_name": "reproduce-original-wave-two-00_129",
+        "original_plan_sha256": "fe6aaad069cc533af295402be8436989cdecbd98adcb48e212c5cdfc6ca4374d",
+        "provenance_kind": "EXACT_REGISTERED_THREE_WAVE_TWO_BATCH_COMPLETION",
+        "required_success_step": "Require exact historical output identities",
+        "run": 41747378579,
+        "source_commit": "4fa94febfa1782e3840f2b04440e02dab54eec8d",
+        "workflow_path": ".github/workflows/rg-d1-wave-two-three-original-20261104.yml"
+      }
+    },
+    "00_166": {
+      "authentication_report": {
+        "bytes": 7722,
+        "path": "ci/rg_actual_numeric_completion_evidence_20261104/00_166_authentication_report.json",
+        "sha256": "d08f37800849fa11dbadce9e8445ed1505143073acc0a41dd5634f43338f5211"
+      },
+      "item": {
+        "artifact_id": 13286252008,
+        "artifact_name": "rg-d1-numeric166-complete-41752314904-1",
+        "artifact_sha256": "439b0b112a04f70c508131762fa01dab95bcaa41ed8865fb78f8e65b12e23e20",
+        "batch": "00_166",
+        "compiled_leaf_origins": {
+          "01666": {
+            "artifact_id": 13284132866,
+            "artifact_name": "rg-d1-numeric166-leaf-01666-41745244804-1",
+            "artifact_sha256": "2465ce4ffcaf2b4077095612e13ffa01cc160d30534db83c7d6a8d636772db14",
+            "job": 126296481344,
+            "repository": "RhudeJJJJ/formal-conjectures",
+            "run": 41745244804,
+            "source_commit": "dbb82a7d98eb27b70dc4462dbed8683842b61f6b"
+          },
+          "01667": {
+            "artifact_id": 13284023500,
+            "artifact_name": "rg-d1-numeric166-leaf-01667-41745244804-1",
+            "artifact_sha256": "391405e7e0cb4426ab62f84041e3d8de5014cc97618f653c598a6e975e61cc49",
+            "job": 126296481773,
+            "repository": "RhudeJJJJ/formal-conjectures",
+            "run": 41745244804,
+            "source_commit": "dbb82a7d98eb27b70dc4462dbed8683842b61f6b"
+          },
+          "01668": {
+            "artifact_id": 13285309516,
+            "artifact_name": "rg-d1-numeric166-leaf-01668-41745244804-1",
+            "artifact_sha256": "8bb55fd484503a6f1f43e443c7ccdce23595a69935eaccfad8eb25007d754137",
+            "job": 126296481863,
+            "repository": "RhudeJJJJ/formal-conjectures",
+            "run": 41745244804,
+            "source_commit": "dbb82a7d98eb27b70dc4462dbed8683842b61f6b"
+          },
+          "01669": {
+            "artifact_id": 13284779222,
+            "artifact_name": "rg-d1-numeric166-leaf-01669-41745244804-1",
+            "artifact_sha256": "27612060ef4b8ea348bfdb3e26b081625e026149dffe884ed6b03ca90c0c0ee1",
+            "job": 126296481710,
+            "repository": "RhudeJJJJ/formal-conjectures",
+            "run": 41745244804,
+            "source_commit": "dbb82a7d98eb27b70dc4462dbed8683842b61f6b"
+          }
+        },
+        "completion_join_spec": {
+          "path": "ci/rg_d1_numeric166_zero_fresh_join_20261104_spec.json",
+          "sha256": "631b58238e9196ec58f80380cbec84d3a8507b8b1a21a92d0cb31569d899179c"
+        },
+        "completion_kind": "NUMERIC166_COMPILED_OBJECTS_WITH_SEPARATE_ZERO_FRESH_BATCH_JOIN",
+        "completion_spec": {
+          "path": "ci/rg_d1_numeric166_decomposed_20261104_spec.json",
+          "sha256": "0ddb0d67758c7627ddc7fae947a7100bcb94c9ea6b26ab3f9c13fef33f7d8f8c"
+        },
+        "job": 126320112053,
+        "job_name": "Join complete original numeric166 batch",
+        "original_job": 126095241107,
+        "original_plan_sha256": "4fda6b685750ffa1ade7b33188ffd8b28ac9ee8faaf6225782f79653225a391b",
+        "required_success_step": "Require full original batch and all preserved origins",
+        "run": 41752314904,
+        "source_commit": "228fa2025b3d02670554946916cc7fd4605eddb4",
+        "workflow_path": ".github/workflows/rg-d1-numeric166-zero-fresh-join-20261104.yml"
+      }
+    },
+    "10_044": {
+      "authentication_report": {
+        "bytes": 4232,
+        "path": "ci/rg_actual_numeric_completion_evidence_20261104/10_044_authentication_report.json",
+        "sha256": "59c0a24b905382c243c2f67b7cbd9aef7954e0dbba5244a7d9b5482869bd58a7"
+      },
+      "item": {
+        "artifact_id": 13283814321,
+        "artifact_name": "rg-d1-wave-two-three-original-20261104-41747378579-1-10_044",
+        "artifact_sha256": "4fb098106b1f66c27fe7fdeaa656b291a344efef1c38e49ddbf076aa7545d912",
+        "batch": "10_044",
+        "job": 126303971336,
+        "job_name": "reproduce-original-wave-two-10_044",
+        "original_plan_sha256": "f50cf293b11e5ff33704f0e5f54f6dd7e8f84f41ced687637c8d855ff17db4ae",
+        "provenance_kind": "EXACT_REGISTERED_THREE_WAVE_TWO_BATCH_COMPLETION",
+        "required_success_step": "Require exact historical output identities",
+        "run": 41747378579,
+        "source_commit": "4fa94febfa1782e3840f2b04440e02dab54eec8d",
+        "workflow_path": ".github/workflows/rg-d1-wave-two-three-original-20261104.yml"
+      }
+    },
+    "30_013": {
+      "authentication_report": {
+        "bytes": 4232,
+        "path": "ci/rg_actual_numeric_completion_evidence_20261104/30_013_authentication_report.json",
+        "sha256": "52b0d96c3fe3e13afed7caa411f94056cf7f10c291b5d8089ea204afe402c071"
+      },
+      "item": {
+        "artifact_id": 13283814778,
+        "artifact_name": "rg-d1-wave-two-three-original-20261104-41747378579-1-30_013",
+        "artifact_sha256": "69f974bf5ffbfbcbc75462c68f185568b825f2ff027607f72f58fdd58278448a",
+        "batch": "30_013",
+        "job": 126303971188,
+        "job_name": "reproduce-original-wave-two-30_013",
+        "original_plan_sha256": "6269cd407408d7d1517a25f4c95c533092bcaa3213268ee5649758a73ef74377",
+        "provenance_kind": "EXACT_REGISTERED_THREE_WAVE_TWO_BATCH_COMPLETION",
+        "required_success_step": "Require exact historical output identities",
+        "run": 41747378579,
+        "source_commit": "4fa94febfa1782e3840f2b04440e02dab54eec8d",
+        "workflow_path": ".github/workflows/rg-d1-wave-two-three-original-20261104.yml"
+      }
+    }
+  },
+  "kind": "REGISTERED_ACTUAL_AUTHENTICATED_NUMERIC_COMPLETION_ORIGINS",
+  "numeric_run": 41686621300,
+  "numeric_source_commit": "aaeaec3cec22467d3f0b83b1761bfb40087bb991",
+  "numeric_spec_sha256": "f47334108b563ae5e20f15fc07b2e4589f6d6e7f49e308bfdb8b4301e689e18e",
+  "repository": "RhudeJJJJ/formal-conjectures"
+}

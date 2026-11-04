@@ -1,0 +1,72 @@
+{
+  "actual_original_output_bytes": 148815712,
+  "actual_workers": 2,
+  "artifact_id": 13283969345,
+  "artifact_metadata_sha256": "9ec084f707f01166d5a28c0c2f3f3b9de22c20e8910c51fd6d6f415976fdca00",
+  "artifact_sha256": "209d33a7c8c6ed8e53d0a28df4d33f91471c2657293776d182e91aaa50fb2874",
+  "base_prior_source_closure_object_axiom_member_identities_matched": 74,
+  "batch": "00_129",
+  "compressed_archive_bytes": 35435496,
+  "degree_one_large_completion_claimed": false,
+  "final_contract_registration_performed": false,
+  "fresh_modules": 2,
+  "job": 126303971178,
+  "job_metadata_sha256": "ed6fb1e37744b18fd4c37cd12f7f158325d085e7583984ace3ecf2656c3f2f9a",
+  "job_timeout_minutes": 180,
+  "kernel_seconds": 163.58,
+  "manifest_path": "/workspace/scratch/406169dbc070/rg_three_wave_two/actual_41747378579/batch00_129/authenticated_manifest.json",
+  "manifest_sha256": "8277ae7c40a88e74ca4bdf1535ff2f3485c61a554c55e0a471f59366daa3577e",
+  "max_observed_lean_processes": 2,
+  "maximum_aggregate_lean_rss": 9955942400,
+  "maximum_individual_module_seconds": 161.71,
+  "maximum_parallel_jobs": 2,
+  "memory_reserve_mib": 2048,
+  "minimum_observed_available_bytes": 12120256512,
+  "module_seconds": {
+    "Proofs.RadenkovicGutmanD1Long00Leaf01290": 161.71,
+    "Proofs.RadenkovicGutmanD1Long00Leaf01291": 129.521
+  },
+  "module_timeout": 1200,
+  "original_master_job_status_relabelled": false,
+  "original_output_member_count": 2,
+  "original_plan": "ci/rg_d1_required_numeric_batches_20261103/batch00_129.json",
+  "original_plan_sha256": "fe6aaad069cc533af295402be8436989cdecbd98adcb48e212c5cdfc6ca4374d",
+  "original_source_closure_object_axiom_member_identities_matched": 2,
+  "original_sources_unchanged_from_audited_base": "97d87abf774780aa34e00899b8f1d4c2b35803c2",
+  "prior_modules": 74,
+  "published_scope_files": {
+    ".github/workflows/rg-d1-wave-two-three-original-20261104.yml": {
+      "bytes": 4154,
+      "sha256": "c84ef569adb6f724b96a10fcdeeb550a3582413c8947772bbc2ebdbda5ec7484"
+    },
+    "ci/rg_d1_wave_two_three_original.py": {
+      "bytes": 6251,
+      "sha256": "caf0d03f721592cd65f5b0c80f799c01d0ded41e48530808817bbd4b084a60fa"
+    },
+    "ci/rg_d1_wave_two_three_original_20261104.json": {
+      "bytes": 3763,
+      "sha256": "361351f15d89d7b25279f277bc2875bf98ae03e8318605f792c8c2f6db81a172"
+    }
+  },
+  "receipt_sha256": "a0e7069fca7ac7b722203ac8b6f0b60d0dd9e5f194dd1df42565d437c095229a",
+  "repository": "RhudeJJJJ/formal-conjectures",
+  "required_modules": 76,
+  "required_success_steps": [
+    "Bind the complete unchanged original batch",
+    "Materialize and bind the exact original numeric sources",
+    "Materialize the exact dependency lock",
+    "Fetch the exact external cache scope",
+    "Restore the retained complete audited analytic base",
+    "Enforce the exact bounded original fresh frontier",
+    "Reproduce the unchanged original certificates in the kernel",
+    "Require exact historical output identities",
+    "Retain completed records and every declared output member",
+    "Retain complete original numeric proof exports"
+  ],
+  "run": 41747378579,
+  "run_attempt": 1,
+  "run_metadata_sha256": "c18540cca376ad4d4b2a86af07d482c5493b9dd8369e827952f8d4b22d20e2ea",
+  "source_commit": "4fa94febfa1782e3840f2b04440e02dab54eec8d",
+  "status": "ACTUAL_THREE_BATCH_MEMBER_ARCHIVE_AND_ORIGINAL_IDENTITIES_AUTHENTICATED",
+  "successful_job_log_sha256": "a09e93ad39a400083be300b32ac96c6857350cb9ba4e1ea3c32789e086800de7"
+}

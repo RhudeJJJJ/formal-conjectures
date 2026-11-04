@@ -2,9 +2,11 @@
 
 This program performs no network or remote mutations. It binds all 349 original
 plans, complete paginated API captures and five already authenticated repairs.
-Missing coverage produces a pending report, never a sealed contract. A prepared
-contract remains an input to the collector's full archive authentication; it is
-not a degreeOneLarge kernel receipt or a main-family closure claim.
+The default --seal requires complete metadata coverage. The separate
+--seal-alternatives mode requires all 195 actual alternatives and concrete
+observations for the other 154 original jobs, whose pending states stay pending.
+Every prepared contract remains an input to the collector's complete archive
+authentication; it is not a kernel receipt or a main-family closure claim.
 """
 import argparse
 import collections
@@ -31,6 +33,7 @@ REGISTRY = 'ci/rg_d1_original_reference_bytes_20261103.json'
 REGISTRY_SHA = 'a04e5e612ce5e927a9f121a03b2786224b84736e64cee1974eaaa8c603693dc9'
 STEP = 'Require exact historical output identities'
 REFERENCE_COMPLETION = 'EXACT_REGISTERED_REFERENCE_BATCH_COMPLETION'
+THREE_WAVE_TWO_COMPLETION = 'EXACT_REGISTERED_THREE_WAVE_TWO_BATCH_COMPLETION'
 PARTIAL = 'ORIGINAL_PARTIAL_PRIORS_WITH_FRESH_REMAINDER'
 ZERO = 'NUMERIC137_COMPILED_OBJECTS_WITH_SEPARATE_ZERO_FRESH_METADATA_AUDIT'
 ZERO_ITEM = 'ci/rg_numeric137_20261103_zero_fresh_prerequisite.json'
@@ -313,7 +316,48 @@ def repair(checkout, evidence_root, refs, batch, plan, original_job):
     return item
 
 
-def prepare(checkout, evidence_root, bundle, evidence_sha):
+def registered_completion(checkout, evidence_root, refs, batch, plan, old, entry, spec_raw, origin):
+    """Recheck frozen actual API evidence against an independently authenticated registry."""
+    check(set(refs) == {'run','job','artifact','authentication_report'}, 'Malformed registered completion evidence')
+    run, job, artifact, report = (evidence_file(evidence_root, refs[k]) for k in
+        ('run','job','artifact','authentication_report'))
+    item = dict(entry['item'])
+    check(batch == item['batch'] and plan['plan_sha256'] == item['original_plan_sha256'],
+          'Changed registered completion plan')
+    auth = entry['authentication_report']
+    check(refs['authentication_report']['sha256'] == auth['sha256']
+          and refs['authentication_report']['bytes'] == auth['bytes'], 'Changed registered authentication report')
+    validate_run(run, item['run'], item['source_commit'], item['workflow_path'])
+    validate_job(job, item['run'], item['source_commit'])
+    check(job['id'] == item['job'] and job['name'] == item['job_name']
+          and succeeded(job, item['required_success_step']), 'Registered job is not actually successful')
+    validate_artifact(artifact, item['run'], item['source_commit'], item['artifact_name'])
+    check(artifact['id'] == item['artifact_id']
+          and artifact['digest'] == 'sha256:' + item['artifact_sha256'], 'Changed registered archive')
+    for key in ('run','job','source_commit','artifact_id','artifact_sha256','original_plan_sha256'):
+        check(report[key] == item[key], 'Changed registered authentication report origin')
+    if batch == '00_166':
+        for key in ('run','job','artifact'):
+            check(refs[key]['sha256'] == report['recorded_api_evidence_sha256'][key+'_metadata.json'],
+                  'Numeric166 API evidence differs from its complete archive authentication')
+        check(old is not None and old['id'] == item['original_job'] == 126095241107,
+              'Missing exact failed numeric166 original')
+        check(old['run_id'] == MASTER_RUN and old['head_sha'] == MASTER_HEAD,
+              'Changed failed numeric166 original origin')
+        check(old['status'] == 'completed' and old['conclusion'] in ('failure','timed_out'),
+              'Numeric166 repair requires its actual failed original')
+    else:
+        for key in ('run','job','artifact'):
+            check(refs[key]['sha256'] == report[key+'_metadata_sha256'],
+                  'Three-batch API evidence differs from its complete archive authentication')
+        from rg_actual_numeric_completions import original_observation, three_binding
+        check(item['provenance_kind'] == THREE_WAVE_TWO_COMPLETION, 'Unknown registered provenance')
+        item['original_job_observation'] = original_observation(batch, old)
+        three_binding(item, spec_raw, origin, checkout)
+    return item
+
+
+def prepare(checkout, evidence_root, bundle, evidence_sha, alternatives_only=False):
     check(bundle['kind'] == 'FROZEN_ACTUAL_D1_NUMERIC_API_EVIDENCE', 'Wrong evidence kind')
     check(bundle['repository'] == REPOSITORY, 'Wrong evidence repository')
     check(set(bundle['matrices']) == set(MATRICES), 'Missing actual matrix')
@@ -321,7 +365,7 @@ def prepare(checkout, evidence_root, bundle, evidence_sha):
     check(set(bundle.get('pending_repairs', {})) <= set(PENDING_REPAIRS), 'Unknown pending repair')
     spec, spec_raw = bound(checkout, SPEC, SPEC_SHA)
     origin, _ = bound(checkout, ORIGIN, ORIGIN_SHA)
-    registry, _ = bound(checkout, REGISTRY, REGISTRY_SHA)
+    registry, registry_raw = bound(checkout, REGISTRY, REGISTRY_SHA)
     check(spec['kind'] == 'EXACT_MISSING_D1_ORIGINAL_NUMERIC_BATCHES', 'Wrong original scope')
     check(spec['mathlib'] == '0df444a360eaa60ab8c11dca51a86af692955474'
           and spec['leancert'] == '621a43d7cf21f87872392a01e874f2f1dbddc926'
@@ -380,11 +424,23 @@ def prepare(checkout, evidence_root, bundle, evidence_sha):
         if batch in master['jobs']:
             check(master['jobs'][batch]['id'] == pending['original_job'], 'Changed prepared original job')
     check(set(reference['jobs']) == references, 'Reference matrix capture omits registered jobs')
-    candidates, repair_success = {}, {}
+    candidates, repair_success, registered_success = {}, {}, {}
     for batch, refs in bundle['repairs'].items():
         check(batch in master['jobs'], 'Missing actual old repair job')
         item = repair(checkout, evidence_root, refs, batch, plans[batch], master['jobs'][batch])
         candidates[batch] = repair_success[batch] = item
+    if bundle.get('registered_completions'):
+        from rg_actual_numeric_completions import context as registered_context
+        registration = registered_context(checkout)
+        check(set(bundle['registered_completions']) <= registration['jobs'].keys(),
+              'Unknown actual registered completion')
+        for batch, refs in bundle['registered_completions'].items():
+            check(batch not in candidates, 'Duplicate registered completion origin')
+            item = registered_completion(checkout, evidence_root, refs, batch, plans[batch],
+                master['jobs'].get(batch), registration['jobs'][batch], spec_raw, origin)
+            candidates[batch] = registered_success[batch] = item
+            if batch == '00_166':
+                repair_success[batch] = item
     selected, batch_status, binding_wait = {}, [], []
     for batch, plan in sorted(plans.items()):
         old = master['jobs'].get(batch)
@@ -393,9 +449,16 @@ def prepare(checkout, evidence_root, bundle, evidence_sha):
                'original_status':old['status'] if old else 'not_created',
                'original_conclusion':old['conclusion'] if old else None,
                'selected_successful_origin':None}
-        if batch in master['success']:
+        if alternatives_only and batch in candidates:
+            # Candidates have already passed their exact registered-origin
+            # validation. Keep the fixed alternative even if its master
+            # duplicate succeeds while the remaining jobs are still pending.
+            selected[batch] = 'repair' if batch in repair_success else 'registered_alternative'
+        elif batch in master['success'] and not (alternatives_only and batch in reference['success']):
             check(batch not in repair_success, 'Fixed failed repair origin also claimed successful')
             selected[batch] = 'master'
+            if batch in registered_success:
+                del candidates[batch]
         elif batch in repair_success:
             selected[batch] = 'repair'
         elif batch in reference['success']:
@@ -403,6 +466,8 @@ def prepare(checkout, evidence_root, bundle, evidence_sha):
             job, artifact = reference['success'][batch]
             candidates[batch] = make_item(batch, plan, job, artifact, MATRICES['reference'][2],
                                           reference_binding(batch, plans, master['jobs'], late))
+        elif batch in registered_success:
+            selected[batch] = 'registered_alternative'
         if batch in selected:
             row['selected_successful_origin'] = selected[batch]
         if batch in candidates:
@@ -410,8 +475,8 @@ def prepare(checkout, evidence_root, bundle, evidence_sha):
             row['replacement_job'] = item['job']
             row['replacement_artifact_id'] = item['artifact_id']
             row['uses_registered_late_original_lookup'] = 'original_job_lookup' in item
-            if item.get('provenance_kind') == REFERENCE_COMPLETION:
-                row['provenance_kind'] = REFERENCE_COMPLETION
+            if item.get('provenance_kind') in {REFERENCE_COMPLETION, THREE_WAVE_TWO_COMPLETION}:
+                row['provenance_kind'] = item['provenance_kind']
                 row['original_job_observation'] = item['original_job_observation']
             elif old and not (old['status'] == 'completed' and old['conclusion'] in ('failure', 'timed_out')):
                 binding_wait.append(batch)
@@ -466,6 +531,37 @@ def prepare(checkout, evidence_root, bundle, evidence_sha):
         if '00_137' in candidates else 'SEALED_SUCCESSFUL_ORIGINAL_NUMERIC_BATCH_REPLACEMENTS',
         repository=REPOSITORY, numeric_run=MASTER_RUN, numeric_source_commit=MASTER_HEAD,
         numeric_spec_sha256=SPEC_SHA, replacements=[candidates[b] for b in sorted(candidates)])
+    if bundle.get('registered_completions'):
+        from rg_actual_numeric_completions import REGISTRY as ACTUAL_REGISTRY, REGISTRY_SHA as ACTUAL_SHA
+        three_completions = sorted(b for b,item in candidates.items()
+            if item.get('provenance_kind') == THREE_WAVE_TWO_COMPLETION)
+        absent_three_originals = sorted(b for b in three_completions
+            if candidates[b]['original_job_observation']['status'] == 'not_created')
+        report.update(actual_completion_registry={'path':ACTUAL_REGISTRY,'sha256':ACTUAL_SHA},
+            registered_completions_missing_evidence=sorted(registration['jobs'].keys()-registered_success.keys()),
+            actual_registered_completion_batches=sorted(registered_success),
+            exact_registered_three_wave_two_completions=three_completions,
+            three_completion_original_jobs_not_created=absent_three_originals,
+            collector_must_reobserve_three_wave_two_original_jobs_without_failure_requirement=True,
+            contract_readiness_accepts_only_fixed_reference186_and_three_wave_two_completions=True)
+        del report['contract_readiness_accepts_only_fixed_registered_reference_completions']
+        report['all_selected_original_job_ids_are_concrete'] = (
+            report['all_selected_original_job_ids_are_concrete'] and not absent_three_originals)
+        if '00_166' in registered_success:
+            report['superseded_serial_attempt_observations'] = pending_observations
+            report['known_repairs_awaiting_actual_success'] = {
+                b:v for b,v in pending_observations.items() if b not in registered_success}
+            report['prepared_declaration_splits_not_counted_as_success'] = {
+                b:v for b,v in PREPARED_DECLARATION_SPLITS.items() if b not in registered_success}
+            report['actually_registered_declaration_splits'] = {'00_166':registered_success['00_166']}
+    if alternatives_only:
+        from rg_numeric_alternative_coverage import assess
+        alternative_report, annotation = assess(spec_raw, registry_raw, candidates, master,
+            binding_wait, evidence_sha, bundle['observed_at'])
+        report.update(alternative_report)
+        report['requested_sealing_mode'] = 'ACTUAL_ALTERNATIVES_ONLY'
+        if annotation is not None:
+            contract['coverage_at_sealing'] = annotation
     return report, contract, spec_raw, origin
 
 
@@ -503,20 +599,28 @@ def main():
     parser.add_argument('--evidence', type=pathlib.Path, required=True)
     parser.add_argument('--evidence-sha256', required=True)
     parser.add_argument('--report', type=pathlib.Path, required=True)
-    parser.add_argument('--seal', type=pathlib.Path,
+    sealing = parser.add_mutually_exclusive_group()
+    sealing.add_argument('--seal', type=pathlib.Path,
         help='Create a new contract only after complete coverage and collector validation; never overwrite')
+    sealing.add_argument('--seal-alternatives', type=pathlib.Path,
+        help='Seal all 195 actual alternatives while explicitly preserving pending original coverage')
     args = parser.parse_args()
     raw = args.evidence.read_bytes()
     check(sha(raw) == args.evidence_sha256, 'Changed frozen evidence index')
     report, contract, spec_raw, origin = prepare(args.checkout.resolve(), args.evidence_root.resolve(),
-        json.loads(raw), sha(raw))
+        json.loads(raw), sha(raw), alternatives_only=args.seal_alternatives is not None)
     atomic_json(args.report, report)
-    if args.seal:
-        if not report['contract_ready']:
+    seal_path = args.seal_alternatives or args.seal
+    if seal_path:
+        ready = (report['alternative_contract_ready'] if args.seal_alternatives
+                 else report['contract_ready'])
+        if not ready:
             print(json.dumps({'status':'PENDING_NO_CONTRACT_WRITTEN',
                 'complete_batches':report['distinct_successful_complete_batch_origins'],
                 'missing_batches':report['missing_successful_batch_count'],
                 'pending_existing_original_bindings':len(report['original_job_bindings_still_pending']),
+                'missing_required_alternatives':report.get('missing_required_alternative_batches'),
+                'unsafe_original_coverage':report.get('unsafe_original_coverage'),
                 'permitted_original_lookups_pending':len(
                     report['permitted_original_job_lookups_requiring_runtime_resolution'])}))
             return 2
@@ -527,17 +631,22 @@ def main():
         def validate(path):
             replacements, _ = sealed_numeric_replacements(path, spec_raw, origin, REPOSITORY)
             check(set(replacements) == {r['batch'] for r in contract['replacements']}, 'Collector mismatch')
-        digest = atomic_json(args.seal, contract, exclusive=True, validate=validate)
+        digest = atomic_json(seal_path, contract, exclusive=True, validate=validate)
         report.update(sealed_contract_written=True, sealed_contract_sha256=digest)
         atomic_json(args.report, report)
     status = 'PENDING'
-    if report['contract_ready']:
+    if args.seal_alternatives and report['alternative_contract_ready']:
+        status = ('ACTUAL_ALTERNATIVES_SEALED_PENDING_ORIGINAL_COVERAGE'
+            if report['pending_original_coverage']
+            else 'ACTUAL_ALTERNATIVES_SEALED_FOR_COMPLETE_ARCHIVE_AUTHENTICATION')
+    elif report['contract_ready']:
         status = ('NUMERIC_CONTRACT_READY_AWAITING_ORIGINAL_JOB_LOOKUPS'
             if report['permitted_original_job_lookups_requiring_runtime_resolution']
             else 'NUMERIC_CONTRACT_READY_FOR_ARCHIVE_AUTHENTICATION')
     print(json.dumps({'status':status,
         'complete_batches':report['distinct_successful_complete_batch_origins'],
         'planned_batches':349, 'sealed_contract_written':report['sealed_contract_written'],
+        'pending_original_coverage':report.get('pending_original_coverage'),
         'permitted_original_lookups_pending':len(
             report['permitted_original_job_lookups_requiring_runtime_resolution']),
         'whole_degree_one_large_complete':False}))

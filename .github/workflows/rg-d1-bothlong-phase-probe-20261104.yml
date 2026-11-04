@@ -7,6 +7,7 @@ on:
     paths:
       - '.github/workflows/rg-d1-bothlong-phase-probe-20261104.yml'
       - 'ci/rg_bothlong_phase_probe_20261104.py'
+      - 'ci/rg_bothlong_mmap_trace_20261104.py'
       - 'ci/rg_bothlong_phase_probe_20261104_spec.json'
       - 'ci/rg_bothlong_phase_probe_20261104/**'
       - 'ci/rg_observed_bothlong_phase_probe_20261104.py'
@@ -35,6 +36,12 @@ jobs:
           ./elan-init -y --default-toolchain none
           "$HOME/.elan/bin/elan" toolchain install leanprover/lean4:v4.33.1
           echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Install the syscall observer before any proof restoration
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y strace
+      - name: Require owned-tracee lifecycle and actual mmap observation before Lean control
+        run: python3 -B ci/rg_bothlong_mmap_trace_20261104.py --control
       - name: Require the isolated flushed-marker control before any proof restoration
         env:
           RG_PROOFSTORE_HOST_PATH: ${{ github.workspace }}
@@ -114,6 +121,7 @@ jobs:
             Proofs/RG_Lean_20261019/build/bothlong_phase_probe/*.jsonl
             Proofs/RG_Lean_20261019/build/bothlong_phase_probe/*.tsv
             Proofs/RG_Lean_20261019/build/bothlong_phase_probe/*.log
+            Proofs/RG_Lean_20261019/build/bothlong_phase_probe/mmap_trace_fixture
             rg-proofstore-setup.json
             rg-proofstore-direct-io.json
             rg-proofstore-kernel-reserve.json

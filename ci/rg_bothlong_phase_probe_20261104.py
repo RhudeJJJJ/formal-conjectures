@@ -371,6 +371,7 @@ def compiler_environment(phase):
 
 
 def compile_diagnostic(phase, name, lean, env):
+    from rg_bothlong_mmap_trace_20261104 import wrap_lean_command, summarize_trace
     sys.path.insert(0, str(SOURCES))
     from module_outputs import remove_pending_outputs, finalize_outputs
     source_root = FIXTURE_SOURCES if name == FIXTURE else DIAG_SOURCES
@@ -382,20 +383,26 @@ def compile_diagnostic(phase, name, lean, env):
     remove_pending_outputs(pending)
     assert not output.exists(), 'Diagnostic worker cannot reuse an earlier compiler result'
     log = BUILD / (name + '.log')
+    trace_path = BUILD / (name + '.mmap.log')
+    trace_report_path = BUILD / (name + '.mmap.json')
     command = [lean, *FLAGS, '-R', str(source_root), '-o', str(pending), str(source)]
-    host_event(phase, 'LEAN_LAUNCH_REQUESTED', module=name, timeout_seconds=900, command=command)
+    execution = wrap_lean_command(command, trace_path, BUILD)
+    host_event(phase, 'TRACED_LEAN_LAUNCH_REQUESTED', module=name, timeout_seconds=900,
+               command=command, execution_command=execution)
     started, timeout = time.monotonic(), False
     with log.open('w') as stream:
-        child = subprocess.Popen(command, cwd=source_root, env=env, stdout=stream, stderr=subprocess.STDOUT)
-        host_event(phase, 'LEAN_PROCESS_STARTED', module=name, pid=child.pid)
+        child = subprocess.Popen(execution, cwd=source_root, env=env, stdout=stream, stderr=subprocess.STDOUT)
+        host_event(phase, 'TRACE_PROCESS_STARTED', module=name, tracer_pid=child.pid)
         try:
             code = child.wait(timeout=900)
         except subprocess.TimeoutExpired:
             timeout = True
             child.kill()
             code = child.wait()
-    host_event(phase, 'LEAN_TIMEOUT' if timeout else 'LEAN_PROCESS_EXITED', module=name,
-               pid=child.pid, returncode=code, seconds=round(time.monotonic() - started, 3))
+    process_seconds = round(time.monotonic() - started, 3)
+    host_event(phase, 'TRACE_TIMEOUT' if timeout else 'TRACE_PROCESS_EXITED', module=name,
+               tracer_pid=child.pid, tracer_returncode=code, seconds=process_seconds)
+    trace = summarize_trace(trace_path)
     text = log.read_text()
     success = not timeout and code == 0 and not re.search(r'\b(error|warning)(?:\([^\n]*?\))?:', text)
     if success:
@@ -403,8 +410,30 @@ def compile_diagnostic(phase, name, lean, env):
         finalize_outputs(pending, output)
     else:
         remove_pending_outputs(pending)
-    return dict(module=name, success=success, timeout=timeout, compiler_returncode=code,
-        seconds=round(time.monotonic() - started, 3), log_sha256=sha(log.read_bytes()),
+    # A killed tracer has no separately waited Lean exit status. On success,
+    # strace propagates the unchanged command's zero status; this is explicit.
+    compiler_returncode = 0 if success else None
+    returncode_source = 'STRACE_PROPAGATED_ZERO_STATUS' if success else 'NOT_OBSERVED_DIRECTLY'
+    write_json(trace_report_path, dict(module=name, phase=phase,
+        native_run_id=os.environ['GITHUB_RUN_ID'],
+        native_run_attempt=os.environ['GITHUB_RUN_ATTEMPT'],
+        native_workflow_source_commit=os.environ['GITHUB_SHA'],
+        lean_command=command, execution_command=execution, tracer_pid=child.pid,
+        tracer_returncode=code, compiler_returncode=compiler_returncode,
+        compiler_returncode_source=returncode_source,
+        timeout=timeout, traced_process_seconds=process_seconds,
+        trace_summary=trace, trace_timestamps='UNIX_WALL_CLOCK_SECONDS',
+        host_event_timestamps='MONOTONIC_NANOSECONDS',
+        lean_marker_timestamps='MONOTONIC_MILLISECONDS',
+        instrumented_timing_is_not_an_untraced_performance_measurement=True,
+        production_kernel_export_claim=False))
+    return dict(module=name, success=success, timeout=timeout,
+        compiler_returncode=compiler_returncode, compiler_returncode_source=returncode_source,
+        tracer_returncode=code, tracer_pid=child.pid,
+        seconds=round(time.monotonic() - started, 3), traced_process_seconds=process_seconds,
+        log_sha256=sha(log.read_bytes()), trace_log=trace_path.name,
+        trace_sha256=trace['trace_sha256'], trace_report=trace_report_path.name,
+        trace_report_sha256=sha(trace_report_path.read_bytes()),
         diagnostic_output_sha256=sha(output.read_bytes()) if success else None)
 
 
@@ -440,12 +469,54 @@ def require_control():
     assert report['named_axiom_profiles'] == [dict(declaration='RGDiagnosticMarkerControl.checked', axioms=[])]
     assert report['production_restore_absent_during_control'] is True
     assert report['import_search_paths'] == [str(HELPER_OBJECTS), str(CONTROL_IMPORTS)]
+    from rg_bothlong_mmap_trace_20261104 import require_control as require_trace_control
+    from rg_bothlong_mmap_trace_20261104 import summarize_trace, require_fixture_mapping
+    require_trace_control(BUILD)
+    assert report['mmap_trace_enabled'] is True
+    assert report['trace_lifecycle_control_sha256'] == sha((BUILD / 'mmap_trace_control.json').read_bytes())
+    for row in report['results']:
+        assert row['tracer_returncode'] == 0
+        assert row['compiler_returncode_source'] == 'STRACE_PROPAGATED_ZERO_STATUS'
+        trace_path = BUILD / (row['module'] + '.mmap.log')
+        detail_path = BUILD / (row['module'] + '.mmap.json')
+        assert row['trace_log'] == trace_path.name and row['trace_report'] == detail_path.name
+        assert row['trace_sha256'] == sha(trace_path.read_bytes())
+        assert row['trace_report_sha256'] == sha(detail_path.read_bytes())
+        detail = json.loads(detail_path.read_bytes())
+        assert detail['module'] == row['module'] and detail['phase'] == 'control'
+        assert detail['native_run_id'] == os.environ['GITHUB_RUN_ID']
+        assert detail['native_run_attempt'] == os.environ['GITHUB_RUN_ATTEMPT']
+        assert detail['native_workflow_source_commit'] == os.environ['GITHUB_SHA']
+        assert detail['tracer_pid'] == row['tracer_pid']
+        assert detail['tracer_returncode'] == detail['compiler_returncode'] == 0
+        assert detail['timeout'] is False
+        assert detail['trace_summary'] == summarize_trace(trace_path)
+        assert detail['trace_summary']['trace_sha256'] == row['trace_sha256']
+        command = detail['lean_command']
+        assert pathlib.Path(command[0]).is_absolute() and pathlib.Path(command[0]).name == 'lean'
+        source_root = FIXTURE_SOURCES if row['module'] == FIXTURE else DIAG_SOURCES
+        output_root = HELPER_OBJECTS if row['module'] == HELPER else CONTROL_IMPORTS if row['module'] == FIXTURE else PROBE_OBJECTS
+        source = source_root / (row['module'].replace('.', '/') + '.lean')
+        output = output_root / (row['module'].replace('.', '/') + '.olean')
+        assert command[1:] == [*FLAGS, '-R', str(source_root), '-o',
+                              str(output.with_suffix('.olean.pending')), str(source)]
+        assert output.is_file() and sha(output.read_bytes()) == row['diagnostic_output_sha256']
+        trace_flags = ['--kill-on-exit', '-f', '-I', '1', '-yy', '-ttt', '-T',
+                       '-e', 'trace=mmap,munmap,mremap']
+        assert pathlib.Path(detail['execution_command'][0]).name == 'strace'
+        assert detail['execution_command'][1:] == [*trace_flags, '-o', str(trace_path), '--', *command]
+    observed_fixture = require_fixture_mapping(BUILD / (CONTROL + '.mmap.log'),
+        CONTROL_IMPORTS / (FIXTURE.replace('.', '/') + '.olean'))
+    assert report['control_fixture_mapping'] == observed_fixture
     return report
 
 
 def worker(phase):
     spec = validate_spec()
     BUILD.mkdir(parents=True, exist_ok=True)
+    from rg_bothlong_mmap_trace_20261104 import require_control as require_trace_control
+    from rg_bothlong_mmap_trace_20261104 import require_fixture_mapping
+    require_trace_control(BUILD)
     phase_file = BUILD / (phase + '_phases.tsv')
     assert not phase_file.exists(), 'Each diagnostic phase must start with a new marker file'
     phase_file.write_text('')
@@ -476,6 +547,10 @@ def worker(phase):
         assert [p['declaration'] for p in profiles] == expected_names
         if phase == 'control':
             assert profiles[0]['axioms'] == []
+    fixture_mapping = None
+    if phase == 'control' and success:
+        fixture_mapping = require_fixture_mapping(BUILD / (CONTROL + '.mmap.log'),
+            CONTROL_IMPORTS / (FIXTURE.replace('.', '/') + '.olean'))
     assert sha(original_source().read_bytes()) == SOURCE_SHA
     if phase == 'control':
         assert not RESTORED.exists()
@@ -484,6 +559,8 @@ def worker(phase):
         assert not (RESTORED / (ORIGINAL.replace('.', '/') + '.olean')).exists()
     status = 'DIAGNOSTIC_MARKER_CONTROL_PASSED' if phase == 'control' and success else 'DIAGNOSTIC_COPY_COMPILER_COMPLETED' if success else 'DIAGNOSTIC_COMPILER_FAILED_OR_TIMED_OUT'
     report = dict(status=status, phase=phase, lean=version, strict_flags=FLAGS,
+        mmap_trace_enabled=True, control_fixture_mapping=fixture_mapping,
+        trace_lifecycle_control_sha256=sha((BUILD / 'mmap_trace_control.json').read_bytes()),
         source_spec_sha256=SPEC_SHA,
         import_search_paths=env['LEAN_PATH'].split(os.pathsep),
         probe_output_directory_excluded_from_import_search=True,

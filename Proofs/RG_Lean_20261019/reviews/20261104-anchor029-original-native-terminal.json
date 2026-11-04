@@ -1,0 +1,159 @@
+{
+  "kind": "ACTUAL_NATIVE_TERMINAL_AND_LOG_OBSERVATION",
+  "run_id": 41826563525,
+  "job_id": 126562666235,
+  "source_commit": "5b7bd43a9f3ca170b19450dd4f34fe9d12bbba90",
+  "run_conclusion": "cancelled",
+  "job_conclusion": "cancelled",
+  "runner_version_line": "\ufeff2026-11-04T12:07:35.7992328Z Current runner version: '2.338.2'",
+  "native_preflight_reports": [
+    {
+      "log_line": 392,
+      "utc": "2026-11-04T12:09:09.1153138Z",
+      "data": {
+        "status": "EXACT_FRONTIER_REQUIRES_MANDATORY_FRESH_KERNEL_EXPORTS",
+        "endpoint": "Proofs.RadenkovicGutmanMiddleOriginalAnchorCertificate029",
+        "required_modules": 281,
+        "verified_prior_objects": 118,
+        "max_fresh": 163,
+        "within_bound": true,
+        "proof_status": "NOT_PROVEN_BY_RESTORE",
+        "complete_submission": "NOT_SUBMITTED"
+      }
+    },
+    {
+      "log_line": 399,
+      "utc": "2026-11-04T12:09:09.6450635Z",
+      "data": {
+        "status": "EXACT_FRONTIER_REQUIRES_MANDATORY_FRESH_KERNEL_EXPORTS",
+        "endpoint": "Proofs.RadenkovicGutmanMiddleOriginalAnchorCertificate029",
+        "required_modules": 281,
+        "verified_prior_objects": 118,
+        "max_fresh": 163,
+        "within_bound": true,
+        "proof_status": "NOT_PROVEN_BY_RESTORE",
+        "complete_submission": "NOT_SUBMITTED"
+      }
+    }
+  ],
+  "retained_record_counts": [
+    {
+      "log_line": 2796,
+      "utc": "2026-11-04T18:08:43.0794221Z",
+      "data": {
+        "total": 469,
+        "fresh": 108
+      }
+    }
+  ],
+  "completed_fresh_records_in_native_log": 108,
+  "completed_cells": {
+    "count": 88,
+    "first": "Proofs.RadenkovicGutmanWideAnchor029Cell000",
+    "last": "Proofs.RadenkovicGutmanWideAnchor029Cell087"
+  },
+  "completed_batches": {
+    "count": 8,
+    "names": [
+      "Proofs.RadenkovicGutmanWideAnchor029Batch000",
+      "Proofs.RadenkovicGutmanWideAnchor029Batch001",
+      "Proofs.RadenkovicGutmanWideAnchor029Batch002",
+      "Proofs.RadenkovicGutmanWideAnchor029Batch003",
+      "Proofs.RadenkovicGutmanWideAnchor029Batch004",
+      "Proofs.RadenkovicGutmanWideAnchor029Batch005",
+      "Proofs.RadenkovicGutmanWideAnchor029Batch006",
+      "Proofs.RadenkovicGutmanWideAnchor029Batch007"
+    ]
+  },
+  "other_completed_fresh_modules": [
+    "Proofs.RadenkovicGutmanWideAnchor029Origin",
+    "Proofs.RadenkovicGutmanWideAnchor029PositiveTailPartsData",
+    "Proofs.RadenkovicGutmanWideAnchor029PositiveTailPart00",
+    "Proofs.RadenkovicGutmanWideAnchor029PositiveTailPart01",
+    "Proofs.RadenkovicGutmanWideAnchor029PositiveTailPart02",
+    "Proofs.RadenkovicGutmanWideAnchor029PositiveTailPart03",
+    "Proofs.RadenkovicGutmanWideAnchor029PositiveTailPart04",
+    "Proofs.RadenkovicGutmanWideAnchor029PositiveTailPart05",
+    "Proofs.RadenkovicGutmanWideAnchor029PositiveTailPart06",
+    "Proofs.RadenkovicGutmanWideAnchor029PositiveTailParts",
+    "Proofs.RadenkovicGutmanWideAnchor029PositiveTail",
+    "Proofs.RadenkovicGutmanWideAnchor029Source"
+  ],
+  "last_completed_fresh": {
+    "log_line": 2758,
+    "utc": "2026-11-04T18:05:49.9398655Z",
+    "record": {
+      "module": "Proofs.RadenkovicGutmanWideAnchor029Cell087",
+      "source_sha256": "3a786e0dedd8497c18017d56ac900b211ed3c12673b6e9635b88508d7799f2ed",
+      "source_closure_sha256": "04394a8a8b33c7b83e5ea53bcb8fa34ed25c9a85fc956bb57b10555288138621",
+      "output_sha256": "fde2ea4d91ce80daa72baf672c13980742de94e88093321fa48bd4d29e74a85f",
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "FRESH_KERNEL_EXPORT",
+      "seconds": 202.359
+    }
+  },
+  "last_resource_observation": {
+    "log_line": 2775,
+    "utc": "2026-11-04T18:08:37.6116220Z",
+    "data": {
+      "seconds": 21567.87,
+      "memory": {
+        "MemTotal": 16760348672,
+        "MemAvailable": 10393423872,
+        "SwapFree": 3217526784
+      },
+      "cgroup_limits": [],
+      "available_bytes": 10393423872,
+      "lean_processes": [
+        {
+          "pid": 5716,
+          "rss": 8738148352,
+          "module": "RadenkovicGutmanWideAnchor029Cell088.lean"
+        }
+      ],
+      "aggregate_lean_rss": 8738148352
+    }
+  },
+  "resource_result_lines": [],
+  "resource_guard_message_count": 0,
+  "error_lines": [
+    {
+      "log_line": 2776,
+      "text": "2026-11-04T18:08:42.9427103Z ##[error]The operation was canceled."
+    }
+  ],
+  "full_scope_success_log_lines": [],
+  "artifact_zip_downloaded_by_this_agent": false,
+  "archive_byte_authentication_pending": true,
+  "original_anchor_endpoint_success_claimed": false,
+  "middle_family_success_claimed": false,
+  "global_rg_success_claimed": false,
+  "completed_log_records_path": "/workspace/scratch/406169dbc070/rg_resume_20261104/anchor029_preparation/original_anchor029_candidate/actual/log_completed_fresh_records.json",
+  "completed_log_records_sha256": "804f7819ad23f5b44ac1e3076353438b2bac389d1af65df2d7194cf5ec710dd1"
+}

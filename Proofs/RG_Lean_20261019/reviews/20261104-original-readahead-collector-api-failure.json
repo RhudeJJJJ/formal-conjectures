@@ -1,0 +1,144 @@
+{
+  "actual_archive_members": [
+    {
+      "bytes": 15,
+      "name": "diagnostics_records.json",
+      "raw_utf8": "{\"modules\":[]}\n",
+      "sha256": "4489b472b977b07cbc2d63195abc8d4842e592bdeeac2aadb2ddf59805a19ce0"
+    },
+    {
+      "bytes": 874,
+      "name": "numeric137_decomposed_source.json",
+      "raw_utf8": "{\n  \"status\": \"COMPLETE_ORIGINAL_BATCH_SOURCE_CONSERVATION_CHECKED_NO_KERNEL_PROOF\",\n  \"original_endpoints\": [\n    \"Proofs.RadenkovicGutmanD1Long00Leaf01370\",\n    \"Proofs.RadenkovicGutmanD1Long00Leaf01371\",\n    \"Proofs.RadenkovicGutmanD1Long00Leaf01372\",\n    \"Proofs.RadenkovicGutmanD1Long00Leaf01373\",\n    \"Proofs.RadenkovicGutmanD1Long00Leaf01374\",\n    \"Proofs.RadenkovicGutmanD1Long00Leaf01375\",\n    \"Proofs.RadenkovicGutmanD1Long00Leaf01376\",\n    \"Proofs.RadenkovicGutmanD1Long00Leaf01377\",\n    \"Proofs.RadenkovicGutmanD1Long00Leaf01378\",\n    \"Proofs.RadenkovicGutmanD1Long00Leaf01379\"\n  ],\n  \"required_modules\": 95,\n  \"fresh_modules\": 21,\n  \"original_declarations_preserved_verbatim\": true,\n  \"unchanged_original_numeric_modules\": 9,\n  \"source_reorganized_original_numeric_modules\": [\n    \"Proofs.RadenkovicGutmanD1Long00Leaf01370\"\n  ],\n  \"added_support_modules\": 11\n}\n",
+      "sha256": "413762b5a92416f1352f66469f536f4d709b1427d6cb9239be671799010b5079"
+    }
+  ],
+  "actual_traceback_path": [
+    "rg_collect_exact_d1_reproductions.py:480 latest_named_job(jobs_for(run), ...)",
+    "jobs_for:433 api.listing('/actions/runs/' + str(r) + '/jobs?filter=all', 'jobs')",
+    "listing:95 paginated get",
+    "get:88 api_open(urllib.request.Request(...))",
+    "rg_github_rate_limit.py:10 opener(request, timeout=120)",
+    "urllib.error.HTTPError: HTTP Error 502: Bad Gateway"
+  ],
+  "artifact": {
+    "archive_download_url": "https://api.github.com/repos/RhudeJJJJ/formal-conjectures/actions/artifacts/13348668508/zip",
+    "created_at": "2026-11-04T17:55:28Z",
+    "digest": "sha256:a1ba5ddd031f58416f2b1c0c73fa2e3760b8d88a95b148d5cff8c799d8bed501",
+    "expired": false,
+    "expires_at": "2027-02-02T17:52:31Z",
+    "id": 13348668508,
+    "name": "rg-degree-one-large-join-repair-20261104-41881296719-1",
+    "node_id": "MDg6QXJ0aWZhY3QxMzM0ODY2ODUwOA==",
+    "size_in_bytes": 631,
+    "updated_at": "2026-11-04T17:55:28Z",
+    "url": "https://api.github.com/repos/RhudeJJJJ/formal-conjectures/actions/artifacts/13348668508",
+    "workflow_run": {
+      "head_branch": "rg-degree-one-large-20261103",
+      "head_repository_id": 1416044648,
+      "head_sha": "c1f319c9ef01b7245b79cb254a3ecb6ab64516a6",
+      "id": 41881296719,
+      "repository_id": 1416044648
+    }
+  },
+  "attempt": 1,
+  "complete_original_kernel_receipt_present": false,
+  "completed_fresh_original_exports": 0,
+  "failed_step": {
+    "completed_at": "2026-11-04T17:55:27Z",
+    "conclusion": "failure",
+    "name": "Collect exact successful numeric and named prerequisite exports",
+    "number": 5,
+    "started_at": "2026-11-04T17:53:27Z",
+    "status": "completed"
+  },
+  "full_original_success_authenticator_executed": false,
+  "interpretation_limits": [
+    "This is a bound observation of a real early transport failure and the complete tiny uploaded archive, not authentication of a complete original proof.",
+    "The source-conservation JSON contains planned fresh counts; these are not compiled exports. Actual diagnostics_records modules is empty.",
+    "No restore, DIO, RA or original kernel result is inferred from this failed collector.",
+    "The HTTP502 evidence identifies a jobs-catalog GET, not a signed artifact download, rate-limit exhaustion, or a particular requested run/page."
+  ],
+  "job": 126754145330,
+  "native_completed_at": "2026-11-04T17:55:32Z",
+  "native_conclusion": "failure",
+  "native_inputs": {
+    "artifacts.json": {
+      "bytes": 791,
+      "sha256": "4b509511b6f4d64fa398c2bb812ac91570248e3f2672180f9c77251b0c858cd0"
+    },
+    "early_failure.zip": {
+      "bytes": 631,
+      "sha256": "a1ba5ddd031f58416f2b1c0c73fa2e3760b8d88a95b148d5cff8c799d8bed501"
+    },
+    "job.log": {
+      "bytes": 83446,
+      "sha256": "d8d0703b2146f15a9453d20017fcca050983b8dc928fea1d2ce0f47c441954e3"
+    },
+    "jobs.json": {
+      "bytes": 5532,
+      "sha256": "8588974af36a6794eb32e5144d7f70c754b0e653851ef71225ab629a652cbaf1"
+    },
+    "run.json": {
+      "bytes": 13065,
+      "sha256": "7e25c64680010bce9d03733eb93b81e385ccff6f4ee993dc57b223b4fcc5deca"
+    }
+  },
+  "observed_at_utc": "2026-11-04T18:02:54.802651+00:00",
+  "original_large_family_completed": false,
+  "original_zip_base64": "UEsDBBQACAAIAO2OZF0AAAAAAAAAAAAAAAAYAAAAZGlhZ25vc3RpY3NfcmVjb3Jkcy5qc29uq1bKzU8pzUktVrKKjq3lAgBQSwcI2egAnBEAAAAPAAAAUEsDBBQACAAIAKeOZF0AAAAAAAAAAAAAAAAhAAAAbnVtZXJpYzEzN19kZWNvbXBvc2VkX3NvdXJjZS5qc29uldJBT8IwFAfw+z5Fs7MxG4gINxwVCHMlA70Y09T1MRpZO19bDhq/u9kOBC/GXtvf/980731FhMTWCedtPCVxxh43Od1RzsrVYlXMcn4/22VLvmVPZUZ5xootLZ9nuxUreLak2ZrOecH4mpYFzfmmZOwhvuoqDapaaXHkoGVrlHZd/UtECCHxBo3Z2+tSSNDv5qSqhXeN0PM0N7pOkhzEPkmH46Rv+r9PA/0g0A8D/U2gHwX620A/DvR3gX4SR4S89tNH+PAKQfLGSH+EbvaTUX+zR7CHi+NB+ntdJFRHgcIpoy1vESzgCSQ/Ab4Jp5p4Shx66DNeVweha5D8nNa+AVTV5bM9tcZjBRzBYC20+vw7E7qm528LKUFy69vWoLsoTNPoO/oBUEsHCOt1hfomAQAAagMAAFBLAQItAxQACAAIAO2OZF3Z6ACcEQAAAA8AAAAYAAAAAAAAAAAAIACkgQAAAABkaWFnbm9zdGljc19yZWNvcmRzLmpzb25QSwECLQMUAAgACACnjmRd63WF+iYBAABqAwAAIQAAAAAAAAAAACAApIFXAAAAbnVtZXJpYzEzN19kZWNvbXBvc2VkX3NvdXJjZS5qc29uUEsFBgAAAAACAAIAlQAAAMwBAAAAAA==",
+  "original_zip_base64_is_exact_downloaded_provider_bytes": true,
+  "remaining_original_input_families": 4,
+  "repository": "RhudeJJJJ/formal-conjectures",
+  "run": 41881296719,
+  "runtime_proof_stages": [
+    {
+      "conclusion": "skipped",
+      "name": "Require direct I/O only for the new owned final proofstore loop",
+      "status": "completed"
+    },
+    {
+      "conclusion": "skipped",
+      "name": "Set only the new owned final Btrfs filesystem readahead to zero",
+      "status": "completed"
+    },
+    {
+      "conclusion": "skipped",
+      "name": "Authenticate and read back every selected original object and sidecar",
+      "status": "completed"
+    },
+    {
+      "conclusion": "skipped",
+      "name": "Require exactly the three remaining fresh final modules",
+      "status": "completed"
+    },
+    {
+      "conclusion": "skipped",
+      "name": "Confirm the owned final filesystem readahead stayed zero after preflight",
+      "status": "completed"
+    },
+    {
+      "conclusion": "skipped",
+      "name": "Check final class, full family, and three-field assembly",
+      "status": "completed"
+    }
+  ],
+  "source_commit": "c1f319c9ef01b7245b79cb254a3ecb6ab64516a6",
+  "specific_requested_catalog_run_or_page_not_present_in_log": true,
+  "status": "ACTUAL_ORIGINAL_PREKERNEL_GITHUB_JOBS_CATALOG_HTTP_502_FAILURE_AND_TINY_ARCHIVE_OBSERVED",
+  "structured_api_error_records": [
+    {
+      "event": {
+        "attempt": 1,
+        "http_status": 502,
+        "message": "Server Error",
+        "rate_remaining": "4999",
+        "rate_reset": "1793818516",
+        "retry_after": null,
+        "status": "GITHUB_EXACT_PROOF_API_ERROR"
+      },
+      "printed_timestamp_utc": "2026-11-04T17:55:27.4004003Z"
+    }
+  ],
+  "successful_diagnostic_authentication_report_sha256": "504b307302ae91b41941c1b88bf3b916ef0412a622df3c019a3b0f23a11c4ebd"
+}

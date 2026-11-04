@@ -1,0 +1,912 @@
+{
+  "actual_archive": {
+    "artifact": 13347912723,
+    "artifact_bytes": 8188678,
+    "artifact_members": 483,
+    "artifact_sha256": "2667fa91f1ee9f69034e2837e38775f5f66df3d1b6b8fce08158fe11aef5bee5"
+  },
+  "actual_compiler_result": {
+    "compiler_returncode": 0,
+    "compiler_returncode_source": "STRACE_PROPAGATED_ZERO_STATUS",
+    "diagnostic_output_sha256": "c31552c2d9fabc4fa79abc3e29ae74898a5beb32cc058b65a92067a6e991810c",
+    "log_sha256": "54b10681e6bc203580596cd01ff30935ab1ab6b2bf3d59b8b6de4f2c9138c32e",
+    "module": "Proofs.RadenkovicGutmanD1OriginalSharedBothLongPhaseProbe",
+    "seconds": 257.645,
+    "success": true,
+    "timeout": false,
+    "trace_log": "Proofs.RadenkovicGutmanD1OriginalSharedBothLongPhaseProbe.mmap.log",
+    "trace_report": "Proofs.RadenkovicGutmanD1OriginalSharedBothLongPhaseProbe.mmap.json",
+    "trace_report_sha256": "e544225f334f319765a74bd802db201787aaa88d12d848711590cabca2eec59d",
+    "trace_sha256": "90315b839046b7ef7df4cdfa62f050f2958d65114e84bd09bac9d2ecdcdce156",
+    "traced_process_seconds": 256.178,
+    "tracer_pid": 4354,
+    "tracer_returncode": 0
+  },
+  "actual_named_axiom_profiles": [
+    {
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "declaration": "Gebendorfer.RadenkovicGutman.D1OriginalSharedBothLong.all_checked"
+    },
+    {
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "declaration": "Gebendorfer.RadenkovicGutman.D1OriginalSharedBothLong.adjacent_checked"
+    },
+    {
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "declaration": "Gebendorfer.RadenkovicGutman.D1OriginalSharedBothLong.partition_checked"
+    },
+    {
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "declaration": "Gebendorfer.RadenkovicGutman.D1OriginalSharedBothLong.budget_checked"
+    },
+    {
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "declaration": "Gebendorfer.RadenkovicGutman.D1OriginalSharedBothLong.normalized_target"
+    }
+  ],
+  "actual_probe_guards": {
+    "exit_code": 0,
+    "foreign_processes_signalled": 0,
+    "host_reserve_stop": false,
+    "host_status": "OWNED_KERNEL_GROUP_ENDED",
+    "maximum_aggregate_lean_rss": 13532717056,
+    "memory_reserve_mib": 2048,
+    "status": "VERIFIER_COMPLETED",
+    "unknown_or_unreadable_cgroup_limits_are_not_claimed_absent": true
+  },
+  "actual_readahead_policy": {
+    "actual_native_enable_and_check_passed": true,
+    "after": {
+      "bdi_link": "/sys/fs/btrfs/c8f9749f-ac2b-4ed5-9ce6-2339f4cf480e/bdi",
+      "effective_loop_direct_io": 1,
+      "filesystem_device_links": [
+        {
+          "device_number": "7:0",
+          "name": "loop0",
+          "resolved_path": "/sys/devices/virtual/block/loop0"
+        }
+      ],
+      "filesystem_uuid": "c8f9749f-ac2b-4ed5-9ce6-2339f4cf480e",
+      "mount_empty": true,
+      "other_device_readahead": {
+        "backing_queue": {
+          "identity": {
+            "device": "0:26",
+            "inode": 28668
+          },
+          "path": "/sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/MSFT1000:00/7ad35d50-c05b-47ab-b3a0-56a9a845852b/pcic05b:00/c05b:00:00.0/nvme/nvme0/nvme0n1/queue/read_ahead_kb",
+          "resolved_path": "/sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/MSFT1000:00/7ad35d50-c05b-47ab-b3a0-56a9a845852b/pcic05b:00/c05b:00:00.0/nvme/nvme0/nvme0n1/queue/read_ahead_kb",
+          "value_kib": 128
+        },
+        "loop_queue": {
+          "identity": {
+            "device": "0:26",
+            "inode": 10248
+          },
+          "path": "/sys/devices/virtual/block/loop0/queue/read_ahead_kb",
+          "resolved_path": "/sys/devices/virtual/block/loop0/queue/read_ahead_kb",
+          "value_kib": 128
+        }
+      },
+      "read_ahead_kib": 0,
+      "readahead_file": {
+        "identity": {
+          "device": "0:26",
+          "inode": 34382
+        },
+        "path": "/sys/fs/btrfs/c8f9749f-ac2b-4ed5-9ce6-2339f4cf480e/bdi/read_ahead_kb",
+        "resolved_path": "/sys/devices/virtual/bdi/btrfs-1/read_ahead_kb"
+      },
+      "resolved_bdi": "/sys/devices/virtual/bdi/btrfs-1"
+    },
+    "before": {
+      "bdi_link": "/sys/fs/btrfs/c8f9749f-ac2b-4ed5-9ce6-2339f4cf480e/bdi",
+      "effective_loop_direct_io": 1,
+      "filesystem_device_links": [
+        {
+          "device_number": "7:0",
+          "name": "loop0",
+          "resolved_path": "/sys/devices/virtual/block/loop0"
+        }
+      ],
+      "filesystem_uuid": "c8f9749f-ac2b-4ed5-9ce6-2339f4cf480e",
+      "mount_empty": true,
+      "other_device_readahead": {
+        "backing_queue": {
+          "identity": {
+            "device": "0:26",
+            "inode": 28668
+          },
+          "path": "/sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/MSFT1000:00/7ad35d50-c05b-47ab-b3a0-56a9a845852b/pcic05b:00/c05b:00:00.0/nvme/nvme0/nvme0n1/queue/read_ahead_kb",
+          "resolved_path": "/sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/MSFT1000:00/7ad35d50-c05b-47ab-b3a0-56a9a845852b/pcic05b:00/c05b:00:00.0/nvme/nvme0/nvme0n1/queue/read_ahead_kb",
+          "value_kib": 128
+        },
+        "loop_queue": {
+          "identity": {
+            "device": "0:26",
+            "inode": 10248
+          },
+          "path": "/sys/devices/virtual/block/loop0/queue/read_ahead_kb",
+          "resolved_path": "/sys/devices/virtual/block/loop0/queue/read_ahead_kb",
+          "value_kib": 128
+        }
+      },
+      "read_ahead_kib": 4096,
+      "readahead_file": {
+        "identity": {
+          "device": "0:26",
+          "inode": 34382
+        },
+        "path": "/sys/fs/btrfs/c8f9749f-ac2b-4ed5-9ce6-2339f4cf480e/bdi/read_ahead_kb",
+        "resolved_path": "/sys/devices/virtual/bdi/btrfs-1/read_ahead_kb"
+      },
+      "resolved_bdi": "/sys/devices/virtual/bdi/btrfs-1"
+    },
+    "check_read_only": true,
+    "check_report_sha256": "4bfa37371cbfb31025866c7ed38cc04e35d8532b9dd126e86e6f7a55c513d39a",
+    "dio_helper_sha256": "96211dac3452504564d33b7e2d90bdbc59597fa07eb953fc26fc6e4a56add5af",
+    "dio_report_sha256": "1f3142f2b302fd4db4141e82d7d8a8f24ad1f8e942a904ae39d1e0568867a982",
+    "effective_loop_dio_unchanged": true,
+    "enable_report_sha256": "c9a9adf0daf397251527e604192fc315122aee63b0aae834837e5944b5472fbb",
+    "helper_sha256": "153e27cb9d4fc7827986cfcf68a730006c4a587443c632630a5681e6b67c2222",
+    "immutable_native_binding": {
+      "dio_helper_sha256": "96211dac3452504564d33b7e2d90bdbc59597fa07eb953fc26fc6e4a56add5af",
+      "dio_report_sha256": "1f3142f2b302fd4db4141e82d7d8a8f24ad1f8e942a904ae39d1e0568867a982",
+      "helper_sha256": "153e27cb9d4fc7827986cfcf68a730006c4a587443c632630a5681e6b67c2222",
+      "image": "/home/runner/work/formal-conjectures/formal-conjectures/rg-ephemeral-proofstore.btrfs",
+      "kernel_release": "7.0.0-1017-azure",
+      "mount": "/home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension",
+      "native_run_attempt": "1",
+      "native_run_id": "41872614352",
+      "native_workflow_source_commit": "532d92118808c8ee38f38c2d143e2e236824ee5c",
+      "setup_report_sha256": "55cfddd0c30df161bc9863ff4b2cabce7696309e9fa56c3a80633aabb4ab800e"
+    },
+    "interpretation_limit": "Actual per-filesystem policy changed before restore and remained zero after preflight. This is an end-to-end policy observation, not an isolated Lean-only A/B measurement, a proof export, or a unique causal attribution. Demand faults, compressed-extent reads and other kernel paths remain possible.",
+    "native_context_observe_and_main_executed_offline": false,
+    "native_job_id": 126723495686,
+    "native_paths_used_only_as_data": true,
+    "native_run_attempt": 1,
+    "native_run_id": 41872614352,
+    "native_step_order": [
+      {
+        "completed_at": "2026-11-04T17:01:10Z",
+        "conclusion": "success",
+        "name": "Create the unchanged bounded logical proofstore",
+        "number": 13,
+        "started_at": "2026-11-04T17:01:08Z"
+      },
+      {
+        "completed_at": "2026-11-04T17:01:10Z",
+        "conclusion": "success",
+        "name": "Require direct I/O only for the new owned proofstore loop",
+        "number": 14,
+        "started_at": "2026-11-04T17:01:10Z"
+      },
+      {
+        "completed_at": "2026-11-04T17:01:10Z",
+        "conclusion": "success",
+        "name": "Set only the new owned Btrfs filesystem readahead to zero",
+        "number": 15,
+        "started_at": "2026-11-04T17:01:10Z"
+      },
+      {
+        "completed_at": "2026-11-04T17:23:51Z",
+        "conclusion": "success",
+        "name": "Authenticate all 444 original archives and read back 25191 projected objects",
+        "number": 16,
+        "started_at": "2026-11-04T17:01:10Z"
+      },
+      {
+        "completed_at": "2026-11-04T17:30:36Z",
+        "conclusion": "success",
+        "name": "Require exactly the original BothLong endpoint to remain uncompiled",
+        "number": 17,
+        "started_at": "2026-11-04T17:23:51Z"
+      },
+      {
+        "completed_at": "2026-11-04T17:30:36Z",
+        "conclusion": "success",
+        "name": "Confirm the owned filesystem readahead stayed zero after preflight",
+        "number": 18,
+        "started_at": "2026-11-04T17:30:36Z"
+      },
+      {
+        "completed_at": "2026-11-04T17:34:59Z",
+        "conclusion": "success",
+        "name": "Observe the isolated diagnostic copy with unchanged strict kernel limits",
+        "number": 19,
+        "started_at": "2026-11-04T17:30:36Z"
+      }
+    ],
+    "observed_before_probe": {
+      "bdi_link": "/sys/fs/btrfs/c8f9749f-ac2b-4ed5-9ce6-2339f4cf480e/bdi",
+      "effective_loop_direct_io": 1,
+      "filesystem_device_links": [
+        {
+          "device_number": "7:0",
+          "name": "loop0",
+          "resolved_path": "/sys/devices/virtual/block/loop0"
+        }
+      ],
+      "filesystem_uuid": "c8f9749f-ac2b-4ed5-9ce6-2339f4cf480e",
+      "mount_empty": false,
+      "other_device_readahead": {
+        "backing_queue": {
+          "identity": {
+            "device": "0:26",
+            "inode": 28668
+          },
+          "path": "/sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/MSFT1000:00/7ad35d50-c05b-47ab-b3a0-56a9a845852b/pcic05b:00/c05b:00:00.0/nvme/nvme0/nvme0n1/queue/read_ahead_kb",
+          "resolved_path": "/sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/MSFT1000:00/7ad35d50-c05b-47ab-b3a0-56a9a845852b/pcic05b:00/c05b:00:00.0/nvme/nvme0/nvme0n1/queue/read_ahead_kb",
+          "value_kib": 128
+        },
+        "loop_queue": {
+          "identity": {
+            "device": "0:26",
+            "inode": 10248
+          },
+          "path": "/sys/devices/virtual/block/loop0/queue/read_ahead_kb",
+          "resolved_path": "/sys/devices/virtual/block/loop0/queue/read_ahead_kb",
+          "value_kib": 128
+        }
+      },
+      "read_ahead_kib": 0,
+      "readahead_file": {
+        "identity": {
+          "device": "0:26",
+          "inode": 34382
+        },
+        "path": "/sys/fs/btrfs/c8f9749f-ac2b-4ed5-9ce6-2339f4cf480e/bdi/read_ahead_kb",
+        "resolved_path": "/sys/devices/virtual/bdi/btrfs-1/read_ahead_kb"
+      },
+      "resolved_bdi": "/sys/devices/virtual/bdi/btrfs-1"
+    },
+    "original_runtime_sysfs_observations_not_reread_locally": true,
+    "other_device_readahead_unchanged": true,
+    "positive_to_zero_transition": true,
+    "pure_validator_names": [
+      "parse_blkid",
+      "select_owned_loop",
+      "validate_sysfs_binding",
+      "validate_inputs",
+      "validate_transition",
+      "validate_enable_report"
+    ],
+    "recorded_mutation_count": 1,
+    "setup_report_sha256": "55cfddd0c30df161bc9863ff4b2cabce7696309e9fa56c3a80633aabb4ab800e",
+    "sole_mutation": {
+      "argv": [
+        "sudo",
+        "-n",
+        "--",
+        "tee",
+        "--",
+        "/sys/fs/btrfs/c8f9749f-ac2b-4ed5-9ce6-2339f4cf480e/bdi/read_ahead_kb"
+      ],
+      "input": "0\n",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "0\n"
+    },
+    "source_commit": "532d92118808c8ee38f38c2d143e2e236824ee5c",
+    "status": "ACTUAL_OWNED_BTRFS_READAHEAD_ENABLE_AND_READ_ONLY_CHECK_AUTHENTICATED"
+  },
+  "actual_resource_observations": {
+    "claims_about_unobserved_process_intervals": false,
+    "first_sample": {
+      "io": {
+        "cancelled_write_bytes": 0,
+        "rchar": 798049,
+        "read_bytes": 101707776,
+        "syscr": 8542,
+        "syscw": 1,
+        "wchar": 1,
+        "write_bytes": 0
+      },
+      "memory": {
+        "RssAnon": 21114880,
+        "RssFile": 336240640,
+        "RssShmem": 0,
+        "VmRSS": 357355520,
+        "VmSize": 6098636800,
+        "VmSwap": 0
+      },
+      "pid": 4358,
+      "seconds": 10.02,
+      "start_time_ticks": 204023,
+      "stat": {
+        "cpu_system_ticks": 190,
+        "cpu_user_ticks": 16,
+        "major_faults": 1102,
+        "minor_faults": 12629,
+        "parent_pid": 4354,
+        "process_group": 4294,
+        "start_time_ticks": 204023,
+        "state": "S",
+        "threads": 5
+      },
+      "ticks_per_second": 100
+    },
+    "last_sample": {
+      "io": {
+        "cancelled_write_bytes": 0,
+        "rchar": 692490393,
+        "read_bytes": 23278141440,
+        "syscr": 54495,
+        "syscw": 1,
+        "wchar": 1,
+        "write_bytes": 0
+      },
+      "memory": {
+        "RssAnon": 4397355008,
+        "RssFile": 8784506880,
+        "RssShmem": 0,
+        "VmRSS": 13181861888,
+        "VmSize": 111292719104,
+        "VmSwap": 867082240
+      },
+      "pid": 4358,
+      "seconds": 250.47,
+      "start_time_ticks": 204023,
+      "stat": {
+        "cpu_system_ticks": 3873,
+        "cpu_user_ticks": 3080,
+        "major_faults": 709688,
+        "minor_faults": 1901352,
+        "parent_pid": 4354,
+        "process_group": 4294,
+        "start_time_ticks": 204023,
+        "state": "S",
+        "threads": 5
+      },
+      "ticks_per_second": 100
+    },
+    "maximum_observed_anon_bytes": 5503115264,
+    "maximum_observed_file_rss_bytes": 9546833920,
+    "maximum_observed_swap_bytes": 882221056,
+    "one_second_maximum_aggregate_lean_rss": 13532717056,
+    "skipped_partial_or_unbound_process_samples": 0,
+    "valid_identity_consistent_lean_samples": 25
+  },
+  "actual_transport_log_observations": {
+    "decision_record_counts": {
+      "RETRY_SAME_ARTIFACT_WITH_FRESH_REDIRECT_AFTER_WAIT": 3
+    },
+    "distinct_http_503_responses": null,
+    "event_record_count": 6,
+    "event_records": [
+      {
+        "event": {
+          "attempt": 1,
+          "decision": "RETRY_SAME_ARTIFACT_WITH_FRESH_REDIRECT_AFTER_WAIT",
+          "documented_service_wait_seconds": 0.0,
+          "has_retry_after": false,
+          "has_retry_after_ms": false,
+          "has_retry_after_ms_generic": false,
+          "maximum_attempts": 4,
+          "retry_start_window_seconds": 600,
+          "service_error_code": "ServerBusy",
+          "status": "SIGNED_ARCHIVE_HTTP_503",
+          "wait_seconds": 30.0
+        },
+        "job_log_line": 1696,
+        "printed_github_log_timestamp_utc": "2026-11-04T17:02:37.0417773Z",
+        "raw_log_line_sha256": "3990fced826574849e1062969369aa8a489c5d33a8f951658c57b21dc1b7289b"
+      },
+      {
+        "event": {
+          "no_request_during_wait": true,
+          "remaining_seconds": 30.0,
+          "status": "WAITING_FOR_SIGNED_ARCHIVE_SERVICE"
+        },
+        "job_log_line": 1697,
+        "printed_github_log_timestamp_utc": "2026-11-04T17:02:37.0419031Z",
+        "raw_log_line_sha256": "8a1dfe7fe5112de59d332008547e537878ac1af3a7f47eeea3e245a45ee01a49"
+      },
+      {
+        "event": {
+          "attempt": 1,
+          "decision": "RETRY_SAME_ARTIFACT_WITH_FRESH_REDIRECT_AFTER_WAIT",
+          "documented_service_wait_seconds": 0.0,
+          "has_retry_after": false,
+          "has_retry_after_ms": false,
+          "has_retry_after_ms_generic": false,
+          "maximum_attempts": 4,
+          "retry_start_window_seconds": 600,
+          "service_error_code": "ServerBusy",
+          "status": "SIGNED_ARCHIVE_HTTP_503",
+          "wait_seconds": 30.0
+        },
+        "job_log_line": 1707,
+        "printed_github_log_timestamp_utc": "2026-11-04T17:03:17.6633954Z",
+        "raw_log_line_sha256": "074bb5726df718d26b95f54ff41b9b2a18382effcd6b070b0a6a2f460bc011b5"
+      },
+      {
+        "event": {
+          "no_request_during_wait": true,
+          "remaining_seconds": 30.0,
+          "status": "WAITING_FOR_SIGNED_ARCHIVE_SERVICE"
+        },
+        "job_log_line": 1708,
+        "printed_github_log_timestamp_utc": "2026-11-04T17:03:17.6635231Z",
+        "raw_log_line_sha256": "8d13c3d274936907ec34bcc0aeb3144d037b2524a54cfa0fdcee981b02ccacf5"
+      },
+      {
+        "event": {
+          "attempt": 1,
+          "decision": "RETRY_SAME_ARTIFACT_WITH_FRESH_REDIRECT_AFTER_WAIT",
+          "documented_service_wait_seconds": 0.0,
+          "has_retry_after": false,
+          "has_retry_after_ms": false,
+          "has_retry_after_ms_generic": false,
+          "maximum_attempts": 4,
+          "retry_start_window_seconds": 600,
+          "service_error_code": "ServerBusy",
+          "status": "SIGNED_ARCHIVE_HTTP_503",
+          "wait_seconds": 30.0
+        },
+        "job_log_line": 1734,
+        "printed_github_log_timestamp_utc": "2026-11-04T17:04:17.1015047Z",
+        "raw_log_line_sha256": "2b9c923c39f992a377e2c851f9429bcae815362cc58a77873f25a8a2b22fdd1d"
+      },
+      {
+        "event": {
+          "no_request_during_wait": true,
+          "remaining_seconds": 30.0,
+          "status": "WAITING_FOR_SIGNED_ARCHIVE_SERVICE"
+        },
+        "job_log_line": 1735,
+        "printed_github_log_timestamp_utc": "2026-11-04T17:04:17.1016270Z",
+        "raw_log_line_sha256": "bb019cbce94d1841b579716232973ae78e9188ea47850efbca9101d8f9f96924"
+      }
+    ],
+    "events_are_actual_log_records_not_independent_network_observations": true,
+    "interpretation_limit": "No transport records means none of these structured records was observed. The helper emits no successful-GET record or artifact ID; retry decisions and wait records do not count successful retries. Full original archive/source/receipt/trace checks remain separate and mandatory.",
+    "job_log_sha256": "98edf9559bf6d504b1191c2cc220901bccfae3df6e8c52200f2942a71a848282",
+    "per_artifact_retry_attribution_possible": false,
+    "printed_log_timestamps_are_not_measured_retry_durations": true,
+    "request_urls_tokens_and_error_bodies_reproduced": false,
+    "retry_decision_records": 3,
+    "retry_success_inferred_from_restore_success": false,
+    "service_error_code_record_counts": {
+      "ServerBusy": 3
+    },
+    "status": "ACTUAL_STRUCTURED_TRANSPORT_LOG_RECORDS_PARSED",
+    "status_record_counts": {
+      "SIGNED_ARCHIVE_HTTP_503": 3,
+      "WAITING_FOR_SIGNED_ARCHIVE_SERVICE": 3
+    },
+    "successful_retry_requests": null,
+    "transport_helper_sha256": "db9221ee4aa24f77082c98f33588b987531fc77f9f93c49111d31ad12363b0ef"
+  },
+  "all_main_olean_mapping_counts": {
+    "attempts": 31044,
+    "errno_counts": {
+      "EEXIST": 20
+    },
+    "failed": 20,
+    "successful": 31024,
+    "successful_address_comparisons": {
+      "equal": 31024,
+      "not_comparable": 0,
+      "unequal": 0,
+      "unequal_after_nonzero_request": 0,
+      "unequal_after_null_or_zero_request": 0
+    },
+    "unknown_outcome": 0
+  },
+  "all_selected_original_module_mappings": {
+    "original_restored_logical_bytes": 97433499160,
+    "projected_plan_sha256": "11ff7db7f88e1e3aa1722796a5002cc9bb29263cb7343df851a12e699b94cd44",
+    "total": 25191,
+    "with_at_least_one_successful_mmap": 25171,
+    "with_complete_exact_path_mapping_attempt": 25191,
+    "without_complete_exact_path_mapping_attempt": 0,
+    "without_successful_mmap_observation": 20
+  },
+  "authentication_report": {
+    "authenticator_sha256": "bcdf299c53d1d3fe8ec5be20fc4fa9b2e9d4bc52db001e5627de45d6edc5ef11",
+    "bytes": 244281,
+    "sha256": "504b307302ae91b41941c1b88bf3b916ef0412a622df3c019a3b0f23a11c4ebd"
+  },
+  "comparison_with_previous_authentic_mmap_timeout": {
+    "comparison_is_different_runners_and_different_observation_windows": true,
+    "no_single_cause_or_causal_speedup_claim": true,
+    "previous_authentication_report_sha256": "474af1c5d3bc1a43be695a53d59640c906a72a71a8cbeab5fc126a6d0f39aebc",
+    "previous_compiler_result": {
+      "compiler_returncode": null,
+      "compiler_returncode_source": "NOT_OBSERVED_DIRECTLY",
+      "diagnostic_output_sha256": null,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "module": "Proofs.RadenkovicGutmanD1OriginalSharedBothLongPhaseProbe",
+      "seconds": 901.556,
+      "success": false,
+      "timeout": true,
+      "trace_log": "Proofs.RadenkovicGutmanD1OriginalSharedBothLongPhaseProbe.mmap.log",
+      "trace_report": "Proofs.RadenkovicGutmanD1OriginalSharedBothLongPhaseProbe.mmap.json",
+      "trace_report_sha256": "b9dfee140102a20377239aaf54acafbfdf3742ab642e87c45633f5ec6d521d95",
+      "trace_sha256": "92d7641305a4f80d482df5a5a9b806c9458911a15a33706243905e6c77124d51",
+      "traced_process_seconds": 900.026,
+      "tracer_pid": 4482,
+      "tracer_returncode": -9
+    },
+    "previous_resource_observations": {
+      "claims_about_unobserved_process_intervals": false,
+      "first_sample": {
+        "io": {
+          "cancelled_write_bytes": 0,
+          "rchar": 884465,
+          "read_bytes": 132325376,
+          "syscr": 9524,
+          "syscw": 1,
+          "wchar": 1,
+          "write_bytes": 0
+        },
+        "memory": {
+          "RssAnon": 21393408,
+          "RssFile": 354684928,
+          "RssShmem": 0,
+          "VmRSS": 376078336,
+          "VmSize": 6276603904,
+          "VmSwap": 0
+        },
+        "pid": 4486,
+        "seconds": 10.02,
+        "start_time_ticks": 287017,
+        "stat": {
+          "cpu_system_ticks": 199,
+          "cpu_user_ticks": 22,
+          "major_faults": 1431,
+          "minor_faults": 13711,
+          "parent_pid": 4482,
+          "process_group": 4423,
+          "start_time_ticks": 287017,
+          "state": "S",
+          "threads": 5
+        },
+        "ticks_per_second": 100
+      },
+      "last_sample": {
+        "io": {
+          "cancelled_write_bytes": 0,
+          "rchar": 692490393,
+          "read_bytes": 191353864192,
+          "syscr": 54495,
+          "syscw": 1,
+          "wchar": 1,
+          "write_bytes": 0
+        },
+        "memory": {
+          "RssAnon": 2137952256,
+          "RssFile": 1012432896,
+          "RssShmem": 0,
+          "VmRSS": 3150385152,
+          "VmSize": 111293771776,
+          "VmSwap": 2941153280
+        },
+        "pid": 4486,
+        "seconds": 894.16,
+        "start_time_ticks": 287017,
+        "stat": {
+          "cpu_system_ticks": 20839,
+          "cpu_user_ticks": 2532,
+          "major_faults": 2511947,
+          "minor_faults": 1963414,
+          "parent_pid": 4482,
+          "process_group": 4423,
+          "start_time_ticks": 287017,
+          "state": "S",
+          "threads": 5
+        },
+        "ticks_per_second": 100
+      },
+      "maximum_observed_anon_bytes": 3960852480,
+      "maximum_observed_file_rss_bytes": 6015127552,
+      "maximum_observed_swap_bytes": 2941837312,
+      "one_second_maximum_aggregate_lean_rss": 8375074816,
+      "skipped_partial_or_unbound_process_samples": 0,
+      "valid_identity_consistent_lean_samples": 89
+    },
+    "previous_run": 41857856028
+  },
+  "complete_call_counts": {
+    "complete_calls": 54572,
+    "matched_resumptions": 0,
+    "mmap_errors": 20,
+    "mmap_file": 54493,
+    "mmap_total": 54545,
+    "mremap_errors": 0,
+    "mremap_total": 0,
+    "munmap_errors": 0,
+    "munmap_total": 27,
+    "raw_lines": 54577,
+    "resumed_lines": 0,
+    "signal_lines": 0,
+    "unfinished_lines": 0,
+    "unknown_outcomes": 0,
+    "unmatched_resumed": 0,
+    "unparsed_lines": 0,
+    "unresolved_unfinished": 0
+  },
+  "created_at_utc": "2026-11-04T18:05:15.049953+00:00",
+  "explicit_errno_counts": {
+    "EEXIST": 20,
+    "ENOMEM": 0
+  },
+  "first_trace_line": {
+    "line": 1,
+    "pid": 4358,
+    "printed_wallclock_unix_seconds": "1793813440.333174"
+  },
+  "first_trace_line_to_last_original_mapping_printed_seconds": "57.012933",
+  "full_analysis": {
+    "analyzer_sha256": "d2bcb65516e848797c27ff4370dfcd4ba5096f54b24514365d42a732e9116dd9",
+    "bytes": 6942125,
+    "outputs": {
+      "all_complete_calls": {
+        "bytes": 53238455,
+        "path": "/workspace/scratch/406169dbc070/rg_resume_20261104/bothlong_phase_probe/readahead_actual/mmap_full_analysis_504b307302ae91b4/complete_memory_syscalls.jsonl",
+        "sha256": "bf03b3e3d24cf23fe80d273b7807be76dc89defac76cd8d97b1ba631f6381223"
+      },
+      "all_exact_file_paths": {
+        "bytes": 54886111,
+        "path": "/workspace/scratch/406169dbc070/rg_resume_20261104/bothlong_phase_probe/readahead_actual/mmap_full_analysis_504b307302ae91b4/exact_file_path_counts.jsonl",
+        "sha256": "7b9d19415f5dcafb020bd48e40f375b4c928f297426c204c20e5c785f087950c"
+      },
+      "all_selected_modules": {
+        "bytes": 40024294,
+        "path": "/workspace/scratch/406169dbc070/rg_resume_20261104/bothlong_phase_probe/readahead_actual/mmap_full_analysis_504b307302ae91b4/selected_original_module_observations.jsonl",
+        "sha256": "2b80791b97486c10e1da7fd5589f9e470548616dc1b75e22d40834aa610f96c6"
+      },
+      "residual_raw_lines": {
+        "bytes": 0,
+        "path": "/workspace/scratch/406169dbc070/rg_resume_20261104/bothlong_phase_probe/readahead_actual/mmap_full_analysis_504b307302ae91b4/unpaired_or_unparsed_trace_lines.jsonl",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    "sha256": "0036d93555aa37b81a4fa5790580d230b68afcc3387dfecbdff736b3ea1e311a"
+  },
+  "full_raw_trace": {
+    "bytes": 15506118,
+    "path": "/workspace/scratch/406169dbc070/rg_resume_20261104/bothlong_phase_probe/readahead_actual/offline_raw_traces/Proofs.RadenkovicGutmanD1OriginalSharedBothLongPhaseProbe.mmap.log",
+    "sha256": "90315b839046b7ef7df4cdfa62f050f2958d65114e84bd09bac9d2ecdcdce156"
+  },
+  "full_scope": {
+    "actual_original_endpoint_preflight_passed": true,
+    "selected_logical_object_bytes": 97433499160,
+    "source_projection_byte_identical_to_reviewed_plan": true,
+    "successful_archive_restores": 444,
+    "successful_prior_object_readbacks": 25191
+  },
+  "header_complete_to_source_commands_complete_seconds": "2.714",
+  "interpretation_limits": [
+    "Complete proof success here belongs to the isolated source-conserving diagnostic copy; original family closure still requires all three real original exports, the full33659 receipt and11 named profiles.",
+    "Twenty EEXIST mapping failures are also observed in this successful run; their mere presence does not imply an import failure. Successful mmap does not prove pages resident or import finalization complete.",
+    "Actual filesystem read-ahead was4096KiB before enable and0 afterwards and after preflight; loop and backing queue values remain128KiB, DIO1. Prior runner values were not measured.",
+    "Policy changed before restore, so this is an end-to-end successful configuration observation including cache history, not an isolated causal A/B test or a unique root-cause proof.",
+    "The25 current samples end at250.47s and the89 older samples at894.16s. Cumulative read-byte totals and maxima have unequal exposure and are not normalized causal measurements.",
+    "The three recorded503 retry decisions are not a measured count of successful retries and do not identify specific artifacts.",
+    "The separate original attempt failed on an API502 before any proofstore restoration or kernel step; it does not negate the authenticated diagnostic success."
+  ],
+  "job": 126723495686,
+  "last_observed_phase": "source_commands.complete",
+  "last_original_file_mapping": {
+    "line": 54529,
+    "pid": 4362,
+    "printed_wallclock_unix_seconds": "1793813497.346107"
+  },
+  "main_lean_identity": {
+    "no_unobserved_exit_status_or_timeout_signal_inferred": true,
+    "observed_sample_count": 25,
+    "parent_tracer_pid": 4354,
+    "pid": 4358,
+    "pid_inferred_from_first_trace_line": false,
+    "process_group": 4294,
+    "start_time_ticks": 204023,
+    "status": "LEAN_PID_BOUND_BY_OBSERVER_START_IDENTITY_AND_PARENT_TRACER",
+    "trace_terminal_observation": {
+      "exit_code": 0,
+      "line": 54577,
+      "signal": null,
+      "wallclock_unix_seconds": "1793813696.451963"
+    }
+  },
+  "marker_clock_is_not_strace_wallclock": true,
+  "marker_intervals_seconds": [
+    {
+      "after": "partition.before",
+      "before": "header.complete",
+      "seconds": 0.048
+    },
+    {
+      "after": "partition.kernel_checked",
+      "before": "partition.before",
+      "seconds": 0.088
+    },
+    {
+      "after": "reserve.before",
+      "before": "partition.kernel_checked",
+      "seconds": 0.001
+    },
+    {
+      "after": "reserve.kernel_checked",
+      "before": "reserve.before",
+      "seconds": 0.01
+    },
+    {
+      "after": "all_checked.before",
+      "before": "reserve.kernel_checked",
+      "seconds": 0.001
+    },
+    {
+      "after": "all_checked.kernel_checked",
+      "before": "all_checked.before",
+      "seconds": 0.143
+    },
+    {
+      "after": "all_checked.axioms.before",
+      "before": "all_checked.kernel_checked",
+      "seconds": 0.002
+    },
+    {
+      "after": "all_checked.axioms.complete",
+      "before": "all_checked.axioms.before",
+      "seconds": 0.012
+    },
+    {
+      "after": "adjacent_checked.before",
+      "before": "all_checked.axioms.complete",
+      "seconds": 0.001
+    },
+    {
+      "after": "adjacent_checked.kernel_checked",
+      "before": "adjacent_checked.before",
+      "seconds": 0.936
+    },
+    {
+      "after": "adjacent_checked.axioms.before",
+      "before": "adjacent_checked.kernel_checked",
+      "seconds": 0.001
+    },
+    {
+      "after": "adjacent_checked.axioms.complete",
+      "before": "adjacent_checked.axioms.before",
+      "seconds": 0.012
+    },
+    {
+      "after": "partition_checked.before",
+      "before": "adjacent_checked.axioms.complete",
+      "seconds": 0.002
+    },
+    {
+      "after": "partition_checked.kernel_checked",
+      "before": "partition_checked.before",
+      "seconds": 0.008
+    },
+    {
+      "after": "partition_checked.axioms.before",
+      "before": "partition_checked.kernel_checked",
+      "seconds": 0.001
+    },
+    {
+      "after": "partition_checked.axioms.complete",
+      "before": "partition_checked.axioms.before",
+      "seconds": 0.009
+    },
+    {
+      "after": "budget_checked.before",
+      "before": "partition_checked.axioms.complete",
+      "seconds": 0.001
+    },
+    {
+      "after": "budget_checked.kernel_checked",
+      "before": "budget_checked.before",
+      "seconds": 1.314
+    },
+    {
+      "after": "budget_checked.axioms.before",
+      "before": "budget_checked.kernel_checked",
+      "seconds": 0.002
+    },
+    {
+      "after": "budget_checked.axioms.complete",
+      "before": "budget_checked.axioms.before",
+      "seconds": 0.015
+    },
+    {
+      "after": "normalized_target.before",
+      "before": "budget_checked.axioms.complete",
+      "seconds": 0.004
+    },
+    {
+      "after": "normalized_target.kernel_checked",
+      "before": "normalized_target.before",
+      "seconds": 0.078
+    },
+    {
+      "after": "normalized_target.axioms.before",
+      "before": "normalized_target.kernel_checked",
+      "seconds": 0.002
+    },
+    {
+      "after": "normalized_target.axioms.complete",
+      "before": "normalized_target.axioms.before",
+      "seconds": 0.02
+    },
+    {
+      "after": "source_commands.complete",
+      "before": "normalized_target.axioms.complete",
+      "seconds": 0.003
+    }
+  ],
+  "next_unobserved_phase": null,
+  "original_continuation": {
+    "actual_cause_record": "HTTP502 at GitHub jobs-catalog read",
+    "actual_conclusion": "failure",
+    "failed_before_restore_and_kernel": true,
+    "failure_observation_sha256": "37a610966bd71cd7b687dee4d8f272c9709768919775f35415a518db0ece8be4",
+    "job": 126754145330,
+    "run": 41881296719,
+    "source_commit": "c1f319c9ef01b7245b79cb254a3ecb6ab64516a6"
+  },
+  "original_kernel_exports_reused_from_diagnostic": false,
+  "original_large_family_completed": false,
+  "phase_markers": 26,
+  "production_kernel_receipt_created": false,
+  "raw_residuals": {
+    "first_timestamped_trace_line": {
+      "line": 1,
+      "pid": 4358,
+      "printed_wallclock_unix_seconds": "1793813440.333174"
+    },
+    "last_timestamped_trace_line": {
+      "line": 54577,
+      "pid": 4358,
+      "printed_wallclock_unix_seconds": "1793813696.451963"
+    },
+    "line_counts": {},
+    "residual_lines_are_not_syscall_counts": true,
+    "total_residual_lines": 0
+  },
+  "remaining_original_input_families": 4,
+  "repository": "RhudeJJJJ/formal-conjectures",
+  "run": 41872614352,
+  "selected_mapping_attempt_counts": {
+    "attempts": 25191,
+    "errno_counts": {
+      "EEXIST": 20
+    },
+    "failed": 20,
+    "successful": 25171,
+    "successful_address_comparisons": {
+      "equal": 25171,
+      "not_comparable": 0,
+      "unequal": 0,
+      "unequal_after_nonzero_request": 0,
+      "unequal_after_null_or_zero_request": 0
+    },
+    "unknown_outcome": 0
+  },
+  "source_commit": "532d92118808c8ee38f38c2d143e2e236824ee5c",
+  "status": "COMPLETE_ACTUAL_BOTH_LONG_READAHEAD_DIAGNOSTIC_SUCCESS_WITH_FULL_RAW_MAPPING_ANALYSIS"
+}

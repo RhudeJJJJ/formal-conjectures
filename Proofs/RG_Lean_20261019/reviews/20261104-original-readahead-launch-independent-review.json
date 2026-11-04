@@ -1,0 +1,113 @@
+{
+  "schema": "rg-independent-diagnostic-launch-gate-review-v1",
+  "status": "REVIEWED_AUTHENTICATED_DIAGNOSTIC_REPORT_WITH_NO_CONCRETE_FINDING",
+  "review_date_utc": "2026-11-04",
+  "reviewer": "/root/rg_proof_audit",
+  "scope": "Persisted conclusion of the already completed read-only report review; no additional validation was performed while saving this record.",
+  "reviewed_report": {
+    "path": "rg_resume_20261104/bothlong_phase_probe/readahead_actual/actual_archive_authentication.json",
+    "bytes": 244281,
+    "sha256": "504b307302ae91b41941c1b88bf3b916ef0412a622df3c019a3b0f23a11c4ebd",
+    "status": "ACTUAL_MMAP_DIAGNOSTIC_ARCHIVE_AUTHENTICATED",
+    "stage": "COMPLETE_DIAGNOSTIC_EVIDENCE_AUTHENTICATED",
+    "root_executed_frozen_authenticator_sha256": "bcdf299c53d1d3fe8ec5be20fc4fa9b2e9d4bc52db001e5627de45d6edc5ef11"
+  },
+  "actual_diagnostic_origin": {
+    "repository": "RhudeJJJJ/formal-conjectures",
+    "run": 41872614352,
+    "job": 126723495686,
+    "attempt": 1,
+    "source_commit": "532d92118808c8ee38f38c2d143e2e236824ee5c",
+    "native_conclusion": "success",
+    "artifact": 13347912723,
+    "artifact_bytes": 8188678,
+    "artifact_sha256": "2667fa91f1ee9f69034e2837e38775f5f66df3d1b6b8fce08158fe11aef5bee5"
+  },
+  "complete_previously_agreed_diagnostic_launch_condition": {
+    "satisfied_in_reviewed_authenticated_report": true,
+    "successful_archive_restores": 444,
+    "successful_prior_object_readbacks": 25191,
+    "selected_logical_object_bytes": 97433499160,
+    "source_projection_byte_identical_to_reviewed_plan": true,
+    "actual_original_endpoint_preflight_passed": true,
+    "actual_native_lifecycle_and_three_module_controls_passed": true,
+    "phase_markers_written": 26,
+    "last_observed_phase": "source_commands.complete",
+    "next_unobserved_phase": null,
+    "exact_named_axiom_profile_declarations": [
+      "Gebendorfer.RadenkovicGutman.D1OriginalSharedBothLong.all_checked",
+      "Gebendorfer.RadenkovicGutman.D1OriginalSharedBothLong.adjacent_checked",
+      "Gebendorfer.RadenkovicGutman.D1OriginalSharedBothLong.partition_checked",
+      "Gebendorfer.RadenkovicGutman.D1OriginalSharedBothLong.budget_checked",
+      "Gebendorfer.RadenkovicGutman.D1OriginalSharedBothLong.normalized_target"
+    ],
+    "each_observed_axiom_profile": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "compiler_returncode": 0,
+    "compiler_returncode_source": "STRACE_PROPAGATED_ZERO_STATUS",
+    "tracer_returncode": 0,
+    "timeout": false,
+    "reported_diagnostic_seconds": 257.645,
+    "traced_process_seconds": 256.178,
+    "unchanged_timeout_seconds": 900,
+    "unchanged_workers": 1,
+    "memory_reserve_mib": 2048,
+    "host_reserve_stop": false,
+    "foreign_processes_signalled": 0,
+    "unsuccessful_native_steps": []
+  },
+  "actual_readahead_condition": {
+    "filesystem_bdi_read_ahead_kib_before_after_before_probe": [
+      4096,
+      0,
+      0
+    ],
+    "recorded_mutation_count": 1,
+    "sole_mutation_target": "/sys/fs/btrfs/c8f9749f-ac2b-4ed5-9ce6-2339f4cf480e/bdi/read_ahead_kb",
+    "sole_mutation_input": "0\n",
+    "sole_mutation_returncode": 0,
+    "uuid_single_owned_loop_bdi_and_sysfs_identity_bound": true,
+    "enable_before_restore_on_empty_mount": true,
+    "read_only_check_after_complete_preflight_before_probe": true,
+    "effective_loop_direct_io_before_after_before_probe": [
+      1,
+      1,
+      1
+    ],
+    "loop_queue_read_ahead_kib_before_after_before_probe": [
+      128,
+      128,
+      128
+    ],
+    "backing_queue_read_ahead_kib_before_after_before_probe": [
+      128,
+      128,
+      128
+    ]
+  },
+  "interpretation_limits": {
+    "diagnostic_copy_only": true,
+    "diagnostic_output_hash_is_native_record_not_archived_object_rehash": true,
+    "production_olean_exports_in_diagnostic_archive": 0,
+    "production_kernel_receipt_created": false,
+    "original_kernel_export_claim": false,
+    "original_large_family_completed": false,
+    "family_closure_claim": false,
+    "remaining_original_input_families": 4,
+    "unique_cause_of_prior_timeouts_established": false,
+    "policy_comparison": "End-to-end filesystem policy observation, not an isolated Lean-only A/B measurement.",
+    "unobserved_or_unreadable_cgroup_limits_claimed_absent": false
+  },
+  "review_actions": {
+    "actual_report_bytes_hash_and_relevant_contents_read": true,
+    "zip_opened_or_downloaded": false,
+    "authenticator_or_analyzer_executed": false,
+    "tests_or_native_process_controls_executed": false,
+    "remote_mutations_performed": false,
+    "new_validation_performed_when_saving_this_review": false
+  },
+  "next_authorized_preparation": "Only after actual production run/job IDs are supplied, create a new bound authenticate_original_readahead_actual.py copy; preserve the frozen None template and all validation gates."
+}

@@ -1,0 +1,104 @@
+{
+  "schema": "rg-original-readahead-actual-authenticator-binding-v1",
+  "status": "FROZEN_ACTUAL_ID_BINDING_ONLY_NO_AUTHENTICATOR_EXECUTION",
+  "parent_template": {
+    "path": "/workspace/scratch/406169dbc070/rg_resume_20261104/final_readahead_preparation/authenticate_original_readahead.py",
+    "bytes": 61393,
+    "sha256": "163b9be7f1c985153f9921f507d3a45dcf4a4d2c6b5c8c3b9a5c567a1733fae7",
+    "git_blob_sha1": "cb6504bc3f4602bc95e55c0523b5094b2b457e1f",
+    "remains_byte_identical": true,
+    "RUN": null,
+    "JOB": null,
+    "COMMIT": null
+  },
+  "actual_authenticator": {
+    "path": "/workspace/scratch/406169dbc070/rg_resume_20261104/final_readahead_preparation/authenticate_original_readahead_actual.py",
+    "bytes": 61446,
+    "sha256": "72a94ebe7be5e8ae5fee057b8c5308631060dace81e5d6793504f88f0a9937aa",
+    "git_blob_sha1": "8cf8c74cf7dde8c8291577126b92a8e32db01cac"
+  },
+  "only_literal_changes": {
+    "RUN": {
+      "before": null,
+      "after": 41881296719
+    },
+    "JOB": {
+      "before": null,
+      "after": 126754145330
+    },
+    "COMMIT": {
+      "before": null,
+      "after": "c1f319c9ef01b7245b79cb254a3ecb6ab64516a6"
+    }
+  },
+  "native_capture_bindings": {
+    "run_start.json": {
+      "path": "/workspace/scratch/406169dbc070/rg_resume_20261104/final_readahead_preparation/actual/run_start.json",
+      "bytes": 13057,
+      "sha256": "c2d493dad2c5e9652bc7783960194dc407bd4dc81d0ca6e80be3efc8d099dcb9"
+    },
+    "jobs_start.json": {
+      "path": "/workspace/scratch/406169dbc070/rg_resume_20261104/final_readahead_preparation/actual/jobs_start.json",
+      "bytes": 930,
+      "sha256": "c648fa32dc428b4fde14d7e1be47638c32d805179f6902c2b7c62cbdfed43ef8"
+    }
+  },
+  "native_identity": {
+    "repository": "RhudeJJJJ/formal-conjectures",
+    "run": 41881296719,
+    "job": 126754145330,
+    "job_name": "check",
+    "attempt": 1,
+    "head_commit": "c1f319c9ef01b7245b79cb254a3ecb6ab64516a6",
+    "branch": "rg-degree-one-large-20261103",
+    "workflow_path": ".github/workflows/rg-degree-one-large-join-repair-20261104.yml",
+    "event": "push"
+  },
+  "native_state_at_capture": {
+    "run_status": "queued",
+    "run_conclusion": null,
+    "job_status": "queued",
+    "job_conclusion": null,
+    "run_created_at": "2026-11-04T17:52:31Z",
+    "run_started_at_field": "2026-11-04T17:52:31Z",
+    "job_started_at_field": "2026-11-04T17:52:32Z",
+    "job_completed_at": null,
+    "timestamp_fields_are_not_evidence_of_kernel_start": true,
+    "kernel_start_claim": false,
+    "production_completion_claim": false
+  },
+  "static_delta_review": {
+    "literal_reversal_yields_exact_original_bytes": true,
+    "ast_after_reverting_only_three_literals_equals_parent": true,
+    "all_function_asts_identical": true,
+    "unchanged_function_count": 29,
+    "parent_assertion_count": 295,
+    "actual_assertion_count": 295,
+    "all_other_source_bytes_and_validation_gates_unchanged": true,
+    "syntax": "ast.parse only; no import or execution of either authenticator"
+  },
+  "three_value_diff": {
+    "path": "/workspace/scratch/406169dbc070/rg_resume_20261104/final_readahead_preparation/actual_authenticator_binding.diff",
+    "bytes": 816,
+    "sha256": "d6ecc4fbbe1433806e5600856b0d6b85a761e6c868762ea06f91ab275a2112e8"
+  },
+  "executed": {
+    "authenticator": false,
+    "actual_validation": false,
+    "tests": false,
+    "native_context_or_process_control": false,
+    "remote_reads_or_writes": false
+  },
+  "production_evidence_scope_preserved": {
+    "original_archives": 767,
+    "total_modules": 33659,
+    "prior_modules": 33656,
+    "fresh_modules": 3,
+    "named_axiom_profiles": 11,
+    "kernel_timeout_seconds": 900,
+    "workers": 1,
+    "memory_reserve_mib": 2048,
+    "source_origin_receipt_milestone_and_owned_device_gates": "Unchanged byte-for-byte from the reviewed template."
+  },
+  "remaining_original_input_families_before_actual_production_completion": 4
+}

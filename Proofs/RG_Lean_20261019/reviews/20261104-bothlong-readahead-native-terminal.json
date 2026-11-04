@@ -1,0 +1,234 @@
+{
+  "schema": "rg-native-terminal-capture-v1",
+  "created_at": "2026-11-04T17:48:25.987984+00:00",
+  "first_native_terminal_observation_utc": "2026-11-04T17:46:51.731Z",
+  "repository": "RhudeJJJJ/formal-conjectures",
+  "run_id": 41872614352,
+  "job_id": 126723495686,
+  "run_attempt": 1,
+  "event": "push",
+  "head_branch": "rg-d1-bothlong-phase-probe-20261104",
+  "head_sha": "532d92118808c8ee38f38c2d143e2e236824ee5c",
+  "native_run": {
+    "status": "completed",
+    "conclusion": "success",
+    "updated_at": "2026-11-04T17:46:32Z"
+  },
+  "native_job": {
+    "status": "completed",
+    "conclusion": "success",
+    "started_at": "2026-11-04T16:56:56Z",
+    "completed_at": "2026-11-04T17:35:03Z"
+  },
+  "native_steps": [
+    {
+      "name": "Set up job",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 1,
+      "started_at": "2026-11-04T16:56:57Z",
+      "completed_at": "2026-11-04T16:56:58Z"
+    },
+    {
+      "name": "Run actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 2,
+      "started_at": "2026-11-04T16:56:58Z",
+      "completed_at": "2026-11-04T16:57:46Z"
+    },
+    {
+      "name": "Reserve actual host space without touching proof inputs",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 3,
+      "started_at": "2026-11-04T16:57:46Z",
+      "completed_at": "2026-11-04T16:57:46Z"
+    },
+    {
+      "name": "Install the fixed compiler before the marker control",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 4,
+      "started_at": "2026-11-04T16:57:46Z",
+      "completed_at": "2026-11-04T16:58:03Z"
+    },
+    {
+      "name": "Install the syscall observer before any proof restoration",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 5,
+      "started_at": "2026-11-04T16:58:03Z",
+      "completed_at": "2026-11-04T16:58:09Z"
+    },
+    {
+      "name": "Require owned-tracee lifecycle and actual mmap observation before Lean control",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 6,
+      "started_at": "2026-11-04T16:58:09Z",
+      "completed_at": "2026-11-04T16:58:11Z"
+    },
+    {
+      "name": "Require the isolated flushed-marker control before any proof restoration",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 7,
+      "started_at": "2026-11-04T16:58:11Z",
+      "completed_at": "2026-11-04T16:58:24Z"
+    },
+    {
+      "name": "Preserve the separate control host observation",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 8,
+      "started_at": "2026-11-04T16:58:24Z",
+      "completed_at": "2026-11-04T16:58:24Z"
+    },
+    {
+      "name": "Authenticate the actual failed run and project only original BothLong imports",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 9,
+      "started_at": "2026-11-04T16:58:24Z",
+      "completed_at": "2026-11-04T16:59:32Z"
+    },
+    {
+      "name": "Materialize the fixed dependency lock",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 10,
+      "started_at": "2026-11-04T16:59:32Z",
+      "completed_at": "2026-11-04T16:59:48Z"
+    },
+    {
+      "name": "Fetch only the external modules of the original BothLong closure",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 11,
+      "started_at": "2026-11-04T16:59:48Z",
+      "completed_at": "2026-11-04T17:01:06Z"
+    },
+    {
+      "name": "Install the transparent filesystem utility",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 12,
+      "started_at": "2026-11-04T17:01:06Z",
+      "completed_at": "2026-11-04T17:01:08Z"
+    },
+    {
+      "name": "Create the unchanged bounded logical proofstore",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 13,
+      "started_at": "2026-11-04T17:01:08Z",
+      "completed_at": "2026-11-04T17:01:10Z"
+    },
+    {
+      "name": "Require direct I/O only for the new owned proofstore loop",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 14,
+      "started_at": "2026-11-04T17:01:10Z",
+      "completed_at": "2026-11-04T17:01:10Z"
+    },
+    {
+      "name": "Set only the new owned Btrfs filesystem readahead to zero",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 15,
+      "started_at": "2026-11-04T17:01:10Z",
+      "completed_at": "2026-11-04T17:01:10Z"
+    },
+    {
+      "name": "Authenticate all 444 original archives and read back 25191 projected objects",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 16,
+      "started_at": "2026-11-04T17:01:10Z",
+      "completed_at": "2026-11-04T17:23:51Z"
+    },
+    {
+      "name": "Require exactly the original BothLong endpoint to remain uncompiled",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 17,
+      "started_at": "2026-11-04T17:23:51Z",
+      "completed_at": "2026-11-04T17:30:36Z"
+    },
+    {
+      "name": "Confirm the owned filesystem readahead stayed zero after preflight",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 18,
+      "started_at": "2026-11-04T17:30:36Z",
+      "completed_at": "2026-11-04T17:30:36Z"
+    },
+    {
+      "name": "Observe the isolated diagnostic copy with unchanged strict kernel limits",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 19,
+      "started_at": "2026-11-04T17:30:36Z",
+      "completed_at": "2026-11-04T17:34:59Z"
+    },
+    {
+      "name": "Retain diagnostic logs and phase observations without proof exports",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 20,
+      "started_at": "2026-11-04T17:34:59Z",
+      "completed_at": "2026-11-04T17:35:02Z"
+    },
+    {
+      "name": "Post Run actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 40,
+      "started_at": "2026-11-04T17:35:02Z",
+      "completed_at": "2026-11-04T17:35:02Z"
+    },
+    {
+      "name": "Complete job",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 41,
+      "started_at": "2026-11-04T17:35:02Z",
+      "completed_at": "2026-11-04T17:35:02Z"
+    }
+  ],
+  "native_artifact": {
+    "id": 13347912723,
+    "name": "rg-bothlong-phase-diagnostic-20261104-41872614352-1",
+    "size_in_bytes": 8188678,
+    "digest": "sha256:2667fa91f1ee9f69034e2837e38775f5f66df3d1b6b8fce08158fe11aef5bee5",
+    "expired": false
+  },
+  "captures": {
+    "run.json": {
+      "bytes": 13040,
+      "sha256": "30f7547cc79e35208b8d6710b5cbc038d7d0b6d9b88f2fa1bc623d8ba2a24bda"
+    },
+    "jobs.json": {
+      "bytes": 5352,
+      "sha256": "5212904950ea759fddf2b597def85c4d8c37da3ebf7d2f788eb52d5609b246d3"
+    },
+    "artifacts.json": {
+      "bytes": 799,
+      "sha256": "7e47c292285fc556a3a23fb221b39d0818b83a86b1e5b54b27322dfbcf0c9c5c"
+    },
+    "job.log": {
+      "bytes": 1051195,
+      "sha256": "98edf9559bf6d504b1191c2cc220901bccfae3df6e8c52200f2942a71a848282"
+    }
+  },
+  "collection_sources": {
+    "run.json": "https://api.github.com/repos/RhudeJJJJ/formal-conjectures/actions/runs/41872614352",
+    "jobs.json": "https://api.github.com/repos/RhudeJJJJ/formal-conjectures/actions/runs/41872614352/jobs?filter=all&per_page=100",
+    "artifacts.json": "https://api.github.com/repos/RhudeJJJJ/formal-conjectures/actions/runs/41872614352/artifacts?per_page=100",
+    "job.log": "github_fetch_workflow_job_logs(repo_full_name=RhudeJJJJ/formal-conjectures, job_id=126723495686)"
+  },
+  "scope": "Native metadata and complete decoded native job log only. No status or conclusion was rewritten. No ZIP was downloaded by this monitor. Full archive, trace, marker, profile and proof validation is reserved for the root agent and is not claimed by this report.",
+  "status_lag_observation": "All native step rows were completed/success through Complete job at 17:35:02Z while earlier run/job envelopes remained in_progress/null; the first actual terminal jobs observation was captured at 17:46:51.731Z. No log request preceded that observation."
+}

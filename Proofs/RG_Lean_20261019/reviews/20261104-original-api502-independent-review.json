@@ -1,0 +1,86 @@
+{
+  "schema": "rg-independent-api-502-delta-review-v1",
+  "created_at": "2026-11-04T18:09:19.488782+00:00",
+  "reviewer": "/root/rg_ci_status",
+  "status": "REVIEW_COMPLETE_NO_CONCRETE_FINDINGS",
+  "base_commit": "c1f319c9ef01b7245b79cb254a3ecb6ab64516a6",
+  "inputs": {
+    "patch/ci/rg_github_rate_limit.py": {
+      "bytes": 7427,
+      "sha256": "0c5a379458beafada219603bd7b8c1ad3cb8eb276335fa7abd86f04e1132461f"
+    },
+    "patch/.github/workflows/rg-degree-one-large-join-repair-20261104.yml": {
+      "bytes": 9642,
+      "sha256": "f556fa1ab222406638850177c1a98d2274bbe305b71797afc2f1cc1308a30267"
+    },
+    "base/ci/rg_github_rate_limit.py": {
+      "bytes": 1981,
+      "sha256": "fd9d88d0062cd6b911f85da394c1543ef5aeae47bde357322ab222ccc462379d"
+    },
+    "base/.github/workflows/rg-degree-one-large-join-repair-20261104.yml": {
+      "bytes": 9605,
+      "sha256": "7147154b7091f5459bb35b78c5a837be2bc5505f88927a035c19e489aaf2ff56"
+    },
+    "publication_inventory.json": {
+      "bytes": 4096,
+      "sha256": "93617d93883ab4df6e2080ece29c01adcee027ddbc68842e1ad3b875b305f584"
+    },
+    "focused_mock_validation.json": {
+      "bytes": 5662,
+      "sha256": "8b34fe43685ac34d6844ddef9ae558a2fad942d848a5b6a3b85b8e8f02193673"
+    },
+    "check_api_502.py": {
+      "bytes": 12044,
+      "sha256": "a142ff2f85e4a9be4a8e28faecc7af145e5914782e7e26c95e5818182ed61ded"
+    },
+    "helper.diff": {
+      "bytes": 6287,
+      "sha256": "3d66a87110bd95d8853e6f8383335475b13b38ba31762b7f1eb2e369e856e059"
+    },
+    "workflow.diff": {
+      "bytes": 550,
+      "sha256": "d9560e5084f0f8ea72aee4a9fc0f2bf54d83d9dfdcd83ab446eefef92c8282d9"
+    }
+  },
+  "findings": [],
+  "static_byte_comparisons": {
+    "existing_error_body_403_429_3700_second_block_byte_identical": true,
+    "existing_redirect_statement_present_exactly_once_in_both": true,
+    "workflow_exactly_one_added_trigger_path": true
+  },
+  "reviewed_behavior": [
+    "Only HTTP 502 enters the added retry path. The existing caller must supply an actual urllib.request.Request with method GET and data=None.",
+    "Both the original request URL and final HTTPError URL must have scheme https and exact authority api.github.com. URL strings, foreign origins, credentials in authority, explicit ports and other methods cannot receive the added retry.",
+    "The original four-attempt loop is shared across 502 and existing rate-limit handling. The new delays are 30, 60 and 120 seconds by shared attempt, never a new independent attempt counter.",
+    "Standard Retry-After integer seconds or HTTP date can increase the delay. Empty, malformed, repeated and out-of-window explicit values stop the 502 retry; no millisecond policy is added.",
+    "The elapsed monotonic window is checked before waiting, after waiting, and immediately before the next 502-derived request. The original 120-second call timeout stays fixed; 600 seconds is a retry-start window, not a hard deadline on an already active call.",
+    "Existing 403/429 handling retains its original 3700-second policy and shared counter, including a rate-limit-derived retry after a prior 502. Redirect decisions and all non-502 error processing remain byte identical.",
+    "The same request object is passed again; this delta does not change headers, body, URL, account, token, source identity or artifact validation. New structured events expose no URL, response body, token or raw header value.",
+    "The workflow change consists solely of adding ci/rg_github_rate_limit.py to the existing push path filter. Every step, source/origin/restore/proof gate and resource limit is byte identical to the reviewed parent workflow."
+  ],
+  "focused_validation_review": {
+    "reported_case_count": 59,
+    "reported_status": "PASS",
+    "script_and_report_read": true,
+    "reviewer_reran_tests": false,
+    "coverage_assessment": "The supplied real Request/HTTPError objects with fake opener and clocks cover the concrete eligibility, deadline, oversleep, Retry-After, shared-counter, legacy-parity and privacy risks of this delta. No additional execution was needed."
+  },
+  "review_limits": {
+    "production_helper_executed": false,
+    "tests_executed_by_this_reviewer": false,
+    "network_calls": 0,
+    "remote_mutations": 0,
+    "ZIP_downloads": 0,
+    "Lean_or_native_CI_success_claimed": false
+  },
+  "native_motivation": {
+    "run_id": 41881296719,
+    "job_id": 126754145330,
+    "native_result": "completed/failure",
+    "failed_step_number": 5,
+    "native_HTTP_status": 502,
+    "native_log_sha256": "d8d0703b2146f15a9453d20017fcca050983b8dc928fea1d2ce0f47c441954e3",
+    "native_terminal_report_sha256": "cb6c4036cabd0410b8300190c8f6e4dd5874ed72e9d2156f7a7f8e77fece2bc2"
+  },
+  "conclusion": "No concrete code or integration blocker remains in the exact two-file delta reviewed here. Publication and any next actual original run remain owned by the root agent; this review supplies no proof receipt or completion."
+}

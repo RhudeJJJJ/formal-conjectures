@@ -1,0 +1,255 @@
+{
+  "status": "PASS",
+  "helper_sha256": "0c5a379458beafada219603bd7b8c1ad3cb8eb276335fa7abd86f04e1132461f",
+  "base_helper_sha256": "fd9d88d0062cd6b911f85da394c1543ef5aeae47bde357322ab222ccc462379d",
+  "workflow_sha256": "f556fa1ab222406638850177c1a98d2274bbe305b71797afc2f1cc1308a30267",
+  "case_count": 59,
+  "cases": [
+    {
+      "name": "actual_HTTPError_502_then_success_same_request_and_private_logs",
+      "status": "PASS"
+    },
+    {
+      "name": "exact_four_shared_attempts_backoffs_30_60_120",
+      "status": "PASS"
+    },
+    {
+      "name": "elapsed_window_before_wait_stops",
+      "status": "PASS"
+    },
+    {
+      "name": "oversleep_rechecked_after_wait",
+      "status": "PASS"
+    },
+    {
+      "name": "window_rechecked_immediately_before_retry",
+      "status": "PASS"
+    },
+    {
+      "name": "integer_Retry_After_respected",
+      "status": "PASS"
+    },
+    {
+      "name": "backoff_is_minimum_not_shortened_by_header",
+      "status": "PASS"
+    },
+    {
+      "name": "IMF_HTTP_date_respected",
+      "status": "PASS"
+    },
+    {
+      "name": "obsolete_RFC850_HTTP_date_respected",
+      "status": "PASS"
+    },
+    {
+      "name": "obsolete_asctime_HTTP_date_respected",
+      "status": "PASS"
+    },
+    {
+      "name": "past_valid_date_preserves_minimum_backoff",
+      "status": "PASS"
+    },
+    {
+      "name": "invalid_Retry_After_empty",
+      "status": "PASS"
+    },
+    {
+      "name": "invalid_Retry_After_garbage",
+      "status": "PASS"
+    },
+    {
+      "name": "invalid_Retry_After_negative",
+      "status": "PASS"
+    },
+    {
+      "name": "invalid_Retry_After_decimal",
+      "status": "PASS"
+    },
+    {
+      "name": "invalid_Retry_After_no_timezone",
+      "status": "PASS"
+    },
+    {
+      "name": "invalid_Retry_After_trailing_junk",
+      "status": "PASS"
+    },
+    {
+      "name": "invalid_Retry_After_overlong",
+      "status": "PASS"
+    },
+    {
+      "name": "invalid_Retry_After_invalid_calendar",
+      "status": "PASS"
+    },
+    {
+      "name": "repeated_Retry_After_rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "explicit_wait_outside_600s_window_rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "exact_600s_start_boundary_rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "ineligible_request_URL_string",
+      "status": "PASS"
+    },
+    {
+      "name": "ineligible_request_http",
+      "status": "PASS"
+    },
+    {
+      "name": "ineligible_request_foreign_host",
+      "status": "PASS"
+    },
+    {
+      "name": "ineligible_request_host_suffix",
+      "status": "PASS"
+    },
+    {
+      "name": "ineligible_request_userinfo",
+      "status": "PASS"
+    },
+    {
+      "name": "ineligible_request_explicit_port",
+      "status": "PASS"
+    },
+    {
+      "name": "ineligible_request_POST",
+      "status": "PASS"
+    },
+    {
+      "name": "ineligible_request_HEAD",
+      "status": "PASS"
+    },
+    {
+      "name": "ineligible_request_GET_with_empty_data",
+      "status": "PASS"
+    },
+    {
+      "name": "foreign_response_origin_not_retried",
+      "status": "PASS"
+    },
+    {
+      "name": "other_HTTP_500_unchanged",
+      "status": "PASS"
+    },
+    {
+      "name": "other_HTTP_503_unchanged",
+      "status": "PASS"
+    },
+    {
+      "name": "other_HTTP_401_unchanged",
+      "status": "PASS"
+    },
+    {
+      "name": "other_HTTP_404_unchanged",
+      "status": "PASS"
+    },
+    {
+      "name": "redirect_301_unchanged",
+      "status": "PASS"
+    },
+    {
+      "name": "redirect_302_unchanged",
+      "status": "PASS"
+    },
+    {
+      "name": "redirect_303_unchanged",
+      "status": "PASS"
+    },
+    {
+      "name": "redirect_307_unchanged",
+      "status": "PASS"
+    },
+    {
+      "name": "redirect_308_unchanged",
+      "status": "PASS"
+    },
+    {
+      "name": "legacy_403_seconds",
+      "status": "PASS"
+    },
+    {
+      "name": "legacy_403_reset",
+      "status": "PASS"
+    },
+    {
+      "name": "legacy_403_secondary",
+      "status": "PASS"
+    },
+    {
+      "name": "legacy_403_not_rate_limited",
+      "status": "PASS"
+    },
+    {
+      "name": "legacy_403_3700s_boundary",
+      "status": "PASS"
+    },
+    {
+      "name": "legacy_403_over_3700s",
+      "status": "PASS"
+    },
+    {
+      "name": "legacy_429_seconds",
+      "status": "PASS"
+    },
+    {
+      "name": "legacy_429_reset",
+      "status": "PASS"
+    },
+    {
+      "name": "legacy_429_secondary",
+      "status": "PASS"
+    },
+    {
+      "name": "legacy_429_not_rate_limited",
+      "status": "PASS"
+    },
+    {
+      "name": "legacy_429_3700s_boundary",
+      "status": "PASS"
+    },
+    {
+      "name": "legacy_429_over_3700s",
+      "status": "PASS"
+    },
+    {
+      "name": "legacy_shared_four_attempts",
+      "status": "PASS"
+    },
+    {
+      "name": "URL_error_not_retried",
+      "status": "PASS"
+    },
+    {
+      "name": "timeout_not_retried",
+      "status": "PASS"
+    },
+    {
+      "name": "hash_assertion_not_retried",
+      "status": "PASS"
+    },
+    {
+      "name": "old_429_wait_after_502_is_not_capped_by_new_window",
+      "status": "PASS"
+    },
+    {
+      "name": "502_and_429_share_the_original_four_attempt_counter",
+      "status": "PASS"
+    }
+  ],
+  "legacy_403_429_error_body_and_3700s_block_byte_identical": true,
+  "redirects_byte_identical": true,
+  "workflow_only_added_push_path": true,
+  "syntax": "ast.parse",
+  "executed_scope": "Pure mock opener, fake clock and real urllib HTTPError/Request objects only.",
+  "network_requests": 0,
+  "real_sleeps": 0,
+  "native_context_simulation": false,
+  "github_environment_simulation": false,
+  "proof_or_actual_authenticator_executed": false
+}

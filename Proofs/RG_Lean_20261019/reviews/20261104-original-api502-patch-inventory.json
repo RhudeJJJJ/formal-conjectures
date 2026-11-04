@@ -1,0 +1,92 @@
+{
+  "schema": "rg-final-api-502-retry-publication-inventory-v1",
+  "status": "FROZEN_FOR_INDEPENDENT_REVIEW_NO_REMOTE_MUTATION",
+  "base_commit": "c1f319c9ef01b7245b79cb254a3ecb6ab64516a6",
+  "files": [
+    {
+      "path": "ci/rg_github_rate_limit.py",
+      "bytes": 7427,
+      "sha256": "0c5a379458beafada219603bd7b8c1ad3cb8eb276335fa7abd86f04e1132461f",
+      "git_blob_sha1": "02c3db7cbce68d671d9a414e7d8d44575094c3c6",
+      "base_bytes": 1981,
+      "base_sha256": "fd9d88d0062cd6b911f85da394c1543ef5aeae47bde357322ab222ccc462379d",
+      "base_git_blob_sha1": "75c97c76584b0d8fc2b3871763dea77d0f61524f",
+      "diff_path": "helper.diff",
+      "diff_sha256": "3d66a87110bd95d8853e6f8383335475b13b38ba31762b7f1eb2e369e856e059"
+    },
+    {
+      "path": ".github/workflows/rg-degree-one-large-join-repair-20261104.yml",
+      "bytes": 9642,
+      "sha256": "f556fa1ab222406638850177c1a98d2274bbe305b71797afc2f1cc1308a30267",
+      "git_blob_sha1": "d18745fb6c833ae36e2f5ea3fd8cd0a97c9ce10a",
+      "base_bytes": 9605,
+      "base_sha256": "7147154b7091f5459bb35b78c5a837be2bc5505f88927a035c19e489aaf2ff56",
+      "base_git_blob_sha1": "6496e2230b6878d881d0b094414dc010f91d125d",
+      "diff_path": "workflow.diff",
+      "diff_sha256": "d9560e5084f0f8ea72aee4a9fc0f2bf54d83d9dfdcd83ab446eefef92c8282d9"
+    }
+  ],
+  "changed_runtime_file_count": 2,
+  "changed_runtime_bytes": 17069,
+  "scope": {
+    "retryable_status": 502,
+    "request_type": "urllib.request.Request",
+    "method": "GET",
+    "data": null,
+    "request_and_final_error_origin": "https://api.github.com (exact scheme and authority; explicit ports and userinfo excluded)",
+    "shared_existing_maximum_attempts": 4,
+    "backoff_seconds_by_shared_attempt": [
+      30,
+      60,
+      120
+    ],
+    "standard_Retry_After": "Integer seconds or a syntactically valid HTTP date; invalid or duplicate explicit header fails closed. Delay is at least the ordinary backoff. No millisecond-header retry policy is added.",
+    "retry_start_window_seconds": 600,
+    "window_checks": [
+      "before wait",
+      "after wait",
+      "immediately before the next request"
+    ],
+    "window_is_not_a_hard_deadline_for_in_flight_120_second_call": true,
+    "same_request_object_and_request_contents_preserved": true,
+    "no_new_retry_for_other_HTTP_codes_or_network_hash_failures": true,
+    "new_502_logs_have_no_URL_response_body_token_or_raw_header_value": true
+  },
+  "unchanged_behavior": {
+    "redirect_codes": [
+      301,
+      302,
+      303,
+      307,
+      308
+    ],
+    "redirect_statement_byte_identical": true,
+    "entire_existing_403_429_error_processing_and_3700_second_block_byte_identical": true,
+    "original_timeout_per_call_seconds": 120,
+    "normalized_AST_after_removing_only_added_502_path_helpers_imports_and_guard_equals_base": true,
+    "workflow_only_added_one_push_filter_path": "ci/rg_github_rate_limit.py",
+    "all_restore_source_origin_proof_resource_receipt_and_milestone_gates_unchanged": true
+  },
+  "focused_validation": {
+    "script": "check_api_502.py",
+    "script_bytes": 12044,
+    "script_sha256": "a142ff2f85e4a9be4a8e28faecc7af145e5914782e7e26c95e5818182ed61ded",
+    "report": "focused_mock_validation.json",
+    "report_bytes": 5662,
+    "report_sha256": "8b34fe43685ac34d6844ddef9ae558a2fad942d848a5b6a3b85b8e8f02193673",
+    "status": "PASS",
+    "cases": 59,
+    "syntax": "ast.parse only for syntax; production helper exercised only with injected pure opener/clock mocks.",
+    "real_HTTPError_and_Request_objects_used": true,
+    "network_requests": 0,
+    "real_sleeps": 0,
+    "native_context_or_GHA_environment_simulated": false,
+    "Lean_or_production_authenticator_executed": false
+  },
+  "limitations": [
+    "No native GitHub retry outcome is claimed by offline mocks.",
+    "An existing 120-second in-flight API call is not interrupted by the new retry-start window.",
+    "Existing 403/429 retries retain their own original 3700-second policy and the shared four-attempt counter.",
+    "This patch supplies no proof exports, receipt or family completion."
+  ]
+}

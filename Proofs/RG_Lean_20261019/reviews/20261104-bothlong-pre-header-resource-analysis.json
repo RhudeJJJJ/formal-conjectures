@@ -1,0 +1,1826 @@
+{
+  "cgroup_mapping": {
+    "all_recorded_mountinfo_reads_succeeded_without_parse_errors": true,
+    "candidate_paths": [
+      "/sys/fs/cgroup/system.slice/hosted-compute-agent.service"
+    ],
+    "mapping_status": [
+      "CANDIDATES_RECORDED"
+    ],
+    "membership_lines": [
+      "0::/system.slice/hosted-compute-agent.service"
+    ],
+    "mounts": [
+      {
+        "mount_point": "/sys/fs/cgroup",
+        "root": "/"
+      }
+    ],
+    "single_coincident_hierarchy_and_namespace_candidate": true,
+    "visible_root_is_not_proof_of_no_hidden_ancestors": "Mountinfo root / and complete traversal to /sys/fs/cgroup describe the visible namespace. They do not establish that no cgroup ancestors or supervisor constraints exist outside that namespace."
+  },
+  "cgroups": [
+    {
+      "background_scan_share_of_scan_delta_percent": 97.718311,
+      "event_counters": {
+        "cpu.stat": {
+          "delta": {
+            "burst_usec": 0,
+            "core_sched.force_idle_usec": 0,
+            "nice_usec": 0,
+            "nr_bursts": 0,
+            "nr_periods": 0,
+            "nr_throttled": 0,
+            "system_usec": 1047682000,
+            "throttled_usec": 0,
+            "usage_usec": 1081408000,
+            "user_usec": 33726000
+          },
+          "first": {
+            "burst_usec": 0,
+            "core_sched.force_idle_usec": 0,
+            "nice_usec": 1821000,
+            "nr_bursts": 0,
+            "nr_periods": 0,
+            "nr_throttled": 0,
+            "system_usec": 1991011000,
+            "throttled_usec": 0,
+            "usage_usec": 2971563000,
+            "user_usec": 980552000
+          },
+          "last": {
+            "burst_usec": 0,
+            "core_sched.force_idle_usec": 0,
+            "nice_usec": 1821000,
+            "nr_bursts": 0,
+            "nr_periods": 0,
+            "nr_throttled": 0,
+            "system_usec": 3038693000,
+            "throttled_usec": 0,
+            "usage_usec": 4052971000,
+            "user_usec": 1014278000
+          }
+        }
+      },
+      "io_device_caution": "Do not add stacked-device counters as distinct physical traffic; these are separate device scopes.",
+      "io_device_deltas": {
+        "7:0": {
+          "dbytes": 0,
+          "dios": 0,
+          "rbytes": 130179833856,
+          "rios": 2287470,
+          "wbytes": 499712,
+          "wios": 33
+        },
+        "8:0": {
+          "dbytes": 4743168,
+          "dios": 177,
+          "rbytes": 135482007552,
+          "rios": 3621321,
+          "wbytes": 12948336640,
+          "wios": 832497
+        }
+      },
+      "limit_values_and_read_status": {
+        "cpu.max": [
+          {
+            "errno": 2,
+            "error_type": "FileNotFoundError",
+            "status": "READ_ERROR"
+          }
+        ],
+        "memory.high": [
+          {
+            "errno": 2,
+            "error_type": "FileNotFoundError",
+            "status": "READ_ERROR"
+          }
+        ],
+        "memory.max": [
+          {
+            "errno": 2,
+            "error_type": "FileNotFoundError",
+            "status": "READ_ERROR"
+          }
+        ],
+        "memory.swap.max": [
+          {
+            "errno": 2,
+            "error_type": "FileNotFoundError",
+            "status": "READ_ERROR"
+          }
+        ]
+      },
+      "measurement_scope": "Cgroup, potentially including other processes; not a Lean-only counter",
+      "memory_gauges_bytes": {},
+      "memory_pressure": {
+        "full": {
+          "first": {
+            "avg10": 1.95,
+            "avg300": 1.75,
+            "avg60": 3.86,
+            "total": 10505787
+          },
+          "last": {
+            "avg10": 13.04,
+            "avg300": 10.55,
+            "avg60": 10.97,
+            "total": 112748937
+          },
+          "maximum_avg10_at_observer_seconds": 241.59,
+          "maximum_avg10_percent": 21.95,
+          "percent_of_observed_window": 11.564921,
+          "total_stall_seconds_delta": 102.24315
+        },
+        "some": {
+          "first": {
+            "avg10": 2.02,
+            "avg300": 1.83,
+            "avg60": 4.01,
+            "total": 12233051
+          },
+          "last": {
+            "avg10": 14.54,
+            "avg300": 11.68,
+            "avg60": 12.1,
+            "total": 123961120
+          },
+          "maximum_avg10_at_observer_seconds": 241.59,
+          "maximum_avg10_percent": 23.58,
+          "percent_of_observed_window": 12.637778,
+          "total_stall_seconds_delta": 111.728069
+        }
+      },
+      "memory_stat_anon_plus_file_bytes": {
+        "first": 15499591680,
+        "last": 15403212800,
+        "maximum": 15499591680,
+        "maximum_at_observer_seconds": 10.02,
+        "minimum": 11194687488,
+        "minimum_at_observer_seconds": 201.18
+      },
+      "memory_stat_first_last_delta": {
+        "anon": {
+          "delta": 2226106368,
+          "first": 382705664,
+          "last": 2608812032
+        },
+        "file": {
+          "delta": -2322485248,
+          "first": 15116886016,
+          "last": 12794400768
+        },
+        "file_mapped": {
+          "delta": 1783832576,
+          "first": 910741504,
+          "last": 2694574080
+        },
+        "pgfault": {
+          "delta": 4585525,
+          "first": 13250238,
+          "last": 17835763
+        },
+        "pgmajfault": {
+          "delta": 2693569,
+          "first": 11340,
+          "last": 2704909
+        },
+        "pgscan": {
+          "delta": 109948355,
+          "first": 57804103,
+          "last": 167752458
+        },
+        "pgscan_direct": {
+          "delta": 2504871,
+          "first": 80143,
+          "last": 2585014
+        },
+        "pgscan_khugepaged": {
+          "delta": 3809,
+          "first": 0,
+          "last": 3809,
+          "maximum": 3809,
+          "minimum": 0
+        },
+        "pgscan_kswapd": {
+          "delta": 107439675,
+          "first": 57723960,
+          "last": 165163635,
+          "maximum": 165163635,
+          "minimum": 57723960
+        },
+        "pgscan_proactive": {
+          "delta": 0,
+          "first": 0,
+          "last": 0,
+          "maximum": 0,
+          "minimum": 0
+        },
+        "pgsteal": {
+          "delta": 101652260,
+          "first": 57787030,
+          "last": 159439290
+        },
+        "pgsteal_direct": {
+          "delta": 2239870,
+          "first": 80111,
+          "last": 2319981
+        },
+        "pgsteal_khugepaged": {
+          "delta": 3550,
+          "first": 0,
+          "last": 3550,
+          "maximum": 3550,
+          "minimum": 0
+        },
+        "pgsteal_kswapd": {
+          "delta": 99408840,
+          "first": 57706919,
+          "last": 157115759,
+          "maximum": 157115759,
+          "minimum": 57706919
+        },
+        "pgsteal_proactive": {
+          "delta": 0,
+          "first": 0,
+          "last": 0,
+          "maximum": 0,
+          "minimum": 0
+        },
+        "pswpin": {
+          "delta": 2592887,
+          "first": 0,
+          "last": 2592887
+        },
+        "pswpout": {
+          "delta": 3150169,
+          "first": 22,
+          "last": 3150191
+        },
+        "swapcached": {
+          "delta": 10371072,
+          "first": 86016,
+          "last": 10457088
+        },
+        "workingset_refault_anon": {
+          "delta": 2593978,
+          "first": 0,
+          "last": 2593978
+        },
+        "workingset_refault_file": {
+          "delta": 97646296,
+          "first": 28682125,
+          "last": 126328421
+        }
+      },
+      "memory_stat_gauge_extents_bytes": {
+        "anon": {
+          "first": 382705664,
+          "last": 2608812032,
+          "maximum": 3842203648,
+          "maximum_at_observer_seconds": 191.13,
+          "minimum": 173621248,
+          "minimum_at_observer_seconds": 40.51
+        },
+        "file": {
+          "first": 15116886016,
+          "last": 12794400768,
+          "maximum": 15116886016,
+          "maximum_at_observer_seconds": 10.02,
+          "minimum": 7460880384,
+          "minimum_at_observer_seconds": 201.18
+        },
+        "file_mapped": {
+          "first": 910741504,
+          "last": 2694574080,
+          "maximum": 5035585536,
+          "maximum_at_observer_seconds": 90.73,
+          "minimum": 910741504,
+          "minimum_at_observer_seconds": 10.02
+        },
+        "swapcached": {
+          "first": 86016,
+          "last": 10457088,
+          "maximum": 591319040,
+          "maximum_at_observer_seconds": 171.05,
+          "minimum": 86016,
+          "minimum_at_observer_seconds": 10.02
+        }
+      },
+      "path": "/sys/fs/cgroup",
+      "read_errors": {
+        "cpu.max": [
+          {
+            "errno": 2,
+            "error_type": "FileNotFoundError",
+            "status": "READ_ERROR"
+          }
+        ],
+        "memory.current": [
+          {
+            "errno": 2,
+            "error_type": "FileNotFoundError",
+            "status": "READ_ERROR"
+          }
+        ],
+        "memory.events": [
+          {
+            "errno": 2,
+            "error_type": "FileNotFoundError",
+            "status": "READ_ERROR"
+          }
+        ],
+        "memory.events.local": [
+          {
+            "errno": 2,
+            "error_type": "FileNotFoundError",
+            "status": "READ_ERROR"
+          }
+        ],
+        "memory.high": [
+          {
+            "errno": 2,
+            "error_type": "FileNotFoundError",
+            "status": "READ_ERROR"
+          }
+        ],
+        "memory.max": [
+          {
+            "errno": 2,
+            "error_type": "FileNotFoundError",
+            "status": "READ_ERROR"
+          }
+        ],
+        "memory.swap.current": [
+          {
+            "errno": 2,
+            "error_type": "FileNotFoundError",
+            "status": "READ_ERROR"
+          }
+        ],
+        "memory.swap.max": [
+          {
+            "errno": 2,
+            "error_type": "FileNotFoundError",
+            "status": "READ_ERROR"
+          }
+        ]
+      },
+      "read_status_counts": {
+        "cpu.max": {
+          "READ_ERROR": 89
+        },
+        "cpu.stat": {
+          "READ": 89
+        },
+        "io.stat": {
+          "READ": 89
+        },
+        "memory.current": {
+          "READ_ERROR": 89
+        },
+        "memory.events": {
+          "READ_ERROR": 89
+        },
+        "memory.events.local": {
+          "READ_ERROR": 89
+        },
+        "memory.high": {
+          "READ_ERROR": 89
+        },
+        "memory.max": {
+          "READ_ERROR": 89
+        },
+        "memory.pressure": {
+          "READ": 89
+        },
+        "memory.stat": {
+          "READ": 89
+        },
+        "memory.swap.current": {
+          "READ_ERROR": 89
+        },
+        "memory.swap.max": {
+          "READ_ERROR": 89
+        }
+      }
+    },
+    {
+      "background_scan_share_of_scan_delta_percent": 97.728129,
+      "event_counters": {
+        "cpu.stat": {
+          "delta": {
+            "burst_usec": 0,
+            "core_sched.force_idle_usec": 0,
+            "nice_usec": 0,
+            "nr_bursts": 0,
+            "nr_periods": 0,
+            "nr_throttled": 0,
+            "system_usec": 211505430,
+            "throttled_usec": 0,
+            "usage_usec": 252938386,
+            "user_usec": 41432957
+          },
+          "first": {
+            "burst_usec": 0,
+            "core_sched.force_idle_usec": 0,
+            "nice_usec": 1821000,
+            "nr_bursts": 0,
+            "nr_periods": 0,
+            "nr_throttled": 0,
+            "system_usec": 235821265,
+            "throttled_usec": 0,
+            "usage_usec": 1221047958,
+            "user_usec": 985226692
+          },
+          "last": {
+            "burst_usec": 0,
+            "core_sched.force_idle_usec": 0,
+            "nice_usec": 1821000,
+            "nr_bursts": 0,
+            "nr_periods": 0,
+            "nr_throttled": 0,
+            "system_usec": 447326695,
+            "throttled_usec": 0,
+            "usage_usec": 1473986344,
+            "user_usec": 1026659649
+          }
+        },
+        "memory.events": {
+          "delta": {
+            "high": 0,
+            "low": 0,
+            "max": 0,
+            "oom": 0,
+            "oom_group_kill": 0,
+            "oom_kill": 0,
+            "sock_throttled": 0
+          },
+          "first": {
+            "high": 0,
+            "low": 0,
+            "max": 0,
+            "oom": 0,
+            "oom_group_kill": 0,
+            "oom_kill": 0,
+            "sock_throttled": 0
+          },
+          "last": {
+            "high": 0,
+            "low": 0,
+            "max": 0,
+            "oom": 0,
+            "oom_group_kill": 0,
+            "oom_kill": 0,
+            "sock_throttled": 0
+          }
+        },
+        "memory.events.local": {
+          "delta": {
+            "high": 0,
+            "low": 0,
+            "max": 0,
+            "oom": 0,
+            "oom_group_kill": 0,
+            "oom_kill": 0,
+            "sock_throttled": 0
+          },
+          "first": {
+            "high": 0,
+            "low": 0,
+            "max": 0,
+            "oom": 0,
+            "oom_group_kill": 0,
+            "oom_kill": 0,
+            "sock_throttled": 0
+          },
+          "last": {
+            "high": 0,
+            "low": 0,
+            "max": 0,
+            "oom": 0,
+            "oom_group_kill": 0,
+            "oom_kill": 0,
+            "sock_throttled": 0
+          }
+        }
+      },
+      "io_device_caution": "Do not add stacked-device counters as distinct physical traffic; these are separate device scopes.",
+      "io_device_deltas": {
+        "7:0": {
+          "dbytes": 0,
+          "dios": 0,
+          "rbytes": 130179735552,
+          "rios": 3954056,
+          "wbytes": 0,
+          "wios": 0
+        },
+        "8:0": {
+          "dbytes": 4050944,
+          "dios": 15,
+          "rbytes": 135459409920,
+          "rios": 3733225,
+          "wbytes": 12864299008,
+          "wios": 3138066
+        }
+      },
+      "limit_values_and_read_status": {
+        "cpu.max": [
+          {
+            "status": "READ",
+            "text": "max 100000"
+          }
+        ],
+        "memory.high": [
+          {
+            "status": "READ",
+            "value": "max"
+          }
+        ],
+        "memory.max": [
+          {
+            "status": "READ",
+            "value": "max"
+          }
+        ],
+        "memory.swap.max": [
+          {
+            "status": "READ",
+            "value": "max"
+          }
+        ]
+      },
+      "measurement_scope": "Cgroup, potentially including other processes; not a Lean-only counter",
+      "memory_gauges_bytes": {
+        "memory.current": {
+          "first": 14742495232,
+          "last": 16066490368,
+          "maximum": 16111730688,
+          "maximum_at_observer_seconds": 80.7,
+          "minimum": 11891875840,
+          "minimum_at_observer_seconds": 201.18
+        },
+        "memory.swap.current": {
+          "first": 86016,
+          "last": 2549039104,
+          "maximum": 3141255168,
+          "maximum_at_observer_seconds": 332.01,
+          "minimum": 86016,
+          "minimum_at_observer_seconds": 10.02
+        }
+      },
+      "memory_pressure": {
+        "full": {
+          "first": {
+            "avg10": 0.0,
+            "avg300": 0.0,
+            "avg60": 0.0,
+            "total": 62530
+          },
+          "last": {
+            "avg10": 10.43,
+            "avg300": 7.08,
+            "avg60": 7.19,
+            "total": 66859602
+          },
+          "maximum_avg10_at_observer_seconds": 382.13,
+          "maximum_avg10_percent": 22.72,
+          "percent_of_observed_window": 7.555546,
+          "total_stall_seconds_delta": 66.797072
+        },
+        "some": {
+          "first": {
+            "avg10": 0.0,
+            "avg300": 0.0,
+            "avg60": 0.0,
+            "total": 62530
+          },
+          "last": {
+            "avg10": 10.43,
+            "avg300": 7.1,
+            "avg60": 7.22,
+            "total": 67085936
+          },
+          "maximum_avg10_at_observer_seconds": 382.13,
+          "maximum_avg10_percent": 22.72,
+          "percent_of_observed_window": 7.581147,
+          "total_stall_seconds_delta": 67.023406
+        }
+      },
+      "memory_stat_anon_plus_file_bytes": {
+        "first": 14101807104,
+        "last": 15301140480,
+        "maximum": 15309299712,
+        "maximum_at_observer_seconds": 332.01,
+        "minimum": 11080888320,
+        "minimum_at_observer_seconds": 201.18
+      },
+      "memory_stat_first_last_delta": {
+        "anon": {
+          "delta": 2267115520,
+          "first": 329490432,
+          "last": 2596605952
+        },
+        "file": {
+          "delta": -1067782144,
+          "first": 13772316672,
+          "last": 12704534528
+        },
+        "file_mapped": {
+          "delta": 1796567040,
+          "first": 888520704,
+          "last": 2685087744
+        },
+        "pgfault": {
+          "delta": 4580545,
+          "first": 13091028,
+          "last": 17671573
+        },
+        "pgmajfault": {
+          "delta": 2691790,
+          "first": 11212,
+          "last": 2703002
+        },
+        "pgscan": {
+          "delta": 109462099,
+          "first": 57435478,
+          "last": 166897577
+        },
+        "pgscan_direct": {
+          "delta": 2483031,
+          "first": 78931,
+          "last": 2561962
+        },
+        "pgscan_khugepaged": {
+          "delta": 3807,
+          "first": 0,
+          "last": 3807,
+          "maximum": 3807,
+          "minimum": 0
+        },
+        "pgscan_kswapd": {
+          "delta": 106975261,
+          "first": 57356547,
+          "last": 164331808,
+          "maximum": 164331808,
+          "minimum": 57356547
+        },
+        "pgscan_proactive": {
+          "delta": 0,
+          "first": 0,
+          "last": 0,
+          "maximum": 0,
+          "minimum": 0
+        },
+        "pgsteal": {
+          "delta": 101185121,
+          "first": 57418877,
+          "last": 158603998
+        },
+        "pgsteal_direct": {
+          "delta": 2218538,
+          "first": 78931,
+          "last": 2297469
+        },
+        "pgsteal_khugepaged": {
+          "delta": 3549,
+          "first": 0,
+          "last": 3549,
+          "maximum": 3549,
+          "minimum": 0
+        },
+        "pgsteal_kswapd": {
+          "delta": 98963034,
+          "first": 57339946,
+          "last": 156302980,
+          "maximum": 156302980,
+          "minimum": 57339946
+        },
+        "pgsteal_proactive": {
+          "delta": 0,
+          "first": 0,
+          "last": 0,
+          "maximum": 0,
+          "minimum": 0
+        },
+        "pswpin": {
+          "delta": 2589733,
+          "first": 0,
+          "last": 2589733
+        },
+        "pswpout": {
+          "delta": 3137707,
+          "first": 22,
+          "last": 3137729
+        },
+        "swapcached": {
+          "delta": 9695232,
+          "first": 86016,
+          "last": 9781248
+        },
+        "workingset_refault_anon": {
+          "delta": 2590811,
+          "first": 0,
+          "last": 2590811
+        },
+        "workingset_refault_file": {
+          "delta": 97500803,
+          "first": 28671827,
+          "last": 126172630
+        }
+      },
+      "memory_stat_gauge_extents_bytes": {
+        "anon": {
+          "first": 329490432,
+          "last": 2596605952,
+          "maximum": 3824173056,
+          "maximum_at_observer_seconds": 191.13,
+          "minimum": 120401920,
+          "minimum_at_observer_seconds": 40.51
+        },
+        "file": {
+          "first": 13772316672,
+          "last": 12704534528,
+          "maximum": 14574866432,
+          "maximum_at_observer_seconds": 40.51,
+          "minimum": 7364616192,
+          "minimum_at_observer_seconds": 201.18
+        },
+        "file_mapped": {
+          "first": 888520704,
+          "last": 2685087744,
+          "maximum": 5013716992,
+          "maximum_at_observer_seconds": 90.73,
+          "minimum": 888520704,
+          "minimum_at_observer_seconds": 10.02
+        },
+        "swapcached": {
+          "first": 86016,
+          "last": 9781248,
+          "maximum": 590635008,
+          "maximum_at_observer_seconds": 171.05,
+          "minimum": 86016,
+          "minimum_at_observer_seconds": 10.02
+        }
+      },
+      "path": "/sys/fs/cgroup/system.slice",
+      "read_status_counts": {
+        "cpu.max": {
+          "READ": 89
+        },
+        "cpu.stat": {
+          "READ": 89
+        },
+        "io.stat": {
+          "READ": 89
+        },
+        "memory.current": {
+          "READ": 89
+        },
+        "memory.events": {
+          "READ": 89
+        },
+        "memory.events.local": {
+          "READ": 89
+        },
+        "memory.high": {
+          "READ": 89
+        },
+        "memory.max": {
+          "READ": 89
+        },
+        "memory.pressure": {
+          "READ": 89
+        },
+        "memory.stat": {
+          "READ": 89
+        },
+        "memory.swap.current": {
+          "READ": 89
+        },
+        "memory.swap.max": {
+          "READ": 89
+        }
+      }
+    },
+    {
+      "background_scan_share_of_scan_delta_percent": 97.749368,
+      "event_counters": {
+        "cpu.stat": {
+          "delta": {
+            "burst_usec": 0,
+            "core_sched.force_idle_usec": 0,
+            "nice_usec": 0,
+            "nr_bursts": 0,
+            "nr_periods": 0,
+            "nr_throttled": 0,
+            "system_usec": 209773919,
+            "throttled_usec": 0,
+            "usage_usec": 250961689,
+            "user_usec": 41187769
+          },
+          "first": {
+            "burst_usec": 0,
+            "core_sched.force_idle_usec": 0,
+            "nice_usec": 1800000,
+            "nr_bursts": 0,
+            "nr_periods": 0,
+            "nr_throttled": 0,
+            "system_usec": 225450183,
+            "throttled_usec": 0,
+            "usage_usec": 1200308622,
+            "user_usec": 974858439
+          },
+          "last": {
+            "burst_usec": 0,
+            "core_sched.force_idle_usec": 0,
+            "nice_usec": 1800000,
+            "nr_bursts": 0,
+            "nr_periods": 0,
+            "nr_throttled": 0,
+            "system_usec": 435224102,
+            "throttled_usec": 0,
+            "usage_usec": 1451270311,
+            "user_usec": 1016046208
+          }
+        },
+        "memory.events": {
+          "delta": {
+            "high": 0,
+            "low": 0,
+            "max": 0,
+            "oom": 0,
+            "oom_group_kill": 0,
+            "oom_kill": 0,
+            "sock_throttled": 0
+          },
+          "first": {
+            "high": 0,
+            "low": 0,
+            "max": 0,
+            "oom": 0,
+            "oom_group_kill": 0,
+            "oom_kill": 0,
+            "sock_throttled": 0
+          },
+          "last": {
+            "high": 0,
+            "low": 0,
+            "max": 0,
+            "oom": 0,
+            "oom_group_kill": 0,
+            "oom_kill": 0,
+            "sock_throttled": 0
+          }
+        },
+        "memory.events.local": {
+          "delta": {
+            "high": 0,
+            "low": 0,
+            "max": 0,
+            "oom": 0,
+            "oom_group_kill": 0,
+            "oom_kill": 0,
+            "sock_throttled": 0
+          },
+          "first": {
+            "high": 0,
+            "low": 0,
+            "max": 0,
+            "oom": 0,
+            "oom_group_kill": 0,
+            "oom_kill": 0,
+            "sock_throttled": 0
+          },
+          "last": {
+            "high": 0,
+            "low": 0,
+            "max": 0,
+            "oom": 0,
+            "oom_group_kill": 0,
+            "oom_kill": 0,
+            "sock_throttled": 0
+          }
+        }
+      },
+      "io_device_caution": "Do not add stacked-device counters as distinct physical traffic; these are separate device scopes.",
+      "io_device_deltas": {
+        "7:0": {
+          "dbytes": 0,
+          "dios": 0,
+          "rbytes": 130179735552,
+          "rios": 3954056,
+          "wbytes": 0,
+          "wios": 0
+        },
+        "8:0": {
+          "dbytes": 4050944,
+          "dios": 15,
+          "rbytes": 135439470592,
+          "rios": 3732128,
+          "wbytes": 12805472256,
+          "wios": 3124408
+        }
+      },
+      "limit_values_and_read_status": {
+        "cpu.max": [
+          {
+            "status": "READ",
+            "text": "max 100000"
+          }
+        ],
+        "memory.high": [
+          {
+            "status": "READ",
+            "value": "max"
+          }
+        ],
+        "memory.max": [
+          {
+            "status": "READ",
+            "value": "max"
+          }
+        ],
+        "memory.swap.max": [
+          {
+            "status": "READ",
+            "value": "max"
+          }
+        ]
+      },
+      "measurement_scope": "Cgroup, potentially including other processes; not a Lean-only counter",
+      "memory_gauges_bytes": {
+        "memory.current": {
+          "first": 14294683648,
+          "last": 15964487680,
+          "maximum": 15964487680,
+          "maximum_at_observer_seconds": 894.1,
+          "minimum": 11731677184,
+          "minimum_at_observer_seconds": 201.18
+        },
+        "memory.swap.current": {
+          "first": 0,
+          "last": 2492047360,
+          "maximum": 3102584832,
+          "maximum_at_observer_seconds": 332.01,
+          "minimum": 0,
+          "minimum_at_observer_seconds": 10.02
+        }
+      },
+      "memory_pressure": {
+        "full": {
+          "first": {
+            "avg10": 0.08,
+            "avg300": 0.0,
+            "avg60": 0.02,
+            "total": 66583
+          },
+          "last": {
+            "avg10": 10.43,
+            "avg300": 7.09,
+            "avg60": 7.18,
+            "total": 66824905
+          },
+          "maximum_avg10_at_observer_seconds": 372.11,
+          "maximum_avg10_percent": 23.54,
+          "percent_of_observed_window": 7.551163,
+          "total_stall_seconds_delta": 66.758322
+        },
+        "some": {
+          "first": {
+            "avg10": 0.08,
+            "avg300": 0.0,
+            "avg60": 0.02,
+            "total": 66583
+          },
+          "last": {
+            "avg10": 10.43,
+            "avg300": 7.12,
+            "avg60": 7.19,
+            "total": 67016504
+          },
+          "maximum_avg10_at_observer_seconds": 372.11,
+          "maximum_avg10_percent": 23.55,
+          "percent_of_observed_window": 7.572835,
+          "total_stall_seconds_delta": 66.949921
+        }
+      },
+      "memory_stat_anon_plus_file_bytes": {
+        "first": 13688811520,
+        "last": 15221137408,
+        "maximum": 15221137408,
+        "maximum_at_observer_seconds": 894.1,
+        "minimum": 10950864896,
+        "minimum_at_observer_seconds": 201.18
+      },
+      "memory_stat_first_last_delta": {
+        "anon": {
+          "delta": 2320642048,
+          "first": 215437312,
+          "last": 2536079360
+        },
+        "file": {
+          "delta": -788316160,
+          "first": 13473374208,
+          "last": 12685058048
+        },
+        "file_mapped": {
+          "delta": 1957937152,
+          "first": 710684672,
+          "last": 2668621824
+        },
+        "pgfault": {
+          "delta": 4577506,
+          "first": 12599418,
+          "last": 17176924
+        },
+        "pgmajfault": {
+          "delta": 2691448,
+          "first": 8026,
+          "last": 2699474
+        },
+        "pgscan": {
+          "delta": 109339010,
+          "first": 57331860,
+          "last": 166670870
+        },
+        "pgscan_direct": {
+          "delta": 2457152,
+          "first": 78579,
+          "last": 2535731
+        },
+        "pgscan_khugepaged": {
+          "delta": 3667,
+          "first": 0,
+          "last": 3667,
+          "maximum": 3667,
+          "minimum": 0
+        },
+        "pgscan_kswapd": {
+          "delta": 106878191,
+          "first": 57253281,
+          "last": 164131472,
+          "maximum": 164131472,
+          "minimum": 57253281
+        },
+        "pgscan_proactive": {
+          "delta": 0,
+          "first": 0,
+          "last": 0,
+          "maximum": 0,
+          "minimum": 0
+        },
+        "pgsteal": {
+          "delta": 101099738,
+          "first": 57325572,
+          "last": 158425310
+        },
+        "pgsteal_direct": {
+          "delta": 2203851,
+          "first": 78579,
+          "last": 2282430
+        },
+        "pgsteal_khugepaged": {
+          "delta": 3530,
+          "first": 0,
+          "last": 3530,
+          "maximum": 3530,
+          "minimum": 0
+        },
+        "pgsteal_kswapd": {
+          "delta": 98892357,
+          "first": 57246993,
+          "last": 156139350,
+          "maximum": 156139350,
+          "minimum": 57246993
+        },
+        "pgsteal_proactive": {
+          "delta": 0,
+          "first": 0,
+          "last": 0,
+          "maximum": 0,
+          "minimum": 0
+        },
+        "pswpin": {
+          "delta": 2589324,
+          "first": 0,
+          "last": 2589324
+        },
+        "pswpout": {
+          "delta": 3124121,
+          "first": 0,
+          "last": 3124121
+        },
+        "swapcached": {
+          "delta": 5009408,
+          "first": 0,
+          "last": 5009408
+        },
+        "workingset_refault_anon": {
+          "delta": 2590367,
+          "first": 0,
+          "last": 2590367
+        },
+        "workingset_refault_file": {
+          "delta": 97498702,
+          "first": 28671776,
+          "last": 126170478
+        }
+      },
+      "memory_stat_gauge_extents_bytes": {
+        "anon": {
+          "first": 215437312,
+          "last": 2536079360,
+          "maximum": 3740897280,
+          "maximum_at_observer_seconds": 191.13,
+          "minimum": 6352896,
+          "minimum_at_observer_seconds": 40.51
+        },
+        "file": {
+          "first": 13473374208,
+          "last": 12685058048,
+          "maximum": 14386675712,
+          "maximum_at_observer_seconds": 40.51,
+          "minimum": 7317889024,
+          "minimum_at_observer_seconds": 201.18
+        },
+        "file_mapped": {
+          "first": 710684672,
+          "last": 2668621824,
+          "maximum": 4972072960,
+          "maximum_at_observer_seconds": 90.73,
+          "minimum": 710684672,
+          "minimum_at_observer_seconds": 10.02
+        },
+        "swapcached": {
+          "first": 0,
+          "last": 5009408,
+          "maximum": 585822208,
+          "maximum_at_observer_seconds": 171.05,
+          "minimum": 0,
+          "minimum_at_observer_seconds": 10.02
+        }
+      },
+      "path": "/sys/fs/cgroup/system.slice/hosted-compute-agent.service",
+      "read_status_counts": {
+        "cpu.max": {
+          "READ": 89
+        },
+        "cpu.stat": {
+          "READ": 89
+        },
+        "io.stat": {
+          "READ": 89
+        },
+        "memory.current": {
+          "READ": 89
+        },
+        "memory.events": {
+          "READ": 89
+        },
+        "memory.events.local": {
+          "READ": 89
+        },
+        "memory.high": {
+          "READ": 89
+        },
+        "memory.max": {
+          "READ": 89
+        },
+        "memory.pressure": {
+          "READ": 89
+        },
+        "memory.stat": {
+          "READ": 89
+        },
+        "memory.swap.current": {
+          "READ": 89
+        },
+        "memory.swap.max": {
+          "READ": 89
+        }
+      }
+    }
+  ],
+  "checkpoint_series": [
+    {
+      "RssAnon": 26570752,
+      "RssAnon_plus_VmSwap": 26570752,
+      "RssFile": 581529600,
+      "VmRSS": 608100352,
+      "VmSize": 8088698880,
+      "VmSwap": 0,
+      "global_SwapFree": 3221135360,
+      "major_faults": 5491,
+      "minor_faults": 25916,
+      "observer_seconds": 10.02,
+      "rchar": 1871913,
+      "read_bytes": 502673408,
+      "system_cpu_seconds": 1.3,
+      "user_cpu_seconds": 0.33
+    },
+    {
+      "RssAnon": 732356608,
+      "RssAnon_plus_VmSwap": 732356608,
+      "RssFile": 1996992512,
+      "VmRSS": 2729349120,
+      "VmSize": 106989363200,
+      "VmSwap": 0,
+      "global_SwapFree": 3221135360,
+      "major_faults": 17407,
+      "minor_faults": 233654,
+      "observer_seconds": 30.06,
+      "rchar": 692490393,
+      "read_bytes": 2718560256,
+      "system_cpu_seconds": 8.2,
+      "user_cpu_seconds": 1.63
+    },
+    {
+      "RssAnon": 987136,
+      "RssAnon_plus_VmSwap": 724701184,
+      "RssFile": 2248839168,
+      "VmRSS": 2249826304,
+      "VmSize": 106989363200,
+      "VmSwap": 723714048,
+      "global_SwapFree": 2281029632,
+      "major_faults": 23714,
+      "minor_faults": 234975,
+      "observer_seconds": 40.51,
+      "rchar": 692490393,
+      "read_bytes": 4816977920,
+      "system_cpu_seconds": 10.62,
+      "user_cpu_seconds": 1.66
+    },
+    {
+      "RssAnon": 3165368320,
+      "RssAnon_plus_VmSwap": 3874103296,
+      "RssFile": 4425703424,
+      "VmRSS": 7591071744,
+      "VmSize": 110218977280,
+      "VmSwap": 708734976,
+      "global_SwapFree": 1922416640,
+      "major_faults": 114624,
+      "minor_faults": 868659,
+      "observer_seconds": 100.75,
+      "rchar": 692490393,
+      "read_bytes": 15419699200,
+      "system_cpu_seconds": 26.7,
+      "user_cpu_seconds": 15.0
+    },
+    {
+      "RssAnon": 3700527104,
+      "RssAnon_plus_VmSwap": 4482064384,
+      "RssFile": 2145583104,
+      "VmRSS": 5846110208,
+      "VmSize": 110218977280,
+      "VmSwap": 781537280,
+      "global_SwapFree": 1610612736,
+      "major_faults": 267807,
+      "minor_faults": 1048143,
+      "observer_seconds": 171.05,
+      "rchar": 692490393,
+      "read_bytes": 28390535168,
+      "system_cpu_seconds": 46.19,
+      "user_cpu_seconds": 21.19
+    },
+    {
+      "RssAnon": 3367759872,
+      "RssAnon_plus_VmSwap": 4602351616,
+      "RssFile": 1285550080,
+      "VmRSS": 4653309952,
+      "VmSize": 110218977280,
+      "VmSwap": 1234591744,
+      "global_SwapFree": 1516154880,
+      "major_faults": 586874,
+      "minor_faults": 1235051,
+      "observer_seconds": 301.85,
+      "rchar": 692490393,
+      "read_bytes": 52815507456,
+      "system_cpu_seconds": 79.22,
+      "user_cpu_seconds": 23.36
+    },
+    {
+      "RssAnon": 1711927296,
+      "RssAnon_plus_VmSwap": 4619116544,
+      "RssFile": 3409526784,
+      "VmRSS": 5121454080,
+      "VmSize": 110218977280,
+      "VmSwap": 2907189248,
+      "global_SwapFree": 40955904,
+      "major_faults": 660660,
+      "minor_faults": 1284243,
+      "observer_seconds": 332.01,
+      "rchar": 692490393,
+      "read_bytes": 56656130048,
+      "system_cpu_seconds": 85.22,
+      "user_cpu_seconds": 23.75
+    },
+    {
+      "RssAnon": 3304644608,
+      "RssAnon_plus_VmSwap": 4656869376,
+      "RssFile": 2927284224,
+      "VmRSS": 6231928832,
+      "VmSize": 110218977280,
+      "VmSwap": 1352224768,
+      "global_SwapFree": 1596538880,
+      "major_faults": 1121038,
+      "minor_faults": 1409088,
+      "observer_seconds": 452.29,
+      "rchar": 692490393,
+      "read_bytes": 74153697280,
+      "system_cpu_seconds": 110.32,
+      "user_cpu_seconds": 24.76
+    },
+    {
+      "RssAnon": 2669834240,
+      "RssAnon_plus_VmSwap": 4711366656,
+      "RssFile": 3256180736,
+      "VmRSS": 5926014976,
+      "VmSize": 110218977280,
+      "VmSwap": 2041532416,
+      "global_SwapFree": 901300224,
+      "major_faults": 1613592,
+      "minor_faults": 1585212,
+      "observer_seconds": 602.83,
+      "rchar": 692490393,
+      "read_bytes": 100144807936,
+      "system_cpu_seconds": 144.34,
+      "user_cpu_seconds": 26.2
+    },
+    {
+      "RssAnon": 1882714112,
+      "RssAnon_plus_VmSwap": 4751212544,
+      "RssFile": 2912002048,
+      "VmRSS": 4794716160,
+      "VmSize": 110218977280,
+      "VmSwap": 2868498432,
+      "global_SwapFree": 57888768,
+      "major_faults": 1991580,
+      "minor_faults": 1714321,
+      "observer_seconds": 723.42,
+      "rchar": 692490393,
+      "read_bytes": 120790224896,
+      "system_cpu_seconds": 171.79,
+      "user_cpu_seconds": 27.31
+    },
+    {
+      "RssAnon": 2502414336,
+      "RssAnon_plus_VmSwap": 4798988288,
+      "RssFile": 2599620608,
+      "VmRSS": 5102034944,
+      "VmSize": 110218977280,
+      "VmSwap": 2296573952,
+      "global_SwapFree": 631009280,
+      "major_faults": 2616290,
+      "minor_faults": 1884759,
+      "observer_seconds": 894.1,
+      "rchar": 692490393,
+      "read_bytes": 148543102976,
+      "system_cpu_seconds": 210.19,
+      "user_cpu_seconds": 28.59
+    }
+  ],
+  "constant_suffixes": {
+    "VmSize": {
+      "consecutive_samples": 80,
+      "first_constant_observer_seconds": 100.75,
+      "last_observer_seconds": 894.1,
+      "value": 110218977280
+    },
+    "rchar": {
+      "consecutive_samples": 87,
+      "first_constant_observer_seconds": 30.06,
+      "last_observer_seconds": 894.1,
+      "value": 692490393
+    },
+    "syscr": {
+      "consecutive_samples": 87,
+      "first_constant_observer_seconds": 30.06,
+      "last_observer_seconds": 894.1,
+      "value": 54495
+    }
+  },
+  "diagnostic_read_cost_seconds": {
+    "maximum": 0.0971,
+    "sum": 0.648116
+  },
+  "documentation": [
+    {
+      "supports": "rchar versus read_bytes; process and global memory counters",
+      "url": "https://docs.kernel.org/filesystems/proc.html"
+    },
+    {
+      "supports": "visible limit interfaces, events, refault and swap page counters",
+      "url": "https://docs.kernel.org/admin-guide/cgroup-v2.html"
+    },
+    {
+      "supports": "some/full memory stall counters and microsecond totals",
+      "url": "https://docs.kernel.org/accounting/psi.html"
+    }
+  ],
+  "eight_gb_plateau_assessment": {
+    "eight_binary_gib_bytes": 8589934592,
+    "eight_decimal_gb_bytes": 8000000000,
+    "meaning": "No exact 8 GB or 8 GiB plateau is directly established by the sampled gauges. This is not an exclusion of unobserved limits.",
+    "observed_exact_fixed_eight_gb_limit": false,
+    "observed_rss_peak_bytes": 8253575168,
+    "service_memory_current_bytes": {
+      "first": 14294683648,
+      "last": 15964487680,
+      "maximum": 15964487680,
+      "maximum_at_observer_seconds": 894.1,
+      "minimum": 11731677184,
+      "minimum_at_observer_seconds": 201.18
+    }
+  },
+  "evidence": {
+    "probe_host_events.jsonl": {
+      "bytes": 1189,
+      "sha256": "837bc6b8998b9d3eab00a258a2749e5fa4c6deb9964db01391321d31e358e5b5"
+    },
+    "probe_phases.tsv": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "probe_resource_observer.json": {
+      "bytes": 3558470,
+      "sha256": "78b325036246d1c5b8209749b76877ca125f6318d26b75edd6e424bae0c50303"
+    },
+    "probe_result.json": {
+      "bytes": 3015,
+      "sha256": "e6ead80d08ea7d2e95f3a68d90798e2d545381a8128688c2b4580992feabcd0a"
+    }
+  },
+  "global_memory_bytes": {
+    "MemAvailable": {
+      "first": 15514587136,
+      "last": 13060919296,
+      "maximum": 15524483072,
+      "maximum_at_observer_seconds": 40.51,
+      "minimum": 11700183040,
+      "minimum_at_observer_seconds": 171.05
+    },
+    "MemTotal": {
+      "first": 16760344576,
+      "last": 16760344576,
+      "maximum": 16760344576,
+      "maximum_at_observer_seconds": 10.02,
+      "minimum": 16760344576,
+      "minimum_at_observer_seconds": 10.02
+    },
+    "SwapFree": {
+      "first": 3221135360,
+      "last": 631009280,
+      "maximum": 3221135360,
+      "maximum_at_observer_seconds": 10.02,
+      "minimum": 40955904,
+      "minimum_at_observer_seconds": 332.01
+    }
+  },
+  "interval_deltas": [
+    {
+      "cpu_percent_of_one_cpu": 40.918164,
+      "cpu_system_seconds": 6.9,
+      "cpu_total_seconds": 8.2,
+      "cpu_user_seconds": 1.3,
+      "elapsed_seconds": 20.04,
+      "first_observer_seconds": 10.02,
+      "last_observer_seconds": 30.06,
+      "major_fault_delta": 11916,
+      "minor_fault_delta": 207738,
+      "rchar_delta": 690618480,
+      "read_bytes_delta": 2215886848
+    },
+    {
+      "cpu_percent_of_one_cpu": 45.08417,
+      "cpu_system_seconds": 18.5,
+      "cpu_total_seconds": 31.87,
+      "cpu_user_seconds": 13.37,
+      "elapsed_seconds": 70.69,
+      "first_observer_seconds": 30.06,
+      "last_observer_seconds": 100.75,
+      "major_fault_delta": 97217,
+      "minor_fault_delta": 635005,
+      "rchar_delta": 0,
+      "read_bytes_delta": 12701138944
+    },
+    {
+      "cpu_percent_of_one_cpu": 30.273496,
+      "cpu_system_seconds": 52.52,
+      "cpu_total_seconds": 60.88,
+      "cpu_user_seconds": 8.36,
+      "elapsed_seconds": 201.1,
+      "first_observer_seconds": 100.75,
+      "last_observer_seconds": 301.85,
+      "major_fault_delta": 472250,
+      "minor_fault_delta": 366392,
+      "rchar_delta": 0,
+      "read_bytes_delta": 37395808256
+    },
+    {
+      "cpu_percent_of_one_cpu": 22.579573,
+      "cpu_system_seconds": 65.12,
+      "cpu_total_seconds": 67.96,
+      "cpu_user_seconds": 2.84,
+      "elapsed_seconds": 300.98,
+      "first_observer_seconds": 301.85,
+      "last_observer_seconds": 602.83,
+      "major_fault_delta": 1026718,
+      "minor_fault_delta": 350161,
+      "rchar_delta": 0,
+      "read_bytes_delta": 47329300480
+    },
+    {
+      "cpu_percent_of_one_cpu": 23.428434,
+      "cpu_system_seconds": 65.85,
+      "cpu_total_seconds": 68.24,
+      "cpu_user_seconds": 2.39,
+      "elapsed_seconds": 291.27,
+      "first_observer_seconds": 602.83,
+      "last_observer_seconds": 894.1,
+      "major_fault_delta": 1002698,
+      "minor_fault_delta": 299547,
+      "rchar_delta": 0,
+      "read_bytes_delta": 48398295040
+    }
+  ],
+  "new_ci_started": false,
+  "new_kernel_run_started": false,
+  "next_import_diagnostic": {
+    "cache_dropped": false,
+    "executed_by_this_analysis": false,
+    "hypothesis_status": "The current counters do not prove that buffered loop I/O caused the observed reclaim or timeout. This is a controlled diagnostic experiment, not an established repair.",
+    "limits_changed": false,
+    "selected_by_root": "Controlled comparison with direct I/O enabled and read back only on the newly owned loop device, after proofstore setup and before restoration.",
+    "swap_policy_changed": false,
+    "unchanged": [
+      "original Lean source bytes",
+      "diagnostic controller and source spec",
+      "phase marker implementation",
+      "resource observers and host guard",
+      "900-second module timeout",
+      "one Lean worker",
+      "2048 MiB reserve",
+      "historical proof-object origins and complete readback checks"
+    ]
+  },
+  "observations": [
+    "The same actual Lean PID/start identity is observed throughout 89 samples, with no process-read error.",
+    "The controlled process was killed by its 900-second controller timeout before any persisted phase marker; no original proof-body checkpoint was reached.",
+    "Substantial Lean-attributed storage reads and major faults continue after ordinary read-call counters stabilize; process swap is repeatedly nonzero.",
+    "The containing service cgroup records repeated anonymous/file refaults, swapin/swapout and memory-pressure stall time.",
+    "Readable non-root memory.max/high/swap.max and cpu.max are unlimited; recorded high/max/oom/oom_kill and CPU throttling counters remain zero.",
+    "The cgroup root lacks the non-root limit interfaces with explicit ENOENT; these reads are not represented as numerical zeroes.",
+    "Global SwapFree reaches 40,955,904 bytes while Lean VmSwap is 2,907,189,248 bytes; this is observed near exhaustion of free swap, not proof of a configured per-process limit."
+  ],
+  "observed_window": {
+    "cpu_percent_of_one_cpu": 26.824496,
+    "cpu_system_seconds": 208.89,
+    "cpu_total_seconds": 237.15,
+    "cpu_user_seconds": 28.26,
+    "elapsed_seconds": 884.08,
+    "first_observer_seconds": 10.02,
+    "last_observer_seconds": 894.1,
+    "major_fault_delta": 2610799,
+    "minor_fault_delta": 1858843,
+    "rchar_delta": 690618480,
+    "read_bytes_delta": 148040429568
+  },
+  "one_second_observer_rss_peak_bytes": 8253575168,
+  "origin": {
+    "archive_bytes": 6559913,
+    "archive_sha256": "bb8418d4f196959ef2a2c391d6ad4c65b3159ebb82635dcac4215c072341ec87",
+    "artifact_id": 13321766925,
+    "job": 126547586924,
+    "native_run_job_authentication": "Separate root-owned authentication; this analysis verifies the fixed ZIP and its extracted evidence bytes",
+    "repository": "RhudeJJJJ/formal-conjectures",
+    "run": 41822127230,
+    "source_commit": "176987f56d837e36c86d75bb52078b41a3062df4"
+  },
+  "original_sources_changed": false,
+  "outcome": {
+    "actual_control_modules": [
+      "RGDiagnostic.PhaseMarker",
+      "Proofs.RGDiagnosticImportFixture",
+      "Proofs.RGDiagnosticMarkerControl"
+    ],
+    "actual_control_status": "DIAGNOSTIC_MARKER_CONTROL_PASSED",
+    "compiler_result": {
+      "compiler_returncode": -9,
+      "diagnostic_output_sha256": null,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "module": "Proofs.RadenkovicGutmanD1OriginalSharedBothLongPhaseProbe",
+      "seconds": 900.699,
+      "success": false,
+      "timeout": true
+    },
+    "host_events": [
+      {
+        "command": [
+          "/home/runner/.elan/toolchains/leanprover--lean4---v4.33.1/bin/lean",
+          "-j1",
+          "-DElab.async=false",
+          "-DwarningAsError=true",
+          "-DautoImplicit=false",
+          "-DrelaxedAutoImplicit=false",
+          "-Dprofiler=true",
+          "-Dprofiler.threshold=100",
+          "-R",
+          "/home/runner/work/formal-conjectures/formal-conjectures/ci/rg_bothlong_phase_probe_20261104",
+          "-o",
+          "/home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/bothlong_phase_probe/probe_objects/Proofs/RadenkovicGutmanD1OriginalSharedBothLongPhaseProbe.olean.pending",
+          "/home/runner/work/formal-conjectures/formal-conjectures/ci/rg_bothlong_phase_probe_20261104/Proofs/RadenkovicGutmanD1OriginalSharedBothLongPhaseProbe.lean"
+        ],
+        "event": "LEAN_LAUNCH_REQUESTED",
+        "module": "Proofs.RadenkovicGutmanD1OriginalSharedBothLongPhaseProbe",
+        "monotonic_ns": 2256901446854,
+        "timeout_seconds": 900
+      },
+      {
+        "event": "LEAN_PROCESS_STARTED",
+        "module": "Proofs.RadenkovicGutmanD1OriginalSharedBothLongPhaseProbe",
+        "monotonic_ns": 2256902486176,
+        "pid": 4193
+      },
+      {
+        "event": "LEAN_TIMEOUT",
+        "module": "Proofs.RadenkovicGutmanD1OriginalSharedBothLongPhaseProbe",
+        "monotonic_ns": 3157591368957,
+        "pid": 4193,
+        "returncode": -9,
+        "seconds": 900.661
+      }
+    ],
+    "host_guard": {
+      "exit_code": 1,
+      "foreign_processes_signalled": 0,
+      "host_reserve_stop": false,
+      "lowest_observed_host_free_bytes": 58276937728,
+      "owned_pid": 4137,
+      "status": "OWNED_KERNEL_GROUP_ENDED"
+    },
+    "original_kernel_success_claim": false,
+    "phase_marker_bytes": 0,
+    "probe_log_bytes": 0,
+    "probe_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "probe_status": "DIAGNOSTIC_COMPILER_FAILED_OR_TIMED_OUT",
+    "resource_observer_exit_code": 1,
+    "resource_observer_status": "VERIFIER_COMPLETED"
+  },
+  "proactive_reclaim_observation": {
+    "meaning": "No proactive reclaim is recorded by these counters during the observed samples. This does not audit external control writes or establish that every eviction mechanism is absent.",
+    "pgscan_proactive_always_zero_on_all_three_visible_levels": true,
+    "pgsteal_proactive_always_zero_on_all_three_visible_levels": true
+  },
+  "process_anon_plus_swap_bytes_after_observer_100_seconds": {
+    "first": 3874103296,
+    "last": 4798988288,
+    "maximum": 4798988288,
+    "maximum_at_observer_seconds": 894.1,
+    "minimum": 3874103296,
+    "minimum_at_observer_seconds": 100.75
+  },
+  "process_counter_monotonicity": {
+    "cpu_system_ticks": true,
+    "cpu_user_ticks": true,
+    "major_faults": true,
+    "minor_faults": true,
+    "read_bytes": true
+  },
+  "process_identity": {
+    "all_before_after_start_identities_equal": true,
+    "clock_ticks_per_second": 100,
+    "parent_pids": [
+      4138
+    ],
+    "pid": 4193,
+    "process_groups": [
+      4138
+    ],
+    "scope_caution": "State is a sampled thread-group-leader state; it does not establish the states of all five threads.",
+    "start_time_ticks": 225690,
+    "states_after": {
+      "S": 89
+    },
+    "states_before": {
+      "S": 89
+    },
+    "successful_process_read_samples": 89,
+    "thread_counts": {
+      "5": 89
+    },
+    "total_observer_samples": 91
+  },
+  "process_io_delta": {
+    "cancelled_write_bytes": 0,
+    "rchar": 690618480,
+    "read_bytes": 148040429568,
+    "syscr": 33750,
+    "syscw": 0,
+    "wchar": 0,
+    "write_bytes": 0
+  },
+  "process_io_first": {
+    "cancelled_write_bytes": 0,
+    "rchar": 1871913,
+    "read_bytes": 502673408,
+    "syscr": 20745,
+    "syscw": 1,
+    "wchar": 1,
+    "write_bytes": 0
+  },
+  "process_io_last": {
+    "cancelled_write_bytes": 0,
+    "rchar": 692490393,
+    "read_bytes": 148543102976,
+    "syscr": 54495,
+    "syscw": 1,
+    "wchar": 1,
+    "write_bytes": 0
+  },
+  "process_limits_variants": [
+    {
+      "Max address space": {
+        "hard": "unlimited",
+        "soft": "unlimited",
+        "units": "bytes"
+      },
+      "Max data size": {
+        "hard": "unlimited",
+        "soft": "unlimited",
+        "units": "bytes"
+      },
+      "Max stack size": {
+        "hard": "unlimited",
+        "soft": "16777216",
+        "units": "bytes"
+      }
+    }
+  ],
+  "process_memory_bytes": {
+    "RssAnon": {
+      "first": 26570752,
+      "last": 2502414336,
+      "maximum": 3700527104,
+      "maximum_at_observer_seconds": 171.05,
+      "minimum": 987136,
+      "minimum_at_observer_seconds": 40.51
+    },
+    "RssFile": {
+      "first": 581529600,
+      "last": 2599620608,
+      "maximum": 4908564480,
+      "maximum_at_observer_seconds": 90.73,
+      "minimum": 581529600,
+      "minimum_at_observer_seconds": 10.02
+    },
+    "RssShmem": {
+      "first": 0,
+      "last": 0,
+      "maximum": 0,
+      "maximum_at_observer_seconds": 10.02,
+      "minimum": 0,
+      "minimum_at_observer_seconds": 10.02
+    },
+    "VmRSS": {
+      "first": 608100352,
+      "last": 5102034944,
+      "maximum": 7913811968,
+      "maximum_at_observer_seconds": 120.81,
+      "minimum": 608100352,
+      "minimum_at_observer_seconds": 10.02
+    },
+    "VmSize": {
+      "first": 8088698880,
+      "last": 110218977280,
+      "maximum": 110218977280,
+      "maximum_at_observer_seconds": 100.75,
+      "minimum": 8088698880,
+      "minimum_at_observer_seconds": 10.02
+    },
+    "VmSwap": {
+      "first": 0,
+      "last": 2296573952,
+      "maximum": 2907189248,
+      "maximum_at_observer_seconds": 332.01,
+      "minimum": 0,
+      "minimum_at_observer_seconds": 10.02
+    }
+  },
+  "schema": "rg_bothlong_namespace_probe_actual_resource_analysis_v1",
+  "status": "ACTUAL_RESOURCE_OBSERVATIONS_ANALYZED_NO_CAUSAL_PROOF",
+  "supported_inferences": [
+    "Repeated paging/reclaim is an observed performance burden in the pre-header interval. The data supports investigating import/loading/mapping behavior before changing proof bodies.",
+    "A CPU-bandwidth quota, memory.high/max event or OOM kill is not supported by the visible recorded limits/events. Other unmeasured scheduler or host constraints are not excluded.",
+    "Constant rchar/syscr with increasing storage-read and fault counters is consistent with mapped-page and swap activity; it does not identify a particular file or instruction."
+  ],
+  "timing_method": "All table times are seconds since the observer began, not since Lean began. Counter deltas use stat_after from the first and last valid Lean sample. The first and final unsampled seconds are not extrapolated.",
+  "unresolved": [
+    "No mmap/munmap arguments, return values or per-file mapping/fault identities were captured, so no deterministic-address collision is established.",
+    "Cgroup counters include other tasks and cannot all be attributed exclusively to Lean.",
+    "No per-thread state/wchan/stack, cpu.pressure or io.pressure was captured; total waiting time cannot be partitioned into CPU/IO/memory causes from these counters.",
+    "Logical restored file lengths, virtual address size, resident pages and storage-layer read counters are different quantities and must not be equated.",
+    "No cause is assigned to a particular module or proof declaration; successful control only establishes that the marker mechanism worked in its isolated control.",
+    "Hidden cgroup ancestors, memory.min/low protection, vm.swappiness and external supervisor policy were not directly observed; no general absence of memory constraints is claimed."
+  ]
+}

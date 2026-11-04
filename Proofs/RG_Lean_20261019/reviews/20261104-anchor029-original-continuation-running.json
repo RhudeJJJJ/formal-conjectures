@@ -1,0 +1,90 @@
+{
+  "anchor029_kernel_success_claim": false,
+  "archive_availability_report_sha256": "db5280ff21eb33075e4e878e812bbd145110ef1404188895a02b59f88fa63adc",
+  "branch": "rg-middle-anchor029-original-recovery-20261104",
+  "created_at": "2026-11-04T12:07:32Z",
+  "current_source_closure_sha256": "31ca493f64f395a899702cb7b8297628f69d30119a97f5769fb179acd16cf0b5",
+  "expected_prior_modules": 118,
+  "expected_required_modules": 281,
+  "files": [
+    {
+      "bytes": 6445,
+      "git_blob_sha": "843835cf26361fb4abe6c97c2d099eac9d23dc5d",
+      "new_file": true,
+      "path": ".github/workflows/rg-middle-anchor029-original-recovery-20261104.yml",
+      "sha256": "6676ba35ed497f7479d0021a75714af3ab1c1e98086dab171ff2bc5cfd8c1fe2"
+    },
+    {
+      "bytes": 295,
+      "git_blob_sha": "3cbc45081183d79cf3c11052599113423a549d75",
+      "new_file": true,
+      "path": "ci/rg_middle_anchor029_generic_recovered_restore_plan_20261104.json",
+      "sha256": "fe37ffe775fcc06a969c72349249df46c3fbc051316ffdd699ba30472391177b"
+    }
+  ],
+  "job": 126562666235,
+  "memory_reserve_mib": 2048,
+  "middle_family_claim": false,
+  "module_timeout_seconds": 600,
+  "native_jobs_capture_sha256": "1af3e5e860cce65bece3b9f5c5f136679d480cd1308921e8a2c824d68653b100",
+  "native_steps": [
+    {
+      "completed_at": "2026-11-04T12:09:07Z",
+      "conclusion": "success",
+      "name": "Restore one independently audited complete source-bound base scope",
+      "number": 7,
+      "started_at": "2026-11-04T12:09:04Z",
+      "status": "completed"
+    },
+    {
+      "completed_at": "2026-11-04T12:09:09Z",
+      "conclusion": "success",
+      "name": "Restore independently audited exact control proofs",
+      "number": 8,
+      "started_at": "2026-11-04T12:09:07Z",
+      "status": "completed"
+    },
+    {
+      "completed_at": "2026-11-04T12:09:09Z",
+      "conclusion": "success",
+      "name": "Bound the remaining fresh module frontier",
+      "number": 9,
+      "started_at": "2026-11-04T12:09:09Z",
+      "status": "completed"
+    },
+    {
+      "completed_at": null,
+      "conclusion": null,
+      "name": "Check multiplicities and actual graph spectral comparison",
+      "number": 10,
+      "started_at": "2026-11-04T12:09:09Z",
+      "status": "in_progress"
+    }
+  ],
+  "observed_at_utc": "20261104T124156Z",
+  "original_endpoint": "Proofs.RadenkovicGutmanMiddleOriginalAnchorCertificate029",
+  "original_sources_changed": false,
+  "parent": "a1ce003413b52e16d4488f2a143bbb4a7e353c97",
+  "readback": [
+    {
+      "git_blob_sha": "843835cf26361fb4abe6c97c2d099eac9d23dc5d",
+      "path": ".github/workflows/rg-middle-anchor029-original-recovery-20261104.yml",
+      "verified": true
+    },
+    {
+      "git_blob_sha": "3cbc45081183d79cf3c11052599113423a549d75",
+      "path": "ci/rg_middle_anchor029_generic_recovered_restore_plan_20261104.json",
+      "verified": true
+    }
+  ],
+  "remaining_original_families": 4,
+  "repository": "RhudeJJJJ/formal-conjectures",
+  "run": 41826563525,
+  "source_commit": "5b7bd43a9f3ca170b19450dd4f34fe9d12bbba90",
+  "static_source_report_sha256": "2a477790b33235df9df05b65e83e7bdb5d6e51c1a37eded6f60c1eb19575a6cd",
+  "status": "ACTUAL_ORIGINAL_ANCHOR029_KERNEL_CHECK_RUNNING",
+  "terminal_object_and_receipt_authentication_completed": false,
+  "tree": "d3ca0b20c0713221373d19b0d430ef744f42bfa5",
+  "unchanged_max_fresh": 163,
+  "workers": 1
+}

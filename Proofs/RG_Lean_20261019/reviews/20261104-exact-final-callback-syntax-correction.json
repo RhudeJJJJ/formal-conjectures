@@ -1,0 +1,16 @@
+{
+  "kind": "ACTUAL_CALLBACK_SYNTAX_FAILURE_AND_VERIFIED_CORRECTION",
+  "first_run": 41755161207,
+  "first_job": 126329432630,
+  "first_source_commit": "c8f5e8e99e4811d6aaf983be310e01fb2509ae76",
+  "diagnostic": "Pinned actionlint1.7.7 rejected the integer literal41686621300 as out of range.",
+  "corrective_commit": "3058176bc186394c43923c475ae4fc63424bea47",
+  "changed_generator_lines": 1,
+  "corrected_expression": "github.event.workflow_run.id == fromJSON('41686621300')",
+  "reference": "https://docs.github.com/en/actions/reference/workflows-and-actions/expressions#fromjson",
+  "strict_python_run_identity_check_unchanged": true,
+  "successful_run": 41755461057,
+  "successful_job": 126330403180,
+  "same_validator_and_actionlint_version": true,
+  "whole_degree_one_large_complete": false
+}

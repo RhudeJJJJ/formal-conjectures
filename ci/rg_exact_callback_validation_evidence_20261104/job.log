@@ -1,0 +1,328 @@
+﻿2026-11-04T01:38:47.8417507Z Current runner version: '2.338.2'
+2026-11-04T01:38:47.8434202Z ##[group]Runner Image Provisioner
+2026-11-04T01:38:47.8434818Z Hosted Compute Agent
+2026-11-04T01:38:47.8435173Z Version: 20261021.618
+2026-11-04T01:38:47.8435538Z Commit: 21505ad2541d5be6135ed84fc33697146cf75b8e
+2026-11-04T01:38:47.8436003Z Build Date: 2026-10-21T00:45:21Z
+2026-11-04T01:38:47.8436409Z Worker ID: {49b27a6d-5d2f-4cf3-8c42-a8525f509d76}
+2026-11-04T01:38:47.8436838Z Region: westus3
+2026-11-04T01:38:47.8437393Z Cloud: Azure
+2026-11-04T01:38:47.8437718Z ##[endgroup]
+2026-11-04T01:38:47.8438719Z ##[group]Operating System
+2026-11-04T01:38:47.8439078Z Ubuntu
+2026-11-04T01:38:47.8439452Z 24.04.5
+2026-11-04T01:38:47.8439774Z LTS
+2026-11-04T01:38:47.8440084Z ##[endgroup]
+2026-11-04T01:38:47.8440444Z ##[group]Runner Image
+2026-11-04T01:38:47.8440796Z Image: ubuntu-24.04
+2026-11-04T01:38:47.8441154Z Version: 20261025.353.1
+2026-11-04T01:38:47.8441939Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261025.353/images/ubuntu/Ubuntu2404-Readme.md
+2026-11-04T01:38:47.8443048Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261025.353
+2026-11-04T01:38:47.8443590Z ##[endgroup]
+2026-11-04T01:38:47.8444293Z ##[group]GITHUB_TOKEN Permissions
+2026-11-04T01:38:47.8445544Z Contents: read
+2026-11-04T01:38:47.8445875Z Metadata: read
+2026-11-04T01:38:47.8446298Z ##[endgroup]
+2026-11-04T01:38:47.8447723Z Secret source: Actions
+2026-11-04T01:38:47.8448301Z Cache mode: write
+2026-11-04T01:38:47.8448704Z Prepare workflow directory
+2026-11-04T01:38:47.8644884Z Prepare all required actions
+2026-11-04T01:38:47.8674303Z Getting action download info
+2026-11-04T01:38:48.1628971Z Download action repository 'actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803' (SHA:d23441a48e516b6c34aea4fa41551a30e30af803)
+2026-11-04T01:38:48.2342885Z Download action repository 'actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+2026-11-04T01:38:48.4164772Z Complete job name: check
+2026-11-04T01:38:48.4670745Z ##[group]Run actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+2026-11-04T01:38:48.4671249Z with:
+2026-11-04T01:38:48.4671493Z   persist-credentials: false
+2026-11-04T01:38:48.4671790Z   repository: RhudeJJJJ/formal-conjectures
+2026-11-04T01:38:48.4673867Z   token: ***
+2026-11-04T01:38:48.4674100Z   ssh-strict: true
+2026-11-04T01:38:48.4674338Z   ssh-user: git
+2026-11-04T01:38:48.4674564Z   clean: true
+2026-11-04T01:38:48.4674806Z   sparse-checkout-cone-mode: true
+2026-11-04T01:38:48.4675086Z   fetch-depth: 1
+2026-11-04T01:38:48.4675319Z   fetch-tags: false
+2026-11-04T01:38:48.4675561Z   show-progress: true
+2026-11-04T01:38:48.4675803Z   lfs: false
+2026-11-04T01:38:48.4676026Z   submodules: false
+2026-11-04T01:38:48.4676268Z   set-safe-directory: true
+2026-11-04T01:38:48.4676539Z   allow-unsafe-pr-checkout: false
+2026-11-04T01:38:48.4676886Z ##[endgroup]
+2026-11-04T01:38:48.6502538Z Syncing repository: RhudeJJJJ/formal-conjectures
+2026-11-04T01:38:48.6504268Z ##[group]Getting Git version info
+2026-11-04T01:38:48.6504952Z Working directory is '/home/runner/work/formal-conjectures/formal-conjectures'
+2026-11-04T01:38:48.6505911Z [command]/usr/bin/git version
+2026-11-04T01:38:48.6560849Z git version 2.56.0
+2026-11-04T01:38:48.6575321Z ##[endgroup]
+2026-11-04T01:38:48.6586061Z Temporarily overriding HOME='/home/runner/work/_temp/994b864e-1387-45c6-8bd6-517cb098c79e' before making global git config changes
+2026-11-04T01:38:48.6587388Z Adding repository directory to the temporary git global config as a safe directory
+2026-11-04T01:38:48.6590409Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/formal-conjectures/formal-conjectures
+2026-11-04T01:38:48.6633879Z Deleting the contents of '/home/runner/work/formal-conjectures/formal-conjectures'
+2026-11-04T01:38:48.6652794Z ##[group]Determining repository object format
+2026-11-04T01:38:48.6657625Z ##[endgroup]
+2026-11-04T01:38:48.6658365Z ##[group]Initializing the repository
+2026-11-04T01:38:48.6659523Z [command]/usr/bin/git init /home/runner/work/formal-conjectures/formal-conjectures
+2026-11-04T01:38:48.6731908Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-11-04T01:38:48.6732759Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-11-04T01:38:48.6733578Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-11-04T01:38:48.6734175Z hint: call:
+2026-11-04T01:38:48.6734496Z hint:
+2026-11-04T01:38:48.6734861Z hint: 	git config --global init.defaultBranch <name>
+2026-11-04T01:38:48.6735189Z hint:
+2026-11-04T01:38:48.6735492Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-11-04T01:38:48.6735972Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-11-04T01:38:48.6736351Z hint:
+2026-11-04T01:38:48.6736574Z hint: 	git branch -m <name>
+2026-11-04T01:38:48.6736822Z hint:
+2026-11-04T01:38:48.6737311Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-11-04T01:38:48.6740076Z Initialized empty Git repository in /home/runner/work/formal-conjectures/formal-conjectures/.git/
+2026-11-04T01:38:48.6748780Z [command]/usr/bin/git remote add origin https://github.com/RhudeJJJJ/formal-conjectures
+2026-11-04T01:38:48.6786341Z ##[endgroup]
+2026-11-04T01:38:48.6786958Z ##[group]Disabling automatic garbage collection
+2026-11-04T01:38:48.6789870Z [command]/usr/bin/git config --local gc.auto 0
+2026-11-04T01:38:48.6818645Z ##[endgroup]
+2026-11-04T01:38:48.6819781Z ##[group]Setting up auth
+2026-11-04T01:38:48.6820225Z Removing SSH command configuration
+2026-11-04T01:38:48.6823734Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-04T01:38:48.6854315Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-04T01:38:48.7145032Z Removing HTTP extra header
+2026-11-04T01:38:48.7152280Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-04T01:38:48.7188370Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-11-04T01:38:48.7375383Z Removing includeIf entries pointing to credentials config files
+2026-11-04T01:38:48.7380576Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-04T01:38:48.7417480Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-11-04T01:38:48.7613687Z [command]/usr/bin/git config --file /home/runner/work/_temp/git-credentials-841972c8-e408-407c-aa3d-7ebcfb43ca41.config http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-11-04T01:38:48.7655166Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/formal-conjectures/formal-conjectures/.git.path /home/runner/work/_temp/git-credentials-841972c8-e408-407c-aa3d-7ebcfb43ca41.config
+2026-11-04T01:38:48.7691708Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/formal-conjectures/formal-conjectures/.git/worktrees/*.path /home/runner/work/_temp/git-credentials-841972c8-e408-407c-aa3d-7ebcfb43ca41.config
+2026-11-04T01:38:48.7728458Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git.path /github/runner_temp/git-credentials-841972c8-e408-407c-aa3d-7ebcfb43ca41.config
+2026-11-04T01:38:48.7764228Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git/worktrees/*.path /github/runner_temp/git-credentials-841972c8-e408-407c-aa3d-7ebcfb43ca41.config
+2026-11-04T01:38:48.7796976Z ##[endgroup]
+2026-11-04T01:38:48.7797524Z ##[group]Fetching the repository
+2026-11-04T01:38:48.7802902Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +85804571dcd5b105004f2d706de5d41bdd4209f9:refs/remotes/origin/rg-degree-one-large-20261103
+2026-11-04T01:39:13.6860576Z From https://github.com/RhudeJJJJ/formal-conjectures
+2026-11-04T01:39:13.6861659Z  * [new ref]             85804571dcd5b105004f2d706de5d41bdd4209f9 -> origin/rg-degree-one-large-20261103
+2026-11-04T01:39:13.6870195Z [command]/usr/bin/git branch --list --remote origin/rg-degree-one-large-20261103
+2026-11-04T01:39:13.6904317Z   origin/rg-degree-one-large-20261103
+2026-11-04T01:39:13.6911442Z [command]/usr/bin/git rev-parse refs/remotes/origin/rg-degree-one-large-20261103
+2026-11-04T01:39:13.6939012Z 85804571dcd5b105004f2d706de5d41bdd4209f9
+2026-11-04T01:39:13.6942938Z ##[endgroup]
+2026-11-04T01:39:13.6943465Z ##[group]Determining the checkout info
+2026-11-04T01:39:13.6943976Z ##[endgroup]
+2026-11-04T01:39:13.6947509Z [command]/usr/bin/git sparse-checkout disable
+2026-11-04T01:39:13.6996952Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-11-04T01:39:13.7031411Z ##[group]Checking out the ref
+2026-11-04T01:39:13.7033953Z [command]/usr/bin/git checkout --progress --force -B rg-degree-one-large-20261103 refs/remotes/origin/rg-degree-one-large-20261103
+2026-11-04T01:39:14.7885650Z Updating files:  11% (15202/135304)
+2026-11-04T01:39:14.8223747Z Updating files:  12% (16237/135304)
+2026-11-04T01:39:14.8566632Z Updating files:  13% (17590/135304)
+2026-11-04T01:39:14.8935069Z Updating files:  14% (18943/135304)
+2026-11-04T01:39:14.9281105Z Updating files:  15% (20296/135304)
+2026-11-04T01:39:14.9653821Z Updating files:  16% (21649/135304)
+2026-11-04T01:39:14.9995867Z Updating files:  17% (23002/135304)
+2026-11-04T01:39:15.0438146Z Updating files:  18% (24355/135304)
+2026-11-04T01:39:15.0789349Z Updating files:  19% (25708/135304)
+2026-11-04T01:39:15.1170652Z Updating files:  20% (27061/135304)
+2026-11-04T01:39:15.1531779Z Updating files:  21% (28414/135304)
+2026-11-04T01:39:15.1970902Z Updating files:  22% (29767/135304)
+2026-11-04T01:39:15.2327995Z Updating files:  23% (31120/135304)
+2026-11-04T01:39:15.2679926Z Updating files:  24% (32473/135304)
+2026-11-04T01:39:15.3125760Z Updating files:  25% (33826/135304)
+2026-11-04T01:39:15.3471525Z Updating files:  26% (35180/135304)
+2026-11-04T01:39:15.3866747Z Updating files:  27% (36533/135304)
+2026-11-04T01:39:15.4206982Z Updating files:  28% (37886/135304)
+2026-11-04T01:39:15.4651010Z Updating files:  29% (39239/135304)
+2026-11-04T01:39:15.4997936Z Updating files:  30% (40592/135304)
+2026-11-04T01:39:15.5480597Z Updating files:  31% (41945/135304)
+2026-11-04T01:39:15.5864346Z Updating files:  32% (43298/135304)
+2026-11-04T01:39:15.6247673Z Updating files:  33% (44651/135304)
+2026-11-04T01:39:15.6638407Z Updating files:  34% (46004/135304)
+2026-11-04T01:39:15.7027650Z Updating files:  35% (47357/135304)
+2026-11-04T01:39:15.7404644Z Updating files:  36% (48710/135304)
+2026-11-04T01:39:15.7546331Z Updating files:  37% (50063/135304)
+2026-11-04T01:39:15.7811571Z Updating files:  37% (50527/135304)
+2026-11-04T01:39:15.8194704Z Updating files:  38% (51416/135304)
+2026-11-04T01:39:15.8582598Z Updating files:  39% (52769/135304)
+2026-11-04T01:39:15.8932083Z Updating files:  40% (54122/135304)
+2026-11-04T01:39:16.0319700Z Updating files:  41% (55475/135304)
+2026-11-04T01:39:16.1107502Z Updating files:  42% (56828/135304)
+2026-11-04T01:39:16.1456399Z Updating files:  43% (58181/135304)
+2026-11-04T01:39:16.2458899Z Updating files:  44% (59534/135304)
+2026-11-04T01:39:16.4463257Z Updating files:  45% (60887/135304)
+2026-11-04T01:39:16.4820269Z Updating files:  46% (62240/135304)
+2026-11-04T01:39:16.5195525Z Updating files:  47% (63593/135304)
+2026-11-04T01:39:16.5563901Z Updating files:  48% (64946/135304)
+2026-11-04T01:39:16.5976397Z Updating files:  49% (66299/135304)
+2026-11-04T01:39:16.6764994Z Updating files:  50% (67652/135304)
+2026-11-04T01:39:16.7548102Z Updating files:  51% (69006/135304)
+2026-11-04T01:39:16.8241436Z Updating files:  51% (69712/135304)
+2026-11-04T01:39:16.9927633Z Updating files:  52% (70359/135304)
+2026-11-04T01:39:17.1740724Z Updating files:  53% (71712/135304)
+2026-11-04T01:39:17.3628303Z Updating files:  54% (73065/135304)
+2026-11-04T01:39:17.5628892Z Updating files:  55% (74418/135304)
+2026-11-04T01:39:17.6195557Z Updating files:  56% (75771/135304)
+2026-11-04T01:39:17.6969528Z Updating files:  57% (77124/135304)
+2026-11-04T01:39:17.7549217Z Updating files:  58% (78477/135304)
+2026-11-04T01:39:17.7959933Z Updating files:  58% (79077/135304)
+2026-11-04T01:39:17.9196888Z Updating files:  59% (79830/135304)
+2026-11-04T01:39:18.0768275Z Updating files:  60% (81183/135304)
+2026-11-04T01:39:18.1880796Z Updating files:  61% (82536/135304)
+2026-11-04T01:39:18.2494680Z Updating files:  62% (83889/135304)
+2026-11-04T01:39:18.3104832Z Updating files:  63% (85242/135304)
+2026-11-04T01:39:18.3708328Z Updating files:  64% (86595/135304)
+2026-11-04T01:39:18.4333591Z Updating files:  65% (87948/135304)
+2026-11-04T01:39:18.4943134Z Updating files:  66% (89301/135304)
+2026-11-04T01:39:18.5547623Z Updating files:  67% (90654/135304)
+2026-11-04T01:39:18.6141814Z Updating files:  68% (92007/135304)
+2026-11-04T01:39:18.7201210Z Updating files:  69% (93360/135304)
+2026-11-04T01:39:18.7547902Z Updating files:  70% (94713/135304)
+2026-11-04T01:39:18.7801614Z Updating files:  70% (95700/135304)
+2026-11-04T01:39:18.8323320Z Updating files:  71% (96066/135304)
+2026-11-04T01:39:18.8778577Z Updating files:  72% (97419/135304)
+2026-11-04T01:39:18.9268956Z Updating files:  73% (98772/135304)
+2026-11-04T01:39:18.9726785Z Updating files:  74% (100125/135304)
+2026-11-04T01:39:19.0153355Z Updating files:  75% (101478/135304)
+2026-11-04T01:39:19.0594119Z Updating files:  76% (102832/135304)
+2026-11-04T01:39:19.1015378Z Updating files:  77% (104185/135304)
+2026-11-04T01:39:19.1465576Z Updating files:  78% (105538/135304)
+2026-11-04T01:39:19.1914115Z Updating files:  79% (106891/135304)
+2026-11-04T01:39:19.2325299Z Updating files:  80% (108244/135304)
+2026-11-04T01:39:19.3959888Z Updating files:  81% (109597/135304)
+2026-11-04T01:39:19.4401996Z Updating files:  82% (110950/135304)
+2026-11-04T01:39:19.4810819Z Updating files:  83% (112303/135304)
+2026-11-04T01:39:19.5250841Z Updating files:  84% (113656/135304)
+2026-11-04T01:39:19.5686623Z Updating files:  85% (115009/135304)
+2026-11-04T01:39:19.7564235Z Updating files:  86% (116362/135304)
+2026-11-04T01:39:19.7621362Z Updating files:  86% (117550/135304)
+2026-11-04T01:39:19.8059403Z Updating files:  87% (117715/135304)
+2026-11-04T01:39:19.8487311Z Updating files:  88% (119068/135304)
+2026-11-04T01:39:19.8903131Z Updating files:  89% (120421/135304)
+2026-11-04T01:39:20.0747076Z Updating files:  90% (121774/135304)
+2026-11-04T01:39:20.1865925Z Updating files:  91% (123127/135304)
+2026-11-04T01:39:20.3678871Z Updating files:  92% (124480/135304)
+2026-11-04T01:39:20.4102910Z Updating files:  93% (125833/135304)
+2026-11-04T01:39:20.4533426Z Updating files:  94% (127186/135304)
+2026-11-04T01:39:20.4934056Z Updating files:  95% (128539/135304)
+2026-11-04T01:39:20.5348653Z Updating files:  96% (129892/135304)
+2026-11-04T01:39:20.6069494Z Updating files:  97% (131245/135304)
+2026-11-04T01:39:20.6652119Z Updating files:  98% (132598/135304)
+2026-11-04T01:39:20.7567896Z Updating files:  99% (133951/135304)
+2026-11-04T01:39:20.8580968Z Updating files:  99% (135105/135304)
+2026-11-04T01:39:20.8581214Z Updating files: 100% (135304/135304)
+2026-11-04T01:39:20.8581382Z Updating files: 100% (135304/135304), done.
+2026-11-04T01:39:21.0206719Z Switched to a new branch 'rg-degree-one-large-20261103'
+2026-11-04T01:39:21.0216358Z branch 'rg-degree-one-large-20261103' set up to track 'origin/rg-degree-one-large-20261103'.
+2026-11-04T01:39:21.0362123Z ##[endgroup]
+2026-11-04T01:39:21.0427989Z [command]/usr/bin/git log -1 --format=%H
+2026-11-04T01:39:21.0446615Z 85804571dcd5b105004f2d706de5d41bdd4209f9
+2026-11-04T01:39:21.0455866Z ##[group]Removing auth
+2026-11-04T01:39:21.0456133Z Removing SSH command configuration
+2026-11-04T01:39:21.0459527Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-04T01:39:21.0497687Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-04T01:39:21.0829139Z Removing HTTP extra header
+2026-11-04T01:39:21.0832438Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-04T01:39:21.0872425Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-11-04T01:39:21.1276177Z Removing includeIf entries pointing to credentials config files
+2026-11-04T01:39:21.1279770Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-04T01:39:21.1317478Z includeif.gitdir:/home/runner/work/formal-conjectures/formal-conjectures/.git.path
+2026-11-04T01:39:21.1318015Z includeif.gitdir:/home/runner/work/formal-conjectures/formal-conjectures/.git/worktrees/*.path
+2026-11-04T01:39:21.1318476Z includeif.gitdir:/github/workspace/.git.path
+2026-11-04T01:39:21.1318758Z includeif.gitdir:/github/workspace/.git/worktrees/*.path
+2026-11-04T01:39:21.1327658Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/formal-conjectures/formal-conjectures/.git.path
+2026-11-04T01:39:21.1368147Z /home/runner/work/_temp/git-credentials-841972c8-e408-407c-aa3d-7ebcfb43ca41.config
+2026-11-04T01:39:21.1370603Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/formal-conjectures/formal-conjectures/.git.path /home/runner/work/_temp/git-credentials-841972c8-e408-407c-aa3d-7ebcfb43ca41.config
+2026-11-04T01:39:21.1944538Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/formal-conjectures/formal-conjectures/.git/worktrees/*.path
+2026-11-04T01:39:21.1945215Z /home/runner/work/_temp/git-credentials-841972c8-e408-407c-aa3d-7ebcfb43ca41.config
+2026-11-04T01:39:21.1953076Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/formal-conjectures/formal-conjectures/.git/worktrees/*.path /home/runner/work/_temp/git-credentials-841972c8-e408-407c-aa3d-7ebcfb43ca41.config
+2026-11-04T01:39:21.2507720Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git.path
+2026-11-04T01:39:21.2546673Z /github/runner_temp/git-credentials-841972c8-e408-407c-aa3d-7ebcfb43ca41.config
+2026-11-04T01:39:21.2554461Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git.path /github/runner_temp/git-credentials-841972c8-e408-407c-aa3d-7ebcfb43ca41.config
+2026-11-04T01:39:21.3094526Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git/worktrees/*.path
+2026-11-04T01:39:21.3129352Z /github/runner_temp/git-credentials-841972c8-e408-407c-aa3d-7ebcfb43ca41.config
+2026-11-04T01:39:21.3136475Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git/worktrees/*.path /github/runner_temp/git-credentials-841972c8-e408-407c-aa3d-7ebcfb43ca41.config
+2026-11-04T01:39:21.3195998Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-11-04T01:39:21.3543502Z Removing credentials config '/home/runner/work/_temp/git-credentials-841972c8-e408-407c-aa3d-7ebcfb43ca41.config'
+2026-11-04T01:39:21.3553865Z ##[endgroup]
+2026-11-04T01:39:21.4298058Z ##[group]Run set -euo pipefail
+2026-11-04T01:39:21.4298340Z [36;1mset -euo pipefail[0m
+2026-11-04T01:39:21.4298549Z [36;1mcurl --fail --silent --show-error --location --retry 3 \[0m
+2026-11-04T01:39:21.4298950Z [36;1m  https://github.com/rhysd/actionlint/releases/download/v1.7.7/actionlint_1.7.7_linux_amd64.tar.gz \[0m
+2026-11-04T01:39:21.4299252Z [36;1m  -o "$RUNNER_TEMP/actionlint.tar.gz"[0m
+2026-11-04T01:39:21.4299588Z [36;1mecho "023070a287cd8cccd71515fedc843f1985bf96c436b7effaecce67290e7e0757  $RUNNER_TEMP/actionlint.tar.gz" | sha256sum --check[0m
+2026-11-04T01:39:21.4300188Z [36;1mtar -xzf "$RUNNER_TEMP/actionlint.tar.gz" -C "$RUNNER_TEMP" actionlint[0m
+2026-11-04T01:39:21.4300445Z [36;1m"$RUNNER_TEMP/actionlint" -shellcheck= -pyflakes= \[0m
+2026-11-04T01:39:21.4300721Z [36;1m  .github/workflows/rg-degree-one-large-exact-run-final-hook-20261103.yml \[0m
+2026-11-04T01:39:21.4301012Z [36;1m  .github/workflows/rg-validate-exact-final-hook-20261104.yml[0m
+2026-11-04T01:39:21.4321471Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-11-04T01:39:21.4321673Z ##[endgroup]
+2026-11-04T01:39:21.7726270Z /home/runner/work/_temp/actionlint.tar.gz: OK
+2026-11-04T01:39:21.8090869Z ##[group]Run python3 - <<'PY'
+2026-11-04T01:39:21.8091074Z [36;1mpython3 - <<'PY'[0m
+2026-11-04T01:39:21.8091226Z [36;1mimport hashlib, json, os, pathlib, re[0m
+2026-11-04T01:39:21.8091529Z [36;1mworkflow = pathlib.Path('.github/workflows/rg-degree-one-large-exact-run-final-hook-20261103.yml')[0m
+2026-11-04T01:39:21.8091887Z [36;1mdescriptor = pathlib.Path('ci/rg_d1_exact_final_callback_20261103.json')[0m
+2026-11-04T01:39:21.8092154Z [36;1mvalue = json.loads(descriptor.read_bytes())[0m
+2026-11-04T01:39:21.8092377Z [36;1massert value['kind'] == 'SEALED_EXACT_NUMERIC_RUN_FINAL_CALLBACK'[0m
+2026-11-04T01:39:21.8092627Z [36;1massert value['repository'] == 'RhudeJJJJ/formal-conjectures'[0m
+2026-11-04T01:39:21.8092897Z [36;1massert value['numeric_run'] == 41686621300 and value['numeric_run_attempt'] == 1[0m
+2026-11-04T01:39:21.8093206Z [36;1massert value['numeric_source_commit'] == 'aaeaec3cec22467d3f0b83b1761bfb40087bb991'[0m
+2026-11-04T01:39:21.8093495Z [36;1massert value['callback_default_branch'] == 'main'[0m
+2026-11-04T01:39:21.8093729Z [36;1massert re.fullmatch(r'[0-9a-f]{40}', value['proof_source_commit'])[0m
+2026-11-04T01:39:21.8094037Z [36;1membedded = re.findall(r"^      RG_FINAL_CONTINUATION_DESCRIPTOR: '(.*)'$", workflow.read_text(), re.M)[0m
+2026-11-04T01:39:21.8094409Z [36;1massert len(embedded) == 1 and json.loads(embedded[0]) == value[0m
+2026-11-04T01:39:21.8094730Z [36;1massert workflow.read_text().count('\n          ref: ' + value['proof_source_commit'] + '\n') == 1[0m
+2026-11-04T01:39:21.8095008Z [36;1mfor relative, digest in value['bound_files'].items():[0m
+2026-11-04T01:39:21.8095221Z [36;1m    target = pathlib.PurePosixPath(relative)[0m
+2026-11-04T01:39:21.8095449Z [36;1m    assert target.is_relative_to('ci') and '..' not in target.parts[0m
+2026-11-04T01:39:21.8095736Z [36;1m    assert hashlib.sha256(pathlib.Path(relative).read_bytes()).hexdigest() == digest[0m
+2026-11-04T01:39:21.8096055Z [36;1mreport = dict(kind='ACTUAL_ACTIONLINT_AND_BOUND_DESCRIPTOR_CHECK_NOT_KERNEL_PROOF',[0m
+2026-11-04T01:39:21.8096370Z [36;1m    repository=os.environ['GITHUB_REPOSITORY'], run=int(os.environ['GITHUB_RUN_ID']),[0m
+2026-11-04T01:39:21.8096693Z [36;1m    source_commit=os.environ['GITHUB_SHA'], proof_source_commit=value['proof_source_commit'],[0m
+2026-11-04T01:39:21.8097035Z [36;1m    files={str(p): hashlib.sha256(p.read_bytes()).hexdigest() for p in (workflow, descriptor)},[0m
+2026-11-04T01:39:21.8097458Z [36;1m    kernel_proof_claimed=False)[0m
+2026-11-04T01:39:21.8097736Z [36;1mpathlib.Path('rg-exact-callback-syntax-check.json').write_text(json.dumps(report, indent=2) + '\n')[0m
+2026-11-04T01:39:21.8098020Z [36;1mprint(json.dumps(report), flush=True)[0m
+2026-11-04T01:39:21.8098176Z [36;1mPY[0m
+2026-11-04T01:39:21.8114636Z shell: /usr/bin/bash -e {0}
+2026-11-04T01:39:21.8114783Z ##[endgroup]
+2026-11-04T01:39:21.8366429Z {"kind": "ACTUAL_ACTIONLINT_AND_BOUND_DESCRIPTOR_CHECK_NOT_KERNEL_PROOF", "repository": "RhudeJJJJ/formal-conjectures", "run": 41755461057, "source_commit": "85804571dcd5b105004f2d706de5d41bdd4209f9", "proof_source_commit": "3058176bc186394c43923c475ae4fc63424bea47", "files": {".github/workflows/rg-degree-one-large-exact-run-final-hook-20261103.yml": "8576d9bdbb07040c634e874fc7c55e42a908abda2cdfe530087cbedc9b890272", "ci/rg_d1_exact_final_callback_20261103.json": "6031f00a1cc6947dc30723c1efb0fb21b3b4fb9cd667d7e4f8cb5b58afecf8be"}, "kernel_proof_claimed": false}
+2026-11-04T01:39:21.8491670Z ##[group]Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+2026-11-04T01:39:21.8491902Z with:
+2026-11-04T01:39:21.8492057Z   name: rg-exact-callback-syntax-check-41755461057-1
+2026-11-04T01:39:21.8492260Z   path: rg-exact-callback-syntax-check.json
+2026-11-04T01:39:21.8492422Z   retention-days: 90
+2026-11-04T01:39:21.8492554Z   if-no-files-found: warn
+2026-11-04T01:39:21.8492686Z   compression-level: 6
+2026-11-04T01:39:21.8492806Z   overwrite: false
+2026-11-04T01:39:21.8492927Z   include-hidden-files: false
+2026-11-04T01:39:21.8493071Z ##[endgroup]
+2026-11-04T01:39:21.9728576Z (node:2300) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-11-04T01:39:21.9729607Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-11-04T01:39:21.9755264Z With the provided path, there will be 1 file uploaded
+2026-11-04T01:39:21.9777788Z Artifact name is valid!
+2026-11-04T01:39:21.9778704Z Root directory input is valid!
+2026-11-04T01:39:22.3449255Z Beginning upload of artifact content to blob storage
+2026-11-04T01:39:22.3583940Z (node:2300) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+2026-11-04T01:39:22.5690441Z Uploaded bytes 613
+2026-11-04T01:39:22.6257053Z Finished uploading artifact content to blob storage!
+2026-11-04T01:39:22.6257896Z SHA256 digest of uploaded artifact zip is 7fe5746b92652f0098b52703147d3b106b49c5ed79f7477e35262af7b6656d24
+2026-11-04T01:39:22.6259142Z Finalizing artifact upload
+2026-11-04T01:39:23.1299386Z Artifact rg-exact-callback-syntax-check-41755461057-1.zip successfully finalized. Artifact ID 13288860464
+2026-11-04T01:39:23.1300249Z Artifact rg-exact-callback-syntax-check-41755461057-1 has been successfully uploaded! Final size is 613 bytes. Artifact ID is 13288860464
+2026-11-04T01:39:23.1305962Z Artifact download URL: https://github.com/RhudeJJJJ/formal-conjectures/actions/runs/41755461057/artifacts/13288860464
+2026-11-04T01:39:23.1510370Z Post job cleanup.
+2026-11-04T01:39:23.2114988Z [command]/usr/bin/git version
+2026-11-04T01:39:23.2144594Z git version 2.56.0
+2026-11-04T01:39:23.2174922Z Temporarily overriding HOME='/home/runner/work/_temp/367edd62-169c-43f6-9b7b-0677173b41bf' before making global git config changes
+2026-11-04T01:39:23.2175869Z Adding repository directory to the temporary git global config as a safe directory
+2026-11-04T01:39:23.2180076Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/formal-conjectures/formal-conjectures
+2026-11-04T01:39:23.2215952Z Removing SSH command configuration
+2026-11-04T01:39:23.2222287Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-04T01:39:23.2268442Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-04T01:39:23.2663326Z Removing HTTP extra header
+2026-11-04T01:39:23.2668553Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-04T01:39:23.2706829Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-11-04T01:39:23.3042837Z Removing includeIf entries pointing to credentials config files
+2026-11-04T01:39:23.3049899Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-04T01:39:23.3092029Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-11-04T01:39:23.3565830Z Cleaning up orphan processes
+2026-11-04T01:39:23.3835546Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

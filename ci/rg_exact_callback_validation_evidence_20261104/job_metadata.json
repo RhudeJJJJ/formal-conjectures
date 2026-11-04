@@ -1,0 +1,84 @@
+{
+  "id": 126330403180,
+  "run_id": 41755461057,
+  "workflow_name": "RG exact final callback syntax and source descriptor",
+  "head_branch": "rg-degree-one-large-20261103",
+  "run_url": "https://api.github.com/repos/RhudeJJJJ/formal-conjectures/actions/runs/41755461057",
+  "run_attempt": 1,
+  "node_id": "CR_kwDOVGcgaM8AAAAdaeD5bA",
+  "head_sha": "85804571dcd5b105004f2d706de5d41bdd4209f9",
+  "url": "https://api.github.com/repos/RhudeJJJJ/formal-conjectures/actions/jobs/126330403180",
+  "html_url": "https://github.com/RhudeJJJJ/formal-conjectures/actions/runs/41755461057/job/126330403180",
+  "status": "completed",
+  "conclusion": "success",
+  "created_at": "2026-11-04T01:38:45Z",
+  "started_at": "2026-11-04T01:38:47Z",
+  "completed_at": "2026-11-04T01:39:25Z",
+  "name": "check",
+  "steps": [
+    {
+      "name": "Set up job",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 1,
+      "started_at": "2026-11-04T01:38:47Z",
+      "completed_at": "2026-11-04T01:38:48Z"
+    },
+    {
+      "name": "Run actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 2,
+      "started_at": "2026-11-04T01:38:48Z",
+      "completed_at": "2026-11-04T01:39:21Z"
+    },
+    {
+      "name": "Check the exact generated workflow with the repository's pinned actionlint",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 3,
+      "started_at": "2026-11-04T01:39:21Z",
+      "completed_at": "2026-11-04T01:39:21Z"
+    },
+    {
+      "name": "Record the exact reviewed callback files without a kernel claim",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 4,
+      "started_at": "2026-11-04T01:39:21Z",
+      "completed_at": "2026-11-04T01:39:21Z"
+    },
+    {
+      "name": "Preserve the actual syntax and descriptor check",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 5,
+      "started_at": "2026-11-04T01:39:21Z",
+      "completed_at": "2026-11-04T01:39:23Z"
+    },
+    {
+      "name": "Post Run actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 10,
+      "started_at": "2026-11-04T01:39:23Z",
+      "completed_at": "2026-11-04T01:39:23Z"
+    },
+    {
+      "name": "Complete job",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 11,
+      "started_at": "2026-11-04T01:39:23Z",
+      "completed_at": "2026-11-04T01:39:23Z"
+    }
+  ],
+  "check_run_url": "https://api.github.com/repos/RhudeJJJJ/formal-conjectures/check-runs/126330403180",
+  "labels": [
+    "ubuntu-24.04"
+  ],
+  "runner_id": 1000010898,
+  "runner_name": "GitHub Actions 1000010898",
+  "runner_group_id": 0,
+  "runner_group_name": "GitHub Actions"
+}

@@ -24,9 +24,15 @@ SOURCES = ROOT / 'Proofs/RG_Lean_20261019'
 BUILD = SOURCES / 'build/bothlong_phase_probe'
 RESTORED = SOURCES / 'build/extension'
 DIAG_SOURCES = ROOT / 'ci/rg_bothlong_phase_probe_20261104'
-OBJECTS = BUILD / 'objects'
+FIXTURE_SOURCES = DIAG_SOURCES / 'control_imports'
+HELPER_OBJECTS = BUILD / 'helper_objects'
+CONTROL_IMPORTS = BUILD / 'control_imports'
+PROBE_OBJECTS = BUILD / 'probe_objects'
+HELPER = 'RGDiagnostic.PhaseMarker'
+FIXTURE = 'Proofs.RGDiagnosticImportFixture'
+CONTROL = 'Proofs.RGDiagnosticMarkerControl'
 SPEC = ROOT / 'ci/rg_bothlong_phase_probe_20261104_spec.json'
-SPEC_SHA = '1db97952bfc986b93a511033f997c3ce041c1a71015f29dcd4bbb55f1b456a1c'
+SPEC_SHA = 'd789066587ab434e4e11455d5ac5dc7ebebf4ced1f52fd9a6c9bda7d77c718b0'
 REPO = 'RhudeJJJJ/formal-conjectures'
 RUN = 41800448987
 JOB = 126474623047
@@ -93,7 +99,7 @@ def validate_spec():
     assert sha(original) == SOURCE_SHA
     probe = (DIAG_SOURCES / (PROBE.replace('.', '/') + '.lean')).read_bytes()
     stripped = b''.join(line for line in probe.splitlines(keepends=True)
-        if line != b'import Proofs.RGDiagnosticPhaseMarker\n'
+        if line != b'import RGDiagnostic.PhaseMarker\n'
         and not line.startswith((b'rg_phase ', b'rg_phase_checked ')))
     assert stripped == original, 'Instrumentation changed original declarations'
     return spec
@@ -249,7 +255,7 @@ def project(plan):
 
 def prepare():
     validate_spec()
-    assert json.loads((BUILD / 'control_result.json').read_bytes())['status'] == 'DIAGNOSTIC_MARKER_CONTROL_PASSED'
+    require_control()
     from rg_collect_exact_d1_reproductions import GitHub
     from rg_github_artifacts import fetch_archive
     api = GitHub(REPO)
@@ -336,7 +342,7 @@ def compiler_environment(phase):
     env = os.environ.copy()
     if phase == 'control':
         lean = subprocess.check_output(['elan', 'which', 'lean'], cwd=ROOT, text=True).strip()
-        env['LEAN_PATH'] = str(OBJECTS)
+        env['LEAN_PATH'] = os.pathsep.join([str(HELPER_OBJECTS), str(CONTROL_IMPORTS)])
     else:
         dependency = ROOT if (ROOT / 'Mathlib').is_dir() else ROOT / '.lake/packages/mathlib'
         assert subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=dependency, text=True).strip() == PIN
@@ -349,8 +355,15 @@ def compiler_environment(phase):
         env.update(settings)
         paths = [str((ROOT / p).resolve()) if not pathlib.Path(p).is_absolute() else p
                  for p in settings['LEAN_PATH'].split(os.pathsep) if p]
-        env['LEAN_PATH'] = os.pathsep.join([str(OBJECTS), str(RESTORED), *paths])
+        env['LEAN_PATH'] = os.pathsep.join([str(HELPER_OBJECTS), str(RESTORED), *paths])
         lean = shutil.which('lean', path=env['PATH'])
+    # Lean resolves an entire root namespace from the first matching directory.
+    # A diagnostic Proofs/ output tree must therefore never shadow imports.
+    search = [pathlib.Path(p).resolve() for p in env['LEAN_PATH'].split(os.pathsep) if p]
+    assert PROBE_OBJECTS.resolve() not in search
+    assert not (HELPER_OBJECTS / 'Proofs').exists()
+    if phase == 'probe':
+        assert CONTROL_IMPORTS.resolve() not in search
     assert lean and pathlib.Path(lean).is_file()
     version = subprocess.check_output([lean, '--version'], env=env, cwd=ROOT, text=True).strip()
     assert 'version 4.33.1,' in version
@@ -360,18 +373,20 @@ def compiler_environment(phase):
 def compile_diagnostic(phase, name, lean, env):
     sys.path.insert(0, str(SOURCES))
     from module_outputs import remove_pending_outputs, finalize_outputs
-    source = DIAG_SOURCES / (name.replace('.', '/') + '.lean')
-    output = OBJECTS / (name.replace('.', '/') + '.olean')
+    source_root = FIXTURE_SOURCES if name == FIXTURE else DIAG_SOURCES
+    output_root = HELPER_OBJECTS if name == HELPER else CONTROL_IMPORTS if name == FIXTURE else PROBE_OBJECTS
+    source = source_root / (name.replace('.', '/') + '.lean')
+    output = output_root / (name.replace('.', '/') + '.olean')
     output.parent.mkdir(parents=True, exist_ok=True)
     pending = output.with_suffix('.olean.pending')
     remove_pending_outputs(pending)
     assert not output.exists(), 'Diagnostic worker cannot reuse an earlier compiler result'
     log = BUILD / (name + '.log')
-    command = [lean, *FLAGS, '-R', str(DIAG_SOURCES), '-o', str(pending), str(source)]
+    command = [lean, *FLAGS, '-R', str(source_root), '-o', str(pending), str(source)]
     host_event(phase, 'LEAN_LAUNCH_REQUESTED', module=name, timeout_seconds=900, command=command)
     started, timeout = time.monotonic(), False
     with log.open('w') as stream:
-        child = subprocess.Popen(command, cwd=DIAG_SOURCES, env=env, stdout=stream, stderr=subprocess.STDOUT)
+        child = subprocess.Popen(command, cwd=source_root, env=env, stdout=stream, stderr=subprocess.STDOUT)
         host_event(phase, 'LEAN_PROCESS_STARTED', module=name, pid=child.pid)
         try:
             code = child.wait(timeout=900)
@@ -415,6 +430,19 @@ def named_axioms(text):
     return result
 
 
+def require_control():
+    report = json.loads((BUILD / 'control_result.json').read_bytes())
+    assert report['status'] == 'DIAGNOSTIC_MARKER_CONTROL_PASSED'
+    assert report['source_spec_sha256'] == SPEC_SHA
+    assert [r['module'] for r in report['results']] == [HELPER, FIXTURE, CONTROL]
+    assert all(r['success'] and not r['timeout'] and r['compiler_returncode'] == 0 for r in report['results'])
+    assert report['observed_phase_labels'] == ['control.header.complete', 'control.kernel.checked', 'control.axioms.complete']
+    assert report['named_axiom_profiles'] == [dict(declaration='RGDiagnosticMarkerControl.checked', axioms=[])]
+    assert report['production_restore_absent_during_control'] is True
+    assert report['import_search_paths'] == [str(HELPER_OBJECTS), str(CONTROL_IMPORTS)]
+    return report
+
+
 def worker(phase):
     spec = validate_spec()
     BUILD.mkdir(parents=True, exist_ok=True)
@@ -423,11 +451,12 @@ def worker(phase):
     phase_file.write_text('')
     if phase == 'probe':
         require_frontier()
-        control = json.loads((BUILD / 'control_result.json').read_bytes())
-        assert control['status'] == 'DIAGNOSTIC_MARKER_CONTROL_PASSED'
+        require_control()
+    else:
+        assert not RESTORED.exists(), 'Early control must not populate the production restore tree'
     lean, env, version = compiler_environment(phase)
     env['RG_PHASE_LOG'] = str(phase_file.resolve())
-    names = ['Proofs.RGDiagnosticPhaseMarker', 'Proofs.RGDiagnosticMarkerControl'] if phase == 'control' else [PROBE]
+    names = [HELPER, FIXTURE, CONTROL] if phase == 'control' else [PROBE]
     results = []
     for name in names:
         result = compile_diagnostic(phase, name, lean, env)
@@ -448,11 +477,17 @@ def worker(phase):
         if phase == 'control':
             assert profiles[0]['axioms'] == []
     assert sha(original_source().read_bytes()) == SOURCE_SHA
-    if phase == 'probe':
+    if phase == 'control':
+        assert not RESTORED.exists()
+    else:
         assert not (RESTORED / (ORIGINAL + '.json')).exists()
         assert not (RESTORED / (ORIGINAL.replace('.', '/') + '.olean')).exists()
     status = 'DIAGNOSTIC_MARKER_CONTROL_PASSED' if phase == 'control' and success else 'DIAGNOSTIC_COPY_COMPILER_COMPLETED' if success else 'DIAGNOSTIC_COMPILER_FAILED_OR_TIMED_OUT'
     report = dict(status=status, phase=phase, lean=version, strict_flags=FLAGS,
+        source_spec_sha256=SPEC_SHA,
+        import_search_paths=env['LEAN_PATH'].split(os.pathsep),
+        probe_output_directory_excluded_from_import_search=True,
+        production_restore_absent_during_control=True if phase == 'control' else None,
         module_timeout_seconds=900, workers=1, memory_reserve_mib=2048,
         results=results, observed_phase_labels=labels, named_axiom_profiles=profiles,
         last_observed_phase=labels[-1] if labels else None,

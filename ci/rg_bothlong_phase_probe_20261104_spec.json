@@ -1,24 +1,85 @@
 {
-  "added_diagnostic_import": "Proofs.RGDiagnosticPhaseMarker",
+  "added_diagnostic_import": "RGDiagnostic.PhaseMarker",
   "artifacts": [
     {
       "bytes": 867,
-      "path": "Proofs/RGDiagnosticPhaseMarker.lean",
-      "sha256": "c9fdf87b04ffe6aba30d18028fc01ba84a71ce3251476733e8de1e9393c21b9a"
+      "local_path": "main/RGDiagnostic/PhaseMarker.lean",
+      "module": "RGDiagnostic.PhaseMarker",
+      "path": "RGDiagnostic/PhaseMarker.lean",
+      "role": "helper",
+      "sha256": "c9fdf87b04ffe6aba30d18028fc01ba84a71ce3251476733e8de1e9393c21b9a",
+      "source_root": "."
     },
     {
-      "bytes": 335,
+      "bytes": 118,
+      "local_path": "control_imports/Proofs/RGDiagnosticImportFixture.lean",
+      "module": "Proofs.RGDiagnosticImportFixture",
+      "path": "control_imports/Proofs/RGDiagnosticImportFixture.lean",
+      "role": "fixture",
+      "sha256": "e1f4204e90c5db6da9eec180725c70739a15ecae4775ce8fd7b75291af452a1e",
+      "source_root": "control_imports"
+    },
+    {
+      "bytes": 392,
+      "local_path": "main/Proofs/RGDiagnosticMarkerControl.lean",
+      "module": "Proofs.RGDiagnosticMarkerControl",
       "path": "Proofs/RGDiagnosticMarkerControl.lean",
-      "sha256": "6c525f51783078b0d21c25a307c65fb2e6eb249ee49df9555c2a6d0535d2d032"
+      "role": "control",
+      "sha256": "ae28ec600e92d895fffcf929698ab3733d4d72bd7fa324f520da679fb41e2d73",
+      "source_root": "."
     },
     {
-      "bytes": 37691,
+      "bytes": 37685,
+      "local_path": "main/Proofs/RadenkovicGutmanD1OriginalSharedBothLongPhaseProbe.lean",
+      "module": "Proofs.RadenkovicGutmanD1OriginalSharedBothLongPhaseProbe",
       "path": "Proofs/RadenkovicGutmanD1OriginalSharedBothLongPhaseProbe.lean",
-      "sha256": "cd01dc52e48d137c500ad0e0dc57d58f59ce7542cba7b3489b23d58aa846306e"
+      "role": "probe",
+      "sha256": "d2a014182a5a8a0cbb4f9cb4f8d7f934f42da361ba53b52cb5a5604800074f02",
+      "source_root": "."
     }
   ],
+  "control_axiom_profiles": {
+    "RGDiagnosticMarkerControl.checked": []
+  },
+  "control_markers": [
+    "control.header.complete",
+    "control.kernel.checked",
+    "control.axioms.complete"
+  ],
+  "control_modules_in_compile_order": [
+    "RGDiagnostic.PhaseMarker",
+    "Proofs.RGDiagnosticImportFixture",
+    "Proofs.RGDiagnosticMarkerControl"
+  ],
+  "control_proof_term": "RGDiagnosticImportFixture.checked",
   "diagnostic_endpoint": "Proofs.RadenkovicGutmanD1OriginalSharedBothLongPhaseProbe",
+  "execution_layout": {
+    "control_explicit_lean_path": [
+      "helper_objects",
+      "control_imports"
+    ],
+    "control_output": "probe_objects/Proofs/RGDiagnosticMarkerControl.olean",
+    "fixture_objects_must_not_be_on_probe_path": true,
+    "fixture_output": "control_imports/Proofs/RGDiagnosticImportFixture.olean",
+    "fixture_source_root": "DIAG_SOURCES/control_imports",
+    "helper_objects_must_not_have_Proofs_root": true,
+    "helper_output": "helper_objects/RGDiagnostic/PhaseMarker.olean",
+    "never_on_lean_path": [
+      "probe_objects"
+    ],
+    "other_source_root": "DIAG_SOURCES",
+    "probe_explicit_lean_path": [
+      "helper_objects",
+      "RESTORED",
+      "lake_package_paths"
+    ],
+    "probe_output": "probe_objects/Proofs/RadenkovicGutmanD1OriginalSharedBothLongPhaseProbe.olean"
+  },
   "family_closure_claim": false,
+  "fixture_declared_type": "True",
+  "fixture_theorem": "RGDiagnosticImportFixture.checked",
+  "helper_content_unchanged_from_previous_actual_control": true,
+  "helper_module_rename_requires_real_compile": true,
   "kernel_success_claim": false,
   "markers": [
     {
@@ -130,6 +191,18 @@
   "original_production_endpoint_unchanged": true,
   "original_source_bytes_preserved_after_removing_instrumentation": true,
   "original_source_sha256": "01d60858da8d95431e0240e6c7dbf2c657111fe34dbf3a3e5a115f90797edc06",
+  "previous_probe_manifest_sha256": "1db97952bfc986b93a511033f997c3ce041c1a71015f29dcd4bbb55f1b456a1c",
+  "primary_search_rule": {
+    "git_blob": "09c0253b7066a88d65ab556dcc224463479090ea",
+    "path": "src/Lean/Util/Path.lean",
+    "ranges": [
+      "6-9",
+      "58-72",
+      "116-125"
+    ],
+    "ref": "v4.33.1",
+    "repository": "leanprover/lean4"
+  },
   "production_receipt_or_manifest_ingestion_forbidden": true,
   "required_compiler_flags": [
     "-j1",
@@ -141,10 +214,11 @@
     "-Dprofiler.threshold=100"
   ],
   "resource_observer_required": true,
+  "scope": "Diagnostic namespace/search-path repair only; all original proof bytes, 123 original imports, 26 marker labels, five original axiom print commands and strict resource/compiler limits preserved.",
   "separate_output_directory_required": true,
   "separate_phase_file_required": true,
   "source_commit": "10aa67f5f16e8ad00b30ac21332791b008b69cfe",
-  "status": "LOCAL_DIAGNOSTIC_PROPOSAL_NOT_KERNEL_TESTED",
+  "status": "LOCAL_NAMESPACE_REPAIR_NOT_KERNEL_TESTED",
   "unchanged_limits": {
     "memory_reserve_mib": 2048,
     "module_timeout_seconds": 900,

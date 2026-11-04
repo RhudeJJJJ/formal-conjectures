@@ -1,5 +1,5 @@
 /- Copyright 2026 Jonas J. Gebendorfer. Apache 2.0. -/
-import Proofs.RGDiagnosticPhaseMarker
+import RGDiagnostic.PhaseMarker
 import Proofs.RadenkovicGutmanFixedClassKernelBase
 import Proofs.RadenkovicGutmanD1OriginalSharedSlice0000Complete
 import Proofs.RadenkovicGutmanD1OriginalSharedSlice0001Complete

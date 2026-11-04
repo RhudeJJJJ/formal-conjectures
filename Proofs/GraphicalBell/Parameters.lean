@@ -11,6 +11,8 @@ public import Lean.Elab.Tactic.Omega
 
 @[expose] public section
 
+set_option warningAsError true
+
 namespace GraphicalBellProof
 open PHOEG.GraphicalBell
 

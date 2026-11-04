@@ -8,6 +8,8 @@ public import Lean.Elab.Tactic.Omega
 
 @[expose] public section
 
+set_option warningAsError true
+
 namespace GraphicalBellProof
 abbrev Vector := Int → Int
 
@@ -66,7 +68,7 @@ theorem step_basis (q : Nat) : step (q : Int) (basis q) = basis (q + 1) := by
     have hqq : (q : Int) + 1 ≠ (q : Int) := by omega
     simp [step, basis, Int.natCast_add, hqq]
   · have hprev : k - 1 ≠ (q : Int) := by omega
-    simp only [step, basis, if_neg hprev]
+    simp only [step, basis, ite_eq_right hprev]
     by_cases heq : k = (q : Int)
     · subst k
       simp [Int.natCast_add, h]
@@ -79,7 +81,7 @@ theorem basis_nonnegative (q : Nat) : Nonnegative (basis q) := by
 
 theorem basis_supported (q : Nat) : Supported (basis q) := by
   intro k hk
-  simp only [basis, if_neg (show k ≠ (q : Int) by omega)]
+  simp only [basis, ite_eq_right (show k ≠ (q : Int) by omega)]
 
 theorem step_supported (d : Int) {a : Vector} (ha : Supported a) : Supported (step d a) := by
   intro k hk

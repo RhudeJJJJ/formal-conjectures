@@ -11,6 +11,8 @@ public import Mathlib.Algebra.BigOperators.Ring.Finset
 
 @[expose] public section
 
+set_option warningAsError true
+
 namespace GraphicalBellProof
 open Finset SimpleGraph
 variable {V : Type*} [DecidableEq V]
@@ -27,8 +29,8 @@ lemma degreeOn_insert {G : SimpleGraph V} {S : Finset V} {v : V} (hv : v ∉ S) 
   unfold degreeOn
   rw [Finset.filter_insert]
   by_cases hadj : G.Adj w v
-  · rw [if_pos hadj, if_pos hadj, card_insert_of_notMem (by simp only [mem_filter]; exact fun h => hv h.1)]
-  · rw [if_neg hadj, if_neg hadj, Nat.add_zero]
+  · rw [ite_eq_left hadj, ite_eq_left hadj, card_insert_of_notMem (by simp only [mem_filter]; exact fun h => hv h.1)]
+  · rw [ite_eq_right hadj, ite_eq_right hadj, Nat.add_zero]
 
 open scoped Classical in
 omit [DecidableEq V] in
@@ -47,7 +49,7 @@ lemma degreeSum_insert {G : SimpleGraph V} {S : Finset V} {v : V} (hv : v ∉ S)
     intro w _
     have he : G.Adj w v ↔ G.Adj v w := ⟨G.symm.symm _ _, G.symm.symm _ _⟩
     simp only [he]
-  simp only [degreeSum, sum_insert hv, degreeOn_insert hv, if_neg hvv, Nat.add_zero,
+  simp only [degreeSum, sum_insert hv, degreeOn_insert hv, ite_eq_right hvv, Nat.add_zero,
     sum_add_distrib]
   rw [hs]
   omega

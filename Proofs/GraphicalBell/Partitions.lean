@@ -12,6 +12,8 @@ public import Lean.Elab.Tactic.Omega
 
 @[expose] public section
 
+set_option warningAsError true
+
 namespace GraphicalBellProof
 open Finset SimpleGraph
 variable {V : Type*} [DecidableEq V]
@@ -194,7 +196,7 @@ lemma extend_card {G : SimpleGraph V} {S : Finset V} {P : Finset (Finset V)}
   rw [extendVertex, card_insert_of_notMem hn]
   rcases hB with rfl | hb
   · simp [stable_empty_not_mem hP]
-  · rw [card_erase_of_mem hb, if_neg (ne_of_mem_of_not_mem hb (stable_empty_not_mem hP))]
+  · rw [card_erase_of_mem hb, ite_eq_right (ne_of_mem_of_not_mem hb (stable_empty_not_mem hP))]
     have := card_pos.mpr ⟨B, hb⟩
     omega
 

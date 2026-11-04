@@ -11,6 +11,8 @@ public import Mathlib.Algebra.Order.Ring.Int
 
 @[expose] public section
 
+set_option warningAsError true
+
 namespace GraphicalBellProof
 open Finset SimpleGraph PHOEG.GraphicalBell
 variable {V : Type*} [DecidableEq V]
@@ -43,7 +45,7 @@ lemma model_le_count (G : SimpleGraph V) (S : Finset V) :
   have hds : degreeOn G S v = d := by
     have h := degreeOn_insert (G := G) hvr v
     rw [hSR] at h
-    simpa only [if_neg (G.loopless.irrefl v), Nat.add_zero] using h
+    simpa only [ite_eq_right (G.loopless.irrefl v), Nat.add_zero] using h
   have hmadd : m = sizeOn G R + d := by
     have h := sizeOn_insert (G := G) hvr
     rwa [hSR] at h

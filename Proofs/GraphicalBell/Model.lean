@@ -9,6 +9,8 @@ public import Proofs.GraphicalBell.Vectors
 
 @[expose] public section
 
+set_option warningAsError true
+
 namespace GraphicalBellProof
 open PHOEG.GraphicalBell
 
@@ -58,7 +60,7 @@ lemma model_step {n m d : ℕ} (hn : 1 ≤ n) (hm : m ≤ n.choose 2)
           omega
         have hnew : model (n - 1) (m - d) = basis q := by
           unfold model
-          rw [hqnew, if_pos (show q = n - 1 by omega)]
+          rw [hqnew, ite_eq_left (show q = n - 1 by omega)]
           congr 1
           omega
         have hold : model n m = step (r : Int) (basis q) := by

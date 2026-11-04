@@ -9,6 +9,8 @@ public import Proofs.GraphicalBell.OriginalBridge
 
 @[expose] public section
 
+set_option warningAsError true
+
 namespace PHOEG.GraphicalBell
 open GraphicalBellProof SimpleGraph
 

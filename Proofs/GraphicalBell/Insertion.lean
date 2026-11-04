@@ -8,6 +8,8 @@ public import Proofs.GraphicalBell.Recovery
 
 @[expose] public section
 
+set_option warningAsError true
+
 namespace GraphicalBellProof
 open Finset SimpleGraph
 variable {V : Type*} [DecidableEq V]
@@ -93,7 +95,7 @@ lemma insertData_surjective {G : SimpleGraph V} {S : Finset V} {v : V} (hv : v �
     apply Subtype.ext
     change extendVertex v P.val ∅ = Q.val.val
     simpa [hempty] using hr
-  · have hp : P.val.card = k + 1 := by simp only [if_neg hempty] at hcard; omega
+  · have hp : P.val.card = k + 1 := by simp only [ite_eq_right hempty] at hcard; omega
     refine ⟨Sum.inr ⟨⟨P, hp⟩, ⟨U.erase v, hb.1.resolve_left hempty, hb.2⟩⟩, ?_⟩
     apply Subtype.ext
     apply Subtype.ext

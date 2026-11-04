@@ -10,6 +10,8 @@ public import Proofs.GraphicalBell.Vectors
 
 @[expose] public section
 
+set_option warningAsError true
+
 namespace GraphicalBellProof
 open Finset SimpleGraph
 

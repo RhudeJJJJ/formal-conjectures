@@ -8,6 +8,8 @@ public import Proofs.GraphicalBell.Partitions
 
 @[expose] public section
 
+set_option warningAsError true
+
 namespace GraphicalBellProof
 open Finset SimpleGraph
 variable {V : Type*} [DecidableEq V]

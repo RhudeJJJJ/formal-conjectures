@@ -13,6 +13,8 @@ public import Mathlib.Combinatorics.SimpleGraph.DegreeSum
 
 @[expose] public section
 
+set_option warningAsError true
+
 namespace GraphicalBellProof
 open Finset SimpleGraph PHOEG.GraphicalBell
 

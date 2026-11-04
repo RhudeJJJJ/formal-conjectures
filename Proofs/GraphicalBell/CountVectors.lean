@@ -9,6 +9,8 @@ public import Mathlib.Algebra.Order.Ring.Int
 
 @[expose] public section
 
+set_option warningAsError true
+
 namespace GraphicalBellProof
 open Finset SimpleGraph
 variable {V : Type*} [DecidableEq V]
@@ -63,12 +65,12 @@ lemma countVector_partial (q r : ℕ) (hr : r ≤ q) :
           rw [countVector_nat (quasiGraph q r) (range (q + 1)) 0, hzero]
           change (0 : Int) = step (r : Int) (basis q) 0
           unfold step basis
-          rw [if_neg (show (0 : Int) - 1 ≠ q by omega), Int.zero_add]
+          rw [ite_eq_right (show (0 : Int) - 1 ≠ q by omega), Int.zero_add]
           by_cases hq : (0 : Int) = q
-          · rw [if_pos hq]
+          · rw [ite_eq_left hq]
             have hr0 : r = 0 := by omega
             simp [hr0]
-          · rw [if_neg hq]
+          · rw [ite_eq_right hq]
             simp
       | succ n =>
           have hk : ((n + 1 : ℕ) : Int) - 1 = n := by omega

@@ -4,8 +4,8 @@ This self-contained source snapshot is the first pair in the migration of
 formal-conjectures PR7385 from its legacy proof-link exemption to a genuine
 Palomar record. It is not registered merely by existing or passing preflight.
 
-`Challenge.lean` states both original mathematical targets with independently
-written-out ordinary definitions and only canonical Mathlib imports.
+`Challenge.lean` states both original mathematical targets with standalone
+copies of the ordinary definitions and only canonical Mathlib imports.
 `Solution.lean` imports the complete18-module proof. Comparator compares
 `PHOEG.GraphicalBell.full_coefficientwise` first and
 `PHOEG.GraphicalBell.full_conjecture` second, permitting only propext,
@@ -22,8 +22,9 @@ PHOEG fixed-order/fixed-size problem; novelty has not been independently
 established by this port.
 
 The complete substantive source is included here under Apache-2.0, ported
-from commit62f9346442c8757cad34bc4c9b295f29260684d2. Only module and visibility
-declarations are initially changed in its18 proof modules. The statement
+from commit62f9346442c8757cad34bc4c9b295f29260684d2. Its18 proof modules gain
+module and visibility declarations, warnings as errors, and the Lean4.35
+replacements if_pos/if_neg -> ite_eq_left/ite_eq_right. The statement
 definitions are retained; unused admitted targets, repository linter
 attributes and the old negative-control audit module are omitted. The small
 Challenge spells the same endpoint types; Comparator must test that claim.

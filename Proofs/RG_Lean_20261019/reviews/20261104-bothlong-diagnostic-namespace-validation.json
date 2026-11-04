@@ -1,0 +1,44 @@
+{
+  "status": "LOCAL_NAMESPACE_REPAIR_BOUNDARIES_PASSED_NOT_A_LEAN_RUN",
+  "controller_sha256": "4faf158e6e94c45f444d7e92f7880713620d56a6b48f5753899fcfe2315d6026",
+  "spec_sha256": "d789066587ab434e4e11455d5ac5dc7ebebf4ced1f52fd9a6c9bda7d77c718b0",
+  "unchanged_workflow_sha256": "c58e588be10b912bd3f3c7a221d3bf1a2099e0519de163195e03c87ae17ff8cd",
+  "observed_failed_run": 41815146709,
+  "observed_failed_job": 126523888097,
+  "failed_log_sha256": "ec837623906eb7dc9e400552c43546c1b2bacc8a06321c3551f3257147a5d463",
+  "checks": [
+    {
+      "name": "Real four source bytes, fixed manifest and exact unchanged original reconstruction",
+      "result": "PASS"
+    },
+    {
+      "name": "Four manifest module names and explicit source roots agree with actual compiler paths",
+      "result": "PASS"
+    },
+    {
+      "name": "Native-failure, whole-ZIP, origin, 25192 projection, original preflight and phase parsers unchanged",
+      "result": "PASS"
+    },
+    {
+      "name": "Actual source/materialization, historical manifests and immutable old plan preparation unchanged after stronger control gate",
+      "result": "PASS"
+    },
+    {
+      "name": "Pinned first-root lookup reproduces observed shadowing and separates new control/probe imports",
+      "result": "PASS"
+    },
+    {
+      "name": "Actual previous successful two-module control is rejected by the new required three-module gate",
+      "result": "PASS"
+    },
+    {
+      "name": "Unchanged workflow trigger covers both new source paths; patch adds no workflow/resource/production-source changes",
+      "result": "PASS"
+    }
+  ],
+  "check_count": 7,
+  "actual_repaired_control_success": false,
+  "actual_large_probe_reached": false,
+  "original_lean_sources_changed": false,
+  "next_required_evidence": "Three real early compiler invocations with separate namespaces, exact three markers and axiom-free control before any restore"
+}

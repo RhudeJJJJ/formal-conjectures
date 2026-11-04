@@ -1,0 +1,75 @@
+{
+  "status": "ACTUAL_DIAGNOSTIC_RUN_FAILED_CAPTURED",
+  "run": 41815146709,
+  "job": 126523888097,
+  "source_commit": "8fffaec836380588fcb4455621d4037436322828",
+  "event": "push",
+  "conclusion": "failure",
+  "run_attempt": 1,
+  "failed_steps": [
+    {
+      "name": "Observe the isolated diagnostic copy with unchanged strict kernel limits",
+      "status": "completed",
+      "conclusion": "failure",
+      "number": 14,
+      "started_at": "2026-11-04T11:22:58Z",
+      "completed_at": "2026-11-04T11:23:06Z"
+    }
+  ],
+  "prior_restore_step": {
+    "name": "Authenticate all 444 original archives and read back 25191 projected objects",
+    "status": "completed",
+    "conclusion": "success",
+    "number": 12,
+    "started_at": "2026-11-04T10:39:30Z",
+    "completed_at": "2026-11-04T11:19:43Z"
+  },
+  "preflight_step": {
+    "name": "Require exactly the original BothLong endpoint to remain uncompiled",
+    "status": "completed",
+    "conclusion": "success",
+    "number": 13,
+    "started_at": "2026-11-04T11:19:43Z",
+    "completed_at": "2026-11-04T11:22:58Z"
+  },
+  "artifact": {
+    "id": 13316846213,
+    "node_id": "MDg6QXJ0aWZhY3QxMzMxNjg0NjIxMw==",
+    "name": "rg-bothlong-phase-diagnostic-20261104-41815146709-1",
+    "size_in_bytes": 6286259,
+    "url": "https://api.github.com/repos/RhudeJJJJ/formal-conjectures/actions/artifacts/13316846213",
+    "archive_download_url": "https://api.github.com/repos/RhudeJJJJ/formal-conjectures/actions/artifacts/13316846213/zip",
+    "expired": false,
+    "digest": "sha256:83fff4aa75eae5aa1d0e1d27f15656c1972f22a37a08774cb14983964a7d9ca0",
+    "created_at": "2026-11-04T11:23:09Z",
+    "updated_at": "2026-11-04T11:23:09Z",
+    "expires_at": "2027-02-02T10:35:03Z",
+    "workflow_run": {
+      "id": 41815146709,
+      "repository_id": 1416044648,
+      "head_repository_id": 1416044648,
+      "head_branch": "rg-d1-bothlong-phase-probe-20261104",
+      "head_sha": "8fffaec836380588fcb4455621d4037436322828"
+    }
+  },
+  "native_files": {
+    "run.json": {
+      "bytes": 13056,
+      "sha256": "209d46164a756e3d8a16c3946896321ed6c933109c9ef653f7f59b136d16da4a"
+    },
+    "jobs.json": {
+      "bytes": 4327,
+      "sha256": "2f20c3ccf67baa63367f52a78cda36fc2eb8ce3324b0b4c05b6957fc02bf6ee4"
+    },
+    "artifacts.json": {
+      "bytes": 799,
+      "sha256": "725805f9e135a352fcfe470255f5e297bbfee51f166f1a6c5592831ecffc8d48"
+    },
+    "job.log": {
+      "bytes": 311185,
+      "sha256": "56a73e011d37459a030afcd9f14e840894566ce5b43f5a6a95c092547551a594"
+    }
+  },
+  "archive_download_pending_central_root": true,
+  "production_kernel_claim": false
+}

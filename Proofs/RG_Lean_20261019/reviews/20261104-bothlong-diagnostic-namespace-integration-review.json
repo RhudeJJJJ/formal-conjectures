@@ -1,0 +1,96 @@
+{
+  "bindings": {
+    "controller": {
+      "path": "namespace_repair_patch/ci/rg_bothlong_phase_probe_20261104.py",
+      "sha256": "4faf158e6e94c45f444d7e92f7880713620d56a6b48f5753899fcfe2315d6026"
+    },
+    "diagnostic_sources": [
+      {
+        "bytes": 867,
+        "module": "RGDiagnostic.PhaseMarker",
+        "path": "RGDiagnostic/PhaseMarker.lean",
+        "sha256": "c9fdf87b04ffe6aba30d18028fc01ba84a71ce3251476733e8de1e9393c21b9a"
+      },
+      {
+        "bytes": 118,
+        "module": "Proofs.RGDiagnosticImportFixture",
+        "path": "control_imports/Proofs/RGDiagnosticImportFixture.lean",
+        "sha256": "e1f4204e90c5db6da9eec180725c70739a15ecae4775ce8fd7b75291af452a1e"
+      },
+      {
+        "bytes": 392,
+        "module": "Proofs.RGDiagnosticMarkerControl",
+        "path": "Proofs/RGDiagnosticMarkerControl.lean",
+        "sha256": "ae28ec600e92d895fffcf929698ab3733d4d72bd7fa324f520da679fb41e2d73"
+      },
+      {
+        "bytes": 37685,
+        "module": "Proofs.RadenkovicGutmanD1OriginalSharedBothLongPhaseProbe",
+        "path": "Proofs/RadenkovicGutmanD1OriginalSharedBothLongPhaseProbe.lean",
+        "sha256": "d2a014182a5a8a0cbb4f9cb4f8d7f934f42da361ba53b52cb5a5604800074f02"
+      }
+    ],
+    "inherited_workflow": {
+      "path": "workflow_patch/.github/workflows/rg-d1-bothlong-phase-probe-20261104.yml",
+      "sha256": "c58e588be10b912bd3f3c7a221d3bf1a2099e0519de163195e03c87ae17ff8cd",
+      "unchanged": true
+    },
+    "namespace_search_review_sha256": "e9afd054317ceb4cb10645b94039221410568872ff52a761d511247671b9856f",
+    "spec": {
+      "path": "namespace_repair_patch/ci/rg_bothlong_phase_probe_20261104_spec.json",
+      "sha256": "d789066587ab434e4e11455d5ac5dc7ebebf4ced1f52fd9a6c9bda7d77c718b0"
+    }
+  },
+  "checks": {
+    "control_and_probe_output_root": "probe_objects",
+    "control_compile_order": [
+      "RGDiagnostic.PhaseMarker",
+      "Proofs.RGDiagnosticImportFixture",
+      "Proofs.RGDiagnosticMarkerControl"
+    ],
+    "control_explicit_lean_path": [
+      "helper_objects",
+      "control_imports"
+    ],
+    "control_precedes_prepare_dependencies_and_444_archive_restore": true,
+    "control_requires_absent_production_restore_tree_before_and_after": true,
+    "fixture_minus_R_and_cwd_equal_DIAG_SOURCES_control_imports": true,
+    "fixture_objects_excluded_from_probe_search_path": true,
+    "fixture_output_root": "control_imports",
+    "fixture_theorem_is_used_by_control": true,
+    "helper_Proofs_root_rejected": true,
+    "helper_module_has_own_RGDiagnostic_root": true,
+    "helper_output_root": "helper_objects",
+    "lean_version_check": "4.33.1",
+    "memory_reserve_mib": 2048,
+    "module_timeout_seconds": 900,
+    "original_imports": 123,
+    "other_modules_minus_R_and_cwd_equal_DIAG_SOURCES": true,
+    "pinned_lean_search_rule_matches_observed_failure": true,
+    "probe_explicit_lean_path": [
+      "helper_objects",
+      "RESTORED",
+      "absolute_lake_package_paths"
+    ],
+    "probe_objects_excluded_from_both_search_paths": true,
+    "probe_original_source_sha256_after_removing_instrumentation": "01d60858da8d95431e0240e6c7dbf2c657111fe34dbf3a3e5a115f90797edc06",
+    "require_control_binds_spec_three_successful_processes_three_markers_empty_profile_and_search_roots": true,
+    "strict_compiler_flags_unchanged": true,
+    "unchanged_original_axiom_print_commands": 5,
+    "unchanged_probe_markers": 26,
+    "workers": 1,
+    "workflow_existing_recursive_source_trigger_includes_new_paths": true,
+    "workflow_read_permissions_and_diagnostic_only_retention_unchanged": true
+  },
+  "findings": [],
+  "limits": [
+    "This is a source/byte integration review. No local Lean installation exists and no new Lean compile was run by the reviewer.",
+    "The first actual three-module early control remains mandatory before expensive restoration.",
+    "No successful original BothLong export or degreeOneLarge family closure is claimed."
+  ],
+  "mutations_by_reviewer": "Four isolated diagnostic sources and review/manifest artifacts only; no production Lean, controller, workflow, remote or CI mutation.",
+  "review_scope": "The changed namespace/search-path controller integration, four diagnostic sources, exact reconstruction and unchanged workflow ordering/trigger/guards. Archive-authentication implementation and production mathematics were not reopened.",
+  "reviewer": "rg_lean_join",
+  "schema": "rg_bothlong_namespace_controller_independent_review_v1",
+  "status": "PASS_STATIC_NAMESPACE_INTEGRATION_REVIEW_NO_NEW_KERNEL_CLAIM"
+}

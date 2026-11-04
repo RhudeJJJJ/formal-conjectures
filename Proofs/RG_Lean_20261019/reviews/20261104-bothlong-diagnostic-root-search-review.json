@@ -1,0 +1,64 @@
+{
+  "actual_failure": {
+    "artifact_path": "actual/diagnostic.zip",
+    "artifact_sha256": "83fff4aa75eae5aa1d0e1d27f15656c1972f22a37a08774cb14983964a7d9ca0",
+    "module_log_bytes": 496,
+    "module_log_entry": "Proofs/RG_Lean_20261019/build/bothlong_phase_probe/Proofs.RadenkovicGutmanD1OriginalSharedBothLongPhaseProbe.log",
+    "module_log_sha256": "ec837623906eb7dc9e400552c43546c1b2bacc8a06321c3551f3257147a5d463",
+    "note": "The actual error identifies namespace-root shadowing before the original BothLong commands; this run does not measure their performance.",
+    "observed_missing_path_suffix": "build/bothlong_phase_probe/objects/Proofs/RadenkovicGutmanFixedClassKernelBase.olean",
+    "proof_phase_reached": false,
+    "run_id": 41815146709
+  },
+  "actual_new_kernel_success": false,
+  "confirmed_rule": "findWithExt selects the first search-path entry with the root namespace directory or root module file; it constructs the requested child path without checking that child exists. findOLean uses this result directly, so a missing child does not retry later roots.",
+  "new_remote_or_ci_actions": false,
+  "original_statements_changed": false,
+  "primary_source": {
+    "excerpts": "namespace_search_primary_excerpts.txt",
+    "excerpts_sha256": "9783900f0dff21239cbdf153f93f807936aa9240dab1efeabe32374ff8c39417",
+    "git_blob": "09c0253b7066a88d65ab556dcc224463479090ea",
+    "path": "src/Lean/Util/Path.lean",
+    "ranges": [
+      "6-9",
+      "58-72",
+      "98-110",
+      "116-125"
+    ],
+    "ref": "v4.33.1",
+    "repository": "leanprover/lean4"
+  },
+  "production_lean_changed": false,
+  "repair_sources_manifest": "namespace_repair_sources/probe_manifest.json",
+  "repair_sources_manifest_sha256": "d789066587ab434e4e11455d5ac5dc7ebebf4ced1f52fd9a6c9bda7d77c718b0",
+  "required_controller_invariants": [
+    "helper_objects contains RGDiagnostic and must not contain Proofs.",
+    "Control imports use helper_objects then fixture control_imports, plus implicit standard library.",
+    "Fixture source compiles with -R DIAG_SOURCES/control_imports, preserving Proofs.RGDiagnosticImportFixture module identity.",
+    "Control and probe outputs go to probe_objects, which never appears on LEAN_PATH.",
+    "Probe uses helper_objects then authenticated restored Proofs root then Lake package paths.",
+    "Fixture object root never appears on the real probe import path.",
+    "All three early control compilations precede expensive restore and retain strict compiler flags and existing guards."
+  ],
+  "schema": "rg_bothlong_namespace_search_review_v1",
+  "scope": "Pinned namespace search rule and four local diagnostic source files; controller/workflow integration review pending freeze.",
+  "source_checks": {
+    "byte_exact_original_reconstruction_sha256": "01d60858da8d95431e0240e6c7dbf2c657111fe34dbf3a3e5a115f90797edc06",
+    "control_checked_proof_term": "RGDiagnosticImportFixture.checked",
+    "control_expected_axioms": [],
+    "control_imports": [
+      "RGDiagnostic.PhaseMarker",
+      "Proofs.RGDiagnosticImportFixture"
+    ],
+    "control_marker_count": 3,
+    "fixture_module": "Proofs.RGDiagnosticImportFixture",
+    "fixture_proof_term": "True.intro",
+    "fixture_theorem": "RGDiagnosticImportFixture.checked : True",
+    "helper_module": "RGDiagnostic.PhaseMarker",
+    "helper_source_bytes_unchanged": true,
+    "probe_marker_count": 26,
+    "probe_original_axiom_print_count": 5,
+    "probe_original_import_count": 123
+  },
+  "status": "SOURCE_NAMESPACE_REPAIR_READY_NOT_KERNEL_TESTED"
+}

@@ -1,0 +1,65 @@
+name: RG exact final callback syntax and source descriptor
+on:
+  push:
+    branches: [rg-degree-one-large-20261103]
+    paths:
+      - '.github/workflows/rg-validate-exact-final-hook-20261104.yml'
+      - '.github/workflows/rg-degree-one-large-exact-run-final-hook-20261103.yml'
+      - 'ci/rg_d1_exact_final_callback_20261103.json'
+permissions:
+  contents: read
+jobs:
+  check:
+    if: github.repository == 'RhudeJJJJ/formal-conjectures'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          persist-credentials: false
+      - name: Check the exact generated workflow with the repository's pinned actionlint
+        shell: bash
+        run: |
+          set -euo pipefail
+          curl --fail --silent --show-error --location --retry 3 \
+            https://github.com/rhysd/actionlint/releases/download/v1.7.7/actionlint_1.7.7_linux_amd64.tar.gz \
+            -o "$RUNNER_TEMP/actionlint.tar.gz"
+          echo "023070a287cd8cccd71515fedc843f1985bf96c436b7effaecce67290e7e0757  $RUNNER_TEMP/actionlint.tar.gz" | sha256sum --check
+          tar -xzf "$RUNNER_TEMP/actionlint.tar.gz" -C "$RUNNER_TEMP" actionlint
+          "$RUNNER_TEMP/actionlint" -shellcheck= -pyflakes= \
+            .github/workflows/rg-degree-one-large-exact-run-final-hook-20261103.yml \
+            .github/workflows/rg-validate-exact-final-hook-20261104.yml
+      - name: Record the exact reviewed callback files without a kernel claim
+        run: |
+          python3 - <<'PY'
+          import hashlib, json, os, pathlib, re
+          workflow = pathlib.Path('.github/workflows/rg-degree-one-large-exact-run-final-hook-20261103.yml')
+          descriptor = pathlib.Path('ci/rg_d1_exact_final_callback_20261103.json')
+          value = json.loads(descriptor.read_bytes())
+          assert value['kind'] == 'SEALED_EXACT_NUMERIC_RUN_FINAL_CALLBACK'
+          assert value['repository'] == 'RhudeJJJJ/formal-conjectures'
+          assert value['numeric_run'] == 41686621300 and value['numeric_run_attempt'] == 1
+          assert value['numeric_source_commit'] == 'aaeaec3cec22467d3f0b83b1761bfb40087bb991'
+          assert value['callback_default_branch'] == 'main'
+          assert re.fullmatch(r'[0-9a-f]{40}', value['proof_source_commit'])
+          embedded = re.findall(r"^      RG_FINAL_CONTINUATION_DESCRIPTOR: '(.*)'$", workflow.read_text(), re.M)
+          assert len(embedded) == 1 and json.loads(embedded[0]) == value
+          assert workflow.read_text().count('\n          ref: ' + value['proof_source_commit'] + '\n') == 1
+          for relative, digest in value['bound_files'].items():
+              target = pathlib.PurePosixPath(relative)
+              assert target.is_relative_to('ci') and '..' not in target.parts
+              assert hashlib.sha256(pathlib.Path(relative).read_bytes()).hexdigest() == digest
+          report = dict(kind='ACTUAL_ACTIONLINT_AND_BOUND_DESCRIPTOR_CHECK_NOT_KERNEL_PROOF',
+              repository=os.environ['GITHUB_REPOSITORY'], run=int(os.environ['GITHUB_RUN_ID']),
+              source_commit=os.environ['GITHUB_SHA'], proof_source_commit=value['proof_source_commit'],
+              files={str(p): hashlib.sha256(p.read_bytes()).hexdigest() for p in (workflow, descriptor)},
+              kernel_proof_claimed=False)
+          pathlib.Path('rg-exact-callback-syntax-check.json').write_text(json.dumps(report, indent=2) + '\n')
+          print(json.dumps(report), flush=True)
+          PY
+      - name: Preserve the actual syntax and descriptor check
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: rg-exact-callback-syntax-check-${{ github.run_id }}-${{ github.run_attempt }}
+          path: rg-exact-callback-syntax-check.json
+          retention-days: 90

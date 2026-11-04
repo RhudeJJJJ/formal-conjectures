@@ -103,7 +103,7 @@ def main():
         "      github.ref == 'refs/heads/main' &&\n"
         "      ((github.event_name == 'workflow_run' &&\n"
         "      github.event.action == 'completed' &&\n"
-        "      github.event.workflow_run.id == 41686621300 &&\n"
+        "      github.event.workflow_run.id == fromJSON('41686621300') &&\n"
         "      github.event.workflow_run.run_attempt == 1 &&\n"
         "      github.event.workflow_run.head_sha == 'aaeaec3cec22467d3f0b83b1761bfb40087bb991' &&\n"
         "      github.event.workflow_run.head_branch == 'rg-degree-one-large-20261103' &&\n"

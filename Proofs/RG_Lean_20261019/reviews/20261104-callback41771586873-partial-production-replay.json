@@ -1,0 +1,166 @@
+{
+  "status": "FOUR_FIXED_CALLBACK_PARTIAL_EXPORTS_AUTHENTICATED",
+  "manifest": "ci/rg_d1_callback41771586873_partial_prior_exports_20261104.json",
+  "manifest_sha256": "5261abd7410fbd6f10b786d60c03d7606f5143127c9d5900e39fb668218bc32b",
+  "preserved_origin": {
+    "repository": "RhudeJJJJ/formal-conjectures",
+    "run": 41771586873,
+    "job": 126382274319,
+    "source_commit": "1c4dd54321723bc7171e7dcab4fb28f01905038e",
+    "artifact_id": 13298606637,
+    "artifact_sha256": "678c858661743a1ed63b41119eb56d4fee63a12fa830f1ebd1b7b06f3e83b97a"
+  },
+  "proof_source_commit": "3058176bc186394c43923c475ae4fc63424bea47",
+  "workflow_head_commit": "1c4dd54321723bc7171e7dcab4fb28f01905038e",
+  "original_run_conclusion": "failure",
+  "original_job_conclusion": "failure",
+  "complete_final_receipt_present": false,
+  "actual_output_bytes_verified": 12963144,
+  "named_axiom_profiles": {
+    "Proofs.RadenkovicGutmanD1Long10": {
+      "Gebendorfer.RadenkovicGutman.DegreeOneLongClass10.partition_checked": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "Gebendorfer.RadenkovicGutman.DegreeOneLongClass10.budget_checked": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "Gebendorfer.RadenkovicGutman.DegreeOneLongClass10.normalized_target": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "Proofs.RadenkovicGutmanD1Long30": {
+      "Gebendorfer.RadenkovicGutman.DegreeOneLongClass30.partition_checked": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "Gebendorfer.RadenkovicGutman.DegreeOneLongClass30.budget_checked": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "Gebendorfer.RadenkovicGutman.DegreeOneLongClass30.normalized_target": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "Proofs.RadenkovicGutmanD1OriginalSharedSlice0080Complete": {
+      "Gebendorfer.RadenkovicGutman.D1OriginalSharedSlice0080Complete.cover_checked": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "Gebendorfer.RadenkovicGutman.D1OriginalSharedSlice0080Complete.slice_checked": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "Gebendorfer.RadenkovicGutman.D1OriginalSharedSlice0080Complete.actual_integral_lower": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "Proofs.RadenkovicGutmanD1OriginalSharedSlice0098Complete": {
+      "Gebendorfer.RadenkovicGutman.D1OriginalSharedSlice0098Complete.cover_checked": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "Gebendorfer.RadenkovicGutman.D1OriginalSharedSlice0098Complete.slice_checked": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "Gebendorfer.RadenkovicGutman.D1OriginalSharedSlice0098Complete.actual_integral_lower": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    }
+  },
+  "current_source_changes": [
+    "Proofs.RadenkovicGutmanD1OriginalSharedBothLong"
+  ],
+  "current_closure_changes": [
+    "Proofs.RadenkovicGutmanD1OriginalSharedBothLong",
+    "Proofs.RadenkovicGutmanOriginalDegreeOneLarge",
+    "Proofs.RadenkovicGutmanRemainingThreeAssembly"
+  ],
+  "partial_modules": [
+    "Proofs.RadenkovicGutmanD1Long10",
+    "Proofs.RadenkovicGutmanD1Long30",
+    "Proofs.RadenkovicGutmanD1OriginalSharedSlice0080Complete",
+    "Proofs.RadenkovicGutmanD1OriginalSharedSlice0098Complete"
+  ],
+  "required_fresh_modules": [
+    "Proofs.RadenkovicGutmanD1OriginalSharedBothLong",
+    "Proofs.RadenkovicGutmanOriginalDegreeOneLarge",
+    "Proofs.RadenkovicGutmanRemainingThreeAssembly"
+  ],
+  "partial_objects_relabelled_as_fresh": false,
+  "production_helper_sha256": "8872cd2515892ab1acf963e48e19162a98225582ba2b6e2579fc732576821b2b",
+  "validation_kind": "ACTUAL_NATIVE_METADATA_AND_TWO_COMPLETE_ZIP_REPLAY_WITH_TRANSPORT_ONLY_SUBSTITUTION",
+  "captured_api_calls": [
+    "/actions/runs/41771586873",
+    "/actions/jobs/126382274319",
+    "/actions/jobs/126382274319/logs",
+    "/actions/artifacts/13298606637",
+    "/actions/artifacts/13298452006"
+  ],
+  "actual_archive_ids": [
+    13298606637,
+    13298452006
+  ],
+  "candidate_both_long_source_sha256": "01d60858da8d95431e0240e6c7dbf2c657111fe34dbf3a3e5a115f90797edc06",
+  "candidate_kernel_checked": false,
+  "focused_negative_controls": [
+    {
+      "control": "changed_actual_partial_source",
+      "result": "REJECTED"
+    },
+    {
+      "control": "changed_actual_partial_recursive_closure",
+      "result": "REJECTED"
+    },
+    {
+      "control": "missing_partial_module",
+      "result": "REJECTED"
+    },
+    {
+      "control": "failed_native_run_relabelled_success",
+      "result": "REJECTED"
+    },
+    {
+      "control": "workflow_head_replaced_by_proof_checkout",
+      "result": "REJECTED"
+    },
+    {
+      "control": "original_full_restore_step_not_successful",
+      "result": "REJECTED"
+    },
+    {
+      "control": "failed_final_step_relabelled_success",
+      "result": "REJECTED"
+    },
+    {
+      "control": "actual_partial_receipt_cannot_be_final_receipt",
+      "result": "REJECTED"
+    },
+    {
+      "control": "old_seven_fresh_plan_cannot_be_three_fresh_resume",
+      "result": "REJECTED"
+    },
+    {
+      "control": "changed_archive_byte",
+      "result": "REJECTED"
+    }
+  ]
+}

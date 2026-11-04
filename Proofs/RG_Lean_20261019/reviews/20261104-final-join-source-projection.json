@@ -1,0 +1,41 @@
+{
+  "kind": "EXACT_SINGLE_SOURCE_CLOSURE_PROJECTION_NOT_KERNEL_PROOF",
+  "actual_prior_plan_sha256": "29e2cf80c90d550da3b6b29b96a9ecd9b745f41c77f5febf78547ae222bd33e2",
+  "required_modules": 33659,
+  "source_changed": [
+    "Proofs.RadenkovicGutmanD1OriginalSharedBothLong"
+  ],
+  "closure_changed": [
+    "Proofs.RadenkovicGutmanD1OriginalSharedBothLong",
+    "Proofs.RadenkovicGutmanOriginalDegreeOneLarge",
+    "Proofs.RadenkovicGutmanRemainingThreeAssembly"
+  ],
+  "unchanged_sources": 33658,
+  "unchanged_closures": 33656,
+  "current_binding_sha256": "48a083f8050264c03af22483d793e75bf9f8990793e91f0a46e3e9b25f7f0bbc",
+  "auxiliary_contract_sha256": "845467fbdc2106eae11a4e3384a767ec31179c3911e0329b4d6c9934e4df3b70",
+  "current_endpoint_closure_sha256": "ec3028a6ce22e4bb224ce176562bb92a7f91d99c8e7074846b0924a16a0798af",
+  "old_new": {
+    "Proofs.RadenkovicGutmanD1OriginalSharedBothLong": {
+      "old_source": "7f6a5608b39a42f834ad1ea48a1ff2bd207a3bf76711ccfd629d2953c70018f0",
+      "new_source": "01d60858da8d95431e0240e6c7dbf2c657111fe34dbf3a3e5a115f90797edc06",
+      "old_closure": "6b4df23bb495be81ef2ce9a83cffaba1ba98cbb54ae50354257908f5594be2ae",
+      "new_closure": "6652bff06d82bfecc1ec12127e805f41eb2e83a79f219b2145a3969fa41ccd06"
+    },
+    "Proofs.RadenkovicGutmanOriginalDegreeOneLarge": {
+      "old_source": "5bf13e2a759e57986dafbdb1937008207169962fc3432303c6e93b485e70ec5f",
+      "new_source": "5bf13e2a759e57986dafbdb1937008207169962fc3432303c6e93b485e70ec5f",
+      "old_closure": "df960dd7bfcf966c82d3a66c1bc33965a8d46bbed1851cb2c2c57a7b8dcf285d",
+      "new_closure": "6eb694fb9381c661109a14998ed9491bf4b5475a8c2fb2cfef81c7822bbae06d"
+    },
+    "Proofs.RadenkovicGutmanRemainingThreeAssembly": {
+      "old_source": "a234c56688628d48232033006c64896a36e3d405a3e8d0a1f559b8bdf9555e65",
+      "new_source": "a234c56688628d48232033006c64896a36e3d405a3e8d0a1f559b8bdf9555e65",
+      "old_closure": "4c573f944556add1e4f68d5b265d9c8b3438ccdd4edf222c4f15b56953a1eb70",
+      "new_closure": "ec3028a6ce22e4bb224ce176562bb92a7f91d99c8e7074846b0924a16a0798af"
+    }
+  },
+  "source_dependencies_unchanged": true,
+  "numeric_plan_and_origin_unchanged": true,
+  "whole_degree_one_large_complete": false
+}

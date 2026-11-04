@@ -1,0 +1,44 @@
+{
+  "kind": "SINGLE_FILE_EXPLICIT_RATIONAL_JOIN_PROOF_REFACTOR_PENDING_KERNEL_VALIDATION",
+  "source_commit": "3058176bc186394c43923c475ae4fc63424bea47",
+  "original_sha256": "7f6a5608b39a42f834ad1ea48a1ff2bd207a3bf76711ccfd629d2953c70018f0",
+  "candidate_sha256": "01d60858da8d95431e0240e6c7dbf2c657111fe34dbf3a3e5a115f90797edc06",
+  "slices": 122,
+  "preserved_declarations": [
+    "partition",
+    "reserve",
+    "partition_checked",
+    "normalized_target"
+  ],
+  "replaced_proof_bodies": [
+    "all_checked",
+    "adjacent_checked",
+    "budget_checked"
+  ],
+  "axiom_audit_names_in_order": [
+    "all_checked",
+    "adjacent_checked",
+    "partition_checked",
+    "budget_checked",
+    "normalized_target"
+  ],
+  "legacy_coordinate_arithmetic": {
+    "source_sha256": "0f69462665087f008440b326854f847ea11184d45ce49758143e95cbc454f00c",
+    "payment": "25702024008204743923/199967286390423552000",
+    "required_payment": "164209/1280000",
+    "margin": "242822654753949887/999836431952117760000",
+    "margin_decimal": 0.00024286237927923263,
+    "comparison_role": "Independent exact arithmetic check only; candidate Lean proof still needs the actual kernel"
+  },
+  "root_cause_status": "No declaration-level evidence in empty failed module log; rational-kernel-reduction bottleneck is a hypothesis, import cost is not ruled out",
+  "kernel_validation": false,
+  "preserved_all_public_statement_types": true,
+  "all_checked_assembly": "Exactly122 explicit List.forall_mem_cons.mpr steps using the same slice_checked declarations; no Boolean simplification",
+  "toolchain_available_locally": {
+    "lean": null,
+    "lake": null
+  },
+  "candidate_git_blob_sha": "cbed725435836fb449baffb7a9c0bdfab5d4dc91",
+  "original_git_blob_sha": "5d6bd2a1b8587a0d33523cdcb4904250a90c7cc8",
+  "budget_checker_application": "Local general accepts_of_budget lemma is checked over abstract rationals before instantiating the large payment; no concrete checker unfolding required"
+}

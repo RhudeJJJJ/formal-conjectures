@@ -1,0 +1,32 @@
+{
+  "files": [
+    {
+      "bytes": 15539,
+      "path": "rg_resume_20261104/callback_audit/patch/ci/rg_callback_partial_completion.py",
+      "sha256": "8872cd2515892ab1acf963e48e19162a98225582ba2b6e2579fc732576821b2b"
+    },
+    {
+      "bytes": 4378,
+      "path": "rg_resume_20261104/callback_audit/patch/ci/rg_d1_callback41771586873_partial_prior_exports_20261104.json",
+      "sha256": "5261abd7410fbd6f10b786d60c03d7606f5143127c9d5900e39fb668218bc32b"
+    },
+    {
+      "bytes": 5459,
+      "path": "rg_resume_20261104/callback_audit/production_partial_replay.json",
+      "sha256": "1030644bd137c78bab23b8ffb1229f153d9123c42353504bdbdf7a72927b239f"
+    }
+  ],
+  "findings": [],
+  "full_final_kernel_proof_claim": false,
+  "integration_condition": "The resume planner must remove thefour partial names from other candidate groups before greedyselection and run validate_selected_origins before restore; root owns this concrete integration.",
+  "review_type": "Read-only source and integration review; actual archive replay was not repeated",
+  "status": "INDEPENDENT_CODE_REVIEW_NO_CONCRETE_DEFECT_FOUND",
+  "verified_in_code": [
+    "Fixed failed run41771586873/job126382274319 and native main workflow head1c4dd54321723bc7171e7dcab4fb28f01905038e are preserved",
+    "Checked proof source3058176bc186394c43923c475ae4fc63424bea47 is separately bound through actual fixed context bytes",
+    "Both complete ZIP digests, actual native run/job statuses, precise successful/failed steps, four exact logged rows and12 named axiom profiles are required",
+    "Current33659 source universe and allfour unchanged partial source/recursive closure hashes remain exact; only BothLong source and thethree final closures may change",
+    "Selected plan must have exactlythree fresh modules and allfour exact callback origins, manifest SHA and rows",
+    "Complete final receipt must retain allfour exact original identities as PRIOR_VERIFIED_JOB_EXPORT and preciselythree final FRESH_KERNEL_EXPORT rows"
+  ]
+}

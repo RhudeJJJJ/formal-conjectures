@@ -1,0 +1,88 @@
+{
+  "files": [
+    {
+      "bytes": 8800,
+      "path": ".github/workflows/rg-degree-one-large-join-repair-20261104.yml",
+      "sha256": "91e89a6dbb4f53906521571fb8672004c613ec5ea3c5f7787549b3adab6bb626"
+    },
+    {
+      "bytes": 27057,
+      "path": "ci/rg_current_final_source_binding_20261103.json",
+      "sha256": "48a083f8050264c03af22483d793e75bf9f8990793e91f0a46e3e9b25f7f0bbc"
+    },
+    {
+      "bytes": 264538,
+      "path": "ci/rg_d1_20261103_verified_continuation_contract.json",
+      "sha256": "845467fbdc2106eae11a4e3384a767ec31179c3911e0329b4d6c9934e4df3b70"
+    },
+    {
+      "bytes": 3574,
+      "path": "ci/rg_plan_final_join_repair_20261104.py",
+      "sha256": "dc5411a722dd9fe78deeb34b4d731725def48b260d9b8cd442d76d15012806cb"
+    },
+    {
+      "bytes": 7905,
+      "path": "ci/rg_verify_degree_one_large_milestone.py",
+      "sha256": "8f0ac12c8e480b2b434692cc29c8ee8f21586bf3613a5634acc6f58ec81162de"
+    }
+  ],
+  "findings": [],
+  "integration_checks": [
+    "Full349 numeric collection and69 auxiliary origins precede planning and complete object restoration",
+    "Fixed callback helper authenticates the four actual partial exports before archive selection; planner excludes those four names from every other archive group",
+    "Plan and preflight require exactly the three final modules to be fresh; complete33659 scope is retained",
+    "Milestone requires full receipt, exact four callback PRIOR identities, exactly three FRESH rows, source and recursive closure equality, allowed axioms and fresh object hashes",
+    "Ordinary checkout keeps actual GITHUB_SHA provenance; no callback descriptor or artificial workflow SHA is injected",
+    "Milestone executes only after successful kernel verification; fresh collection and both diagnostic archives retain their always-on failure evidence behavior",
+    "Outdated current-source graph assertions are retained explicitly as prior evidence rather than asserted for the new source"
+  ],
+  "new_kernel_success_claimed": false,
+  "preserved_coverage": {
+    "auxiliary_origins_unchanged": 69,
+    "auxiliary_required_modules_unchanged": 1104,
+    "four_callback_prior_sources_and_closures_unchanged": true,
+    "fresh_final_modules": 3,
+    "full_scope_modules": 33659,
+    "numeric_batches": 349,
+    "numeric_origin_sha256": "9e4fbdfaf1f57b59453b5501e270e4d15b87a06bddcafd719ac882bd026980c7",
+    "numeric_replacement_contract_sha256": "72c52956c9c6f77228317ba623851953ca3151a3ae7ded9d929ac1251899049d",
+    "numeric_spec_sha256": "f47334108b563ae5e20f15fc07b2e4589f6d6e7f49e308bfdb8b4301e689e18e"
+  },
+  "related_fixed_helper": {
+    "final_candidate_actual_archive_replay_sha256": "895d9e6e4ba8c1f04498b4b426b860149899ce6cc090defff447131295574800",
+    "manifest_sha256": "5261abd7410fbd6f10b786d60c03d7606f5143127c9d5900e39fb668218bc32b",
+    "sha256": "8872cd2515892ab1acf963e48e19162a98225582ba2b6e2579fc732576821b2b"
+  },
+  "remote_mutations": false,
+  "resource_limits": {
+    "host_reserve_wrapper_unchanged": true,
+    "job_timeout_minutes": 360,
+    "memory_reserve_mib": 2048,
+    "module_timeout_seconds": 900,
+    "profile_option_is_existing_diagnostics_only": true,
+    "proof_checks_unchanged": true,
+    "proofstore_logical_gib": 256,
+    "required_free_gib": 45,
+    "runner": "ubuntu-24.04",
+    "workers": 1
+  },
+  "scope": "Read-only review of the five fixed integration files; targeted recomputation of the three changed closure hashes; existing archive replay was not repeated.",
+  "source_projection": {
+    "actual_prior_plan_sha256": "29e2cf80c90d550da3b6b29b96a9ecd9b745f41c77f5febf78547ae222bd33e2",
+    "candidate_source_sha256": "01d60858da8d95431e0240e6c7dbf2c657111fe34dbf3a3e5a115f90797edc06",
+    "closure_changed": [
+      "Proofs.RadenkovicGutmanD1OriginalSharedBothLong",
+      "Proofs.RadenkovicGutmanOriginalDegreeOneLarge",
+      "Proofs.RadenkovicGutmanRemainingThreeAssembly"
+    ],
+    "current_endpoint_closure_sha256": "ec3028a6ce22e4bb224ce176562bb92a7f91d99c8e7074846b0924a16a0798af",
+    "path": "rg_resume_20261104/source_projection.json",
+    "required_modules": 33659,
+    "sha256": "f30016a879e80f98d3047ceb404fe088d6d92111e177c4844056cd725498c226",
+    "source_changed": [
+      "Proofs.RadenkovicGutmanD1OriginalSharedBothLong"
+    ],
+    "three_new_closures_independently_recomputed_from_actual_prior_plan": true
+  },
+  "status": "INDEPENDENT_INTEGRATED_REVIEW_PASS_NO_CONCRETE_DEFECT_FOUND"
+}

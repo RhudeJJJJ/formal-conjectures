@@ -128,12 +128,228 @@ set_option maxRecDepth 100000
 noncomputable def partition : List FastArmCoverIntegral.Slice := [D1OriginalSharedSlice0000Complete.slice,D1OriginalSharedSlice0001Complete.slice,D1OriginalSharedSlice0002Complete.slice,D1OriginalSharedSlice0003Complete.slice,D1OriginalSharedSlice0004Complete.slice,D1OriginalSharedSlice0005Complete.slice,D1OriginalSharedSlice0006Complete.slice,D1OriginalSharedSlice0007Complete.slice,D1OriginalSharedSlice0008Complete.slice,D1OriginalSharedSlice0009Complete.slice,D1OriginalSharedSlice0010Complete.slice,D1OriginalSharedSlice0011Complete.slice,D1OriginalSharedSlice0012Complete.slice,D1OriginalSharedSlice0013Complete.slice,D1OriginalSharedSlice0014Complete.slice,D1OriginalSharedSlice0015Complete.slice,D1OriginalSharedSlice0016Complete.slice,D1OriginalSharedSlice0017Complete.slice,D1OriginalSharedSlice0018Complete.slice,D1OriginalSharedSlice0019Complete.slice,D1OriginalSharedSlice0020Complete.slice,D1OriginalSharedSlice0021Complete.slice,D1OriginalSharedSlice0022Complete.slice,D1OriginalSharedSlice0023Complete.slice,D1OriginalSharedSlice0024Complete.slice,D1OriginalSharedSlice0025Complete.slice,D1OriginalSharedSlice0026Complete.slice,D1OriginalSharedSlice0027Complete.slice,D1OriginalSharedSlice0028Complete.slice,D1OriginalSharedSlice0029Complete.slice,D1OriginalSharedSlice0030Complete.slice,D1OriginalSharedSlice0031Complete.slice,D1OriginalSharedSlice0032Complete.slice,D1OriginalSharedSlice0033Complete.slice,D1OriginalSharedSlice0034Complete.slice,D1OriginalSharedSlice0035Complete.slice,D1OriginalSharedSlice0036Complete.slice,D1OriginalSharedSlice0037Complete.slice,D1OriginalSharedSlice0038Complete.slice,D1OriginalSharedSlice0039Complete.slice,D1OriginalSharedSlice0040Complete.slice,D1OriginalSharedSlice0041Complete.slice,D1OriginalSharedSlice0042Complete.slice,D1OriginalSharedSlice0043Complete.slice,D1OriginalSharedSlice0044Complete.slice,D1OriginalSharedSlice0045Complete.slice,D1OriginalSharedSlice0046Complete.slice,D1OriginalSharedSlice0047Complete.slice,D1OriginalSharedSlice0048Complete.slice,D1OriginalSharedSlice0049Complete.slice,D1OriginalSharedSlice0050Complete.slice,D1OriginalSharedSlice0051Complete.slice,D1OriginalSharedSlice0052Complete.slice,D1OriginalSharedSlice0053Complete.slice,D1OriginalSharedSlice0054Complete.slice,D1OriginalSharedSlice0055Complete.slice,D1OriginalSharedSlice0056Complete.slice,D1OriginalSharedSlice0057Complete.slice,D1OriginalSharedSlice0058Complete.slice,D1OriginalSharedSlice0059Complete.slice,D1OriginalSharedSlice0060Complete.slice,D1OriginalSharedSlice0061Complete.slice,D1OriginalSharedSlice0062Complete.slice,D1OriginalSharedSlice0063Complete.slice,D1OriginalSharedSlice0064Complete.slice,D1OriginalSharedSlice0065Complete.slice,D1OriginalSharedSlice0066Complete.slice,D1OriginalSharedSlice0067Complete.slice,D1OriginalSharedSlice0068Complete.slice,D1OriginalSharedSlice0069Complete.slice,D1OriginalSharedSlice0070Complete.slice,D1OriginalSharedSlice0071Complete.slice,D1OriginalSharedSlice0072Complete.slice,D1OriginalSharedSlice0073Complete.slice,D1OriginalSharedSlice0074Complete.slice,D1OriginalSharedSlice0075Complete.slice,D1OriginalSharedSlice0076Complete.slice,D1OriginalSharedSlice0077Complete.slice,D1OriginalSharedSlice0078Complete.slice,D1OriginalSharedSlice0079Complete.slice,D1OriginalSharedSlice0080Complete.slice,D1OriginalSharedSlice0081Complete.slice,D1OriginalSharedSlice0082Complete.slice,D1OriginalSharedSlice0083Complete.slice,D1OriginalSharedSlice0084Complete.slice,D1OriginalSharedSlice0085Complete.slice,D1OriginalSharedSlice0086Complete.slice,D1OriginalSharedSlice0087Complete.slice,D1OriginalSharedSlice0088Complete.slice,D1OriginalSharedSlice0089Complete.slice,D1OriginalSharedSlice0090Complete.slice,D1OriginalSharedSlice0091Complete.slice,D1OriginalSharedSlice0092Complete.slice,D1OriginalSharedSlice0093Complete.slice,D1OriginalSharedSlice0094Complete.slice,D1OriginalSharedSlice0095Complete.slice,D1OriginalSharedSlice0096Complete.slice,D1OriginalSharedSlice0097Complete.slice,D1OriginalSharedSlice0098Complete.slice,D1OriginalSharedSlice0099Complete.slice,D1OriginalSharedSlice0100Complete.slice,D1OriginalSharedSlice0101Complete.slice,D1OriginalSharedSlice0102Complete.slice,D1OriginalSharedSlice0103Complete.slice,D1OriginalSharedSlice0104Complete.slice,D1OriginalSharedSlice0105Complete.slice,D1OriginalSharedSlice0106Complete.slice,D1OriginalSharedSlice0107Complete.slice,D1OriginalSharedSlice0108Complete.slice,D1OriginalSharedSlice0109Complete.slice,D1OriginalSharedSlice0110Complete.slice,D1OriginalSharedSlice0111Complete.slice,D1OriginalSharedSlice0112Complete.slice,D1OriginalSharedSlice0113Complete.slice,D1OriginalSharedSlice0114Complete.slice,D1OriginalSharedSlice0115Complete.slice,D1OriginalSharedSlice0116Complete.slice,D1OriginalSharedSlice0117Complete.slice,D1OriginalSharedSlice0118Complete.slice,D1OriginalSharedSlice0119Complete.slice,D1OriginalSharedSlice0120Complete.slice,D1OriginalSharedSlice0121Complete.slice]
 noncomputable def reserve : ℚ := 189/5000
 theorem all_checked : ∀ s ∈ partition, FastArmCoverIntegral.accepts 1 4 4 s=true := by
-  simp only [partition,List.forall_mem_cons]
-  exact ⟨D1OriginalSharedSlice0000Complete.slice_checked,D1OriginalSharedSlice0001Complete.slice_checked,D1OriginalSharedSlice0002Complete.slice_checked,D1OriginalSharedSlice0003Complete.slice_checked,D1OriginalSharedSlice0004Complete.slice_checked,D1OriginalSharedSlice0005Complete.slice_checked,D1OriginalSharedSlice0006Complete.slice_checked,D1OriginalSharedSlice0007Complete.slice_checked,D1OriginalSharedSlice0008Complete.slice_checked,D1OriginalSharedSlice0009Complete.slice_checked,D1OriginalSharedSlice0010Complete.slice_checked,D1OriginalSharedSlice0011Complete.slice_checked,D1OriginalSharedSlice0012Complete.slice_checked,D1OriginalSharedSlice0013Complete.slice_checked,D1OriginalSharedSlice0014Complete.slice_checked,D1OriginalSharedSlice0015Complete.slice_checked,D1OriginalSharedSlice0016Complete.slice_checked,D1OriginalSharedSlice0017Complete.slice_checked,D1OriginalSharedSlice0018Complete.slice_checked,D1OriginalSharedSlice0019Complete.slice_checked,D1OriginalSharedSlice0020Complete.slice_checked,D1OriginalSharedSlice0021Complete.slice_checked,D1OriginalSharedSlice0022Complete.slice_checked,D1OriginalSharedSlice0023Complete.slice_checked,D1OriginalSharedSlice0024Complete.slice_checked,D1OriginalSharedSlice0025Complete.slice_checked,D1OriginalSharedSlice0026Complete.slice_checked,D1OriginalSharedSlice0027Complete.slice_checked,D1OriginalSharedSlice0028Complete.slice_checked,D1OriginalSharedSlice0029Complete.slice_checked,D1OriginalSharedSlice0030Complete.slice_checked,D1OriginalSharedSlice0031Complete.slice_checked,D1OriginalSharedSlice0032Complete.slice_checked,D1OriginalSharedSlice0033Complete.slice_checked,D1OriginalSharedSlice0034Complete.slice_checked,D1OriginalSharedSlice0035Complete.slice_checked,D1OriginalSharedSlice0036Complete.slice_checked,D1OriginalSharedSlice0037Complete.slice_checked,D1OriginalSharedSlice0038Complete.slice_checked,D1OriginalSharedSlice0039Complete.slice_checked,D1OriginalSharedSlice0040Complete.slice_checked,D1OriginalSharedSlice0041Complete.slice_checked,D1OriginalSharedSlice0042Complete.slice_checked,D1OriginalSharedSlice0043Complete.slice_checked,D1OriginalSharedSlice0044Complete.slice_checked,D1OriginalSharedSlice0045Complete.slice_checked,D1OriginalSharedSlice0046Complete.slice_checked,D1OriginalSharedSlice0047Complete.slice_checked,D1OriginalSharedSlice0048Complete.slice_checked,D1OriginalSharedSlice0049Complete.slice_checked,D1OriginalSharedSlice0050Complete.slice_checked,D1OriginalSharedSlice0051Complete.slice_checked,D1OriginalSharedSlice0052Complete.slice_checked,D1OriginalSharedSlice0053Complete.slice_checked,D1OriginalSharedSlice0054Complete.slice_checked,D1OriginalSharedSlice0055Complete.slice_checked,D1OriginalSharedSlice0056Complete.slice_checked,D1OriginalSharedSlice0057Complete.slice_checked,D1OriginalSharedSlice0058Complete.slice_checked,D1OriginalSharedSlice0059Complete.slice_checked,D1OriginalSharedSlice0060Complete.slice_checked,D1OriginalSharedSlice0061Complete.slice_checked,D1OriginalSharedSlice0062Complete.slice_checked,D1OriginalSharedSlice0063Complete.slice_checked,D1OriginalSharedSlice0064Complete.slice_checked,D1OriginalSharedSlice0065Complete.slice_checked,D1OriginalSharedSlice0066Complete.slice_checked,D1OriginalSharedSlice0067Complete.slice_checked,D1OriginalSharedSlice0068Complete.slice_checked,D1OriginalSharedSlice0069Complete.slice_checked,D1OriginalSharedSlice0070Complete.slice_checked,D1OriginalSharedSlice0071Complete.slice_checked,D1OriginalSharedSlice0072Complete.slice_checked,D1OriginalSharedSlice0073Complete.slice_checked,D1OriginalSharedSlice0074Complete.slice_checked,D1OriginalSharedSlice0075Complete.slice_checked,D1OriginalSharedSlice0076Complete.slice_checked,D1OriginalSharedSlice0077Complete.slice_checked,D1OriginalSharedSlice0078Complete.slice_checked,D1OriginalSharedSlice0079Complete.slice_checked,D1OriginalSharedSlice0080Complete.slice_checked,D1OriginalSharedSlice0081Complete.slice_checked,D1OriginalSharedSlice0082Complete.slice_checked,D1OriginalSharedSlice0083Complete.slice_checked,D1OriginalSharedSlice0084Complete.slice_checked,D1OriginalSharedSlice0085Complete.slice_checked,D1OriginalSharedSlice0086Complete.slice_checked,D1OriginalSharedSlice0087Complete.slice_checked,D1OriginalSharedSlice0088Complete.slice_checked,D1OriginalSharedSlice0089Complete.slice_checked,D1OriginalSharedSlice0090Complete.slice_checked,D1OriginalSharedSlice0091Complete.slice_checked,D1OriginalSharedSlice0092Complete.slice_checked,D1OriginalSharedSlice0093Complete.slice_checked,D1OriginalSharedSlice0094Complete.slice_checked,D1OriginalSharedSlice0095Complete.slice_checked,D1OriginalSharedSlice0096Complete.slice_checked,D1OriginalSharedSlice0097Complete.slice_checked,D1OriginalSharedSlice0098Complete.slice_checked,D1OriginalSharedSlice0099Complete.slice_checked,D1OriginalSharedSlice0100Complete.slice_checked,D1OriginalSharedSlice0101Complete.slice_checked,D1OriginalSharedSlice0102Complete.slice_checked,D1OriginalSharedSlice0103Complete.slice_checked,D1OriginalSharedSlice0104Complete.slice_checked,D1OriginalSharedSlice0105Complete.slice_checked,D1OriginalSharedSlice0106Complete.slice_checked,D1OriginalSharedSlice0107Complete.slice_checked,D1OriginalSharedSlice0108Complete.slice_checked,D1OriginalSharedSlice0109Complete.slice_checked,D1OriginalSharedSlice0110Complete.slice_checked,D1OriginalSharedSlice0111Complete.slice_checked,D1OriginalSharedSlice0112Complete.slice_checked,D1OriginalSharedSlice0113Complete.slice_checked,D1OriginalSharedSlice0114Complete.slice_checked,D1OriginalSharedSlice0115Complete.slice_checked,D1OriginalSharedSlice0116Complete.slice_checked,D1OriginalSharedSlice0117Complete.slice_checked,D1OriginalSharedSlice0118Complete.slice_checked,D1OriginalSharedSlice0119Complete.slice_checked,D1OriginalSharedSlice0120Complete.slice_checked,D1OriginalSharedSlice0121Complete.slice_checked,fun _ h => False.elim (List.not_mem_nil h)⟩
-theorem adjacent_checked : FixedClassChain.adjacent (1/1000) 1024 partition=true := by decide +kernel
+  unfold partition
+  refine List.forall_mem_cons.mpr ⟨D1OriginalSharedSlice0000Complete.slice_checked, ?_⟩
+  refine List.forall_mem_cons.mpr ⟨D1OriginalSharedSlice0001Complete.slice_checked, ?_⟩
+  refine List.forall_mem_cons.mpr ⟨D1OriginalSharedSlice0002Complete.slice_checked, ?_⟩
+  refine List.forall_mem_cons.mpr ⟨D1OriginalSharedSlice0003Complete.slice_checked, ?_⟩
+  refine List.forall_mem_cons.mpr ⟨D1OriginalSharedSlice0004Complete.slice_checked, ?_⟩
+  refine List.forall_mem_cons.mpr ⟨D1OriginalSharedSlice0005Complete.slice_checked, ?_⟩
+  refine List.forall_mem_cons.mpr ⟨D1OriginalSharedSlice0006Complete.slice_checked, ?_⟩
+  refine List.forall_mem_cons.mpr ⟨D1OriginalSharedSlice0007Complete.slice_checked, ?_⟩
+  refine List.forall_mem_cons.mpr ⟨D1OriginalSharedSlice0008Complete.slice_checked, ?_⟩
+  refine List.forall_mem_cons.mpr ⟨D1OriginalSharedSlice0009Complete.slice_checked, ?_⟩
+  refine List.forall_mem_cons.mpr ⟨D1OriginalSharedSlice0010Complete.slice_checked, ?_⟩
+  refine List.forall_mem_cons.mpr ⟨D1OriginalSharedSlice0011Complete.slice_checked, ?_⟩
+  refine List.forall_mem_cons.mpr ⟨D1OriginalSharedSlice0012Complete.slice_checked, ?_⟩
+  refine List.forall_mem_cons.mpr ⟨D1OriginalSharedSlice0013Complete.slice_checked, ?_⟩
+  refine List.forall_mem_cons.mpr ⟨D1OriginalSharedSlice0014Complete.slice_checked, ?_⟩
+  refine List.forall_mem_cons.mpr ⟨D1OriginalSharedSlice0015Complete.slice_checked, ?_⟩
+  refine List.forall_mem_cons.mpr ⟨D1OriginalSharedSlice0016Complete.slice_checked, ?_⟩
+  refine List.forall_mem_cons.mpr ⟨D1OriginalSharedSlice0017Complete.slice_checked, ?_⟩
+  refine List.forall_mem_cons.mpr ⟨D1OriginalSharedSlice0018Complete.slice_checked, ?_⟩
+  refine List.forall_mem_cons.mpr ⟨D1OriginalSharedSlice0019Complete.slice_checked, ?_⟩
+  refine List.forall_mem_cons.mpr ⟨D1OriginalSharedSlice0020Complete.slice_checked, ?_⟩
+  refine List.forall_mem_cons.mpr ⟨D1OriginalSharedSlice0021Complete.slice_checked, ?_⟩
+  refine List.forall_mem_cons.mpr ⟨D1OriginalSharedSlice0022Complete.slice_checked, ?_⟩
+  refine List.forall_mem_cons.mpr ⟨D1OriginalSharedSlice0023Complete.slice_checked, ?_⟩
+  refine List.forall_mem_cons.mpr ⟨D1OriginalSharedSlice0024Complete.slice_checked, ?_⟩
+  refine List.forall_mem_cons.mpr ⟨D1OriginalSharedSlice0025Complete.slice_checked, ?_⟩
+  refine List.forall_mem_cons.mpr ⟨D1OriginalSharedSlice0026Complete.slice_checked, ?_⟩
+  refine List.forall_mem_cons.mpr ⟨D1OriginalSharedSlice0027Complete.slice_checked, ?_⟩
+  refine List.forall_mem_cons.mpr ⟨D1OriginalSharedSlice0028Complete.slice_checked, ?_⟩
+  refine List.forall_mem_cons.mpr ⟨D1OriginalSharedSlice0029Complete.slice_checked, ?_⟩
+  refine List.forall_mem_cons.mpr ⟨D1OriginalSharedSlice0030Complete.slice_checked, ?_⟩
+  refine List.forall_mem_cons.mpr ⟨D1OriginalSharedSlice0031Complete.slice_checked, ?_⟩
+  refine List.forall_mem_cons.mpr ⟨D1OriginalSharedSlice0032Complete.slice_checked, ?_⟩
+  refine List.forall_mem_cons.mpr ⟨D1OriginalSharedSlice0033Complete.slice_checked, ?_⟩
+  refine List.forall_mem_cons.mpr ⟨D1OriginalSharedSlice0034Complete.slice_checked, ?_⟩
+  refine List.forall_mem_cons.mpr ⟨D1OriginalSharedSlice0035Complete.slice_checked, ?_⟩
+  refine List.forall_mem_cons.mpr ⟨D1OriginalSharedSlice0036Complete.slice_checked, ?_⟩
+  refine List.forall_mem_cons.mpr ⟨D1OriginalSharedSlice0037Complete.slice_checked, ?_⟩
+  refine List.forall_mem_cons.mpr ⟨D1OriginalSharedSlice0038Complete.slice_checked, ?_⟩
+  refine List.forall_mem_cons.mpr ⟨D1OriginalSharedSlice0039Complete.slice_checked, ?_⟩
+  refine List.forall_mem_cons.mpr ⟨D1OriginalSharedSlice0040Complete.slice_checked, ?_⟩
+  refine List.forall_mem_cons.mpr ⟨D1OriginalSharedSlice0041Complete.slice_checked, ?_⟩
+  refine List.forall_mem_cons.mpr ⟨D1OriginalSharedSlice0042Complete.slice_checked, ?_⟩
+  refine List.forall_mem_cons.mpr ⟨D1OriginalSharedSlice0043Complete.slice_checked, ?_⟩
+  refine List.forall_mem_cons.mpr ⟨D1OriginalSharedSlice0044Complete.slice_checked, ?_⟩
+  refine List.forall_mem_cons.mpr ⟨D1OriginalSharedSlice0045Complete.slice_checked, ?_⟩
+  refine List.forall_mem_cons.mpr ⟨D1OriginalSharedSlice0046Complete.slice_checked, ?_⟩
+  refine List.forall_mem_cons.mpr ⟨D1OriginalSharedSlice0047Complete.slice_checked, ?_⟩
+  refine List.forall_mem_cons.mpr ⟨D1OriginalSharedSlice0048Complete.slice_checked, ?_⟩
+  refine List.forall_mem_cons.mpr ⟨D1OriginalSharedSlice0049Complete.slice_checked, ?_⟩
+  refine List.forall_mem_cons.mpr ⟨D1OriginalSharedSlice0050Complete.slice_checked, ?_⟩
+  refine List.forall_mem_cons.mpr ⟨D1OriginalSharedSlice0051Complete.slice_checked, ?_⟩
+  refine List.forall_mem_cons.mpr ⟨D1OriginalSharedSlice0052Complete.slice_checked, ?_⟩
+  refine List.forall_mem_cons.mpr ⟨D1OriginalSharedSlice0053Complete.slice_checked, ?_⟩
+  refine List.forall_mem_cons.mpr ⟨D1OriginalSharedSlice0054Complete.slice_checked, ?_⟩
+  refine List.forall_mem_cons.mpr ⟨D1OriginalSharedSlice0055Complete.slice_checked, ?_⟩
+  refine List.forall_mem_cons.mpr ⟨D1OriginalSharedSlice0056Complete.slice_checked, ?_⟩
+  refine List.forall_mem_cons.mpr ⟨D1OriginalSharedSlice0057Complete.slice_checked, ?_⟩
+  refine List.forall_mem_cons.mpr ⟨D1OriginalSharedSlice0058Complete.slice_checked, ?_⟩
+  refine List.forall_mem_cons.mpr ⟨D1OriginalSharedSlice0059Complete.slice_checked, ?_⟩
+  refine List.forall_mem_cons.mpr ⟨D1OriginalSharedSlice0060Complete.slice_checked, ?_⟩
+  refine List.forall_mem_cons.mpr ⟨D1OriginalSharedSlice0061Complete.slice_checked, ?_⟩
+  refine List.forall_mem_cons.mpr ⟨D1OriginalSharedSlice0062Complete.slice_checked, ?_⟩
+  refine List.forall_mem_cons.mpr ⟨D1OriginalSharedSlice0063Complete.slice_checked, ?_⟩
+  refine List.forall_mem_cons.mpr ⟨D1OriginalSharedSlice0064Complete.slice_checked, ?_⟩
+  refine List.forall_mem_cons.mpr ⟨D1OriginalSharedSlice0065Complete.slice_checked, ?_⟩
+  refine List.forall_mem_cons.mpr ⟨D1OriginalSharedSlice0066Complete.slice_checked, ?_⟩
+  refine List.forall_mem_cons.mpr ⟨D1OriginalSharedSlice0067Complete.slice_checked, ?_⟩
+  refine List.forall_mem_cons.mpr ⟨D1OriginalSharedSlice0068Complete.slice_checked, ?_⟩
+  refine List.forall_mem_cons.mpr ⟨D1OriginalSharedSlice0069Complete.slice_checked, ?_⟩
+  refine List.forall_mem_cons.mpr ⟨D1OriginalSharedSlice0070Complete.slice_checked, ?_⟩
+  refine List.forall_mem_cons.mpr ⟨D1OriginalSharedSlice0071Complete.slice_checked, ?_⟩
+  refine List.forall_mem_cons.mpr ⟨D1OriginalSharedSlice0072Complete.slice_checked, ?_⟩
+  refine List.forall_mem_cons.mpr ⟨D1OriginalSharedSlice0073Complete.slice_checked, ?_⟩
+  refine List.forall_mem_cons.mpr ⟨D1OriginalSharedSlice0074Complete.slice_checked, ?_⟩
+  refine List.forall_mem_cons.mpr ⟨D1OriginalSharedSlice0075Complete.slice_checked, ?_⟩
+  refine List.forall_mem_cons.mpr ⟨D1OriginalSharedSlice0076Complete.slice_checked, ?_⟩
+  refine List.forall_mem_cons.mpr ⟨D1OriginalSharedSlice0077Complete.slice_checked, ?_⟩
+  refine List.forall_mem_cons.mpr ⟨D1OriginalSharedSlice0078Complete.slice_checked, ?_⟩
+  refine List.forall_mem_cons.mpr ⟨D1OriginalSharedSlice0079Complete.slice_checked, ?_⟩
+  refine List.forall_mem_cons.mpr ⟨D1OriginalSharedSlice0080Complete.slice_checked, ?_⟩
+  refine List.forall_mem_cons.mpr ⟨D1OriginalSharedSlice0081Complete.slice_checked, ?_⟩
+  refine List.forall_mem_cons.mpr ⟨D1OriginalSharedSlice0082Complete.slice_checked, ?_⟩
+  refine List.forall_mem_cons.mpr ⟨D1OriginalSharedSlice0083Complete.slice_checked, ?_⟩
+  refine List.forall_mem_cons.mpr ⟨D1OriginalSharedSlice0084Complete.slice_checked, ?_⟩
+  refine List.forall_mem_cons.mpr ⟨D1OriginalSharedSlice0085Complete.slice_checked, ?_⟩
+  refine List.forall_mem_cons.mpr ⟨D1OriginalSharedSlice0086Complete.slice_checked, ?_⟩
+  refine List.forall_mem_cons.mpr ⟨D1OriginalSharedSlice0087Complete.slice_checked, ?_⟩
+  refine List.forall_mem_cons.mpr ⟨D1OriginalSharedSlice0088Complete.slice_checked, ?_⟩
+  refine List.forall_mem_cons.mpr ⟨D1OriginalSharedSlice0089Complete.slice_checked, ?_⟩
+  refine List.forall_mem_cons.mpr ⟨D1OriginalSharedSlice0090Complete.slice_checked, ?_⟩
+  refine List.forall_mem_cons.mpr ⟨D1OriginalSharedSlice0091Complete.slice_checked, ?_⟩
+  refine List.forall_mem_cons.mpr ⟨D1OriginalSharedSlice0092Complete.slice_checked, ?_⟩
+  refine List.forall_mem_cons.mpr ⟨D1OriginalSharedSlice0093Complete.slice_checked, ?_⟩
+  refine List.forall_mem_cons.mpr ⟨D1OriginalSharedSlice0094Complete.slice_checked, ?_⟩
+  refine List.forall_mem_cons.mpr ⟨D1OriginalSharedSlice0095Complete.slice_checked, ?_⟩
+  refine List.forall_mem_cons.mpr ⟨D1OriginalSharedSlice0096Complete.slice_checked, ?_⟩
+  refine List.forall_mem_cons.mpr ⟨D1OriginalSharedSlice0097Complete.slice_checked, ?_⟩
+  refine List.forall_mem_cons.mpr ⟨D1OriginalSharedSlice0098Complete.slice_checked, ?_⟩
+  refine List.forall_mem_cons.mpr ⟨D1OriginalSharedSlice0099Complete.slice_checked, ?_⟩
+  refine List.forall_mem_cons.mpr ⟨D1OriginalSharedSlice0100Complete.slice_checked, ?_⟩
+  refine List.forall_mem_cons.mpr ⟨D1OriginalSharedSlice0101Complete.slice_checked, ?_⟩
+  refine List.forall_mem_cons.mpr ⟨D1OriginalSharedSlice0102Complete.slice_checked, ?_⟩
+  refine List.forall_mem_cons.mpr ⟨D1OriginalSharedSlice0103Complete.slice_checked, ?_⟩
+  refine List.forall_mem_cons.mpr ⟨D1OriginalSharedSlice0104Complete.slice_checked, ?_⟩
+  refine List.forall_mem_cons.mpr ⟨D1OriginalSharedSlice0105Complete.slice_checked, ?_⟩
+  refine List.forall_mem_cons.mpr ⟨D1OriginalSharedSlice0106Complete.slice_checked, ?_⟩
+  refine List.forall_mem_cons.mpr ⟨D1OriginalSharedSlice0107Complete.slice_checked, ?_⟩
+  refine List.forall_mem_cons.mpr ⟨D1OriginalSharedSlice0108Complete.slice_checked, ?_⟩
+  refine List.forall_mem_cons.mpr ⟨D1OriginalSharedSlice0109Complete.slice_checked, ?_⟩
+  refine List.forall_mem_cons.mpr ⟨D1OriginalSharedSlice0110Complete.slice_checked, ?_⟩
+  refine List.forall_mem_cons.mpr ⟨D1OriginalSharedSlice0111Complete.slice_checked, ?_⟩
+  refine List.forall_mem_cons.mpr ⟨D1OriginalSharedSlice0112Complete.slice_checked, ?_⟩
+  refine List.forall_mem_cons.mpr ⟨D1OriginalSharedSlice0113Complete.slice_checked, ?_⟩
+  refine List.forall_mem_cons.mpr ⟨D1OriginalSharedSlice0114Complete.slice_checked, ?_⟩
+  refine List.forall_mem_cons.mpr ⟨D1OriginalSharedSlice0115Complete.slice_checked, ?_⟩
+  refine List.forall_mem_cons.mpr ⟨D1OriginalSharedSlice0116Complete.slice_checked, ?_⟩
+  refine List.forall_mem_cons.mpr ⟨D1OriginalSharedSlice0117Complete.slice_checked, ?_⟩
+  refine List.forall_mem_cons.mpr ⟨D1OriginalSharedSlice0118Complete.slice_checked, ?_⟩
+  refine List.forall_mem_cons.mpr ⟨D1OriginalSharedSlice0119Complete.slice_checked, ?_⟩
+  refine List.forall_mem_cons.mpr ⟨D1OriginalSharedSlice0120Complete.slice_checked, ?_⟩
+  refine List.forall_mem_cons.mpr ⟨D1OriginalSharedSlice0121Complete.slice_checked, ?_⟩
+  intro s hs
+  exact False.elim (List.not_mem_nil hs)
+#print axioms all_checked
+theorem adjacent_checked : FixedClassChain.adjacent (1/1000) 1024 partition=true := by
+  norm_num [partition, FixedClassChain.adjacent, Bool.and_eq_true, decide_eq_true_eq,
+    D1OriginalSharedSlice0000Complete.slice, D1OriginalSharedSlice0001Complete.slice, D1OriginalSharedSlice0002Complete.slice,
+    D1OriginalSharedSlice0003Complete.slice, D1OriginalSharedSlice0004Complete.slice, D1OriginalSharedSlice0005Complete.slice,
+    D1OriginalSharedSlice0006Complete.slice, D1OriginalSharedSlice0007Complete.slice, D1OriginalSharedSlice0008Complete.slice,
+    D1OriginalSharedSlice0009Complete.slice, D1OriginalSharedSlice0010Complete.slice, D1OriginalSharedSlice0011Complete.slice,
+    D1OriginalSharedSlice0012Complete.slice, D1OriginalSharedSlice0013Complete.slice, D1OriginalSharedSlice0014Complete.slice,
+    D1OriginalSharedSlice0015Complete.slice, D1OriginalSharedSlice0016Complete.slice, D1OriginalSharedSlice0017Complete.slice,
+    D1OriginalSharedSlice0018Complete.slice, D1OriginalSharedSlice0019Complete.slice, D1OriginalSharedSlice0020Complete.slice,
+    D1OriginalSharedSlice0021Complete.slice, D1OriginalSharedSlice0022Complete.slice, D1OriginalSharedSlice0023Complete.slice,
+    D1OriginalSharedSlice0024Complete.slice, D1OriginalSharedSlice0025Complete.slice, D1OriginalSharedSlice0026Complete.slice,
+    D1OriginalSharedSlice0027Complete.slice, D1OriginalSharedSlice0028Complete.slice, D1OriginalSharedSlice0029Complete.slice,
+    D1OriginalSharedSlice0030Complete.slice, D1OriginalSharedSlice0031Complete.slice, D1OriginalSharedSlice0032Complete.slice,
+    D1OriginalSharedSlice0033Complete.slice, D1OriginalSharedSlice0034Complete.slice, D1OriginalSharedSlice0035Complete.slice,
+    D1OriginalSharedSlice0036Complete.slice, D1OriginalSharedSlice0037Complete.slice, D1OriginalSharedSlice0038Complete.slice,
+    D1OriginalSharedSlice0039Complete.slice, D1OriginalSharedSlice0040Complete.slice, D1OriginalSharedSlice0041Complete.slice,
+    D1OriginalSharedSlice0042Complete.slice, D1OriginalSharedSlice0043Complete.slice, D1OriginalSharedSlice0044Complete.slice,
+    D1OriginalSharedSlice0045Complete.slice, D1OriginalSharedSlice0046Complete.slice, D1OriginalSharedSlice0047Complete.slice,
+    D1OriginalSharedSlice0048Complete.slice, D1OriginalSharedSlice0049Complete.slice, D1OriginalSharedSlice0050Complete.slice,
+    D1OriginalSharedSlice0051Complete.slice, D1OriginalSharedSlice0052Complete.slice, D1OriginalSharedSlice0053Complete.slice,
+    D1OriginalSharedSlice0054Complete.slice, D1OriginalSharedSlice0055Complete.slice, D1OriginalSharedSlice0056Complete.slice,
+    D1OriginalSharedSlice0057Complete.slice, D1OriginalSharedSlice0058Complete.slice, D1OriginalSharedSlice0059Complete.slice,
+    D1OriginalSharedSlice0060Complete.slice, D1OriginalSharedSlice0061Complete.slice, D1OriginalSharedSlice0062Complete.slice,
+    D1OriginalSharedSlice0063Complete.slice, D1OriginalSharedSlice0064Complete.slice, D1OriginalSharedSlice0065Complete.slice,
+    D1OriginalSharedSlice0066Complete.slice, D1OriginalSharedSlice0067Complete.slice, D1OriginalSharedSlice0068Complete.slice,
+    D1OriginalSharedSlice0069Complete.slice, D1OriginalSharedSlice0070Complete.slice, D1OriginalSharedSlice0071Complete.slice,
+    D1OriginalSharedSlice0072Complete.slice, D1OriginalSharedSlice0073Complete.slice, D1OriginalSharedSlice0074Complete.slice,
+    D1OriginalSharedSlice0075Complete.slice, D1OriginalSharedSlice0076Complete.slice, D1OriginalSharedSlice0077Complete.slice,
+    D1OriginalSharedSlice0078Complete.slice, D1OriginalSharedSlice0079Complete.slice, D1OriginalSharedSlice0080Complete.slice,
+    D1OriginalSharedSlice0081Complete.slice, D1OriginalSharedSlice0082Complete.slice, D1OriginalSharedSlice0083Complete.slice,
+    D1OriginalSharedSlice0084Complete.slice, D1OriginalSharedSlice0085Complete.slice, D1OriginalSharedSlice0086Complete.slice,
+    D1OriginalSharedSlice0087Complete.slice, D1OriginalSharedSlice0088Complete.slice, D1OriginalSharedSlice0089Complete.slice,
+    D1OriginalSharedSlice0090Complete.slice, D1OriginalSharedSlice0091Complete.slice, D1OriginalSharedSlice0092Complete.slice,
+    D1OriginalSharedSlice0093Complete.slice, D1OriginalSharedSlice0094Complete.slice, D1OriginalSharedSlice0095Complete.slice,
+    D1OriginalSharedSlice0096Complete.slice, D1OriginalSharedSlice0097Complete.slice, D1OriginalSharedSlice0098Complete.slice,
+    D1OriginalSharedSlice0099Complete.slice, D1OriginalSharedSlice0100Complete.slice, D1OriginalSharedSlice0101Complete.slice,
+    D1OriginalSharedSlice0102Complete.slice, D1OriginalSharedSlice0103Complete.slice, D1OriginalSharedSlice0104Complete.slice,
+    D1OriginalSharedSlice0105Complete.slice, D1OriginalSharedSlice0106Complete.slice, D1OriginalSharedSlice0107Complete.slice,
+    D1OriginalSharedSlice0108Complete.slice, D1OriginalSharedSlice0109Complete.slice, D1OriginalSharedSlice0110Complete.slice,
+    D1OriginalSharedSlice0111Complete.slice, D1OriginalSharedSlice0112Complete.slice, D1OriginalSharedSlice0113Complete.slice,
+    D1OriginalSharedSlice0114Complete.slice, D1OriginalSharedSlice0115Complete.slice, D1OriginalSharedSlice0116Complete.slice,
+    D1OriginalSharedSlice0117Complete.slice, D1OriginalSharedSlice0118Complete.slice, D1OriginalSharedSlice0119Complete.slice,
+    D1OriginalSharedSlice0120Complete.slice, D1OriginalSharedSlice0121Complete.slice]
+#print axioms adjacent_checked
 theorem partition_checked : FastArmCoverIntegral.checkAt 1 4 4 (1/1000) 1024 partition=true :=
   FixedClassChain.check_of_adjacent 1 4 4 (1/1000) 1024 partition adjacent_checked all_checked
-theorem budget_checked : PaidFixedClassIntegral.accepts reserve (FastArmCoverIntegral.payment partition)=true := by decide +kernel
+#print axioms partition_checked
+theorem budget_checked : PaidFixedClassIntegral.accepts reserve (FastArmCoverIntegral.payment partition)=true := by
+  have accepts_of_budget (T P : ℚ)
+      (h : 0 ≤ T ∧ T*(22/7) < -9/1000+P-1/2048) :
+      PaidFixedClassIntegral.accepts T P=true :=
+    decide_eq_true h
+  apply accepts_of_budget
+  norm_num [reserve, partition, FastArmCoverIntegral.payment,
+    D1OriginalSharedSlice0000Complete.slice, D1OriginalSharedSlice0001Complete.slice, D1OriginalSharedSlice0002Complete.slice,
+    D1OriginalSharedSlice0003Complete.slice, D1OriginalSharedSlice0004Complete.slice, D1OriginalSharedSlice0005Complete.slice,
+    D1OriginalSharedSlice0006Complete.slice, D1OriginalSharedSlice0007Complete.slice, D1OriginalSharedSlice0008Complete.slice,
+    D1OriginalSharedSlice0009Complete.slice, D1OriginalSharedSlice0010Complete.slice, D1OriginalSharedSlice0011Complete.slice,
+    D1OriginalSharedSlice0012Complete.slice, D1OriginalSharedSlice0013Complete.slice, D1OriginalSharedSlice0014Complete.slice,
+    D1OriginalSharedSlice0015Complete.slice, D1OriginalSharedSlice0016Complete.slice, D1OriginalSharedSlice0017Complete.slice,
+    D1OriginalSharedSlice0018Complete.slice, D1OriginalSharedSlice0019Complete.slice, D1OriginalSharedSlice0020Complete.slice,
+    D1OriginalSharedSlice0021Complete.slice, D1OriginalSharedSlice0022Complete.slice, D1OriginalSharedSlice0023Complete.slice,
+    D1OriginalSharedSlice0024Complete.slice, D1OriginalSharedSlice0025Complete.slice, D1OriginalSharedSlice0026Complete.slice,
+    D1OriginalSharedSlice0027Complete.slice, D1OriginalSharedSlice0028Complete.slice, D1OriginalSharedSlice0029Complete.slice,
+    D1OriginalSharedSlice0030Complete.slice, D1OriginalSharedSlice0031Complete.slice, D1OriginalSharedSlice0032Complete.slice,
+    D1OriginalSharedSlice0033Complete.slice, D1OriginalSharedSlice0034Complete.slice, D1OriginalSharedSlice0035Complete.slice,
+    D1OriginalSharedSlice0036Complete.slice, D1OriginalSharedSlice0037Complete.slice, D1OriginalSharedSlice0038Complete.slice,
+    D1OriginalSharedSlice0039Complete.slice, D1OriginalSharedSlice0040Complete.slice, D1OriginalSharedSlice0041Complete.slice,
+    D1OriginalSharedSlice0042Complete.slice, D1OriginalSharedSlice0043Complete.slice, D1OriginalSharedSlice0044Complete.slice,
+    D1OriginalSharedSlice0045Complete.slice, D1OriginalSharedSlice0046Complete.slice, D1OriginalSharedSlice0047Complete.slice,
+    D1OriginalSharedSlice0048Complete.slice, D1OriginalSharedSlice0049Complete.slice, D1OriginalSharedSlice0050Complete.slice,
+    D1OriginalSharedSlice0051Complete.slice, D1OriginalSharedSlice0052Complete.slice, D1OriginalSharedSlice0053Complete.slice,
+    D1OriginalSharedSlice0054Complete.slice, D1OriginalSharedSlice0055Complete.slice, D1OriginalSharedSlice0056Complete.slice,
+    D1OriginalSharedSlice0057Complete.slice, D1OriginalSharedSlice0058Complete.slice, D1OriginalSharedSlice0059Complete.slice,
+    D1OriginalSharedSlice0060Complete.slice, D1OriginalSharedSlice0061Complete.slice, D1OriginalSharedSlice0062Complete.slice,
+    D1OriginalSharedSlice0063Complete.slice, D1OriginalSharedSlice0064Complete.slice, D1OriginalSharedSlice0065Complete.slice,
+    D1OriginalSharedSlice0066Complete.slice, D1OriginalSharedSlice0067Complete.slice, D1OriginalSharedSlice0068Complete.slice,
+    D1OriginalSharedSlice0069Complete.slice, D1OriginalSharedSlice0070Complete.slice, D1OriginalSharedSlice0071Complete.slice,
+    D1OriginalSharedSlice0072Complete.slice, D1OriginalSharedSlice0073Complete.slice, D1OriginalSharedSlice0074Complete.slice,
+    D1OriginalSharedSlice0075Complete.slice, D1OriginalSharedSlice0076Complete.slice, D1OriginalSharedSlice0077Complete.slice,
+    D1OriginalSharedSlice0078Complete.slice, D1OriginalSharedSlice0079Complete.slice, D1OriginalSharedSlice0080Complete.slice,
+    D1OriginalSharedSlice0081Complete.slice, D1OriginalSharedSlice0082Complete.slice, D1OriginalSharedSlice0083Complete.slice,
+    D1OriginalSharedSlice0084Complete.slice, D1OriginalSharedSlice0085Complete.slice, D1OriginalSharedSlice0086Complete.slice,
+    D1OriginalSharedSlice0087Complete.slice, D1OriginalSharedSlice0088Complete.slice, D1OriginalSharedSlice0089Complete.slice,
+    D1OriginalSharedSlice0090Complete.slice, D1OriginalSharedSlice0091Complete.slice, D1OriginalSharedSlice0092Complete.slice,
+    D1OriginalSharedSlice0093Complete.slice, D1OriginalSharedSlice0094Complete.slice, D1OriginalSharedSlice0095Complete.slice,
+    D1OriginalSharedSlice0096Complete.slice, D1OriginalSharedSlice0097Complete.slice, D1OriginalSharedSlice0098Complete.slice,
+    D1OriginalSharedSlice0099Complete.slice, D1OriginalSharedSlice0100Complete.slice, D1OriginalSharedSlice0101Complete.slice,
+    D1OriginalSharedSlice0102Complete.slice, D1OriginalSharedSlice0103Complete.slice, D1OriginalSharedSlice0104Complete.slice,
+    D1OriginalSharedSlice0105Complete.slice, D1OriginalSharedSlice0106Complete.slice, D1OriginalSharedSlice0107Complete.slice,
+    D1OriginalSharedSlice0108Complete.slice, D1OriginalSharedSlice0109Complete.slice, D1OriginalSharedSlice0110Complete.slice,
+    D1OriginalSharedSlice0111Complete.slice, D1OriginalSharedSlice0112Complete.slice, D1OriginalSharedSlice0113Complete.slice,
+    D1OriginalSharedSlice0114Complete.slice, D1OriginalSharedSlice0115Complete.slice, D1OriginalSharedSlice0116Complete.slice,
+    D1OriginalSharedSlice0117Complete.slice, D1OriginalSharedSlice0118Complete.slice, D1OriginalSharedSlice0119Complete.slice,
+    D1OriginalSharedSlice0120Complete.slice, D1OriginalSharedSlice0121Complete.slice]
+#print axioms budget_checked
 open scoped Classical
 noncomputable section
 theorem normalized_target {V : Type*} [Fintype V] [DecidableEq V]
@@ -143,9 +359,5 @@ theorem normalized_target {V : Type*} [Fintype V] [DecidableEq V]
   PaidFixedClassIntegral.normalized_target G u p q 1 (by decide) hd 4 4 hp hq
     reserve partition partition_checked budget_checked
 end
-#print axioms all_checked
-#print axioms adjacent_checked
-#print axioms partition_checked
-#print axioms budget_checked
 #print axioms normalized_target
 end Gebendorfer.RadenkovicGutman.D1OriginalSharedBothLong

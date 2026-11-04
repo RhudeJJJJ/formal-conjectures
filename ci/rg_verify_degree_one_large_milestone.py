@@ -32,7 +32,25 @@ if 'current_source_binding' in plan:
     assert plan['source_closure_sha256'][ENDPOINT] == current_binding['source_endpoint_closure_sha256']
     interval_rechecks = INTERVAL_RECHECKS
 fresh = {n: r for n, r in receipt['modules'].items() if r['mode'] == 'FRESH_KERNEL_EXPORT'}
-assert set(fresh) == set(FRESH) | HEADS | interval_rechecks == set(plan['fresh_modules'])
+partial_reuse = None
+if 'final_partial_reuse' in plan:
+    from rg_plan_final_join_repair_20261104 import reuse_binding
+    from rg_callback_partial_completion import validate_selected_origins, validate_final_receipt
+    assert plan['final_partial_reuse'] == reuse_binding()
+    validate_selected_origins(plan)
+    partial_reuse = validate_final_receipt(receipt, plan['source_sha256'],
+                                          plan['source_closure_sha256'])
+    audit_raw = (SOURCES / 'build/final_partial_authentication.json').read_bytes()
+    assert hashlib.sha256(audit_raw).hexdigest() == plan['final_partial_authentication_sha256']
+    audit = json.loads(audit_raw)
+    assert audit['status'] == 'FOUR_FIXED_CALLBACK_PARTIAL_EXPORTS_AUTHENTICATED'
+    assert audit['manifest_sha256'] == plan['final_partial_reuse']['manifest_sha256']
+    assert audit['preserved_origin'] == plan['final_partial_reuse']['preserved_origin']
+    assert audit['proof_source_commit'] == plan['final_partial_reuse']['proof_source_commit']
+    expected_fresh = set(FRESH)
+else:
+    expected_fresh = set(FRESH) | HEADS | interval_rechecks
+assert set(fresh) == expected_fresh == set(plan['fresh_modules'])
 for name, row in receipt['modules'].items():
     assert row['module'] == name
     assert row['source_sha256'] == plan['source_sha256'][name]
@@ -80,6 +98,8 @@ report = {
     'fresh_axiom_profiles': {n: r['axiom_profiles'] for n, r in fresh.items()},
     'current_source_binding': current_binding,
 }
+if partial_reuse:
+    report['authenticated_prior_final_modules'] = dict(plan['final_partial_reuse'], **partial_reuse)
 if context:
     report['exact_callback_context'] = context
 encoded_report = json.dumps(report, indent=2) + '\n'

@@ -1,10 +1,10 @@
 {
   "kind": "SEALED_D1_COMPLETION_PREREQUISITES",
   "source_endpoint_sha256": "a234c56688628d48232033006c64896a36e3d405a3e8d0a1f559b8bdf9555e65",
-  "source_endpoint_closure_sha256": "4c573f944556add1e4f68d5b265d9c8b3438ccdd4edf222c4f15b56953a1eb70",
+  "source_endpoint_closure_sha256": "ec3028a6ce22e4bb224ce176562bb92a7f91d99c8e7074846b0924a16a0798af",
   "current_source_binding": {
     "path": "ci/rg_current_final_source_binding_20261103.json",
-    "sha256": "60e4aa538e6b6755fb2057f7a772fdb336d3054b9f5d5243a03317177d90797c"
+    "sha256": "48a083f8050264c03af22483d793e75bf9f8990793e91f0a46e3e9b25f7f0bbc"
   },
   "audited_reference_commit": "39aa6ada86dcfd053c73271cbeb2b9ad0a3c92e4",
   "jobs": [
@@ -3363,7 +3363,7 @@
     "sha256": "f807742f752cedf975c3aa0b87a81a6dbd5a2dcb5dbeadba49a580798e2267f6"
   },
   "previous_actual_source_graph_sha256": "c2b50b3145d7c9b5f745b80ab2e9858a7ab6a88381e4f021dfed06529f0bbd48",
-  "current_source_graph_status": "ACTUAL_CURRENT_SOURCE_GRAPH_FULLY_AUTHENTICATED_NO_KERNEL_PROOF",
+  "current_source_graph_status": "EXACT_SINGLE_FINAL_JOIN_PROOF_REFACTOR_PENDING_ACTUAL_CURRENT_GRAPH_AND_KERNEL_CHECK",
   "current_source_reorganized_original_numeric_modules": [
     "Proofs.RadenkovicGutmanD1Long00Leaf01370",
     "Proofs.RadenkovicGutmanD1Long00Leaf01666",
@@ -3372,9 +3372,23 @@
     "Proofs.RadenkovicGutmanD1Long00Leaf01669"
   ],
   "current_required_modules": 33659,
-  "verified_source_receipt": {
+  "prior_verified_source_receipt_before_final_join_repair": {
     "path": "ci/rg_current_final_source_binding_20261104_verified_source.json",
     "sha256": "f5491c0d2938e4585f62dff0df52264f43ec7846ac3312853e37c52440e70903"
   },
-  "actual_source_graph_sha256": "4236d699b74431840be49d90bb375b9949d8a6964bb726439f0e45bd9639a107"
+  "prior_actual_source_graph_sha256_before_final_join_repair": "4236d699b74431840be49d90bb375b9949d8a6964bb726439f0e45bd9639a107",
+  "final_join_source_repair": {
+    "module": "Proofs.RadenkovicGutmanD1OriginalSharedBothLong",
+    "source_sha256": "01d60858da8d95431e0240e6c7dbf2c657111fe34dbf3a3e5a115f90797edc06",
+    "prior_actual_callback_run": 41771586873,
+    "prior_actual_callback_evidence_sha256": "c65a098b17e38ecc7e244495560ec48f40b046709f0bf7bfd4a15f72dfae2a7a",
+    "only_source_changed": true,
+    "changed_closures": [
+      "Proofs.RadenkovicGutmanD1OriginalSharedBothLong",
+      "Proofs.RadenkovicGutmanOriginalDegreeOneLarge",
+      "Proofs.RadenkovicGutmanRemainingThreeAssembly"
+    ],
+    "required_modules_unchanged": 33659,
+    "complete_kernel_receipt_pending": true
+  }
 }

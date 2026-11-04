@@ -1,0 +1,73 @@
+{
+  "status": "THREE_ORIGINAL_BATCH_SOURCE_AND_BOUNDARY_CHECKS_PASSED",
+  "tests": 12,
+  "results": [
+    {
+      "name": "all_three_complete_original_plans_and_historical_rows_bind_exactly",
+      "status": "passed"
+    },
+    {
+      "name": "changed_fixed_three_scope_rejected",
+      "status": "passed"
+    },
+    {
+      "name": "changed_original349_spec_rejected",
+      "status": "passed"
+    },
+    {
+      "name": "changed_original_batch_plan_rejected",
+      "status": "passed"
+    },
+    {
+      "name": "changed_historical_reference_bytes_rejected",
+      "status": "passed"
+    },
+    {
+      "name": "changed_existing_kernel_runner_rejected",
+      "status": "passed"
+    },
+    {
+      "name": "changed_existing_exact_identity_checker_rejected",
+      "status": "passed"
+    },
+    {
+      "name": "numeric166_cannot_enter_the_fixed_three_batch_cli",
+      "status": "passed"
+    },
+    {
+      "name": "existing_source_checker_rejects_changed_checked_in_original_source",
+      "status": "passed"
+    },
+    {
+      "name": "workflow_keeps_max_two_jobs_and_all_strict_original_kernel_gates_in_order",
+      "status": "passed"
+    },
+    {
+      "name": "all_actual_recursive_source_plan_reports_are_bound_without_a_kernel_claim",
+      "status": "passed"
+    },
+    {
+      "name": "patch_contains_only_three_new_source_scheduling_files",
+      "status": "passed"
+    }
+  ],
+  "frozen_inventory_sha256": "e473d4b8584edca3cccefc7fa8b13fedfc6f36b48bdc0d6774f3622233907562",
+  "recursive_source_plan_summary_sha256": "82254fead0def9c083458332b474ae587bae7ae84ae780dc4604b8a5cd97fd20",
+  "batch_ids": [
+    "00_129",
+    "10_044",
+    "30_013"
+  ],
+  "fresh_modules": 34,
+  "maximum_parallel_jobs": 2,
+  "workers": 2,
+  "module_timeout": 1200,
+  "memory_reserve_mib": 2048,
+  "original349_spec_changed": false,
+  "fixed186_reference_registry_changed": false,
+  "lean_sources_changed": false,
+  "proof_bodies_changed": false,
+  "actual_successful_origins_registered": false,
+  "remote_mutations_performed": false,
+  "archive_authentication_and_kernel_success_still_required": true
+}

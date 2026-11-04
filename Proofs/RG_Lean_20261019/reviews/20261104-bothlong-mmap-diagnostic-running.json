@@ -1,0 +1,250 @@
+{
+  "branch": "rg-d1-bothlong-phase-probe-20261104",
+  "complete_original_archive_restore_claim": false,
+  "created_at_utc": "2026-11-04T14:30:35Z",
+  "files": [
+    {
+      "bytes": 6680,
+      "git_blob_sha": "4bf5675a92d324b3c3cb5ad0a3d0ea6cddaf9cc8",
+      "path": ".github/workflows/rg-d1-bothlong-phase-probe-20261104.yml",
+      "sha256": "d5a5d75da49789113df36075ca55cfb83adf35a7ba0edd7c9a0aff9073e3d077"
+    },
+    {
+      "bytes": 33392,
+      "git_blob_sha": "144614269b3d78c37efbf11dbb6c8fa07086055f",
+      "path": "ci/rg_bothlong_phase_probe_20261104.py",
+      "sha256": "4ab98348b61d6570fe4a807daef51a7d8fb292af20697aeadaff219fd10f6f43"
+    },
+    {
+      "bytes": 37551,
+      "git_blob_sha": "e11e23bcb09b974dd19c58e7e2458f4b43fc409d",
+      "path": "ci/rg_bothlong_mmap_trace_20261104.py",
+      "sha256": "a8799847517d58f12e25f1a6aa67a7a525328baf84b19fddd6c9558a7fdb55ed"
+    }
+  ],
+  "full_rg_kernel_proof_claim": false,
+  "independent_terminal_raw_trace_authentication_completed": false,
+  "job": 126637373312,
+  "large_probe_completed": false,
+  "local_control_success_claim": false,
+  "local_lifecycle_result": "UNSUPPORTED_PID_NAMESPACE_NO_EXITKILL_RESULT",
+  "mandatory_native_controls_passed": true,
+  "measurement_limits": [
+    "Native step success is separate from independent terminal-byte authentication.",
+    "The running restore has not yet produced a completed preflight or large Lean probe.",
+    "A syscall trace identifies observed calls, not completed imports or the cause of a timeout.",
+    "Wallclock trace-line timestamps are distinct from monotonic Lean marker timestamps."
+  ],
+  "native_jobs_snapshot": {
+    "jobs": [
+      {
+        "check_run_url": "https://api.github.com/repos/RhudeJJJJ/formal-conjectures/check-runs/126637373312",
+        "completed_at": null,
+        "conclusion": null,
+        "created_at": "2026-11-04T14:30:36Z",
+        "head_branch": "rg-d1-bothlong-phase-probe-20261104",
+        "head_sha": "9362f408f8bdda0f27f8bd547c53927401ca5c50",
+        "html_url": "https://github.com/RhudeJJJJ/formal-conjectures/actions/runs/41848259185/job/126637373312",
+        "id": 126637373312,
+        "labels": [
+          "ubuntu-24.04"
+        ],
+        "name": "diagnose",
+        "node_id": "CR_kwDOVGcgaM8AAAAdfCz3gA",
+        "run_attempt": 1,
+        "run_id": 41848259185,
+        "run_url": "https://api.github.com/repos/RhudeJJJJ/formal-conjectures/actions/runs/41848259185",
+        "runner_group_id": 0,
+        "runner_group_name": "GitHub Actions",
+        "runner_id": 1000011158,
+        "runner_name": "GitHub Actions 1000011158",
+        "started_at": "2026-11-04T14:30:40Z",
+        "status": "in_progress",
+        "steps": [
+          {
+            "completed_at": "2026-11-04T14:30:41Z",
+            "conclusion": "success",
+            "name": "Set up job",
+            "number": 1,
+            "started_at": "2026-11-04T14:30:41Z",
+            "status": "completed"
+          },
+          {
+            "completed_at": "2026-11-04T14:31:18Z",
+            "conclusion": "success",
+            "name": "Run actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803",
+            "number": 2,
+            "started_at": "2026-11-04T14:30:42Z",
+            "status": "completed"
+          },
+          {
+            "completed_at": "2026-11-04T14:31:19Z",
+            "conclusion": "success",
+            "name": "Reserve actual host space without touching proof inputs",
+            "number": 3,
+            "started_at": "2026-11-04T14:31:18Z",
+            "status": "completed"
+          },
+          {
+            "completed_at": "2026-11-04T14:31:37Z",
+            "conclusion": "success",
+            "name": "Install the fixed compiler before the marker control",
+            "number": 4,
+            "started_at": "2026-11-04T14:31:19Z",
+            "status": "completed"
+          },
+          {
+            "completed_at": "2026-11-04T14:31:44Z",
+            "conclusion": "success",
+            "name": "Install the syscall observer before any proof restoration",
+            "number": 5,
+            "started_at": "2026-11-04T14:31:37Z",
+            "status": "completed"
+          },
+          {
+            "completed_at": "2026-11-04T14:31:47Z",
+            "conclusion": "success",
+            "name": "Require owned-tracee lifecycle and actual mmap observation before Lean control",
+            "number": 6,
+            "started_at": "2026-11-04T14:31:44Z",
+            "status": "completed"
+          },
+          {
+            "completed_at": "2026-11-04T14:31:58Z",
+            "conclusion": "success",
+            "name": "Require the isolated flushed-marker control before any proof restoration",
+            "number": 7,
+            "started_at": "2026-11-04T14:31:47Z",
+            "status": "completed"
+          },
+          {
+            "completed_at": "2026-11-04T14:31:58Z",
+            "conclusion": "success",
+            "name": "Preserve the separate control host observation",
+            "number": 8,
+            "started_at": "2026-11-04T14:31:58Z",
+            "status": "completed"
+          },
+          {
+            "completed_at": "2026-11-04T14:33:10Z",
+            "conclusion": "success",
+            "name": "Authenticate the actual failed run and project only original BothLong imports",
+            "number": 9,
+            "started_at": "2026-11-04T14:31:58Z",
+            "status": "completed"
+          },
+          {
+            "completed_at": "2026-11-04T14:33:24Z",
+            "conclusion": "success",
+            "name": "Materialize the fixed dependency lock",
+            "number": 10,
+            "started_at": "2026-11-04T14:33:10Z",
+            "status": "completed"
+          },
+          {
+            "completed_at": "2026-11-04T14:34:41Z",
+            "conclusion": "success",
+            "name": "Fetch only the external modules of the original BothLong closure",
+            "number": 11,
+            "started_at": "2026-11-04T14:33:24Z",
+            "status": "completed"
+          },
+          {
+            "completed_at": "2026-11-04T14:34:45Z",
+            "conclusion": "success",
+            "name": "Install the transparent filesystem utility",
+            "number": 12,
+            "started_at": "2026-11-04T14:34:41Z",
+            "status": "completed"
+          },
+          {
+            "completed_at": "2026-11-04T14:34:47Z",
+            "conclusion": "success",
+            "name": "Create the unchanged bounded logical proofstore",
+            "number": 13,
+            "started_at": "2026-11-04T14:34:45Z",
+            "status": "completed"
+          },
+          {
+            "completed_at": "2026-11-04T14:34:47Z",
+            "conclusion": "success",
+            "name": "Require direct I/O only for the new owned proofstore loop",
+            "number": 14,
+            "started_at": "2026-11-04T14:34:47Z",
+            "status": "completed"
+          },
+          {
+            "completed_at": null,
+            "conclusion": null,
+            "name": "Authenticate all 444 original archives and read back 25191 projected objects",
+            "number": 15,
+            "started_at": "2026-11-04T14:34:47Z",
+            "status": "in_progress"
+          },
+          {
+            "completed_at": null,
+            "conclusion": null,
+            "name": "Require exactly the original BothLong endpoint to remain uncompiled",
+            "number": 16,
+            "started_at": null,
+            "status": "pending"
+          },
+          {
+            "completed_at": null,
+            "conclusion": null,
+            "name": "Observe the isolated diagnostic copy with unchanged strict kernel limits",
+            "number": 17,
+            "started_at": null,
+            "status": "pending"
+          },
+          {
+            "completed_at": null,
+            "conclusion": null,
+            "name": "Retain diagnostic logs and phase observations without proof exports",
+            "number": 18,
+            "started_at": null,
+            "status": "pending"
+          },
+          {
+            "completed_at": null,
+            "conclusion": null,
+            "name": "Post Run actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803",
+            "number": 36,
+            "started_at": null,
+            "status": "pending"
+          }
+        ],
+        "url": "https://api.github.com/repos/RhudeJJJJ/formal-conjectures/actions/jobs/126637373312",
+        "workflow_name": "RG fixed BothLong phase diagnosis"
+      }
+    ],
+    "total_count": 1
+  },
+  "native_jobs_snapshot_sha256": "455ff62a8f4bf483587eff30ed03179bad461b28287c24801d9578c7f9647341",
+  "observed_at_utc": "2026-11-04T14:35:00Z",
+  "original_kernel_export_claim": false,
+  "original_lean_sources_flags_limits_or_guards_changed": false,
+  "readback": [
+    {
+      "git_blob_sha": "4bf5675a92d324b3c3cb5ad0a3d0ea6cddaf9cc8",
+      "path": ".github/workflows/rg-d1-bothlong-phase-probe-20261104.yml",
+      "verified": true
+    },
+    {
+      "git_blob_sha": "144614269b3d78c37efbf11dbb6c8fa07086055f",
+      "path": "ci/rg_bothlong_phase_probe_20261104.py",
+      "verified": true
+    },
+    {
+      "git_blob_sha": "e11e23bcb09b974dd19c58e7e2458f4b43fc409d",
+      "path": "ci/rg_bothlong_mmap_trace_20261104.py",
+      "verified": true
+    }
+  ],
+  "remaining_original_input_families": 4,
+  "repository": "RhudeJJJJ/formal-conjectures",
+  "run": 41848259185,
+  "source_commit": "9362f408f8bdda0f27f8bd547c53927401ca5c50",
+  "status": "ACTUAL_NATIVE_TRACE_CONTROLS_PASSED_ORIGINAL_RESTORE_RUNNING",
+  "tree": "058e320d1dffe6d8b1808f96d0846be62c69ef96"
+}

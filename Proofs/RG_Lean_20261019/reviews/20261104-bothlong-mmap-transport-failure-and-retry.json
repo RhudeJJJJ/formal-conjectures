@@ -1,0 +1,684 @@
+{
+  "completed_diagnostic": {
+    "actual_lean_fixture_mapping": {
+      "actual_lean_control_success_must_be_checked_separately": true,
+      "complete_exact_file_attempts": 1,
+      "failed_mmaps": 0,
+      "fixture_bytes": 3080,
+      "fixture_path": "/home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/bothlong_phase_probe/control_imports/Proofs/RGDiagnosticImportFixture.olean",
+      "fixture_sha256": "abd4a1053f85fad1ce378dad374ec87b24fa8f6e6c33ce48acefa4e44bf7c059",
+      "last_matching_attempts": [
+        {
+          "arguments": [
+            "0xaa3482c0000",
+            "3080",
+            "PROT_READ|PROT_WRITE",
+            "MAP_PRIVATE|MAP_FIXED_NOREPLACE",
+            "11</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/bothlong_phase_probe/control_imports/Proofs/RGDiagnosticImportFixture.olean>",
+            "0"
+          ],
+          "duration_seconds": "0.000017",
+          "errno": null,
+          "file_descriptor": 11,
+          "file_path": "/home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/bothlong_phase_probe/control_imports/Proofs/RGDiagnosticImportFixture.olean",
+          "first_line": 11675,
+          "first_trace_line_wallclock_unix_seconds": "1793802716.424791",
+          "last_line": 11675,
+          "last_trace_line_wallclock_unix_seconds": "1793802716.424791",
+          "length_bytes": 3080,
+          "mapping_flags": "MAP_PRIVATE|MAP_FIXED_NOREPLACE",
+          "offset_bytes": 0,
+          "outcome": "SUCCESS",
+          "pid": 2642,
+          "protection": "PROT_READ|PROT_WRITE",
+          "requested_address": "0xaa3482c0000",
+          "result_text": "0xaa3482c0000",
+          "resumed": false,
+          "syscall": "mmap"
+        }
+      ],
+      "mapping_failure_is_observation_not_lean_failure": true,
+      "successful_mmaps": 1,
+      "trace_bytes": 2875041,
+      "trace_sha256": "793a21ec14e3eee00a4170c2a66b48b4a8fb67183aa8c50e1a5205251db4eea0"
+    },
+    "full_checker_error": {
+      "message": "Authenticate all 444 original archives and read back 25191 projected objects",
+      "type": "AssertionError"
+    },
+    "full_checker_sha256": "2f586040f635d049b1c1002cf45cc6a77b892e013e5f8e968561a4585a4d97a3",
+    "full_checker_stage": "UNCHANGED_SOURCE_PROJECTION_DIO_AND_COMPLETE_RESTORE",
+    "full_checker_status": "ACTUAL_MMAP_DIAGNOSTIC_INCOMPLETE_OR_REJECTED",
+    "full_report_sha256": "741f0254ab00c44f0bede6fd5b62fcad6404e27af0daecdc31851a6e53d4e646",
+    "job": 126637373312,
+    "kernel_timeout_in_this_run": false,
+    "lifecycle": {
+      "actual_timing_seconds": {
+        "latest_planned_end_observation_spawn_elapsed_seconds": 8.000356,
+        "prekill_at_spawn_elapsed_seconds": 2.000356,
+        "ready_at_spawn_elapsed_seconds": 0.125956,
+        "tracee_end_observed_spawn_elapsed_seconds": 2.00156,
+        "tracer_kill_at_spawn_elapsed_seconds": 2.000435
+      },
+      "fixture_files": {
+        "fixture.bin": {
+          "bytes": 4096,
+          "sha256": "764407ab1e783417ace1bd68942ee9a496d39a6089d416646be2f3275fa9bee1"
+        },
+        "fixture.mmap.log": {
+          "bytes": 6529,
+          "sha256": "a1959e99fb94706984f95b211f2b653b37ad202d462f1da087207979b1d86840"
+        },
+        "tracee_ready.json": {
+          "bytes": 262,
+          "sha256": "b07a190f811717c0cae1c33d365605e36ac02d4a6410399592aead33e0e7f655"
+        },
+        "tracer.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "tracer.stdout.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      "mapping": {
+        "actual_lean_control_success_must_be_checked_separately": true,
+        "complete_exact_file_attempts": 1,
+        "failed_mmaps": 0,
+        "fixture_bytes": 4096,
+        "fixture_path": "/home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/bothlong_phase_probe/mmap_trace_fixture/fixture.bin",
+        "fixture_sha256": "764407ab1e783417ace1bd68942ee9a496d39a6089d416646be2f3275fa9bee1",
+        "last_matching_attempts": [
+          {
+            "arguments": [
+              "NULL",
+              "4096",
+              "PROT_READ",
+              "MAP_SHARED",
+              "3</home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/bothlong_phase_probe/mmap_trace_fixture/fixture.bin>",
+              "0"
+            ],
+            "duration_seconds": "0.000023",
+            "errno": null,
+            "file_descriptor": 3,
+            "file_path": "/home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/bothlong_phase_probe/mmap_trace_fixture/fixture.bin",
+            "first_line": 39,
+            "first_trace_line_wallclock_unix_seconds": "1793802705.395415",
+            "last_line": 39,
+            "last_trace_line_wallclock_unix_seconds": "1793802705.395415",
+            "length_bytes": 4096,
+            "mapping_flags": "MAP_SHARED",
+            "offset_bytes": 0,
+            "outcome": "SUCCESS",
+            "pid": 2600,
+            "protection": "PROT_READ",
+            "requested_address": "NULL",
+            "result_text": "0x7f6c89cf7000",
+            "resumed": false,
+            "syscall": "mmap"
+          }
+        ],
+        "mapping_failure_is_observation_not_lean_failure": true,
+        "successful_mmaps": 1,
+        "trace_bytes": 6529,
+        "trace_sha256": "a1959e99fb94706984f95b211f2b653b37ad202d462f1da087207979b1d86840"
+      },
+      "report_sha256": "fe08e3cf2d815c4cd192becc5d2093a376ba6368dc35f4d6e637f379aa8b8b38",
+      "status": "ACTUAL_NATIVE_LIFECYCLE_AND_FILE_MMAP_AUTHENTICATED"
+    },
+    "native_terminal": {
+      "artifact_bytes_authenticated_by_this_agent": false,
+      "artifact_upload_step": "success",
+      "diagnostic_artifact_native_metadata": {
+        "archive_download_url": "https://api.github.com/repos/RhudeJJJJ/formal-conjectures/actions/artifacts/13336767112/zip",
+        "created_at": "2026-11-04T15:12:02Z",
+        "digest": "sha256:cfdec62a1ba65bc7f0dd225acb8ab8ce7ce624ed50ef4bc3095edf470bccfd01",
+        "expired": false,
+        "expires_at": "2027-02-02T14:30:35Z",
+        "id": 13336767112,
+        "name": "rg-bothlong-phase-diagnostic-20261104-41848259185-1",
+        "node_id": "MDg6QXJ0aWZhY3QxMzMzNjc2NzExMg==",
+        "size_in_bytes": 6855382,
+        "updated_at": "2026-11-04T15:12:02Z",
+        "url": "https://api.github.com/repos/RhudeJJJJ/formal-conjectures/actions/artifacts/13336767112",
+        "workflow_run": {
+          "head_branch": "rg-d1-bothlong-phase-probe-20261104",
+          "head_repository_id": 1416044648,
+          "head_sha": "9362f408f8bdda0f27f8bd547c53927401ca5c50",
+          "id": 41848259185,
+          "repository_id": 1416044648
+        }
+      },
+      "direct_io_step": "success",
+      "failed_step": {
+        "completed_at": "2026-11-04T15:11:58Z",
+        "conclusion": "failure",
+        "name": "Authenticate all 444 original archives and read back 25191 projected objects",
+        "number": 15,
+        "started_at": "2026-11-04T14:34:47Z",
+        "status": "completed"
+      },
+      "failed_step_exit_code": 1,
+      "family_closure_claim": false,
+      "full_trace_audit_executed_by_this_agent": false,
+      "head_branch": "rg-d1-bothlong-phase-probe-20261104",
+      "job": 126637373312,
+      "kind": "NATIVE_TERMINAL_CAPTURE_REPORT",
+      "lifecycle_control_step": "success",
+      "native_capture_files": {
+        "artifacts.json": {
+          "bytes": 799,
+          "sha256": "1eacc4294192bdf8e4b39ec947f404e0dfc1f3afab0286f9829e12fb532fa7cd"
+        },
+        "job.log": {
+          "bytes": 360516,
+          "sha256": "7bbe8aeef178a2bfb733c18187ac2199853e09effc4d930bd60532117967fad3"
+        },
+        "jobs.json": {
+          "bytes": 4945,
+          "sha256": "3939fe0a403471b6ebc29b66c07efd4e85633b2c10933fe65499c833be31bac4"
+        },
+        "run.json": {
+          "bytes": 13044,
+          "sha256": "ea4b59c2bab14cc9f65dc6c974557febc395d8f2e3c6157f62dd9d565172300a"
+        }
+      },
+      "native_job_completed_at": "2026-11-04T15:12:05Z",
+      "native_job_conclusion": "failure",
+      "native_run_conclusion": "failure",
+      "native_run_updated_at": "2026-11-04T15:12:05Z",
+      "native_terminal_error": "urllib.error.HTTPError: HTTP Error 503: Egress is over the account limit.",
+      "native_terminal_error_timestamp": "2026-11-04T15:11:57.8319089Z",
+      "original_kernel_export_claim": false,
+      "preflight_status": "skipped",
+      "probe_started": false,
+      "probe_status": "skipped",
+      "probe_timeout_claim": false,
+      "recorded_at_utc": "2026-11-04T15:14:50.221211+00:00",
+      "remote_mutations": false,
+      "repository": "RhudeJJJJ/formal-conjectures",
+      "restore_error_excerpt_sha256": "a84d887fa0c3f58ec0b21500569ef6b45a49d9379ced89388f14a293e85a3331",
+      "restore_log_observations": {
+        "last_success": {
+          "all_declared_sidecars_preserved": true,
+          "allocated_image_bytes": 24027430912,
+          "artifact_id": 12798916099,
+          "artifact_sha256": "9d067a59a47c7a4fa79894efe3f618b79cdb2c6cba92e278d347d3f460d252f7",
+          "cumulative_logical_member_bytes": 97429368352,
+          "fresh_kernel_compilations": 0,
+          "host_free_after": 58657398784,
+          "host_free_before": 58658447360,
+          "logical_image_bytes": 274877906944,
+          "logical_member_bytes": 109024,
+          "modules": 1,
+          "status": "EXACT_ORIGINAL_MEMBERS_RESTORED_AND_READ_BACK_THROUGH_COMPRESSION"
+        },
+        "logged_logical_member_bytes": 97429368352,
+        "logged_restored_modules": 25153,
+        "next_archive_identity_basis": "Inferred from exact successful log prefix plus unchanged sequential plan iteration; exception does not print the request URL.",
+        "next_archive_in_exact_sequential_plan": {
+          "archive_bytes": 89593,
+          "artifact_id": 12798885087,
+          "artifact_sha256": "6e391abba6d7fec1c1bfbf9cb81706fedefb0b4fbf271bc78ce54cee004b80cc",
+          "selected_modules": [
+            "Proofs.RadenkovicGutmanD1OriginalSharedSlice0011Complete"
+          ]
+        },
+        "projected_archive_count": 444,
+        "projected_plan_sha256": "11ff7db7f88e1e3aa1722796a5002cc9bb29263cb7343df851a12e699b94cd44",
+        "remaining_archives": 38,
+        "remaining_modules": 38,
+        "success_count": 406,
+        "success_ids_equal_exact_plan_prefix": true
+      },
+      "run": 41848259185,
+      "source_commit": "9362f408f8bdda0f27f8bd547c53927401ca5c50",
+      "status": "COMPLETED_FAILURE_BEFORE_PROBE",
+      "three_lean_control_step": "success",
+      "zip_downloaded_by_this_agent": false
+    },
+    "partial_auditor_sha256": "de1e9f99d6f9aa6917ad4b15c1cf0e352a8fde8ee8647a280b8a668da8fc5630",
+    "partial_report_sha256": "1cd89076ee0debd4bb3c456b970f0237e3e9b1e7f969ec410f8eef1ac4f435a9",
+    "partial_restore": {
+      "actual_direct_io": {
+        "after_enabled": true,
+        "backing_block": {
+          "image_device": "259:1",
+          "logical_sector_bytes": 512,
+          "logical_sector_source": "/sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/MSFT1000:00/7ad35d50-c05b-47ab-b3a0-56a9a845852b/pcic05b:00/c05b:00:00.0/nvme/nvme0/nvme0n1/queue/logical_block_size",
+          "resolved_sysfs": "/sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/MSFT1000:00/7ad35d50-c05b-47ab-b3a0-56a9a845852b/pcic05b:00/c05b:00:00.0/nvme/nvme0/nvme0n1/nvme0n1p1",
+          "status": "READ_FROM_SYSFS",
+          "sysfs": "/sys/dev/block/259:1"
+        },
+        "backing_filesystem": {
+          "fstype": "ext4",
+          "maj:min": "259:1",
+          "options": "rw,relatime,discard,journal_async_commit,nobarrier,errors=remount-ro,commit=30,data=writeback",
+          "source": "/dev/nvme0n1p1",
+          "target": "/"
+        },
+        "before_enabled": false,
+        "effective_sysfs_after": 1,
+        "flag_changed": true,
+        "image_identity": {
+          "device": "259:1",
+          "inode": 9298726,
+          "size": 274877906944
+        },
+        "kernel_release": "7.0.0-1017-azure",
+        "loop": "/dev/loop0",
+        "lower_filesystem_cache_behavior_measured_directly": false,
+        "only_owned_loop_dio_mutation": true,
+        "original_sources_and_guards_unchanged": true,
+        "report_sha256": "673b4e89a781c0fe321a2eeb91da4c7b3070d39631c28cff6b4da6bc1b133344",
+        "setup_report_sha256": "cf364539a43ccb09ac10dd320efd60f2264c342f0e7c92acc7b4b224410b391b",
+        "util_linux_version": "losetup from util-linux 2.39.3"
+      },
+      "all_archived_restore_reports_equal_native_log_rows": true,
+      "authenticated_partial_restore_module_count": 25153,
+      "authenticated_partial_restore_report_count": 406,
+      "authenticated_reported_logical_member_bytes": 97429368352,
+      "inferred_next_fetch": {
+        "archive_bytes": 89593,
+        "artifact_id": 12798885087,
+        "artifact_sha256": "6e391abba6d7fec1c1bfbf9cb81706fedefb0b4fbf271bc78ce54cee004b80cc",
+        "basis": "Exact 406-row native prefix and unchanged sequential restore iteration; no request URL was printed.",
+        "modules": [
+          "Proofs.RadenkovicGutmanD1OriginalSharedSlice0011Complete"
+        ]
+      },
+      "logical_size_validation_basis": "Each archived logical-byte count exactly equals its native log row and cumulative prefix sum. The fixed selected rows contain hashes but no member sizes; object sizes are not independently derived from the plan or rehashed from historical object ZIPs in this audit.",
+      "missing_archive_count": 38,
+      "missing_module_count": 38,
+      "missing_modules": [
+        "Proofs.RadenkovicGutmanD1OriginalSharedSlice0000Complete",
+        "Proofs.RadenkovicGutmanD1OriginalSharedSlice0001Complete",
+        "Proofs.RadenkovicGutmanD1OriginalSharedSlice0002Complete",
+        "Proofs.RadenkovicGutmanD1OriginalSharedSlice0003Complete",
+        "Proofs.RadenkovicGutmanD1OriginalSharedSlice0004Complete",
+        "Proofs.RadenkovicGutmanD1OriginalSharedSlice0005Complete",
+        "Proofs.RadenkovicGutmanD1OriginalSharedSlice0006Complete",
+        "Proofs.RadenkovicGutmanD1OriginalSharedSlice0007Complete",
+        "Proofs.RadenkovicGutmanD1OriginalSharedSlice0008Complete",
+        "Proofs.RadenkovicGutmanD1OriginalSharedSlice0009Complete",
+        "Proofs.RadenkovicGutmanD1OriginalSharedSlice0010Complete",
+        "Proofs.RadenkovicGutmanD1OriginalSharedSlice0011Complete",
+        "Proofs.RadenkovicGutmanD1OriginalSharedSlice0059Complete",
+        "Proofs.RadenkovicGutmanD1OriginalSharedSlice0060Complete",
+        "Proofs.RadenkovicGutmanD1OriginalSharedSlice0061Complete",
+        "Proofs.RadenkovicGutmanD1OriginalSharedSlice0062Complete",
+        "Proofs.RadenkovicGutmanD1OriginalSharedSlice0063Complete",
+        "Proofs.RadenkovicGutmanD1OriginalSharedSlice0064Complete",
+        "Proofs.RadenkovicGutmanD1OriginalSharedSlice0065Complete",
+        "Proofs.RadenkovicGutmanD1OriginalSharedSlice0066Complete",
+        "Proofs.RadenkovicGutmanD1OriginalSharedSlice0067Complete",
+        "Proofs.RadenkovicGutmanD1OriginalSharedSlice0068Complete",
+        "Proofs.RadenkovicGutmanD1OriginalSharedSlice0071Complete",
+        "Proofs.RadenkovicGutmanD1OriginalSharedSlice0072Complete",
+        "Proofs.RadenkovicGutmanD1OriginalSharedSlice0073Complete",
+        "Proofs.RadenkovicGutmanD1OriginalSharedSlice0075Complete",
+        "Proofs.RadenkovicGutmanD1OriginalSharedSlice0077Complete",
+        "Proofs.RadenkovicGutmanD1OriginalSharedSlice0079Complete",
+        "Proofs.RadenkovicGutmanD1OriginalSharedSlice0081Complete",
+        "Proofs.RadenkovicGutmanD1OriginalSharedSlice0082Complete",
+        "Proofs.RadenkovicGutmanD1OriginalSharedSlice0083Complete",
+        "Proofs.RadenkovicGutmanD1OriginalSharedSlice0085Complete",
+        "Proofs.RadenkovicGutmanD1OriginalSharedSlice0086Complete",
+        "Proofs.RadenkovicGutmanD1OriginalSharedSlice0087Complete",
+        "Proofs.RadenkovicGutmanD1OriginalSharedSlice0088Complete",
+        "Proofs.RadenkovicGutmanD1OriginalSharedSlice0090Complete",
+        "Proofs.RadenkovicGutmanD1OriginalSharedSlice0091Complete",
+        "Proofs.RadenkovicGutmanD1OriginalSharedSlice0092Complete"
+      ],
+      "projected_plan_sha256": "11ff7db7f88e1e3aa1722796a5002cc9bb29263cb7343df851a12e699b94cd44",
+      "successful_reports_are_exact_plan_prefix": true
+    },
+    "preflight_completed": false,
+    "probe_started": false,
+    "probe_trace_exists": false,
+    "run": 41848259185,
+    "source_commit": "9362f408f8bdda0f27f8bd547c53927401ca5c50",
+    "three_control_invocations": [
+      {
+        "compiler_returncode": 0,
+        "compiler_returncode_source": "STRACE_PROPAGATED_ZERO_STATUS",
+        "detail_report_sha256": "8a1b43e004be81db2071dd9684a151cf10c5966eb5ac84c59c70d34ff73273bb",
+        "log_sha256": "d9e2a830aa28502480f48d5bbd2afcfcf1373c9523bba7d0b22215ec56aa0c6a",
+        "module": "RGDiagnostic.PhaseMarker",
+        "phase": "control",
+        "raw_trace_bytes": 2874442,
+        "raw_trace_sha256": "6042d8e974220009d2004ebfbdbb77be689ffbea59c77053b437cb3ebd4df810",
+        "success": true,
+        "timeout": false,
+        "traced_process_seconds": 3.789,
+        "tracer_pid": 2614,
+        "tracer_returncode": 0
+      },
+      {
+        "compiler_returncode": 0,
+        "compiler_returncode_source": "STRACE_PROPAGATED_ZERO_STATUS",
+        "detail_report_sha256": "c26c5498abb1eb6a5fd4fa6cd4d402caea944c5df2b9e12591edbee5f1548152",
+        "log_sha256": "5dfb8100915ff945e0b743bf663c843e7026a8a0810805dc1b552e2a79c31cd2",
+        "module": "Proofs.RGDiagnosticImportFixture",
+        "phase": "control",
+        "raw_trace_bytes": 781649,
+        "raw_trace_sha256": "f59d291c8fc1be48fea30333695442e73b466eadb3059ffa3452c1556242c9aa",
+        "success": true,
+        "timeout": false,
+        "traced_process_seconds": 1.013,
+        "tracer_pid": 2624,
+        "tracer_returncode": 0
+      },
+      {
+        "compiler_returncode": 0,
+        "compiler_returncode_source": "STRACE_PROPAGATED_ZERO_STATUS",
+        "detail_report_sha256": "4740b7bd01c41ccb2074040a1cf98ab44b7f3ff8263313125ec39994fb582936",
+        "log_sha256": "dbd9da388dac2f8231486fd51524baf20adadb3a04d37aac0ec391dc4fff6a1c",
+        "module": "Proofs.RGDiagnosticMarkerControl",
+        "phase": "control",
+        "raw_trace_bytes": 2875041,
+        "raw_trace_sha256": "793a21ec14e3eee00a4170c2a66b48b4a8fb67183aa8c50e1a5205251db4eea0",
+        "success": true,
+        "timeout": false,
+        "traced_process_seconds": 3.621,
+        "tracer_pid": 2634,
+        "tracer_returncode": 0
+      }
+    ]
+  },
+  "family_closure_claim": false,
+  "new_run_large_probe_result_pending": true,
+  "new_run_native_capture_sha256": "4ad3675c63bfc15b5cc092486535746175ed89c8d008eb28155db16d65b103e1",
+  "new_run_native_observation": {
+    "captured_at": "2026-11-04 15:30:26 UTC",
+    "completed_at": null,
+    "conclusion": null,
+    "id": 126671224306,
+    "started_at": "2026-11-04T15:27:03Z",
+    "status": "in_progress",
+    "steps": [
+      {
+        "completed_at": "2026-11-04T15:27:05Z",
+        "conclusion": "success",
+        "name": "Set up job",
+        "number": 1,
+        "started_at": "2026-11-04T15:27:04Z",
+        "status": "completed"
+      },
+      {
+        "completed_at": "2026-11-04T15:27:43Z",
+        "conclusion": "success",
+        "name": "Run actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803",
+        "number": 2,
+        "started_at": "2026-11-04T15:27:05Z",
+        "status": "completed"
+      },
+      {
+        "completed_at": "2026-11-04T15:27:43Z",
+        "conclusion": "success",
+        "name": "Reserve actual host space without touching proof inputs",
+        "number": 3,
+        "started_at": "2026-11-04T15:27:43Z",
+        "status": "completed"
+      },
+      {
+        "completed_at": "2026-11-04T15:27:59Z",
+        "conclusion": "success",
+        "name": "Install the fixed compiler before the marker control",
+        "number": 4,
+        "started_at": "2026-11-04T15:27:43Z",
+        "status": "completed"
+      },
+      {
+        "completed_at": "2026-11-04T15:28:06Z",
+        "conclusion": "success",
+        "name": "Install the syscall observer before any proof restoration",
+        "number": 5,
+        "started_at": "2026-11-04T15:27:59Z",
+        "status": "completed"
+      },
+      {
+        "completed_at": "2026-11-04T15:28:08Z",
+        "conclusion": "success",
+        "name": "Require owned-tracee lifecycle and actual mmap observation before Lean control",
+        "number": 6,
+        "started_at": "2026-11-04T15:28:06Z",
+        "status": "completed"
+      },
+      {
+        "completed_at": "2026-11-04T15:28:19Z",
+        "conclusion": "success",
+        "name": "Require the isolated flushed-marker control before any proof restoration",
+        "number": 7,
+        "started_at": "2026-11-04T15:28:08Z",
+        "status": "completed"
+      },
+      {
+        "completed_at": "2026-11-04T15:28:19Z",
+        "conclusion": "success",
+        "name": "Preserve the separate control host observation",
+        "number": 8,
+        "started_at": "2026-11-04T15:28:19Z",
+        "status": "completed"
+      },
+      {
+        "completed_at": "2026-11-04T15:29:31Z",
+        "conclusion": "success",
+        "name": "Authenticate the actual failed run and project only original BothLong imports",
+        "number": 9,
+        "started_at": "2026-11-04T15:28:19Z",
+        "status": "completed"
+      },
+      {
+        "completed_at": "2026-11-04T15:29:48Z",
+        "conclusion": "success",
+        "name": "Materialize the fixed dependency lock",
+        "number": 10,
+        "started_at": "2026-11-04T15:29:31Z",
+        "status": "completed"
+      },
+      {
+        "completed_at": null,
+        "conclusion": null,
+        "name": "Fetch only the external modules of the original BothLong closure",
+        "number": 11,
+        "started_at": "2026-11-04T15:29:48Z",
+        "status": "in_progress"
+      },
+      {
+        "completed_at": null,
+        "conclusion": null,
+        "name": "Install the transparent filesystem utility",
+        "number": 12,
+        "started_at": null,
+        "status": "pending"
+      },
+      {
+        "completed_at": null,
+        "conclusion": null,
+        "name": "Create the unchanged bounded logical proofstore",
+        "number": 13,
+        "started_at": null,
+        "status": "pending"
+      },
+      {
+        "completed_at": null,
+        "conclusion": null,
+        "name": "Require direct I/O only for the new owned proofstore loop",
+        "number": 14,
+        "started_at": null,
+        "status": "pending"
+      },
+      {
+        "completed_at": null,
+        "conclusion": null,
+        "name": "Authenticate all 444 original archives and read back 25191 projected objects",
+        "number": 15,
+        "started_at": null,
+        "status": "pending"
+      },
+      {
+        "completed_at": null,
+        "conclusion": null,
+        "name": "Require exactly the original BothLong endpoint to remain uncompiled",
+        "number": 16,
+        "started_at": null,
+        "status": "pending"
+      },
+      {
+        "completed_at": null,
+        "conclusion": null,
+        "name": "Observe the isolated diagnostic copy with unchanged strict kernel limits",
+        "number": 17,
+        "started_at": null,
+        "status": "pending"
+      },
+      {
+        "completed_at": null,
+        "conclusion": null,
+        "name": "Retain diagnostic logs and phase observations without proof exports",
+        "number": 18,
+        "started_at": null,
+        "status": "pending"
+      },
+      {
+        "completed_at": null,
+        "conclusion": null,
+        "name": "Post Run actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803",
+        "number": 36,
+        "started_at": null,
+        "status": "pending"
+      }
+    ]
+  },
+  "original_degree_one_large_completed": false,
+  "original_lean_limits": {
+    "memory_reserve_mib": 2048,
+    "module_timeout_seconds": 900,
+    "workers": 1
+  },
+  "original_proof_source_commit": "10aa67f5f16e8ad00b30ac21332791b008b69cfe",
+  "production_continuation_started": false,
+  "recorded_at_utc": "2026-11-04T15:30:59.081414+00:00",
+  "remaining_original_input_families": 4,
+  "repository": "RhudeJJJJ/formal-conjectures",
+  "source_notes": [
+    {
+      "fact": "Exact egress message is documented as ServerBusy HTTP503; actual response error-code header was not captured.",
+      "url": "https://learn.microsoft.com/en-us/rest/api/storageservices/common-rest-api-error-codes"
+    },
+    {
+      "fact": "Exponential backoff is recommended for Storage503 throttling; our attempt counts and timing are local bounded choices.",
+      "url": "https://learn.microsoft.com/en-us/azure/storage/blobs/scalability-targets"
+    },
+    {
+      "fact": "Signed download redirect expires after one minute.",
+      "url": "https://docs.github.com/en/rest/actions/artifacts#download-an-artifact"
+    },
+    {
+      "fact": "Retry-After can be nonnegative integer seconds or an HTTP-date.",
+      "url": "https://httpwg.org/specs/rfc9110.html#field.retry-after"
+    },
+    {
+      "fact": "SDK understands retry-after-ms and x-ms-retry-after-ms as milliseconds; this does not establish their presence in the failed response.",
+      "git_blob": "8e2eccfdc5e386dcbaaf07f99f0659b1750d44b6",
+      "url": "https://github.com/Azure/azure-sdk-for-python/blob/main/sdk/core/azure-core/azure/core/pipeline/policies/_utils.py"
+    }
+  ],
+  "status": "ACTUAL_RESTORE_TRANSPORT_FAILURE_AUTHENTICATED_SEPARATE_BOUNDED_RETRY_RUNNING",
+  "transport_correction": {
+    "actual_failed_response_retry_headers_unknown": true,
+    "focused_tests": {
+      "actual_sleep_calls": 0,
+      "errors": 0,
+      "failures": 0,
+      "helper_sha256": "db9221ee4aa24f77082c98f33588b987531fc77f9f93c49111d31ad12363b0ef",
+      "kind": "SYNTHETIC_OFFLINE_TRANSPORT_TESTS_ONLY",
+      "native_ci_or_lean_claim": false,
+      "passed": true,
+      "real_network_calls": 0,
+      "tests": 12
+    },
+    "fresh_redirect_after_wait": true,
+    "github_token_only_on_api": true,
+    "independent_review_sha256": "711fa62414948bb3149c0c0f2f898e1e3a76dfde36ac8bfa9263b2ddf33a37fd",
+    "invalid_or_excessive_explicit_wait_stops": true,
+    "native_503_recovery_claim": false,
+    "only_signed_http_503_get_retried": true,
+    "publication": {
+      "base_commit": "9362f408f8bdda0f27f8bd547c53927401ca5c50",
+      "base_tree": "058e320d1dffe6d8b1808f96d0846be62c69ef96",
+      "branch": "rg-d1-bothlong-phase-probe-20261104",
+      "commit": "f5fa2bc163667ecd2d36ab6133abcffca4f83a0c",
+      "exact_source_readback_verified": true,
+      "files": [
+        {
+          "bytes": 8940,
+          "git_blob": "0d6b0ca19ca8b1717621559b426a0a7b0b9d9520",
+          "local_path": "/workspace/scratch/406169dbc070/rg_resume_20261104/bothlong_phase_probe/transport_retry_candidate/patch/ci/rg_github_artifacts.py",
+          "path": "ci/rg_github_artifacts.py",
+          "sha256": "db9221ee4aa24f77082c98f33588b987531fc77f9f93c49111d31ad12363b0ef"
+        },
+        {
+          "bytes": 6716,
+          "git_blob": "893d1378b3d90ce60937bf12cce555138c585355",
+          "local_path": "/workspace/scratch/406169dbc070/rg_resume_20261104/bothlong_phase_probe/transport_retry_candidate/patch/.github/workflows/rg-d1-bothlong-phase-probe-20261104.yml",
+          "path": ".github/workflows/rg-d1-bothlong-phase-probe-20261104.yml",
+          "sha256": "7acc6c499fbda379bd7a0404637a4221fd1fe1f6b2e97a9cb393d314021f4a2f"
+        }
+      ],
+      "independent_review_sha256": "711fa62414948bb3149c0c0f2f898e1e3a76dfde36ac8bfa9263b2ddf33a37fd",
+      "job": 126671224306,
+      "primary_failure_run": 41848259185,
+      "production_kernel_claim": false,
+      "remaining_original_input_families": 4,
+      "root_review_sha256": "7a20b03c2f304a0b37df71b3eecc6676c301f7ae3668542d0ab085ccf74382da",
+      "run": 41857856028,
+      "status": "PUBLISHED_READBACK_EXACT_NATIVE_RUN_STARTED",
+      "tree": "ded1e26b7bb2794b4d1c24ed95fb0dd2584d0455"
+    },
+    "root_review": {
+      "at_utc": "2026-11-04T15:26:31.882396+00:00",
+      "backoff_seconds": [
+        30,
+        60,
+        120
+      ],
+      "family_closure_claim": false,
+      "final_archive_digest_check_and_return_AST_unchanged": true,
+      "focused_synthetic_tests": {
+        "actual_sleep_calls": 0,
+        "errors": 0,
+        "failures": 0,
+        "helper_sha256": "db9221ee4aa24f77082c98f33588b987531fc77f9f93c49111d31ad12363b0ef",
+        "kind": "SYNTHETIC_OFFLINE_TRANSPORT_TESTS_ONLY",
+        "native_ci_or_lean_claim": false,
+        "passed": true,
+        "real_network_calls": 0,
+        "tests": 12
+      },
+      "full_restore_and_lean_gates_unchanged": true,
+      "max_signed_get_attempts": 4,
+      "metadata_run_source_digest_auth_AST_unchanged": true,
+      "native_retry_success_claim": false,
+      "original_fetch_archive_prefix_through_NoRedirect_AST_unchanged": true,
+      "partial_restore_report_sha256": "1cd89076ee0debd4bb3c456b970f0237e3e9b1e7f969ec410f8eef1ac4f435a9",
+      "retry_start_window_seconds": 600,
+      "root_partial_restore_auditor_read_complete_no_concrete_finding": true,
+      "same_fixed_artifact_id_with_new_signed_redirect_each_attempt": true,
+      "signed_503_only": true,
+      "signed_get_contains_no_GitHub_token": true,
+      "status": "ROOT_REVIEW_AND_FOCUSED_SYNTHETIC_TESTS_PASSED",
+      "window_is_not_a_hard_limit_on_API_rate_wait_or_inflight_transfer": true,
+      "workflow_only_extra_helper_trigger_path": true
+    },
+    "same_fixed_artifact_and_account": true,
+    "service_wait_headers": [
+      "Retry-After",
+      "retry-after-ms",
+      "x-ms-retry-after-ms"
+    ]
+  },
+  "upstream_submission": false
+}

@@ -1,0 +1,116 @@
+{
+  "kind": "SOURCE_ONLY_CONTINUATION_CHECKPOINT_DURING_LOCAL_ENVIRONMENT_OUTAGE",
+  "observed_at_utc": "2026-11-04 19:11:35 UTC",
+  "repository": "RhudeJJJJ/formal-conjectures",
+  "primary_branch": "rg-degree-one-large-20261103",
+  "parent_commit": "1188a0dbc3ad1c5698671a93b9e27e6d21a718a5",
+  "parent_tree": "feefe7a52644c6f24237b100b1145f702f496be8",
+  "original_Lean_sources_changed": false,
+  "runtime_files_changed": false,
+  "remaining_original_families": 4,
+  "full_global_RG_proof_claim": false,
+  "upstream_submission": false,
+  "local_execution": {
+    "status": "UNAVAILABLE",
+    "first_root_failure": "2026-11-04 19:08 UTC",
+    "failure": "exec-server transport disconnected; recovery unavailable",
+    "bounded_followup": "No usable execution environment is available",
+    "new_authenticator_execution": false,
+    "execution_recovery_required": true
+  },
+  "primary": {
+    "run": 41890211247,
+    "job": 126785297420,
+    "attempt": 1,
+    "workflow_head": "1188a0dbc3ad1c5698671a93b9e27e6d21a718a5",
+    "original_proof_source_commit": "10aa67f5f16e8ad00b30ac21332791b008b69cfe",
+    "status": "in_progress",
+    "conclusion": null,
+    "active_step": 14,
+    "active_step_name": "Authenticate and read back every selected original object and sidecar",
+    "active_step_started_at": "2026-11-04T19:00:27Z",
+    "prerequisite_collection_completed_at": "2026-11-04T18:56:54Z",
+    "complete_original_archive_authentication": false,
+    "kernel_milestone_established": false,
+    "expected_required_modules": 33659,
+    "expected_restored_modules": 33656,
+    "expected_fresh_modules": 3,
+    "expected_archives": 767,
+    "expected_named_axiom_profiles": 11,
+    "limits": {
+      "module_seconds": 900,
+      "workers": 1,
+      "memory_reserve_mib": 2048
+    }
+  },
+  "anchor029": {
+    "run": 41888401962,
+    "job": 126778939548,
+    "attempt": 1,
+    "workflow_head": "b6924bdabeff35ff4af328c3879c69fc90ecf8f6",
+    "status": "in_progress",
+    "conclusion": null,
+    "active_step": 10,
+    "active_step_name": "Check multiplicities and actual graph spectral comparison",
+    "active_step_started_at": "2026-11-04T18:35:37Z",
+    "expected_required_modules": 281,
+    "expected_prior_modules": 226,
+    "expected_fresh_modules": 55,
+    "expected_named_axiom_profiles": 838,
+    "previous_actual_partial_authentication_sha256": "d5189d1fb0493e394d65054c29f1a4ac3a934e84d2e8873172bb758207312783",
+    "previous_authenticated_fresh_modules": 108,
+    "previous_authenticated_named_profiles": 545,
+    "endpoint_success_claim": false,
+    "middle_family_closed": false,
+    "limits": {
+      "module_seconds": 600,
+      "workers": 1,
+      "memory_reserve_mib": 2048,
+      "job_minutes": 360
+    }
+  },
+  "actual_primary_checker": {
+    "repository_path": "Proofs/RG_Lean_20261019/reviews/offline_sources_20261104/source/rg_resume_20261104/final_joblog_retry_preparation/authenticate_original_joblog_retry_actual.py",
+    "local_layout_path": "rg_resume_20261104/final_joblog_retry_preparation/authenticate_original_joblog_retry_actual.py",
+    "bytes": 62080,
+    "sha256": "eaae96913a22c9011facdecbee52f2a7da8739ec9ecea414336d0971d779de9c",
+    "git_blob_sha1": "0c7e562a68596c30e8b32588932b2d4f17518286",
+    "unbound_template_sha256": "ec770eeb344d5b37dae61aeeaee6331424d9278c464e1b67410050f28a4259d4",
+    "binding_delta": "Only the three real RUN, JOB, COMMIT literals; all existing proof and origin gates remain unchanged",
+    "previous_root_delta_review_completed": true,
+    "actual_execution": false,
+    "not_standalone": true
+  },
+  "raw_captures": [
+    {
+      "path": "Proofs/RG_Lean_20261019/reviews/continuation_20261104T1911/primary_run.json",
+      "source_url": "https://api.github.com/repos/RhudeJJJJ/formal-conjectures/actions/runs/41890211247"
+    },
+    {
+      "path": "Proofs/RG_Lean_20261019/reviews/continuation_20261104T1911/primary_jobs.json",
+      "source_url": "https://api.github.com/repos/RhudeJJJJ/formal-conjectures/actions/runs/41890211247/jobs?filter=all&per_page=100"
+    },
+    {
+      "path": "Proofs/RG_Lean_20261019/reviews/continuation_20261104T1911/anchor_run.json",
+      "source_url": "https://api.github.com/repos/RhudeJJJJ/formal-conjectures/actions/runs/41888401962"
+    },
+    {
+      "path": "Proofs/RG_Lean_20261019/reviews/continuation_20261104T1911/anchor_jobs.json",
+      "source_url": "https://api.github.com/repos/RhudeJJJJ/formal-conjectures/actions/runs/41888401962/jobs?filter=all&per_page=100"
+    }
+  ],
+  "continuation_steps": [
+    "Continue reading actual native run/job metadata. The local outage does not justify cancelling or duplicating either CI job.",
+    "Restore access to an execution environment and the complete original local evidence layout using the published offline-source/dependency inventory and fixed original evidence. The preserved scripts alone are not standalone proof bundles.",
+    "On actual native terminal result, root captures canonical run.json, jobs.json, artifacts.json and job.log and downloads the exact actual archive bytes with full catalog size and SHA-256 verification.",
+    "Only actual original native success plus successful execution of the frozen complete original authenticator can change four open families to three. On native failure preserve and inspect the authentic failure evidence without weakening gates.",
+    "For Anchor029 execute the separately frozen bound continuation authenticator on its actual terminal archive. Endpoint success alone does not close the entire middle family."
+  ],
+  "primary_authentication_command": "python -B rg_resume_20261104/final_joblog_retry_preparation/authenticate_original_joblog_retry_actual.py --evidence-directory rg_resume_20261104/final_joblog_retry_preparation/actual --output rg_resume_20261104/final_joblog_retry_preparation/actual/complete_original_authentication.json",
+  "source_scope_clarifications": {
+    "original_Lean_sources_unchanged": true,
+    "core_degree": "C.degree u",
+    "physical_order": "N = m + p + q + 2",
+    "global_remaining_three_conclusion_requires": "h : RemainingThreeAssembly.Inputs"
+  }
+}

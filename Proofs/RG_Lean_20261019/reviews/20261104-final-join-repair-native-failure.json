@@ -1,0 +1,74 @@
+{
+  "actual_fresh_completed_module_records": 0,
+  "actual_native_error_lines": [
+    "2026-11-04T09:52:06.5233066Z subprocess.TimeoutExpired: Command '['/home/runner/.elan/toolchains/leanprover--lean4---v4.33.1/bin/lean', '-j1', '-DElab.async=false', '-DwarningAsError=true', '-Dprofiler=true', '-Dprofiler.threshold=100', '-DautoImplicit=false', '-DrelaxedAutoImplicit=false', '-o', '/home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension/Proofs/RadenkovicGutmanD1OriginalSharedBothLong.olean.pending', '/home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanD1OriginalSharedBothLong.lean']' timed out after 899.9999807500008 seconds",
+    "2026-11-04T09:52:06.5741675Z RuntimeError: Timeout: Proofs.RadenkovicGutmanD1OriginalSharedBothLong"
+  ],
+  "artifact_metadata": [
+    {
+      "bytes": 9888379,
+      "digest": "sha256:3bdea6dc64fd24f862a4b8c9e9259be608b92a429a154c7f6b080cdacbfc5c81",
+      "id": 13312610351,
+      "name": "rg-degree-one-large-join-repair-20261104-evidence-41800448987-1"
+    },
+    {
+      "bytes": 4351652,
+      "digest": "sha256:e719249592e23b01cd5a9e274c38e7d0882d89abec82d55c1937b818f4ce6e09",
+      "id": 13311274595,
+      "name": "rg-degree-one-large-join-repair-20261104-41800448987-1"
+    }
+  ],
+  "capture_time_utc": "2026-11-04 09:53:02 UTC",
+  "error_kind": "MODULE_TIMEOUT",
+  "failed_module": "Proofs.RadenkovicGutmanD1OriginalSharedBothLong",
+  "failed_step": [
+    {
+      "completed_at": "2026-11-04T09:52:11Z",
+      "conclusion": "failure",
+      "name": "Check final class, full family, and three-field assembly",
+      "number": 14,
+      "started_at": "2026-11-04T09:30:33Z",
+      "status": "completed"
+    }
+  ],
+  "job": 126474623047,
+  "job_completed_at": "2026-11-04T09:52:21Z",
+  "job_conclusion": "failure",
+  "job_status": "completed",
+  "main_family_count_change_claimed": false,
+  "native_capture_files": [
+    {
+      "bytes": 13582,
+      "path": "run.json",
+      "sha256": "7b154f43a7524bb5be69b084243690d75bbd06a0c2af1f67b51a1fed25b656b2"
+    },
+    {
+      "bytes": 4908,
+      "path": "jobs.json",
+      "sha256": "b32c466394701a4428957e5a181dc1054aca98dd5709aa4be682d006cb195309"
+    },
+    {
+      "bytes": 1568,
+      "path": "artifacts.json",
+      "sha256": "b89585ed33f4e028c8eb01c126c3a1d12a409ee7c57af35482afdd4c8648fdff"
+    },
+    {
+      "bytes": 818886,
+      "path": "job.log",
+      "sha256": "21799d12c9c59491b674485c79b928bfeb4e25bcb171f1776fce5051ed979ee3"
+    }
+  ],
+  "new_kernel_receipt_created": false,
+  "raw_module_profiler_log": "Must inspect actual fresh ZIP member Proofs.RadenkovicGutmanD1OriginalSharedBothLong.log; native job log does not identify the unfinished declaration or import phase",
+  "remote_mutations": false,
+  "repository": "RhudeJJJJ/formal-conjectures",
+  "run": 41800448987,
+  "run_attempt": 1,
+  "run_conclusion": "failure",
+  "run_status": "completed",
+  "source_commit": "10aa67f5f16e8ad00b30ac21332791b008b69cfe",
+  "status": "ACTUAL_TERMINAL_FAILURE_NATIVE_CAPTURES_SAVED",
+  "timeout_limit_seconds": 900,
+  "whole_degree_one_large_complete": false,
+  "zip_download_and_authentication": "PENDING_CENTRAL_ROOT_DOWNLOAD"
+}

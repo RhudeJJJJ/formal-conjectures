@@ -2,7 +2,7 @@
 
 Jonas J. Gebendorfer. OpenAI Codex assisted with implementation and validation.
 
-Status at 01:43 UTC on 4 November 2026: **incomplete; four original input families remain open in Lean, and no full Lean proof has been submitted**.
+Status at 10:25 UTC on 4 November 2026: **incomplete; four original input families remain open in Lean, and no full Lean proof has been submitted**.
 The written computer-assisted proof and the original statement submission are distinct from completion of this Lean project.
 
 The target is the two statements in [PR #7399](https://github.com/google-deepmind/formal-conjectures/pull/7399), at statement commit `3654bf2bddc5217f904b7b85207b1091e833de49`: for every positive order and every tree on `Fin n`, the path minimizes actual Laplacian energy, with equality exactly for a graph isomorphic to the path. Energy is centered at the actual mean degree `2m/n`.
@@ -12,6 +12,18 @@ The target is the two statements in [PR #7399](https://github.com/google-deepmin
 The exact seven required inputs are in [OriginalAssembly](Proofs/RadenkovicGutmanOriginalAssembly.lean). Three have complete original kernel-object and source-closure audits at their recorded verified revisions: degree one through order 13, degree at least four through order 12 (all 247 actual-tree comparisons and coverage), and degree at least 46. Four remain open in this formalization: degree one at orders 14–52, degree one from order 53, degree two or three, and degrees 4–45 from order 13.
 
 ## Current milestone: the complete degree-one large-order family
+
+### Latest verified checkpoint — 4 November, 10:25 UTC
+
+The complete current source and restore preflight has now passed for **33,659 modules**, with **33,656 authenticated prior objects and exactly three fresh final modules**. All 349 required numerical selections are covered by 154 successful original jobs and 195 authenticated fixed alternatives; the original master run itself did not succeed. All 69 named supporting selections are also retained. The four completed exports from the earlier failed callback keep their actual failed-job origin in the [fixed partial manifest](../../ci/rg_d1_callback41771586873_partial_prior_exports_20261104.json).
+
+The subsequent [full join-repair run 41800448987](https://github.com/RhudeJJJJ/formal-conjectures/actions/runs/41800448987/job/126474623047), at source commit `10aa67f5f16e8ad00b30ac21332791b008b69cfe`, successfully authenticated and restored all 767 selected archives. The current `BothLong` proof refactor preserves the original statements, interval data, imports and strict reserve. Its actual kernel attempt nevertheless **timed out at the unchanged 900-second module limit**, with zero completed fresh exports and no complete receipt. The [native failure capture](reviews/20261104-final-join-repair-native-failure.json) and [independently downloaded archive observations](reviews/20261104-final-join-repair-archive-observation.json) record that failure without turning restored prerequisites into a family-completion claim. Neither the memory reserve nor the host-space guard caused the stop. The empty buffered module log does not establish which import or proof phase was unfinished.
+
+A separate phase-marker diagnostic is being prepared against the unchanged production source. Its selected `BothLong` dependency scope is 25,191 authenticated prior modules from 444 archives. Diagnostic exports will remain separate from production receipts. The complete degree-one-large milestone and the three-field assembly are still unverified, so **four original input families remain open**.
+
+Separately, [run 41805266301](https://github.com/RhudeJJJJ/formal-conjectures/actions/runs/41805266301/job/126490589025) successfully recovered the two missing generic Middle exports, `RadenkovicGutmanDegreeOneMiddleAnchorAssembly` and `RadenkovicGutmanMiddleOriginalAnchorPredicate`, at their actual checked source commit `5ab25f374a5d3d73e98725a44698f0b73423245a`. Its complete 48-module scope contains 46 authenticated priors and two fresh exports. Both unchanged source closures and historical object identities match, and all three named standard-axiom profiles are authenticated. The [actual recovery manifest](../../ci/rg_middle_generic_recovery_20261104_run41805266301_prior_exports.json) and [full authentication report](reviews/20261104-middle-generic-actual-kernel-authentication.json) preserve the new run and archive origin. This recovers prerequisites only; it does not close Anchor029 or the Middle family.
+
+### Milestone scope and preceding reconstruction history
 
 The required field retains its original scope: residual root degree `C.degree u = 1`, actual order at least 53, and the strict reserve `189 / 5000 < normalizedIntegral C u p q 2`. Within this input, 14 of 15 arm classes have prior complete checks. The remaining class uses the original 122 interval trees and 1,754 leaf positions; alternate proof routes preserve each position and its original payment.
 

@@ -1,7 +1,13 @@
-import Proofs.GraphicalBell.Insertion
-import Mathlib.Algebra.Order.BigOperators.Group.Finset
+/- Copyright2026 J.J.Gebendorfer. Licensed under Apache-2.0.
+Modified4November2026: module/visibility port for Palomar; provenance in README.md. -/
+module
+
+public import Proofs.GraphicalBell.Insertion
+public import Mathlib.Algebra.Order.BigOperators.Group.Finset
 
 /-! Lower bound for vertex extensions from actual neighbor counts. -/
+
+@[expose] public section
 
 namespace GraphicalBellProof
 open Finset SimpleGraph

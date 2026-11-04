@@ -1,6 +1,12 @@
-import Lean.Elab.Tactic.Omega
+/- Copyright2026 J.J.Gebendorfer. Licensed under Apache-2.0.
+Modified4November2026: module/visibility port for Palomar; provenance in README.md. -/
+module
+
+public import Lean.Elab.Tactic.Omega
 
 /-! Integer coefficient operators and exact comparison identities for graphical Stirling counts. -/
+
+@[expose] public section
 
 namespace GraphicalBellProof
 abbrev Vector := Int → Int

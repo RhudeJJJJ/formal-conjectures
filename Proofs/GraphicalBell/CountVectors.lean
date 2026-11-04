@@ -1,7 +1,13 @@
-import Proofs.GraphicalBell.QuasiGraph
-import Mathlib.Algebra.Order.Ring.Int
+/- Copyright2026 J.J.Gebendorfer. Licensed under Apache-2.0.
+Modified4November2026: module/visibility port for Palomar; provenance in README.md. -/
+module
+
+public import Proofs.GraphicalBell.QuasiGraph
+public import Mathlib.Algebra.Order.Ring.Int
 
 /-! Identification of candidate stable-partition counts with integer coefficient vectors. -/
+
+@[expose] public section
 
 namespace GraphicalBellProof
 open Finset SimpleGraph

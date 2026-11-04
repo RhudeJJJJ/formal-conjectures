@@ -1,10 +1,16 @@
-import Mathlib.Combinatorics.SimpleGraph.Finite
-import Mathlib.Combinatorics.SimpleGraph.Clique
-import Mathlib.Order.Partition.Finpartition
-import Mathlib.SetTheory.Cardinal.Finite
-import Lean.Elab.Tactic.Omega
+/- Copyright2026 J.J.Gebendorfer. Licensed under Apache-2.0.
+Modified4November2026: module/visibility port for Palomar; provenance in README.md. -/
+module
+
+public import Mathlib.Combinatorics.SimpleGraph.Finite
+public import Mathlib.Combinatorics.SimpleGraph.Clique
+public import Mathlib.Order.Partition.Finpartition
+public import Mathlib.SetTheory.Cardinal.Finite
+public import Lean.Elab.Tactic.Omega
 
 /-! Stable partitions on finite carriers and their deletion and extension maps. -/
+
+@[expose] public section
 
 namespace GraphicalBellProof
 open Finset SimpleGraph

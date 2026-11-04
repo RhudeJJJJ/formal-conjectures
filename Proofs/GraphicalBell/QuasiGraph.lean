@@ -1,8 +1,14 @@
-import Proofs.GraphicalBell.Discrete
-import Proofs.GraphicalBell.Simplicial
-import Proofs.GraphicalBell.Vectors
+/- Copyright2026 J.J.Gebendorfer. Licensed under Apache-2.0.
+Modified4November2026: module/visibility port for Palomar; provenance in README.md. -/
+module
+
+public import Proofs.GraphicalBell.Discrete
+public import Proofs.GraphicalBell.Simplicial
+public import Proofs.GraphicalBell.Vectors
 
 /-! Concrete quasi-complete candidate graphs and their recurrences. -/
+
+@[expose] public section
 
 namespace GraphicalBellProof
 open Finset SimpleGraph

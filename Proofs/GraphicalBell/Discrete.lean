@@ -1,6 +1,12 @@
-import Proofs.GraphicalBell.Base
+/- Copyright2026 J.J.Gebendorfer. Licensed under Apache-2.0.
+Modified4November2026: module/visibility port for Palomar; provenance in README.md. -/
+module
+
+public import Proofs.GraphicalBell.Base
 
 /-! Unique stable partition of a clique and its graded counts. -/
+
+@[expose] public section
 
 namespace GraphicalBellProof
 open Finset SimpleGraph

@@ -1,0 +1,51 @@
+version: v0.4
+project:
+  name: "Graphical Stirling and Bell minima at fixed order and size"
+  description: >-
+    For every nonempty finite simple graph, the quasi-complete graph with the
+    same numbers of vertices and edges has no more stable partitions into
+    any prescribed number of nonempty independent unlabeled blocks.
+    Summing these inequalities proves the corresponding graphical Bell
+    minimum. The development covers disconnected graphs and makes no
+    assertion of uniqueness of the minimizing isomorphism type.
+  authors: ["J. J. Gebendorfer"]
+  responsible_maintainers: ["J. J. Gebendorfer"]
+  license: Apache-2.0
+classification:
+  arxiv: [math.CO]
+  msc2020: [05C15, 05C35, 05A18]
+sources:
+  - title: "The Quasi-Complete Graph Minimizes Graphical Stirling Numbers at Fixed Order and Size"
+    authors: ["J. J. Gebendorfer"]
+    type: paper
+    url: "https://github.com/user-attachments/files/33356610/Gebendorfer_Graphical_Bell_Submission_Package_2026.zip"
+    relationship: formalizes
+    note: "Author manuscript dated25July2026; source comparison archived with the manuscript. This migration does not establish first priority or independent peer review."
+  - title: "PHOEG CSD8 presentation, displayed slides29-31"
+    type: other
+    url: "https://orbi.umons.ac.be/bitstream/20.500.12907/7470/1/Hauweele_CSD8.pdf"
+    relationship: background
+    note: "The fixed-order fixed-size graphical Bell problem. Bibliographic authorship is not guessed from the filename."
+related_formalizations:
+  - id: "https://github.com/RhudeJJJJ/formal-conjectures/tree/62f9346442c8757cad34bc4c9b295f29260684d2/Proofs/GraphicalBell"
+    relationship: builds-on
+    note: "This snapshot contains the substantive proof source, ported from the earlier Lean4.33.1 development to the current toolchain and module system; it is not a wrapper importing that repository."
+automation:
+  methods:
+    - method: agent
+      tool_setup: "OpenAI Codex; Lean kernel, arithmetic tactics and finite-cardinality reasoning."
+      notes: "The prior full proofs and this port were materially AI-assisted. Exact earlier model IDs, costs and prompt logs are not reconstructed."
+review:
+  status: self-assessed
+  notes: >-
+    The earlier Lean4.33.1 certificate had rigid-universe target comparisons
+    and standard-axiom audits in public run40201620527. This new snapshot
+    requires its own complete Palomar mechanical preflight and subsequent
+    registry verification. No independent human expert review is claimed.
+fidelity:
+  notes: >-
+    The compared statements retain n>=1, all finite vertex types, all block
+    counts and explicit decidability instances. Stable partitions are actual
+    partitions into nonempty independent unlabeled blocks. The stronger
+    coefficientwise inequality concerns this basis, not ordinary monomial
+    coefficients. No connectedness or extremal uniqueness conclusion is made.

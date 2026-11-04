@@ -1,6 +1,12 @@
-import Proofs.GraphicalBell.Deletion
+/- Copyright2026 J.J.Gebendorfer. Licensed under Apache-2.0.
+Modified4November2026: module/visibility port for Palomar; provenance in README.md. -/
+module
+
+public import Proofs.GraphicalBell.Deletion
 
 /-! Exact vertex-extension recurrence when the neighbor set is a clique. -/
+
+@[expose] public section
 
 namespace GraphicalBellProof
 open Finset SimpleGraph

@@ -1,7 +1,13 @@
-import Proofs.GraphicalBell.Parameters
-import Proofs.GraphicalBell.Vectors
+/- Copyright2026 J.J.Gebendorfer. Licensed under Apache-2.0.
+Modified4November2026: module/visibility port for Palomar; provenance in README.md. -/
+module
+
+public import Proofs.GraphicalBell.Parameters
+public import Proofs.GraphicalBell.Vectors
 
 /-! Coefficient comparison for the finite-order, finite-size candidate model. -/
+
+@[expose] public section
 
 namespace GraphicalBellProof
 open PHOEG.GraphicalBell

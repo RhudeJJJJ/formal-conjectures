@@ -1,8 +1,14 @@
-import FormalConjectures.Other.GraphicalBell
-import Proofs.GraphicalBell.Base
-import Mathlib.Algebra.Order.BigOperators.Group.Finset
+/- Copyright2026 J.J.Gebendorfer. Licensed under Apache-2.0.
+Modified4November2026: module/visibility port for Palomar; provenance in README.md. -/
+module
+
+public import FormalConjectures.Other.GraphicalBell
+public import Proofs.GraphicalBell.Base
+public import Mathlib.Algebra.Order.BigOperators.Group.Finset
 
 /-! Summing graded partition inequalities to obtain the graphical Bell bound. -/
+
+@[expose] public section
 
 namespace GraphicalBellProof
 open Finset SimpleGraph

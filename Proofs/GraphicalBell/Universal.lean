@@ -1,9 +1,15 @@
-import Proofs.GraphicalBell.Model
-import Proofs.GraphicalBell.Degrees
-import Proofs.GraphicalBell.Base
-import Mathlib.Algebra.Order.Ring.Int
+/- Copyright2026 J.J.Gebendorfer. Licensed under Apache-2.0.
+Modified4November2026: module/visibility port for Palomar; provenance in README.md. -/
+module
+
+public import Proofs.GraphicalBell.Model
+public import Proofs.GraphicalBell.Degrees
+public import Proofs.GraphicalBell.Base
+public import Mathlib.Algebra.Order.Ring.Int
 
 /-! Finite-carrier induction for the universal coefficientwise lower bound. -/
+
+@[expose] public section
 
 namespace GraphicalBellProof
 open Finset SimpleGraph PHOEG.GraphicalBell

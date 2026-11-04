@@ -1,9 +1,15 @@
-import Proofs.GraphicalBell.Partitions
-import Proofs.GraphicalBell.Deletion
-import Mathlib.Data.Nat.Choose.Basic
-import Mathlib.Algebra.BigOperators.Ring.Finset
+/- Copyright2026 J.J.Gebendorfer. Licensed under Apache-2.0.
+Modified4November2026: module/visibility port for Palomar; provenance in README.md. -/
+module
+
+public import Proofs.GraphicalBell.Partitions
+public import Proofs.GraphicalBell.Deletion
+public import Mathlib.Data.Nat.Choose.Basic
+public import Mathlib.Algebra.BigOperators.Ring.Finset
 
 /-! Finite-carrier degree sums, edge bounds and a small-degree vertex. -/
+
+@[expose] public section
 
 namespace GraphicalBellProof
 open Finset SimpleGraph

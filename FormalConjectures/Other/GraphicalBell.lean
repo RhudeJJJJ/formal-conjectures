@@ -1,5 +1,6 @@
 /-
 Copyright 2026 The Formal Conjectures Authors.
+Modified 4 November 2026: standalone Palomar statement/proof port; mathematical definitions retained.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -15,21 +16,14 @@ limitations under the License.
 -/
 module
 
-public import FormalConjecturesUtil
+public import Mathlib.Combinatorics.SimpleGraph.Finite
+public import Mathlib.Combinatorics.SimpleGraph.Clique
+public import Mathlib.Data.Nat.Find
+public import Mathlib.Data.Nat.Choose.Basic
+public import Mathlib.SetTheory.Cardinal.Finite
 
-/-!
-# Fixed-order, fixed-size graphical Bell conjecture
-
-*References:*
-- [PHOEG CSD8 presentation, displayed slides 29–31](https://orbi.umons.ac.be/bitstream/20.500.12907/7470/1/Hauweele_CSD8.pdf)
-- [J. J. Gebendorfer, The Quasi-Complete Graph Minimizes Graphical Stirling Numbers at Fixed Order and Size, 25 July 2026](https://doi.org/10.5281/zenodo.21543038)
-- [Archived manuscript and source comparison](https://github.com/user-attachments/files/33356610/Gebendorfer_Graphical_Bell_Submission_Package_2026.zip)
-
-Blocks are nonempty, independent and unlabeled. The stronger comparison is in
-stable-partition counts, equivalently the falling-factorial chromatic basis;
-it is not a comparison of ordinary monomial coefficients. Connectedness and
-uniqueness of the extremal isomorphism type are not asserted.
--/
+/-! Definitions copied from the exact PR7385 statement.
+Only the unused admitted target declarations and repository metadata attributes are omitted. -/
 
 @[expose] public section
 namespace PHOEG.GraphicalBell
@@ -67,21 +61,5 @@ def quasiComplete (n m : ℕ) : SimpleGraph (Fin n) where
       · exact Or.inr (Or.inr h)
       · exact Or.inr (Or.inl h)⟩
   loopless := ⟨by intro v h; exact h.1 rfl⟩
-
-/-- Every finite simple graph of order $n\ge1$ and size $m$ has at least as
-many stable partitions as the quasi-complete graph $Q(n,m)$. -/
-@[category research solved, AMS 5]
-theorem conjecture {V : Type*} [Fintype V] [DecidableEq V]
-    (G : SimpleGraph V) [DecidableRel G.Adj] (hn : 1 ≤ Fintype.card V) :
-    bell (quasiComplete (Fintype.card V) G.edgeFinset.card) ≤ bell G := by
-  sorry
-
-/-- The written resolution strengthens the Bell bound coordinatewise for every
-number of nonempty independent blocks. -/
-@[category research solved, AMS 5]
-theorem coefficientwise {V : Type*} [Fintype V] [DecidableEq V]
-    (G : SimpleGraph V) [DecidableRel G.Adj] (hn : 1 ≤ Fintype.card V) (k : ℕ) :
-    stirling (quasiComplete (Fintype.card V) G.edgeFinset.card) k ≤ stirling G k := by
-  sorry
 
 end PHOEG.GraphicalBell

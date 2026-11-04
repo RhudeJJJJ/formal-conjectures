@@ -1,11 +1,17 @@
-import Proofs.GraphicalBell.CountVectors
-import Proofs.GraphicalBell.Transport
-import Proofs.GraphicalBell.BellBridge
-import Proofs.GraphicalBell.Model
-import Proofs.GraphicalBell.Degrees
-import Mathlib.Combinatorics.SimpleGraph.DegreeSum
+/- Copyright2026 J.J.Gebendorfer. Licensed under Apache-2.0.
+Modified4November2026: module/visibility port for Palomar; provenance in README.md. -/
+module
+
+public import Proofs.GraphicalBell.CountVectors
+public import Proofs.GraphicalBell.Transport
+public import Proofs.GraphicalBell.BellBridge
+public import Proofs.GraphicalBell.Model
+public import Proofs.GraphicalBell.Degrees
+public import Mathlib.Combinatorics.SimpleGraph.DegreeSum
 
 /-! Identification with the submitted edge count and quasi-complete graph. -/
+
+@[expose] public section
 
 namespace GraphicalBellProof
 open Finset SimpleGraph PHOEG.GraphicalBell

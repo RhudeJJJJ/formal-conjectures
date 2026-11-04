@@ -1,9 +1,15 @@
-import FormalConjectures.Other.GraphicalBell
-import Mathlib.Data.Nat.Find
-import Mathlib.Data.Nat.Choose.Basic
-import Lean.Elab.Tactic.Omega
+/- Copyright2026 J.J.Gebendorfer. Licensed under Apache-2.0.
+Modified4November2026: module/visibility port for Palomar; provenance in README.md. -/
+module
+
+public import FormalConjectures.Other.GraphicalBell
+public import Mathlib.Data.Nat.Find
+public import Mathlib.Data.Nat.Choose.Basic
+public import Lean.Elab.Tactic.Omega
 
 /-! Clique and remainder parameters under deletion of a minimum-degree vertex. -/
+
+@[expose] public section
 
 namespace GraphicalBellProof
 open PHOEG.GraphicalBell

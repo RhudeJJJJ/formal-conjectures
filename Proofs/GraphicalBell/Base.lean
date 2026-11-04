@@ -1,6 +1,12 @@
-import Proofs.GraphicalBell.Partitions
+/- Copyright2026 J.J.Gebendorfer. Licensed under Apache-2.0.
+Modified4November2026: module/visibility port for Palomar; provenance in README.md. -/
+module
+
+public import Proofs.GraphicalBell.Partitions
 
 /-! Finite partition bounds and the empty-carrier counting base case. -/
+
+@[expose] public section
 
 namespace GraphicalBellProof
 open Finset SimpleGraph

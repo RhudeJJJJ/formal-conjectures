@@ -1,7 +1,13 @@
-import Proofs.GraphicalBell.Universal
-import Proofs.GraphicalBell.OriginalBridge
+/- Copyright2026 J.J.Gebendorfer. Licensed under Apache-2.0.
+Modified4November2026: module/visibility port for Palomar; provenance in README.md. -/
+module
+
+public import Proofs.GraphicalBell.Universal
+public import Proofs.GraphicalBell.OriginalBridge
 
 /-! Complete proofs of both unchanged graphical Stirling and Bell target statements. -/
+
+@[expose] public section
 
 namespace PHOEG.GraphicalBell
 open GraphicalBellProof SimpleGraph

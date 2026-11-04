@@ -1,0 +1,153 @@
+{
+  "added_diagnostic_import": "Proofs.RGDiagnosticPhaseMarker",
+  "artifacts": [
+    {
+      "bytes": 867,
+      "path": "Proofs/RGDiagnosticPhaseMarker.lean",
+      "sha256": "c9fdf87b04ffe6aba30d18028fc01ba84a71ce3251476733e8de1e9393c21b9a"
+    },
+    {
+      "bytes": 335,
+      "path": "Proofs/RGDiagnosticMarkerControl.lean",
+      "sha256": "6c525f51783078b0d21c25a307c65fb2e6eb249ee49df9555c2a6d0535d2d032"
+    },
+    {
+      "bytes": 37691,
+      "path": "Proofs/RadenkovicGutmanD1OriginalSharedBothLongPhaseProbe.lean",
+      "sha256": "cd01dc52e48d137c500ad0e0dc57d58f59ce7542cba7b3489b23d58aa846306e"
+    }
+  ],
+  "diagnostic_endpoint": "Proofs.RadenkovicGutmanD1OriginalSharedBothLongPhaseProbe",
+  "family_closure_claim": false,
+  "kernel_success_claim": false,
+  "markers": [
+    {
+      "checked_declaration": null,
+      "label": "header.complete"
+    },
+    {
+      "checked_declaration": null,
+      "label": "partition.before"
+    },
+    {
+      "checked_declaration": "Gebendorfer.RadenkovicGutman.D1OriginalSharedBothLong.partition",
+      "label": "partition.kernel_checked"
+    },
+    {
+      "checked_declaration": null,
+      "label": "reserve.before"
+    },
+    {
+      "checked_declaration": "Gebendorfer.RadenkovicGutman.D1OriginalSharedBothLong.reserve",
+      "label": "reserve.kernel_checked"
+    },
+    {
+      "checked_declaration": null,
+      "label": "all_checked.before"
+    },
+    {
+      "checked_declaration": "Gebendorfer.RadenkovicGutman.D1OriginalSharedBothLong.all_checked",
+      "label": "all_checked.kernel_checked"
+    },
+    {
+      "checked_declaration": null,
+      "label": "all_checked.axioms.before"
+    },
+    {
+      "checked_declaration": null,
+      "label": "all_checked.axioms.complete"
+    },
+    {
+      "checked_declaration": null,
+      "label": "adjacent_checked.before"
+    },
+    {
+      "checked_declaration": "Gebendorfer.RadenkovicGutman.D1OriginalSharedBothLong.adjacent_checked",
+      "label": "adjacent_checked.kernel_checked"
+    },
+    {
+      "checked_declaration": null,
+      "label": "adjacent_checked.axioms.before"
+    },
+    {
+      "checked_declaration": null,
+      "label": "adjacent_checked.axioms.complete"
+    },
+    {
+      "checked_declaration": null,
+      "label": "partition_checked.before"
+    },
+    {
+      "checked_declaration": "Gebendorfer.RadenkovicGutman.D1OriginalSharedBothLong.partition_checked",
+      "label": "partition_checked.kernel_checked"
+    },
+    {
+      "checked_declaration": null,
+      "label": "partition_checked.axioms.before"
+    },
+    {
+      "checked_declaration": null,
+      "label": "partition_checked.axioms.complete"
+    },
+    {
+      "checked_declaration": null,
+      "label": "budget_checked.before"
+    },
+    {
+      "checked_declaration": "Gebendorfer.RadenkovicGutman.D1OriginalSharedBothLong.budget_checked",
+      "label": "budget_checked.kernel_checked"
+    },
+    {
+      "checked_declaration": null,
+      "label": "budget_checked.axioms.before"
+    },
+    {
+      "checked_declaration": null,
+      "label": "budget_checked.axioms.complete"
+    },
+    {
+      "checked_declaration": null,
+      "label": "normalized_target.before"
+    },
+    {
+      "checked_declaration": "Gebendorfer.RadenkovicGutman.D1OriginalSharedBothLong.normalized_target",
+      "label": "normalized_target.kernel_checked"
+    },
+    {
+      "checked_declaration": null,
+      "label": "normalized_target.axioms.before"
+    },
+    {
+      "checked_declaration": null,
+      "label": "normalized_target.axioms.complete"
+    },
+    {
+      "checked_declaration": null,
+      "label": "source_commands.complete"
+    }
+  ],
+  "original_direct_imports": 123,
+  "original_production_endpoint_unchanged": true,
+  "original_source_bytes_preserved_after_removing_instrumentation": true,
+  "original_source_sha256": "01d60858da8d95431e0240e6c7dbf2c657111fe34dbf3a3e5a115f90797edc06",
+  "production_receipt_or_manifest_ingestion_forbidden": true,
+  "required_compiler_flags": [
+    "-j1",
+    "-DElab.async=false",
+    "-DwarningAsError=true",
+    "-DautoImplicit=false",
+    "-DrelaxedAutoImplicit=false",
+    "-Dprofiler=true",
+    "-Dprofiler.threshold=100"
+  ],
+  "resource_observer_required": true,
+  "separate_output_directory_required": true,
+  "separate_phase_file_required": true,
+  "source_commit": "10aa67f5f16e8ad00b30ac21332791b008b69cfe",
+  "status": "LOCAL_DIAGNOSTIC_PROPOSAL_NOT_KERNEL_TESTED",
+  "unchanged_limits": {
+    "memory_reserve_mib": 2048,
+    "module_timeout_seconds": 900,
+    "workers": 1
+  }
+}

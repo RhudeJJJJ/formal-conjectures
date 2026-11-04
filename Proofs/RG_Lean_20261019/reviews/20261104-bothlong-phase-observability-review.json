@@ -1,0 +1,260 @@
+{
+  "status": "LOCAL_DIAGNOSTIC_PROPOSAL_NOT_KERNEL_TESTED",
+  "actual_failed_run": 41800448987,
+  "actual_failed_job": 126474623047,
+  "source_commit": "10aa67f5f16e8ad00b30ac21332791b008b69cfe",
+  "failed_module": "Proofs.RadenkovicGutmanD1OriginalSharedBothLong",
+  "observed_module_log_bytes": 0,
+  "actual_timeout_seconds": 900,
+  "runtime_phase_not_yet_established": true,
+  "primary_sources": [
+    {
+      "path": "src/Lean/Elab/Print.lean",
+      "git_blob_sha": "8bdbae57a80b5eb963b38beef630040a3f4c28ff",
+      "ref": "v4.33.1",
+      "lines": [
+        240,
+        250
+      ],
+      "url": "https://github.com/leanprover/lean4/blob/v4.33.1/src/Lean/Elab/Print.lean#L240",
+      "finding": "Axiom reports are logInfo messages, not direct flushed file writes."
+    },
+    {
+      "path": "src/Lean/Language/Basic.lean",
+      "git_blob_sha": "4a579f0cb536096f0815bd245a64a8151f01937f",
+      "ref": "v4.33.1",
+      "lines": [
+        414,
+        451
+      ],
+      "url": "https://github.com/leanprover/lean4/blob/v4.33.1/src/Lean/Language/Basic.lean#L414",
+      "finding": "CLI message reporting is incremental, but uses IO.print or IO.println without an explicit flush here."
+    },
+    {
+      "path": "src/Lean/Language/Lean.lean",
+      "git_blob_sha": "4a7b553d8946e330f1de283cb38807371c7e00b5",
+      "ref": "v4.33.1",
+      "lines": [
+        753,
+        781
+      ],
+      "url": "https://github.com/leanprover/lean4/blob/v4.33.1/src/Lean/Language/Lean.lean#L753",
+      "finding": "Each command runs with isolated standard streams; captured output is converted to a message after command completion."
+    },
+    {
+      "path": "src/Lean/CoreM.lean",
+      "git_blob_sha": "61d372630f94a66febd188f998aa81b1361a4ce0",
+      "ref": "v4.33.1",
+      "lines": [
+        581,
+        585
+      ],
+      "url": "https://github.com/leanprover/lean4/blob/v4.33.1/src/Lean/CoreM.lean#L581",
+      "finding": "stderrAsMessages defaults to true."
+    },
+    {
+      "path": "src/Init/System/IO.lean",
+      "git_blob_sha": "64faef771c3b33af437dde294e5472dced69f6a5",
+      "ref": "v4.33.1",
+      "lines": [
+        1710,
+        1717
+      ],
+      "url": "https://github.com/leanprover/lean4/blob/v4.33.1/src/Init/System/IO.lean#L1710",
+      "finding": "The isolated in-memory stream implements flush as a no-op."
+    },
+    {
+      "path": "src/Init/System/IO.lean",
+      "git_blob_sha": "64faef771c3b33af437dde294e5472dced69f6a5",
+      "ref": "v4.33.1",
+      "lines": [
+        1795,
+        1809
+      ],
+      "url": "https://github.com/leanprover/lean4/blob/v4.33.1/src/Init/System/IO.lean#L1795",
+      "finding": "withIsolatedStreams swaps Lean standard streams for in-memory buffers."
+    },
+    {
+      "path": "src/library/time_task.cpp",
+      "git_blob_sha": "fecae9fadb28f0d8e2e15c1d60f2143a35beb7f5",
+      "ref": "v4.33.1",
+      "lines": [
+        57,
+        89
+      ],
+      "url": "https://github.com/leanprover/lean4/blob/v4.33.1/src/library/time_task.cpp#L57",
+      "finding": "Profiler measurements emit through tout only when the timed scope finishes."
+    },
+    {
+      "path": "src/util/timeit.h",
+      "git_blob_sha": "954b8a0637fb97527dffc958e49a5c3ffc93bdb8",
+      "ref": "v4.33.1",
+      "lines": [
+        74,
+        79
+      ],
+      "url": "https://github.com/leanprover/lean4/blob/v4.33.1/src/util/timeit.h#L74",
+      "finding": "The profiling callback runs in the timer destructor, subject to its threshold."
+    },
+    {
+      "path": "src/kernel/trace.cpp",
+      "git_blob_sha": "4a1c4f65a3405c30aec7a74ed7578bc5e15288e3",
+      "ref": "v4.33.1",
+      "lines": [
+        38,
+        48
+      ],
+      "url": "https://github.com/leanprover/lean4/blob/v4.33.1/src/kernel/trace.cpp#L38",
+      "finding": "tout sends profiler text to Lean's stderr stream."
+    },
+    {
+      "path": "src/Lean/Shell.lean",
+      "git_blob_sha": "3f73f6fe35d11cbccd9b6effe1bafad030fdbdce",
+      "ref": "v4.33.1",
+      "lines": [
+        552,
+        574
+      ],
+      "url": "https://github.com/leanprover/lean4/blob/v4.33.1/src/Lean/Shell.lean#L552",
+      "finding": "Cumulative profiling output is requested after runFrontend returns."
+    },
+    {
+      "path": "src/Init/System/IO.lean",
+      "git_blob_sha": "64faef771c3b33af437dde294e5472dced69f6a5",
+      "ref": "v4.33.1",
+      "lines": [
+        822,
+        826
+      ],
+      "url": "https://github.com/leanprover/lean4/blob/v4.33.1/src/Init/System/IO.lean#L822",
+      "finding": "A separately opened Handle.flush explicitly writes the handle's pending output."
+    },
+    {
+      "path": "src/runtime/io.cpp",
+      "git_blob_sha": "c0973b82bd2ed51195f7e7e0f4f9248354bea328",
+      "ref": "v4.33.1",
+      "lines": [
+        550,
+        557
+      ],
+      "url": "https://github.com/leanprover/lean4/blob/v4.33.1/src/runtime/io.cpp#L550",
+      "finding": "Handle.flush calls std::fflush."
+    },
+    {
+      "path": "src/Lean/Elab/Command.lean",
+      "git_blob_sha": "112bf0606c1b16af59d7953c32ac7959b6508ced",
+      "ref": "v4.33.1",
+      "lines": [
+        222,
+        227
+      ],
+      "url": "https://github.com/leanprover/lean4/blob/v4.33.1/src/Lean/Elab/Command.lean#L222",
+      "finding": "CommandElabM provides the ordinary IO lift used by the diagnostic command."
+    },
+    {
+      "path": "src/Init/Meta/Defs.lean",
+      "git_blob_sha": "201680de486432949cac7a2da67f00faabd021da",
+      "ref": "v4.33.1",
+      "lines": [
+        1357,
+        1358
+      ],
+      "url": "https://github.com/leanprover/lean4/blob/v4.33.1/src/Init/Meta/Defs.lean#L1357",
+      "finding": "The diagnostic string argument uses the existing StrLit.getString API."
+    },
+    {
+      "path": "src/Lean/Util/CollectAxioms.lean",
+      "git_blob_sha": "dc9897059a4463dfd143a2b3f8fbb4f4a3c3f154",
+      "ref": "v4.33.1",
+      "lines": [
+        30,
+        73
+      ],
+      "url": "https://github.com/leanprover/lean4/blob/v4.33.1/src/Lean/Util/CollectAxioms.lean#L30",
+      "finding": "Axiom collection first consults imported precomputed data; it must not be assumed to traverse all imported proof bodies anew."
+    },
+    {
+      "path": "src/Lean/Elab/Import.lean",
+      "git_blob_sha": "5dbec270457e39333fcd6e630277a8a5ef24d997",
+      "ref": "v4.33.1",
+      "lines": [
+        147,
+        157
+      ],
+      "url": "https://github.com/leanprover/lean4/blob/v4.33.1/src/Lean/Elab/Import.lean#L147",
+      "finding": "Legacy source chooses private global import level; module source chooses exported level."
+    },
+    {
+      "path": "src/Lean/Environment.lean",
+      "git_blob_sha": "33928512dadcfa2e42a307499e9228596da0341a",
+      "ref": "v4.33.1",
+      "lines": [
+        2115,
+        2122
+      ],
+      "url": "https://github.com/leanprover/lean4/blob/v4.33.1/src/Lean/Environment.lean#L2115",
+      "finding": "Module-system roots reject direct legacy imports; legacy roots ignore transitive module visibility boundaries."
+    },
+    {
+      "path": "src/Lean/Environment.lean",
+      "git_blob_sha": "33928512dadcfa2e42a307499e9228596da0341a",
+      "ref": "v4.33.1",
+      "lines": [
+        2177,
+        2190
+      ],
+      "url": "https://github.com/leanprover/lean4/blob/v4.33.1/src/Lean/Environment.lean#L2177",
+      "finding": "The legacy global private level forces transitive importAll."
+    },
+    {
+      "path": "src/Lean/Environment.lean",
+      "git_blob_sha": "33928512dadcfa2e42a307499e9228596da0341a",
+      "ref": "v4.33.1",
+      "lines": [
+        2433,
+        2449
+      ],
+      "url": "https://github.com/leanprover/lean4/blob/v4.33.1/src/Lean/Environment.lean#L2433",
+      "finding": "The documented private import level loads all data; importModules is timed as one import profiler scope."
+    }
+  ],
+  "diagnostic_design": {
+    "precompiled_marker_command": "Proofs.RGDiagnosticPhaseMarker",
+    "transport": "RG_PHASE_LOG names a separate append-only file opened with IO.FS.Handle.mk; every marker explicitly flushes that real file handle.",
+    "stdout_and_stderr_not_used_for_markers": true,
+    "kernel_checkpoint": "rg_phase_checked forces env.checked.get.find? on the fully qualified original declaration before recording completion.",
+    "source_strategy": "Separate diagnostic module with exact original imports, declarations, proofs, options and axiom reports, plus one helper import and 26 marker commands. Removing only that instrumentation reconstructs the original bytes exactly.",
+    "control_strategy": "Compile the tiny marker helper and run RGDiagnosticMarkerControl before any expensive RG restore; require all three control markers and normal compiler success.",
+    "host_strategy": "Write and flush a separate process-start record before launching the diagnostic Lean process, then a process-exit or timeout record from the supervising process; retain the separate marker file even on failure.",
+    "scope": "No production Lean source, workflow, manifest or helper is changed. No diagnostic output may enter a production success receipt.",
+    "limits": "Retain one worker, 900-second module timeout, 2048-MiB resource reserve, trust level and all existing compiler proof-checking flags."
+  },
+  "interpretation": [
+    {
+      "last_boundary": "Process-start only; no header.complete after a successful small marker control",
+      "conclusion": "The diagnostic has not reached the first original declaration. This localizes the delay to startup/import/header/first-command entry, not all_checked/adjacent_checked/budget_checked; do not overstate this as identifying one individual import."
+    },
+    {
+      "last_boundary": "X.before with no X.kernel_checked",
+      "conclusion": "The original X declaration or its kernel completion is the pending stage."
+    },
+    {
+      "last_boundary": "X.axioms.before with no X.axioms.complete",
+      "conclusion": "The #print axioms command for X is the pending stage."
+    },
+    {
+      "last_boundary": "source_commands.complete but no successful compiler exit",
+      "conclusion": "All source commands and named axiom reports completed; investigate post-elaboration/export work separately."
+    }
+  ],
+  "reorganization_constraints": [
+    "A one-line switch to module is rejected by Lean because BothLong directly imports legacy SliceComplete modules.",
+    "Adding ordinary proof chunk files with the same transitive legacy closure cannot remove the existing import byte volume.",
+    "A genuine module-system migration must cover the required legacy import boundary and preserve all public statements, original cases, sources, checked proof exports and complete sidecar provenance; it is not proposed blindly here."
+  ],
+  "lean_compilation_executed": false,
+  "new_kernel_success_claim": false,
+  "new_family_closure_claim": false,
+  "production_files_changed": 0,
+  "remote_mutations": 0
+}

@@ -1,0 +1,79 @@
+{
+  "status": "LOCAL_FOCUSED_ACTUAL_FAILURE_REPLAY_PASSED_NOT_A_KERNEL_RUN",
+  "checks": [
+    {
+      "name": "Exact immutable manifest, three diagnostic sources and original-byte reconstruction",
+      "result": "PASS"
+    },
+    {
+      "name": "Actual native failure, both full archive hashes, 33656 exact prior rows and successful original restore/frontier steps",
+      "result": "PASS"
+    },
+    {
+      "name": "Exact 25192-source / 25191-prior projection, 444 archives and two fixed boundaries",
+      "result": "PASS"
+    },
+    {
+      "name": "Projected source graph equals restriction of independently verified current 33659 graph",
+      "result": "PASS"
+    },
+    {
+      "name": "Every selected dynamic manifest retains exact actual archived SHA",
+      "result": "PASS"
+    },
+    {
+      "name": "Reject relabelled failed job as success",
+      "result": "PASS"
+    },
+    {
+      "name": "Reject changed actual source origin",
+      "result": "PASS"
+    },
+    {
+      "name": "Reject changed native archive identity",
+      "result": "PASS"
+    },
+    {
+      "name": "Reject changed actual ZIP byte",
+      "result": "PASS"
+    },
+    {
+      "name": "Reject missing successful original full restoration",
+      "result": "PASS"
+    },
+    {
+      "name": "All 26 concrete instrumented markers exactly match the immutable ordered manifest",
+      "result": "PASS"
+    },
+    {
+      "name": "Reject out-of-order persisted marker evidence",
+      "result": "PASS"
+    },
+    {
+      "name": "Workflow early-control ordering, fixed branch, read-only scope, strict wrappers and shell syntax",
+      "result": "PASS"
+    },
+    {
+      "name": "Controller and unchanged observer Python parse",
+      "result": "PASS"
+    },
+    {
+      "name": "Published observer copies exactly equal independently frozen observer bytes",
+      "result": "PASS"
+    }
+  ],
+  "check_count": 15,
+  "controller_sha256": "489d40d4e19450a122dc564c33c1f7af877f9768faa1cdf56029a63e53688075",
+  "workflow_sha256": "c58e588be10b912bd3f3c7a221d3bf1a2099e0519de163195e03c87ae17ff8cd",
+  "spec_sha256": "1db97952bfc986b93a511033f997c3ce041c1a71015f29dcd4bbb55f1b456a1c",
+  "actual_failed_run": 41800448987,
+  "actual_failed_job": 126474623047,
+  "actual_failed_source": "10aa67f5f16e8ad00b30ac21332791b008b69cfe",
+  "source_projection_modules": 25192,
+  "prior_objects": 25191,
+  "archives": 444,
+  "native_failure_preserved": true,
+  "actual_diagnostic_lean_run_performed": false,
+  "missing_original_endpoint_still_required": true,
+  "local_validation_limits": "No Lean compiler execution or full binary restoration locally. Static manifests are required by production prepare/restorer; recorded metadata replay uses exact actual archive bytes."
+}

@@ -1,0 +1,119 @@
+name: RG fixed BothLong phase diagnosis
+# Diagnostic copy only. The original BothLong endpoint is never exported here.
+on:
+  workflow_dispatch: {}
+  push:
+    branches: [rg-d1-bothlong-phase-probe-20261104]
+    paths:
+      - '.github/workflows/rg-d1-bothlong-phase-probe-20261104.yml'
+      - 'ci/rg_bothlong_phase_probe_20261104.py'
+      - 'ci/rg_bothlong_phase_probe_20261104_spec.json'
+      - 'ci/rg_bothlong_phase_probe_20261104/**'
+      - 'ci/rg_observed_bothlong_phase_probe_20261104.py'
+      - 'ci/rg_proc_resource_snapshot_20261104.py'
+permissions:
+  contents: read
+  actions: read
+concurrency:
+  group: rg-d1-bothlong-phase-probe-20261104
+  cancel-in-progress: false
+jobs:
+  diagnose:
+    if: github.repository == 'RhudeJJJJ/formal-conjectures' && github.ref == 'refs/heads/rg-d1-bothlong-phase-probe-20261104'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 360
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          persist-credentials: false
+      - name: Reserve actual host space without touching proof inputs
+        run: python3 -B ci/rg_prepare_finite_runner_storage.py --required-free-gib 45
+      - name: Install the fixed compiler before the marker control
+        run: |
+          set -o pipefail
+          curl -sSfL https://github.com/leanprover/elan/releases/download/v1.4.2/elan-x86_64-unknown-linux-gnu.tar.gz | tar xz
+          ./elan-init -y --default-toolchain none
+          "$HOME/.elan/bin/elan" toolchain install leanprover/lean4:v4.33.1
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Require the isolated flushed-marker control before any proof restoration
+        env:
+          RG_PROOFSTORE_HOST_PATH: ${{ github.workspace }}
+        run: |
+          python3 -B ci/rg_run_with_host_reserve.py -- \
+            python3 -B ci/rg_observed_bothlong_phase_probe_20261104.py \
+              --phase control --memory-reserve-mib 2048
+      - name: Preserve the separate control host observation
+        if: always()
+        run: |
+          python3 - <<'PY'
+          import pathlib, shutil
+          source = pathlib.Path('rg-proofstore-kernel-reserve.json')
+          target = pathlib.Path('Proofs/RG_Lean_20261019/build/bothlong_phase_probe/control_host_reserve.json')
+          if source.is_file():
+              target.parent.mkdir(parents=True, exist_ok=True)
+              shutil.copyfile(source, target)
+          PY
+      - name: Authenticate the actual failed run and project only original BothLong imports
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 -B ci/rg_bothlong_phase_probe_20261104.py --phase prepare
+      - name: Materialize the fixed dependency lock
+        run: python3 -B ci/rg_dependencies.py
+      - name: Fetch only the external modules of the original BothLong closure
+        run: |
+          python3 - <<'PY'
+          import json, pathlib, re, subprocess, sys
+          root = pathlib.Path('Proofs/RG_Lean_20261019')
+          sys.path.insert(0, str(root))
+          from verify import without_comments
+          plan = json.loads((root / 'build/bothlong_phase_probe/projected_plan.json').read_bytes())
+          external = set()
+          for name in plan['source_sha256']:
+              base = root / 'ThirdParty/LeanCert' if name.startswith('LeanCert.') else root
+              code = without_comments((base / (name.replace('.', '/') + '.lean')).read_text())
+              for dep in re.findall(r'^\s*(?:public\s+)?import\s+([\w.]+)\s*$', code, re.M):
+                  if not dep.startswith(('Proofs.', 'LeanCert.', 'Lean.', 'Init.', 'Std.')) and dep not in ('Lean', 'Init', 'Std'):
+                      external.add(dep)
+          subprocess.run(['lake', 'exe', 'cache', 'get', *sorted(external)], check=True)
+          PY
+      - name: Install the transparent filesystem utility
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y btrfs-progs
+      - name: Create the unchanged bounded logical proofstore
+        run: python3 -B ci/rg_ephemeral_compressed_proofstore.py --logical-gib 256
+      - name: Authenticate all 444 original archives and read back 25191 projected objects
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          python3 -B ci/rg_restore_exact_compressed_plan.py \
+            --plan Proofs/RG_Lean_20261019/build/bothlong_phase_probe/projected_plan.json \
+            --build-directory Proofs/RG_Lean_20261019/build/extension
+      - name: Require exactly the original BothLong endpoint to remain uncompiled
+        run: |
+          python3 -B ci/rg_restore_with_kernel_fallback.py \
+            --plan ci/rg_empty_restore_plan.json \
+            --build-directory Proofs/RG_Lean_20261019/build/extension \
+            --endpoint Proofs.RadenkovicGutmanD1OriginalSharedBothLong \
+            --max-fresh 1 --preflight-only
+          python3 -B ci/rg_bothlong_phase_probe_20261104.py --phase require-frontier
+      - name: Observe the isolated diagnostic copy with unchanged strict kernel limits
+        run: |
+          python3 -B ci/rg_run_with_host_reserve.py -- \
+            python3 -B ci/rg_observed_bothlong_phase_probe_20261104.py \
+              --phase probe --memory-reserve-mib 2048
+      - name: Retain diagnostic logs and phase observations without proof exports
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: rg-bothlong-phase-diagnostic-20261104-${{ github.run_id }}-${{ github.run_attempt }}
+          path: |
+            Proofs/RG_Lean_20261019/build/bothlong_phase_probe/*.json
+            Proofs/RG_Lean_20261019/build/bothlong_phase_probe/*.jsonl
+            Proofs/RG_Lean_20261019/build/bothlong_phase_probe/*.tsv
+            Proofs/RG_Lean_20261019/build/bothlong_phase_probe/*.log
+            rg-proofstore-setup.json
+            rg-proofstore-kernel-reserve.json
+            rg-proofstore-roundtrip-reports
+          if-no-files-found: error
+          retention-days: 90

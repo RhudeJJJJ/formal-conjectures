@@ -1,0 +1,260 @@
+{
+  "all_available": true,
+  "all_native_origin_and_digest_checks_pass": true,
+  "artifact_count": 6,
+  "kernel_or_authenticator_execution": false,
+  "limits": [
+    "Availability is the native catalog state at the recorded read time.",
+    "Catalog digest and size are metadata; artifact bytes were not downloaded or rehashed by this reviewer.",
+    "Job IDs are manifest/origin expectations; artifact catalogs bind run/head/artifact, not individual job proof provenance.",
+    "The new030 partial manifest is separately authenticated and reviewed by the parent."
+  ],
+  "objects_read": 0,
+  "read_completed_at_utc": "2026-11-05 15:02:13 UTC",
+  "read_started_at_utc": "2026-11-05 15:01:47 UTC",
+  "repository": "RhudeJJJJ/formal-conjectures",
+  "rows": [
+    {
+      "artifact": {
+        "archive_download_url": "https://api.github.com/repos/RhudeJJJJ/formal-conjectures/actions/artifacts/12540313213/zip",
+        "created_at": "2026-10-24T00:17:41Z",
+        "digest": "sha256:15b735bfcca048d8547139fe68160b6c7bb9fb8975755e93d5dc12a287b832ce",
+        "expired": false,
+        "expires_at": "2027-01-22T00:07:24Z",
+        "id": 12540313213,
+        "name": "rg-reusable-analytic-kernel-base-exports-40043374288-0",
+        "node_id": "MDg6QXJ0aWZhY3QxMjU0MDMxMzIxMw==",
+        "size_in_bytes": 36119215,
+        "updated_at": "2026-10-24T00:17:41Z",
+        "url": "https://api.github.com/repos/RhudeJJJJ/formal-conjectures/actions/artifacts/12540313213",
+        "workflow_run": {
+          "head_branch": "rg-remaining-six-spectral-20261021",
+          "head_repository_id": 1416044648,
+          "head_sha": "c2db3f31827123facf22671e0f33564e58eb7498",
+          "id": 40043374288,
+          "repository_id": 1416044648
+        }
+      },
+      "checks": {
+        "archive_digest_matches": true,
+        "artifact_id_matches": true,
+        "expired_false": true,
+        "positive_size": true,
+        "repository_ids_match": true,
+        "run_matches": true,
+        "source_commit_matches": true
+      },
+      "expected_job": 120719353775,
+      "expected_repository": "RhudeJJJJ/formal-conjectures",
+      "expected_run": 40043374288,
+      "expected_source_commit": "c2db3f31827123facf22671e0f33564e58eb7498",
+      "manifest": "/workspace/scratch/406169dbc070/rg_resume_20261105/middle_next/ci_review/current_origin/source/ci/rg_reusable_analytic_kernel_base_complete_scope_capsule.json",
+      "manifest_sha256": "ecec5dc115eca93fdfadf72072bfb9d13c85c5d36191b31738d4295d9305d6a3",
+      "native_catalog_path": "/workspace/scratch/406169dbc070/rg_resume_20261105/middle_next/source_scope/availability/run40043374288_artifacts.json",
+      "native_catalog_sha256": "0b0e7cfd01aa3c5119781f15835c62778f06d9d50ea5c2ddba4824eefad235bb",
+      "native_catalog_url": "https://api.github.com/repos/RhudeJJJJ/formal-conjectures/actions/runs/40043374288/artifacts?per_page=100"
+    },
+    {
+      "artifact": {
+        "archive_download_url": "https://api.github.com/repos/RhudeJJJJ/formal-conjectures/actions/artifacts/13310650054/zip",
+        "created_at": "2026-11-04T09:12:02Z",
+        "digest": "sha256:dd081deeb80b417e65c5ada699a30cc05eaf30ab2faa07460c091ddce94676d0",
+        "expired": false,
+        "expires_at": "2027-02-02T09:10:27Z",
+        "id": 13310650054,
+        "name": "rg-middle-generic-recovery-20261104-41805266301-1",
+        "node_id": "MDg6QXJ0aWZhY3QxMzMxMDY1MDA1NA==",
+        "size_in_bytes": 293023,
+        "updated_at": "2026-11-04T09:12:02Z",
+        "url": "https://api.github.com/repos/RhudeJJJJ/formal-conjectures/actions/artifacts/13310650054",
+        "workflow_run": {
+          "head_branch": "rg-middle-generic-recovery-20261104",
+          "head_repository_id": 1416044648,
+          "head_sha": "5ab25f374a5d3d73e98725a44698f0b73423245a",
+          "id": 41805266301,
+          "repository_id": 1416044648
+        }
+      },
+      "checks": {
+        "archive_digest_matches": true,
+        "artifact_id_matches": true,
+        "expired_false": true,
+        "positive_size": true,
+        "repository_ids_match": true,
+        "run_matches": true,
+        "source_commit_matches": true
+      },
+      "expected_job": 126490589025,
+      "expected_repository": "RhudeJJJJ/formal-conjectures",
+      "expected_run": 41805266301,
+      "expected_source_commit": "5ab25f374a5d3d73e98725a44698f0b73423245a",
+      "manifest": "/workspace/scratch/406169dbc070/rg_resume_20261105/middle_next/ci_review/current_origin/source/ci/rg_middle_generic_recovery_20261104_run41805266301_prior_exports.json",
+      "manifest_sha256": "1092cca689061a69ce2cc5238ab9fba44a57da0f6025aece5fdeef60156c3c5e",
+      "native_catalog_path": "/workspace/scratch/406169dbc070/rg_resume_20261105/middle_next/source_scope/availability/run41805266301_artifacts.json",
+      "native_catalog_sha256": "0433d5b63ee78a20ec51b10d6085593e116ed14946c49be27fcc1c1af4f760fa",
+      "native_catalog_url": "https://api.github.com/repos/RhudeJJJJ/formal-conjectures/actions/runs/41805266301/artifacts?per_page=100"
+    },
+    {
+      "artifact": {
+        "archive_download_url": "https://api.github.com/repos/RhudeJJJJ/formal-conjectures/actions/artifacts/12557550776/zip",
+        "created_at": "2026-10-24T10:34:20Z",
+        "digest": "sha256:48ec1df1d64655f5532a4d6bc8d5e8373702435419ff694aed1862c0c5bf7ffe",
+        "expired": false,
+        "expires_at": "2026-11-23T10:34:19Z",
+        "id": 12557550776,
+        "name": "rg-integer-anchor000-same-cell-benchmark-exports-40086293882-0",
+        "node_id": "MDg6QXJ0aWZhY3QxMjU1NzU1MDc3Ng==",
+        "size_in_bytes": 1025683,
+        "updated_at": "2026-10-24T10:34:20Z",
+        "url": "https://api.github.com/repos/RhudeJJJJ/formal-conjectures/actions/artifacts/12557550776",
+        "workflow_run": {
+          "head_branch": "rg-remaining-six-spectral-20261021",
+          "head_repository_id": 1416044648,
+          "head_sha": "85f3dd79d52cfbb177fec8f316b1953406ed669f",
+          "id": 40086293882,
+          "repository_id": 1416044648
+        }
+      },
+      "checks": {
+        "archive_digest_matches": true,
+        "artifact_id_matches": true,
+        "expired_false": true,
+        "positive_size": true,
+        "repository_ids_match": true,
+        "run_matches": true,
+        "source_commit_matches": true
+      },
+      "expected_job": 120849813321,
+      "expected_repository": "RhudeJJJJ/formal-conjectures",
+      "expected_run": 40086293882,
+      "expected_source_commit": "85f3dd79d52cfbb177fec8f316b1953406ed669f",
+      "manifest": "/workspace/scratch/406169dbc070/rg_resume_20261105/middle_next/ci_review/current_origin/source/ci/rg_middle_original_integer_payment_generic_prior_exports.json",
+      "manifest_sha256": "1f01f082da827fb1c72ea1876bf9a89ede36fb2b0d79736a1416139d5848caf1",
+      "native_catalog_path": "/workspace/scratch/406169dbc070/rg_resume_20261105/middle_next/source_scope/availability/run40086293882_artifacts.json",
+      "native_catalog_sha256": "e9c79ff873c4e7d88b07c8d9c12b1fbe9709fbe77edd2474c0451a7c28b23b27",
+      "native_catalog_url": "https://api.github.com/repos/RhudeJJJJ/formal-conjectures/actions/runs/40086293882/artifacts?per_page=100"
+    },
+    {
+      "artifact": {
+        "archive_download_url": "https://api.github.com/repos/RhudeJJJJ/formal-conjectures/actions/artifacts/12712500204/zip",
+        "created_at": "2026-10-27T05:29:17Z",
+        "digest": "sha256:10cf55d3c006a38b99dddb384656c73dc8637e4c71824f36e297f8702542a3a1",
+        "expired": false,
+        "expires_at": "2027-01-24T20:45:54Z",
+        "id": 12712500204,
+        "name": "rg-original-anchor028-positive-tail-parts-control-exports-40398535778-0",
+        "node_id": "MDg6QXJ0aWZhY3QxMjcxMjUwMDIwNA==",
+        "size_in_bytes": 4973381,
+        "updated_at": "2026-10-27T05:29:17Z",
+        "url": "https://api.github.com/repos/RhudeJJJJ/formal-conjectures/actions/artifacts/12712500204",
+        "workflow_run": {
+          "head_branch": "rg-remaining-six-spectral-20261021",
+          "head_repository_id": 1416044648,
+          "head_sha": "dfb3783528b8fc95be09f74eef426349360c75d8",
+          "id": 40398535778,
+          "repository_id": 1416044648
+        }
+      },
+      "checks": {
+        "archive_digest_matches": true,
+        "artifact_id_matches": true,
+        "expired_false": true,
+        "positive_size": true,
+        "repository_ids_match": true,
+        "run_matches": true,
+        "source_commit_matches": true
+      },
+      "expected_job": 121837911979,
+      "expected_repository": "RhudeJJJJ/formal-conjectures",
+      "expected_run": 40398535778,
+      "expected_source_commit": "dfb3783528b8fc95be09f74eef426349360c75d8",
+      "manifest": "/workspace/scratch/406169dbc070/rg_resume_20261105/middle_next/ci_review/current_origin/source/ci/rg_middle_oct27_anchor028_parts_original_partial_prior_exports.json",
+      "manifest_sha256": "9e93cf8c80a588ad55f028797148dae07b0b6b569cb013fd5db3ef0ddc1fcad8",
+      "native_catalog_path": "/workspace/scratch/406169dbc070/rg_resume_20261105/middle_next/source_scope/availability/run40398535778_artifacts.json",
+      "native_catalog_sha256": "2ca60f76c7c6f0f853785682f4440a9c408ae90d82a7b81fb58451aaf755aafe",
+      "native_catalog_url": "https://api.github.com/repos/RhudeJJJJ/formal-conjectures/actions/runs/40398535778/artifacts?per_page=100"
+    },
+    {
+      "artifact": {
+        "archive_download_url": "https://api.github.com/repos/RhudeJJJJ/formal-conjectures/actions/artifacts/12780380356/zip",
+        "created_at": "2026-10-27T23:38:48Z",
+        "digest": "sha256:05a2e714ddec7260ea2ab1f565eec6adc837f8869b0bdee4200f536b6afaea98",
+        "expired": false,
+        "expires_at": "2027-01-25T16:49:44Z",
+        "id": 12780380356,
+        "name": "rg-anchor028-verified-tail-prefix-resume-exports-40544724991-0",
+        "node_id": "MDg6QXJ0aWZhY3QxMjc4MDM4MDM1Ng==",
+        "size_in_bytes": 2869209,
+        "updated_at": "2026-10-27T23:38:48Z",
+        "url": "https://api.github.com/repos/RhudeJJJJ/formal-conjectures/actions/artifacts/12780380356",
+        "workflow_run": {
+          "head_branch": "rg-remaining-six-spectral-20261021",
+          "head_repository_id": 1416044648,
+          "head_sha": "689a93f27df64d7fd88be7f4abf61ace1b154018",
+          "id": 40544724991,
+          "repository_id": 1416044648
+        }
+      },
+      "checks": {
+        "archive_digest_matches": true,
+        "artifact_id_matches": true,
+        "expired_false": true,
+        "positive_size": true,
+        "repository_ids_match": true,
+        "run_matches": true,
+        "source_commit_matches": true
+      },
+      "expected_job": 122332142283,
+      "expected_repository": "RhudeJJJJ/formal-conjectures",
+      "expected_run": 40544724991,
+      "expected_source_commit": "689a93f27df64d7fd88be7f4abf61ace1b154018",
+      "manifest": "/workspace/scratch/406169dbc070/rg_resume_20261105/middle_next/ci_review/current_origin/source/ci/rg_middle_oct28_anchor028_original_prior_exports.json",
+      "manifest_sha256": "e024f33452d866f7acf1b9947374ef37ebeab77ef6e02c2afcfa2fe4b629a711",
+      "native_catalog_path": "/workspace/scratch/406169dbc070/rg_resume_20261105/middle_next/source_scope/availability/run40544724991_artifacts.json",
+      "native_catalog_sha256": "6c5622ba7e63d2d9ce81313f16bd3431d2cd20eee0819cc6dc0b8bf0c6b39992",
+      "native_catalog_url": "https://api.github.com/repos/RhudeJJJJ/formal-conjectures/actions/runs/40544724991/artifacts?per_page=100"
+    },
+    {
+      "artifact": {
+        "archive_download_url": "https://api.github.com/repos/RhudeJJJJ/formal-conjectures/actions/artifacts/12872778035/zip",
+        "created_at": "2026-10-29T04:20:02Z",
+        "digest": "sha256:54544ef3ac4befc87c818a1f16907a6d02c07bd924f3fb6066a070d2a5a77756",
+        "expired": false,
+        "expires_at": "2027-01-26T15:18:02Z",
+        "id": 12872778035,
+        "name": "rg-nine-original-anchors-verified-tail-decomposition-20261028-exports-40714530693-1",
+        "node_id": "MDg6QXJ0aWZhY3QxMjg3Mjc3ODAzNQ==",
+        "size_in_bytes": 4418554,
+        "updated_at": "2026-10-29T04:20:02Z",
+        "url": "https://api.github.com/repos/RhudeJJJJ/formal-conjectures/actions/artifacts/12872778035",
+        "workflow_run": {
+          "head_branch": "rg-remaining-six-spectral-20261021",
+          "head_repository_id": 1416044648,
+          "head_sha": "b5648d132318fe3d955f1ebe79ed333a58abc722",
+          "id": 40714530693,
+          "repository_id": 1416044648
+        }
+      },
+      "checks": {
+        "archive_digest_matches": true,
+        "artifact_id_matches": true,
+        "expired_false": true,
+        "positive_size": true,
+        "repository_ids_match": true,
+        "run_matches": true,
+        "source_commit_matches": true
+      },
+      "expected_job": 122908481894,
+      "expected_repository": "RhudeJJJJ/formal-conjectures",
+      "expected_run": 40714530693,
+      "expected_source_commit": "b5648d132318fe3d955f1ebe79ed333a58abc722",
+      "manifest": "ci/rg_middle_anchor030_run40714530693_partial_prior_exports.json",
+      "manifest_sha256": null,
+      "native_catalog_path": "/workspace/scratch/406169dbc070/rg_resume_20261105/middle_next/source_scope/availability/run40714530693_artifacts.json",
+      "native_catalog_sha256": "c8053342720f4b6a0172c418e0837dbbc671c16441d501c3c871b926824da650",
+      "native_catalog_url": "https://api.github.com/repos/RhudeJJJJ/formal-conjectures/actions/runs/40714530693/artifacts?per_page=100"
+    }
+  ],
+  "status": "ALL_SIX_REFERENCED_ARTIFACTS_AVAILABLE_NATIVE_METADATA_MATCH",
+  "zip_downloads": 0
+}

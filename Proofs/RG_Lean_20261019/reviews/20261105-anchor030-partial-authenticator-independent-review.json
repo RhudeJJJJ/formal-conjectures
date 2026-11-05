@@ -1,0 +1,72 @@
+{
+  "schema": "rg_anchor030_partial_authenticator_static_review_v1",
+  "status": "PASS_BOUNDED_STATIC_REVIEW_NO_BLOCKING_FINDINGS",
+  "reviewed_at_utc": "2026-11-05T15:02:23.670584+00:00",
+  "reviewer": "middle_prior_evidence_1105b",
+  "reviewed_script": "rg_resume_20261105/middle_next/anchor030_producer/authenticate_original_anchor030_partial.py",
+  "reviewed_script_bytes": 27849,
+  "reviewed_script_sha256": "8e324d0c4b9feec6eafbaef355e0bc588ea29a4b27ba14f6cb0cd1e81add3d01",
+  "full_authenticator_executions_by_reviewer": 0,
+  "zip_opens_by_reviewer": 0,
+  "lean_runs_by_reviewer": 0,
+  "remote_mutations_by_reviewer": 0,
+  "findings": [],
+  "checks": [
+    {
+      "check": "Utility provenance",
+      "status": "PASS",
+      "detail": "All13 utility function source segments match the frozen executed Anchor029 continuation authenticator verbatim. Original checker51023 bytes, SHA2565ea66b63d162ae70eb84b9925b87027016d489cf8b0f277144637b65e41469d5; no use of the older rolled-back original029 parser."
+    },
+    {
+      "check": "Fixed current source gate",
+      "status": "PASS",
+      "detail": "Four fixed metadata digests are required. All281 source bytes must match their pinned size, SHA256 and Git blob identity; the independently recomputed recursive graph and every inventory closure must agree. Toolchain4.33.1, Mathlib0df444a360eaa60ab8c11dca51a86af692955474 and LeanCert621a43d7cf21f87872392a01e874f2f1dbddc926 remain fixed."
+    },
+    {
+      "check": "Historical helper and workflow provenance",
+      "status": "PASS",
+      "detail": "All21 historical workflow/helper files have exact byte and Git blob identities, including the original comment parser. Historical plan must equal the original four manifests in order; original360-minute job,600-second module,1worker and2048MiB reserve contract is required."
+    },
+    {
+      "check": "Native run job and artifact selection",
+      "status": "PASS",
+      "detail": "The code requires frozen raw native digests; correct repository, head, branch, workflow, attempt and cancelled conclusions; complete distinct9-job and9-artifact catalogs; exact job122908481894 and artifact12872778035; exact artifact name,4,418,554 bytes, SHA25654544ef3ac4befc87c818a1f16907a6d02c07bd924f3fb6066a070d2a5a77756 and workflow-run binding. Native selected job has exactly14 completed steps, only the kernel step is cancelled."
+    },
+    {
+      "check": "Original prior rows and origins",
+      "status": "PASS",
+      "detail": "The five historical prerequisite manifests have disjoint module counts193+2+2+110+54=361. All361 actual diagnostic rows must equal the reconstructed historical rows, including original origins and transport capsule metadata. Only118 belong to the current281-module endpoint graph;243 are explicitly extra historical diagnostic priors. No new generic recovery origin is substituted into the original producer evidence."
+    },
+    {
+      "check": "Exact original partial frontier",
+      "status": "PASS",
+      "detail": "Independent source inspection confirms163 original fresh modules with838 print-axiom occurrences:91 completed modules/455 occurrences,72 remaining modules/383 occurrences. All91 native completed log rows match current source and recursive-closure hashes. Remaining modules are Cells072\u2013133, Batches007\u2013013, FinitePayment, OriginalAnchor and Certificate030."
+    },
+    {
+      "check": "Archive membership and sources",
+      "status": "PASS_BY_CODE_INSPECTION_PENDING_ROOT_EXECUTION",
+      "detail": "The complete ZIP size/hash must agree. Exact557-member set equals281 original sources+273 completed object/record/log files+source manifest+diagnostics+unfinished Cell072 log. Duplicate, directory, traversal and unexpected members fail. All source bytes and source manifest must equal current pinned sources. Both receipt.json and a final resource observer report are prohibited."
+    },
+    {
+      "check": "Fresh export and named axiom validation",
+      "status": "PASS_BY_CODE_INSPECTION_PENDING_ROOT_EXECUTION",
+      "detail": "Every completed module must have identical diagnostic, native completion-log and archived sidecar rows; current source/closure hashes; no prior/transport origin fields; valid finite timing; actual streamed olean SHA256; warning/error-free module log; exact ordered source-derived declaration names; and only Classical.choice, Quot.sound, propext. All455 completed named profiles are counted."
+    },
+    {
+      "check": "Cancellation and resource semantics",
+      "status": "PASS",
+      "detail": "The original command and two281=118+163 preflight observations are required; native retention must be452 total/91 fresh. Whole endpoint success marker and endpoint receipt are absent. Resource observations must exist, have no low-memory guard event and no completed result, with observed active-Lean reserve at least2048MiB. Report explicitly disclaims hidden intervals and a completed observer run. Cell072 remains unfinished and outside certified exports."
+    },
+    {
+      "check": "Scope of successful output",
+      "status": "PASS",
+      "detail": "The report describes authenticated partial exports only; complete endpoint success, Anchor030 certificate, Middle family and global RG claims all remain false. Family count change is0; three original families remain. Report writes are exclusive and atomic, and a previously present actual report prevents a rerun."
+    }
+  ],
+  "limitations": [
+    "This is a static review of the exact script digest above, not an execution result or an actual archive/member authentication.",
+    "Historical prerequisite origins are authenticated as preserved metadata. The report does not claim that this partial archive contains or rehashes all361 historical prior object bytes.",
+    "The root must execute the fixed-input check and then the full authenticator on the actual original archive before admitting the91 rows as reusable partial exports.",
+    "Any script change invalidates this review digest."
+  ]
+}

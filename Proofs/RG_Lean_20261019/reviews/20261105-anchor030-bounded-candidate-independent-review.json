@@ -1,0 +1,66 @@
+{
+  "actual_report_references_match_frozen_current_source_graph": true,
+  "all_455_named_profiles_match_source_commands_and_report_order": true,
+  "all_91_current_source_and_closure_identities_match": true,
+  "all_91_manifest_rows_exactly_equal_actual_report_and_native_completed_rows": true,
+  "anchor030_full_certificate_claim": false,
+  "artifact_availability": {
+    "read_completed_at_utc": "2026-11-05 15:02:13 UTC",
+    "report": "/workspace/scratch/406169dbc070/rg_resume_20261105/middle_next/source_scope/availability/artifact_availability_report.json",
+    "sha256": "8aefd21c1c81b3b96bf1868b8d1718cec1e1ad724c4f1a1bfe8ab3761182e336"
+  },
+  "authenticated_partial_modules": 91,
+  "candidate_files": [
+    {
+      "bytes": 6508,
+      "path": ".github/workflows/rg-middle-anchor030-partial-resume-20261105.yml",
+      "sha256": "d6e3816fffe802f700768b9064e709b14cc1ab308d6c8b9e2c5ed2267d17dbae"
+    },
+    {
+      "bytes": 359,
+      "path": "ci/rg_middle_anchor030_partial_resume_restore_plan_20261105.json",
+      "sha256": "ca10c314768db5bbdddb3620e0665ef4e1766c9e4cd9e8be028365f9bbdf0e82"
+    },
+    {
+      "bytes": 89740,
+      "path": "ci/rg_middle_anchor030_run40714530693_partial_prior_exports.json",
+      "sha256": "53cddc2c55109470c7bb061e507404b87b04e9ca1eafd0e6ce2e59135907b5de"
+    }
+  ],
+  "candidate_modifies_lean_sources": false,
+  "candidate_prior_modules": 209,
+  "common_prior_modules": 118,
+  "compiled_object_bytes_represented_by_report": 13233776,
+  "degree_one_middle_family_claim": false,
+  "endpoint": "Proofs.RadenkovicGutmanMiddleOriginalAnchorCertificate030",
+  "family_count_change": 0,
+  "job_timeout_minutes": 360,
+  "limits": [
+    "Actual archive authentication was performed by the parent; reviewer checked its exact report and manifest, without reopening ZIP or rerunning authenticator.",
+    "383 is the number of ordered source #print axioms occurrences expected from the72 remaining modules, including repeated declarations in batch modules; it is not yet383 new actual kernel profiles.",
+    "The91-module producer was cancelled and has no complete endpoint receipt.",
+    "The subsequent continuation must obtain its own genuine successful receipt and exact axiom-profile authentication.",
+    "Even a successful Anchor030 endpoint does not close the complete Middle family."
+  ],
+  "memory_reserve_mib": 2048,
+  "module_timeout_seconds": 600,
+  "one_worker": true,
+  "original_predicate_source_unchanged": true,
+  "ready_to_publish_bounded_partial_reuse_candidate": true,
+  "remaining_modules": 72,
+  "remaining_original_families": 3,
+  "remaining_source_profile_occurrences": 383,
+  "remote_mutations": 0,
+  "required_modules": 281,
+  "review_role": "Independent source/report/manifest/workflow text reviewer",
+  "reviewed_actual_report": {
+    "path": "/workspace/scratch/406169dbc070/rg_resume_20261105/middle_next/anchor030_producer/actual/original_anchor030_partial_authentication.json",
+    "sha256": "5f3f22f25732b46839e311676485b01273768ceb7605145f6c2b13972fb598f9"
+  },
+  "reviewer_authenticator_executions": 0,
+  "reviewer_kernel_runs": 0,
+  "reviewer_zip_reads": 0,
+  "single_endpoint_single_job": true,
+  "source_identity_commit": "eec9bfa2996116bb5f83fc2b6d83d015b5786c6b",
+  "status": "PASS_BOUNDED_ANCHOR030_PUBLICATION_REVIEW"
+}

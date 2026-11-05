@@ -13,6 +13,40 @@ The exact seven required inputs are in [OriginalAssembly](Proofs/RadenkovicGutma
 
 Four have complete original kernel-object and source-closure audits at their recorded verified revisions: degree one through order 13, degree one from order 53, degree at least four through order 12 (all 247 actual-tree comparisons and coverage), and degree at least 46. Three remain open: degree one at orders 14–52, degree two or three, and degrees 4–45 from order 13.
 
+## Original Anchor030 continuation — 5 November 2026
+
+The next bounded original target is `MiddleOriginalAnchorCertificate030.certificate`.
+It retains the original anchor `n = 52`, `p = 9`, `q = 39` and lower bound
+`3824018983001674635847799415612737 / 32624163332060752803334972325527552`.
+The current 281-source closure is fixed at `eec9bfa2996116bb5f83fc2b6d83d015b5786c6b`;
+no Lean statement, source proof, payment or integral threshold changes in this continuation.
+
+The actual [historical partial producer](https://github.com/RhudeJJJJ/formal-conjectures/actions/runs/40714530693/job/122908481894)
+ended cancelled at its six-hour job boundary. Its original archive `12872778035`
+has now been authenticated against its complete native metadata and job log:
+**91 completed kernel exports, 455 exact named standard-axiom profiles, and
+13,233,776 bytes of compiled objects**. All 281 archived source files and recursive
+source closures match the current target exactly. The [authentication report](reviews/20261105-anchor030-original-partial-authentication.json)
+has SHA-256 `5f3f22f25732b46839e311676485b01273768ceb7605145f6c2b13972fb598f9`.
+These individual exports preserve the cancelled original job as their origin;
+the historical run did not produce a complete Anchor030 receipt.
+
+The new restore plan combines **118 existing prerequisites + 91 authenticated
+partial exports + 72 mandatory fresh modules = 281 required modules**. The fresh
+frontier is Cells072–133, Batches007–013, FinitePayment, OriginalAnchor and
+Certificate030, with 383 new named axiom checks. The workflow checks only this
+original endpoint, using the unchanged 600-second per-module timeout, one worker,
+2048 MiB reserve and 360-minute job cap. All six required archive identities were
+listed and unexpired in the native catalog check on 5 November.
+
+This checkpoint prepares the continuation; its complete new kernel receipt is
+still required. `degreeOneMiddle`, `degreeTwoThree` and `degreeFourToFortyfive`
+remain the three open original families. The current Middle dependency audit
+separates its 680 analytic anchors, 39 order-coverage modules and 25 residual
+finite batches. The historical successful 3,880-module Middle residual join has
+a preserved native log, but its seven-day result archive is no longer listed;
+that is an evidence-availability issue, not a new mathematical obligation.
+
 ## Verified degree-one large-order family
 
 ### Complete original authentication — 5 November 2026

@@ -1,0 +1,119 @@
+{
+  "anchor029": {
+    "actual_fresh_output_bytes": 7558224,
+    "authentication_report_sha256": "aa9128492cb857cac5a50fc1823dc7d2b410dadc41e9e996bb952445b4220ca7",
+    "cancelled_producer_origin": {
+      "artifact_id": 13351145439,
+      "artifact_sha256": "11c263c3f06adca05f4810ed1d410221f6e2d4b1a479dcf8b731f435d5b98fd5",
+      "authenticated_report_sha256": "d5189d1fb0493e394d65054c29f1a4ac3a934e84d2e8873172bb758207312783",
+      "completed_endpoint_receipt": false,
+      "job": 126562666235,
+      "repository": "RhudeJJJJ/formal-conjectures",
+      "run": 41826563525,
+      "source_commit": "5b7bd43a9f3ca170b19450dd4f34fe9d12bbba90",
+      "whole_job_conclusion": "cancelled"
+    },
+    "certificate_completed": true,
+    "family_count_change": 0,
+    "fresh_modules": 55,
+    "full_middle_family_completed": false,
+    "inherited_profiles": 545,
+    "job": 126778939548,
+    "limits": {
+      "job_minutes": 360,
+      "memory_reserve_mib": 2048,
+      "module_seconds": 600,
+      "workers": 1
+    },
+    "named_axiom_profiles": 838,
+    "new_profiles": 293,
+    "original_source_identity_commit": "7a64184a0b353295d4977004066e163375cf3b4b",
+    "prior_modules": 226,
+    "receipt_sha256": "62869abd85a3dcc6b141d2cecd8a2735ba2515ac1b1700d29a1ee3f517d11eee",
+    "required_modules": 281,
+    "run": 41888401962,
+    "workflow_head": "b6924bdabeff35ff4af328c3879c69fc90ecf8f6"
+  },
+  "branch": "rg-degree-one-large-20261103",
+  "confirmed_at_Europe_Berlin": "2026-11-05T15:31:10.899743+01:00",
+  "confirmed_at_utc": "2026-11-05T14:31:10.899743+00:00",
+  "fresh_export_manifests": [
+    {
+      "bytes": 3628,
+      "git_blob_sha1": "f093870cff4d7631f1951b4ff9563cf0d967912f",
+      "local_path": "/workspace/scratch/406169dbc070/rg_resume_20261105/publication/patch/Proofs/RG_Lean_20261019/reviews/20261105-degree-one-large-fresh-prior-exports.json",
+      "path": "Proofs/RG_Lean_20261019/reviews/20261105-degree-one-large-fresh-prior-exports.json",
+      "sha256": "3aa2e79e6a4477e376367587771250a8af466988eb2931346fe042cc84173447"
+    },
+    {
+      "bytes": 56443,
+      "git_blob_sha1": "1fc6399cb41dfc1ae1a36d6f2ef2edc3e800f5b1",
+      "local_path": "/workspace/scratch/406169dbc070/rg_resume_20261105/publication/patch/Proofs/RG_Lean_20261019/reviews/20261105-anchor029-fresh-prior-exports.json",
+      "path": "Proofs/RG_Lean_20261019/reviews/20261105-anchor029-fresh-prior-exports.json",
+      "sha256": "e2ee87c6b01373111adba75375be74a3f43f8d29f81e43353e202cfc9a5d214a"
+    }
+  ],
+  "frozen_authenticator_executions": [
+    {
+      "executions_this_resume": 1,
+      "exit_code": 0,
+      "report_sha256": "101fdef6bb0152d1c3458f84c3d22d3c148f62aea2b2c56a538f8528df5ef40d",
+      "scope": "degreeOneLarge",
+      "source_sha256": "eaae96913a22c9011facdecbee52f2a7da8739ec9ecea414336d0971d779de9c"
+    },
+    {
+      "executions_this_resume": 1,
+      "exit_code": 0,
+      "report_sha256": "aa9128492cb857cac5a50fc1823dc7d2b410dadc41e9e996bb952445b4220ca7",
+      "scope": "Anchor029",
+      "source_sha256": "5ea66b63d162ae70eb84b9925b87027016d489cf8b0f277144637b65e41469d5"
+    }
+  ],
+  "full_global_rg_proof_claim": false,
+  "global_theorem_requires": "h : RemainingThreeAssembly.Inputs",
+  "historical_failure_and_cancelled_origins_preserved": true,
+  "interpretation_limits": [
+    "The primary actual completed original receipt reduces four remaining families to three.",
+    "The separate Anchor029 certificate does not close the degreeOneMiddle family.",
+    "The frozen Anchor report's conditional count of four excludes this separate Large completion and is preserved unchanged.",
+    "These archived reports and scripts bind the original artifact bytes; they do not replace those external proof artifacts.",
+    "The new manifests contain only the 3 and 55 actual fresh rows of their respective native jobs."
+  ],
+  "new_native_Lean_runs_started": false,
+  "primary_authentication_report_sha256": "101fdef6bb0152d1c3458f84c3d22d3c148f62aea2b2c56a538f8528df5ef40d",
+  "primary_fresh_modules": [
+    "Proofs.RadenkovicGutmanD1OriginalSharedBothLong",
+    "Proofs.RadenkovicGutmanOriginalDegreeOneLarge",
+    "Proofs.RadenkovicGutmanRemainingThreeAssembly"
+  ],
+  "primary_job": 126785297420,
+  "primary_kernel_milestone_established": true,
+  "primary_limits": {
+    "memory_reserve_mib": 2048,
+    "module_seconds": 900,
+    "workers": 1
+  },
+  "primary_named_axiom_profiles": 11,
+  "primary_proof_source_commit": "10aa67f5f16e8ad00b30ac21332791b008b69cfe",
+  "primary_receipt_sha256": "ef5471f390cdb8fcfc8d8d90718a30eacc4face0f2942b97137580412d031308",
+  "primary_required_modules": 33659,
+  "primary_restore": {
+    "recorded_readback_bytes": 119932353256,
+    "restored_archives": 767,
+    "restored_modules": 33656
+  },
+  "primary_run": 41890211247,
+  "primary_workflow_head": "1188a0dbc3ad1c5698671a93b9e27e6d21a718a5",
+  "proof_sources_changed": false,
+  "publication_parent": "f02df37d3d83484fa311b5bfefe9a8fb49fa63cf",
+  "remaining_original_families": [
+    "degreeOneMiddle",
+    "degreeTwoThree",
+    "degreeFourToFortyfive"
+  ],
+  "remaining_original_families_now": 3,
+  "repository": "RhudeJJJJ/formal-conjectures",
+  "runtime_or_workflow_files_changed": false,
+  "status": "ORIGINAL_DEGREE_ONE_LARGE_AND_ANCHOR029_AUTHENTICATED",
+  "upstream_submission": false
+}

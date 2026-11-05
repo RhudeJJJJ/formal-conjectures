@@ -1,0 +1,111 @@
+{
+  "artifact_id": 13360142786,
+  "artifact_sha256": "720cdd4e513b2e4fb68e7fd2b84c63cb3c31f899a3da79fc5938816600ffea3f",
+  "job": 126785297420,
+  "kind": "AUTHENTICATED_FRESH_KERNEL_EXPORTS",
+  "lean_version": "4.33.1",
+  "mathlib": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "modules": {
+    "Proofs.RadenkovicGutmanD1OriginalSharedBothLong": {
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "FRESH_KERNEL_EXPORT",
+      "module": "Proofs.RadenkovicGutmanD1OriginalSharedBothLong",
+      "output_sha256": "c7418e313b4c6fc272712f3c83dd728bb5cdb462f2c018c6dfa3ee661b12db9b",
+      "seconds": 217.778,
+      "source_closure_sha256": "6652bff06d82bfecc1ec12127e805f41eb2e83a79f219b2145a3969fa41ccd06",
+      "source_sha256": "01d60858da8d95431e0240e6c7dbf2c657111fe34dbf3a3e5a115f90797edc06"
+    },
+    "Proofs.RadenkovicGutmanOriginalDegreeOneLarge": {
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "FRESH_KERNEL_EXPORT",
+      "module": "Proofs.RadenkovicGutmanOriginalDegreeOneLarge",
+      "output_sha256": "9380d257be5f1b8f83cecb1702ac31f2cb1a780c2957b8797a283d110e7ecf4d",
+      "seconds": 351.509,
+      "source_closure_sha256": "6eb694fb9381c661109a14998ed9491bf4b5475a8c2fb2cfef81c7822bbae06d",
+      "source_sha256": "5bf13e2a759e57986dafbdb1937008207169962fc3432303c6e93b485e70ec5f"
+    },
+    "Proofs.RadenkovicGutmanRemainingThreeAssembly": {
+      "axiom_profiles": [
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      ],
+      "mode": "FRESH_KERNEL_EXPORT",
+      "module": "Proofs.RadenkovicGutmanRemainingThreeAssembly",
+      "output_sha256": "f58d57e5573e0d4bcf436383cd9293627b54a81fad2b541217f9ba13fca23022",
+      "seconds": 460.195,
+      "source_closure_sha256": "ec3028a6ce22e4bb224ce176562bb92a7f91d99c8e7074846b0924a16a0798af",
+      "source_sha256": "a234c56688628d48232033006c64896a36e3d405a3e8d0a1f559b8bdf9555e65"
+    }
+  },
+  "origin_context": {
+    "actual_fresh_modules": 3,
+    "actual_job_conclusion": "success",
+    "actual_run_conclusion": "success",
+    "authenticated_report_sha256": "101fdef6bb0152d1c3458f84c3d22d3c148f62aea2b2c56a538f8528df5ef40d",
+    "complete_endpoint_receipt_present": true,
+    "kernel_receipt_created_by_this_packager": false,
+    "manifest_scope": "Only actual fresh objects physically exported by this artifact; no prior row relabelled as fresh",
+    "named_axiom_profiles": 11,
+    "receipt_sha256": "ef5471f390cdb8fcfc8d8d90718a30eacc4face0f2942b97137580412d031308",
+    "run_attempt": 1,
+    "workflow_event": "push"
+  },
+  "repository": "RhudeJJJJ/formal-conjectures",
+  "run": 41890211247,
+  "source_commit": "1188a0dbc3ad1c5698671a93b9e27e6d21a718a5"
+}

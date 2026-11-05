@@ -1,0 +1,75 @@
+{
+  "Lean_executed_by_this_agent": false,
+  "archive_downloaded_by_this_agent": false,
+  "artifacts": [
+    {
+      "archive_download_url": "https://api.github.com/repos/RhudeJJJJ/formal-conjectures/actions/artifacts/13369207671/zip",
+      "created_at": "2026-11-04T22:30:45Z",
+      "digest": "sha256:348b5d9a538fa344a121e39e4d20929172371293501ea3ec3fb558fe154141bc",
+      "expired": false,
+      "expires_at": "2027-02-02T18:33:58Z",
+      "id": 13369207671,
+      "name": "rg-middle-anchor029-partial-resume-20261104-exports-41888401962-0",
+      "node_id": "MDg6QXJ0aWZhY3QxMzM2OTIwNzY3MQ==",
+      "size_in_bytes": 2940777,
+      "updated_at": "2026-11-04T22:30:45Z",
+      "url": "https://api.github.com/repos/RhudeJJJJ/formal-conjectures/actions/artifacts/13369207671",
+      "workflow_run": {
+        "head_branch": "rg-middle-anchor029-partial-resume-20261104",
+        "head_repository_id": 1416044648,
+        "head_sha": "b6924bdabeff35ff4af328c3879c69fc90ecf8f6",
+        "id": 41888401962,
+        "repository_id": 1416044648
+      }
+    }
+  ],
+  "authenticator_executed_by_this_agent": false,
+  "files": [
+    {
+      "bytes": 13433,
+      "name": "run.json",
+      "path": "/workspace/scratch/406169dbc070/rg_resume_20261104/anchor029_preparation/continuation_candidate/actual/run.json",
+      "sha256": "f9ffbfd24b093e7e73e643d9a6b60084d037b1c82a5ddc19ce9d02c28234378c"
+    },
+    {
+      "bytes": 3692,
+      "name": "jobs.json",
+      "path": "/workspace/scratch/406169dbc070/rg_resume_20261104/anchor029_preparation/continuation_candidate/actual/jobs.json",
+      "sha256": "ddc0ab2183da8b072423952cfce637d0b5e07faf7d4f40cb24e104810fa5da3f"
+    },
+    {
+      "bytes": 821,
+      "name": "artifacts.json",
+      "path": "/workspace/scratch/406169dbc070/rg_resume_20261104/anchor029_preparation/continuation_candidate/actual/artifacts.json",
+      "sha256": "965712314c93c130af46a97106b5e84733fb8eb42d5402ed78f98a2d5029ddd8"
+    },
+    {
+      "bytes": 636292,
+      "name": "job.log",
+      "path": "/workspace/scratch/406169dbc070/rg_resume_20261104/anchor029_preparation/continuation_candidate/actual/job.log",
+      "sha256": "4964421464cdc6273c991f9c9af6b49ab05420a8d0905ccd23b96abfb70754f9"
+    }
+  ],
+  "job": 126778939548,
+  "job_completed_at": "2026-11-04T22:30:47Z",
+  "kernel_step_completed_at": "2026-11-04T22:30:44Z",
+  "middle_family_closure_claim": false,
+  "native_job_conclusion": "success",
+  "native_job_name": "check (Proofs.RadenkovicGutmanMiddleOriginalAnchorCertificate029, ci/rg_middle_anchor029_partial_...",
+  "native_log_only_observations": {
+    "archive_or_output_bytes_not_verified_by_this_capture": true,
+    "distinct_fresh_log_records": 55,
+    "max_fresh": 55,
+    "named_profile_occurrence_count_from_rows": 293,
+    "per_record_success_boolean": "NOT_PRESENT_IN_NATIVE_EXPORT_ROWS; use native job/step conclusion separately",
+    "required_modules": 281,
+    "verified_prior_objects": 226
+  },
+  "native_run_conclusion": "success",
+  "remote_writes_by_this_agent": false,
+  "repository": "RhudeJJJJ/formal-conjectures",
+  "run": 41888401962,
+  "run_attempt": 1,
+  "status": "ACTUAL_NATIVE_TERMINAL_SUCCESS_METADATA_AND_LOG_CAPTURED_ARCHIVE_AUTHENTICATION_PENDING",
+  "workflow_head_commit": "b6924bdabeff35ff4af328c3879c69fc90ecf8f6"
+}

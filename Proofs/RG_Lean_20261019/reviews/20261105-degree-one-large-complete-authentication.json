@@ -1,0 +1,652 @@
+{
+  "artifacts": {
+    "evidence": {
+      "digest": "sha256:5e79895ba9e2a362518788813a9c9b2469e0d9065048613d7e2be453ac008867",
+      "id": 13359923008,
+      "name": "rg-degree-one-large-join-repair-20261104-evidence-41890211247-1",
+      "size_in_bytes": 9896551
+    },
+    "fresh": {
+      "digest": "sha256:720cdd4e513b2e4fb68e7fd2b84c63cb3c31f899a3da79fc5938816600ffea3f",
+      "id": 13360142786,
+      "name": "rg-degree-one-large-join-repair-20261104-41890211247-1",
+      "size_in_bytes": 9718148
+    }
+  },
+  "collected_prerequisite_coverage": {
+    "auxiliary_origins": 69,
+    "collected_modules": 5758,
+    "numeric_batches": 349,
+    "numeric_supports": 87
+  },
+  "complete_restoration_evidence": {
+    "recorded_readback_bytes": 119932353256,
+    "restored_archives": 767,
+    "restored_modules": 33656
+  },
+  "expected_declarations_sha256": "c224b1efc499184cdb2bc45b33378239e3e2c3370738daabd8ec9830e937f07e",
+  "fixed_callback_priors": {
+    "original_failed_job_unchanged": true,
+    "partial_modules": [
+      "Proofs.RadenkovicGutmanD1Long10",
+      "Proofs.RadenkovicGutmanD1Long30",
+      "Proofs.RadenkovicGutmanD1OriginalSharedSlice0080Complete",
+      "Proofs.RadenkovicGutmanD1OriginalSharedSlice0098Complete"
+    ],
+    "partial_objects_relabelled_as_fresh": false,
+    "preserved_origin": {
+      "artifact_id": 13298606637,
+      "artifact_sha256": "678c858661743a1ed63b41119eb56d4fee63a12fa830f1ebd1b7b06f3e83b97a",
+      "job": 126382274319,
+      "repository": "RhudeJJJJ/formal-conjectures",
+      "run": 41771586873,
+      "source_commit": "1c4dd54321723bc7171e7dcab4fb28f01905038e"
+    }
+  },
+  "fresh_modules": [
+    "Proofs.RadenkovicGutmanD1OriginalSharedBothLong",
+    "Proofs.RadenkovicGutmanOriginalDegreeOneLarge",
+    "Proofs.RadenkovicGutmanRemainingThreeAssembly"
+  ],
+  "fresh_output_bytes_verified": 2094448,
+  "full_global_rg_proof_claim": false,
+  "global_rg": "THREE_EXPLICIT_ORIGINAL_FORMAL_INPUT_OBLIGATIONS_REMAIN",
+  "job": 126785297420,
+  "kernel_receipt_created_by_authenticator": false,
+  "milestone_sha256": "320172b7ebfc8ca7874168411fdf497a0943f6d9ff4d1af0c0e28e0bef226884",
+  "modules": {
+    "Proofs.RadenkovicGutmanD1OriginalSharedBothLong": {
+      "module_log_sha256": "e11d0b55101ad17276865697beb60a039e986a537b593dde8d49ecf79a3e1462",
+      "named_axiom_profiles": {
+        "Gebendorfer.RadenkovicGutman.D1OriginalSharedBothLong.adjacent_checked": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "Gebendorfer.RadenkovicGutman.D1OriginalSharedBothLong.all_checked": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "Gebendorfer.RadenkovicGutman.D1OriginalSharedBothLong.budget_checked": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "Gebendorfer.RadenkovicGutman.D1OriginalSharedBothLong.normalized_target": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "Gebendorfer.RadenkovicGutman.D1OriginalSharedBothLong.partition_checked": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      },
+      "row": {
+        "axiom_profiles": [
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        ],
+        "mode": "FRESH_KERNEL_EXPORT",
+        "module": "Proofs.RadenkovicGutmanD1OriginalSharedBothLong",
+        "output_sha256": "c7418e313b4c6fc272712f3c83dd728bb5cdb462f2c018c6dfa3ee661b12db9b",
+        "seconds": 217.778,
+        "source_closure_sha256": "6652bff06d82bfecc1ec12127e805f41eb2e83a79f219b2145a3969fa41ccd06",
+        "source_sha256": "01d60858da8d95431e0240e6c7dbf2c657111fe34dbf3a3e5a115f90797edc06"
+      },
+      "verified_output_members": [
+        {
+          "bytes": 1954536,
+          "path": "Proofs/RadenkovicGutmanD1OriginalSharedBothLong.olean",
+          "sha256": "c7418e313b4c6fc272712f3c83dd728bb5cdb462f2c018c6dfa3ee661b12db9b"
+        }
+      ]
+    },
+    "Proofs.RadenkovicGutmanOriginalDegreeOneLarge": {
+      "module_log_sha256": "b59e8e9f88663a4a039d4d7eb03865cda9c69b62b766f9c22b0b42eedbd38d1a",
+      "named_axiom_profiles": {
+        "Gebendorfer.RadenkovicGutman.OriginalDegreeOneLarge.certificates": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "Gebendorfer.RadenkovicGutman.OriginalDegreeOneLarge.input_family": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      },
+      "row": {
+        "axiom_profiles": [
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        ],
+        "mode": "FRESH_KERNEL_EXPORT",
+        "module": "Proofs.RadenkovicGutmanOriginalDegreeOneLarge",
+        "output_sha256": "9380d257be5f1b8f83cecb1702ac31f2cb1a780c2957b8797a283d110e7ecf4d",
+        "seconds": 351.509,
+        "source_closure_sha256": "6eb694fb9381c661109a14998ed9491bf4b5475a8c2fb2cfef81c7822bbae06d",
+        "source_sha256": "5bf13e2a759e57986dafbdb1937008207169962fc3432303c6e93b485e70ec5f"
+      },
+      "verified_output_members": [
+        {
+          "bytes": 100488,
+          "path": "Proofs/RadenkovicGutmanOriginalDegreeOneLarge.olean",
+          "sha256": "9380d257be5f1b8f83cecb1702ac31f2cb1a780c2957b8797a283d110e7ecf4d"
+        }
+      ]
+    },
+    "Proofs.RadenkovicGutmanRemainingThreeAssembly": {
+      "module_log_sha256": "e1dd3576b3d257f64828e689de5351f7cad90205e98812dfb6cd72b930bf9782",
+      "named_axiom_profiles": {
+        "Gebendorfer.RadenkovicGutman.RemainingThreeAssembly.degreeOneLarge": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "Gebendorfer.RadenkovicGutman.RemainingThreeAssembly.inputs_imply_uniform": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "Gebendorfer.RadenkovicGutman.RemainingThreeAssembly.toOriginalInputs": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "Gebendorfer.RadenkovicGutman.RemainingThreeAssembly.universal_conclusion_of_remaining_inputs": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      },
+      "row": {
+        "axiom_profiles": [
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        ],
+        "mode": "FRESH_KERNEL_EXPORT",
+        "module": "Proofs.RadenkovicGutmanRemainingThreeAssembly",
+        "output_sha256": "f58d57e5573e0d4bcf436383cd9293627b54a81fad2b541217f9ba13fca23022",
+        "seconds": 460.195,
+        "source_closure_sha256": "ec3028a6ce22e4bb224ce176562bb92a7f91d99c8e7074846b0924a16a0798af",
+        "source_sha256": "a234c56688628d48232033006c64896a36e3d405a3e8d0a1f559b8bdf9555e65"
+      },
+      "verified_output_members": [
+        {
+          "bytes": 39424,
+          "path": "Proofs/RadenkovicGutmanRemainingThreeAssembly.olean",
+          "sha256": "f58d57e5573e0d4bcf436383cd9293627b54a81fad2b541217f9ba13fca23022"
+        }
+      ]
+    }
+  },
+  "named_axiom_profiles_checked": 11,
+  "native_inputs": {
+    "artifacts.json": {
+      "bytes": 1568,
+      "sha256": "ceced99c8e3940159cc547f09e4215e95b88b0ae1966848f764d759370c43065"
+    },
+    "evidence.zip": {
+      "bytes": 9896551,
+      "sha256": "5e79895ba9e2a362518788813a9c9b2469e0d9065048613d7e2be453ac008867"
+    },
+    "fresh.zip": {
+      "bytes": 9718148,
+      "sha256": "720cdd4e513b2e4fb68e7fd2b84c63cb3c31f899a3da79fc5938816600ffea3f"
+    },
+    "job.log": {
+      "bytes": 854691,
+      "sha256": "560d795559c320fb0acd40aef7e2fa6a38623db2d48e3e005799e3b56c470521"
+    },
+    "jobs.json": {
+      "bytes": 5532,
+      "sha256": "5baeb286dd95598b860d16097180642cd97dd4434cd6983fba274a273acc0b20"
+    },
+    "run.json": {
+      "bytes": 13372,
+      "sha256": "aea22e604bd33d01bc0500eeca4ec65f7decd1c47bddf4447827b324581de9fa"
+    }
+  },
+  "native_job_conclusion": "success",
+  "native_run_conclusion": "success",
+  "new_gate_sources": {
+    "authenticator_sha256": "eaae96913a22c9011facdecbee52f2a7da8739ec9ecea414336d0971d779de9c",
+    "frozen_diagnostic_constants_overwritten": false,
+    "native_context_simulated": false,
+    "native_paths_materialized": false,
+    "parent_and_gate_sources": {
+      "original_production_authenticator": {
+        "bytes": 36849,
+        "path": "/workspace/scratch/406169dbc070/rg_resume_20261104/final_direct_io_candidate/authenticate_original_direct_io.py",
+        "sha256": "0c01acb3884573c3e8e571d1bd6cd02936e47f072786a8379093732ca0189023"
+      },
+      "reviewed_readahead_gate_source": {
+        "bytes": 71243,
+        "path": "/workspace/scratch/406169dbc070/rg_resume_20261104/bothlong_phase_probe/authenticate_readahead_run.py",
+        "sha256": "bcdf299c53d1d3fe8ec5be20fc4fa9b2e9d4bc52db001e5627de45d6edc5ef11"
+      },
+      "reviewed_transport_parser_source": {
+        "bytes": 55081,
+        "path": "/workspace/scratch/406169dbc070/rg_resume_20261104/bothlong_phase_probe/authenticate_mmap_transport_retry_run.py",
+        "sha256": "47b9b7affcac54c4c68745ae5f3c5c3d30ad456b5d333beebd767626fddddf1f"
+      }
+    },
+    "runtime_code_bindings": {
+      ".github/workflows/rg-degree-one-large-join-repair-20261104.yml": {
+        "bytes": 9692,
+        "git_blob_sha1": "957870c6fad05a6e848e547c37325ebd79d8dedf",
+        "sha256": "0279c31549914f494e73ac72e50cf040e3e1c63a1ed380b5c9713a351bb5e2b9"
+      },
+      "ci/rg_collect_exact_d1_reproductions.py": {
+        "bytes": 44842,
+        "git_blob_sha1": "e693564fa1ff13653c2664f71fc604c4979c1d0b",
+        "sha256": "3b882d57a26546dc0caaa8e702d57c8b4dffff6172449d108d42f8ade2cf6527"
+      },
+      "ci/rg_enable_final_owned_proofstore_direct_io_20261104.py": {
+        "bytes": 13324,
+        "git_blob_sha1": "059b5fd863fcc14285d9f3791c3b5341064e387f",
+        "sha256": "f37830c0db07c77e865907b5f0d67d272c6963f46aeff81487a7438f33d33b1a"
+      },
+      "ci/rg_final_owned_proofstore_readahead_20261104.py": {
+        "bytes": 20183,
+        "git_blob_sha1": "ed715804b09f2812898be0d6acb93a4eb434462a",
+        "sha256": "be321bc881d77668d5e00731b7c1ba11a24154426ae98bcecdd5abf867f903f2"
+      },
+      "ci/rg_github_artifacts.py": {
+        "bytes": 8940,
+        "git_blob_sha1": "0d6b0ca19ca8b1717621559b426a0a7b0b9d9520",
+        "sha256": "db9221ee4aa24f77082c98f33588b987531fc77f9f93c49111d31ad12363b0ef"
+      },
+      "ci/rg_github_rate_limit.py": {
+        "bytes": 7427,
+        "git_blob_sha1": "02c3db7cbce68d671d9a414e7d8d44575094c3c6",
+        "sha256": "0c5a379458beafada219603bd7b8c1ad3cb8eb276335fa7abd86f04e1132461f"
+      }
+    },
+    "transport_events_used_as_restore_success": false
+  },
+  "partial_authentication_sha256": "b7d088a9a98d8da576a9ac5b741e0dc1a135aaad4886bedffbfd8482b481b170",
+  "plan_sha256": "8a8be4723d3cef83cc22cb23b8eb4418e26aac2e1a1da57b4f8a2b5749bf11cb",
+  "prior_actual_callback_plan_sha256": "29e2cf80c90d550da3b6b29b96a9ecd9b745f41c77f5febf78547ae222bd33e2",
+  "production_helper_sha256": "8872cd2515892ab1acf963e48e19162a98225582ba2b6e2579fc732576821b2b",
+  "readahead_policy": {
+    "actual_native_enable_and_check_passed": true,
+    "after": {
+      "bdi_link": "/sys/fs/btrfs/259cba10-ae4a-4ea8-8d88-88bdf9fa54ea/bdi",
+      "effective_loop_direct_io": 1,
+      "filesystem_device_links": [
+        {
+          "device_number": "7:0",
+          "name": "loop0",
+          "resolved_path": "/sys/devices/virtual/block/loop0"
+        }
+      ],
+      "filesystem_uuid": "259cba10-ae4a-4ea8-8d88-88bdf9fa54ea",
+      "mount_empty": true,
+      "other_device_readahead": {
+        "backing_queue": {
+          "identity": {
+            "device": "0:26",
+            "inode": 28541
+          },
+          "path": "/sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/MSFT1000:00/7ad35d50-c05b-47ab-b3a0-56a9a845852b/pcic05b:00/c05b:00:00.0/nvme/nvme0/nvme0n1/queue/read_ahead_kb",
+          "resolved_path": "/sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/MSFT1000:00/7ad35d50-c05b-47ab-b3a0-56a9a845852b/pcic05b:00/c05b:00:00.0/nvme/nvme0/nvme0n1/queue/read_ahead_kb",
+          "value_kib": 128
+        },
+        "loop_queue": {
+          "identity": {
+            "device": "0:26",
+            "inode": 10255
+          },
+          "path": "/sys/devices/virtual/block/loop0/queue/read_ahead_kb",
+          "resolved_path": "/sys/devices/virtual/block/loop0/queue/read_ahead_kb",
+          "value_kib": 128
+        }
+      },
+      "read_ahead_kib": 0,
+      "readahead_file": {
+        "identity": {
+          "device": "0:26",
+          "inode": 34171
+        },
+        "path": "/sys/fs/btrfs/259cba10-ae4a-4ea8-8d88-88bdf9fa54ea/bdi/read_ahead_kb",
+        "resolved_path": "/sys/devices/virtual/bdi/btrfs-1/read_ahead_kb"
+      },
+      "resolved_bdi": "/sys/devices/virtual/bdi/btrfs-1"
+    },
+    "before": {
+      "bdi_link": "/sys/fs/btrfs/259cba10-ae4a-4ea8-8d88-88bdf9fa54ea/bdi",
+      "effective_loop_direct_io": 1,
+      "filesystem_device_links": [
+        {
+          "device_number": "7:0",
+          "name": "loop0",
+          "resolved_path": "/sys/devices/virtual/block/loop0"
+        }
+      ],
+      "filesystem_uuid": "259cba10-ae4a-4ea8-8d88-88bdf9fa54ea",
+      "mount_empty": true,
+      "other_device_readahead": {
+        "backing_queue": {
+          "identity": {
+            "device": "0:26",
+            "inode": 28541
+          },
+          "path": "/sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/MSFT1000:00/7ad35d50-c05b-47ab-b3a0-56a9a845852b/pcic05b:00/c05b:00:00.0/nvme/nvme0/nvme0n1/queue/read_ahead_kb",
+          "resolved_path": "/sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/MSFT1000:00/7ad35d50-c05b-47ab-b3a0-56a9a845852b/pcic05b:00/c05b:00:00.0/nvme/nvme0/nvme0n1/queue/read_ahead_kb",
+          "value_kib": 128
+        },
+        "loop_queue": {
+          "identity": {
+            "device": "0:26",
+            "inode": 10255
+          },
+          "path": "/sys/devices/virtual/block/loop0/queue/read_ahead_kb",
+          "resolved_path": "/sys/devices/virtual/block/loop0/queue/read_ahead_kb",
+          "value_kib": 128
+        }
+      },
+      "read_ahead_kib": 4096,
+      "readahead_file": {
+        "identity": {
+          "device": "0:26",
+          "inode": 34171
+        },
+        "path": "/sys/fs/btrfs/259cba10-ae4a-4ea8-8d88-88bdf9fa54ea/bdi/read_ahead_kb",
+        "resolved_path": "/sys/devices/virtual/bdi/btrfs-1/read_ahead_kb"
+      },
+      "resolved_bdi": "/sys/devices/virtual/bdi/btrfs-1"
+    },
+    "check_read_only": true,
+    "check_report_sha256": "abe2f61e92a159ac3f7fb4f8718f8e1311f99cc16bd81a981ce215542e2a2238",
+    "dio_helper_sha256": "f37830c0db07c77e865907b5f0d67d272c6963f46aeff81487a7438f33d33b1a",
+    "dio_report_sha256": "1d9b21da267ed61a8978e5960ca6801b068725109d619100445773419f2e1c1b",
+    "effective_loop_dio_unchanged": true,
+    "enable_report_sha256": "f0ef33f4419c2e687bc473f8e6287be4dab3d48c87e42ea073146f2bcbfc4e4d",
+    "helper_sha256": "be321bc881d77668d5e00731b7c1ba11a24154426ae98bcecdd5abf867f903f2",
+    "immutable_native_binding": {
+      "dio_helper_sha256": "f37830c0db07c77e865907b5f0d67d272c6963f46aeff81487a7438f33d33b1a",
+      "dio_report_sha256": "1d9b21da267ed61a8978e5960ca6801b068725109d619100445773419f2e1c1b",
+      "helper_sha256": "be321bc881d77668d5e00731b7c1ba11a24154426ae98bcecdd5abf867f903f2",
+      "image": "/home/runner/work/formal-conjectures/formal-conjectures/rg-ephemeral-proofstore.btrfs",
+      "kernel_release": "7.0.0-1017-azure",
+      "mount": "/home/runner/work/formal-conjectures/formal-conjectures/Proofs/RG_Lean_20261019/build/extension",
+      "native_run_attempt": "1",
+      "native_run_id": "41890211247",
+      "native_workflow_source_commit": "1188a0dbc3ad1c5698671a93b9e27e6d21a718a5",
+      "setup_report_sha256": "db04c033ec4e704af8420bd877f66c39f4aa845fa9efaf92e043cc780e8a5e77"
+    },
+    "interpretation_limit": "Actual per-filesystem policy changed before restore and remained zero after preflight. This is an end-to-end policy observation, not an isolated Lean-only A/B measurement, a proof export, or a unique causal attribution. Demand faults, compressed-extent reads and other kernel paths remain possible.",
+    "native_context_observe_and_main_executed_offline": false,
+    "native_job_id": 126785297420,
+    "native_paths_used_only_as_data": true,
+    "native_run_attempt": 1,
+    "native_run_id": 41890211247,
+    "native_step_order": [
+      {
+        "completed_at": "2026-11-04T19:00:27Z",
+        "conclusion": "success",
+        "name": "Create a new bounded logical proofstore without formatting an existing disk",
+        "number": 11,
+        "started_at": "2026-11-04T19:00:26Z"
+      },
+      {
+        "completed_at": "2026-11-04T19:00:27Z",
+        "conclusion": "success",
+        "name": "Require direct I/O only for the new owned final proofstore loop",
+        "number": 12,
+        "started_at": "2026-11-04T19:00:27Z"
+      },
+      {
+        "completed_at": "2026-11-04T19:00:27Z",
+        "conclusion": "success",
+        "name": "Set only the new owned final Btrfs filesystem readahead to zero",
+        "number": 13,
+        "started_at": "2026-11-04T19:00:27Z"
+      },
+      {
+        "completed_at": "2026-11-04T19:46:21Z",
+        "conclusion": "success",
+        "name": "Authenticate and read back every selected original object and sidecar",
+        "number": 14,
+        "started_at": "2026-11-04T19:00:27Z"
+      },
+      {
+        "completed_at": "2026-11-04T19:53:53Z",
+        "conclusion": "success",
+        "name": "Require exactly the three remaining fresh final modules",
+        "number": 15,
+        "started_at": "2026-11-04T19:46:21Z"
+      },
+      {
+        "completed_at": "2026-11-04T19:53:53Z",
+        "conclusion": "success",
+        "name": "Confirm the owned final filesystem readahead stayed zero after preflight",
+        "number": 16,
+        "started_at": "2026-11-04T19:53:53Z"
+      },
+      {
+        "completed_at": "2026-11-04T20:21:59Z",
+        "conclusion": "success",
+        "name": "Check final class, full family, and three-field assembly",
+        "number": 17,
+        "started_at": "2026-11-04T19:53:53Z"
+      }
+    ],
+    "observed_before_kernel": {
+      "bdi_link": "/sys/fs/btrfs/259cba10-ae4a-4ea8-8d88-88bdf9fa54ea/bdi",
+      "effective_loop_direct_io": 1,
+      "filesystem_device_links": [
+        {
+          "device_number": "7:0",
+          "name": "loop0",
+          "resolved_path": "/sys/devices/virtual/block/loop0"
+        }
+      ],
+      "filesystem_uuid": "259cba10-ae4a-4ea8-8d88-88bdf9fa54ea",
+      "mount_empty": false,
+      "other_device_readahead": {
+        "backing_queue": {
+          "identity": {
+            "device": "0:26",
+            "inode": 28541
+          },
+          "path": "/sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/MSFT1000:00/7ad35d50-c05b-47ab-b3a0-56a9a845852b/pcic05b:00/c05b:00:00.0/nvme/nvme0/nvme0n1/queue/read_ahead_kb",
+          "resolved_path": "/sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/MSFT1000:00/7ad35d50-c05b-47ab-b3a0-56a9a845852b/pcic05b:00/c05b:00:00.0/nvme/nvme0/nvme0n1/queue/read_ahead_kb",
+          "value_kib": 128
+        },
+        "loop_queue": {
+          "identity": {
+            "device": "0:26",
+            "inode": 10255
+          },
+          "path": "/sys/devices/virtual/block/loop0/queue/read_ahead_kb",
+          "resolved_path": "/sys/devices/virtual/block/loop0/queue/read_ahead_kb",
+          "value_kib": 128
+        }
+      },
+      "read_ahead_kib": 0,
+      "readahead_file": {
+        "identity": {
+          "device": "0:26",
+          "inode": 34171
+        },
+        "path": "/sys/fs/btrfs/259cba10-ae4a-4ea8-8d88-88bdf9fa54ea/bdi/read_ahead_kb",
+        "resolved_path": "/sys/devices/virtual/bdi/btrfs-1/read_ahead_kb"
+      },
+      "resolved_bdi": "/sys/devices/virtual/bdi/btrfs-1"
+    },
+    "original_runtime_sysfs_observations_not_reread_locally": true,
+    "other_device_readahead_unchanged": true,
+    "positive_to_zero_transition": true,
+    "pure_validator_names": [
+      "parse_blkid",
+      "select_owned_loop",
+      "validate_sysfs_binding",
+      "validate_inputs",
+      "validate_transition",
+      "validate_enable_report"
+    ],
+    "recorded_mutation_count": 1,
+    "setup_report_sha256": "db04c033ec4e704af8420bd877f66c39f4aa845fa9efaf92e043cc780e8a5e77",
+    "sole_mutation": {
+      "argv": [
+        "sudo",
+        "-n",
+        "--",
+        "tee",
+        "--",
+        "/sys/fs/btrfs/259cba10-ae4a-4ea8-8d88-88bdf9fa54ea/bdi/read_ahead_kb"
+      ],
+      "input": "0\n",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "0\n"
+    },
+    "source_commit": "1188a0dbc3ad1c5698671a93b9e27e6d21a718a5",
+    "status": "ACTUAL_OWNED_BTRFS_READAHEAD_ENABLE_AND_READ_ONLY_CHECK_AUTHENTICATED"
+  },
+  "receipt_sha256": "ef5471f390cdb8fcfc8d8d90718a30eacc4face0f2942b97137580412d031308",
+  "remaining_main_family_count": 3,
+  "remaining_original_main_families": [
+    "degreeOneMiddle",
+    "degreeTwoThree",
+    "degreeFourToFortyfive"
+  ],
+  "repository": "RhudeJJJJ/formal-conjectures",
+  "required_modules": 33659,
+  "resource_evidence": {
+    "direct_io_evidence": {
+      "after_enabled": true,
+      "backing_block": {
+        "image_device": "259:1",
+        "logical_sector_bytes": 512,
+        "logical_sector_source": "/sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/MSFT1000:00/7ad35d50-c05b-47ab-b3a0-56a9a845852b/pcic05b:00/c05b:00:00.0/nvme/nvme0/nvme0n1/queue/logical_block_size",
+        "resolved_sysfs": "/sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/MSFT1000:00/7ad35d50-c05b-47ab-b3a0-56a9a845852b/pcic05b:00/c05b:00:00.0/nvme/nvme0/nvme0n1/nvme0n1p1",
+        "status": "READ_FROM_SYSFS",
+        "sysfs": "/sys/dev/block/259:1"
+      },
+      "backing_filesystem": {
+        "fstype": "ext4",
+        "maj:min": "259:1",
+        "options": "rw,relatime,discard,journal_async_commit,nobarrier,errors=remount-ro,commit=30,data=writeback",
+        "source": "/dev/nvme0n1p1",
+        "target": "/"
+      },
+      "before_enabled": false,
+      "effective_sysfs_after": 1,
+      "flag_changed": true,
+      "image_identity": {
+        "device": "259:1",
+        "inode": 9302875,
+        "size": 274877906944
+      },
+      "kernel_release": "7.0.0-1017-azure",
+      "loop": "/dev/loop0",
+      "lower_filesystem_cache_behavior_measured_directly": false,
+      "only_owned_loop_dio_mutation": true,
+      "original_sources_and_guards_unchanged": true,
+      "report_sha256": "1d9b21da267ed61a8978e5960ca6801b068725109d619100445773419f2e1c1b",
+      "setup_report_sha256": "db04c033ec4e704af8420bd877f66c39f4aa845fa9efaf92e043cc780e8a5e77",
+      "util_linux_version": "losetup from util-linux 2.39.3"
+    },
+    "exit_code": 0,
+    "host": {
+      "exit_code": 0,
+      "foreign_processes_signalled": 0,
+      "host_reserve_stop": false,
+      "lowest_observed_host_free_bytes": 52644249600,
+      "owned_pid": 4656,
+      "status": "OWNED_KERNEL_GROUP_ENDED"
+    },
+    "maximum_aggregate_lean_rss": 14734430208,
+    "maximum_persisted_sample_lean_rss": 14682062848,
+    "memory_reserve_bytes": 2147483648,
+    "minimum_observed_available_bytes": 6398279680,
+    "resource_observer_sha256": "c0f083badcdafa0319493f92e97a69b9218f11f54046a41786cae113a292a610",
+    "seconds": 1684.04,
+    "status": "VERIFIER_COMPLETED"
+  },
+  "restored_modules": 33656,
+  "run": 41890211247,
+  "run_attempt": 1,
+  "source_commit": "1188a0dbc3ad1c5698671a93b9e27e6d21a718a5",
+  "source_endpoint_closure_sha256": "ec3028a6ce22e4bb224ce176562bb92a7f91d99c8e7074846b0924a16a0798af",
+  "source_endpoint_sha256": "a234c56688628d48232033006c64896a36e3d405a3e8d0a1f559b8bdf9555e65",
+  "source_graph_sha256": "f0e3699070738db4ae272e3adbaf21ef20779082b93e55c1c269842284e8259a",
+  "source_projection_sha256": "f30016a879e80f98d3047ceb404fe088d6d92111e177c4844056cd725498c226",
+  "status": "ACTUAL_EXACT_DEGREE_ONE_LARGE_KERNEL_RECEIPT_AUTHENTICATED_THREE_FAMILIES_REMAIN",
+  "transport_retry_observations": {
+    "decision_record_counts": {},
+    "distinct_http_503_responses": null,
+    "event_record_count": 0,
+    "event_records": [],
+    "events_are_actual_log_records_not_independent_network_observations": true,
+    "interpretation_limit": "No transport records means none of these structured records was observed. The helper emits no successful-GET record or artifact ID; retry decisions and wait records do not count successful retries. Full original archive/source/receipt/trace checks remain separate and mandatory.",
+    "job_log_sha256": "560d795559c320fb0acd40aef7e2fa6a38623db2d48e3e005799e3b56c470521",
+    "per_artifact_retry_attribution_possible": false,
+    "printed_log_timestamps_are_not_measured_retry_durations": true,
+    "request_urls_tokens_and_error_bodies_reproduced": false,
+    "retry_decision_records": 0,
+    "retry_success_inferred_from_restore_success": false,
+    "service_error_code_record_counts": {},
+    "status": "ACTUAL_STRUCTURED_TRANSPORT_LOG_RECORDS_PARSED",
+    "status_record_counts": {},
+    "successful_retry_requests": null,
+    "transport_helper_sha256": "db9221ee4aa24f77082c98f33588b987531fc77f9f93c49111d31ad12363b0ef"
+  },
+  "unchanged_original_proof_source_commit": "10aa67f5f16e8ad00b30ac21332791b008b69cfe",
+  "workflow_event": "push"
+}

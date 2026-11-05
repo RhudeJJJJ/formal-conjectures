@@ -1,0 +1,153 @@
+{
+  "boundaries": {
+    "Lean_run": false,
+    "ZIP_downloaded": false,
+    "ZIP_opened": false,
+    "checker_imported": false,
+    "full_authenticator_rerun": false,
+    "proof_or_runtime_changes": false,
+    "remote_writes": false
+  },
+  "continuation_scope": {
+    "bytes": 300305,
+    "path": "/workspace/scratch/406169dbc070/rg_resume_20261104/anchor029_preparation/continuation_candidate/continuation_scope.json",
+    "sha256": "b2c7c2b3483d845fa84ff71f7e906cd9dc657a8e73cfc7e09c9d4d09e529a06f"
+  },
+  "endpoint_scope": {
+    "anchor_record": {
+      "lower": "3675063162842515354431878914926785/32624163332060752803334972325527552",
+      "n": 52,
+      "p": 9,
+      "q": 38
+    },
+    "conclusion": "(lower : \u211d) \u2264 normalizedIntegral C u p q (51 / 26 : \u211d), with 51/26 = 2 - 2/52.",
+    "declaration": "Gebendorfer.RadenkovicGutman.MiddleOriginalAnchorCertificate029.certificate",
+    "premises": [
+      "(source C u p q).IsTree",
+      "C.degree u = 1",
+      "(p,q) = (9,38) or (38,9)",
+      "order C p q <= 52"
+    ],
+    "scope_limit": "This proves the particular original Anchor029 certificate. It does not prove all degreeOneMiddle cases.",
+    "source_closure_sha256": "31ca493f64f395a899702cb7b8297628f69d30119a97f5769fb179acd16cf0b5",
+    "source_definitions_read": [
+      "RadenkovicGutmanMiddleOriginalAnchorCertificate029",
+      "RadenkovicGutmanMiddleOriginalAnchorPredicate",
+      "RadenkovicGutmanWideAnchor029OriginalAnchor"
+    ],
+    "source_sha256": "e58c770e5bc70bcf7a5ad5529af7a3586dd704ea953d5b320dfb0513f79a83dc",
+    "type": "MiddleOriginalAnchorPredicate.Proved anchor"
+  },
+  "frozen_checker": {
+    "bytes": 51023,
+    "path": "/workspace/scratch/406169dbc070/rg_resume_20261104/anchor029_preparation/continuation_candidate/authenticate_anchor029_continuation_run41888401962.py",
+    "sha256": "5ea66b63d162ae70eb84b9925b87027016d489cf8b0f277144637b65e41469d5"
+  },
+  "native_captures": {
+    "artifacts.json": {
+      "bytes": 821,
+      "path": "/workspace/scratch/406169dbc070/rg_resume_20261104/anchor029_preparation/continuation_candidate/actual/artifacts.json",
+      "sha256": "965712314c93c130af46a97106b5e84733fb8eb42d5402ed78f98a2d5029ddd8"
+    },
+    "job.log": {
+      "bytes": 636292,
+      "path": "/workspace/scratch/406169dbc070/rg_resume_20261104/anchor029_preparation/continuation_candidate/actual/job.log",
+      "sha256": "4964421464cdc6273c991f9c9af6b49ab05420a8d0905ccd23b96abfb70754f9"
+    },
+    "jobs.json": {
+      "bytes": 3692,
+      "path": "/workspace/scratch/406169dbc070/rg_resume_20261104/anchor029_preparation/continuation_candidate/actual/jobs.json",
+      "sha256": "ddc0ab2183da8b072423952cfce637d0b5e07faf7d4f40cb24e104810fa5da3f"
+    },
+    "run.json": {
+      "bytes": 13433,
+      "path": "/workspace/scratch/406169dbc070/rg_resume_20261104/anchor029_preparation/continuation_candidate/actual/run.json",
+      "sha256": "f9ffbfd24b093e7e73e643d9a6b60084d037b1c82a5ddc19ce9d02c28234378c"
+    }
+  },
+  "native_outcome": {
+    "all_14_native_steps_success": true,
+    "attempt": 1,
+    "head": "b6924bdabeff35ff4af328c3879c69fc90ecf8f6",
+    "job": 126778939548,
+    "job_completed_at": "2026-11-04T22:30:47Z",
+    "kernel_step_completed_at": "2026-11-04T22:30:44Z",
+    "run": 41888401962,
+    "run_and_job_conclusion": "success"
+  },
+  "origin_crosschecks": {
+    "all_108_inherited_report_entries_equal_frozen_producer_report": true,
+    "no_overlap_with_55_fresh_modules": true,
+    "producer_completed_endpoint_receipt": false,
+    "producer_whole_job_conclusion_preserved": "cancelled",
+    "six_prerequisite_origins_preserved": true
+  },
+  "producer_report": {
+    "bytes": 288072,
+    "path": "/workspace/scratch/406169dbc070/rg_resume_20261104/anchor029_preparation/original_anchor029_candidate/actual/original_anchor029_authentication.json",
+    "sha256": "d5189d1fb0493e394d65054c29f1a4ac3a934e84d2e8873172bb758207312783"
+  },
+  "resource_crosschecks": {
+    "all_samples_with_Lean_processes_have_reserve": true,
+    "exit_code": 0,
+    "maximum_aggregate_lean_rss": 10304520192,
+    "memory_reserve_mib": 2048,
+    "minimum_observed_available_bytes": 8709599232,
+    "module_timeout_seconds": 600,
+    "native_resource_samples": 1409,
+    "native_result_matches_root_report": true,
+    "no_native_memory_guard_event": true,
+    "observed_seconds": 14107.16,
+    "per_module_recorded_seconds_are_not_pure_Lean_runtime": true,
+    "status": "VERIFIER_COMPLETED",
+    "unobserved_memory_intervals_not_claimed": true,
+    "whole_job_timeout_minutes": 360,
+    "workers": 1
+  },
+  "review_scope": "Read frozen checker source and resulting report; cross-compare fixed continuation/producer records, source scopes and original native captures. No authenticator import/execution and no ZIP open/download.",
+  "reviewed_at_utc": "2026-11-05T14:27:15.739378+00:00",
+  "root_report": {
+    "bytes": 415386,
+    "path": "/workspace/scratch/406169dbc070/rg_resume_20261104/anchor029_preparation/continuation_candidate/actual/anchor029_continuation_authentication.json",
+    "sha256": "aa9128492cb857cac5a50fc1823dc7d2b410dadc41e9e996bb952445b4220ca7"
+  },
+  "scope_crosschecks": {
+    "actual_and_expected_zip_members_from_root_report": 450,
+    "additional_diagnostic_priors_outside_endpoint": 243,
+    "all_163_module_profile_lists_equal_fixed_source_order": true,
+    "allowed_axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "combined_ordered_profile_occurrences": 838,
+    "complete_original_receipt_sha256": "62869abd85a3dcc6b141d2cecd8a2735ba2515ac1b1700d29a1ee3f517d11eee",
+    "diagnostic_prior_rows": 469,
+    "fresh_exports": 55,
+    "fresh_output_bytes_from_root_report": 7558224,
+    "full_diagnostic_rows": 524,
+    "historical_required_priors": 118,
+    "inherited_cancelled_producer_exports": 108,
+    "inherited_ordered_profile_occurrences": 545,
+    "member_count_derivation": "281 source members + 55 object/record/log triples + 4 metadata members",
+    "new_ordered_profile_occurrences": 293,
+    "original_sources": 281,
+    "profile_module_partition": 163,
+    "required_priors": 226
+  },
+  "status": "INDEPENDENT_REPORT_SOURCE_AND_NATIVE_CAPTURE_REVIEW_PASSED_NO_CONCRETE_FINDING",
+  "status_interpretation": {
+    "anchor029_certificate_completed": true,
+    "conditional_family_count_key": "remaining_original_families_without_separate_large_completion",
+    "family_count_change_from_this_anchor_run": 0,
+    "frozen_report_conditional_family_count": 4,
+    "frozen_report_edited": false,
+    "global_rg_proof_claim": false,
+    "separate_primary_Large_completion_is_outside_this_Anchor_review": true
+  },
+  "workflow": {
+    "bytes": 6508,
+    "path": "/workspace/scratch/406169dbc070/rg_resume_20261104/anchor029_preparation/continuation_candidate/patch/.github/workflows/rg-middle-anchor029-partial-resume-20261104.yml",
+    "sha256": "a6d2e2c84ff5d191a06c94f3fbf057cc4b0555e4cb57cd8190992aff311f3145"
+  }
+}

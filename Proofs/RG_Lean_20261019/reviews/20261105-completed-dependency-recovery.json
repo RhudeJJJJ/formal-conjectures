@@ -1,0 +1,149 @@
+{
+  "anchor_full_report_sha256": "aa9128492cb857cac5a50fc1823dc7d2b410dadc41e9e996bb952445b4220ca7",
+  "earlier_inventory_missing_five_anchor_inputs_now_exactly_restored": true,
+  "earlier_static_inventory_sha256": "a40715a9551a0ce84ee48503ed27e688becee3cb9a4cbc4218321e09b7160e49",
+  "kernel_receipt_synthesized": false,
+  "original_transitive_LF_variant_preserved": true,
+  "primary_full_report_sha256": "101fdef6bb0152d1c3458f84c3d22d3c148f62aea2b2c56a538f8528df5ef40d",
+  "proof_gates_changed": false,
+  "recovered_file_count": 15,
+  "recovered_files": [
+    {
+      "bytes": 9692,
+      "exact_recovery_verified": true,
+      "expected_sha256": "0279c31549914f494e73ac72e50cf040e3e1c63a1ed380b5c9713a351bb5e2b9",
+      "git_blob_sha1": "957870c6fad05a6e848e547c37325ebd79d8dedf",
+      "local_path": "rg_resume_20261104/final_joblog_retry_preparation/patch/.github/workflows/rg-degree-one-large-join-repair-20261104.yml",
+      "ref": "1188a0dbc3ad1c5698671a93b9e27e6d21a718a5",
+      "repository_path": ".github/workflows/rg-degree-one-large-join-repair-20261104.yml"
+    },
+    {
+      "bytes": 13324,
+      "exact_recovery_verified": true,
+      "expected_sha256": "f37830c0db07c77e865907b5f0d67d272c6963f46aeff81487a7438f33d33b1a",
+      "git_blob_sha1": "059b5fd863fcc14285d9f3791c3b5341064e387f",
+      "local_path": "rg_resume_20261104/final_joblog_retry_preparation/patch/ci/rg_enable_final_owned_proofstore_direct_io_20261104.py",
+      "ref": "1188a0dbc3ad1c5698671a93b9e27e6d21a718a5",
+      "repository_path": "ci/rg_enable_final_owned_proofstore_direct_io_20261104.py"
+    },
+    {
+      "bytes": 20183,
+      "exact_recovery_verified": true,
+      "expected_sha256": "be321bc881d77668d5e00731b7c1ba11a24154426ae98bcecdd5abf867f903f2",
+      "git_blob_sha1": "ed715804b09f2812898be0d6acb93a4eb434462a",
+      "local_path": "rg_resume_20261104/final_joblog_retry_preparation/patch/ci/rg_final_owned_proofstore_readahead_20261104.py",
+      "ref": "1188a0dbc3ad1c5698671a93b9e27e6d21a718a5",
+      "repository_path": "ci/rg_final_owned_proofstore_readahead_20261104.py"
+    },
+    {
+      "bytes": 8940,
+      "exact_recovery_verified": true,
+      "expected_sha256": "db9221ee4aa24f77082c98f33588b987531fc77f9f93c49111d31ad12363b0ef",
+      "git_blob_sha1": "0d6b0ca19ca8b1717621559b426a0a7b0b9d9520",
+      "local_path": "rg_resume_20261104/final_joblog_retry_preparation/patch/ci/rg_github_artifacts.py",
+      "ref": "1188a0dbc3ad1c5698671a93b9e27e6d21a718a5",
+      "repository_path": "ci/rg_github_artifacts.py"
+    },
+    {
+      "bytes": 7427,
+      "exact_recovery_verified": true,
+      "expected_sha256": "0c5a379458beafada219603bd7b8c1ad3cb8eb276335fa7abd86f04e1132461f",
+      "git_blob_sha1": "02c3db7cbce68d671d9a414e7d8d44575094c3c6",
+      "local_path": "rg_resume_20261104/final_joblog_retry_preparation/patch/ci/rg_github_rate_limit.py",
+      "ref": "1188a0dbc3ad1c5698671a93b9e27e6d21a718a5",
+      "repository_path": "ci/rg_github_rate_limit.py"
+    },
+    {
+      "bytes": 44842,
+      "exact_recovery_verified": true,
+      "expected_sha256": "3b882d57a26546dc0caaa8e702d57c8b4dffff6172449d108d42f8ade2cf6527",
+      "git_blob_sha1": "e693564fa1ff13653c2664f71fc604c4979c1d0b",
+      "local_path": "rg_resume_20261104/final_joblog_retry_preparation/patch/ci/rg_collect_exact_d1_reproductions.py",
+      "ref": "1188a0dbc3ad1c5698671a93b9e27e6d21a718a5",
+      "repository_path": "ci/rg_collect_exact_d1_reproductions.py"
+    },
+    {
+      "bytes": 71243,
+      "exact_recovery_verified": true,
+      "expected_sha256": "bcdf299c53d1d3fe8ec5be20fc4fa9b2e9d4bc52db001e5627de45d6edc5ef11",
+      "git_blob_sha1": "c266a781b2605d4185c6ca44e275ecbd2df900f6",
+      "local_path": "rg_resume_20261104/bothlong_phase_probe/authenticate_readahead_run.py",
+      "ref": "f02df37d3d83484fa311b5bfefe9a8fb49fa63cf",
+      "repository_path": "Proofs/RG_Lean_20261019/reviews/offline_sources_20261104/source/rg_resume_20261104/bothlong_phase_probe/authenticate_readahead_run.py"
+    },
+    {
+      "bytes": 55081,
+      "exact_recovery_verified": true,
+      "expected_sha256": "47b9b7affcac54c4c68745ae5f3c5c3d30ad456b5d333beebd767626fddddf1f",
+      "git_blob_sha1": "b74bde86c54ecd11ac8188b7d8f1837c92d3e699",
+      "local_path": "rg_resume_20261104/bothlong_phase_probe/authenticate_mmap_transport_retry_run.py",
+      "ref": "f02df37d3d83484fa311b5bfefe9a8fb49fa63cf",
+      "repository_path": "Proofs/RG_Lean_20261019/reviews/offline_sources_20261104/source/rg_resume_20261104/bothlong_phase_probe/authenticate_mmap_transport_retry_run.py"
+    },
+    {
+      "bytes": 6508,
+      "exact_recovery_verified": true,
+      "expected_sha256": "a6d2e2c84ff5d191a06c94f3fbf057cc4b0555e4cb57cd8190992aff311f3145",
+      "git_blob_sha1": "ce4e1f8e0da1fe9cae0d7eded8901371634dc1b8",
+      "local_path": "rg_resume_20261104/anchor029_preparation/continuation_candidate/patch/.github/workflows/rg-middle-anchor029-partial-resume-20261104.yml",
+      "ref": "b6924bdabeff35ff4af328c3879c69fc90ecf8f6",
+      "repository_path": ".github/workflows/rg-middle-anchor029-partial-resume-20261104.yml"
+    },
+    {
+      "bytes": 359,
+      "exact_recovery_verified": true,
+      "expected_sha256": "5937c30e2f16a6ee9c95cfbc3eb4bfe14e455cc9995a804fbf1446bdbab378ab",
+      "git_blob_sha1": "496b57564fc142583001f4cc95aa113d5faeb4c6",
+      "local_path": "rg_resume_20261104/anchor029_preparation/continuation_candidate/patch/ci/rg_middle_anchor029_partial_resume_restore_plan_20261104.json",
+      "ref": "b6924bdabeff35ff4af328c3879c69fc90ecf8f6",
+      "repository_path": "ci/rg_middle_anchor029_partial_resume_restore_plan_20261104.json"
+    },
+    {
+      "bytes": 106724,
+      "exact_recovery_verified": true,
+      "expected_sha256": "59b460a03405b69f4889c4e6954f6bf1abc53be3cbf96ed38799fe44abbdbf4f",
+      "git_blob_sha1": "3cad3bdf880910dc7c0f8ebbb043f4b261099e9e",
+      "local_path": "rg_resume_20261104/anchor029_preparation/continuation_candidate/patch/ci/rg_middle_anchor029_run41826563525_partial_prior_exports.json",
+      "ref": "b6924bdabeff35ff4af328c3879c69fc90ecf8f6",
+      "repository_path": "ci/rg_middle_anchor029_run41826563525_partial_prior_exports.json"
+    },
+    {
+      "bytes": 300305,
+      "exact_recovery_verified": true,
+      "expected_sha256": "b2c7c2b3483d845fa84ff71f7e906cd9dc657a8e73cfc7e09c9d4d09e529a06f",
+      "git_blob_sha1": "a2d1f789997c7f1a05fc366adf7517115d77a267",
+      "local_path": "rg_resume_20261104/anchor029_preparation/continuation_candidate/continuation_scope.json",
+      "ref": "b6924bdabeff35ff4af328c3879c69fc90ecf8f6",
+      "repository_path": "Proofs/RG_Lean_20261019/reviews/20261104-anchor029-partial-continuation-scope.json"
+    },
+    {
+      "bytes": 288072,
+      "exact_recovery_verified": true,
+      "expected_sha256": "d5189d1fb0493e394d65054c29f1a4ac3a934e84d2e8873172bb758207312783",
+      "git_blob_sha1": "60de7ddacdffcd4a31346c08ca1a65ff6351dfdd",
+      "local_path": "rg_resume_20261104/anchor029_preparation/original_anchor029_candidate/actual/original_anchor029_authentication.json",
+      "ref": "b6924bdabeff35ff4af328c3879c69fc90ecf8f6",
+      "repository_path": "Proofs/RG_Lean_20261019/reviews/20261104-anchor029-original-partial-authentication.json"
+    },
+    {
+      "bytes": 62080,
+      "exact_recovery_verified": true,
+      "expected_sha256": "eaae96913a22c9011facdecbee52f2a7da8739ec9ecea414336d0971d779de9c",
+      "git_blob_sha1": "0c7e562a68596c30e8b32588932b2d4f17518286",
+      "local_path": "rg_resume_20261104/final_joblog_retry_preparation/authenticate_original_joblog_retry_actual.py",
+      "ref": "f02df37d3d83484fa311b5bfefe9a8fb49fa63cf",
+      "repository_path": "Proofs/RG_Lean_20261019/reviews/offline_sources_20261104/source/rg_resume_20261104/final_joblog_retry_preparation/authenticate_original_joblog_retry_actual.py"
+    },
+    {
+      "bytes": 51023,
+      "exact_recovery_verified": true,
+      "expected_sha256": "5ea66b63d162ae70eb84b9925b87027016d489cf8b0f277144637b65e41469d5",
+      "git_blob_sha1": "14b305de9007b19947f36dff8a24fc44f84c02de",
+      "local_path": "rg_resume_20261104/anchor029_preparation/continuation_candidate/authenticate_anchor029_continuation_run41888401962.py",
+      "ref": "f02df37d3d83484fa311b5bfefe9a8fb49fa63cf",
+      "repository_path": "Proofs/RG_Lean_20261019/reviews/offline_sources_20261104/source/rg_resume_20261104/anchor029_preparation/continuation_candidate/authenticate_anchor029_continuation_run41888401962.py"
+    }
+  ],
+  "repository": "RhudeJJJJ/formal-conjectures",
+  "status": "EXACT_PUBLISHED_BYTES_RECOVERED_AND_BOTH_FROZEN_FULL_AUTHENTICATORS_SUCCEEDED"
+}

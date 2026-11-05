@@ -1,0 +1,240 @@
+{
+  "archive_bytes_downloaded_by_agent": false,
+  "artifacts": [
+    {
+      "digest": "sha256:720cdd4e513b2e4fb68e7fd2b84c63cb3c31f899a3da79fc5938816600ffea3f",
+      "expired": false,
+      "id": 13360142786,
+      "name": "rg-degree-one-large-join-repair-20261104-41890211247-1",
+      "size_in_bytes": 9718148
+    },
+    {
+      "digest": "sha256:5e79895ba9e2a362518788813a9c9b2469e0d9065048613d7e2be453ac008867",
+      "expired": false,
+      "id": 13359923008,
+      "name": "rg-degree-one-large-join-repair-20261104-evidence-41890211247-1",
+      "size_in_bytes": 9896551
+    }
+  ],
+  "family_closure_claim": false,
+  "files": {
+    "artifacts.json": {
+      "bytes": 1568,
+      "path": "rg_resume_20261104/final_joblog_retry_preparation/actual/artifacts.json",
+      "sha256": "ceced99c8e3940159cc547f09e4215e95b88b0ae1966848f764d759370c43065"
+    },
+    "job.log": {
+      "bytes": 854691,
+      "path": "rg_resume_20261104/final_joblog_retry_preparation/actual/job.log",
+      "sha256": "560d795559c320fb0acd40aef7e2fa6a38623db2d48e3e005799e3b56c470521"
+    },
+    "jobs.json": {
+      "bytes": 5532,
+      "path": "rg_resume_20261104/final_joblog_retry_preparation/actual/jobs.json",
+      "sha256": "5baeb286dd95598b860d16097180642cd97dd4434cd6983fba274a273acc0b20"
+    },
+    "run.json": {
+      "bytes": 13372,
+      "path": "rg_resume_20261104/final_joblog_retry_preparation/actual/run.json",
+      "sha256": "aea22e604bd33d01bc0500eeca4ec65f7decd1c47bddf4447827b324581de9fa"
+    }
+  },
+  "full_archive_authenticator_executed": false,
+  "head_sha": "1188a0dbc3ad1c5698671a93b9e27e6d21a718a5",
+  "inventory_created_at_utc": "2026-11-05T14:19:00.312893+00:00",
+  "job": 126785297420,
+  "native_job_completed_at": "2026-11-04T20:22:12Z",
+  "native_job_conclusion": "success",
+  "native_run_conclusion": "success",
+  "native_steps": [
+    {
+      "completed_at": "2026-11-04T18:45:13Z",
+      "conclusion": "success",
+      "name": "Set up job",
+      "number": 1,
+      "started_at": "2026-11-04T18:45:12Z",
+      "status": "completed"
+    },
+    {
+      "completed_at": "2026-11-04T18:45:48Z",
+      "conclusion": "success",
+      "name": "Run actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803",
+      "number": 2,
+      "started_at": "2026-11-04T18:45:13Z",
+      "status": "completed"
+    },
+    {
+      "completed_at": "2026-11-04T18:45:48Z",
+      "conclusion": "success",
+      "name": "Reserve actual host space without touching proof inputs",
+      "number": 3,
+      "started_at": "2026-11-04T18:45:48Z",
+      "status": "completed"
+    },
+    {
+      "completed_at": "2026-11-04T18:46:00Z",
+      "conclusion": "success",
+      "name": "Reproduce the already checked shared class sources",
+      "number": 4,
+      "started_at": "2026-11-04T18:45:48Z",
+      "status": "completed"
+    },
+    {
+      "completed_at": "2026-11-04T18:56:54Z",
+      "conclusion": "success",
+      "name": "Collect exact successful numeric and named prerequisite exports",
+      "number": 5,
+      "started_at": "2026-11-04T18:46:00Z",
+      "status": "completed"
+    },
+    {
+      "completed_at": "2026-11-04T18:58:34Z",
+      "conclusion": "success",
+      "name": "Establish exact current closure and available original object coverage",
+      "number": 6,
+      "started_at": "2026-11-04T18:56:54Z",
+      "status": "completed"
+    },
+    {
+      "completed_at": "2026-11-04T18:58:35Z",
+      "conclusion": "success",
+      "name": "Install the fixed project toolchain",
+      "number": 7,
+      "started_at": "2026-11-04T18:58:34Z",
+      "status": "completed"
+    },
+    {
+      "completed_at": "2026-11-04T18:58:49Z",
+      "conclusion": "success",
+      "name": "Materialize the fixed dependency lock",
+      "number": 8,
+      "started_at": "2026-11-04T18:58:35Z",
+      "status": "completed"
+    },
+    {
+      "completed_at": "2026-11-04T19:00:20Z",
+      "conclusion": "success",
+      "name": "Fetch only the external modules of this exact source closure",
+      "number": 9,
+      "started_at": "2026-11-04T18:58:49Z",
+      "status": "completed"
+    },
+    {
+      "completed_at": "2026-11-04T19:00:26Z",
+      "conclusion": "success",
+      "name": "Install the transparent filesystem utility",
+      "number": 10,
+      "started_at": "2026-11-04T19:00:20Z",
+      "status": "completed"
+    },
+    {
+      "completed_at": "2026-11-04T19:00:27Z",
+      "conclusion": "success",
+      "name": "Create a new bounded logical proofstore without formatting an existing disk",
+      "number": 11,
+      "started_at": "2026-11-04T19:00:26Z",
+      "status": "completed"
+    },
+    {
+      "completed_at": "2026-11-04T19:00:27Z",
+      "conclusion": "success",
+      "name": "Require direct I/O only for the new owned final proofstore loop",
+      "number": 12,
+      "started_at": "2026-11-04T19:00:27Z",
+      "status": "completed"
+    },
+    {
+      "completed_at": "2026-11-04T19:00:27Z",
+      "conclusion": "success",
+      "name": "Set only the new owned final Btrfs filesystem readahead to zero",
+      "number": 13,
+      "started_at": "2026-11-04T19:00:27Z",
+      "status": "completed"
+    },
+    {
+      "completed_at": "2026-11-04T19:46:21Z",
+      "conclusion": "success",
+      "name": "Authenticate and read back every selected original object and sidecar",
+      "number": 14,
+      "started_at": "2026-11-04T19:00:27Z",
+      "status": "completed"
+    },
+    {
+      "completed_at": "2026-11-04T19:53:53Z",
+      "conclusion": "success",
+      "name": "Require exactly the three remaining fresh final modules",
+      "number": 15,
+      "started_at": "2026-11-04T19:46:21Z",
+      "status": "completed"
+    },
+    {
+      "completed_at": "2026-11-04T19:53:53Z",
+      "conclusion": "success",
+      "name": "Confirm the owned final filesystem readahead stayed zero after preflight",
+      "number": 16,
+      "started_at": "2026-11-04T19:53:53Z",
+      "status": "completed"
+    },
+    {
+      "completed_at": "2026-11-04T20:21:59Z",
+      "conclusion": "success",
+      "name": "Check final class, full family, and three-field assembly",
+      "number": 17,
+      "started_at": "2026-11-04T19:53:53Z",
+      "status": "completed"
+    },
+    {
+      "completed_at": "2026-11-04T20:22:00Z",
+      "conclusion": "success",
+      "name": "Require the exact completed kernel milestone and remaining three scopes",
+      "number": 18,
+      "started_at": "2026-11-04T20:21:59Z",
+      "status": "completed"
+    },
+    {
+      "completed_at": "2026-11-04T20:22:03Z",
+      "conclusion": "success",
+      "name": "Retain complete fresh outputs, axiom profiles, and diagnostics",
+      "number": 19,
+      "started_at": "2026-11-04T20:22:00Z",
+      "status": "completed"
+    },
+    {
+      "completed_at": "2026-11-04T20:22:06Z",
+      "conclusion": "success",
+      "name": "Preserve complete fresh proof exports in the standard archive layout",
+      "number": 20,
+      "started_at": "2026-11-04T20:22:03Z",
+      "status": "completed"
+    },
+    {
+      "completed_at": "2026-11-04T20:22:09Z",
+      "conclusion": "success",
+      "name": "Preserve original evidence and measured resource results separately",
+      "number": 21,
+      "started_at": "2026-11-04T20:22:06Z",
+      "status": "completed"
+    },
+    {
+      "completed_at": "2026-11-04T20:22:09Z",
+      "conclusion": "success",
+      "name": "Post Run actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803",
+      "number": 42,
+      "started_at": "2026-11-04T20:22:09Z",
+      "status": "completed"
+    },
+    {
+      "completed_at": "2026-11-04T20:22:09Z",
+      "conclusion": "success",
+      "name": "Complete job",
+      "number": 43,
+      "started_at": "2026-11-04T20:22:09Z",
+      "status": "completed"
+    }
+  ],
+  "repository": "RhudeJJJJ/formal-conjectures",
+  "run": 41890211247,
+  "run_attempt": 1,
+  "status": "ACTUAL_NATIVE_SUCCESS_CAPTURED_ARCHIVE_AUTHENTICATION_PENDING",
+  "workflow_event": "push"
+}

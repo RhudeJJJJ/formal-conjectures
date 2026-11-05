@@ -2,7 +2,7 @@
 
 Jonas J. Gebendorfer. OpenAI Codex assisted with implementation and validation.
 
-Status at 19:11 UTC on 4 November 2026: **incomplete; four original input families remain open in Lean, and no full Lean proof has been submitted**.
+Status at 15:31 CET on 5 November 2026: **the original `degreeOneLarge` family is kernel-verified; three original input families remain open, and no full Lean proof has been submitted**.
 The written computer-assisted proof and the original statement submission are distinct from completion of this Lean project.
 
 The target is the two statements in [PR #7399](https://github.com/google-deepmind/formal-conjectures/pull/7399), at statement commit `3654bf2bddc5217f904b7b85207b1091e833de49`: for every positive order and every tree on `Fin n`, the path minimizes actual Laplacian energy, with equality exactly for a graph isomorphic to the path. Energy is centered at the actual mean degree `2 |E(T)| / n`, where `|E(T)|` is the number of edges.
@@ -11,11 +11,37 @@ The target is the two statements in [PR #7399](https://github.com/google-deepmin
 
 The exact seven required inputs are in [OriginalAssembly](Proofs/RadenkovicGutmanOriginalAssembly.lean). In all family ranges below, degree means the residual core-node degree `C.degree u`. The [actual source graph](Proofs/RadenkovicGutmanFusionQuotient.lean) attaches two pendant paths of physical lengths `p + 1` and `q + 1` to the distinguished vertex `u` of the core `C : SimpleGraph (Fin m)`. Its physical order is `N = order C p q = m + p + q + 2`; `p` and `q` range over all natural numbers, including zero.
 
-Three have complete original kernel-object and source-closure audits at their recorded verified revisions: degree one through order 13, degree at least four through order 12 (all 247 actual-tree comparisons and coverage), and degree at least 46. Four remain open in this formalization: degree one at orders 14–52, degree one from order 53, degree two or three, and degrees 4–45 from order 13.
+Four have complete original kernel-object and source-closure audits at their recorded verified revisions: degree one through order 13, degree one from order 53, degree at least four through order 12 (all 247 actual-tree comparisons and coverage), and degree at least 46. Three remain open: degree one at orders 14–52, degree two or three, and degrees 4–45 from order 13.
 
-## Current milestone: the complete degree-one large-order family
+## Verified degree-one large-order family
 
-### Latest verified checkpoint — 4 November, 18:43 UTC
+### Complete original authentication — 5 November 2026
+
+The [actual original run 41890211247](https://github.com/RhudeJJJJ/formal-conjectures/actions/runs/41890211247/job/126785297420), at workflow commit `1188a0dbc3ad1c5698671a93b9e27e6d21a718a5`, completed successfully on 4 November at **21:22:12 CET**. On 5 November, the already frozen original authenticator was restored byte-for-byte and executed once against both complete actual archives and their native metadata. It returned exit 0. The [complete authentication report](reviews/20261105-degree-one-large-complete-authentication.json), SHA-256 `101fdef6bb0152d1c3458f84c3d22d3c148f62aea2b2c56a538f8528df5ef40d`, and [independent review](reviews/20261105-degree-one-large-independent-review.json) establish the original large-family milestone.
+
+The complete receipt covers **33,659 modules: 33,656 prior exports and exactly three fresh original exports**. All 767 selected archive identities and the actual full restoration/readback evidence are authenticated, totaling 119,932,353,256 recorded logical bytes. Complete selection coverage includes all 349 numerical batches and 69 named supporting origins. The four completed callback exports preserve their common original failed-job origin. The actual original Lean sources remain those fixed at `10aa67f5f16e8ad00b30ac21332791b008b69cfe`; the successful workflow head is separately identified above.
+
+| Fresh original module | Recorded module seconds | Exact named axiom profiles |
+|---|---:|---:|
+| `D1OriginalSharedBothLong` | 217.778 | 5 |
+| `OriginalDegreeOneLarge` | 351.509 | 2 |
+| `RemainingThreeAssembly` | 460.195 | 4 |
+
+All 11 profiles contain only `Classical.choice`, `Quot.sound` and `propext`. The unchanged gates used 900 seconds per module, one worker and 2048 MiB reserve. The actual memory and host guards completed successfully. The owned Btrfs read-ahead policy is authenticated as 4096 → 0 → 0 KiB while Direct I/O remained enabled; this successful configuration is not an isolated causal performance experiment. The [fresh-only export manifest](reviews/20261105-degree-one-large-fresh-prior-exports.json) copies exactly the three authenticated native rows and their actual artifact origin.
+
+The completed original family proves `(189 / 5000 : ℝ) < normalizedIntegral C u p q 2` for every original tree presentation with `C.degree u = 1` and physical order at least 53. There is no upper bound on order or arm lengths. This reduces **four open original families to three**. The global theorem remains conditional on the three exact fields listed below.
+
+### Anchor029 also completed
+
+The separate [Anchor029 continuation 41888401962](https://github.com/RhudeJJJJ/formal-conjectures/actions/runs/41888401962/job/126778939548), at `b6924bdabeff35ff4af328c3879c69fc90ecf8f6`, completed successfully on 4 November at **23:30:47 CET**. Its [complete actual authentication](reviews/20261105-anchor029-complete-authentication.json), SHA-256 `aa9128492cb857cac5a50fc1823dc7d2b410dadc41e9e996bb952445b4220ca7`, and [independent review](reviews/20261105-anchor029-independent-review.json) establish the original Anchor029 certificate.
+
+The complete 281-module endpoint has **226 priors and 55 fresh exports**, with **838 ordered named profile occurrences: 545 inherited and 293 new**. All 281 original source files, recursive closures, the 450-member actual archive and the complete receipt were checked. The 108 completed exports reused from the previous cancelled run keep that actual cancelled-job origin. The unchanged bounds were 600 seconds per Lean process, one worker, 2048 MiB reserve and a 360-minute job cap. The [fresh-only continuation manifest](reviews/20261105-anchor029-fresh-prior-exports.json) contains exactly the 55 new native rows; the 226 priors are not relabelled as fresh.
+
+Anchor029 closes one concrete original certificate. It does **not** close the whole `degreeOneMiddle` family, so the aggregate count remains **three**. The frozen Anchor report retains its explicitly conditional field `remaining_original_families_without_separate_large_completion = 4`; the separate Large completion above supplies the reduction. The [current verified status](reviews/20261105-verified-formalization-status.json) records both conclusions together.
+
+### Historical diagnostic and transport checkpoints — 4 November 2026
+
+The following dated attempts preserve what was known before the final original success and its complete authentication. References to four open families or pending checks in these historical records describe those earlier checkpoints.
 
 The complete current source and restore preflight has now passed for **33,659 modules**, with **33,656 authenticated prior objects and exactly three fresh final modules**. All 349 required numerical selections are covered by 154 successful original jobs and 195 authenticated fixed alternatives; the original master run itself did not succeed. All 69 named supporting selections are also retained. The four completed exports from the earlier failed callback keep their actual failed-job origin in the [fixed partial manifest](../../ci/rg_d1_callback41771586873_partial_prior_exports_20261104.json).
 
@@ -69,15 +95,15 @@ The [complete actual partial-archive authentication](reviews/20261104-anchor029-
 
 The separate [partial-result continuation, run 41888401962](https://github.com/RhudeJJJJ/formal-conjectures/actions/runs/41888401962/job/126778939548), at `b6924bdabeff35ff4af328c3879c69fc90ecf8f6`, is now active. Its [reviewed plan](https://github.com/RhudeJJJJ/formal-conjectures/blob/b6924bdabeff35ff4af328c3879c69fc90ecf8f6/Proofs/RG_Lean_20261019/reviews/20261104-anchor029-partial-continuation-independent-review.json) retains the original four manifests in order and adds exactly the authenticated 108-object producer manifest. The unchanged source graph gives 281 required modules: 226 priors and 55 fresh obligations (Cell088–133, Batch008–013, and the three original final modules). Both native restore steps and the bounded preflight are successful; the original Lean step has run since 18:35:37 UTC under the unchanged 600-second module cap, one worker, 2048 MiB reserve and 360-minute job cap. Exact new object counts await terminal archive authentication. The separately frozen checker requires all 281 original source/closure identities, the complete 226-prior/55-fresh receipt and all 838 original ordered named checks: 545 inherited and 293 new. No Anchor029, Middle-family or global completion is claimed.
 
-### Milestone scope and preceding reconstruction history
+### Verified scope and remaining original inputs
 
-The required field retains its original scope: `(source C u p q).IsTree`, residual core-node degree `C.degree u = 1`, physical order `53 ≤ N = m + p + q + 2`, and the strict reserve `(189 / 5000 : ℝ) < normalizedIntegral C u p q 2`. It has no upper bound on `N`, `p` or `q`. Within this input, 14 of 15 arm classes have prior complete checks. The remaining class uses the original 122 interval trees and 1,754 leaf positions; alternate proof routes preserve each position and its original payment.
+The required field retains its original scope: `(source C u p q).IsTree`, residual core-node degree `C.degree u = 1`, physical order `53 ≤ N = m + p + q + 2`, and the strict reserve `(189 / 5000 : ℝ) < normalizedIntegral C u p q 2`. It has no upper bound on `N`, `p` or `q`. The completed family covers all 15 unordered arm classes; the existing symmetry dispatch covers every ordered pair and all natural arm parameters. The formerly remaining class uses the original 122 interval trees and 1,754 leaf positions; alternate proof routes preserve each position and its original payment.
 
 All **122 original interval endpoints now have successful kernel jobs**. The final missing interval, 94, passed at source commit `06cfda994d984eae62a7dc4b5679bdadd24bff91`: [run 41676720743, job 126059212324](https://github.com/RhudeJJJJ/formal-conjectures/actions/runs/41676720743/job/126059212324). Its authenticated receipt covers 2,723 modules, including exactly three fresh exports: the interval endpoint and two unchanged integer elaboration helpers. The original ZIP, receipt, object hashes and standard axiom profiles have been authenticated. The [122-interval index](../../ci/rg_d1_20261103_interval_receipt_index.json) records exact run, job, source, archive and output identities and distinguishes receipt collection from the final current dependency audit.
 
-The [candidate complete family](Proofs/RadenkovicGutmanOriginalDegreeOneLarge.lean) now connects the existing `D1FastFullBox20` and `D1FastFullBox40` theorems to their original class fields. The earlier candidate incorrectly referenced nonexistent `D1Long20` and `D1Long40` modules. [RemainingThreeAssembly](Proofs/RadenkovicGutmanRemainingThreeAssembly.lean) supplies the degree-one large-order field from that family and preserves the exact three remaining input fields. **Neither candidate is counted as completed until its complete source-bound kernel check passes.**
+The [authenticated complete family](Proofs/RadenkovicGutmanOriginalDegreeOneLarge.lean) connects the existing `D1FastFullBox20` and `D1FastFullBox40` theorems to their original class fields. The earlier candidate incorrectly referenced nonexistent `D1Long20` and `D1Long40` modules. [RemainingThreeAssembly](Proofs/RadenkovicGutmanRemainingThreeAssembly.lean) now supplies the kernel-verified degree-one large-order field and preserves the exact three remaining input fields. Both current modules are covered by the completed original receipt and its full authentication above.
 
-If that complete family check succeeds, `RemainingThreeAssembly.Inputs` retains exactly the following three obligations. Each row is quantified over every `m : ℕ`, `C : SimpleGraph (Fin m)`, `u : Fin m` and `p q : ℕ`, with the common premise `(source C u p q).IsTree`. Here `N = order C p q` and `meanIntegral C u p q = normalizedIntegral C u p q (2 - 2 / (N : ℝ))`.
+After the complete family check, `RemainingThreeAssembly.Inputs` retains exactly the following three obligations. Each row is quantified over every `m : ℕ`, `C : SimpleGraph (Fin m)`, `u : Fin m` and `p q : ℕ`, with the common premise `(source C u p q).IsTree`. Here `N = order C p q` and `meanIntegral C u p q = normalizedIntegral C u p q (2 - 2 / (N : ℝ))`.
 
 | Remaining field | Degree and physical-order premises | Required conclusion |
 |---|---|---|
@@ -85,7 +111,7 @@ If that complete family check succeeds, `RemainingThreeAssembly.Inputs` retains 
 | `degreeTwoThree` | `C.degree u = 2 ∨ C.degree u = 3`; no additional order cutoff | `0 < meanIntegral C u p q` |
 | `degreeFourToFortyfive` | `4 ≤ C.degree u`, `C.degree u ≤ 45`, `13 ≤ N` | `(2 / 13 : ℝ) < normalizedIntegral C u p q 2` |
 
-The theorem `universal_conclusion_of_remaining_inputs` still requires `h : RemainingThreeAssembly.Inputs`. Given that argument, it proves [GlobalAssembly.Conclusion](Proofs/RadenkovicGutmanGlobalAssembly.lean) for every tree `T : SimpleGraph (Fin n)` with `1 ≤ n`: the path minimizes Laplacian energy, and energy equality holds exactly when `T` is isomorphic to the path. Checking this conditional theorem does not construct the three required fields. The current four-open-family status remains unchanged until the original large-family evidence is fully authenticated.
+The theorem `universal_conclusion_of_remaining_inputs` still requires `h : RemainingThreeAssembly.Inputs`. Given that argument, it proves [GlobalAssembly.Conclusion](Proofs/RadenkovicGutmanGlobalAssembly.lean) for every tree `T : SimpleGraph (Fin n)` with `1 ≤ n`: the path minimizes Laplacian energy, and energy equality holds exactly when `T` is isomorphic to the path. Checking this conditional theorem does not construct the three required fields. The current global theorem remains conditional on these three fields; a full RG proof is not claimed.
 
 The complete source preflight at fixed commit `640b3161bad20263bfcdf26b07a9ef3fed1b8bb3` covered 33,472 modules. It identified 9,993 unavailable original outputs before starting any bulk restore or final kernel compilation: [run 41678930853](https://github.com/RhudeJJJJ/formal-conjectures/actions/runs/41678930853). Of those, 4,860 belong to the degree-one large-order dependency closure and 5,133 to the other already checked inputs needed by the combined assembly. Many original seven-day CI archives have expired. These are missing compiled artifacts, not additional mathematical input families. The unchanged sources and historical receipts remain available.
 
@@ -102,7 +128,7 @@ At 17:41 UTC on 3 November, the complete reconstruction pipeline was launched at
 - [Original degree-at-least-46 prerequisite — run 41686621224](https://github.com/RhudeJJJJ/formal-conjectures/actions/runs/41686621224): exactly 67 original modules are reconstructed against their historical identities.
 - The [twelve supporting classes — run 41683471558](https://github.com/RhudeJJJJ/formal-conjectures/actions/runs/41683471558) retain their exact earlier source and output gates. The [original segmented leaf 1260 — run 41679064835](https://github.com/RhudeJJJJ/formal-conjectures/actions/runs/41679064835) passed on 3 November at 17:44 UTC. Its complete 229-module receipt contains 153 fresh exports and 76 authenticated prior objects. The full archive and all 153 original source, closure, object, axiom and output-member identities have been authenticated.
 
-### Current reconstruction results and remaining checks
+### Earlier reconstruction results and checks — 3–4 November 2026
 
 The [original sealed completion contract](../../ci/rg_d1_20261103_completion_contract.json) accounts for the historical 5,592-module gap at its fixed source revision. New proof organizations require explicit current source closures and fresh objects. The old contract does not by itself validate changed sources.
 

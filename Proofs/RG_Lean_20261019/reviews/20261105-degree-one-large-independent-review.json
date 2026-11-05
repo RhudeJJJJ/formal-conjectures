@@ -1,0 +1,195 @@
+{
+  "actual_fresh_output_bytes": 2094448,
+  "allowed_axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "boundaries": {
+    "archive_authentication_dependency": "Root single actual full frozen-authenticator execution and its bound report; this review cross-checks canonical native text, catalog and local sizes without duplicating that execution",
+    "archive_byte_hashes_recomputed_by_reviewer": false,
+    "archive_downloads": 0,
+    "archive_open_or_decompression_by_reviewer": false,
+    "full_authenticator_reexecuted": false,
+    "native_Lean_or_controls_executed": false,
+    "remote_mutations": false
+  },
+  "canonical_native_text_input_readbacks": {
+    "artifacts.json": {
+      "bytes": 1568,
+      "sha256": "ceced99c8e3940159cc547f09e4215e95b88b0ae1966848f764d759370c43065"
+    },
+    "job.log": {
+      "bytes": 854691,
+      "sha256": "560d795559c320fb0acd40aef7e2fa6a38623db2d48e3e005799e3b56c470521"
+    },
+    "jobs.json": {
+      "bytes": 5532,
+      "sha256": "5baeb286dd95598b860d16097180642cd97dd4434cd6983fba274a273acc0b20"
+    },
+    "run.json": {
+      "bytes": 13372,
+      "sha256": "aea22e604bd33d01bc0500eeca4ec65f7decd1c47bddf4447827b324581de9fa"
+    }
+  },
+  "completed_final_modules": [
+    {
+      "module": "Proofs.RadenkovicGutmanD1OriginalSharedBothLong",
+      "named_profiles": 5,
+      "native_completed_record_timestamp": "2026-11-04T20:08:21.1878487Z",
+      "output_bytes": 1954536,
+      "output_sha256": "c7418e313b4c6fc272712f3c83dd728bb5cdb462f2c018c6dfa3ee661b12db9b",
+      "seconds": 217.778,
+      "source_closure_sha256": "6652bff06d82bfecc1ec12127e805f41eb2e83a79f219b2145a3969fa41ccd06",
+      "source_sha256": "01d60858da8d95431e0240e6c7dbf2c657111fe34dbf3a3e5a115f90797edc06"
+    },
+    {
+      "module": "Proofs.RadenkovicGutmanOriginalDegreeOneLarge",
+      "named_profiles": 2,
+      "native_completed_record_timestamp": "2026-11-04T20:14:12.9795875Z",
+      "output_bytes": 100488,
+      "output_sha256": "9380d257be5f1b8f83cecb1702ac31f2cb1a780c2957b8797a283d110e7ecf4d",
+      "seconds": 351.509,
+      "source_closure_sha256": "6eb694fb9381c661109a14998ed9491bf4b5475a8c2fb2cfef81c7822bbae06d",
+      "source_sha256": "5bf13e2a759e57986dafbdb1937008207169962fc3432303c6e93b485e70ec5f"
+    },
+    {
+      "module": "Proofs.RadenkovicGutmanRemainingThreeAssembly",
+      "named_profiles": 4,
+      "native_completed_record_timestamp": "2026-11-04T20:21:53.4545064Z",
+      "output_bytes": 39424,
+      "output_sha256": "f58d57e5573e0d4bcf436383cd9293627b54a81fad2b541217f9ba13fca23022",
+      "seconds": 460.195,
+      "source_closure_sha256": "ec3028a6ce22e4bb224ce176562bb92a7f91d99c8e7074846b0924a16a0798af",
+      "source_sha256": "a234c56688628d48232033006c64896a36e3d405a3e8d0a1f559b8bdf9555e65"
+    }
+  ],
+  "exact_artifact_metadata": {
+    "evidence": {
+      "archive_opened_or_rehashed_by_this_review": false,
+      "catalog_digest_equals_root_authenticated_digest": true,
+      "digest": "sha256:5e79895ba9e2a362518788813a9c9b2469e0d9065048613d7e2be453ac008867",
+      "id": 13359923008,
+      "name": "rg-degree-one-large-join-repair-20261104-evidence-41890211247-1",
+      "present_local_size": 9896551,
+      "size_in_bytes": 9896551
+    },
+    "fresh": {
+      "archive_opened_or_rehashed_by_this_review": false,
+      "catalog_digest_equals_root_authenticated_digest": true,
+      "digest": "sha256:720cdd4e513b2e4fb68e7fd2b84c63cb3c31f899a3da79fc5938816600ffea3f",
+      "id": 13360142786,
+      "name": "rg-degree-one-large-join-repair-20261104-41890211247-1",
+      "present_local_size": 9718148,
+      "size_in_bytes": 9718148
+    }
+  },
+  "findings": [],
+  "frozen_authenticator": {
+    "assertion_count": 295,
+    "bytes": 62080,
+    "executed_by_this_review": false,
+    "git_blob_sha1": "0c7e562a68596c30e8b32588932b2d4f17518286",
+    "path": "/workspace/scratch/406169dbc070/rg_resume_20261104/final_joblog_retry_preparation/authenticate_original_joblog_retry_actual.py",
+    "sha256": "eaae96913a22c9011facdecbee52f2a7da8739ec9ecea414336d0971d779de9c"
+  },
+  "kind": "INDEPENDENT_PRIMARY_FULL_AUTHENTICATION_REPORT_REVIEW",
+  "named_profiles_total": 11,
+  "native_result": {
+    "all_23_steps_success": true,
+    "attempt": 1,
+    "event": "push",
+    "job": 126785297420,
+    "job_completed_at_Europe_Berlin": "2026-11-04T21:22:12+01:00",
+    "job_completed_at_utc": "2026-11-04T20:22:12Z",
+    "run": 41890211247,
+    "workflow_head": "1188a0dbc3ad1c5698671a93b9e27e6d21a718a5"
+  },
+  "preserved_four_callback_exports": {
+    "all_four_share_one_original_failed_job": true,
+    "four_distinct_job_origins_claimed": false,
+    "manifest_sha256": "5261abd7410fbd6f10b786d60c03d7606f5143127c9d5900e39fb668218bc32b",
+    "original_failed_job_unchanged": true,
+    "partial_modules": [
+      "Proofs.RadenkovicGutmanD1Long10",
+      "Proofs.RadenkovicGutmanD1Long30",
+      "Proofs.RadenkovicGutmanD1OriginalSharedSlice0080Complete",
+      "Proofs.RadenkovicGutmanD1OriginalSharedSlice0098Complete"
+    ],
+    "partial_objects_relabelled_as_fresh": false,
+    "preserved_origin": {
+      "artifact_id": 13298606637,
+      "artifact_sha256": "678c858661743a1ed63b41119eb56d4fee63a12fa830f1ebd1b7b06f3e83b97a",
+      "job": 126382274319,
+      "repository": "RhudeJJJJ/formal-conjectures",
+      "run": 41771586873,
+      "source_commit": "1c4dd54321723bc7171e7dcab4fb28f01905038e"
+    }
+  },
+  "resource_findings": {
+    "effective_loop_direct_io": [
+      1,
+      1,
+      1
+    ],
+    "foreign_processes_signalled": 0,
+    "host_reserve_stop": false,
+    "isolated_causal_performance_claim": false,
+    "maximum_aggregate_lean_rss": 14734430208,
+    "maximum_persisted_sample_lean_rss": 14682062848,
+    "memory_reserve_bytes": 2147483648,
+    "minimum_observed_available_bytes": 6398279680,
+    "module_times_are_distinct_from_total_verifier_duration": true,
+    "owned_btrfs_read_ahead_kib": [
+      4096,
+      0,
+      0
+    ],
+    "per_module_limit_seconds": 900,
+    "resource_exit_code": 0,
+    "resource_observer_seconds": 1684.04,
+    "resource_status": "VERIFIER_COMPLETED",
+    "workers": 1
+  },
+  "reviewed_at_utc": "2026-11-05T14:25:39.592891+00:00",
+  "reviewer": "rg_recovery_audit_1105",
+  "root_authenticated_collection": {
+    "auxiliary_origins": 69,
+    "collected_modules": 5758,
+    "numeric_batches": 349,
+    "numeric_supports": 87
+  },
+  "root_authenticated_restore": {
+    "recorded_readback_bytes": 119932353256,
+    "restored_archives": 767,
+    "restored_modules": 33656
+  },
+  "root_report": {
+    "bytes": 26206,
+    "path": "/workspace/scratch/406169dbc070/rg_resume_20261104/final_joblog_retry_preparation/actual/complete_original_authentication.json",
+    "root_reported_full_execution_exit_code": 0,
+    "sha256": "101fdef6bb0152d1c3458f84c3d22d3c148f62aea2b2c56a538f8528df5ef40d",
+    "status": "ACTUAL_EXACT_DEGREE_ONE_LARGE_KERNEL_RECEIPT_AUTHENTICATED_THREE_FAMILIES_REMAIN"
+  },
+  "source_and_scope": {
+    "actual_workflow_head": "1188a0dbc3ad1c5698671a93b9e27e6d21a718a5",
+    "claim_supported": "degreeOneLarge completed with the exact original scope; three original input families remain",
+    "full_global_proof_claim": false,
+    "global_theorem_still_requires": "h : RemainingThreeAssembly.Inputs",
+    "receipt_created_by_authenticator": false,
+    "remaining_count": 3,
+    "remaining_families": [
+      "degreeOneMiddle",
+      "degreeTwoThree",
+      "degreeFourToFortyfive"
+    ],
+    "remaining_source_sha256": "a234c56688628d48232033006c64896a36e3d405a3e8d0a1f559b8bdf9555e65",
+    "unchanged_original_Lean_source_commit": "10aa67f5f16e8ad00b30ac21332791b008b69cfe"
+  },
+  "status": "NO_CONCRETE_FINDING",
+  "transport_interpretation": {
+    "no_claim_that_success_was_caused_by_a_retry": true,
+    "structured_artifact_retry_records": 0,
+    "successful_retry_requests_inferred": false
+  }
+}

@@ -1,0 +1,214 @@
+{
+  "anchor_observed_report": {
+    "archive_members": 450,
+    "conditional_without_separate_large_completion_count_preserved": 4,
+    "family_count_change": 0,
+    "fresh": 55,
+    "full_original_receipt_authenticated": true,
+    "inherited_completed_modules": 108,
+    "inherited_named_profiles": 545,
+    "inherited_producer_conclusion": "cancelled",
+    "new_named_profiles": 293,
+    "original_source_files": 281,
+    "priors": 226,
+    "required_modules": 281,
+    "total_ordered_named_profiles": 838,
+    "whole_middle_family_closed": false
+  },
+  "base_tree": "3c427bbffde48881cc1fa874022358d577af1f41",
+  "branch": "rg-degree-one-large-20261103",
+  "findings": [],
+  "fresh_manifests": [
+    {
+      "all_actual_origin_fields_equal": true,
+      "all_rows_deep_equal_to_authenticated_fresh_rows": true,
+      "artifact_id": 13360142786,
+      "inherited_rows_relabelled": false,
+      "named_profiles": 11,
+      "path": "rg_resume_20261105/publication/patch/Proofs/RG_Lean_20261019/reviews/20261105-degree-one-large-fresh-prior-exports.json",
+      "rows": 3,
+      "scope": "degree-one-large",
+      "sha256": "3aa2e79e6a4477e376367587771250a8af466988eb2931346fe042cc84173447"
+    },
+    {
+      "all_actual_origin_fields_equal": true,
+      "all_rows_deep_equal_to_authenticated_fresh_rows": true,
+      "artifact_id": 13369207671,
+      "inherited_rows_relabelled": false,
+      "named_profiles": 293,
+      "path": "rg_resume_20261105/publication/patch/Proofs/RG_Lean_20261019/reviews/20261105-anchor029-fresh-prior-exports.json",
+      "rows": 55,
+      "scope": "anchor029",
+      "sha256": "e2ee87c6b01373111adba75375be74a3f43f8d29f81e43353e202cfc9a5d214a"
+    }
+  ],
+  "native_text_captures": [
+    {
+      "bytes": 13372,
+      "name": "run.json",
+      "scope": "degree_one_large",
+      "sha256": "aea22e604bd33d01bc0500eeca4ec65f7decd1c47bddf4447827b324581de9fa"
+    },
+    {
+      "bytes": 5532,
+      "name": "jobs.json",
+      "scope": "degree_one_large",
+      "sha256": "5baeb286dd95598b860d16097180642cd97dd4434cd6983fba274a273acc0b20"
+    },
+    {
+      "bytes": 1568,
+      "name": "artifacts.json",
+      "scope": "degree_one_large",
+      "sha256": "ceced99c8e3940159cc547f09e4215e95b88b0ae1966848f764d759370c43065"
+    },
+    {
+      "bytes": 854691,
+      "name": "job.log",
+      "scope": "degree_one_large",
+      "sha256": "560d795559c320fb0acd40aef7e2fa6a38623db2d48e3e005799e3b56c470521"
+    },
+    {
+      "bytes": 13433,
+      "name": "run.json",
+      "scope": "anchor029",
+      "sha256": "f9ffbfd24b093e7e73e643d9a6b60084d037b1c82a5ddc19ce9d02c28234378c"
+    },
+    {
+      "bytes": 3692,
+      "name": "jobs.json",
+      "scope": "anchor029",
+      "sha256": "ddc0ab2183da8b072423952cfce637d0b5e07faf7d4f40cb24e104810fa5da3f"
+    },
+    {
+      "bytes": 821,
+      "name": "artifacts.json",
+      "scope": "anchor029",
+      "sha256": "965712314c93c130af46a97106b5e84733fb8eb42d5402ed78f98a2d5029ddd8"
+    },
+    {
+      "bytes": 636292,
+      "name": "job.log",
+      "scope": "anchor029",
+      "sha256": "4964421464cdc6273c991f9c9af6b49ab05420a8d0905ccd23b96abfb70754f9"
+    }
+  ],
+  "package": {
+    "Lean_source_changes": 0,
+    "active_runtime_changes": 0,
+    "all_full_file_sha256_and_git_blob_sha1_verified": true,
+    "bytes": 2224072,
+    "exact_no_extra_patch_file_set_verified": true,
+    "files": 22,
+    "inventory_sha256": "d5bda3f8084562b6012d053972807a152c7da67009e017585362b3fb9454980a",
+    "paths_limited_to_README_and_archived_reviews": true,
+    "readme_diff_sha256": "0fc665464475a5e24adce99c5d3a69babd19f7ae3339b0e46207b16db9fe9c9f",
+    "readme_sha256": "6aecde554db30d8ac5b59a5cd655f03d425f033ecc35f1e9564a2a1e24a9f278",
+    "workflow_changes": 0
+  },
+  "primary_observed_report": {
+    "allowed_axioms_only": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "effective_direct_io": [
+      1,
+      1,
+      1
+    ],
+    "four_original_failed_callback_origins_preserved": true,
+    "fresh": 3,
+    "module_results": [
+      {
+        "module": "Proofs.RadenkovicGutmanD1OriginalSharedBothLong",
+        "named_profiles": 5,
+        "seconds": 217.778
+      },
+      {
+        "module": "Proofs.RadenkovicGutmanOriginalDegreeOneLarge",
+        "named_profiles": 2,
+        "seconds": 351.509
+      },
+      {
+        "module": "Proofs.RadenkovicGutmanRemainingThreeAssembly",
+        "named_profiles": 4,
+        "seconds": 460.195
+      }
+    ],
+    "named_axiom_profiles": 11,
+    "named_supporting_origins": 69,
+    "numeric_batches": 349,
+    "original_source_commit": "10aa67f5f16e8ad00b30ac21332791b008b69cfe",
+    "owned_Btrfs_read_ahead_kib": [
+      4096,
+      0,
+      0
+    ],
+    "priors": 33656,
+    "recorded_logical_readback_bytes": 119932353256,
+    "required_modules": 33659,
+    "resource_and_host_exit_codes": [
+      0,
+      0
+    ],
+    "restored_archives": 767,
+    "workflow_head": "1188a0dbc3ad1c5698671a93b9e27e6d21a718a5"
+  },
+  "publication_parent": "f02df37d3d83484fa311b5bfefe9a8fb49fa63cf",
+  "readme_and_status_semantics": {
+    "current_count": 3,
+    "current_open_original_families": [
+      "degreeOneMiddle",
+      "degreeTwoThree",
+      "degreeFourToFortyfive"
+    ],
+    "current_status_record_matches_both_reports": true,
+    "full_global_RG_proof_claim": false,
+    "global_conclusion_still_requires": "h : RemainingThreeAssembly.Inputs",
+    "historical_four_family_and_pending_snapshots_explicitly_dated_and_labeled": true,
+    "large_scope": "Original tree presentation, C.degree u = 1, N = m + p + q + 2 >= 53, reserve189/5000, no upper order/arm bound",
+    "remaining_scopes": "degreeOneMiddle: core degree1 and14<=N<=52; degreeTwoThree: core degree2or3 with no extra order cutoff; degreeFourToFortyfive: core degree4..45 andN>=13",
+    "upstream_submission": false,
+    "whole_middle_completion_claim": false
+  },
+  "report_bindings": {
+    "anchor029": {
+      "bytes": 415386,
+      "exact_copy_of_root_actual_report": true,
+      "frozen_checker_sha256": "5ea66b63d162ae70eb84b9925b87027016d489cf8b0f277144637b65e41469d5",
+      "sha256": "aa9128492cb857cac5a50fc1823dc7d2b410dadc41e9e996bb952445b4220ca7"
+    },
+    "primary": {
+      "bytes": 26206,
+      "exact_copy_of_root_actual_report": true,
+      "frozen_checker_sha256": "eaae96913a22c9011facdecbee52f2a7da8739ec9ecea414336d0971d779de9c",
+      "sha256": "101fdef6bb0152d1c3458f84c3d22d3c148f62aea2b2c56a538f8528df5ef40d"
+    }
+  },
+  "repository": "RhudeJJJJ/formal-conjectures",
+  "review_limits": {
+    "Lean_or_native_control_executed": false,
+    "actual_archives_opened_or_downloaded": false,
+    "full_authenticators_executed": false,
+    "proposed_package_modified": false,
+    "remote_reads_or_writes": false,
+    "root_execution_counts_are_recorded_not_reperformed": true,
+    "scope": "Independent comparison of the proposed publication with frozen actual authentication reports, native text captures, source types and exact file inventories."
+  },
+  "reviewed_at_Europe_Berlin": "2026-11-05T15:37:09.544584+01:00",
+  "reviewed_at_utc": "2026-11-05T14:37:09.544584+00:00",
+  "reviewer": "rg_primary_terminal_1105",
+  "source_types": [
+    {
+      "exact_original_type_read": true,
+      "module": "Proofs.RadenkovicGutmanOriginalDegreeOneLarge",
+      "sha256": "5bf13e2a759e57986dafbdb1937008207169962fc3432303c6e93b485e70ec5f"
+    },
+    {
+      "exact_original_type_read": true,
+      "module": "Proofs.RadenkovicGutmanRemainingThreeAssembly",
+      "sha256": "a234c56688628d48232033006c64896a36e3d405a3e8d0a1f559b8bdf9555e65"
+    }
+  ],
+  "status": "INDEPENDENT_SOURCE_ONLY_RESULT_PUBLICATION_REVIEW_NO_FINDINGS"
+}

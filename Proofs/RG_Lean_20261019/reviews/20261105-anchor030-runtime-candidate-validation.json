@@ -1,0 +1,62 @@
+{
+  "status": "LOCAL_CANDIDATE_VALIDATED_WITH_ROOT_AUTHENTICATED_91_ROW_MANIFEST",
+  "repository": "RhudeJJJJ/formal-conjectures",
+  "candidate_base_commit": "eec9bfa2996116bb5f83fc2b6d83d015b5786c6b",
+  "candidate_branch": "rg-middle-anchor030-partial-resume-20261105",
+  "reference_workflow": "/workspace/scratch/406169dbc070/rg_resume_20261104/anchor029_preparation/continuation_candidate/patch/.github/workflows/rg-middle-anchor029-partial-resume-20261104.yml",
+  "reference_workflow_sha256": "a6d2e2c84ff5d191a06c94f3fbf057cc4b0555e4cb57cd8190992aff311f3145",
+  "endpoint": "Proofs.RadenkovicGutmanMiddleOriginalAnchorCertificate030",
+  "expected_source_count": 281,
+  "conditional_frontier": {
+    "historical_required": 281,
+    "historical_prior": 118,
+    "historical_fresh": 163,
+    "historical_partial_completed": 91,
+    "proposed_current_prior": 209,
+    "proposed_current_fresh": 72
+  },
+  "files": [
+    {
+      "path": ".github/workflows/rg-middle-anchor030-partial-resume-20261105.yml",
+      "local_path": "/workspace/scratch/406169dbc070/rg_resume_20261105/middle_next/ci_review/candidate/patch/.github/workflows/rg-middle-anchor030-partial-resume-20261105.yml",
+      "bytes": 6508,
+      "sha256": "d6e3816fffe802f700768b9064e709b14cc1ab308d6c8b9e2c5ed2267d17dbae",
+      "git_blob_sha": "8c64157b8210a4fb0000245dd39336f0b79b22d2"
+    },
+    {
+      "path": "ci/rg_middle_anchor030_partial_resume_restore_plan_20261105.json",
+      "local_path": "/workspace/scratch/406169dbc070/rg_resume_20261105/middle_next/ci_review/candidate/patch/ci/rg_middle_anchor030_partial_resume_restore_plan_20261105.json",
+      "bytes": 359,
+      "sha256": "ca10c314768db5bbdddb3620e0665ef4e1766c9e4cd9e8be028365f9bbdf0e82",
+      "git_blob_sha": "3d9b37f2f060632bd97288281cd16af7e8e79762"
+    },
+    {
+      "path": "ci/rg_middle_anchor030_run40714530693_partial_prior_exports.json",
+      "local_path": "/workspace/scratch/406169dbc070/rg_resume_20261105/middle_next/ci_review/candidate/patch/ci/rg_middle_anchor030_run40714530693_partial_prior_exports.json",
+      "bytes": 89740,
+      "sha256": "53cddc2c55109470c7bb061e507404b87b04e9ca1eafd0e6ce2e59135907b5de",
+      "git_blob_sha": "cd9e8b133b89bc49dacbde85bf080967bb9e5eea"
+    }
+  ],
+  "all_job_steps_identical_except_artifact_label": true,
+  "source_files_modified": 0,
+  "helper_files_modified": 0,
+  "historical_manifest_rows_modified": 0,
+  "kernel_runs": 0,
+  "remote_mutations": 0,
+  "limits": {
+    "lean_workers": 1,
+    "module_timeout_seconds": 600,
+    "memory_reserve_mib": 2048,
+    "job_timeout_minutes": 360,
+    "retention_days": 90,
+    "restore_workers_inherited_default": 2
+  },
+  "inherited_current_artifact_fetcher_git_blob": "0d6b0ca19ca8b1717621559b426a0a7b0b9d9520",
+  "no_anchor029_only_manifests": true,
+  "required_partial_manifest": "ci/rg_middle_anchor030_run40714530693_partial_prior_exports.json",
+  "required_partial_manifest_available": true,
+  "producer_authentication_report_sha256": "5f3f22f25732b46839e311676485b01273768ceb7605145f6c2b13972fb598f9",
+  "future_result_authenticator_sha256": "e1b2d0306494ded22526d78e20e0b7940be2078ed9eaafd7f4879766c8e654cf",
+  "actual_future_result_authenticator_run": false
+}

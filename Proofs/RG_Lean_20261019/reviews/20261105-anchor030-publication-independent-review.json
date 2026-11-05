@@ -1,0 +1,93 @@
+{
+  "schema": "rg_anchor030_publication_package_independent_review_v1",
+  "status": "PASS_BOUNDED_PUBLICATION_PACKAGE_REVIEW",
+  "reviewed_at_utc": "2026-11-05T15:09:08.676320+00:00",
+  "reviewer": "middle_prior_evidence_1105b",
+  "repository": "RhudeJJJJ/formal-conjectures",
+  "parent_commit": "eec9bfa2996116bb5f83fc2b6d83d015b5786c6b",
+  "branch": "rg-middle-anchor030-partial-resume-20261105",
+  "reviewed_inventory_path": "rg_resume_20261105/middle_next/publication/inventory.json",
+  "reviewed_inventory_sha256": "0070da8e7a359be736e5eac5c2588deaad0e9e5fa35ba979de26f5add50a9103",
+  "reviewed_file_count": 25,
+  "reviewed_total_bytes": 4404725,
+  "package_builder_path": "rg_resume_20261105/middle_next/prepare_anchor030_checkpoint.py",
+  "package_builder_bytes": 10240,
+  "package_builder_sha256": "623320424ca4f12226c2e06cf6f0ca46e884f6fabdc9d61bf2cc201269ba3391",
+  "runtime_files": [
+    ".github/workflows/rg-middle-anchor030-partial-resume-20261105.yml",
+    "ci/rg_middle_anchor030_partial_resume_restore_plan_20261105.json",
+    "ci/rg_middle_anchor030_run40714530693_partial_prior_exports.json"
+  ],
+  "findings": [],
+  "checks": [
+    {
+      "check": "Exact publication footprint",
+      "status": "PASS",
+      "detail": "All25 actual files exactly equal the inventory and independently reconstructed builder output path set. Every byte count, SHA256 and Git blob SHA matches; total4,404,725 bytes. Exactly three files are under ci/ or .github/: the intended single-endpoint workflow, restore plan and91-export manifest. There are no .lean files, no verifier/helper edits and no hidden additional runtime files."
+    },
+    {
+      "check": "Package builder behavior",
+      "status": "PASS",
+      "detail": "The builder only reads local authenticated evidence and writes the local publication package/inventory. It has no network, Lean, ZIP, full-authenticator, or production receipt execution. It requires exact actual report and runtime-file digests; the91 manifest rows must equal report rows; source capture checks source SHA256 and Git blob identities. The offline builder copy is byte-identical to the reviewed source."
+    },
+    {
+      "check": "Authenticated report and provenance preservation",
+      "status": "PASS",
+      "detail": "The published224,421-byte report is byte-identical to the actual report with SHA2565f3f22f25732b46839e311676485b01273768ceb7605145f6c2b13972fb598f9. All91 manifest rows are deep-identical to its module rows. Manifest SHA25653cddc2c55109470c7bb061e507404b87b04e9ca1eafd0e6ce2e59135907b5de preserves Run40714530693, Job122908481894, original headb5648d132318fe3d955f1ebe79ed333a58abc722, artifact12872778035 and its digest. Context explicitly retains cancelled whole job and no completed endpoint receipt."
+    },
+    {
+      "check": "Raw native evidence copies",
+      "status": "PASS",
+      "detail": "Published run.json, jobs.json, artifacts.json and full job.log exactly equal their actual input files and the fixed report hashes. Raw log remains953,870 bytes with SHA2568b6f2fc21b40ca1bd6d32456499ce33f435dbc177aa801396fdb5afd796ddefa."
+    },
+    {
+      "check": "Source and review copies",
+      "status": "PASS",
+      "detail": "All14 directly copied review/source files exactly equal their originals. The current-source capture contains the exact281-module set and byte-identical source content with matching SHA256/Git blob identities. Historical capture contains all21 inventoried helper/workflow files with exact identities; its retained404 for an extra nonexistent rg_github_rate_limit.py query is not an omitted required helper and does not affect the21-file inventory."
+    },
+    {
+      "check": "Scope and pending-run distinction",
+      "status": "PASS",
+      "detail": "Continuation metadata retains281 required modules =118 existing prerequisites +91 authenticated partial exports +72 mandatory fresh modules. All72 remaining module names exactly equal the actual report. The838 ordered source checks divide into455 inherited actual named profiles and383 future source-declared checks. Actual continuation preflight is explicitly unobserved; complete Anchor030 and Middle claims remain false."
+    },
+    {
+      "check": "Workflow bounds and restoration",
+      "status": "PASS",
+      "detail": "The workflow triggers only on the intended fork continuation branch and three runtime paths. It has one endpoint, max_fresh72, a281-source bundle assertion, exact locked dependencies, original base restore, bounded fallback and preflight, one kernel worker,600-second module timeout,2048MiB reserve and360-minute job cap. Actual output/diagnostic retention runs always and has90-day retention. No verification gate is weakened."
+    },
+    {
+      "check": "README factual consistency",
+      "status": "PASS",
+      "detail": "The README differs from the parent only by the Anchor030 continuation section. Original n52,p9,q39 and lower bound match the pinned certificate. Its91 exports,455 exact named profiles and13,233,776 actual object bytes agree with the report. It identifies the historical cancelled producer, explicitly denies a complete historical Anchor030 receipt, and requires the new complete kernel receipt. The six-archive availability statement is dated to the native November5 check. Exactly degreeOneMiddle, degreeTwoThree and degreeFourToFortyfive remain open."
+    },
+    {
+      "check": "Middle residual historical classification",
+      "status": "PASS",
+      "detail": "The README correctly separates the historical3,880-module successful residual join from current archive availability and from complete Middle-family closure. The published evidence map preserves its original run/job/head, actual log scope and current byte-identical endpoint source, with current full-closure replay and artifact authentication explicitly unclaimed."
+    }
+  ],
+  "advisories": [
+    {
+      "severity": "nonblocking",
+      "item": "Residual raw log preservation",
+      "detail": "This25-file package includes the residual finding in the evidence map, but the raw run39999831483_job120572732381.log remains under local prior_evidence/native. Adding that log or its native capture set would preserve the README residual finding directly in Git as well. This does not affect Anchor030 runtime correctness or its authenticated partial exports."
+    }
+  ],
+  "original_lean_sources_modified": false,
+  "three_runtime_files_only": true,
+  "actual_partial_report_preserved_exactly": true,
+  "current_continuation_complete_receipt_claim": false,
+  "degree_one_middle_family_claim": false,
+  "remaining_original_families": 3,
+  "ready_to_publish_bounded_candidate": true,
+  "reviewer_remote_mutations": 0,
+  "reviewer_package_builder_executions": 0,
+  "reviewer_full_authenticator_executions": 0,
+  "reviewer_zip_reads": 0,
+  "reviewer_lean_runs": 0,
+  "limitations": [
+    "This review is tied to the exact inventory and builder digests above.",
+    "The actual partial-archive authentication was performed once by the parent; this review checked its report and published copy, without rerunning authentication or reopening the ZIP.",
+    "The future continuation still requires genuine runtime restore/preflight, kernel execution and exact final receipt authentication."
+  ]
+}

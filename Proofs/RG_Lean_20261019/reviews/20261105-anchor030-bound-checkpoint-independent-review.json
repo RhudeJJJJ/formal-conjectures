@@ -1,0 +1,98 @@
+{
+  "schema": "rg_anchor030_bound_checkpoint_independent_review_v1",
+  "status": "PASS_SOURCE_ONLY_BOUND_CHECKPOINT_REVIEW",
+  "reviewed_at_utc": "2026-11-05T15:19:39.555575+00:00",
+  "reviewer": "middle_prior_evidence_1105b",
+  "repository": "RhudeJJJJ/formal-conjectures",
+  "parent_commit": "415f1d8bbc3a065b81adea9ac3b74fd27fc66265",
+  "branch": "rg-middle-anchor030-partial-resume-20261105",
+  "reviewed_inventory_path": "rg_resume_20261105/middle_next/bound_checkpoint/inventory.json",
+  "reviewed_inventory_sha256": "43a2cf7e2d2ab3c5244aa3ff2825743209da0fbec6be0b5bed28ba6d95939e45",
+  "reviewed_file_count": 25,
+  "reviewed_total_bytes": 1356248,
+  "builder_path": "rg_resume_20261105/middle_next/prepare_anchor030_bound_checkpoint.py",
+  "builder_bytes": 7254,
+  "builder_sha256": "18c59c09c856482e03240c118088a295663794f3f5f1c8281536b21573f02fe7",
+  "findings": [],
+  "checks": [
+    {
+      "check": "Exact source-only footprint",
+      "status": "PASS",
+      "detail": "All25 actual files equal both the inventory path set and the independently reconstructed builder output set. All byte counts, SHA256 values and Git blob identities match; total1,356,248 bytes. Every path is under Proofs/RG_Lean_20261019. There are no ci/, .github/ or .lean files, so this checkpoint changes no runtime workflow, restoration plan, manifest, verifier or Lean source."
+    },
+    {
+      "check": "Builder has no proof or runtime execution",
+      "status": "PASS",
+      "detail": "The builder only reads and copies local files, substitutes one README passage and inventories local output. It neither reads ZIP archives nor executes the builder outputs, authenticators, Lean or remote mutations. It pins the complete checker and binding digests and exact actual run/job/attempt/head before packaging."
+    },
+    {
+      "check": "All preserved copies are exact",
+      "status": "PASS",
+      "detail": "All24 copied source, review, metadata and native files are byte-identical to their original local inputs. The remaining file is the README with only the documented active-run/frozen-checker passage changed."
+    },
+    {
+      "check": "Frozen checker and real native binding",
+      "status": "PASS",
+      "detail": "The copied50,654-byte completion checker has SHA256e1b2d0306494ded22526d78e20e0b7940be2078ed9eaafd7f4879766c8e654cf. The1,067-byte binding has SHA2563946d265c550efadb154bc913cadf073d4492f2f98a4afa18361735962c015aa and binds actual Run42052127520, Job127330696809, attempt1 and head415f1d8bbc3a065b81adea9ac3b74fd27fc66265. The earlier unbound code review/freeze record is preserved as a historical snapshot; the separate later bound-native review and binding identify the actual run without modifying that history."
+    },
+    {
+      "check": "Native active-state facts",
+      "status": "PASS",
+      "detail": "Preserved run.json and jobs.json exactly match the status-capture hashes. Both identify the same actual repository, branch, run, job, attempt and head as the binding. Native status is in_progress with null conclusions. Both restore steps and the mandatory frontier preflight have native completed/success results. The kernel step is in_progress, started2026-11-05T15:11:31Z, and has no completion timestamp."
+    },
+    {
+      "check": "README current-versus-future distinction",
+      "status": "PASS",
+      "detail": "The README reports the observed running workflow and correct kernel start16:11:31 CET, equal to15:11:31 UTC in Europe/Berlin on November5. It explicitly says final result, actual completed fresh count and complete archive have not been observed. The fixed-input check is distinguished from unexecuted actual completion mode. The72 new modules,383 new ordered profiles,281-module receipt and501-member archive are future acceptance requirements, not observed successes."
+    },
+    {
+      "check": "Three original families remain open",
+      "status": "PASS",
+      "detail": "README, native-progress summary and inventory all retain degreeOneMiddle, degreeTwoThree and degreeFourToFortyfive as the three open original families. Complete actual Anchor030 authentication and complete Middle-family closure remain unclaimed. The checkpoint does not move the already running workflow off its own415f1d8 head."
+    },
+    {
+      "check": "Current helper source capture",
+      "status": "PASS",
+      "detail": "All16 helper/manifests in the copied current-source capture have the exact inventoried path set, original bytes, SHA256 and Git blob identities. The complete capture SHA256 matches the copied current-helper inventory. No required helper is omitted from this16-file capture."
+    },
+    {
+      "check": "Historical residual raw-evidence preservation",
+      "status": "PASS",
+      "detail": "All four native residual files now match the original saved captures byte-for-byte. Native run39999831483 and job120572732381 are success at head23ab701bb5fe9a7e46499d7411bd74d1c64bbd79; the full log retains PASS_EXTENSION_SCOPE3880 MODULES and the artifact catalog has0 current entries. The238,321-byte log SHA256 is5c7e9009e582b028682432813ad625763e88ab7696aa13d85db46f2fbc517b06. This resolves the previous publication-review advisory about retaining the raw residual log in Git."
+    },
+    {
+      "check": "Earlier review and publication provenance",
+      "status": "PASS",
+      "detail": "The earlier25-file publication inventory, exact remote-readback record and independent publication review are copied unchanged. Their scope stays separate from this later source-only checkpoint and from the future actual completion authentication."
+    }
+  ],
+  "native_observation_as_of_utc": "2026-11-05T15:12:54.762231+00:00",
+  "observed_run": 42052127520,
+  "observed_job": 127330696809,
+  "observed_attempt": 1,
+  "running_workflow_head": "415f1d8bbc3a065b81adea9ac3b74fd27fc66265",
+  "observed_run_status": "in_progress",
+  "observed_job_status": "in_progress",
+  "observed_native_conclusion": null,
+  "kernel_step_started_at_utc": "2026-11-05T15:11:31Z",
+  "kernel_step_started_at_europe_berlin": "2026-11-05T16:11:31+01:00",
+  "runtime_files_modified": false,
+  "lean_sources_modified": false,
+  "actual_complete_anchor030_authentication_claim": false,
+  "actual_new_fresh_export_count_observed": null,
+  "degree_one_middle_family_claim": false,
+  "remaining_original_families": 3,
+  "prior_residual_log_preservation_advisory_resolved": true,
+  "ready_for_source_only_checkpoint_publication": true,
+  "reviewer_package_builder_executions": 0,
+  "reviewer_checker_executions": 0,
+  "reviewer_zip_reads": 0,
+  "reviewer_lean_runs": 0,
+  "reviewer_remote_mutations": 0,
+  "limitations": [
+    "This review authenticates the local publication copy and its fixed native snapshot; it does not assert later job progress beyond the captured observation.",
+    "The completion checker was not executed by this reviewer, and no actual final archive, receipt or object bytes were read.",
+    "A genuine successful final native result and full actual completion authentication remain required.",
+    "This review is bound to the exact inventory and builder digests above."
+  ]
+}

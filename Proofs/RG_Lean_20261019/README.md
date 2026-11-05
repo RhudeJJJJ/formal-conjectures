@@ -39,9 +39,27 @@ original endpoint, using the unchanged 600-second per-module timeout, one worker
 2048 MiB reserve and 360-minute job cap. All six required archive identities were
 listed and unexpired in the native catalog check on 5 November.
 
-This checkpoint prepares the continuation; its complete new kernel receipt is
-still required. `degreeOneMiddle`, `degreeTwoThree` and `degreeFourToFortyfive`
-remain the three open original families. The current Middle dependency audit
+The [new native continuation 42052127520](https://github.com/RhudeJJJJ/formal-conjectures/actions/runs/42052127520/job/127330696809)
+is running as attempt 1 on workflow head `415f1d8bbc3a065b81adea9ac3b74fd27fc66265`.
+Both restoration steps and the mandatory frontier preflight succeeded. The
+kernel step began on 5 November at **16:11:31 CET**. Its final result, completed
+fresh-export count and complete result archive have not yet been observed.
+The [native status capture](reviews/20261105-anchor030-active-native-state.json)
+records this distinction explicitly.
+
+The [fixed completion authenticator](reviews/offline_sources_20261105/anchor030/authenticate_anchor030_continuation.py),
+SHA-256 `e1b2d0306494ded22526d78e20e0b7940be2078ed9eaafd7f4879766c8e654cf`,
+is bound to the actual new run and job by the [separate native binding](reviews/20261105-anchor030-fixed-native-binding.json),
+SHA-256 `3946d265c550efadb154bc913cadf073d4492f2f98a4afa18361735962c015aa`.
+Its fixed-input check and independent review passed. Actual completion mode has
+not run; it requires all 72 new exports, 383 new ordered named profiles, the
+complete 281-module receipt, the exact 501-member result archive and successful
+native/resource completion. This documentation checkpoint does not alter the
+running workflow, restore plan, manifests or any Lean source.
+
+The complete new kernel receipt is still required. `degreeOneMiddle`,
+`degreeTwoThree` and `degreeFourToFortyfive` remain the three open original
+families. The current Middle dependency audit
 separates its 680 analytic anchors, 39 order-coverage modules and 25 residual
 finite batches. The historical successful 3,880-module Middle residual join has
 a preserved native log, but its seven-day result archive is no longer listed;

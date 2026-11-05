@@ -1,0 +1,264 @@
+{
+  "schema": "rg_middle_next_ci_integration_review_v1",
+  "status": "SOURCE_AND_PIPELINE_REVIEW_COMPLETE_WITH_ROOT_AUTHENTICATED_PARTIAL_MANIFEST",
+  "repository": "RhudeJJJJ/formal-conjectures",
+  "current_base_commit": "eec9bfa2996116bb5f83fc2b6d83d015b5786c6b",
+  "historical_original_anchor030_commit": "b5648d132318fe3d955f1ebe79ed333a58abc722",
+  "recommended_next_endpoint": "Proofs.RadenkovicGutmanMiddleOriginalAnchorCertificate030",
+  "scope": {
+    "unchanged_original_predicate": true,
+    "current_required_modules": 281,
+    "existing_exact_required_priors": 118,
+    "historical_source_matching_completed_prefix": 91,
+    "proposed_reused_modules_after_object_authentication": 209,
+    "proposed_fresh_modules": 72,
+    "proposed_fresh_partition": {
+      "Cell072_to_Cell133": 62,
+      "Batch007_to_Batch013": 7,
+      "FinitePayment_OriginalAnchor_Certificate030": 3
+    },
+    "next_kernel_receipt_required": true,
+    "middle_family_completed_by_this_review": false,
+    "global_rg_claim": false,
+    "remaining_original_families_unchanged": 3
+  },
+  "original_export_manifest_format": {
+    "top_level_required": [
+      "repository",
+      "run",
+      "job",
+      "source_commit",
+      "artifact_id",
+      "artifact_sha256",
+      "lean_version",
+      "mathlib",
+      "modules"
+    ],
+    "top_level_optional_annotations": [
+      "kind",
+      "origin_context"
+    ],
+    "lean_version": "4.33.1",
+    "mathlib": "0df444a360eaa60ab8c11dca51a86af692955474",
+    "modules_format": "Map from exact Proofs module name to the original, byte-authenticated FRESH_KERNEL_EXPORT record.",
+    "record_fields": [
+      "module",
+      "source_sha256",
+      "source_closure_sha256",
+      "output_sha256",
+      "axiom_profiles",
+      "mode",
+      "seconds"
+    ],
+    "record_mode": "FRESH_KERNEL_EXPORT",
+    "optional_additional_outputs": "Map of server/private to exact sha256 and bytes. Preserve if present.",
+    "axiom_profiles": "Nonempty ordered list of profile sets; each set is contained in Classical.choice, Quot.sound, propext.",
+    "archive_row_rule": "The manifest row must equal the original module JSON member exactly. Do not alter source hashes, timings, profiles or output hashes.",
+    "partial_prefix_origin": {
+      "repository": "RhudeJJJJ/formal-conjectures",
+      "run": 40714530693,
+      "job": 122908481894,
+      "source_commit": "b5648d132318fe3d955f1ebe79ed333a58abc722",
+      "artifact_id": 12872778035,
+      "artifact_sha256": "54544ef3ac4befc87c818a1f16907a6d02c07bd924f3fb6066a070d2a5a77756"
+    },
+    "partial_prefix_context_required": "Retain native cancelled run/job conclusion and absence of a complete endpoint receipt. Admit only the 91 individually completed actual exports."
+  },
+  "restore_plan_format": {
+    "type": "JSON list of repository-relative manifest paths",
+    "candidate_plan": "ci/rg_middle_anchor030_partial_resume_restore_plan_20261105.json",
+    "refs": [
+      "ci/rg_middle_generic_recovery_20261104_run41805266301_prior_exports.json",
+      "ci/rg_middle_original_integer_payment_generic_prior_exports.json",
+      "ci/rg_middle_oct27_anchor028_parts_original_partial_prior_exports.json",
+      "ci/rg_middle_oct28_anchor028_original_prior_exports.json",
+      "ci/rg_middle_anchor030_run40714530693_partial_prior_exports.json"
+    ],
+    "base_capsule_is_separate": "ci/rg_reusable_analytic_kernel_base_complete_scope_capsule.json",
+    "new_partial_manifest_missing_until_root_authentication": false,
+    "no_anchor029_only_references": true,
+    "no_historical_rows_or_origins_rewritten": true,
+    "same_artifact_grouping": "The wrapper merges equal rows for one artifact ID and downloads each resulting original artifact once.",
+    "same_module_deduplication": "Repeated module exports require equal source, closure, output, profiles and output members; mismatches hard-fail.",
+    "equivalent_origin_choice": "Original plan order is not precedence. The wrapper sorts by descending module count and artifact ID, and records retained/equivalent original archive identities.",
+    "new_partial_manifest_authenticated_report_sha256": "5f3f22f25732b46839e311676485b01273768ceb7605145f6c2b13972fb598f9"
+  },
+  "provenance_rules": {
+    "job_export_restore": "Verified original FRESH_KERNEL_EXPORT becomes PRIOR_VERIFIED_JOB_EXPORT with its original repository/run/job/source_commit/artifact/hash and optional origin context.",
+    "base_capsule_restore": "Preserve row origin for prior objects. Add transport_capsule separately. A transport capsule does not become the original producer.",
+    "anchor029_reuse": "The authenticated 108+55 exports are entirely Anchor029-specific. They are valid candidates for a later endpoint that imports Anchor029 and has matching source/closure hashes. They add zero required objects to Anchor030.",
+    "anchor029_manifest_path_for_future_wrapper": "Proofs/RG_Lean_20261019/reviews/20261105-anchor029-fresh-prior-exports.json",
+    "review_path_compatibility": "rg_restore_with_kernel_fallback accepts repository paths and generates a ci/ plan; direct rg_restore_plan_parallel accepts only ci/ manifest paths.",
+    "no_current_commit_relabelling": "A new continuation checkout does not replace historical source_commit in inherited origins."
+  },
+  "unchanged_gates": {
+    "module_timeout_seconds": 600,
+    "lean_workers": 1,
+    "lean_process_flag": "-j1",
+    "async_elaboration": false,
+    "warnings_as_errors": true,
+    "auto_implicit": false,
+    "relaxed_auto_implicit": false,
+    "memory_reserve_mib": 2048,
+    "job_timeout_minutes": 360,
+    "matrix_max_parallel": 1,
+    "restore_workers_original_default": 2,
+    "current_source_count": 281,
+    "max_fresh": 72,
+    "fresh_bound_supported_interval": [
+      1,
+      512
+    ],
+    "full_source_closure_and_object_hash_checks": true,
+    "forbidden_source_tokens": [
+      "sorry",
+      "admit",
+      "native_decide",
+      "axiom declaration"
+    ],
+    "mandatory_full_endpoint_verifier": true,
+    "retention_days": 90,
+    "permissions": {
+      "contents": "read",
+      "actions": "read"
+    }
+  },
+  "preflight_meaning": {
+    "prepare_only": "Validates grouped plan path/disjointness only. Does not restore objects, execute Lean or prove the endpoint.",
+    "preflight_only": "Checks current source and recursive dependency closures, existing main object bytes and permitted profiles, then bounds missing required modules. Does not prove the endpoint.",
+    "mandatory_resume_verifier": "Rechecks source and closure hashes, all recorded additional outputs and strict permitted profiles. Freshly compiles the remaining modules and writes the complete endpoint receipt.",
+    "transport_fallback": "Only recognized transport failures may reach bounded fallback. Integrity and assertion failures remain hard failures.",
+    "full_bound_consumed": "With 72 planned fresh modules and max_fresh72, loss of any required prior must fail preflight rather than enlarge the run."
+  },
+  "candidate_minimal_changes": {
+    "workflow": "Add the single030 continuation workflow copied from successful029; change endpoint, branch/path labels, plan path, original producer reference, artifact label and exact fresh bound.",
+    "job_steps": "Every step equals the successful029 workflow except the artifact label.",
+    "restore_plan": "Keep the four original control references with the already authenticated generic recovery replacement, then append the root-authenticated genuine030 prefix manifest.",
+    "helper_changes": 0,
+    "lean_changes": 0,
+    "historical_manifest_changes": 0,
+    "current_transport_helper": "Inherit current signed503-retry helper unchanged; do not transplant the older historical3114-byte fetcher."
+  },
+  "integration_risks_and_resolutions": [
+    {
+      "risk": "A cancelled producer is mistaken for full endpoint success.",
+      "resolution": "Use only authenticated91 completed records and keep complete_receipt=false and native cancellation provenance."
+    },
+    {
+      "risk": "Counts include unrelated restored objects.",
+      "resolution": "The full endpoint receipt is281 rows; the completed diagnostics bundle is expected524 rows. Keep source-bound endpoint accounting separate from retained unused prior diagnostics."
+    },
+    {
+      "risk": "Metadata-only source matches are treated as object authentication.",
+      "resolution": "Root must authenticate full original archive digest, all91 object bytes, records and unabridged named-profile logs before writing the admission manifest."
+    },
+    {
+      "risk": "Current transport implementation is silently rolled back.",
+      "resolution": "Use current eec9 helper bytes; only artifact fetcher differs among common historical/current captured helper files."
+    },
+    {
+      "risk": "Legacy inline collector does not copy future module-system sidecars.",
+      "resolution": "This candidate changes no Lean sources; historical91 and existing base/control rows have no sidecars. Current future72 sources have no module directives. If actual new rows acquire additional_outputs, stop and retain them with the existing verified collector instead of ignoring them."
+    },
+    {
+      "risk": "A longer job or wider fresh frontier is silently authorized.",
+      "resolution": "Keep600/1/2048/360 and exact72. A failed bounded run yields only separately authenticated completed objects and requires a subsequent bounded continuation."
+    }
+  ],
+  "candidate": {
+    "status": "LOCAL_CANDIDATE_VALIDATED_WITH_ROOT_AUTHENTICATED_91_ROW_MANIFEST",
+    "repository": "RhudeJJJJ/formal-conjectures",
+    "candidate_base_commit": "eec9bfa2996116bb5f83fc2b6d83d015b5786c6b",
+    "candidate_branch": "rg-middle-anchor030-partial-resume-20261105",
+    "reference_workflow": "/workspace/scratch/406169dbc070/rg_resume_20261104/anchor029_preparation/continuation_candidate/patch/.github/workflows/rg-middle-anchor029-partial-resume-20261104.yml",
+    "reference_workflow_sha256": "a6d2e2c84ff5d191a06c94f3fbf057cc4b0555e4cb57cd8190992aff311f3145",
+    "endpoint": "Proofs.RadenkovicGutmanMiddleOriginalAnchorCertificate030",
+    "expected_source_count": 281,
+    "conditional_frontier": {
+      "historical_required": 281,
+      "historical_prior": 118,
+      "historical_fresh": 163,
+      "historical_partial_completed": 91,
+      "proposed_current_prior": 209,
+      "proposed_current_fresh": 72
+    },
+    "files": [
+      {
+        "path": ".github/workflows/rg-middle-anchor030-partial-resume-20261105.yml",
+        "local_path": "/workspace/scratch/406169dbc070/rg_resume_20261105/middle_next/ci_review/candidate/patch/.github/workflows/rg-middle-anchor030-partial-resume-20261105.yml",
+        "bytes": 6508,
+        "sha256": "d6e3816fffe802f700768b9064e709b14cc1ab308d6c8b9e2c5ed2267d17dbae",
+        "git_blob_sha": "8c64157b8210a4fb0000245dd39336f0b79b22d2"
+      },
+      {
+        "path": "ci/rg_middle_anchor030_partial_resume_restore_plan_20261105.json",
+        "local_path": "/workspace/scratch/406169dbc070/rg_resume_20261105/middle_next/ci_review/candidate/patch/ci/rg_middle_anchor030_partial_resume_restore_plan_20261105.json",
+        "bytes": 359,
+        "sha256": "ca10c314768db5bbdddb3620e0665ef4e1766c9e4cd9e8be028365f9bbdf0e82",
+        "git_blob_sha": "3d9b37f2f060632bd97288281cd16af7e8e79762"
+      },
+      {
+        "path": "ci/rg_middle_anchor030_run40714530693_partial_prior_exports.json",
+        "local_path": "/workspace/scratch/406169dbc070/rg_resume_20261105/middle_next/ci_review/candidate/patch/ci/rg_middle_anchor030_run40714530693_partial_prior_exports.json",
+        "bytes": 89740,
+        "sha256": "53cddc2c55109470c7bb061e507404b87b04e9ca1eafd0e6ce2e59135907b5de",
+        "git_blob_sha": "cd9e8b133b89bc49dacbde85bf080967bb9e5eea"
+      }
+    ],
+    "all_job_steps_identical_except_artifact_label": true,
+    "source_files_modified": 0,
+    "helper_files_modified": 0,
+    "historical_manifest_rows_modified": 0,
+    "kernel_runs": 0,
+    "remote_mutations": 0,
+    "limits": {
+      "lean_workers": 1,
+      "module_timeout_seconds": 600,
+      "memory_reserve_mib": 2048,
+      "job_timeout_minutes": 360,
+      "retention_days": 90,
+      "restore_workers_inherited_default": 2
+    },
+    "inherited_current_artifact_fetcher_git_blob": "0d6b0ca19ca8b1717621559b426a0a7b0b9d9520",
+    "no_anchor029_only_manifests": true,
+    "required_partial_manifest": "ci/rg_middle_anchor030_run40714530693_partial_prior_exports.json",
+    "required_partial_manifest_available": true,
+    "producer_authentication_report_sha256": "5f3f22f25732b46839e311676485b01273768ceb7605145f6c2b13972fb598f9",
+    "future_result_authenticator_sha256": "e1b2d0306494ded22526d78e20e0b7940be2078ed9eaafd7f4879766c8e654cf",
+    "actual_future_result_authenticator_run": false
+  },
+  "evidence": {
+    "historical_source_inventory": {
+      "path": "/workspace/scratch/406169dbc070/rg_resume_20261105/middle_next/ci_review/historical_origin/source_inventory.json",
+      "sha256": "1a3e53db6912dbbf96b214fb9ed4c5bdb10b4fbfe93b6902ce9cf4e4cfed74e7"
+    },
+    "current_source_inventory": {
+      "path": "/workspace/scratch/406169dbc070/rg_resume_20261105/middle_next/ci_review/current_origin/source_inventory.json",
+      "sha256": "779125b86f589238eb1bbadf72e18868e2ac14ea7731105cb22bfdadd13a0c7b"
+    },
+    "static_frontier": {
+      "path": "/workspace/scratch/406169dbc070/rg_resume_20261105/middle_next/ci_review/static_frontier_review.json",
+      "sha256": "edcec78c569049216f81bb1ddce636520a62fc26b64f649a47005eb3ed9dae9a"
+    },
+    "candidate_validation": {
+      "path": "/workspace/scratch/406169dbc070/rg_resume_20261105/middle_next/ci_review/candidate/candidate_validation.json",
+      "sha256": "4b333559d6801e83a77a2915d3b398a79b0f752ed3e8c45073fb6ddefd2429a0"
+    },
+    "offline_continuation_authenticator": {
+      "path": "/workspace/scratch/406169dbc070/rg_resume_20261105/middle_next/ci_review/candidate/authenticate_anchor030_continuation.py",
+      "sha256": "e1b2d0306494ded22526d78e20e0b7940be2078ed9eaafd7f4879766c8e654cf"
+    },
+    "fixed_input_validation": {
+      "path": "/workspace/scratch/406169dbc070/rg_resume_20261105/middle_next/ci_review/candidate/fixed_input_validation.json",
+      "sha256": "5804d5ceb9db18538545dd282fd51d67953a0928fa5d8d4c2e23466fb3a5d481"
+    }
+  },
+  "review_activity": {
+    "read_only_remote_fetches": true,
+    "remote_mutations": 0,
+    "archive_downloads": 0,
+    "full_authenticator_runs": 0,
+    "lean_or_lake_runs": 0,
+    "production_restorer_or_preflight_runs": 0
+  }
+}

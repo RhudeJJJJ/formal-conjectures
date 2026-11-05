@@ -1,0 +1,101 @@
+{
+  "status": "FROZEN_OFFLINE_CONTINUATION_AUTHENTICATOR_NO_ACTUAL_RUN",
+  "bytes": 50654,
+  "sha256": "e1b2d0306494ded22526d78e20e0b7940be2078ed9eaafd7f4879766c8e654cf",
+  "executed_fixed_input_only_checker_sha256": "77273a200434830feaf643f106c36d981246e37da891703eae2882e566c6224c",
+  "post_preflight_delta": {
+    "added_bytes": 6,
+    "human_readable_strings_changed": 4,
+    "reverse_delta_reconstructs_exact_executed_checker": true,
+    "control_flow_and_proof_checks_changed": false
+  },
+  "function_comparisons": [
+    {
+      "function": "require",
+      "comparison": "VERBATIM"
+    },
+    {
+      "function": "sha",
+      "comparison": "VERBATIM"
+    },
+    {
+      "function": "file_sha",
+      "comparison": "VERBATIM"
+    },
+    {
+      "function": "git_blob",
+      "comparison": "VERBATIM"
+    },
+    {
+      "function": "unique",
+      "comparison": "VERBATIM"
+    },
+    {
+      "function": "decode",
+      "comparison": "VERBATIM"
+    },
+    {
+      "function": "bound",
+      "comparison": "VERBATIM"
+    },
+    {
+      "function": "table",
+      "comparison": "VERBATIM"
+    },
+    {
+      "function": "origin",
+      "comparison": "VERBATIM"
+    },
+    {
+      "function": "expected_named_declarations",
+      "comparison": "VERBATIM"
+    },
+    {
+      "function": "source_graph",
+      "comparison": "VERBATIM"
+    },
+    {
+      "function": "expected_complete_archive_members",
+      "comparison": "EXACT_FIXED_ENDPOINT_AND_COUNT_SUBSTITUTION_ONLY"
+    },
+    {
+      "function": "native_metadata",
+      "comparison": "EXACT_FIXED_ENDPOINT_AND_COUNT_SUBSTITUTION_ONLY"
+    },
+    {
+      "function": "log_payloads",
+      "comparison": "EXACT_FIXED_ENDPOINT_AND_COUNT_SUBSTITUTION_ONLY"
+    },
+    {
+      "function": "validate_source_bundle",
+      "comparison": "EXACT_FIXED_ENDPOINT_AND_COUNT_SUBSTITUTION_ONLY"
+    },
+    {
+      "function": "profiles_from_log",
+      "comparison": "EXACT_FIXED_ENDPOINT_AND_COUNT_SUBSTITUTION_ONLY"
+    },
+    {
+      "function": "validate_resource",
+      "comparison": "EXACT_FIXED_ENDPOINT_AND_COUNT_SUBSTITUTION_ONLY"
+    },
+    {
+      "function": "validate_archive",
+      "comparison": "EXACT_FIXED_ENDPOINT_AND_COUNT_SUBSTITUTION_ONLY"
+    },
+    {
+      "function": "authenticate",
+      "comparison": "EXACT_FIXED_ENDPOINT_AND_COUNT_SUBSTITUTION_ONLY"
+    }
+  ],
+  "independent_review": {
+    "reviewer": "/root/middle_source_scope_1105b",
+    "reviewed_sha256": "e1b2d0306494ded22526d78e20e0b7940be2078ed9eaafd7f4879766c8e654cf",
+    "reported_no_endpoint_count_or_completion_gate_issue": true,
+    "checker_modes_executed_by_reviewer": 0,
+    "archives_read_by_reviewer": 0
+  },
+  "native_binding_still_unbound": true,
+  "full_actual_checker_executions": 0,
+  "old_zip_reads": 0,
+  "new_actual_evidence_reads": 0
+}

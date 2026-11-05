@@ -1,0 +1,54 @@
+{
+  "schema": "rg_anchor030_native_progress_v1",
+  "observed_at_utc": "2026-11-05T15:12:54.762231+00:00",
+  "repository": "RhudeJJJJ/formal-conjectures",
+  "run": 42052127520,
+  "job": 127330696809,
+  "run_attempt": 1,
+  "workflow_head": "415f1d8bbc3a065b81adea9ac3b74fd27fc66265",
+  "branch": "rg-middle-anchor030-partial-resume-20261105",
+  "run_status": "in_progress",
+  "job_status": "in_progress",
+  "native_conclusion": null,
+  "kernel_step_started_at_utc": "2026-11-05T15:11:31Z",
+  "native_restoration_and_preflight_steps": [
+    {
+      "name": "Restore one independently audited complete source-bound base scope",
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-11-05T15:11:24Z",
+      "completed_at": "2026-11-05T15:11:26Z"
+    },
+    {
+      "name": "Restore independently audited exact control proofs",
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-11-05T15:11:26Z",
+      "completed_at": "2026-11-05T15:11:30Z"
+    },
+    {
+      "name": "Bound the remaining fresh module frontier",
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-11-05T15:11:30Z",
+      "completed_at": "2026-11-05T15:11:31Z"
+    }
+  ],
+  "kernel_step_completion_observed": false,
+  "complete_actual_receipt_authenticated": false,
+  "new_actual_fresh_export_count_observed": null,
+  "expected_scope": {
+    "required": 281,
+    "prior": 209,
+    "fresh": 72,
+    "new_named_axiom_profiles": 383
+  },
+  "scope_counts_basis": "Frozen source graph and restore manifests; native job step outcomes observed, final job log not yet captured.",
+  "fixed_authenticator_sha256": "e1b2d0306494ded22526d78e20e0b7940be2078ed9eaafd7f4879766c8e654cf",
+  "fixed_native_binding_sha256": "3946d265c550efadb154bc913cadf073d4492f2f98a4afa18361735962c015aa",
+  "remaining_original_families": 3,
+  "native_capture_sha256": {
+    "run.json": "f4075ed553d0b41a1344bc548f6915d8883a0528bdbaab9a952bb156936508d5",
+    "jobs.json": "0165a6f372945036a1e18dc679c4659b3f7c30d6bb8b6c27ed98bdecee3e1836"
+  }
+}

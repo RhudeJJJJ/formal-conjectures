@@ -1,0 +1,140 @@
+{
+  "actual_directory_bound": "ci_review/candidate/actual",
+  "all_binding_referenced_file_hashes_match": true,
+  "anchor030_certificate_claim": false,
+  "attempt": 1,
+  "binding_sha256": "3946d265c550efadb154bc913cadf073d4492f2f98a4afa18361735962c015aa",
+  "branch": "rg-middle-anchor030-partial-resume-20261105",
+  "complete_continuation_receipt_authenticated": false,
+  "degree_one_middle_family_claim": false,
+  "exact_native_job_name": "check (Proofs.RadenkovicGutmanMiddleOriginalAnchorCertificate030, ci/rg_middle_anchor030_partial_...",
+  "expected_scope": {
+    "fresh_modules": 72,
+    "new_ordered_named_profile_occurrences": 383,
+    "prior_modules": 209,
+    "required_modules": 281
+  },
+  "family_count_change": 0,
+  "frozen_binding_constants_extracted_by_ast_only_and_matched": true,
+  "frozen_checker_sha256": "e1b2d0306494ded22526d78e20e0b7940be2078ed9eaafd7f4879766c8e654cf",
+  "global_rg_claim": false,
+  "head_sha": "415f1d8bbc3a065b81adea9ac3b74fd27fc66265",
+  "initial_and_progress_native_identity_both_match": true,
+  "input_bindings": [
+    {
+      "bytes": 1067,
+      "frozen_review_copy": "/workspace/scratch/406169dbc070/rg_resume_20261105/middle_next/source_scope/bound_native_inputs/binding.json",
+      "original_path": "/workspace/scratch/406169dbc070/rg_resume_20261105/middle_next/ci_review/candidate/continuation_binding.json",
+      "role": "binding",
+      "sha256": "3946d265c550efadb154bc913cadf073d4492f2f98a4afa18361735962c015aa"
+    },
+    {
+      "bytes": 50654,
+      "path": "/workspace/scratch/406169dbc070/rg_resume_20261105/middle_next/ci_review/candidate/authenticate_anchor030_continuation.py",
+      "role": "checker",
+      "sha256": "e1b2d0306494ded22526d78e20e0b7940be2078ed9eaafd7f4879766c8e654cf"
+    },
+    {
+      "bytes": 693,
+      "frozen_review_copy": "/workspace/scratch/406169dbc070/rg_resume_20261105/middle_next/source_scope/bound_native_inputs/fixed_preflight.json",
+      "original_path": "/workspace/scratch/406169dbc070/rg_resume_20261105/middle_next/ci_review/candidate/bound_fixed_input_preflight.json",
+      "role": "fixed_preflight",
+      "sha256": "e2d5e8b22421626bac05f93d7138916024d98cfb972a2062569b48ff4e91ce82"
+    },
+    {
+      "bytes": 13097,
+      "frozen_review_copy": "/workspace/scratch/406169dbc070/rg_resume_20261105/middle_next/source_scope/bound_native_inputs/initial_run.json",
+      "original_path": "/workspace/scratch/406169dbc070/rg_resume_20261105/middle_next/ci_review/candidate/initial_native/run.json",
+      "role": "initial_run",
+      "sha256": "f4075ed553d0b41a1344bc548f6915d8883a0528bdbaab9a952bb156936508d5"
+    },
+    {
+      "bytes": 3109,
+      "frozen_review_copy": "/workspace/scratch/406169dbc070/rg_resume_20261105/middle_next/source_scope/bound_native_inputs/initial_jobs.json",
+      "original_path": "/workspace/scratch/406169dbc070/rg_resume_20261105/middle_next/ci_review/candidate/initial_native/jobs.json",
+      "role": "initial_jobs",
+      "sha256": "e6bafa97b14a9fdf7538802ce5f98628dbcb702c7283fbd7eedad0ed8b5aacfc"
+    },
+    {
+      "bytes": 13097,
+      "frozen_review_copy": "/workspace/scratch/406169dbc070/rg_resume_20261105/middle_next/source_scope/bound_native_inputs/progress_run.json",
+      "original_path": "/workspace/scratch/406169dbc070/rg_resume_20261105/middle_next/ci_review/candidate/native_progress/run.json",
+      "role": "progress_run",
+      "sha256": "f4075ed553d0b41a1344bc548f6915d8883a0528bdbaab9a952bb156936508d5"
+    },
+    {
+      "bytes": 3367,
+      "frozen_review_copy": "/workspace/scratch/406169dbc070/rg_resume_20261105/middle_next/source_scope/bound_native_inputs/progress_jobs.json",
+      "original_path": "/workspace/scratch/406169dbc070/rg_resume_20261105/middle_next/ci_review/candidate/native_progress/jobs.json",
+      "role": "progress_jobs",
+      "sha256": "0165a6f372945036a1e18dc679c4659b3f7c30d6bb8b6c27ed98bdecee3e1836"
+    },
+    {
+      "bytes": 2075,
+      "frozen_review_copy": "/workspace/scratch/406169dbc070/rg_resume_20261105/middle_next/source_scope/bound_native_inputs/progress.json",
+      "original_path": "/workspace/scratch/406169dbc070/rg_resume_20261105/middle_next/ci_review/candidate/native_progress/progress.json",
+      "role": "progress",
+      "sha256": "7f1fcd6ce94bb5ca40b7d2d066e7bdda67561889fb3dabba615b05b370d37721"
+    }
+  ],
+  "job": 127330696809,
+  "limits": [
+    "Metadata observations are the exact saved native snapshots at the recorded time, not a terminal outcome.",
+    "The successful native restoration and preflight steps do not replace the later full actual artifact, receipt and axiom-profile authentication.",
+    "The job name contains the native API ellipsis; the exact native value is preserved without guessing the expanded name.",
+    "Parent fixed-input-only exit0 is a source/plan binding check and does not claim new actual proof exports."
+  ],
+  "native_job_name_matched_without_expansion_or_reconstruction": true,
+  "native_kernel_step": {
+    "completed_at": null,
+    "conclusion": null,
+    "name": "Check multiplicities and actual graph spectral comparison",
+    "number": 10,
+    "started_at": "2026-11-05T15:11:31Z",
+    "status": "in_progress"
+  },
+  "native_restore_and_preflight_steps": [
+    {
+      "completed_at": "2026-11-05T15:11:26Z",
+      "conclusion": "success",
+      "name": "Restore one independently audited complete source-bound base scope",
+      "number": 7,
+      "started_at": "2026-11-05T15:11:24Z",
+      "status": "completed"
+    },
+    {
+      "completed_at": "2026-11-05T15:11:30Z",
+      "conclusion": "success",
+      "name": "Restore independently audited exact control proofs",
+      "number": 8,
+      "started_at": "2026-11-05T15:11:26Z",
+      "status": "completed"
+    },
+    {
+      "completed_at": "2026-11-05T15:11:31Z",
+      "conclusion": "success",
+      "name": "Bound the remaining fresh module frontier",
+      "number": 9,
+      "started_at": "2026-11-05T15:11:30Z",
+      "status": "completed"
+    }
+  ],
+  "observed_native_conclusion": null,
+  "observed_native_job_status": "in_progress",
+  "observed_native_run_status": "in_progress",
+  "observed_progress_at_utc": "2026-11-05T15:12:54.762231+00:00",
+  "parent_fixed_input_preflight_sha256": "e2d5e8b22421626bac05f93d7138916024d98cfb972a2062569b48ff4e91ce82",
+  "remaining_original_families": 3,
+  "remote_mutations": 0,
+  "repository": "RhudeJJJJ/formal-conjectures",
+  "review_scope": "Read-only external binding, raw native run/job metadata, frozen checker identity and parent fixed-input preflight output. No authentication procedure executed.",
+  "reviewer_actual_directory_inspected": false,
+  "reviewer_checker_executions": 0,
+  "reviewer_kernel_runs": 0,
+  "reviewer_zip_reads": 0,
+  "run": 42052127520,
+  "scope_basis": "Frozen source graph/manifests and parent fixed-input metadata preflight; no observed fresh completion count is inferred.",
+  "source_identity_commit": "eec9bfa2996116bb5f83fc2b6d83d015b5786c6b",
+  "status": "PASS_BOUND_ACTUAL_NATIVE_IDENTITY_METADATA_REVIEW",
+  "workflow": ".github/workflows/rg-middle-anchor030-partial-resume-20261105.yml"
+}

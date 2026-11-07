@@ -1,0 +1,477 @@
+{
+  "artifact": {
+    "digest": "sha256:21144c504d5a6a44b03400d5ccaf2599c268fed2ca1a0d34b1dff9cb8ada1671",
+    "id": 13564040057,
+    "name": "rg-middle-residual-list-assembly-recovery-20261105-exports-42345489172-0",
+    "size_in_bytes": 3284572
+  },
+  "authenticator_sha256": "aafd88b016b8328d4d665fe82f6b6b91f9fa70841b7548332dca0434760e84de",
+  "binding_sha256": "dded71a8472baf637772a6de3f5fcc5635f6de50a806d799954138b12e8e74c9",
+  "component_completed": true,
+  "endpoint": "Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteListAssembly",
+  "fresh_modules": 8,
+  "fresh_output_bytes": 13348232,
+  "global_rg_proved": false,
+  "head_sha": "9db7ac27d50f0b0c8f4d90d5bc27398f374f06ca",
+  "job": 128322194549,
+  "kernel_receipt_created_by_authenticator": false,
+  "middle_family_completed": false,
+  "modules": {
+    "Proofs.RadenkovicGutmanActualSmallGeFourKeys": {
+      "named_axiom_profiles": [
+        {
+          "axioms": [
+            "propext"
+          ],
+          "declaration": "Gebendorfer.RadenkovicGutman.SmallGeFourKeys.getD_fin"
+        },
+        {
+          "axioms": [
+            "propext"
+          ],
+          "declaration": "Gebendorfer.RadenkovicGutman.SmallGeFourKeys.representative_get"
+        },
+        {
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "declaration": "Gebendorfer.RadenkovicGutman.SmallGeFourKeys.rootDegree_eq_degree"
+        },
+        {
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "declaration": "Gebendorfer.RadenkovicGutman.SmallGeFourKeys.certified_cons"
+        }
+      ],
+      "output_bytes": 127736,
+      "row": {
+        "axiom_profiles": [
+          [
+            "propext"
+          ],
+          [
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        ],
+        "mode": "FRESH_KERNEL_EXPORT",
+        "module": "Proofs.RadenkovicGutmanActualSmallGeFourKeys",
+        "output_sha256": "e915b62bfc61f7179d2b14fcce668aca947d998990ef9eb8ae7cb6e4731b4745",
+        "seconds": 2.12,
+        "source_closure_sha256": "267e5fc710fccd15cde64f16d3cbb846752d93a5dfab22a91506b793050e4607",
+        "source_sha256": "ca7a3fc64a46c72c9ad3a5bb7b985eeb2d6dec6d8cdc2a9d44033828d542c86d"
+      }
+    },
+    "Proofs.RadenkovicGutmanCanonicalTreeCoverage": {
+      "named_axiom_profiles": [
+        {
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "declaration": "Gebendorfer.RadenkovicGutman.CanonicalTreeCoverage.checkedIso"
+        },
+        {
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "declaration": "Gebendorfer.RadenkovicGutman.CanonicalTreeCoverage.checkedIso_root"
+        },
+        {
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "declaration": "Gebendorfer.RadenkovicGutman.CanonicalTreeCoverage.step_sound"
+        },
+        {
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "declaration": "Gebendorfer.RadenkovicGutman.CanonicalTreeCoverage.coversAllFamilies"
+        },
+        {
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "declaration": "Gebendorfer.RadenkovicGutman.CanonicalTreeCoverage.actual_tree_covered"
+        }
+      ],
+      "output_bytes": 264624,
+      "row": {
+        "axiom_profiles": [
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        ],
+        "mode": "FRESH_KERNEL_EXPORT",
+        "module": "Proofs.RadenkovicGutmanCanonicalTreeCoverage",
+        "output_sha256": "d2385bcfd78e1f33d67ad89feccb21b5f764ce99aa7b2358ecffcf8156aa9fe5",
+        "seconds": 1.418,
+        "source_closure_sha256": "9e0ab296f47819fb553dcc9cf5db44919eeb4fcb271cc977f216a47dbd0c350a",
+        "source_sha256": "b0060f81270c60cb39d50689c43ad096ce7ef33c539719772732c002b6566cc6"
+      }
+    },
+    "Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteKeysData": {
+      "named_axiom_profiles": [
+        {
+          "axioms": [],
+          "declaration": "Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualFiniteKeys.domain_bounds"
+        },
+        {
+          "axioms": [],
+          "declaration": "Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualFiniteKeys.key_count"
+        }
+      ],
+      "output_bytes": 3115024,
+      "row": {
+        "axiom_profiles": [
+          [],
+          []
+        ],
+        "mode": "FRESH_KERNEL_EXPORT",
+        "module": "Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteKeysData",
+        "output_sha256": "36ff913b655d6e92283eb47f4cb05afa8c86887f5b25a440b48950bc3a409f75",
+        "seconds": 4.279,
+        "source_closure_sha256": "dcf3ef0cf419acde46e41d2e6271b2546b59fad9ff3a731a14b2e8c27ab53205",
+        "source_sha256": "7c4db02f2ed4ee4259771600b3b9709986b1fc3dc4117ec5b7fb72f33a28680b"
+      }
+    },
+    "Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteListAssembly": {
+      "named_axiom_profiles": [
+        {
+          "axioms": [
+            "propext"
+          ],
+          "declaration": "Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualFiniteListAssembly.of_batches"
+        }
+      ],
+      "output_bytes": 47032,
+      "row": {
+        "axiom_profiles": [
+          [
+            "propext"
+          ]
+        ],
+        "mode": "FRESH_KERNEL_EXPORT",
+        "module": "Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteListAssembly",
+        "output_sha256": "385fa086e05bbcf4aed36646315b91c535ab213cb6810fe8f9f471d2e1690a16",
+        "seconds": 2.02,
+        "source_closure_sha256": "d9e59932a5666295d456d8a8f66691e7d354d5f0e39f822e243b23df9db29b73",
+        "source_sha256": "d2495d6007e3869fce07715160c1a11cd353984834c1dad83bfb57ed2a161e9b"
+      }
+    },
+    "Proofs.RadenkovicGutmanFiniteTreeTransfer": {
+      "named_axiom_profiles": [
+        {
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "declaration": "Gebendorfer.RadenkovicGutman.FiniteTreeTransfer.stopLoss_iso"
+        },
+        {
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "declaration": "Gebendorfer.RadenkovicGutman.FiniteTreeTransfer.sourceIso"
+        },
+        {
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "declaration": "Gebendorfer.RadenkovicGutman.FiniteTreeTransfer.fusedIso"
+        },
+        {
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "declaration": "Gebendorfer.RadenkovicGutman.FiniteTreeTransfer.checkedGraphIso"
+        },
+        {
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "declaration": "Gebendorfer.RadenkovicGutman.FiniteTreeTransfer.mean_positive_of_spectral_comparison"
+        },
+        {
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "declaration": "Gebendorfer.RadenkovicGutman.FiniteTreeTransfer.certified_transport"
+        },
+        {
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "declaration": "Gebendorfer.RadenkovicGutman.FiniteTreeTransfer.positive_of_certified"
+        }
+      ],
+      "output_bytes": 552288,
+      "row": {
+        "axiom_profiles": [
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        ],
+        "mode": "FRESH_KERNEL_EXPORT",
+        "module": "Proofs.RadenkovicGutmanFiniteTreeTransfer",
+        "output_sha256": "42e342010dcbdcfb5f5782028eefa844ffa757593361fc2f34d58c26fb91a958",
+        "seconds": 3.073,
+        "source_closure_sha256": "c6938abc4915be9a84f41038dac217193fd3ee043454f36afd5d436a6bbddfa7",
+        "source_sha256": "b433dda4c3bfffd2dbc4d14d1d7e8562c61925c0ff4dfd2a4c9fd46d120f0a3b"
+      }
+    },
+    "Proofs.RadenkovicGutmanRootedCatalogueData": {
+      "named_axiom_profiles": [
+        {
+          "axioms": [],
+          "declaration": "Gebendorfer.RadenkovicGutman.RootedCatalogueData.catalogue_sizes"
+        }
+      ],
+      "output_bytes": 8855608,
+      "row": {
+        "axiom_profiles": [
+          []
+        ],
+        "mode": "FRESH_KERNEL_EXPORT",
+        "module": "Proofs.RadenkovicGutmanRootedCatalogueData",
+        "output_sha256": "39eac6e3413e74d582bd4f06ce003c5d7bd97a8d01a7d2e603c2f0ce828eb34b",
+        "seconds": 35.272,
+        "source_closure_sha256": "61a8bc67fb99ae269c3e1c7a8728401dcf27bd6f8b7f0ea69114d7d14f0219f7",
+        "source_sha256": "4e212d206794c94ef765e7f66513ef3cf6a6f41d18490efc3fcb23254adce33f"
+      }
+    },
+    "Proofs.RadenkovicGutmanRootedTreeEnumeration": {
+      "named_axiom_profiles": [
+        {
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "declaration": "Gebendorfer.RadenkovicGutman.RootedTreeEnumeration.card_vertices"
+        },
+        {
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "declaration": "Gebendorfer.RadenkovicGutman.RootedTreeEnumeration.card_family"
+        },
+        {
+          "axioms": [
+            "Quot.sound",
+            "propext"
+          ],
+          "declaration": "Gebendorfer.RadenkovicGutman.RootedTreeEnumeration.extensionIso"
+        },
+        {
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "declaration": "Gebendorfer.RadenkovicGutman.RootedTreeEnumeration.complete"
+        },
+        {
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "declaration": "Gebendorfer.RadenkovicGutman.RootedTreeEnumeration.complete_at_order"
+        }
+      ],
+      "output_bytes": 226568,
+      "row": {
+        "axiom_profiles": [
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        ],
+        "mode": "FRESH_KERNEL_EXPORT",
+        "module": "Proofs.RadenkovicGutmanRootedTreeEnumeration",
+        "output_sha256": "21ecd008113e6d5acfe4bd0995dbcf2e1f323c13bc50aef51402b6bc4da48e72",
+        "seconds": 1.368,
+        "source_closure_sha256": "f9abe69684034d270718ff8a084bbf537aa53753a0069a6968ce3ace6bdd8319",
+        "source_sha256": "3d646c4b25e0cc17ad5ee086cfbf20c4a07a2b4823fc48fd5602380074119e45"
+      }
+    },
+    "Proofs.RadenkovicGutmanTreeLeafInduction": {
+      "named_axiom_profiles": [
+        {
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "declaration": "Gebendorfer.RadenkovicGutman.TreeLeafInduction.exists_leaf_ne_root"
+        },
+        {
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "declaration": "Gebendorfer.RadenkovicGutman.TreeLeafInduction.deletionIso"
+        },
+        {
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "declaration": "Gebendorfer.RadenkovicGutman.TreeLeafInduction.finite_tree_induction"
+        }
+      ],
+      "output_bytes": 159352,
+      "row": {
+        "axiom_profiles": [
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        ],
+        "mode": "FRESH_KERNEL_EXPORT",
+        "module": "Proofs.RadenkovicGutmanTreeLeafInduction",
+        "output_sha256": "c99779810ac7e25bad46d81ae861c0e6043f6dc0a0d24e82e9c1cdd64a9f7257",
+        "seconds": 1.368,
+        "source_closure_sha256": "8815588fed96df8e077739e0613ead2b485007d5fffeff37acd1806f3fe39eb7",
+        "source_sha256": "601c2a97fcf01faa98df611d637e75ca201651d5efe5027a4ef002af28ed4c10"
+      }
+    }
+  },
+  "named_axiom_profiles": 28,
+  "native_conclusion": "success",
+  "prior_modules": 31,
+  "receipt_sha256": "4ed48384d492875f6050f91bec45a217b49abee4e505d2185e27fc2cf7229f79",
+  "remaining_original_families": 3,
+  "repository": "RhudeJJJJ/formal-conjectures",
+  "required_modules": 39,
+  "resource_seconds": 52.07,
+  "run": 42345489172,
+  "status": "ACTUAL_ORIGINAL_RESIDUAL_LIST_ASSEMBLY_AUTHENTICATED"
+}

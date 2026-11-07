@@ -1,0 +1,101 @@
+{
+  "anchor270_certificate_claim": false,
+  "changed_functions": [
+    "fixed_context",
+    "authenticate",
+    "main"
+  ],
+  "checks": [
+    {
+      "check": "Exact original target and source closure",
+      "detail": "The candidate binds our independently recomputed 281-source Anchor270 graph at current commit 5aed41513a76d7d22be5087091e796587353bbf5. Endpoint source SHA fb3ecbd5523d0384ae2d267ffad97c91baf5e594911aa1c42b1b5bdaf0e51816 and closure 64a0135113c0b73b897055f6cc86c8894d1f58fcee7d7082f3bf6abdeb3795d7 match. Current inventory, graph and Git-tree bridge digests match. No 030 identifiers remain in the checker; no 029 or 030 proof imports occur in this closure.",
+      "status": "PASS"
+    },
+    {
+      "check": "Native origin binding",
+      "detail": "All fixed native capture hashes match the saved native data. Run 40714530693, Job 122908481481, attempt 1, head b5648d132318fe3d955f1ebe79ed333a58abc722, exact native job name and artifact 12891755528 are selected from complete nine-job and nine-artifact catalogs. Artifact name ends -2; size 5861934 and digest ef6ab324fbaec1259f6fa89fbb05185c28437fd8a2750f43b0ac21fec47d3f0f match. Run and job are cancelled; all 14 steps completed, with only the kernel step cancelled.",
+      "status": "PASS"
+    },
+    {
+      "check": "Historical helper and prior origins",
+      "detail": "All 21 historical helper/workflow/manifest files match inventory SHA256 and Git blob identities. Twenty are byte-identical to the prior b5648d capture. The replacement is the directly captured 270 restore-plan path, whose blob cf8205a74ac4cfccc899e668faa4db62ecf2f427 contains the same four historical manifests. The checker preserves all 361 historical prior rows and actual original origins, including 118 endpoint dependencies and 243 additional diagnostic priors.",
+      "status": "PASS"
+    },
+    {
+      "check": "Exact completed and remaining partition",
+      "detail": "Our independent source and native-log comparison confirms 128 original fresh module rows and 655 named source-profile occurrences. Remaining: Cells106\u2013133, Batches010\u2013013, FinitePayment, OriginalAnchor and Certificate270, exactly 35 modules with 183 named occurrences. The original 163-module/838-occurrence total remains fixed. The completed prefix is dependency-closed with the 118 common priors.",
+      "status": "PASS"
+    },
+    {
+      "check": "Actual archive validation is mandatory",
+      "detail": "The candidate requires actual complete ZIP size and digest, exactly 668 unique safe members, 281 byte-identical current sources and recomputed recursive closures, 128 exact native/diagnostic/record/object/log triples, ordered named declarations and standard allowed axiom profiles. Exact membership is 281 + 3*128 + 3. Final receipt and resource_observer files are explicitly absent for this cancelled producer. Diagnostic rows are 489 = 361 historical priors + 128 fresh. This reviewer did not inspect the ZIP or object bytes.",
+      "status": "PASS"
+    },
+    {
+      "check": "Resource and conclusion semantics",
+      "detail": "Historical source and native invocation remain 600 seconds per module, one worker, 2048 MiB reserve and a 360-minute job cap. Native partial resource observations are required and reserve violations rejected; no final observer result or unseen intervals are claimed. Cell106 is excluded from completed exports and its unfinished log remains evidence only. Endpoint, Middle-family and global RG claims remain false; the aggregate remains three open families.",
+      "status": "PASS"
+    },
+    {
+      "check": "Frozen template derivation",
+      "detail": "All 13 utility/parser functions are byte-identical to the executed 030 template. All 16 function names and 73 require calls are preserved. AST control flow, operators and booleans are unchanged after abstracting text/integer bindings and the two report-field renames anchor030_certificate_claim and unfinished_cell072_log_sha256. Every concrete diff was inspected and corresponds to target/source/native identities, local paths, bounded counts or report labels. No proof predicate, origin gate, resource check or axiom check is removed.",
+      "status": "PASS"
+    }
+  ],
+  "degree_one_middle_family_claim": false,
+  "findings": [],
+  "frozen_template": "rg_resume_20261105/middle_next/anchor030_producer/authenticate_original_anchor030_partial.py",
+  "frozen_template_sha256": "8e324d0c4b9feec6eafbaef355e0bc588ea29a4b27ba14f6cb0cd1e81add3d01",
+  "limits": [
+    "Independent static source/native-metadata review only; actual artifact and object bytes have not been authenticated by this reviewer.",
+    "Root must execute the frozen checker against the genuine original archive before reusing these 128 exports.",
+    "A complete 270 continuation still needs its genuine new native origin, all 35 new modules and the complete original endpoint receipt."
+  ],
+  "preserved_boolean_literals_and_operators": true,
+  "ready_for_root_actual_partial_authentication": true,
+  "remaining_original_families": 3,
+  "require_call_counts_old_and_new": [
+    73,
+    73
+  ],
+  "reviewed_at_utc": "2026-11-05T15:46:01.947607+00:00",
+  "reviewed_checker": "rg_resume_20261105/middle_followup_1105c/anchor270_producer/authenticate_original_anchor270_partial.py",
+  "reviewed_checker_bytes": 27844,
+  "reviewed_checker_sha256": "df2890d204d6216006689292da5754502e4e0c90e7eb339355a6b12e8ca46610",
+  "reviewer": "anchor270_scope_1105c",
+  "reviewer_checker_executions": 0,
+  "reviewer_lean_runs": 0,
+  "reviewer_object_reads": 0,
+  "reviewer_remote_mutations": 0,
+  "reviewer_zip_reads": 0,
+  "same_ast_control_flow_after_binding_and_report_field_renames": true,
+  "schema": "rg_anchor270_partial_authenticator_independent_review_v1",
+  "scope": {
+    "completed_named_profiles": 655,
+    "completed_partial_modules": 128,
+    "diagnostic_rows": 489,
+    "expected_partial_zip_members": 668,
+    "historical_prior_modules": 118,
+    "original_fresh_modules": 163,
+    "original_named_profiles": 838,
+    "remaining_fresh_modules": 35,
+    "remaining_named_profiles": 183,
+    "required_modules": 281
+  },
+  "status": "PASS_STATIC_FIXED_PARTIAL_AUTHENTICATOR_REVIEW",
+  "unchanged_functions": [
+    "require",
+    "sha",
+    "file_sha",
+    "git_blob",
+    "unique",
+    "decode",
+    "bound",
+    "table",
+    "origin",
+    "expected_named_declarations",
+    "source_graph",
+    "log_payloads",
+    "profiles_from_log"
+  ]
+}

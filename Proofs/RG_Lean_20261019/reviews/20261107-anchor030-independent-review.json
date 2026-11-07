@@ -1,0 +1,71 @@
+{
+  "Lean_or_lake_executions_by_reviewer": 0,
+  "actual_fresh_compiled_objects_hashed": 72,
+  "actual_fresh_named_profiles_read": 383,
+  "actual_fresh_object_bytes_read": 9925536,
+  "actual_recursive_source_closures_recomputed": 281,
+  "actual_source_files_hashed": 281,
+  "all_axiom_sets_are_standard": true,
+  "all_fresh_named_profiles_match_source_order": true,
+  "archive_members_read_and_crc_checked": 501,
+  "artifact_bytes": 3645182,
+  "artifact_sha256": "a48e29915be99a0ed998b9512760beec1979520518322cd3d7aa6aca1d65fed9",
+  "authentication_report_sha256": "4548ffb0a0b99c6ceed6bc283a2c4611bd4784fb541c16e36b942b1050d06400",
+  "completion_authenticator_executions_by_reviewer": 0,
+  "diagnostic_partition": {
+    "fresh": 72,
+    "outside_endpoint_scope": 243,
+    "prior": 452,
+    "total": 524
+  },
+  "endpoint": "Proofs.RadenkovicGutmanMiddleOriginalAnchorCertificate030",
+  "endpoint_claim_supported": true,
+  "findings": [],
+  "fresh_endpoint_profile": [
+    {
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "declaration": "Gebendorfer.RadenkovicGutman.MiddleOriginalAnchorCertificate030.certificate"
+    }
+  ],
+  "fresh_endpoint_record": {
+    "axiom_profiles": [
+      [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    ],
+    "mode": "FRESH_KERNEL_EXPORT",
+    "module": "Proofs.RadenkovicGutmanMiddleOriginalAnchorCertificate030",
+    "output_sha256": "b4f9383319671a9b5822fca47ff5cd81e789a46850b06e279ca79025f8c57bb4",
+    "seconds": 1.82,
+    "source_closure_sha256": "acedf98ce792910b1ceb69a1bf4626db2fdc92e831a19f7ef34d8fd27e9d94c8",
+    "source_sha256": "1059c2669df91981529bc57a6afa91b012a54f411a6aeb23e7a1afea9a22b61d"
+  },
+  "fresh_module_byte_checks_sha256": "87a2928c98fc6884aae8c7133f13956a7b015178a674ff45a0aff9398183947b",
+  "full_degree_one_middle_claim": false,
+  "global_rg_claim": false,
+  "inherited_91_cancelled_producer_origins_preserved": true,
+  "inherited_original_profiles": 455,
+  "job": 127330696809,
+  "native_run_and_job_success_verified": true,
+  "original_named_profiles_combined": 838,
+  "prior_object_archives_reread_by_reviewer": false,
+  "receipt_partition": {
+    "fresh": 72,
+    "prior": 209,
+    "required": 281
+  },
+  "receipt_sha256": "6b4e722cefa0dca46c1723ae781d1bb3ffcb7da09458efd8874e85dee33ad6a0",
+  "remaining_original_families": 3,
+  "repository": "RhudeJJJJ/formal-conjectures",
+  "review_scope": "Read actual fresh ZIP bytes, native captures, all endpoint receipt rows, original source graph and frozen root report; inherited object authentication remains the frozen producer/native restore evidence.",
+  "reviewed_at_utc": "2026-11-07T06:06:27.396832+00:00",
+  "run": 42052127520,
+  "status": "PASS_INDEPENDENT_ACTUAL_ANCHOR030_BYTE_AND_RECEIPT_REVIEW",
+  "workflow_head": "415f1d8bbc3a065b81adea9ac3b74fd27fc66265"
+}

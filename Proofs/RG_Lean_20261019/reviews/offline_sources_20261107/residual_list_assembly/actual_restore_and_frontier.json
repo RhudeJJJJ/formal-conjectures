@@ -1,0 +1,47 @@
+{
+  "checked_at_utc": "2026-11-07T06:04:52.701624+00:00",
+  "archive": "/workspace/scratch/406169dbc070/rg_numeric_recovery/actual_analytic_base_verified.zip",
+  "archive_bytes": 36119215,
+  "archive_sha256": "15b735bfcca048d8547139fe68160b6c7bb9fb8975755e93d5dc12a287b832ce",
+  "commands": [
+    {
+      "command": [
+        "python",
+        "-B",
+        "ci/rg_restore_complete_scope.py",
+        "--manifest",
+        "ci/rg_reusable_analytic_kernel_base_complete_scope_capsule.json",
+        "--build-directory",
+        "/workspace/scratch/9f79fa0e9941/residual/build/extension",
+        "--verified-local-archive",
+        "/workspace/scratch/406169dbc070/rg_numeric_recovery/actual_analytic_base_verified.zip"
+      ],
+      "cwd": "/workspace/scratch/9f79fa0e9941/residual/current_origin/source",
+      "exit_code": 0,
+      "log": "/workspace/scratch/9f79fa0e9941/residual/production_preflight_0.log",
+      "log_sha256": "64e9043b8ae70b8423ea7515b60effbc43afda8c09e1833db08caaff98b9b61b"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "ci/rg_restore_with_kernel_fallback.py",
+        "--plan",
+        "/workspace/scratch/9f79fa0e9941/residual/patch/ci/rg_middle_residual_list_assembly_recovery_restore_plan_20261105.json",
+        "--build-directory",
+        "/workspace/scratch/9f79fa0e9941/residual/build/extension",
+        "--endpoint",
+        "Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteListAssembly",
+        "--max-fresh",
+        "8",
+        "--preflight-only"
+      ],
+      "cwd": "/workspace/scratch/9f79fa0e9941/residual/current_origin/source",
+      "exit_code": 0,
+      "log": "/workspace/scratch/9f79fa0e9941/residual/production_preflight_1.log",
+      "log_sha256": "279ffab75d3f767071621babfe74b7fec37e5b64a7b129aedfcdd1e8f95b9c4e"
+    }
+  ],
+  "lean_runs": 0,
+  "remote_mutations": 0
+}

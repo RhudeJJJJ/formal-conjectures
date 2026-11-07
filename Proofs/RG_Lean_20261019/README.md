@@ -2,7 +2,7 @@
 
 Jonas J. Gebendorfer. OpenAI Codex assisted with implementation and validation.
 
-Status at 15:31 CET on 5 November 2026: **the original `degreeOneLarge` family is kernel-verified; three original input families remain open, and no full Lean proof has been submitted**.
+Status on 7 November 2026: **the original `degreeOneLarge` family and original Anchor029/Anchor030 certificates are kernel-verified; three original input families remain open, and no full Lean proof has been submitted**.
 The written computer-assisted proof and the original statement submission are distinct from completion of this Lean project.
 
 The target is the two statements in [PR #7399](https://github.com/google-deepmind/formal-conjectures/pull/7399), at statement commit `3654bf2bddc5217f904b7b85207b1091e833de49`: for every positive order and every tree on `Fin n`, the path minimizes actual Laplacian energy, with equality exactly for a graph isomorphic to the path. Energy is centered at the actual mean degree `2 |E(T)| / n`, where `|E(T)|` is the number of edges.
@@ -13,9 +13,61 @@ The exact seven required inputs are in [OriginalAssembly](Proofs/RadenkovicGutma
 
 Four have complete original kernel-object and source-closure audits at their recorded verified revisions: degree one through order 13, degree one from order 53, degree at least four through order 12 (all 247 actual-tree comparisons and coverage), and degree at least 46. Three remain open: degree one at orders 14–52, degree two or three, and degrees 4–45 from order 13.
 
-## Original Anchor030 continuation — 5 November 2026
+## Residual finite list assembly recovered — 7 November 2026
 
-The next bounded original target is `MiddleOriginalAnchorCertificate030.certificate`.
+The [new original ListAssembly run](https://github.com/RhudeJJJJ/formal-conjectures/actions/runs/42345489172/job/128322194549)
+completed successfully and passed its fixed archive authenticator. The exact
+39-module receipt consists of 31 restored prerequisites and eight fresh modules,
+with all 28 ordered named axiom profiles using only standard Lean axioms.
+All 13,348,232 fresh compiled-object bytes were checked against the recorded
+hashes. The [authentication report](reviews/20261107-residual-list-assembly-authentication.json)
+binds the source closure, native success, full artifact, and receipt.
+
+This closes the generic theorem
+`DegreeOneMiddleResidualFiniteListAssembly.of_batches`: for an arbitrary
+predicate on keys, proofs for all 25 listed batches imply the predicate for
+every key in the complete list. It does not supply those 25 concrete certificate
+proofs. The list has 1,232 keys. Core/parameter coverage, actual-tree transport,
+and the concrete residual certificates remain separate components.
+
+## Original Anchor270 continuation — 7 November 2026
+
+The next independent original target is `MiddleOriginalAnchorCertificate270.certificate`.
+Its original anchor is `n = 52`, `p = 0`, `q = 46`, with lower bound
+`3138901717630130452352892712856689 / 32624163332060752803334972325527552`.
+All 281 current source files are pinned at `5aed41513a76d7d22be5087091e796587353bbf5`;
+their recursive closure contains no Anchor029 or Anchor030 module.
+
+The [actual historical producer](https://github.com/RhudeJJJJ/formal-conjectures/actions/runs/40714530693/job/122908481481)
+ended cancelled after six hours. Its original archive `12891755528` has now
+passed complete root authentication: **128 completed kernel exports, 655 exact
+ordered named standard-axiom profiles and 18,129,448 bytes of compiled objects**.
+All 281 original source bytes and recursive dependency hashes match the current
+target. The [partial authentication report](reviews/20261105-anchor270-original-partial-authentication.json)
+has SHA-256 `fed1b82a66e787b2b63a0fb81bdaf81dd819e44967fb639a4a411ca45f6e147f`.
+The manifest preserves the real cancelled job as the origin of these individual
+completed exports. That historical job did not complete the Anchor270 endpoint.
+
+The bounded continuation uses **118 shared prerequisites + 128 authenticated
+partial exports + 35 mandatory fresh modules = 281 modules**. The remaining
+modules are Cells106–133, Batches010–013, FinitePayment, OriginalAnchor and
+Certificate270; they contain 183 new named axiom checks. The unchanged job
+limits are 600 seconds per module, one worker, 2048 MiB reserve and 360 minutes.
+The separate source graph permits this single-endpoint job to run independently
+of the completed Anchor030 work on its own runner.
+
+The [actual Anchor270 continuation 42345329502](https://github.com/RhudeJJJJ/formal-conjectures/actions/runs/42345329502/job/128321707343)
+started on 7 November at workflow head `12d2d0ddecb59686244f7eb14c42687ec2b456e9`.
+Its fixed checker is separately bound to the actual run and job. Completion is
+still pending; this checkpoint does not count it as a proved endpoint. The three original families `degreeOneMiddle`, `degreeTwoThree` and
+`degreeFourToFortyfive` remain open. The [remaining-seven evidence map](reviews/20261105-middle-remaining-seven-native-evidence.json)
+records historical prefixes and available archives for subsequent original
+anchors. Only this Anchor270 prefix has been object-authenticated in this step;
+the other six native-log counts are not current object or endpoint proof claims.
+
+## Original Anchor030 completion — 7 November 2026
+
+The completed original target is `MiddleOriginalAnchorCertificate030.certificate`.
 It retains the original anchor `n = 52`, `p = 9`, `q = 39` and lower bound
 `3824018983001674635847799415612737 / 32624163332060752803334972325527552`.
 The current 281-source closure is fixed at `eec9bfa2996116bb5f83fc2b6d83d015b5786c6b`;
@@ -39,31 +91,36 @@ original endpoint, using the unchanged 600-second per-module timeout, one worker
 2048 MiB reserve and 360-minute job cap. All six required archive identities were
 listed and unexpired in the native catalog check on 5 November.
 
-The [new native continuation 42052127520](https://github.com/RhudeJJJJ/formal-conjectures/actions/runs/42052127520/job/127330696809)
-is running as attempt 1 on workflow head `415f1d8bbc3a065b81adea9ac3b74fd27fc66265`.
-Both restoration steps and the mandatory frontier preflight succeeded. The
-kernel step began on 5 November at **16:11:31 CET**. Its final result, completed
-fresh-export count and complete result archive have not yet been observed.
-The [native status capture](reviews/20261105-anchor030-active-native-state.json)
-records this distinction explicitly.
+The [native continuation 42052127520](https://github.com/RhudeJJJJ/formal-conjectures/actions/runs/42052127520/job/127330696809)
+completed successfully on 5 November at **20:32:48 CET**. On 7 November the
+unchanged, previously frozen completion checker was executed against the complete
+actual archive and terminal native metadata. It returned exit 0. The
+[complete authentication report](reviews/20261107-anchor030-complete-authentication.json)
+and [independent byte review](reviews/20261107-anchor030-independent-review.json)
+establish this exact original endpoint.
 
-The [fixed completion authenticator](reviews/offline_sources_20261105/anchor030/authenticate_anchor030_continuation.py),
-SHA-256 `e1b2d0306494ded22526d78e20e0b7940be2078ed9eaafd7f4879766c8e654cf`,
-is bound to the actual new run and job by the [separate native binding](reviews/20261105-anchor030-fixed-native-binding.json),
-SHA-256 `3946d265c550efadb154bc913cadf073d4492f2f98a4afa18361735962c015aa`.
-Its fixed-input check and independent review passed. Actual completion mode has
-not run; it requires all 72 new exports, 383 new ordered named profiles, the
-complete 281-module receipt, the exact 501-member result archive and successful
-native/resource completion. This documentation checkpoint does not alter the
-running workflow, restore plan, manifests or any Lean source.
+The complete receipt covers **281 modules: 209 source-bound prior exports and
+72 fresh original exports**. The full 3,645,182-byte archive has 501 members;
+all 281 source files and their recursive dependency hashes match the pinned
+target. All 72 fresh compiled objects were hashed, totaling 9,925,536 bytes.
+The actual logs contain all 383 new ordered named axiom profiles; with the
+preserved 455 historical profiles, all 838 original profiles are covered.
+They use only `propext`, `Classical.choice`, and `Quot.sound`.
 
-The complete new kernel receipt is still required. `degreeOneMiddle`,
-`degreeTwoThree` and `degreeFourToFortyfive` remain the three open original
-families. The current Middle dependency audit
-separates its 680 analytic anchors, 39 order-coverage modules and 25 residual
-finite batches. The historical successful 3,880-module Middle residual join has
-a preserved native log, but its seven-day result archive is no longer listed;
-that is an evidence-availability issue, not a new mathematical obligation.
+The successful native run retains workflow head
+`415f1d8bbc3a065b81adea9ac3b74fd27fc66265`; the original source identity remains
+`eec9bfa2996116bb5f83fc2b6d83d015b5786c6b`. Its actual artifact is `13447525826`,
+SHA-256 `a48e29915be99a0ed998b9512760beec1979520518322cd3d7aa6aca1d65fed9`.
+The new [fresh-export manifest](../../ci/rg_middle_anchor030_run42052127520_prior_exports.json)
+contains only the 72 objects physically exported by this successful job. The
+91 historical partial exports retain their cancelled producer origin.
+
+Anchor030 is one certificate of `degreeOneMiddle`; its success does not close
+the full family. `degreeOneMiddle`, `degreeTwoThree`, and
+`degreeFourToFortyfive` remain open. The Middle scope consists of 680 analytic
+anchors, 39 order-coverage modules, and 25 finite-residual certificate batches.
+The historical 3,880-module residual join has a preserved success log, but
+its result archive is no longer listed; its objects are being recovered.
 
 ## Verified degree-one large-order family
 

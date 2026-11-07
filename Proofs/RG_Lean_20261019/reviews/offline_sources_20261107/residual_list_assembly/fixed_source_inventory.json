@@ -1,0 +1,2371 @@
+{
+  "archive_reads": 0,
+  "candidate_prior_modules": [
+    "Proofs.RadenkovicGutmanActualFusionIntegral",
+    "Proofs.RadenkovicGutmanArmEmbedding",
+    "Proofs.RadenkovicGutmanCoreQuotient",
+    "Proofs.RadenkovicGutmanCoulson",
+    "Proofs.RadenkovicGutmanCountGap",
+    "Proofs.RadenkovicGutmanCountTransport",
+    "Proofs.RadenkovicGutmanForkResidual",
+    "Proofs.RadenkovicGutmanFourVertexSpectrum",
+    "Proofs.RadenkovicGutmanFusionDescent",
+    "Proofs.RadenkovicGutmanFusionQuotient",
+    "Proofs.RadenkovicGutmanFusionTerminal",
+    "Proofs.RadenkovicGutmanGlobalAssembly",
+    "Proofs.RadenkovicGutmanGraphIntegral",
+    "Proofs.RadenkovicGutmanGraphJoin",
+    "Proofs.RadenkovicGutmanIsoEnergy",
+    "Proofs.RadenkovicGutmanMinimalFusion",
+    "Proofs.RadenkovicGutmanMixedGraphIntegral",
+    "Proofs.RadenkovicGutmanMixedStopLoss",
+    "Proofs.RadenkovicGutmanNonpathFork",
+    "Proofs.RadenkovicGutmanOrderFour",
+    "Proofs.RadenkovicGutmanPathDeterminant",
+    "Proofs.RadenkovicGutmanPathRecurrence",
+    "Proofs.RadenkovicGutmanPathResolvent",
+    "Proofs.RadenkovicGutmanPerturbation",
+    "Proofs.RadenkovicGutmanRewireIso",
+    "Proofs.RadenkovicGutmanRewireTopology",
+    "Proofs.RadenkovicGutmanScalarIntegral",
+    "Proofs.RadenkovicGutmanSmallOrders",
+    "Proofs.RadenkovicGutmanSourcePresentation",
+    "Proofs.RadenkovicGutmanSpectral",
+    "Proofs.RadenkovicGutmanTreeTerminal"
+  ],
+  "commit": "5aed41513a76d7d22be5087091e796587353bbf5",
+  "component_kind": "DEGREE_ONE_MIDDLE_RESIDUAL_FINITE_LIST_ASSEMBLY",
+  "current_proof_source_tree": "b2aed82cbb58530a1adffdec303d67db45669393",
+  "endpoint": "Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteListAssembly",
+  "expected_archive_members": 67,
+  "expected_diagnostic_records": 201,
+  "expected_fresh_named_axiom_profiles": 28,
+  "fresh_checkpoint_modules": [
+    "Proofs.RadenkovicGutmanActualSmallGeFourKeys",
+    "Proofs.RadenkovicGutmanCanonicalTreeCoverage",
+    "Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteKeysData",
+    "Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteListAssembly",
+    "Proofs.RadenkovicGutmanFiniteTreeTransfer",
+    "Proofs.RadenkovicGutmanRootedCatalogueData",
+    "Proofs.RadenkovicGutmanRootedTreeEnumeration",
+    "Proofs.RadenkovicGutmanTreeLeafInduction"
+  ],
+  "kernel_runs": 0,
+  "leancert_pin": "621a43d7cf21f87872392a01e874f2f1dbddc926",
+  "mathlib_pin": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "modules": {
+    "Proofs.RadenkovicGutmanActualFusionIntegral": {
+      "bytes": 7829,
+      "capture_path": "rg_resume_20261104/anchor029_preparation/static_source_closure/source_capture_batch003.json",
+      "captured_ref": "7a64184a0b353295d4977004066e163375cf3b4b",
+      "current_url": "https://github.com/RhudeJJJJ/formal-conjectures/blob/5aed41513a76d7d22be5087091e796587353bbf5/Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanActualFusionIntegral.lean",
+      "external_imports": [],
+      "git_blob_sha": "8dec68a6de181a5eeaa2bd2966f08bc27109df57",
+      "historical_row": {
+        "axiom_profiles": [
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        ],
+        "mode": "FRESH_KERNEL_EXPORT",
+        "module": "Proofs.RadenkovicGutmanActualFusionIntegral",
+        "output_sha256": "9fcf9cb3db1070e40687eb550edf6ecaff74a54e19ad460bf3cf577cbb103676",
+        "seconds": 3.474,
+        "source_closure_sha256": "94d192281e7d44facdb32cfe3d0972e830f37b16fb48dd412a33e97cc1642baf",
+        "source_sha256": "909981a2b0872bdb1701ce68145af1234f25c127b849b6d5c7ad87b8d9eecae3"
+      },
+      "identity_basis": "UNCHANGED_PROOFS_GIT_TREE_WITH_PREVIOUS_EXACT_BYTE_CAPTURE",
+      "local_path": "/workspace/scratch/9f79fa0e9941/residual/source/Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanActualFusionIntegral.lean",
+      "path": "Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanActualFusionIntegral.lean",
+      "previous_inventory": "rg_resume_20261105/middle_next/source_scope/anchor030_source_inventory.json",
+      "previous_local_path": "/workspace/scratch/406169dbc070/rg_resume_20261105/middle_followup_1105c/residual_recovery/candidate/source/Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanActualFusionIntegral.lean",
+      "source_closure_sha256": "94d192281e7d44facdb32cfe3d0972e830f37b16fb48dd412a33e97cc1642baf",
+      "source_dependencies": [
+        "Proofs.RadenkovicGutmanMinimalFusion",
+        "Proofs.RadenkovicGutmanMixedStopLoss"
+      ],
+      "source_sha256": "909981a2b0872bdb1701ce68145af1234f25c127b849b6d5c7ad87b8d9eecae3"
+    },
+    "Proofs.RadenkovicGutmanActualSmallGeFourKeys": {
+      "bytes": 2017,
+      "git_blob_sha": "29f89092a32b5df6a5e9e1457409a792ff9fa2bc",
+      "historical_row": {
+        "axiom_profiles": [
+          [
+            "propext"
+          ],
+          [
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        ],
+        "mode": "FRESH_KERNEL_EXPORT",
+        "module": "Proofs.RadenkovicGutmanActualSmallGeFourKeys",
+        "output_sha256": "e915b62bfc61f7179d2b14fcce668aca947d998990ef9eb8ae7cb6e4731b4745",
+        "seconds": 1.968,
+        "source_closure_sha256": "267e5fc710fccd15cde64f16d3cbb846752d93a5dfab22a91506b793050e4607",
+        "source_sha256": "ca7a3fc64a46c72c9ad3a5bb7b985eeb2d6dec6d8cdc2a9d44033828d542c86d"
+      },
+      "identity_basis": "EXACT_GITHUB_FILE_AT_FIXED_COMMIT",
+      "local_path": "/workspace/scratch/9f79fa0e9941/residual/source/Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanActualSmallGeFourKeys.lean",
+      "path": "Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanActualSmallGeFourKeys.lean",
+      "previous_local_path": "/workspace/scratch/406169dbc070/rg_resume_20261105/middle_followup_1105c/residual_recovery/candidate/source/Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanActualSmallGeFourKeys.lean",
+      "source_closure_sha256": "267e5fc710fccd15cde64f16d3cbb846752d93a5dfab22a91506b793050e4607",
+      "source_dependencies": [
+        "Proofs.RadenkovicGutmanFiniteTreeTransfer",
+        "Proofs.RadenkovicGutmanRootedCatalogueData"
+      ],
+      "source_sha256": "ca7a3fc64a46c72c9ad3a5bb7b985eeb2d6dec6d8cdc2a9d44033828d542c86d"
+    },
+    "Proofs.RadenkovicGutmanArmEmbedding": {
+      "bytes": 4781,
+      "capture_path": "rg_resume_20261104/anchor029_preparation/static_source_closure/source_capture_batch009.json",
+      "captured_ref": "7a64184a0b353295d4977004066e163375cf3b4b",
+      "current_url": "https://github.com/RhudeJJJJ/formal-conjectures/blob/5aed41513a76d7d22be5087091e796587353bbf5/Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanArmEmbedding.lean",
+      "external_imports": [],
+      "git_blob_sha": "8888849dfd795696239909eca87c475d3cb377fb",
+      "historical_row": {
+        "axiom_profiles": [
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        ],
+        "mode": "FRESH_KERNEL_EXPORT",
+        "module": "Proofs.RadenkovicGutmanArmEmbedding",
+        "output_sha256": "97d0ef24f81d3a108fd30a09a02f42decdd3a63b72b8c853ad4c7d5d39bdc85a",
+        "seconds": 1.518,
+        "source_closure_sha256": "a447e236450e45c1a7af92fb7d74976fa5948748a2b40970336711f55fc06c24",
+        "source_sha256": "a67925799555e93e2fd9b11efadd721ca12400b2045deac2afebcefe86538538"
+      },
+      "identity_basis": "UNCHANGED_PROOFS_GIT_TREE_WITH_PREVIOUS_EXACT_BYTE_CAPTURE",
+      "local_path": "/workspace/scratch/9f79fa0e9941/residual/source/Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanArmEmbedding.lean",
+      "path": "Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanArmEmbedding.lean",
+      "previous_inventory": "rg_resume_20261105/middle_next/source_scope/anchor030_source_inventory.json",
+      "previous_local_path": "/workspace/scratch/406169dbc070/rg_resume_20261105/middle_followup_1105c/residual_recovery/candidate/source/Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanArmEmbedding.lean",
+      "source_closure_sha256": "a447e236450e45c1a7af92fb7d74976fa5948748a2b40970336711f55fc06c24",
+      "source_dependencies": [
+        "Proofs.RadenkovicGutmanForkResidual"
+      ],
+      "source_sha256": "a67925799555e93e2fd9b11efadd721ca12400b2045deac2afebcefe86538538"
+    },
+    "Proofs.RadenkovicGutmanCanonicalTreeCoverage": {
+      "bytes": 4478,
+      "git_blob_sha": "0fd6415ced7b99b4094dc768f6b7fceff1b76459",
+      "historical_row": {
+        "axiom_profiles": [
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        ],
+        "mode": "FRESH_KERNEL_EXPORT",
+        "module": "Proofs.RadenkovicGutmanCanonicalTreeCoverage",
+        "output_sha256": "d2385bcfd78e1f33d67ad89feccb21b5f764ce99aa7b2358ecffcf8156aa9fe5",
+        "seconds": 1.367,
+        "source_closure_sha256": "9e0ab296f47819fb553dcc9cf5db44919eeb4fcb271cc977f216a47dbd0c350a",
+        "source_sha256": "b0060f81270c60cb39d50689c43ad096ce7ef33c539719772732c002b6566cc6"
+      },
+      "identity_basis": "EXACT_GITHUB_FILE_AT_FIXED_COMMIT",
+      "local_path": "/workspace/scratch/9f79fa0e9941/residual/source/Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanCanonicalTreeCoverage.lean",
+      "path": "Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanCanonicalTreeCoverage.lean",
+      "previous_local_path": "/workspace/scratch/406169dbc070/rg_resume_20261105/middle_followup_1105c/residual_recovery/candidate/source/Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanCanonicalTreeCoverage.lean",
+      "source_closure_sha256": "9e0ab296f47819fb553dcc9cf5db44919eeb4fcb271cc977f216a47dbd0c350a",
+      "source_dependencies": [
+        "Proofs.RadenkovicGutmanRootedTreeEnumeration"
+      ],
+      "source_sha256": "b0060f81270c60cb39d50689c43ad096ce7ef33c539719772732c002b6566cc6"
+    },
+    "Proofs.RadenkovicGutmanCoreQuotient": {
+      "bytes": 6261,
+      "capture_path": "rg_resume_20261104/anchor029_preparation/static_source_closure/source_capture_batch009.json",
+      "captured_ref": "7a64184a0b353295d4977004066e163375cf3b4b",
+      "current_url": "https://github.com/RhudeJJJJ/formal-conjectures/blob/5aed41513a76d7d22be5087091e796587353bbf5/Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanCoreQuotient.lean",
+      "external_imports": [
+        "Mathlib.LinearAlgebra.Matrix.SchurComplement",
+        "Mathlib.Tactic.FinCases",
+        "Mathlib.Tactic.Ring"
+      ],
+      "git_blob_sha": "74a0b828882d9b1f2a78fd976ebac114d99e6be4",
+      "historical_row": {
+        "axiom_profiles": [
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        ],
+        "mode": "FRESH_KERNEL_EXPORT",
+        "module": "Proofs.RadenkovicGutmanCoreQuotient",
+        "output_sha256": "3be134b4047eb2054061f2dd924ace566176db95f4f7fbd3e569e968e58133a5",
+        "seconds": 5.177,
+        "source_closure_sha256": "e4ae07f61d2620d98311434d9bbb551f6f036435a6ab8285907d68eab42186d5",
+        "source_sha256": "9a73956ea3e17c97208ee5522dc73d9feb2b5f209e5d707ef19d64bade8d3d82"
+      },
+      "identity_basis": "UNCHANGED_PROOFS_GIT_TREE_WITH_PREVIOUS_EXACT_BYTE_CAPTURE",
+      "local_path": "/workspace/scratch/9f79fa0e9941/residual/source/Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanCoreQuotient.lean",
+      "path": "Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanCoreQuotient.lean",
+      "previous_inventory": "rg_resume_20261105/middle_next/source_scope/anchor030_source_inventory.json",
+      "previous_local_path": "/workspace/scratch/406169dbc070/rg_resume_20261105/middle_followup_1105c/residual_recovery/candidate/source/Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanCoreQuotient.lean",
+      "source_closure_sha256": "e4ae07f61d2620d98311434d9bbb551f6f036435a6ab8285907d68eab42186d5",
+      "source_dependencies": [
+        "Proofs.RadenkovicGutmanPathResolvent"
+      ],
+      "source_sha256": "9a73956ea3e17c97208ee5522dc73d9feb2b5f209e5d707ef19d64bade8d3d82"
+    },
+    "Proofs.RadenkovicGutmanCoulson": {
+      "bytes": 5098,
+      "capture_path": "rg_resume_20261104/anchor029_preparation/static_source_closure/source_capture_batch005.json",
+      "captured_ref": "7a64184a0b353295d4977004066e163375cf3b4b",
+      "current_url": "https://github.com/RhudeJJJJ/formal-conjectures/blob/5aed41513a76d7d22be5087091e796587353bbf5/Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanCoulson.lean",
+      "external_imports": [],
+      "git_blob_sha": "e99b56b3e3c32ec652f2406778448628b9ad2afa",
+      "historical_row": {
+        "axiom_profiles": [
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        ],
+        "mode": "FRESH_KERNEL_EXPORT",
+        "module": "Proofs.RadenkovicGutmanCoulson",
+        "output_sha256": "7f92a07558a12ebe3e44c754f1563614ec112eda412b6c38606b394ae0d3fc5f",
+        "seconds": 2.922,
+        "source_closure_sha256": "a85d2ce7840d0fb0029ef7eeac68d37cdd203bcc0942dfa89c91875d93ff7f36",
+        "source_sha256": "4c91db9f8c55b6211a8ad1895eb4a35d6d68afd8e96e43d628f8d56a1b69a0e1"
+      },
+      "identity_basis": "UNCHANGED_PROOFS_GIT_TREE_WITH_PREVIOUS_EXACT_BYTE_CAPTURE",
+      "local_path": "/workspace/scratch/9f79fa0e9941/residual/source/Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanCoulson.lean",
+      "path": "Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanCoulson.lean",
+      "previous_inventory": "rg_resume_20261105/middle_next/source_scope/anchor030_source_inventory.json",
+      "previous_local_path": "/workspace/scratch/406169dbc070/rg_resume_20261105/middle_followup_1105c/residual_recovery/candidate/source/Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanCoulson.lean",
+      "source_closure_sha256": "a85d2ce7840d0fb0029ef7eeac68d37cdd203bcc0942dfa89c91875d93ff7f36",
+      "source_dependencies": [
+        "Proofs.RadenkovicGutmanScalarIntegral",
+        "Proofs.RadenkovicGutmanSpectral"
+      ],
+      "source_sha256": "4c91db9f8c55b6211a8ad1895eb4a35d6d68afd8e96e43d628f8d56a1b69a0e1"
+    },
+    "Proofs.RadenkovicGutmanCountGap": {
+      "bytes": 5309,
+      "capture_path": "rg_resume_20261104/anchor029_preparation/static_source_closure/source_capture_batch008.json",
+      "captured_ref": "7a64184a0b353295d4977004066e163375cf3b4b",
+      "current_url": "https://github.com/RhudeJJJJ/formal-conjectures/blob/5aed41513a76d7d22be5087091e796587353bbf5/Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanCountGap.lean",
+      "external_imports": [
+        "Mathlib.Analysis.Matrix.Spectrum",
+        "Mathlib.Tactic.Linarith",
+        "Mathlib.Tactic.Positivity",
+        "Mathlib.Tactic.Ring"
+      ],
+      "git_blob_sha": "9f37e9b0030d2ead18c70736247b50cd9f484fdc",
+      "historical_row": {
+        "axiom_profiles": [
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        ],
+        "mode": "FRESH_KERNEL_EXPORT",
+        "module": "Proofs.RadenkovicGutmanCountGap",
+        "output_sha256": "a3826cfbd0e1b130e4301a33be1d3f5252af799abd94a2579890e1855f89e59b",
+        "seconds": 3.072,
+        "source_closure_sha256": "e094d2590497c077143917af18a459f1b8bdc8324157118d3d2871fc65c65262",
+        "source_sha256": "17eefcfd9580f0df92eb9c1ce4dded759fd575602c6e53f57263ab4613f84d6e"
+      },
+      "identity_basis": "UNCHANGED_PROOFS_GIT_TREE_WITH_PREVIOUS_EXACT_BYTE_CAPTURE",
+      "local_path": "/workspace/scratch/9f79fa0e9941/residual/source/Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanCountGap.lean",
+      "path": "Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanCountGap.lean",
+      "previous_inventory": "rg_resume_20261105/middle_next/source_scope/anchor030_source_inventory.json",
+      "previous_local_path": "/workspace/scratch/406169dbc070/rg_resume_20261105/middle_followup_1105c/residual_recovery/candidate/source/Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanCountGap.lean",
+      "source_closure_sha256": "e094d2590497c077143917af18a459f1b8bdc8324157118d3d2871fc65c65262",
+      "source_dependencies": [],
+      "source_sha256": "17eefcfd9580f0df92eb9c1ce4dded759fd575602c6e53f57263ab4613f84d6e"
+    },
+    "Proofs.RadenkovicGutmanCountTransport": {
+      "bytes": 6006,
+      "capture_path": "rg_resume_20261104/anchor029_preparation/static_source_closure/source_capture_batch007.json",
+      "captured_ref": "7a64184a0b353295d4977004066e163375cf3b4b",
+      "current_url": "https://github.com/RhudeJJJJ/formal-conjectures/blob/5aed41513a76d7d22be5087091e796587353bbf5/Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanCountTransport.lean",
+      "external_imports": [],
+      "git_blob_sha": "4e8d437ed5f208cb6ba9f77d1b7250885324ae6e",
+      "historical_row": {
+        "axiom_profiles": [
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        ],
+        "mode": "FRESH_KERNEL_EXPORT",
+        "module": "Proofs.RadenkovicGutmanCountTransport",
+        "output_sha256": "29f25514ec6790e476b52ca3c4e8f8ae1cc4a109d1824d34e8928ab87f7ffe4a",
+        "seconds": 4.776,
+        "source_closure_sha256": "4f622b9ce2fd5ffb47ad6145be10f8e6d0d757854b5e3c5974ec55a2ae199997",
+        "source_sha256": "700a56e67a26d218c655c148a04bdfb5820f06dc8f08fd49f6109d42b803bf43"
+      },
+      "identity_basis": "UNCHANGED_PROOFS_GIT_TREE_WITH_PREVIOUS_EXACT_BYTE_CAPTURE",
+      "local_path": "/workspace/scratch/9f79fa0e9941/residual/source/Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanCountTransport.lean",
+      "path": "Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanCountTransport.lean",
+      "previous_inventory": "rg_resume_20261105/middle_next/source_scope/anchor030_source_inventory.json",
+      "previous_local_path": "/workspace/scratch/406169dbc070/rg_resume_20261105/middle_followup_1105c/residual_recovery/candidate/source/Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanCountTransport.lean",
+      "source_closure_sha256": "4f622b9ce2fd5ffb47ad6145be10f8e6d0d757854b5e3c5974ec55a2ae199997",
+      "source_dependencies": [
+        "Proofs.RadenkovicGutmanCountGap",
+        "Proofs.RadenkovicGutmanPerturbation"
+      ],
+      "source_sha256": "700a56e67a26d218c655c148a04bdfb5820f06dc8f08fd49f6109d42b803bf43"
+    },
+    "Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteKeysData": {
+      "bytes": 21977,
+      "git_blob_sha": "1564d8c1644f71da0f519d3bf9bfe75456ca4335",
+      "historical_row": {
+        "axiom_profiles": [
+          [],
+          []
+        ],
+        "mode": "FRESH_KERNEL_EXPORT",
+        "module": "Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteKeysData",
+        "output_sha256": "36ff913b655d6e92283eb47f4cb05afa8c86887f5b25a440b48950bc3a409f75",
+        "seconds": 4.627,
+        "source_closure_sha256": "dcf3ef0cf419acde46e41d2e6271b2546b59fad9ff3a731a14b2e8c27ab53205",
+        "source_sha256": "7c4db02f2ed4ee4259771600b3b9709986b1fc3dc4117ec5b7fb72f33a28680b"
+      },
+      "identity_basis": "EXACT_GITHUB_FILE_AT_FIXED_COMMIT",
+      "local_path": "/workspace/scratch/9f79fa0e9941/residual/source/Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneMiddleResidualFiniteKeysData.lean",
+      "path": "Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneMiddleResidualFiniteKeysData.lean",
+      "previous_local_path": "/workspace/scratch/406169dbc070/rg_resume_20261105/middle_followup_1105c/residual_recovery/candidate/source/Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneMiddleResidualFiniteKeysData.lean",
+      "source_closure_sha256": "dcf3ef0cf419acde46e41d2e6271b2546b59fad9ff3a731a14b2e8c27ab53205",
+      "source_dependencies": [
+        "Proofs.RadenkovicGutmanActualSmallGeFourKeys"
+      ],
+      "source_sha256": "7c4db02f2ed4ee4259771600b3b9709986b1fc3dc4117ec5b7fb72f33a28680b"
+    },
+    "Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteListAssembly": {
+      "bytes": 4226,
+      "git_blob_sha": "d1b0ab41640c14c10a09e3f82c3bdc70d1f04a06",
+      "historical_row": {
+        "axiom_profiles": [
+          [
+            "propext"
+          ]
+        ],
+        "mode": "FRESH_KERNEL_EXPORT",
+        "module": "Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteListAssembly",
+        "output_sha256": "385fa086e05bbcf4aed36646315b91c535ab213cb6810fe8f9f471d2e1690a16",
+        "seconds": 2.168,
+        "source_closure_sha256": "d9e59932a5666295d456d8a8f66691e7d354d5f0e39f822e243b23df9db29b73",
+        "source_sha256": "d2495d6007e3869fce07715160c1a11cd353984834c1dad83bfb57ed2a161e9b"
+      },
+      "identity_basis": "EXISTING_BYTE_CAPTURE_PLUS_IDENTICAL_CURRENT_PROOFS_TREE",
+      "local_path": "/workspace/scratch/9f79fa0e9941/residual/source/Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneMiddleResidualFiniteListAssembly.lean",
+      "path": "Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneMiddleResidualFiniteListAssembly.lean",
+      "previous_local_path": "/workspace/scratch/406169dbc070/rg_resume_20261105/middle_followup_1105c/residual_recovery/candidate/source/Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneMiddleResidualFiniteListAssembly.lean",
+      "source_closure_sha256": "d9e59932a5666295d456d8a8f66691e7d354d5f0e39f822e243b23df9db29b73",
+      "source_dependencies": [
+        "Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteKeysData"
+      ],
+      "source_sha256": "d2495d6007e3869fce07715160c1a11cd353984834c1dad83bfb57ed2a161e9b"
+    },
+    "Proofs.RadenkovicGutmanFiniteTreeTransfer": {
+      "bytes": 5664,
+      "git_blob_sha": "976cb4495e7093834cc6e1fd20a10a5568ffdb81",
+      "historical_row": {
+        "axiom_profiles": [
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        ],
+        "mode": "FRESH_KERNEL_EXPORT",
+        "module": "Proofs.RadenkovicGutmanFiniteTreeTransfer",
+        "output_sha256": "42e342010dcbdcfb5f5782028eefa844ffa757593361fc2f34d58c26fb91a958",
+        "seconds": 3.875,
+        "source_closure_sha256": "c6938abc4915be9a84f41038dac217193fd3ee043454f36afd5d436a6bbddfa7",
+        "source_sha256": "b433dda4c3bfffd2dbc4d14d1d7e8562c61925c0ff4dfd2a4c9fd46d120f0a3b"
+      },
+      "identity_basis": "EXACT_GITHUB_FILE_AT_FIXED_COMMIT",
+      "local_path": "/workspace/scratch/9f79fa0e9941/residual/source/Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanFiniteTreeTransfer.lean",
+      "path": "Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanFiniteTreeTransfer.lean",
+      "previous_local_path": "/workspace/scratch/406169dbc070/rg_resume_20261105/middle_followup_1105c/residual_recovery/candidate/source/Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanFiniteTreeTransfer.lean",
+      "source_closure_sha256": "c6938abc4915be9a84f41038dac217193fd3ee043454f36afd5d436a6bbddfa7",
+      "source_dependencies": [
+        "Proofs.RadenkovicGutmanActualFusionIntegral",
+        "Proofs.RadenkovicGutmanCanonicalTreeCoverage",
+        "Proofs.RadenkovicGutmanIsoEnergy"
+      ],
+      "source_sha256": "b433dda4c3bfffd2dbc4d14d1d7e8562c61925c0ff4dfd2a4c9fd46d120f0a3b"
+    },
+    "Proofs.RadenkovicGutmanForkResidual": {
+      "bytes": 7573,
+      "capture_path": "rg_resume_20261104/anchor029_preparation/static_source_closure/source_capture_batch010.json",
+      "captured_ref": "7a64184a0b353295d4977004066e163375cf3b4b",
+      "current_url": "https://github.com/RhudeJJJJ/formal-conjectures/blob/5aed41513a76d7d22be5087091e796587353bbf5/Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanForkResidual.lean",
+      "external_imports": [],
+      "git_blob_sha": "98f0b5b8754a0adc426310b4f2593d28aa077c58",
+      "historical_row": {
+        "axiom_profiles": [
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        ],
+        "mode": "FRESH_KERNEL_EXPORT",
+        "module": "Proofs.RadenkovicGutmanForkResidual",
+        "output_sha256": "81f4c174c8e0b50cbd10cee7a92d40721db692d88885dd441645b483845a5c24",
+        "seconds": 1.618,
+        "source_closure_sha256": "e69192082ae34ffd965ee83654d024ddf985cb9fe477fe1139c33fbc892adac2",
+        "source_sha256": "52b708273156266900ce1b5150ab47fef4661c2c588637ee7ef2a28eeca272d2"
+      },
+      "identity_basis": "UNCHANGED_PROOFS_GIT_TREE_WITH_PREVIOUS_EXACT_BYTE_CAPTURE",
+      "local_path": "/workspace/scratch/9f79fa0e9941/residual/source/Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanForkResidual.lean",
+      "path": "Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanForkResidual.lean",
+      "previous_inventory": "rg_resume_20261105/middle_next/source_scope/anchor030_source_inventory.json",
+      "previous_local_path": "/workspace/scratch/406169dbc070/rg_resume_20261105/middle_followup_1105c/residual_recovery/candidate/source/Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanForkResidual.lean",
+      "source_closure_sha256": "e69192082ae34ffd965ee83654d024ddf985cb9fe477fe1139c33fbc892adac2",
+      "source_dependencies": [
+        "Proofs.RadenkovicGutmanNonpathFork"
+      ],
+      "source_sha256": "52b708273156266900ce1b5150ab47fef4661c2c588637ee7ef2a28eeca272d2"
+    },
+    "Proofs.RadenkovicGutmanFourVertexSpectrum": {
+      "bytes": 5670,
+      "capture_path": "rg_resume_20261104/anchor029_preparation/static_source_closure/source_capture_batch006.json",
+      "captured_ref": "7a64184a0b353295d4977004066e163375cf3b4b",
+      "current_url": "https://github.com/RhudeJJJJ/formal-conjectures/blob/5aed41513a76d7d22be5087091e796587353bbf5/Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanFourVertexSpectrum.lean",
+      "external_imports": [
+        "Mathlib.Combinatorics.SimpleGraph.Star",
+        "Mathlib.Tactic.NormDet"
+      ],
+      "git_blob_sha": "4a7071ac40b8d168271b0159dd863a8e31c8a5ff",
+      "historical_row": {
+        "axiom_profiles": [
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        ],
+        "mode": "FRESH_KERNEL_EXPORT",
+        "module": "Proofs.RadenkovicGutmanFourVertexSpectrum",
+        "output_sha256": "920e3886fde1e45130c2a21fedda3ff13fd24cd3d4a89d20bc2533e7ef0a3208",
+        "seconds": 6.031,
+        "source_closure_sha256": "c96995b7d8ca19b3eb4541593f5e0e049cb4aa9603b2ac933c24b25d4b2948bf",
+        "source_sha256": "bc4c525182d0e46627d4e8a8db327272123fce92560f1d950d83c3e6a9a3b51a"
+      },
+      "identity_basis": "UNCHANGED_PROOFS_GIT_TREE_WITH_PREVIOUS_EXACT_BYTE_CAPTURE",
+      "local_path": "/workspace/scratch/9f79fa0e9941/residual/source/Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanFourVertexSpectrum.lean",
+      "path": "Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanFourVertexSpectrum.lean",
+      "previous_inventory": "rg_resume_20261105/middle_next/source_scope/anchor030_source_inventory.json",
+      "previous_local_path": "/workspace/scratch/406169dbc070/rg_resume_20261105/middle_followup_1105c/residual_recovery/candidate/source/Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanFourVertexSpectrum.lean",
+      "source_closure_sha256": "c96995b7d8ca19b3eb4541593f5e0e049cb4aa9603b2ac933c24b25d4b2948bf",
+      "source_dependencies": [
+        "Proofs.RadenkovicGutmanSmallOrders"
+      ],
+      "source_sha256": "bc4c525182d0e46627d4e8a8db327272123fce92560f1d950d83c3e6a9a3b51a"
+    },
+    "Proofs.RadenkovicGutmanFusionDescent": {
+      "bytes": 4583,
+      "capture_path": "rg_resume_20261104/anchor029_preparation/static_source_closure/source_capture_batch011.json",
+      "captured_ref": "7a64184a0b353295d4977004066e163375cf3b4b",
+      "current_url": "https://github.com/RhudeJJJJ/formal-conjectures/blob/5aed41513a76d7d22be5087091e796587353bbf5/Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanFusionDescent.lean",
+      "external_imports": [],
+      "git_blob_sha": "071ed8f133e340c082f4313df7c933b0b46e3ad5",
+      "historical_row": {
+        "axiom_profiles": [
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        ],
+        "mode": "FRESH_KERNEL_EXPORT",
+        "module": "Proofs.RadenkovicGutmanFusionDescent",
+        "output_sha256": "1f329544a2de14aaf149a35009bc219e01ca59a707808a7a30f2445a81e37d94",
+        "seconds": 4.678,
+        "source_closure_sha256": "2e376ce221284f743ecbbef8e481a795091978fd1a14151fa109121aa6c76451",
+        "source_sha256": "c0ff8556e7e10269102c32f4f9dd473f97c434361ea351b6d45b52f01b6fc4bd"
+      },
+      "identity_basis": "UNCHANGED_PROOFS_GIT_TREE_WITH_PREVIOUS_EXACT_BYTE_CAPTURE",
+      "local_path": "/workspace/scratch/9f79fa0e9941/residual/source/Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanFusionDescent.lean",
+      "path": "Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanFusionDescent.lean",
+      "previous_inventory": "rg_resume_20261105/middle_next/source_scope/anchor030_source_inventory.json",
+      "previous_local_path": "/workspace/scratch/406169dbc070/rg_resume_20261105/middle_followup_1105c/residual_recovery/candidate/source/Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanFusionDescent.lean",
+      "source_closure_sha256": "2e376ce221284f743ecbbef8e481a795091978fd1a14151fa109121aa6c76451",
+      "source_dependencies": [
+        "Proofs.RadenkovicGutmanRewireIso",
+        "Proofs.RadenkovicGutmanRewireTopology"
+      ],
+      "source_sha256": "c0ff8556e7e10269102c32f4f9dd473f97c434361ea351b6d45b52f01b6fc4bd"
+    },
+    "Proofs.RadenkovicGutmanFusionQuotient": {
+      "bytes": 7353,
+      "capture_path": "rg_resume_20261104/anchor029_preparation/static_source_closure/source_capture_batch007.json",
+      "captured_ref": "7a64184a0b353295d4977004066e163375cf3b4b",
+      "current_url": "https://github.com/RhudeJJJJ/formal-conjectures/blob/5aed41513a76d7d22be5087091e796587353bbf5/Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanFusionQuotient.lean",
+      "external_imports": [],
+      "git_blob_sha": "c6fd0633bbfa18eae793eab02a29ccf52ae59641",
+      "historical_row": {
+        "axiom_profiles": [
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        ],
+        "mode": "FRESH_KERNEL_EXPORT",
+        "module": "Proofs.RadenkovicGutmanFusionQuotient",
+        "output_sha256": "bf3fef072b3d4d29d79bb732d111f46b265e3febf4781c6b583413d92af9869d",
+        "seconds": 3.173,
+        "source_closure_sha256": "318488a4d452c35a048a420595f65f5265337ecd72428c4093dbbd4faf07dc31",
+        "source_sha256": "af4340091b54039be8601ca21297236fe5983b34e9bc5e311a1709b87e1faaf8"
+      },
+      "identity_basis": "UNCHANGED_PROOFS_GIT_TREE_WITH_PREVIOUS_EXACT_BYTE_CAPTURE",
+      "local_path": "/workspace/scratch/9f79fa0e9941/residual/source/Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanFusionQuotient.lean",
+      "path": "Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanFusionQuotient.lean",
+      "previous_inventory": "rg_resume_20261105/middle_next/source_scope/anchor030_source_inventory.json",
+      "previous_local_path": "/workspace/scratch/406169dbc070/rg_resume_20261105/middle_followup_1105c/residual_recovery/candidate/source/Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanFusionQuotient.lean",
+      "source_closure_sha256": "318488a4d452c35a048a420595f65f5265337ecd72428c4093dbbd4faf07dc31",
+      "source_dependencies": [
+        "Proofs.RadenkovicGutmanGraphJoin"
+      ],
+      "source_sha256": "af4340091b54039be8601ca21297236fe5983b34e9bc5e311a1709b87e1faaf8"
+    },
+    "Proofs.RadenkovicGutmanFusionTerminal": {
+      "bytes": 2618,
+      "capture_path": "rg_resume_20261104/anchor029_preparation/static_source_closure/source_capture_batch010.json",
+      "captured_ref": "7a64184a0b353295d4977004066e163375cf3b4b",
+      "current_url": "https://github.com/RhudeJJJJ/formal-conjectures/blob/5aed41513a76d7d22be5087091e796587353bbf5/Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanFusionTerminal.lean",
+      "external_imports": [],
+      "git_blob_sha": "ed3b1c7927f9848d5208b8494142e0dc4e230ebf",
+      "historical_row": {
+        "axiom_profiles": [
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        ],
+        "mode": "FRESH_KERNEL_EXPORT",
+        "module": "Proofs.RadenkovicGutmanFusionTerminal",
+        "output_sha256": "e40ba26b58b22a322bc2da3b16ed6d6f4de1466fff9a35972b2c0abafc72556f",
+        "seconds": 2.37,
+        "source_closure_sha256": "5d00ac0a5e15f14b66e49925a54b671d60e5d3131ce180d2e9d7d4d958c07b7f",
+        "source_sha256": "bc16cf9f5bc2b7e2ee4e05d01f10ccff60e5b1a255a4f1000d144001d25def7d"
+      },
+      "identity_basis": "UNCHANGED_PROOFS_GIT_TREE_WITH_PREVIOUS_EXACT_BYTE_CAPTURE",
+      "local_path": "/workspace/scratch/9f79fa0e9941/residual/source/Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanFusionTerminal.lean",
+      "path": "Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanFusionTerminal.lean",
+      "previous_inventory": "rg_resume_20261105/middle_next/source_scope/anchor030_source_inventory.json",
+      "previous_local_path": "/workspace/scratch/406169dbc070/rg_resume_20261105/middle_followup_1105c/residual_recovery/candidate/source/Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanFusionTerminal.lean",
+      "source_closure_sha256": "5d00ac0a5e15f14b66e49925a54b671d60e5d3131ce180d2e9d7d4d958c07b7f",
+      "source_dependencies": [
+        "Proofs.RadenkovicGutmanFusionDescent",
+        "Proofs.RadenkovicGutmanTreeTerminal"
+      ],
+      "source_sha256": "bc16cf9f5bc2b7e2ee4e05d01f10ccff60e5b1a255a4f1000d144001d25def7d"
+    },
+    "Proofs.RadenkovicGutmanGlobalAssembly": {
+      "bytes": 8618,
+      "capture_path": "rg_resume_20261104/anchor029_preparation/static_source_closure/source_capture_batch009.json",
+      "captured_ref": "7a64184a0b353295d4977004066e163375cf3b4b",
+      "current_url": "https://github.com/RhudeJJJJ/formal-conjectures/blob/5aed41513a76d7d22be5087091e796587353bbf5/Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanGlobalAssembly.lean",
+      "external_imports": [],
+      "git_blob_sha": "da689f7f922a9b58e42ae79a421a94e7a0b36f8c",
+      "historical_row": {
+        "axiom_profiles": [
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        ],
+        "mode": "FRESH_KERNEL_EXPORT",
+        "module": "Proofs.RadenkovicGutmanGlobalAssembly",
+        "output_sha256": "61a60967f4853c10172051b63142497bfc2ed28724d21610a0d4e3e2ff1ff6da",
+        "seconds": 2.573,
+        "source_closure_sha256": "68338b2678801246299084c5c72087d51837da385f2927217c26434717ad04b7",
+        "source_sha256": "7ecd79f3b58a271c5921481be8b2180675ca840ee62c5d00e8b6ab0024ba95ea"
+      },
+      "identity_basis": "UNCHANGED_PROOFS_GIT_TREE_WITH_PREVIOUS_EXACT_BYTE_CAPTURE",
+      "local_path": "/workspace/scratch/9f79fa0e9941/residual/source/Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanGlobalAssembly.lean",
+      "path": "Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanGlobalAssembly.lean",
+      "previous_inventory": "rg_resume_20261105/middle_next/source_scope/anchor030_source_inventory.json",
+      "previous_local_path": "/workspace/scratch/406169dbc070/rg_resume_20261105/middle_followup_1105c/residual_recovery/candidate/source/Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanGlobalAssembly.lean",
+      "source_closure_sha256": "68338b2678801246299084c5c72087d51837da385f2927217c26434717ad04b7",
+      "source_dependencies": [
+        "Proofs.RadenkovicGutmanFusionTerminal",
+        "Proofs.RadenkovicGutmanIsoEnergy"
+      ],
+      "source_sha256": "7ecd79f3b58a271c5921481be8b2180675ca840ee62c5d00e8b6ab0024ba95ea"
+    },
+    "Proofs.RadenkovicGutmanGraphIntegral": {
+      "bytes": 3499,
+      "capture_path": "rg_resume_20261104/anchor029_preparation/static_source_closure/source_capture_batch006.json",
+      "captured_ref": "7a64184a0b353295d4977004066e163375cf3b4b",
+      "current_url": "https://github.com/RhudeJJJJ/formal-conjectures/blob/5aed41513a76d7d22be5087091e796587353bbf5/Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanGraphIntegral.lean",
+      "external_imports": [],
+      "git_blob_sha": "dc9588ac0a753e0087490918511d1434c50e044a",
+      "historical_row": {
+        "axiom_profiles": [
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        ],
+        "mode": "FRESH_KERNEL_EXPORT",
+        "module": "Proofs.RadenkovicGutmanGraphIntegral",
+        "output_sha256": "35357357527fa3b5632f12ccccc4b250c694c32d3d56abb1b1443b0724c213d1",
+        "seconds": 2.823,
+        "source_closure_sha256": "98c1de33fdae0f07fb736f4acbc9b5ef9fc3220c5a9eb0c5b5adf22408df2038",
+        "source_sha256": "0a9f10cff64ce9c67b8312b014786025e313b58c1f8debad4263675bca8dab35"
+      },
+      "identity_basis": "UNCHANGED_PROOFS_GIT_TREE_WITH_PREVIOUS_EXACT_BYTE_CAPTURE",
+      "local_path": "/workspace/scratch/9f79fa0e9941/residual/source/Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanGraphIntegral.lean",
+      "path": "Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanGraphIntegral.lean",
+      "previous_inventory": "rg_resume_20261105/middle_next/source_scope/anchor030_source_inventory.json",
+      "previous_local_path": "/workspace/scratch/406169dbc070/rg_resume_20261105/middle_followup_1105c/residual_recovery/candidate/source/Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanGraphIntegral.lean",
+      "source_closure_sha256": "98c1de33fdae0f07fb736f4acbc9b5ef9fc3220c5a9eb0c5b5adf22408df2038",
+      "source_dependencies": [
+        "Proofs.RadenkovicGutmanCoulson",
+        "Proofs.RadenkovicGutmanCountTransport",
+        "Proofs.RadenkovicGutmanFusionQuotient"
+      ],
+      "source_sha256": "0a9f10cff64ce9c67b8312b014786025e313b58c1f8debad4263675bca8dab35"
+    },
+    "Proofs.RadenkovicGutmanGraphJoin": {
+      "bytes": 8300,
+      "capture_path": "rg_resume_20261104/anchor029_preparation/static_source_closure/source_capture_batch008.json",
+      "captured_ref": "7a64184a0b353295d4977004066e163375cf3b4b",
+      "current_url": "https://github.com/RhudeJJJJ/formal-conjectures/blob/5aed41513a76d7d22be5087091e796587353bbf5/Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanGraphJoin.lean",
+      "external_imports": [
+        "Aesop",
+        "Mathlib.Combinatorics.SimpleGraph.Operations",
+        "Mathlib.Combinatorics.SimpleGraph.Sum"
+      ],
+      "git_blob_sha": "1c557823da96bfde30734577eff9a408f4848036",
+      "historical_row": {
+        "axiom_profiles": [
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        ],
+        "mode": "FRESH_KERNEL_EXPORT",
+        "module": "Proofs.RadenkovicGutmanGraphJoin",
+        "output_sha256": "e7d6c0ee20fe403f46ec15a8272b7ef454ee26b4637466ceeaf54357d0a951f1",
+        "seconds": 7.183,
+        "source_closure_sha256": "c891c0eaf716f1a520e5fa97eb22fb98eae7ce80f235c626f9dad55020a68696",
+        "source_sha256": "36d8d239d7a45bf63cfd0475180e208c72cf5bbe9f18873a32b966bdcfa7c428"
+      },
+      "identity_basis": "UNCHANGED_PROOFS_GIT_TREE_WITH_PREVIOUS_EXACT_BYTE_CAPTURE",
+      "local_path": "/workspace/scratch/9f79fa0e9941/residual/source/Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanGraphJoin.lean",
+      "path": "Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanGraphJoin.lean",
+      "previous_inventory": "rg_resume_20261105/middle_next/source_scope/anchor030_source_inventory.json",
+      "previous_local_path": "/workspace/scratch/406169dbc070/rg_resume_20261105/middle_followup_1105c/residual_recovery/candidate/source/Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanGraphJoin.lean",
+      "source_closure_sha256": "c891c0eaf716f1a520e5fa97eb22fb98eae7ce80f235c626f9dad55020a68696",
+      "source_dependencies": [
+        "Proofs.RadenkovicGutmanCoreQuotient"
+      ],
+      "source_sha256": "36d8d239d7a45bf63cfd0475180e208c72cf5bbe9f18873a32b966bdcfa7c428"
+    },
+    "Proofs.RadenkovicGutmanIsoEnergy": {
+      "bytes": 2883,
+      "capture_path": "rg_resume_20261104/anchor029_preparation/static_source_closure/source_capture_batch006.json",
+      "captured_ref": "7a64184a0b353295d4977004066e163375cf3b4b",
+      "current_url": "https://github.com/RhudeJJJJ/formal-conjectures/blob/5aed41513a76d7d22be5087091e796587353bbf5/Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanIsoEnergy.lean",
+      "external_imports": [],
+      "git_blob_sha": "ed83703330019e335d571b17b75ea1fc943ce066",
+      "historical_row": {
+        "axiom_profiles": [
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        ],
+        "mode": "FRESH_KERNEL_EXPORT",
+        "module": "Proofs.RadenkovicGutmanIsoEnergy",
+        "output_sha256": "590dd0a33f0dbf752ef7dd6647ca73625ca84409f03e6536aabe62eb9a79fa6d",
+        "seconds": 2.42,
+        "source_closure_sha256": "95f192969345db20f08cf39c8a37f267a7b708300d1698f8293dd3f4001e18c0",
+        "source_sha256": "b68912b00217f93960b64d30093ec2d5eb0843ea716ea9afc41aa7b62156efd9"
+      },
+      "identity_basis": "UNCHANGED_PROOFS_GIT_TREE_WITH_PREVIOUS_EXACT_BYTE_CAPTURE",
+      "local_path": "/workspace/scratch/9f79fa0e9941/residual/source/Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanIsoEnergy.lean",
+      "path": "Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanIsoEnergy.lean",
+      "previous_inventory": "rg_resume_20261105/middle_next/source_scope/anchor030_source_inventory.json",
+      "previous_local_path": "/workspace/scratch/406169dbc070/rg_resume_20261105/middle_followup_1105c/residual_recovery/candidate/source/Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanIsoEnergy.lean",
+      "source_closure_sha256": "95f192969345db20f08cf39c8a37f267a7b708300d1698f8293dd3f4001e18c0",
+      "source_dependencies": [
+        "Proofs.RadenkovicGutmanRewireIso",
+        "Proofs.RadenkovicGutmanSpectral"
+      ],
+      "source_sha256": "b68912b00217f93960b64d30093ec2d5eb0843ea716ea9afc41aa7b62156efd9"
+    },
+    "Proofs.RadenkovicGutmanMinimalFusion": {
+      "bytes": 6757,
+      "capture_path": "rg_resume_20261104/anchor029_preparation/static_source_closure/source_capture_batch004.json",
+      "captured_ref": "7a64184a0b353295d4977004066e163375cf3b4b",
+      "current_url": "https://github.com/RhudeJJJJ/formal-conjectures/blob/5aed41513a76d7d22be5087091e796587353bbf5/Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanMinimalFusion.lean",
+      "external_imports": [],
+      "git_blob_sha": "3108e21e68ff92622236d74b76e161d19d93e5fb",
+      "historical_row": {
+        "axiom_profiles": [
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        ],
+        "mode": "FRESH_KERNEL_EXPORT",
+        "module": "Proofs.RadenkovicGutmanMinimalFusion",
+        "output_sha256": "5fb4706208963529a7e042d0245d427f5302968be0aeb210f9a0d54dc0ecef78",
+        "seconds": 3.072,
+        "source_closure_sha256": "52f8324ac9793123a266a48eda9ba8ffad7097def9c2a466f07e8301bccc8448",
+        "source_sha256": "5a49e023bcdd6b9f513d7477f30ea88603317cbc36be6aa043a1a18bb4b65bf3"
+      },
+      "identity_basis": "UNCHANGED_PROOFS_GIT_TREE_WITH_PREVIOUS_EXACT_BYTE_CAPTURE",
+      "local_path": "/workspace/scratch/9f79fa0e9941/residual/source/Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanMinimalFusion.lean",
+      "path": "Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanMinimalFusion.lean",
+      "previous_inventory": "rg_resume_20261105/middle_next/source_scope/anchor030_source_inventory.json",
+      "previous_local_path": "/workspace/scratch/406169dbc070/rg_resume_20261105/middle_followup_1105c/residual_recovery/candidate/source/Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanMinimalFusion.lean",
+      "source_closure_sha256": "52f8324ac9793123a266a48eda9ba8ffad7097def9c2a466f07e8301bccc8448",
+      "source_dependencies": [
+        "Proofs.RadenkovicGutmanOrderFour"
+      ],
+      "source_sha256": "5a49e023bcdd6b9f513d7477f30ea88603317cbc36be6aa043a1a18bb4b65bf3"
+    },
+    "Proofs.RadenkovicGutmanMixedGraphIntegral": {
+      "bytes": 2201,
+      "capture_path": "rg_resume_20261104/anchor029_preparation/static_source_closure/source_capture_batch005.json",
+      "captured_ref": "7a64184a0b353295d4977004066e163375cf3b4b",
+      "current_url": "https://github.com/RhudeJJJJ/formal-conjectures/blob/5aed41513a76d7d22be5087091e796587353bbf5/Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanMixedGraphIntegral.lean",
+      "external_imports": [],
+      "git_blob_sha": "54b975f55975916dc9e7f4e2d1134ae1e3262c6f",
+      "historical_row": {
+        "axiom_profiles": [
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        ],
+        "mode": "FRESH_KERNEL_EXPORT",
+        "module": "Proofs.RadenkovicGutmanMixedGraphIntegral",
+        "output_sha256": "ee40d6d1cb401c9e3c3144825d23b9036336a16075b722fd6899846848aa0aed",
+        "seconds": 2.42,
+        "source_closure_sha256": "71a23c338ff792b0e7d1ec39eaad45800e4ab49a05b689dc23096ec3946c0497",
+        "source_sha256": "9fc651e7971b3eaf75d4d050d35b5a6f1dee29824cd3fde72ff3af782955ba08"
+      },
+      "identity_basis": "UNCHANGED_PROOFS_GIT_TREE_WITH_PREVIOUS_EXACT_BYTE_CAPTURE",
+      "local_path": "/workspace/scratch/9f79fa0e9941/residual/source/Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanMixedGraphIntegral.lean",
+      "path": "Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanMixedGraphIntegral.lean",
+      "previous_inventory": "rg_resume_20261105/middle_next/source_scope/anchor030_source_inventory.json",
+      "previous_local_path": "/workspace/scratch/406169dbc070/rg_resume_20261105/middle_followup_1105c/residual_recovery/candidate/source/Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanMixedGraphIntegral.lean",
+      "source_closure_sha256": "71a23c338ff792b0e7d1ec39eaad45800e4ab49a05b689dc23096ec3946c0497",
+      "source_dependencies": [
+        "Proofs.RadenkovicGutmanGraphIntegral",
+        "Proofs.RadenkovicGutmanIsoEnergy"
+      ],
+      "source_sha256": "9fc651e7971b3eaf75d4d050d35b5a6f1dee29824cd3fde72ff3af782955ba08"
+    },
+    "Proofs.RadenkovicGutmanMixedStopLoss": {
+      "bytes": 4196,
+      "capture_path": "rg_resume_20261104/anchor029_preparation/static_source_closure/source_capture_batch004.json",
+      "captured_ref": "7a64184a0b353295d4977004066e163375cf3b4b",
+      "current_url": "https://github.com/RhudeJJJJ/formal-conjectures/blob/5aed41513a76d7d22be5087091e796587353bbf5/Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanMixedStopLoss.lean",
+      "external_imports": [],
+      "git_blob_sha": "e28ba7c65162bfaacdcf6ae5c795d22417cfff4a",
+      "historical_row": {
+        "axiom_profiles": [
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        ],
+        "mode": "FRESH_KERNEL_EXPORT",
+        "module": "Proofs.RadenkovicGutmanMixedStopLoss",
+        "output_sha256": "a1013824a008edce8235f9e73006a2cbac8f74f197f8e16758236a4322631662",
+        "seconds": 2.621,
+        "source_closure_sha256": "edbf1215cff94d3a6fdbb060542deaf9d215f57bad1af2558339b2a892dc5106",
+        "source_sha256": "98e238802dccd72d1f546692c5f06fbfad93cf916bda5a5d8fe80f21c979469d"
+      },
+      "identity_basis": "UNCHANGED_PROOFS_GIT_TREE_WITH_PREVIOUS_EXACT_BYTE_CAPTURE",
+      "local_path": "/workspace/scratch/9f79fa0e9941/residual/source/Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanMixedStopLoss.lean",
+      "path": "Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanMixedStopLoss.lean",
+      "previous_inventory": "rg_resume_20261105/middle_next/source_scope/anchor030_source_inventory.json",
+      "previous_local_path": "/workspace/scratch/406169dbc070/rg_resume_20261105/middle_followup_1105c/residual_recovery/candidate/source/Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanMixedStopLoss.lean",
+      "source_closure_sha256": "edbf1215cff94d3a6fdbb060542deaf9d215f57bad1af2558339b2a892dc5106",
+      "source_dependencies": [
+        "Proofs.RadenkovicGutmanMixedGraphIntegral"
+      ],
+      "source_sha256": "98e238802dccd72d1f546692c5f06fbfad93cf916bda5a5d8fe80f21c979469d"
+    },
+    "Proofs.RadenkovicGutmanNonpathFork": {
+      "bytes": 11346,
+      "capture_path": "rg_resume_20261104/anchor029_preparation/static_source_closure/source_capture_batch011.json",
+      "captured_ref": "7a64184a0b353295d4977004066e163375cf3b4b",
+      "current_url": "https://github.com/RhudeJJJJ/formal-conjectures/blob/5aed41513a76d7d22be5087091e796587353bbf5/Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanNonpathFork.lean",
+      "external_imports": [],
+      "git_blob_sha": "e1293131018ac66ef2089385d166eda562ee51ac",
+      "historical_row": {
+        "axiom_profiles": [
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        ],
+        "mode": "FRESH_KERNEL_EXPORT",
+        "module": "Proofs.RadenkovicGutmanNonpathFork",
+        "output_sha256": "1467af4812c7f0bca5d5527956e2708a68584e7e1b3d79344d844a194b577edb",
+        "seconds": 2.421,
+        "source_closure_sha256": "ee4e46afa2e542ca9f2d69698993169de2cc24aac2e1bcc71ba1b30b6f17173a",
+        "source_sha256": "4bb96fc7641b19119b56af9246b7e9b81054264d08096ff3fdedc32eb4d29b34"
+      },
+      "identity_basis": "UNCHANGED_PROOFS_GIT_TREE_WITH_PREVIOUS_EXACT_BYTE_CAPTURE",
+      "local_path": "/workspace/scratch/9f79fa0e9941/residual/source/Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanNonpathFork.lean",
+      "path": "Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanNonpathFork.lean",
+      "previous_inventory": "rg_resume_20261105/middle_next/source_scope/anchor030_source_inventory.json",
+      "previous_local_path": "/workspace/scratch/406169dbc070/rg_resume_20261105/middle_followup_1105c/residual_recovery/candidate/source/Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanNonpathFork.lean",
+      "source_closure_sha256": "ee4e46afa2e542ca9f2d69698993169de2cc24aac2e1bcc71ba1b30b6f17173a",
+      "source_dependencies": [
+        "Proofs.RadenkovicGutmanTreeTerminal"
+      ],
+      "source_sha256": "4bb96fc7641b19119b56af9246b7e9b81054264d08096ff3fdedc32eb4d29b34"
+    },
+    "Proofs.RadenkovicGutmanOrderFour": {
+      "bytes": 4260,
+      "capture_path": "rg_resume_20261104/anchor029_preparation/static_source_closure/source_capture_batch005.json",
+      "captured_ref": "7a64184a0b353295d4977004066e163375cf3b4b",
+      "current_url": "https://github.com/RhudeJJJJ/formal-conjectures/blob/5aed41513a76d7d22be5087091e796587353bbf5/Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanOrderFour.lean",
+      "external_imports": [],
+      "git_blob_sha": "7ca949c5a28fd6df359567c4fcd2c5f6569b7d59",
+      "historical_row": {
+        "axiom_profiles": [
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        ],
+        "mode": "FRESH_KERNEL_EXPORT",
+        "module": "Proofs.RadenkovicGutmanOrderFour",
+        "output_sha256": "f8a5c87cd39b82baa3f47cbcee45b865a1493c447df688cda364b7745373ca74",
+        "seconds": 2.421,
+        "source_closure_sha256": "00e4bccd853e8fb3f5f182595346f80e9c682fe6829c29e94a369469171e89fa",
+        "source_sha256": "c8ce0d4139db81098f867ae809d8a8a5f9c1cfdbdd087e0cb3b6f27b008abdb1"
+      },
+      "identity_basis": "UNCHANGED_PROOFS_GIT_TREE_WITH_PREVIOUS_EXACT_BYTE_CAPTURE",
+      "local_path": "/workspace/scratch/9f79fa0e9941/residual/source/Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanOrderFour.lean",
+      "path": "Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanOrderFour.lean",
+      "previous_inventory": "rg_resume_20261105/middle_next/source_scope/anchor030_source_inventory.json",
+      "previous_local_path": "/workspace/scratch/406169dbc070/rg_resume_20261105/middle_followup_1105c/residual_recovery/candidate/source/Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanOrderFour.lean",
+      "source_closure_sha256": "00e4bccd853e8fb3f5f182595346f80e9c682fe6829c29e94a369469171e89fa",
+      "source_dependencies": [
+        "Proofs.RadenkovicGutmanFourVertexSpectrum"
+      ],
+      "source_sha256": "c8ce0d4139db81098f867ae809d8a8a5f9c1cfdbdd087e0cb3b6f27b008abdb1"
+    },
+    "Proofs.RadenkovicGutmanPathDeterminant": {
+      "bytes": 9066,
+      "capture_path": "rg_resume_20261104/anchor029_preparation/static_source_closure/source_capture_batch008.json",
+      "captured_ref": "7a64184a0b353295d4977004066e163375cf3b4b",
+      "current_url": "https://github.com/RhudeJJJJ/formal-conjectures/blob/5aed41513a76d7d22be5087091e796587353bbf5/Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanPathDeterminant.lean",
+      "external_imports": [
+        "Mathlib.Combinatorics.SimpleGraph.Hasse",
+        "Mathlib.Combinatorics.SimpleGraph.LapMatrix",
+        "Mathlib.LinearAlgebra.Matrix.NonsingularInverse"
+      ],
+      "git_blob_sha": "f06831775bb7bf7222a033db16b0b87f644e106d",
+      "historical_row": {
+        "axiom_profiles": [
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        ],
+        "mode": "FRESH_KERNEL_EXPORT",
+        "module": "Proofs.RadenkovicGutmanPathDeterminant",
+        "output_sha256": "fd7ebd5428aa3b83191d6baddc082d470aaaaa833fdd437a4ef01e6211e44f7c",
+        "seconds": 3.875,
+        "source_closure_sha256": "8b98b18afc3d7bea424153f2b268320498e33442b1876d0c31c42b23e8e2704a",
+        "source_sha256": "d6121b7d9da80dabe42e1a33f87b6d60a7f968da8823fe829b15851be072d031"
+      },
+      "identity_basis": "UNCHANGED_PROOFS_GIT_TREE_WITH_PREVIOUS_EXACT_BYTE_CAPTURE",
+      "local_path": "/workspace/scratch/9f79fa0e9941/residual/source/Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanPathDeterminant.lean",
+      "path": "Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanPathDeterminant.lean",
+      "previous_inventory": "rg_resume_20261105/middle_next/source_scope/anchor030_source_inventory.json",
+      "previous_local_path": "/workspace/scratch/406169dbc070/rg_resume_20261105/middle_followup_1105c/residual_recovery/candidate/source/Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanPathDeterminant.lean",
+      "source_closure_sha256": "8b98b18afc3d7bea424153f2b268320498e33442b1876d0c31c42b23e8e2704a",
+      "source_dependencies": [
+        "Proofs.RadenkovicGutmanPathRecurrence"
+      ],
+      "source_sha256": "d6121b7d9da80dabe42e1a33f87b6d60a7f968da8823fe829b15851be072d031"
+    },
+    "Proofs.RadenkovicGutmanPathRecurrence": {
+      "bytes": 2923,
+      "capture_path": "rg_resume_20261104/anchor029_preparation/static_source_closure/source_capture_batch006.json",
+      "captured_ref": "7a64184a0b353295d4977004066e163375cf3b4b",
+      "current_url": "https://github.com/RhudeJJJJ/formal-conjectures/blob/5aed41513a76d7d22be5087091e796587353bbf5/Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanPathRecurrence.lean",
+      "external_imports": [
+        "Mathlib.Tactic.FieldSimp",
+        "Mathlib.Tactic.LinearCombination",
+        "Mathlib.Tactic.Ring"
+      ],
+      "git_blob_sha": "d78ab617262e4429ccc8c02fa312830f3b1143a2",
+      "historical_row": {
+        "axiom_profiles": [
+          [
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        ],
+        "mode": "FRESH_KERNEL_EXPORT",
+        "module": "Proofs.RadenkovicGutmanPathRecurrence",
+        "output_sha256": "7fa0a06299caf4890228139185769086b6c0b785673272c500e5c948d2a2c5d6",
+        "seconds": 1.518,
+        "source_closure_sha256": "b11c8835f40da37fb10e1cae3e5554b0692d07ddbecb2f270d8fc682276ecb8e",
+        "source_sha256": "4e4eeb10961d7d9834c138cfe317e5f6dd2a153102b2e092662c75661230c4e6"
+      },
+      "identity_basis": "UNCHANGED_PROOFS_GIT_TREE_WITH_PREVIOUS_EXACT_BYTE_CAPTURE",
+      "local_path": "/workspace/scratch/9f79fa0e9941/residual/source/Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanPathRecurrence.lean",
+      "path": "Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanPathRecurrence.lean",
+      "previous_inventory": "rg_resume_20261105/middle_next/source_scope/anchor030_source_inventory.json",
+      "previous_local_path": "/workspace/scratch/406169dbc070/rg_resume_20261105/middle_followup_1105c/residual_recovery/candidate/source/Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanPathRecurrence.lean",
+      "source_closure_sha256": "b11c8835f40da37fb10e1cae3e5554b0692d07ddbecb2f270d8fc682276ecb8e",
+      "source_dependencies": [],
+      "source_sha256": "4e4eeb10961d7d9834c138cfe317e5f6dd2a153102b2e092662c75661230c4e6"
+    },
+    "Proofs.RadenkovicGutmanPathResolvent": {
+      "bytes": 2459,
+      "capture_path": "rg_resume_20261104/anchor029_preparation/static_source_closure/source_capture_batch007.json",
+      "captured_ref": "7a64184a0b353295d4977004066e163375cf3b4b",
+      "current_url": "https://github.com/RhudeJJJJ/formal-conjectures/blob/5aed41513a76d7d22be5087091e796587353bbf5/Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanPathResolvent.lean",
+      "external_imports": [
+        "Mathlib.Analysis.Matrix.Spectrum"
+      ],
+      "git_blob_sha": "331ae29380bfeb3c1752f8d10239858a041ae4b9",
+      "historical_row": {
+        "axiom_profiles": [
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        ],
+        "mode": "FRESH_KERNEL_EXPORT",
+        "module": "Proofs.RadenkovicGutmanPathResolvent",
+        "output_sha256": "8bfb52e727d3d9a6f88ffac88e2db4be7cfa7a71ed1e006a1a169f58824480de",
+        "seconds": 2.27,
+        "source_closure_sha256": "3b74e0955f8ec2db84ef63ad50eb68eb697bf454fafd9076e242ef962f4ee5c7",
+        "source_sha256": "72a7442dc6be586455fdec61a674157048718060da11c5d4bf24eb129e78e627"
+      },
+      "identity_basis": "UNCHANGED_PROOFS_GIT_TREE_WITH_PREVIOUS_EXACT_BYTE_CAPTURE",
+      "local_path": "/workspace/scratch/9f79fa0e9941/residual/source/Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanPathResolvent.lean",
+      "path": "Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanPathResolvent.lean",
+      "previous_inventory": "rg_resume_20261105/middle_next/source_scope/anchor030_source_inventory.json",
+      "previous_local_path": "/workspace/scratch/406169dbc070/rg_resume_20261105/middle_followup_1105c/residual_recovery/candidate/source/Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanPathResolvent.lean",
+      "source_closure_sha256": "3b74e0955f8ec2db84ef63ad50eb68eb697bf454fafd9076e242ef962f4ee5c7",
+      "source_dependencies": [
+        "Proofs.RadenkovicGutmanPathDeterminant"
+      ],
+      "source_sha256": "72a7442dc6be586455fdec61a674157048718060da11c5d4bf24eb129e78e627"
+    },
+    "Proofs.RadenkovicGutmanPerturbation": {
+      "bytes": 5290,
+      "capture_path": "rg_resume_20261104/anchor029_preparation/static_source_closure/source_capture_batch008.json",
+      "captured_ref": "7a64184a0b353295d4977004066e163375cf3b4b",
+      "current_url": "https://github.com/RhudeJJJJ/formal-conjectures/blob/5aed41513a76d7d22be5087091e796587353bbf5/Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanPerturbation.lean",
+      "external_imports": [
+        "Mathlib.Combinatorics.SimpleGraph.Operations"
+      ],
+      "git_blob_sha": "b9b638d5b9ebd8191eedd0e1b91487c068ff6add",
+      "historical_row": {
+        "axiom_profiles": [
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        ],
+        "mode": "FRESH_KERNEL_EXPORT",
+        "module": "Proofs.RadenkovicGutmanPerturbation",
+        "output_sha256": "2e12cfc12b3f61fbc047e084439b3c357e10836d9e6071723ad743d373a67315",
+        "seconds": 3.473,
+        "source_closure_sha256": "780adf4f60f37fc150d990bcedeb53bcf03b619020a75f16e7ee0984f623db96",
+        "source_sha256": "166d8a987925c7c517b36f06796e36c78acd947c1bfcc13d13970ba5b527a54c"
+      },
+      "identity_basis": "UNCHANGED_PROOFS_GIT_TREE_WITH_PREVIOUS_EXACT_BYTE_CAPTURE",
+      "local_path": "/workspace/scratch/9f79fa0e9941/residual/source/Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanPerturbation.lean",
+      "path": "Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanPerturbation.lean",
+      "previous_inventory": "rg_resume_20261105/middle_next/source_scope/anchor030_source_inventory.json",
+      "previous_local_path": "/workspace/scratch/406169dbc070/rg_resume_20261105/middle_followup_1105c/residual_recovery/candidate/source/Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanPerturbation.lean",
+      "source_closure_sha256": "780adf4f60f37fc150d990bcedeb53bcf03b619020a75f16e7ee0984f623db96",
+      "source_dependencies": [
+        "Proofs.RadenkovicGutmanSpectral"
+      ],
+      "source_sha256": "166d8a987925c7c517b36f06796e36c78acd947c1bfcc13d13970ba5b527a54c"
+    },
+    "Proofs.RadenkovicGutmanRewireIso": {
+      "bytes": 3199,
+      "capture_path": "rg_resume_20261104/anchor029_preparation/static_source_closure/source_capture_batch007.json",
+      "captured_ref": "7a64184a0b353295d4977004066e163375cf3b4b",
+      "current_url": "https://github.com/RhudeJJJJ/formal-conjectures/blob/5aed41513a76d7d22be5087091e796587353bbf5/Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanRewireIso.lean",
+      "external_imports": [],
+      "git_blob_sha": "0feb75a96a1bc9746ae0484f45dafcee13031381",
+      "historical_row": {
+        "axiom_profiles": [
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        ],
+        "mode": "FRESH_KERNEL_EXPORT",
+        "module": "Proofs.RadenkovicGutmanRewireIso",
+        "output_sha256": "caa3e1f4d1c58ca22939ee60309a1c1baa42dffdbe8abb89cd347ec75e81a74e",
+        "seconds": 3.526,
+        "source_closure_sha256": "07ba06d8d1747a8ee29434f4a2f2f6432ab7563c05a7145f5d824e31d254a753",
+        "source_sha256": "300a08814b9356b998083b4393c099ae9ebb5eba9e6a6918f2388666d1b51998"
+      },
+      "identity_basis": "UNCHANGED_PROOFS_GIT_TREE_WITH_PREVIOUS_EXACT_BYTE_CAPTURE",
+      "local_path": "/workspace/scratch/9f79fa0e9941/residual/source/Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanRewireIso.lean",
+      "path": "Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanRewireIso.lean",
+      "previous_inventory": "rg_resume_20261105/middle_next/source_scope/anchor030_source_inventory.json",
+      "previous_local_path": "/workspace/scratch/406169dbc070/rg_resume_20261105/middle_followup_1105c/residual_recovery/candidate/source/Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanRewireIso.lean",
+      "source_closure_sha256": "07ba06d8d1747a8ee29434f4a2f2f6432ab7563c05a7145f5d824e31d254a753",
+      "source_dependencies": [
+        "Proofs.RadenkovicGutmanCountTransport",
+        "Proofs.RadenkovicGutmanFusionQuotient"
+      ],
+      "source_sha256": "300a08814b9356b998083b4393c099ae9ebb5eba9e6a6918f2388666d1b51998"
+    },
+    "Proofs.RadenkovicGutmanRewireTopology": {
+      "bytes": 6543,
+      "capture_path": "rg_resume_20261104/anchor029_preparation/static_source_closure/source_capture_batch012.json",
+      "captured_ref": "7a64184a0b353295d4977004066e163375cf3b4b",
+      "current_url": "https://github.com/RhudeJJJJ/formal-conjectures/blob/5aed41513a76d7d22be5087091e796587353bbf5/Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanRewireTopology.lean",
+      "external_imports": [
+        "Mathlib.Combinatorics.SimpleGraph.Acyclic",
+        "Mathlib.Combinatorics.SimpleGraph.Operations"
+      ],
+      "git_blob_sha": "c98ca6f38ab1164729d6a11436f0bfc1ddabdc90",
+      "historical_row": {
+        "axiom_profiles": [
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          []
+        ],
+        "mode": "FRESH_KERNEL_EXPORT",
+        "module": "Proofs.RadenkovicGutmanRewireTopology",
+        "output_sha256": "1537f76d2f67f563d23201077e695e97b043f6a0be9a19af37334b38249ca108",
+        "seconds": 2.02,
+        "source_closure_sha256": "8adb8dc4ec86bf7b326988ca8829d81d48467eb215c6ed5bed03d64fda762a79",
+        "source_sha256": "ca4b40c0c3acf8a84cf38167d7df2b24cda864bdc120da26f6d001ad37e3a619"
+      },
+      "identity_basis": "UNCHANGED_PROOFS_GIT_TREE_WITH_PREVIOUS_EXACT_BYTE_CAPTURE",
+      "local_path": "/workspace/scratch/9f79fa0e9941/residual/source/Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanRewireTopology.lean",
+      "path": "Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanRewireTopology.lean",
+      "previous_inventory": "rg_resume_20261105/middle_next/source_scope/anchor030_source_inventory.json",
+      "previous_local_path": "/workspace/scratch/406169dbc070/rg_resume_20261105/middle_followup_1105c/residual_recovery/candidate/source/Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanRewireTopology.lean",
+      "source_closure_sha256": "8adb8dc4ec86bf7b326988ca8829d81d48467eb215c6ed5bed03d64fda762a79",
+      "source_dependencies": [],
+      "source_sha256": "ca4b40c0c3acf8a84cf38167d7df2b24cda864bdc120da26f6d001ad37e3a619"
+    },
+    "Proofs.RadenkovicGutmanRootedCatalogueData": {
+      "bytes": 550598,
+      "git_blob_sha": "9001e509773cdb6755f20259573e3b5b4b36e647",
+      "historical_row": {
+        "axiom_profiles": [
+          []
+        ],
+        "mode": "FRESH_KERNEL_EXPORT",
+        "module": "Proofs.RadenkovicGutmanRootedCatalogueData",
+        "output_sha256": "39eac6e3413e74d582bd4f06ce003c5d7bd97a8d01a7d2e603c2f0ce828eb34b",
+        "seconds": 33.452,
+        "source_closure_sha256": "61a8bc67fb99ae269c3e1c7a8728401dcf27bd6f8b7f0ea69114d7d14f0219f7",
+        "source_sha256": "4e212d206794c94ef765e7f66513ef3cf6a6f41d18490efc3fcb23254adce33f"
+      },
+      "identity_basis": "EXACT_GITHUB_FILE_AT_FIXED_COMMIT",
+      "local_path": "/workspace/scratch/9f79fa0e9941/residual/source/Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanRootedCatalogueData.lean",
+      "path": "Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanRootedCatalogueData.lean",
+      "previous_local_path": "/workspace/scratch/406169dbc070/rg_resume_20261105/middle_followup_1105c/residual_recovery/candidate/source/Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanRootedCatalogueData.lean",
+      "source_closure_sha256": "61a8bc67fb99ae269c3e1c7a8728401dcf27bd6f8b7f0ea69114d7d14f0219f7",
+      "source_dependencies": [
+        "Proofs.RadenkovicGutmanCanonicalTreeCoverage"
+      ],
+      "source_sha256": "4e212d206794c94ef765e7f66513ef3cf6a6f41d18490efc3fcb23254adce33f"
+    },
+    "Proofs.RadenkovicGutmanRootedTreeEnumeration": {
+      "bytes": 4736,
+      "git_blob_sha": "a94a801e3460de5861c9c6fcffed75fb67b816ee",
+      "historical_row": {
+        "axiom_profiles": [
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        ],
+        "mode": "FRESH_KERNEL_EXPORT",
+        "module": "Proofs.RadenkovicGutmanRootedTreeEnumeration",
+        "output_sha256": "21ecd008113e6d5acfe4bd0995dbcf2e1f323c13bc50aef51402b6bc4da48e72",
+        "seconds": 1.367,
+        "source_closure_sha256": "f9abe69684034d270718ff8a084bbf537aa53753a0069a6968ce3ace6bdd8319",
+        "source_sha256": "3d646c4b25e0cc17ad5ee086cfbf20c4a07a2b4823fc48fd5602380074119e45"
+      },
+      "identity_basis": "EXACT_GITHUB_FILE_AT_FIXED_COMMIT",
+      "local_path": "/workspace/scratch/9f79fa0e9941/residual/source/Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanRootedTreeEnumeration.lean",
+      "path": "Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanRootedTreeEnumeration.lean",
+      "previous_local_path": "/workspace/scratch/406169dbc070/rg_resume_20261105/middle_followup_1105c/residual_recovery/candidate/source/Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanRootedTreeEnumeration.lean",
+      "source_closure_sha256": "f9abe69684034d270718ff8a084bbf537aa53753a0069a6968ce3ace6bdd8319",
+      "source_dependencies": [
+        "Proofs.RadenkovicGutmanTreeLeafInduction"
+      ],
+      "source_sha256": "3d646c4b25e0cc17ad5ee086cfbf20c4a07a2b4823fc48fd5602380074119e45"
+    },
+    "Proofs.RadenkovicGutmanScalarIntegral": {
+      "bytes": 7136,
+      "capture_path": "rg_resume_20261104/anchor029_preparation/static_source_closure/source_capture_batch006.json",
+      "captured_ref": "7a64184a0b353295d4977004066e163375cf3b4b",
+      "current_url": "https://github.com/RhudeJJJJ/formal-conjectures/blob/5aed41513a76d7d22be5087091e796587353bbf5/Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanScalarIntegral.lean",
+      "external_imports": [
+        "Mathlib.Analysis.SpecialFunctions.ImproperIntegrals",
+        "Mathlib.Analysis.SpecialFunctions.Log.NegMulLog",
+        "Mathlib.Tactic"
+      ],
+      "git_blob_sha": "c76b13a8f6febac758b3781b120ce388bbc4cb85",
+      "historical_row": {
+        "axiom_profiles": [
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        ],
+        "mode": "FRESH_KERNEL_EXPORT",
+        "module": "Proofs.RadenkovicGutmanScalarIntegral",
+        "output_sha256": "e643d93b9a76f76d44308ae3cc825b810f073dd310ddcb391785c1e7d2afa2eb",
+        "seconds": 3.824,
+        "source_closure_sha256": "58f1e13ad5e74c911c4b9c573a591a4bbcb6addae0759840436150cb64b30275",
+        "source_sha256": "5c6513466fe92cd9b0d1a16bf9c0589a26b580768bd88565ee06a5f88a4a43c4"
+      },
+      "identity_basis": "UNCHANGED_PROOFS_GIT_TREE_WITH_PREVIOUS_EXACT_BYTE_CAPTURE",
+      "local_path": "/workspace/scratch/9f79fa0e9941/residual/source/Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanScalarIntegral.lean",
+      "path": "Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanScalarIntegral.lean",
+      "previous_inventory": "rg_resume_20261105/middle_next/source_scope/anchor030_source_inventory.json",
+      "previous_local_path": "/workspace/scratch/406169dbc070/rg_resume_20261105/middle_followup_1105c/residual_recovery/candidate/source/Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanScalarIntegral.lean",
+      "source_closure_sha256": "58f1e13ad5e74c911c4b9c573a591a4bbcb6addae0759840436150cb64b30275",
+      "source_dependencies": [],
+      "source_sha256": "5c6513466fe92cd9b0d1a16bf9c0589a26b580768bd88565ee06a5f88a4a43c4"
+    },
+    "Proofs.RadenkovicGutmanSmallOrders": {
+      "bytes": 4849,
+      "capture_path": "rg_resume_20261104/anchor029_preparation/static_source_closure/source_capture_batch007.json",
+      "captured_ref": "7a64184a0b353295d4977004066e163375cf3b4b",
+      "current_url": "https://github.com/RhudeJJJJ/formal-conjectures/blob/5aed41513a76d7d22be5087091e796587353bbf5/Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanSmallOrders.lean",
+      "external_imports": [],
+      "git_blob_sha": "18cef8f3e8edca12de794a802daac74031620858",
+      "historical_row": {
+        "axiom_profiles": [
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        ],
+        "mode": "FRESH_KERNEL_EXPORT",
+        "module": "Proofs.RadenkovicGutmanSmallOrders",
+        "output_sha256": "b8a83242ef0a7cb20626de8f60f2ad475ba7099721c624a67143dd3e6cc0aa76",
+        "seconds": 2.421,
+        "source_closure_sha256": "a215bb3992c94571a67183844c1ece0e8b02be5b074441c1712064a11a2a94fa",
+        "source_sha256": "757fc7d654b4e532c0ac3b5b5f8d7c48544c835f1fb09e96975afe82c27b3cb6"
+      },
+      "identity_basis": "UNCHANGED_PROOFS_GIT_TREE_WITH_PREVIOUS_EXACT_BYTE_CAPTURE",
+      "local_path": "/workspace/scratch/9f79fa0e9941/residual/source/Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanSmallOrders.lean",
+      "path": "Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanSmallOrders.lean",
+      "previous_inventory": "rg_resume_20261105/middle_next/source_scope/anchor030_source_inventory.json",
+      "previous_local_path": "/workspace/scratch/406169dbc070/rg_resume_20261105/middle_followup_1105c/residual_recovery/candidate/source/Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanSmallOrders.lean",
+      "source_closure_sha256": "a215bb3992c94571a67183844c1ece0e8b02be5b074441c1712064a11a2a94fa",
+      "source_dependencies": [
+        "Proofs.RadenkovicGutmanSourcePresentation"
+      ],
+      "source_sha256": "757fc7d654b4e532c0ac3b5b5f8d7c48544c835f1fb09e96975afe82c27b3cb6"
+    },
+    "Proofs.RadenkovicGutmanSourcePresentation": {
+      "bytes": 12321,
+      "capture_path": "rg_resume_20261104/anchor029_preparation/static_source_closure/source_capture_batch008.json",
+      "captured_ref": "7a64184a0b353295d4977004066e163375cf3b4b",
+      "current_url": "https://github.com/RhudeJJJJ/formal-conjectures/blob/5aed41513a76d7d22be5087091e796587353bbf5/Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanSourcePresentation.lean",
+      "external_imports": [],
+      "git_blob_sha": "7bb6ef4e9bfdc38e0961157b449c776ed64a48d4",
+      "historical_row": {
+        "axiom_profiles": [
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        ],
+        "mode": "FRESH_KERNEL_EXPORT",
+        "module": "Proofs.RadenkovicGutmanSourcePresentation",
+        "output_sha256": "49bb245f6d3076ba1e32b6a88711965f29ea2decde0a0245b6f7531873d7930a",
+        "seconds": 14.602,
+        "source_closure_sha256": "3e11d411fd3ec08744c86181cdec3d7ac65229887ae620c4968ec6942b0bbc2f",
+        "source_sha256": "68e35d0e0fd36309175e8ff35a0b20619965689d32c35504cd3f5421cf5bbae7"
+      },
+      "identity_basis": "UNCHANGED_PROOFS_GIT_TREE_WITH_PREVIOUS_EXACT_BYTE_CAPTURE",
+      "local_path": "/workspace/scratch/9f79fa0e9941/residual/source/Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanSourcePresentation.lean",
+      "path": "Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanSourcePresentation.lean",
+      "previous_inventory": "rg_resume_20261105/middle_next/source_scope/anchor030_source_inventory.json",
+      "previous_local_path": "/workspace/scratch/406169dbc070/rg_resume_20261105/middle_followup_1105c/residual_recovery/candidate/source/Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanSourcePresentation.lean",
+      "source_closure_sha256": "3e11d411fd3ec08744c86181cdec3d7ac65229887ae620c4968ec6942b0bbc2f",
+      "source_dependencies": [
+        "Proofs.RadenkovicGutmanArmEmbedding",
+        "Proofs.RadenkovicGutmanGlobalAssembly"
+      ],
+      "source_sha256": "68e35d0e0fd36309175e8ff35a0b20619965689d32c35504cd3f5421cf5bbae7"
+    },
+    "Proofs.RadenkovicGutmanSpectral": {
+      "bytes": 9310,
+      "capture_path": "rg_resume_20261104/anchor029_preparation/static_source_closure/source_capture_batch006.json",
+      "captured_ref": "7a64184a0b353295d4977004066e163375cf3b4b",
+      "current_url": "https://github.com/RhudeJJJJ/formal-conjectures/blob/5aed41513a76d7d22be5087091e796587353bbf5/Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanSpectral.lean",
+      "external_imports": [
+        "Mathlib.Analysis.Calculus.MeanValue",
+        "Mathlib.Analysis.Matrix.Spectrum",
+        "Mathlib.Combinatorics.SimpleGraph.Acyclic",
+        "Mathlib.Combinatorics.SimpleGraph.DegreeSum",
+        "Mathlib.Combinatorics.SimpleGraph.Hasse",
+        "Mathlib.Combinatorics.SimpleGraph.LapMatrix",
+        "Mathlib.Tactic"
+      ],
+      "git_blob_sha": "cf02f5786170e2890526eb152ea1854016b6b79b",
+      "historical_row": {
+        "axiom_profiles": [
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        ],
+        "mode": "FRESH_KERNEL_EXPORT",
+        "module": "Proofs.RadenkovicGutmanSpectral",
+        "output_sha256": "05c524d1c115eebac715d425d7bc93516091f445d17e933e7d4d20320ddd0c94",
+        "seconds": 3.874,
+        "source_closure_sha256": "184b16762c75c2961cd905c2ef7f1d86351d1b7dbfa11da6bc62fb52ea58ecb9",
+        "source_sha256": "70d7fe9e91a930f1a2e62ea85b5ecea17484877d5150c5eb52cfee1776d98348"
+      },
+      "identity_basis": "UNCHANGED_PROOFS_GIT_TREE_WITH_PREVIOUS_EXACT_BYTE_CAPTURE",
+      "local_path": "/workspace/scratch/9f79fa0e9941/residual/source/Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanSpectral.lean",
+      "path": "Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanSpectral.lean",
+      "previous_inventory": "rg_resume_20261105/middle_next/source_scope/anchor030_source_inventory.json",
+      "previous_local_path": "/workspace/scratch/406169dbc070/rg_resume_20261105/middle_followup_1105c/residual_recovery/candidate/source/Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanSpectral.lean",
+      "source_closure_sha256": "184b16762c75c2961cd905c2ef7f1d86351d1b7dbfa11da6bc62fb52ea58ecb9",
+      "source_dependencies": [],
+      "source_sha256": "70d7fe9e91a930f1a2e62ea85b5ecea17484877d5150c5eb52cfee1776d98348"
+    },
+    "Proofs.RadenkovicGutmanTreeLeafInduction": {
+      "bytes": 4202,
+      "git_blob_sha": "61276d5654dcd221d651e09563eca1ad9a1909f2",
+      "historical_row": {
+        "axiom_profiles": [
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        ],
+        "mode": "FRESH_KERNEL_EXPORT",
+        "module": "Proofs.RadenkovicGutmanTreeLeafInduction",
+        "output_sha256": "c99779810ac7e25bad46d81ae861c0e6043f6dc0a0d24e82e9c1cdd64a9f7257",
+        "seconds": 1.268,
+        "source_closure_sha256": "8815588fed96df8e077739e0613ead2b485007d5fffeff37acd1806f3fe39eb7",
+        "source_sha256": "601c2a97fcf01faa98df611d637e75ca201651d5efe5027a4ef002af28ed4c10"
+      },
+      "identity_basis": "EXACT_GITHUB_FILE_AT_FIXED_COMMIT",
+      "local_path": "/workspace/scratch/9f79fa0e9941/residual/source/Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanTreeLeafInduction.lean",
+      "path": "Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanTreeLeafInduction.lean",
+      "previous_local_path": "/workspace/scratch/406169dbc070/rg_resume_20261105/middle_followup_1105c/residual_recovery/candidate/source/Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanTreeLeafInduction.lean",
+      "source_closure_sha256": "8815588fed96df8e077739e0613ead2b485007d5fffeff37acd1806f3fe39eb7",
+      "source_dependencies": [],
+      "source_sha256": "601c2a97fcf01faa98df611d637e75ca201651d5efe5027a4ef002af28ed4c10"
+    },
+    "Proofs.RadenkovicGutmanTreeTerminal": {
+      "bytes": 6540,
+      "capture_path": "rg_resume_20261104/anchor029_preparation/static_source_closure/source_capture_batch011.json",
+      "captured_ref": "7a64184a0b353295d4977004066e163375cf3b4b",
+      "current_url": "https://github.com/RhudeJJJJ/formal-conjectures/blob/5aed41513a76d7d22be5087091e796587353bbf5/Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanTreeTerminal.lean",
+      "external_imports": [
+        "Mathlib.Combinatorics.SimpleGraph.Hasse"
+      ],
+      "git_blob_sha": "e14416e77027c24f838daa55ec967a04347659a9",
+      "historical_row": {
+        "axiom_profiles": [
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        ],
+        "mode": "FRESH_KERNEL_EXPORT",
+        "module": "Proofs.RadenkovicGutmanTreeTerminal",
+        "output_sha256": "83ed5e884ff07c2eb3841dc22118a23d4092812fd3945cb0a0c5d65c3e036444",
+        "seconds": 1.819,
+        "source_closure_sha256": "99447102a4bd370008aad64215170f13de97152dd52d1b8242c153ccaaf9f65e",
+        "source_sha256": "80c7ad1a75f506b8c06bb36040c8b3b7a521b64bcfa143047317602ab6fbc747"
+      },
+      "identity_basis": "UNCHANGED_PROOFS_GIT_TREE_WITH_PREVIOUS_EXACT_BYTE_CAPTURE",
+      "local_path": "/workspace/scratch/9f79fa0e9941/residual/source/Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanTreeTerminal.lean",
+      "path": "Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanTreeTerminal.lean",
+      "previous_inventory": "rg_resume_20261105/middle_next/source_scope/anchor030_source_inventory.json",
+      "previous_local_path": "/workspace/scratch/406169dbc070/rg_resume_20261105/middle_followup_1105c/residual_recovery/candidate/source/Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanTreeTerminal.lean",
+      "source_closure_sha256": "99447102a4bd370008aad64215170f13de97152dd52d1b8242c153ccaaf9f65e",
+      "source_dependencies": [
+        "Proofs.RadenkovicGutmanRewireTopology"
+      ],
+      "source_sha256": "80c7ad1a75f506b8c06bb36040c8b3b7a521b64bcfa143047317602ab6fbc747"
+    }
+  },
+  "named_axiom_declarations": {
+    "Proofs.RadenkovicGutmanActualSmallGeFourKeys": [
+      "Gebendorfer.RadenkovicGutman.SmallGeFourKeys.getD_fin",
+      "Gebendorfer.RadenkovicGutman.SmallGeFourKeys.representative_get",
+      "Gebendorfer.RadenkovicGutman.SmallGeFourKeys.rootDegree_eq_degree",
+      "Gebendorfer.RadenkovicGutman.SmallGeFourKeys.certified_cons"
+    ],
+    "Proofs.RadenkovicGutmanCanonicalTreeCoverage": [
+      "Gebendorfer.RadenkovicGutman.CanonicalTreeCoverage.checkedIso",
+      "Gebendorfer.RadenkovicGutman.CanonicalTreeCoverage.checkedIso_root",
+      "Gebendorfer.RadenkovicGutman.CanonicalTreeCoverage.step_sound",
+      "Gebendorfer.RadenkovicGutman.CanonicalTreeCoverage.coversAllFamilies",
+      "Gebendorfer.RadenkovicGutman.CanonicalTreeCoverage.actual_tree_covered"
+    ],
+    "Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteKeysData": [
+      "Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualFiniteKeys.domain_bounds",
+      "Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualFiniteKeys.key_count"
+    ],
+    "Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteListAssembly": [
+      "Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualFiniteListAssembly.of_batches"
+    ],
+    "Proofs.RadenkovicGutmanFiniteTreeTransfer": [
+      "Gebendorfer.RadenkovicGutman.FiniteTreeTransfer.stopLoss_iso",
+      "Gebendorfer.RadenkovicGutman.FiniteTreeTransfer.sourceIso",
+      "Gebendorfer.RadenkovicGutman.FiniteTreeTransfer.fusedIso",
+      "Gebendorfer.RadenkovicGutman.FiniteTreeTransfer.checkedGraphIso",
+      "Gebendorfer.RadenkovicGutman.FiniteTreeTransfer.mean_positive_of_spectral_comparison",
+      "Gebendorfer.RadenkovicGutman.FiniteTreeTransfer.certified_transport",
+      "Gebendorfer.RadenkovicGutman.FiniteTreeTransfer.positive_of_certified"
+    ],
+    "Proofs.RadenkovicGutmanRootedCatalogueData": [
+      "Gebendorfer.RadenkovicGutman.RootedCatalogueData.catalogue_sizes"
+    ],
+    "Proofs.RadenkovicGutmanRootedTreeEnumeration": [
+      "Gebendorfer.RadenkovicGutman.RootedTreeEnumeration.card_vertices",
+      "Gebendorfer.RadenkovicGutman.RootedTreeEnumeration.card_family",
+      "Gebendorfer.RadenkovicGutman.RootedTreeEnumeration.extensionIso",
+      "Gebendorfer.RadenkovicGutman.RootedTreeEnumeration.complete",
+      "Gebendorfer.RadenkovicGutman.RootedTreeEnumeration.complete_at_order"
+    ],
+    "Proofs.RadenkovicGutmanTreeLeafInduction": [
+      "Gebendorfer.RadenkovicGutman.TreeLeafInduction.exists_leaf_ne_root",
+      "Gebendorfer.RadenkovicGutman.TreeLeafInduction.deletionIso",
+      "Gebendorfer.RadenkovicGutman.TreeLeafInduction.finite_tree_induction"
+    ]
+  },
+  "only_analytic_capsule_restored": true,
+  "remote_mutations": 0,
+  "repository": "RhudeJJJJ/formal-conjectures",
+  "required_modules": 39,
+  "status": "SOURCE_METADATA_ONLY_NOT_A_KERNEL_RECEIPT"
+}

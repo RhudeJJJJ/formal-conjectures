@@ -1,0 +1,63 @@
+{
+  "schema": "rg_middle_parameter_coverage_recovery_checkpoint_v1",
+  "status": "ORIGINAL_CORE_AUTHENTICATED_PARAMETER_KERNEL_RUN_STARTED",
+  "original_core": {
+    "run": 42345977030,
+    "job": 128323686026,
+    "source_commit": "38d23137efc0e946ab67bb31020c14bb59db546f",
+    "artifact_id": 13563667766,
+    "artifact_sha256": "c3fd2c892fbeb2ae11846df6a406acdcfa928cb9a68f3a5a3f4bcc44e713f618",
+    "native_job_conclusion": "success",
+    "source_closures_recomputed": 40,
+    "prior_modules": 38,
+    "fresh_modules_in_original_job": 2,
+    "fresh_object_bytes_rehashed": 9485144,
+    "exact_named_axiom_profiles_checked": 3,
+    "allowed_axioms": ["Classical.choice", "Quot.sound", "propext"],
+    "prior_object_bytes_reread_locally": false
+  },
+  "independent_data_replay": {
+    "status": "PASS_NOT_A_KERNEL_PROOF",
+    "catalogue_representatives_inspected": 3047,
+    "unique_residual_keys": 1232,
+    "exact_lookup_assignments_checked": 1232,
+    "missing_keys": 0,
+    "extraneous_keys": 0,
+    "unequal_arm_orientations": "BOTH_RETAINED",
+    "method": "Parse the original leaf-insertion families, reconstruct root degree, enumerate the exact original domains, and compare every lookup target to its full key.",
+    "source_hashes": {
+      "RootedCatalogueData": "4e212d206794c94ef765e7f66513ef3cf6a6f41d18490efc3fcb23254adce33f",
+      "DegreeOneMiddleResidualFiniteKeysData": "7c4db02f2ed4ee4259771600b3b9709986b1fc3dc4117ec5b7fb72f33a28680b",
+      "DegreeOneMiddleResidualFiniteKeyLookup": "3c1bdb7c43f456488c7e400d08ceb4b194e0b55847661436ccefd58978c716c9"
+    },
+    "limitation": "This replay establishes neither rooted-catalogue completeness nor any spectral certificate and does not replace Lean."
+  },
+  "new_kernel_run": {
+    "run": 42704252628,
+    "job": 129456735506,
+    "source_commit": "317f7373b45a6803b0feebb24f14e771ecc72ea5",
+    "endpoint": "Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoverageComplete",
+    "last_observed_status": "in_progress",
+    "source_freeze_restore_and_exact_frontier_steps": "success",
+    "complete_receipt_observed": false,
+    "maximum_fresh_module_count": 128,
+    "workers": 1,
+    "module_timeout_seconds": 600,
+    "memory_reserve_mib": 2048
+  },
+  "local_checks": {
+    "archive_and_data_tests_passed": 9,
+    "includes_same_count_wrong_lookup_rejection": true,
+    "includes_corrupt_object_and_wrong_theorem_rejection": true,
+    "local_lean_execution": false
+  },
+  "anchor512": {
+    "run": 42699996104,
+    "job": 129441855117,
+    "last_observed_status": "in_progress",
+    "restarted": false
+  },
+  "remaining_original_families": ["degreeOneMiddle", "degreeTwoThree", "degreeFourToFortyfive"],
+  "global_rg": "NOT_PROVED",
+  "full_lean_submission": "NOT_SUBMITTED"
+}

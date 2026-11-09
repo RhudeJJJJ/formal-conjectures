@@ -1,0 +1,82 @@
+{
+  "artifact_id": 13684857828,
+  "artifact_sha256": "900bbe270297f99e726fc207ccd2b1658fcdda799fae6705308c0170d437fd66",
+  "artifact_size_bytes": 918394,
+  "boundary": "Authenticates the failure evidence and unchanged inputs, not a successful proof. Does not weaken any memory, timeout, Lean, or source guard.",
+  "compiled_objects_present": false,
+  "evidence_sha256": {
+    "artifact.zip": "900bbe270297f99e726fc207ccd2b1658fcdda799fae6705308c0170d437fd66",
+    "artifacts.json": "9b8923d1318f61ea8b9d14a60cf87df3acbf35967429f9b11a1bedcda30381f0",
+    "job.log": "6e6151a7526bfcbde15c3f5fdc3eab751971c4a7eb07143c352517630d84daf5",
+    "jobs.json": "b6013319ba1dc0c1fdf95a60e4e8bb56c17962bfa0cbc280bac219675a3e781a",
+    "run.json": "0f7bed4e4c96ae6c1d57dca556cf45b98a214a3fa0ca6bab9c50850a3f321f75"
+  },
+  "expected_fresh_count": 11,
+  "expected_key_count": 3,
+  "fresh_completed_module_count": 0,
+  "frozen_checker_execution": {
+    "exit_code": 1,
+    "first_rejection": "ValueError: Native run not started",
+    "independent_non_success_gates": [
+      "Native job failed",
+      "Resource guard stopped verifier",
+      "No completed fresh records",
+      "No receipt",
+      "No fresh objects"
+    ],
+    "prior_export_manifest_created": false,
+    "reason": "Native enclosing run metadata still reported queued while individual job had completed with failure. Inputs and checker were not modified.",
+    "sha256": "31622b83a62a54357d5d8cba0c0001ba90b98dc669272e7f394c276cb23ff776",
+    "success_report_created": false
+  },
+  "head_sha": "da50fcb4764d92a7fc4eb6f31ee727697ac561f6",
+  "incomplete_module": "Proofs.RadenkovicGutmanDegreeOneMiddleResidualSpectrum1715",
+  "job_completed_at": "2026-11-09T15:03:04Z",
+  "job_conclusion": "failure",
+  "job_id": 129238619187,
+  "job_url": "https://github.com/RhudeJJJJ/formal-conjectures/actions/runs/42640095601/job/129238619187",
+  "kind": "ORIGINAL_MIDDLE_RESIDUAL_BATCH024_NATIVE_FAILURE_DIAGNOSIS",
+  "module_log_empty": true,
+  "native_memory_guard_event": {
+    "aggregate_lean_rss": 14679810048,
+    "available_bytes": 2088427520,
+    "cgroup_limits": [],
+    "lean_processes": [
+      {
+        "module": "RadenkovicGutmanDegreeOneMiddleResidualSpectrum1715.lean",
+        "pid": 2745,
+        "rss": 14679810048
+      }
+    ],
+    "memory": {
+      "MemAvailable": 2088427520,
+      "MemTotal": 16760348672,
+      "SwapFree": 3219812352
+    },
+    "seconds": 87.11
+  },
+  "new_certified_keys": 0,
+  "original_source_commit": "15d45e8d3ed3bacaf3afe7d85488a42f08302d76",
+  "proof_status": "NO_NEW_COMPLETED_KERNEL_EXPORTS",
+  "receipt_present": false,
+  "repository": "RhudeJJJJ/formal-conjectures",
+  "resource_result": {
+    "exit_code": -15,
+    "mathlib_and_lean_flags_unchanged": true,
+    "maximum_aggregate_lean_rss": 14679810048,
+    "seconds": 87.12,
+    "status": "MEMORY_GUARD_STOPPED_OWN_VERIFIER"
+  },
+  "run_id": 42640095601,
+  "run_status_at_capture": "queued",
+  "status": "MEMORY_GUARD_STOPPED_OWN_VERIFIER",
+  "unchanged_prior_diagnostic_rows": 707,
+  "verified_archive_members": 63,
+  "verified_frozen_validation_sha256": {
+    "rg_middle_residual_batch_authenticate_20261109.py": "31622b83a62a54357d5d8cba0c0001ba90b98dc669272e7f394c276cb23ff776",
+    "rg_middle_residual_batch_inventory_20261109.json": "22c745d4fdb281e8cc2172ffcc3b975005da4fb4777e9021e85f46bbc9a665e0",
+    "rg_middle_residual_batch_plan_20261109.py": "d7be007de8a00740dfe088bf027286c177190c7b88619bea332003b16337915a"
+  },
+  "verified_original_source_count": 56,
+  "workflow_step_exit_code": 86
+}

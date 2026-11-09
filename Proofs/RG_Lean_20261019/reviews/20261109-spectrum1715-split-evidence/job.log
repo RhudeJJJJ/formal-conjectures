@@ -1,0 +1,549 @@
+﻿2026-11-09T15:14:51.4439893Z Current runner version: '2.338.2'
+2026-11-09T15:14:51.4456676Z ##[group]Runner Image Provisioner
+2026-11-09T15:14:51.4457315Z Hosted Compute Agent
+2026-11-09T15:14:51.4457702Z Version: 20261028.624
+2026-11-09T15:14:51.4458095Z Commit: 54898b74c23fde5556c9b3c3a2290865feef0dfe
+2026-11-09T15:14:51.4458771Z Build Date: 2026-10-28T21:51:42Z
+2026-11-09T15:14:51.4459194Z Worker ID: {7ecd2aa3-a3e8-4795-801a-c0611924cdbe}
+2026-11-09T15:14:51.4459712Z Region: westus3
+2026-11-09T15:14:51.4460105Z Cloud: Azure
+2026-11-09T15:14:51.4460481Z ##[endgroup]
+2026-11-09T15:14:51.4461322Z ##[group]Operating System
+2026-11-09T15:14:51.4461733Z Ubuntu
+2026-11-09T15:14:51.4462084Z 24.04.5
+2026-11-09T15:14:51.4462455Z LTS
+2026-11-09T15:14:51.4462991Z ##[endgroup]
+2026-11-09T15:14:51.4463476Z ##[group]Runner Image
+2026-11-09T15:14:51.4464011Z Image: ubuntu-24.04
+2026-11-09T15:14:51.4464542Z Version: 20261101.360.1
+2026-11-09T15:14:51.4465506Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261101.360/images/ubuntu/Ubuntu2404-Readme.md
+2026-11-09T15:14:51.4466416Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261101.360
+2026-11-09T15:14:51.4467004Z ##[endgroup]
+2026-11-09T15:14:51.4467784Z ##[group]GITHUB_TOKEN Permissions
+2026-11-09T15:14:51.4469324Z Actions: read
+2026-11-09T15:14:51.4469671Z Contents: read
+2026-11-09T15:14:51.4470083Z Metadata: read
+2026-11-09T15:14:51.4470465Z ##[endgroup]
+2026-11-09T15:14:51.4471797Z Secret source: Actions
+2026-11-09T15:14:51.4472386Z Cache mode: write
+2026-11-09T15:14:51.4473143Z Prepare workflow directory
+2026-11-09T15:14:51.4677188Z Prepare all required actions
+2026-11-09T15:14:51.4707866Z Getting action download info
+2026-11-09T15:14:51.7712295Z Download action repository 'actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803' (SHA:d23441a48e516b6c34aea4fa41551a30e30af803)
+2026-11-09T15:14:51.8594484Z Download action repository 'actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+2026-11-09T15:14:52.0394217Z Complete job name: spectrum1715-sample-split
+2026-11-09T15:14:52.0938199Z ##[group]Run actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+2026-11-09T15:14:52.0938684Z with:
+2026-11-09T15:14:52.0938916Z   persist-credentials: false
+2026-11-09T15:14:52.0939200Z   repository: RhudeJJJJ/formal-conjectures
+2026-11-09T15:14:52.0941145Z   token: ***
+2026-11-09T15:14:52.0941362Z   ssh-strict: true
+2026-11-09T15:14:52.0941585Z   ssh-user: git
+2026-11-09T15:14:52.0941800Z   clean: true
+2026-11-09T15:14:52.0942031Z   sparse-checkout-cone-mode: true
+2026-11-09T15:14:52.0942297Z   fetch-depth: 1
+2026-11-09T15:14:52.0942522Z   fetch-tags: false
+2026-11-09T15:14:52.0942931Z   show-progress: true
+2026-11-09T15:14:52.0943164Z   lfs: false
+2026-11-09T15:14:52.0943376Z   submodules: false
+2026-11-09T15:14:52.0943607Z   set-safe-directory: true
+2026-11-09T15:14:52.0943870Z   allow-unsafe-pr-checkout: false
+2026-11-09T15:14:52.0944217Z ##[endgroup]
+2026-11-09T15:14:52.3171693Z Syncing repository: RhudeJJJJ/formal-conjectures
+2026-11-09T15:14:52.3172981Z ##[group]Getting Git version info
+2026-11-09T15:14:52.3173415Z Working directory is '/home/runner/work/formal-conjectures/formal-conjectures'
+2026-11-09T15:14:52.3174257Z [command]/usr/bin/git version
+2026-11-09T15:14:52.3261429Z git version 2.56.0
+2026-11-09T15:14:52.3275362Z ##[endgroup]
+2026-11-09T15:14:52.3284476Z Temporarily overriding HOME='/home/runner/work/_temp/b6e04747-8924-4770-b887-0f29a7185dc3' before making global git config changes
+2026-11-09T15:14:52.3285752Z Adding repository directory to the temporary git global config as a safe directory
+2026-11-09T15:14:52.3287627Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/formal-conjectures/formal-conjectures
+2026-11-09T15:14:52.3341583Z Deleting the contents of '/home/runner/work/formal-conjectures/formal-conjectures'
+2026-11-09T15:14:52.3342840Z ##[group]Determining repository object format
+2026-11-09T15:14:52.3343548Z ##[endgroup]
+2026-11-09T15:14:52.3344477Z ##[group]Initializing the repository
+2026-11-09T15:14:52.3345140Z [command]/usr/bin/git init /home/runner/work/formal-conjectures/formal-conjectures
+2026-11-09T15:14:52.3443463Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-11-09T15:14:52.3444366Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-11-09T15:14:52.3445001Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-11-09T15:14:52.3445384Z hint: call:
+2026-11-09T15:14:52.3445598Z hint:
+2026-11-09T15:14:52.3445885Z hint: 	git config --global init.defaultBranch <name>
+2026-11-09T15:14:52.3446264Z hint:
+2026-11-09T15:14:52.3446565Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-11-09T15:14:52.3447050Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-11-09T15:14:52.3447581Z hint:
+2026-11-09T15:14:52.3447802Z hint: 	git branch -m <name>
+2026-11-09T15:14:52.3448049Z hint:
+2026-11-09T15:14:52.3448410Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-11-09T15:14:52.3455110Z Initialized empty Git repository in /home/runner/work/formal-conjectures/formal-conjectures/.git/
+2026-11-09T15:14:52.3471041Z [command]/usr/bin/git remote add origin https://github.com/RhudeJJJJ/formal-conjectures
+2026-11-09T15:14:52.3580216Z ##[endgroup]
+2026-11-09T15:14:52.3580884Z ##[group]Disabling automatic garbage collection
+2026-11-09T15:14:52.3583343Z [command]/usr/bin/git config --local gc.auto 0
+2026-11-09T15:14:52.3625382Z ##[endgroup]
+2026-11-09T15:14:52.3626479Z ##[group]Setting up auth
+2026-11-09T15:14:52.3629936Z Removing SSH command configuration
+2026-11-09T15:14:52.3630979Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-09T15:14:52.3667961Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-09T15:14:52.3989426Z Removing HTTP extra header
+2026-11-09T15:14:52.3994678Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-09T15:14:52.4028848Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-11-09T15:14:52.4204683Z Removing includeIf entries pointing to credentials config files
+2026-11-09T15:14:52.4208991Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-09T15:14:52.4245981Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-11-09T15:14:52.4430114Z [command]/usr/bin/git config --file /home/runner/work/_temp/git-credentials-043e5820-113b-4f49-b657-2ff5775d0373.config http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-11-09T15:14:52.4466815Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/formal-conjectures/formal-conjectures/.git.path /home/runner/work/_temp/git-credentials-043e5820-113b-4f49-b657-2ff5775d0373.config
+2026-11-09T15:14:52.4500274Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/formal-conjectures/formal-conjectures/.git/worktrees/*.path /home/runner/work/_temp/git-credentials-043e5820-113b-4f49-b657-2ff5775d0373.config
+2026-11-09T15:14:52.4534573Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git.path /github/runner_temp/git-credentials-043e5820-113b-4f49-b657-2ff5775d0373.config
+2026-11-09T15:14:52.4572314Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git/worktrees/*.path /github/runner_temp/git-credentials-043e5820-113b-4f49-b657-2ff5775d0373.config
+2026-11-09T15:14:52.4603059Z ##[endgroup]
+2026-11-09T15:14:52.4603454Z ##[group]Fetching the repository
+2026-11-09T15:14:52.4607844Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +bf94b4cb59495e9235d59bc65ef1a66255b83361:refs/remotes/origin/rg-middle-spectrum1715-split-20261109
+2026-11-09T15:15:03.0612308Z From https://github.com/RhudeJJJJ/formal-conjectures
+2026-11-09T15:15:03.0613017Z  * [new ref]             bf94b4cb59495e9235d59bc65ef1a66255b83361 -> origin/rg-middle-spectrum1715-split-20261109
+2026-11-09T15:15:03.0621790Z [command]/usr/bin/git branch --list --remote origin/rg-middle-spectrum1715-split-20261109
+2026-11-09T15:15:03.0656082Z   origin/rg-middle-spectrum1715-split-20261109
+2026-11-09T15:15:03.0662155Z [command]/usr/bin/git rev-parse refs/remotes/origin/rg-middle-spectrum1715-split-20261109
+2026-11-09T15:15:03.0690533Z bf94b4cb59495e9235d59bc65ef1a66255b83361
+2026-11-09T15:15:03.0694296Z ##[endgroup]
+2026-11-09T15:15:03.0694781Z ##[group]Determining the checkout info
+2026-11-09T15:15:03.0695504Z ##[endgroup]
+2026-11-09T15:15:03.0698140Z [command]/usr/bin/git sparse-checkout disable
+2026-11-09T15:15:03.0751549Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-11-09T15:15:03.0785150Z ##[group]Checking out the ref
+2026-11-09T15:15:03.0787407Z [command]/usr/bin/git checkout --progress --force -B rg-middle-spectrum1715-split-20261109 refs/remotes/origin/rg-middle-spectrum1715-split-20261109
+2026-11-09T15:15:04.1620893Z Updating files:  12% (16392/135576)
+2026-11-09T15:15:04.1945816Z Updating files:  13% (17625/135576)
+2026-11-09T15:15:04.2294457Z Updating files:  14% (18981/135576)
+2026-11-09T15:15:04.2625333Z Updating files:  15% (20337/135576)
+2026-11-09T15:15:04.2981076Z Updating files:  16% (21693/135576)
+2026-11-09T15:15:04.3308924Z Updating files:  17% (23048/135576)
+2026-11-09T15:15:04.3784448Z Updating files:  18% (24404/135576)
+2026-11-09T15:15:04.4113724Z Updating files:  19% (25760/135576)
+2026-11-09T15:15:04.4470955Z Updating files:  20% (27116/135576)
+2026-11-09T15:15:04.4795694Z Updating files:  21% (28471/135576)
+2026-11-09T15:15:04.5204012Z Updating files:  22% (29827/135576)
+2026-11-09T15:15:04.5535522Z Updating files:  23% (31183/135576)
+2026-11-09T15:15:04.5872876Z Updating files:  24% (32539/135576)
+2026-11-09T15:15:04.6302132Z Updating files:  25% (33894/135576)
+2026-11-09T15:15:04.6635645Z Updating files:  26% (35250/135576)
+2026-11-09T15:15:04.7019880Z Updating files:  27% (36606/135576)
+2026-11-09T15:15:04.7339198Z Updating files:  28% (37962/135576)
+2026-11-09T15:15:04.7775760Z Updating files:  29% (39318/135576)
+2026-11-09T15:15:04.8104445Z Updating files:  30% (40673/135576)
+2026-11-09T15:15:04.8574479Z Updating files:  31% (42029/135576)
+2026-11-09T15:15:04.8946091Z Updating files:  32% (43385/135576)
+2026-11-09T15:15:04.9322480Z Updating files:  33% (44741/135576)
+2026-11-09T15:15:04.9690166Z Updating files:  34% (46096/135576)
+2026-11-09T15:15:05.0054188Z Updating files:  35% (47452/135576)
+2026-11-09T15:15:05.0391465Z Updating files:  36% (48808/135576)
+2026-11-09T15:15:05.0755259Z Updating files:  37% (50164/135576)
+2026-11-09T15:15:05.1104098Z Updating files:  38% (51519/135576)
+2026-11-09T15:15:05.1316187Z Updating files:  39% (52875/135576)
+2026-11-09T15:15:05.1469327Z Updating files:  39% (53666/135576)
+2026-11-09T15:15:05.1801513Z Updating files:  40% (54231/135576)
+2026-11-09T15:15:05.3284668Z Updating files:  41% (55587/135576)
+2026-11-09T15:15:05.3961285Z Updating files:  42% (56942/135576)
+2026-11-09T15:15:05.4285954Z Updating files:  43% (58298/135576)
+2026-11-09T15:15:05.5308326Z Updating files:  44% (59654/135576)
+2026-11-09T15:15:05.7363985Z Updating files:  45% (61010/135576)
+2026-11-09T15:15:05.7695605Z Updating files:  46% (62365/135576)
+2026-11-09T15:15:05.8033658Z Updating files:  47% (63721/135576)
+2026-11-09T15:15:05.8394766Z Updating files:  48% (65077/135576)
+2026-11-09T15:15:05.8764349Z Updating files:  49% (66433/135576)
+2026-11-09T15:15:05.9589137Z Updating files:  50% (67788/135576)
+2026-11-09T15:15:06.1065406Z Updating files:  51% (69144/135576)
+2026-11-09T15:15:06.1316595Z Updating files:  52% (70500/135576)
+2026-11-09T15:15:06.2689702Z Updating files:  52% (70725/135576)
+2026-11-09T15:15:06.4452508Z Updating files:  53% (71856/135576)
+2026-11-09T15:15:06.6196369Z Updating files:  54% (73212/135576)
+2026-11-09T15:15:06.7903572Z Updating files:  55% (74567/135576)
+2026-11-09T15:15:06.8386798Z Updating files:  56% (75923/135576)
+2026-11-09T15:15:06.8845825Z Updating files:  57% (77279/135576)
+2026-11-09T15:15:06.9753045Z Updating files:  58% (78635/135576)
+2026-11-09T15:15:07.1129879Z Updating files:  59% (79990/135576)
+2026-11-09T15:15:07.1317236Z Updating files:  60% (81346/135576)
+2026-11-09T15:15:07.2531759Z Updating files:  60% (81462/135576)
+2026-11-09T15:15:07.3450920Z Updating files:  61% (82702/135576)
+2026-11-09T15:15:07.4049786Z Updating files:  62% (84058/135576)
+2026-11-09T15:15:07.4647659Z Updating files:  63% (85413/135576)
+2026-11-09T15:15:07.5221813Z Updating files:  64% (86769/135576)
+2026-11-09T15:15:07.5792946Z Updating files:  65% (88125/135576)
+2026-11-09T15:15:07.6351361Z Updating files:  66% (89481/135576)
+2026-11-09T15:15:07.6961793Z Updating files:  67% (90836/135576)
+2026-11-09T15:15:07.7468554Z Updating files:  68% (92192/135576)
+2026-11-09T15:15:07.8480834Z Updating files:  69% (93548/135576)
+2026-11-09T15:15:07.8992581Z Updating files:  70% (94904/135576)
+2026-11-09T15:15:07.9466650Z Updating files:  71% (96259/135576)
+2026-11-09T15:15:07.9889689Z Updating files:  72% (97615/135576)
+2026-11-09T15:15:08.0335346Z Updating files:  73% (98971/135576)
+2026-11-09T15:15:08.0747946Z Updating files:  74% (100327/135576)
+2026-11-09T15:15:08.1156341Z Updating files:  75% (101682/135576)
+2026-11-09T15:15:08.1315666Z Updating files:  76% (103038/135576)
+2026-11-09T15:15:08.1583426Z Updating files:  76% (103542/135576)
+2026-11-09T15:15:08.1988350Z Updating files:  77% (104394/135576)
+2026-11-09T15:15:08.2390211Z Updating files:  78% (105750/135576)
+2026-11-09T15:15:08.2788514Z Updating files:  79% (107106/135576)
+2026-11-09T15:15:08.3168547Z Updating files:  80% (108461/135576)
+2026-11-09T15:15:08.5010429Z Updating files:  81% (109817/135576)
+2026-11-09T15:15:08.5408961Z Updating files:  82% (111173/135576)
+2026-11-09T15:15:08.8364570Z Updating files:  83% (112529/135576)
+2026-11-09T15:15:08.8754585Z Updating files:  84% (113884/135576)
+2026-11-09T15:15:08.9150117Z Updating files:  85% (115240/135576)
+2026-11-09T15:15:08.9551464Z Updating files:  86% (116596/135576)
+2026-11-09T15:15:08.9929643Z Updating files:  87% (117952/135576)
+2026-11-09T15:15:09.0307615Z Updating files:  88% (119307/135576)
+2026-11-09T15:15:09.0695821Z Updating files:  89% (120663/135576)
+2026-11-09T15:15:09.2008526Z Updating files:  90% (122019/135576)
+2026-11-09T15:15:09.2527003Z Updating files:  90% (122691/135576)
+2026-11-09T15:15:09.3632183Z Updating files:  91% (123375/135576)
+2026-11-09T15:15:09.5480651Z Updating files:  92% (124730/135576)
+2026-11-09T15:15:09.5883493Z Updating files:  93% (126086/135576)
+2026-11-09T15:15:09.6290207Z Updating files:  94% (127442/135576)
+2026-11-09T15:15:09.6670851Z Updating files:  95% (128798/135576)
+2026-11-09T15:15:09.7075080Z Updating files:  96% (130153/135576)
+2026-11-09T15:15:09.7748377Z Updating files:  97% (131509/135576)
+2026-11-09T15:15:09.8372401Z Updating files:  98% (132865/135576)
+2026-11-09T15:15:10.0153921Z Updating files:  99% (134221/135576)
+2026-11-09T15:15:10.0154542Z Updating files: 100% (135576/135576)
+2026-11-09T15:15:10.0154775Z Updating files: 100% (135576/135576), done.
+2026-11-09T15:15:10.1150740Z Switched to a new branch 'rg-middle-spectrum1715-split-20261109'
+2026-11-09T15:15:10.1154001Z branch 'rg-middle-spectrum1715-split-20261109' set up to track 'origin/rg-middle-spectrum1715-split-20261109'.
+2026-11-09T15:15:10.1307098Z ##[endgroup]
+2026-11-09T15:15:10.1357253Z [command]/usr/bin/git log -1 --format=%H
+2026-11-09T15:15:10.1387210Z bf94b4cb59495e9235d59bc65ef1a66255b83361
+2026-11-09T15:15:10.1395447Z ##[group]Removing auth
+2026-11-09T15:15:10.1395692Z Removing SSH command configuration
+2026-11-09T15:15:10.1398173Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-09T15:15:10.1432577Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-09T15:15:10.1760721Z Removing HTTP extra header
+2026-11-09T15:15:10.1762149Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-09T15:15:10.1821603Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-11-09T15:15:10.2156014Z Removing includeIf entries pointing to credentials config files
+2026-11-09T15:15:10.2156461Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-09T15:15:10.2188397Z includeif.gitdir:/home/runner/work/formal-conjectures/formal-conjectures/.git.path
+2026-11-09T15:15:10.2189068Z includeif.gitdir:/home/runner/work/formal-conjectures/formal-conjectures/.git/worktrees/*.path
+2026-11-09T15:15:10.2189507Z includeif.gitdir:/github/workspace/.git.path
+2026-11-09T15:15:10.2189806Z includeif.gitdir:/github/workspace/.git/worktrees/*.path
+2026-11-09T15:15:10.2196654Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/formal-conjectures/formal-conjectures/.git.path
+2026-11-09T15:15:10.2226466Z /home/runner/work/_temp/git-credentials-043e5820-113b-4f49-b657-2ff5775d0373.config
+2026-11-09T15:15:10.2235240Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/formal-conjectures/formal-conjectures/.git.path /home/runner/work/_temp/git-credentials-043e5820-113b-4f49-b657-2ff5775d0373.config
+2026-11-09T15:15:10.2470329Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/formal-conjectures/formal-conjectures/.git/worktrees/*.path
+2026-11-09T15:15:10.2498117Z /home/runner/work/_temp/git-credentials-043e5820-113b-4f49-b657-2ff5775d0373.config
+2026-11-09T15:15:10.2514486Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/formal-conjectures/formal-conjectures/.git/worktrees/*.path /home/runner/work/_temp/git-credentials-043e5820-113b-4f49-b657-2ff5775d0373.config
+2026-11-09T15:15:10.2555719Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git.path
+2026-11-09T15:15:10.2573162Z /github/runner_temp/git-credentials-043e5820-113b-4f49-b657-2ff5775d0373.config
+2026-11-09T15:15:10.2582181Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git.path /github/runner_temp/git-credentials-043e5820-113b-4f49-b657-2ff5775d0373.config
+2026-11-09T15:15:10.2740550Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git/worktrees/*.path
+2026-11-09T15:15:10.2764704Z /github/runner_temp/git-credentials-043e5820-113b-4f49-b657-2ff5775d0373.config
+2026-11-09T15:15:10.2769843Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git/worktrees/*.path /github/runner_temp/git-credentials-043e5820-113b-4f49-b657-2ff5775d0373.config
+2026-11-09T15:15:10.2840474Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-11-09T15:15:10.3153470Z Removing credentials config '/home/runner/work/_temp/git-credentials-043e5820-113b-4f49-b657-2ff5775d0373.config'
+2026-11-09T15:15:10.3160261Z ##[endgroup]
+2026-11-09T15:15:10.3338297Z ##[group]Run git fetch --no-tags --depth 1 origin 15d45e8d3ed3bacaf3afe7d85488a42f08302d76
+2026-11-09T15:15:10.3338671Z [36;1mgit fetch --no-tags --depth 1 origin 15d45e8d3ed3bacaf3afe7d85488a42f08302d76[0m
+2026-11-09T15:15:10.3356660Z shell: /usr/bin/bash -e {0}
+2026-11-09T15:15:10.3356807Z ##[endgroup]
+2026-11-09T15:15:11.3802887Z From https://github.com/RhudeJJJJ/formal-conjectures
+2026-11-09T15:15:11.3803613Z  * branch                15d45e8d3ed3bacaf3afe7d85488a42f08302d76 -> FETCH_HEAD
+2026-11-09T15:15:11.3895380Z ##[group]Run python3 -B ci/rg_middle_spectrum1715_split_check_20261109.py --retain
+2026-11-09T15:15:11.3895844Z [36;1mpython3 -B ci/rg_middle_spectrum1715_split_check_20261109.py --retain[0m
+2026-11-09T15:15:11.3915960Z shell: /usr/bin/bash -e {0}
+2026-11-09T15:15:11.3916109Z ##[endgroup]
+2026-11-09T15:15:11.8030701Z SPECTRUM1715_SPLIT_SOURCE_PASS {"status": "SOURCE_ONLY_REQUIRES_FRESH_NATIVE_KERNEL_RECEIPT", "endpoint": "Proofs.RadenkovicGutmanDegreeOneMiddleResidualSpectrum1715", "source_count": 19, "expected_prior_count": 18, "expected_fresh_count": 1}
+2026-11-09T15:15:11.8284462Z ##[group]Run set -o pipefail
+2026-11-09T15:15:11.8284666Z [36;1mset -o pipefail[0m
+2026-11-09T15:15:11.8284984Z [36;1mcurl -sSfL https://github.com/leanprover/elan/releases/download/v1.4.2/elan-x86_64-unknown-linux-gnu.tar.gz | tar xz[0m
+2026-11-09T15:15:11.8285323Z [36;1m./elan-init -y --default-toolchain none[0m
+2026-11-09T15:15:11.8285509Z [36;1mecho "$HOME/.elan/bin" >> "$GITHUB_PATH"[0m
+2026-11-09T15:15:11.8301826Z shell: /usr/bin/bash -e {0}
+2026-11-09T15:15:11.8301968Z ##[endgroup]
+2026-11-09T15:15:12.3267994Z info: skipping toolchain installation
+2026-11-09T15:15:12.3268168Z 
+2026-11-09T15:15:12.3300348Z ##[group]Run python3 -B ci/rg_dependencies.py
+2026-11-09T15:15:12.3300564Z [36;1mpython3 -B ci/rg_dependencies.py[0m
+2026-11-09T15:15:12.3317941Z shell: /usr/bin/bash -e {0}
+2026-11-09T15:15:12.3318084Z ##[endgroup]
+2026-11-09T15:15:21.7586085Z LOCKED_PACKAGE mathlib 0df444a360eaa60ab8c11dca51a86af692955474
+2026-11-09T15:15:22.3628761Z LOCKED_PACKAGE plausible b7eb3304aeae834b12dda98993a37f6a41f6f0bb
+2026-11-09T15:15:23.1554971Z LOCKED_PACKAGE LeanSearchClient 5f4d51b81cbd3f6b32b156bfad9056621a040404
+2026-11-09T15:15:23.6493166Z LOCKED_PACKAGE importGraph 16f02aa7642864af59f1ff0e384a015994db9118
+2026-11-09T15:15:25.0188635Z LOCKED_PACKAGE proofwidgets 4be2e3d5087eeb272cf5a8853b8f9dd025ef5957
+2026-11-09T15:15:25.6521912Z LOCKED_PACKAGE aesop 3448c0bcc5ce01b2d1546e483ec3620e32df3d0e
+2026-11-09T15:15:26.1510302Z LOCKED_PACKAGE Qq 92c15be17b7caf78c2ad767ec40f89052d908d81
+2026-11-09T15:15:26.8059376Z LOCKED_PACKAGE batteries 4488d40d070b9700d4d5a6aa342f0d40c31b2a2d
+2026-11-09T15:15:27.2824247Z LOCKED_PACKAGE Cli 6130a47896ce867c6a4a55373441e59e565bad0f
+2026-11-09T15:15:27.2824574Z UNCHANGED_LAKE_LOCK c8ffc0d59f492007162fe54c68396e4b9f2f305fcf69210a7fbaf0b18fcd8cd9
+2026-11-09T15:15:27.2903621Z ##[group]Run python3 - <<'PY'
+2026-11-09T15:15:27.2903812Z [36;1mpython3 - <<'PY'[0m
+2026-11-09T15:15:27.2903952Z [36;1mimport pathlib,re,subprocess[0m
+2026-11-09T15:15:27.2904124Z [36;1mroot=pathlib.Path('Proofs/RG_Lean_20261019')[0m
+2026-11-09T15:15:27.2904295Z [36;1mseen,external=set(),set()[0m
+2026-11-09T15:15:27.2904436Z [36;1mdef visit(name):[0m
+2026-11-09T15:15:27.2904563Z [36;1m    if name in seen:return[0m
+2026-11-09T15:15:27.2904718Z [36;1m    seen.add(name)[0m
+2026-11-09T15:15:27.2904959Z [36;1m    for dep in re.findall(r'^\s*import\s+([\w.]+)',(root/(name.replace('.','/')+'.lean')).read_text(),re.M):[0m
+2026-11-09T15:15:27.2905245Z [36;1m        if dep.startswith('Proofs.'):visit(dep)[0m
+2026-11-09T15:15:27.2905523Z [36;1m        elif not dep.startswith(('Lean.','Init.','Std.')) and dep not in ('Lean','Init','Std'):external.add(dep)[0m
+2026-11-09T15:15:27.2905858Z [36;1mvisit('Proofs.RadenkovicGutmanDegreeOneMiddleResidualSpectrum1715')[0m
+2026-11-09T15:15:27.2906168Z [36;1msubprocess.run(['lake','exe','cache','get',*sorted(external)],check=True)[0m
+2026-11-09T15:15:27.2906370Z [36;1mPY[0m
+2026-11-09T15:15:27.2921594Z shell: /usr/bin/bash -e {0}
+2026-11-09T15:15:27.2921729Z ##[endgroup]
+2026-11-09T15:15:27.3143357Z info: downloading component 'lean'
+2026-11-09T15:15:31.9689744Z info: installing component 'lean'
+2026-11-09T15:15:42.5288910Z ✔ [2/13] Built Cache.Cli (250ms)
+2026-11-09T15:15:42.5314410Z ✔ [3/13] Built Cache.Lean (290ms)
+2026-11-09T15:15:42.7282812Z ✔ [7/27] Built Cache.Cli:c.o (123ms)
+2026-11-09T15:15:42.7283280Z ✔ [8/27] Built Cache.Lean:c.o (130ms)
+2026-11-09T15:15:42.9285177Z ✔ [9/27] Built Cache.Infra (330ms)
+2026-11-09T15:15:43.0276354Z ✔ [10/27] Built Cache.Infra:c.o (137ms)
+2026-11-09T15:15:43.1277020Z ✔ [11/27] Built Batteries.Tactic.OpenPrivate (610ms)
+2026-11-09T15:15:43.9285942Z ✔ [12/27] Built Batteries.Tactic.OpenPrivate:c.o (744ms)
+2026-11-09T15:15:44.1288090Z ✔ [13/27] Built Cache.IO (903ms)
+2026-11-09T15:15:44.6314125Z ✔ [14/27] Built Cache.Hashing (557ms)
+2026-11-09T15:15:45.0310799Z ✔ [15/27] Built Cache.IO:c.o (981ms)
+2026-11-09T15:15:45.0311189Z ✔ [16/27] Built Cache.Hashing:c.o (369ms)
+2026-11-09T15:15:45.9344146Z ✔ [17/27] Built Cache.Requests (1.3s)
+2026-11-09T15:15:46.3323925Z ✔ [18/27] Built Cache.Marker (421ms)
+2026-11-09T15:15:46.4318440Z ✔ [19/27] Built Cache.Marker:c.o (97ms)
+2026-11-09T15:15:46.8393752Z ✔ [20/27] Built Cache.Query (507ms)
+2026-11-09T15:15:47.1362632Z ✔ [21/27] Built Cache.Query:c.o (217ms)
+2026-11-09T15:15:47.4404092Z ✔ [22/27] Built Cache.Warning (543ms)
+2026-11-09T15:15:47.6366259Z ✔ [23/27] Built Cache.Requests:c.o (1.7s)
+2026-11-09T15:15:47.6366564Z ✔ [24/27] Built Cache.Warning:c.o (214ms)
+2026-11-09T15:15:48.1383911Z ✔ [25/27] Built Cache.Main (762ms)
+2026-11-09T15:15:48.7381414Z ✔ [26/27] Built Cache.Main:c.o (538ms)
+2026-11-09T15:15:49.3402456Z ✔ [27/27] Built cache:exe (600ms)
+2026-11-09T15:15:51.1205683Z Current branch: HEAD
+2026-11-09T15:15:51.1206101Z Using cache from origin: (some leanprover-community/mathlib4)
+2026-11-09T15:15:51.1206759Z Attempting to download 3282 file(s) from leanprover-community/mathlib4 cache at https://lakecache.blob.core.windows.net/mathlib4-master
+2026-11-09T15:15:51.9682322Z 
+2026-11-09T15:15:52.0733101Z Downloaded: 1 file(s) [attempted 1/3282 = 0%, 49 KB/s], Decompressed: 0
+2026-11-09T15:15:52.1734284Z Downloaded: 58 file(s) [attempted 58/3282 = 1%, 66 KB/s], Decompressed: 29
+2026-11-09T15:15:52.2754652Z Downloaded: 140 file(s) [attempted 140/3282 = 4%, 2361 KB/s], Decompressed: 72
+2026-11-09T15:15:52.3750741Z Downloaded: 227 file(s) [attempted 227/3282 = 6%, 2575 KB/s], Decompressed: 126
+2026-11-09T15:15:52.4750239Z Downloaded: 330 file(s) [attempted 330/3282 = 10%, 224 KB/s], Decompressed: 126
+2026-11-09T15:15:52.5747846Z Downloaded: 433 file(s) [attempted 433/3282 = 13%, 2780 KB/s], Decompressed: 126
+2026-11-09T15:15:52.6770989Z Downloaded: 543 file(s) [attempted 543/3282 = 16%, 1950 KB/s], Decompressed: 225
+2026-11-09T15:15:52.7771332Z Downloaded: 642 file(s) [attempted 642/3282 = 19%, 2891 KB/s], Decompressed: 225
+2026-11-09T15:15:52.8770392Z Downloaded: 736 file(s) [attempted 736/3282 = 22%, 770 KB/s], Decompressed: 225
+2026-11-09T15:15:52.9776340Z Downloaded: 834 file(s) [attempted 834/3282 = 25%, 3896 KB/s], Decompressed: 225
+2026-11-09T15:15:53.0833928Z Downloaded: 934 file(s) [attempted 934/3282 = 28%, 238 KB/s], Decompressed: 225
+2026-11-09T15:15:53.1844003Z Downloaded: 1046 file(s) [attempted 1046/3282 = 31%, 231 KB/s], Decompressed: 449
+2026-11-09T15:15:53.2848586Z Downloaded: 1151 file(s) [attempted 1151/3282 = 35%, 641 KB/s], Decompressed: 449
+2026-11-09T15:15:53.3839982Z Downloaded: 1260 file(s) [attempted 1260/3282 = 38%, 888 KB/s], Decompressed: 449
+2026-11-09T15:15:53.4864928Z Downloaded: 1359 file(s) [attempted 1359/3282 = 41%, 560 KB/s], Decompressed: 449
+2026-11-09T15:15:53.5857606Z Downloaded: 1465 file(s) [attempted 1465/3282 = 44%, 111 KB/s], Decompressed: 449
+2026-11-09T15:15:53.6904357Z Downloaded: 1563 file(s) [attempted 1563/3282 = 47%, 695 KB/s], Decompressed: 449
+2026-11-09T15:15:53.7896033Z Downloaded: 1661 file(s) [attempted 1661/3282 = 50%, 964 KB/s], Decompressed: 449
+2026-11-09T15:15:53.8902983Z Downloaded: 1763 file(s) [attempted 1763/3282 = 53%, 2051 KB/s], Decompressed: 449
+2026-11-09T15:15:53.9932524Z Downloaded: 1868 file(s) [attempted 1868/3282 = 56%, 2027 KB/s], Decompressed: 449
+2026-11-09T15:15:54.1020231Z Downloaded: 1973 file(s) [attempted 1973/3282 = 60%, 4324 KB/s], Decompressed: 449
+2026-11-09T15:15:54.2040206Z Downloaded: 2078 file(s) [attempted 2078/3282 = 63%, 561 KB/s], Decompressed: 955
+2026-11-09T15:15:54.3093933Z Downloaded: 2178 file(s) [attempted 2178/3282 = 66%, 2122 KB/s], Decompressed: 955
+2026-11-09T15:15:54.4083802Z Downloaded: 2232 file(s) [attempted 2232/3282 = 68%, 893 KB/s], Decompressed: 955
+2026-11-09T15:15:54.5091017Z Downloaded: 2329 file(s) [attempted 2329/3282 = 70%, 498 KB/s], Decompressed: 955
+2026-11-09T15:15:54.6100010Z Downloaded: 2430 file(s) [attempted 2430/3282 = 74%, 479 KB/s], Decompressed: 955
+2026-11-09T15:15:54.7150020Z Downloaded: 2532 file(s) [attempted 2532/3282 = 77%, 1328 KB/s], Decompressed: 955
+2026-11-09T15:15:54.8146784Z Downloaded: 2635 file(s) [attempted 2635/3282 = 80%, 3797 KB/s], Decompressed: 955
+2026-11-09T15:15:54.9148240Z Downloaded: 2725 file(s) [attempted 2725/3282 = 83%, 814 KB/s], Decompressed: 955
+2026-11-09T15:15:55.0157629Z Downloaded: 2830 file(s) [attempted 2830/3282 = 86%, 522 KB/s], Decompressed: 955
+2026-11-09T15:15:55.1213854Z Downloaded: 2916 file(s) [attempted 2916/3282 = 88%, 973 KB/s], Decompressed: 955
+2026-11-09T15:15:55.2204002Z Downloaded: 3031 file(s) [attempted 3031/3282 = 92%, 1116 KB/s], Decompressed: 955
+2026-11-09T15:15:55.3200996Z Downloaded: 3135 file(s) [attempted 3135/3282 = 95%, 1168 KB/s], Decompressed: 955
+2026-11-09T15:15:55.4554893Z Downloaded: 3233 file(s) [attempted 3233/3282 = 98%, 285 KB/s], Decompressed: 955
+2026-11-09T15:15:55.6044307Z Downloaded: 3278 file(s) [attempted 3278/3282 = 99%, 4858 KB/s], Decompressed: 955
+2026-11-09T15:15:55.6497789Z Downloaded: 3280 file(s) [attempted 3280/3282 = 99%, 292 KB/s], Decompressed: 955
+2026-11-09T15:15:55.6510082Z Downloaded: 3282 file(s) [attempted 3282/3282 = 100%, 292 KB/s], Decompressed: 955
+2026-11-09T15:16:00.0335229Z Decompressed 3282 file(s)
+2026-11-09T15:16:00.0335552Z Already decompressed 3282 file(s)
+2026-11-09T15:16:00.1090024Z ##[group]Run python3 -B ci/rg_restore_complete_scope.py --manifest ci/rg_reusable_analytic_kernel_base_complete_scope_capsule.json --build-directory Proofs/RG_Lean_20261019/build/extension
+2026-11-09T15:16:00.1090690Z [36;1mpython3 -B ci/rg_restore_complete_scope.py --manifest ci/rg_reusable_analytic_kernel_base_complete_scope_capsule.json --build-directory Proofs/RG_Lean_20261019/build/extension[0m
+2026-11-09T15:16:00.1106711Z shell: /usr/bin/bash -e {0}
+2026-11-09T15:16:00.1106846Z env:
+2026-11-09T15:16:00.1108237Z   GITHUB_TOKEN: ***
+2026-11-09T15:16:00.1108357Z ##[endgroup]
+2026-11-09T15:16:03.5432364Z {"status": "RESTORED_AUDITED_COMPLETE_SCOPE_NOT_FRESH", "modules": 193, "original_prior_origins_preserved": true, "full_current_source_and_closure_recheck": "REQUIRED_BY_VERIFY_EXTENSION"}
+2026-11-09T15:16:03.5667208Z ##[group]Run python3 - <<'PY'
+2026-11-09T15:16:03.5667400Z [36;1mpython3 - <<'PY'[0m
+2026-11-09T15:16:03.5667543Z [36;1mimport json,subprocess,sys[0m
+2026-11-09T15:16:03.5667788Z [36;1mmanifests=json.load(open('ci/rg_middle_residual_certificates000_restore_plan_20261108.json'))[0m
+2026-11-09T15:16:03.5668226Z [36;1massert manifests==['ci/rg_all111_finite_original_projected_parents_20261028/083.json','ci/rg_middle_residual_list_assembly_run42345489172_prior_exports.json'][0m
+2026-11-09T15:16:03.5668580Z [36;1mfor manifest in manifests:[0m
+2026-11-09T15:16:03.5668937Z [36;1m    subprocess.run([sys.executable,'-B','ci/rg_restore_job_exports.py','--manifest',manifest,'--build-directory','Proofs/RG_Lean_20261019/build/extension'],check=True)[0m
+2026-11-09T15:16:03.5669285Z [36;1mPY[0m
+2026-11-09T15:16:03.5684769Z shell: /usr/bin/bash -e {0}
+2026-11-09T15:16:03.5684899Z env:
+2026-11-09T15:16:03.5686280Z   GITHUB_TOKEN: ***
+2026-11-09T15:16:03.5686401Z ##[endgroup]
+2026-11-09T15:16:07.5060903Z {"status": "RESTORED_PRIOR_VERIFIED_EXPORTS_NOT_FRESH", "modules": 512, "run": 40123647581, "job": 120960351710, "artifact_digest_verified": true, "current_source_and_closure": "MUST_BE_RECHECKED_BY_VERIFY_EXTENSION"}
+2026-11-09T15:16:09.1969573Z {"status": "RESTORED_PRIOR_VERIFIED_EXPORTS_NOT_FRESH", "modules": 8, "run": 42345489172, "job": 128322194549, "artifact_digest_verified": true, "current_source_and_closure": "MUST_BE_RECHECKED_BY_VERIFY_EXTENSION"}
+2026-11-09T15:16:09.2169703Z ##[group]Run python3 -B ci/rg_restore_with_kernel_fallback.py --plan ci/rg_middle_residual_certificates000_restore_plan_20261108.json --build-directory Proofs/RG_Lean_20261019/build/extension --endpoint Proofs.RadenkovicGutmanDegreeOneMiddleResidualSpectrum1715 --max-fresh 1 --preflight-only
+2026-11-09T15:16:09.2170934Z [36;1mpython3 -B ci/rg_restore_with_kernel_fallback.py --plan ci/rg_middle_residual_certificates000_restore_plan_20261108.json --build-directory Proofs/RG_Lean_20261019/build/extension --endpoint Proofs.RadenkovicGutmanDegreeOneMiddleResidualSpectrum1715 --max-fresh 1 --preflight-only[0m
+2026-11-09T15:16:09.2187281Z shell: /usr/bin/bash -e {0}
+2026-11-09T15:16:09.2187422Z env:
+2026-11-09T15:16:09.2188811Z   GITHUB_TOKEN: ***
+2026-11-09T15:16:09.2188934Z ##[endgroup]
+2026-11-09T15:16:09.2887476Z {"status": "EXACT_FRONTIER_REQUIRES_MANDATORY_FRESH_KERNEL_EXPORTS", "endpoint": "Proofs.RadenkovicGutmanDegreeOneMiddleResidualSpectrum1715", "required_modules": 19, "verified_prior_objects": 18, "max_fresh": 1, "within_bound": true, "proof_status": "NOT_PROVEN_BY_RESTORE", "complete_submission": "NOT_SUBMITTED"}
+2026-11-09T15:16:09.3046933Z ##[group]Run set -o pipefail
+2026-11-09T15:16:09.3047115Z [36;1mset -o pipefail[0m
+2026-11-09T15:16:09.3047677Z [36;1mpython3 -B ci/rg_observed_kernel_verify.py --memory-reserve-mib 2048 -- --mathlib-project "$GITHUB_WORKSPACE" --endpoint Proofs.RadenkovicGutmanDegreeOneMiddleResidualSpectrum1715 --workers 1 --module-timeout 600 --resume | python3 -B ci/rg_compact_ci_output.py[0m
+2026-11-09T15:16:09.3067081Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-11-09T15:16:09.3067275Z ##[endgroup]
+2026-11-09T15:16:09.3581284Z RG_KERNEL_RESOURCE_OBSERVATION {"seconds":0.0,"memory":{"MemTotal":16760344576,"MemAvailable":15376330752,"SwapFree":3221221376},"cgroup_limits":[],"available_bytes":15376330752,"lean_processes":[],"aggregate_lean_rss":0}
+2026-11-09T15:16:19.3689197Z RG_KERNEL_RESOURCE_OBSERVATION {"seconds":10.01,"memory":{"MemTotal":16760344576,"MemAvailable":14340366336,"SwapFree":3221221376},"cgroup_limits":[],"available_bytes":14340366336,"lean_processes":[{"pid":2793,"rss":4665401344,"module":"RadenkovicGutmanDegreeOneMiddleResidualSpectrum1715.lean"}],"aggregate_lean_rss":4665401344}
+2026-11-09T15:16:29.3795038Z RG_KERNEL_RESOURCE_OBSERVATION {"seconds":20.02,"memory":{"MemTotal":16760344576,"MemAvailable":14197989376,"SwapFree":3221221376},"cgroup_limits":[],"available_bytes":14197989376,"lean_processes":[{"pid":2793,"rss":4784357376,"module":"RadenkovicGutmanDegreeOneMiddleResidualSpectrum1715.lean"}],"aggregate_lean_rss":4784357376}
+2026-11-09T15:16:39.3925692Z RG_KERNEL_RESOURCE_OBSERVATION {"seconds":30.04,"memory":{"MemTotal":16760344576,"MemAvailable":14138032128,"SwapFree":3221221376},"cgroup_limits":[],"available_bytes":14138032128,"lean_processes":[{"pid":2793,"rss":4843503616,"module":"RadenkovicGutmanDegreeOneMiddleResidualSpectrum1715.lean"}],"aggregate_lean_rss":4843503616}
+2026-11-09T15:16:49.4031531Z RG_KERNEL_RESOURCE_OBSERVATION {"seconds":40.05,"memory":{"MemTotal":16760344576,"MemAvailable":14061023232,"SwapFree":3221221376},"cgroup_limits":[],"available_bytes":14061023232,"lean_processes":[{"pid":2793,"rss":4874129408,"module":"RadenkovicGutmanDegreeOneMiddleResidualSpectrum1715.lean"}],"aggregate_lean_rss":4874129408}
+2026-11-09T15:16:59.4155086Z RG_KERNEL_RESOURCE_OBSERVATION {"seconds":50.06,"memory":{"MemTotal":16760344576,"MemAvailable":13986570240,"SwapFree":3221221376},"cgroup_limits":[],"available_bytes":13986570240,"lean_processes":[{"pid":2793,"rss":4905373696,"module":"RadenkovicGutmanDegreeOneMiddleResidualSpectrum1715.lean"}],"aggregate_lean_rss":4905373696}
+2026-11-09T15:17:09.4288100Z RG_KERNEL_RESOURCE_OBSERVATION {"seconds":60.07,"memory":{"MemTotal":16760344576,"MemAvailable":13901217792,"SwapFree":3221221376},"cgroup_limits":[],"available_bytes":13901217792,"lean_processes":[{"pid":2793,"rss":4936990720,"module":"RadenkovicGutmanDegreeOneMiddleResidualSpectrum1715.lean"}],"aggregate_lean_rss":4936990720}
+2026-11-09T15:17:19.4425511Z RG_KERNEL_RESOURCE_OBSERVATION {"seconds":70.09,"memory":{"MemTotal":16760344576,"MemAvailable":13839192064,"SwapFree":3221221376},"cgroup_limits":[],"available_bytes":13839192064,"lean_processes":[{"pid":2793,"rss":4941565952,"module":"RadenkovicGutmanDegreeOneMiddleResidualSpectrum1715.lean"}],"aggregate_lean_rss":4941565952}
+2026-11-09T15:17:29.4562458Z RG_KERNEL_RESOURCE_OBSERVATION {"seconds":80.1,"memory":{"MemTotal":16760344576,"MemAvailable":13779886080,"SwapFree":3221221376},"cgroup_limits":[],"available_bytes":13779886080,"lean_processes":[{"pid":2793,"rss":4961677312,"module":"RadenkovicGutmanDegreeOneMiddleResidualSpectrum1715.lean"}],"aggregate_lean_rss":4961677312}
+2026-11-09T15:17:39.4695159Z RG_KERNEL_RESOURCE_OBSERVATION {"seconds":90.11,"memory":{"MemTotal":16760344576,"MemAvailable":13702144000,"SwapFree":3221221376},"cgroup_limits":[],"available_bytes":13702144000,"lean_processes":[{"pid":2793,"rss":4970655744,"module":"RadenkovicGutmanDegreeOneMiddleResidualSpectrum1715.lean"}],"aggregate_lean_rss":4970655744}
+2026-11-09T15:17:45.6974495Z PASS Proofs.RadenkovicGutmanDegreeOneMiddleResidualSpectrum1715 FRESH_KERNEL_EXPORT 95.551
+2026-11-09T15:17:45.6977760Z COMPLETED_MODULE_JSON {"module":"Proofs.RadenkovicGutmanDegreeOneMiddleResidualSpectrum1715","source_sha256":"35fd0b52d969ccf315d5def4d7df856bb2268596e8cf78bb417873ca658107da","source_closure_sha256":"af9d0cc7c0ad34c55bc2c6a92e643ed0340e1298592837113c51e0e662b8e527","output_sha256":"cb9494909072f0afd8c52567f8cc35dcd3d6c6c435599e2abc84c17813dfe764","axiom_profiles":[["Classical.choice","Quot.sound","propext"],["Classical.choice","Quot.sound","propext"],["Classical.choice","Quot.sound","propext"],["Classical.choice","Quot.sound","propext"],["Classical.choice","Quot.sound","propext"],["Classical.choice","Quot.sound","propext"],["Classical.choice","Quot.sound","propext"],["Classical.choice","Quot.sound","propext"],["Classical.choice","Quot.sound","propext"],["Classical.choice","Quot.sound","propext"],["Classical.choice","Quot.sound","propext"],["Classical.choice","Quot.sound","propext"],["Classical.choice","Quot.sound","propext"],["Classical.choice","Quot.sound","propext"],["Classical.choice","Quot.sound","propext"],["Classical.choice","Quot.sound","propext"],["Classical.choice","Quot.sound","propext"],["Classical.choice","Quot.sound","propext"],["Classical.choice","Quot.sound","propext"],["Classical.choice","Quot.sound","propext"],["Classical.choice","Quot.sound","propext"],["Classical.choice","Quot.sound","propext"],["Classical.choice","Quot.sound","propext"]],"mode":"FRESH_KERNEL_EXPORT","seconds":95.551}
+2026-11-09T15:17:45.6980778Z PASS_EXTENSION_SCOPE 19 MODULES; GLOBAL RG NOT_PROVED
+2026-11-09T15:17:46.4784579Z RG_KERNEL_RESOURCE_RESULT {"status": "VERIFIER_COMPLETED", "exit_code": 0, "maximum_aggregate_lean_rss": 5030395904, "seconds": 97.12, "mathlib_and_lean_flags_unchanged": true}
+2026-11-09T15:17:46.4921695Z ##[group]Run python3 -B ci/rg_middle_spectrum1715_split_check_20261109.py --receipt
+2026-11-09T15:17:46.4922242Z [36;1mpython3 -B ci/rg_middle_spectrum1715_split_check_20261109.py --receipt[0m
+2026-11-09T15:17:46.4944276Z shell: /usr/bin/bash -e {0}
+2026-11-09T15:17:46.4944502Z ##[endgroup]
+2026-11-09T15:17:46.9235497Z SPECTRUM1715_SPLIT_KERNEL_PASS {"endpoint": "Proofs.RadenkovicGutmanDegreeOneMiddleResidualSpectrum1715", "expected_fresh_count": 1, "expected_prior_count": 18, "kind": "SAME_ORIGINAL_PROPOSITIONS_SAMPLE_SPLIT_NEW_SOURCE_IDENTITY", "named_axiom_profiles": ["Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualSpectrum1715.matrix_certificate_00", "Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualSpectrum1715.matrix_certificate_01", "Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualSpectrum1715.matrix_certificate_02", "Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualSpectrum1715.matrix_certificate_03", "Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualSpectrum1715.matrix_certificate_04", "Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualSpectrum1715.matrix_certificate_05", "Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualSpectrum1715.matrix_certificate_06", "Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualSpectrum1715.matrix_certificate_07", "Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualSpectrum1715.matrix_certificate_08", "Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualSpectrum1715.matrix_certificate_09", "Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualSpectrum1715.matrix_certificate_10", "Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualSpectrum1715.matrix_certificate_11", "Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualSpectrum1715.matrix_certificate_12", "Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualSpectrum1715.matrix_certificate_13", "Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualSpectrum1715.matrix_certificate_14", "Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualSpectrum1715.matrix_certificate_15", "Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualSpectrum1715.matrix_certificate_16", "Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualSpectrum1715.matrix_certificate_17", "Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualSpectrum1715.matrix_certificates", "Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualSpectrum1715.graph_charpoly", "Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualSpectrum1715.boxes_accepted", "Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualSpectrum1715.factorization", "Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualSpectrum1715.actual_graph_bounds"], "original_source_commit": "15d45e8d3ed3bacaf3afe7d85488a42f08302d76", "original_statements_and_numerical_data_unchanged": true, "source_closure_sha256": {"Proofs.RadenkovicGutmanCheckedCharpoly": "62374275c95b996c9406585e93c586dbeca5502d821dc67985c6b8b63c2d37c0", "Proofs.RadenkovicGutmanCheckedRoots": "eadad13857374b0415bf2b9b1f2d4e0ad8e87c19c7ac3aec852c286738458bf7", "Proofs.RadenkovicGutmanCoreQuotient": "e4ae07f61d2620d98311434d9bbb551f6f036435a6ab8285907d68eab42186d5", "Proofs.RadenkovicGutmanCountGap": "e094d2590497c077143917af18a459f1b8bdc8324157118d3d2871fc65c65262", "Proofs.RadenkovicGutmanCountTransport": "4f622b9ce2fd5ffb47ad6145be10f8e6d0d757854b5e3c5974ec55a2ae199997", "Proofs.RadenkovicGutmanDegreeOneMiddleResidualSpectrum1715": "af9d0cc7c0ad34c55bc2c6a92e643ed0340e1298592837113c51e0e662b8e527", "Proofs.RadenkovicGutmanFactoredRoots": "b4f675a79a2c82ca573a680125d52aca78d47575872d4f17ed00a3be6094797c", "Proofs.RadenkovicGutmanFiniteSpectralCertificates": "e44a514c9b4d589f673cfe5ecad699b31ae69b0da50cbcf77f1935f7269443af", "Proofs.RadenkovicGutmanFusionQuotient": "318488a4d452c35a048a420595f65f5265337ecd72428c4093dbbd4faf07dc31", "Proofs.RadenkovicGutmanGraphJoin": "c891c0eaf716f1a520e5fa97eb22fb98eae7ce80f235c626f9dad55020a68696", "Proofs.RadenkovicGutmanIsoEnergy": "95f192969345db20f08cf39c8a37f267a7b708300d1698f8293dd3f4001e18c0", "Proofs.RadenkovicGutmanPathDeterminant": "8b98b18afc3d7bea424153f2b268320498e33442b1876d0c31c42b23e8e2704a", "Proofs.RadenkovicGutmanPathRecurrence": "b11c8835f40da37fb10e1cae3e5554b0692d07ddbecb2f270d8fc682276ecb8e", "Proofs.RadenkovicGutmanPathResolvent": "3b74e0955f8ec2db84ef63ad50eb68eb697bf454fafd9076e242ef962f4ee5c7", "Proofs.RadenkovicGutmanPerturbation": "780adf4f60f37fc150d990bcedeb53bcf03b619020a75f16e7ee0984f623db96", "Proofs.RadenkovicGutmanRationalSpectralBounds": "c510b8edac3dc98925238f8bbc1c7e033ce5d25d3696cd0a102682c22a443709", "Proofs.RadenkovicGutmanRewireIso": "07ba06d8d1747a8ee29434f4a2f2f6432ab7563c05a7145f5d824e31d254a753", "Proofs.RadenkovicGutmanRootIsolation": "721995e4a5c44ccc7f9e2dc07cb3d8e29945757623cca0824e0cd252b38691da", "Proofs.RadenkovicGutmanSpectral": "184b16762c75c2961cd905c2ef7f1d86351d1b7dbfa11da6bc62fb52ea58ecb9"}, "source_count": 19, "source_sha256": {"Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanCheckedCharpoly.lean": "53c401e24195eecad7dc30d4e942edab67da591704635e921e444b36f73cd837", "Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanCheckedRoots.lean": "a34251570fad7db92c412bde79b9c288c7be279efe505d69a8b0ea0b1f914539", "Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanCoreQuotient.lean": "9a73956ea3e17c97208ee5522dc73d9feb2b5f209e5d707ef19d64bade8d3d82", "Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanCountGap.lean": "17eefcfd9580f0df92eb9c1ce4dded759fd575602c6e53f57263ab4613f84d6e", "Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanCountTransport.lean": "700a56e67a26d218c655c148a04bdfb5820f06dc8f08fd49f6109d42b803bf43", "Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneMiddleResidualSpectrum1715.lean": "35fd0b52d969ccf315d5def4d7df856bb2268596e8cf78bb417873ca658107da", "Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanFactoredRoots.lean": "0aea6499047652bec84ad0e526b7709926e370e4236cfade05adbce4e34f6643", "Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanFiniteSpectralCertificates.lean": "eb006c3693658cb332688ff412d4e5860efdaccee323dbe9d15789965ef0e50a", "Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanFusionQuotient.lean": "af4340091b54039be8601ca21297236fe5983b34e9bc5e311a1709b87e1faaf8", "Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanGraphJoin.lean": "36d8d239d7a45bf63cfd0475180e208c72cf5bbe9f18873a32b966bdcfa7c428", "Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanIsoEnergy.lean": "b68912b00217f93960b64d30093ec2d5eb0843ea716ea9afc41aa7b62156efd9", "Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanPathDeterminant.lean": "d6121b7d9da80dabe42e1a33f87b6d60a7f968da8823fe829b15851be072d031", "Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanPathRecurrence.lean": "4e4eeb10961d7d9834c138cfe317e5f6dd2a153102b2e092662c75661230c4e6", "Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanPathResolvent.lean": "72a7442dc6be586455fdec61a674157048718060da11c5d4bf24eb129e78e627", "Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanPerturbation.lean": "166d8a987925c7c517b36f06796e36c78acd947c1bfcc13d13970ba5b527a54c", "Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanRationalSpectralBounds.lean": "772802e17379f9b875f9c8c63308ffb3c146cff56326d46c4e7c428dac458323", "Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanRewireIso.lean": "300a08814b9356b998083b4393c099ae9ebb5eba9e6a6918f2388666d1b51998", "Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanRootIsolation.lean": "252239aacd0149f20c91de7148d308606014aa8cbde3b4619eb82ae02a2c01e8", "Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanSpectral.lean": "70d7fe9e91a930f1a2e62ea85b5ecea17484877d5150c5eb52cfee1776d98348"}, "status": "FRESH_NATIVE_KERNEL_RECEIPT_CHECKED_FOR_NEW_SOURCE"}
+2026-11-09T15:17:46.9322954Z ##[group]Run python3 - <<'PY'
+2026-11-09T15:17:46.9323160Z [36;1mpython3 - <<'PY'[0m
+2026-11-09T15:17:46.9323326Z [36;1mimport json,pathlib,shutil,sys[0m
+2026-11-09T15:17:46.9323511Z [36;1mproject=pathlib.Path('Proofs/RG_Lean_20261019')[0m
+2026-11-09T15:17:46.9323711Z [36;1msys.path.insert(0,str(project.resolve()))[0m
+2026-11-09T15:17:46.9323897Z [36;1mfrom module_outputs import output_members[0m
+2026-11-09T15:17:46.9324063Z [36;1mroot=project/'build/extension'[0m
+2026-11-09T15:17:46.9324284Z [36;1mrecords=[json.loads(p.read_text()) for p in sorted(root.glob('Proofs.*.json'))][0m
+2026-11-09T15:17:46.9324578Z [36;1mfresh=project/'build/fresh_exports';fresh.mkdir(parents=True,exist_ok=True)[0m
+2026-11-09T15:17:46.9324921Z [36;1m(fresh/'diagnostics_records.json').write_text(json.dumps({'modules':records},separators=(',',':'))+'\n')[0m
+2026-11-09T15:17:46.9325274Z [36;1mif (root/'receipt.json').is_file():shutil.copyfile(root/'receipt.json',fresh/'receipt.json')[0m
+2026-11-09T15:17:46.9325685Z [36;1mprint('RETAINED_RECORD_COUNTS '+json.dumps({'total':len(records),'fresh':sum(r['mode']=='FRESH_KERNEL_EXPORT' for r in records)}))[0m
+2026-11-09T15:17:46.9325988Z [36;1mfor row in records:[0m
+2026-11-09T15:17:46.9326139Z [36;1m    if row['mode']=='FRESH_KERNEL_EXPORT':[0m
+2026-11-09T15:17:46.9326303Z [36;1m        name=row['module'][0m
+2026-11-09T15:17:46.9326499Z [36;1m        for rel,expected_sha,expected_size in output_members(name,row):[0m
+2026-11-09T15:17:46.9326799Z [36;1m            dest=fresh/rel;dest.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(root/rel,dest)[0m
+2026-11-09T15:17:46.9327091Z [36;1m        shutil.copyfile(root/(name+'.json'),fresh/(name+'.json'))[0m
+2026-11-09T15:17:46.9327426Z [36;1mfor log in root.glob('Proofs.*.log'):[0m
+2026-11-09T15:17:46.9327698Z [36;1m    shutil.copyfile(log,fresh/log.name);print('MODULE_LOG_TAIL '+log.name+' '+log.read_text()[-18000:])[0m
+2026-11-09T15:17:46.9327955Z [36;1mPY[0m
+2026-11-09T15:17:46.9343780Z shell: /usr/bin/bash -e {0}
+2026-11-09T15:17:46.9343923Z ##[endgroup]
+2026-11-09T15:17:46.9813343Z RETAINED_RECORD_COUNTS {"total": 708, "fresh": 1}
+2026-11-09T15:17:46.9814142Z MODULE_LOG_TAIL Proofs.RadenkovicGutmanDegreeOneMiddleResidualSpectrum1715.log 'Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualSpectrum1715.matrix_certificate_00' depends on axioms: [propext,
+2026-11-09T15:17:46.9816735Z  Classical.choice,
+2026-11-09T15:17:46.9816944Z  Quot.sound]
+2026-11-09T15:17:46.9817393Z 'Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualSpectrum1715.matrix_certificate_01' depends on axioms: [propext,
+2026-11-09T15:17:46.9817866Z  Classical.choice,
+2026-11-09T15:17:46.9818038Z  Quot.sound]
+2026-11-09T15:17:46.9818478Z 'Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualSpectrum1715.matrix_certificate_02' depends on axioms: [propext,
+2026-11-09T15:17:46.9818936Z  Classical.choice,
+2026-11-09T15:17:46.9819098Z  Quot.sound]
+2026-11-09T15:17:46.9819509Z 'Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualSpectrum1715.matrix_certificate_03' depends on axioms: [propext,
+2026-11-09T15:17:46.9819959Z  Classical.choice,
+2026-11-09T15:17:46.9820117Z  Quot.sound]
+2026-11-09T15:17:46.9820510Z 'Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualSpectrum1715.matrix_certificate_04' depends on axioms: [propext,
+2026-11-09T15:17:46.9820958Z  Classical.choice,
+2026-11-09T15:17:46.9821117Z  Quot.sound]
+2026-11-09T15:17:46.9821507Z 'Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualSpectrum1715.matrix_certificate_05' depends on axioms: [propext,
+2026-11-09T15:17:46.9821951Z  Classical.choice,
+2026-11-09T15:17:46.9822109Z  Quot.sound]
+2026-11-09T15:17:46.9822500Z 'Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualSpectrum1715.matrix_certificate_06' depends on axioms: [propext,
+2026-11-09T15:17:46.9823087Z  Classical.choice,
+2026-11-09T15:17:46.9823250Z  Quot.sound]
+2026-11-09T15:17:46.9823646Z 'Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualSpectrum1715.matrix_certificate_07' depends on axioms: [propext,
+2026-11-09T15:17:46.9824799Z  Classical.choice,
+2026-11-09T15:17:46.9824974Z  Quot.sound]
+2026-11-09T15:17:46.9825374Z 'Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualSpectrum1715.matrix_certificate_08' depends on axioms: [propext,
+2026-11-09T15:17:46.9825815Z  Classical.choice,
+2026-11-09T15:17:46.9825975Z  Quot.sound]
+2026-11-09T15:17:46.9826369Z 'Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualSpectrum1715.matrix_certificate_09' depends on axioms: [propext,
+2026-11-09T15:17:46.9826802Z  Classical.choice,
+2026-11-09T15:17:46.9826954Z  Quot.sound]
+2026-11-09T15:17:46.9827338Z 'Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualSpectrum1715.matrix_certificate_10' depends on axioms: [propext,
+2026-11-09T15:17:46.9827789Z  Classical.choice,
+2026-11-09T15:17:46.9827952Z  Quot.sound]
+2026-11-09T15:17:46.9828352Z 'Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualSpectrum1715.matrix_certificate_11' depends on axioms: [propext,
+2026-11-09T15:17:46.9828818Z  Classical.choice,
+2026-11-09T15:17:46.9828988Z  Quot.sound]
+2026-11-09T15:17:46.9829408Z 'Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualSpectrum1715.matrix_certificate_12' depends on axioms: [propext,
+2026-11-09T15:17:46.9829862Z  Classical.choice,
+2026-11-09T15:17:46.9830022Z  Quot.sound]
+2026-11-09T15:17:46.9830418Z 'Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualSpectrum1715.matrix_certificate_13' depends on axioms: [propext,
+2026-11-09T15:17:46.9830942Z  Classical.choice,
+2026-11-09T15:17:46.9831131Z  Quot.sound]
+2026-11-09T15:17:46.9831525Z 'Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualSpectrum1715.matrix_certificate_14' depends on axioms: [propext,
+2026-11-09T15:17:46.9831974Z  Classical.choice,
+2026-11-09T15:17:46.9832134Z  Quot.sound]
+2026-11-09T15:17:46.9832808Z 'Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualSpectrum1715.matrix_certificate_15' depends on axioms: [propext,
+2026-11-09T15:17:46.9833254Z  Classical.choice,
+2026-11-09T15:17:46.9833416Z  Quot.sound]
+2026-11-09T15:17:46.9833822Z 'Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualSpectrum1715.matrix_certificate_16' depends on axioms: [propext,
+2026-11-09T15:17:46.9834273Z  Classical.choice,
+2026-11-09T15:17:46.9834436Z  Quot.sound]
+2026-11-09T15:17:46.9834835Z 'Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualSpectrum1715.matrix_certificate_17' depends on axioms: [propext,
+2026-11-09T15:17:46.9835285Z  Classical.choice,
+2026-11-09T15:17:46.9835443Z  Quot.sound]
+2026-11-09T15:17:46.9835838Z 'Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualSpectrum1715.matrix_certificates' depends on axioms: [propext,
+2026-11-09T15:17:46.9836314Z  Classical.choice,
+2026-11-09T15:17:46.9836476Z  Quot.sound]
+2026-11-09T15:17:46.9836859Z 'Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualSpectrum1715.graph_charpoly' depends on axioms: [propext,
+2026-11-09T15:17:46.9837294Z  Classical.choice,
+2026-11-09T15:17:46.9837455Z  Quot.sound]
+2026-11-09T15:17:46.9837842Z 'Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualSpectrum1715.boxes_accepted' depends on axioms: [propext,
+2026-11-09T15:17:46.9838298Z  Classical.choice,
+2026-11-09T15:17:46.9838460Z  Quot.sound]
+2026-11-09T15:17:46.9838855Z 'Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualSpectrum1715.factorization' depends on axioms: [propext,
+2026-11-09T15:17:46.9839312Z  Classical.choice,
+2026-11-09T15:17:46.9839476Z  Quot.sound]
+2026-11-09T15:17:46.9839864Z 'Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualSpectrum1715.actual_graph_bounds' depends on axioms: [propext,
+2026-11-09T15:17:46.9840305Z  Classical.choice,
+2026-11-09T15:17:46.9840470Z  Quot.sound]
+2026-11-09T15:17:46.9840565Z 
+2026-11-09T15:17:46.9953131Z ##[group]Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+2026-11-09T15:17:46.9953367Z with:
+2026-11-09T15:17:46.9953528Z   name: rg-middle-spectrum1715-split-20261109-42642701013
+2026-11-09T15:17:46.9953727Z   path: Proofs/RG_Lean_20261019/build/fresh_exports
+2026-11-09T15:17:46.9953885Z   retention-days: 90
+2026-11-09T15:17:46.9954008Z   if-no-files-found: warn
+2026-11-09T15:17:46.9954133Z   compression-level: 6
+2026-11-09T15:17:46.9954253Z   overwrite: false
+2026-11-09T15:17:46.9954373Z   include-hidden-files: false
+2026-11-09T15:17:46.9954503Z ##[endgroup]
+2026-11-09T15:17:47.1119419Z (node:2844) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-11-09T15:17:47.1119828Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-11-09T15:17:47.1209623Z With the provided path, there will be 33 files uploaded
+2026-11-09T15:17:47.1209953Z Artifact name is valid!
+2026-11-09T15:17:47.1210175Z Root directory input is valid!
+2026-11-09T15:17:47.4713035Z Beginning upload of artifact content to blob storage
+2026-11-09T15:17:47.8088548Z (node:2844) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+2026-11-09T15:17:48.5091300Z Uploaded bytes 4239867
+2026-11-09T15:17:48.5680779Z Finished uploading artifact content to blob storage!
+2026-11-09T15:17:48.5681402Z SHA256 digest of uploaded artifact zip is d950235b1e3c233480f77e739e16ad4cd931d3157521459a4e503ab1189eea7d
+2026-11-09T15:17:48.5682229Z Finalizing artifact upload
+2026-11-09T15:17:49.0103317Z Artifact rg-middle-spectrum1715-split-20261109-42642701013.zip successfully finalized. Artifact ID 13686137636
+2026-11-09T15:17:49.0104158Z Artifact rg-middle-spectrum1715-split-20261109-42642701013 has been successfully uploaded! Final size is 4239867 bytes. Artifact ID is 13686137636
+2026-11-09T15:17:49.0106041Z Artifact download URL: https://github.com/RhudeJJJJ/formal-conjectures/actions/runs/42642701013/artifacts/13686137636
+2026-11-09T15:17:49.0310143Z Post job cleanup.
+2026-11-09T15:17:49.0888194Z [command]/usr/bin/git version
+2026-11-09T15:17:49.0921229Z git version 2.56.0
+2026-11-09T15:17:49.0947891Z Temporarily overriding HOME='/home/runner/work/_temp/8712a149-9620-44bb-9e33-cb49e0ad2d4f' before making global git config changes
+2026-11-09T15:17:49.0948670Z Adding repository directory to the temporary git global config as a safe directory
+2026-11-09T15:17:49.0951852Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/formal-conjectures/formal-conjectures
+2026-11-09T15:17:49.0982216Z Removing SSH command configuration
+2026-11-09T15:17:49.0986881Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-09T15:17:49.1017517Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-09T15:17:49.1362216Z Removing HTTP extra header
+2026-11-09T15:17:49.1362967Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-09T15:17:49.1406972Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-11-09T15:17:49.1742629Z Removing includeIf entries pointing to credentials config files
+2026-11-09T15:17:49.1749360Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-09T15:17:49.1791178Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-11-09T15:17:49.2249084Z Cleaning up orphan processes
+2026-11-09T15:17:49.2506339Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+

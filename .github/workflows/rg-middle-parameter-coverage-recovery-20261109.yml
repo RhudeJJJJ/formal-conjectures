@@ -1,0 +1,119 @@
+name: RG original Middle parameter coverage recovery
+on:
+  push:
+    branches: [rg-middle-kernel-continuation-20261109]
+    paths:
+      - '.github/workflows/rg-middle-parameter-coverage-recovery-20261109.yml'
+      - 'ci/rg_middle_parameter_coverage_restore_plan_20261109.json'
+      - 'ci/rg_middle_core_coverage_run42345977030_prior_exports_20261109.json'
+permissions:
+  contents: read
+  actions: read
+concurrency:
+  group: rg-middle-parameter-coverage-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  original-parameter-coverage:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 360
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          persist-credentials: false
+          fetch-depth: 2
+      - name: Freeze original source closure and exact intended fresh module names
+        run: |
+          python3 - <<'PY'
+          import hashlib,json,pathlib,re
+          root=pathlib.Path('Proofs/RG_Lean_20261019')
+          out=root/'build/fresh_exports';out.mkdir(parents=True,exist_ok=True)
+          prefix='Proofs.RadenkovicGutmanDegreeOneMiddleResidualFinite'
+          endpoint=prefix+'CoverageComplete';base_endpoint=prefix+'CoreCoverage'
+          data={};deps={}
+          def visit(m):
+              if m in data:return
+              b=(root/(m.replace('.','/')+'.lean')).read_bytes();data[m]=b
+              deps[m]=sorted(set(re.findall(r'^\s*(?:public\s+)?import\s+(Proofs\.[\w.]+)\s*$',b.decode(),re.M)))
+              for d in deps[m]:visit(d)
+          visit(base_endpoint);base=set(data);assert len(base)==40
+          visit(endpoint);fresh=sorted(set(data)-base)
+          assert 12 <= len(fresh) <= 128
+          assert all(re.fullmatch(re.escape(prefix)+r'(Coverage(?:Complete|\d{2})|CoreCoverage\d{2}Block\d{3})',m) for m in fresh)
+          assert all(prefix+f'Coverage{i:02d}' in fresh for i in range(11))
+          sources={}
+          for m,b in data.items():
+              rel='Proofs/RG_Lean_20261019/'+m.replace('.','/')+'.lean'
+              dest=out/'generated_source'/rel;dest.parent.mkdir(parents=True,exist_ok=True);dest.write_bytes(b)
+              sources[rel]=hashlib.sha256(b).hexdigest()
+          lock=dict(endpoint=endpoint,source_sha256=sources,required_modules=len(data),base_modules=sorted(base),fresh_modules=fresh)
+          (out/'source_lock.json').write_text(json.dumps(lock,indent=2)+'\n')
+          (out/'generated_source/generated_source_manifest.json').write_text(json.dumps(dict(endpoint=endpoint,source_sha256=sources,kind='ORIGINAL_PARAMETER_COVERAGE_REQUIRES_KERNEL_RECEIPT'),indent=2)+'\n')
+          print(json.dumps(dict(status='SOURCE_AND_EXACT_FRONTIER_FROZEN_NOT_PROVED',sources=len(data),fresh=len(fresh))))
+          PY
+      - name: Install project toolchain
+        run: |
+          set -o pipefail
+          curl -sSfL https://github.com/leanprover/elan/releases/download/v1.4.2/elan-x86_64-unknown-linux-gnu.tar.gz | tar xz
+          ./elan-init -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Materialize exact dependency lock
+        run: python3 -B ci/rg_dependencies.py
+      - name: Fetch required Mathlib cache
+        run: |
+          python3 - <<'PY'
+          import json,pathlib,re,subprocess
+          lock=json.loads(pathlib.Path('Proofs/RG_Lean_20261019/build/fresh_exports/source_lock.json').read_text());external=set()
+          for rel in lock['source_sha256']:
+              for dep in re.findall(r'^\s*(?:public\s+)?import\s+([\w.]+)',pathlib.Path(rel).read_text(),re.M):
+                  if not dep.startswith(('Proofs.','Lean.','Init.','Std.')) and dep not in ('Lean','Init','Std'):external.add(dep)
+          subprocess.run(['lake','exe','cache','get',*sorted(external)],check=True)
+          PY
+      - name: Restore independently authenticated shared base
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 -B ci/rg_restore_complete_scope.py --manifest ci/rg_reusable_analytic_kernel_base_complete_scope_capsule.json --build-directory Proofs/RG_Lean_20261019/build/extension
+      - name: Restore original list and core-coverage exports with preserved origins
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 -B ci/rg_restore_with_kernel_fallback.py --plan ci/rg_middle_parameter_coverage_restore_plan_20261109.json --build-directory Proofs/RG_Lean_20261019/build/extension --endpoint Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoverageComplete --max-fresh 128 --workers 1
+      - name: Match actual fresh frontier to the complete original source partition
+        run: |
+          python3 - <<'PY'
+          import hashlib,json,pathlib
+          root=pathlib.Path('Proofs/RG_Lean_20261019/build')
+          lock=json.loads((root/'fresh_exports/source_lock.json').read_text())
+          plan=json.loads((root/'extension/bounded_kernel_fallback_plan.json').read_text())
+          assert plan['endpoint']==lock['endpoint']
+          assert plan['required_modules']==lock['required_modules']
+          assert plan['verified_prior_objects']==len(lock['base_modules'])
+          assert sorted(plan['fresh_modules'])==lock['fresh_modules']
+          for rel,h in lock['source_sha256'].items():assert hashlib.sha256(pathlib.Path(rel).read_bytes()).hexdigest()==h
+          print(json.dumps(dict(status='EXACT_SOURCE_PARTITION_CHECKED_NOT_PROVED',required=plan['required_modules'],prior=plan['verified_prior_objects'],fresh=len(plan['fresh_modules']))))
+          PY
+      - name: Kernel-check original complete parameter coverage
+        shell: bash
+        run: |
+          set -o pipefail
+          python3 -B ci/rg_observed_kernel_verify.py --memory-reserve-mib 2048 -- --mathlib-project "$GITHUB_WORKSPACE" --endpoint Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoverageComplete --workers 1 --module-timeout 600 --resume | python3 -B ci/rg_compact_ci_output.py
+      - name: Preserve completed exports, receipt and original sources
+        if: always()
+        run: |
+          python3 - <<'PY'
+          import json,pathlib,shutil
+          root=pathlib.Path('Proofs/RG_Lean_20261019/build/extension');out=root.parent/'fresh_exports';out.mkdir(parents=True,exist_ok=True)
+          rows=[json.loads(p.read_text()) for p in sorted(root.glob('Proofs.*.json'))]
+          (out/'diagnostics_records.json').write_text(json.dumps({'modules':rows},separators=(',',':'))+'\n')
+          for name in ('receipt.json','bounded_kernel_fallback_plan.json','resource_report.json'):
+              if (root/name).is_file():shutil.copyfile(root/name,out/name)
+          for row in rows:
+              if row['mode']!='FRESH_KERNEL_EXPORT':continue
+              n=row['module'];rel=n.replace('.','/')+'.olean';dest=out/rel;dest.parent.mkdir(parents=True,exist_ok=True)
+              shutil.copyfile(root/rel,dest);shutil.copyfile(root/(n+'.json'),out/(n+'.json'))
+          for log in root.glob('Proofs.*.log'):shutil.copyfile(log,out/log.name)
+          PY
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: rg-middle-parameter-coverage-20261109-${{ github.run_id }}
+          path: Proofs/RG_Lean_20261019/build/fresh_exports
+          retention-days: 90

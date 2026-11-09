@@ -1,0 +1,35 @@
+name: RG cancel duplicate continuation 20261109
+on:
+  push:
+    branches: [rg-middle-kernel-continuation-20261109]
+    paths: ['.github/workflows/rg-cancel-duplicate-20261109.yml']
+permissions:
+  actions: write
+  contents: read
+jobs:
+  cancel-exact-duplicate:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - name: Keep primary 42699996104 and cancel only duplicate 42700076481
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python3 - <<'PY'
+          import json,os,urllib.request
+          base='https://api.github.com/repos/RhudeJJJJ/formal-conjectures/actions/runs/'
+          headers={'Authorization':'Bearer '+os.environ['GH_TOKEN'],'Accept':'application/vnd.github+json','X-GitHub-Api-Version':'2022-11-28'}
+          def get(n):
+              with urllib.request.urlopen(urllib.request.Request(base+str(n),headers=headers),timeout=30) as r:return json.load(r)
+          primary=get(42699996104);duplicate=get(42700076481)
+          assert primary['head_sha']=='7a1019ce3be594dcde74fd28c8c07ba72c4618db'
+          assert duplicate['head_sha']=='31ad8da8a6e3b7aa6f9fe242d0d3ed2101f0cadd'
+          assert primary['head_branch']==duplicate['head_branch']=='rg-middle-kernel-continuation-20261109'
+          assert primary['workflow_id']==duplicate['workflow_id']==412577541
+          assert primary['id']!=duplicate['id']
+          if duplicate['status']!='completed':
+              request=urllib.request.Request(base+'42700076481/cancel',headers=headers,method='POST',data=b'')
+              with urllib.request.urlopen(request,timeout=30) as r:assert r.status==202
+              print('Cancellation requested for exact duplicate 42700076481; primary 42699996104 retained.')
+          else:print('Duplicate already terminal; no mutation.')
+          PY

@@ -1,0 +1,117 @@
+name: RG Middle physical residual parameters
+on:
+  push:
+    branches: [rg-middle-kernel-continuation-20261109]
+    paths:
+      - '.github/workflows/rg-middle-residual-parameters-20261109.yml'
+      - 'ci/rg_middle_parameter_reuse_20261109.py'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanDegreeOneMiddleResidualFiniteParameters.lean'
+permissions:
+  contents: read
+  actions: read
+concurrency:
+  group: rg-middle-residual-parameters-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  parameters:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 360
+    env:
+      RG_ENDPOINT: Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteParameters
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          persist-credentials: false
+      - name: Freeze the exact current source closure
+        run: |
+          python3 - <<'PY'
+          import hashlib,json,os,pathlib,re
+          root=pathlib.Path('Proofs/RG_Lean_20261019');out=root/'build/fresh_exports';out.mkdir(parents=True,exist_ok=True)
+          sources={}
+          def visit(name):
+              rel='Proofs/RG_Lean_20261019/'+name.replace('.','/')+'.lean'
+              if rel in sources:return
+              raw=pathlib.Path(rel).read_bytes();sources[rel]=hashlib.sha256(raw).hexdigest()
+              target=out/'generated_source'/rel;target.parent.mkdir(parents=True,exist_ok=True);target.write_bytes(raw)
+              for dep in re.findall(r'^\s*(?:public\s+)?import\s+(Proofs\.[\w.]+)\s*$',raw.decode(),re.M):visit(dep)
+          visit(os.environ['RG_ENDPOINT'])
+          lock=dict(endpoint=os.environ['RG_ENDPOINT'],source_sha256=sources,required_modules=len(sources),fresh_modules=[os.environ['RG_ENDPOINT']])
+          (out/'source_lock.json').write_text(json.dumps(lock,indent=2)+'\n')
+          (out/'generated_source/generated_source_manifest.json').write_text(json.dumps(lock,indent=2)+'\n')
+          print(json.dumps(dict(status='SOURCES_FROZEN_NOT_PROVED',required=len(sources))))
+          PY
+      - name: Install the project toolchain
+        run: |
+          set -o pipefail
+          curl -sSfL https://github.com/leanprover/elan/releases/download/v1.4.2/elan-x86_64-unknown-linux-gnu.tar.gz | tar xz
+          ./elan-init -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Materialize exact dependency lock
+        run: python3 -B ci/rg_dependencies.py
+      - name: Fetch required Mathlib cache
+        run: |
+          python3 - <<'PY'
+          import json,pathlib,re,subprocess
+          lock=json.loads(pathlib.Path('Proofs/RG_Lean_20261019/build/fresh_exports/source_lock.json').read_text());external=set()
+          for rel in lock['source_sha256']:
+              for dep in re.findall(r'^\s*(?:public\s+)?import\s+([\w.]+)',pathlib.Path(rel).read_text(),re.M):
+                  if not dep.startswith(('Proofs.','Lean.','Init.','Std.')) and dep not in ('Lean','Init','Std'):external.add(dep)
+          subprocess.run(['lake','exe','cache','get',*sorted(external)],check=True)
+          PY
+      - name: Restore authenticated shared base
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 -B ci/rg_restore_complete_scope.py --manifest ci/rg_reusable_analytic_kernel_base_complete_scope_capsule.json --build-directory Proofs/RG_Lean_20261019/build/extension
+      - name: Restore original finite list and core prerequisites
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 -B ci/rg_restore_plan_parallel.py --plan ci/rg_middle_parameter_coverage_restore_plan_20261109.json --build-directory Proofs/RG_Lean_20261019/build/extension --workers 1
+      - name: Restore the successful complete parameter coverage with its real origin
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 -B ci/rg_middle_parameter_reuse_20261109.py --restore
+      - name: Require exactly the new physical-parameter module to be fresh
+        run: |
+          python3 -B ci/rg_restore_with_kernel_fallback.py --plan ci/rg_middle_parameter_coverage_restore_plan_20261109.json --build-directory Proofs/RG_Lean_20261019/build/extension --endpoint "$RG_ENDPOINT" --max-fresh 1 --preflight-only
+          python3 - <<'PY'
+          import hashlib,json,pathlib
+          root=pathlib.Path('Proofs/RG_Lean_20261019/build')
+          lock=json.loads((root/'fresh_exports/source_lock.json').read_text())
+          plan=json.loads((root/'extension/bounded_kernel_fallback_plan.json').read_text())
+          assert plan['endpoint']==lock['endpoint']
+          assert plan['required_modules']==lock['required_modules']
+          assert plan['verified_prior_objects']==lock['required_modules']-1
+          assert plan['fresh_modules']==lock['fresh_modules']
+          for rel,h in lock['source_sha256'].items():assert hashlib.sha256(pathlib.Path(rel).read_bytes()).hexdigest()==h
+          print(json.dumps(dict(status='EXACT_SINGLE_NEW_MODULE_FRONTIER',required=plan['required_modules'],prior=plan['verified_prior_objects'])))
+          PY
+      - name: Kernel-check the exact residual domain and key bridge
+        shell: bash
+        run: |
+          set -o pipefail
+          python3 -B ci/rg_observed_kernel_verify.py --memory-reserve-mib 2048 -- --mathlib-project "$GITHUB_WORKSPACE" --endpoint "$RG_ENDPOINT" --workers 1 --module-timeout 600 --resume | python3 -B ci/rg_compact_ci_output.py
+      - name: Retain actual completed exports and diagnostics
+        if: always()
+        run: |
+          python3 - <<'PY'
+          import json,pathlib,shutil
+          root=pathlib.Path('Proofs/RG_Lean_20261019/build/extension');out=root.parent/'fresh_exports';out.mkdir(parents=True,exist_ok=True)
+          rows=[json.loads(p.read_text()) for p in sorted(root.glob('Proofs.*.json'))]
+          (out/'diagnostics_records.json').write_text(json.dumps({'modules':rows},separators=(',',':'))+'\n')
+          for name in ('receipt.json','bounded_kernel_fallback_plan.json','resource_report.json'):
+              if (root/name).is_file():shutil.copyfile(root/name,out/name)
+          reuse=root.parent/'parameter_coverage_reuse/prior_exports.json'
+          if reuse.is_file():shutil.copyfile(reuse,out/'parameter_coverage_prior_exports.json')
+          for row in rows:
+              if row['mode']!='FRESH_KERNEL_EXPORT':continue
+              n=row['module'];rel=n.replace('.','/')+'.olean';dest=out/rel;dest.parent.mkdir(parents=True,exist_ok=True)
+              shutil.copyfile(root/rel,dest);shutil.copyfile(root/(n+'.json'),out/(n+'.json'))
+          for log in root.glob('Proofs.*.log'):
+              shutil.copyfile(log,out/log.name);print('MODULE_LOG_TAIL '+log.name+' '+log.read_text()[-18000:])
+          PY
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: rg-middle-residual-parameters-20261109-${{ github.run_id }}
+          path: Proofs/RG_Lean_20261019/build/fresh_exports
+          retention-days: 90

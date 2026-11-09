@@ -1,0 +1,45 @@
+{
+  "schema": "rg_actual_mean_fresh_endpoint_byte_audit_v1",
+  "status": "SOURCE_RECEIPT_FRESH_OBJECT_AND_NAMED_AXIOMS_VERIFIED",
+  "origin": {
+    "repository": "RhudeJJJJ/formal-conjectures",
+    "run": 42699996104,
+    "job": 129441855435,
+    "commit": "7a1019ce3be594dcde74fd28c8c07ba72c4618db",
+    "artifact_id": 13711576453,
+    "artifact_sha256": "dd3a33160594af3add92c2ff8577963643fb893c05a6f7a1befb226e269f2c83"
+  },
+  "endpoint": "Proofs.RadenkovicGutmanMiddleAnchor270MeanReserve",
+  "lean": "Lean (version 4.33.1, x86_64-unknown-linux-gnu, commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6, Release)",
+  "mathlib": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "leancert": "621a43d7cf21f87872392a01e874f2f1dbddc926",
+  "source_modules": 282,
+  "prior_modules": 281,
+  "fresh_modules": 1,
+  "fresh_object_bytes": 354584,
+  "fresh_source_sha256": "3d309e0e40f8084e3de0208dbb7e30a2fb8644edd439386790e3ed253784f2fe",
+  "fresh_object_sha256": "59a105ced74fed283f6d89d88d1522f73338e7ddeada9569cb992a7ebce7c6cf",
+  "source_closure_sha256": "cb8b84c136cd774d5cfecfe9006f7c42d62f83b9240df7843177dd487925d480",
+  "exact_named_axiom_checks": [
+    ["Gebendorfer.RadenkovicGutman.MiddleAnchor270MeanReserve.quantitative_anchor_transport", ["Classical.choice", "Quot.sound", "propext"]],
+    ["Gebendorfer.RadenkovicGutman.MiddleAnchor270MeanReserve.quantitative_anchor_transport_strict", ["Classical.choice", "Quot.sound", "propext"]],
+    ["Gebendorfer.RadenkovicGutman.MiddleAnchor270MeanReserve.threshold_displacement", ["Classical.choice", "Quot.sound", "propext"]],
+    ["Gebendorfer.RadenkovicGutman.MiddleAnchor270MeanReserve.original_payment_reserve", ["Classical.choice", "Quot.sound", "propext"]],
+    ["Gebendorfer.RadenkovicGutman.MiddleAnchor270MeanReserve.actual_mean_reserve", ["Classical.choice", "Quot.sound", "propext"]],
+    ["Gebendorfer.RadenkovicGutman.MiddleAnchor270MeanReserve.actual_energy_gap", ["Classical.choice", "Quot.sound", "propext"]],
+    ["Gebendorfer.RadenkovicGutman.MiddleAnchor270MeanReserve.strict_fusion", ["Classical.choice", "Quot.sound", "propext"]]
+  ],
+  "compile_seconds": 2.169,
+  "archive_bytes": 798736,
+  "archive_members": 291,
+  "all_282_source_closures_recomputed": true,
+  "local_kernel_execution": false,
+  "prior_object_bytes_reread_locally": false,
+  "global_rg": "NOT_PROVED",
+  "remaining_original_families": 3,
+  "limits": [
+    "The current fresh Lean execution is the identified GitHub Actions job, not this local byte audit.",
+    "The downloaded archive contains one fresh compiled object. The 281 restored prerequisite objects were checked by the CI verifier, not reread locally here.",
+    "No completion of degreeOneMiddle or of the universal RG theorem is claimed."
+  ]
+}

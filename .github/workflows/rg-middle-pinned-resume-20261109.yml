@@ -9,6 +9,9 @@ on:
 permissions:
   contents: read
   actions: read
+concurrency:
+  group: rg-middle-pinned-${{ github.ref }}
+  cancel-in-progress: false
 jobs:
   check:
     strategy:

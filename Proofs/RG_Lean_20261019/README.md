@@ -2,7 +2,7 @@
 
 Jonas J. Gebendorfer. OpenAI Codex assisted with implementation and validation.
 
-Status on 7 November 2026: **the original `degreeOneLarge` family and original Anchor029/Anchor030 certificates are kernel-verified; three original input families remain open, and no full Lean proof has been submitted**.
+Status on 9 November 2026: **the original `degreeOneLarge` family is kernel-verified; the first 52 original finite Middle residual certificates have a complete authenticated kernel receipt. Three original input families remain open, and no full Lean proof has been submitted**.
 The written computer-assisted proof and the original statement submission are distinct from completion of this Lean project.
 
 The target is the two statements in [PR #7399](https://github.com/google-deepmind/formal-conjectures/pull/7399), at statement commit `3654bf2bddc5217f904b7b85207b1091e833de49`: for every positive order and every tree on `Fin n`, the path minimizes actual Laplacian energy, with equality exactly for a graph isomorphic to the path. Energy is centered at the actual mean degree `2 |E(T)| / n`, where `|E(T)|` is the number of edges.
@@ -12,6 +12,18 @@ The target is the two statements in [PR #7399](https://github.com/google-deepmin
 The exact seven required inputs are in [OriginalAssembly](Proofs/RadenkovicGutmanOriginalAssembly.lean). In all family ranges below, degree means the residual core-node degree `C.degree u`. The [actual source graph](Proofs/RadenkovicGutmanFusionQuotient.lean) attaches two pendant paths of physical lengths `p + 1` and `q + 1` to the distinguished vertex `u` of the core `C : SimpleGraph (Fin m)`. Its physical order is `N = order C p q = m + p + q + 2`; `p` and `q` range over all natural numbers, including zero.
 
 Four have complete original kernel-object and source-closure audits at their recorded verified revisions: degree one through order 13, degree one from order 53, degree at least four through order 12 (all 247 actual-tree comparisons and coverage), and degree at least 46. Three remain open: degree one at orders 14–52, degree two or three, and degrees 4–45 from order 13.
+
+## Original finite Middle residual certificates — 9 November 2026
+
+The original [Batch000 run](https://github.com/RhudeJJJJ/formal-conjectures/actions/runs/42433253830/job/128586559182) completed on 8 November. Its full archive was independently authenticated on 9 November: 194 original sources and recursive dependency closures, 45 required prior objects, 149 fresh compiled objects, and 692 ordered named axiom profiles. All profiles use only standard Lean axioms. The [authentication report](reviews/20261109-residual-batch000-authentication.json) is a post-run byte and provenance review; it does not manufacture or replace the native kernel receipt.
+
+This establishes `DegreeOneMiddleResidualFiniteKeys.certified_keys000` for its exact 52 keys. The [fresh-export manifest](../../ci/rg_middle_residual_certificates000_run42433253830_prior_exports.json) retains the original successful producer and includes only its 149 fresh exports. The other 1,180 keys remain to be authenticated in their 24 original batches.
+
+The [remaining-batch workflow](../../.github/workflows/rg-middle-residual-certificates-rest-20261109.yml) checks Batches001–024 independently, with Batch024 first. The [source plan](../../ci/rg_middle_residual_batch_inventory_20261109.json) binds every source to commit `15d45e8d3ed3bacaf3afe7d85488a42f08302d76`, the recursive dependency hashes, the original fixed prior manifests and the exact ordered key-to-certificate association. It plans 3,473 distinct fresh modules, or 3,501 exports across the independent jobs; the 28 repeated exports are shared prerequisites of different batches. A source plan is not a completed proof.
+
+Each job preserves the successful Batch000 settings: Lean 4.33.1, the fixed Mathlib commit, one Lean worker, a 600-second module timeout and a 2,048 MiB memory reserve. At most 12 jobs run in parallel. Full source snapshots, receipts, named axiom logs, compiled objects and the frozen completion checker are retained for 90 days. No original Lean statement or source proof is changed. New batch completions require terminal job metadata and independent archive authentication.
+
+The small Batch024 endpoint has three exact keys, 56 source modules, 45 prior objects and 11 mandatory fresh modules. Completing it would reduce the pending residual keys from 1,180 to 1,177. After all 24 new batch jobs succeed, the dependent `finite-join` job independently authenticates every archive, restores Batch000 and the separately authenticated 2-module core and 117-module prerequisite origins, and checks the original `DegreeOneMiddleResidualFiniteAllCertificates` endpoint. Its complete closure has 3,880 modules: 3,879 source-bound priors and one mandatory fresh final module. Restoration uses the established temporary compressed proof store and bounded one-GiB projections of authenticated rows. The full `OriginalDegreeOneMiddle.input_family` also needs the original analytic-anchor and coverage assemblies. No Middle-family completion is claimed by this continuation plan.
 
 ## Residual finite list assembly recovered — 7 November 2026
 

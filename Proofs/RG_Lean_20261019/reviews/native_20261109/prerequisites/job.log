@@ -1,0 +1,1193 @@
+﻿2026-11-07T06:22:42.6152191Z Current runner version: '2.338.2'
+2026-11-07T06:22:42.6168647Z ##[group]Runner Image Provisioner
+2026-11-07T06:22:42.6169213Z Hosted Compute Agent
+2026-11-07T06:22:42.6169609Z Version: 20261028.624
+2026-11-07T06:22:42.6169978Z Commit: 54898b74c23fde5556c9b3c3a2290865feef0dfe
+2026-11-07T06:22:42.6170623Z Build Date: 2026-10-28T21:51:42Z
+2026-11-07T06:22:42.6171020Z Worker ID: {c5f52e58-eafd-4c26-9c28-30ffa9e5a3ae}
+2026-11-07T06:22:42.6171479Z Region: centralus
+2026-11-07T06:22:42.6171821Z Cloud: Azure
+2026-11-07T06:22:42.6172144Z ##[endgroup]
+2026-11-07T06:22:42.6173139Z ##[group]Operating System
+2026-11-07T06:22:42.6173497Z Ubuntu
+2026-11-07T06:22:42.6173796Z 24.04.5
+2026-11-07T06:22:42.6174186Z LTS
+2026-11-07T06:22:42.6174519Z ##[endgroup]
+2026-11-07T06:22:42.6174870Z ##[group]Runner Image
+2026-11-07T06:22:42.6175221Z Image: ubuntu-24.04
+2026-11-07T06:22:42.6175574Z Version: 20261101.360.1
+2026-11-07T06:22:42.6176337Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261101.360/images/ubuntu/Ubuntu2404-Readme.md
+2026-11-07T06:22:42.6177214Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261101.360
+2026-11-07T06:22:42.6177753Z ##[endgroup]
+2026-11-07T06:22:42.6178511Z ##[group]GITHUB_TOKEN Permissions
+2026-11-07T06:22:42.6179761Z Actions: read
+2026-11-07T06:22:42.6180090Z Contents: read
+2026-11-07T06:22:42.6180477Z Metadata: read
+2026-11-07T06:22:42.6180805Z ##[endgroup]
+2026-11-07T06:22:42.6182068Z Secret source: Actions
+2026-11-07T06:22:42.6182748Z Cache mode: write
+2026-11-07T06:22:42.6183356Z Prepare workflow directory
+2026-11-07T06:22:42.6383863Z Prepare all required actions
+2026-11-07T06:22:42.6413311Z Getting action download info
+2026-11-07T06:22:42.8812957Z Download action repository 'actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803' (SHA:d23441a48e516b6c34aea4fa41551a30e30af803)
+2026-11-07T06:22:42.9509863Z Download action repository 'actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+2026-11-07T06:22:43.1405030Z Complete job name: check (Proofs.RadenkovicGutmanDegreeOneMiddleResidualFinitePrerequisites, ci/rg_middle_residual_p...
+2026-11-07T06:22:43.1909420Z ##[group]Run actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+2026-11-07T06:22:43.1909916Z with:
+2026-11-07T06:22:43.1910150Z   persist-credentials: false
+2026-11-07T06:22:43.1910438Z   repository: RhudeJJJJ/formal-conjectures
+2026-11-07T06:22:43.1912482Z   token: ***
+2026-11-07T06:22:43.1912876Z   ssh-strict: true
+2026-11-07T06:22:43.1913104Z   ssh-user: git
+2026-11-07T06:22:43.1913324Z   clean: true
+2026-11-07T06:22:43.1913556Z   sparse-checkout-cone-mode: true
+2026-11-07T06:22:43.1913825Z   fetch-depth: 1
+2026-11-07T06:22:43.1914049Z   fetch-tags: false
+2026-11-07T06:22:43.1914279Z   show-progress: true
+2026-11-07T06:22:43.1914511Z   lfs: false
+2026-11-07T06:22:43.1914725Z   submodules: false
+2026-11-07T06:22:43.1914958Z   set-safe-directory: true
+2026-11-07T06:22:43.1915216Z   allow-unsafe-pr-checkout: false
+2026-11-07T06:22:43.1915595Z ##[endgroup]
+2026-11-07T06:22:43.3997332Z Syncing repository: RhudeJJJJ/formal-conjectures
+2026-11-07T06:22:43.3998829Z ##[group]Getting Git version info
+2026-11-07T06:22:43.3999250Z Working directory is '/home/runner/work/formal-conjectures/formal-conjectures'
+2026-11-07T06:22:43.3999846Z [command]/usr/bin/git version
+2026-11-07T06:22:43.4073195Z git version 2.56.0
+2026-11-07T06:22:43.4091453Z ##[endgroup]
+2026-11-07T06:22:43.4096784Z Temporarily overriding HOME='/home/runner/work/_temp/f854b3c7-7779-4d7b-bd4c-359f06b0f6aa' before making global git config changes
+2026-11-07T06:22:43.4098142Z Adding repository directory to the temporary git global config as a safe directory
+2026-11-07T06:22:43.4100818Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/formal-conjectures/formal-conjectures
+2026-11-07T06:22:43.4141455Z Deleting the contents of '/home/runner/work/formal-conjectures/formal-conjectures'
+2026-11-07T06:22:43.4144638Z ##[group]Determining repository object format
+2026-11-07T06:22:43.4145854Z ##[endgroup]
+2026-11-07T06:22:43.4146429Z ##[group]Initializing the repository
+2026-11-07T06:22:43.4149360Z [command]/usr/bin/git init /home/runner/work/formal-conjectures/formal-conjectures
+2026-11-07T06:22:43.4263976Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-11-07T06:22:43.4283372Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-11-07T06:22:43.4284949Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-11-07T06:22:43.4285337Z hint: call:
+2026-11-07T06:22:43.4285547Z hint:
+2026-11-07T06:22:43.4285843Z hint: 	git config --global init.defaultBranch <name>
+2026-11-07T06:22:43.4286162Z hint:
+2026-11-07T06:22:43.4286464Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-11-07T06:22:43.4286943Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-11-07T06:22:43.4287475Z hint:
+2026-11-07T06:22:43.4287987Z hint: 	git branch -m <name>
+2026-11-07T06:22:43.4288377Z hint:
+2026-11-07T06:22:43.4288895Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-11-07T06:22:43.4289825Z Initialized empty Git repository in /home/runner/work/formal-conjectures/formal-conjectures/.git/
+2026-11-07T06:22:43.4291470Z [command]/usr/bin/git remote add origin https://github.com/RhudeJJJJ/formal-conjectures
+2026-11-07T06:22:43.4329980Z ##[endgroup]
+2026-11-07T06:22:43.4330588Z ##[group]Disabling automatic garbage collection
+2026-11-07T06:22:43.4333070Z [command]/usr/bin/git config --local gc.auto 0
+2026-11-07T06:22:43.4358963Z ##[endgroup]
+2026-11-07T06:22:43.4359926Z ##[group]Setting up auth
+2026-11-07T06:22:43.4360740Z Removing SSH command configuration
+2026-11-07T06:22:43.4365393Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-07T06:22:43.4396514Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-07T06:22:43.4700703Z Removing HTTP extra header
+2026-11-07T06:22:43.4707270Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-07T06:22:43.4742309Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-11-07T06:22:43.4917323Z Removing includeIf entries pointing to credentials config files
+2026-11-07T06:22:43.4921899Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-07T06:22:43.4956089Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-11-07T06:22:43.5135667Z [command]/usr/bin/git config --file /home/runner/work/_temp/git-credentials-698ba839-992c-42df-8a70-8be7ee36ef45.config http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-11-07T06:22:43.5171427Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/formal-conjectures/formal-conjectures/.git.path /home/runner/work/_temp/git-credentials-698ba839-992c-42df-8a70-8be7ee36ef45.config
+2026-11-07T06:22:43.5205067Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/formal-conjectures/formal-conjectures/.git/worktrees/*.path /home/runner/work/_temp/git-credentials-698ba839-992c-42df-8a70-8be7ee36ef45.config
+2026-11-07T06:22:43.5239870Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git.path /github/runner_temp/git-credentials-698ba839-992c-42df-8a70-8be7ee36ef45.config
+2026-11-07T06:22:43.5278584Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git/worktrees/*.path /github/runner_temp/git-credentials-698ba839-992c-42df-8a70-8be7ee36ef45.config
+2026-11-07T06:22:43.5309581Z ##[endgroup]
+2026-11-07T06:22:43.5310200Z ##[group]Fetching the repository
+2026-11-07T06:22:43.5315736Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +a5fd179b1e8bc17776a7f6d8e9e9abc652d55f55:refs/remotes/origin/rg-middle-residual-prerequisites-recovery-20261107
+2026-11-07T06:23:07.8879015Z From https://github.com/RhudeJJJJ/formal-conjectures
+2026-11-07T06:23:07.8879645Z  * [new ref]             a5fd179b1e8bc17776a7f6d8e9e9abc652d55f55 -> origin/rg-middle-residual-prerequisites-recovery-20261107
+2026-11-07T06:23:07.8888119Z [command]/usr/bin/git branch --list --remote origin/rg-middle-residual-prerequisites-recovery-20261107
+2026-11-07T06:23:07.8920657Z   origin/rg-middle-residual-prerequisites-recovery-20261107
+2026-11-07T06:23:07.8927507Z [command]/usr/bin/git rev-parse refs/remotes/origin/rg-middle-residual-prerequisites-recovery-20261107
+2026-11-07T06:23:07.8954006Z a5fd179b1e8bc17776a7f6d8e9e9abc652d55f55
+2026-11-07T06:23:07.8957625Z ##[endgroup]
+2026-11-07T06:23:07.8958025Z ##[group]Determining the checkout info
+2026-11-07T06:23:07.8958679Z ##[endgroup]
+2026-11-07T06:23:07.8961376Z [command]/usr/bin/git sparse-checkout disable
+2026-11-07T06:23:07.9010935Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-11-07T06:23:07.9041638Z ##[group]Checking out the ref
+2026-11-07T06:23:07.9044210Z [command]/usr/bin/git checkout --progress --force -B rg-middle-residual-prerequisites-recovery-20261107 refs/remotes/origin/rg-middle-residual-prerequisites-recovery-20261107
+2026-11-07T06:23:08.9635584Z Updating files:  12% (17244/135499)
+2026-11-07T06:23:08.9953431Z Updating files:  13% (17615/135499)
+2026-11-07T06:23:09.0285233Z Updating files:  14% (18970/135499)
+2026-11-07T06:23:09.0598857Z Updating files:  15% (20325/135499)
+2026-11-07T06:23:09.0942297Z Updating files:  16% (21680/135499)
+2026-11-07T06:23:09.1256891Z Updating files:  17% (23035/135499)
+2026-11-07T06:23:09.1670098Z Updating files:  18% (24390/135499)
+2026-11-07T06:23:09.1992113Z Updating files:  19% (25745/135499)
+2026-11-07T06:23:09.2331677Z Updating files:  20% (27100/135499)
+2026-11-07T06:23:09.2652230Z Updating files:  21% (28455/135499)
+2026-11-07T06:23:09.3043287Z Updating files:  22% (29810/135499)
+2026-11-07T06:23:09.3364861Z Updating files:  23% (31165/135499)
+2026-11-07T06:23:09.3681208Z Updating files:  24% (32520/135499)
+2026-11-07T06:23:09.4118074Z Updating files:  25% (33875/135499)
+2026-11-07T06:23:09.4451687Z Updating files:  26% (35230/135499)
+2026-11-07T06:23:09.4818862Z Updating files:  27% (36585/135499)
+2026-11-07T06:23:09.5134736Z Updating files:  28% (37940/135499)
+2026-11-07T06:23:09.5561936Z Updating files:  29% (39295/135499)
+2026-11-07T06:23:09.5882805Z Updating files:  30% (40650/135499)
+2026-11-07T06:23:09.6339594Z Updating files:  31% (42005/135499)
+2026-11-07T06:23:09.6701850Z Updating files:  32% (43360/135499)
+2026-11-07T06:23:09.7070059Z Updating files:  33% (44715/135499)
+2026-11-07T06:23:09.7427437Z Updating files:  34% (46070/135499)
+2026-11-07T06:23:09.7779723Z Updating files:  35% (47425/135499)
+2026-11-07T06:23:09.8106382Z Updating files:  36% (48780/135499)
+2026-11-07T06:23:09.8460346Z Updating files:  37% (50135/135499)
+2026-11-07T06:23:09.8799743Z Updating files:  38% (51490/135499)
+2026-11-07T06:23:09.9155855Z Updating files:  39% (52845/135499)
+2026-11-07T06:23:09.9480587Z Updating files:  40% (54200/135499)
+2026-11-07T06:23:09.9549487Z Updating files:  41% (55555/135499)
+2026-11-07T06:23:10.0893003Z Updating files:  41% (55770/135499)
+2026-11-07T06:23:10.1569021Z Updating files:  42% (56910/135499)
+2026-11-07T06:23:10.1883182Z Updating files:  43% (58265/135499)
+2026-11-07T06:23:10.2856431Z Updating files:  44% (59620/135499)
+2026-11-07T06:23:10.4726262Z Updating files:  45% (60975/135499)
+2026-11-07T06:23:10.5052092Z Updating files:  46% (62330/135499)
+2026-11-07T06:23:10.5380917Z Updating files:  47% (63685/135499)
+2026-11-07T06:23:10.5714022Z Updating files:  48% (65040/135499)
+2026-11-07T06:23:10.6075076Z Updating files:  49% (66395/135499)
+2026-11-07T06:23:10.6854210Z Updating files:  50% (67750/135499)
+2026-11-07T06:23:10.8739068Z Updating files:  51% (69105/135499)
+2026-11-07T06:23:10.9550634Z Updating files:  52% (70460/135499)
+2026-11-07T06:23:11.0317871Z Updating files:  52% (71153/135499)
+2026-11-07T06:23:11.2037345Z Updating files:  53% (71815/135499)
+2026-11-07T06:23:11.3787570Z Updating files:  54% (73170/135499)
+2026-11-07T06:23:11.5517774Z Updating files:  55% (74525/135499)
+2026-11-07T06:23:11.6000454Z Updating files:  56% (75880/135499)
+2026-11-07T06:23:11.6447095Z Updating files:  57% (77235/135499)
+2026-11-07T06:23:11.7349135Z Updating files:  58% (78590/135499)
+2026-11-07T06:23:11.8660445Z Updating files:  59% (79945/135499)
+2026-11-07T06:23:11.9549350Z Updating files:  60% (81300/135499)
+2026-11-07T06:23:12.0065330Z Updating files:  60% (81934/135499)
+2026-11-07T06:23:12.1025499Z Updating files:  61% (82655/135499)
+2026-11-07T06:23:12.1596331Z Updating files:  62% (84010/135499)
+2026-11-07T06:23:12.2155946Z Updating files:  63% (85365/135499)
+2026-11-07T06:23:12.2709280Z Updating files:  64% (86720/135499)
+2026-11-07T06:23:12.3267265Z Updating files:  65% (88075/135499)
+2026-11-07T06:23:12.3816303Z Updating files:  66% (89430/135499)
+2026-11-07T06:23:12.4365439Z Updating files:  67% (90785/135499)
+2026-11-07T06:23:12.4912913Z Updating files:  68% (92140/135499)
+2026-11-07T06:23:12.5919507Z Updating files:  69% (93495/135499)
+2026-11-07T06:23:12.6448360Z Updating files:  70% (94850/135499)
+2026-11-07T06:23:12.6912838Z Updating files:  71% (96205/135499)
+2026-11-07T06:23:12.7324499Z Updating files:  72% (97560/135499)
+2026-11-07T06:23:12.7767703Z Updating files:  73% (98915/135499)
+2026-11-07T06:23:12.8197122Z Updating files:  74% (100270/135499)
+2026-11-07T06:23:12.8592232Z Updating files:  75% (101625/135499)
+2026-11-07T06:23:12.8991403Z Updating files:  76% (102980/135499)
+2026-11-07T06:23:12.9371455Z Updating files:  77% (104335/135499)
+2026-11-07T06:23:12.9548996Z Updating files:  78% (105690/135499)
+2026-11-07T06:23:12.9754932Z Updating files:  78% (106367/135499)
+2026-11-07T06:23:13.0150955Z Updating files:  79% (107045/135499)
+2026-11-07T06:23:13.0524611Z Updating files:  80% (108400/135499)
+2026-11-07T06:23:13.2054477Z Updating files:  81% (109755/135499)
+2026-11-07T06:23:13.2538388Z Updating files:  82% (111110/135499)
+2026-11-07T06:23:13.2906961Z Updating files:  83% (112465/135499)
+2026-11-07T06:23:13.3293076Z Updating files:  84% (113820/135499)
+2026-11-07T06:23:13.3684230Z Updating files:  85% (115175/135499)
+2026-11-07T06:23:13.4071432Z Updating files:  86% (116530/135499)
+2026-11-07T06:23:13.4457942Z Updating files:  87% (117885/135499)
+2026-11-07T06:23:13.4838376Z Updating files:  88% (119240/135499)
+2026-11-07T06:23:13.5224299Z Updating files:  89% (120595/135499)
+2026-11-07T06:23:13.6791849Z Updating files:  90% (121950/135499)
+2026-11-07T06:23:13.7885167Z Updating files:  91% (123305/135499)
+2026-11-07T06:23:13.9593121Z Updating files:  92% (124660/135499)
+2026-11-07T06:23:13.9615077Z Updating files:  92% (125831/135499)
+2026-11-07T06:23:14.0019986Z Updating files:  93% (126015/135499)
+2026-11-07T06:23:14.0423826Z Updating files:  94% (127370/135499)
+2026-11-07T06:23:14.0802990Z Updating files:  95% (128725/135499)
+2026-11-07T06:23:14.1200955Z Updating files:  96% (130080/135499)
+2026-11-07T06:23:14.1871662Z Updating files:  97% (131435/135499)
+2026-11-07T06:23:14.2429757Z Updating files:  98% (132790/135499)
+2026-11-07T06:23:14.4202446Z Updating files:  99% (134145/135499)
+2026-11-07T06:23:14.4202893Z Updating files: 100% (135499/135499)
+2026-11-07T06:23:14.4208456Z Updating files: 100% (135499/135499), done.
+2026-11-07T06:23:14.5032200Z Switched to a new branch 'rg-middle-residual-prerequisites-recovery-20261107'
+2026-11-07T06:23:14.5033007Z branch 'rg-middle-residual-prerequisites-recovery-20261107' set up to track 'origin/rg-middle-residual-prerequisites-recovery-20261107'.
+2026-11-07T06:23:14.5178980Z ##[endgroup]
+2026-11-07T06:23:14.5223995Z [command]/usr/bin/git log -1 --format=%H
+2026-11-07T06:23:14.5255668Z a5fd179b1e8bc17776a7f6d8e9e9abc652d55f55
+2026-11-07T06:23:14.5263291Z ##[group]Removing auth
+2026-11-07T06:23:14.5263533Z Removing SSH command configuration
+2026-11-07T06:23:14.5266658Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-07T06:23:14.5300060Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-07T06:23:14.5616091Z Removing HTTP extra header
+2026-11-07T06:23:14.5619736Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-07T06:23:14.5660255Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-11-07T06:23:14.5962972Z Removing includeIf entries pointing to credentials config files
+2026-11-07T06:23:14.5966173Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-07T06:23:14.5994429Z includeif.gitdir:/home/runner/work/formal-conjectures/formal-conjectures/.git.path
+2026-11-07T06:23:14.5995006Z includeif.gitdir:/home/runner/work/formal-conjectures/formal-conjectures/.git/worktrees/*.path
+2026-11-07T06:23:14.5995462Z includeif.gitdir:/github/workspace/.git.path
+2026-11-07T06:23:14.5995760Z includeif.gitdir:/github/workspace/.git/worktrees/*.path
+2026-11-07T06:23:14.6002244Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/formal-conjectures/formal-conjectures/.git.path
+2026-11-07T06:23:14.6031114Z /home/runner/work/_temp/git-credentials-698ba839-992c-42df-8a70-8be7ee36ef45.config
+2026-11-07T06:23:14.6040071Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/formal-conjectures/formal-conjectures/.git.path /home/runner/work/_temp/git-credentials-698ba839-992c-42df-8a70-8be7ee36ef45.config
+2026-11-07T06:23:14.6423517Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/formal-conjectures/formal-conjectures/.git/worktrees/*.path
+2026-11-07T06:23:14.6453068Z /home/runner/work/_temp/git-credentials-698ba839-992c-42df-8a70-8be7ee36ef45.config
+2026-11-07T06:23:14.6458861Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/formal-conjectures/formal-conjectures/.git/worktrees/*.path /home/runner/work/_temp/git-credentials-698ba839-992c-42df-8a70-8be7ee36ef45.config
+2026-11-07T06:23:14.7052175Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git.path
+2026-11-07T06:23:14.7061389Z /github/runner_temp/git-credentials-698ba839-992c-42df-8a70-8be7ee36ef45.config
+2026-11-07T06:23:14.7069164Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git.path /github/runner_temp/git-credentials-698ba839-992c-42df-8a70-8be7ee36ef45.config
+2026-11-07T06:23:14.7629672Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git/worktrees/*.path
+2026-11-07T06:23:14.7657397Z /github/runner_temp/git-credentials-698ba839-992c-42df-8a70-8be7ee36ef45.config
+2026-11-07T06:23:14.7662536Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git/worktrees/*.path /github/runner_temp/git-credentials-698ba839-992c-42df-8a70-8be7ee36ef45.config
+2026-11-07T06:23:14.8526714Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-11-07T06:23:14.8830708Z Removing credentials config '/home/runner/work/_temp/git-credentials-698ba839-992c-42df-8a70-8be7ee36ef45.config'
+2026-11-07T06:23:14.8837466Z ##[endgroup]
+2026-11-07T06:23:14.9435500Z ##[group]Run set -o pipefail
+2026-11-07T06:23:14.9435715Z [36;1mset -o pipefail[0m
+2026-11-07T06:23:14.9436031Z [36;1mcurl -sSfL https://github.com/leanprover/elan/releases/download/v1.4.2/elan-x86_64-unknown-linux-gnu.tar.gz | tar xz[0m
+2026-11-07T06:23:14.9436370Z [36;1m./elan-init -y --default-toolchain none[0m
+2026-11-07T06:23:14.9436692Z [36;1mecho "$HOME/.elan/bin" >> "$GITHUB_PATH"[0m
+2026-11-07T06:23:14.9454775Z shell: /usr/bin/bash -e {0}
+2026-11-07T06:23:14.9454928Z ##[endgroup]
+2026-11-07T06:23:15.5196572Z info: skipping toolchain installation
+2026-11-07T06:23:15.5196811Z 
+2026-11-07T06:23:15.5289230Z ##[group]Run python3 -B ci/rg_dependencies.py
+2026-11-07T06:23:15.5289433Z [36;1mpython3 -B ci/rg_dependencies.py[0m
+2026-11-07T06:23:15.5309487Z shell: /usr/bin/bash -e {0}
+2026-11-07T06:23:15.5309698Z ##[endgroup]
+2026-11-07T06:23:23.9359621Z LOCKED_PACKAGE mathlib 0df444a360eaa60ab8c11dca51a86af692955474
+2026-11-07T06:23:24.3792868Z LOCKED_PACKAGE plausible b7eb3304aeae834b12dda98993a37f6a41f6f0bb
+2026-11-07T06:23:24.7680833Z LOCKED_PACKAGE LeanSearchClient 5f4d51b81cbd3f6b32b156bfad9056621a040404
+2026-11-07T06:23:25.1171543Z LOCKED_PACKAGE importGraph 16f02aa7642864af59f1ff0e384a015994db9118
+2026-11-07T06:23:25.7792172Z LOCKED_PACKAGE proofwidgets 4be2e3d5087eeb272cf5a8853b8f9dd025ef5957
+2026-11-07T06:23:26.2138983Z LOCKED_PACKAGE aesop 3448c0bcc5ce01b2d1546e483ec3620e32df3d0e
+2026-11-07T06:23:26.5726659Z LOCKED_PACKAGE Qq 92c15be17b7caf78c2ad767ec40f89052d908d81
+2026-11-07T06:23:27.0517414Z LOCKED_PACKAGE batteries 4488d40d070b9700d4d5a6aa342f0d40c31b2a2d
+2026-11-07T06:23:27.3434137Z LOCKED_PACKAGE Cli 6130a47896ce867c6a4a55373441e59e565bad0f
+2026-11-07T06:23:27.3434573Z UNCHANGED_LAKE_LOCK c8ffc0d59f492007162fe54c68396e4b9f2f305fcf69210a7fbaf0b18fcd8cd9
+2026-11-07T06:23:27.3525860Z ##[group]Run python3 - <<'PY'
+2026-11-07T06:23:27.3526048Z [36;1mpython3 - <<'PY'[0m
+2026-11-07T06:23:27.3526191Z [36;1mimport hashlib,json,pathlib,re[0m
+2026-11-07T06:23:27.3526365Z [36;1mroot=pathlib.Path('Proofs/RG_Lean_20261019')[0m
+2026-11-07T06:23:27.3526562Z [36;1mbundle=root/'build/fresh_exports/generated_source'[0m
+2026-11-07T06:23:27.3526731Z [36;1msources={}[0m
+2026-11-07T06:23:27.3526846Z [36;1mdef visit(name):[0m
+2026-11-07T06:23:27.3527013Z [36;1m    rel='Proofs/RG_Lean_20261019/'+name.replace('.','/')+'.lean'[0m
+2026-11-07T06:23:27.3527212Z [36;1m    if rel in sources:return[0m
+2026-11-07T06:23:27.3527366Z [36;1m    data=pathlib.Path(rel).read_bytes()[0m
+2026-11-07T06:23:27.3527546Z [36;1m    sources[rel]=hashlib.sha256(data).hexdigest()[0m
+2026-11-07T06:23:27.3527813Z [36;1m    target=bundle/rel;target.parent.mkdir(parents=True,exist_ok=True);target.write_bytes(data)[0m
+2026-11-07T06:23:27.3528185Z [36;1m    for dep in re.findall(r'^\s*(?:public\s+)?import\s+(Proofs\.[\w.]+)\s*$',data.decode(),re.M):visit(dep)[0m
+2026-11-07T06:23:27.3528517Z [36;1mvisit('Proofs.RadenkovicGutmanDegreeOneMiddleResidualFinitePrerequisites')[0m
+2026-11-07T06:23:27.3528753Z [36;1massert len(sources)==259[0m
+2026-11-07T06:23:27.3529360Z [36;1m(bundle/'generated_source_manifest.json').write_text(json.dumps(dict(endpoint='Proofs.RadenkovicGutmanDegreeOneMiddleResidualFinitePrerequisites',component_kind='DEGREE_ONE_MIDDLE_RESIDUAL_FINITE_PREREQUISITES',source_sha256=sources,kind='ORIGINAL_TARGET_REQUIRES_SUCCESSFUL_KERNEL_RECEIPT'),indent=2)+'\n')[0m
+2026-11-07T06:23:27.3529962Z [36;1mPY[0m
+2026-11-07T06:23:27.3545457Z shell: /usr/bin/bash -e {0}
+2026-11-07T06:23:27.3545589Z ##[endgroup]
+2026-11-07T06:23:27.4169824Z ##[group]Run python3 - <<'PY'
+2026-11-07T06:23:27.4169997Z [36;1mpython3 - <<'PY'[0m
+2026-11-07T06:23:27.4170134Z [36;1mimport pathlib, re, subprocess[0m
+2026-11-07T06:23:27.4170308Z [36;1mroot = pathlib.Path('Proofs/RG_Lean_20261019')[0m
+2026-11-07T06:23:27.4170477Z [36;1mseen, external = set(), set()[0m
+2026-11-07T06:23:27.4170620Z [36;1mdef visit(name):[0m
+2026-11-07T06:23:27.4170746Z [36;1m    if name in seen:[0m
+2026-11-07T06:23:27.4170871Z [36;1m        return[0m
+2026-11-07T06:23:27.4170988Z [36;1m    seen.add(name)[0m
+2026-11-07T06:23:27.4171162Z [36;1m    source = (root / (name.replace('.', '/') + '.lean')).read_text()[0m
+2026-11-07T06:23:27.4171397Z [36;1m    for dep in re.findall(r'^\s*import\s+([\w.]+)', source, re.M):[0m
+2026-11-07T06:23:27.4171594Z [36;1m        if dep.startswith('Proofs.'):[0m
+2026-11-07T06:23:27.4171877Z [36;1m            visit(dep)[0m
+2026-11-07T06:23:27.4172119Z [36;1m        elif not dep.startswith(('Lean.', 'Init.', 'Std.')) and dep not in ('Lean','Init','Std'):[0m
+2026-11-07T06:23:27.4172347Z [36;1m            external.add(dep)[0m
+2026-11-07T06:23:27.4172771Z [36;1mvisit('Proofs.RadenkovicGutmanDegreeOneMiddleResidualFinitePrerequisites')[0m
+2026-11-07T06:23:27.4173072Z [36;1msubprocess.run(['lake', 'exe', 'cache', 'get', *sorted(external)], check=True)[0m
+2026-11-07T06:23:27.4173272Z [36;1mPY[0m
+2026-11-07T06:23:27.4187303Z shell: /usr/bin/bash -e {0}
+2026-11-07T06:23:27.4187439Z ##[endgroup]
+2026-11-07T06:23:27.4645846Z info: downloading component 'lean'
+2026-11-07T06:23:32.0288141Z info: installing component 'lean'
+2026-11-07T06:23:41.8252902Z ✔ [3/27] Built Cache.Cli (261ms)
+2026-11-07T06:23:41.9265198Z ✔ [6/27] Built Cache.Lean (323ms)
+2026-11-07T06:23:42.0266433Z ✔ [7/27] Built Cache.Cli:c.o (148ms)
+2026-11-07T06:23:42.0266857Z ✔ [8/27] Built Cache.Lean:c.o (116ms)
+2026-11-07T06:23:42.1294298Z ✔ [9/27] Built Cache.Infra (322ms)
+2026-11-07T06:23:42.2270613Z ✔ [10/27] Built Cache.Infra:c.o (139ms)
+2026-11-07T06:23:42.4284132Z ✔ [11/27] Built Batteries.Tactic.OpenPrivate (630ms)
+2026-11-07T06:23:43.1295748Z ✔ [12/27] Built Batteries.Tactic.OpenPrivate:c.o (738ms)
+2026-11-07T06:23:43.3306896Z ✔ [13/27] Built Cache.IO (908ms)
+2026-11-07T06:23:43.9334334Z ✔ [14/27] Built Cache.Hashing (561ms)
+2026-11-07T06:23:44.2313834Z ✔ [15/27] Built Cache.Hashing:c.o (355ms)
+2026-11-07T06:23:44.3305803Z ✔ [16/27] Built Cache.IO:c.o (1.0s)
+2026-11-07T06:23:45.1313433Z ✔ [17/27] Built Cache.Requests (1.2s)
+2026-11-07T06:23:45.5317535Z ✔ [18/27] Built Cache.Marker (415ms)
+2026-11-07T06:23:45.6318441Z ✔ [19/27] Built Cache.Marker:c.o (101ms)
+2026-11-07T06:23:46.0325311Z ✔ [20/27] Built Cache.Query (486ms)
+2026-11-07T06:23:46.2327108Z ✔ [21/27] Built Cache.Query:c.o (237ms)
+2026-11-07T06:23:46.5354202Z ✔ [22/27] Built Cache.Warning (535ms)
+2026-11-07T06:23:46.7346724Z ✔ [23/27] Built Cache.Requests:c.o (1.7s)
+2026-11-07T06:23:46.7347059Z ✔ [24/27] Built Cache.Warning:c.o (201ms)
+2026-11-07T06:23:47.2350770Z ✔ [25/27] Built Cache.Main (742ms)
+2026-11-07T06:23:47.7355419Z ✔ [26/27] Built Cache.Main:c.o (511ms)
+2026-11-07T06:23:48.3365975Z ✔ [27/27] Built cache:exe (569ms)
+2026-11-07T06:23:50.1043162Z Current branch: HEAD
+2026-11-07T06:23:50.1043508Z Using cache from origin: (some leanprover-community/mathlib4)
+2026-11-07T06:23:50.1044139Z Attempting to download 3528 file(s) from leanprover-community/mathlib4 cache at https://lakecache.blob.core.windows.net/mathlib4-master
+2026-11-07T06:23:50.7577693Z 
+2026-11-07T06:23:50.8593185Z Downloaded: 1 file(s) [attempted 1/3528 = 0%, 55 KB/s], Decompressed: 0
+2026-11-07T06:23:50.9616511Z Downloaded: 206 file(s) [attempted 206/3528 = 5%, 6278 KB/s], Decompressed: 22
+2026-11-07T06:23:51.0603111Z Downloaded: 449 file(s) [attempted 449/3528 = 12%, 4166 KB/s], Decompressed: 22
+2026-11-07T06:23:51.1629703Z Downloaded: 801 file(s) [attempted 801/3528 = 22%, 5834 KB/s], Decompressed: 22
+2026-11-07T06:23:51.2651720Z Downloaded: 1141 file(s) [attempted 1141/3528 = 32%, 12923 KB/s], Decompressed: 107
+2026-11-07T06:23:51.3655688Z Downloaded: 1451 file(s) [attempted 1451/3528 = 41%, 2644 KB/s], Decompressed: 107
+2026-11-07T06:23:51.4638363Z Downloaded: 1805 file(s) [attempted 1805/3528 = 51%, 19700 KB/s], Decompressed: 107
+2026-11-07T06:23:51.5725009Z Downloaded: 2114 file(s) [attempted 2114/3528 = 59%, 13897 KB/s], Decompressed: 107
+2026-11-07T06:23:51.6680800Z Downloaded: 2468 file(s) [attempted 2468/3528 = 69%, 5595 KB/s], Decompressed: 107
+2026-11-07T06:23:51.7674988Z Downloaded: 2836 file(s) [attempted 2836/3528 = 80%, 5044 KB/s], Decompressed: 107
+2026-11-07T06:23:51.8715873Z Downloaded: 3212 file(s) [attempted 3212/3528 = 91%, 1633 KB/s], Decompressed: 107
+2026-11-07T06:23:51.9530644Z Downloaded: 3523 file(s) [attempted 3523/3528 = 99%, 2164 KB/s], Decompressed: 107
+2026-11-07T06:23:51.9531382Z Downloaded: 3528 file(s) [attempted 3528/3528 = 100%, 2164 KB/s], Decompressed: 107
+2026-11-07T06:24:00.6852446Z Decompressed 3528 file(s)
+2026-11-07T06:24:00.6852836Z Already decompressed 3528 file(s)
+2026-11-07T06:24:00.8176709Z ##[group]Run python3 -B ci/rg_restore_complete_scope.py --manifest ci/rg_reusable_analytic_kernel_base_complete_scope_capsule.json --build-directory Proofs/RG_Lean_20261019/build/extension
+2026-11-07T06:24:00.8177359Z [36;1mpython3 -B ci/rg_restore_complete_scope.py --manifest ci/rg_reusable_analytic_kernel_base_complete_scope_capsule.json --build-directory Proofs/RG_Lean_20261019/build/extension[0m
+2026-11-07T06:24:00.8192944Z shell: /usr/bin/bash -e {0}
+2026-11-07T06:24:00.8193075Z env:
+2026-11-07T06:24:00.8194470Z   GITHUB_TOKEN: ***
+2026-11-07T06:24:00.8194589Z ##[endgroup]
+2026-11-07T06:24:03.0540244Z {"status": "RESTORED_AUDITED_COMPLETE_SCOPE_NOT_FRESH", "modules": 193, "original_prior_origins_preserved": true, "full_current_source_and_closure_recheck": "REQUIRED_BY_VERIFY_EXTENSION"}
+2026-11-07T06:24:03.0702949Z ##[group]Run python3 - <<'PY'
+2026-11-07T06:24:03.0703163Z [36;1mpython3 - <<'PY'[0m
+2026-11-07T06:24:03.0703302Z [36;1mimport json,subprocess,sys[0m
+2026-11-07T06:24:03.0703566Z [36;1mmanifests=json.load(open('ci/rg_middle_residual_prerequisites_recovery_restore_plan_20261107.json'))[0m
+2026-11-07T06:24:03.0703821Z [36;1massert manifests==[[0m
+2026-11-07T06:24:03.0704009Z [36;1m    'ci/rg_all111_finite_original_projected_parents_20261028/083.json',[0m
+2026-11-07T06:24:03.0704266Z [36;1m    'ci/rg_middle_residual_list_assembly_run42345489172_prior_exports.json',[0m
+2026-11-07T06:24:03.0704528Z [36;1m    'ci/rg_middle_residual_core_coverage_run42345977030_prior_exports.json'][0m
+2026-11-07T06:24:03.0704738Z [36;1mfor manifest in manifests:[0m
+2026-11-07T06:24:03.0705097Z [36;1m    subprocess.run([sys.executable,'-B','ci/rg_restore_job_exports.py','--manifest',manifest,'--build-directory','Proofs/RG_Lean_20261019/build/extension'],check=True)[0m
+2026-11-07T06:24:03.0705680Z [36;1mPY[0m
+2026-11-07T06:24:03.0736250Z shell: /usr/bin/bash -e {0}
+2026-11-07T06:24:03.0736386Z env:
+2026-11-07T06:24:03.0737735Z   GITHUB_TOKEN: ***
+2026-11-07T06:24:03.0737851Z ##[endgroup]
+2026-11-07T06:24:05.9525165Z {"status": "RESTORED_PRIOR_VERIFIED_EXPORTS_NOT_FRESH", "modules": 512, "run": 40123647581, "job": 120960351710, "artifact_digest_verified": true, "current_source_and_closure": "MUST_BE_RECHECKED_BY_VERIFY_EXTENSION"}
+2026-11-07T06:24:07.0843364Z {"status": "RESTORED_PRIOR_VERIFIED_EXPORTS_NOT_FRESH", "modules": 8, "run": 42345489172, "job": 128322194549, "artifact_digest_verified": true, "current_source_and_closure": "MUST_BE_RECHECKED_BY_VERIFY_EXTENSION"}
+2026-11-07T06:24:08.1123295Z {"status": "RESTORED_PRIOR_VERIFIED_EXPORTS_NOT_FRESH", "modules": 2, "run": 42345977030, "job": 128323686026, "artifact_digest_verified": true, "current_source_and_closure": "MUST_BE_RECHECKED_BY_VERIFY_EXTENSION"}
+2026-11-07T06:24:08.1338361Z ##[group]Run python3 -B ci/rg_restore_with_kernel_fallback.py --plan ci/rg_middle_residual_prerequisites_recovery_restore_plan_20261107.json --build-directory Proofs/RG_Lean_20261019/build/extension --endpoint Proofs.RadenkovicGutmanDegreeOneMiddleResidualFinitePrerequisites --max-fresh 117 --preflight-only
+2026-11-07T06:24:08.1340132Z [36;1mpython3 -B ci/rg_restore_with_kernel_fallback.py --plan ci/rg_middle_residual_prerequisites_recovery_restore_plan_20261107.json --build-directory Proofs/RG_Lean_20261019/build/extension --endpoint Proofs.RadenkovicGutmanDegreeOneMiddleResidualFinitePrerequisites --max-fresh 117 --preflight-only[0m
+2026-11-07T06:24:08.1359320Z shell: /usr/bin/bash -e {0}
+2026-11-07T06:24:08.1359456Z env:
+2026-11-07T06:24:08.1360795Z   GITHUB_TOKEN: ***
+2026-11-07T06:24:08.1360911Z ##[endgroup]
+2026-11-07T06:24:09.3418751Z {"status": "EXACT_FRONTIER_REQUIRES_MANDATORY_FRESH_KERNEL_EXPORTS", "endpoint": "Proofs.RadenkovicGutmanDegreeOneMiddleResidualFinitePrerequisites", "required_modules": 259, "verified_prior_objects": 142, "max_fresh": 117, "within_bound": true, "proof_status": "NOT_PROVEN_BY_RESTORE", "complete_submission": "NOT_SUBMITTED"}
+2026-11-07T06:24:09.3517531Z ##[group]Run set -o pipefail
+2026-11-07T06:24:09.3517710Z [36;1mset -o pipefail[0m
+2026-11-07T06:24:09.3518273Z [36;1mpython3 -B ci/rg_observed_kernel_verify.py --memory-reserve-mib 2048 -- --mathlib-project "$GITHUB_WORKSPACE" --endpoint Proofs.RadenkovicGutmanDegreeOneMiddleResidualFinitePrerequisites --workers 1 --module-timeout 600 --resume | python3 -B ci/rg_compact_ci_output.py[0m
+2026-11-07T06:24:09.3535941Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-11-07T06:24:09.3536123Z ##[endgroup]
+2026-11-07T06:24:09.3848031Z RG_KERNEL_RESOURCE_OBSERVATION {"seconds":0.0,"memory":{"MemTotal":16760344576,"MemAvailable":15372783616,"SwapFree":3221221376},"cgroup_limits":[],"available_bytes":15372783616,"lean_processes":[],"aggregate_lean_rss":0}
+2026-11-07T06:24:12.9943477Z PASS Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage00Block000 FRESH_KERNEL_EXPORT 1.718
+2026-11-07T06:24:12.9944676Z COMPLETED_MODULE_JSON {"module":"Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage00Block000","source_sha256":"2e77a7c1f451a01dc0d247c1d55637485900c26f24f8a996945f27f53d4c0030","source_closure_sha256":"861864e2966628a98d9193a894d339cd7076f2ed2aaaab78435f26631053bf09","output_sha256":"c7a18e7537f23a920a42500ecc9f180dd16ea7a2ea5239fbcab65ab1bd0b50e8","axiom_profiles":[["Classical.choice","Quot.sound","propext"]],"mode":"FRESH_KERNEL_EXPORT","seconds":1.718}
+2026-11-07T06:24:14.7119829Z PASS Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage01Block000 FRESH_KERNEL_EXPORT 1.718
+2026-11-07T06:24:14.7120991Z COMPLETED_MODULE_JSON {"module":"Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage01Block000","source_sha256":"9a87748b696786b123d9232fa3422db6ad6ed31dadf46af7cc3109d13af0961a","source_closure_sha256":"3552acb837cb96706063e573d26efafd25257d0c6e18b4733dce00292bde30b2","output_sha256":"babf4d764280cb442f549d5f3a5d261bfe0afd2c2d0c8e7468c81f53fa51f725","axiom_profiles":[["Classical.choice","Quot.sound","propext"]],"mode":"FRESH_KERNEL_EXPORT","seconds":1.718}
+2026-11-07T06:24:16.4298492Z PASS Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage02Block000 FRESH_KERNEL_EXPORT 1.717
+2026-11-07T06:24:16.4299593Z COMPLETED_MODULE_JSON {"module":"Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage02Block000","source_sha256":"a17e964be3abb797ef07ee65b77513792999de2471d769def85ff80ac1e7c053","source_closure_sha256":"7ba6db2374f273099264f2a60aa245746b55da0266570f9dad9fc17549f298dd","output_sha256":"f6c17ec73f054cb5eb1d327f040bafe20c583bb0b7bc5e32f208745290f1519e","axiom_profiles":[["Classical.choice","Quot.sound","propext"]],"mode":"FRESH_KERNEL_EXPORT","seconds":1.717}
+2026-11-07T06:24:18.1977724Z PASS Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage03Block000 FRESH_KERNEL_EXPORT 1.768
+2026-11-07T06:24:18.1978837Z COMPLETED_MODULE_JSON {"module":"Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage03Block000","source_sha256":"db80820e6f195b6092c0aa784cc6ee37e3b3a9f8d34e23f7471f4b88ba7a367c","source_closure_sha256":"aa5affa90b4b7d80958344c3e05c756c6da3aa17887ffc19934dd504a7f727d7","output_sha256":"dc9a7f2e07018fd39cc590300bf6b43eae4a8cf7c36f340636cfe20b6e6ed63e","axiom_profiles":[["Classical.choice","Quot.sound","propext"]],"mode":"FRESH_KERNEL_EXPORT","seconds":1.768}
+2026-11-07T06:24:19.3961987Z RG_KERNEL_RESOURCE_OBSERVATION {"seconds":10.01,"memory":{"MemTotal":16760344576,"MemAvailable":15218671616,"SwapFree":3221221376},"cgroup_limits":[],"available_bytes":15218671616,"lean_processes":[{"pid":2738,"rss":3855138816,"module":"RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage04Block000.lean"}],"aggregate_lean_rss":3855138816}
+2026-11-07T06:24:20.0169768Z PASS Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage04Block000 FRESH_KERNEL_EXPORT 1.819
+2026-11-07T06:24:20.0171075Z COMPLETED_MODULE_JSON {"module":"Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage04Block000","source_sha256":"f6fc9c0da391da824cc33d99ff94f6e65d41e7ec7ffe9fdcdb33ac1ea0f77c25","source_closure_sha256":"71712e9783d11a4c650c7f771ae7210c7ba8566eef921c8096f42673c9a030cc","output_sha256":"17e400f9235e43143049e1a0ba29f2582aa0aa0c5b46301ffc347ab82bdf2abf","axiom_profiles":[["Classical.choice","Quot.sound","propext"]],"mode":"FRESH_KERNEL_EXPORT","seconds":1.819}
+2026-11-07T06:24:21.8853709Z PASS Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage05Block000 FRESH_KERNEL_EXPORT 1.868
+2026-11-07T06:24:21.8855309Z COMPLETED_MODULE_JSON {"module":"Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage05Block000","source_sha256":"3582c9fe13ad71acfada15e01e3fc3e530dd71a6e6b6cf03497d8293bdc3b03d","source_closure_sha256":"93c1320ca2264d3be760ab8eabbeee0be7e5646c8026a65d651f48693afba123","output_sha256":"a63b4cde2bfb923c928129b0a70cfe1d8c579668fb1b932318f6895165d32c4c","axiom_profiles":[["Classical.choice","Quot.sound","propext"]],"mode":"FRESH_KERNEL_EXPORT","seconds":1.868}
+2026-11-07T06:24:24.1042833Z PASS Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage06Block000 FRESH_KERNEL_EXPORT 2.218
+2026-11-07T06:24:24.1043913Z COMPLETED_MODULE_JSON {"module":"Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage06Block000","source_sha256":"f197b5a6662521b33754c9fc84929628f2acf6ce0996b9c1f48d76334a114b30","source_closure_sha256":"8a05e0d98bf7bd879a761ebe919888cc78636d98e102c314c083d1800e95bb61","output_sha256":"1fafdf42b3520d334fbf0517c5dd34501452ac6656ba21923f40d4e8f127e5eb","axiom_profiles":[["Classical.choice","Quot.sound","propext"]],"mode":"FRESH_KERNEL_EXPORT","seconds":2.218}
+2026-11-07T06:24:25.8733063Z PASS Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage06Block001 FRESH_KERNEL_EXPORT 1.769
+2026-11-07T06:24:25.8734186Z COMPLETED_MODULE_JSON {"module":"Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage06Block001","source_sha256":"06f6a63fb1e7a6c969283085e288d65cfd98e901ca028f34efa1178697edc7f9","source_closure_sha256":"13c876e41bc22cfea6c67b4cdcec01f9566923ee6e08658c1df4d72c6c0118ae","output_sha256":"3e97005efa7591b44cf7e7be51cb10479f1662d0145fe6ab18491e1ef1a0d5b3","axiom_profiles":[["Classical.choice","Quot.sound","propext"]],"mode":"FRESH_KERNEL_EXPORT","seconds":1.769}
+2026-11-07T06:24:27.7914053Z PASS Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage07Block000 FRESH_KERNEL_EXPORT 1.918
+2026-11-07T06:24:27.7915136Z COMPLETED_MODULE_JSON {"module":"Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage07Block000","source_sha256":"6f921cfc4539ccabc50bedc18518f24c513bd551f95692827ab9918322afa7f6","source_closure_sha256":"ae8ed108f52fa453c36621024c59638a6b43c744cb2cddb0a43185352c21113e","output_sha256":"61b7b3a52ea95f73d5e1ce340ef084c9a9fc2dd772674428ca13ba43d6012637","axiom_profiles":[["Classical.choice","Quot.sound","propext"]],"mode":"FRESH_KERNEL_EXPORT","seconds":1.918}
+2026-11-07T06:24:29.4081840Z RG_KERNEL_RESOURCE_OBSERVATION {"seconds":20.02,"memory":{"MemTotal":16760344576,"MemAvailable":15103188992,"SwapFree":3221221376},"cgroup_limits":[],"available_bytes":15103188992,"lean_processes":[{"pid":2767,"rss":4084654080,"module":"RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage07Block001.lean"}],"aggregate_lean_rss":4084654080}
+2026-11-07T06:24:29.7112503Z PASS Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage07Block001 FRESH_KERNEL_EXPORT 1.919
+2026-11-07T06:24:29.7113898Z COMPLETED_MODULE_JSON {"module":"Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage07Block001","source_sha256":"30445b44eea0cffb4eba7035bd935299be69a891fb7537709e6001b3c2a284b5","source_closure_sha256":"b9803e9c526800b1a8aeb28e8920e52ebb8da6eea3e36b07fd35d3981e4757cd","output_sha256":"2a14f8aa5f11d230955ef2ba886c5151fcad2cc95d25e534546814bd03c6c890","axiom_profiles":[["Classical.choice","Quot.sound","propext"]],"mode":"FRESH_KERNEL_EXPORT","seconds":1.919}
+2026-11-07T06:24:31.6804188Z PASS Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage07Block002 FRESH_KERNEL_EXPORT 1.969
+2026-11-07T06:24:31.6805649Z COMPLETED_MODULE_JSON {"module":"Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage07Block002","source_sha256":"a3bf688ce311b40c10c9bb434d8eb779196640760f0333adb8967b9adb0ec98e","source_closure_sha256":"8505842f45bff5fa80ce81ec0a8a2dbcfad1763ca128ad2dfd52849c1868b79b","output_sha256":"c584e39010a1e5e9cc654514f0fc9ac3b14e8e4eb3cf2403e374075e0dee6f3a","axiom_profiles":[["Classical.choice","Quot.sound","propext"]],"mode":"FRESH_KERNEL_EXPORT","seconds":1.969}
+2026-11-07T06:24:33.4997831Z PASS Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage07Block003 FRESH_KERNEL_EXPORT 1.819
+2026-11-07T06:24:33.4998941Z COMPLETED_MODULE_JSON {"module":"Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage07Block003","source_sha256":"a5e4f6927da96bddb01ec729232e18ecc24c785055f4203d3237e44495ca292f","source_closure_sha256":"8260064f10a3478c5acac42abc2225bfd706f9963aab6632392d3211625346c8","output_sha256":"338c42d814812a906b9b0c830b7ad0ae08235dc8a0499af38b6acab7f881fd17","axiom_profiles":[["Classical.choice","Quot.sound","propext"]],"mode":"FRESH_KERNEL_EXPORT","seconds":1.819}
+2026-11-07T06:24:35.5183217Z PASS Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage08Block000 FRESH_KERNEL_EXPORT 2.018
+2026-11-07T06:24:35.5184814Z COMPLETED_MODULE_JSON {"module":"Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage08Block000","source_sha256":"9a7795ffcbb0d1037bd6eb507b7ee499bf1a432b5e321d842d2f7c9dd9b8fd6b","source_closure_sha256":"e15f6341b0b2dfe51e2e00ab09095911ee18c90feff30500611c38431a8d9409","output_sha256":"8e70bdae685efd798667822fc119be173dc479a444557a5a0fe1e13a2e3d79bc","axiom_profiles":[["Classical.choice","Quot.sound","propext"]],"mode":"FRESH_KERNEL_EXPORT","seconds":2.018}
+2026-11-07T06:24:37.5868807Z PASS Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage08Block001 FRESH_KERNEL_EXPORT 2.068
+2026-11-07T06:24:37.5869922Z COMPLETED_MODULE_JSON {"module":"Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage08Block001","source_sha256":"73b5dfe08743b8cec00c2d5ef26c0234cca276db6861276c7131a02b65547fee","source_closure_sha256":"2157c1472da8587ccedb4992a94b78532333ada59539985275b60f8aef987515","output_sha256":"48fe87742fd842ad21602f6882e6800f8fc2ad3463692381b8817350a5c0e676","axiom_profiles":[["Classical.choice","Quot.sound","propext"]],"mode":"FRESH_KERNEL_EXPORT","seconds":2.068}
+2026-11-07T06:24:39.4197289Z RG_KERNEL_RESOURCE_OBSERVATION {"seconds":30.04,"memory":{"MemTotal":16760344576,"MemAvailable":14950100992,"SwapFree":3221221376},"cgroup_limits":[],"available_bytes":14950100992,"lean_processes":[{"pid":2816,"rss":4145930240,"module":"RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage08Block002.lean"}],"aggregate_lean_rss":4145930240}
+2026-11-07T06:24:39.6574736Z PASS Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage08Block002 FRESH_KERNEL_EXPORT 2.07
+2026-11-07T06:24:39.6575866Z COMPLETED_MODULE_JSON {"module":"Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage08Block002","source_sha256":"f8b842a520f29b0d7ca58227766669ce6894703277a40e29c662ef934e5a4601","source_closure_sha256":"6c4d1c8288ace37906b5233a88964987b4afe417022165366d2d9c73de18d5aa","output_sha256":"0d509ab35a5e2904d0a3435558c913958d02b695162ea764f9baa446b53aefc6","axiom_profiles":[["Classical.choice","Quot.sound","propext"]],"mode":"FRESH_KERNEL_EXPORT","seconds":2.07}
+2026-11-07T06:24:41.8270450Z PASS Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage08Block003 FRESH_KERNEL_EXPORT 2.169
+2026-11-07T06:24:41.8272237Z COMPLETED_MODULE_JSON {"module":"Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage08Block003","source_sha256":"049365b5e7d6d070a3617453f4347059c9f74cac099223da9b6a91d01e93b450","source_closure_sha256":"c528ae1652fe592fae62982f4998caf5107fd631477f766dd774d1b205d680f8","output_sha256":"8617ae02895a85d4927714b1a274c56f92304a5bae155e6d1345ec88f6e69ec5","axiom_profiles":[["Classical.choice","Quot.sound","propext"]],"mode":"FRESH_KERNEL_EXPORT","seconds":2.169}
+2026-11-07T06:24:44.0461760Z PASS Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage08Block004 FRESH_KERNEL_EXPORT 2.219
+2026-11-07T06:24:44.0464176Z COMPLETED_MODULE_JSON {"module":"Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage08Block004","source_sha256":"b86352243e6b80314819fa18b21ade009e1d30b61f7a6ae748b047ced8747815","source_closure_sha256":"91b851ae42ec4b7bb9aae5377273a973be10a35b5b903dbfece6a06115ff989a","output_sha256":"0a80061c620278e1add9ce25b7074e6b4c7ad1f02db34d86e99943cf0f9133d9","axiom_profiles":[["Classical.choice","Quot.sound","propext"]],"mode":"FRESH_KERNEL_EXPORT","seconds":2.219}
+2026-11-07T06:24:46.2156904Z PASS Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage08Block005 FRESH_KERNEL_EXPORT 2.169
+2026-11-07T06:24:46.2158689Z COMPLETED_MODULE_JSON {"module":"Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage08Block005","source_sha256":"92c50aa085fc6e358993232ac20a0571b21f63c2d6258e02ba71fbec93c46f3c","source_closure_sha256":"407c8d8eb62bf29f56237eee23c1ea56f5b49ca60d190d6cafdbf22f10ad1531","output_sha256":"4627e5f2dd4acbd7d8652947ea941bbc737ae848435d9e39db96e44e55add254","axiom_profiles":[["Classical.choice","Quot.sound","propext"]],"mode":"FRESH_KERNEL_EXPORT","seconds":2.169}
+2026-11-07T06:24:48.3843536Z PASS Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage08Block006 FRESH_KERNEL_EXPORT 2.168
+2026-11-07T06:24:48.3845175Z COMPLETED_MODULE_JSON {"module":"Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage08Block006","source_sha256":"d88db5a54ff74c8bc77855da431202fe11aa0124729d01c7d50d1be5a6dbdd47","source_closure_sha256":"829e99a28d36522d66a8c2db9a41e7ba564bdfaa234f416607def29316a3c638","output_sha256":"3428d8720f2643ac4f5233a2d7e163da267070b9106a3f90f6aa01c0fa01e486","axiom_profiles":[["Classical.choice","Quot.sound","propext"]],"mode":"FRESH_KERNEL_EXPORT","seconds":2.168}
+2026-11-07T06:24:49.4343774Z RG_KERNEL_RESOURCE_OBSERVATION {"seconds":40.05,"memory":{"MemTotal":16760344576,"MemAvailable":15353151488,"SwapFree":3221221376},"cgroup_limits":[],"available_bytes":15353151488,"lean_processes":[{"pid":2848,"rss":3697127424,"module":"RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage08Block007.lean"}],"aggregate_lean_rss":3697127424}
+2026-11-07T06:24:50.4530383Z PASS Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage08Block007 FRESH_KERNEL_EXPORT 2.068
+2026-11-07T06:24:50.4531495Z COMPLETED_MODULE_JSON {"module":"Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage08Block007","source_sha256":"13d3c50a414d6d5dd6d3f384d30e7eb91e7199d46e4c69c98b8c60bc061ef936","source_closure_sha256":"07445a74cef899d2ddd822a3bd550964d610e032ce61bf0703ab6f216de0d67a","output_sha256":"4fedfe17e68ae7ec91502507af0acb7e3846df864b7ea9bb14b152316bc20b59","axiom_profiles":[["Classical.choice","Quot.sound","propext"]],"mode":"FRESH_KERNEL_EXPORT","seconds":2.068}
+2026-11-07T06:24:52.4729471Z PASS Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage08Block008 FRESH_KERNEL_EXPORT 2.02
+2026-11-07T06:24:52.4730613Z COMPLETED_MODULE_JSON {"module":"Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage08Block008","source_sha256":"2ec41ffd8b54ea670b624c8666ca8fce0e96a1da6087c4bebbf087739bfa22f1","source_closure_sha256":"e4c60fc00e923924afcbaffe0ef01fe39a2979caa9eb75c026d9b21588644782","output_sha256":"2bf5f0755a3d745a6d0c5256c83dfe50a67b6ec35543b6af37b234c661011a7e","axiom_profiles":[["Classical.choice","Quot.sound","propext"]],"mode":"FRESH_KERNEL_EXPORT","seconds":2.02}
+2026-11-07T06:24:54.6918003Z PASS Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage09Block000 FRESH_KERNEL_EXPORT 2.218
+2026-11-07T06:24:54.6919090Z COMPLETED_MODULE_JSON {"module":"Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage09Block000","source_sha256":"0385a67136f8c91c58a49b05e5d190f24758a4c525c097b564e4990169861f8e","source_closure_sha256":"8a91548bf5d267d3afca1d176657ff094e0f796f33a4ef05bddc20791bb1c064","output_sha256":"0024493ecd8bd2db2306d6d3d8e499271781949cc1bb5d479992db985483d724","axiom_profiles":[["Classical.choice","Quot.sound","propext"]],"mode":"FRESH_KERNEL_EXPORT","seconds":2.218}
+2026-11-07T06:24:56.9627301Z PASS Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage09Block001 FRESH_KERNEL_EXPORT 2.27
+2026-11-07T06:24:56.9628368Z COMPLETED_MODULE_JSON {"module":"Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage09Block001","source_sha256":"880884718e728ff666f78543b5029af9c460a7705004dba8e18d3011b4a389a5","source_closure_sha256":"41c832f0bf8d7cfc25ad12115824911d049d763c0569e35e487c0649c4ce0959","output_sha256":"108d4922f283a2e5816abb16a5d9ce4ad116899b8fa4bd5ec672a656562c101a","axiom_profiles":[["Classical.choice","Quot.sound","propext"]],"mode":"FRESH_KERNEL_EXPORT","seconds":2.27}
+2026-11-07T06:24:59.3318073Z PASS Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage09Block002 FRESH_KERNEL_EXPORT 2.369
+2026-11-07T06:24:59.3319197Z COMPLETED_MODULE_JSON {"module":"Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage09Block002","source_sha256":"613b5c58938539f3eb286bca79616d5d45b32ac34d35e9fc635d2c992112d7c2","source_closure_sha256":"cfeff4b6d7b213ab0bc1564bbd8eb9d43d3c43e039546ac210a87382a524351b","output_sha256":"8b4027fb6977ad460b0490a9ae0df42ac650e6f282fee5c7ccb99c8639bc4bc2","axiom_profiles":[["Classical.choice","Quot.sound","propext"]],"mode":"FRESH_KERNEL_EXPORT","seconds":2.369}
+2026-11-07T06:24:59.4456797Z RG_KERNEL_RESOURCE_OBSERVATION {"seconds":50.06,"memory":{"MemTotal":16760344576,"MemAvailable":15396077568,"SwapFree":3221221376},"cgroup_limits":[],"available_bytes":15396077568,"lean_processes":[{"pid":2875,"rss":222797824,"module":"RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage09Block003.lean"}],"aggregate_lean_rss":222797824}
+2026-11-07T06:25:01.7518819Z PASS Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage09Block003 FRESH_KERNEL_EXPORT 2.419
+2026-11-07T06:25:01.7519973Z COMPLETED_MODULE_JSON {"module":"Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage09Block003","source_sha256":"953c0e7f5caad96072ff5cf2fe518ed0464de7518a75ef9830a58f9e24daab24","source_closure_sha256":"2ecaf281bd621dd911ac6d4fd2d01de874e6786393ef4be1a821745b2880efe9","output_sha256":"dc5448f00633ebc05b971448a8aad7f2b327322c9e31b9665d84cf63215df951","axiom_profiles":[["Classical.choice","Quot.sound","propext"]],"mode":"FRESH_KERNEL_EXPORT","seconds":2.419}
+2026-11-07T06:25:04.1710622Z PASS Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage09Block004 FRESH_KERNEL_EXPORT 2.419
+2026-11-07T06:25:04.1712387Z COMPLETED_MODULE_JSON {"module":"Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage09Block004","source_sha256":"4d25c47cb0ee046a39ae2845a78900c4965790f568d3d79cbb3f9b0f89740924","source_closure_sha256":"4224376b17696376595f2c0516dfed0f0731b8d808f319acaee6e282d15477fa","output_sha256":"0aed6de45840bffc9ed40fda7dd6feeed393540f6742285fdc73a7ef7f665653","axiom_profiles":[["Classical.choice","Quot.sound","propext"]],"mode":"FRESH_KERNEL_EXPORT","seconds":2.419}
+2026-11-07T06:25:06.6909487Z PASS Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage09Block005 FRESH_KERNEL_EXPORT 2.519
+2026-11-07T06:25:06.6910612Z COMPLETED_MODULE_JSON {"module":"Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage09Block005","source_sha256":"284442f664b8de27f68e0027691c6646fd270ae5b73cafdb2d766f074b3b7d5e","source_closure_sha256":"4358d88047962504e71b102161459c0abc4fbbf25d933764139df855c4b4554e","output_sha256":"a7787af148491cab80a943387646d4831eff36673be68eb8c429dcaa994a9da7","axiom_profiles":[["Classical.choice","Quot.sound","propext"]],"mode":"FRESH_KERNEL_EXPORT","seconds":2.519}
+2026-11-07T06:25:09.2603753Z PASS Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage09Block006 FRESH_KERNEL_EXPORT 2.569
+2026-11-07T06:25:09.2605762Z COMPLETED_MODULE_JSON {"module":"Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage09Block006","source_sha256":"f354350ae94978e8e8f6666364746445345ace1246b28f5c9407725e2a2029ff","source_closure_sha256":"cb25b2b13a1aa838ab9e0ab64915f060e59a0023c460f388be3cc6473427a0bc","output_sha256":"8b2344c7e4a2c4cd04901b641eeac9de54548ac01d27092144d66f189b58fa98","axiom_profiles":[["Classical.choice","Quot.sound","propext"]],"mode":"FRESH_KERNEL_EXPORT","seconds":2.569}
+2026-11-07T06:25:09.4574059Z RG_KERNEL_RESOURCE_OBSERVATION {"seconds":60.07,"memory":{"MemTotal":16760344576,"MemAvailable":15460372480,"SwapFree":3221221376},"cgroup_limits":[],"available_bytes":15460372480,"lean_processes":[{"pid":2921,"rss":428167168,"module":"RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage09Block007.lean"}],"aggregate_lean_rss":428167168}
+2026-11-07T06:25:11.8312066Z PASS Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage09Block007 FRESH_KERNEL_EXPORT 2.57
+2026-11-07T06:25:11.8313437Z COMPLETED_MODULE_JSON {"module":"Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage09Block007","source_sha256":"d428e6f69f708330dd90d8ef9ba2aad1fee4eeb2c47a51ee1f87488b81e160d0","source_closure_sha256":"a1d5dee3c5ed814976eaf0359f7c953d26198b44e564d44a1c21c7eb024adab9","output_sha256":"623e87d1318b63d1050ecd176eac1079cd8fec5f2232cc8d282e327f988de612","axiom_profiles":[["Classical.choice","Quot.sound","propext"]],"mode":"FRESH_KERNEL_EXPORT","seconds":2.57}
+2026-11-07T06:25:14.4514632Z PASS Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage09Block008 FRESH_KERNEL_EXPORT 2.62
+2026-11-07T06:25:14.4515724Z COMPLETED_MODULE_JSON {"module":"Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage09Block008","source_sha256":"5d8ee7973e7d10679b0ec5fd11de79b688abc7907f69b4ac537584282e9fee09","source_closure_sha256":"1c6a9581bed9dbced3010fb82a2b746d7ba2bde098a517d0bd47eb55c0c15251","output_sha256":"2226e614620e728ddeadccf89c74997356140a06b0b64edf2eca3521dfa13bbd","axiom_profiles":[["Classical.choice","Quot.sound","propext"]],"mode":"FRESH_KERNEL_EXPORT","seconds":2.62}
+2026-11-07T06:25:16.9718406Z PASS Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage09Block009 FRESH_KERNEL_EXPORT 2.52
+2026-11-07T06:25:16.9719517Z COMPLETED_MODULE_JSON {"module":"Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage09Block009","source_sha256":"6017f2bc8492dcb6eb91933d1d10160b79a9cd41aef20bb56fda7b3c334aff87","source_closure_sha256":"f0a7a30a54690d8dd93bbee8774cdc57883900cbd1d230b46e53acab7d106771","output_sha256":"5d038812b59fabfa4b10a14245e830b52f8accd0a27237c40b1832d692e4dbdc","axiom_profiles":[["Classical.choice","Quot.sound","propext"]],"mode":"FRESH_KERNEL_EXPORT","seconds":2.52}
+2026-11-07T06:25:19.4693611Z RG_KERNEL_RESOURCE_OBSERVATION {"seconds":70.09,"memory":{"MemTotal":16760344576,"MemAvailable":14741098496,"SwapFree":3221221376},"cgroup_limits":[],"available_bytes":14741098496,"lean_processes":[{"pid":2939,"rss":4392775680,"module":"RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage09Block010.lean"}],"aggregate_lean_rss":4392775680}
+2026-11-07T06:25:19.7931333Z PASS Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage09Block010 FRESH_KERNEL_EXPORT 2.821
+2026-11-07T06:25:19.7932409Z COMPLETED_MODULE_JSON {"module":"Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage09Block010","source_sha256":"fe3d471086cff4c0c67038ec13dd170278305030369323bcb816b9a40e2d955a","source_closure_sha256":"cff16cdfeacc3346dd71efaf09d441b9c34ac7230dcdd8045778e3b03801cba9","output_sha256":"29e412456a298935394154a87ce909e838e58ffb244373d5429dbae98a27824f","axiom_profiles":[["Classical.choice","Quot.sound","propext"]],"mode":"FRESH_KERNEL_EXPORT","seconds":2.821}
+2026-11-07T06:25:22.6636803Z PASS Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage09Block011 FRESH_KERNEL_EXPORT 2.87
+2026-11-07T06:25:22.6637897Z COMPLETED_MODULE_JSON {"module":"Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage09Block011","source_sha256":"f27c0f037cdbfa4ad81fe85822b16a5e8bd01858f86ccf87dbe29f3b97924158","source_closure_sha256":"2a9ee71812678d135e22cbb2b5aae388503aa98ffc9002873462029c82c66a49","output_sha256":"fc0e9ed7ce2efaacdea016a20e3c1fbd0f11668ddef5ab87766a10f7a57b1c5e","axiom_profiles":[["Classical.choice","Quot.sound","propext"]],"mode":"FRESH_KERNEL_EXPORT","seconds":2.87}
+2026-11-07T06:25:25.2335105Z PASS Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage09Block012 FRESH_KERNEL_EXPORT 2.569
+2026-11-07T06:25:25.2336192Z COMPLETED_MODULE_JSON {"module":"Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage09Block012","source_sha256":"bac765212b98950e5a8f07414f0bad6f26542ba636fb1e3c2a96ded2f2b702a9","source_closure_sha256":"07e8cf19d5107ad7b98296bfd3f809141a86cf2d9304e3fc8d74f1f18775d2b7","output_sha256":"ca5bc87ce5f27e1070534c5a2a686bba756a0bbb71f2cdf3bebb722a6b74bbc6","axiom_profiles":[["Classical.choice","Quot.sound","propext"]],"mode":"FRESH_KERNEL_EXPORT","seconds":2.569}
+2026-11-07T06:25:28.2038726Z PASS Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage09Block013 FRESH_KERNEL_EXPORT 2.97
+2026-11-07T06:25:28.2039850Z COMPLETED_MODULE_JSON {"module":"Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage09Block013","source_sha256":"b49b78a5d971bc0e4478c110826e66bda6d032cee6d5d7e74acadbd9ba09ed2e","source_closure_sha256":"ad448adf3af0f15cf431ddcd31452bec3ff020da9474dc0aa4e273a33a38588a","output_sha256":"e709e12121f8ab64d620a3a63487540128a178d1ee63109d090fc3fd2f3e77e0","axiom_profiles":[["Classical.choice","Quot.sound","propext"]],"mode":"FRESH_KERNEL_EXPORT","seconds":2.97}
+2026-11-07T06:25:29.4811915Z RG_KERNEL_RESOURCE_OBSERVATION {"seconds":80.1,"memory":{"MemTotal":16760344576,"MemAvailable":15194374144,"SwapFree":3221221376},"cgroup_limits":[],"available_bytes":15194374144,"lean_processes":[{"pid":2961,"rss":3945119744,"module":"RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage09Block014.lean"}],"aggregate_lean_rss":3945119744}
+2026-11-07T06:25:30.9238481Z PASS Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage09Block014 FRESH_KERNEL_EXPORT 2.719
+2026-11-07T06:25:30.9240311Z COMPLETED_MODULE_JSON {"module":"Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage09Block014","source_sha256":"2ba0d774596950eb4b22004f0f6594eb1af4c82ccdef15c17f1886a5e34322dd","source_closure_sha256":"901b6e4097432ce623b749eff72b19a8953940535a94625a0880b45203ae8caa","output_sha256":"7dd627f2be844c29ec493489365487be47fdcebe99f750446b277bdb49e1d718","axiom_profiles":[["Classical.choice","Quot.sound","propext"]],"mode":"FRESH_KERNEL_EXPORT","seconds":2.719}
+2026-11-07T06:25:33.6948077Z PASS Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage09Block015 FRESH_KERNEL_EXPORT 2.771
+2026-11-07T06:25:33.6949222Z COMPLETED_MODULE_JSON {"module":"Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage09Block015","source_sha256":"4b3e1c813f914bb79fa8c1461e2cb36d844d8d0170627afa72b223e57ee252db","source_closure_sha256":"ee7c2537f7c71c470efc92129256d533aac45d8a4c430f0c1d8c49aec2c7182b","output_sha256":"5b0086d09a6b17c3c8628ef81415aad6351a5e0a2efb24190c299736ffac7909","axiom_profiles":[["Classical.choice","Quot.sound","propext"]],"mode":"FRESH_KERNEL_EXPORT","seconds":2.771}
+2026-11-07T06:25:36.1153530Z PASS Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage09Block016 FRESH_KERNEL_EXPORT 2.42
+2026-11-07T06:25:36.1154661Z COMPLETED_MODULE_JSON {"module":"Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage09Block016","source_sha256":"5b27644d41fe5d62a8467463cf3fd693ea4638656d48e46087b6584c3e2c6d31","source_closure_sha256":"52f46884fe5a87c35eaa856b22669dc32e99b2cdffeab4a3667102af3a43f7cd","output_sha256":"08df778f57d06de581886ccbde62da4a17e2ccb8ea12f46deb574aee95fbb705","axiom_profiles":[["Classical.choice","Quot.sound","propext"]],"mode":"FRESH_KERNEL_EXPORT","seconds":2.42}
+2026-11-07T06:25:39.0357120Z PASS Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage09Block017 FRESH_KERNEL_EXPORT 2.92
+2026-11-07T06:25:39.0358429Z COMPLETED_MODULE_JSON {"module":"Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage09Block017","source_sha256":"e97a7f357c51d369c71761ab80dbcea8e32d2b045b56a8c6985cbd7acb656cd5","source_closure_sha256":"77ca1988a9b45ec49a37932dfe9e01f3bd3d19248c4ba0f44eea2d4eb25266da","output_sha256":"24725718009b48430f9db2f8ca645054dd684ea9c6c13e5621629c41e0007015","axiom_profiles":[["Classical.choice","Quot.sound","propext"]],"mode":"FRESH_KERNEL_EXPORT","seconds":2.92}
+2026-11-07T06:25:39.4925862Z RG_KERNEL_RESOURCE_OBSERVATION {"seconds":90.11,"memory":{"MemTotal":16760344576,"MemAvailable":15400534016,"SwapFree":3221221376},"cgroup_limits":[],"available_bytes":15400534016,"lean_processes":[{"pid":2982,"rss":1371340800,"module":"RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage09Block018.lean"}],"aggregate_lean_rss":1371340800}
+2026-11-07T06:25:41.7057161Z PASS Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage09Block018 FRESH_KERNEL_EXPORT 2.669
+2026-11-07T06:25:41.7058285Z COMPLETED_MODULE_JSON {"module":"Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage09Block018","source_sha256":"49467b4dbf8e4f910ce2a15816f30fc5b1e06c62aeb5c894e017a3097cfbc18b","source_closure_sha256":"b58d6c30cf523f97390769a503bebb0345954f6abdc72ddec7614e4662fa8e7a","output_sha256":"3e8d19ae4a48e847ca1a884dd7665e1130f69cb50e1f0f126cfa716b5209c584","axiom_profiles":[["Classical.choice","Quot.sound","propext"]],"mode":"FRESH_KERNEL_EXPORT","seconds":2.669}
+2026-11-07T06:25:44.2756260Z PASS Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage09Block019 FRESH_KERNEL_EXPORT 2.569
+2026-11-07T06:25:44.2758048Z COMPLETED_MODULE_JSON {"module":"Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage09Block019","source_sha256":"ef1f25c9ab4cd4115bc7411295acd11f638cc409c3b81222b5b21bb6fdd311b7","source_closure_sha256":"929320959c3c3af94e109075240eedb8c01a8a8e12118315c3410e5759ae6c29","output_sha256":"0ea6d292c55aa1363ede67cf2c41b3a400187cefbbec99d2c97029b7ace9e2e6","axiom_profiles":[["Classical.choice","Quot.sound","propext"]],"mode":"FRESH_KERNEL_EXPORT","seconds":2.569}
+2026-11-07T06:25:46.7459811Z PASS Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage09Block020 FRESH_KERNEL_EXPORT 2.47
+2026-11-07T06:25:46.7461645Z COMPLETED_MODULE_JSON {"module":"Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage09Block020","source_sha256":"41edf9c363fd9181185a6d0df75d99b88acf9522b48f89e3aab93fc692cae981","source_closure_sha256":"186517a0dea91e4bbece94c63dce6b1ae27abbd4bb58ba4f28afa9d35af85b9f","output_sha256":"bd2df76abd87a2ee3248dcb0bd41b0d05cbb18e92333658e275b2951b0790809","axiom_profiles":[["Classical.choice","Quot.sound","propext"]],"mode":"FRESH_KERNEL_EXPORT","seconds":2.47}
+2026-11-07T06:25:49.2661592Z PASS Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage09Block021 FRESH_KERNEL_EXPORT 2.52
+2026-11-07T06:25:49.2662850Z COMPLETED_MODULE_JSON {"module":"Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage09Block021","source_sha256":"02ca2c732f7ca0cc48cabf58db4f1b78a7c78eb6c628f245c0b5b1f71f0e651d","source_closure_sha256":"b4670dd5a71c1502f95427aac3d045d1395eed5c0d8f8a964281a254e0e39c46","output_sha256":"40b59fd530f808cd6554ad2065cc6fd5d09bccf0003ecf40c34932bdf74be839","axiom_profiles":[["Classical.choice","Quot.sound","propext"]],"mode":"FRESH_KERNEL_EXPORT","seconds":2.52}
+2026-11-07T06:25:49.5040884Z RG_KERNEL_RESOURCE_OBSERVATION {"seconds":100.12,"memory":{"MemTotal":16760344576,"MemAvailable":15274356736,"SwapFree":3221221376},"cgroup_limits":[],"available_bytes":15274356736,"lean_processes":[{"pid":3003,"rss":583081984,"module":"RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage09Block022.lean"}],"aggregate_lean_rss":583081984}
+2026-11-07T06:25:51.2346993Z PASS Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage09Block022 FRESH_KERNEL_EXPORT 1.968
+2026-11-07T06:25:54.0552918Z COMPLETED_MODULE_JSON {"module":"Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage09Block022","source_sha256":"46a47e6a3f4d8b0bcaabafcb8b20e8e5a83a4f90e90bc5928df667e2b18502ea","source_closure_sha256":"988c82ca5c29152570d91d253f4dff2783a8f67df1ea0847823385b0127b92e0","output_sha256":"b7144a7545eb28f002045ae786014ec075242faac3abacba3c32afac8809d263","axiom_profiles":[["Classical.choice","Quot.sound","propext"]],"mode":"FRESH_KERNEL_EXPORT","seconds":1.968}
+2026-11-07T06:25:54.0555018Z PASS Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block000 FRESH_KERNEL_EXPORT 2.82
+2026-11-07T06:25:54.0556184Z COMPLETED_MODULE_JSON {"module":"Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block000","source_sha256":"275a91178f3d2edf6a66dbc797dee42896a865f4ce7cf1990094040ffa7c3667","source_closure_sha256":"44a43cf5f7d8412f89fe4f0b141ba241cb1e2f3dd9989bcb5c58c675912ed327","output_sha256":"bd25805335192d33a3defa3dbfc017b889425a9189bdd940c109bd5fa72bf759","axiom_profiles":[["Classical.choice","Quot.sound","propext"]],"mode":"FRESH_KERNEL_EXPORT","seconds":2.82}
+2026-11-07T06:25:56.7253797Z PASS Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block001 FRESH_KERNEL_EXPORT 2.67
+2026-11-07T06:25:56.7254935Z COMPLETED_MODULE_JSON {"module":"Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block001","source_sha256":"70118635155a991ebde7e3bb99ab3b10a52a0a8d95f478acd3770d86e00be27f","source_closure_sha256":"fe68c2f52dfedf18b9323b98b511cc3aee8f075f5f42d68c449fda9727acb7a8","output_sha256":"558bc5074b45e4a3511a74d2cda77ed4b8052879464819999c9fa284dbc5a930","axiom_profiles":[["Classical.choice","Quot.sound","propext"]],"mode":"FRESH_KERNEL_EXPORT","seconds":2.67}
+2026-11-07T06:25:59.5143504Z RG_KERNEL_RESOURCE_OBSERVATION {"seconds":110.13,"memory":{"MemTotal":16760344576,"MemAvailable":15351934976,"SwapFree":3221221376},"cgroup_limits":[],"available_bytes":15351934976,"lean_processes":[],"aggregate_lean_rss":0}
+2026-11-07T06:25:59.5453713Z PASS Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block002 FRESH_KERNEL_EXPORT 2.82
+2026-11-07T06:25:59.5455457Z COMPLETED_MODULE_JSON {"module":"Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block002","source_sha256":"2e553afae71626ea3d3a316aaf877335b3735669b968eebd55359a4b1d791505","source_closure_sha256":"bdb01e3bea467fca9293272de999a77d81305a3c7cf161215e59e3bfaf41eefa","output_sha256":"2ccb84364d85d5f52df517359fee4c86f2219f570bc2eeeb25216d9f92133186","axiom_profiles":[["Classical.choice","Quot.sound","propext"]],"mode":"FRESH_KERNEL_EXPORT","seconds":2.82}
+2026-11-07T06:26:02.4659099Z PASS Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block003 FRESH_KERNEL_EXPORT 2.92
+2026-11-07T06:26:02.4660183Z COMPLETED_MODULE_JSON {"module":"Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block003","source_sha256":"7d9ee92fede6789f3a215c690b6589906bcb753b8e0931a43db72b2631aa9530","source_closure_sha256":"fc4fadd2d32dc00999f5be966422fb12d5a1fb8b0a60b4648911f037177952a8","output_sha256":"021559986b42ee03dafee96d232c628ebf5f68c37810d3b1919392e5b9e73e00","axiom_profiles":[["Classical.choice","Quot.sound","propext"]],"mode":"FRESH_KERNEL_EXPORT","seconds":2.92}
+2026-11-07T06:26:05.4363760Z PASS Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block004 FRESH_KERNEL_EXPORT 2.97
+2026-11-07T06:26:05.4364874Z COMPLETED_MODULE_JSON {"module":"Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block004","source_sha256":"0944051d843e6b219829486255fa4a8340fd24d63c81f8f373bb1955dbf550ff","source_closure_sha256":"9e2daaff2ead0c93d98f593a796c45fe7177e418c30daf81d0b2dab57b110122","output_sha256":"f6607a103beb6d6728aeb1e0301aaa4ba7291736119d01c892c484292f34d5b3","axiom_profiles":[["Classical.choice","Quot.sound","propext"]],"mode":"FRESH_KERNEL_EXPORT","seconds":2.97}
+2026-11-07T06:26:08.2074528Z PASS Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block005 FRESH_KERNEL_EXPORT 2.771
+2026-11-07T06:26:08.2075624Z COMPLETED_MODULE_JSON {"module":"Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block005","source_sha256":"758cf346641aef7af0fcef976ba7020bdc8bbe16a0473fc4d45e6fe8ec6d3548","source_closure_sha256":"f79807dd810fa27e32298d0e076e9473fe3da72706352c8fe53ee9260b5aebca","output_sha256":"fcd22df9177cf3f58d48aabe607621affe9ca85daef97d43ba50bdcaa2b81dda","axiom_profiles":[["Classical.choice","Quot.sound","propext"]],"mode":"FRESH_KERNEL_EXPORT","seconds":2.771}
+2026-11-07T06:26:09.5261756Z RG_KERNEL_RESOURCE_OBSERVATION {"seconds":120.14,"memory":{"MemTotal":16760344576,"MemAvailable":15159296000,"SwapFree":3221221376},"cgroup_limits":[],"available_bytes":15159296000,"lean_processes":[{"pid":3041,"rss":3980017664,"module":"RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block006.lean"}],"aggregate_lean_rss":3980017664}
+2026-11-07T06:26:11.3783212Z PASS Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block006 FRESH_KERNEL_EXPORT 3.17
+2026-11-07T06:26:11.3784291Z COMPLETED_MODULE_JSON {"module":"Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block006","source_sha256":"ee9418278b287d18bfa809d34412377ee0d9e6b1edc0d5972ac838fd5a188729","source_closure_sha256":"cd9b57c52ff34e791c13f6251cbf7554a12cd0786c94c3a6808de90c053d46bc","output_sha256":"a8a4f28f216df01b739b061c92323890ee41a6298f213e24a790fb8f11045043","axiom_profiles":[["Classical.choice","Quot.sound","propext"]],"mode":"FRESH_KERNEL_EXPORT","seconds":3.17}
+2026-11-07T06:26:14.5998904Z PASS Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block007 FRESH_KERNEL_EXPORT 3.221
+2026-11-07T06:26:14.6000058Z COMPLETED_MODULE_JSON {"module":"Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block007","source_sha256":"f37739774c8d9056ca5bd7a315893dbadcbd42e585a1df8b1ad5af9798b57c56","source_closure_sha256":"6ce30b7f8bee4e92ee430c019b61ad896276dcd9a42f178af68ec6a693502701","output_sha256":"f9dca8d0a1a8a678e4467e71289effd50b3caf4a0e631bb3f606942b6cfdcf03","axiom_profiles":[["Classical.choice","Quot.sound","propext"]],"mode":"FRESH_KERNEL_EXPORT","seconds":3.221}
+2026-11-07T06:26:17.5701112Z PASS Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block008 FRESH_KERNEL_EXPORT 2.97
+2026-11-07T06:26:17.5702224Z COMPLETED_MODULE_JSON {"module":"Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block008","source_sha256":"c8665e15d85529d57dcb93e398847ccb4742a5ed0360125526462436d93abf10","source_closure_sha256":"3d4329a2bd738f08184df2c12c1aaeb488b7b84fba45c969ef1a0cecf3fd958c","output_sha256":"c274f0a857a2e290856f2b530fb1fe80ee6e01593e85739b753721257f021361","axiom_profiles":[["Classical.choice","Quot.sound","propext"]],"mode":"FRESH_KERNEL_EXPORT","seconds":2.97}
+2026-11-07T06:26:19.5373034Z RG_KERNEL_RESOURCE_OBSERVATION {"seconds":130.15,"memory":{"MemTotal":16760344576,"MemAvailable":14865358848,"SwapFree":3221221376},"cgroup_limits":[],"available_bytes":14865358848,"lean_processes":[{"pid":3057,"rss":4299370496,"module":"RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block009.lean"}],"aggregate_lean_rss":4299370496}
+2026-11-07T06:26:20.9913903Z PASS Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block009 FRESH_KERNEL_EXPORT 3.421
+2026-11-07T06:26:20.9915177Z COMPLETED_MODULE_JSON {"module":"Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block009","source_sha256":"8324460632fd6ac17f13ea9f6a0873ab006c941e0dc7fc0cdd62a345cbf78dfb","source_closure_sha256":"01db1db814339940ab20cb93478f48010b2dea1dff497cb21cbb31a727a0c1e9","output_sha256":"fbe2fc44193cb13cfb9b280b0a68414dc8ae88da523f994913dae6567a824eb3","axiom_profiles":[["Classical.choice","Quot.sound","propext"]],"mode":"FRESH_KERNEL_EXPORT","seconds":3.421}
+2026-11-07T06:26:24.4127224Z PASS Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block010 FRESH_KERNEL_EXPORT 3.421
+2026-11-07T06:26:24.4128830Z COMPLETED_MODULE_JSON {"module":"Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block010","source_sha256":"2982e0f1a537c5f6a52ce35a743e08afdaebfdfc90c96a09e97c20511f4e4a11","source_closure_sha256":"c2a26880a314992b828e9e394184f9bd724ebdc8e7ebfce8febbaf2f7616695f","output_sha256":"5e56788fc92494cd48ad8f9a2b8974d1d550690d491dd414176b7ee488b5742c","axiom_profiles":[["Classical.choice","Quot.sound","propext"]],"mode":"FRESH_KERNEL_EXPORT","seconds":3.421}
+2026-11-07T06:26:27.7347891Z PASS Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block011 FRESH_KERNEL_EXPORT 3.322
+2026-11-07T06:26:27.7349642Z COMPLETED_MODULE_JSON {"module":"Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block011","source_sha256":"5888681841209d982aba2be3cf65553ec099e4c55a3e70b183bb22ee3c21dca8","source_closure_sha256":"d6ab3bc6902d344e75e4ba6b6c97745e3ec3f756cf0d18aea6172176975f87c4","output_sha256":"a8488fc4d96c543e23b7acdf4e608fea3d52b123dbcdd6372ad39cd597e0eea6","axiom_profiles":[["Classical.choice","Quot.sound","propext"]],"mode":"FRESH_KERNEL_EXPORT","seconds":3.322}
+2026-11-07T06:26:29.5491828Z RG_KERNEL_RESOURCE_OBSERVATION {"seconds":140.17,"memory":{"MemTotal":16760344576,"MemAvailable":14953594880,"SwapFree":3221221376},"cgroup_limits":[],"available_bytes":14953594880,"lean_processes":[{"pid":3075,"rss":4200796160,"module":"RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block012.lean"}],"aggregate_lean_rss":4200796160}
+2026-11-07T06:26:31.1564931Z PASS Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block012 FRESH_KERNEL_EXPORT 3.421
+2026-11-07T06:26:31.1566025Z COMPLETED_MODULE_JSON {"module":"Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block012","source_sha256":"0d5548266728d1104868470ad20500704315e60491a0936738449e893f9d534a","source_closure_sha256":"373fee4da3890f683523b8e1044bdfb8a667c4f468447e4ef0b141b3a4f126ff","output_sha256":"3d019518e144637fd33f60ec720228bf0223505b7f7b4829771b4fc5f2757f8f","axiom_profiles":[["Classical.choice","Quot.sound","propext"]],"mode":"FRESH_KERNEL_EXPORT","seconds":3.421}
+2026-11-07T06:26:34.6781403Z PASS Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block013 FRESH_KERNEL_EXPORT 3.521
+2026-11-07T06:26:34.6783572Z COMPLETED_MODULE_JSON {"module":"Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block013","source_sha256":"1cb04a9d4aa9226f11f9013d84ea56936e565dee43c60457f9f7bbc42edf8bb8","source_closure_sha256":"fa76fcaf7e5fc357b3c244d83ed2b01b44563f1c3305ca5c0bd7272a3d27c313","output_sha256":"c262664ef71347c97c83f7a0025fe86a3bb1de5169d8d575ace4b3bd053c0eba","axiom_profiles":[["Classical.choice","Quot.sound","propext"]],"mode":"FRESH_KERNEL_EXPORT","seconds":3.521}
+2026-11-07T06:26:37.9993127Z PASS Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block014 FRESH_KERNEL_EXPORT 3.321
+2026-11-07T06:26:37.9994219Z COMPLETED_MODULE_JSON {"module":"Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block014","source_sha256":"6411fe5545824008f4fe793bcb648c076e47219b8afe943edd2cf575f4214624","source_closure_sha256":"e92c67c7c052b315c2beca40737133c90928983df561a6fa5dc79408ed18e5e0","output_sha256":"4012bea258d84dcac4a487cfc7b20dc2e94c12f041dd541a63f251a80c9fe526","axiom_profiles":[["Classical.choice","Quot.sound","propext"]],"mode":"FRESH_KERNEL_EXPORT","seconds":3.321}
+2026-11-07T06:26:39.5610401Z RG_KERNEL_RESOURCE_OBSERVATION {"seconds":150.18,"memory":{"MemTotal":16760344576,"MemAvailable":15118106624,"SwapFree":3221221376},"cgroup_limits":[],"available_bytes":15118106624,"lean_processes":[{"pid":3091,"rss":4055982080,"module":"RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block015.lean"}],"aggregate_lean_rss":4055982080}
+2026-11-07T06:26:41.2726613Z PASS Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block015 FRESH_KERNEL_EXPORT 3.273
+2026-11-07T06:26:41.2728383Z COMPLETED_MODULE_JSON {"module":"Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block015","source_sha256":"eec0970f89bfddad9e839eb3c2d92a29e91fa776b7ae55f33b4590e59e18180c","source_closure_sha256":"d970643d5a0914d9d5d7fc99071de0fca091ec7577bffab94148fe7b6b3c2fcc","output_sha256":"bdc8f39f4286437aac9c1a9ca3d095da8d2e074a91fdff6f0a171c5831e2eec6","axiom_profiles":[["Classical.choice","Quot.sound","propext"]],"mode":"FRESH_KERNEL_EXPORT","seconds":3.273}
+2026-11-07T06:26:45.2450587Z PASS Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block016 FRESH_KERNEL_EXPORT 3.972
+2026-11-07T06:26:45.2451919Z COMPLETED_MODULE_JSON {"module":"Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block016","source_sha256":"77bf86d5099defd090a0d27075f2845f06e4cfdf102fe42a5d3025e3c269469b","source_closure_sha256":"07d30deaf4f6f3c411cb9fdeab4a2ce88a7e5dd23c7cb45fad765f6ed9908c72","output_sha256":"f089b7f7247540bc6da510d3ff52720191ae68de20bed26eedca4dbd2ba2444d","axiom_profiles":[["Classical.choice","Quot.sound","propext"]],"mode":"FRESH_KERNEL_EXPORT","seconds":3.972}
+2026-11-07T06:26:48.9179849Z PASS Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block017 FRESH_KERNEL_EXPORT 3.672
+2026-11-07T06:26:48.9180953Z COMPLETED_MODULE_JSON {"module":"Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block017","source_sha256":"1f43a365bc6ddc370082016d7dce602796745bd10dc2ec0bedf5fcb258ac9914","source_closure_sha256":"06b857c19aec5dd884cb89d2938bc253d467f3667c2c423f541dfdecb0580654","output_sha256":"df97bf8c622ea4234350c5143a45c7d8272ff2b326c4035b32a5e94b532ad200","axiom_profiles":[["Classical.choice","Quot.sound","propext"]],"mode":"FRESH_KERNEL_EXPORT","seconds":3.672}
+2026-11-07T06:26:49.5724274Z RG_KERNEL_RESOURCE_OBSERVATION {"seconds":160.19,"memory":{"MemTotal":16760344576,"MemAvailable":15474036736,"SwapFree":3221221376},"cgroup_limits":[],"available_bytes":15474036736,"lean_processes":[{"pid":3108,"rss":2379829248,"module":"RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block018.lean"}],"aggregate_lean_rss":2379829248}
+2026-11-07T06:26:53.0407485Z PASS Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block018 FRESH_KERNEL_EXPORT 4.122
+2026-11-07T06:26:53.0409302Z COMPLETED_MODULE_JSON {"module":"Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block018","source_sha256":"d5c9ccb65c7570b03fc519b6e0b9219cc821c33deb7505f91b2bff91051edc31","source_closure_sha256":"96072c393f2c6aa851334b812eecb9a997d0ccb5406642de49cbd5045e6a4de3","output_sha256":"9e777fd9b88037bfec8565cab6bbcc1ceb53f935b5b7bba2efd426260e790169","axiom_profiles":[["Classical.choice","Quot.sound","propext"]],"mode":"FRESH_KERNEL_EXPORT","seconds":4.122}
+2026-11-07T06:26:56.8641061Z PASS Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block019 FRESH_KERNEL_EXPORT 3.823
+2026-11-07T06:26:56.8643359Z COMPLETED_MODULE_JSON {"module":"Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block019","source_sha256":"925f14812bf22f846b1ff659a6236ef800185f6aa08ae010991cd49edd0e2a05","source_closure_sha256":"9dba907c85b8add254c2ffa471d053a59d6efc41cf7f5c19d5550d099542d28d","output_sha256":"bb6184c731ed56436c1fc0b59172cb9b527c03217fdc851edd4c2c235ba25b0f","axiom_profiles":[["Classical.choice","Quot.sound","propext"]],"mode":"FRESH_KERNEL_EXPORT","seconds":3.823}
+2026-11-07T06:26:59.5843992Z RG_KERNEL_RESOURCE_OBSERVATION {"seconds":170.2,"memory":{"MemTotal":16760344576,"MemAvailable":14574768128,"SwapFree":3221221376},"cgroup_limits":[],"available_bytes":14574768128,"lean_processes":[{"pid":3120,"rss":4644835328,"module":"RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block020.lean"}],"aggregate_lean_rss":4644835328}
+2026-11-07T06:27:00.4360230Z PASS Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block020 FRESH_KERNEL_EXPORT 3.571
+2026-11-07T06:27:04.3584682Z COMPLETED_MODULE_JSON {"module":"Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block020","source_sha256":"b60208410d29617827f33daa3c182b70dffe18ef995eedf6b4efa876d2efc1a6","source_closure_sha256":"94b77bb361c7a8c5d900c4c5878106888e494549a47d6de321c9ebea884a0eda","output_sha256":"66e50b0000919ab8ba72b109992226a7c2359de42b7f6204d74cdd3dbf79a85f","axiom_profiles":[["Classical.choice","Quot.sound","propext"]],"mode":"FRESH_KERNEL_EXPORT","seconds":3.571}
+2026-11-07T06:27:04.3586519Z PASS Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block021 FRESH_KERNEL_EXPORT 3.922
+2026-11-07T06:27:04.3587761Z COMPLETED_MODULE_JSON {"module":"Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block021","source_sha256":"36e354a1f5ce084fde7bde889f99bae7aa1461cd08f1511c9db3472e2f5e4e15","source_closure_sha256":"28470da701f0e19b624b00519f4d8136877ccdebbf49b5a1d3d5c126366b9ae8","output_sha256":"c6680c15660f56a3bbeb02ead0451bd5273a246da3df61b0c219d14d290f8292","axiom_profiles":[["Classical.choice","Quot.sound","propext"]],"mode":"FRESH_KERNEL_EXPORT","seconds":3.922}
+2026-11-07T06:27:08.4313981Z PASS Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block022 FRESH_KERNEL_EXPORT 4.073
+2026-11-07T06:27:08.4315061Z COMPLETED_MODULE_JSON {"module":"Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block022","source_sha256":"071a56180df0cf8c6c85aafa0cb2c0592e24f6d1a4d107da5e3bc1982eeabda2","source_closure_sha256":"1a843d155f3e9bf64595493403559dfceafbf5fa7f1ebe500694a89ca28aa4c3","output_sha256":"2f4629f5b63dd1e6b04d9ad452f4c01bb91668cbc4d3df4f145f7d2e938d9d7f","axiom_profiles":[["Classical.choice","Quot.sound","propext"]],"mode":"FRESH_KERNEL_EXPORT","seconds":4.073}
+2026-11-07T06:27:09.5967585Z RG_KERNEL_RESOURCE_OBSERVATION {"seconds":180.21,"memory":{"MemTotal":16760344576,"MemAvailable":15271370752,"SwapFree":3221221376},"cgroup_limits":[],"available_bytes":15271370752,"lean_processes":[{"pid":3136,"rss":3843993600,"module":"RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block023.lean"}],"aggregate_lean_rss":3843993600}
+2026-11-07T06:27:12.5538736Z PASS Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block023 FRESH_KERNEL_EXPORT 4.122
+2026-11-07T06:27:12.5539826Z COMPLETED_MODULE_JSON {"module":"Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block023","source_sha256":"8e0735a3d43d258cfaab2858167717e3b509de7de3e0eead5ea431b48304cf7b","source_closure_sha256":"23ff27b1ed41297ce57730857204bc0bac1a17f65a810e2367a296f2a3c72ff6","output_sha256":"16a859792f09ae0137ae08ff6291a9ddcce02b07fdc75a9b57179f99c32a4311","axiom_profiles":[["Classical.choice","Quot.sound","propext"]],"mode":"FRESH_KERNEL_EXPORT","seconds":4.122}
+2026-11-07T06:27:16.6761994Z PASS Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block024 FRESH_KERNEL_EXPORT 4.122
+2026-11-07T06:27:16.6764202Z COMPLETED_MODULE_JSON {"module":"Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block024","source_sha256":"2eaa48db79b2455c0739ef5dced508493750f95a8552df490d272cbcedd5d66e","source_closure_sha256":"8eb67b35d17d785d455d2cd2d958b6c6a7cfe304622d6b06b70f72129dc1dee3","output_sha256":"4c136e9a1cb4190961eb89e1b2f7da5c0a66cea843324459d979bfec8d9a0b58","axiom_profiles":[["Classical.choice","Quot.sound","propext"]],"mode":"FRESH_KERNEL_EXPORT","seconds":4.122}
+2026-11-07T06:27:19.6097259Z RG_KERNEL_RESOURCE_OBSERVATION {"seconds":190.23,"memory":{"MemTotal":16760344576,"MemAvailable":14595346432,"SwapFree":3221221376},"cgroup_limits":[],"available_bytes":14595346432,"lean_processes":[{"pid":3148,"rss":4682764288,"module":"RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block025.lean"}],"aggregate_lean_rss":4682764288}
+2026-11-07T06:27:20.3487362Z PASS Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block025 FRESH_KERNEL_EXPORT 3.672
+2026-11-07T06:27:20.3488475Z COMPLETED_MODULE_JSON {"module":"Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block025","source_sha256":"adfe3744b6754c7676841007d22bf2f9e5d000c346445ecffef4c9a86ae8399e","source_closure_sha256":"feabf69f7654498b2e7ef3cc95644a40d1dfc8784ad68597a03e13300a48049e","output_sha256":"a2dff6248cd746d16eef9e15a50ef5cfbcc39f86f00cae0c7cdb1fee948570e9","axiom_profiles":[["Classical.choice","Quot.sound","propext"]],"mode":"FRESH_KERNEL_EXPORT","seconds":3.672}
+2026-11-07T06:27:24.8719964Z PASS Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block026 FRESH_KERNEL_EXPORT 4.523
+2026-11-07T06:27:24.8721037Z COMPLETED_MODULE_JSON {"module":"Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block026","source_sha256":"1aa9e59499e155dda03accd1ab09d7e743b34229b367f761e17ca8fe975911c9","source_closure_sha256":"a267bd0b3d1d79ba71d3d644180c0cbe6dd620a2e290a03b0d39c28fd24a16b7","output_sha256":"237741113d751a0b73005a255285e38f4020148f62dbd0d2b91d569bff6ce7e9","axiom_profiles":[["Classical.choice","Quot.sound","propext"]],"mode":"FRESH_KERNEL_EXPORT","seconds":4.523}
+2026-11-07T06:27:28.8961751Z PASS Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block027 FRESH_KERNEL_EXPORT 4.024
+2026-11-07T06:27:28.8965231Z COMPLETED_MODULE_JSON {"module":"Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block027","source_sha256":"9fce560583c76f442de1742cad0011143b09be1bb8592f22dafb4f32b91f07b4","source_closure_sha256":"a317691e1983afcad224bb67155777520d6d1f63bb6b1c584cd34a2622aa6e4f","output_sha256":"8e456903493da915451422a38788f2ee27a04235075199a1ff2fa64e7434893c","axiom_profiles":[["Classical.choice","Quot.sound","propext"]],"mode":"FRESH_KERNEL_EXPORT","seconds":4.024}
+2026-11-07T06:27:29.6218155Z RG_KERNEL_RESOURCE_OBSERVATION {"seconds":200.24,"memory":{"MemTotal":16760344576,"MemAvailable":15424638976,"SwapFree":3221221376},"cgroup_limits":[],"available_bytes":15424638976,"lean_processes":[{"pid":3164,"rss":2831228928,"module":"RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block028.lean"}],"aggregate_lean_rss":2831228928}
+2026-11-07T06:27:32.6681044Z PASS Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block028 FRESH_KERNEL_EXPORT 3.772
+2026-11-07T06:27:32.6682151Z COMPLETED_MODULE_JSON {"module":"Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block028","source_sha256":"eb9675907ad0cb51fa3906e439b35dbf5445a1e65a451d575d4d0857da230fda","source_closure_sha256":"6c9ceaaa1f0dc95880df8307cfd4bd260cedf60d31a3ffc3a38af264c986fea8","output_sha256":"73efef52fb5cf51e7457a2bba57524247d5d51eef11baec510c28ccccc13690a","axiom_profiles":[["Classical.choice","Quot.sound","propext"]],"mode":"FRESH_KERNEL_EXPORT","seconds":3.772}
+2026-11-07T06:27:36.9913613Z PASS Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block029 FRESH_KERNEL_EXPORT 4.323
+2026-11-07T06:27:39.6336885Z RG_KERNEL_RESOURCE_OBSERVATION {"seconds":210.25,"memory":{"MemTotal":16760344576,"MemAvailable":15484985344,"SwapFree":3221221376},"cgroup_limits":[],"available_bytes":15484985344,"lean_processes":[],"aggregate_lean_rss":0}
+2026-11-07T06:27:39.6338795Z COMPLETED_MODULE_JSON {"module":"Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block029","source_sha256":"7deca14eb3a7b2c3848ea1f98c1ec38a4793c5e88564108c27b263e3185b4fd3","source_closure_sha256":"b49ff5280d3fea748e6597ead23a5b89003c7dc3a43ffe547dd9ba5c705a0f5a","output_sha256":"c3e3de78656af665df510d4d6e357f8ee8357ac2c4765da9720d73471354d665","axiom_profiles":[["Classical.choice","Quot.sound","propext"]],"mode":"FRESH_KERNEL_EXPORT","seconds":4.323}
+2026-11-07T06:27:39.7112514Z PASS Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block030 FRESH_KERNEL_EXPORT 2.719
+2026-11-07T06:27:39.7113809Z COMPLETED_MODULE_JSON {"module":"Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block030","source_sha256":"3894cb5ae59d286e5a3440cd184553b5b1a3aef1b8791784ca4aad441fc20eb5","source_closure_sha256":"d9b0229e51e27578ad764c33b9f87c1d52b6110d2074be99eeb2be59046b512e","output_sha256":"411dc50d4933441722ffbcfb29b65035e74e22902dd6ef1c045b32641b62304a","axiom_profiles":[["Classical.choice","Quot.sound","propext"]],"mode":"FRESH_KERNEL_EXPORT","seconds":2.719}
+2026-11-07T06:27:44.6365672Z PASS Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block031 FRESH_KERNEL_EXPORT 4.925
+2026-11-07T06:27:44.6367479Z COMPLETED_MODULE_JSON {"module":"Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block031","source_sha256":"758c44f564dfc7f7d47a64cfe9e6ae91a4999e409ff1e1263fd64d65771dc4cc","source_closure_sha256":"6a26bdc200f623f8f2eef673cc1e4e2d498281ca390c053304511b1c6afa5b02","output_sha256":"cb279b335c65ae13f0184915b413f3427f7c6752a083e84bd720d3ab47087c05","axiom_profiles":[["Classical.choice","Quot.sound","propext"]],"mode":"FRESH_KERNEL_EXPORT","seconds":4.925}
+2026-11-07T06:27:49.4108043Z PASS Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block032 FRESH_KERNEL_EXPORT 4.774
+2026-11-07T06:27:49.4110361Z COMPLETED_MODULE_JSON {"module":"Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block032","source_sha256":"1fb05c9c273e19f01d6c633d94158c08e651da14d8bf311ea7a845f4bd87367c","source_closure_sha256":"b7d070e4c1a7e499eefe4fca36a6ff1c33f1b4f266439eb2dfb6f28fe496702f","output_sha256":"c2a065aea2e922731695f0b5b9304a68a30a8d1c16a708bd9865c256c958f994","axiom_profiles":[["Classical.choice","Quot.sound","propext"]],"mode":"FRESH_KERNEL_EXPORT","seconds":4.774}
+2026-11-07T06:27:49.6458157Z RG_KERNEL_RESOURCE_OBSERVATION {"seconds":220.26,"memory":{"MemTotal":16760344576,"MemAvailable":15530639360,"SwapFree":3221221376},"cgroup_limits":[],"available_bytes":15530639360,"lean_processes":[{"pid":3192,"rss":558768128,"module":"RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block033.lean"}],"aggregate_lean_rss":558768128}
+2026-11-07T06:27:53.4340372Z PASS Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block033 FRESH_KERNEL_EXPORT 4.023
+2026-11-07T06:27:53.4341512Z COMPLETED_MODULE_JSON {"module":"Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block033","source_sha256":"0d768b0f56427f250a151b25d8d04860c7f9ea620a6e5f5e655399b68acd7830","source_closure_sha256":"6ce4f5a13d19efd09d84400debeff06c119d2c8923204d216fb6ac9dcbb7d577","output_sha256":"aed5660a4a393ca52ffc515a0726929b5f303b2d16ea789d0d3945fecd477f5a","axiom_profiles":[["Classical.choice","Quot.sound","propext"]],"mode":"FRESH_KERNEL_EXPORT","seconds":4.023}
+2026-11-07T06:27:58.2084241Z PASS Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block034 FRESH_KERNEL_EXPORT 4.774
+2026-11-07T06:27:58.2085335Z COMPLETED_MODULE_JSON {"module":"Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block034","source_sha256":"09f365b95d0d1f81159860aef706527016660d6fc5ade3a26b662c22f8f93c01","source_closure_sha256":"8a111c67ed2ec476c073d6dceb34312155c711b52a03ae6f5f08e99b16a88ed4","output_sha256":"0b0d24c2b9f1f530640dfde7e47b68ac9366a00ccab523ea88d478a743b9a87d","axiom_profiles":[["Classical.choice","Quot.sound","propext"]],"mode":"FRESH_KERNEL_EXPORT","seconds":4.774}
+2026-11-07T06:27:59.6571327Z RG_KERNEL_RESOURCE_OBSERVATION {"seconds":230.27,"memory":{"MemTotal":16760344576,"MemAvailable":15223439360,"SwapFree":3221221376},"cgroup_limits":[],"available_bytes":15223439360,"lean_processes":[{"pid":3203,"rss":4011970560,"module":"RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block035.lean"}],"aggregate_lean_rss":4011970560}
+2026-11-07T06:28:02.8327831Z PASS Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block035 FRESH_KERNEL_EXPORT 4.624
+2026-11-07T06:28:02.8328913Z COMPLETED_MODULE_JSON {"module":"Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block035","source_sha256":"21d4f58222d4857fe5198718ac3ddf0bf89cef034947687fb3bf27969fb0cbe8","source_closure_sha256":"aff7b3c2f790da1f85b444006b02d7b79490d9d83540265809155f3717e1ab02","output_sha256":"80e9e3775ccd90ffec873653187c6e9a6b2d1a57fa2cf1b8b376180dba48f416","axiom_profiles":[["Classical.choice","Quot.sound","propext"]],"mode":"FRESH_KERNEL_EXPORT","seconds":4.624}
+2026-11-07T06:28:07.0054814Z PASS Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block036 FRESH_KERNEL_EXPORT 4.172
+2026-11-07T06:28:07.0055952Z COMPLETED_MODULE_JSON {"module":"Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block036","source_sha256":"c04f281879a12b07dfd8e6809488f7db1f5059e5f1f1488a0c5064e6fc231e1e","source_closure_sha256":"8bb20fe0a993413e18e9cc6a411fbbcc0738c9b637a8119af5c4cfcb3ea8ea08","output_sha256":"e717565f0013c3bcfa37863754f34492d7cb32ff2e0a2fb46a598491e7d017a7","axiom_profiles":[["Classical.choice","Quot.sound","propext"]],"mode":"FRESH_KERNEL_EXPORT","seconds":4.172}
+2026-11-07T06:28:09.6697748Z RG_KERNEL_RESOURCE_OBSERVATION {"seconds":240.29,"memory":{"MemTotal":16760344576,"MemAvailable":14576480256,"SwapFree":3221221376},"cgroup_limits":[],"available_bytes":14576480256,"lean_processes":[{"pid":3213,"rss":4657999872,"module":"RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block037.lean"}],"aggregate_lean_rss":4657999872}
+2026-11-07T06:28:10.9778272Z PASS Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block037 FRESH_KERNEL_EXPORT 3.972
+2026-11-07T06:28:10.9779718Z COMPLETED_MODULE_JSON {"module":"Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block037","source_sha256":"16db5577bf2f6d93205d82bd47468d7aa5ab562e87ab6b26fe15b64162795f71","source_closure_sha256":"e5e04ab36fdc4d77853d2cb3c97f14472677406553110126e07145b1464c85a8","output_sha256":"a9bbd909b01dae8deb01bea1889bc3e2bee5258dd0e118be81b1482e9d4b9dc4","axiom_profiles":[["Classical.choice","Quot.sound","propext"]],"mode":"FRESH_KERNEL_EXPORT","seconds":3.972}
+2026-11-07T06:28:14.6498115Z PASS Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block038 FRESH_KERNEL_EXPORT 3.672
+2026-11-07T06:28:14.6499247Z COMPLETED_MODULE_JSON {"module":"Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block038","source_sha256":"bd4cd8be4b73cc210818f67f3d04eb51d344707107b66e59afd5f106ea0e0fd7","source_closure_sha256":"4f20cd07449b1af29fd270990e227a2502f083edec5763e1958a7677d56fcb80","output_sha256":"db69bdd69d9ee09e713b2953f7718b4eb9e6d5ba48dcdc540379ca0a303312d8","axiom_profiles":[["Classical.choice","Quot.sound","propext"]],"mode":"FRESH_KERNEL_EXPORT","seconds":3.672}
+2026-11-07T06:28:19.6243035Z PASS Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block039 FRESH_KERNEL_EXPORT 4.974
+2026-11-07T06:28:19.6244842Z COMPLETED_MODULE_JSON {"module":"Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block039","source_sha256":"4825ce194d5a31fabffe58a1cea40bcc8d5f84a8886df8a4b94e27817daaa1e1","source_closure_sha256":"d795510373bd860a3e97699a4e26cd6e1f77f4a9f258c88fc3c5f7a05ba0c196","output_sha256":"cc19ba501ab120083768cc7a7668914e7d2a6d4d424c4a65701e63681d7229bb","axiom_profiles":[["Classical.choice","Quot.sound","propext"]],"mode":"FRESH_KERNEL_EXPORT","seconds":4.974}
+2026-11-07T06:28:19.6816414Z RG_KERNEL_RESOURCE_OBSERVATION {"seconds":250.3,"memory":{"MemTotal":16760344576,"MemAvailable":15426772992,"SwapFree":3221221376},"cgroup_limits":[],"available_bytes":15426772992,"lean_processes":[{"pid":3228,"rss":142254080,"module":"RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block040.lean"}],"aggregate_lean_rss":142254080}
+2026-11-07T06:28:23.9973816Z PASS Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block040 FRESH_KERNEL_EXPORT 4.373
+2026-11-07T06:28:23.9974896Z COMPLETED_MODULE_JSON {"module":"Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block040","source_sha256":"779816dd760c2fb99214c85ef1344c7449b85cd88e95f6474805cdeb89b8da25","source_closure_sha256":"d996b5043b7e489d12a601fde35ad7cc25f4599ec8eae2bd2d008575929f4486","output_sha256":"c76bc573c11ad7e208fafa7dc6111b31a5a882fda0d4e229a82bf2c2927e15cd","axiom_profiles":[["Classical.choice","Quot.sound","propext"]],"mode":"FRESH_KERNEL_EXPORT","seconds":4.373}
+2026-11-07T06:28:28.1698573Z PASS Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block041 FRESH_KERNEL_EXPORT 4.172
+2026-11-07T06:28:28.1699711Z COMPLETED_MODULE_JSON {"module":"Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block041","source_sha256":"9ab0de0a23e68c828d53d8163daf79b0f78c651103bc978187c6b1c06c39459d","source_closure_sha256":"1fe9dd600fabe1e94a1ac5af7ef3d1acfba65695d43f42f778d173a9e4c6ea34","output_sha256":"a7c0759921aa696ec8c0bd19f87d7a7d27e79fc2203b575e32990b42826d0f14","axiom_profiles":[["Classical.choice","Quot.sound","propext"]],"mode":"FRESH_KERNEL_EXPORT","seconds":4.172}
+2026-11-07T06:28:29.6933575Z RG_KERNEL_RESOURCE_OBSERVATION {"seconds":260.31,"memory":{"MemTotal":16760344576,"MemAvailable":15175069696,"SwapFree":3221221376},"cgroup_limits":[],"available_bytes":15175069696,"lean_processes":[{"pid":3239,"rss":4025450496,"module":"RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block042.lean"}],"aggregate_lean_rss":4025450496}
+2026-11-07T06:28:32.7939763Z PASS Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block042 FRESH_KERNEL_EXPORT 4.624
+2026-11-07T06:28:32.7941066Z COMPLETED_MODULE_JSON {"module":"Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block042","source_sha256":"7db36bfcc581b18f7d854e7baed657d7573a7d51f896d6f1ff1fd7bd40ce44ef","source_closure_sha256":"ec9155ccb8d85e193370c8c5e1fa50025d99bbbb4360d9f4786c6424697959b7","output_sha256":"e3893c67f14d7014b56065126d9d660726f8f024061e2f3488f6c59613957f27","axiom_profiles":[["Classical.choice","Quot.sound","propext"]],"mode":"FRESH_KERNEL_EXPORT","seconds":4.624}
+2026-11-07T06:28:36.4170570Z PASS Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block043 FRESH_KERNEL_EXPORT 3.622
+2026-11-07T06:28:36.4172174Z COMPLETED_MODULE_JSON {"module":"Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block043","source_sha256":"2bbe1def9e3105d94c173116db30b137224d6d1fa17a1af2acc32f7aa226ac09","source_closure_sha256":"538f6bd375b87c5875affe586d20ad0cedfc545f6fe2f490f40ef3d515d2bca8","output_sha256":"00dcb5ebe968d7ad178109c7caeb88b4531cd7ff0a591a79898273a806348102","axiom_profiles":[["Classical.choice","Quot.sound","propext"]],"mode":"FRESH_KERNEL_EXPORT","seconds":3.622}
+2026-11-07T06:28:39.7052211Z RG_KERNEL_RESOURCE_OBSERVATION {"seconds":270.32,"memory":{"MemTotal":16760344576,"MemAvailable":14174863360,"SwapFree":3221221376},"cgroup_limits":[],"available_bytes":14174863360,"lean_processes":[{"pid":3250,"rss":4955803648,"module":"RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block044.lean"}],"aggregate_lean_rss":4955803648}
+2026-11-07T06:28:41.1405753Z PASS Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block044 FRESH_KERNEL_EXPORT 4.723
+2026-11-07T06:28:41.1406869Z COMPLETED_MODULE_JSON {"module":"Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block044","source_sha256":"12ed31386ae38904df34705b30ad24fa9968cf53165a556521d8725d31f83f1a","source_closure_sha256":"013db5811eb079c37c0abf85b8a6dfc72d135e3e58bdbf470593ee92bd002770","output_sha256":"cb15ef2a3da1028cf5bf8ad60dab72eade7d570cc2b885971501febb64ad425d","axiom_profiles":[["Classical.choice","Quot.sound","propext"]],"mode":"FRESH_KERNEL_EXPORT","seconds":4.723}
+2026-11-07T06:28:44.7120996Z PASS Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block045 FRESH_KERNEL_EXPORT 3.571
+2026-11-07T06:28:44.7122101Z COMPLETED_MODULE_JSON {"module":"Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block045","source_sha256":"a356e8cf052f3b9c77b348307dcea55b2a021a5d1aef809f9aab249fe4482978","source_closure_sha256":"a22dd5ae633c83582048865208362761547ba371a43e78ab5cc79b979531f854","output_sha256":"6133ea5d2847f9bdb74138e87ad2c266d752d8ebbf60439ce841cab0d289255d","axiom_profiles":[["Classical.choice","Quot.sound","propext"]],"mode":"FRESH_KERNEL_EXPORT","seconds":3.571}
+2026-11-07T06:28:47.9329168Z PASS Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block046 FRESH_KERNEL_EXPORT 3.22
+2026-11-07T06:28:47.9330940Z COMPLETED_MODULE_JSON {"module":"Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block046","source_sha256":"91b8f573e9a2c49c3c56cd286d85d89e7da018fed02636da41e51e5089f1a292","source_closure_sha256":"74891e5795ed667fdd3005b16c2185f8a30bc99c09cc98818d9ca2b9384be36f","output_sha256":"d52e73c7b1fb5962102f1ce1144d1e0c59e2164f7a78c4e65892d13bc1207efe","axiom_profiles":[["Classical.choice","Quot.sound","propext"]],"mode":"FRESH_KERNEL_EXPORT","seconds":3.22}
+2026-11-07T06:28:49.7171075Z RG_KERNEL_RESOURCE_OBSERVATION {"seconds":280.33,"memory":{"MemTotal":16760344576,"MemAvailable":14969094144,"SwapFree":3221221376},"cgroup_limits":[],"available_bytes":14969094144,"lean_processes":[{"pid":3267,"rss":4203773952,"module":"RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block047.lean"}],"aggregate_lean_rss":4203773952}
+2026-11-07T06:28:52.4567192Z PASS Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block047 FRESH_KERNEL_EXPORT 4.523
+2026-11-07T06:28:52.4569337Z COMPLETED_MODULE_JSON {"module":"Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block047","source_sha256":"80a6dc1a7babdff6c386e9982446516cd00c6b66fd9dd6956b9c0b579e5b0d41","source_closure_sha256":"f8ff868b5406132052e4824021e838fc5af93afcc2aea5b25af5be83a94a4aa0","output_sha256":"25c6786aa3cd948f30e7d11dd3b31d1b3a5c73a9ce09c2887ec2a7191cd287dc","axiom_profiles":[["Classical.choice","Quot.sound","propext"]],"mode":"FRESH_KERNEL_EXPORT","seconds":4.523}
+2026-11-07T06:28:56.8796873Z PASS Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block048 FRESH_KERNEL_EXPORT 4.423
+2026-11-07T06:28:56.8797948Z COMPLETED_MODULE_JSON {"module":"Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block048","source_sha256":"094a234e58b876fde467f064958b2851806dfbe73e2937ae1c40137ad6ccdc96","source_closure_sha256":"008879f1c4547ff572e33da95a91bb013e62f1a528ba7f2553f1158db624c4d1","output_sha256":"a05910a5b17ab31317a41546927178703c34bc7b36adbf2f218fa29f9b370233","axiom_profiles":[["Classical.choice","Quot.sound","propext"]],"mode":"FRESH_KERNEL_EXPORT","seconds":4.423}
+2026-11-07T06:28:59.7281763Z RG_KERNEL_RESOURCE_OBSERVATION {"seconds":290.34,"memory":{"MemTotal":16760344576,"MemAvailable":14483644416,"SwapFree":3221221376},"cgroup_limits":[],"available_bytes":14483644416,"lean_processes":[{"pid":3278,"rss":4722442240,"module":"RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block049.lean"}],"aggregate_lean_rss":4722442240}
+2026-11-07T06:29:01.1537045Z PASS Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block049 FRESH_KERNEL_EXPORT 4.273
+2026-11-07T06:29:01.1538129Z COMPLETED_MODULE_JSON {"module":"Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block049","source_sha256":"e5af033720299a45f62bd2963060b7671bf903de3edc0b4f02648c28a404e9be","source_closure_sha256":"84664cbf0a6d411ecb1cd2b3cf948942738d04df69c5648d45f28a2160e93688","output_sha256":"3befed68c9c348fb601e05765f3b30b8c77dcd558f5db267be3def2d062736af","axiom_profiles":[["Classical.choice","Quot.sound","propext"]],"mode":"FRESH_KERNEL_EXPORT","seconds":4.273}
+2026-11-07T06:29:05.5769559Z PASS Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block050 FRESH_KERNEL_EXPORT 4.423
+2026-11-07T06:29:05.5770679Z COMPLETED_MODULE_JSON {"module":"Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block050","source_sha256":"9c882c87a34ca521d0da59495c022d8d109497974ac565f3ab4c6f58f6f5b6cd","source_closure_sha256":"79ee8c055798b818f7a782bc5fdc50b500cb28ddb9020b03dc3956ad7b1a667d","output_sha256":"363ac917705ed4006a57a669fa53d4cc648471cec87cf7fb7ca18e346498af20","axiom_profiles":[["Classical.choice","Quot.sound","propext"]],"mode":"FRESH_KERNEL_EXPORT","seconds":4.423}
+2026-11-07T06:29:09.2504612Z PASS Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block051 FRESH_KERNEL_EXPORT 3.673
+2026-11-07T06:29:09.2505730Z COMPLETED_MODULE_JSON {"module":"Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block051","source_sha256":"d3913a270ae4bb9fb3b5e594f28433ebeb3d71bbaa7d04039f9d58d71434b00e","source_closure_sha256":"da0cddba99c291257ae66a88aa48757a8fae62bd13d1e1d85829b95e970268eb","output_sha256":"47e88645d83a8f72b87d4a22631cfa17ce14c29c4cd3eff758125605608b981f","axiom_profiles":[["Classical.choice","Quot.sound","propext"]],"mode":"FRESH_KERNEL_EXPORT","seconds":3.673}
+2026-11-07T06:29:09.7405598Z RG_KERNEL_RESOURCE_OBSERVATION {"seconds":300.36,"memory":{"MemTotal":16760344576,"MemAvailable":15457210368,"SwapFree":3221221376},"cgroup_limits":[],"available_bytes":15457210368,"lean_processes":[{"pid":3294,"rss":1496887296,"module":"RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block052.lean"}],"aggregate_lean_rss":1496887296}
+2026-11-07T06:29:12.6219359Z PASS Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block052 FRESH_KERNEL_EXPORT 3.371
+2026-11-07T06:29:12.6220696Z COMPLETED_MODULE_JSON {"module":"Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block052","source_sha256":"f46b320e6a4a5cebb2cfbf206a1387879fda942702780424097f0d24b9729e42","source_closure_sha256":"72c04082d7e3013521aab327ecc98ba227ca91eaeb856ebd1ba5e34655c24c16","output_sha256":"41366092c1db1b91e0a65d0cd4824a271a2486bc96b8ec8d3c27245580630f66","axiom_profiles":[["Classical.choice","Quot.sound","propext"]],"mode":"FRESH_KERNEL_EXPORT","seconds":3.371}
+2026-11-07T06:29:16.7443404Z PASS Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block053 FRESH_KERNEL_EXPORT 4.122
+2026-11-07T06:29:16.7445470Z COMPLETED_MODULE_JSON {"module":"Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block053","source_sha256":"8f078505b40b9805446a404ba362e895f09dfa80afe92a3f6a8e0cae1e56e0b6","source_closure_sha256":"307df4b71ee27e6b9392e976f6ef1689b51f12ec2b3569ca628b850468dc7150","output_sha256":"a0e51d490f6f0ba42d96cec06f6cc4b258fd055663fd95a3f55882efc7b3ce22","axiom_profiles":[["Classical.choice","Quot.sound","propext"]],"mode":"FRESH_KERNEL_EXPORT","seconds":4.122}
+2026-11-07T06:29:19.7538948Z RG_KERNEL_RESOURCE_OBSERVATION {"seconds":310.37,"memory":{"MemTotal":16760344576,"MemAvailable":14556209152,"SwapFree":3221221376},"cgroup_limits":[],"available_bytes":14556209152,"lean_processes":[{"pid":3305,"rss":4695478272,"module":"RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block054.lean"}],"aggregate_lean_rss":4695478272}
+2026-11-07T06:29:20.5667278Z PASS Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block054 FRESH_KERNEL_EXPORT 3.822
+2026-11-07T06:29:20.5668413Z COMPLETED_MODULE_JSON {"module":"Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block054","source_sha256":"9f8c5fb0f11a6740a62503a0e31fc2e873fb9c388d05fc58609fe768a85bcd55","source_closure_sha256":"c58281328565d32eb183b2436d153e628c7c4282ec7f393c1aeebbdc5f6944fc","output_sha256":"8950606ec7e8f29153a3a31693d02ffeac2042a27c2efcb7bccdc7a3881dfc6d","axiom_profiles":[["Classical.choice","Quot.sound","propext"]],"mode":"FRESH_KERNEL_EXPORT","seconds":3.822}
+2026-11-07T06:29:24.0380761Z PASS Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block055 FRESH_KERNEL_EXPORT 3.471
+2026-11-07T06:29:24.0383125Z COMPLETED_MODULE_JSON {"module":"Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block055","source_sha256":"546fd6d2869e2098f95e5a3c10f7a93b1ec6ebee67451a6031d6b05ca338827c","source_closure_sha256":"e94b296b1a26f58a5bdb0defcd358e6ab3c818356cd5eb34b605586eabb117ea","output_sha256":"a320247130395a185b5d307a42b5c9c565a7e4dfd041feba22dc7ca19d331aca","axiom_profiles":[["Classical.choice","Quot.sound","propext"]],"mode":"FRESH_KERNEL_EXPORT","seconds":3.471}
+2026-11-07T06:29:27.9605392Z PASS Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block056 FRESH_KERNEL_EXPORT 3.922
+2026-11-07T06:29:27.9606769Z COMPLETED_MODULE_JSON {"module":"Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block056","source_sha256":"459ffe76721e0552a62b54c14874f142f0da607555d61650814adb4c969571d5","source_closure_sha256":"7c33286f3363abbd23503ca123971edad0ef14373d933e226d18216d091f1e54","output_sha256":"f341caa6c866e3ed639d95fcc22c57b36c9ed18b2cb9f35196ba7604f31b5323","axiom_profiles":[["Classical.choice","Quot.sound","propext"]],"mode":"FRESH_KERNEL_EXPORT","seconds":3.922}
+2026-11-07T06:29:29.7649932Z RG_KERNEL_RESOURCE_OBSERVATION {"seconds":320.38,"memory":{"MemTotal":16760344576,"MemAvailable":15000231936,"SwapFree":3221221376},"cgroup_limits":[],"available_bytes":15000231936,"lean_processes":[{"pid":3322,"rss":4201684992,"module":"RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block057.lean"}],"aggregate_lean_rss":4201684992}
+2026-11-07T06:29:30.6808735Z PASS Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block057 FRESH_KERNEL_EXPORT 2.72
+2026-11-07T06:29:30.6810850Z COMPLETED_MODULE_JSON {"module":"Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block057","source_sha256":"d67d7d22dcf012ce42a425f49647454e7898863179c8b4c1a69dddf74a1b363a","source_closure_sha256":"75c0dd01c389863268f106ab6d246b3ceb620c1fa60ec57801808b43f5c078ad","output_sha256":"d81133ce64f6d25de15f684f6a56d9b80dbdfc60f57fddd5f97c467dccc8d3ba","axiom_profiles":[["Classical.choice","Quot.sound","propext"]],"mode":"FRESH_KERNEL_EXPORT","seconds":2.72}
+2026-11-07T06:29:32.4487618Z PASS Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoverage00 FRESH_KERNEL_EXPORT 1.767
+2026-11-07T06:29:32.4489297Z COMPLETED_MODULE_JSON {"module":"Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoverage00","source_sha256":"12870f9a933d3bbda4a937b8b8b8286568a686b9344b08211841809d7577f74f","source_closure_sha256":"3dfdbb2163cd0e73e8331b775c6b7a6a5fc1915cecda20d524469fbca21a42e4","output_sha256":"8335e87a565456a20e7efa8752892af9c9df86dd70ac3d04015d2b9311c4e7f9","axiom_profiles":[["Classical.choice","Quot.sound","propext"]],"mode":"FRESH_KERNEL_EXPORT","seconds":1.767}
+2026-11-07T06:29:34.1679483Z PASS Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoverage01 FRESH_KERNEL_EXPORT 1.719
+2026-11-07T06:29:34.1680552Z COMPLETED_MODULE_JSON {"module":"Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoverage01","source_sha256":"837908440e59535c3297ecb70b4abfad13f2428412c20f46288c95e750f00222","source_closure_sha256":"7cd5b69dba755db729f05a45eb920d812fc0e2c05ff4f5dc26b4691a20f4ed5a","output_sha256":"0d134f9fe3fab24614bd93e4dfd38db29a3bc72f41fbca0c8fdcdb1091df9151","axiom_profiles":[["Classical.choice","Quot.sound","propext"]],"mode":"FRESH_KERNEL_EXPORT","seconds":1.719}
+2026-11-07T06:29:35.8858006Z PASS Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoverage02 FRESH_KERNEL_EXPORT 1.717
+2026-11-07T06:29:35.8859694Z COMPLETED_MODULE_JSON {"module":"Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoverage02","source_sha256":"9c5fe7da1ff50b688affe9eb773edb1d012543a267aa308cf9dc94cf91e022f0","source_closure_sha256":"83918459e2c0b0addf4422c5433365786aba2db86a4ed0d3a79de2552b533f41","output_sha256":"ada152f0816a726631fbfd9e4c90a3ce34523799b44bd0c3e18c72519552f373","axiom_profiles":[["Classical.choice","Quot.sound","propext"]],"mode":"FRESH_KERNEL_EXPORT","seconds":1.717}
+2026-11-07T06:29:37.6037872Z PASS Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoverage03 FRESH_KERNEL_EXPORT 1.718
+2026-11-07T06:29:37.6038945Z COMPLETED_MODULE_JSON {"module":"Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoverage03","source_sha256":"5cd0ffdb09d7fabf669db5734d391bf25e7638e033315d3526e7b69af9f41566","source_closure_sha256":"f37dc95a7122889de86533d251ad102d486054a7ee86bca647e3af60db7a80f6","output_sha256":"2ff036fecf6a618185a05f70b59b007aaf6b6d243e2f6a38bbc0739e25455418","axiom_profiles":[["Classical.choice","Quot.sound","propext"]],"mode":"FRESH_KERNEL_EXPORT","seconds":1.718}
+2026-11-07T06:29:39.3217555Z PASS Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoverage04 FRESH_KERNEL_EXPORT 1.717
+2026-11-07T06:29:39.3218580Z COMPLETED_MODULE_JSON {"module":"Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoverage04","source_sha256":"0aaa6f105395f837c0122d1a063d6d62d223d871720c1dc7863233de416cfddf","source_closure_sha256":"d8feb69c40b632793a9513dfff10b73eb0342d97100d30f029c2adc41742a8db","output_sha256":"715be6b90589621ff37b95c4007c34ad1a0580b23197ed7b4de07a888d7b1bdd","axiom_profiles":[["Classical.choice","Quot.sound","propext"]],"mode":"FRESH_KERNEL_EXPORT","seconds":1.717}
+2026-11-07T06:29:39.7767996Z RG_KERNEL_RESOURCE_OBSERVATION {"seconds":330.39,"memory":{"MemTotal":16760344576,"MemAvailable":15479570432,"SwapFree":3221221376},"cgroup_limits":[],"available_bytes":15479570432,"lean_processes":[{"pid":3359,"rss":1348952064,"module":"RadenkovicGutmanDegreeOneMiddleResidualFiniteCoverage05.lean"}],"aggregate_lean_rss":1348952064}
+2026-11-07T06:29:41.0398122Z PASS Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoverage05 FRESH_KERNEL_EXPORT 1.717
+2026-11-07T06:29:41.0399152Z COMPLETED_MODULE_JSON {"module":"Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoverage05","source_sha256":"4b3656d0d17575bc2f5a0868b1efa3d4591fb8010f91b16fab79c7bffad260ad","source_closure_sha256":"0ac73ab890e401d67b101a3075e4924648e43c96534bf564dc4fcecf62987b80","output_sha256":"ac19d8519e9c7bb9f6f41d8a102019e4c1f0647dfcf41886c9b06f6ef6944c4d","axiom_profiles":[["Classical.choice","Quot.sound","propext"]],"mode":"FRESH_KERNEL_EXPORT","seconds":1.717}
+2026-11-07T06:29:42.7579918Z PASS Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoverage06 FRESH_KERNEL_EXPORT 1.717
+2026-11-07T06:29:42.7581314Z COMPLETED_MODULE_JSON {"module":"Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoverage06","source_sha256":"006a5bfded6b98f22da0167008094f439dab8fef81c67ef99acfb18e67d9f307","source_closure_sha256":"b381d49b2b8c8a3445f9166f87af497096bdd511b68fb049d1f2eb34b447a96f","output_sha256":"10d21b40dec8c6dd2280b38f30c5372fe9e27217fcbb93166292e8240e48dcab","axiom_profiles":[["Classical.choice","Quot.sound","propext"]],"mode":"FRESH_KERNEL_EXPORT","seconds":1.717}
+2026-11-07T06:29:44.5257621Z PASS Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoverage07 FRESH_KERNEL_EXPORT 1.767
+2026-11-07T06:29:44.5258720Z COMPLETED_MODULE_JSON {"module":"Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoverage07","source_sha256":"8bc833a2dc0f65dfef3c2bb00f4b98d161fb53dad23895e2f09517087cc953b3","source_closure_sha256":"f4877a9a00297c1ace42790db9f7cbad03370768a17344b7382af41b8cfcdfac","output_sha256":"c705a1beb30accf5b2fc623c3be5afdb11d92f470c623b51b54ef6367efef8a8","axiom_profiles":[["Classical.choice","Quot.sound","propext"]],"mode":"FRESH_KERNEL_EXPORT","seconds":1.767}
+2026-11-07T06:29:46.3436310Z PASS Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoverage08 FRESH_KERNEL_EXPORT 1.817
+2026-11-07T06:29:46.3437988Z COMPLETED_MODULE_JSON {"module":"Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoverage08","source_sha256":"8d3b64cdace938821d6d425aa57aa0cc1390efceb1dfb43a88e02f73a6ac0496","source_closure_sha256":"794f165880b843bdb1aa93edf86ead9d3ba7989c504e1200580a14f69f064445","output_sha256":"8cfee1476fba64b03c5c50510e7eccf938c9eb18a77d2a47962f2cc3bc9999c3","axiom_profiles":[["Classical.choice","Quot.sound","propext"]],"mode":"FRESH_KERNEL_EXPORT","seconds":1.817}
+2026-11-07T06:29:48.3620594Z PASS Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoverage09 FRESH_KERNEL_EXPORT 2.018
+2026-11-07T06:29:48.3621664Z COMPLETED_MODULE_JSON {"module":"Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoverage09","source_sha256":"a41846382056fe04cb7e794b5de8f947c34e4b4cef0cff1b00d9340f997ebb1e","source_closure_sha256":"eeb235756e242a9e485c0a23dd6339b51e9ba540a384bcfe1935a350054323bf","output_sha256":"73ced4c718e17a32c9b99cef89c34957d6d5cebe360958b394d682a3b7de4743","axiom_profiles":[["Classical.choice","Quot.sound","propext"]],"mode":"FRESH_KERNEL_EXPORT","seconds":2.018}
+2026-11-07T06:29:49.7886560Z RG_KERNEL_RESOURCE_OBSERVATION {"seconds":340.4,"memory":{"MemTotal":16760344576,"MemAvailable":15190757376,"SwapFree":3221221376},"cgroup_limits":[],"available_bytes":15190757376,"lean_processes":[{"pid":3386,"rss":4018683904,"module":"RadenkovicGutmanDegreeOneMiddleResidualFiniteCoverage10.lean"}],"aggregate_lean_rss":4018683904}
+2026-11-07T06:29:51.3834413Z PASS Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoverage10 FRESH_KERNEL_EXPORT 3.021
+2026-11-07T06:29:51.3835483Z COMPLETED_MODULE_JSON {"module":"Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoverage10","source_sha256":"6e43da59e9e6128aa4c91440a25a5be34181c4d40de20ad176d1009f5cbb5749","source_closure_sha256":"b6c727a4437072fb3a4f8a6b7e5187d4a58da60f9d483c3edc93420e281b0745","output_sha256":"d97d6d9e18662cdaaebaaebee2082fdc8b10148f50b10849fc03007e986b22d1","axiom_profiles":[["Classical.choice","Quot.sound","propext"]],"mode":"FRESH_KERNEL_EXPORT","seconds":3.021}
+2026-11-07T06:29:53.1515265Z PASS Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoverageComplete FRESH_KERNEL_EXPORT 1.767
+2026-11-07T06:29:53.1516344Z COMPLETED_MODULE_JSON {"module":"Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoverageComplete","source_sha256":"9918e1534051740d3e3f6b7cc4f2120217f7a71ae32d6197b76462c3b7e43110","source_closure_sha256":"6b9e7ea82578b67a83a0ae6060c582f75340d708fd006584915a72bf2ebc80f7","output_sha256":"90f2f2598aa801beb6ef48455a257fa337219568155eb9a3b70fc1bd5db5bf61","axiom_profiles":[["Classical.choice","Quot.sound","propext"]],"mode":"FRESH_KERNEL_EXPORT","seconds":1.767}
+2026-11-07T06:29:55.1700236Z PASS Proofs.RadenkovicGutmanDegreeOneMiddleAnchorAssembly FRESH_KERNEL_EXPORT 2.018
+2026-11-07T06:29:55.1704291Z COMPLETED_MODULE_JSON {"module":"Proofs.RadenkovicGutmanDegreeOneMiddleAnchorAssembly","source_sha256":"4a1900bdbc48f3c3ef82944382a7e4c44cee56a13e5c27f3c3ef4f96614109e7","source_closure_sha256":"98892ccee79e460b5c89f48fb6c52dacf80caa6a9766e3291ccfd53ecaa57bc2","output_sha256":"0e06f2fd175c8d658489bae26f1c4a94b54d4a98cf4f3f2738b7afb92d57c01b","axiom_profiles":[["Classical.choice","Quot.sound","propext"],["Classical.choice","Quot.sound","propext"]],"mode":"FRESH_KERNEL_EXPORT","seconds":2.018}
+2026-11-07T06:29:57.2887052Z PASS Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteTransfer FRESH_KERNEL_EXPORT 2.118
+2026-11-07T06:29:57.2888242Z COMPLETED_MODULE_JSON {"module":"Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteTransfer","source_sha256":"cc7eac29893fef409b70d2aaa8334ee6adef27519ce885a1a99efc5f16971ef1","source_closure_sha256":"3f62ef015ebfcc6bbca4fa3f792d4d3718addc1cf2bc34394707b1304e7677ca","output_sha256":"a6a2065a7d28878ee1cf3ae6497f00a5ddf3493b2fa45f15cb5c65576ec6c098","axiom_profiles":[["Classical.choice","Quot.sound","propext"],["Classical.choice","Quot.sound","propext"]],"mode":"FRESH_KERNEL_EXPORT","seconds":2.118}
+2026-11-07T06:29:59.0064789Z PASS Proofs.RadenkovicGutmanDegreeOneMiddleResidualFinitePrerequisites FRESH_KERNEL_EXPORT 1.717
+2026-11-07T06:29:59.0065980Z COMPLETED_MODULE_JSON {"module":"Proofs.RadenkovicGutmanDegreeOneMiddleResidualFinitePrerequisites","source_sha256":"af4b56ec38cbc4bcc18989f4fdd6dd47b5ac0743550a2bdc7dd226f012741a51","source_closure_sha256":"49ff179d1fad361362bd065ac992834aafc9fb3b8f84f7ea2663166af472836a","output_sha256":"14ccb08ade4d3632b8393f64724aa49a4bcef99cab8315e66d5f8cf4601aafba","axiom_profiles":[["Classical.choice","Quot.sound","propext"]],"mode":"FRESH_KERNEL_EXPORT","seconds":1.717}
+2026-11-07T06:29:59.0091555Z PASS_EXTENSION_SCOPE 259 MODULES; GLOBAL RG NOT_PROVED
+2026-11-07T06:29:59.8004189Z RG_KERNEL_RESOURCE_RESULT {"status": "VERIFIER_COMPLETED", "exit_code": 0, "maximum_aggregate_lean_rss": 5063811072, "seconds": 350.42, "mathlib_and_lean_flags_unchanged": true}
+2026-11-07T06:29:59.8125263Z ##[group]Run python3 - <<'PY'
+2026-11-07T06:29:59.8125442Z [36;1mpython3 - <<'PY'[0m
+2026-11-07T06:29:59.8125580Z [36;1mimport json,pathlib,shutil[0m
+2026-11-07T06:29:59.8125772Z [36;1mroot=pathlib.Path('Proofs/RG_Lean_20261019/build/extension')[0m
+2026-11-07T06:29:59.8126038Z [36;1mrecords=[json.loads(p.read_text()) for p in sorted(root.glob('Proofs.*.json'))][0m
+2026-11-07T06:29:59.8126321Z [36;1mfresh=root.parent/'fresh_exports';fresh.mkdir(parents=True,exist_ok=True)[0m
+2026-11-07T06:29:59.8126644Z [36;1m(fresh/'diagnostics_records.json').write_text(json.dumps({'modules':records},separators=(',',':'))+'\n')[0m
+2026-11-07T06:29:59.8126994Z [36;1mif (root/'receipt.json').is_file():shutil.copyfile(root/'receipt.json',fresh/'receipt.json')[0m
+2026-11-07T06:29:59.8127380Z [36;1mprint('RETAINED_RECORD_COUNTS '+json.dumps({'total':len(records),'fresh':sum(r['mode']=='FRESH_KERNEL_EXPORT' for r in records)}))[0m
+2026-11-07T06:29:59.8127704Z [36;1mfor row in records:[0m
+2026-11-07T06:29:59.8127856Z [36;1m    if row['mode']=='FRESH_KERNEL_EXPORT':[0m
+2026-11-07T06:29:59.8128071Z [36;1m        name=row['module'];rel=name.replace('.','/')+'.olean';dest=fresh/rel[0m
+2026-11-07T06:29:59.8128304Z [36;1m        dest.parent.mkdir(parents=True,exist_ok=True)[0m
+2026-11-07T06:29:59.8128570Z [36;1m        shutil.copyfile(root/rel,dest);shutil.copyfile(root/(name+'.json'),fresh/(name+'.json'))[0m
+2026-11-07T06:29:59.8128817Z [36;1mfor log in root.glob('Proofs.*.log'):[0m
+2026-11-07T06:29:59.8129073Z [36;1m    shutil.copyfile(log,fresh/log.name);print('MODULE_LOG_TAIL '+log.name+' '+log.read_text()[-18000:])[0m
+2026-11-07T06:29:59.8129314Z [36;1mPY[0m
+2026-11-07T06:29:59.8144697Z shell: /usr/bin/bash -e {0}
+2026-11-07T06:29:59.8144833Z ##[endgroup]
+2026-11-07T06:29:59.8666218Z RETAINED_RECORD_COUNTS {"total": 826, "fresh": 117}
+2026-11-07T06:29:59.8667155Z MODULE_LOG_TAIL Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block049.log 'Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualFiniteKeys.CoreCoverage.checked10b049' depends on axioms: [propext,
+2026-11-07T06:29:59.8668172Z  Classical.choice,
+2026-11-07T06:29:59.8668347Z  Quot.sound]
+2026-11-07T06:29:59.8668451Z 
+2026-11-07T06:29:59.8669163Z MODULE_LOG_TAIL Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block031.log 'Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualFiniteKeys.CoreCoverage.checked10b031' depends on axioms: [propext,
+2026-11-07T06:29:59.8670012Z  Classical.choice,
+2026-11-07T06:29:59.8670193Z  Quot.sound]
+2026-11-07T06:29:59.8670287Z 
+2026-11-07T06:29:59.8670991Z MODULE_LOG_TAIL Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage07Block000.log 'Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualFiniteKeys.CoreCoverage.checked7b000' depends on axioms: [propext,
+2026-11-07T06:29:59.8671866Z  Classical.choice,
+2026-11-07T06:29:59.8672033Z  Quot.sound]
+2026-11-07T06:29:59.8672128Z 
+2026-11-07T06:29:59.8672972Z MODULE_LOG_TAIL Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage09Block019.log 'Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualFiniteKeys.CoreCoverage.checked9b019' depends on axioms: [propext,
+2026-11-07T06:29:59.8673818Z  Classical.choice,
+2026-11-07T06:29:59.8673992Z  Quot.sound]
+2026-11-07T06:29:59.8674085Z 
+2026-11-07T06:29:59.8674786Z MODULE_LOG_TAIL Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage09Block004.log 'Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualFiniteKeys.CoreCoverage.checked9b004' depends on axioms: [propext,
+2026-11-07T06:29:59.8675626Z  Classical.choice,
+2026-11-07T06:29:59.8675794Z  Quot.sound]
+2026-11-07T06:29:59.8675889Z 
+2026-11-07T06:29:59.8676580Z MODULE_LOG_TAIL Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage05Block000.log 'Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualFiniteKeys.CoreCoverage.checked5b000' depends on axioms: [propext,
+2026-11-07T06:29:59.8677425Z  Classical.choice,
+2026-11-07T06:29:59.8677601Z  Quot.sound]
+2026-11-07T06:29:59.8677691Z 
+2026-11-07T06:29:59.8678524Z MODULE_LOG_TAIL Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block014.log 'Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualFiniteKeys.CoreCoverage.checked10b014' depends on axioms: [propext,
+2026-11-07T06:29:59.8679374Z  Classical.choice,
+2026-11-07T06:29:59.8679543Z  Quot.sound]
+2026-11-07T06:29:59.8679635Z 
+2026-11-07T06:29:59.8680321Z MODULE_LOG_TAIL Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage09Block014.log 'Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualFiniteKeys.CoreCoverage.checked9b014' depends on axioms: [propext,
+2026-11-07T06:29:59.8681153Z  Classical.choice,
+2026-11-07T06:29:59.8681323Z  Quot.sound]
+2026-11-07T06:29:59.8681419Z 
+2026-11-07T06:29:59.8682108Z MODULE_LOG_TAIL Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage09Block016.log 'Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualFiniteKeys.CoreCoverage.checked9b016' depends on axioms: [propext,
+2026-11-07T06:29:59.8683043Z  Classical.choice,
+2026-11-07T06:29:59.8683221Z  Quot.sound]
+2026-11-07T06:29:59.8683312Z 
+2026-11-07T06:29:59.8684004Z MODULE_LOG_TAIL Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block042.log 'Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualFiniteKeys.CoreCoverage.checked10b042' depends on axioms: [propext,
+2026-11-07T06:29:59.8684841Z  Classical.choice,
+2026-11-07T06:29:59.8685012Z  Quot.sound]
+2026-11-07T06:29:59.8685104Z 
+2026-11-07T06:29:59.8685794Z MODULE_LOG_TAIL Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage07Block002.log 'Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualFiniteKeys.CoreCoverage.checked7b002' depends on axioms: [propext,
+2026-11-07T06:29:59.8686630Z  Classical.choice,
+2026-11-07T06:29:59.8686794Z  Quot.sound]
+2026-11-07T06:29:59.8686884Z 
+2026-11-07T06:29:59.8687577Z MODULE_LOG_TAIL Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block050.log 'Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualFiniteKeys.CoreCoverage.checked10b050' depends on axioms: [propext,
+2026-11-07T06:29:59.8688518Z  Classical.choice,
+2026-11-07T06:29:59.8688688Z  Quot.sound]
+2026-11-07T06:29:59.8688780Z 
+2026-11-07T06:29:59.8689463Z MODULE_LOG_TAIL Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage08Block003.log 'Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualFiniteKeys.CoreCoverage.checked8b003' depends on axioms: [propext,
+2026-11-07T06:29:59.8690305Z  Classical.choice,
+2026-11-07T06:29:59.8690481Z  Quot.sound]
+2026-11-07T06:29:59.8690573Z 
+2026-11-07T06:29:59.8691268Z MODULE_LOG_TAIL Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage06Block000.log 'Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualFiniteKeys.CoreCoverage.checked6b000' depends on axioms: [propext,
+2026-11-07T06:29:59.8692102Z  Classical.choice,
+2026-11-07T06:29:59.8692268Z  Quot.sound]
+2026-11-07T06:29:59.8692361Z 
+2026-11-07T06:29:59.8693154Z MODULE_LOG_TAIL Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block051.log 'Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualFiniteKeys.CoreCoverage.checked10b051' depends on axioms: [propext,
+2026-11-07T06:29:59.8694003Z  Classical.choice,
+2026-11-07T06:29:59.8694172Z  Quot.sound]
+2026-11-07T06:29:59.8694264Z 
+2026-11-07T06:29:59.8694959Z MODULE_LOG_TAIL Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage09Block002.log 'Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualFiniteKeys.CoreCoverage.checked9b002' depends on axioms: [propext,
+2026-11-07T06:29:59.8695788Z  Classical.choice,
+2026-11-07T06:29:59.8695957Z  Quot.sound]
+2026-11-07T06:29:59.8696050Z 
+2026-11-07T06:29:59.8696751Z MODULE_LOG_TAIL Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block016.log 'Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualFiniteKeys.CoreCoverage.checked10b016' depends on axioms: [propext,
+2026-11-07T06:29:59.8697588Z  Classical.choice,
+2026-11-07T06:29:59.8697755Z  Quot.sound]
+2026-11-07T06:29:59.8697845Z 
+2026-11-07T06:29:59.8698651Z MODULE_LOG_TAIL Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block034.log 'Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualFiniteKeys.CoreCoverage.checked10b034' depends on axioms: [propext,
+2026-11-07T06:29:59.8699498Z  Classical.choice,
+2026-11-07T06:29:59.8699666Z  Quot.sound]
+2026-11-07T06:29:59.8699759Z 
+2026-11-07T06:29:59.8700440Z MODULE_LOG_TAIL Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage09Block022.log 'Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualFiniteKeys.CoreCoverage.checked9b022' depends on axioms: [propext,
+2026-11-07T06:29:59.8701278Z  Classical.choice,
+2026-11-07T06:29:59.8701448Z  Quot.sound]
+2026-11-07T06:29:59.8701537Z 
+2026-11-07T06:29:59.8702230Z MODULE_LOG_TAIL Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block008.log 'Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualFiniteKeys.CoreCoverage.checked10b008' depends on axioms: [propext,
+2026-11-07T06:29:59.8703191Z  Classical.choice,
+2026-11-07T06:29:59.8703359Z  Quot.sound]
+2026-11-07T06:29:59.8703461Z 
+2026-11-07T06:29:59.8704158Z MODULE_LOG_TAIL Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block047.log 'Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualFiniteKeys.CoreCoverage.checked10b047' depends on axioms: [propext,
+2026-11-07T06:29:59.8704998Z  Classical.choice,
+2026-11-07T06:29:59.8705164Z  Quot.sound]
+2026-11-07T06:29:59.8705259Z 
+2026-11-07T06:29:59.8705951Z MODULE_LOG_TAIL Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block003.log 'Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualFiniteKeys.CoreCoverage.checked10b003' depends on axioms: [propext,
+2026-11-07T06:29:59.8706860Z  Classical.choice,
+2026-11-07T06:29:59.8707052Z  Quot.sound]
+2026-11-07T06:29:59.8707146Z 
+2026-11-07T06:29:59.8707877Z MODULE_LOG_TAIL Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage08Block007.log 'Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualFiniteKeys.CoreCoverage.checked8b007' depends on axioms: [propext,
+2026-11-07T06:29:59.8708824Z  Classical.choice,
+2026-11-07T06:29:59.8708999Z  Quot.sound]
+2026-11-07T06:29:59.8709090Z 
+2026-11-07T06:29:59.8709785Z MODULE_LOG_TAIL Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block015.log 'Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualFiniteKeys.CoreCoverage.checked10b015' depends on axioms: [propext,
+2026-11-07T06:29:59.8710627Z  Classical.choice,
+2026-11-07T06:29:59.8710793Z  Quot.sound]
+2026-11-07T06:29:59.8710889Z 
+2026-11-07T06:29:59.8711577Z MODULE_LOG_TAIL Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block022.log 'Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualFiniteKeys.CoreCoverage.checked10b022' depends on axioms: [propext,
+2026-11-07T06:29:59.8712423Z  Classical.choice,
+2026-11-07T06:29:59.8712695Z  Quot.sound]
+2026-11-07T06:29:59.8712789Z 
+2026-11-07T06:29:59.8713482Z MODULE_LOG_TAIL Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage09Block000.log 'Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualFiniteKeys.CoreCoverage.checked9b000' depends on axioms: [propext,
+2026-11-07T06:29:59.8714324Z  Classical.choice,
+2026-11-07T06:29:59.8714494Z  Quot.sound]
+2026-11-07T06:29:59.8714588Z 
+2026-11-07T06:29:59.8715278Z MODULE_LOG_TAIL Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block054.log 'Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualFiniteKeys.CoreCoverage.checked10b054' depends on axioms: [propext,
+2026-11-07T06:29:59.8716118Z  Classical.choice,
+2026-11-07T06:29:59.8716285Z  Quot.sound]
+2026-11-07T06:29:59.8716383Z 
+2026-11-07T06:29:59.8717072Z MODULE_LOG_TAIL Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block036.log 'Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualFiniteKeys.CoreCoverage.checked10b036' depends on axioms: [propext,
+2026-11-07T06:29:59.8717907Z  Classical.choice,
+2026-11-07T06:29:59.8718076Z  Quot.sound]
+2026-11-07T06:29:59.8718170Z 
+2026-11-07T06:29:59.8718962Z MODULE_LOG_TAIL Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block055.log 'Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualFiniteKeys.CoreCoverage.checked10b055' depends on axioms: [propext,
+2026-11-07T06:29:59.8719807Z  Classical.choice,
+2026-11-07T06:29:59.8719974Z  Quot.sound]
+2026-11-07T06:29:59.8720068Z 
+2026-11-07T06:29:59.8720759Z MODULE_LOG_TAIL Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block001.log 'Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualFiniteKeys.CoreCoverage.checked10b001' depends on axioms: [propext,
+2026-11-07T06:29:59.8721598Z  Classical.choice,
+2026-11-07T06:29:59.8721763Z  Quot.sound]
+2026-11-07T06:29:59.8721854Z 
+2026-11-07T06:29:59.8722649Z MODULE_LOG_TAIL Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block052.log 'Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualFiniteKeys.CoreCoverage.checked10b052' depends on axioms: [propext,
+2026-11-07T06:29:59.8723488Z  Classical.choice,
+2026-11-07T06:29:59.8723661Z  Quot.sound]
+2026-11-07T06:29:59.8723754Z 
+2026-11-07T06:29:59.8724449Z MODULE_LOG_TAIL Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage06Block001.log 'Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualFiniteKeys.CoreCoverage.checked6b001' depends on axioms: [propext,
+2026-11-07T06:29:59.8725301Z  Classical.choice,
+2026-11-07T06:29:59.8725463Z  Quot.sound]
+2026-11-07T06:29:59.8725558Z 
+2026-11-07T06:29:59.8726232Z MODULE_LOG_TAIL Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage08Block008.log 'Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualFiniteKeys.CoreCoverage.checked8b008' depends on axioms: [propext,
+2026-11-07T06:29:59.8727038Z  Classical.choice,
+2026-11-07T06:29:59.8727203Z  Quot.sound]
+2026-11-07T06:29:59.8727344Z 
+2026-11-07T06:29:59.8728018Z MODULE_LOG_TAIL Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage08Block006.log 'Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualFiniteKeys.CoreCoverage.checked8b006' depends on axioms: [propext,
+2026-11-07T06:29:59.8728854Z  Classical.choice,
+2026-11-07T06:29:59.8729027Z  Quot.sound]
+2026-11-07T06:29:59.8729249Z 
+2026-11-07T06:29:59.8729938Z MODULE_LOG_TAIL Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage08Block005.log 'Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualFiniteKeys.CoreCoverage.checked8b005' depends on axioms: [propext,
+2026-11-07T06:29:59.8730778Z  Classical.choice,
+2026-11-07T06:29:59.8730949Z  Quot.sound]
+2026-11-07T06:29:59.8731041Z 
+2026-11-07T06:29:59.8731759Z MODULE_LOG_TAIL Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block032.log 'Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualFiniteKeys.CoreCoverage.checked10b032' depends on axioms: [propext,
+2026-11-07T06:29:59.8732727Z  Classical.choice,
+2026-11-07T06:29:59.8732898Z  Quot.sound]
+2026-11-07T06:29:59.8732992Z 
+2026-11-07T06:29:59.8733657Z MODULE_LOG_TAIL Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block013.log 'Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualFiniteKeys.CoreCoverage.checked10b013' depends on axioms: [propext,
+2026-11-07T06:29:59.8734413Z  Classical.choice,
+2026-11-07T06:29:59.8734588Z  Quot.sound]
+2026-11-07T06:29:59.8734679Z 
+2026-11-07T06:29:59.8735386Z MODULE_LOG_TAIL Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block009.log 'Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualFiniteKeys.CoreCoverage.checked10b009' depends on axioms: [propext,
+2026-11-07T06:29:59.8736255Z  Classical.choice,
+2026-11-07T06:29:59.8736426Z  Quot.sound]
+2026-11-07T06:29:59.8736523Z 
+2026-11-07T06:29:59.8737234Z MODULE_LOG_TAIL Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage09Block013.log 'Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualFiniteKeys.CoreCoverage.checked9b013' depends on axioms: [propext,
+2026-11-07T06:29:59.8738111Z  Classical.choice,
+2026-11-07T06:29:59.8738283Z  Quot.sound]
+2026-11-07T06:29:59.8738375Z 
+2026-11-07T06:29:59.8738883Z MODULE_LOG_TAIL Proofs.RadenkovicGutmanDegreeOneMiddleAnchorAssembly.log 'Gebendorfer.RadenkovicGutman.DegreeOneMiddleAnchors.covered_sound' depends on axioms: [propext,
+2026-11-07T06:29:59.8739539Z  Classical.choice,
+2026-11-07T06:29:59.8739837Z  Quot.sound]
+2026-11-07T06:29:59.8740240Z 'Gebendorfer.RadenkovicGutman.DegreeOneMiddleAnchors.input_family_of_certificates' depends on axioms: [propext,
+2026-11-07T06:29:59.8740710Z  Classical.choice,
+2026-11-07T06:29:59.8740882Z  Quot.sound]
+2026-11-07T06:29:59.8740983Z 
+2026-11-07T06:29:59.8741707Z MODULE_LOG_TAIL Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block027.log 'Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualFiniteKeys.CoreCoverage.checked10b027' depends on axioms: [propext,
+2026-11-07T06:29:59.8742653Z  Classical.choice,
+2026-11-07T06:29:59.8742814Z  Quot.sound]
+2026-11-07T06:29:59.8742897Z 
+2026-11-07T06:29:59.8743489Z MODULE_LOG_TAIL Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoverage00.log 'Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualFiniteKeys.covered0' depends on axioms: [propext,
+2026-11-07T06:29:59.8744209Z  Classical.choice,
+2026-11-07T06:29:59.8744379Z  Quot.sound]
+2026-11-07T06:29:59.8744481Z 
+2026-11-07T06:29:59.8745161Z MODULE_LOG_TAIL Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage09Block006.log 'Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualFiniteKeys.CoreCoverage.checked9b006' depends on axioms: [propext,
+2026-11-07T06:29:59.8745998Z  Classical.choice,
+2026-11-07T06:29:59.8746174Z  Quot.sound]
+2026-11-07T06:29:59.8746267Z 
+2026-11-07T06:29:59.8746971Z MODULE_LOG_TAIL Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block039.log 'Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualFiniteKeys.CoreCoverage.checked10b039' depends on axioms: [propext,
+2026-11-07T06:29:59.8747825Z  Classical.choice,
+2026-11-07T06:29:59.8747996Z  Quot.sound]
+2026-11-07T06:29:59.8748090Z 
+2026-11-07T06:29:59.8748796Z MODULE_LOG_TAIL Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block000.log 'Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualFiniteKeys.CoreCoverage.checked10b000' depends on axioms: [propext,
+2026-11-07T06:29:59.8749654Z  Classical.choice,
+2026-11-07T06:29:59.8749951Z  Quot.sound]
+2026-11-07T06:29:59.8750045Z 
+2026-11-07T06:29:59.8750757Z MODULE_LOG_TAIL Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block057.log 'Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualFiniteKeys.CoreCoverage.checked10b057' depends on axioms: [propext,
+2026-11-07T06:29:59.8751601Z  Classical.choice,
+2026-11-07T06:29:59.8751771Z  Quot.sound]
+2026-11-07T06:29:59.8751866Z 
+2026-11-07T06:29:59.8752689Z MODULE_LOG_TAIL Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage09Block011.log 'Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualFiniteKeys.CoreCoverage.checked9b011' depends on axioms: [propext,
+2026-11-07T06:29:59.8753551Z  Classical.choice,
+2026-11-07T06:29:59.8753723Z  Quot.sound]
+2026-11-07T06:29:59.8753821Z 
+2026-11-07T06:29:59.8754530Z MODULE_LOG_TAIL Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage08Block000.log 'Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualFiniteKeys.CoreCoverage.checked8b000' depends on axioms: [propext,
+2026-11-07T06:29:59.8755378Z  Classical.choice,
+2026-11-07T06:29:59.8755553Z  Quot.sound]
+2026-11-07T06:29:59.8755647Z 
+2026-11-07T06:29:59.8756217Z MODULE_LOG_TAIL Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoverage09.log 'Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualFiniteKeys.covered9' depends on axioms: [propext,
+2026-11-07T06:29:59.8756914Z  Classical.choice,
+2026-11-07T06:29:59.8757079Z  Quot.sound]
+2026-11-07T06:29:59.8757171Z 
+2026-11-07T06:29:59.8757853Z MODULE_LOG_TAIL Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage01Block000.log 'Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualFiniteKeys.CoreCoverage.checked1b000' depends on axioms: [propext,
+2026-11-07T06:29:59.8758708Z  Classical.choice,
+2026-11-07T06:29:59.8758878Z  Quot.sound]
+2026-11-07T06:29:59.8758971Z 
+2026-11-07T06:29:59.8759785Z MODULE_LOG_TAIL Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block029.log 'Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualFiniteKeys.CoreCoverage.checked10b029' depends on axioms: [propext,
+2026-11-07T06:29:59.8760564Z  Classical.choice,
+2026-11-07T06:29:59.8760731Z  Quot.sound]
+2026-11-07T06:29:59.8760819Z 
+2026-11-07T06:29:59.8761466Z MODULE_LOG_TAIL Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage09Block021.log 'Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualFiniteKeys.CoreCoverage.checked9b021' depends on axioms: [propext,
+2026-11-07T06:29:59.8762249Z  Classical.choice,
+2026-11-07T06:29:59.8762409Z  Quot.sound]
+2026-11-07T06:29:59.8762501Z 
+2026-11-07T06:29:59.8763247Z MODULE_LOG_TAIL Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage09Block018.log 'Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualFiniteKeys.CoreCoverage.checked9b018' depends on axioms: [propext,
+2026-11-07T06:29:59.8764031Z  Classical.choice,
+2026-11-07T06:29:59.8764193Z  Quot.sound]
+2026-11-07T06:29:59.8764282Z 
+2026-11-07T06:29:59.8764938Z MODULE_LOG_TAIL Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block028.log 'Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualFiniteKeys.CoreCoverage.checked10b028' depends on axioms: [propext,
+2026-11-07T06:29:59.8765726Z  Classical.choice,
+2026-11-07T06:29:59.8765888Z  Quot.sound]
+2026-11-07T06:29:59.8765978Z 
+2026-11-07T06:29:59.8766647Z MODULE_LOG_TAIL Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block041.log 'Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualFiniteKeys.CoreCoverage.checked10b041' depends on axioms: [propext,
+2026-11-07T06:29:59.8767441Z  Classical.choice,
+2026-11-07T06:29:59.8767605Z  Quot.sound]
+2026-11-07T06:29:59.8767698Z 
+2026-11-07T06:29:59.8768351Z MODULE_LOG_TAIL Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage09Block020.log 'Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualFiniteKeys.CoreCoverage.checked9b020' depends on axioms: [propext,
+2026-11-07T06:29:59.8769147Z  Classical.choice,
+2026-11-07T06:29:59.8769312Z  Quot.sound]
+2026-11-07T06:29:59.8769401Z 
+2026-11-07T06:29:59.8770068Z MODULE_LOG_TAIL Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block006.log 'Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualFiniteKeys.CoreCoverage.checked10b006' depends on axioms: [propext,
+2026-11-07T06:29:59.8770954Z  Classical.choice,
+2026-11-07T06:29:59.8771059Z  Quot.sound]
+2026-11-07T06:29:59.8771120Z 
+2026-11-07T06:29:59.8771521Z MODULE_LOG_TAIL Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block030.log 'Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualFiniteKeys.CoreCoverage.checked10b030' depends on axioms: [propext,
+2026-11-07T06:29:59.8772014Z  Classical.choice,
+2026-11-07T06:29:59.8772121Z  Quot.sound]
+2026-11-07T06:29:59.8772178Z 
+2026-11-07T06:29:59.8772714Z MODULE_LOG_TAIL Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block056.log 'Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualFiniteKeys.CoreCoverage.checked10b056' depends on axioms: [propext,
+2026-11-07T06:29:59.8773362Z  Classical.choice,
+2026-11-07T06:29:59.8773523Z  Quot.sound]
+2026-11-07T06:29:59.8773622Z 
+2026-11-07T06:29:59.8774253Z MODULE_LOG_TAIL Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage09Block015.log 'Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualFiniteKeys.CoreCoverage.checked9b015' depends on axioms: [propext,
+2026-11-07T06:29:59.8775025Z  Classical.choice,
+2026-11-07T06:29:59.8775146Z  Quot.sound]
+2026-11-07T06:29:59.8775205Z 
+2026-11-07T06:29:59.8775547Z MODULE_LOG_TAIL Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoverage01.log 'Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualFiniteKeys.covered1' depends on axioms: [propext,
+2026-11-07T06:29:59.8775971Z  Classical.choice,
+2026-11-07T06:29:59.8776076Z  Quot.sound]
+2026-11-07T06:29:59.8776132Z 
+2026-11-07T06:29:59.8776537Z MODULE_LOG_TAIL Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage07Block001.log 'Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualFiniteKeys.CoreCoverage.checked7b001' depends on axioms: [propext,
+2026-11-07T06:29:59.8777025Z  Classical.choice,
+2026-11-07T06:29:59.8777133Z  Quot.sound]
+2026-11-07T06:29:59.8777285Z 
+2026-11-07T06:29:59.8777620Z MODULE_LOG_TAIL Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoverage05.log 'Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualFiniteKeys.covered5' depends on axioms: [propext,
+2026-11-07T06:29:59.8778042Z  Classical.choice,
+2026-11-07T06:29:59.8778145Z  Quot.sound]
+2026-11-07T06:29:59.8778224Z 
+2026-11-07T06:29:59.8778623Z MODULE_LOG_TAIL Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage09Block005.log 'Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualFiniteKeys.CoreCoverage.checked9b005' depends on axioms: [propext,
+2026-11-07T06:29:59.8779114Z  Classical.choice,
+2026-11-07T06:29:59.8779218Z  Quot.sound]
+2026-11-07T06:29:59.8779274Z 
+2026-11-07T06:29:59.8779676Z MODULE_LOG_TAIL Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block040.log 'Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualFiniteKeys.CoreCoverage.checked10b040' depends on axioms: [propext,
+2026-11-07T06:29:59.8780172Z  Classical.choice,
+2026-11-07T06:29:59.8780280Z  Quot.sound]
+2026-11-07T06:29:59.8780340Z 
+2026-11-07T06:29:59.8780745Z MODULE_LOG_TAIL Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block021.log 'Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualFiniteKeys.CoreCoverage.checked10b021' depends on axioms: [propext,
+2026-11-07T06:29:59.8781235Z  Classical.choice,
+2026-11-07T06:29:59.8781338Z  Quot.sound]
+2026-11-07T06:29:59.8781397Z 
+2026-11-07T06:29:59.8781798Z MODULE_LOG_TAIL Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage09Block007.log 'Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualFiniteKeys.CoreCoverage.checked9b007' depends on axioms: [propext,
+2026-11-07T06:29:59.8782285Z  Classical.choice,
+2026-11-07T06:29:59.8782388Z  Quot.sound]
+2026-11-07T06:29:59.8782445Z 
+2026-11-07T06:29:59.8782983Z MODULE_LOG_TAIL Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block045.log 'Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualFiniteKeys.CoreCoverage.checked10b045' depends on axioms: [propext,
+2026-11-07T06:29:59.8783555Z  Classical.choice,
+2026-11-07T06:29:59.8783660Z  Quot.sound]
+2026-11-07T06:29:59.8783718Z 
+2026-11-07T06:29:59.8784122Z MODULE_LOG_TAIL Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage04Block000.log 'Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualFiniteKeys.CoreCoverage.checked4b000' depends on axioms: [propext,
+2026-11-07T06:29:59.8784607Z  Classical.choice,
+2026-11-07T06:29:59.8784710Z  Quot.sound]
+2026-11-07T06:29:59.8784767Z 
+2026-11-07T06:29:59.8785168Z MODULE_LOG_TAIL Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage09Block001.log 'Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualFiniteKeys.CoreCoverage.checked9b001' depends on axioms: [propext,
+2026-11-07T06:29:59.8785653Z  Classical.choice,
+2026-11-07T06:29:59.8785757Z  Quot.sound]
+2026-11-07T06:29:59.8785817Z 
+2026-11-07T06:29:59.8786153Z MODULE_LOG_TAIL Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoverage04.log 'Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualFiniteKeys.covered4' depends on axioms: [propext,
+2026-11-07T06:29:59.8786581Z  Classical.choice,
+2026-11-07T06:29:59.8786686Z  Quot.sound]
+2026-11-07T06:29:59.8786743Z 
+2026-11-07T06:29:59.8787132Z MODULE_LOG_TAIL Proofs.RadenkovicGutmanDegreeOneMiddleResidualFinitePrerequisites.log 'Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualFiniteTransfer.residual_cases_of_certificates' depends on axioms: [propext,
+2026-11-07T06:29:59.8787609Z  Classical.choice,
+2026-11-07T06:29:59.8787712Z  Quot.sound]
+2026-11-07T06:29:59.8787771Z 
+2026-11-07T06:29:59.8788102Z MODULE_LOG_TAIL Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoverage07.log 'Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualFiniteKeys.covered7' depends on axioms: [propext,
+2026-11-07T06:29:59.8788521Z  Classical.choice,
+2026-11-07T06:29:59.8788625Z  Quot.sound]
+2026-11-07T06:29:59.8788684Z 
+2026-11-07T06:29:59.8789167Z MODULE_LOG_TAIL Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block048.log 'Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualFiniteKeys.CoreCoverage.checked10b048' depends on axioms: [propext,
+2026-11-07T06:29:59.8789659Z  Classical.choice,
+2026-11-07T06:29:59.8789763Z  Quot.sound]
+2026-11-07T06:29:59.8789819Z 
+2026-11-07T06:29:59.8790220Z MODULE_LOG_TAIL Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage08Block001.log 'Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualFiniteKeys.CoreCoverage.checked8b001' depends on axioms: [propext,
+2026-11-07T06:29:59.8790704Z  Classical.choice,
+2026-11-07T06:29:59.8790806Z  Quot.sound]
+2026-11-07T06:29:59.8790865Z 
+2026-11-07T06:29:59.8791262Z MODULE_LOG_TAIL Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage02Block000.log 'Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualFiniteKeys.CoreCoverage.checked2b000' depends on axioms: [propext,
+2026-11-07T06:29:59.8791750Z  Classical.choice,
+2026-11-07T06:29:59.8791856Z  Quot.sound]
+2026-11-07T06:29:59.8791912Z 
+2026-11-07T06:29:59.8792320Z MODULE_LOG_TAIL Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block025.log 'Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualFiniteKeys.CoreCoverage.checked10b025' depends on axioms: [propext,
+2026-11-07T06:29:59.8792939Z  Classical.choice,
+2026-11-07T06:29:59.8793043Z  Quot.sound]
+2026-11-07T06:29:59.8793103Z 
+2026-11-07T06:29:59.8793501Z MODULE_LOG_TAIL Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage09Block010.log 'Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualFiniteKeys.CoreCoverage.checked9b010' depends on axioms: [propext,
+2026-11-07T06:29:59.8793986Z  Classical.choice,
+2026-11-07T06:29:59.8794092Z  Quot.sound]
+2026-11-07T06:29:59.8794148Z 
+2026-11-07T06:29:59.8794569Z MODULE_LOG_TAIL Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block037.log 'Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualFiniteKeys.CoreCoverage.checked10b037' depends on axioms: [propext,
+2026-11-07T06:29:59.8795073Z  Classical.choice,
+2026-11-07T06:29:59.8795176Z  Quot.sound]
+2026-11-07T06:29:59.8795320Z 
+2026-11-07T06:29:59.8795657Z MODULE_LOG_TAIL Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoverage06.log 'Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualFiniteKeys.covered6' depends on axioms: [propext,
+2026-11-07T06:29:59.8796077Z  Classical.choice,
+2026-11-07T06:29:59.8796180Z  Quot.sound]
+2026-11-07T06:29:59.8796239Z 
+2026-11-07T06:29:59.8796643Z MODULE_LOG_TAIL Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block053.log 'Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualFiniteKeys.CoreCoverage.checked10b053' depends on axioms: [propext,
+2026-11-07T06:29:59.8797134Z  Classical.choice,
+2026-11-07T06:29:59.8797238Z  Quot.sound]
+2026-11-07T06:29:59.8797294Z 
+2026-11-07T06:29:59.8797712Z MODULE_LOG_TAIL Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block026.log 'Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualFiniteKeys.CoreCoverage.checked10b026' depends on axioms: [propext,
+2026-11-07T06:29:59.8798214Z  Classical.choice,
+2026-11-07T06:29:59.8798325Z  Quot.sound]
+2026-11-07T06:29:59.8798386Z 
+2026-11-07T06:29:59.8798784Z MODULE_LOG_TAIL Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage09Block017.log 'Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualFiniteKeys.CoreCoverage.checked9b017' depends on axioms: [propext,
+2026-11-07T06:29:59.8799271Z  Classical.choice,
+2026-11-07T06:29:59.8799373Z  Quot.sound]
+2026-11-07T06:29:59.8799430Z 
+2026-11-07T06:29:59.8799833Z MODULE_LOG_TAIL Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block035.log 'Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualFiniteKeys.CoreCoverage.checked10b035' depends on axioms: [propext,
+2026-11-07T06:29:59.8800323Z  Classical.choice,
+2026-11-07T06:29:59.8800425Z  Quot.sound]
+2026-11-07T06:29:59.8800485Z 
+2026-11-07T06:29:59.8800884Z MODULE_LOG_TAIL Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block024.log 'Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualFiniteKeys.CoreCoverage.checked10b024' depends on axioms: [propext,
+2026-11-07T06:29:59.8801525Z  Classical.choice,
+2026-11-07T06:29:59.8801631Z  Quot.sound]
+2026-11-07T06:29:59.8801688Z 
+2026-11-07T06:29:59.8802090Z MODULE_LOG_TAIL Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block018.log 'Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualFiniteKeys.CoreCoverage.checked10b018' depends on axioms: [propext,
+2026-11-07T06:29:59.8802692Z  Classical.choice,
+2026-11-07T06:29:59.8802795Z  Quot.sound]
+2026-11-07T06:29:59.8802854Z 
+2026-11-07T06:29:59.8803266Z MODULE_LOG_TAIL Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block020.log 'Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualFiniteKeys.CoreCoverage.checked10b020' depends on axioms: [propext,
+2026-11-07T06:29:59.8803754Z  Classical.choice,
+2026-11-07T06:29:59.8803856Z  Quot.sound]
+2026-11-07T06:29:59.8803915Z 
+2026-11-07T06:29:59.8804320Z MODULE_LOG_TAIL Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage09Block009.log 'Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualFiniteKeys.CoreCoverage.checked9b009' depends on axioms: [propext,
+2026-11-07T06:29:59.8804809Z  Classical.choice,
+2026-11-07T06:29:59.8804912Z  Quot.sound]
+2026-11-07T06:29:59.8804968Z 
+2026-11-07T06:29:59.8805368Z MODULE_LOG_TAIL Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage09Block003.log 'Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualFiniteKeys.CoreCoverage.checked9b003' depends on axioms: [propext,
+2026-11-07T06:29:59.8805856Z  Classical.choice,
+2026-11-07T06:29:59.8805959Z  Quot.sound]
+2026-11-07T06:29:59.8806019Z 
+2026-11-07T06:29:59.8806417Z MODULE_LOG_TAIL Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block002.log 'Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualFiniteKeys.CoreCoverage.checked10b002' depends on axioms: [propext,
+2026-11-07T06:29:59.8806909Z  Classical.choice,
+2026-11-07T06:29:59.8807011Z  Quot.sound]
+2026-11-07T06:29:59.8807067Z 
+2026-11-07T06:29:59.8807491Z MODULE_LOG_TAIL Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block044.log 'Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualFiniteKeys.CoreCoverage.checked10b044' depends on axioms: [propext,
+2026-11-07T06:29:59.8808065Z  Classical.choice,
+2026-11-07T06:29:59.8808166Z  Quot.sound]
+2026-11-07T06:29:59.8808225Z 
+2026-11-07T06:29:59.8808585Z MODULE_LOG_TAIL Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteTransfer.log 'Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualFiniteTransfer.residual_parameters' depends on axioms: [propext,
+2026-11-07T06:29:59.8809030Z  Classical.choice,
+2026-11-07T06:29:59.8809136Z  Quot.sound]
+2026-11-07T06:29:59.8809393Z 'Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualFiniteTransfer.residual_cases' depends on axioms: [propext,
+2026-11-07T06:29:59.8809680Z  Classical.choice,
+2026-11-07T06:29:59.8809784Z  Quot.sound]
+2026-11-07T06:29:59.8809840Z 
+2026-11-07T06:29:59.8810247Z MODULE_LOG_TAIL Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block023.log 'Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualFiniteKeys.CoreCoverage.checked10b023' depends on axioms: [propext,
+2026-11-07T06:29:59.8810743Z  Classical.choice,
+2026-11-07T06:29:59.8810846Z  Quot.sound]
+2026-11-07T06:29:59.8810904Z 
+2026-11-07T06:29:59.8811304Z MODULE_LOG_TAIL Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage09Block008.log 'Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualFiniteKeys.CoreCoverage.checked9b008' depends on axioms: [propext,
+2026-11-07T06:29:59.8811795Z  Classical.choice,
+2026-11-07T06:29:59.8811897Z  Quot.sound]
+2026-11-07T06:29:59.8811954Z 
+2026-11-07T06:29:59.8812357Z MODULE_LOG_TAIL Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block011.log 'Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualFiniteKeys.CoreCoverage.checked10b011' depends on axioms: [propext,
+2026-11-07T06:29:59.8812970Z  Classical.choice,
+2026-11-07T06:29:59.8813073Z  Quot.sound]
+2026-11-07T06:29:59.8813131Z 
+2026-11-07T06:29:59.8813550Z MODULE_LOG_TAIL Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoverage08.log 'Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualFiniteKeys.covered8' depends on axioms: [propext,
+2026-11-07T06:29:59.8813981Z  Classical.choice,
+2026-11-07T06:29:59.8814090Z  Quot.sound]
+2026-11-07T06:29:59.8814147Z 
+2026-11-07T06:29:59.8814550Z MODULE_LOG_TAIL Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block004.log 'Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualFiniteKeys.CoreCoverage.checked10b004' depends on axioms: [propext,
+2026-11-07T06:29:59.8815040Z  Classical.choice,
+2026-11-07T06:29:59.8815146Z  Quot.sound]
+2026-11-07T06:29:59.8815205Z 
+2026-11-07T06:29:59.8815605Z MODULE_LOG_TAIL Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block010.log 'Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualFiniteKeys.CoreCoverage.checked10b010' depends on axioms: [propext,
+2026-11-07T06:29:59.8816094Z  Classical.choice,
+2026-11-07T06:29:59.8816197Z  Quot.sound]
+2026-11-07T06:29:59.8816256Z 
+2026-11-07T06:29:59.8816662Z MODULE_LOG_TAIL Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block046.log 'Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualFiniteKeys.CoreCoverage.checked10b046' depends on axioms: [propext,
+2026-11-07T06:29:59.8817154Z  Classical.choice,
+2026-11-07T06:29:59.8817258Z  Quot.sound]
+2026-11-07T06:29:59.8817314Z 
+2026-11-07T06:29:59.8817729Z MODULE_LOG_TAIL Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block007.log 'Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualFiniteKeys.CoreCoverage.checked10b007' depends on axioms: [propext,
+2026-11-07T06:29:59.8818218Z  Classical.choice,
+2026-11-07T06:29:59.8818321Z  Quot.sound]
+2026-11-07T06:29:59.8818380Z 
+2026-11-07T06:29:59.8818780Z MODULE_LOG_TAIL Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage09Block012.log 'Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualFiniteKeys.CoreCoverage.checked9b012' depends on axioms: [propext,
+2026-11-07T06:29:59.8819285Z  Classical.choice,
+2026-11-07T06:29:59.8819388Z  Quot.sound]
+2026-11-07T06:29:59.8819525Z 
+2026-11-07T06:29:59.8819900Z MODULE_LOG_TAIL Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoverageComplete.log 'Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualFiniteKeys.parameter_coverage' depends on axioms: [propext,
+2026-11-07T06:29:59.8820357Z  Classical.choice,
+2026-11-07T06:29:59.8820461Z  Quot.sound]
+2026-11-07T06:29:59.8820520Z 
+2026-11-07T06:29:59.8820921Z MODULE_LOG_TAIL Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block012.log 'Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualFiniteKeys.CoreCoverage.checked10b012' depends on axioms: [propext,
+2026-11-07T06:29:59.8821413Z  Classical.choice,
+2026-11-07T06:29:59.8821517Z  Quot.sound]
+2026-11-07T06:29:59.8821575Z 
+2026-11-07T06:29:59.8821978Z MODULE_LOG_TAIL Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage08Block002.log 'Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualFiniteKeys.CoreCoverage.checked8b002' depends on axioms: [propext,
+2026-11-07T06:29:59.8822464Z  Classical.choice,
+2026-11-07T06:29:59.8822699Z  Quot.sound]
+2026-11-07T06:29:59.8822759Z 
+2026-11-07T06:29:59.8823159Z MODULE_LOG_TAIL Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block038.log 'Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualFiniteKeys.CoreCoverage.checked10b038' depends on axioms: [propext,
+2026-11-07T06:29:59.8823648Z  Classical.choice,
+2026-11-07T06:29:59.8823753Z  Quot.sound]
+2026-11-07T06:29:59.8823812Z 
+2026-11-07T06:29:59.8824214Z MODULE_LOG_TAIL Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage07Block003.log 'Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualFiniteKeys.CoreCoverage.checked7b003' depends on axioms: [propext,
+2026-11-07T06:29:59.8824701Z  Classical.choice,
+2026-11-07T06:29:59.8824804Z  Quot.sound]
+2026-11-07T06:29:59.8824860Z 
+2026-11-07T06:29:59.8825264Z MODULE_LOG_TAIL Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block043.log 'Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualFiniteKeys.CoreCoverage.checked10b043' depends on axioms: [propext,
+2026-11-07T06:29:59.8825843Z  Classical.choice,
+2026-11-07T06:29:59.8825954Z  Quot.sound]
+2026-11-07T06:29:59.8826014Z 
+2026-11-07T06:29:59.8826415Z MODULE_LOG_TAIL Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage08Block004.log 'Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualFiniteKeys.CoreCoverage.checked8b004' depends on axioms: [propext,
+2026-11-07T06:29:59.8826922Z  Classical.choice,
+2026-11-07T06:29:59.8827026Z  Quot.sound]
+2026-11-07T06:29:59.8827082Z 
+2026-11-07T06:29:59.8827423Z MODULE_LOG_TAIL Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoverage02.log 'Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualFiniteKeys.covered2' depends on axioms: [propext,
+2026-11-07T06:29:59.8827847Z  Classical.choice,
+2026-11-07T06:29:59.8827950Z  Quot.sound]
+2026-11-07T06:29:59.8828010Z 
+2026-11-07T06:29:59.8828412Z MODULE_LOG_TAIL Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage00Block000.log 'Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualFiniteKeys.CoreCoverage.checked0b000' depends on axioms: [propext,
+2026-11-07T06:29:59.8828901Z  Classical.choice,
+2026-11-07T06:29:59.8829008Z  Quot.sound]
+2026-11-07T06:29:59.8829065Z 
+2026-11-07T06:29:59.8829468Z MODULE_LOG_TAIL Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block033.log 'Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualFiniteKeys.CoreCoverage.checked10b033' depends on axioms: [propext,
+2026-11-07T06:29:59.8829958Z  Classical.choice,
+2026-11-07T06:29:59.8830061Z  Quot.sound]
+2026-11-07T06:29:59.8830119Z 
+2026-11-07T06:29:59.8830456Z MODULE_LOG_TAIL Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoverage10.log 'Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualFiniteKeys.covered10' depends on axioms: [propext,
+2026-11-07T06:29:59.8830879Z  Classical.choice,
+2026-11-07T06:29:59.8830982Z  Quot.sound]
+2026-11-07T06:29:59.8831040Z 
+2026-11-07T06:29:59.8831445Z MODULE_LOG_TAIL Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block017.log 'Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualFiniteKeys.CoreCoverage.checked10b017' depends on axioms: [propext,
+2026-11-07T06:29:59.8832013Z  Classical.choice,
+2026-11-07T06:29:59.8832117Z  Quot.sound]
+2026-11-07T06:29:59.8832174Z 
+2026-11-07T06:29:59.8832511Z MODULE_LOG_TAIL Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoverage03.log 'Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualFiniteKeys.covered3' depends on axioms: [propext,
+2026-11-07T06:29:59.8833124Z  Classical.choice,
+2026-11-07T06:29:59.8833228Z  Quot.sound]
+2026-11-07T06:29:59.8833289Z 
+2026-11-07T06:29:59.8833688Z MODULE_LOG_TAIL Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage03Block000.log 'Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualFiniteKeys.CoreCoverage.checked3b000' depends on axioms: [propext,
+2026-11-07T06:29:59.8834177Z  Classical.choice,
+2026-11-07T06:29:59.8834279Z  Quot.sound]
+2026-11-07T06:29:59.8834336Z 
+2026-11-07T06:29:59.8834741Z MODULE_LOG_TAIL Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block019.log 'Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualFiniteKeys.CoreCoverage.checked10b019' depends on axioms: [propext,
+2026-11-07T06:29:59.8835235Z  Classical.choice,
+2026-11-07T06:29:59.8835336Z  Quot.sound]
+2026-11-07T06:29:59.8835395Z 
+2026-11-07T06:29:59.8835793Z MODULE_LOG_TAIL Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCoreCoverage10Block005.log 'Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualFiniteKeys.CoreCoverage.checked10b005' depends on axioms: [propext,
+2026-11-07T06:29:59.8836283Z  Classical.choice,
+2026-11-07T06:29:59.8836386Z  Quot.sound]
+2026-11-07T06:29:59.8836445Z 
+2026-11-07T06:29:59.8876945Z ##[group]Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+2026-11-07T06:29:59.8877163Z with:
+2026-11-07T06:29:59.8877378Z   name: rg-middle-residual-prerequisites-recovery-20261107-exports-42346733540-0
+2026-11-07T06:29:59.8877628Z   path: Proofs/RG_Lean_20261019/build/fresh_exports
+2026-11-07T06:29:59.8877789Z   retention-days: 90
+2026-11-07T06:29:59.8877920Z   if-no-files-found: warn
+2026-11-07T06:29:59.8878046Z   compression-level: 6
+2026-11-07T06:29:59.8878166Z   overwrite: false
+2026-11-07T06:29:59.8878282Z   include-hidden-files: false
+2026-11-07T06:29:59.8878412Z ##[endgroup]
+2026-11-07T06:29:59.9901820Z (node:3417) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-11-07T06:29:59.9902307Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-11-07T06:30:00.0583030Z With the provided path, there will be 614 files uploaded
+2026-11-07T06:30:00.0583864Z Artifact name is valid!
+2026-11-07T06:30:00.0584069Z Root directory input is valid!
+2026-11-07T06:30:00.3782918Z Beginning upload of artifact content to blob storage
+2026-11-07T06:30:00.7425132Z (node:3417) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+2026-11-07T06:30:01.1132061Z Uploaded bytes 2514457
+2026-11-07T06:30:01.1528684Z Finished uploading artifact content to blob storage!
+2026-11-07T06:30:01.1529381Z SHA256 digest of uploaded artifact zip is 21d595a8f449d7d2f5ec37fb33e50ad808ccea00a06e24a2c069da81a4bc619a
+2026-11-07T06:30:01.1530702Z Finalizing artifact upload
+2026-11-07T06:30:01.5561544Z Artifact rg-middle-residual-prerequisites-recovery-20261107-exports-42346733540-0.zip successfully finalized. Artifact ID 13564132816
+2026-11-07T06:30:01.5562302Z Artifact rg-middle-residual-prerequisites-recovery-20261107-exports-42346733540-0 has been successfully uploaded! Final size is 2514457 bytes. Artifact ID is 13564132816
+2026-11-07T06:30:01.5563266Z Artifact download URL: https://github.com/RhudeJJJJ/formal-conjectures/actions/runs/42346733540/artifacts/13564132816
+2026-11-07T06:30:01.5770505Z Post job cleanup.
+2026-11-07T06:30:01.6288847Z [command]/usr/bin/git version
+2026-11-07T06:30:01.6320008Z git version 2.56.0
+2026-11-07T06:30:01.6343261Z Temporarily overriding HOME='/home/runner/work/_temp/1bf24db0-d67a-4fc3-b988-a787c80ac795' before making global git config changes
+2026-11-07T06:30:01.6343929Z Adding repository directory to the temporary git global config as a safe directory
+2026-11-07T06:30:01.6345101Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/formal-conjectures/formal-conjectures
+2026-11-07T06:30:01.6370719Z Removing SSH command configuration
+2026-11-07T06:30:01.6374974Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-07T06:30:01.6402157Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-07T06:30:01.6737737Z Removing HTTP extra header
+2026-11-07T06:30:01.6742055Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-07T06:30:01.6810969Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-11-07T06:30:01.7132318Z Removing includeIf entries pointing to credentials config files
+2026-11-07T06:30:01.7138087Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-07T06:30:01.7176889Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-11-07T06:30:01.7609547Z Cleaning up orphan processes
+2026-11-07T06:30:01.7852147Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+

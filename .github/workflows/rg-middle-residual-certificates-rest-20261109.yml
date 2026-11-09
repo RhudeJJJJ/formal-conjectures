@@ -1,0 +1,256 @@
+name: RG Middle original residual certificates 001 through 024
+
+on:
+  push:
+    branches: [rg-middle-residual-certificates-rest-20261109]
+    paths:
+      - '.github/workflows/rg-middle-residual-certificates-rest-20261109.yml'
+      - 'ci/rg_middle_residual_batch_plan_20261109.py'
+      - 'ci/rg_middle_residual_batch_inventory_20261109.json'
+      - 'ci/rg_middle_residual_batch_authenticate_20261109.py'
+      - 'ci/rg_middle_residual_join_20261109.py'
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  check:
+    name: residual-batch-${{ matrix.batch }}
+    strategy:
+      fail-fast: false
+      max-parallel: 12
+      matrix:
+        batch: ['024', '001', '002', '003', '004', '005', '006', '007', '008', '009', '010', '011', '012', '013', '014', '015', '016', '017', '018', '019', '020', '021', '022', '023']
+    runs-on: ubuntu-24.04
+    timeout-minutes: 360
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          persist-credentials: false
+      - name: Fetch the immutable original source commit
+        run: git fetch --no-tags --depth 1 origin 15d45e8d3ed3bacaf3afe7d85488a42f08302d76
+      - name: Check the frozen original source inventory
+        run: python3 -B ci/rg_middle_residual_batch_plan_20261109.py --check
+      - name: Retain the exact source closure and frozen checker
+        env:
+          RG_BATCH: ${{ matrix.batch }}
+        run: |
+          python3 - <<'PY'
+          import hashlib,json,os,pathlib,shutil
+          inventory_path=pathlib.Path('ci/rg_middle_residual_batch_inventory_20261109.json')
+          inventory=json.loads(inventory_path.read_text())
+          row=next(x for x in inventory['batches'] if x['index']==os.environ['RG_BATCH'])
+          bundle=pathlib.Path('Proofs/RG_Lean_20261019/build/fresh_exports/generated_source')
+          for rel,expected in row['source_sha256'].items():
+              data=pathlib.Path(rel).read_bytes()
+              assert hashlib.sha256(data).hexdigest()==expected,rel
+              target=bundle/rel;target.parent.mkdir(parents=True,exist_ok=True);target.write_bytes(data)
+          assert len(row['source_sha256'])==row['source_count']
+          manifest=dict(endpoint=row['endpoint'],component_kind='DEGREE_ONE_MIDDLE_RESIDUAL_CERTIFICATE_BATCH'+row['index'],source_sha256=row['source_sha256'],kind='ORIGINAL_TARGET_REQUIRES_SUCCESSFUL_KERNEL_RECEIPT')
+          (bundle/'generated_source_manifest.json').write_text(json.dumps(manifest,indent=2)+'\n')
+          evidence=bundle.parent/'frozen_validation';evidence.mkdir(parents=True,exist_ok=True)
+          for rel in [str(inventory_path),'ci/rg_middle_residual_batch_plan_20261109.py','ci/rg_middle_residual_batch_authenticate_20261109.py']:
+              p=pathlib.Path(rel);shutil.copyfile(p,evidence/p.name)
+              print('FROZEN_VALIDATOR_SHA256 '+rel+' '+hashlib.sha256(p.read_bytes()).hexdigest())
+          print('ORIGINAL_BATCH_PLAN '+json.dumps({k:row[k] for k in ['index','endpoint','key_count','source_count','fresh_count']},sort_keys=True))
+          PY
+      - name: Install the project toolchain
+        run: |
+          set -o pipefail
+          curl -sSfL https://github.com/leanprover/elan/releases/download/v1.4.2/elan-x86_64-unknown-linux-gnu.tar.gz | tar xz
+          ./elan-init -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Materialize the exact dependency lock
+        run: python3 -B ci/rg_dependencies.py
+      - name: Fetch the required Mathlib cache
+        env:
+          RG_BATCH: ${{ matrix.batch }}
+        run: |
+          python3 - <<'PY'
+          import os,pathlib,re,subprocess
+          root=pathlib.Path('Proofs/RG_Lean_20261019')
+          seen,external=set(),set()
+          def visit(name):
+              if name in seen:return
+              seen.add(name)
+              source=(root/(name.replace('.','/')+'.lean')).read_text()
+              for dep in re.findall(r'^\s*import\s+([\w.]+)',source,re.M):
+                  if dep.startswith('Proofs.'):visit(dep)
+                  elif not dep.startswith(('Lean.','Init.','Std.')) and dep not in ('Lean','Init','Std'):external.add(dep)
+          visit('Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCertificateBatch'+os.environ['RG_BATCH'])
+          subprocess.run(['lake','exe','cache','get',*sorted(external)],check=True)
+          PY
+      - name: Restore the audited original common scope
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 -B ci/rg_restore_complete_scope.py --manifest ci/rg_reusable_analytic_kernel_base_complete_scope_capsule.json --build-directory Proofs/RG_Lean_20261019/build/extension
+      - name: Restore authenticated common and list exports in fixed order
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          python3 - <<'PY'
+          import json,subprocess,sys
+          manifests=json.load(open('ci/rg_middle_residual_certificates000_restore_plan_20261108.json'))
+          assert manifests==['ci/rg_all111_finite_original_projected_parents_20261028/083.json','ci/rg_middle_residual_list_assembly_run42345489172_prior_exports.json']
+          for manifest in manifests:
+              subprocess.run([sys.executable,'-B','ci/rg_restore_job_exports.py','--manifest',manifest,'--build-directory','Proofs/RG_Lean_20261019/build/extension'],check=True)
+          PY
+      - name: Enforce the exact fresh frontier before kernel replay
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          RG_BATCH: ${{ matrix.batch }}
+        run: |
+          python3 - <<'PY'
+          import json,os,subprocess,sys
+          inventory=json.load(open('ci/rg_middle_residual_batch_inventory_20261109.json'))
+          row=next(x for x in inventory['batches'] if x['index']==os.environ['RG_BATCH'])
+          subprocess.run([sys.executable,'-B','ci/rg_restore_with_kernel_fallback.py','--plan','ci/rg_middle_residual_certificates000_restore_plan_20261108.json','--build-directory','Proofs/RG_Lean_20261019/build/extension','--endpoint',row['endpoint'],'--max-fresh',str(row['fresh_count']),'--preflight-only'],check=True)
+          PY
+      - name: Check the original concrete residual certificates
+        shell: bash
+        run: |
+          set -o pipefail
+          python3 -B ci/rg_observed_kernel_verify.py --memory-reserve-mib 2048 -- --mathlib-project "$GITHUB_WORKSPACE" --endpoint Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteCertificateBatch${{ matrix.batch }} --workers 1 --module-timeout 600 --resume | python3 -B ci/rg_compact_ci_output.py
+      - name: Retain completed records and native compiled objects
+        if: always()
+        run: |
+          python3 - <<'PY'
+          import json,pathlib,shutil,sys
+          project=pathlib.Path('Proofs/RG_Lean_20261019')
+          sys.path.insert(0,str(project.resolve()))
+          from module_outputs import output_members
+          root=project/'build/extension'
+          records=[json.loads(p.read_text()) for p in sorted(root.glob('Proofs.*.json'))]
+          fresh=project/'build/fresh_exports';fresh.mkdir(parents=True,exist_ok=True)
+          (fresh/'diagnostics_records.json').write_text(json.dumps({'modules':records},separators=(',',':'))+'\n')
+          if (root/'receipt.json').is_file():shutil.copyfile(root/'receipt.json',fresh/'receipt.json')
+          print('RETAINED_RECORD_COUNTS '+json.dumps({'total':len(records),'fresh':sum(r['mode']=='FRESH_KERNEL_EXPORT' for r in records)}))
+          for row in records:
+              if row['mode']=='FRESH_KERNEL_EXPORT':
+                  name=row['module']
+                  for rel,expected_sha,expected_size in output_members(name,row):
+                      dest=fresh/rel;dest.parent.mkdir(parents=True,exist_ok=True)
+                      shutil.copyfile(root/rel,dest)
+                  shutil.copyfile(root/(name+'.json'),fresh/(name+'.json'))
+          for log in root.glob('Proofs.*.log'):
+              shutil.copyfile(log,fresh/log.name);print('MODULE_LOG_TAIL '+log.name+' '+log.read_text()[-18000:])
+          PY
+      - name: Retain original exports for independent authentication
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: rg-middle-residual-certificates-rest-20261109-batch${{ matrix.batch }}-${{ github.run_id }}
+          path: Proofs/RG_Lean_20261019/build/fresh_exports
+          retention-days: 90
+
+  finite-join:
+    name: original-finite-residual-join
+    needs: check
+    runs-on: ubuntu-24.04
+    timeout-minutes: 360
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          persist-credentials: false
+      - name: Fetch the immutable original source commit
+        run: git fetch --no-tags --depth 1 origin 15d45e8d3ed3bacaf3afe7d85488a42f08302d76
+      - name: Check the frozen original source inventory
+        run: python3 -B ci/rg_middle_residual_batch_plan_20261109.py --check
+      - name: Reserve capacity on this fresh hosted runner
+        run: python3 -B ci/rg_prepare_finite_runner_storage.py --required-free-gib 45
+      - name: Install the project toolchain
+        run: |
+          set -o pipefail
+          curl -sSfL https://github.com/leanprover/elan/releases/download/v1.4.2/elan-x86_64-unknown-linux-gnu.tar.gz | tar xz
+          ./elan-init -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Materialize the exact dependency lock
+        run: python3 -B ci/rg_dependencies.py
+      - name: Fetch the required Mathlib cache
+        run: |
+          python3 - <<'PY'
+          import pathlib,re,subprocess
+          root=pathlib.Path('Proofs/RG_Lean_20261019')
+          seen,external=set(),set()
+          def visit(name):
+              if name in seen:return
+              seen.add(name)
+              for dep in re.findall(r'^\s*import\s+([\w.]+)',(root/(name.replace('.','/')+'.lean')).read_text(),re.M):
+                  if dep.startswith('Proofs.'):visit(dep)
+                  elif not dep.startswith(('Lean.','Init.','Std.')) and dep not in ('Lean','Init','Std'):external.add(dep)
+          visit('Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteAllCertificates')
+          subprocess.run(['lake','exe','cache','get',*sorted(external)],check=True)
+          PY
+      - name: Use the established byte-preserving compressed proof store
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y btrfs-progs
+          python3 -B ci/rg_ephemeral_compressed_proofstore.py --logical-gib 256
+      - name: Restore the audited original common scope
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 -B ci/rg_restore_complete_scope.py --manifest ci/rg_reusable_analytic_kernel_base_complete_scope_capsule.json --build-directory Proofs/RG_Lean_20261019/build/extension
+      - name: Restore authenticated common and list exports in fixed order
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 -B ci/rg_restore_plan_parallel.py --plan ci/rg_middle_residual_certificates000_restore_plan_20261108.json --build-directory Proofs/RG_Lean_20261019/build/extension --workers 1
+      - name: Authenticate every completed batch and restore exact original prerequisites
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 -B ci/rg_middle_residual_join_20261109.py
+      - name: Check the single original finite residual join
+        shell: bash
+        run: |
+          set -o pipefail
+          python3 -B ci/rg_run_with_host_reserve.py -- python3 -B ci/rg_observed_kernel_verify.py --memory-reserve-mib 2048 -- --mathlib-project "$GITHUB_WORKSPACE" --endpoint Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteAllCertificates --workers 1 --module-timeout 600 --resume | python3 -B ci/rg_compact_ci_output.py
+      - name: Check the complete finite receipt and three original declarations
+        run: |
+          python3 - <<'PY'
+          import json,pathlib,re
+          root=pathlib.Path('Proofs/RG_Lean_20261019/build/extension')
+          endpoint='Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteAllCertificates'
+          receipt=json.loads((root/'receipt.json').read_text())
+          assert receipt['endpoints']==[endpoint] and len(receipt['modules'])==3880
+          fresh=[name for name,row in receipt['modules'].items() if row['mode']=='FRESH_KERNEL_EXPORT']
+          assert fresh==[endpoint]
+          for name,row in receipt['modules'].items():
+              assert row['axiom_profiles'] and all(set(p)<={'propext','Classical.choice','Quot.sound'} for p in row['axiom_profiles'])
+          text=(root/(endpoint+'.log')).read_text()
+          names=re.findall(r"'([^']+)'\s+(?:depends on axioms:|does not depend on any axioms)",text)
+          namespace='Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualFiniteAllCertificates.'
+          assert names==[namespace+x for x in ['residual_cases','certified_all_keys','certificates']]
+          print('ORIGINAL_FINITE_RESIDUAL_JOIN_KERNEL_PASS '+json.dumps({'modules':3880,'fresh':1,'keys':1232,'declarations':names,'middle_family_complete':False,'global_rg_proved':False}))
+          PY
+      - name: Retain the complete join evidence and fresh original compiled object
+        if: always()
+        run: |
+          python3 - <<'PY'
+          import json,pathlib,shutil,sys
+          project=pathlib.Path('Proofs/RG_Lean_20261019')
+          sys.path.insert(0,str(project.resolve()))
+          from module_outputs import output_members
+          root=project/'build/extension';fresh=project/'build/fresh_exports'
+          fresh.mkdir(parents=True,exist_ok=True)
+          records=[json.loads(p.read_text()) for p in sorted(root.glob('Proofs.*.json'))]
+          (fresh/'diagnostics_records.json').write_text(json.dumps({'modules':records},separators=(',',':'))+'\n')
+          if (root/'receipt.json').is_file():shutil.copyfile(root/'receipt.json',fresh/'receipt.json')
+          for row in records:
+              if row['mode']=='FRESH_KERNEL_EXPORT':
+                  name=row['module']
+                  for rel,expected_sha,expected_size in output_members(name,row):
+                      dest=fresh/rel;dest.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(root/rel,dest)
+                  shutil.copyfile(root/(name+'.json'),fresh/(name+'.json'))
+          for log in root.glob('Proofs.*.log'):
+              shutil.copyfile(log,fresh/log.name);print('MODULE_LOG_TAIL '+log.name+' '+log.read_text()[-18000:])
+          frozen=fresh/'join_validation';frozen.mkdir(parents=True,exist_ok=True)
+          for rel in ['ci/rg_middle_residual_join_20261109.py','ci/rg_middle_residual_batch_inventory_20261109.json','ci/rg_middle_residual_batch_plan_20261109.py','ci/rg_middle_residual_batch_authenticate_20261109.py','.github/workflows/rg-middle-residual-certificates-rest-20261109.yml']:
+              p=pathlib.Path(rel);shutil.copyfile(p,frozen/p.name)
+          PY
+      - name: Retain the original finite join and provenance
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: rg-middle-original-finite-residual-join-20261109-${{ github.run_id }}
+          path: Proofs/RG_Lean_20261019/build/fresh_exports
+          retention-days: 90

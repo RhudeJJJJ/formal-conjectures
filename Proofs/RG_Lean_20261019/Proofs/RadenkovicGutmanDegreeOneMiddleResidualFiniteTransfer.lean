@@ -1,6 +1,7 @@
 /- Copyright 2026 Jonas J. Gebendorfer. Apache 2.0. -/
 import Proofs.RadenkovicGutmanDegreeOneMiddleAnchorAssembly
 import Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteKeysData
+import Proofs.RadenkovicGutmanDegreeOneMiddleResidualFiniteParameters
 import Proofs.RadenkovicGutmanRootedCatalogueComplete
 import Proofs.RadenkovicGutmanCoreTreeTransfer
 
@@ -15,18 +16,8 @@ set_option backward.isDefEq.respectTransparency false
 
 theorem residual_parameters (m p q : ℕ) (hm : 0 < m)
     (hr : (m+p+q+2,min p q,max p q) ∈ DegreeOneMiddleAnchors.residual) :
-    m ≤ 11 ∧ p < 5 ∧ q < 5 ∧ (m-1,p,q) ∈ DegreeOneMiddleResidualFiniteKeys.domains := by
-  simp only [DegreeOneMiddleAnchors.residual,List.mem_cons,List.not_mem_nil,
-    Prod.mk.injEq,or_false] at hr
-  have split (N a b : ℕ) (h : m+p+q+2=N ∧ min p q=a ∧ max p q=b) :
-      m=N-a-b-2 ∧ ((p=a ∧ q=b) ∨ (p=b ∧ q=a)) := by omega
-  rcases hr with h | h | h | h | h | h | h | h
-  all_goals
-    obtain ⟨he,hpq⟩ := split _ _ _ h
-    rcases hpq with ⟨rfl,rfl⟩ | ⟨rfl,rfl⟩
-    all_goals
-      subst m
-      norm_num [DegreeOneMiddleResidualFiniteKeys.domains]
+    m ≤ 11 ∧ p < 5 ∧ q < 5 ∧ (m-1,p,q) ∈ DegreeOneMiddleResidualFiniteKeys.domains :=
+  DegreeOneMiddleResidualFiniteParameters.residual_parameters m p q hm hr
 
 def Coverage : Prop :=
   ∀ (n : ℕ), n ≤ 10 → ∀ (i : Fin (RootedCatalogueData.catalogue n).length)

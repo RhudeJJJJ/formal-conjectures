@@ -16,7 +16,9 @@ theorem residual_parameters (m p q : ℕ) (hm : 0 < m)
   simp only [DegreeOneMiddleAnchors.residual,List.mem_cons,List.not_mem_nil,
     Prod.mk.injEq,or_false] at hr
   have split (N a b : ℕ) (h : m+p+q+2=N ∧ min p q=a ∧ max p q=b) :
-      m=N-a-b-2 ∧ ((p=a ∧ q=b) ∨ (p=b ∧ q=a)) := by omega
+      m=N-a-b-2 ∧ ((p=a ∧ q=b) ∨ (p=b ∧ q=a)) := by
+    clear hr
+    omega
   rcases hr with h | h | h | h | h | h | h | h
   all_goals
     obtain ⟨he,hpq⟩ := split _ _ _ h
@@ -24,6 +26,8 @@ theorem residual_parameters (m p q : ℕ) (hm : 0 < m)
     all_goals
       subst m
       norm_num [DegreeOneMiddleResidualFiniteKeys.domains]
+
+#print axioms residual_parameters
 
 /-- No residual parameter is lost, and no additional ordered domain is admitted. -/
 theorem residual_iff_domain (m p q : ℕ) (hm : 0 < m) :
@@ -35,9 +39,17 @@ theorem residual_iff_domain (m p q : ℕ) (hm : 0 < m) :
   · intro hd
     simp only [DegreeOneMiddleResidualFiniteKeys.domains,List.mem_cons,
       List.not_mem_nil,Prod.mk.injEq,or_false] at hd
-    simp only [DegreeOneMiddleAnchors.residual,List.mem_cons,List.not_mem_nil,
-      Prod.mk.injEq,or_false]
-    omega
+    rcases hd with h | h | h | h | h | h | h | h | h | h
+    all_goals
+      rcases h with ⟨hn,hp,hq⟩
+      subst p
+      subst q
+      have hm' : m=(m-1)+1 := by omega
+      rw [hn] at hm'
+      subst m
+      norm_num [DegreeOneMiddleAnchors.residual]
+
+#print axioms residual_iff_domain
 
 /-- The physical order of every unpaid finite case is between 14 and 17. -/
 theorem residual_physical_bounds (m p q : ℕ)
@@ -46,7 +58,10 @@ theorem residual_physical_bounds (m p q : ℕ)
       (p=2 ∨ p=4) ∧ (q=2 ∨ q=4) := by
   simp only [DegreeOneMiddleAnchors.residual,List.mem_cons,List.not_mem_nil,
     Prod.mk.injEq,or_false] at hr
-  omega
+  rcases hr with h | h | h | h | h | h | h | h
+  all_goals omega
+
+#print axioms residual_physical_bounds
 
 /-- Join the physical residual classification to the kernel-checked parameter
 coverage. Both orientations of unequal arms use the original key list. -/
@@ -62,8 +77,5 @@ theorem residual_key_mem (m p q : ℕ) (hm : 0 < m)
   exact DegreeOneMiddleResidualFiniteKeys.parameter_coverage (m-1) (by omega)
     i ⟨p,hp⟩ ⟨q,hq⟩ helig
 
-#print axioms residual_parameters
-#print axioms residual_iff_domain
-#print axioms residual_physical_bounds
 #print axioms residual_key_mem
 end Gebendorfer.RadenkovicGutman.DegreeOneMiddleResidualFiniteParameters

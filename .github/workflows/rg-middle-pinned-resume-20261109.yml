@@ -1,0 +1,97 @@
+name: RG Anchor270 actual mean and original Anchor512
+on:
+  push:
+    branches: [rg-middle-kernel-continuation-20261109]
+    paths:
+      - '.github/workflows/rg-middle-pinned-resume-20261109.yml'
+      - 'ci/rg_middle_pinned_resume_20261109.py'
+      - 'Proofs/RG_Lean_20261019/Proofs/RadenkovicGutmanMiddleAnchor270MeanReserve.lean'
+permissions:
+  contents: read
+  actions: read
+jobs:
+  check:
+    strategy:
+      fail-fast: false
+      max-parallel: 1
+      matrix:
+        include:
+          - anchor: '270'
+            endpoint: Proofs.RadenkovicGutmanMiddleAnchor270MeanReserve
+            max_fresh: 1
+          - anchor: '512'
+            endpoint: Proofs.RadenkovicGutmanMiddleOriginalAnchorCertificate512
+            max_fresh: 47
+    runs-on: ubuntu-24.04
+    timeout-minutes: 360
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          persist-credentials: false
+          fetch-depth: 2
+      - name: Pin original archive, all original sources and fresh export origins
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 -B ci/rg_middle_pinned_resume_20261109.py ${{ matrix.anchor }}
+      - name: Install project toolchain
+        run: |
+          set -o pipefail
+          curl -sSfL https://github.com/leanprover/elan/releases/download/v1.4.2/elan-x86_64-unknown-linux-gnu.tar.gz | tar xz
+          ./elan-init -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Materialize exact dependency lock
+        run: python3 -B ci/rg_dependencies.py
+      - name: Fetch required Mathlib cache
+        env:
+          ANCHOR: ${{ matrix.anchor }}
+        run: |
+          python3 - <<'PY'
+          import json,os,pathlib,re,subprocess
+          lock=json.loads(pathlib.Path('ci/_rg_pinned_'+os.environ['ANCHOR']+'_20261109/source_lock.json').read_text())
+          external=set()
+          for rel in lock['source_sha256']:
+              for dep in re.findall(r'^\s*(?:public\s+)?import\s+([\w.]+)',pathlib.Path(rel).read_text(),re.M):
+                  if not dep.startswith(('Proofs.','Lean.','Init.','Std.')) and dep not in ('Lean','Init','Std'):
+                      external.add(dep)
+          subprocess.run(['lake','exe','cache','get',*sorted(external)],check=True)
+          PY
+      - name: Restore authenticated shared kernel base
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 -B ci/rg_restore_complete_scope.py --manifest ci/rg_reusable_analytic_kernel_base_complete_scope_capsule.json --build-directory Proofs/RG_Lean_20261019/build/extension
+      - name: Restore original exports without changing their source or origin
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 -B ci/rg_restore_with_kernel_fallback.py --plan ci/_rg_pinned_${{ matrix.anchor }}_20261109/plan.json --build-directory Proofs/RG_Lean_20261019/build/extension --endpoint ${{ matrix.endpoint }} --max-fresh ${{ matrix.max_fresh }}
+      - name: Require exact fresh module identities
+        run: python3 -B ci/rg_middle_pinned_resume_20261109.py ${{ matrix.anchor }} --check-frontier
+      - name: Fresh kernel check with unchanged original limits
+        shell: bash
+        run: |
+          set -o pipefail
+          python3 -B ci/rg_observed_kernel_verify.py --memory-reserve-mib 2048 -- --mathlib-project "$GITHUB_WORKSPACE" --endpoint ${{ matrix.endpoint }} --workers 1 --module-timeout 600 --resume | python3 -B ci/rg_compact_ci_output.py
+      - name: Retain original-source and fresh-kernel evidence
+        if: always()
+        run: |
+          python3 - <<'PY'
+          import json,pathlib,shutil
+          root=pathlib.Path('Proofs/RG_Lean_20261019/build/extension')
+          out=root.parent/'fresh_exports';out.mkdir(parents=True,exist_ok=True)
+          rows=[json.loads(p.read_text()) for p in sorted(root.glob('Proofs.*.json'))]
+          (out/'diagnostics_records.json').write_text(json.dumps({'modules':rows},separators=(',',':'))+'\n')
+          if (root/'receipt.json').is_file():shutil.copyfile(root/'receipt.json',out/'receipt.json')
+          for row in rows:
+              if row['mode']!='FRESH_KERNEL_EXPORT':continue
+              n=row['module'];rel=n.replace('.','/')+'.olean';dest=out/rel
+              dest.parent.mkdir(parents=True,exist_ok=True)
+              shutil.copyfile(root/rel,dest);shutil.copyfile(root/(n+'.json'),out/(n+'.json'))
+          for log in root.glob('Proofs.*.log'):shutil.copyfile(log,out/log.name)
+          for name in ('bounded_kernel_fallback_plan.json','resource_report.json'):
+              if (root/name).is_file():shutil.copyfile(root/name,out/name)
+          PY
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: rg-middle-pinned-${{ matrix.anchor }}-20261109-${{ github.run_id }}
+          path: Proofs/RG_Lean_20261019/build/fresh_exports
+          retention-days: 90

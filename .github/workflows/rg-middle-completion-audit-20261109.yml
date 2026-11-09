@@ -1,0 +1,35 @@
+name: RG Middle completed certificate archive audit
+
+on:
+  push:
+    branches: [rg-middle-case0493-split-20261109]
+    paths:
+      - '.github/workflows/rg-middle-completion-audit-20261109.yml'
+      - 'ci/rg_middle_completion_audit_20261109.py'
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  audit:
+    name: fixed-producer-object-authentication
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          persist-credentials: false
+      - name: Fetch the immutable original statement and data source
+        run: git fetch --no-tags --depth 1 origin 15d45e8d3ed3bacaf3afe7d85488a42f08302d76
+      - name: Authenticate completed producers without generating new proof claims
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 -B ci/rg_middle_completion_audit_20261109.py
+      - name: Retain independent reports and exact new proof sources
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: rg-middle-completion-audit-20261109-${{ github.run_id }}
+          path: rg_completion_audit_20261109
+          retention-days: 90
